@@ -15,6 +15,45 @@ impl crate::NiBound {
     pub unsafe fn merge(&self, other: *const Self) { unsafe { function!(70973, (*const Self, *const Self))(core::ptr::from_ref(self), other) } }
 }
 
+impl crate::NiMatrix3 {
+    /// `NiMatrix3::FromEulerAnglesXYZ`: out = X(x) * Y(y) * Z(z) with X(a) = [[1,0,0],[0,c,s],[0,-s,c]], Y(a) = [[c,0,-s],[0,1,0],[s,0,c]], Z(a) = [[c,s,0],[-s,c,0],[0,0,1]] (row-major, c = cos a, s = sin a)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 70221, rva 0xede280.
+    /// `void (NiMatrix3* out, float x, float y, float z)`
+    #[inline]
+    pub fn from_euler_angles_xyz(&self, x: f32, y: f32, z: f32) { unsafe { function!(70221, (*const Self, f32, f32, f32))(core::ptr::from_ref(self), x, y, z) } }
+    /// `NiMatrix3::FromEulerAnglesZXY`: out = Z(z) * X(x) * Y(y) with the same elementary matrices
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70233, rva 0xedf900.
+    /// `void (NiMatrix3* out, float z, float x, float y)`
+    #[inline]
+    pub fn from_euler_angles_zxy(&self, z: f32, x: f32, y: f32) { unsafe { function!(70233, (*const Self, f32, f32, f32))(core::ptr::from_ref(self), z, x, y) } }
+    /// `NiMatrix3::FromEulerAnglesZYX`: out = Z(z) * Y(y) * X(x)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70225, rva 0xede800.
+    /// `void (NiMatrix3* out, float z, float y, float x)`
+    #[inline]
+    pub fn from_euler_angles_zyx(&self, z: f32, y: f32, x: f32) { unsafe { function!(70225, (*const Self, f32, f32, f32))(core::ptr::from_ref(self), z, y, x) } }
+    /// `NiMatrix3::ToEulerAnglesXYZ`: inverse of FromEulerAnglesXYZ: y = -asin(m[0][2]) (asin argument clamped to [-1, 1]); |m02| < 1: x = atan2(m[1][2], m[2][2]), z = atan2(m[0][1], m[0][0]), returns true; at m02 <= -1 (y = +pi/2): x = -atan2(m[1][0], m[1][1]), z = 0; at m02 >= 1 (y = -pi/2): x = atan2(m[1][0], m[1][1]), z = 0; returns false at the poles
+    ///
+    /// Semantic, nimath pass, high; ledger semantic evidence, name high; id 70215, rva 0xeddc30.
+    /// `bool (const NiMatrix3* m, float* x, float* y, float* z)`
+    ///
+    /// # Safety
+    /// `x`, `y`, `z` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn to_euler_angles_xyz(&self, x: *mut f32, y: *mut f32, z: *mut f32) -> bool { unsafe { function!(70215, (*const Self, *mut f32, *mut f32, *mut f32) -> bool)(core::ptr::from_ref(self), x, y, z) } }
+    /// `NiMatrix3::ToEulerAnglesZXY`: inverse of FromEulerAnglesZXY: x = -asin(m[2][1]); z = atan2(m[0][1], m[1][1]); y = atan2(m[2][0], m[2][2]); at the poles z = +-atan2(m[0][2], m[0][0]) and y = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 70232, rva 0xedf800.
+    /// `bool (const NiMatrix3* m, float* z, float* x, float* y)`
+    ///
+    /// # Safety
+    /// `z`, `x`, `y` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn to_euler_angles_zxy(&self, z: *mut f32, x: *mut f32, y: *mut f32) -> bool { unsafe { function!(70232, (*const Self, *mut f32, *mut f32, *mut f32) -> bool)(core::ptr::from_ref(self), z, x, y) } }
+}
+
 impl crate::NiTransform {
     /// `NiTransform::ApplyToBound`: centre' = xf.rot*centre*xf.scale + xf.trans, radius' = radius*xf.scale; with radius 0 this is the point transform
     ///
@@ -75,15 +114,6 @@ pub fn clamp_color_components_to_one(c: &mut crate::NiColor) { unsafe { function
 /// `NiQuaternion* (NiQuaternion* out, const NiQuaternion* q)`
 #[inline]
 pub fn conjugate_quaternion(out: &mut crate::NiQuaternion, q: &crate::NiQuaternion) -> Option<&'static crate::NiQuaternion> { unsafe { function!(70838, (*mut crate::NiQuaternion, *const crate::NiQuaternion) -> Option<&'static crate::NiQuaternion>)(core::ptr::from_mut(out), core::ptr::from_ref(q)) } }
-/// `DecomposeMatrixToEulerAngles`: three Euler angles of a rotation: y = -asin(m[2]) (clamped to the pitch limits), x = -Atan2Approx(-m[5], m[8]), z = -Atan2Approx(-m[1], m[0]); at the pitch limits returns false with z = 0 and x from m[3]/m[4]
-///
-/// Semantic, nimath pass, medium; ledger semantic evidence, name medium; id 70215, rva 0xeddc30.
-/// `bool (const NiMatrix3* m, float* x, float* y, float* z)`
-///
-/// # Safety
-/// The pass rates the signature medium.
-#[inline]
-pub unsafe fn decompose_matrix_to_euler_angles(m: *const crate::NiMatrix3, x: *mut f32, y: *mut f32, z: *mut f32) -> bool { unsafe { function!(70215, (*const crate::NiMatrix3, *mut f32, *mut f32, *mut f32) -> bool)(m, x, y, z) } }
 /// `MakePlaneFromNormalAndPoint`: out = {normal, dot(normal, point)}; returns out
 ///
 /// Semantic, nimath pass, high; ledger semantic evidence, name high; id 70803, rva 0xef74a0.

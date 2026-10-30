@@ -76,7 +76,7 @@ pub struct BGSVolumetricLighting_vtable {
     pub slot_33: *const c_void,
     /// `TESForm::vfunc_34` at 0x146740 (rtti, medium); signature (low): `undefined1 vfunc_34(void)`
     pub slot_34: *const c_void,
-    /// `TESForm::vfunc_35` at 0x1e6070 (rtti, medium); signature (low): `undefined vfunc_35(TESForm * this, byte param_1)`
+    /// `TESForm::SetDelete` at 0x1e6070 (semantic, high); signature (untiered): `undefined SetDelete(TESForm * this, byte param_1)`
     pub slot_35: *const c_void,
     /// `TESForm::vfunc_36` at 0x1e60d0 (rtti, medium); signature (low): `undefined vfunc_36(TESForm * this, char param_1)`
     pub slot_36: *const c_void,
@@ -5063,11 +5063,11 @@ pub struct BSFaceGenKeyframeMultiple_vtable {
     pub slot_2: *const c_void,
     /// `BSFaceGenKeyframeMultiple::vfunc_3` at 0x431670 (rtti, high); signature (low): `ulonglong vfunc_3(BSFaceGenKeyframeMultiple * this, BSFaceGenKeyframeMultiple * param_1, float param_2, char param_3, char param_4)`
     pub slot_3: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_4` at 0x431ad0 (rtti, high); signature (low): `undefined vfunc_4(BSFaceGenKeyframeMultiple * this, undefined1 param_1)`
+    /// `BSFaceGenKeyframeMultiple::Clear` at 0x431ad0 (semantic, high); signature (untiered): `undefined Clear(BSFaceGenKeyframeMultiple * this, undefined1 param_1)`; `Clear`: unless already zero: time = 0, values zeroed (slot 15 with the same count) (high); semantic signature: `void (BSFaceGenKeyframeMultiple* this, bool zero)`
     pub slot_4: *const c_void,
     /// `BSFaceGenKeyframeMultiple::vfunc_5` at 0x431b20 (rtti, high); signature (low): `undefined vfunc_5(BSFaceGenKeyframeMultiple * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_6` at 0x431bd0 (rtti, high); signature (low): `undefined vfunc_6(BSFaceGenKeyframeMultiple * this, longlong * param_1)`
+    /// `BSFaceGenKeyframeMultiple::CopyFrom` at 0x431bd0 (semantic, high); signature (untiered): `undefined CopyFrom(BSFaceGenKeyframeMultiple * this, longlong * param_1)`; `CopyFrom`: copies type, time, count and values (high); semantic signature: `void (BSFaceGenKeyframeMultiple* this, const BSFaceGenKeyframeMultiple* other)`
     pub slot_6: *const c_void,
     /// `BSFaceGenKeyframeMultiple::vfunc_7` at 0x431c90 (rtti, high); signature (low): `undefined8 vfunc_7(BSFaceGenKeyframeMultiple * this, longlong * param_1)`
     pub slot_7: *const c_void,
@@ -5075,22 +5075,63 @@ pub struct BSFaceGenKeyframeMultiple_vtable {
     pub slot_8: *const c_void,
     /// `BSFaceGenKeyframeMultiple::vfunc_9` at 0x431da0 (rtti, high); signature (high): `undefined8 vfunc_9(BSFaceGenKeyframeMultiple * this)`
     pub slot_9: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_10` at 0x431e10 (rtti, high); signature (low): `undefined8 vfunc_10(BSFaceGenKeyframeMultiple * this, float param_1, longlong * param_2)`
+    /// `BSFaceGenKeyframeMultiple::StepTowards` at 0x431e10 (semantic, medium); signature (untiered): `undefined8 StepTowards(BSFaceGenKeyframeMultiple * this, float param_1, longlong * param_2)`; `StepTowards`: moves each value towards the target by a speed from slot 8 of the target; returns true when changed (medium); semantic signature: `bool (BSFaceGenKeyframeMultiple* this, float dt, const BSFaceGenKeyframeMultiple* target)`
     pub slot_10: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_11` at 0x432030 (rtti, high); signature (high): `ulonglong vfunc_11(BSFaceGenKeyframeMultiple * this)`
+    /// `BSFaceGenKeyframeMultiple::HasAnyValue` at 0x432030 (semantic, high); signature (untiered): `ulonglong HasAnyValue(BSFaceGenKeyframeMultiple * this)`; `HasAnyValue`: true when any value is in (0,1] (high); semantic signature: `bool (BSFaceGenKeyframeMultiple* this)`
     pub slot_11: *const c_void,
     /// `BSFaceGenKeyframeMultiple::vfunc_12` at 0x432520 (rtti, high); signature (low): `undefined1 vfunc_12(void)`
     pub slot_12: *const c_void,
     /// `BSFaceGenKeyframe::vfunc_13` at 0x4324f0 (rtti, medium); signature (low): `undefined1 vfunc_13(void)`
     pub slot_13: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_14` at 0x432080 (rtti, high); signature (low): `ulonglong vfunc_14(BSFaceGenKeyframeMultiple * this, uint param_1)`
+    /// `BSFaceGenKeyframeMultiple::IsValid` at 0x432080 (semantic, high); signature (untiered): `ulonglong IsValid(BSFaceGenKeyframeMultiple * this, uint param_1)`; `IsValid`: index < count and 0 <= values[index] <= 1 (high); semantic signature: `bool (BSFaceGenKeyframeMultiple* this, u32 index)`
     pub slot_14: *const c_void,
-    /// `BSFaceGenKeyframeMultiple::vfunc_15` at 0x4320b0 (rtti, high); signature (low): `undefined vfunc_15(BSFaceGenKeyframeMultiple * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    /// `BSFaceGenKeyframeMultiple::Resize` at 0x4320b0 (semantic, high); signature (untiered): `undefined Resize(BSFaceGenKeyframeMultiple * this, uint param_1, undefined8 param_2, undefined8 param_3)`; `Resize`: reallocates values when the count changes; fills 0 (zero) or FLT_MAX (high); semantic signature: `void (BSFaceGenKeyframeMultiple* this, u32 count, bool zero)`
     pub slot_15: *const c_void,
 }
 impl BSFaceGenKeyframeMultiple_vtable {
     pub const ID: u64 = 200252;
+    pub const SLOT_Clear: usize = 4;
+    /// Slot 4 as `BSFaceGenKeyframeMultiple_vtable_Clear`, `None` when the slot is null.
+    #[must_use]
+    pub fn Clear(&self) -> Option<BSFaceGenKeyframeMultiple_vtable_Clear> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenKeyframeMultiple_vtable_Clear>>(self.slot_4) }
+    }
+    pub const SLOT_CopyFrom: usize = 6;
+    /// Slot 6 as `BSFaceGenKeyframeMultiple_vtable_CopyFrom`, `None` when the slot is null.
+    #[must_use]
+    pub fn CopyFrom(&self) -> Option<BSFaceGenKeyframeMultiple_vtable_CopyFrom> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenKeyframeMultiple_vtable_CopyFrom>>(self.slot_6) }
+    }
+    pub const SLOT_StepTowards: usize = 10;
+    pub const SLOT_HasAnyValue: usize = 11;
+    /// Slot 11 as `BSFaceGenKeyframeMultiple_vtable_HasAnyValue`, `None` when the slot is null.
+    #[must_use]
+    pub fn HasAnyValue(&self) -> Option<BSFaceGenKeyframeMultiple_vtable_HasAnyValue> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenKeyframeMultiple_vtable_HasAnyValue>>(self.slot_11) }
+    }
+    pub const SLOT_IsValid: usize = 14;
+    /// Slot 14 as `BSFaceGenKeyframeMultiple_vtable_IsValid`, `None` when the slot is null.
+    #[must_use]
+    pub fn IsValid(&self) -> Option<BSFaceGenKeyframeMultiple_vtable_IsValid> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenKeyframeMultiple_vtable_IsValid>>(self.slot_14) }
+    }
+    pub const SLOT_Resize: usize = 15;
+    /// Slot 15 as `BSFaceGenKeyframeMultiple_vtable_Resize`, `None` when the slot is null.
+    #[must_use]
+    pub fn Resize(&self) -> Option<BSFaceGenKeyframeMultiple_vtable_Resize> {
+        unsafe { core::mem::transmute::<*const c_void, Option<BSFaceGenKeyframeMultiple_vtable_Resize>>(self.slot_15) }
+    }
 }
+/// `BSFaceGenKeyframeMultiple::Clear`, slot 4: unless already zero: time = 0, values zeroed (slot 15 with the same count) (high).
+pub type BSFaceGenKeyframeMultiple_vtable_Clear = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple, zero: bool);
+/// `BSFaceGenKeyframeMultiple::CopyFrom`, slot 6: copies type, time, count and values (high).
+pub type BSFaceGenKeyframeMultiple_vtable_CopyFrom = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple, other: *const crate::BSFaceGenKeyframeMultiple);
+/// `BSFaceGenKeyframeMultiple::HasAnyValue`, slot 11: true when any value is in (0,1] (high).
+pub type BSFaceGenKeyframeMultiple_vtable_HasAnyValue = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple) -> bool;
+/// `BSFaceGenKeyframeMultiple::IsValid`, slot 14: index < count and 0 <= values[index] <= 1 (high).
+pub type BSFaceGenKeyframeMultiple_vtable_IsValid = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple, index: u32) -> bool;
+/// `BSFaceGenKeyframeMultiple::Resize`, slot 15: reallocates values when the count changes; fills 0 (zero) or FLT_MAX (high).
+pub type BSFaceGenKeyframeMultiple_vtable_Resize = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple, count: u32, zero: bool);
 
 /// `BSFaceGenModel::vftable` at 0x18bfa80, id 200288 (rtti, high); 2 slots.
 #[repr(C)]
@@ -14022,55 +14063,5 @@ pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
 }
 impl BSImagespaceShaderISSAOCompositeFog_vtable {
     pub const ID: u64 = 254415;
-}
-
-/// `BSImagespaceShaderISSAOCompositeFog::vftable_10` at 0x1b3bbc8, id 254417 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeFog_vtable_10 {
-    /// `BSImagespaceShaderISSAOCompositeFog::NiBoneMatrixSetterI_vdtor` at 0x1507750 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
-    pub slot_0: *const c_void,
-    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
-    pub slot_1: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeFog_vtable_10 {
-    pub const ID: u64 = 254417;
-}
-
-/// `BSImagespaceShaderISSAOCompositeFog::vftable_18` at 0x1b3bbe0, id 254419 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeFog_vtable_18 {
-    /// `BSShader::BSReloadShaderI_vfunc_0` at 0x1578e50 (rtti, medium); signature (low): `undefined BSReloadShaderI_vfunc_0(BSShader * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_0: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeFog_vtable_18 {
-    pub const ID: u64 = 254419;
-}
-
-/// `BSImagespaceShaderISSAOCompositeFog::vftable_90` at 0x1b3bbf0, id 254421 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeFog_vtable_90 {
-    /// `BSImagespaceShaderISSAOCompositeFog::ImageSpaceEffect_vdtor` at 0x150775c (slot_propagation, medium); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
-    pub slot_0: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
-    pub slot_1: *const c_void,
-    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
-    pub slot_6: *const c_void,
-    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeFog_vtable_90 {
-    pub const ID: u64 = 254421;
 }
 

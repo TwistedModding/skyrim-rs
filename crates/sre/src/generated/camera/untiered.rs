@@ -211,6 +211,23 @@ impl crate::BGSBodyPartData {
     pub unsafe fn vfunc_6_sub1(param_1: *mut i64, param_2: i64, param_3: u64, param_4: *mut c_char) -> u8 { unsafe { function!(23446, (*mut i64, i64, u64, *mut c_char) -> u8)(param_1, param_2, param_3, param_4) } }
 }
 
+impl crate::BSFaceGenKeyframeMultiple {
+    /// `BSFaceGenKeyframeMultiple::vfunc_10_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 26563, rva 0x423de0).
+    /// `float vfunc_10_sub0(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_10_sub0() -> f32 { unsafe { function!(26563, () -> f32)() } }
+    /// `BSFaceGenKeyframeMultiple::vfunc_10_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 26564, rva 0x423e00).
+    /// `float vfunc_10_sub1(void)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_10_sub1() -> f32 { unsafe { function!(26564, () -> f32)() } }
+}
+
 impl crate::BSFlattenedBoneTree {
     /// `BSFlattenedBoneTree::GetObjectByName` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70743, rva 0xef4da0).
     /// `NiNode * GetObjectByName(BSFlattenedBoneTree * this, ulonglong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -894,6 +911,23 @@ impl crate::MapCameraStates__World {
     pub unsafe fn update(&self) -> u64 { unsafe { function!(53043, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
+impl crate::ModelReferenceEffect {
+    /// `ModelReferenceEffect::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34678, rva 0x5d8790).
+    /// `undefined ctor_sub0(AttachTechniqueInput * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: *mut c_void) -> u64 { unsafe { function!(34678, (*mut c_void) -> u64)(param_1) } }
+    /// `ModelReferenceEffect::vfunc_59_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34675, rva 0x5d8650).
+    /// `undefined8 vfunc_59_sub0(longlong * param_1, undefined8 param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_59_sub0(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(34675, (*mut i64, u64) -> u64)(param_1, param_2) } }
+}
+
 impl crate::MountInteraction {
     /// `MountInteraction::vfunc_14_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 40359, rva 0x73d930).
     /// `undefined vfunc_14_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -954,6 +988,27 @@ impl crate::MovementControllerNPC {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_movement_direct_control_vfunc_8_sub0(param_1: i64) -> u64 { unsafe { function!(41974, (i64) -> u64)(param_1) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAllowRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 41708, rva 0x796910).
+    /// `longlong IMovementMotionDrivenControl_IsAllowRotation(MovementControllerNPC * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_is_allow_rotation(&self) -> i64 { unsafe { function!(41708, (*const Self) -> i64)(core::ptr::from_ref(self).byte_add(0x128)) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_IsAnimationOrRotationDriven` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 41707, rva 0x7968e0).
+    /// `longlong IMovementMotionDrivenControl_IsAnimationOrRotationDriven(MovementControllerNPC * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_is_animation_or_rotation_driven(&self) -> i64 { unsafe { function!(41707, (*const Self) -> i64)(core::ptr::from_ref(self).byte_add(0x128)) } }
+    /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAllowRotation` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 41705, rva 0x7967d0).
+    /// `undefined IMovementMotionDrivenControl_StartAllowRotation(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn i_movement_motion_driven_control_start_allow_rotation(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(41705, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x128), param_1, param_2, param_3) } }
     /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 41736, rva 0x798450).
     /// `undefined IMovementMotionDrivenControl_vfunc_4_sub0(longlong * param_1)`
     ///
@@ -1672,6 +1727,30 @@ impl crate::TESModel {
     pub unsafe fn dtor_3(&self, param_1: u64, param_2: i64, param_3: *mut u8) -> u64 { unsafe { function!(23455, (*const Self, u64, i64, *mut u8) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::TESObjectLIGH {
+    /// `TESObjectLIGH::Load` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 17601, rva 0x273ae0).
+    /// `undefined8 Load(TESObjectLIGH * this, uint * param_1, TESObjectLIGH * param_2, ulonglong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load(&self, param_1: *mut u32, param_2: *mut Self, param_3: u64) -> u64 { unsafe { function!(17601, (*const Self, *mut u32, *mut Self, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESObjectLIGH::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17618, rva 0x275250).
+    /// `undefined LoadGame(TESObjectLIGH * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(17618, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+    /// `TESObjectLIGH::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17617, rva 0x275210).
+    /// `undefined SaveGame(TESObjectLIGH * this, longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(17617, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
+}
+
 impl crate::TESObjectWEAP {
     /// `TESObjectWEAP::GetLastFile` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 18145, rva 0x28e7b0).
     /// `undefined GetLastFile(TESObjectWEAP * this)`
@@ -1893,6 +1972,23 @@ impl crate::TESQuest {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vfunc_6_sub9(param_1: *mut u8) -> *mut u8 { unsafe { function!(25278, (*mut u8) -> *mut u8)(param_1) } }
+}
+
+impl crate::TESWeather {
+    /// `TESWeather::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20413, rva 0x309bd0).
+    /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(20413, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESWeather::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18021, rva 0x2878f0).
+    /// `undefined vfunc_19_sub0(longlong * param_1, char param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub0(param_1: *mut i64, param_2: c_char) -> u64 { unsafe { function!(18021, (*mut i64, c_char) -> u64)(param_1, param_2) } }
 }
 
 impl crate::ThirdPersonState {
@@ -2142,6 +2238,13 @@ impl crate::bhkCharProxyController {
 }
 
 impl crate::bhkCharRigidBodyController {
+    /// `bhkCharRigidBodyController::SetPosition`, vtable slot 3, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 79193, rva 0x109ab10).
+    /// `undefined SetPosition(bhkCharRigidBodyController * this, float * param_1, char param_2, char param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_position(&self, param_1: *mut f32, param_2: c_char, param_3: c_char) -> u64 { unsafe { virtual_function!(self, 3, (*const Self, *mut f32, c_char, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `bhkCharRigidBodyController::hkpCharacterRigidBodyListener_vfunc_4_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 79219, rva 0x109c4a0).
     /// `longlong hkpCharacterRigidBodyListener_vfunc_4_sub0(longlong param_1)`
     ///

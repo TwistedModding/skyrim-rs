@@ -5496,114 +5496,6 @@ const _: () = assert!(core::mem::offset_of!(ModManagerMenu, field_F4) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(ModManagerMenu, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(ModManagerMenu, field_FC) == 0xFC);
 
-/// `ModelReferenceEffect`: size 0xD8 (exact, high); primary base `ReferenceEffect`.
-/// Evidence: runtime: 0xD8 at 2 allocation sites; agrees with the static allocation sites.
-/// Bases: `ReferenceEffect`@0x0, `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0, `SimpleAnimationGraphManagerHolder`@0x48, `IAnimationGraphManagerHolder`@0x48, `BSTEventSink<BSAnimationGraphEvent>`@0x60.
-#[repr(C)]
-pub struct ModelReferenceEffect {
-    /// +0x0 `vtbl:ModelReferenceEffect:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::ModelReferenceEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, base BSTempEffect
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base BSTempEffect
-    pub field_20: u32,
-    /// +0x24 `undefined1`, base BSTempEffect
-    pub field_24: u8,
-    pub unknown_25: [u8; 3],
-    /// +0x28 `undefined4`, base BSTempEffect
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined8`, base ReferenceEffect
-    pub field_30: u64,
-    /// +0x38 `undefined4`, base ReferenceEffect
-    pub field_38: u32,
-    /// +0x3C `undefined4`, base ReferenceEffect
-    pub field_3C: u32,
-    /// +0x40 `undefined2`, base ReferenceEffect
-    pub field_40: u16,
-    pub unknown_42: [u8; 6],
-    /// +0x48 `vtbl:ModelReferenceEffect:48`, rtti
-    #[doc(hidden)]
-    pub __vftable_48: *const crate::raw::vtables::ModelReferenceEffect_vtable_48,
-    /// +0x50 `undefined8`, base SimpleAnimationGraphManagerHolder
-    pub field_50: u64,
-    /// +0x58 `undefined8`, base SimpleAnimationGraphManagerHolder
-    pub field_58: u64,
-    /// +0x60 `vtbl:ModelReferenceEffect:60`, rtti
-    #[doc(hidden)]
-    pub __vftable_60: *const crate::raw::vtables::ModelReferenceEffect_vtable_60,
-    /// +0x68 `undefined8`, member ctor RefAttachTechniqueInput
-    pub m_RefAttachTechniqueInput_68: u64,
-    /// +0x70 `undefined8`, ctor store
-    pub field_70: u64,
-    /// +0x78 `undefined8`, ctor store
-    pub field_78: u64,
-    /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
-    pub unknown_84: [u8; 4],
-    /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
-    /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
-    /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
-    /// +0xA0 `undefined4`, ctor store
-    pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
-    /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
-    /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
-    /// +0xB8 `undefined8`, ctor store
-    pub field_B8: u64,
-    /// +0xC0 `undefined8`, ctor store
-    pub field_C0: u64,
-    /// +0xC8 `undefined8`, ctor store
-    pub field_C8: u64,
-    /// +0xD0 `undefined4`, ctor store
-    pub field_D0: u32,
-    pub unknown_D4: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<ModelReferenceEffect>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, m_RefAttachTechniqueInput_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_D0) == 0xD0);
-
 /// `Moon`: size 0xD8 (exact, high); primary base `SkyObject`.
 /// Evidence: runtime: 0xD8 at 2 allocation sites.
 /// Bases: `SkyObject`@0x0.
@@ -9643,55 +9535,6 @@ pub struct RefHandleUIData {
 }
 const _: () = assert!(core::mem::offset_of!(RefHandleUIData, __vftable) == 0x0);
 
-/// `ReferenceEffect`: size 0x48 (exact, medium); primary base `BSTempEffect`.
-/// Evidence: lower bound field field_40 meets upper bound next base of ModelReferenceEffect at 0x48.
-/// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct ReferenceEffect {
-    /// +0x0 `vtbl:ReferenceEffect:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::ReferenceEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, base BSTempEffect
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base BSTempEffect
-    pub field_20: u32,
-    /// +0x24 `undefined1`, base BSTempEffect
-    pub field_24: u8,
-    pub unknown_25: [u8; 3],
-    /// +0x28 `undefined4`, base BSTempEffect
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
-    /// +0x38 `undefined4`, ctor store (widths [4, 8])
-    pub field_38: u32,
-    /// +0x3C `undefined4`, ctor store
-    pub field_3C: u32,
-    /// +0x40 `undefined2`, ctor store
-    pub field_40: u16,
-    pub unknown_42: [u8; 6],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<ReferenceEffect>() == 0x48);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_40) == 0x40);
-
 /// `ReferenceEffectController`: size 0x8 (exact, low).
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of OwnedCameraEffectController at 0x8 (soft).
 #[repr(C)]
@@ -12640,8 +12483,8 @@ pub struct SummonPlacementEffect {
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
+    /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
+    pub lifetime: f32,
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
@@ -12653,14 +12496,16 @@ pub struct SummonPlacementEffect {
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined8`, base ReferenceEffect
-    pub field_30: u64,
-    /// +0x38 `undefined4`, base ReferenceEffect
-    pub field_38: u32,
+    /// +0x30 `ptr:ReferenceEffectController`, base ReferenceEffect, semantic; OwnedController / OwnedCameraEffectController (high)
+    pub controller: *mut crate::ReferenceEffectController,
+    /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (high)
+    pub target: u32,
     /// +0x3C `undefined4`, base ReferenceEffect
     pub field_3C: u32,
-    /// +0x40 `undefined2`, base ReferenceEffect
-    pub field_40: u16,
+    /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
+    pub finished: u8,
+    /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
+    pub field_41: u8,
     pub unknown_42: [u8; 6],
     /// +0x48 `vtbl:SummonPlacementEffect:48`, rtti
     #[doc(hidden)]
@@ -12696,15 +12541,16 @@ pub struct SummonPlacementEffect {
 const _: () = assert!(size_of::<SummonPlacementEffect>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, controller) == 0x30);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, finished) == 0x40);
+const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_41) == 0x41);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, __vftable_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(SummonPlacementEffect, field_58) == 0x58);
@@ -19846,4 +19692,146 @@ pub struct _anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_MagicItem_SpellAttack__Event, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<WeaponAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<WeaponAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESObjectWEAP_WeaponAttack__Event, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<ShoutAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<ShoutAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteItemHandler_TESShout_ShoutAttack__Event, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::FavoriteShoutHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `_anon_5C8159CE::FavoriteItemHandler<TESShout,ShoutAttack::Event>`@0x0, `BSTEventSink<ShoutAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteShoutHandler {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteShoutHandler:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteShoutHandler_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteShoutHandler, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::FavoriteSpellHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `_anon_5C8159CE::FavoriteItemHandler<MagicItem,SpellAttack::Event>`@0x0, `BSTEventSink<SpellAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteSpellHandler {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteSpellHandler:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteSpellHandler_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteSpellHandler, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::FavoriteWeaponHandler`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `_anon_5C8159CE::FavoriteItemHandler<TESObjectWEAP,WeaponAttack::Event>`@0x0, `BSTEventSink<WeaponAttack::Event>`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__FavoriteWeaponHandler {
+    /// +0x0 `vtbl:_anon_5C8159CE::FavoriteWeaponHandler:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__FavoriteWeaponHandler_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__FavoriteWeaponHandler, __vftable) == 0x0);
+
+/// `_anon_5C8159CE::GetMiscStatInfoFunc`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `MiscStatManager::IMiscStatVisitor`.
+/// Evidence: vptr at 0x0.
+/// Bases: `MiscStatManager::IMiscStatVisitor`@0x0.
+#[repr(C)]
+pub struct _anon_5C8159CE__GetMiscStatInfoFunc {
+    /// +0x0 `vtbl:_anon_5C8159CE::GetMiscStatInfoFunc:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5C8159CE__GetMiscStatInfoFunc_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5C8159CE__GetMiscStatInfoFunc, __vftable) == 0x0);
+
+/// `_anon_5E019490::DecalApplier`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<TESCellReadyToApplyDecalsEvent>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<TESCellReadyToApplyDecalsEvent>`@0x0.
+#[repr(C)]
+pub struct _anon_5E019490__DecalApplier {
+    /// +0x0 `vtbl:_anon_5E019490::DecalApplier:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5E019490__DecalApplier_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5E019490__DecalApplier, __vftable) == 0x0);
+
+/// `_anon_5FBDCD4E::Compression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
+/// Evidence: vptr at 0x0.
+#[repr(C)]
+pub struct _anon_5FBDCD4E__Compression {
+    /// +0x0 `vtbl:_anon_5FBDCD4E::Compression:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__Compression_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__Compression, __vftable) == 0x0);
+
+/// `_anon_5FBDCD4E::LZ4Compression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5FBDCD4E::Compression`.
+/// Evidence: vptr at 0x0.
+/// Bases: `_anon_5FBDCD4E::Compression`@0x0.
+#[repr(C)]
+pub struct _anon_5FBDCD4E__LZ4Compression {
+    /// +0x0 `vtbl:_anon_5FBDCD4E::LZ4Compression:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__LZ4Compression_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__LZ4Compression, __vftable) == 0x0);
+
+/// `_anon_5FBDCD4E::ZLibCompression`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `_anon_5FBDCD4E::Compression`.
+/// Evidence: vptr at 0x0.
+/// Bases: `_anon_5FBDCD4E::Compression`@0x0.
+#[repr(C)]
+pub struct _anon_5FBDCD4E__ZLibCompression {
+    /// +0x0 `vtbl:_anon_5FBDCD4E::ZLibCompression:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_5FBDCD4E__ZLibCompression_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_5FBDCD4E__ZLibCompression, __vftable) == 0x0);
+
+/// `_anon_64C0A5C9::CellAcousticSpaceListener`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<BGSActorCellEvent>`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSTEventSink<BGSActorCellEvent>`@0x0.
+#[repr(C)]
+pub struct _anon_64C0A5C9__CellAcousticSpaceListener {
+    /// +0x0 `vtbl:_anon_64C0A5C9::CellAcousticSpaceListener:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::_anon_64C0A5C9__CellAcousticSpaceListener_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(_anon_64C0A5C9__CellAcousticSpaceListener, __vftable) == 0x0);
 

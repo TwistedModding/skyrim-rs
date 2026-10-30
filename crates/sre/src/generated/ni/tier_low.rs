@@ -1591,23 +1591,6 @@ impl crate::NiKeyframeManager {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(73656, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::NiLight {
-    /// `NiLight::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 70565, rva 0xeed140).
-    /// `NiLight * ctor(NiLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70565, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `NiLight::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 70567, rva 0xeed200).
-    /// `NiLight * vdtor(NiLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70567, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::NiLightColorController {
     /// `NiLightColorController::Create` (decompiler signature, tier low; ledger string evidence, name high; id 73685, rva 0xf7eb60).
     /// `NiPoint3InterpController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -3334,23 +3317,6 @@ impl crate::NiPoint3Interpolator {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(73836, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::NiPointLight {
-    /// `NiPointLight::Create` (decompiler signature, tier low; ledger string evidence, name high; id 70966, rva 0xefe420).
-    /// `NiLight * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiLight { unsafe { function!(70966, (u64, u64, u64, u64) -> *mut crate::NiLight)(param_1, param_2, param_3, param_4) } }
-    /// `NiPointLight::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 70970, rva 0xefe5f0).
-    /// `NiPointLight * vdtor(NiPointLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(70970, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::NiPosData {

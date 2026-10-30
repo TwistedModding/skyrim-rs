@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `AssignRefCountedPointer_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39731, rva 0x71cb30).
-/// `longlong * AssignRefCountedPointer_12(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pointer_12(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(39731, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
-/// `AssignRefCountedPointer_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69737, rva 0xeca3f0).
-/// `longlong * AssignRefCountedPointer_7(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_pointer_7(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(69737, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
-/// `AssignRefCountedPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 18819, rva 0x2b60c0).
-/// `longlong * AssignRefCountedPtr(longlong * param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn assign_ref_counted_ptr(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(18819, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
 /// `AssignRefCountedPtr_11` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 90798, rva 0x11d28e0).
 /// `undefined8 * AssignRefCountedPtr_11(undefined8 * param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -1746,20 +1725,6 @@ pub unsafe fn build_region_list_for_point2_d(param_1: i64, param_2: u32, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn build_rgba_endpoint_palette(param_1: u64, param_2: *mut u8, param_3: i64, param_4: *mut c_char, param_5: u64) -> u64 { unsafe { function!(77757, (u64, *mut u8, i64, *mut c_char, u64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
-/// `BuildRotationMatrixFromAngles_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70225, rva 0xede800).
-/// `undefined BuildRotationMatrixFromAngles_2(undefined8 * param_1, uint param_2, uint param_3, uint param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn build_rotation_matrix_from_angles_2(param_1: *mut u64, param_2: u32, param_3: u32, param_4: u32) -> u64 { unsafe { function!(70225, (*mut u64, u32, u32, u32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `BuildRotationMatrixFromEulerAngles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70233, rva 0xedf900).
-/// `undefined BuildRotationMatrixFromEulerAngles(undefined8 * param_1, uint param_2, uint param_3, uint param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn build_rotation_matrix_from_euler_angles(param_1: *mut u64, param_2: u32, param_3: u32, param_4: u32) -> u64 { unsafe { function!(70233, (*mut u64, u32, u32, u32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `BuildSampledPathPointArray` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 92717, rva 0x122e8c0).
 /// `undefined8 * BuildSampledPathPointArray(undefined8 * param_1, longlong param_2, float param_3, float param_4, float param_5)`
 ///
@@ -1872,13 +1837,6 @@ pub unsafe fn build_time_period_platforms_query(param_1: *mut u64, param_2: i64,
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn build_topic_info_response_text(param_1: i64, param_2: *mut i64, param_3: c_char, param_4: u64) -> u64 { unsafe { function!(25608, (i64, *mut i64, c_char, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `BuildTransformFromAnglesPositionScale` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19753, rva 0x2eee20).
-/// `undefined BuildTransformFromAnglesPositionScale(longlong param_1, undefined8 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn build_transform_from_angles_position_scale(param_1: i64, param_2: *mut u64) -> u64 { unsafe { function!(19753, (i64, *mut u64) -> u64)(param_1, param_2) } }
 /// `BuildTransformFromVfuncPositionAndAngles` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90920, rva 0x11d66f0).
 /// `undefined BuildTransformFromVfuncPositionAndAngles(longlong * param_1, float * param_2)`
 ///
@@ -3699,13 +3657,6 @@ pub unsafe fn clamp_byte_range_to_parent_recursive(param_1: i64) -> u64 { unsafe
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn clamp_field58_to_field50_count(param_1: i64) -> u64 { unsafe { function!(59555, (i64) -> u64)(param_1) } }
-/// `ClassifyActorStateFlags` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 37841, rva 0x6a6dd0).
-/// `undefined4 ClassifyActorStateFlags(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn classify_actor_state_flags(param_1: i64) -> u32 { unsafe { function!(37841, (i64) -> u32)(param_1) } }
 /// `ClassifyNodeRefBaseFormType` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19543, rva 0x2e3690).
 /// `undefined8 ClassifyNodeRefBaseFormType(longlong * param_1)`
 ///
@@ -13338,3 +13289,45 @@ pub unsafe fn compute_minutes_from_field68_milliseconds(param_1: i64) -> u64 { u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_model_space_bone_transform(param_1: *mut i64, param_2: i32) -> i64 { unsafe { function!(56999, (*mut i64, i32) -> i64)(param_1, param_2) } }
+/// `ComputeModelSpaceBoundingBox` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 56997, rva 0xaa0440).
+/// `undefined ComputeModelSpaceBoundingBox(longlong * param_1, undefined1[16] * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_model_space_bounding_box(param_1: *mut i64, param_2: *mut c_void) -> u64 { unsafe { function!(56997, (*mut i64, *mut c_void) -> u64)(param_1, param_2) } }
+/// `ComputeModelSpacePoseBounds` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 64143, rva 0xbf3310).
+/// `undefined ComputeModelSpacePoseBounds(uint param_1, longlong param_2, longlong param_3, float * param_4, undefined1[16] * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_model_space_pose_bounds(param_1: u32, param_2: i64, param_3: i64, param_4: *mut f32, param_5: *mut c_void) -> u64 { unsafe { function!(64143, (u32, i64, i64, *mut f32, *mut c_void) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `ComputeMonthIndexFromYearAndDayOfYear` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86300, rva 0xdba230).
+/// `undefined ComputeMonthIndexFromYearAndDayOfYear(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_month_index_from_year_and_day_of_year(param_1: i64) -> u64 { unsafe { function!(86300, (i64) -> u64)(param_1) } }
+/// `ComputeMotionFeedbackSpeedAndHeading` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39551, rva 0x700eb0).
+/// `undefined8 ComputeMotionFeedbackSpeedAndHeading(longlong param_1, float * param_2, float param_3, float * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_motion_feedback_speed_and_heading(param_1: i64, param_2: *mut f32, param_3: f32, param_4: *mut f32) -> u64 { unsafe { function!(39551, (i64, *mut f32, f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ComputeMovingSpheresContact` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 70976, rva 0xefefc0).
+/// `undefined8 ComputeMovingSpheresContact(float param_1, float * param_2, float * param_3, float * param_4, float * param_5, float * param_6, float * param_7, char param_8, float * param_9, float * param_10)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_moving_spheres_contact(param_1: f32, param_2: *mut f32, param_3: *mut f32, param_4: *mut f32, param_5: *mut f32, param_6: *mut f32, param_7: *mut f32, param_8: c_char, param_9: *mut f32, param_10: *mut f32) -> u64 { unsafe { function!(70976, (f32, *mut f32, *mut f32, *mut f32, *mut f32, *mut f32, *mut f32, c_char, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10) } }
+/// `ComputeNamedValueListCrc32` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 57819, rva 0xab7620).
+/// `undefined ComputeNamedValueListCrc32(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn compute_named_value_list_crc32(param_1: *mut i64) -> u64 { unsafe { function!(57819, (*mut i64) -> u64)(param_1) } }

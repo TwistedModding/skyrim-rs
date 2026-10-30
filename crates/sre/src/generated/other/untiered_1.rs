@@ -3205,23 +3205,6 @@ impl crate::ModManagerMenu {
     pub unsafe fn g_fx_function_handler_vfunc_1_sub9(param_1: *mut u64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(33796, (*mut u64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 }
 
-impl crate::ModelReferenceEffect {
-    /// `ModelReferenceEffect::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34678, rva 0x5d8790).
-    /// `undefined ctor_sub0(AttachTechniqueInput * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub0(param_1: *mut c_void) -> u64 { unsafe { function!(34678, (*mut c_void) -> u64)(param_1) } }
-    /// `ModelReferenceEffect::vfunc_59_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 34675, rva 0x5d8650).
-    /// `undefined8 vfunc_59_sub0(longlong * param_1, undefined8 param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_59_sub0(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(34675, (*mut i64, u64) -> u64)(param_1, param_2) } }
-}
-
 impl crate::NavMesh {
     /// `NavMesh::GetFormDetailedString` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 30337, rva 0x4c1b70).
     /// `undefined GetFormDetailedString(NavMesh * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
@@ -12855,13 +12838,6 @@ pub unsafe fn apply_save_data_restore_functor(param_1: i64, param_2: u64) -> u64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn apply_session_token_or_fail(param_1: *mut i64, param_2: *mut i64, param_3: c_char, param_4: u64) -> u64 { unsafe { function!(449369, (*mut i64, *mut i64, c_char, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ApplySingleExpressionWeight` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 26594, rva 0x4248d0).
-/// `undefined ApplySingleExpressionWeight(longlong param_1, int param_2, float param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn apply_single_expression_weight(param_1: i64, param_2: i32, param_3: f32) -> u64 { unsafe { function!(26594, (i64, i32, f32) -> u64)(param_1, param_2, param_3) } }
 /// `ApplySpeechHighlightByDistance` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 35169, rva 0x5eade0).
 /// `undefined8 ApplySpeechHighlightByDistance(undefined8 * param_1, uint * param_2)`
 ///
@@ -13891,3 +13867,24 @@ pub unsafe fn assign_ref_counted_pair_array_ptr(param_1: *mut u64, param_2: *mut
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn assign_ref_counted_pointer_11(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(38167, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRefCountedPointer_12` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39731, rva 0x71cb30).
+/// `longlong * AssignRefCountedPointer_12(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_12(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(39731, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRefCountedPointer_7` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 69737, rva 0xeca3f0).
+/// `longlong * AssignRefCountedPointer_7(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_pointer_7(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(69737, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }
+/// `AssignRefCountedPtr` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 18819, rva 0x2b60c0).
+/// `longlong * AssignRefCountedPtr(longlong * param_1, undefined8 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn assign_ref_counted_ptr(param_1: *mut i64, param_2: *mut u64) -> *mut i64 { unsafe { function!(18819, (*mut i64, *mut u64) -> *mut i64)(param_1, param_2) } }

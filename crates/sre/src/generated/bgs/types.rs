@@ -846,26 +846,6 @@ pub struct BGSBipedModelList {
 }
 const _: () = assert!(core::mem::offset_of!(BGSBipedModelList, __vftable) == 0x0);
 
-/// `BGSBipedObjectForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
-/// Evidence: lower bound field field_C meets upper bound next base of TESObjectARMO at 0x1C0.
-/// Bases: `BaseFormComponent`@0x0.
-#[repr(C)]
-pub struct BGSBipedObjectForm {
-    /// +0x0 `vtbl:BGSBipedObjectForm:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BGSBipedObjectForm_vtable,
-    /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
-    /// +0xC `undefined4`, ctor store
-    pub field_C: u32,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BGSBipedObjectForm>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, field_C) == 0xC);
-
 /// `BGSBlockBashData`: size 0x18 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: lower bound field field_10 meets upper bound next base of TESObjectARMO at 0x1D8.
 /// Bases: `BaseFormComponent`@0x0.

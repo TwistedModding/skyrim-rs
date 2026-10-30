@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_18` at 0x487ef0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_18: u64 = 29176;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_19` at 0x487eb0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_19: u64 = 29174;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_20` at 0x487e70 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_20: u64 = 29172;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_30` at 0x487f70 (rtti, medium); signature (low): `undefined * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_30: u64 = 29180;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_34` at 0x487f30 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_34: u64 = 29178;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vdtor` at 0x487b00 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vdtor: u64 = 29161;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vfunc_18` at 0x487f10 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vfunc_18: u64 = 29177;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vfunc_19` at 0x487ed0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vfunc_19: u64 = 29175;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vfunc_20` at 0x487e90 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vfunc_20: u64 = 29173;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vfunc_30` at 0x487f80 (rtti, medium); signature (low): `undefined * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vfunc_30: u64 = 29181;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes>::vfunc_34` at 0x487f50 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSleepParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSleepParamTypes__vfunc_34: u64 = 29179;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vdtor` at 0x489f00 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vdtor: u64 = 29206;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vfunc_18` at 0x48a190 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vfunc_18: u64 = 29215;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vfunc_19` at 0x48a170 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vfunc_19: u64 = 29214;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vfunc_20` at 0x48a150 (rtti, medium); signature (low): `undefined1 vfunc_20(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vfunc_20: u64 = 29213;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vfunc_30` at 0x48a1d0 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vfunc_30: u64 = 29217;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes>::vfunc_34` at 0x48a1b0 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureTravelParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureTravelParamTypes__vfunc_34: u64 = 29216;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vdtor` at 0x477830 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureUnlockParamTypes__vdtor: u64 = 28858;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes>::vfunc_18` at 0x477c30 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureUnlockParamTypes> * this, uint param_1)`
@@ -2737,6 +2771,36 @@ pub const BSExtraData__dtor_3: u64 = 12178;
 pub const BSExtraData__vdtor: u64 = 11560;
 /// `BSExtraData::vfunc_2` at 0x1565d0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
 pub const BSExtraData__vfunc_2: u64 = 11565;
+/// `BSFaceGenAnimationData::ComputeTrackTargetAngles` at 0x425860 (semantic, medium); signature (untiered): `bool ComputeTrackTargetAngles(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`; semantic: from the look-at vector +0x1a0..+0x1a8 (in the head's frame: head world rotation +0x7c times a fixed euler matrix) computes the base eye heading +0x1d4 = atan2 and pitch +0x1d8, the per-axis speeds +0x1dc/+0x1e0 and head angles +0x1e8..+0x1f4; on +0x214 it snaps the current angles (+0x1bc/+0x1c0 = base, +0x1b4/+0x1b8) (medium); signature `bool (BSFaceGenAnimationData* this, ?, ?, NiAVObject* head)`
+pub const BSFaceGenAnimationData__ComputeTrackTargetAngles: u64 = 26603;
+/// `BSFaceGenAnimationData::FindKeyframeName` at 0x43afa0 (semantic, high); signature (untiered): `uint FindKeyframeName(char * param_1, undefined4 * param_2)`; semantic: case-insensitive lookup of a face channel name: expression table 0x20b0830 (17, type 1), modifier table 0x20b08c0 (17, type 2), phoneme table 0x20b0950 (16, type 0), custom 'SkinnyMorph' 0x20b0828 (type 3); returns the index or -1 (high); signature `u32 (const char* name, u32* outType)`
+pub const BSFaceGenAnimationData__FindKeyframeName: u64 = 27016;
+/// `BSFaceGenAnimationData::FindKeyframeName` as a function pointer type (high).
+pub type BSFaceGenAnimationData__FindKeyframeName_fn = unsafe extern "C" fn(name: *const c_char, outType: *mut u32) -> u32;
+/// `BSFaceGenAnimationData::Reset` at 0x4241d0 (semantic, high); signature (untiered): `DWORD Reset(longlong param_1, float param_2, char param_3, char param_4, char param_5, char param_6)`; semantic: under the data spin lock +0x220: 0x423510 resets the animated keyframes (expression target to zero over blendTime or at once when blendTime <= 0; the lip-sync modifier/phoneme tracks +0xe0/+0x120 and the speech animation +0x228; custom +0x160), 0x4236d0 resets the input keyframes (+0x40 expression, +0x60 modifier, +0x80 phoneme, +0xa0 custom); when blendTime == 0 it also clears the outputs (+0xc0 expression, +0x100 modifier, +0x140 phoneme, +0x180 custom). closeEyes sets both blink modifiers to 1.0 and blink stage 5 (or, with blendTime > 0, stage 5 with timer = blendTime) (high); signature `void (BSFaceGenAnimationData* this, float blendTime, bool expressions, bool modifiersAndPhonemes, bool custom, bool closeEyes)`
+pub const BSFaceGenAnimationData__Reset: u64 = 26586;
+/// `BSFaceGenAnimationData::Reset` as a function pointer type (high).
+pub type BSFaceGenAnimationData__Reset_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenAnimationData, blendTime: f32, expressions: bool, modifiersAndPhonemes: bool, custom: bool, closeEyes: bool);
+/// `BSFaceGenAnimationData::SetExpression` at 0x4248d0 (semantic, high); signature (untiered): `undefined SetExpression(longlong param_1, int param_2, float param_3)`; semantic: when +0x21e (override lock) is 0, expression in [-1,16] and weight in [0,1]: builds 17 zero floats, sets [expression] = weight (-1 = all zero) and calls SetExpressionTarget 0x4246c0 (high); signature `void (BSFaceGenAnimationData* this, i32 expression, float weight)`
+pub const BSFaceGenAnimationData__SetExpression: u64 = 26594;
+/// `BSFaceGenAnimationData::SetExpression` as a function pointer type (high).
+pub type BSFaceGenAnimationData__SetExpression_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenAnimationData, expression: i32, weight: f32);
+/// `BSFaceGenAnimationData::SetExpressionTarget` at 0x4246c0 (semantic, high); signature (untiered): `undefined SetExpressionTarget(longlong param_1, longlong param_2)`; semantic: unless +0x21a (eyes-closed state) or +0x21e (override lock) is set: if the 17 weights differ from the expression keyframe +0x20's values, stores them in the pending target keyframe +0x18 (pooled BSFaceGenKeyframeMultiple, type 1, 17 values) that Advance blends +0x20 towards; with +0x21a set it releases +0x18 (high); signature `void (BSFaceGenAnimationData* this, const float* weights17)`
+pub const BSFaceGenAnimationData__SetExpressionTarget: u64 = 26593;
+/// `BSFaceGenAnimationData::SetExpressionTarget` as a function pointer type (high).
+pub type BSFaceGenAnimationData__SetExpressionTarget_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenAnimationData, weights17: *const f32);
+/// `BSFaceGenAnimationData::SetEyesClosedState` at 0x424410 (semantic, medium); signature (untiered): `DWORD SetEyesClosedState(longlong param_1, char param_2, char param_3)`; semantic: sets/clears +0x21a; setting calls Reset(this, immediate ? 0 : 1, true, true, false, true); clearing zeroes the expression target and the animated/input keyframes and sets +0x215. While +0x21a is set Advance forces both blink modifiers towards 1 (stage 4) and SetExpressionTarget/SetMood/eye tracking are skipped (medium); signature `u32 (BSFaceGenAnimationData* this, bool closed, bool immediate)`
+pub const BSFaceGenAnimationData__SetEyesClosedState: u64 = 26591;
+/// `BSFaceGenAnimationData::SetMood` at 0x424950 (semantic, medium); signature (untiered): `undefined SetMood(longlong param_1, uint param_2, undefined4 param_3)`; semantic: mood < 8 sets expression index mood+7 (the Mood* names 7..14) when +0x21e, +0x21a and +0x21d are all 0 (medium); signature `void (BSFaceGenAnimationData* this, u32 mood, float weight)`
+pub const BSFaceGenAnimationData__SetMood: u64 = 26595;
+/// `BSFaceGenAnimationData::UpdateBlink` at 0x423250 (semantic, high); signature (untiered): `undefined UpdateBlink(longlong param_1, float param_2)`; semantic: blink state machine on +0x200 (stage) and +0x204 (timer), writing modifier output +0x100 values [0] BlinkLeft and [1] BlinkRight directly and clearing that keyframe's +0x1c (high); signature `void (BSFaceGenAnimationData* this, float dt)`
+pub const BSFaceGenAnimationData__UpdateBlink: u64 = 26553;
+/// `BSFaceGenAnimationData::UpdateBlink` as a function pointer type (high).
+pub type BSFaceGenAnimationData__UpdateBlink_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenAnimationData, dt: f32);
+/// `BSFaceGenAnimationData::UpdateEyeTracking` at 0x4256e0 (semantic, high); signature (untiered): `bool UpdateEyeTracking(longlong param_1, float param_2)`; semantic: unless +0x21a: base eye angles (heading +0x1d4, pitch +0x1d8) plus the emotion offset (0x4253b0: +0x20c heading, +0x210 pitch, re-rolled when timer +0x208 runs out, by the strongest expression from 0x425c60) are approached by the current angles +0x1bc/+0x1c0 at fTrackSpeed*dt per axis, then 0x4251b0 clamps them to fTrackEyeXY/fTrackEyeZ (degrees -> radians) and writes the Look modifiers of output +0x100 ([8] LookDown, [9] LookLeft, [10] LookRight, [11] LookUp) as angle/limit (high); signature `bool (BSFaceGenAnimationData* this, float dt)`
+pub const BSFaceGenAnimationData__UpdateEyeTracking: u64 = 26601;
+/// `BSFaceGenAnimationData::UpdateEyeTracking` as a function pointer type (high).
+pub type BSFaceGenAnimationData__UpdateEyeTracking_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenAnimationData, dt: f32) -> bool;
 /// `BSFaceGenAnimationData::ctor` at 0x4237c0 (layout_inference, high); signature (low): `BSFaceGenAnimationData * ctor(BSFaceGenAnimationData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFaceGenAnimationData__ctor: u64 = 26557;
 /// `BSFaceGenAnimationData::ctor` at 0x423ae0 (layout_inference, medium); signature (high): `undefined ctor(BSFaceGenAnimationData * this)`
@@ -2805,8 +2869,22 @@ pub const BSFaceGenKeyframeExclusive__vfunc_7: u64 = 26786;
 pub const BSFaceGenKeyframeExclusive__vfunc_8: u64 = 26812;
 /// `BSFaceGenKeyframeExclusive::vfunc_9` at 0x4324e0 (rtti, high); signature (high): `undefined1 vfunc_9(BSFaceGenKeyframeExclusive * this)`
 pub const BSFaceGenKeyframeExclusive__vfunc_9: u64 = 26814;
-/// `BSFaceGenKeyframeMultiple::ctor` at 0x431080 (layout_inference, medium); signature (low): `BSFaceGenKeyframeMultiple * ctor(BSFaceGenKeyframeMultiple * this, undefined4 param_1, ulonglong param_2, longlong param_3)`
+/// `BSFaceGenKeyframeMultiple::Clear` at 0x431ad0 (semantic, high); signature (untiered): `undefined Clear(BSFaceGenKeyframeMultiple * this, undefined1 param_1)`
+pub const BSFaceGenKeyframeMultiple__Clear: u64 = 26796;
+/// `BSFaceGenKeyframeMultiple::CopyFrom` at 0x431bd0 (semantic, high); signature (untiered): `undefined CopyFrom(BSFaceGenKeyframeMultiple * this, longlong * param_1)`
+pub const BSFaceGenKeyframeMultiple__CopyFrom: u64 = 26798;
+/// `BSFaceGenKeyframeMultiple::HasAnyValue` at 0x432030 (semantic, high); signature (untiered): `ulonglong HasAnyValue(BSFaceGenKeyframeMultiple * this)`
+pub const BSFaceGenKeyframeMultiple__HasAnyValue: u64 = 26803;
+/// `BSFaceGenKeyframeMultiple::IsValid` at 0x432080 (semantic, high); signature (untiered): `ulonglong IsValid(BSFaceGenKeyframeMultiple * this, uint param_1)`
+pub const BSFaceGenKeyframeMultiple__IsValid: u64 = 26804;
+/// `BSFaceGenKeyframeMultiple::Resize` at 0x4320b0 (semantic, high); signature (untiered): `undefined Resize(BSFaceGenKeyframeMultiple * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSFaceGenKeyframeMultiple__Resize: u64 = 26805;
+/// `BSFaceGenKeyframeMultiple::StepTowards` at 0x431e10 (semantic, medium); signature (untiered): `undefined8 StepTowards(BSFaceGenKeyframeMultiple * this, float param_1, longlong * param_2)`
+pub const BSFaceGenKeyframeMultiple__StepTowards: u64 = 26802;
+/// `BSFaceGenKeyframeMultiple::ctor` at 0x431080 (semantic, high); signature (low): `BSFaceGenKeyframeMultiple * ctor(BSFaceGenKeyframeMultiple * this, undefined4 param_1, ulonglong param_2, longlong param_3)`; semantic: type +8, time +0xc = 0, allocates count floats at +0x10 (count +0x18) copied from values (or zeroed with +0x1c = 1 when values is null) (high); signature `BSFaceGenKeyframeMultiple* (BSFaceGenKeyframeMultiple* this, u32 type, u32 count, const float* values)`
 pub const BSFaceGenKeyframeMultiple__ctor: u64 = 26789;
+/// `BSFaceGenKeyframeMultiple::ctor` as a function pointer type (high).
+pub type BSFaceGenKeyframeMultiple__ctor_fn = unsafe extern "C" fn(this: *mut crate::BSFaceGenKeyframeMultiple, type_: u32, count: u32, values: *const f32) -> *mut crate::BSFaceGenKeyframeMultiple;
 /// `BSFaceGenKeyframeMultiple::ctor` at 0x431230 (layout_inference, medium); signature (low): `BSFaceGenKeyframeMultiple * ctor(BSFaceGenKeyframeMultiple * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFaceGenKeyframeMultiple__ctor_2: u64 = 26790;
 /// `BSFaceGenKeyframeMultiple::dtor` at 0x431310 (layout_inference, high); signature (low): `undefined dtor(BSFaceGenKeyframeMultiple * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -2815,30 +2893,18 @@ pub const BSFaceGenKeyframeMultiple__dtor: u64 = 26791;
 pub const BSFaceGenKeyframeMultiple__vdtor: u64 = 26810;
 /// `BSFaceGenKeyframeMultiple::vfunc_1` at 0x431520 (rtti, high); signature (low): `ulonglong vfunc_1(BSFaceGenKeyframeMultiple * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFaceGenKeyframeMultiple__vfunc_1: u64 = 26793;
-/// `BSFaceGenKeyframeMultiple::vfunc_10` at 0x431e10 (rtti, high); signature (low): `undefined8 vfunc_10(BSFaceGenKeyframeMultiple * this, float param_1, longlong * param_2)`
-pub const BSFaceGenKeyframeMultiple__vfunc_10: u64 = 26802;
 /// `BSFaceGenKeyframeMultiple::vfunc_10_sub0` at 0x423de0 (callgraph, medium); signature (untiered): `float vfunc_10_sub0(void)`
 pub const BSFaceGenKeyframeMultiple__vfunc_10_sub0: u64 = 26563;
 /// `BSFaceGenKeyframeMultiple::vfunc_10_sub1` at 0x423e00 (callgraph, medium); signature (untiered): `float vfunc_10_sub1(void)`
 pub const BSFaceGenKeyframeMultiple__vfunc_10_sub1: u64 = 26564;
-/// `BSFaceGenKeyframeMultiple::vfunc_11` at 0x432030 (rtti, high); signature (high): `ulonglong vfunc_11(BSFaceGenKeyframeMultiple * this)`
-pub const BSFaceGenKeyframeMultiple__vfunc_11: u64 = 26803;
 /// `BSFaceGenKeyframeMultiple::vfunc_12` at 0x432520 (rtti, high); signature (low): `undefined1 vfunc_12(void)`
 pub const BSFaceGenKeyframeMultiple__vfunc_12: u64 = 26818;
-/// `BSFaceGenKeyframeMultiple::vfunc_14` at 0x432080 (rtti, high); signature (low): `ulonglong vfunc_14(BSFaceGenKeyframeMultiple * this, uint param_1)`
-pub const BSFaceGenKeyframeMultiple__vfunc_14: u64 = 26804;
-/// `BSFaceGenKeyframeMultiple::vfunc_15` at 0x4320b0 (rtti, high); signature (low): `undefined vfunc_15(BSFaceGenKeyframeMultiple * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSFaceGenKeyframeMultiple__vfunc_15: u64 = 26805;
 /// `BSFaceGenKeyframeMultiple::vfunc_2` at 0x431880 (rtti, high); signature (low): `char vfunc_2(BSFaceGenKeyframeMultiple * this, longlong * param_1, longlong * param_2, float param_3)`
 pub const BSFaceGenKeyframeMultiple__vfunc_2: u64 = 26795;
 /// `BSFaceGenKeyframeMultiple::vfunc_3` at 0x431670 (rtti, high); signature (low): `ulonglong vfunc_3(BSFaceGenKeyframeMultiple * this, BSFaceGenKeyframeMultiple * param_1, float param_2, char param_3, char param_4)`
 pub const BSFaceGenKeyframeMultiple__vfunc_3: u64 = 26794;
-/// `BSFaceGenKeyframeMultiple::vfunc_4` at 0x431ad0 (rtti, high); signature (low): `undefined vfunc_4(BSFaceGenKeyframeMultiple * this, undefined1 param_1)`
-pub const BSFaceGenKeyframeMultiple__vfunc_4: u64 = 26796;
 /// `BSFaceGenKeyframeMultiple::vfunc_5` at 0x431b20 (rtti, high); signature (low): `undefined vfunc_5(BSFaceGenKeyframeMultiple * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSFaceGenKeyframeMultiple__vfunc_5: u64 = 26797;
-/// `BSFaceGenKeyframeMultiple::vfunc_6` at 0x431bd0 (rtti, high); signature (low): `undefined vfunc_6(BSFaceGenKeyframeMultiple * this, longlong * param_1)`
-pub const BSFaceGenKeyframeMultiple__vfunc_6: u64 = 26798;
 /// `BSFaceGenKeyframeMultiple::vfunc_7` at 0x431c90 (rtti, high); signature (low): `undefined8 vfunc_7(BSFaceGenKeyframeMultiple * this, longlong * param_1)`
 pub const BSFaceGenKeyframeMultiple__vfunc_7: u64 = 26799;
 /// `BSFaceGenKeyframeMultiple::vfunc_8` at 0x431d20 (rtti, high); signature (high): `float vfunc_8(BSFaceGenKeyframeMultiple * this)`
@@ -7937,107 +8003,3 @@ pub const BSProceduralLightningController__vfunc_24_sub1: u64 = 77196;
 pub const BSProceduralLightningController__vfunc_25: u64 = 76911;
 /// `BSProceduralLightningController::vfunc_26` at 0xffc920 (rtti, high); signature (low): `char vfunc_26(BSProceduralLightningController * this, longlong * param_1)`
 pub const BSProceduralLightningController__vfunc_26: u64 = 76912;
-/// `BSProceduralLightningController::vfunc_27` at 0xffc9c0 (rtti, high); signature (low): `undefined vfunc_27(BSProceduralLightningController * this, longlong * param_1)`
-pub const BSProceduralLightningController__vfunc_27: u64 = 76913;
-/// `BSProceduralLightningController::vfunc_27_sub0` at 0x1005760 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2)`
-pub const BSProceduralLightningController__vfunc_27_sub0: u64 = 77192;
-/// `BSProceduralLightningController::vfunc_27_sub1` at 0x1005910 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub1(longlong param_1, longlong param_2)`
-pub const BSProceduralLightningController__vfunc_27_sub1: u64 = 77195;
-/// `BSProceduralLightningController::vfunc_28` at 0xffca50 (rtti, high); signature (low): `ulonglong vfunc_28(BSProceduralLightningController * this, longlong * param_1)`
-pub const BSProceduralLightningController__vfunc_28: u64 = 76914;
-/// `BSProceduralLightningController::vfunc_28_sub0` at 0x10058e0 (callgraph, medium); signature (untiered): `ulonglong vfunc_28_sub0(ushort * param_1, ushort * param_2)`
-pub const BSProceduralLightningController__vfunc_28_sub0: u64 = 77194;
-/// `BSProceduralLightningController::vfunc_28_sub1` at 0x1005c70 (callgraph, medium); signature (untiered): `ulonglong vfunc_28_sub1(float * param_1, float * param_2)`
-pub const BSProceduralLightningController__vfunc_28_sub1: u64 = 77197;
-/// `BSProceduralLightningController::vfunc_29` at 0xffd9f0 (rtti, high); signature (low): `undefined vfunc_29(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__vfunc_29: u64 = 76931;
-/// `BSProceduralLightningController::vfunc_30` at 0xffdb60 (rtti, high); signature (untiered): `undefined vfunc_30(void)`
-pub const BSProceduralLightningController__vfunc_30: u64 = 76932;
-/// `BSProceduralLightningController::vfunc_39` at 0xffcec0 (rtti, high); signature (low): `undefined vfunc_39(BSProceduralLightningController * this, float * param_1, undefined8 param_2, undefined8 * * param_3)`
-pub const BSProceduralLightningController__vfunc_39: u64 = 76918;
-/// `BSProceduralLightningController::vfunc_39_sub0` at 0xffdc30 (callgraph, medium); signature (untiered): `undefined vfunc_39_sub0(longlong param_1, undefined4 param_2)`
-pub const BSProceduralLightningController__vfunc_39_sub0: u64 = 76934;
-/// `BSProceduralLightningController::vfunc_39_sub1` at 0xffdd10 (callgraph, medium); signature (untiered): `undefined8 vfunc_39_sub1(longlong param_1)`
-pub const BSProceduralLightningController__vfunc_39_sub1: u64 = 76936;
-/// `BSProceduralLightningController::vfunc_39_sub2` at 0xffdf10 (callgraph, medium); signature (untiered): `undefined vfunc_39_sub2(longlong param_1, undefined8 param_2)`
-pub const BSProceduralLightningController__vfunc_39_sub2: u64 = 76938;
-/// `BSProceduralLightningController::vfunc_39_sub3` at 0x10056a0 (callgraph, medium); signature (untiered): `undefined vfunc_39_sub3(undefined8 * param_1, undefined8 * param_2)`
-pub const BSProceduralLightningController__vfunc_39_sub3: u64 = 77191;
-/// `BSProceduralLightningController::vfunc_46` at 0xffd790 (rtti, high); signature (high): `undefined8 vfunc_46(BSProceduralLightningController * this)`
-pub const BSProceduralLightningController__vfunc_46: u64 = 76920;
-/// `BSProceduralLightningController::vfunc_47` at 0xffd7c0 (rtti, high); signature (low): `undefined8 vfunc_47(void)`
-pub const BSProceduralLightningController__vfunc_47: u64 = 76921;
-/// `BSProceduralLightningController::vfunc_48` at 0xffd7d0 (rtti, high); signature (low): `undefined * vfunc_48(BSProceduralLightningController * this, ushort param_1)`
-pub const BSProceduralLightningController__vfunc_48: u64 = 76922;
-/// `BSProceduralLightningController::vfunc_49` at 0xffd7f0 (rtti, high); signature (low): `ushort vfunc_49(BSProceduralLightningController * this, longlong param_1)`
-pub const BSProceduralLightningController__vfunc_49: u64 = 76923;
-/// `BSProceduralLightningController::vfunc_50` at 0xffd860 (rtti, high); signature (low): `undefined vfunc_50(BSProceduralLightningController * this, undefined8 * param_1)`
-pub const BSProceduralLightningController__vfunc_50: u64 = 76924;
-/// `BSProceduralLightningController::vfunc_51` at 0xffd880 (rtti, high); signature (low): `undefined8 vfunc_51(BSProceduralLightningController * this, ushort param_1)`
-pub const BSProceduralLightningController__vfunc_51: u64 = 76925;
-/// `BSProceduralLightningController::vfunc_52` at 0xffd8a0 (rtti, high); signature (low): `undefined vfunc_52(BSProceduralLightningController * this, longlong * param_1, ushort param_2)`
-pub const BSProceduralLightningController__vfunc_52: u64 = 76926;
-/// `BSProceduralLightningController::vfunc_54` at 0xffd780 (rtti, high); signature (low): `char * vfunc_54(void)`
-pub const BSProceduralLightningController__vfunc_54: u64 = 76919;
-/// `BSProceduralLightningController::vfunc_55` at 0xffd8f0 (rtti, high); signature (low): `undefined8 vfunc_55(void)`
-pub const BSProceduralLightningController__vfunc_55: u64 = 76927;
-/// `BSProceduralLightningController::vfunc_56` at 0xffd900 (rtti, high); signature (low): `undefined vfunc_56(void)`
-pub const BSProceduralLightningController__vfunc_56: u64 = 76928;
-/// `BSProceduralLightningController::vfunc_57` at 0xffd910 (rtti, high); signature (low): `NiBlendFloatInterpolator * vfunc_57(BSProceduralLightningController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, byte param_5)`
-pub const BSProceduralLightningController__vfunc_57: u64 = 76929;
-/// `BSProceduralLightningController::vfunc_58` at 0xffd9e0 (rtti, high); signature (low): `undefined vfunc_58(void)`
-pub const BSProceduralLightningController__vfunc_58: u64 = 76930;
-/// `BSProceduralLightningController::vfunc_59` at 0xffe540 (rtti, high); signature (low): `bool vfunc_59(BSProceduralLightningController * this, longlong * param_1, ushort param_2)`
-pub const BSProceduralLightningController__vfunc_59: u64 = 76953;
-/// `BSProceduralLightningTasklet::vdtor` at 0xffe470 (slot_propagation, medium); signature (low): `BSProceduralLightningTasklet * vdtor(BSProceduralLightningTasklet * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningTasklet__vdtor: u64 = 76951;
-/// `BSProceduralLightningTasklet::vfunc_2` at 0xffe8f0 (rtti, high); signature (low): `undefined vfunc_2(BSProceduralLightningTasklet * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningTasklet__vfunc_2: u64 = 76956;
-/// `BSProceduralLightningTasklet::vfunc_2_sub0` at 0x1005640 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(longlong param_1)`
-pub const BSProceduralLightningTasklet__vfunc_2_sub0: u64 = 77190;
-/// `BSProceduralLightningTasklet::vfunc_2_sub1` at 0x1005cd0 (callgraph, medium); signature (untiered): `ulonglong vfunc_2_sub1(ushort * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BSProceduralLightningTasklet__vfunc_2_sub1: u64 = 77198;
-/// `BSProceduralLightningTasklet::vfunc_3` at 0xffe8e0 (rtti, high); signature (high): `undefined vfunc_3(BSProceduralLightningTasklet * this)`
-pub const BSProceduralLightningTasklet__vfunc_3: u64 = 76955;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x434928 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 26856;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vdtor` at 0x4349c0 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this, ulonglong param_1, undefined8 param_2, longlong param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vdtor: u64 = 26859;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vfunc_1` at 0x434c70 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vfunc_1: u64 = 26866;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vfunc_15` at 0x434c40 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vfunc_15: u64 = 26864;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vfunc_16` at 0x434bd0 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vfunc_16: u64 = 26862;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vfunc_17` at 0x434be0 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vfunc_17: u64 = 26863;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>::vfunc_18` at 0x434c60 (rtti, high); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2__vfunc_18: u64 = 26865;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x25d680 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 16888;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vdtor` at 0x25d6b0 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vdtor: u64 = 16891;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vfunc_1` at 0x25d980 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vfunc_1: u64 = 16899;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vfunc_15` at 0x25d950 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vfunc_15: u64 = 16897;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vfunc_16` at 0x25d870 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vfunc_16: u64 = 16895;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vfunc_17` at 0x25d8f0 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vfunc_17: u64 = 16896;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>::vfunc_18` at 0x25d970 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1__vfunc_18: u64 = 16898;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0x152374 (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__BSResource_IEntryDB_PostFlushNotify_vdtor: u64 = 11366;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vdtor` at 0x1524f0 (slot_propagation, medium); signature (low): `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * vdtor(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vdtor: u64 = 11374;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_1` at 0x153290 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_1: u64 = 11401;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_15` at 0x152b30 (rtti, medium); signature (high): `undefined vfunc_15(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_15: u64 = 11393;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_16` at 0x152ac0 (rtti, medium); signature (low): `undefined vfunc_16(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_16: u64 = 11391;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_17` at 0x152ad0 (rtti, medium); signature (high): `int vfunc_17(BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2> * this)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_17: u64 = 11392;
-/// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>::vfunc_18` at 0x153280 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-pub const BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2__vfunc_18: u64 = 11400;

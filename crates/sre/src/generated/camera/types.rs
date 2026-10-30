@@ -265,6 +265,27 @@ const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_34) 
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSAcousticSpaceListener, field_48) == 0x48);
 
+/// `BGSBipedObjectForm`: size 0x10 (exact, medium); primary base `BaseFormComponent`.
+/// Meaning: biped slot mask component (armor at +0x1b0, addon at +0x28) (high, camera pass).
+/// Evidence: lower bound field field_C meets upper bound next base of TESObjectARMO at 0x1C0.
+/// Bases: `BaseFormComponent`@0x0.
+#[repr(C)]
+pub struct BGSBipedObjectForm {
+    /// +0x0 `vtbl:BGSBipedObjectForm:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BGSBipedObjectForm_vtable,
+    /// +0x8 `u32`, semantic; bit i = biped object i (i < 32); see the flag rows (high)
+    pub slotMask: u32,
+    /// +0xC `u32`, semantic; copied with +8 by slot 3 0x1d2110 (low)
+    pub field_C: u32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSBipedObjectForm>() == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, slotMask) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSBipedObjectForm, field_C) == 0xC);
+
 /// `BGSBodyPart`: size 0xF0 (exact).
 /// Meaning: one body part of a BGSBodyPartData (high, camera pass).
 /// Evidence: one body part of a BGSBodyPartData; ; size: AllocateMemory(0xf0) and OperatorDelete(.., 0xf0) in 0x38b2f0.
@@ -514,6 +535,37 @@ const _: () = assert!(size_of::<BSEffectShaderData>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, refCount) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, nodeFilter) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSEffectShaderData, textures) == 0x10);
+
+/// `BSFaceGenKeyframeMultiple`: size 0x20 (exact, medium); primary base `BSFaceGenKeyframe`.
+/// Meaning: one face channel group: a type and an array of weights (high, camera pass).
+/// Evidence: runtime: 0x20 at 1 allocation sites.
+/// Bases: `BSFaceGenKeyframe`@0x0.
+#[repr(C)]
+pub struct BSFaceGenKeyframeMultiple {
+    /// +0x0 `vtbl:BSFaceGenKeyframeMultiple:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSFaceGenKeyframeMultiple_vtable,
+    /// +0x8 `u32`, ctor store, semantic, runtime; channel group: 0 phoneme, 1 expression, 2 modifier, 3 custom (high)
+    pub type_: u32,
+    /// +0xC `float`, semantic; keyframe time/progress; 0 with all values zero marks it cleared (medium)
+    pub time: f32,
+    /// +0x10 `pointer`, semantic; float[count] weights in [0,1] (FLT_MAX = unset after slot 15 without zeroing) (high)
+    pub values: *mut c_void,
+    /// +0x18 `u32`, ctor store, semantic, runtime; number of weights (17, 16 or 1) (high)
+    pub count: u32,
+    /// +0x1C `u8`, semantic; values known all zero; any write must clear it so the morpher notices (high)
+    pub isZero: u8,
+    pub unknown_1D: [u8; 3],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSFaceGenKeyframeMultiple>() == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, type_) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, time) == 0xC);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, values) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, count) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenKeyframeMultiple, isZero) == 0x1C);
 
 /// `BSFlattenedBoneTree`: size 0x168 (exact, medium); primary base `NiNode`.
 /// Meaning: skeleton node that keeps every bone as a flat 0x80-byte entry and refreshes their world transforms after its own update (high, camera pass).
@@ -930,6 +982,63 @@ const _: () = assert!(core::mem::offset_of!(BeamProjectile, __vftable_1E0) == 0x
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, source_BeamProjectileImpactEvent) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(BeamProjectile, field_240) == 0x240);
 
+/// `BipedAnim`: size 0x2778 (exact).
+/// Meaning: an actor's worn/equipped 3D: 42 biped objects, a buffered copy and the owner handle (high, camera pass).
+/// Evidence: an actor's worn/equipped 3D: 42 biped objects, a buffered copy and the owner handle; IC8 I (static-Z). No RTTI; name from the request. Character+0x268 (third person), PlayerCharacter+0x8f8 (first person). 42 = QueuePlayerSlotMeshLoads loop bound 0x2a.; size: PlayerCharacter::Load3D allocates 0x2778; release paths OperatorDelete(0x2778) (SetupWornItemsAndFaceGen3D 0x3c4dc0, QueuePlayerSlotMeshLoads 0x971ca0).
+#[repr(C)]
+pub struct BipedAnim {
+    /// +0x0 `u32`, semantic; reference count (LOCK inc/dec; freed at 0) (high)
+    pub refCount: u32,
+    pub unknown_4: [u8; 4],
+    /// +0x8 `ptr:NiNode`, semantic; a named node of the owner's 3D (ctor LookupNamedObject(root, lazy static name)) (medium)
+    pub root: *mut crate::NiNode,
+    /// +0x10 `undefined1`, semantic; BipedObject[42], 0x78 each: 0..31 = BGSBipedObjectForm bits, 32..40 weapons by type, 41 ammo/quiver; the shield/left hand index is the race's +0x138 (high)
+    pub objects: [u8; 5040],
+    /// +0x13C0 `undefined1`, semantic; second BipedObject[42] (swapped/queued copies) (medium)
+    pub bufferedObjects: [u8; 5040],
+    /// +0x2770 `u32`, semantic; the owner reference's handle (high)
+    pub ownerHandle: u32,
+    pub unknown_2774: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BipedAnim>() == 0x2778);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, refCount) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, root) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, objects) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, bufferedObjects) == 0x13C0);
+const _: () = assert!(core::mem::offset_of!(BipedAnim, ownerHandle) == 0x2770);
+
+/// `BipedObject`: size 0x78 (exact).
+/// Meaning: one biped slot: the item, its addon and model, and the attached part clone (high, camera pass).
+/// Evidence: one biped slot: the item, its addon and model, and the attached part clone; IC8 I (static-Z). Layout from ResetSlotEntry 0x2178d0, CopyAssignRefCountedRecord 0x217a50 and the Add* functions.; size: stride 0x78 in the ctor loop 0x217c10 and every indexed access (imul 0x78 at 0x21a3ec).
+#[repr(C)]
+pub struct BipedObject {
+    /// +0x0 `ptr:TESForm`, semantic; the equipped form (armor 0x1a, weapon 0x29, light 0x1f, ammo 0x2a, or the addon) (high)
+    pub item: *mut crate::TESForm,
+    /// +0x8 `ptr:TESObjectARMA`, semantic; the armor addon (form type 0x66 'f') (high)
+    pub addon: *mut crate::TESObjectARMA,
+    /// +0x10 `ptr:TESModel`, semantic; the model component used to load the part (slot 4 = path) (high)
+    pub model: *mut crate::TESModel,
+    /// +0x18 `pointer`, semantic; AddArmor's fifth argument (only stored when non-null) (low)
+    pub field_18: *mut c_void,
+    /// +0x20 `ptr:NiAVObject`, semantic; the attached 3D clone of the part (refcounted NiPointer) (high)
+    pub partClone: *mut crate::NiAVObject,
+    pub unknown_28: [u8; 56],
+    /// +0x60 `pointer`, semantic; the part's animation graph holder (refcounted) (medium)
+    pub graphHolder: *mut c_void,
+    pub unknown_68: [u8; 16],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BipedObject>() == 0x78);
+const _: () = assert!(core::mem::offset_of!(BipedObject, item) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BipedObject, addon) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BipedObject, model) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BipedObject, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BipedObject, partClone) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BipedObject, graphHolder) == 0x60);
+
 /// `BleedoutCameraState`: size 0x138 (exact, medium); primary base `ThirdPersonState`.
 /// Meaning: orbit while bleeding out (medium, frame pass).
 /// Evidence: runtime: 0x138 at 1 allocation sites; agrees with the static allocation sites.
@@ -1131,6 +1240,41 @@ const _: () = assert!(core::mem::offset_of!(CachedRaycastData, collisionGroup) =
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, useWorldOnly) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(CachedRaycastData, everHit) == 0x30);
 
+/// `Calendar`: size 0x40 (exact).
+/// Meaning: the game calendar (no RTTI): six TESGlobal pointers (medium, camera pass).
+/// Evidence: the game calendar (no RTTI): six TESGlobal pointers; IC8 G (static-Y). Name descriptive (ledger: AdvanceGameCalendarTime, UpdateSceneGraphAndCalendarTime).; size: Init 0x645c80 writes up to +0x38; AdvanceGameCalendarTime reads +0x3c (lower bound 0x40); static instance 0x21a3710.
+#[repr(C)]
+pub struct Calendar {
+    pub unknown_0: [u8; 8],
+    /// +0x8 `ptr:TESGlobal`, semantic; global 0x35 (medium)
+    pub gameYear: *mut crate::TESGlobal,
+    /// +0x10 `ptr:TESGlobal`, semantic; global 0x36 (medium)
+    pub gameMonth: *mut crate::TESGlobal,
+    /// +0x18 `ptr:TESGlobal`, semantic; global 0x37 (medium)
+    pub gameDay: *mut crate::TESGlobal,
+    /// +0x20 `ptr:TESGlobal`, semantic; global 0x38 'GameHour' (value +0x34, 0..24) (high)
+    pub gameHour: *mut crate::TESGlobal,
+    /// +0x28 `ptr:TESGlobal`, semantic; global 0x39 'GameDaysPassed' (high)
+    pub gameDaysPassed: *mut crate::TESGlobal,
+    /// +0x30 `ptr:TESGlobal`, semantic; global 0x3a (medium)
+    pub timeScale: *mut crate::TESGlobal,
+    /// +0x38 `u32`, semantic; incremented on each day rollover (medium)
+    pub daysAdvanced: u32,
+    /// +0x3C `float`, semantic; accumulated whole days (low)
+    pub field_3c: f32,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<Calendar>() == 0x40);
+const _: () = assert!(core::mem::offset_of!(Calendar, gameYear) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Calendar, gameMonth) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Calendar, gameDay) == 0x18);
+const _: () = assert!(core::mem::offset_of!(Calendar, gameHour) == 0x20);
+const _: () = assert!(core::mem::offset_of!(Calendar, gameDaysPassed) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Calendar, timeScale) == 0x30);
+const _: () = assert!(core::mem::offset_of!(Calendar, daysAdvanced) == 0x38);
+const _: () = assert!(core::mem::offset_of!(Calendar, field_3c) == 0x3C);
+
 /// `CameraCasterHolder`: size 0x10 (exact).
 /// Meaning: PlayerCamera+0x120: two refcounted bhkSimpleShapePhantoms built by CreateSpherePhantom 0x557e40 around one bhkSphereShape of radius fCameraCasterSize * havok scale (collision layer 0x27 with a fresh group from bhkCollisionFilter+0x4c) (high, camera pass).
 /// Evidence: PlayerCamera+0x120: two refcounted bhkSimpleShapePhantoms built by CreateSpherePhantom 0x557e40 around one bhkSphereShape of radius fCameraCasterSize * havok scale (collision layer 0x27 with a fresh group from bhkCollisionFilter+0x4c); no RTTI; name descriptive. CastCameraLinearAndCollectHits 0x5574f0 reads *holder (+0) as the casting phantom; size: CreateCameraCaster 0x8fa4a0 allocates 0x10; DestroyCameraCaster frees 0x10; run-cam: PlayerCamera+0x120 is null at the main menu and 0x14c275cf200 in play, a 0x10-byte holder of two bhkSimpleShapePhantom and bhkSimpleShapePhantom; every one of 226 third-person frames casts CastCameraLinearAndCollectHits with rcx = that holder (1-1 casts a frame, rets ['8fa963']).
@@ -1211,17 +1355,17 @@ const _: () = assert!(core::mem::offset_of!(CameraShakeHandler, refCount) == 0x8
 const _: () = assert!(core::mem::offset_of!(CameraShakeHandler, pad0C) == 0xC);
 
 /// `CrosshairPickData`: size 0x38 (exact).
-/// Meaning: the player's crosshair pick: phantom sphere, picked reference handles and hit point, refreshed by the 'Pick reference' job (high, camera pass).
-/// Evidence: the player's crosshair pick: phantom sphere, picked reference handles and hit point, refreshed by the 'Pick reference' job; no RTTI; descriptive name from the job name 'Pick reference' (0x1905cf8) and the use; it also matches a library name. Pointer global ID_401585 0x31e0b70; size: static instance at 0x3245340 (PlayerCharacter::ctor passes it to the ctor 0x409c30); the PlayerCamera static starts at 0x3245380 and the highest field written is the byte at +0x34.
+/// Meaning: the player's crosshair pick (high, camera pass).
+/// Evidence: the player's crosshair pick; IC8 (static-X). Corrects targetHandle2 (+0x8) from CrosshairPickData::Pick 0x409fd0.; size: existing class row (static 0x3245340); not re-derived.
 #[repr(C)]
 pub struct CrosshairPickData {
     pub unknown_0: [u8; 4],
-    /// +0x4 `u32`, semantic; reference handle of the picked object (activation target) (high)
+    /// +0x4 `u32`, semantic; handle of the activation target: the accepted reference of any type within the activate pick length (fFavorRequestPickDistance with a pending favor), or an actor of a race with +0x128 == 3 within fLargeActivatePickLength_G (high)
     pub targetHandle: u32,
-    /// +0x8 `u32`, semantic; second handle reset with +4 (actor or grab candidate) (medium)
-    pub targetHandle2: u32,
-    /// +0xC `u32`, semantic; handle kept for a hit within fLargeActivatePickLength_G:Interface (medium)
-    pub largeTargetHandle: u32,
+    /// +0x8 `u32`, semantic; the actor the pick hit: set to the handle of any ACHR (formType 0x3e) found along the cast; after the target is chosen it is overwritten with targetHandle unless the target's base is CONT, DOOR, TREE, FLOR or FURN (0x1c, 0x1d, 0x26..0x28); cleared when it is the player's mount (high)
+    pub actorHandle: u32,
+    /// +0xC `u32`, semantic; handle of a target whose 3D has a keyframed or dynamic rigid body (HasBhkRigidBodyWithType4Or5Cached) within the player's +0xae4 reach, or a copy of +4 when the final target has one (medium)
+    pub grabTargetHandle: u32,
     /// +0x10 `class:NiPoint3`, semantic; NiPoint3 origin + t * direction of the accepted hit (high); retyped undefined1 -> class:NiPoint3: Pick 0x409fd0 writes t*dir + origin into +0x10..+0x18
     pub hitPoint: crate::NiPoint3,
     pub unknown_1C: [u8; 4],
@@ -1239,8 +1383,8 @@ pub struct CrosshairPickData {
 }
 const _: () = assert!(size_of::<CrosshairPickData>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(CrosshairPickData, targetHandle) == 0x4);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, targetHandle2) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CrosshairPickData, largeTargetHandle) == 0xC);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, actorHandle) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CrosshairPickData, grabTargetHandle) == 0xC);
 const _: () = assert!(core::mem::offset_of!(CrosshairPickData, hitPoint) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CrosshairPickData, hitObject) == 0x20);
 const _: () = assert!(core::mem::offset_of!(CrosshairPickData, phantom) == 0x28);
@@ -2460,6 +2604,118 @@ const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, boundsPolygo
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, notifyOnBegin) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MapCameraStates__World, padding71) == 0x71);
 
+/// `ModelReferenceEffect`: size 0xD8 (exact, high); primary base `ReferenceEffect`.
+/// Meaning: an art object played on a reference (high, camera pass).
+/// Evidence: runtime: 0xD8 at 2 allocation sites; agrees with the static allocation sites.
+/// Bases: `ReferenceEffect`@0x0, `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0, `SimpleAnimationGraphManagerHolder`@0x48, `IAnimationGraphManagerHolder`@0x48, `BSTEventSink<BSAnimationGraphEvent>`@0x60.
+#[repr(C)]
+pub struct ModelReferenceEffect {
+    /// +0x0 `vtbl:ModelReferenceEffect:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::ModelReferenceEffect_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
+    pub lifetime: f32,
+    pub unknown_14: [u8; 4],
+    /// +0x18 `undefined8`, base BSTempEffect
+    pub field_18: u64,
+    /// +0x20 `undefined4`, base BSTempEffect
+    pub field_20: u32,
+    /// +0x24 `undefined1`, base BSTempEffect
+    pub field_24: u8,
+    pub unknown_25: [u8; 3],
+    /// +0x28 `undefined4`, base BSTempEffect
+    pub field_28: u32,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `ptr:ReferenceEffectController`, base ReferenceEffect, semantic; OwnedController / OwnedCameraEffectController (high)
+    pub controller: *mut crate::ReferenceEffectController,
+    /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (high)
+    pub target: u32,
+    /// +0x3C `undefined4`, base ReferenceEffect
+    pub field_3C: u32,
+    /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
+    pub finished: u8,
+    /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
+    pub field_41: u8,
+    pub unknown_42: [u8; 6],
+    /// +0x48 `vtbl:ModelReferenceEffect:48`, rtti
+    #[doc(hidden)]
+    pub __vftable_48: *const crate::raw::vtables::ModelReferenceEffect_vtable_48,
+    /// +0x50 `undefined8`, base SimpleAnimationGraphManagerHolder
+    pub field_50: u64,
+    /// +0x58 `undefined8`, base SimpleAnimationGraphManagerHolder
+    pub field_58: u64,
+    /// +0x60 `vtbl:ModelReferenceEffect:60`, rtti
+    #[doc(hidden)]
+    pub __vftable_60: *const crate::raw::vtables::ModelReferenceEffect_vtable_60,
+    /// +0x68 `undefined8`, member ctor RefAttachTechniqueInput
+    pub m_RefAttachTechniqueInput_68: u64,
+    /// +0x70 `undefined8`, ctor store
+    pub field_70: u64,
+    /// +0x78 `undefined8`, ctor store
+    pub field_78: u64,
+    /// +0x80 `undefined4`, ctor store
+    pub field_80: u32,
+    pub unknown_84: [u8; 4],
+    /// +0x88 `undefined8`, ctor store
+    pub field_88: u64,
+    /// +0x90 `undefined8`, ctor store
+    pub field_90: u64,
+    /// +0x98 `undefined8`, ctor store
+    pub field_98: u64,
+    /// +0xA0 `undefined4`, ctor store
+    pub field_A0: u32,
+    pub unknown_A4: [u8; 4],
+    /// +0xA8 `undefined8`, ctor store
+    pub field_A8: u64,
+    /// +0xB0 `undefined8`, ctor store
+    pub field_B0: u64,
+    /// +0xB8 `ptr:BGSArtObject`, semantic; the art object (high)
+    pub artObject: *mut crate::BGSArtObject,
+    /// +0xC0 `undefined8`, ctor store
+    pub field_C0: u64,
+    /// +0xC8 `undefined8`, ctor store
+    pub field_C8: u64,
+    /// +0xD0 `undefined4`, ctor store
+    pub field_D0: u32,
+    pub unknown_D4: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<ModelReferenceEffect>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, lifetime) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, controller) == 0x30);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, target) == 0x38);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, finished) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_41) == 0x41);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, __vftable_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, m_RefAttachTechniqueInput_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, artObject) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(ModelReferenceEffect, field_D0) == 0xD0);
+
 /// `MountInteraction`: size 0x38 (exact, high); primary base `RefrInteraction`.
 /// Meaning: the RefrInteraction shared by a rider and its mount through ExtraInteraction (0xa9) (high, camera pass).
 /// Evidence: camera pass (semantic): IC2 F (static-N): the two handles of the RefrInteraction base.; size: SetupMountInteraction 0x6d34a0 allocates 0x38 before MountInteraction::ctor 0x73ca00.
@@ -2490,7 +2746,7 @@ const _: () = assert!(core::mem::offset_of!(MountInteraction, actorHandle) == 0x
 const _: () = assert!(core::mem::offset_of!(MountInteraction, field_18) == 0x18);
 
 /// `MovementControllerNPC`: size 0x1D0 (exact, high); primary base `MovementControllerAI`.
-/// Meaning: the IMovementMotionDrivenControl sub-object (animation- versus motion-driven) (high, camera pass).
+/// Meaning: actor movement controller (high, camera pass).
 /// Evidence: runtime: 0x1D0 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `MovementControllerAI`@0x0, `BSIntrusiveRefCounted`@0x8, `IMovementControllerRegisterInterface`@0x0, `IMovementMessageInterface`@0x120, `IMovementInterface`@0x120, `IMovementMotionDrivenControl`@0x128, `IMovementInterface`@0x128, `IMovementSelectIdle`@0x130, `IMovementInterface`@0x130, `IMovementDirectControl`@0x138, `IMovementInterface`@0x138, `IMovementPlannerDirectControl`@0x140, `IMovementInterface`@0x140, `IAnimationSetCallbackFunctor`@0x148.
 #[repr(C)]
@@ -2540,7 +2796,7 @@ pub struct MovementControllerNPC {
     pub field_1B0: u64,
     /// +0x1B8 `undefined8`, ctor store
     pub field_1B8: u64,
-    /// +0x1C0 `u32`, semantic; movement drive mode; IsMotionDriven = mode in {1,2,3,7,8,10,11,12,13,14} (medium)
+    /// +0x1C0 `u32`, semantic, runtime; current movement type list (MotionDriveMode enum): 0 animation-driven; 1, 2, 3, 7, 8, 10..14 motion-driven variants; 4, 5, 9 allow-rotation variants (high)
     pub motionMode: u32,
     pub unknown_1C4: [u8; 1],
     /// +0x1C5 `u8`, semantic, runtime; 1 = movement driven by the player's controls, 0 = AI-driven (high)
@@ -2573,6 +2829,198 @@ const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1B8) ==
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, motionMode) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, controlsDriven) == 0x1C5);
 const _: () = assert!(core::mem::offset_of!(MovementControllerNPC, field_1C8) == 0x1C8);
+
+/// `NiLight`: size 0x140 (exact, medium); primary base `NiAVObject`.
+/// Meaning: base light (high, camera pass).
+/// Evidence: lower bound NiAmbientLight (size 0x140 at 0x0) adds no fields or bases meets upper bound derived NiAmbientLight size 0x140 at 0x0.
+/// Bases: `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct NiLight {
+    /// +0x0 `vtbl:NiLight:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::NiLight_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
+    pub name: crate::BSFixedString,
+    /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
+    pub controllers: *mut crate::NiTimeController,
+    /// +0x20 `ptr:NiExtraData`, base NiObjectNET, semantic; heap array of NiExtraData*, sorted ascending by name pointer (high)
+    pub extraData: *mut crate::NiExtraData,
+    /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
+    pub extraDataCount: u16,
+    /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
+    pub extraDataCapacity: u16,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
+    pub parent: *mut crate::NiNode,
+    /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
+    pub parentIndex: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
+    pub collisionObject: *mut crate::NiCollisionObject,
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
+    /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
+    pub flags: u32,
+    /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
+    pub unknownF8: u64,
+    /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
+    pub fadeAmount: f32,
+    /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
+    pub previousWorldFrame: u32,
+    /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
+    pub unknown108: u8,
+    /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
+    pub flags2: u8,
+    pub unknown_10A: [u8; 6],
+    /// +0x110 `class:NiColor`, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
+    pub ambient: crate::NiColor,
+    /// +0x11C `class:NiColor`, semantic; light colour (high)
+    pub diffuse: crate::NiColor,
+    /// +0x128 `class:NiPoint3`, semantic; point-light radius in x, y and z (the third colour slot) (high)
+    pub radius: crate::NiPoint3,
+    /// +0x134 `float`, semantic; dimmer/fade; ShadowSceneNode::UpdateLight drops the light below 0.05 (high)
+    pub fade: f32,
+    /// +0x138 `undefined8`, semantic; zeroed by the ctor (low)
+    pub field_138: u64,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<NiLight>() == 0x140);
+const _: () = assert!(core::mem::offset_of!(NiLight, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiLight, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiLight, controllers) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiLight, extraData) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiLight, extraDataCount) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiLight, parent) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiLight, parentIndex) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiLight, collisionObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiLight, world) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(NiLight, previousWorld) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(NiLight, worldBound) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(NiLight, flags) == 0xF4);
+const _: () = assert!(core::mem::offset_of!(NiLight, unknownF8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(NiLight, fadeAmount) == 0x100);
+const _: () = assert!(core::mem::offset_of!(NiLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiLight, unknown108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(NiLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiLight, ambient) == 0x110);
+const _: () = assert!(core::mem::offset_of!(NiLight, diffuse) == 0x11C);
+const _: () = assert!(core::mem::offset_of!(NiLight, radius) == 0x128);
+const _: () = assert!(core::mem::offset_of!(NiLight, fade) == 0x134);
+const _: () = assert!(core::mem::offset_of!(NiLight, field_138) == 0x138);
+
+/// `NiPointLight`: size 0x150 (exact, high); primary base `NiLight`.
+/// Meaning: point light (high, camera pass).
+/// Evidence: runtime: 0x150 at 2 allocation sites; agrees with the static allocation sites.
+/// Bases: `NiLight`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct NiPointLight {
+    /// +0x0 `vtbl:NiPointLight:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::NiPointLight_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
+    pub name: crate::BSFixedString,
+    /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
+    pub controllers: *mut crate::NiTimeController,
+    /// +0x20 `ptr:NiExtraData`, base NiObjectNET, semantic; heap array of NiExtraData*, sorted ascending by name pointer (high)
+    pub extraData: *mut crate::NiExtraData,
+    /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
+    pub extraDataCount: u16,
+    /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
+    pub extraDataCapacity: u16,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
+    pub parent: *mut crate::NiNode,
+    /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
+    pub parentIndex: u32,
+    pub unknown_3C: [u8; 4],
+    /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
+    pub collisionObject: *mut crate::NiCollisionObject,
+    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
+    pub local: crate::NiTransform,
+    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
+    pub world: crate::NiTransform,
+    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
+    pub previousWorld: crate::NiTransform,
+    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
+    pub worldBound: crate::NiBound,
+    /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
+    pub flags: u32,
+    /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
+    pub unknownF8: u64,
+    /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
+    pub fadeAmount: f32,
+    /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
+    pub previousWorldFrame: u32,
+    /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
+    pub unknown108: u8,
+    /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
+    pub flags2: u8,
+    pub unknown_10A: [u8; 6],
+    /// +0x110 `class:NiColor`, base NiLight, semantic; first colour (0 for point lights; the sky's colour for the sun) (medium)
+    pub ambient: crate::NiColor,
+    /// +0x11C `class:NiColor`, base NiLight, semantic; light colour (high)
+    pub diffuse: crate::NiColor,
+    /// +0x128 `class:NiPoint3`, base NiLight, semantic; point-light radius in x, y and z (the third colour slot) (high)
+    pub radius: crate::NiPoint3,
+    /// +0x134 `float`, base NiLight, semantic; dimmer/fade; ShadowSceneNode::UpdateLight drops the light below 0.05 (high)
+    pub fade: f32,
+    /// +0x138 `undefined8`, base NiLight, semantic; zeroed by the ctor (low)
+    pub field_138: u64,
+    /// +0x140 `float`, semantic; constant term; also flicker phase 0 in UpdateLightFlicker (high)
+    pub constantAttenuation: f32,
+    /// +0x144 `float`, semantic; linear term (ctor 1.0); also flicker phase 1 (high)
+    pub linearAttenuation: f32,
+    /// +0x148 `float`, semantic; quadratic term (ctor 0); also flicker phase 2 (high)
+    pub quadraticAttenuation: f32,
+    pub unknown_14C: [u8; 4],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<NiPointLight>() == 0x150);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, controllers) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, extraData) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, extraDataCount) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, extraDataCapacity) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, parent) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, parentIndex) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, collisionObject) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, local) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, world) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, previousWorld) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, worldBound) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, flags) == 0xF4);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, unknownF8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, fadeAmount) == 0x100);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, previousWorldFrame) == 0x104);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, unknown108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, flags2) == 0x109);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, ambient) == 0x110);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, diffuse) == 0x11C);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, radius) == 0x128);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, fade) == 0x134);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, field_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, constantAttenuation) == 0x140);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, linearAttenuation) == 0x144);
+const _: () = assert!(core::mem::offset_of!(NiPointLight, quadraticAttenuation) == 0x148);
 
 /// `NiUpdateData`: size 0x8 (exact).
 /// Meaning: argument record of the NiAVObject update slots 44-49 (high, camera pass).
@@ -3065,6 +3513,59 @@ const _: () = assert!(core::mem::offset_of!(RaceSexMenu, field_1A1) == 0x1A1);
 const _: () = assert!(core::mem::offset_of!(RaceSexMenu, lookInputActive) == 0x1A2);
 const _: () = assert!(core::mem::offset_of!(RaceSexMenu, mouseLookDrag) == 0x1A5);
 
+/// `ReferenceEffect`: size 0x48 (exact, medium); primary base `BSTempEffect`.
+/// Meaning: base of ModelReferenceEffect and ShaderReferenceEffect (high, camera pass).
+/// Evidence: lower bound field field_40 meets upper bound next base of ModelReferenceEffect at 0x48.
+/// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct ReferenceEffect {
+    /// +0x0 `vtbl:ReferenceEffect:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::ReferenceEffect_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 4],
+    /// +0x10 `float`, base BSTempEffect, semantic; duration passed to the create functions (high)
+    pub lifetime: f32,
+    pub unknown_14: [u8; 4],
+    /// +0x18 `undefined8`, base BSTempEffect
+    pub field_18: u64,
+    /// +0x20 `undefined4`, base BSTempEffect
+    pub field_20: u32,
+    /// +0x24 `undefined1`, base BSTempEffect
+    pub field_24: u8,
+    pub unknown_25: [u8; 3],
+    /// +0x28 `undefined4`, base BSTempEffect
+    pub field_28: u32,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `ptr:ReferenceEffectController`, semantic; OwnedController / OwnedCameraEffectController (high)
+    pub controller: *mut crate::ReferenceEffectController,
+    /// +0x38 `u32`, semantic; target reference handle (high)
+    pub target: u32,
+    /// +0x3C `undefined4`, ctor store
+    pub field_3C: u32,
+    /// +0x40 `u8`, semantic; set to 1 to end the effect (high)
+    pub finished: u8,
+    /// +0x41 `u8`, semantic; set to 1 by InitAndRegisterOrDestroy (low)
+    pub field_41: u8,
+    pub unknown_42: [u8; 6],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<ReferenceEffect>() == 0x48);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, lifetime) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, controller) == 0x30);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, target) == 0x38);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, finished) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ReferenceEffect, field_41) == 0x41);
+
 /// `ShaderReferenceEffect`: size 0x138 (exact, high); primary base `ReferenceEffect`.
 /// Meaning: a TESEffectShader played on a reference (membrane/particle shader) (high, camera pass).
 /// Evidence: allocation sites (high): {'312': 4}.
@@ -3077,8 +3578,8 @@ pub struct ShaderReferenceEffect {
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
     pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
+    /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
+    pub lifetime: f32,
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
@@ -3090,15 +3591,17 @@ pub struct ShaderReferenceEffect {
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined8`, base ReferenceEffect
-    pub field_30: u64,
-    /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (ReferenceEffect) (high)
+    /// +0x30 `ptr:ReferenceEffectController`, base ReferenceEffect, semantic; OwnedController / OwnedCameraEffectController (high)
+    pub controller: *mut crate::ReferenceEffectController,
+    /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (high)
     pub target: u32,
     /// +0x3C `undefined4`, base ReferenceEffect
     pub field_3C: u32,
-    /// +0x40 `u8`, base ReferenceEffect, semantic; set to stop the effect (ReferenceEffect) (high)
+    /// +0x40 `u8`, base ReferenceEffect, semantic; set to 1 to end the effect (high)
     pub finished: u8,
-    pub unknown_41: [u8; 127],
+    /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
+    pub field_41: u8,
+    pub unknown_42: [u8; 126],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined1`, ctor store
@@ -3143,15 +3646,16 @@ pub struct ShaderReferenceEffect {
 const _: () = assert!(size_of::<ShaderReferenceEffect>() == 0x138);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, lifetime) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, controller) == 0x30);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, target) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, finished) == 0x40);
+const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_41) == 0x41);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(ShaderReferenceEffect, field_C8) == 0xC8);
@@ -3922,6 +4426,160 @@ const _: () = assert!(core::mem::offset_of!(TESModel, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESModel, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(TESModel, field_22) == 0x22);
 
+/// `TESObjectLIGH`: size 0x130 (exact, medium); primary base `TESBoundAnimObject`.
+/// Meaning: light base form (high, camera pass).
+/// Evidence: runtime: 0x130 at 1 allocation sites.
+/// Bases: `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESIcon`@0x78, `TESTexture`@0x78, `BaseFormComponent`@0x78, `BGSMessageIcon`@0x88, `BaseFormComponent`@0x88, `TESWeightForm`@0xA0, `BaseFormComponent`@0xA0, `TESValueForm`@0xB0, `BaseFormComponent`@0xB0, `BGSDestructibleObjectForm`@0xC0, `BaseFormComponent`@0xC0, `BGSEquipType`@0xD0, `BaseFormComponent`@0xD0.
+#[repr(C)]
+pub struct TESObjectLIGH {
+    /// +0x0 `vtbl:TESObjectLIGH:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESObjectLIGH_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 5],
+    /// +0x20 `undefined2`, base TESBoundObject
+    pub field_20: u16,
+    /// +0x22 `undefined2`, base TESBoundObject
+    pub field_22: u16,
+    /// +0x24 `undefined2`, base TESBoundObject
+    pub field_24: u16,
+    /// +0x26 `undefined2`, base TESBoundObject
+    pub field_26: u16,
+    /// +0x28 `undefined2`, base TESBoundObject
+    pub field_28: u16,
+    /// +0x2A `undefined2`, base TESBoundObject
+    pub field_2A: u16,
+    pub unknown_2C: [u8; 4],
+    /// +0x30 `vtbl:TESObjectLIGH:30`, rtti
+    #[doc(hidden)]
+    pub __vftable_30: *const crate::raw::vtables::TESObjectLIGH_vtable_30,
+    pub unknown_38: [u8; 8],
+    /// +0x40 `vtbl:TESObjectLIGH:40`, rtti
+    #[doc(hidden)]
+    pub __vftable_40: *const crate::raw::vtables::TESObjectLIGH_vtable_40,
+    /// +0x48 `class:BSFixedString`, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
+    pub model: crate::BSFixedString,
+    /// +0x50 `undefined8`, base TESModelTextureSwap
+    pub field_50: u64,
+    pub unknown_58: [u8; 16],
+    /// +0x68 `undefined8`, base TESModelTextureSwap
+    pub field_68: u64,
+    /// +0x70 `undefined4`, base TESModelTextureSwap
+    pub field_70: u32,
+    pub unknown_74: [u8; 4],
+    /// +0x78 `vtbl:TESObjectLIGH:78`, rtti
+    #[doc(hidden)]
+    pub __vftable_78: *const crate::raw::vtables::TESObjectLIGH_vtable_78,
+    pub unknown_80: [u8; 8],
+    /// +0x88 `vtbl:TESObjectLIGH:88`, rtti
+    #[doc(hidden)]
+    pub __vftable_88: *const crate::raw::vtables::TESObjectLIGH_vtable_88,
+    pub unknown_90: [u8; 16],
+    /// +0xA0 `vtbl:TESObjectLIGH:A0`, rtti
+    #[doc(hidden)]
+    pub __vftable_A0: *const crate::raw::vtables::TESObjectLIGH_vtable_A0,
+    /// +0xA8 `undefined4`, base TESWeightForm
+    pub field_A8: u32,
+    pub unknown_AC: [u8; 4],
+    /// +0xB0 `vtbl:TESObjectLIGH:B0`, rtti
+    #[doc(hidden)]
+    pub __vftable_B0: *const crate::raw::vtables::TESObjectLIGH_vtable_B0,
+    /// +0xB8 `undefined4`, base TESValueForm
+    pub field_B8: u32,
+    pub unknown_BC: [u8; 4],
+    /// +0xC0 `vtbl:TESObjectLIGH:C0`, rtti
+    #[doc(hidden)]
+    pub __vftable_C0: *const crate::raw::vtables::TESObjectLIGH_vtable_C0,
+    /// +0xC8 `undefined8`, base BGSDestructibleObjectForm
+    pub field_C8: u64,
+    /// +0xD0 `vtbl:TESObjectLIGH:D0`, rtti
+    #[doc(hidden)]
+    pub __vftable_D0: *const crate::raw::vtables::TESObjectLIGH_vtable_D0,
+    /// +0xD8 `undefined8`, base BGSEquipType
+    pub field_D8: u64,
+    /// +0xE0 `undefined4`, semantic; first DATA dword (int) (low)
+    pub field_e0: u32,
+    /// +0xE4 `u32`, semantic; light radius (integer) (high)
+    pub radius: u32,
+    /// +0xE8 `undefined4`, semantic; colour r +0xe8, g +0xe9, b +0xea (0-255) (high)
+    pub color: u32,
+    /// +0xEC `u32`, semantic; light flags (see flags rows); see the flag rows (high)
+    pub flags: u32,
+    /// +0xF0 `float`, semantic; 1.0 when 0 at load; passed to LightParams+0xc for shadow lights (medium)
+    pub falloffExponent: f32,
+    /// +0xF4 `float`, semantic; spot / shadow-spot field of view in degrees (90 default) (high)
+    pub fov: f32,
+    /// +0xF8 `float`, semantic; 0.001 default; passed to LightParams+0x10 for shadow lights (5.0 when not a shadow light) (medium)
+    pub nearClip: f32,
+    /// +0xFC `float`, semantic; phase speed of flicker/pulse (clamped to [0,1] at load) (high)
+    pub flickerPeriod: f32,
+    /// +0x100 `float`, semantic; fade modulation amplitude (x0.5) (high)
+    pub flickerIntensityAmplitude: f32,
+    /// +0x104 `float`, semantic; local translation wobble amplitude (high)
+    pub flickerMovementAmplitude: f32,
+    /// +0x108 `float`, semantic; base fade (FNAM, 1.0 default) -> NiLight+0x134 (high)
+    pub fade: f32,
+    pub unknown_10C: [u8; 4],
+    /// +0x110 `ptr:BGSSoundDescriptorForm`, semantic; SNAM sound (medium)
+    pub sound: *mut crate::BGSSoundDescriptorForm,
+    pub unknown_118: [u8; 16],
+    /// +0x128 `ptr:BGSLensFlare`, semantic; LNAM lens flare (high)
+    pub lensFlare: *mut crate::BGSLensFlare,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESObjectLIGH>() == 0x130);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_22) == 0x22);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_26) == 0x26);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_2A) == 0x2A);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, model) == 0x48);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __vftable_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_e0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, radius) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, color) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flags) == 0xEC);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, falloffExponent) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, fov) == 0xF4);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, nearClip) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flickerPeriod) == 0xFC);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flickerIntensityAmplitude) == 0x100);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flickerMovementAmplitude) == 0x104);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, fade) == 0x108);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, sound) == 0x110);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, lensFlare) == 0x128);
+
 /// `TESObjectWEAP`: size 0x220 (exact, high); primary base `TESBoundObject`.
 /// Meaning: weapon form: the weapon (animation) type byte (high, camera pass).
 /// Evidence: runtime: 0x220 at 3 allocation sites.
@@ -4239,6 +4897,198 @@ const _: () = assert!(core::mem::offset_of!(TESQuest, field_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_240) == 0x240);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_248) == 0x248);
 const _: () = assert!(core::mem::offset_of!(TESQuest, field_260) == 0x260);
+
+/// `TESWeather`: size 0x8D8 (exact, high); primary base `TESForm`.
+/// Meaning: a weather form (high, camera pass).
+/// Evidence: runtime: 0x8D8 at 2 allocation sites; agrees with the static allocation sites.
+/// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
+/// Packed: a field lies below its natural alignment.
+#[repr(C, packed)]
+pub struct TESWeather {
+    /// +0x0 `vtbl:TESWeather:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::TESWeather_vtable,
+    /// +0x8 `ptr:TESFileArray`, base TESForm, semantic; array of the files this form was read from; null for runtime-created forms (high)
+    pub sourceFiles: *mut crate::TESFileArray,
+    /// +0x10 `undefined4`, base TESForm, semantic; record flags; see the flag rows (high)
+    pub formFlags: u32,
+    /// +0x14 `undefined4`, base TESForm, semantic; the form id (high)
+    pub formID: u32,
+    /// +0x18 `undefined2`, base TESForm, semantic; 16-bit flag word saved with the form; low 6 bits restored on load (medium)
+    pub inGameFlags: u16,
+    /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
+    pub formType: u8,
+    pub unknown_1B: [u8; 517],
+    /// +0x220 `undefined8`, ctor store
+    pub field_220: u64,
+    /// +0x228 `undefined8`, ctor store
+    pub field_228: u64,
+    /// +0x230 `undefined8`, ctor store
+    pub field_230: u64,
+    /// +0x238 `undefined8`, ctor store
+    pub field_238: u64,
+    /// +0x240 `undefined8`, ctor store
+    pub field_240: u64,
+    /// +0x248 `undefined8`, ctor store
+    pub field_248: u64,
+    /// +0x250 `undefined8`, ctor store
+    pub field_250: u64,
+    /// +0x258 `undefined8`, ctor store
+    pub field_258: u64,
+    pub unknown_260: [u8; 512],
+    /// +0x460 `undefined4`, ctor store
+    pub field_460: u32,
+    /// +0x464 `undefined4`, ctor store
+    pub field_464: u32,
+    /// +0x468 `undefined4`, ctor store
+    pub field_468: u32,
+    /// +0x46C `undefined4`, ctor store
+    pub field_46C: u32,
+    pub unknown_470: [u8; 496],
+    /// +0x660 `undefined4`, ctor store
+    pub field_660: u32,
+    /// +0x664 `undefined8`, ctor store
+    pub field_664: u64,
+    pub unknown_66C: [u8; 3],
+    /// +0x66F `u8`, semantic; weather classification bits: 0 pleasant, 1 cloudy, 2 rainy, 3 snow; see the flag rows (high)
+    pub dataFlags: u8,
+    pub unknown_670: [u8; 4],
+    /// +0x674 `undefined2`, ctor store
+    pub field_674: u16,
+    /// +0x676 `undefined1`, ctor store
+    pub field_676: u8,
+    pub unknown_677: [u8; 1],
+    /// +0x678 `undefined8`, ctor store
+    pub field_678: u64,
+    /// +0x680 `undefined8`, ctor store
+    pub field_680: u64,
+    /// +0x688 `undefined4`, ctor store (widths [4, 8])
+    pub field_688: u32,
+    /// +0x68C `undefined4`, ctor store
+    pub field_68C: u32,
+    /// +0x690 `undefined4`, ctor store (widths [4, 8])
+    pub field_690: u32,
+    /// +0x694 `undefined4`, ctor store
+    pub field_694: u32,
+    pub unknown_698: [u8; 224],
+    /// +0x778 `undefined4`, ctor store
+    pub field_778: u32,
+    /// +0x77C `undefined4`, ctor store
+    pub field_77C: u32,
+    /// +0x780 `undefined4`, ctor store
+    pub field_780: u32,
+    /// +0x784 `undefined4`, ctor store
+    pub field_784: u32,
+    /// +0x788 `undefined4`, ctor store
+    pub field_788: u32,
+    /// +0x78C `undefined4`, ctor store
+    pub field_78C: u32,
+    /// +0x790 `undefined4`, ctor store
+    pub field_790: u32,
+    /// +0x794 `undefined4`, ctor store
+    pub field_794: u32,
+    /// +0x798 `undefined4`, ctor store
+    pub field_798: u32,
+    /// +0x79C `undefined4`, ctor store
+    pub field_79C: u32,
+    /// +0x7A0 `undefined4`, ctor store
+    pub field_7A0: u32,
+    /// +0x7A4 `undefined4`, ctor store
+    pub field_7A4: u32,
+    /// +0x7A8 `undefined8`, ctor store
+    pub field_7A8: u64,
+    /// +0x7B0 `undefined8`, ctor store
+    pub field_7B0: u64,
+    pub unknown_7B8: [u8; 24],
+    /// +0x7D0 `undefined4`, ctor store
+    pub field_7D0: u32,
+    pub unknown_7D4: [u8; 4],
+    /// +0x7D8 `undefined8`, ctor store
+    pub field_7D8: u64,
+    /// +0x7E0 `undefined8`, ctor store
+    pub field_7E0: u64,
+    /// +0x7E8 `undefined8`, ctor store
+    pub field_7E8: u64,
+    /// +0x7F0 `undefined8`, ctor store
+    pub field_7F0: u64,
+    pub unknown_7F8: [u8; 128],
+    /// +0x878 `class:TESModel`, member ctor TESModel
+    pub m_TESModel_878: [u8; 24],
+    pub unknown_890: [u8; 16],
+    /// +0x8A0 `undefined8`, ctor store
+    pub field_8A0: u64,
+    /// +0x8A8 `undefined8`, ctor store
+    pub field_8A8: u64,
+    /// +0x8B0 `undefined8`, ctor store
+    pub field_8B0: u64,
+    /// +0x8B8 `undefined8`, ctor store
+    pub field_8B8: u64,
+    /// +0x8C0 `undefined8`, ctor store
+    pub field_8C0: u64,
+    /// +0x8C8 `undefined8`, ctor store
+    pub field_8C8: u64,
+    /// +0x8D0 `undefined8`, ctor store
+    pub field_8D0: u64,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<TESWeather>() == 0x8D8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, sourceFiles) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formFlags) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formID) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESWeather, inGameFlags) == 0x18);
+const _: () = assert!(core::mem::offset_of!(TESWeather, formType) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_228) == 0x228);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_240) == 0x240);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_250) == 0x250);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_258) == 0x258);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_460) == 0x460);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_464) == 0x464);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_468) == 0x468);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_46C) == 0x46C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_660) == 0x660);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_664) == 0x664);
+const _: () = assert!(core::mem::offset_of!(TESWeather, dataFlags) == 0x66F);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_674) == 0x674);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_676) == 0x676);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_678) == 0x678);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_680) == 0x680);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_688) == 0x688);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_68C) == 0x68C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_690) == 0x690);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_694) == 0x694);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_778) == 0x778);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_77C) == 0x77C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_780) == 0x780);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_784) == 0x784);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_788) == 0x788);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_78C) == 0x78C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_790) == 0x790);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_794) == 0x794);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_798) == 0x798);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_79C) == 0x79C);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7A0) == 0x7A0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7A4) == 0x7A4);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7A8) == 0x7A8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7B0) == 0x7B0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7D0) == 0x7D0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7D8) == 0x7D8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7E0) == 0x7E0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7E8) == 0x7E8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_7F0) == 0x7F0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, m_TESModel_878) == 0x878);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8A0) == 0x8A0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8A8) == 0x8A8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8B0) == 0x8B0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8B8) == 0x8B8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8C0) == 0x8C0);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8C8) == 0x8C8);
+const _: () = assert!(core::mem::offset_of!(TESWeather, field_8D0) == 0x8D0);
 
 /// `ThirdPersonState`: size 0xE8 (exact, high); primary base `TESCameraState`.
 /// Meaning: orbit camera behind the target with zoom, shoulder offsets, chase yaw, free rotation and collision recovery; ids 8 and 9 (9 the gameplay one with +0xe1 = 1) (high, frame pass).
@@ -5507,6 +6357,150 @@ const _: () = assert!(core::mem::offset_of!(hkpShape, referenceCount) == 0xA);
 const _: () = assert!(core::mem::offset_of!(hkpShape, userData) == 0x10);
 const _: () = assert!(core::mem::offset_of!(hkpShape, type_) == 0x18);
 
+/// values in data/motiondrivemodes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum MotionDriveMode {
+    /// `AnimationDriven`
+    AnimationDriven = 0,
+    /// `MotionDrivenControls`
+    MotionDrivenControls = 1,
+    /// `MotionDrivenAI`
+    MotionDrivenAI = 2,
+    /// `MotionDriven_1C4`
+    MotionDriven_1C4 = 3,
+    /// `AllowRotationAI`
+    AllowRotationAI = 4,
+    /// `AllowRotationControls`
+    AllowRotationControls = 5,
+    /// `MotionDriven_1C6`
+    MotionDriven_1C6 = 7,
+    /// `MotionDriven_1C7`
+    MotionDriven_1C7 = 8,
+    /// `AllowRotation_1C6`
+    AllowRotation_1C6 = 9,
+    /// `MotionDrivenDefault`
+    MotionDrivenDefault = 10,
+    /// `MotionDrivenDefault_1C4`
+    MotionDrivenDefault_1C4 = 11,
+    /// `MotionDriven_1CA`
+    MotionDriven_1CA = 12,
+    /// `MotionDriven_1CB`
+    MotionDriven_1CB = 13,
+    /// `MotionDrivenControlsMounted`
+    MotionDrivenControlsMounted = 14,
+}
+
+impl MotionDriveMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::AnimationDriven),
+            1 => Some(Self::MotionDrivenControls),
+            2 => Some(Self::MotionDrivenAI),
+            3 => Some(Self::MotionDriven_1C4),
+            4 => Some(Self::AllowRotationAI),
+            5 => Some(Self::AllowRotationControls),
+            7 => Some(Self::MotionDriven_1C6),
+            8 => Some(Self::MotionDriven_1C7),
+            9 => Some(Self::AllowRotation_1C6),
+            10 => Some(Self::MotionDrivenDefault),
+            11 => Some(Self::MotionDrivenDefault_1C4),
+            12 => Some(Self::MotionDriven_1CA),
+            13 => Some(Self::MotionDriven_1CB),
+            14 => Some(Self::MotionDrivenControlsMounted),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/skymodes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum SkyMode {
+    /// `None`
+    None = 0,
+    /// `Interior`
+    Interior = 1,
+    /// `SkyDomeOnly`
+    SkyDomeOnly = 2,
+    /// `Full`
+    Full = 3,
+}
+
+impl SkyMode {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::None),
+            1 => Some(Self::Interior),
+            2 => Some(Self::SkyDomeOnly),
+            3 => Some(Self::Full),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/bsfacegenkeyframetypes.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum BSFaceGenKeyframeType {
+    /// `Phoneme`
+    Phoneme = 0,
+    /// `Expression`
+    Expression = 1,
+    /// `Modifier`
+    Modifier = 2,
+    /// `Custom`
+    Custom = 3,
+}
+
+impl BSFaceGenKeyframeType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Phoneme),
+            1 => Some(Self::Expression),
+            2 => Some(Self::Modifier),
+            3 => Some(Self::Custom),
+            _ => None,
+        }
+    }
+}
+
+/// values in data/faceblinkstages.json (camera pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum FaceBlinkStage {
+    /// `Waiting`
+    Waiting = 0,
+    /// `Closing`
+    Closing = 1,
+    /// `Opening`
+    Opening = 2,
+    /// `HeldLookingDown`
+    HeldLookingDown = 3,
+    /// `EyesClosedState`
+    EyesClosedState = 4,
+    /// `Frozen`
+    Frozen = 5,
+}
+
+impl FaceBlinkStage {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            0 => Some(Self::Waiting),
+            1 => Some(Self::Closing),
+            2 => Some(Self::Opening),
+            3 => Some(Self::HeldLookingDown),
+            4 => Some(Self::EyesClosedState),
+            5 => Some(Self::Frozen),
+            _ => None,
+        }
+    }
+}
+
 /// values in data/hkpshapetypes.json (camera pass).
 #[repr(u32)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
@@ -6107,6 +7101,28 @@ impl DisablePOVType {
     }
 }
 
+/// Named bits of `BGSBipedObjectForm.slotMask` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct BGSBipedObjectForm_slotMask(pub u32);
+
+impl BGSBipedObjectForm_slotMask {
+    /// Slot0Head (medium)
+    pub const SLOT0_HEAD: Self = Self(0x1);
+    /// Slot1Hair (medium)
+    pub const SLOT1_HAIR: Self = Self(0x2);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
 /// Named bits of `BGSCameraPath.pathFlags` (camera pass); unnamed bits pass through `bits`.
 #[repr(transparent)]
 #[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
@@ -6248,6 +7264,76 @@ impl TESFurniture_activeMarkerFlags {
 
     #[must_use]
     pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESObjectLIGH.flags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESObjectLIGH_flags(pub u32);
+
+impl TESObjectLIGH_flags {
+    /// runtimeFlag1 (low)
+    pub const RUNTIME_FLAG1: Self = Self(0x1);
+    /// CanCarry (high)
+    pub const CAN_CARRY: Self = Self(0x2);
+    /// Negative (high)
+    pub const NEGATIVE: Self = Self(0x4);
+    /// Flicker (high)
+    pub const FLICKER: Self = Self(0x8);
+    /// OffByDefault (medium)
+    pub const OFF_BY_DEFAULT: Self = Self(0x20);
+    /// FlickerVariant (low)
+    pub const FLICKER_VARIANT: Self = Self(0x40);
+    /// Pulse (high)
+    pub const PULSE: Self = Self(0x80);
+    /// PulseVariant (medium)
+    pub const PULSE_VARIANT: Self = Self(0x100);
+    /// Spot (low)
+    pub const SPOT: Self = Self(0x200);
+    /// ShadowSpot (high)
+    pub const SHADOW_SPOT: Self = Self(0x400);
+    /// ShadowHemisphere (high)
+    pub const SHADOW_HEMISPHERE: Self = Self(0x800);
+    /// ShadowOmni (high)
+    pub const SHADOW_OMNI: Self = Self(0x1000);
+    /// Flag2000 (medium)
+    pub const FLAG2000: Self = Self(0x2000);
+
+    #[must_use]
+    pub const fn bits(self) -> u32 {
+        self.0
+    }
+
+    #[must_use]
+    pub const fn contains(self, other: Self) -> bool {
+        self.0 & other.0 == other.0
+    }
+}
+
+/// Named bits of `TESWeather.dataFlags` (camera pass); unnamed bits pass through `bits`.
+#[repr(transparent)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Default)]
+pub struct TESWeather_dataFlags(pub u8);
+
+impl TESWeather_dataFlags {
+    /// Pleasant (high)
+    pub const PLEASANT: Self = Self(0x1);
+    /// Cloudy (high)
+    pub const CLOUDY: Self = Self(0x2);
+    /// Rainy (high)
+    pub const RAINY: Self = Self(0x4);
+    /// Snow (high)
+    pub const SNOW: Self = Self(0x8);
+
+    #[must_use]
+    pub const fn bits(self) -> u8 {
         self.0
     }
 

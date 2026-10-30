@@ -3,6 +3,86 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState>::vdtor` at 0x4588a0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSandboxExecState_IProcedureTreeExecState__vdtor: u64 = 27989;
+/// `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState>::vfunc_1` at 0x459dd0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSandboxExecState_IProcedureTreeExecState__vfunc_1: u64 = 28062;
+/// `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSandboxExecState_IProcedureTreeExecState__vfunc_2: u64 = 28102;
+/// `BSTDerivedCreator<BGSProcedureSay,IProcedure>::vdtor` at 0x483640 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSay,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureSay,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSay_IProcedure__vdtor: u64 = 29066;
+/// `BSTDerivedCreator<BGSProcedureSay,IProcedure>::vfunc_1` at 0x4836b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureSay,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSay_IProcedure__vfunc_1: u64 = 29068;
+/// `BSTDerivedCreator<BGSProcedureSay,IProcedure>::vfunc_2` at 0x483730 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSay,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSay_IProcedure__vfunc_2: u64 = 29069;
+/// `BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState>::vdtor` at 0x4588d0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSayExecState_IProcedureTreeExecState__vdtor: u64 = 27990;
+/// `BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState>::vfunc_1` at 0x459e30 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSayExecState_IProcedureTreeExecState__vfunc_1: u64 = 28063;
+/// `BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a910 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSayExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSayExecState_IProcedureTreeExecState__vfunc_2: u64 = 28103;
+/// `BSTDerivedCreator<BGSProcedureShout,IProcedure>::vdtor` at 0x485290 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureShout,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureShout,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureShout_IProcedure__vdtor: u64 = 29101;
+/// `BSTDerivedCreator<BGSProcedureShout,IProcedure>::vfunc_1` at 0x485510 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureShout,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureShout_IProcedure__vfunc_1: u64 = 29107;
+/// `BSTDerivedCreator<BGSProcedureShout,IProcedure>::vfunc_2` at 0x485590 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureShout,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureShout_IProcedure__vfunc_2: u64 = 29108;
+/// `BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState>::vdtor` at 0x458900 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureShoutExecState_IProcedureTreeExecState__vdtor: u64 = 27991;
+/// `BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState>::vfunc_1` at 0x459e90 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureShoutExecState_IProcedureTreeExecState__vfunc_1: u64 = 28064;
+/// `BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a930 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureShoutExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureShoutExecState_IProcedureTreeExecState__vfunc_2: u64 = 28104;
+/// `BSTDerivedCreator<BGSProcedureSit,IProcedure>::vdtor` at 0x487b70 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSit,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureSit,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSit_IProcedure__vdtor: u64 = 29163;
+/// `BSTDerivedCreator<BGSProcedureSit,IProcedure>::vfunc_1` at 0x487d30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureSit,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSit_IProcedure__vfunc_1: u64 = 29168;
+/// `BSTDerivedCreator<BGSProcedureSit,IProcedure>::vfunc_2` at 0x487e30 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSit,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSit_IProcedure__vfunc_2: u64 = 29170;
+/// `BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState>::vdtor` at 0x458930 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSitSleepExecState_IProcedureTreeExecState__vdtor: u64 = 27992;
+/// `BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState>::vfunc_1` at 0x459ef0 (rtti, medium); signature (low): `BGSProcedureSitSleepExecState * vfunc_1(BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSitSleepExecState_IProcedureTreeExecState__vfunc_1: u64 = 28065;
+/// `BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a950 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSitSleepExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSitSleepExecState_IProcedureTreeExecState__vfunc_2: u64 = 28105;
+/// `BSTDerivedCreator<BGSProcedureSleep,IProcedure>::vdtor` at 0x487ba0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSleep,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureSleep,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSleep_IProcedure__vdtor: u64 = 29164;
+/// `BSTDerivedCreator<BGSProcedureSleep,IProcedure>::vfunc_1` at 0x487db0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureSleep,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSleep_IProcedure__vfunc_1: u64 = 29169;
+/// `BSTDerivedCreator<BGSProcedureSleep,IProcedure>::vfunc_2` at 0x487e50 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSleep,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSleep_IProcedure__vfunc_2: u64 = 29171;
+/// `BSTDerivedCreator<BGSProcedureTravel,IProcedure>::vdtor` at 0x489f70 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTravel,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureTravel,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTravel_IProcedure__vdtor: u64 = 29208;
+/// `BSTDerivedCreator<BGSProcedureTravel,IProcedure>::vfunc_1` at 0x48a0b0 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureTravel,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTravel_IProcedure__vfunc_1: u64 = 29211;
+/// `BSTDerivedCreator<BGSProcedureTravel,IProcedure>::vfunc_2` at 0x48a130 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTravel,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTravel_IProcedure__vfunc_2: u64 = 29212;
+/// `BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState>::vdtor` at 0x458960 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTravelExecState_IProcedureTreeExecState__vdtor: u64 = 27993;
+/// `BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState>::vfunc_1` at 0x459f50 (rtti, medium); signature (low): `BGSProcedureTravelExecState * vfunc_1(BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTravelExecState_IProcedureTreeExecState__vfunc_1: u64 = 28066;
+/// `BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a970 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTravelExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTravelExecState_IProcedureTreeExecState__vfunc_2: u64 = 28106;
+/// `BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem>::vdtor` at 0x458990 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem> * vdtor(BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeProcedure_IProcedureTreeItem__vdtor: u64 = 27994;
+/// `BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem>::vfunc_1` at 0x459fb0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeProcedure_IProcedureTreeItem__vfunc_1: u64 = 28067;
+/// `BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem>::vfunc_2` at 0x45a990 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeProcedure,IProcedureTreeItem> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeProcedure_IProcedureTreeItem__vfunc_2: u64 = 28107;
+/// `BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem>::vdtor` at 0x4589c0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem> * vdtor(BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandom_IProcedureTreeItem__vdtor: u64 = 27995;
+/// `BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem>::vfunc_1` at 0x45a010 (rtti, medium); signature (low): `BGSProcedureTreeBranch * vfunc_1(BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandom_IProcedureTreeItem__vfunc_1: u64 = 28068;
+/// `BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem>::vfunc_2` at 0x45a9b0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeRandom,IProcedureTreeItem> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandom_IProcedureTreeItem__vfunc_2: u64 = 28108;
+/// `BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState>::vdtor` at 0x4589f0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandomExecState_IProcedureTreeExecState__vdtor: u64 = 27996;
+/// `BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState>::vfunc_1` at 0x45a090 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandomExecState_IProcedureTreeExecState__vfunc_1: u64 = 28069;
+/// `BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a9d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeRandomExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureTreeRandomExecState_IProcedureTreeExecState__vfunc_2: u64 = 28109;
+/// `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem>::vdtor` at 0x458a20 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * vdtor(BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureTreeSequence_IProcedureTreeItem__vdtor: u64 = 27997;
 /// `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem>::vfunc_1` at 0x45a170 (rtti, medium); signature (low): `BGSProcedureTreeBranch * vfunc_1(BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureTreeSequence_IProcedureTreeItem__vfunc_1: u64 = 28070;
 /// `BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem>::vfunc_2` at 0x45a9f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureTreeSequence,IProcedureTreeItem> * this, undefined8 * param_1)`
@@ -4889,6 +4969,10 @@ pub const BaseExtraList__GetLocation: u64 = 11830;
 pub const BaseExtraList__GetPersistentCell: u64 = 11728;
 /// `BaseExtraList::GetReferenceHandle` at 0x164c80 (semantic, medium); signature (untiered): `undefined4 * GetReferenceHandle(longlong param_1, undefined4 * param_2)`; semantic: handle recorded by ExtraReferenceHandle (medium); signature `uint* BaseExtraList::GetReferenceHandle(BaseExtraList* this, uint* out)`
 pub const BaseExtraList__GetReferenceHandle: u64 = 11719;
+/// `BaseExtraList::GetTextDisplayData` at 0x162e90 (semantic, high); signature (untiered): `longlong * GetTextDisplayData(longlong param_1)`; semantic: extra 0x99 of the list, or of the reference named by the list's extra 0x1c when that reference has formFlags bit 5 (high); signature `ExtraTextDisplayData* (BaseExtraList* list)`
+pub const BaseExtraList__GetTextDisplayData: u64 = 11654;
+/// `BaseExtraList::GetTextDisplayData` as a function pointer type (high).
+pub type BaseExtraList__GetTextDisplayData_fn = unsafe extern "C" fn(list: *mut crate::BaseExtraList) -> *mut crate::ExtraTextDisplayData;
 /// `BaseExtraList::HasType` at 0x1573e0 (runtime, high); signature (untiered): `ulonglong HasType(longlong param_1, uint param_2)`; semantic: whether a type is present (high); signature `bool BaseExtraList::HasType(const BaseExtraList* this, uint type)`
 pub const BaseExtraList__HasType: u64 = 11582;
 /// `BaseExtraList::HasType` as a function pointer type (high).
@@ -5179,6 +5263,30 @@ pub const BindIntArgToMatchingPlaceholders: u64 = 86337;
 pub const BindMovieAndShowInitializing: u64 = 441617;
 /// `BindUInt16FormatArgument` at 0xe16400 (decompiler, medium); signature (untiered): `undefined BindUInt16FormatArgument(longlong param_1, ushort * param_2)`
 pub const BindUInt16FormatArgument: u64 = 88730;
+/// `BipedAnim::AddAmmo` at 0x21ad20 (semantic, high); signature (untiered): `undefined AddAmmo(longlong param_1, longlong param_2, undefined8 param_3)`; semantic: ammo (form type 0x2a) into entry 41 (biped+0x1348), model = ammo+0x40; UpdateQuiverSlotModel 0x21ad80 attaches it as the 'Quiver' node in entry 41's clone (+0x1368) (high); signature `void (BipedAnim* this, TESAmmo* ammo)`
+pub const BipedAnim__AddAmmo: u64 = 15687;
+/// `BipedAnim::AddAmmo` as a function pointer type (high).
+pub type BipedAnim__AddAmmo_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim, ammo: *mut crate::TESAmmo);
+/// `BipedAnim::AddArmor` at 0x218ae0 (semantic, high); signature (untiered): `undefined AddArmor(int * param_1, longlong param_2, longlong param_3, longlong param_4, longlong param_5)`; semantic: for each slot bit i < 32 of the addon's BGSBipedObjectForm (addon+0x28, mask +0x30) the entry i gets item = armor (or the addon), addon, model and extra: the object index equals the BGSBipedObjectForm bit index for the first 32 entries (high); signature `void (BipedAnim* this, TESObjectARMO* armor, TESObjectARMA* addon, TESModel* model, void* extra)`
+pub const BipedAnim__AddArmor: u64 = 15677;
+/// `BipedAnim::AddArmor` as a function pointer type (high).
+pub type BipedAnim__AddArmor_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim, armor: *mut crate::TESObjectARMO, addon: *mut crate::TESObjectARMA, model: *mut crate::TESModel, extra: *mut c_void);
+/// `BipedAnim::AddLight` at 0x21b020 (semantic, high); signature (untiered): `undefined AddLight(longlong param_1, longlong param_2, undefined8 param_3)`; semantic: light (form type 0x1f) into index leftHand ? race shield index : 32; model = light+0x40 (high); signature `void (BipedAnim* this, TESObjectLIGH* light, bool leftHand)`
+pub const BipedAnim__AddLight: u64 = 15690;
+/// `BipedAnim::AddLight` as a function pointer type (high).
+pub type BipedAnim__AddLight_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim, light: *mut crate::TESObjectLIGH, leftHand: bool);
+/// `BipedAnim::AddWeapon` at 0x21a350 (semantic, high); signature (untiered): `undefined AddWeapon(longlong param_1, longlong param_2, undefined8 param_3)`; semantic: index = leftHand ? race shield index (0x2e5ba0) : table 0x207b1b0[weapon+0x19d (weapon type)]; entry.item = weapon, entry.model = weapon+0x40 (or its first-person model +0x200 ->+0x30 for the player's bipeds) (high); signature `void (BipedAnim* this, TESObjectWEAP* weapon, bool leftHand)`
+pub const BipedAnim__AddWeapon: u64 = 15682;
+/// `BipedAnim::AddWeapon` as a function pointer type (high).
+pub type BipedAnim__AddWeapon_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim, weapon: *mut crate::TESObjectWEAP, leftHand: bool);
+/// `BipedAnim::GetShieldEntry` at 0x21b950 (semantic, high); signature (untiered): `longlong * GetShieldEntry(longlong param_1)`; semantic: entry at the owner's race shield index when its item is armor (form type 0x1a), else null (high); signature `BipedObject* (BipedAnim* this)`
+pub const BipedAnim__GetShieldEntry: u64 = 15695;
+/// `BipedAnim::GetShieldEntry` as a function pointer type (high).
+pub type BipedAnim__GetShieldEntry_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim) -> *mut crate::BipedObject;
+/// `BipedAnim::ctor` at 0x217c10 (semantic, high); signature (untiered): `undefined4 * ctor(undefined4 * param_1, longlong param_2, longlong * param_3)`; semantic: refcount +0 = 0, +8 = a named node looked up in root, objects[42] at +0x10 and bufferedObjects[42] at +0x13c0 (0x78 each, reset by 0x2178d0), owner handle +0x2770 (high); signature `BipedAnim* (BipedAnim* this, TESObjectREFR* owner, NiNode* root)`
+pub const BipedAnim__ctor: u64 = 15655;
+/// `BipedAnim::ctor` as a function pointer type (high).
+pub type BipedAnim__ctor_fn = unsafe extern "C" fn(this: *mut crate::BipedAnim, owner: *mut crate::TESObjectREFR, root: *mut crate::NiNode) -> *mut crate::BipedAnim;
 /// `BleedoutCameraState::Begin` at 0x8f3b90 (semantic, high); signature (untiered): `undefined Begin(BleedoutCameraState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BleedoutCameraState__Begin: u64 = 50714;
 /// `BleedoutCameraState::ComputeOrbitPositionWithCollision` at 0x8f4530 (runtime, high); signature (untiered): `bool ComputeOrbitPositionWithCollision(longlong param_1, float * param_2, longlong param_3, undefined8 param_4)`; semantic: position = focus node (+0x120) world translation, or the target's slot-111 3D world translation + eye height when no focus node; then position -= distance (+0x10c) * rotation column 1; ComputeCameraCasterCollision(camera, position, fade true); returns true when clear (or when the position stayed zero) (high); signature `bool (BleedoutCameraState* this, NiPoint3* position, const NiMatrix3* rotation)`
@@ -5499,153 +5607,3 @@ pub const BuildMissingContentControls: u64 = 454906;
 pub const BuildMissingContentPageControls: u64 = 454540;
 /// `BuildModManifestPathFromValue` at 0x6476e0 (decompiler, medium); signature (untiered): `undefined BuildModManifestPathFromValue(undefined8 * param_1, ulonglong param_2, ulonglong * param_3, undefined8 param_4)`
 pub const BuildModManifestPathFromValue: u64 = 442622;
-/// `BuildMoppCinfoFromShape` at 0x10b30e0 (decompiler, medium); signature (untiered): `undefined BuildMoppCinfoFromShape(longlong * param_1, longlong param_2, undefined1 param_3)`
-pub const BuildMoppCinfoFromShape: u64 = 79645;
-/// `BuildMoppCode` at 0x11176b0 (decompiler, medium); signature (untiered): `undefined8 * BuildMoppCode(longlong * param_1, longlong * param_2, undefined8 * param_3, int param_4)`
-pub const BuildMoppCode: u64 = 81232;
-/// `BuildMoppTreeForMesh` at 0x110c830 (decompiler, medium); signature (untiered): `undefined BuildMoppTreeForMesh(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`
-pub const BuildMoppTreeForMesh: u64 = 81120;
-/// `BuildNameIndexMap` at 0xbdf060 (decompiler, medium); signature (untiered): `undefined BuildNameIndexMap(longlong * param_1, longlong param_2, int * param_3, undefined1 * param_4)`
-pub const BuildNameIndexMap: u64 = 63849;
-/// `BuildNavmeshInfoPathMatrix` at 0x11f06c0 (decompiler, medium); signature (untiered): `undefined BuildNavmeshInfoPathMatrix(longlong * param_1, longlong param_2)`
-pub const BuildNavmeshInfoPathMatrix: u64 = 91348;
-/// `BuildNormalizedModelPathString` at 0x3b9f30 (decompiler, medium); signature (untiered): `undefined BuildNormalizedModelPathString(char * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const BuildNormalizedModelPathString: u64 = 24617;
-/// `BuildOrthonormalBasisFromDirection` at 0xfddf10 (decompiler, medium); signature (medium): `undefined BuildOrthonormalBasisFromDirection(float * param_1, float * param_2)`
-pub const BuildOrthonormalBasisFromDirection: u64 = 76210;
-/// `BuildParentChainIndices` at 0xbf2560 (decompiler, medium); signature (untiered): `undefined8 BuildParentChainIndices(undefined8 param_1, longlong param_2, short param_3, short param_4, longlong * param_5)`
-pub const BuildParentChainIndices: u64 = 64132;
-/// `BuildPathArraysFromNodeChain` at 0x11c8c10 (decompiler, medium); signature (untiered): `undefined BuildPathArraysFromNodeChain(undefined8 param_1, longlong param_2, longlong param_3, longlong param_4)`
-pub const BuildPathArraysFromNodeChain: u64 = 90550;
-/// `BuildPathFromParentMap` at 0xac1ae0 (decompiler, medium); signature (untiered): `undefined BuildPathFromParentMap(longlong * param_1, ulonglong param_2, longlong * param_3)`
-pub const BuildPathFromParentMap: u64 = 58109;
-/// `BuildPathStringFromParentMap` at 0xac1bc0 (decompiler, medium); signature (untiered): `undefined BuildPathStringFromParentMap(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
-pub const BuildPathStringFromParentMap: u64 = 58110;
-/// `BuildPathToDescendant` at 0xca2e00 (decompiler, medium); signature (untiered): `undefined8 BuildPathToDescendant(longlong param_1, longlong param_2, longlong * param_3)`
-pub const BuildPathToDescendant: u64 = 67172;
-/// `BuildPathWithHardwarePlatformsJson` at 0x135a930 (decompiler, medium); signature (untiered): `undefined BuildPathWithHardwarePlatformsJson(ulonglong * param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildPathWithHardwarePlatformsJson: u64 = 526627;
-/// `BuildPlanesAndGetField50` at 0xfe8e40 (decompiler, medium); signature (medium): `longlong BuildPlanesAndGetField50(longlong param_1, float * param_2)`
-pub const BuildPlanesAndGetField50: u64 = 76431;
-/// `BuildPlanesFromProjectedBoxHull` at 0xfe66d0 (decompiler, medium); signature (untiered): `ulonglong BuildPlanesFromProjectedBoxHull(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildPlanesFromProjectedBoxHull: u64 = 76408;
-/// `BuildPlanesFromQuadCornersAndPoint` at 0xfe8a60 (decompiler, medium); signature (medium): `undefined BuildPlanesFromQuadCornersAndPoint(longlong param_1, float * param_2)`
-pub const BuildPlanesFromQuadCornersAndPoint: u64 = 76429;
-/// `BuildPrefixedNameIndexMap` at 0xbbd390 (decompiler, medium); signature (untiered): `undefined BuildPrefixedNameIndexMap(longlong param_1, longlong param_2, void * param_3, longlong * param_4)`
-pub const BuildPrefixedNameIndexMap: u64 = 63342;
-/// `BuildProfileLineString` at 0x9c49f0 (decompiler, medium); signature (untiered): `undefined BuildProfileLineString(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4, uint * param_5, longlong * param_6, longlong * param_7, longlong * param_8, undefined8 * param_9)`
-pub const BuildProfileLineString: u64 = 53671;
-/// `BuildQuaternionFromArray110Floats38To40` at 0x4240b0 (decompiler, medium); signature (untiered): `undefined8 BuildQuaternionFromArray110Floats38To40(longlong param_1, float * param_2)`
-pub const BuildQuaternionFromArray110Floats38To40: u64 = 26585;
-/// `BuildQuaternionFromEulerAngles` at 0xef9110 (semantic, medium); signature (medium): `undefined BuildQuaternionFromEulerAngles(float * param_1, float param_2, float param_3, float param_4)`; semantic: quaternion of three Euler angles (the order DecomposeMatrixToEulerAngles produces) (medium); signature `void (NiQuaternion* out, float x, float y, float z)`
-pub const BuildQuaternionFromEulerAngles: u64 = 70843;
-/// `BuildRectShapeFromBoundsField20` at 0xe2b950 (decompiler, high); signature (untiered): `undefined BuildRectShapeFromBoundsField20(longlong param_1)`
-pub const BuildRectShapeFromBoundsField20: u64 = 88292;
-/// `BuildRefPositionArrayFromHandles` at 0x7bb190 (decompiler, medium); signature (untiered): `longlong * BuildRefPositionArrayFromHandles(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildRefPositionArrayFromHandles: u64 = 42573;
-/// `BuildReferenceDestination` at 0x448a80 (decompiler, medium); signature (medium): `longlong BuildReferenceDestination(longlong * param_1, float param_2, float param_3)`
-pub const BuildReferenceDestination: u64 = 27336;
-/// `BuildRegionListForPoint2D` at 0x2557d0 (decompiler, high); signature (untiered): `undefined BuildRegionListForPoint2D(longlong param_1, uint param_2, float * param_3, longlong param_4)`
-pub const BuildRegionListForPoint2D: u64 = 16627;
-/// `BuildRgbaEndpointPalette` at 0x1040040 (decompiler, medium); signature (untiered): `undefined BuildRgbaEndpointPalette(undefined8 param_1, byte * param_2, longlong param_3, char * param_4, ulonglong param_5)`
-pub const BuildRgbaEndpointPalette: u64 = 77757;
-/// `BuildRotationMatrixFromAngles` at 0x1210500 (decompiler, medium); signature (medium): `undefined BuildRotationMatrixFromAngles(float * param_1, float * param_2)`
-pub const BuildRotationMatrixFromAngles: u64 = 91825;
-/// `BuildRotationMatrixFromAngles_2` at 0xede800 (decompiler, medium); signature (untiered): `undefined BuildRotationMatrixFromAngles_2(undefined8 * param_1, uint param_2, uint param_3, uint param_4)`
-pub const BuildRotationMatrixFromAngles_2: u64 = 70225;
-/// `BuildRotationMatrixFromDirection` at 0xfddc20 (decompiler, medium); signature (medium): `undefined BuildRotationMatrixFromDirection(float * param_1, float * param_2)`
-pub const BuildRotationMatrixFromDirection: u64 = 76209;
-/// `BuildRotationMatrixFromEulerAngles` at 0xedf900 (decompiler, medium); signature (untiered): `undefined BuildRotationMatrixFromEulerAngles(undefined8 * param_1, uint param_2, uint param_3, uint param_4)`
-pub const BuildRotationMatrixFromEulerAngles: u64 = 70233;
-/// `BuildSampledPathPointArray` at 0x122e8c0 (decompiler, medium); signature (untiered): `undefined8 * BuildSampledPathPointArray(undefined8 * param_1, longlong param_2, float param_3, float param_4, float param_5)`
-pub const BuildSampledPathPointArray: u64 = 92717;
-/// `BuildScaledMeshesPathWithDmOrDsSuffix` at 0x276300 (decompiler, medium); signature (medium): `undefined BuildScaledMeshesPathWithDmOrDsSuffix(longlong param_1, longlong param_2, char * param_3, char param_4)`
-pub const BuildScaledMeshesPathWithDmOrDsSuffix: u64 = 17652;
-/// `BuildSearchResultsPageControls` at 0x1616410 (decompiler, medium); signature (untiered): `undefined BuildSearchResultsPageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildSearchResultsPageControls: u64 = 454459;
-/// `BuildSegmentIndexPairsFromFlags` at 0x1019620 (decompiler, medium); signature (medium): `ulonglong BuildSegmentIndexPairsFromFlags(int param_1, char * param_2, longlong param_3)`
-pub const BuildSegmentIndexPairsFromFlags: u64 = 77480;
-/// `BuildSegmentJobList` at 0x60ef30 (semantic, high); signature (untiered): `longlong * BuildSegmentJobList(undefined8 param_1, undefined8 * param_2, char * param_3, ulonglong param_4, uint param_5)`; semantic: builds one segment from the {fn,name} table up to the JobListEnd entry; 0x60d700/0x60d710/0x60d720 entries become signal / sync / signal+sync barriers; the JobListEnd fn becomes the segment's completion callback (+0x10) (high); signature `JobList* (void* context, const JobEntry* entries, const char* name, u8 listByteD4, u32 workerLimit)`
-pub const BuildSegmentJobList: u64 = 35419;
-/// `BuildSegmentJobList` as a function pointer type (high).
-pub type BuildSegmentJobList_fn = unsafe extern "C" fn(context: *mut c_void, entries: *const c_void, name: *const c_char, listByteD4: u8, workerLimit: u32) -> *mut c_void;
-/// `BuildSideBarControls` at 0x15fcc50 (decompiler, medium); signature (untiered): `undefined BuildSideBarControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildSideBarControls: u64 = 454079;
-/// `BuildSmoothedPathForLargeZDelta` at 0x11be8f0 (decompiler, medium); signature (untiered): `undefined8 BuildSmoothedPathForLargeZDelta(undefined8 param_1, float * param_2, float * param_3, longlong param_4, undefined8 param_5, longlong param_6)`
-pub const BuildSmoothedPathForLargeZDelta: u64 = 90435;
-/// `BuildSmoothedPathWithTriangleFlagFilters` at 0x1209920 (decompiler, medium); signature (untiered): `ulonglong BuildSmoothedPathWithTriangleFlagFilters(longlong param_1, float * param_2, float * param_3)`
-pub const BuildSmoothedPathWithTriangleFlagFilters: u64 = 91737;
-/// `BuildSortedEndpointArrays` at 0xc0eeb0 (decompiler, medium); signature (untiered): `undefined BuildSortedEndpointArrays(longlong param_1, undefined8 * param_2, longlong * param_3)`
-pub const BuildSortedEndpointArrays: u64 = 64694;
-/// `BuildSortedIndexAndResolveRecordValues` at 0xe9b050 (decompiler, medium); signature (untiered): `undefined BuildSortedIndexAndResolveRecordValues(longlong param_1)`
-pub const BuildSortedIndexAndResolveRecordValues: u64 = 90076;
-/// `BuildSortedVertexIndexMaps` at 0xefb210 (decompiler, medium); signature (untiered): `undefined BuildSortedVertexIndexMaps(longlong param_1, longlong * param_2, longlong * param_3, byte param_4)`
-pub const BuildSortedVertexIndexMaps: u64 = 70891;
-/// `BuildSoundHandleIfInvalid` at 0x805820 (decompiler, high); signature (high): `undefined BuildSoundHandleIfInvalid(int * param_1, longlong param_2)`
-pub const BuildSoundHandleIfInvalid: u64 = 44272;
-/// `BuildStateIdToIndexMap` at 0xaf9290 (decompiler, medium); signature (untiered): `undefined BuildStateIdToIndexMap(longlong param_1)`
-pub const BuildStateIdToIndexMap: u64 = 59407;
-/// `BuildStringFromCharCodeArgs` at 0xdb29b0 (decompiler, medium); signature (untiered): `undefined BuildStringFromCharCodeArgs(longlong param_1)`
-pub const BuildStringFromCharCodeArgs: u64 = 86095;
-/// `BuildSubdividedSphereTriangles` at 0x1590d50 (decompiler, medium); signature (untiered): `undefined BuildSubdividedSphereTriangles(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildSubdividedSphereTriangles: u64 = 109075;
-/// `BuildSwappedPairInput` at 0xc9d180 (decompiler, medium); signature (untiered): `undefined BuildSwappedPairInput(undefined8 * param_1, undefined8 * param_2)`
-pub const BuildSwappedPairInput: u64 = 67118;
-/// `BuildTextForEntryMatchingField50` at 0x3d8c50 (decompiler, medium); signature (untiered): `undefined BuildTextForEntryMatchingField50(longlong param_1, longlong * param_2)`
-pub const BuildTextForEntryMatchingField50: u64 = 25077;
-/// `BuildTexturePathWithNSuffix` at 0x1f2d20 (decompiler, medium); signature (medium): `undefined1 * BuildTexturePathWithNSuffix(longlong * param_1, char * param_2)`
-pub const BuildTexturePathWithNSuffix: u64 = 14960;
-/// `BuildTextureSwapMapAndApply` at 0x1ed800 (decompiler, medium); signature (untiered): `undefined BuildTextureSwapMapAndApply(longlong param_1, longlong param_2, undefined8 param_3, longlong param_4)`
-pub const BuildTextureSwapMapAndApply: u64 = 14837;
-/// `BuildTimePeriodPlatformsQuery` at 0x136a5e0 (decompiler, medium); signature (untiered): `undefined BuildTimePeriodPlatformsQuery(ulonglong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildTimePeriodPlatformsQuery: u64 = 526760;
-/// `BuildTopicInfoResponseText` at 0x3f2630 (decompiler, medium); signature (untiered): `undefined BuildTopicInfoResponseText(longlong param_1, longlong * param_2, char param_3, undefined8 param_4)`
-pub const BuildTopicInfoResponseText: u64 = 25608;
-/// `BuildTransformFromAnglesPositionScale` at 0x2eee20 (decompiler, medium); signature (untiered): `undefined BuildTransformFromAnglesPositionScale(longlong param_1, undefined8 * param_2)`
-pub const BuildTransformFromAnglesPositionScale: u64 = 19753;
-/// `BuildTransformFromQuaternion` at 0x551c60 (decompiler, medium); signature (medium): `float * BuildTransformFromQuaternion(float * param_1, float * param_2)`
-pub const BuildTransformFromQuaternion: u64 = 32846;
-/// `BuildTransformFromVfuncPositionAndAngles` at 0x11d66f0 (decompiler, medium); signature (untiered): `undefined BuildTransformFromVfuncPositionAndAngles(longlong * param_1, float * param_2)`
-pub const BuildTransformFromVfuncPositionAndAngles: u64 = 90920;
-/// `BuildTransposedMatrixRelativeToOrigin` at 0x15170c0 (decompiler, medium); signature (medium): `undefined BuildTransposedMatrixRelativeToOrigin(float * param_1, float * param_2)`
-pub const BuildTransposedMatrixRelativeToOrigin: u64 = 106462;
-/// `BuildTransposedTransformWithScaledTranslation` at 0x2fa390 (decompiler, medium); signature (medium): `undefined4 * BuildTransposedTransformWithScaledTranslation(undefined4 * param_1, undefined4 * param_2)`
-pub const BuildTransposedTransformWithScaledTranslation: u64 = 20034;
-/// `BuildTreeInstanceBuffer` at 0x50c6d0 (decompiler, medium); signature (untiered): `undefined BuildTreeInstanceBuffer(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildTreeInstanceBuffer: u64 = 31665;
-/// `BuildUgcModsContentQuery` at 0x13694e0 (decompiler, medium); signature (untiered): `undefined BuildUgcModsContentQuery(ulonglong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildUgcModsContentQuery: u64 = 526755;
-/// `BuildVertexAdjacencyArrays` at 0x10fef90 (decompiler, medium); signature (untiered): `undefined BuildVertexAdjacencyArrays(longlong param_1, longlong * param_2, longlong * param_3)`
-pub const BuildVertexAdjacencyArrays: u64 = 80971;
-/// `BuildViewProjectionMatrices` at 0x101d400 (semantic, high); signature (untiered): `undefined BuildViewProjectionMatrices(undefined8 param_1, undefined8 * param_2, float * param_3, undefined1[16] * param_4, undefined4 * param_5, undefined4 * param_6, undefined4 * param_7, float * param_8)`; semantic: standard left-handed projection with D3D depth [0,1] from the NiFrustum (l, r, t, b, n, f, ortho) (high); signature `void (FrameState* this, float* view, float* proj, float* viewProj, const NiPoint3* forward, const NiPoint3* up, const NiPoint3* right, const NiFrustum* frustum)`
-pub const BuildViewProjectionMatrices: u64 = 77510;
-/// `BuildViewProjectionMatrices` as a function pointer type (high).
-pub type BuildViewProjectionMatrices_fn = unsafe extern "C" fn(this: *mut crate::FrameState, view: *mut f32, proj: *mut f32, viewProj: *mut f32, forward: *const crate::NiPoint3, up: *const crate::NiPoint3, right: *const crate::NiPoint3, frustum: *const crate::NiFrustum);
-/// `BuildYesNoDialogControls` at 0x15e8080 (decompiler, medium); signature (untiered): `undefined BuildYesNoDialogControls(longlong * param_1, float * param_2, void * param_3, longlong * param_4, longlong * param_5)`
-pub const BuildYesNoDialogControls: u64 = 454781;
-/// `BumpAllocate0x140FromFieldB8` at 0x517290 (decompiler, medium); signature (medium): `longlong BumpAllocate0x140FromFieldB8(longlong param_1)`
-pub const BumpAllocate0x140FromFieldB8: u64 = 31824;
-/// `ButtonEvent::CopyCtor` at 0xcfafe0 (semantic, high); signature (untiered): `ButtonEvent * CopyCtor(ButtonEvent * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; semantic: copy constructor (pass 3 called it ctor) (high); signature `ButtonEvent* (ButtonEvent* this, const ButtonEvent* other)`
-pub const ButtonEvent__CopyCtor: u64 = 68679;
-/// `ButtonEvent::CopyCtor` as a function pointer type (high).
-pub type ButtonEvent__CopyCtor_fn = unsafe extern "C" fn(this: *mut crate::ButtonEvent, other: *const crate::ButtonEvent) -> *mut crate::ButtonEvent;
-/// `ButtonEvent::Init` at 0xcfb060 (semantic, high); signature (untiered): `undefined Init(longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`; semantic: fill a stand-alone ButtonEvent (menus map one through ProcessInputEventMappings) (high); signature `void (ButtonEvent* this, InputDevice device, u32 idCode, float value, float heldDownSecs)`
-pub const ButtonEvent__Init: u64 = 68680;
-/// `ButtonEvent::Init` as a function pointer type (high).
-pub type ButtonEvent__Init_fn = unsafe extern "C" fn(this: *mut crate::ButtonEvent, device: u32, idCode: u32, value: f32, heldDownSecs: f32);
-/// `ButtonEvent::IsPressed` at 0xcf2e80 (semantic, high); signature (untiered): `undefined1 IsPressed(longlong param_1)`; semantic: value != 0 && heldDownSecs == 0 (high); signature `bool (const ButtonEvent* this)`
-pub const ButtonEvent__IsPressed: u64 = 68601;
-/// `ButtonEvent::IsPressed` as a function pointer type (high).
-pub type ButtonEvent__IsPressed_fn = unsafe extern "C" fn(this: *const crate::ButtonEvent) -> bool;
-/// `ButtonEvent::vdtor` at 0x7b1a90 (layout_inference, medium); signature (low): `ButtonEvent * vdtor(ButtonEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const ButtonEvent__vdtor: u64 = 42397;
-/// `ByteArrayImplementation::vdtor` at 0xc5dfa0 (layout_inference, medium); signature (low): `ByteArrayImplementation * vdtor(ByteArrayImplementation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const ByteArrayImplementation__vdtor: u64 = 65915;
-/// `ByteArrayImplementation::vfunc_17` at 0xc5f7d0 (rtti, high); signature (low): `undefined1 vfunc_17(ByteArrayImplementation * this, int param_1)`
-pub const ByteArrayImplementation__vfunc_17: u64 = 65954;
-/// `ByteArrayImplementation::vfunc_18` at 0xc633f0 (rtti, high); signature (low): `undefined vfunc_18(ByteArrayImplementation * this, int param_1, undefined1 param_2)`
-pub const ByteArrayImplementation__vfunc_18: u64 = 66137;
-/// `ByteArrayImplementation::vfunc_20` at 0xc63370 (rtti, high); signature (low): `undefined vfunc_20(ByteArrayImplementation * this, int param_1, undefined1 param_2)`
-pub const ByteArrayImplementation__vfunc_20: u64 = 66133;
-/// `ByteArrayImplementation::vfunc_33` at 0xc62d40 (rtti, high); signature (low): `undefined vfunc_33(ByteArrayImplementation * this, void * param_1, uint param_2)`
-pub const ByteArrayImplementation__vfunc_33: u64 = 66112;

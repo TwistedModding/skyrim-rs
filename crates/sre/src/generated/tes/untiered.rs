@@ -760,23 +760,6 @@ impl crate::TESObjectLAND {
     pub unsafe fn vfunc_6_sub0() -> u8 { unsafe { function!(19119, () -> u8)() } }
 }
 
-impl crate::TESObjectLIGH {
-    /// `TESObjectLIGH::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17618, rva 0x275250).
-    /// `undefined LoadGame(TESObjectLIGH * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn load_game(&self, param_1: i64) -> u64 { unsafe { function!(17618, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-    /// `TESObjectLIGH::SaveGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17617, rva 0x275210).
-    /// `undefined SaveGame(TESObjectLIGH * this, longlong param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn save_game(&self, param_1: i64) -> u64 { unsafe { function!(17617, (*const Self, i64) -> u64)(core::ptr::from_ref(self), param_1) } }
-}
-
 impl crate::TESObjectMISC {
     /// `TESObjectMISC::LoadGame` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 17995, rva 0x286ef0).
     /// `undefined LoadGame(TESObjectMISC * this, longlong param_1)`
@@ -829,13 +812,6 @@ impl crate::TESPackage {
 }
 
 impl crate::TESRace {
-    /// `TESRace::GetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 25468, rva 0x3ebd80).
-    /// `undefined1 * GetFormEditorID(TESRace * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn get_form_editor_id(&self) -> *mut u8 { unsafe { function!(25468, (*const Self) -> *mut u8)(core::ptr::from_ref(self)) } }
     /// `TESRace::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 25385, rva 0x3e8a90).
     /// `undefined8 SetFormEditorID(TESRace * this, char * param_1, undefined8 param_2, ulonglong param_3)`
     ///
@@ -1242,23 +1218,6 @@ impl crate::TESWaterReflections {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn ctor_sub0(param_1: *mut i64) -> u64 { unsafe { function!(32241, (*mut i64) -> u64)(param_1) } }
-}
-
-impl crate::TESWeather {
-    /// `TESWeather::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20413, rva 0x309bd0).
-    /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(20413, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-    /// `TESWeather::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 18021, rva 0x2878f0).
-    /// `undefined vfunc_19_sub0(longlong * param_1, char param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_19_sub0(param_1: *mut i64, param_2: c_char) -> u64 { unsafe { function!(18021, (*mut i64, c_char) -> u64)(param_1, param_2) } }
 }
 
 impl crate::TESWorldSpace {

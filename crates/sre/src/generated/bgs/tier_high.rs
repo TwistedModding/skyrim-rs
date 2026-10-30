@@ -290,16 +290,6 @@ impl crate::BGSAttackDataMap {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(27401, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::BGSBipedObjectForm {
-    /// `BGSBipedObjectForm::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 14112, rva 0x1d20a0).
-    /// `BGSBipedObjectForm * ctor(BGSBipedObjectForm * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(14112, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::BGSBlockBashData {
     /// `BGSBlockBashData::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 14123, rva 0x1d2220).
     /// `BGSBlockBashData * ctor(BGSBlockBashData * this)`

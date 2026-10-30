@@ -2625,12 +2625,6 @@ impl core::ops::Deref for crate::ModManagerMenu {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `ModelReferenceEffect` is laid out from its primary base `ReferenceEffect`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::ModelReferenceEffect {
-    type Target = crate::ReferenceEffect;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `Moon` is laid out from its primary base `SkyObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::Moon {
     type Target = crate::SkyObject;
@@ -3108,12 +3102,6 @@ impl core::ops::Deref for crate::RefAttachTechniqueInput {
 /// `RefHandleUIData` is laid out from its primary base `IUIMessageData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::RefHandleUIData {
     type Target = crate::IUIMessageData;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `ReferenceEffect` is laid out from its primary base `BSTempEffect`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::ReferenceEffect {
-    type Target = crate::BSTempEffect;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
@@ -5916,18 +5904,6 @@ impl crate::ModManagerMenu {
     pub fn as_menu_event_handler(&self) -> &crate::MenuEventHandler { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
 }
 
-impl crate::ModelReferenceEffect {
-    /// The `BSTEventSink<BSAnimationGraphEvent>` base at +0x60.
-    #[inline]
-    pub fn as_bst_event_sink_bs_animation_graph_event(&self) -> &crate::BSTEventSink_BSAnimationGraphEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x60).cast() } }
-    /// The `IAnimationGraphManagerHolder` base at +0x48.
-    #[inline]
-    pub fn as_i_animation_graph_manager_holder(&self) -> &crate::IAnimationGraphManagerHolder { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-    /// The `SimpleAnimationGraphManagerHolder` base at +0x48.
-    #[inline]
-    pub fn as_simple_animation_graph_manager_holder(&self) -> &crate::SimpleAnimationGraphManagerHolder { unsafe { &*core::ptr::from_ref(self).byte_add(0x48).cast() } }
-}
-
 impl crate::NavMesh {
     /// The `BSNavmesh` base at +0x28.
     #[inline]
@@ -6490,9 +6466,6 @@ pub fn g_type_node_bs_frustum_fov_controller() -> *mut c_void { address!(411005)
 /// `g_TypeNode_BSFurnitureMarkerNode` at 0x332e320, id 411273 (string, high)
 #[inline]
 pub fn g_type_node_bs_furniture_marker_node() -> *mut c_void { address!(411273) as *mut c_void }
-/// `g_TypeNode_BSGeometry` at 0x331d7c8, id 410531 (string, high)
-#[inline]
-pub fn g_type_node_bs_geometry() -> *mut c_void { address!(410531) as *mut c_void }
 /// `g_TypeNode_BSGeometryListCullingProcess` at 0x332e430, id 411301 (string, high)
 #[inline]
 pub fn g_type_node_bs_geometry_list_culling_process() -> *mut c_void { address!(411301) as *mut c_void }
@@ -6754,9 +6727,6 @@ pub fn g_type_node_bsx_flags() -> *mut c_void { address!(411156) as *mut c_void 
 /// `g_TypeNode_DebugTextExtraData` at 0x333c580, id 412094 (string, high)
 #[inline]
 pub fn g_type_node_debug_text_extra_data() -> *mut c_void { address!(412094) as *mut c_void }
-/// `g_TypeNode_ModelReferenceEffect` at 0x32118f8, id 402943 (string, high)
-#[inline]
-pub fn g_type_node_model_reference_effect() -> *mut c_void { address!(402943) as *mut c_void }
 /// `g_TypeNode_NiAVObject` at 0x331c4a8, id 410476 (string, high)
 #[inline]
 pub fn g_type_node_ni_av_object() -> *mut c_void { address!(410476) as *mut c_void }
@@ -7192,9 +7162,6 @@ pub fn g_type_node_ni_point3_interp_controller() -> *mut c_void { address!(41104
 /// `g_TypeNode_NiPoint3Interpolator` at 0x331ef10, id 410987 (string, high)
 #[inline]
 pub fn g_type_node_ni_point3_interpolator() -> *mut c_void { address!(410987) as *mut c_void }
-/// `g_TypeNode_NiPointLight` at 0x331d7f0, id 410534 (string, high)
-#[inline]
-pub fn g_type_node_ni_point_light() -> *mut c_void { address!(410534) as *mut c_void }
 /// `g_TypeNode_NiPosData` at 0x331ed48, id 410959 (string, high)
 #[inline]
 pub fn g_type_node_ni_pos_data() -> *mut c_void { address!(410959) as *mut c_void }
@@ -7312,9 +7279,6 @@ pub fn g_type_node_reference_effect() -> *mut c_void { address!(402952) as *mut 
 /// `g_TypeNode_SceneGraph` at 0x3242628, id 403753 (string, high)
 #[inline]
 pub fn g_type_node_scene_graph() -> *mut c_void { address!(403753) as *mut c_void }
-/// `g_TypeNode_ShaderReferenceEffect` at 0x3211960, id 402958 (string, high)
-#[inline]
-pub fn g_type_node_shader_reference_effect() -> *mut c_void { address!(402958) as *mut c_void }
 /// `g_TypeNode_ShadowSceneNode` at 0x33d4100, id 414664 (string, high)
 #[inline]
 pub fn g_type_node_shadow_scene_node() -> *mut c_void { address!(414664) as *mut c_void }

@@ -129,12 +129,6 @@ impl core::ops::Deref for crate::BGSBipedModelList {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BGSBipedObjectForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BGSBipedObjectForm {
-    type Target = crate::BaseFormComponent;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BGSBlockBashData` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BGSBlockBashData {
     type Target = crate::BaseFormComponent;

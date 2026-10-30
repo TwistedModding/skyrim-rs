@@ -3,6 +3,108 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vdtor` at 0x8812e0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * vdtor(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_CombatBehaviorExpression_CombatB_d178199fe24a: u64 = 47848;
+/// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vfunc_2` at 0x8815f0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_CombatBehaviorExpression_CombatB_67490fabe6ad: u64 = 47860;
+/// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextMelee,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vdtor` at 0x8ba320 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextMelee,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * vdtor(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextMelee,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextMelee_CombatBehaviorExpression_CombatB_eb149bbd7561: u64 = 49187;
+/// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextMelee,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vfunc_2` at 0x8ba5d0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextMelee,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextMelee_CombatBehaviorExpression_CombatB_11415167d347: u64 = 49198;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon>::vdtor` at 0x878980 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapon__vdtor: u64 = 47606;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon>::vfunc_2` at 0x878fa0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapon__vfunc_2: u64 = 47631;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextAcquireWeapon>::vfunc_2_sub0` at 0x875d90 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextAcquireWeapon__vfunc_2_sub0: u64 = 47583;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCloseMovement>::vdtor` at 0x887ee0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCloseMovement> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCloseMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCloseMovement__vdtor: u64 = 47947;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCloseMovement>::vfunc_2` at 0x889210 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCloseMovement> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCloseMovement__vfunc_2: u64 = 48004;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCover>::vdtor` at 0x8d67a0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCover> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCover> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCover__vdtor: u64 = 49868;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCover>::vfunc_2` at 0x8d6ab0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextCover> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextCover__vfunc_2: u64 = 49881;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextDodgeThreat>::vdtor` at 0x87f100 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextDodgeThreat> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextDodgeThreat> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextDodgeThreat__vdtor: u64 = 47809;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextDodgeThreat>::vfunc_2` at 0x87f2c0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextDodgeThreat> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextDodgeThreat__vfunc_2: u64 = 47815;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation>::vdtor` at 0x891ea0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLocation__vdtor: u64 = 48213;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation>::vfunc_2` at 0x892220 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLocation__vfunc_2: u64 = 48228;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFindAttackLocation>::vfunc_2_sub0` at 0x892440 (callgraph, medium); signature (untiered): `undefined vfunc_2_sub0(undefined8 param_1, undefined8 * param_2, undefined8 * param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFindAttackLocation__vfunc_2_sub0: u64 = 48233;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlankingMovement>::vdtor` at 0x89ca90 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlankingMovement> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlankingMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlankingMovement__vdtor: u64 = 48447;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlankingMovement>::vfunc_2` at 0x89cf10 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlankingMovement> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlankingMovement__vfunc_2: u64 = 48465;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlee>::vdtor` at 0x8a67b0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlee> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlee> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlee__vdtor: u64 = 48687;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlee>::vfunc_2` at 0x8a7070 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextFlee> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextFlee__vfunc_2: u64 = 48723;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextHide>::vdtor` at 0x8a67f0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextHide> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextHide> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextHide__vdtor: u64 = 48688;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextHide>::vfunc_2` at 0x8a7150 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextHide> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextHide__vfunc_2: u64 = 48724;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextRangedMovement>::vdtor` at 0x8c5a10 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextRangedMovement> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextRangedMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextRangedMovement__vdtor: u64 = 49472;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextRangedMovement>::vfunc_2` at 0x8c5c70 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextRangedMovement> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextRangedMovement__vfunc_2: u64 = 49482;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextSearch>::vdtor` at 0x8cea60 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextSearch> * vdtor(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextSearch> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextSearch__vdtor: u64 = 49672;
+/// `CombatBehaviorTreeCreateContextNode<CombatBehaviorContextSearch>::vfunc_2` at 0x8cf090 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode<CombatBehaviorContextSearch> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode_CombatBehaviorContextSearch__vfunc_2: u64 = 49696;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vdtor` at 0x8789c0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vdtor: u64 = 47607;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vfunc_3` at 0x879330 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vfunc_3: u64 = 47639;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vfunc_6` at 0x879f60 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vfunc_6: u64 = 47665;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vfunc_7` at 0x879ad0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vfunc_7: u64 = 47654;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vfunc_8` at 0x87a3b0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vfunc_8: u64 = 47680;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextAcquireWeapon>::vfunc_9` at 0x8796e0 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextAcquireWeapon__vfunc_9: u64 = 47647;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vdtor` at 0x881320 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vdtor: u64 = 47849;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vfunc_3` at 0x8817e0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vfunc_3: u64 = 47864;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vfunc_6` at 0x881e70 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * this, longlong * param_1, undefined8 param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vfunc_6: u64 = 47877;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vfunc_7` at 0x881ca0 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vfunc_7: u64 = 47873;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vfunc_8` at 0x8821a0 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vfunc_8: u64 = 47885;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextBlock>::vfunc_9` at 0x881a60 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextBlock__vfunc_9: u64 = 47869;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vdtor` at 0x887f20 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vdtor: u64 = 47948;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vfunc_3` at 0x889700 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vfunc_3: u64 = 48015;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vfunc_6` at 0x88bf80 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vfunc_6: u64 = 48071;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vfunc_7` at 0x88b790 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vfunc_7: u64 = 48056;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vfunc_8` at 0x88cb30 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vfunc_8: u64 = 48106;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCloseMovement>::vfunc_9` at 0x88ae80 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCloseMovement__vfunc_9: u64 = 48038;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vdtor` at 0x8d67e0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vdtor: u64 = 49869;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vfunc_3` at 0x8d6db0 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * this, longlong * param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vfunc_3: u64 = 49886;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vfunc_6` at 0x8d7980 (rtti, medium); signature (low): `undefined vfunc_6(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * this, longlong * param_1, longlong param_2)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vfunc_6: u64 = 49904;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vfunc_7` at 0x8d7610 (rtti, medium); signature (low): `undefined vfunc_7(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * this, longlong * param_1, longlong param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vfunc_7: u64 = 49900;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vfunc_8` at 0x8d7c30 (rtti, medium); signature (low): `bool vfunc_8(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover> * this, longlong param_1)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vfunc_8: u64 = 49912;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextCover>::vfunc_9` at 0x8d7340 (rtti, medium); signature (low): `undefined * vfunc_9(void)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextCover__vfunc_9: u64 = 49895;
+/// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vdtor` at 0x87f140 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * vdtor(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vdtor: u64 = 47810;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_3` at 0x87f380 (rtti, medium); signature (low): `undefined vfunc_3(CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat> * this, longlong * param_1)`
 pub const CombatBehaviorTreeCreateContextNodeBase_CombatBehaviorContextDodgeThreat__vfunc_3: u64 = 47817;
 /// `CombatBehaviorTreeCreateContextNodeBase<CombatBehaviorContextDodgeThreat>::vfunc_6` at 0x87f800 (rtti, medium); signature (low): `undefined vfunc_6(void)`
@@ -5507,201 +5609,3 @@ pub const CombatProjectileAimController__vfunc_8: u64 = 44384;
 pub const CombatProjectileAimController__vfunc_8_sub0: u64 = 44396;
 /// `CombatProjectileAimController::vfunc_9` at 0x80c290 (rtti, high); signature (low): `undefined8 * vfunc_9(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatProjectileAimController__vfunc_9: u64 = 44391;
-/// `CombatSearchLockData::vdtor` at 0x8cbf60 (slot_propagation, medium); signature (low): `CombatSearchLockData * vdtor(CombatSearchLockData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatSearchLockData__vdtor: u64 = 49572;
-/// `CombatSearchLockData::vfunc_1` at 0x8cbf50 (rtti, high); signature (untiered): `undefined4 vfunc_1(void)`
-pub const CombatSearchLockData__vfunc_1: u64 = 49571;
-/// `CombatSearchLockData::vfunc_2` at 0x8c9c90 (rtti, high); signature (low): `undefined1 vfunc_2(CombatSearchLockData * this, longlong * param_1, undefined4 * param_2, undefined8 param_3)`
-pub const CombatSearchLockData__vfunc_2: u64 = 49534;
-/// `CombatTargetLocation::ctor` at 0x858a40 (layout_inference, medium); signature (low): `undefined ctor(CombatTargetLocation * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocation__ctor: u64 = 47005;
-/// `CombatTargetLocation::vdtor` at 0x85d260 (layout_inference, medium); signature (low): `CombatTargetLocation * vdtor(CombatTargetLocation * this, uint param_1, undefined8 param_2, longlong param_3)`
-pub const CombatTargetLocation__vdtor: u64 = 47056;
-/// `CombatTargetLocation::vfunc_2` at 0x858da0 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTargetLocation__vfunc_2: u64 = 47010;
-/// `CombatTargetLocation::vfunc_3` at 0x858cc0 (rtti, high); signature (low): `undefined vfunc_3(CombatTargetLocation * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocation__vfunc_3: u64 = 47008;
-/// `CombatTargetLocation::vfunc_3_sub0` at 0x858930 (callgraph, medium); signature (untiered): `undefined vfunc_3_sub0(void * param_1, longlong param_2)`
-pub const CombatTargetLocation__vfunc_3_sub0: u64 = 47003;
-/// `CombatTargetLocation::vfunc_4` at 0x858d30 (rtti, high); signature (low): `undefined vfunc_4(CombatTargetLocation * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocation__vfunc_4: u64 = 47009;
-/// `CombatTargetLocation::vfunc_4_sub0` at 0x8589c0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(void * param_1, longlong param_2)`
-pub const CombatTargetLocation__vfunc_4_sub0: u64 = 47004;
-/// `CombatTargetLocation::vfunc_4_sub1` at 0x85c4d0 (callgraph, medium); signature (untiered): `undefined8 vfunc_4_sub1(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatTargetLocation__vfunc_4_sub1: u64 = 47047;
-/// `CombatTargetLocationSearch::ctor` at 0x858db0 (layout_inference, high); signature (low): `CombatTargetLocationSearch * ctor(CombatTargetLocationSearch * this, longlong param_1, longlong param_2, float param_3)`
-pub const CombatTargetLocationSearch__ctor: u64 = 47011;
-/// `CombatTargetLocationSearch::ctor_sub0` at 0x860700 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatTargetLocationSearch__ctor_sub0: u64 = 47130;
-/// `CombatTargetLocationSearch::vdtor` at 0x85d2d0 (slot_propagation, medium); signature (low): `CombatTargetLocationSearch * vdtor(CombatTargetLocationSearch * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocationSearch__vdtor: u64 = 47057;
-/// `CombatTargetLocationSearch::vfunc_2` at 0x85a760 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTargetLocationSearch__vfunc_2: u64 = 47024;
-/// `CombatTargetLocationSearch::vfunc_3` at 0x85a0f0 (rtti, high); signature (low): `undefined vfunc_3(CombatTargetLocationSearch * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocationSearch__vfunc_3: u64 = 47022;
-/// `CombatTargetLocationSearch::vfunc_4` at 0x85a3c0 (rtti, high); signature (low): `undefined vfunc_4(CombatTargetLocationSearch * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
-pub const CombatTargetLocationSearch__vfunc_4: u64 = 47023;
-/// `CombatTargetLocationSearchResult::ctor` at 0x85a770 (layout_inference, high); signature (low): `CombatTargetLocationSearchResult * ctor(CombatTargetLocationSearchResult * this, longlong param_1)`
-pub const CombatTargetLocationSearchResult__ctor: u64 = 47025;
-/// `CombatTargetLocationSearchResult::ctor` at 0x85a7c0 (layout_inference, medium); signature (high): `undefined ctor(CombatTargetLocationSearchResult * this)`
-pub const CombatTargetLocationSearchResult__ctor_2: u64 = 47026;
-/// `CombatTargetLocationSearchResult::vdtor` at 0x85d380 (slot_propagation, medium); signature (low): `CombatTargetLocationSearchResult * vdtor(CombatTargetLocationSearchResult * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetLocationSearchResult__vdtor: u64 = 47058;
-/// `CombatTargetLocationSearchResult::vfunc_2` at 0x85aa70 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTargetLocationSearchResult__vfunc_2: u64 = 47030;
-/// `CombatTargetLocationSearchResult::vfunc_3` at 0x85a990 (rtti, high); signature (low): `undefined vfunc_3(CombatTargetLocationSearchResult * this, longlong param_1)`
-pub const CombatTargetLocationSearchResult__vfunc_3: u64 = 47028;
-/// `CombatTargetLocationSearchResult::vfunc_4` at 0x85a9d0 (rtti, high); signature (low): `undefined vfunc_4(CombatTargetLocationSearchResult * this, longlong param_1)`
-pub const CombatTargetLocationSearchResult__vfunc_4: u64 = 47029;
-/// `CombatTargetSelector::ctor` at 0x861ce0 (layout_inference, high); signature (low): `CombatTargetSelector * ctor(CombatTargetSelector * this, undefined8 param_1, undefined4 param_2)`
-pub const CombatTargetSelector__ctor: u64 = 47184;
-/// `CombatTargetSelector::dtor` at 0x861d50 (layout_inference, high); signature (high): `undefined dtor(CombatTargetSelector * this)`
-pub const CombatTargetSelector__dtor: u64 = 47185;
-/// `CombatTargetSelector::vdtor` at 0x862b70 (layout_inference, medium); signature (low): `CombatTargetSelector * vdtor(CombatTargetSelector * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelector__vdtor: u64 = 47201;
-/// `CombatTargetSelector::vfunc_2` at 0x861f40 (rtti, high); signature (low): `uint vfunc_2(void)`
-pub const CombatTargetSelector__vfunc_2: u64 = 47189;
-/// `CombatTargetSelector::vfunc_3` at 0x861db0 (rtti, medium); signature (low): `undefined vfunc_3(CombatTargetSelector * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelector__vfunc_3: u64 = 47187;
-/// `CombatTargetSelector::vfunc_4` at 0x861e80 (rtti, medium); signature (low): `undefined vfunc_4(CombatTargetSelector * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelector__vfunc_4: u64 = 47188;
-/// `CombatTargetSelector::vfunc_5` at 0x861da0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-pub const CombatTargetSelector__vfunc_5: u64 = 47186;
-/// `CombatTargetSelectorFixed::ctor` at 0x862a40 (layout_inference, high); signature (low): `CombatTargetSelectorFixed * ctor(CombatTargetSelectorFixed * this, undefined8 param_1, longlong param_2, undefined4 param_3)`
-pub const CombatTargetSelectorFixed__ctor: u64 = 47197;
-/// `CombatTargetSelectorFixed::vdtor` at 0x862c30 (layout_inference, medium); signature (low): `CombatTargetSelectorFixed * vdtor(CombatTargetSelectorFixed * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelectorFixed__vdtor: u64 = 47203;
-/// `CombatTargetSelectorFixed::vfunc_2` at 0x862b60 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTargetSelectorFixed__vfunc_2: u64 = 47200;
-/// `CombatTargetSelectorFixed::vfunc_5` at 0x862ad0 (rtti, high); signature (high): `undefined vfunc_5(CombatTargetSelectorFixed * this)`
-pub const CombatTargetSelectorFixed__vfunc_5: u64 = 47198;
-/// `CombatTargetSelectorFixed::vfunc_6` at 0x862b50 (rtti, high); signature (low): `undefined4 * vfunc_6(CombatTargetSelectorFixed * this, undefined4 * param_1)`
-pub const CombatTargetSelectorFixed__vfunc_6: u64 = 47199;
-/// `CombatTargetSelectorStandard::ctor` at 0x861fc0 (layout_inference, high); signature (low): `CombatTargetSelectorStandard * ctor(CombatTargetSelectorStandard * this, undefined8 param_1, undefined4 param_2)`
-pub const CombatTargetSelectorStandard__ctor: u64 = 47190;
-/// `CombatTargetSelectorStandard::vdtor` at 0x862bd0 (layout_inference, medium); signature (low): `CombatTargetSelectorStandard * vdtor(CombatTargetSelectorStandard * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelectorStandard__vdtor: u64 = 47202;
-/// `CombatTargetSelectorStandard::vfunc_2` at 0x8622d0 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTargetSelectorStandard__vfunc_2: u64 = 47194;
-/// `CombatTargetSelectorStandard::vfunc_3` at 0x862120 (rtti, high); signature (low): `undefined vfunc_3(CombatTargetSelectorStandard * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelectorStandard__vfunc_3: u64 = 47192;
-/// `CombatTargetSelectorStandard::vfunc_4` at 0x862200 (rtti, high); signature (low): `undefined vfunc_4(CombatTargetSelectorStandard * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelectorStandard__vfunc_4: u64 = 47193;
-/// `CombatTargetSelectorStandard::vfunc_6` at 0x862040 (rtti, high); signature (low): `undefined4 * vfunc_6(CombatTargetSelectorStandard * this, undefined4 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTargetSelectorStandard__vfunc_6: u64 = 47191;
-/// `CombatTargetSelectorStandard::vfunc_6_sub0` at 0x8622e0 (callgraph, medium); signature (untiered): `int * vfunc_6_sub0(longlong param_1, int * param_2, BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<1024>_>_vtbl * param_3, ulonglong param_4)`
-pub const CombatTargetSelectorStandard__vfunc_6_sub0: u64 = 47195;
-/// `CombatThreat::ctor` at 0x863560 (layout_inference, high); signature (low): `CombatThreat * ctor(CombatThreat * this, longlong * param_2, undefined4 param_3, undefined4 param_4, float param_5)`
-pub const CombatThreat__ctor: u64 = 47224;
-/// `CombatThreat::vdtor` at 0x865230 (slot_propagation, medium); signature (low): `CombatThreat * vdtor(CombatThreat * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatThreat__vdtor: u64 = 47248;
-/// `CombatThreat::vfunc_2` at 0x865220 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatThreat__vfunc_2: u64 = 47247;
-/// `CombatThreat::vfunc_3` at 0x8638a0 (rtti, high); signature (low): `undefined vfunc_3(CombatThreat * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatThreat__vfunc_3: u64 = 47229;
-/// `CombatThreat::vfunc_4` at 0x8639d0 (rtti, high); signature (low): `undefined vfunc_4(CombatThreat * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatThreat__vfunc_4: u64 = 47230;
-/// `CombatTrackTargetAimController::ctor` at 0x80ab90 (layout_inference, high); signature (low): `CombatTrackTargetAimController * ctor(CombatTrackTargetAimController * this, undefined8 param_1, undefined4 param_2, float param_3, undefined1 param_4)`
-pub const CombatTrackTargetAimController__ctor: u64 = 44369;
-/// `CombatTrackTargetAimController::vdtor` at 0x80d500 (layout_inference, medium); signature (low): `CombatTrackTargetAimController * vdtor(CombatTrackTargetAimController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTrackTargetAimController__vdtor: u64 = 44401;
-/// `CombatTrackTargetAimController::vfunc_2` at 0x80aff0 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatTrackTargetAimController__vfunc_2: u64 = 44374;
-/// `CombatTrackTargetAimController::vfunc_3` at 0x80af40 (rtti, high); signature (low): `undefined vfunc_3(CombatTrackTargetAimController * this, longlong param_1)`
-pub const CombatTrackTargetAimController__vfunc_3: u64 = 44372;
-/// `CombatTrackTargetAimController::vfunc_4` at 0x80afa0 (rtti, high); signature (low): `undefined vfunc_4(CombatTrackTargetAimController * this, longlong param_1)`
-pub const CombatTrackTargetAimController__vfunc_4: u64 = 44373;
-/// `CombatTrackTargetAimController::vfunc_8` at 0x80abe0 (rtti, high); signature (high): `undefined vfunc_8(CombatTrackTargetAimController * this)`
-pub const CombatTrackTargetAimController__vfunc_8: u64 = 44370;
-/// `CombatTrackTargetAimController::vfunc_8_sub0` at 0x80a4b0 (callgraph, medium); signature (untiered): `undefined1 vfunc_8_sub0(longlong param_1)`
-pub const CombatTrackTargetAimController__vfunc_8_sub0: u64 = 44359;
-/// `CombatTrackTargetAimController::vfunc_8_sub1` at 0x80a650 (callgraph, medium); signature (untiered): `undefined8 vfunc_8_sub1(longlong param_1, undefined4 * param_2)`
-pub const CombatTrackTargetAimController__vfunc_8_sub1: u64 = 44360;
-/// `CombatTrackTargetAimController::vfunc_9` at 0x80ae40 (rtti, high); signature (low): `undefined8 * vfunc_9(CombatTrackTargetAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatTrackTargetAimController__vfunc_9: u64 = 44371;
-/// `CombineAdler32` at 0xa9abb0 (decompiler, medium); signature (medium): `uint CombineAdler32(uint param_1, uint param_2, longlong param_3)`
-pub const CombineAdler32: u64 = 56939;
-/// `CombineCrc32` at 0xa9acb0 (decompiler, medium); signature (medium): `ulonglong CombineCrc32(uint param_1, uint param_2, ulonglong param_3)`
-pub const CombineCrc32: u64 = 56941;
-/// `CombineDwordWithFFFFHighWord` at 0x9ba420 (decompiler, high); signature (high): `ulonglong CombineDwordWithFFFFHighWord(ulonglong param_1)`
-pub const CombineDwordWithFFFFHighWord: u64 = 53516;
-/// `CombineQuatTransformsAddTranslation` at 0xf5fa80 (decompiler, medium); signature (medium): `float * CombineQuatTransformsAddTranslation(float * param_1, float * param_2, float * param_3)`
-pub const CombineQuatTransformsAddTranslation: u64 = 72644;
-/// `CombineScaleOffsetPairs4` at 0xd6e3e0 (decompiler, medium); signature (medium): `undefined CombineScaleOffsetPairs4(float * param_1, float * param_2)`
-pub const CombineScaleOffsetPairs4: u64 = 84448;
-/// `CommandEffect::ctor` at 0x5c4720 (layout_inference, high); signature (low): `CommandEffect * ctor(CommandEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
-pub const CommandEffect__ctor: u64 = 34251;
-/// `CommandEffect::ctor` at 0x5c4760 (layout_inference, medium); signature (low): `undefined ctor(CommandEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__ctor_2: u64 = 34252;
-/// `CommandEffect::vdtor` at 0x5c4e40 (layout_inference, medium); signature (low): `CommandEffect * vdtor(CommandEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vdtor: u64 = 34262;
-/// `CommandEffect::vfunc_1` at 0x5c48a0 (rtti, medium); signature (low): `undefined vfunc_1(CommandEffect * this, longlong * param_1)`
-pub const CommandEffect__vfunc_1: u64 = 34254;
-/// `CommandEffect::vfunc_10` at 0x5c4bb0 (rtti, medium); signature (low): `undefined vfunc_10(CommandEffect * this, undefined8 param_1)`
-pub const CommandEffect__vfunc_10: u64 = 34259;
-/// `CommandEffect::vfunc_18` at 0x5c47a0 (rtti, medium); signature (low): `undefined vfunc_18(CommandEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_18: u64 = 34253;
-/// `CommandEffect::vfunc_20` at 0x5c4c90 (rtti, high); signature (low): `undefined vfunc_20(CommandEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_20: u64 = 34260;
-/// `CommandEffect::vfunc_21` at 0x5c4d80 (rtti, high); signature (low): `undefined vfunc_21(CommandEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_21: u64 = 34261;
-/// `CommandEffect::vfunc_3` at 0x5c4900 (rtti, medium); signature (high): `longlong vfunc_3(CommandEffect * this)`
-pub const CommandEffect__vfunc_3: u64 = 34255;
-/// `CommandEffect::vfunc_4` at 0x5c4970 (rtti, high); signature (low): `undefined vfunc_4(CommandEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_4: u64 = 34256;
-/// `CommandEffect::vfunc_8` at 0x5c4a70 (rtti, high); signature (low): `undefined vfunc_8(CommandEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_8: u64 = 34257;
-/// `CommandEffect::vfunc_9` at 0x5c4b10 (rtti, high); signature (low): `undefined vfunc_9(CommandEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandEffect__vfunc_9: u64 = 34258;
-/// `CommandSummonedEffect::ctor` at 0x5c4ea0 (layout_inference, high); signature (low): `CommandSummonedEffect * ctor(CommandSummonedEffect * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
-pub const CommandSummonedEffect__ctor: u64 = 34263;
-/// `CommandSummonedEffect::vdtor` at 0x5c5100 (slot_propagation, medium); signature (low): `CommandSummonedEffect * vdtor(CommandSummonedEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandSummonedEffect__vdtor: u64 = 34267;
-/// `CommandSummonedEffect::vfunc_20` at 0x5c4fb0 (rtti, high); signature (low): `undefined vfunc_20(CommandSummonedEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CommandSummonedEffect__vfunc_20: u64 = 34265;
-/// `CommandSummonedEffect::vfunc_20_sub0` at 0x6d8b50 (callgraph, medium); signature (untiered): `undefined vfunc_20_sub0(longlong * param_1, longlong * param_2)`
-pub const CommandSummonedEffect__vfunc_20_sub0: u64 = 38801;
-/// `CommitBlockPagesIfDecommitted` at 0x10e4290 (decompiler, medium); signature (medium): `undefined8 CommitBlockPagesIfDecommitted(undefined8 param_1, ulonglong * param_2)`
-pub const CommitBlockPagesIfDecommitted: u64 = 80663;
-/// `CompactArray40ToReferencedEntries` at 0x11e75a0 (decompiler, medium); signature (untiered): `undefined CompactArray40ToReferencedEntries(longlong param_1)`
-pub const CompactArray40ToReferencedEntries: u64 = 91176;
-/// `CompactArrayRemovingNulls` at 0x1c7a60 (decompiler, medium); signature (untiered): `undefined CompactArrayRemovingNulls(longlong param_1)`
-pub const CompactArrayRemovingNulls: u64 = 13872;
-/// `CompactChildArrayAndReindex` at 0x21fc10 (decompiler, medium); signature (untiered): `undefined CompactChildArrayAndReindex(longlong param_1)`
-pub const CompactChildArrayAndReindex: u64 = 15748;
-/// `CompactEntryArrays` at 0xf56160 (decompiler, medium); signature (untiered): `undefined CompactEntryArrays(longlong param_1, undefined8 param_2, undefined8 param_3, longlong param_4)`
-pub const CompactEntryArrays: u64 = 72443;
-/// `CompactPtrArray` at 0x24af00 (decompiler, medium); signature (untiered): `undefined CompactPtrArray(longlong param_1)`
-pub const CompactPtrArray: u64 = 16382;
-/// `CompactRefPtrArray` at 0x21fa20 (decompiler, medium); signature (untiered): `undefined CompactRefPtrArray(longlong param_1, undefined8 param_2, longlong * param_3, undefined8 param_4)`
-pub const CompactRefPtrArray: u64 = 15747;
-/// `CompactingStore::MoveCallback::vdtor` at 0xce4720 (layout_inference, medium); signature (low): `MoveCallback * vdtor(MoveCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompactingStore__MoveCallback__vdtor: u64 = 68278;
-/// `CompactingStore::NoopMoveCallback::vdtor` at 0xce4760 (layout_inference, medium); signature (low): `NoopMoveCallback * vdtor(NoopMoveCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompactingStore__NoopMoveCallback__vdtor: u64 = 68280;
-/// `CompactingStore::NoopMoveCallback::vfunc_0` at 0xce4750 (rtti, high); signature (low): `undefined vfunc_0(void)`
-pub const CompactingStore__NoopMoveCallback__vfunc_0: u64 = 68279;
-/// `CompactingStore::Store::ctor` at 0xce4a40 (layout_inference, high); signature (low): `Store * ctor(Store * this, ulonglong param_1, ulonglong param_2)`
-pub const CompactingStore__Store__ctor: u64 = 68294;
-/// `CompactingStore::Store::ctor` at 0xce4bf0 (layout_inference, medium); signature (high): `undefined ctor(Store * this)`
-pub const CompactingStore__Store__ctor_2: u64 = 68295;
-/// `CompactingStore::Store::ctor_caller` at 0xcde070 (callgraph, medium); signature (untiered): `undefined ctor_caller(longlong param_1, undefined8 param_2, undefined4 param_3)`
-pub const CompactingStore__Store__ctor_caller: u64 = 68112;
-/// `CompactingStore::Store::vdtor` at 0xce7410 (layout_inference, medium); signature (low): `Store * vdtor(Store * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CompactingStore__Store__vdtor: u64 = 68339;
-/// `CompactingStore::Store::vfunc_1` at 0xce59e0 (rtti, high); signature (low): `undefined8 vfunc_1(Store * this, longlong * param_1)`
-pub const CompactingStore__Store__vfunc_1: u64 = 68307;
-/// `CompactingStore::Store::vfunc_2` at 0xce59f0 (rtti, high); signature (low): `undefined vfunc_2(Store * this, undefined8 * param_1)`
-pub const CompactingStore__Store__vfunc_2: u64 = 68308;
-/// `CompactingStore::Store::vfunc_3` at 0xce5be0 (rtti, high); signature (low): `undefined8 vfunc_3(Store * this, ulonglong param_1)`
-pub const CompactingStore__Store__vfunc_3: u64 = 68310;
-/// `Compare24ByteArraysEqual` at 0x18d980 (decompiler, medium); signature (medium): `char Compare24ByteArraysEqual(longlong * param_1, longlong * param_2)`
-pub const Compare24ByteArraysEqual: u64 = 12861;
-/// `Compare24ByteArraysEqual_2` at 0x18da10 (decompiler, medium); signature (medium): `char Compare24ByteArraysEqual_2(longlong * param_1, longlong * param_2)`
-pub const Compare24ByteArraysEqual_2: u64 = 12862;
-/// `CompareActorHandlesByDistanceToPlayer` at 0x785dd0 (decompiler, medium); signature (medium): `ulonglong CompareActorHandlesByDistanceToPlayer(uint * param_1, uint * param_2)`
-pub const CompareActorHandlesByDistanceToPlayer: u64 = 41403;
-/// `CompareByByteFieldDEDescending` at 0x188c40 (decompiler, medium); signature (medium): `int CompareByByteFieldDEDescending(undefined8 * param_1, undefined8 * param_2)`
-pub const CompareByByteFieldDEDescending: u64 = 12745;
-/// `CompareByDistanceAndFacingWeight` at 0x5e50c0 (decompiler, medium); signature (medium): `undefined8 CompareByDistanceAndFacingWeight(float * param_1, float * param_2)`
-pub const CompareByDistanceAndFacingWeight: u64 = 35011;

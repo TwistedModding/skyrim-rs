@@ -3,6 +3,230 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Debug::ToggleMenus` at 0xa1f9e0 (papyrus_native, high); signature (medium): `void ToggleMenus(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the same toggle of UI+0x1c0, no echo (high); signature `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*)`
+pub const Papyrus__Debug__ToggleMenus: u64 = 55390;
+/// `Papyrus::Debug::ToggleMenus` as a function pointer type (high).
+pub type Papyrus__Debug__ToggleMenus_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void);
+/// `Papyrus::Debug::Trace` at 0xa1fa00 (papyrus_native, high); signature (medium): `void Trace(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, uint a1)`
+pub const Papyrus__Debug__Trace: u64 = 55391;
+/// `Papyrus::Debug::TraceStack` at 0xa1faa0 (papyrus_native, high); signature (medium): `void TraceStack(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, uint a1)`
+pub const Papyrus__Debug__TraceStack: u64 = 55392;
+/// `Papyrus::Debug::TraceUser` at 0xa1fb20 (papyrus_native, high); signature (medium): `bool TraceUser(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, BSFixedString * a1, uint a2)`
+pub const Papyrus__Debug__TraceUser: u64 = 55393;
+/// `Papyrus::Debug::TraceUser_sub0` at 0x9d8d40 (callgraph, medium); signature (untiered): `undefined8 TraceUser_sub0(longlong param_1, ulonglong * param_2, undefined8 param_3, int param_4)`
+pub const Papyrus__Debug__TraceUser_sub0: u64 = 53933;
+/// `Papyrus::EffectShader::Play` at 0xa33fa0 (papyrus_native, high); signature (medium): `void Play(IVirtualMachine * vm, uint stackId, TESEffectShader * self, TESObjectREFR * a0, float a1)`
+pub const Papyrus__EffectShader__Play: u64 = 55778;
+/// `Papyrus::EffectShader::RegisterFuncs` at 0xa34130 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__EffectShader__RegisterFuncs: u64 = 55782;
+/// `Papyrus::EffectShader::Stop` at 0xa340d0 (papyrus_native, high); signature (medium): `void Stop(IVirtualMachine * vm, uint stackId, TESEffectShader * self, TESObjectREFR * a0)`
+pub const Papyrus__EffectShader__Stop: u64 = 55779;
+/// `Papyrus::Enchantment::IsHostile` at 0xa22f00 (papyrus_native, high); signature (medium): `bool IsHostile(IVirtualMachine * vm, uint stackId, EnchantmentItem * self)`
+pub const Papyrus__Enchantment__IsHostile: u64 = 55441;
+/// `Papyrus::Enchantment::RegisterFuncs` at 0xa22dc0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Enchantment__RegisterFuncs: u64 = 55439;
+/// `Papyrus::Faction::CanPayCrimeGold` at 0xa34990 (papyrus_native, high); signature (medium): `bool CanPayCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__CanPayCrimeGold: u64 = 55793;
+/// `Papyrus::Faction::GetCrimeGold` at 0xa349d0 (papyrus_native, high); signature (medium): `uint GetCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetCrimeGold: u64 = 55794;
+/// `Papyrus::Faction::GetCrimeGoldNonViolent` at 0xa349f0 (papyrus_native, high); signature (medium): `uint GetCrimeGoldNonViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetCrimeGoldNonViolent: u64 = 55795;
+/// `Papyrus::Faction::GetCrimeGoldViolent` at 0xa34a10 (papyrus_native, high); signature (medium): `uint GetCrimeGoldViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetCrimeGoldViolent: u64 = 55796;
+/// `Papyrus::Faction::GetInfamy` at 0xa34a30 (papyrus_native, high); signature (medium): `uint GetInfamy(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetInfamy: u64 = 55797;
+/// `Papyrus::Faction::GetInfamyNonViolent` at 0xa34a50 (papyrus_native, high); signature (medium): `uint GetInfamyNonViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetInfamyNonViolent: u64 = 55798;
+/// `Papyrus::Faction::GetInfamyViolent` at 0xa34a70 (papyrus_native, high); signature (medium): `uint GetInfamyViolent(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetInfamyViolent: u64 = 55799;
+/// `Papyrus::Faction::GetReaction` at 0xa366c0 (papyrus_native, high); signature (medium): `int GetReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0)`
+pub const Papyrus__Faction__GetReaction: u64 = 55839;
+/// `Papyrus::Faction::GetStolenItemValueCrime` at 0xa34a90 (papyrus_native, high); signature (medium): `uint GetStolenItemValueCrime(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetStolenItemValueCrime: u64 = 55800;
+/// `Papyrus::Faction::GetStolenItemValueNoCrime` at 0xa34ab0 (papyrus_native, high); signature (medium): `uint GetStolenItemValueNoCrime(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__GetStolenItemValueNoCrime: u64 = 55801;
+/// `Papyrus::Faction::IsFactionInCrimeGroup` at 0xa366d0 (papyrus_native, high); signature (medium): `bool IsFactionInCrimeGroup(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0)`
+pub const Papyrus__Faction__IsFactionInCrimeGroup: u64 = 55840;
+/// `Papyrus::Faction::IsPlayerExpelled` at 0xa366e0 (papyrus_native, high); signature (medium): `bool IsPlayerExpelled(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__IsPlayerExpelled: u64 = 55841;
+/// `Papyrus::Faction::ModCrimeGold` at 0xa34ad0 (papyrus_native, high); signature (medium): `void ModCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, int a0, bool a1)`
+pub const Papyrus__Faction__ModCrimeGold: u64 = 55802;
+/// `Papyrus::Faction::ModReaction` at 0xa34af0 (papyrus_native, high); signature (medium): `void ModReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, int a1)`
+pub const Papyrus__Faction__ModReaction: u64 = 55803;
+/// `Papyrus::Faction::PlayerPayCrimeGold` at 0xa34b30 (papyrus_native, high); signature (medium): `void PlayerPayCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0, bool a1)`
+pub const Papyrus__Faction__PlayerPayCrimeGold: u64 = 55805;
+/// `Papyrus::Faction::RegisterFuncs` at 0xa34ef0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Faction__RegisterFuncs: u64 = 55815;
+/// `Papyrus::Faction::SendAssaultAlarm` at 0xa34b50 (papyrus_native, high); signature (medium): `void SendAssaultAlarm(IVirtualMachine * vm, uint stackId, TESFaction * self)`
+pub const Papyrus__Faction__SendAssaultAlarm: u64 = 55806;
+/// `Papyrus::Faction::SendPlayerToJail` at 0xa34c40 (papyrus_native, high); signature (medium): `bool SendPlayerToJail(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0, bool a1)`
+pub const Papyrus__Faction__SendPlayerToJail: u64 = 55807;
+/// `Papyrus::Faction::SetAlly` at 0xa34d50 (papyrus_native, high); signature (medium): `void SetAlly(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, bool a1, bool a2)`
+pub const Papyrus__Faction__SetAlly: u64 = 55808;
+/// `Papyrus::Faction::SetCrimeGold` at 0xa34dd0 (papyrus_native, high); signature (medium): `void SetCrimeGold(IVirtualMachine * vm, uint stackId, TESFaction * self, uint a0)`
+pub const Papyrus__Faction__SetCrimeGold: u64 = 55809;
+/// `Papyrus::Faction::SetCrimeGoldViolent` at 0xa34df0 (papyrus_native, high); signature (medium): `void SetCrimeGoldViolent(IVirtualMachine * vm, uint stackId, TESFaction * self, uint a0)`
+pub const Papyrus__Faction__SetCrimeGoldViolent: u64 = 55810;
+/// `Papyrus::Faction::SetEnemy` at 0xa34e10 (papyrus_native, high); signature (medium): `void SetEnemy(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, bool a1, bool a2)`
+pub const Papyrus__Faction__SetEnemy: u64 = 55811;
+/// `Papyrus::Faction::SetPlayerEnemy` at 0xa366f0 (papyrus_native, high); signature (medium): `void SetPlayerEnemy(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0)`
+pub const Papyrus__Faction__SetPlayerEnemy: u64 = 55842;
+/// `Papyrus::Faction::SetPlayerExpelled` at 0xa36700 (papyrus_native, high); signature (medium): `void SetPlayerExpelled(IVirtualMachine * vm, uint stackId, TESFaction * self, bool a0)`
+pub const Papyrus__Faction__SetPlayerExpelled: u64 = 55843;
+/// `Papyrus::Faction::SetReaction` at 0xa34e90 (papyrus_native, high); signature (medium): `void SetReaction(IVirtualMachine * vm, uint stackId, TESFaction * self, TESFaction * a0, int a1)`
+pub const Papyrus__Faction__SetReaction: u64 = 55812;
+/// `Papyrus::Form::GetFormID` at 0xa392a0 (papyrus_native, high); signature (medium): `uint GetFormID(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__GetFormID: u64 = 55902;
+/// `Papyrus::Form::GetGoldValue` at 0xa37690 (papyrus_native, high); signature (medium): `int GetGoldValue(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__GetGoldValue: u64 = 55869;
+/// `Papyrus::Form::HasKeyword` at 0xa376d0 (papyrus_native, high); signature (medium): `bool HasKeyword(IVirtualMachine * vm, uint stackId, TESForm * self, BGSKeyword * a0)`
+pub const Papyrus__Form__HasKeyword: u64 = 55870;
+/// `Papyrus::Form::PlayerKnows` at 0xa392b0 (papyrus_native, high); signature (medium): `bool PlayerKnows(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__PlayerKnows: u64 = 55903;
+/// `Papyrus::Form::RegisterForAnimationEvent` at 0xa37740 (papyrus_native, high); signature (medium): `bool RegisterForAnimationEvent(IVirtualMachine * vm, uint stackId, TESForm * self, TESObjectREFR * a0, BSFixedString * a1)`
+pub const Papyrus__Form__RegisterForAnimationEvent: u64 = 55871;
+/// `Papyrus::Form::RegisterForLOS` at 0xa37820 (papyrus_native, high); signature (medium): `void RegisterForLOS(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
+pub const Papyrus__Form__RegisterForLOS: u64 = 55872;
+/// `Papyrus::Form::RegisterForSingleLOSGain` at 0xa378b0 (papyrus_native, high); signature (medium): `void RegisterForSingleLOSGain(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
+pub const Papyrus__Form__RegisterForSingleLOSGain: u64 = 55873;
+/// `Papyrus::Form::RegisterForSingleLOSLost` at 0xa37940 (papyrus_native, high); signature (medium): `void RegisterForSingleLOSLost(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
+pub const Papyrus__Form__RegisterForSingleLOSLost: u64 = 55874;
+/// `Papyrus::Form::RegisterForSingleUpdate` at 0xa379d0 (papyrus_native, high); signature (medium): `void RegisterForSingleUpdate(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
+pub const Papyrus__Form__RegisterForSingleUpdate: u64 = 55875;
+/// `Papyrus::Form::RegisterForSingleUpdateGameTime` at 0xa37a30 (papyrus_native, high); signature (medium): `void RegisterForSingleUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
+pub const Papyrus__Form__RegisterForSingleUpdateGameTime: u64 = 55876;
+/// `Papyrus::Form::RegisterForSleep` at 0xa37a90 (papyrus_native, high); signature (medium): `void RegisterForSleep(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__RegisterForSleep: u64 = 55877;
+/// `Papyrus::Form::RegisterForTrackedStatsEvent` at 0xa37ae0 (papyrus_native, high); signature (medium): `void RegisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__RegisterForTrackedStatsEvent: u64 = 55878;
+/// `Papyrus::Form::RegisterForUpdate` at 0xa37b30 (papyrus_native, high); signature (medium): `void RegisterForUpdate(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
+pub const Papyrus__Form__RegisterForUpdate: u64 = 55879;
+/// `Papyrus::Form::RegisterForUpdateGameTime` at 0xa37b90 (papyrus_native, high); signature (medium): `void RegisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self, float a0)`
+pub const Papyrus__Form__RegisterForUpdateGameTime: u64 = 55880;
+/// `Papyrus::Form::RegisterFuncs` at 0xa37fe0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Form__RegisterFuncs: u64 = 55890;
+/// `Papyrus::Form::StartObjectProfiling` at 0xa37bf0 (papyrus_native, high); signature (medium): `void StartObjectProfiling(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__StartObjectProfiling: u64 = 55881;
+/// `Papyrus::Form::StopObjectProfiling` at 0xa37c80 (papyrus_native, high); signature (medium): `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__StopObjectProfiling: u64 = 55882;
+/// `Papyrus::Form::UnregisterForAnimationEvent` at 0xa37d10 (papyrus_native, high); signature (medium): `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, TESForm * self, TESObjectREFR * a0, BSFixedString * a1)`
+pub const Papyrus__Form__UnregisterForAnimationEvent: u64 = 55883;
+/// `Papyrus::Form::UnregisterForLOS` at 0xa37de0 (papyrus_native, high); signature (medium): `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, TESForm * self, Actor * a0, TESObjectREFR * a1)`
+pub const Papyrus__Form__UnregisterForLOS: u64 = 55884;
+/// `Papyrus::Form::UnregisterForSleep` at 0xa37e80 (papyrus_native, high); signature (medium): `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__UnregisterForSleep: u64 = 55885;
+/// `Papyrus::Form::UnregisterForTrackedStatsEvent` at 0xa37ed0 (papyrus_native, high); signature (medium): `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__UnregisterForTrackedStatsEvent: u64 = 55886;
+/// `Papyrus::Form::UnregisterForUpdate` at 0xa37f20 (papyrus_native, high); signature (medium): `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__UnregisterForUpdate: u64 = 55887;
+/// `Papyrus::Form::UnregisterForUpdateGameTime` at 0xa37f70 (papyrus_native, high); signature (medium): `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, TESForm * self)`
+pub const Papyrus__Form__UnregisterForUpdateGameTime: u64 = 55888;
+/// `Papyrus::FormList::AddForm` at 0xa300b0 (papyrus_native, high); signature (medium): `void AddForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
+pub const Papyrus__FormList__AddForm: u64 = 55680;
+/// `Papyrus::FormList::Find` at 0xa2f580 (papyrus_native, high); signature (medium): `int Find(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
+pub const Papyrus__FormList__Find: u64 = 55669;
+/// `Papyrus::FormList::GetAt` at 0xa300c0 (papyrus_native, high); signature (medium): `TESForm * GetAt(IVirtualMachine * vm, uint stackId, BGSListForm * self, uint a0)`
+pub const Papyrus__FormList__GetAt: u64 = 55681;
+/// `Papyrus::FormList::GetSize` at 0xa2f5d0 (papyrus_native, high); signature (medium): `uint GetSize(IVirtualMachine * vm, uint stackId, BGSListForm * self)`
+pub const Papyrus__FormList__GetSize: u64 = 55670;
+/// `Papyrus::FormList::HasForm` at 0xa300d0 (papyrus_native, high); signature (medium): `bool HasForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
+pub const Papyrus__FormList__HasForm: u64 = 55682;
+/// `Papyrus::FormList::RegisterFuncs` at 0xa2f610 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__FormList__RegisterFuncs: u64 = 55671;
+/// `Papyrus::FormList::RemoveAddedForm` at 0xa300f0 (papyrus_native, high); signature (medium): `void RemoveAddedForm(IVirtualMachine * vm, uint stackId, BGSListForm * self, TESForm * a0)`
+pub const Papyrus__FormList__RemoveAddedForm: u64 = 55683;
+/// `Papyrus::FormList::Revert` at 0xa30100 (papyrus_native, high); signature (medium): `void Revert(IVirtualMachine * vm, uint stackId, BGSListForm * self)`
+pub const Papyrus__FormList__Revert: u64 = 55684;
+/// `Papyrus::Game::AddAchievement` at 0xa23dd0 (papyrus_native, high); signature (medium): `void AddAchievement(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, int a0)`
+pub const Papyrus__Game__AddAchievement: u64 = 55450;
+/// `Papyrus::Game::AddHavokBallAndSocketConstraint` at 0xa237c0 (papyrus_native, high); signature (medium): `bool AddHavokBallAndSocketConstraint(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1, TESObjectREFR * a2, BSFixedString * a3, float a4, float a5, float a6, float a7, float a8, float a9)`
+pub const Papyrus__Game__AddHavokBallAndSocketConstraint: u64 = 55447;
+/// `Papyrus::Game::AddPerkPoints` at 0xa23e50 (papyrus_native, high); signature (medium): `void AddPerkPoints(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, int a0)`
+pub const Papyrus__Game__AddPerkPoints: u64 = 55451;
+/// `Papyrus::Game::AdvanceSkill` at 0xa23d20 (papyrus_native, high); signature (medium): `void AdvanceSkill(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0, float a1)`
+pub const Papyrus__Game__AdvanceSkill: u64 = 55449;
+/// `Papyrus::Game::CalculateFavorCost` at 0xa23e90 (papyrus_native, high); signature (medium): `uint CalculateFavorCost(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
+pub const Papyrus__Game__CalculateFavorCost: u64 = 55453;
+/// `Papyrus::Game::ClearPrison` at 0xa2ace0 (papyrus_native, high); signature (medium): `void ClearPrison(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__ClearPrison: u64 = 55561;
+/// `Papyrus::Game::ClearTempEffects` at 0xa2acf0 (papyrus_native, high); signature (medium): `void ClearTempEffects(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__ClearTempEffects: u64 = 55562;
+/// `Papyrus::Game::DisablePlayerControls` at 0xa23ee0 (papyrus_native, high); signature (medium): `void DisablePlayerControls(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, uint a8)`; semantic: clears ControlMap bits (movement 0x401, fighting 0x40, looking 2, sneaking 0x80, menu 0x100) and, when camSwitch is set, writes PlayerControls.bDisablePOVChange[disablePOVType] = 1; it never touches ControlMap bit 5 (high); signature `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*, bool movement, bool fighting, bool camSwitch, bool looking, bool sneaking, bool menu, bool activate, bool journalTabs, u32 disablePOVType)`
+pub const Papyrus__Game__DisablePlayerControls: u64 = 55454;
+/// `Papyrus::Game::DisablePlayerControls` as a function pointer type (high).
+pub type Papyrus__Game__DisablePlayerControls_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, movement: bool, fighting: bool, camSwitch: bool, looking: bool, sneaking: bool, menu: bool, activate: bool, journalTabs: bool, disablePOVType: u32);
+/// `Papyrus::Game::DisablePlayerControls_sub0` at 0x7ae890 (callgraph, medium); signature (untiered): `undefined DisablePlayerControls_sub0(longlong param_1)`
+pub const Papyrus__Game__DisablePlayerControls_sub0: u64 = 42351;
+/// `Papyrus::Game::EnableFastTravel` at 0xa2ad00 (papyrus_native, high); signature (medium): `void EnableFastTravel(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
+pub const Papyrus__Game__EnableFastTravel: u64 = 55563;
+/// `Papyrus::Game::EnablePlayerControls` at 0xa23fc0 (papyrus_native, high); signature (medium): `void EnablePlayerControls(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, uint a8)`; semantic: sets the same ControlMap bits and, when camSwitch is set, writes bDisablePOVChange[disablePOVType] = 0 (high); signature `void (IVirtualMachine* vm, u32 stackId, StaticFunctionTag*, bool movement, bool fighting, bool camSwitch, bool looking, bool sneaking, bool menu, bool activate, bool journalTabs, u32 disablePOVType)`
+pub const Papyrus__Game__EnablePlayerControls: u64 = 55455;
+/// `Papyrus::Game::EnablePlayerControls` as a function pointer type (high).
+pub type Papyrus__Game__EnablePlayerControls_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, movement: bool, fighting: bool, camSwitch: bool, looking: bool, sneaking: bool, menu: bool, activate: bool, journalTabs: bool, disablePOVType: u32);
+/// `Papyrus::Game::FadeOutGame` at 0xa24070 (papyrus_native, high); signature (medium): `void FadeOutGame(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0, bool a1, float a2, float a3)`
+pub const Papyrus__Game__FadeOutGame: u64 = 55456;
+/// `Papyrus::Game::FastTravel` at 0xa240a0 (papyrus_native, high); signature (medium): `void FastTravel(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0)`
+pub const Papyrus__Game__FastTravel: u64 = 55457;
+/// `Papyrus::Game::FindClosestActor` at 0xa24700 (papyrus_native, high); signature (medium): `Actor * FindClosestActor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2, float a3)`
+pub const Papyrus__Game__FindClosestActor: u64 = 55462;
+/// `Papyrus::Game::FindClosestActor_sub0` at 0x787e10 (callgraph, medium); signature (untiered): `undefined FindClosestActor_sub0(void)`
+pub const Papyrus__Game__FindClosestActor_sub0: u64 = 41426;
+/// `Papyrus::Game::FindClosestReferenceOfAnyTypeInList` at 0xa242c0 (papyrus_native, high); signature (medium): `TESObjectREFR * FindClosestReferenceOfAnyTypeInList(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BGSListForm * a0, float a1, float a2, float a3, float a4)`
+pub const Papyrus__Game__FindClosestReferenceOfAnyTypeInList: u64 = 55459;
+/// `Papyrus::Game::FindClosestReferenceOfAnyTypeInList_sub0` at 0x1aa650 (callgraph, medium); signature (untiered): `bool FindClosestReferenceOfAnyTypeInList_sub0(undefined8 param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, longlong * param_5)`
+pub const Papyrus__Game__FindClosestReferenceOfAnyTypeInList_sub0: u64 = 13422;
+/// `Papyrus::Game::FindClosestReferenceOfType` at 0xa241a0 (papyrus_native, high); signature (medium): `TESObjectREFR * FindClosestReferenceOfType(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESForm * a0, float a1, float a2, float a3, float a4)`
+pub const Papyrus__Game__FindClosestReferenceOfType: u64 = 55458;
+/// `Papyrus::Game::FindClosestReferenceOfType_Walk` at 0x1ac870 (semantic, high); signature (untiered): `ulonglong FindClosestReferenceOfType_Walk(longlong param_1, undefined8 param_2, float * param_3, float param_4, float param_5, float param_6)`; semantic: a template instance of the same walk with an inlined functor (one per Papyrus Find* native): interior: TES+0xc0's references; exterior: the attached cells (state 7) of the loaded grid TES+0x78 whose 4096-unit square is within radius, then the worldspace's persistent cell (TES+0x148) (high); signature `u32 (TES* tes, Functor* f, const NiPoint3* origin, float radius, bool ignoreBounds, bool twoD)`
+pub const Papyrus__Game__FindClosestReferenceOfType_Walk: u64 = 13453;
+/// `Papyrus::Game::FindClosestReferenceOfType_Walk` as a function pointer type (high).
+pub type Papyrus__Game__FindClosestReferenceOfType_Walk_fn = unsafe extern "C" fn(tes: *mut crate::TES, f: *mut c_void, origin: *const crate::NiPoint3, radius: f32, ignoreBounds: bool, twoD: bool) -> u32;
+/// `Papyrus::Game::FindClosestReferenceOfType_sub0` at 0x1aa430 (callgraph, medium); signature (untiered): `bool FindClosestReferenceOfType_sub0(undefined8 param_1, undefined8 param_2, undefined4 * param_3, undefined8 param_4, longlong * param_5)`
+pub const Papyrus__Game__FindClosestReferenceOfType_sub0: u64 = 13420;
+/// `Papyrus::Game::FindRandomActor` at 0xa247a0 (papyrus_native, high); signature (medium): `Actor * FindRandomActor(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0, float a1, float a2, float a3)`
+pub const Papyrus__Game__FindRandomActor: u64 = 55463;
+/// `Papyrus::Game::FindRandomActor_sub0` at 0x787ea0 (callgraph, medium); signature (untiered): `undefined FindRandomActor_sub0(longlong param_1, float * param_2, float param_3, longlong param_4, char param_5)`
+pub const Papyrus__Game__FindRandomActor_sub0: u64 = 41428;
+/// `Papyrus::Game::FindRandomReferenceOfAnyTypeInList` at 0xa24570 (papyrus_native, high); signature (medium): `TESObjectREFR * FindRandomReferenceOfAnyTypeInList(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BGSListForm * a0, float a1, float a2, float a3, float a4)`
+pub const Papyrus__Game__FindRandomReferenceOfAnyTypeInList: u64 = 55461;
+/// `Papyrus::Game::FindRandomReferenceOfAnyTypeInList_sub0` at 0x1aa6d0 (callgraph, medium); signature (untiered): `bool FindRandomReferenceOfAnyTypeInList_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, longlong * param_5)`
+pub const Papyrus__Game__FindRandomReferenceOfAnyTypeInList_sub0: u64 = 13423;
+/// `Papyrus::Game::FindRandomReferenceOfType` at 0xa24450 (papyrus_native, high); signature (medium): `TESObjectREFR * FindRandomReferenceOfType(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESForm * a0, float a1, float a2, float a3, float a4)`
+pub const Papyrus__Game__FindRandomReferenceOfType: u64 = 55460;
+/// `Papyrus::Game::FindRandomReferenceOfType_sub0` at 0x1aa4b0 (callgraph, medium); signature (untiered): `bool FindRandomReferenceOfType_sub0(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4, longlong * param_5)`
+pub const Papyrus__Game__FindRandomReferenceOfType_sub0: u64 = 13421;
+/// `Papyrus::Game::ForceFirstPerson` at 0xa2ad20 (papyrus_native, high); signature (medium): `void ForceFirstPerson(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: exactly 12 bytes: 48 8B 0D <rel32> (mov rcx,[g_PlayerCamera_ptr]) + E9 <rel32> (jmp 0x8f8de0) (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused)`
+pub const Papyrus__Game__ForceFirstPerson: u64 = 55564;
+/// `Papyrus::Game::ForceFirstPerson` as a function pointer type (high).
+pub type Papyrus__Game__ForceFirstPerson_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void);
+/// `Papyrus::Game::ForceThirdPerson` at 0xa2ad30 (papyrus_native, high); signature (medium): `void ForceThirdPerson(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: exactly 12 bytes: mov rcx,[0x31a5478] + jmp 0x8f8f40 (high); signature `void (IVirtualMachine* vm, u32 stackId, void* unused)`
+pub const Papyrus__Game__ForceThirdPerson: u64 = 55565;
+/// `Papyrus::Game::ForceThirdPerson` as a function pointer type (high).
+pub type Papyrus__Game__ForceThirdPerson_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, unused: *mut c_void);
+/// `Papyrus::Game::GetForm` at 0xa2ad40 (papyrus_native, high); signature (medium): `TESForm * GetForm(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
+pub const Papyrus__Game__GetForm: u64 = 55566;
+/// `Papyrus::Game::GetFormFromFile` at 0xa24a10 (papyrus_native, high); signature (medium): `TESForm * GetFormFromFile(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0, BSFixedString * a1)`
+pub const Papyrus__Game__GetFormFromFile: u64 = 55465;
+/// `Papyrus::Game::GetGameSettingFloat` at 0xa24ad0 (papyrus_native, high); signature (medium): `float GetGameSettingFloat(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Game__GetGameSettingFloat: u64 = 55466;
+/// `Papyrus::Game::GetGameSettingInt` at 0xa24ba0 (papyrus_native, high); signature (medium): `int GetGameSettingInt(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Game__GetGameSettingInt: u64 = 55467;
+/// `Papyrus::Game::GetGameSettingString` at 0xa24c80 (papyrus_native, high); signature (medium): `bool GetGameSettingString(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
+pub const Papyrus__Game__GetGameSettingString: u64 = 55468;
+/// `Papyrus::Game::GetLocalizedNameForAmiibo` at 0xa25990 (papyrus_native, high); signature (medium): `BSFixedString * GetLocalizedNameForAmiibo(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
+pub const Papyrus__Game__GetLocalizedNameForAmiibo: u64 = 524049;
+/// `Papyrus::Game::GetPlayer` at 0xa24de0 (papyrus_native, high); signature (medium): `Actor * GetPlayer(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__GetPlayer: u64 = 55469;
+/// `Papyrus::Game::GetPlayerGrabbedRef` at 0xa24df0 (papyrus_native, high); signature (medium): `TESObjectREFR * GetPlayerGrabbedRef(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__GetPlayerGrabbedRef: u64 = 55470;
+/// `Papyrus::Game::GetPlayersLastRiddenHorse` at 0xa24e70 (papyrus_native, high); signature (medium): `Actor * GetPlayersLastRiddenHorse(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__GetPlayersLastRiddenHorse: u64 = 55471;
+/// `Papyrus::Game::GetRealHoursPassed` at 0xa25070 (papyrus_native, high); signature (medium): `float GetRealHoursPassed(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__GetRealHoursPassed: u64 = 55475;
+/// `Papyrus::Game::GetSecondsSinceLastAmiiboUsage` at 0xa25a50 (papyrus_native, high); signature (medium): `int GetSecondsSinceLastAmiiboUsage(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, uint a0)`
+pub const Papyrus__Game__GetSecondsSinceLastAmiiboUsage: u64 = 524052;
+/// `Papyrus::Game::GetSunPositionX` at 0xa24ef0 (papyrus_native, high); signature (medium): `float GetSunPositionX(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
+pub const Papyrus__Game__GetSunPositionX: u64 = 55472;
 /// `Papyrus::Game::GetSunPositionY` at 0xa24f70 (papyrus_native, high); signature (medium): `float GetSunPositionY(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Game__GetSunPositionY: u64 = 55473;
 /// `Papyrus::Game::GetSunPositionZ` at 0xa24ff0 (papyrus_native, high); signature (medium): `float GetSunPositionZ(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
@@ -303,8 +527,10 @@ pub const Papyrus__ObjectReference__ClearDestruction: u64 = 56151;
 pub const Papyrus__ObjectReference__CreateDetectionEvent: u64 = 56152;
 /// `Papyrus::ObjectReference::DamageObject` at 0xa45250 (papyrus_native, high); signature (medium): `bool DamageObject(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, float a0)`
 pub const Papyrus__ObjectReference__DamageObject: u64 = 56153;
-/// `Papyrus::ObjectReference::Delete` at 0xa45360 (papyrus_native, high); signature (low): `ulonglong Delete(longlong * param_1, undefined4 param_2, longlong * param_3, undefined8 param_4)`
+/// `Papyrus::ObjectReference::Delete` at 0xa45360 (papyrus_native, high); signature (low): `ulonglong Delete(longlong * param_1, undefined4 param_2, longlong * param_3, undefined8 param_4)`; semantic: refuses the player; SetDelete(true) (slot 35); unloads the 3D (TryLockedCallVfunc360, or SendRefMessageType18 when another thread is in its update phase); for created refs sets inGameFlags (+0x18) bit 0 (and clears 0x40) and queues DeleteFunctor, whose Run 0xa42da0 calls UnregisterReference(g_GarbageCollector, ref, true) 0x64dab0 (high); signature `bool (IVirtualMachine* vm, u32 stackId, TESObjectREFR* self)`
 pub const Papyrus__ObjectReference__Delete: u64 = 56154;
+/// `Papyrus::ObjectReference::Delete` as a function pointer type (high).
+pub type Papyrus__ObjectReference__Delete_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR) -> bool;
 /// `Papyrus::ObjectReference::Disable` at 0xa45510 (papyrus_native, high); signature (low): `undefined Disable(undefined8 param_1, undefined4 param_2, TESObjectREFR * param_3, undefined1 param_4)`
 pub const Papyrus__ObjectReference__Disable: u64 = 56155;
 /// `Papyrus::ObjectReference::DisableNoWait` at 0xa45540 (papyrus_native, high); signature (medium): `void DisableNoWait(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, bool a0)`
@@ -731,8 +957,10 @@ pub const Papyrus__Utility__Wait: u64 = 56816;
 pub const Papyrus__Utility__WaitGameTime: u64 = 56817;
 /// `Papyrus::Utility::WaitMenuMode` at 0xa65740 (papyrus_native, high); signature (medium): `bool WaitMenuMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, float a0)`
 pub const Papyrus__Utility__WaitMenuMode: u64 = 56818;
-/// `Papyrus::VisualEffect::Play` at 0xa1c850 (papyrus_native, high); signature (medium): `void Play(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0, float a1, TESObjectREFR * a2)`
+/// `Papyrus::VisualEffect::Play` at 0xa1c850 (papyrus_native, high); signature (medium): `void Play(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0, float a1, TESObjectREFR * a2)`; semantic: requires a loaded cell and 3D; facing kept only with BGSReferenceEffect+0x30 bit 0; art +0x20 -> CreateModelReferenceEffect, shader +0x28 -> PlayShaderReferenceEffect (high); signature `void (VM*, u32 stackId, BGSReferenceEffect* self, TESObjectREFR* target, float duration, TESObjectREFR* facing)`
 pub const Papyrus__VisualEffect__Play: u64 = 55308;
+/// `Papyrus::VisualEffect::Play` as a function pointer type (high).
+pub type Papyrus__VisualEffect__Play_fn = unsafe extern "C" fn(a0: *mut c_void, stackId: u32, self_: *mut crate::BGSReferenceEffect, target: *mut crate::TESObjectREFR, duration: f32, facing: *mut crate::TESObjectREFR);
 /// `Papyrus::VisualEffect::RegisterFuncs` at 0xa1ca70 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const Papyrus__VisualEffect__RegisterFuncs: u64 = 55311;
 /// `Papyrus::VisualEffect::Stop` at 0xa1c9d0 (papyrus_native, high); signature (medium): `void Stop(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0)`
@@ -747,8 +975,10 @@ pub const Papyrus__Weather__FindWeather: u64 = 56802;
 pub const Papyrus__Weather__FindWeather_sub0: u64 = 26256;
 /// `Papyrus::Weather::ForceActive` at 0xa63d70 (papyrus_native, high); signature (medium): `void ForceActive(IVirtualMachine * vm, uint stackId, TESWeather * self, bool a0)`
 pub const Papyrus__Weather__ForceActive: u64 = 56773;
-/// `Papyrus::Weather::GetClassification` at 0xa63dd0 (papyrus_native, high); signature (medium): `int GetClassification(IVirtualMachine * vm, uint stackId, TESWeather * self)`
+/// `Papyrus::Weather::GetClassification` at 0xa63dd0 (papyrus_native, high); signature (medium): `int GetClassification(IVirtualMachine * vm, uint stackId, TESWeather * self)`; semantic: returns 0 if +0x66f bit 0, 1 if bit 1, 2 if bit 2, 3 if bit 3, else -1 (high); signature `int (VM*, u32, TESWeather* self)`
 pub const Papyrus__Weather__GetClassification: u64 = 56775;
+/// `Papyrus::Weather::GetClassification` as a function pointer type (high).
+pub type Papyrus__Weather__GetClassification_fn = unsafe extern "C" fn(a0: *mut c_void, a1: u32, self_: *mut crate::TESWeather) -> i32;
 /// `Papyrus::Weather::GetCurrentWeather` at 0xa65130 (papyrus_native, high); signature (medium): `TESWeather * GetCurrentWeather(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Weather__GetCurrentWeather: u64 = 56803;
 /// `Papyrus::Weather::GetCurrentWeatherTransition` at 0xa65150 (papyrus_native, high); signature (medium): `float GetCurrentWeatherTransition(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
@@ -1811,8 +2041,10 @@ pub const PlayIdle60AndProcessStoryEvent: u64 = 39442;
 pub const PlayIdleAtIdleMarker: u64 = 29321;
 /// `PlayOkSoundAndInvokeCallbacks` at 0x1609bc0 (decompiler, medium); signature (untiered): `undefined PlayOkSoundAndInvokeCallbacks(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlayOkSoundAndInvokeCallbacks: u64 = 454596;
-/// `PlayShaderReferenceEffect` at 0x2f7420 (decompiler, medium); signature (untiered): `undefined PlayShaderReferenceEffect(longlong param_1, undefined8 param_2, undefined4 param_3, longlong param_4, uint param_5, undefined8 param_6, longlong param_7, undefined1 param_8)`
+/// `PlayShaderReferenceEffect` at 0x2f7420 (semantic, high); signature (untiered): `undefined PlayShaderReferenceEffect(longlong param_1, undefined8 param_2, undefined4 param_3, longlong param_4, uint param_5, undefined8 param_6, longlong param_7, undefined1 param_8)`; semantic: the engine's 'apply effect shader': OwnedController with +0x10 = shader (or an OwnedCameraEffectController when attachToCamera), then a ShaderReferenceEffect (0x138) through InitAndRegisterOrDestroy(effect, duration, param8) (high); signature `void (TESObjectREFR* target, TESEffectShader* shader, float duration, TESObjectREFR* facingTarget, bool attachToCamera, bool param6, NiAVObject* attachRoot, bool param8)`
 pub const PlayShaderReferenceEffect: u64 = 19872;
+/// `PlayShaderReferenceEffect` as a function pointer type (high).
+pub type PlayShaderReferenceEffect_fn = unsafe extern "C" fn(target: *mut crate::TESObjectREFR, shader: *mut crate::TESEffectShader, duration: f32, facingTarget: *mut crate::TESObjectREFR, attachToCamera: bool, param6: bool, attachRoot: *mut crate::NiAVObject, param8: bool);
 /// `PlaySoundAndInvokeCallbacks` at 0x15f1da0 (decompiler, medium); signature (untiered): `undefined PlaySoundAndInvokeCallbacks(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const PlaySoundAndInvokeCallbacks: u64 = 454406;
 /// `PlaySoundDescriptorAt` at 0x5598c0 (semantic, high); signature (untiered): `undefined PlaySoundDescriptorAt(longlong param_1, uint param_2, undefined4 * param_3, longlong param_4)`; semantic: fire-and-forget: build (flags|0x10), SetPosition, FollowNode, Play (high); signature `void (BGSSoundDescriptorForm* descriptor, uint32 flags, const NiPoint3* position, NiAVObject* follow)`
@@ -2705,6 +2937,10 @@ pub const PlayerControls__SetActivateEnabled: u64 = 42345;
 pub type PlayerControls__SetActivateEnabled_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls, enabled: bool);
 /// `PlayerControls::SetTurnRateFromLookInput` at 0x7b0790 (semantic, medium); signature (untiered): `undefined SetTurnRateFromLookInput(longlong param_1)`; semantic: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call) (medium); signature `void (PlayerControls* this)`
 pub const PlayerControls__SetTurnRateFromLookInput: u64 = 42373;
+/// `PlayerControls::UpdateMovementState` at 0x7b03c0 (semantic, high); signature (untiered): `undefined UpdateMovementState(longlong param_1)`; semantic: builds the player's flags1 movement bits each input update and stores them with SetMovementFlags: keeps 0x100/0x200/0x400 (sprint, sneak, swim); while moving adds direction bits 0-3 from GetMovementDirection, 0x10 or 0x20 by the sign of ActorState slot 6's float, and 0x80 (running) when a gamepad is connected or PlayerControls+0x49 is set, else 0x40 (walking); not moving: only the kept bits (high); signature `void (PlayerControls* this)`
+pub const PlayerControls__UpdateMovementState: u64 = 42371;
+/// `PlayerControls::UpdateMovementState` as a function pointer type (high).
+pub type PlayerControls__UpdateMovementState_fn = unsafe extern "C" fn(this: *mut crate::PlayerControls);
 /// `PlayerControls::ctor` at 0x7ad450 (layout_inference, high); signature (high): `PlayerControls * ctor(PlayerControls * this)`; semantic: sets the vtables and globals, registers 4 sinks, creates handlers (high); signature `PlayerControls* (PlayerControls* this)`
 pub const PlayerControls__ctor: u64 = 42336;
 /// `PlayerControls::ctor` as a function pointer type (high).
@@ -3183,6 +3419,10 @@ pub type ProcessLists__RefreshAllActors_fn = unsafe extern "C" fn(this: *mut c_v
 pub const ProcessLists__RemoveActorHandle: u64 = 41291;
 /// `ProcessLists::RemoveActorHandle` as a function pointer type (high).
 pub type ProcessLists__RemoveActorHandle_fn = unsafe extern "C" fn(this: *mut c_void, h: *mut c_void, level: i32);
+/// `ProcessLists::StopModelEffectsOnRef` at 0x785420 (semantic, high); signature (untiered): `int * StopModelEffectsOnRef(longlong param_1, longlong param_2, longlong param_3)`; semantic: under the spin lock +0x120 walks the temp-effect array +0x108 (u32 count +0x118); for each ModelReferenceEffect (GetRTTI walk to g_TypeNode_ModelReferenceEffect) whose target handle +0x38 is ref's handle and whose art +0xb8 is art sets the finished byte +0x40 = 1 (high); signature `void (ProcessLists* lists, TESObjectREFR* ref, BGSArtObject* art)`
+pub const ProcessLists__StopModelEffectsOnRef: u64 = 41396;
+/// `ProcessLists::StopModelEffectsOnRef` as a function pointer type (high).
+pub type ProcessLists__StopModelEffectsOnRef_fn = unsafe extern "C" fn(lists: *mut c_void, ref_: *mut crate::TESObjectREFR, art: *mut crate::BGSArtObject);
 /// `ProcessLists::StopShaderEffectsOnRef` at 0x785310 (semantic, high); signature (untiered): `int * StopShaderEffectsOnRef(longlong param_1, longlong param_2, longlong param_3)`; semantic: under the spin lock lists+0x120 walks the temp-effect array +0x108 (count +0x118), and for every ShaderReferenceEffect (TypeNode check) whose target handle +0x38 is ref and whose +0x108 is shader sets +0x40 = 1 (finish) (high); signature `void (ProcessLists* lists, TESObjectREFR* ref, TESEffectShader* shader)`
 pub const ProcessLists__StopShaderEffectsOnRef: u64 = 41395;
 /// `ProcessLists::StopShaderEffectsOnRef` as a function pointer type (high).
@@ -3991,6 +4231,8 @@ pub const QueueRefHandleMessageAndSetBusy: u64 = 52098;
 pub const QueueRefTaskType9: u64 = 36909;
 /// `QueueReferenceAnimationTask` at 0x194880 (decompiler, medium); signature (untiered): `undefined QueueReferenceAnimationTask(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const QueueReferenceAnimationTask: u64 = 13034;
+/// `QueueReferenceEnableOrDisable` at 0x345830 (semantic, medium); signature (untiered): `undefined QueueReferenceEnableOrDisable(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`; semantic: console 'disable' (false) / enable (true) path: under the critical section ID_401208 removes the ref from one pending list and adds it to the disable (ID_401209) or enable (ID_401215) list, processed later (medium); signature `void (TESObjectREFR* ref, bool enable)`
+pub const QueueReferenceEnableOrDisable: u64 = 21913;
 /// `QueueReferenceLoad` at 0x195c90 (decompiler, medium); signature (untiered): `undefined QueueReferenceLoad(longlong param_1, longlong * param_2, uint param_3, char param_4)`
 pub const QueueReferenceLoad: u64 = 13057;
 /// `QueueReferenceLoadForEntry` at 0x2d1fe0 (decompiler, medium); signature (untiered): `undefined8 QueueReferenceLoadForEntry(undefined8 * param_1, longlong * param_2)`
@@ -8043,335 +8285,3 @@ pub const ReleaseRefCountedArrayHolder_3: u64 = 53798;
 pub const ReleaseRefCountedArrayObjectPtr: u64 = 26657;
 /// `ReleaseRefCountedB0Object` at 0x47c800 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedB0Object(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseRefCountedB0Object: u64 = 28948;
-/// `ReleaseRefCountedBlock20` at 0x9ecd80 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedBlock20(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedBlock20: u64 = 54182;
-/// `ReleaseRefCountedBuffer` at 0x156b700 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedBuffer(longlong * param_1)`
-pub const ReleaseRefCountedBuffer: u64 = 107848;
-/// `ReleaseRefCountedElementsAndFreeArray` at 0x109c050 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedElementsAndFreeArray(longlong * param_1)`
-pub const ReleaseRefCountedElementsAndFreeArray: u64 = 79209;
-/// `ReleaseRefCountedEntry` at 0xd1c7f0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedEntry(undefined8 * param_1)`
-pub const ReleaseRefCountedEntry: u64 = 83177;
-/// `ReleaseRefCountedField10` at 0x71c450 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedField10(longlong param_1)`
-pub const ReleaseRefCountedField10: u64 = 39726;
-/// `ReleaseRefCountedField170` at 0x1a8ca0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedField170(longlong param_1)`
-pub const ReleaseRefCountedField170: u64 = 13397;
-/// `ReleaseRefCountedField20` at 0x11b6ab0 (decompiler, high); signature (high): `undefined ReleaseRefCountedField20(longlong param_1)`
-pub const ReleaseRefCountedField20: u64 = 90350;
-/// `ReleaseRefCountedField20InArrayRange` at 0x79ab60 (decompiler, high); signature (high): `undefined ReleaseRefCountedField20InArrayRange(longlong param_1, uint param_2, uint param_3)`
-pub const ReleaseRefCountedField20InArrayRange: u64 = 41816;
-/// `ReleaseRefCountedField20Thunk` at 0x1230270 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedField20Thunk(longlong param_1)`
-pub const ReleaseRefCountedField20Thunk: u64 = 92763;
-/// `ReleaseRefCountedField20_2` at 0x860a30 (decompiler, high); signature (high): `undefined ReleaseRefCountedField20_2(longlong param_1)`
-pub const ReleaseRefCountedField20_2: u64 = 47143;
-/// `ReleaseRefCountedField20_3` at 0x11c4d40 (decompiler, high); signature (high): `undefined ReleaseRefCountedField20_3(longlong param_1)`
-pub const ReleaseRefCountedField20_3: u64 = 90489;
-/// `ReleaseRefCountedField60` at 0x8141b0 (decompiler, high); signature (high): `undefined ReleaseRefCountedField60(longlong param_1)`
-pub const ReleaseRefCountedField60: u64 = 44596;
-/// `ReleaseRefCountedField8` at 0x1230280 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedField8(longlong param_1)`
-pub const ReleaseRefCountedField8: u64 = 92764;
-/// `ReleaseRefCountedField8_2` at 0xece020 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedField8_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
-pub const ReleaseRefCountedField8_2: u64 = 69826;
-/// `ReleaseRefCountedField8_3` at 0x71c320 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedField8_3(longlong param_1)`
-pub const ReleaseRefCountedField8_3: u64 = 39720;
-/// `ReleaseRefCountedFields08And10` at 0x78b870 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedFields08And10(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedFields08And10: u64 = 41488;
-/// `ReleaseRefCountedFields0And8` at 0x1055010 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedFields0And8(longlong * param_1)`
-pub const ReleaseRefCountedFields0And8: u64 = 78023;
-/// `ReleaseRefCountedFields20And8` at 0x8ce880 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedFields20And8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedFields20And8: u64 = 49668;
-/// `ReleaseRefCountedFields48And20` at 0x11c4ce0 (decompiler, high); signature (high): `undefined ReleaseRefCountedFields48And20(longlong param_1)`
-pub const ReleaseRefCountedFields48And20: u64 = 90488;
-/// `ReleaseRefCountedListObject` at 0x6bab20 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedListObject(undefined8 * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedListObject: u64 = 38134;
-/// `ReleaseRefCountedMapHolder` at 0x9cb000 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedMapHolder(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedMapHolder: u64 = 53748;
-/// `ReleaseRefCountedNamedArray` at 0x14cca40 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedNamedArray(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedNamedArray: u64 = 105125;
-/// `ReleaseRefCountedNodeWithInnerRefPtr` at 0x9b1040 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedNodeWithInnerRefPtr(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedNodeWithInnerRefPtr: u64 = 53391;
-/// `ReleaseRefCountedObject2F8` at 0x1212ca0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedObject2F8(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedObject2F8: u64 = 91867;
-/// `ReleaseRefCountedObject58` at 0x9cafb0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedObject58(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedObject58: u64 = 53747;
-/// `ReleaseRefCountedObject68` at 0x9ecd30 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedObject68(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedObject68: u64 = 54181;
-/// `ReleaseRefCountedObject78` at 0x11c4bc0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedObject78(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedObject78: u64 = 90483;
-/// `ReleaseRefCountedObjectPtr` at 0x865cb0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedObjectPtr(longlong * param_1)`
-pub const ReleaseRefCountedObjectPtr: u64 = 47264;
-/// `ReleaseRefCountedPairArray` at 0x11f7630 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPairArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPairArray: u64 = 91458;
-/// `ReleaseRefCountedPairArrayPtr` at 0x71c220 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPairArrayPtr(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPairArrayPtr: u64 = 39715;
-/// `ReleaseRefCountedPairArray_2` at 0x494040 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPairArray_2(longlong * param_1)`
-pub const ReleaseRefCountedPairArray_2: u64 = 29394;
-/// `ReleaseRefCountedPointer` at 0x1473f0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer(longlong * param_1)`
-pub const ReleaseRefCountedPointer: u64 = 10954;
-/// `ReleaseRefCountedPointerArray` at 0x222980 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointerArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray: u64 = 15822;
-/// `ReleaseRefCountedPointerArray_10` at 0x441100 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_10(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_10: u64 = 27119;
-/// `ReleaseRefCountedPointerArray_11` at 0x441060 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointerArray_11(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_11: u64 = 27118;
-/// `ReleaseRefCountedPointerArray_2` at 0x76a620 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_2(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_2: u64 = 40997;
-/// `ReleaseRefCountedPointerArray_3` at 0x5225e0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_3: u64 = 32042;
-/// `ReleaseRefCountedPointerArray_4` at 0x52eab0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_4: u64 = 32236;
-/// `ReleaseRefCountedPointerArray_5` at 0x52eb50 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_5(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_5: u64 = 32237;
-/// `ReleaseRefCountedPointerArray_6` at 0x52e970 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_6: u64 = 32234;
-/// `ReleaseRefCountedPointerArray_7` at 0x52ea10 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_7(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_7: u64 = 32235;
-/// `ReleaseRefCountedPointerArray_8` at 0x2021e0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_8(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_8: u64 = 15240;
-/// `ReleaseRefCountedPointerArray_9` at 0x202140 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointerArray_9(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPointerArray_9: u64 = 15239;
-/// `ReleaseRefCountedPointerFields` at 0x101df40 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointerFields(longlong * param_1)`
-pub const ReleaseRefCountedPointerFields: u64 = 77514;
-/// `ReleaseRefCountedPointerPair` at 0x1da330 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointerPair(longlong * param_1)`
-pub const ReleaseRefCountedPointerPair: u64 = 14291;
-/// `ReleaseRefCountedPointer_10` at 0x15754d0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_10(longlong * param_1)`
-pub const ReleaseRefCountedPointer_10: u64 = 108262;
-/// `ReleaseRefCountedPointer_11` at 0x2b5ff0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_11(longlong * param_1)`
-pub const ReleaseRefCountedPointer_11: u64 = 18815;
-/// `ReleaseRefCountedPointer_12` at 0x1b2940 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_12(longlong * param_1)`
-pub const ReleaseRefCountedPointer_12: u64 = 13586;
-/// `ReleaseRefCountedPointer_13` at 0xffe230 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_13(longlong * param_1)`
-pub const ReleaseRefCountedPointer_13: u64 = 76946;
-/// `ReleaseRefCountedPointer_14` at 0xec9ef0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_14(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 * param_4)`
-pub const ReleaseRefCountedPointer_14: u64 = 69718;
-/// `ReleaseRefCountedPointer_15` at 0xec9f50 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_15(longlong * param_1)`
-pub const ReleaseRefCountedPointer_15: u64 = 69721;
-/// `ReleaseRefCountedPointer_16` at 0xeda870 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_16(longlong * param_1)`
-pub const ReleaseRefCountedPointer_16: u64 = 70126;
-/// `ReleaseRefCountedPointer_17` at 0x6bab60 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_17(longlong * param_1)`
-pub const ReleaseRefCountedPointer_17: u64 = 38135;
-/// `ReleaseRefCountedPointer_18` at 0x220e30 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_18(longlong * param_1)`
-pub const ReleaseRefCountedPointer_18: u64 = 15779;
-/// `ReleaseRefCountedPointer_19` at 0x966b90 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_19(longlong * param_1)`
-pub const ReleaseRefCountedPointer_19: u64 = 52329;
-/// `ReleaseRefCountedPointer_2` at 0x1d1d90 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_2(longlong * param_1)`
-pub const ReleaseRefCountedPointer_2: u64 = 14101;
-/// `ReleaseRefCountedPointer_20` at 0x40e9c0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_20(longlong * param_1)`
-pub const ReleaseRefCountedPointer_20: u64 = 26173;
-/// `ReleaseRefCountedPointer_21` at 0x4c00e0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_21(longlong * param_1)`
-pub const ReleaseRefCountedPointer_21: u64 = 30278;
-/// `ReleaseRefCountedPointer_22` at 0xf75550 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_22(longlong * param_1)`
-pub const ReleaseRefCountedPointer_22: u64 = 73271;
-/// `ReleaseRefCountedPointer_23` at 0xf622b0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_23(longlong * param_1)`
-pub const ReleaseRefCountedPointer_23: u64 = 72722;
-/// `ReleaseRefCountedPointer_24` at 0x226970 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_24(longlong * param_1)`
-pub const ReleaseRefCountedPointer_24: u64 = 15930;
-/// `ReleaseRefCountedPointer_25` at 0xf5b090 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_25(longlong * param_1)`
-pub const ReleaseRefCountedPointer_25: u64 = 72510;
-/// `ReleaseRefCountedPointer_26` at 0x21ec50 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_26(longlong * param_1)`
-pub const ReleaseRefCountedPointer_26: u64 = 15732;
-/// `ReleaseRefCountedPointer_27` at 0xf61170 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_27(longlong * param_1)`
-pub const ReleaseRefCountedPointer_27: u64 = 72678;
-/// `ReleaseRefCountedPointer_28` at 0x435c20 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_28(longlong * param_1)`
-pub const ReleaseRefCountedPointer_28: u64 = 26889;
-/// `ReleaseRefCountedPointer_29` at 0xf7dd40 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_29(longlong * param_1)`
-pub const ReleaseRefCountedPointer_29: u64 = 73649;
-/// `ReleaseRefCountedPointer_3` at 0x3eb660 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_3(longlong * param_1)`
-pub const ReleaseRefCountedPointer_3: u64 = 25439;
-/// `ReleaseRefCountedPointer_30` at 0xf5b000 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_30(longlong * param_1)`
-pub const ReleaseRefCountedPointer_30: u64 = 72507;
-/// `ReleaseRefCountedPointer_31` at 0xfb46f0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_31(longlong * param_1)`
-pub const ReleaseRefCountedPointer_31: u64 = 71473;
-/// `ReleaseRefCountedPointer_32` at 0xf9a080 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_32(longlong * param_1)`
-pub const ReleaseRefCountedPointer_32: u64 = 74512;
-/// `ReleaseRefCountedPointer_33` at 0xf67020 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_33(longlong * param_1)`
-pub const ReleaseRefCountedPointer_33: u64 = 72847;
-/// `ReleaseRefCountedPointer_34` at 0xf85e80 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_34(longlong * param_1)`
-pub const ReleaseRefCountedPointer_34: u64 = 73868;
-/// `ReleaseRefCountedPointer_35` at 0xf72890 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_35(longlong * param_1)`
-pub const ReleaseRefCountedPointer_35: u64 = 73165;
-/// `ReleaseRefCountedPointer_36` at 0x2d1400 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_36(longlong * param_1)`
-pub const ReleaseRefCountedPointer_36: u64 = 19259;
-/// `ReleaseRefCountedPointer_37` at 0xf64440 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_37(longlong * param_1)`
-pub const ReleaseRefCountedPointer_37: u64 = 72797;
-/// `ReleaseRefCountedPointer_38` at 0x41cc00 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_38(longlong * param_1)`
-pub const ReleaseRefCountedPointer_38: u64 = 26358;
-/// `ReleaseRefCountedPointer_39` at 0x41cc30 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_39(longlong * param_1)`
-pub const ReleaseRefCountedPointer_39: u64 = 26359;
-/// `ReleaseRefCountedPointer_4` at 0x62c0e0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_4(longlong * param_1)`
-pub const ReleaseRefCountedPointer_4: u64 = 35828;
-/// `ReleaseRefCountedPointer_40` at 0x19af80 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_40(longlong * param_1)`
-pub const ReleaseRefCountedPointer_40: u64 = 13162;
-/// `ReleaseRefCountedPointer_41` at 0x2a8b70 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_41(longlong * param_1)`
-pub const ReleaseRefCountedPointer_41: u64 = 18681;
-/// `ReleaseRefCountedPointer_42` at 0x2d1430 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_42(longlong * param_1)`
-pub const ReleaseRefCountedPointer_42: u64 = 19260;
-/// `ReleaseRefCountedPointer_43` at 0x1b2910 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_43(longlong * param_1)`
-pub const ReleaseRefCountedPointer_43: u64 = 13585;
-/// `ReleaseRefCountedPointer_44` at 0x4411b0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_44(longlong * param_1)`
-pub const ReleaseRefCountedPointer_44: u64 = 27121;
-/// `ReleaseRefCountedPointer_45` at 0x4b6490 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_45(longlong * param_1)`
-pub const ReleaseRefCountedPointer_45: u64 = 30164;
-/// `ReleaseRefCountedPointer_46` at 0x4b8610 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_46(longlong * param_1)`
-pub const ReleaseRefCountedPointer_46: u64 = 30195;
-/// `ReleaseRefCountedPointer_47` at 0x50d8a0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_47(longlong * param_1)`
-pub const ReleaseRefCountedPointer_47: u64 = 31686;
-/// `ReleaseRefCountedPointer_48` at 0x512d70 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_48(longlong * param_1)`
-pub const ReleaseRefCountedPointer_48: u64 = 31768;
-/// `ReleaseRefCountedPointer_49` at 0x1f7950 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_49(longlong * param_1)`
-pub const ReleaseRefCountedPointer_49: u64 = 15057;
-/// `ReleaseRefCountedPointer_5` at 0x1b29d0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_5(longlong * param_1)`
-pub const ReleaseRefCountedPointer_5: u64 = 13589;
-/// `ReleaseRefCountedPointer_50` at 0x2023b0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_50(longlong * param_1)`
-pub const ReleaseRefCountedPointer_50: u64 = 15246;
-/// `ReleaseRefCountedPointer_51` at 0x2023e0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_51(longlong * param_1)`
-pub const ReleaseRefCountedPointer_51: u64 = 15247;
-/// `ReleaseRefCountedPointer_52` at 0x20b030 (decompiler, high); signature (high): `undefined ReleaseRefCountedPointer_52(longlong * param_1)`
-pub const ReleaseRefCountedPointer_52: u64 = 15399;
-/// `ReleaseRefCountedPointer_53` at 0x20b060 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_53(longlong * param_1)`
-pub const ReleaseRefCountedPointer_53: u64 = 15400;
-/// `ReleaseRefCountedPointer_54` at 0x21ebf0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_54(longlong * param_1)`
-pub const ReleaseRefCountedPointer_54: u64 = 15730;
-/// `ReleaseRefCountedPointer_55` at 0x2b5f90 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_55(longlong * param_1)`
-pub const ReleaseRefCountedPointer_55: u64 = 18813;
-/// `ReleaseRefCountedPointer_56` at 0x2d13d0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_56(longlong * param_1)`
-pub const ReleaseRefCountedPointer_56: u64 = 19258;
-/// `ReleaseRefCountedPointer_57` at 0x2f8040 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_57(longlong * param_1)`
-pub const ReleaseRefCountedPointer_57: u64 = 19889;
-/// `ReleaseRefCountedPointer_58` at 0x6bab90 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_58(longlong * param_1)`
-pub const ReleaseRefCountedPointer_58: u64 = 38136;
-/// `ReleaseRefCountedPointer_59` at 0x71c290 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPointer_59(longlong * param_1)`
-pub const ReleaseRefCountedPointer_59: u64 = 39717;
-/// `ReleaseRefCountedPointer_6` at 0x220e60 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_6(longlong * param_1)`
-pub const ReleaseRefCountedPointer_6: u64 = 15780;
-/// `ReleaseRefCountedPointer_60` at 0x71c2c0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPointer_60(longlong * param_1)`
-pub const ReleaseRefCountedPointer_60: u64 = 39718;
-/// `ReleaseRefCountedPointer_61` at 0x71c2f0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPointer_61(longlong * param_1)`
-pub const ReleaseRefCountedPointer_61: u64 = 39719;
-/// `ReleaseRefCountedPointer_62` at 0x71c360 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_62(longlong * param_1)`
-pub const ReleaseRefCountedPointer_62: u64 = 39721;
-/// `ReleaseRefCountedPointer_63` at 0x71c3c0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPointer_63(longlong * param_1)`
-pub const ReleaseRefCountedPointer_63: u64 = 39723;
-/// `ReleaseRefCountedPointer_64` at 0x7350d0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPointer_64(longlong * param_1)`
-pub const ReleaseRefCountedPointer_64: u64 = 40131;
-/// `ReleaseRefCountedPointer_65` at 0x735100 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPointer_65(longlong * param_1)`
-pub const ReleaseRefCountedPointer_65: u64 = 40132;
-/// `ReleaseRefCountedPointer_7` at 0x24da90 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_7(longlong * param_1)`
-pub const ReleaseRefCountedPointer_7: u64 = 16413;
-/// `ReleaseRefCountedPointer_8` at 0x21ec20 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_8(longlong * param_1)`
-pub const ReleaseRefCountedPointer_8: u64 = 15731;
-/// `ReleaseRefCountedPointer_9` at 0x1b29a0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPointer_9(longlong * param_1)`
-pub const ReleaseRefCountedPointer_9: u64 = 13588;
-/// `ReleaseRefCountedPtr` at 0x2d1360 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr(longlong * param_1)`
-pub const ReleaseRefCountedPtr: u64 = 19256;
-/// `ReleaseRefCountedPtrArray` at 0x91ba70 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArray(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArray: u64 = 51250;
-/// `ReleaseRefCountedPtrArrayAndFree` at 0x555c70 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArrayAndFree: u64 = 32939;
-/// `ReleaseRefCountedPtrArrayAndFree_2` at 0x78b740 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArrayAndFree_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArrayAndFree_2: u64 = 41482;
-/// `ReleaseRefCountedPtrArrayRange` at 0x79abe0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtrArrayRange(longlong param_1, uint param_2, uint param_3)`
-pub const ReleaseRefCountedPtrArrayRange: u64 = 41818;
-/// `ReleaseRefCountedPtrArrayViaVfunc1` at 0x7c4f40 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArrayViaVfunc1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArrayViaVfunc1: u64 = 42737;
-/// `ReleaseRefCountedPtrArrayViaVfunc1Thunk` at 0x7c6160 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtrArrayViaVfunc1Thunk(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArrayViaVfunc1Thunk: u64 = 42751;
-/// `ReleaseRefCountedPtrArrayViaVfunc1_2` at 0x7c60b0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArrayViaVfunc1_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArrayViaVfunc1_2: u64 = 42749;
-/// `ReleaseRefCountedPtrArray_2` at 0x91b9d0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArray_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArray_2: u64 = 51249;
-/// `ReleaseRefCountedPtrArray_3` at 0x2d0f10 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArray_3(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArray_3: u64 = 19248;
-/// `ReleaseRefCountedPtrArray_4` at 0x12168a0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrArray_4(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseRefCountedPtrArray_4: u64 = 91915;
-/// `ReleaseRefCountedPtrAt188` at 0xeba450 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrAt188(longlong * param_1)`
-pub const ReleaseRefCountedPtrAt188: u64 = 69327;
-/// `ReleaseRefCountedPtrAt8` at 0x1211530 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtrAt8(longlong param_1)`
-pub const ReleaseRefCountedPtrAt8: u64 = 91837;
-/// `ReleaseRefCountedPtrAtField8` at 0x9ed940 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtrAtField8(longlong param_1)`
-pub const ReleaseRefCountedPtrAtField8: u64 = 54227;
-/// `ReleaseRefCountedPtrAtField8_2` at 0xf22ed0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtrAtField8_2(longlong param_1)`
-pub const ReleaseRefCountedPtrAtField8_2: u64 = 71923;
-/// `ReleaseRefCountedPtrCount28` at 0x11f7830 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtrCount28(longlong * param_1)`
-pub const ReleaseRefCountedPtrCount28: u64 = 91463;
-/// `ReleaseRefCountedPtrCount80` at 0x4f8730 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtrCount80(longlong * param_1)`
-pub const ReleaseRefCountedPtrCount80: u64 = 31414;
-/// `ReleaseRefCountedPtrDeleting` at 0x768890 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtrDeleting(longlong * param_1)`
-pub const ReleaseRefCountedPtrDeleting: u64 = 40923;
-/// `ReleaseRefCountedPtrField` at 0x1173990 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtrField(undefined8 * param_1)`
-pub const ReleaseRefCountedPtrField: u64 = 84476;
-/// `ReleaseRefCountedPtr_10` at 0x383b10 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_10(longlong * param_1)`
-pub const ReleaseRefCountedPtr_10: u64 = 23253;
-/// `ReleaseRefCountedPtr_100` at 0x11d5870 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_100(longlong * param_1)`
-pub const ReleaseRefCountedPtr_100: u64 = 90896;
-/// `ReleaseRefCountedPtr_101` at 0x3ae190 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_101(longlong * param_1)`
-pub const ReleaseRefCountedPtr_101: u64 = 24311;
-/// `ReleaseRefCountedPtr_102` at 0x7686b0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_102(longlong * param_1)`
-pub const ReleaseRefCountedPtr_102: u64 = 40915;
-/// `ReleaseRefCountedPtr_103` at 0x3e22b0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_103(longlong * param_1)`
-pub const ReleaseRefCountedPtr_103: u64 = 25264;
-/// `ReleaseRefCountedPtr_104` at 0x7c4970 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_104(longlong * param_1)`
-pub const ReleaseRefCountedPtr_104: u64 = 42720;
-/// `ReleaseRefCountedPtr_105` at 0x7d8f90 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_105(longlong * param_1)`
-pub const ReleaseRefCountedPtr_105: u64 = 43583;
-/// `ReleaseRefCountedPtr_106` at 0x822980 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_106(longlong * param_1)`
-pub const ReleaseRefCountedPtr_106: u64 = 44817;
-/// `ReleaseRefCountedPtr_107` at 0x855420 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_107(longlong * param_1)`
-pub const ReleaseRefCountedPtr_107: u64 = 46923;
-/// `ReleaseRefCountedPtr_108` at 0x8727e0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedPtr_108(longlong * param_1)`
-pub const ReleaseRefCountedPtr_108: u64 = 47474;
-/// `ReleaseRefCountedPtr_109` at 0x8a6710 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_109(longlong * param_1)`
-pub const ReleaseRefCountedPtr_109: u64 = 48684;
-/// `ReleaseRefCountedPtr_11` at 0x2f8350 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_11(longlong * param_1)`
-pub const ReleaseRefCountedPtr_11: u64 = 19902;
-/// `ReleaseRefCountedPtr_110` at 0x8dd710 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_110(longlong * param_1)`
-pub const ReleaseRefCountedPtr_110: u64 = 50035;
-/// `ReleaseRefCountedPtr_111` at 0x8ef6f0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_111(longlong * param_1)`
-pub const ReleaseRefCountedPtr_111: u64 = 50576;
-/// `ReleaseRefCountedPtr_112` at 0x8ef720 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedPtr_112(longlong * param_1)`
-pub const ReleaseRefCountedPtr_112: u64 = 50577;
-/// `ReleaseRefCountedPtr_113` at 0x11d58a0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_113(longlong * param_1)`
-pub const ReleaseRefCountedPtr_113: u64 = 90897;
-/// `ReleaseRefCountedPtr_114` at 0x1216b40 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_114(longlong * param_1)`
-pub const ReleaseRefCountedPtr_114: u64 = 91922;
-/// `ReleaseRefCountedPtr_115` at 0x1216b80 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_115(longlong * param_1)`
-pub const ReleaseRefCountedPtr_115: u64 = 91924;
-/// `ReleaseRefCountedPtr_116` at 0x14ed280 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_116(longlong * param_1)`
-pub const ReleaseRefCountedPtr_116: u64 = 105663;
-/// `ReleaseRefCountedPtr_117` at 0x1534b20 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_117(longlong * param_1)`
-pub const ReleaseRefCountedPtr_117: u64 = 107075;
-/// `ReleaseRefCountedPtr_12` at 0x606cb0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_12(longlong * param_1)`
-pub const ReleaseRefCountedPtr_12: u64 = 35827;
-/// `ReleaseRefCountedPtr_13` at 0x8c17c0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_13(longlong * param_1)`
-pub const ReleaseRefCountedPtr_13: u64 = 49391;
-/// `ReleaseRefCountedPtr_14` at 0x8608e0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_14(longlong * param_1)`
-pub const ReleaseRefCountedPtr_14: u64 = 47140;
-/// `ReleaseRefCountedPtr_15` at 0x891d90 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_15(longlong * param_1)`
-pub const ReleaseRefCountedPtr_15: u64 = 48209;
-/// `ReleaseRefCountedPtr_16` at 0x8d66e0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_16(longlong * param_1)`
-pub const ReleaseRefCountedPtr_16: u64 = 49865;
-/// `ReleaseRefCountedPtr_17` at 0x8a6650 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_17(longlong * param_1)`
-pub const ReleaseRefCountedPtr_17: u64 = 48681;
-/// `ReleaseRefCountedPtr_18` at 0x8608b0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_18(longlong * param_1)`
-pub const ReleaseRefCountedPtr_18: u64 = 47139;
-/// `ReleaseRefCountedPtr_19` at 0x89c770 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_19(longlong * param_1)`
-pub const ReleaseRefCountedPtr_19: u64 = 48436;
-/// `ReleaseRefCountedPtr_2` at 0x6baac0 (decompiler, high); signature (high): `undefined ReleaseRefCountedPtr_2(longlong * param_1)`
-pub const ReleaseRefCountedPtr_2: u64 = 38132;
-/// `ReleaseRefCountedPtr_20` at 0x89c7a0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_20(longlong * param_1)`
-pub const ReleaseRefCountedPtr_20: u64 = 48437;
-/// `ReleaseRefCountedPtr_21` at 0x8a6680 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_21(longlong * param_1)`
-pub const ReleaseRefCountedPtr_21: u64 = 48682;
-/// `ReleaseRefCountedPtr_22` at 0x887cc0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_22(longlong * param_1)`
-pub const ReleaseRefCountedPtr_22: u64 = 47940;
-/// `ReleaseRefCountedPtr_23` at 0x8c17f0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_23(longlong * param_1)`
-pub const ReleaseRefCountedPtr_23: u64 = 49392;
-/// `ReleaseRefCountedPtr_24` at 0x8ce6c0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_24(longlong * param_1)`
-pub const ReleaseRefCountedPtr_24: u64 = 49662;
-/// `ReleaseRefCountedPtr_25` at 0x8ce6f0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_25(longlong * param_1)`
-pub const ReleaseRefCountedPtr_25: u64 = 49663;
-/// `ReleaseRefCountedPtr_26` at 0x8e7490 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_26(longlong * param_1)`
-pub const ReleaseRefCountedPtr_26: u64 = 50213;
-/// `ReleaseRefCountedPtr_27` at 0x8e74c0 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_27(longlong * param_1)`
-pub const ReleaseRefCountedPtr_27: u64 = 50214;
-/// `ReleaseRefCountedPtr_28` at 0x467b70 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedPtr_28(longlong * param_1)`
-pub const ReleaseRefCountedPtr_28: u64 = 28469;

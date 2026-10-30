@@ -157,7 +157,7 @@ pub struct Actor {
     /// +0x1F8 `ptr:TESRace`, semantic, runtime; the actor's race (high)
     pub race: *mut crate::TESRace,
     pub unknown_200: [u8; 4],
-    /// +0x204 `undefined4`, semantic, runtime; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    /// +0x204 `undefined4`, semantic, runtime; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     pub boolFlags2: u32,
     /// +0x208 `class:ActorValueStorage`, semantic, runtime; cache and modifiers of the sparse actor values (high)
     pub avStorage: crate::ActorValueStorage,
@@ -655,7 +655,7 @@ pub struct Character {
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
     pub race: *mut crate::TESRace,
     pub unknown_200: [u8; 4],
-    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     pub boolFlags2: u32,
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
     pub avStorage: crate::ActorValueStorage,
@@ -1077,7 +1077,7 @@ pub struct PlayerCharacter {
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
     pub race: *mut crate::TESRace,
     pub unknown_200: [u8; 4],
-    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 tested by IsOnMount, bit 18 essential (medium)
+    /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     pub boolFlags2: u32,
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
     pub avStorage: crate::ActorValueStorage,
@@ -2806,6 +2806,8 @@ impl ActorValue {
 pub struct Actor_boolFlags(pub u32);
 
 impl Actor_boolFlags {
+    /// AIEnabled (high)
+    pub const AI_ENABLED: Self = Self(0x2);
     /// AnimationUpdateEnabled (low)
     pub const ANIMATION_UPDATE_ENABLED: Self = Self(0x100);
     /// PendingAnimationGraphInit (low)
@@ -2830,12 +2832,20 @@ impl Actor_boolFlags {
 pub struct ActorState_flags1(pub u32);
 
 impl ActorState_flags1 {
+    /// Walking (high)
+    pub const WALKING: Self = Self(0x40);
+    /// Running (high)
+    pub const RUNNING: Self = Self(0x80);
     /// sprinting (high)
     pub const SPRINTING: Self = Self(0x100);
     /// sneaking (high)
     pub const SNEAKING: Self = Self(0x200);
     /// swimming (high)
     pub const SWIMMING: Self = Self(0x400);
+    /// Jogging (medium)
+    pub const JOGGING: Self = Self(0x1000);
+    /// FastWalking (medium)
+    pub const FAST_WALKING: Self = Self(0x2000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

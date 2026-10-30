@@ -1305,16 +1305,6 @@ impl crate::NiPoint3InterpController {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(74438, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::NiPointLight {
-    /// `NiPointLight::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 70967, rva 0xefe4e0).
-    /// `NiPointLight * ctor(NiPointLight * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(70967, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::NiPosData {
     /// `NiPosData::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 73153, rva 0xf71800).
     /// `undefined dtor(NiPosData * this)`

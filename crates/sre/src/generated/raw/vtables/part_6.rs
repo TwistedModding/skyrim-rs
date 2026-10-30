@@ -3,6 +3,56 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSImagespaceShaderISSAOCompositeFog::vftable_10` at 0x1b3bbc8, id 254417 (rtti, high); 2 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeFog_vtable_10 {
+    /// `BSImagespaceShaderISSAOCompositeFog::NiBoneMatrixSetterI_vdtor` at 0x1507750 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
+    pub slot_0: *const c_void,
+    /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices` at 0x1578c80 (semantic, high); signature (untiered): `undefined SetBoneMatrices(void * this, longlong param_1, longlong param_2, float * param_3)`
+    pub slot_1: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeFog_vtable_10 {
+    pub const ID: u64 = 254417;
+}
+
+/// `BSImagespaceShaderISSAOCompositeFog::vftable_18` at 0x1b3bbe0, id 254419 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeFog_vtable_18 {
+    /// `BSShader::BSReloadShaderI_vfunc_0` at 0x1578e50 (rtti, medium); signature (low): `undefined BSReloadShaderI_vfunc_0(BSShader * this, longlong param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_0: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeFog_vtable_18 {
+    pub const ID: u64 = 254419;
+}
+
+/// `BSImagespaceShaderISSAOCompositeFog::vftable_90` at 0x1b3bbf0, id 254421 (rtti, high); 10 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeFog_vtable_90 {
+    /// `BSImagespaceShaderISSAOCompositeFog::ImageSpaceEffect_vdtor` at 0x150775c (slot_propagation, medium); signature (high): `undefined ImageSpaceEffect_vdtor(BSImagespaceShaderISSAOCompositeFog * this)`
+    pub slot_0: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_1` at 0x1564e30 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_1(BSImagespaceShader * this, undefined8 param_1, undefined * param_2)`
+    pub slot_1: *const c_void,
+    /// `ImageSpaceEffect::vfunc_2` at 0x150b9f0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::ImageSpaceEffect_vfunc_3` at 0x15652a0 (rtti, medium); signature (low): `undefined ImageSpaceEffect_vfunc_3(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `ImageSpaceEffect::vfunc_4` at 0x1509bc0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `ImageSpaceEffect::vfunc_5` at 0x150b820 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `ImageSpaceEffect::vfunc_6` at 0x150b480 (rtti, medium); signature (high): `undefined1 vfunc_6(ImageSpaceEffect * this)`
+    pub slot_6: *const c_void,
+    /// `ImageSpaceEffect::vfunc_7` at 0x150ba40 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `ImageSpaceEffect::vfunc_8` at 0x150b8e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `ImageSpaceEffect::vfunc_9` at 0x150b810 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
+    pub slot_9: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeFog_vtable_90 {
+    pub const ID: u64 = 254421;
+}
+
 /// `BSImagespaceShaderISSAOCompositeSAO::vftable` at 0x1b3b918, id 254392 (rtti, high); 15 slots.
 #[repr(C)]
 pub struct BSImagespaceShaderISSAOCompositeSAO_vtable {
@@ -13598,149 +13648,5 @@ pub struct BSPortalGraphEntry_vtable {
 }
 impl BSPortalGraphEntry_vtable {
     pub const ID: u64 = 238263;
-}
-
-/// `BSPortalSharedNode::vftable` at 0x1a6dfd8, id 238387 (rtti, high); 62 slots.
-#[repr(C)]
-pub struct BSPortalSharedNode_vtable {
-    /// `BSPortalSharedNode::vdtor` at 0xfea050 (layout_inference, medium); signature (low): `BSPortalSharedNode * vdtor(BSPortalSharedNode * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `BSPortalSharedNode::vfunc_2` at 0xfea100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `NiNode::AsNode` at 0x1b4d10 (semantic, high); signature (untiered): `NiNode * AsNode(NiNode * this)`
-    pub slot_3: *const c_void,
-    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
-    pub slot_9: *const c_void,
-    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
-    pub slot_12: *const c_void,
-    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
-    pub slot_13: *const c_void,
-    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
-    pub slot_14: *const c_void,
-    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
-    pub slot_15: *const c_void,
-    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
-    pub slot_16: *const c_void,
-    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
-    pub slot_17: *const c_void,
-    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
-    pub slot_18: *const c_void,
-    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
-    pub slot_19: *const c_void,
-    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
-    pub slot_20: *const c_void,
-    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
-    pub slot_21: *const c_void,
-    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
-    /// `BSPortalSharedNode::vfunc_23` at 0xfe9c20 (rtti, high); signature (low): `NiNode * vfunc_23(BSPortalSharedNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
-    /// `NiNode::vfunc_24` at 0xee1560 (rtti, medium); signature (low): `undefined vfunc_24(NiNode * this, longlong param_1)`
-    pub slot_24: *const c_void,
-    /// `NiNode::vfunc_25` at 0xee15a0 (rtti, medium); signature (low): `undefined vfunc_25(NiNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_25: *const c_void,
-    /// `NiNode::vfunc_26` at 0xee1650 (rtti, medium); signature (low): `undefined1 vfunc_26(NiNode * this, undefined8 param_1)`
-    pub slot_26: *const c_void,
-    /// `NiNode::vfunc_27` at 0xee16e0 (rtti, medium); signature (low): `undefined vfunc_27(NiNode * this, longlong * param_1)`
-    pub slot_27: *const c_void,
-    /// `NiNode::vfunc_28` at 0xee17b0 (rtti, medium); signature (low): `undefined8 vfunc_28(NiNode * this, longlong param_1)`
-    pub slot_28: *const c_void,
-    /// `NiNode::vfunc_29` at 0xee2f60 (rtti, medium); signature (low): `undefined vfunc_29(NiNode * this, longlong param_1)`
-    pub slot_29: *const c_void,
-    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
-    pub slot_30: *const c_void,
-    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
-    pub slot_31: *const c_void,
-    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
-    pub slot_32: *const c_void,
-    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
-    pub slot_33: *const c_void,
-    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
-    pub slot_34: *const c_void,
-    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
-    pub slot_35: *const c_void,
-    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
-    pub slot_36: *const c_void,
-    /// `NiNode::vfunc_37` at 0xee2420 (rtti, medium); signature (low): `undefined vfunc_37(NiNode * this, longlong param_1)`
-    pub slot_37: *const c_void,
-    /// `NiNode::vfunc_38` at 0xee2310 (rtti, medium); signature (low): `undefined vfunc_38(NiNode * this, longlong * param_1)`
-    pub slot_38: *const c_void,
-    /// `NiNode::vfunc_39` at 0xee3010 (rtti, medium); signature (low): `undefined vfunc_39(NiNode * this, undefined8 param_1)`
-    pub slot_39: *const c_void,
-    /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
-    pub slot_40: *const c_void,
-    /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
-    pub slot_41: *const c_void,
-    /// `NiNode::vfunc_42` at 0xee23a0 (rtti, medium); signature (low): `NiAVObject * vfunc_42(NiNode * this, longlong * param_1)`
-    pub slot_42: *const c_void,
-    /// `NiNode::vfunc_43` at 0xee2e30 (rtti, medium); signature (low): `undefined vfunc_43(NiNode * this, char * param_1, char param_2, undefined1 * param_3)`
-    pub slot_43: *const c_void,
-    /// `NiNode::vfunc_44` at 0xee24d0 (rtti, medium); signature (low): `undefined vfunc_44(NiNode * this, longlong param_1, uint param_2)`
-    pub slot_44: *const c_void,
-    /// `NiNode::vfunc_45` at 0xee2680 (rtti, medium); signature (low): `undefined vfunc_45(NiNode * this, longlong param_1, uint param_2)`
-    pub slot_45: *const c_void,
-    /// `NiNode::vfunc_46` at 0xee2a40 (rtti, medium); signature (low): `undefined vfunc_46(NiNode * this, longlong param_1, uint param_2)`
-    pub slot_46: *const c_void,
-    /// `NiNode::vfunc_47` at 0xee2920 (rtti, medium); signature (high): `undefined vfunc_47(NiNode * this)`
-    pub slot_47: *const c_void,
-    /// `NiAVObject::UpdateWorldData` at 0xeebf40 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiAVObject * this, longlong param_1)`
-    pub slot_48: *const c_void,
-    /// `NiNode::vfunc_49` at 0xee2b70 (rtti, medium); signature (low): `undefined vfunc_49(NiNode * this, undefined8 param_1)`
-    pub slot_49: *const c_void,
-    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
-    pub slot_50: *const c_void,
-    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
-    pub slot_51: *const c_void,
-    /// `BSPortalSharedNode::vfunc_52` at 0xfe9e20 (rtti, high); signature (low): `undefined vfunc_52(BSPortalSharedNode * this, BSPortalSharedNode * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_52: *const c_void,
-    /// `NiNode::AttachChild` at 0xee1b00 (semantic, high); signature (untiered): `undefined AttachChild(NiNode * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-    pub slot_53: *const c_void,
-    /// `NiNode::InsertChildAt` at 0xee1c70 (semantic, high); signature (untiered): `undefined InsertChildAt(NiNode * this, undefined4 param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_54: *const c_void,
-    /// `NiNode::DetachChild` at 0xee1d60 (semantic, high); signature (untiered): `undefined DetachChild(NiNode * this, longlong * param_1, longlong * param_2)`
-    pub slot_55: *const c_void,
-    /// `NiNode::DetachChild2` at 0xee1d10 (semantic, high); signature (untiered): `undefined DetachChild2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_56: *const c_void,
-    /// `NiNode::DetachChildAt` at 0xee1f20 (semantic, high); signature (untiered): `undefined DetachChildAt(NiNode * this, uint param_1, longlong * param_2)`
-    pub slot_57: *const c_void,
-    /// `NiNode::DetachChildAt2` at 0xee1ed0 (semantic, high); signature (untiered): `undefined DetachChildAt2(NiNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_58: *const c_void,
-    /// `NiNode::SetAt` at 0xee2150 (semantic, high); signature (untiered): `undefined SetAt(NiNode * this, uint param_1, longlong * param_2, longlong * param_3)`
-    pub slot_59: *const c_void,
-    /// `NiNode::SetAt2` at 0xee2100 (semantic, high); signature (untiered): `undefined SetAt2(NiNode * this)`
-    pub slot_60: *const c_void,
-    /// `NiNode::UpdateUpwardPass` at 0xee28e0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiNode * this)`
-    pub slot_61: *const c_void,
-}
-impl BSPortalSharedNode_vtable {
-    pub const ID: u64 = 238387;
-}
-
-/// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vftable` at 0x1ac0518, id 245918 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor_vtable {
-    /// `BSPrecomputedNavmeshInfoPathMap::INavmeshInfoVisitor::vdtor` at 0x11f1fa0 (semantic, high); signature (low): `INavmeshInfoVisitor * vdtor(INavmeshInfoVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-}
-impl BSPrecomputedNavmeshInfoPathMap__INavmeshInfoVisitor_vtable {
-    pub const ID: u64 = 245918;
 }
 

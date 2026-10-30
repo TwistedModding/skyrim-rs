@@ -11671,6 +11671,10 @@ pub const g_CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t: u64 =
 pub const g_CCallbackImpl_1: u64 = 505562;
 /// `g_CCallbackImpl_8` at 0x3699448 (layout_inference, medium)
 pub const g_CCallbackImpl_8: u64 = 415501;
+/// `g_Calendar` at 0x21a3710 (semantic, high); the static Calendar object (id 400479) (high); type `class:Calendar`
+pub const g_Calendar: u64 = 400479;
+/// `g_Calendar_ptr` at 0x21a05d0 (runtime, high); pointer to `Calendar`: Calendar singleton pointer (Address Library id 400447); Calendar singleton pointer (Address Library id 400447) (high); type `ptr:Calendar`
+pub const g_Calendar_ptr: u64 = 400447;
 /// `g_CameraFOVOffset` at 0x3436028 (semantic, high); FOV offset added to the world FOV (ApplyWorldFOV) and the hands FOV (0x1537460) (high); type `float`
 pub const g_CameraFOVOffset: u64 = 414942;
 /// `g_CameraInsideLightMask` at 0x343630c (semantic, high); frame copy of ShadowSceneNode +0x248 (high); type `u32`
@@ -11711,6 +11715,8 @@ pub const g_CharacterCollisionMessagePlayerAdapter: u64 = 381081;
 pub const g_Character_ptr: u64 = 401440;
 /// `g_CollisionLayerNames` at 0x20d1f80 (semantic, high); const char*[47]: collision layer names by layer index (enum CollisionLayer); entry 47 is null (high); type `pointer`
 pub const g_CollisionLayerNames: u64 = 389332;
+/// `g_CollisionsDisabled` at 0x219e5f4 (semantic, high); 1 after console 'tcl' without a reference or Debug.ToggleCollisions: physics collisions off for the player (and the world flag +0xc701) (high); type `u8`
+pub const g_CollisionsDisabled: u64 = 400334;
 /// `g_CombatBehaviorTreeAcquireWeapon` at 0x3254ca0 (layout_inference, medium)
 pub const g_CombatBehaviorTreeAcquireWeapon: u64 = 405299;
 /// `g_CombatBehaviorTreeAction` at 0x3254d38 (layout_inference, medium)
@@ -12175,6 +12181,16 @@ pub const g_FOCollisionListener_ptr: u64 = 400444;
 pub const g_FOIslandActivationListener_ptr: u64 = 400944;
 /// `g_FOVTanScale` at 0x20d9230 (semantic, high); tan(fov/2) / tan(37.5 deg), set with the world FOV (high); type `float`
 pub const g_FOVTanScale: u64 = 391777;
+/// `g_FaceAnimationSettings_ptr` at 0x219e5e0 (semantic, medium); pointer to an engine object whose byte +0x58 gates blinking and eye tracking (console 'ModifyFaceGen reset' sets it to 1) (medium); type `pointer`
+pub const g_FaceAnimationSettings_ptr: u64 = 400331;
+/// `g_FaceGenExpressionNames` at 0x20b0830 (semantic, high); expression names 0..16: DialogueAnger, DialogueFear, DialogueHappy, DialogueSad, DialogueSurprise, DialoguePuzzled, DialogueDisgusted, MoodNeutral, MoodAnger, MoodFear, MoodHappy, MoodSad, MoodSurprise, MoodPuzzled, MoodDisgusted, CombatAnger, CombatShout (high); type `pointer`
+pub const g_FaceGenExpressionNames: u64 = 378660;
+/// `g_FaceGenKeyframeTypeNames` at 0x20b0800 (semantic, high); keyframe type names by type value: 0 Phoneme, 1 Expression, 2 Modifier, 3 Custom ('SkinnyMorph' at 0x20b0828 is the custom channel) (high); type `pointer`
+pub const g_FaceGenKeyframeTypeNames: u64 = 378655;
+/// `g_FaceGenModifierNames` at 0x20b08c0 (semantic, high); modifier names 0..16: BlinkLeft, BlinkRight, BrowDownLeft, BrowDownRight, BrowInLeft, BrowInRight, BrowUpLeft, BrowUpRight, LookDown, LookLeft, LookRight, LookUp, SquintLeft, SquintRight, HeadPitch, HeadRoll, HeadYaw (high); type `pointer`
+pub const g_FaceGenModifierNames: u64 = 378677;
+/// `g_FaceGenPhonemeNames` at 0x20b0950 (semantic, high); phoneme names 0..15: Aah, BigAah, BMP, ChJSh, DST, Eee, Eh, FV, I, K, N, Oh, OohQ, R, Th, W (high); type `pointer`
+pub const g_FaceGenPhonemeNames: u64 = 378694;
 /// `g_FaceMorphQueue` at 0x31e76b8 (semantic, high); face nodes whose morphs are applied by the next 'Face morphing' step (count at 0x31e76c8, spin lock ID_401746) (high); type `pointer`
 pub const g_FaceMorphQueue: u64 = 401743;
 /// `g_FadeFrameCounter` at 0x20d6690 (semantic, medium); frame stamp BSFadeNode.fadeFrame (+0x13c) is compared with (ID_390886) (medium); type `u32`
@@ -12347,6 +12363,8 @@ pub const g_LastMessageBoxType: u64 = 383037;
 pub const g_LastPlayerPosition: u64 = 404241;
 /// `g_LastSoundId` at 0x3273924 (runtime, medium); sound id counter (new id = value+1) (medium); type `undefined4`
 pub const g_LastSoundId: u64 = 410106;
+/// `g_LightAttenuationModes` at 0x31a5498 (semantic, medium); bit 0 constant, bit 1 linear, bit 2 quadratic attenuation terms on (from bUseConstant/bUseLinear/bUseQuadratic:LightAttenuation, inferred) (medium); type `u32`
+pub const g_LightAttenuationModes: u64 = 400806;
 /// `g_LightingShader` at 0x33d3e28 (semantic, high); pointer to `BSLightingShader`: refcounted holder of the lighting shader; refcounted holder of the lighting shader (high); type `ptr:BSLightingShader`
 pub const g_LightingShader: u64 = 414613;
 /// `g_LightingShaderInstance` at 0x3436400 (semantic, high); pointer to `BSLightingShader`: instance pointer set by the ctor; instance pointer set by the ctor (high); type `ptr:BSLightingShader`
@@ -12495,6 +12513,8 @@ pub const g_PlayerControls_ptr: u64 = 400864;
 pub const g_PlayerDeathReloadTimer: u64 = 381535;
 /// `g_PlayerHandle` at 0x3230774 (semantic, high); the player's ObjectRefHandle (high); type `u32`
 pub const g_PlayerHandle: u64 = 403520;
+/// `g_PlayerNoCollisionOverride` at 0x20b7478 (semantic, low); second switch read with g_CollisionsDisabled by PlayerCharacter::Update (only reader 0x745f49); no writer found by xref (low); type `u8`
+pub const g_PlayerNoCollisionOverride: u64 = 381537;
 /// `g_PlayerRef_ptr` at 0x31df300 (xref_inference, medium); pointer to `PlayerCharacter`: pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference; pointer compared with the camera target and the actor in the pitch clamps; behaves as the player reference (medium); type `ptr:PlayerCharacter`
 pub const g_PlayerRef_ptr: u64 = 401069;
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340 (layout_inference, medium)
@@ -12855,7 +12875,7 @@ pub const g_TypeNode_BSFogProperty: u64 = 415262;
 pub const g_TypeNode_BSFrustumFOVController: u64 = 411005;
 /// `g_TypeNode_BSFurnitureMarkerNode` at 0x332e320 (string, high)
 pub const g_TypeNode_BSFurnitureMarkerNode: u64 = 411273;
-/// `g_TypeNode_BSGeometry` at 0x331d7c8 (string, high)
+/// `g_TypeNode_BSGeometry` at 0x331d7c8 (semantic, high); BSGeometry's type node (id 410531); parent 0x331c4a8 (id 410476, NiAVObject's) (high); type `undefined1`
 pub const g_TypeNode_BSGeometry: u64 = 410531;
 /// `g_TypeNode_BSGeometryListCullingProcess` at 0x332e430 (string, high)
 pub const g_TypeNode_BSGeometryListCullingProcess: u64 = 411301;
@@ -13031,7 +13051,7 @@ pub const g_TypeNode_BSWindModifier: u64 = 411185;
 pub const g_TypeNode_BSXFlags: u64 = 411156;
 /// `g_TypeNode_DebugTextExtraData` at 0x333c580 (string, high)
 pub const g_TypeNode_DebugTextExtraData: u64 = 412094;
-/// `g_TypeNode_ModelReferenceEffect` at 0x32118f8 (string, high)
+/// `g_TypeNode_ModelReferenceEffect` at 0x32118f8 (semantic, high); id 402943; parent g_TypeNode_ReferenceEffect 0x3211930 (high); type `undefined1`
 pub const g_TypeNode_ModelReferenceEffect: u64 = 402943;
 /// `g_TypeNode_NiAVObject` at 0x331c4a8 (string, high)
 pub const g_TypeNode_NiAVObject: u64 = 410476;
@@ -13323,7 +13343,7 @@ pub const g_TypeNode_NiPathInterpolator: u64 = 410925;
 pub const g_TypeNode_NiPoint3InterpController: u64 = 411041;
 /// `g_TypeNode_NiPoint3Interpolator` at 0x331ef10 (string, high)
 pub const g_TypeNode_NiPoint3Interpolator: u64 = 410987;
-/// `g_TypeNode_NiPointLight` at 0x331d7f0 (string, high)
+/// `g_TypeNode_NiPointLight` at 0x331d7f0 (semantic, high); NiPointLight's type node (id 410534); parent g_TypeNode_NiLight 0x331c660 (id 410503) (high); type `undefined1`
 pub const g_TypeNode_NiPointLight: u64 = 410534;
 /// `g_TypeNode_NiPosData` at 0x331ed48 (string, high)
 pub const g_TypeNode_NiPosData: u64 = 410959;
@@ -13403,7 +13423,7 @@ pub const g_TypeNode_REFRSyncController: u64 = 401106;
 pub const g_TypeNode_ReferenceEffect: u64 = 402952;
 /// `g_TypeNode_SceneGraph` at 0x3242628 (string, high)
 pub const g_TypeNode_SceneGraph: u64 = 403753;
-/// `g_TypeNode_ShaderReferenceEffect` at 0x3211960 (string, high)
+/// `g_TypeNode_ShaderReferenceEffect` at 0x3211960 (semantic, high); id 402958; parent g_TypeNode_ReferenceEffect 0x3211930 (high); type `undefined1`
 pub const g_TypeNode_ShaderReferenceEffect: u64 = 402958;
 /// `g_TypeNode_ShadowSceneNode` at 0x33d4100 (string, high)
 pub const g_TypeNode_ShadowSceneNode: u64 = 414664;
@@ -13547,49 +13567,3 @@ pub const g_TypeNode_bhkRigidBody: u64 = 411544;
 pub const g_TypeNode_bhkRigidBodyT: u64 = 411581;
 /// `g_TypeNode_bhkSPCollisionObject` at 0x3338780 (string, high)
 pub const g_TypeNode_bhkSPCollisionObject: u64 = 411659;
-/// `g_TypeNode_bhkSerializable` at 0x3337840 (string, high)
-pub const g_TypeNode_bhkSerializable: u64 = 411584;
-/// `g_TypeNode_bhkShape` at 0x3337870 (string, high)
-pub const g_TypeNode_bhkShape: u64 = 411590;
-/// `g_TypeNode_bhkShapeCollection` at 0x3338b58 (string, high)
-pub const g_TypeNode_bhkShapeCollection: u64 = 411741;
-/// `g_TypeNode_bhkShapePhantom` at 0x3337920 (string, high)
-pub const g_TypeNode_bhkShapePhantom: u64 = 411605;
-/// `g_TypeNode_bhkSimpleShapePhantom` at 0x3337938 (string, high)
-pub const g_TypeNode_bhkSimpleShapePhantom: u64 = 411607;
-/// `g_TypeNode_bhkSphereRepShape` at 0x33378d0 (string, high)
-pub const g_TypeNode_bhkSphereRepShape: u64 = 411598;
-/// `g_TypeNode_bhkSphereShape` at 0x3337980 (string, high)
-pub const g_TypeNode_bhkSphereShape: u64 = 411613;
-/// `g_TypeNode_bhkSpringAction` at 0x3338ac8 (string, high)
-pub const g_TypeNode_bhkSpringAction: u64 = 411730;
-/// `g_TypeNode_bhkSpringDamperConstraintMotor` at 0x3338be0 (string, high)
-pub const g_TypeNode_bhkSpringDamperConstraintMotor: u64 = 411745;
-/// `g_TypeNode_bhkStiffSpringConstraint` at 0x3338a00 (string, high)
-pub const g_TypeNode_bhkStiffSpringConstraint: u64 = 411713;
-/// `g_TypeNode_bhkTiltPreventAction` at 0x31e0ac8 (string, high)
-pub const g_TypeNode_bhkTiltPreventAction: u64 = 401567;
-/// `g_TypeNode_bhkTransformShape` at 0x3338928 (string, high)
-pub const g_TypeNode_bhkTransformShape: u64 = 411695;
-/// `g_TypeNode_bhkTriSampledHeightFieldBvTreeShape` at 0x3337ab8 (string, high)
-pub const g_TypeNode_bhkTriSampledHeightFieldBvTreeShape: u64 = 411639;
-/// `g_TypeNode_bhkTriangleShape` at 0x33388f8 (string, high)
-pub const g_TypeNode_bhkTriangleShape: u64 = 411691;
-/// `g_TypeNode_bhkUnaryAction` at 0x3337a58 (string, high)
-pub const g_TypeNode_bhkUnaryAction: u64 = 411631;
-/// `g_TypeNode_bhkVelocityConstraintMotor` at 0x3338bd0 (string, high)
-pub const g_TypeNode_bhkVelocityConstraintMotor: u64 = 411744;
-/// `g_TypeNode_bhkWheelAction` at 0x31e0ad8 (string, high)
-pub const g_TypeNode_bhkWheelAction: u64 = 401568;
-/// `g_TypeNode_bhkWheelConstraint` at 0x3338a18 (string, high)
-pub const g_TypeNode_bhkWheelConstraint: u64 = 411715;
-/// `g_TypeNode_bhkWorld` at 0x3336538 (string, high)
-pub const g_TypeNode_bhkWorld: u64 = 411527;
-/// `g_TypeNode_bhkWorldM` at 0x3337808 (string, high)
-pub const g_TypeNode_bhkWorldM: u64 = 411582;
-/// `g_TypeNode_bhkWorldObject` at 0x33364f8 (string, high)
-pub const g_TypeNode_bhkWorldObject: u64 = 411515;
-/// `g_TypeNode_hkPackedNiTriStripsData` at 0x3337908 (string, high)
-pub const g_TypeNode_hkPackedNiTriStripsData: u64 = 411603;
-/// `g_UI3DScene_ptr` at 0x3230a00 (semantic, medium); pointer to the static menu 3D scene manager at 0x323a280 (no vtable): +0x8 culler, +0x10 and +0x18 accumulators, +0x20 NiCamera, +0x28 lock, +0x30 scene [1], +0x38 eight mode roots, +0x78 per-mode light definition chains, +0x90 current mode, +0x98 mode stack (medium); type `pointer`
-pub const g_UI3DScene_ptr: u64 = 403560;

@@ -310,6 +310,15 @@ impl crate::AIProcess {
     /// `void (AIProcess* this, u8 flags)`
     #[inline]
     pub fn start_deferred_kill(&self, flags: u8) { unsafe { function!(40033, (*const Self, u8))(core::ptr::from_ref(self), flags) } }
+    /// `AIProcess::TickGraphUpdateShutoffTimer`: counts down MiddleHighProcessData+0x2d0; when it expires clears the actor's boolFlags2 bit 8 (graph updates off) and sets bit 17 (one last forced update)
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 39942, rva 0x725e80.
+    /// `void (AIProcess* process, Actor* actor, float delta)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn tick_graph_update_shutoff_timer(&self, actor: *mut crate::Actor, delta: f32) { unsafe { function!(39942, (*const Self, *mut crate::Actor, f32))(core::ptr::from_ref(self), actor, delta) } }
     /// `AIProcess::ctor`: constructs an AI process
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 39107, rva 0x6e66a0.
@@ -673,6 +682,12 @@ impl crate::Actor {
     /// `float (Actor* this)`
     #[inline]
     pub fn get_movement_direction(&self) -> f32 { unsafe { function!(37960, (*const Self) -> f32)(core::ptr::from_ref(self)) } }
+    /// `Actor::GetMovementStateClass`: 3 flying (bits 18-20 set and not state 5), 2 swimming (0x400), 4 sneaking (0x200), 1 running (0x80), 5 sprinting (0x100), else 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37841, rva 0x6a6dd0.
+    /// `u32 (Actor* this)`
+    #[inline]
+    pub fn get_movement_state_class(&self) -> u32 { unsafe { function!(37841, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetPermanentActorValueImpl`: base plus permanent modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38484, rva 0x6c62e0.
@@ -680,6 +695,15 @@ impl crate::Actor {
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
     pub fn get_permanent_actor_value_impl(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38484, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self), value) } }
+    /// `Actor::GetRaceShieldBipedIndex`: base (this+0x40) must be a TESNPC (form type 0x2b) with a race (+0x158): returns race+0x138, else -1; the biped index for shields, left-hand weapons and lights
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 19630, rva 0x2e5ba0.
+    /// `i32 (Actor* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn get_race_shield_biped_index(&self) -> i32 { unsafe { function!(19630, (*const Self) -> i32)(core::ptr::from_ref(self)) } }
     /// `Actor::GetRiderHandle`: for a mount (boolFlags2 bit 1) with an ExtraInteraction: *out = interaction+0x14 (the actor handle of the MountInteraction, i.e. the rider); else g_InvalidRefHandle
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38701, rva 0x6d31f0.
@@ -695,6 +719,12 @@ impl crate::Actor {
     /// `float (const Actor* actor, bool eyeHeight)`
     #[inline]
     pub fn get_scaled_height(&self, eyeHeight: bool) -> f32 { unsafe { function!(37445, (*const Self, bool) -> f32)(core::ptr::from_ref(self), eyeHeight) } }
+    /// `Actor::GetWalkRunInterpolation`: run/walk blend: forceRun or flags1 0x80 -> run value (ID_186632), forceWalk -> 1.0, 0x1000 -> fJogInterpolationBetweenWalkAndRun + 1, 0x2000 -> fFastWalkInterpolationBetweenWalkAndRun + 1, else 1.0 (walk)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37457, rva 0x6860d0.
+    /// `float (Actor* this, bool forceRun, bool forceWalk)`
+    #[inline]
+    pub fn get_walk_run_interpolation(&self, forceRun: bool, forceWalk: bool) -> f32 { unsafe { function!(37457, (*const Self, bool, bool) -> f32)(core::ptr::from_ref(self), forceRun, forceWalk) } }
     /// `Actor::HasKeyword`: Actor slot 72: TESObjectREFR::HasKeyword (base object, then the reference's keywords); when false and keyword != null, the race's BGSKeywordForm (+0x70 of TESRace) slot 4
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37183, rva 0x671bf0.
@@ -707,12 +737,27 @@ impl crate::Actor {
     /// `void (Actor* actor)`
     #[inline]
     pub fn head_tracking_off(&self) { unsafe { function!(37798, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Actor::InitAnimationPoseAfterGraphLoad`: holder slot 12: with a process and not while loading a save: runs the procedures' pose init when boolFlags2 bit 28 is set, or when bit 25 is clear and the actor is not dead, not in the player's cell (unless ID_400336) and ProcessLists+0x1e7 is clear; then clears bit 25
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37986, rva 0x6b1180.
+    /// `void (IAnimationGraphManagerHolder* this /* Actor + 0x38 */)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn init_animation_pose_after_graph_load(&self) { unsafe { function!(37986, (*const Self))(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `Actor::IsAnimationDriven`: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37486, rva 0x687ac0.
     /// `bool (Actor* actor)`
     #[inline]
     pub fn is_animation_driven(&self) -> bool { unsafe { function!(37486, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    /// `Actor::IsAnimationUpdateEnabled`: holder slot 14: (Actor+0x204 >> 8) & 1, i.e. boolFlags2 bit 8
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37985, rva 0x6b1160.
+    /// `bool (IAnimationGraphManagerHolder* this /* Actor + 0x38 */)`
+    #[inline]
+    pub fn is_animation_update_enabled(&self) -> bool { unsafe { function!(37985, (*const Self) -> bool)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `Actor::IsAttacking`: attack state (flags1 bits 28-31) != 0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38590, rva 0x6cb920.
@@ -799,6 +844,12 @@ impl crate::Actor {
     /// `source` must point to what the engine expects.
     #[inline]
     pub unsafe fn mod_actor_value_impl(&self, modifier: i32, value: crate::ActorValue, delta: f32, source: *mut c_void) { unsafe { function!(38468, (*const Self, i32, crate::ActorValue, f32, *mut c_void))(core::ptr::from_ref(self), modifier, value, delta, source) } }
+    /// `Actor::MoveToPosition`: actor move: stops furniture use, clears the knock state, SetPosition, SetAngleZ(heading), SetAngleX(pitch), finds the cell for the position, MoveRefToCellOrWorldspace and the location-change event; when the target cell is attached and no other thread is in its update phase it then calls an actor virtual with the new position, SetHeading(heading) again and AlignControllerToPathingSurface (else queues task 0x20 with position and heading); with the last bool it also resets the process (ID_37818, ID_39114). It never writes the 3D root directly
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37313, rva 0x677370.
+    /// `bool (Actor* this, const NiPoint3* position, float heading, float pitch, TESObjectCELL* cell, TESWorldSpace* worldspace, bool)`
+    #[inline]
+    pub fn move_to_position(&self, position: &crate::NiPoint3, heading: f32, pitch: f32, cell: &crate::TESObjectCELL, worldspace: &crate::TESWorldSpace, a6: bool) -> bool { unsafe { function!(37313, (*const Self, *const crate::NiPoint3, f32, f32, *const crate::TESObjectCELL, *const crate::TESWorldSpace, bool) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(position), heading, pitch, core::ptr::from_ref(cell), core::ptr::from_ref(worldspace), a6) } }
     /// `Actor::NotifyAnimationGraph`: 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38048, rva 0x6b61a0.
@@ -851,6 +902,18 @@ impl crate::Actor {
     /// `void (Actor* this)`
     #[inline]
     pub fn retry_pending_weapon_request(&self) { unsafe { function!(37280, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Actor::SetAIEnabled`: boolFlags (+0xe8) bit 1 = enable; when disabling an actor with a process, the character controller (MiddleHighProcessData+0x250) gets SetLinearVelocity(0) (slot 7)
+    ///
+    /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37504, rva 0x688fb0.
+    /// `void (Actor* this, bool enable)`
+    #[inline]
+    pub fn set_ai_enabled(&self, enable: bool) { unsafe { function!(37504, (*const Self, bool))(core::ptr::from_ref(self), enable) } }
+    /// `Actor::SetHeading`: the actor heading setter: refused while the life state (flags1 bits 21-24) is not 0, 4, 7, 8 (6 only while sitting) or while the actor has a process and knock state bits 25-27 are set; wraps to [0, 2*pi]; races with TESRace+0x108 bit 9 store the difference to rotZ (wrapped to [-pi, pi)) in rotY instead; otherwise SetAngleZ
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 37230, rva 0x6740b0.
+    /// `void (Actor* this, float headingRadians)`
+    #[inline]
+    pub fn set_heading(&self, headingRadians: f32) { unsafe { function!(37230, (*const Self, f32))(core::ptr::from_ref(self), headingRadians) } }
     /// `Actor::SetLifeState`: stores the life state into bits 21..24 of Actor+0xc8 (flags1) and applies the transition: state 2 (dead) stops sounds and 3D effects; entering/leaving bleedout (states 7/8) pushes or leaves the player's bleedout camera
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 37612, rva 0x693200.
@@ -876,6 +939,15 @@ impl crate::Actor {
     /// May be null: `partner`.
     #[inline]
     pub fn start_kill_move(&self, partner: Option<&Self>) { unsafe { function!(38613, (*const Self, *const Self))(core::ptr::from_ref(self), partner.map_or(core::ptr::null(), core::ptr::from_ref)) } }
+    /// `Actor::StopMovingAndClearSprintSync`: unmounted, not flying: RequestStopMoving on the actor's (or root mount's) movement object (+0x148) with the float; then graph variable g_AnimationVariableNames+0x358 ('iSyncSprintState') set through the bool setter to false
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 37817, rva 0x6a6050.
+    /// `void (Actor* this, float)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn stop_moving_and_clear_sprint_sync(&self, a1: f32) { unsafe { function!(37817, (*const Self, f32))(core::ptr::from_ref(self), a1) } }
     /// `Actor::StopUsingFurniture`: gets the actor out of its furniture: sets +0x204 bit 8; when instant, moves it to the furniture's exit point (default-object action 0x37 positions, slot 0x548 SetPosition), restores the player's controls and calls PlayerCamera::ExitFurnitureCamera(0); updates the furniture state and the process bytes +0x320 (= !instant) and +0x32c (= instant); mounted actors take the mount path (extra 0xa9)
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 38697, rva 0x6d2a40.
@@ -934,6 +1006,12 @@ impl crate::ActorState {
     /// `bool ActorState::HasFlags(const ActorState* this, ushort mask)`
     #[inline]
     pub fn has_flags(&self, mask: u16) -> bool { unsafe { function!(38986, (*const Self, u16) -> bool)(core::ptr::from_ref(self), mask) } }
+    /// `ActorState::SetMovementFlags`: flags1 (+0x8 of ActorState = Actor+0xc8) low 14 bits = flags & 0x3fff, upper bits kept
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38982, rva 0x6e1490.
+    /// `bool (ActorState* this, u16 flags)`
+    #[inline]
+    pub fn set_movement_flags(&self, flags: u16) -> bool { unsafe { function!(38982, (*const Self, u16) -> bool)(core::ptr::from_ref(self), flags) } }
 }
 
 impl crate::ActorValueInfo {
@@ -1148,6 +1226,12 @@ impl crate::BaseExtraList {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_reference_handle(&self, out: *mut u32) -> *mut u32 { unsafe { function!(11719, (*const Self, *mut u32) -> *mut u32)(core::ptr::from_ref(self), out) } }
+    /// `BaseExtraList::GetTextDisplayData`: extra 0x99 of the list, or of the reference named by the list's extra 0x1c when that reference has formFlags bit 5
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 11654, rva 0x162e90.
+    /// `ExtraTextDisplayData* (BaseExtraList* list)`
+    #[inline]
+    pub fn get_text_display_data(&self) -> Option<&'static crate::ExtraTextDisplayData> { unsafe { function!(11654, (*const Self) -> Option<&'static crate::ExtraTextDisplayData>)(core::ptr::from_ref(self)) } }
     /// `BaseExtraList::HasType`: whether a type is present
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 11582, rva 0x1573e0.
@@ -1169,6 +1253,15 @@ impl crate::BaseExtraList {
     /// Semantic field, actors pass, high; `None` while the pointer is null.
     #[inline]
     pub fn head(&self) -> Option<&crate::BSExtraData> { unsafe { { self.head }.as_ref() } }
+}
+
+impl crate::Character {
+    /// `Character::GetFaceGenAnimationData`: Character/PlayerCharacter vtable slot 99 (+0x318): GetFaceNode (slot 97) ->+0x150 (BSFaceGenNiNode::animationData), or null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40260, rva 0x73a2f0.
+    /// `BSFaceGenAnimationData* (Character* this)`
+    #[inline]
+    pub fn get_face_gen_animation_data(&self) -> Option<&'static crate::BSFaceGenAnimationData> { unsafe { function!(40260, (*const Self) -> Option<&'static crate::BSFaceGenAnimationData>)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ContainerEntry {
@@ -1330,7 +1423,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_biped(&self, firstPerson: bool) -> *mut *mut c_void { unsafe { virtual_function!(self, 126, (*const Self, bool) -> *mut *mut c_void)(core::ptr::from_ref(self), firstPerson) } }
+    pub unsafe fn get_biped(&self, firstPerson: bool) -> *mut *mut crate::BipedAnim { unsafe { virtual_function!(self, 126, (*const Self, bool) -> *mut *mut crate::BipedAnim)(core::ptr::from_ref(self), firstPerson) } }
     /// `PlayerCharacter::GetCurrent3DNoFallback`, vtable slot 141: like slot 112 but returns firstPersonRoot (even null) whenever IsThirdPerson is false
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -1345,7 +1438,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_current_biped(&self) -> *mut *mut c_void { unsafe { virtual_function!(self, 127, (*const Self) -> *mut *mut c_void)(core::ptr::from_ref(self)) } }
+    pub unsafe fn get_current_biped(&self) -> *mut *mut crate::BipedAnim { unsafe { virtual_function!(self, 127, (*const Self) -> *mut *mut crate::BipedAnim)(core::ptr::from_ref(self)) } }
     /// `PlayerCharacter::GetHeading`, vtable slot 164: Actor::vfunc_164(this, 0) plus the float at +0x930, wrapped into [0, 2pi)
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -1785,6 +1878,24 @@ impl crate::TESObjectREFR {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn has_keyword(&self, keyword: &crate::BGSKeyword) -> bool { unsafe { virtual_function!(self, 72, (*const Self, *const crate::BGSKeyword) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(keyword)) } }
+    /// `NotifyReferenceTransformChanged`: before a transform write of a non-actor reference: returns for actors, for some base types and for refs with extra 0x0e; otherwise calls slot 84 (+0x2a0) with a zero vector
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 19669, rva 0x2e7310.
+    /// `void (TESObjectREFR* this)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn notify_reference_transform_changed(&self) { unsafe { function!(19669, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `TESObjectREFR::DisableLatent`: Papyrus Disable/DisableNoWait body: refuses already-disabled (formFlags bit 11), temporary (bit 14) refs, explosions and refs with an enable parent; with fadeOut sets the 3D's fade bits (+0x153); queues DisableFunctor (+0x14 formID, +0x18 bit 0 fade, bit 1 return now) on the VM
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 56491, rva 0xa56710.
+    /// `bool (TESObjectREFR* this, bool fadeOut, bool returnNow, IVirtualMachine* vm, u32 stackId)`
+    ///
+    /// # Safety
+    /// `vm` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn disable_latent(&self, fadeOut: bool, returnNow: bool, vm: *mut c_void, stackId: u32) -> bool { unsafe { function!(56491, (*const Self, bool, bool, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), fadeOut, returnNow, vm, stackId) } }
     /// `TESObjectREFR::GetAnimationGraphEventSource`: ref+0x38 slot 2 then 0x765930; graphIndex 0xffffffff means the active graph
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 40850, rva 0x765b00.
@@ -1818,6 +1929,12 @@ impl crate::TESObjectREFR {
     /// `BGSLocation* TESObjectREFR::GetCurrentLocation(TESObjectREFR* this)`
     #[inline]
     pub fn get_current_location(&self) -> Option<&'static crate::BGSLocation> { unsafe { function!(19812, (*const Self) -> Option<&'static crate::BGSLocation>)(core::ptr::from_ref(self)) } }
+    /// `TESObjectREFR::GetDisplayFullName`: the reference's display name: its ExtraTextDisplayData (type 0x99, found through the 0x1c redirect, or through the owning container's inventory entry for the same handle) rebuilt with the item health (extra 0x25) by 0x189740; when there is none and the health is outside the plain range a new 0x99 extra is added; otherwise the base form's TESFullName name (0x1e8460)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19781, rva 0x2f08d0.
+    /// `const char* (TESObjectREFR* this)`
+    #[inline]
+    pub fn get_display_full_name(&self) -> *const c_char { unsafe { function!(19781, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
     /// `TESObjectREFR::GetHandle`: handle of a reference, created on first use
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19846, rva 0x2f60c0.
@@ -1835,6 +1952,18 @@ impl crate::TESObjectREFR {
     /// May be null: `this`.
     #[inline]
     pub fn get_inventory_changes(&self) -> Option<&'static crate::InventoryChanges> { unsafe { function!(16039, (*const Self) -> Option<&'static crate::InventoryChanges>)(core::ptr::from_ref(self)) } }
+    /// `TESObjectREFR::GetLocalTransform`: rotate = GetRotationMatrix's matrix (XYZ; Z only for actors), translate = position, scale = refScale * 0.01 * TESNPC::GetHeight for NPC_ bases
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19753, rva 0x2eee20.
+    /// `void (const TESObjectREFR* this, NiTransform* out)`
+    #[inline]
+    pub fn get_local_transform(&self, out: &mut crate::NiTransform) { unsafe { function!(19753, (*const Self, *mut crate::NiTransform))(core::ptr::from_ref(self), core::ptr::from_mut(out)) } }
+    /// `TESObjectREFR::GetRotationMatrix`: FromEulerAnglesXYZ(out, rotX, rotY, rotZ); for actors (formType 0x3e) x and y are taken as 0, so an actor's matrix is Z(rotZ) only
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19752, rva 0x2eedd0.
+    /// `NiMatrix3* (const TESObjectREFR* this, NiMatrix3* out)`
+    #[inline]
+    pub fn get_rotation_matrix(&self, out: &mut crate::NiMatrix3) -> Option<&'static crate::NiMatrix3> { unsafe { function!(19752, (*const Self, *mut crate::NiMatrix3) -> Option<&'static crate::NiMatrix3>)(core::ptr::from_ref(self), core::ptr::from_mut(out)) } }
     /// `TESObjectREFR::GetScale`: effective scale
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 19664, rva 0x2e6f30.
@@ -1847,6 +1976,54 @@ impl crate::TESObjectREFR {
     /// `TESWorldSpace* TESObjectREFR::GetWorldspace(TESObjectREFR* this)`
     #[inline]
     pub fn get_worldspace(&self) -> Option<&'static crate::TESWorldSpace> { unsafe { function!(19816, (*const Self) -> Option<&'static crate::TESWorldSpace>)(core::ptr::from_ref(self)) } }
+    /// `TESObjectREFR::SetAngleX`: rotX (+0x48) = value when different; NotifyReferenceTransformChanged; AddChange(2); no clamp, no 3D update
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19787, rva 0x2f0d20.
+    /// `void (TESObjectREFR* this, float radians)`
+    #[inline]
+    pub fn set_angle_x(&self, radians: f32) { unsafe { function!(19787, (*const Self, f32))(core::ptr::from_ref(self), radians) } }
+    /// `TESObjectREFR::SetAngleY`: rotY (+0x4c), same pattern as SetAngleX
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19788, rva 0x2f0da0.
+    /// `void (TESObjectREFR* this, float radians)`
+    #[inline]
+    pub fn set_angle_y(&self, radians: f32) { unsafe { function!(19788, (*const Self, f32))(core::ptr::from_ref(self), radians) } }
+    /// `TESObjectREFR::SetAngleZ`: rotZ (+0x50), same pattern; for actors (formType 0x3e) the value is wrapped into [0, 2*pi]
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19789, rva 0x2f0e20.
+    /// `void (TESObjectREFR* this, float radians)`
+    #[inline]
+    pub fn set_angle_z(&self, radians: f32) { unsafe { function!(19789, (*const Self, f32))(core::ptr::from_ref(self), radians) } }
+    /// `TESObjectREFR::SetAngles`: writes rotX/Y/Z together (z wrapped for actors), NotifyReferenceTransformChanged, AddChange(2)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19786, rva 0x2f0c30.
+    /// `void (TESObjectREFR* this, const NiPoint3* radians)`
+    #[inline]
+    pub fn set_angles(&self, radians: &crate::NiPoint3) { unsafe { function!(19786, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(radians)) } }
+    /// `TESObjectREFR::SetAnglesFromMatrix`: ToEulerAnglesXYZ(m, &rotX, &rotY, &rotZ) written straight into +0x48/+0x4c/+0x50 (no change flag)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19751, rva 0x2eedb0.
+    /// `void (TESObjectREFR* this, const NiMatrix3* m)`
+    #[inline]
+    pub fn set_angles_from_matrix(&self, m: &crate::NiMatrix3) { unsafe { function!(19751, (*const Self, *const crate::NiMatrix3))(core::ptr::from_ref(self), core::ptr::from_ref(m)) } }
+    /// `TESObjectREFR::SetCollisionDisabled`: formFlags (+0x10) bit 4: set when the argument is true, cleared when false; on a reference the bit means 'move without collision' (see the flag row)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 14634, rva 0x1e6030.
+    /// `void (TESForm* form, bool set)`
+    #[inline]
+    pub fn set_collision_disabled(form: &crate::TESForm, set: bool) { unsafe { function!(14634, (*const crate::TESForm, bool))(core::ptr::from_ref(form), set) } }
+    /// `TESObjectREFR::SetPosition`: writes posX/Y/Z (+0x54..+0x5c) when they differ: NotifyReferenceTransformChanged, AddChange(2) (slot 10), loadedData+0x28 |= 0x10; re-buckets the reference in the cell's position grid for handle-tracked refs; does not touch the 3D or the character controller
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19790, rva 0x2f0ef0.
+    /// `void (TESObjectREFR* this, const NiPoint3* position)`
+    #[inline]
+    pub fn set_position(&self, position: &crate::NiPoint3) { unsafe { function!(19790, (*const Self, *const crate::NiPoint3))(core::ptr::from_ref(self), core::ptr::from_ref(position)) } }
+    /// `TESObjectREFR::SetScale`: refScale (+0x98, u16 percent) = round(scale * 100) clamped to [1, 1000] (AddChange(0x10) when it changes); root.local.scale (+0x78) = refScale / 100 * TESNPC::GetHeight for NPC_ bases; the player also scales the first-person root by min(scale, 1); UpdateNode on each root; actors then rebuild the character controller (slots 168 and 102) keeping controller +0x240/+0x24c/+0x250
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19665, rva 0x2e6f80.
+    /// `void (TESObjectREFR* this, float scale)`
+    #[inline]
+    pub fn set_scale(&self, scale: f32) { unsafe { function!(19665, (*const Self, f32))(core::ptr::from_ref(self), scale) } }
     /// `TESObjectREFR::UpdateAnimationGraphs`: builds AnimationGraphUpdateData (slot 121), updates the holder's manager, then the 42 biped slots' graphs
     ///
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 20123, rva 0x2fdeb0.

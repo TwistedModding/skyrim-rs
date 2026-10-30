@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `PackStridedVerticesAndComputeAabb` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65106, rva 0xc3b990).
-/// `undefined PackStridedVerticesAndComputeAabb(longlong param_1, undefined1[12] * param_2, int param_3, int param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_strided_vertices_and_compute_aabb(param_1: i64, param_2: *mut c_void, param_3: i32, param_4: i32) -> u64 { unsafe { function!(65106, (i64, *mut c_void, i32, i32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PackVector4ToBytes` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 64487, rva 0xc01f50).
-/// `uint PackVector4ToBytes(float * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pack_vector4_to_bytes(param_1: *mut f32) -> u32 { unsafe { function!(64487, (*mut f32) -> u32)(param_1) } }
-/// `PadByteArrayToAlignment` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65568, rva 0xc4ec80).
-/// `undefined PadByteArrayToAlignment(int param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pad_byte_array_to_alignment(param_1: i32, param_2: *mut i64) -> u64 { unsafe { function!(65568, (i32, *mut i64) -> u64)(param_1, param_2) } }
-/// `PadWriterByteArrayToAlignment` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 64439, rva 0xc005d0).
-/// `undefined PadWriterByteArrayToAlignment(longlong * param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn pad_writer_byte_array_to_alignment(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(64439, (*mut i64, i32) -> u64)(param_1, param_2) } }
 /// `Papyrus::ActiveMagicEffect::AddInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54576, rva 0x9fba70).
 /// `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
 ///
@@ -255,13 +227,6 @@ pub unsafe fn papyrus__actor__can_fly_here(vm: *mut c_void, stackId: u32, self_:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__clear_arrested(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54656, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
-/// `Papyrus::Actor::ClearExpressionOverride` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54657, rva 0x9ffe30).
-/// `void ClearExpressionOverride(IVirtualMachine * vm, uint stackId, Actor * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__clear_expression_override(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor) { unsafe { function!(54657, (*mut c_void, u32, *mut crate::Actor))(vm, stackId, self_) } }
 /// `Papyrus::Actor::ClearExtraArrows` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54658, rva 0x9ffeb0).
 /// `void ClearExtraArrows(IVirtualMachine * vm, uint stackId, Actor * self)`
 ///
@@ -1109,13 +1074,6 @@ pub unsafe fn papyrus__actor__set_doing_favor(vm: *mut c_void, stackId: u32, sel
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__set_dont_move(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u8) { unsafe { function!(54761, (*mut c_void, u32, *mut crate::Actor, u8))(vm, stackId, self_, a0) } }
-/// `Papyrus::Actor::SetExpressionOverride` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54748, rva 0xa02300).
-/// `void SetExpressionOverride(IVirtualMachine * vm, uint stackId, Actor * self, uint a0, uint a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__set_expression_override(vm: *mut c_void, stackId: u32, self_: *mut crate::Actor, a0: u32, a1: u32) { unsafe { function!(54748, (*mut c_void, u32, *mut crate::Actor, u32, u32))(vm, stackId, self_, a0, a1) } }
 /// `Papyrus::Actor::SetEyeTexture` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54749, rva 0xa02410).
 /// `void SetEyeTexture(IVirtualMachine * vm, uint stackId, Actor * self, BGSTextureSet * a0)`
 ///
@@ -4336,13 +4294,6 @@ pub unsafe fn papyrus__utility__wait_game_time(vm: *mut c_void, stackId: u32, un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__utility__wait_menu_mode(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: f32) -> u8 { unsafe { function!(56818, (*mut c_void, u32, *mut c_void, f32) -> u8)(vm, stackId, unused, a0) } }
-/// `Papyrus::VisualEffect::Play` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55308, rva 0xa1c850).
-/// `void Play(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0, float a1, TESObjectREFR * a2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__visual_effect__play(vm: *mut c_void, stackId: u32, self_: *mut crate::BGSReferenceEffect, a0: *mut crate::TESObjectREFR, a1: f32, a2: *mut crate::TESObjectREFR) { unsafe { function!(55308, (*mut c_void, u32, *mut crate::BGSReferenceEffect, *mut crate::TESObjectREFR, f32, *mut crate::TESObjectREFR))(vm, stackId, self_, a0, a1, a2) } }
 /// `Papyrus::VisualEffect::Stop` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55309, rva 0xa1c9d0).
 /// `void Stop(IVirtualMachine * vm, uint stackId, BGSReferenceEffect * self, TESObjectREFR * a0)`
 ///
@@ -4371,13 +4322,6 @@ pub unsafe fn papyrus__weather__find_weather(vm: *mut c_void, stackId: u32, unus
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__weather__force_active(vm: *mut c_void, stackId: u32, self_: *mut crate::TESWeather, a0: u8) { unsafe { function!(56773, (*mut c_void, u32, *mut crate::TESWeather, u8))(vm, stackId, self_, a0) } }
-/// `Papyrus::Weather::GetClassification` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56775, rva 0xa63dd0).
-/// `int GetClassification(IVirtualMachine * vm, uint stackId, TESWeather * self)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__weather__get_classification(vm: *mut c_void, stackId: u32, self_: *mut crate::TESWeather) -> i32 { unsafe { function!(56775, (*mut c_void, u32, *mut crate::TESWeather) -> i32)(vm, stackId, self_) } }
 /// `Papyrus::Weather::GetCurrentWeather` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56803, rva 0xa65130).
 /// `TESWeather * GetCurrentWeather(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 ///
@@ -13478,3 +13422,66 @@ pub unsafe fn resolve_list_form_i_ds(param_1: i64, param_2: i64, param_3: *mut c
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn resolve_masters_for_file_list_d60(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(13746, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ResolveRefHandleIntoSmartPtr` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12971, rva 0x1917d0).
+/// `undefined ResolveRefHandleIntoSmartPtr(uint * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_ref_handle_into_smart_ptr(param_1: *mut u32, param_2: *mut i64) -> u64 { unsafe { function!(12971, (*mut u32, *mut i64) -> u64)(param_1, param_2) } }
+/// `ResolveRelativePathAgainstFileDirectory` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69220, rva 0xeb3d00).
+/// `undefined ResolveRelativePathAgainstFileDirectory(char * param_1, char * param_2, char * param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn resolve_relative_path_against_file_directory(param_1: *mut c_char, param_2: *mut c_char, param_3: *mut c_char) -> u64 { unsafe { function!(69220, (*mut c_char, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3) } }
+/// `RestartLoopSoundAtRefPosition` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 43976, rva 0x7ee9d0).
+/// `undefined RestartLoopSoundAtRefPosition(TESObjectREFR * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn restart_loop_sound_at_ref_position(param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(43976, (*mut crate::TESObjectREFR) -> u64)(param_1) } }
+/// `RestoreActorValue` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38455, rva 0x6c47f0).
+/// `undefined RestoreActorValue(longlong param_1, int param_2, float param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn restore_actor_value(param_1: i64, param_2: i32, param_3: f32) -> u64 { unsafe { function!(38455, (i64, i32, f32) -> u64)(param_1, param_2, param_3) } }
+/// `RestoreBit0OfFieldF4OnGlobals` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 31823, rva 0x5171f0).
+/// `undefined RestoreBit0OfFieldF4OnGlobals(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn restore_bit0_of_field_f4_on_globals(param_1: i64) -> u64 { unsafe { function!(31823, (i64) -> u64)(param_1) } }
+/// `RestorePlaneMasks` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76844, rva 0xff9230).
+/// `undefined RestorePlaneMasks(longlong * param_1, undefined4 * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn restore_plane_masks(param_1: *mut i64, param_2: *mut u32) -> u64 { unsafe { function!(76844, (*mut i64, *mut u32) -> u64)(param_1, param_2) } }
+/// `ReturnEntryToPool` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 15419, rva 0x20b8d0).
+/// `undefined ReturnEntryToPool(ulonglong param_1, ulonglong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn return_entry_to_pool(param_1: u64, param_2: u64) -> u64 { unsafe { function!(15419, (u64, u64) -> u64)(param_1, param_2) } }
+/// `ReturnStreamBufferToPool` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 68052, rva 0xcdc470).
+/// `undefined ReturnStreamBufferToPool(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn return_stream_buffer_to_pool(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(68052, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `ReverseByteRange` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 453589, rva 0x15a6fa8).
+/// `undefined ReverseByteRange(undefined1[32] * param_1, undefined1[32] * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn reverse_byte_range(param_1: *mut c_void, param_2: *mut c_void) -> u64 { unsafe { function!(453589, (*mut c_void, *mut c_void) -> u64)(param_1, param_2) } }

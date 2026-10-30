@@ -21,12 +21,5 @@ impl crate::TESObjectREFR {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn save_animation_graph_state(&self, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(20098, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self), param_2, param_3, param_4) } }
-    /// `TESObjectREFR::SetScale` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19665, rva 0x2e6f80).
-    /// `undefined SetScale(longlong * param_1, float param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn set_scale(param_1: *mut i64, param_2: f32) -> u64 { unsafe { function!(19665, (*mut i64, f32) -> u64)(param_1, param_2) } }
 }
 

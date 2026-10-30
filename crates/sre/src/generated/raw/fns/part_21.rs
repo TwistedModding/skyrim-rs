@@ -3,6 +3,258 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_0` at 0x1282b20 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3749361b573e: u64 = 444239;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_1` at 0x1284490 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_cbdebcd21195: u64 = 444296;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_0` at 0x12943c0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7d2cdcbfd09d: u64 = 444983;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_1` at 0x12957a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eab4c6bb2ab9: u64 = 444993;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_0` at 0x12943f0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_3746e5f2615d: u64 = 524857;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_1` at 0x12957d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_000fcd3c7d4b: u64 = 524869;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_0` at 0x12ebe20 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ba7763f696a4: u64 = 444932;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_1` at 0x12ec1e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e47c9455529: u64 = 444941;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_0` at 0x12ebe50 (rtti, high); signature (low): `CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * vfunc_0(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6df096eb0eb0: u64 = 444933;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_2` at 0x12ec0f0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b6e6f99ff390: u64 = 444938;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>::vfunc_3` at 0x12ec310 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c80679a5692d: u64 = 444943;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_0` at 0x1283050 (rtti, high); signature (low): `CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * vfunc_0(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b7b3432c778: u64 = 444249;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_2` at 0x1283e30 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d7b0f9d1ff69: u64 = 444280;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>::vfunc_3` at 0x1284b90 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0bc582dd639b: u64 = 444302;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_0` at 0x1294420 (rtti, high); signature (low): `CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * vfunc_0(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d1bf09baa874: u64 = 444984;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_2` at 0x1294cc0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f40767187d07: u64 = 444988;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>::vfunc_3` at 0x12958d0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0e5d6fa5ee75: u64 = 444995;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_0` at 0x1294450 (rtti, high); signature (low): `CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * vfunc_0(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_11e83404f313: u64 = 524858;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_2` at 0x1294d20 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5ffdb418c319: u64 = 524865;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>::vfunc_3` at 0x1295930 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f71a7edc5bb3: u64 = 524870;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_0` at 0x12ebe80 (rtti, high); signature (low): `CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * vfunc_0(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_979a2cae27ed: u64 = 444934;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_2` at 0x12ec150 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4e43ae8c5e6b: u64 = 444939;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::vfunc_3` at 0x12ec370 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e22e2f78b38d: u64 = 444944;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1283310 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fa5ea47b931e: u64 = 444261;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1283400 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4307c2f37308: u64 = 444265;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_0` at 0x1259a70 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_93cfa7042a60: u64 = 443988;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_1` at 0x125a6d0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_42b0f6084258: u64 = 444011;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_0` at 0x1259b30 (rtti, high); signature (low): `CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * vfunc_0(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_1f337942abe2: u64 = 443993;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_2` at 0x125a600 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_3ef4ab992c45: u64 = 444010;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>::vfunc_3` at 0x125a760 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_0face964f1b3: u64 = 444016;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICallableBase::vfunc_0` at 0x1259cb0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_4a1730045459: u64 = 443995;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1259d40 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__ErrorParams_2fb924f11a60: u64 = 443998;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_0` at 0x1259aa0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_e5f4de88aa7b: u64 = 443989;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_1` at 0x125a6e0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 param_1)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_4d53c0221f1e: u64 = 444012;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_0` at 0x1259b00 (rtti, high); signature (low): `CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * vfunc_0(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_aff275235b7b: u64 = 443991;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_2` at 0x125a5a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_6708e3f78d05: u64 = 444008;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>::vfunc_3` at 0x125a700 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_ff59d3ab2275: u64 = 444014;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICallableBase::vfunc_0` at 0x1259ce0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_2e994c4a1e85: u64 = 443996;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1259d70 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__LogParams_c_8446ee11cccf: u64 = 443999;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_0` at 0x1259ad0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_7781e0accdfd: u64 = 443990;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_1` at 0x125a6f0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CallableBas_a46f3a939313: u64 = 444013;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_0` at 0x1259b60 (rtti, high); signature (low): `CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * vfunc_0(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_bb39f3b119e4: u64 = 443992;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_2` at 0x125a660 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_aef163020f38: u64 = 444009;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>::vfunc_3` at 0x125a7c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__CopyableCal_c22815040ed6: u64 = 444015;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICallableBase::vfunc_0` at 0x1259d10 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICallableBase__vfunc_0: u64 = 443997;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable::vfunc_0` at 0x1259da0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_void__ICopyableCallable__vfunc_0: u64 = 524336;
+/// `crt_atexit` at 0x15a7930 (crt_init, medium); signature (low): `int crt_atexit(void)`
+pub const crt_atexit: u64 = 109608;
+/// `doDownloads::waitingCallback::vdtor` at 0x6072f0 (layout_inference, medium); signature (low): `waitingCallback * vdtor(waitingCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const doDownloads__waitingCallback__vdtor: u64 = 442436;
+/// `doDownloads::waitingCallback::vfunc_1` at 0x607220 (rtti, high); signature (low): `undefined vfunc_1(void)`
+pub const doDownloads__waitingCallback__vfunc_1: u64 = 442433;
+/// `downloadConfirmResetCallback::vdtor` at 0x607260 (layout_inference, medium); signature (low): `downloadConfirmResetCallback * vdtor(downloadConfirmResetCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const downloadConfirmResetCallback__vdtor: u64 = 442435;
+/// `downloadConfirmResetCallback::vfunc_1` at 0x606eb0 (rtti, high); signature (low): `undefined vfunc_1(void)`
+pub const downloadConfirmResetCallback__vfunc_1: u64 = 442432;
+/// `entry` at 0x15a8514 (ghidra_analyzer, high); signature (low): `undefined entry(void)`
+pub const entry: u64 = 109642;
+/// `g_AutoRegisterCombatObject_CombatAimController__atexit` at 0x17a1250 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAimController__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatAimController__atexit: u64 = 171877;
+/// `g_AutoRegisterCombatObject_CombatAimController__init` at 0xad750 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAimController__init(void)`
+pub const g_AutoRegisterCombatObject_CombatAimController__init: u64 = 6543;
+/// `g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__atexit` at 0x17a2cf0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__atexit: u64 = 172127;
+/// `g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__init` at 0xb0b80 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__init(void)`
+pub const g_AutoRegisterCombatObject_CombatApproachTargetSpeedController__init: u64 = 6667;
+/// `g_AutoRegisterCombatObject_CombatAreaHoldPosition__atexit` at 0x17a12a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaHoldPosition__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaHoldPosition__atexit: u64 = 171882;
+/// `g_AutoRegisterCombatObject_CombatAreaHoldPosition__init` at 0xad980 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaHoldPosition__init(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaHoldPosition__init: u64 = 6548;
+/// `g_AutoRegisterCombatObject_CombatAreaRadius__atexit` at 0x17a12b0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaRadius__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaRadius__atexit: u64 = 171883;
+/// `g_AutoRegisterCombatObject_CombatAreaRadius__init` at 0xad9f0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaRadius__init(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaRadius__init: u64 = 6549;
+/// `g_AutoRegisterCombatObject_CombatAreaReference__atexit` at 0x17a12c0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaReference__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaReference__atexit: u64 = 171884;
+/// `g_AutoRegisterCombatObject_CombatAreaReference__init` at 0xada60 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaReference__init(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaReference__init: u64 = 6550;
+/// `g_AutoRegisterCombatObject_CombatAreaStandard__atexit` at 0x17a12d0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaStandard__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaStandard__atexit: u64 = 171885;
+/// `g_AutoRegisterCombatObject_CombatAreaStandard__init` at 0xadad0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatAreaStandard__init(void)`
+pub const g_AutoRegisterCombatObject_CombatAreaStandard__init: u64 = 6551;
+/// `g_AutoRegisterCombatObject_CombatCoverLocation__atexit` at 0x17a1360 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverLocation__atexit: u64 = 171889;
+/// `g_AutoRegisterCombatObject_CombatCoverLocation__init` at 0xadbe0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverLocation__init: u64 = 6554;
+/// `g_AutoRegisterCombatObject_CombatCoverSearchDebugData__atexit` at 0x17a1380 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearchDebugData__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearchDebugData__atexit: u64 = 171891;
+/// `g_AutoRegisterCombatObject_CombatCoverSearchDebugData__init` at 0xadcc0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearchDebugData__init(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearchDebugData__init: u64 = 6556;
+/// `g_AutoRegisterCombatObject_CombatCoverSearchResult__atexit` at 0x17a1390 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearchResult__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearchResult__atexit: u64 = 171892;
+/// `g_AutoRegisterCombatObject_CombatCoverSearchResult__init` at 0xadd30 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearchResult__init(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearchResult__init: u64 = 6557;
+/// `g_AutoRegisterCombatObject_CombatCoverSearch__atexit` at 0x17a1370 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearch__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearch__atexit: u64 = 171890;
+/// `g_AutoRegisterCombatObject_CombatCoverSearch__init` at 0xadc50 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatCoverSearch__init(void)`
+pub const g_AutoRegisterCombatObject_CombatCoverSearch__init: u64 = 6555;
+/// `g_AutoRegisterCombatObject_CombatDisableActionController__atexit` at 0x17a2790 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatDisableActionController__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatDisableActionController__atexit: u64 = 172076;
+/// `g_AutoRegisterCombatObject_CombatDisableActionController__init` at 0xafec0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatDisableActionController__init(void)`
+pub const g_AutoRegisterCombatObject_CombatDisableActionController__init: u64 = 6641;
+/// `g_AutoRegisterCombatObject_CombatDisableAimController__atexit` at 0x17a1260 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatDisableAimController__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatDisableAimController__atexit: u64 = 171878;
+/// `g_AutoRegisterCombatObject_CombatDisableAimController__init` at 0xad7c0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatDisableAimController__init(void)`
+pub const g_AutoRegisterCombatObject_CombatDisableAimController__init: u64 = 6544;
+/// `g_AutoRegisterCombatObject_CombatFlankingSearchData__atexit` at 0x17a22a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatFlankingSearchData__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatFlankingSearchData__atexit: u64 = 172010;
+/// `g_AutoRegisterCombatObject_CombatFlankingSearchData__init` at 0xaf500 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatFlankingSearchData__init(void)`
+pub const g_AutoRegisterCombatObject_CombatFlankingSearchData__init: u64 = 6623;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemMelee__atexit` at 0x17a1540 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemMelee__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemMelee__atexit: u64 = 171899;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemMelee__init` at 0xadfe0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemMelee__init(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemMelee__init: u64 = 6564;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__atexit` at 0x17a1550 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__atexit: u64 = 171900;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__init` at 0xae050 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__init(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemOneHandedBlock__init: u64 = 6565;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemRanged__atexit` at 0x17a1560 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemRanged__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemRanged__atexit: u64 = 171901;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemRanged__init` at 0xae0c0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemRanged__init(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemRanged__init: u64 = 6566;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemShield__atexit` at 0x17a1570 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemShield__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemShield__atexit: u64 = 171902;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemShield__init` at 0xae130 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemShield__init(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemShield__init: u64 = 6567;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemTorch__atexit` at 0x17a1580 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemTorch__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemTorch__atexit: u64 = 171903;
+/// `g_AutoRegisterCombatObject_CombatInventoryItemTorch__init` at 0xae1a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatInventoryItemTorch__init(void)`
+pub const g_AutoRegisterCombatObject_CombatInventoryItemTorch__init: u64 = 6568;
+/// `g_AutoRegisterCombatObject_CombatMeleeAimController__atexit` at 0x17a1270 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatMeleeAimController__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatMeleeAimController__atexit: u64 = 171879;
+/// `g_AutoRegisterCombatObject_CombatMeleeAimController__init` at 0xad830 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatMeleeAimController__init(void)`
+pub const g_AutoRegisterCombatObject_CombatMeleeAimController__init: u64 = 6545;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__atexit` at 0x17a2d00 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__atexit: u64 = 172128;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init` at 0xb0bf0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init: u64 = 6668;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init_sub0` at 0x8efce0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationLocation__init_sub0: u64 = 50586;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__atexit` at 0x17a2d10 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__atexit: u64 = 172129;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init` at 0xb0c60 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init: u64 = 6669;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init_sub0` at 0x8efd70 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlight_CombatPathDestinationRef__init_sub0: u64 = 50587;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__atexit` at 0x17a2d20 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__atexit: u64 = 172130;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__init` at 0xb0cd0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestFlyingAttack_CombatPathDestinationNone__init: u64 = 6670;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__atexit` at 0x17a2d30 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__atexit: u64 = 172131;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init` at 0xb0d40 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init: u64 = 6671;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init_sub0` at 0x8efef0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestHover_CombatPathDestinationNone__init_sub0: u64 = 50589;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__atexit` at 0x17a2d40 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__atexit: u64 = 172132;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__init` at 0xb0db0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestLanding_CombatPathDestinationLocation__init: u64 = 6672;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__atexit` at 0x17a2d50 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__atexit: u64 = 172133;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init` at 0xb0e20 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init: u64 = 6673;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init_sub0` at 0x8f00d0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationLocations__init_sub0: u64 = 50591;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__atexit` at 0x17a2d60 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__atexit: u64 = 172134;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init` at 0xb0e90 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init: u64 = 6674;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init_sub0` at 0x8f0160 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestMultiGoal_CombatPathDestinationRefs__init_sub0: u64 = 50592;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__atexit` at 0x17a2d70 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__atexit: u64 = 172135;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__init` at 0xb0f00 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestOrbit_CombatPathDestinationLocation__init: u64 = 6675;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__atexit` at 0x17a2d80 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__atexit: u64 = 172136;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__init` at 0xb0f70 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestRotatePath_CombatPathDestinationLocation__init: u64 = 6676;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__atexit` at 0x17a2d90 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__atexit: u64 = 172137;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init` at 0xb0fe0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init: u64 = 6677;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init_sub0` at 0x8f03d0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationLocation__init_sub0: u64 = 50595;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__atexit` at 0x17a2da0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__atexit: u64 = 172138;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init` at 0xb1050 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init: u64 = 6678;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init_sub0` at 0x8f0460 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStandard_CombatPathDestinationRef__init_sub0: u64 = 50596;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__atexit` at 0x17a2db0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__atexit: u64 = 172139;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__init` at 0xb10c0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestStraightPath_CombatPathDestinationLocation__init: u64 = 6679;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__atexit` at 0x17a2dc0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__atexit: u64 = 172140;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init` at 0xb1130 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init: u64 = 6680;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init_sub0` at 0x8f05e0 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init_sub0(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationLocations__init_sub0: u64 = 50598;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__atexit` at 0x17a2dd0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__atexit(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__atexit: u64 = 172141;
+/// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init` at 0xb11a0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init(void)`
+pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init: u64 = 6681;
 /// `g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0` at 0x8f0670 (callgraph, medium); signature (untiered): `uint g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0(void)`
 pub const g_AutoRegisterCombatObject_CombatPathT_CombatPathRequestWeightedMultiGoal_CombatPathDestinationRefs__init_sub0: u64 = 50599;
 /// `g_AutoRegisterCombatObject_CombatPathingDebugData__init` at 0xb09f0 (crt_init, medium); signature (high): `void g_AutoRegisterCombatObject_CombatPathingDebugData__init(void)`
@@ -7965,469 +8217,3 @@ pub const hkpConvexVerticesShape__vfunc_15: u64 = 65098;
 pub const hkpConvexVerticesShape__vfunc_17: u64 = 65099;
 /// `hkpConvexVerticesShape::vfunc_6` at 0xc3c2f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
 pub const hkpConvexVerticesShape__vfunc_6: u64 = 65111;
-/// `hkpConvexVerticesShape::vfunc_7` at 0xc3b510 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexVerticesShape * this, float * param_1, float param_2, float * param_3)`
-pub const hkpConvexVerticesShape__vfunc_7: u64 = 65102;
-/// `hkpConvexVerticesShape::vfunc_8` at 0xc3b5c0 (rtti, medium); signature (low): `undefined1 * vfunc_8(hkpConvexVerticesShape * this, undefined1 * param_1, float * param_2, float * param_3)`
-pub const hkpConvexVerticesShape__vfunc_8: u64 = 65103;
-/// `hkpCylinderShape::ctor` at 0xb42980 (layout_inference, medium); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, undefined8 * param_1, undefined8 * param_2, float param_3, undefined4 param_4)`
-pub const hkpCylinderShape__ctor: u64 = 60720;
-/// `hkpCylinderShape::ctor` at 0xb43ae0 (layout_inference, high); signature (low): `hkpCylinderShape * ctor(hkpCylinderShape * this, int param_1)`
-pub const hkpCylinderShape__ctor_2: u64 = 60733;
-/// `hkpCylinderShape::vdtor` at 0xb43b70 (layout_inference, medium); signature (low): `hkpCylinderShape * vdtor(hkpCylinderShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpCylinderShape__vdtor: u64 = 60734;
-/// `hkpCylinderShape::vfunc_11` at 0xb42e20 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpCylinderShape__vfunc_11: u64 = 60726;
-/// `hkpCylinderShape::vfunc_12` at 0xb42e30 (rtti, high); signature (low): `longlong vfunc_12(hkpCylinderShape * this, longlong param_1)`
-pub const hkpCylinderShape__vfunc_12: u64 = 60727;
-/// `hkpCylinderShape::vfunc_13` at 0xb438b0 (rtti, high); signature (low): `undefined vfunc_13(hkpCylinderShape * this, undefined8 * param_1)`
-pub const hkpCylinderShape__vfunc_13: u64 = 60730;
-/// `hkpCylinderShape::vfunc_14` at 0xb42a80 (rtti, high); signature (low): `undefined vfunc_14(hkpCylinderShape * this, float * param_1, float * param_2)`
-pub const hkpCylinderShape__vfunc_14: u64 = 60723;
-/// `hkpCylinderShape::vfunc_15` at 0xb42cb0 (rtti, high); signature (low): `undefined vfunc_15(hkpCylinderShape * this, ushort * param_1, int param_2, float * param_3)`
-pub const hkpCylinderShape__vfunc_15: u64 = 60724;
-/// `hkpCylinderShape::vfunc_17` at 0xb42df0 (rtti, high); signature (low): `undefined vfunc_17(hkpCylinderShape * this, float * param_1)`
-pub const hkpCylinderShape__vfunc_17: u64 = 60725;
-/// `hkpCylinderShape::vfunc_2` at 0xb438c0 (rtti, high); signature (low): `undefined vfunc_2(hkpCylinderShape * this, undefined8 param_1)`
-pub const hkpCylinderShape__vfunc_2: u64 = 60731;
-/// `hkpCylinderShape::vfunc_6` at 0xb43c00 (rtti, high); signature (low): `undefined8 vfunc_6(void)`
-pub const hkpCylinderShape__vfunc_6: u64 = 60735;
-/// `hkpCylinderShape::vfunc_7` at 0xb43000 (rtti, high); signature (low): `undefined vfunc_7(hkpCylinderShape * this, float * param_1, float param_2, float * param_3)`
-pub const hkpCylinderShape__vfunc_7: u64 = 60728;
-/// `hkpCylinderShape::vfunc_8` at 0xb43160 (rtti, high); signature (low): `undefined1 * vfunc_8(hkpCylinderShape * this, undefined1 * param_1, float * param_2, float * param_3)`
-pub const hkpCylinderShape__vfunc_8: u64 = 60729;
-/// `hkpDashpotAction::ctor` at 0xb9b170 (layout_inference, high); signature (high): `undefined ctor(hkpDashpotAction * this)`
-pub const hkpDashpotAction__ctor: u64 = 62483;
-/// `hkpDashpotAction::ctor` at 0xba2a60 (layout_inference, high); signature (low): `hkpDashpotAction * ctor(hkpDashpotAction * this, longlong param_1, longlong param_2, undefined8 param_3)`
-pub const hkpDashpotAction__ctor_2: u64 = 62683;
-/// `hkpDashpotAction::vdtor` at 0xb9c040 (slot_propagation, medium); signature (low): `hkpDashpotAction * vdtor(hkpDashpotAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDashpotAction__vdtor: u64 = 62583;
-/// `hkpDashpotAction::vfunc_3` at 0xba2aa0 (rtti, high); signature (low): `undefined vfunc_3(hkpDashpotAction * this, longlong param_1)`
-pub const hkpDashpotAction__vfunc_3: u64 = 62684;
-/// `hkpDashpotAction::vfunc_7` at 0xba2c20 (rtti, high); signature (low): `hkpDashpotAction * vfunc_7(hkpDashpotAction * this, longlong * param_1, longlong param_2)`
-pub const hkpDashpotAction__vfunc_7: u64 = 62685;
-/// `hkpDefaultConvexListFilter::vdtor` at 0xb36670 (layout_inference, medium); signature (low): `hkpDefaultConvexListFilter * vdtor(hkpDefaultConvexListFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDefaultConvexListFilter__vdtor: u64 = 60533;
-/// `hkpDefaultConvexListFilter::vfunc_3` at 0xb3cd80 (rtti, high); signature (low): `uint vfunc_3(hkpDefaultConvexListFilter * this, undefined8 param_1, longlong * param_2, longlong * param_3)`
-pub const hkpDefaultConvexListFilter__vfunc_3: u64 = 60625;
-/// `hkpDefaultToiResourceMgr::ctor` at 0x1107580 (layout_inference, medium); signature (high): `hkpDefaultToiResourceMgr * ctor(hkpDefaultToiResourceMgr * this)`
-pub const hkpDefaultToiResourceMgr__ctor: u64 = 81075;
-/// `hkpDefaultToiResourceMgr::vdtor` at 0x1107750 (slot_propagation, medium); signature (low): `hkpDefaultToiResourceMgr * vdtor(hkpDefaultToiResourceMgr * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDefaultToiResourceMgr__vdtor: u64 = 81084;
-/// `hkpDefaultToiResourceMgr::vfunc_1` at 0x1107870 (rtti, high); signature (low): `undefined * vfunc_1(void)`
-pub const hkpDefaultToiResourceMgr__vfunc_1: u64 = 81087;
-/// `hkpDefaultToiResourceMgr::vfunc_2` at 0x11076f0 (rtti, high); signature (low): `undefined vfunc_2(hkpDefaultToiResourceMgr * this, longlong * param_1)`
-pub const hkpDefaultToiResourceMgr__vfunc_2: u64 = 81081;
-/// `hkpDefaultToiResourceMgr::vfunc_3` at 0x11075d0 (rtti, high); signature (low): `undefined8 vfunc_3(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, undefined4 * param_3)`
-pub const hkpDefaultToiResourceMgr__vfunc_3: u64 = 81077;
-/// `hkpDefaultToiResourceMgr::vfunc_3_sub0` at 0x1107730 (callgraph, medium); signature (untiered): `undefined1 * vfunc_3_sub0(undefined8 param_1, undefined1 * param_2)`
-pub const hkpDefaultToiResourceMgr__vfunc_3_sub0: u64 = 81083;
-/// `hkpDefaultToiResourceMgr::vfunc_4` at 0x1107690 (rtti, high); signature (low): `undefined8 vfunc_4(void)`
-pub const hkpDefaultToiResourceMgr__vfunc_4: u64 = 81078;
-/// `hkpDefaultToiResourceMgr::vfunc_5` at 0x11076a0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-pub const hkpDefaultToiResourceMgr__vfunc_5: u64 = 81079;
-/// `hkpDefaultToiResourceMgr::vfunc_6` at 0x11076b0 (rtti, high); signature (low): `undefined vfunc_6(hkpDefaultToiResourceMgr * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-pub const hkpDefaultToiResourceMgr__vfunc_6: u64 = 81080;
-/// `hkpDefaultToiResourceMgr::vfunc_7` at 0x1107720 (rtti, high); signature (high): `undefined4 vfunc_7(hkpDefaultToiResourceMgr * this)`
-pub const hkpDefaultToiResourceMgr__vfunc_7: u64 = 81082;
-/// `hkpDefaultWorldMaintenanceMgr::ctor` at 0xb80a30 (layout_inference, medium); signature (high): `hkpDefaultWorldMaintenanceMgr * ctor(hkpDefaultWorldMaintenanceMgr * this)`
-pub const hkpDefaultWorldMaintenanceMgr__ctor: u64 = 62217;
-/// `hkpDefaultWorldMaintenanceMgr::vdtor` at 0xb80c40 (layout_inference, medium); signature (low): `hkpDefaultWorldMaintenanceMgr * vdtor(hkpDefaultWorldMaintenanceMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDefaultWorldMaintenanceMgr__vdtor: u64 = 62221;
-/// `hkpDefaultWorldMaintenanceMgr::vfunc_3` at 0xb80a60 (rtti, high); signature (low): `undefined vfunc_3(hkpDefaultWorldMaintenanceMgr * this, longlong param_1)`
-pub const hkpDefaultWorldMaintenanceMgr__vfunc_3: u64 = 62218;
-/// `hkpDefaultWorldMaintenanceMgr::vfunc_4` at 0xb80a80 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMaintenanceMgr * this, longlong param_1, float * param_2)`
-pub const hkpDefaultWorldMaintenanceMgr__vfunc_4: u64 = 62219;
-/// `hkpDefaultWorldMaintenanceMgr::vfunc_4_sub0` at 0xb60870 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1)`
-pub const hkpDefaultWorldMaintenanceMgr__vfunc_4_sub0: u64 = 61512;
-/// `hkpDefaultWorldMaintenanceMgr::vfunc_5` at 0xb80b80 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMaintenanceMgr * this, undefined8 param_1, float * param_2)`
-pub const hkpDefaultWorldMaintenanceMgr__vfunc_5: u64 = 62220;
-/// `hkpDefaultWorldMemoryWatchDog::vdtor` at 0xb51ec0 (layout_inference, medium); signature (low): `hkpDefaultWorldMemoryWatchDog * vdtor(hkpDefaultWorldMemoryWatchDog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDefaultWorldMemoryWatchDog__vdtor: u64 = 61212;
-/// `hkpDefaultWorldMemoryWatchDog::vfunc_3` at 0xb7a210 (rtti, high); signature (high): `undefined4 vfunc_3(hkpDefaultWorldMemoryWatchDog * this)`
-pub const hkpDefaultWorldMemoryWatchDog__vfunc_3: u64 = 62066;
-/// `hkpDefaultWorldMemoryWatchDog::vfunc_4` at 0xb7a220 (rtti, high); signature (low): `undefined vfunc_4(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
-pub const hkpDefaultWorldMemoryWatchDog__vfunc_4: u64 = 62067;
-/// `hkpDefaultWorldMemoryWatchDog::vfunc_4_sub0` at 0xb7a310 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, int param_2, undefined4 param_3, int * param_4)`
-pub const hkpDefaultWorldMemoryWatchDog__vfunc_4_sub0: u64 = 62069;
-/// `hkpDefaultWorldMemoryWatchDog::vfunc_5` at 0xb7a2e0 (rtti, high); signature (low): `undefined vfunc_5(hkpDefaultWorldMemoryWatchDog * this, longlong param_1)`
-pub const hkpDefaultWorldMemoryWatchDog__vfunc_5: u64 = 62068;
-/// `hkpDeferredConstraintOwner::vdtor` at 0x110c3c0 (layout_inference, medium); signature (low): `hkpDeferredConstraintOwner * vdtor(hkpDeferredConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDeferredConstraintOwner__vdtor: u64 = 81113;
-/// `hkpDeferredConstraintOwner::vfunc_3` at 0x110c470 (rtti, high); signature (low): `undefined vfunc_3(hkpDeferredConstraintOwner * this, undefined8 param_1)`
-pub const hkpDeferredConstraintOwner__vfunc_3: u64 = 81115;
-/// `hkpDeferredConstraintOwner::vfunc_4` at 0x110c480 (rtti, high); signature (low): `undefined vfunc_4(hkpDeferredConstraintOwner * this, undefined8 param_1)`
-pub const hkpDeferredConstraintOwner__vfunc_4: u64 = 81116;
-/// `hkpDeferredConstraintOwner::vfunc_5` at 0x110c450 (rtti, high); signature (low): `undefined vfunc_5(hkpDeferredConstraintOwner * this, longlong param_1, uint param_2)`
-pub const hkpDeferredConstraintOwner__vfunc_5: u64 = 81114;
-/// `hkpDisableEntityCollisionFilter::ctor` at 0xba5aa0 (layout_inference, high); signature (high): `hkpDisableEntityCollisionFilter * ctor(hkpDisableEntityCollisionFilter * this)`
-pub const hkpDisableEntityCollisionFilter__ctor: u64 = 62741;
-/// `hkpDisableEntityCollisionFilter::dtor` at 0xba5b10 (layout_inference, high); signature (high): `undefined dtor(hkpDisableEntityCollisionFilter * this)`
-pub const hkpDisableEntityCollisionFilter__dtor: u64 = 62742;
-/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bc90 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
-pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62568;
-/// `hkpDisableEntityCollisionFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba5f20 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
-pub const hkpDisableEntityCollisionFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62747;
-/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vdtor` at 0xb9bcc0 (slot_propagation, medium); signature (low): `undefined hkpEntityListener_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vdtor: u64 = 62572;
-/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2` at 0xba5eb0 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_2(hkpDisableEntityCollisionFilter * this, longlong param_1)`
-pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2: u64 = 62745;
-/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_2_sub0` at 0xba5e40 (callgraph, medium); signature (untiered): `undefined1 * hkpEntityListener_vfunc_2_sub0(longlong param_1, undefined1 * param_2, longlong param_3)`
-pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_2_sub0: u64 = 62744;
-/// `hkpDisableEntityCollisionFilter::hkpEntityListener_vfunc_5` at 0xba5f10 (rtti, high); signature (low): `undefined hkpEntityListener_vfunc_5(void)`
-pub const hkpDisableEntityCollisionFilter__hkpEntityListener_vfunc_5: u64 = 62746;
-/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb9bcb4 (slot_propagation, medium); signature (low): `undefined hkpRayCollidableFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 62571;
-/// `hkpDisableEntityCollisionFilter::hkpRayCollidableFilter_vfunc_1` at 0xba5fa0 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
-pub const hkpDisableEntityCollisionFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62751;
-/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bca8 (slot_propagation, medium); signature (low): `undefined hkpRayShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62570;
-/// `hkpDisableEntityCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba5f90 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
-pub const hkpDisableEntityCollisionFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62750;
-/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bc9c (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpDisableEntityCollisionFilter * this)`
-pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 62569;
-/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba5f80 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
-pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62749;
-/// `hkpDisableEntityCollisionFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba5f70 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpDisableEntityCollisionFilter * this, undefined1 * param_1)`
-pub const hkpDisableEntityCollisionFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62748;
-/// `hkpDisableEntityCollisionFilter::vdtor` at 0xb9c0c0 (slot_propagation, medium); signature (low): `hkpDisableEntityCollisionFilter * vdtor(hkpDisableEntityCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisableEntityCollisionFilter__vdtor: u64 = 62584;
-/// `hkpDisplayBindingData::PhysicsSystem::vdtor` at 0xb9bd00 (slot_propagation, medium); signature (low): `PhysicsSystem * vdtor(PhysicsSystem * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisplayBindingData__PhysicsSystem__vdtor: u64 = 62577;
-/// `hkpDisplayBindingData::RigidBody::vdtor` at 0xb9bd80 (layout_inference, medium); signature (low): `RigidBody * vdtor(RigidBody * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisplayBindingData__RigidBody__vdtor: u64 = 62578;
-/// `hkpDisplayBindingData::vdtor` at 0xb9c140 (slot_propagation, medium); signature (low): `hkpDisplayBindingData * vdtor(hkpDisplayBindingData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDisplayBindingData__vdtor: u64 = 62585;
-/// `hkpDynamicsContactMgr::vdtor` at 0xb7e000 (layout_inference, medium); signature (low): `hkpDynamicsContactMgr * vdtor(hkpDynamicsContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpDynamicsContactMgr__vdtor: u64 = 62161;
-/// `hkpDynamicsContactMgr::vfunc_10` at 0xb7e290 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
-pub const hkpDynamicsContactMgr__vfunc_10: u64 = 62172;
-/// `hkpDynamicsContactMgr::vfunc_11` at 0xb7e280 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpDynamicsContactMgr__vfunc_11: u64 = 62171;
-/// `hkpDynamicsContactMgr::vfunc_12` at 0xb7e1d0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
-pub const hkpDynamicsContactMgr__vfunc_12: u64 = 62167;
-/// `hkpDynamicsContactMgr::vfunc_14` at 0xb7e4f0 (rtti, medium); signature (low): `undefined vfunc_14(void)`
-pub const hkpDynamicsContactMgr__vfunc_14: u64 = 62176;
-/// `hkpDynamicsContactMgr::vfunc_15` at 0xb7e500 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-pub const hkpDynamicsContactMgr__vfunc_15: u64 = 62177;
-/// `hkpDynamicsContactMgr::vfunc_16` at 0xb7e270 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
-pub const hkpDynamicsContactMgr__vfunc_16: u64 = 62170;
-/// `hkpDynamicsContactMgr::vfunc_17` at 0xb7e1c0 (rtti, medium); signature (low): `undefined1 * vfunc_17(hkpDynamicsContactMgr * this, undefined1 * param_1)`
-pub const hkpDynamicsContactMgr__vfunc_17: u64 = 62166;
-/// `hkpDynamicsContactMgr::vfunc_18` at 0xb7e1b0 (rtti, high); signature (low): `undefined vfunc_18(void)`
-pub const hkpDynamicsContactMgr__vfunc_18: u64 = 62165;
-/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vdtor` at 0xc41520 (layout_inference, medium); signature (low): `CollectSupportedConstraints * vdtor(CollectSupportedConstraints * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vdtor: u64 = 65193;
-/// `hkpEaseConstraintsAction::CollectSupportedConstraints::vfunc_1` at 0xc41610 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectSupportedConstraints * this, undefined1 * param_1, longlong param_2)`
-pub const hkpEaseConstraintsAction__CollectSupportedConstraints__vfunc_1: u64 = 65196;
-/// `hkpEaseConstraintsAction::ctor` at 0xc40d80 (layout_inference, high); signature (low): `hkpEaseConstraintsAction * ctor(hkpEaseConstraintsAction * this, longlong * param_1)`
-pub const hkpEaseConstraintsAction__ctor: u64 = 65180;
-/// `hkpEaseConstraintsAction::ctor_sub0` at 0xbad3c0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1, longlong * param_2, longlong * param_3)`
-pub const hkpEaseConstraintsAction__ctor_sub0: u64 = 62891;
-/// `hkpEaseConstraintsAction::ctor_sub1` at 0xc41000 (callgraph, medium); signature (untiered): `undefined ctor_sub1(longlong * param_1, longlong * param_2)`
-pub const hkpEaseConstraintsAction__ctor_sub1: u64 = 65186;
-/// `hkpEaseConstraintsAction::dtor` at 0xc41450 (layout_inference, high); signature (high): `undefined dtor(hkpEaseConstraintsAction * this)`
-pub const hkpEaseConstraintsAction__dtor: u64 = 65191;
-/// `hkpEaseConstraintsAction::vdtor` at 0xc41580 (slot_propagation, medium); signature (low): `hkpEaseConstraintsAction * vdtor(hkpEaseConstraintsAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEaseConstraintsAction__vdtor: u64 = 65194;
-/// `hkpEaseConstraintsAction::vfunc_3` at 0xc40e80 (rtti, medium); signature (low): `undefined vfunc_3(hkpEaseConstraintsAction * this, longlong param_1)`
-pub const hkpEaseConstraintsAction__vfunc_3: u64 = 65183;
-/// `hkpEaseConstraintsAction::vfunc_7` at 0xc40f70 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
-pub const hkpEaseConstraintsAction__vfunc_7: u64 = 65184;
-/// `hkpEasePenetrationAction::ctor` at 0xc42200 (layout_inference, high); signature (low): `hkpEasePenetrationAction * ctor(hkpEasePenetrationAction * this, longlong param_2, undefined4 param_3)`
-pub const hkpEasePenetrationAction__ctor: u64 = 65203;
-/// `hkpEasePenetrationAction::ctor` at 0xc42270 (layout_inference, medium); signature (high): `undefined ctor(hkpEasePenetrationAction * this)`
-pub const hkpEasePenetrationAction__ctor_2: u64 = 65204;
-/// `hkpEasePenetrationAction::vdtor` at 0xc424b0 (slot_propagation, medium); signature (low): `hkpEasePenetrationAction * vdtor(hkpEasePenetrationAction * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEasePenetrationAction__vdtor: u64 = 65207;
-/// `hkpEasePenetrationAction::vfunc_3` at 0xc422a0 (rtti, high); signature (low): `undefined vfunc_3(hkpEasePenetrationAction * this, longlong param_1)`
-pub const hkpEasePenetrationAction__vfunc_3: u64 = 65205;
-/// `hkpEasePenetrationAction::vfunc_7` at 0xc424a0 (rtti, high); signature (low): `undefined8 vfunc_7(void)`
-pub const hkpEasePenetrationAction__vfunc_7: u64 = 65206;
-/// `hkpEndOfStepCallbackUtil::ctor` at 0xb810b0 (layout_inference, medium); signature (high): `hkpEndOfStepCallbackUtil * ctor(hkpEndOfStepCallbackUtil * this)`
-pub const hkpEndOfStepCallbackUtil__ctor: u64 = 62228;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vdtor` at 0xb81bcc (slot_propagation, medium); signature (low): `undefined hkpWorldPostSimulationListener_vdtor(hkpEndOfStepCallbackUtil * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vdtor: u64 = 62235;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1` at 0xb81280 (rtti, high); signature (high): `undefined hkpWorldPostSimulationListener_vfunc_1(hkpEndOfStepCallbackUtil * this)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1: u64 = 62230;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub0` at 0xb63a80 (callgraph, medium); signature (untiered): `undefined8 hkpWorldPostSimulationListener_vfunc_1_sub0(longlong param_1)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub0: u64 = 61572;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub1` at 0xb81110 (callgraph, medium); signature (untiered): `undefined hkpWorldPostSimulationListener_vfunc_1_sub1(longlong * param_1, undefined8 * param_2, undefined4 param_3)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub1: u64 = 62229;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub2` at 0xb814a0 (callgraph, medium); signature (untiered): `undefined hkpWorldPostSimulationListener_vfunc_1_sub2(longlong param_1, uint param_2, int param_3, undefined1 param_4)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub2: u64 = 62232;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub3` at 0xb81660 (callgraph, medium); signature (untiered): `undefined hkpWorldPostSimulationListener_vfunc_1_sub3(longlong * param_1, longlong * param_2)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub3: u64 = 62233;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub4` at 0xb81930 (callgraph, medium); signature (untiered): `undefined hkpWorldPostSimulationListener_vfunc_1_sub4(longlong * param_1, longlong * param_2)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub4: u64 = 62234;
-/// `hkpEndOfStepCallbackUtil::hkpWorldPostSimulationListener_vfunc_1_sub5` at 0xb81c60 (callgraph, medium); signature (untiered): `undefined hkpWorldPostSimulationListener_vfunc_1_sub5(longlong * param_1, longlong * param_2)`
-pub const hkpEndOfStepCallbackUtil__hkpWorldPostSimulationListener_vfunc_1_sub5: u64 = 62237;
-/// `hkpEndOfStepCallbackUtil::vdtor` at 0xb81be0 (slot_propagation, medium); signature (low): `hkpEndOfStepCallbackUtil * vdtor(hkpEndOfStepCallbackUtil * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEndOfStepCallbackUtil__vdtor: u64 = 62236;
-/// `hkpEntity::ctor` at 0xb4a990 (layout_inference, medium); signature (high): `undefined ctor(hkpEntity * this)`
-pub const hkpEntity__ctor: u64 = 60839;
-/// `hkpEntity::ctor` at 0xb4b7c0 (layout_inference, high); signature (low): `hkpEntity * ctor(hkpEntity * this, longlong param_1)`
-pub const hkpEntity__ctor_2: u64 = 60863;
-/// `hkpEntity::ctor` at 0xb4b930 (layout_inference, high); signature (low): `hkpEntity * ctor(hkpEntity * this, int param_1)`
-pub const hkpEntity__ctor_3: u64 = 60864;
-/// `hkpEntity::ctor_sub0` at 0xb68460 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1)`
-pub const hkpEntity__ctor_sub0: u64 = 61704;
-/// `hkpEntity::vdtor` at 0xb4c440 (slot_propagation, medium); signature (low): `hkpEntity * vdtor(hkpEntity * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEntity__vdtor: u64 = 60878;
-/// `hkpEntity::vfunc_2` at 0xb4b4d0 (rtti, medium); signature (low): `undefined vfunc_2(hkpEntity * this, longlong * param_1)`
-pub const hkpEntity__vfunc_2: u64 = 60859;
-/// `hkpEntity::vfunc_5` at 0xb4c870 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-pub const hkpEntity__vfunc_5: u64 = 60886;
-/// `hkpEntity::vfunc_6` at 0xb4bac0 (rtti, medium); signature (high): `undefined vfunc_6(hkpEntity * this)`
-pub const hkpEntity__vfunc_6: u64 = 60865;
-/// `hkpEntityActivationListener::vdtor` at 0x4d39a0 (layout_inference, medium); signature (low): `hkpEntityActivationListener * vdtor(hkpEntityActivationListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEntityActivationListener__vdtor: u64 = 30563;
-/// `hkpEntityEntityBroadPhaseListener::ctor` at 0xb7b450 (layout_inference, medium); signature (low): `hkpEntityEntityBroadPhaseListener * ctor(hkpEntityEntityBroadPhaseListener * this, undefined8 param_1)`
-pub const hkpEntityEntityBroadPhaseListener__ctor: u64 = 62092;
-/// `hkpEntityEntityBroadPhaseListener::hkpBroadPhaseListener_vdtor` at 0xb7b528 (slot_propagation, medium); signature (high): `undefined hkpBroadPhaseListener_vdtor(hkpEntityEntityBroadPhaseListener * this)`
-pub const hkpEntityEntityBroadPhaseListener__hkpBroadPhaseListener_vdtor: u64 = 62095;
-/// `hkpEntityEntityBroadPhaseListener::hkpBroadPhaseListener_vfunc_1` at 0xb7b480 (rtti, high); signature (low): `undefined hkpBroadPhaseListener_vfunc_1(hkpEntityEntityBroadPhaseListener * this, longlong * param_1)`
-pub const hkpEntityEntityBroadPhaseListener__hkpBroadPhaseListener_vfunc_1: u64 = 62093;
-/// `hkpEntityEntityBroadPhaseListener::hkpBroadPhaseListener_vfunc_2` at 0xb7b4f0 (rtti, high); signature (low): `undefined hkpBroadPhaseListener_vfunc_2(hkpEntityEntityBroadPhaseListener * this, longlong * param_1)`
-pub const hkpEntityEntityBroadPhaseListener__hkpBroadPhaseListener_vfunc_2: u64 = 62094;
-/// `hkpEntityEntityBroadPhaseListener::vdtor` at 0xb7b540 (layout_inference, medium); signature (low): `hkpEntityEntityBroadPhaseListener * vdtor(hkpEntityEntityBroadPhaseListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEntityEntityBroadPhaseListener__vdtor: u64 = 62096;
-/// `hkpEntityListener::ctor` at 0x2d1b00 (layout_inference, medium); signature (low): `undefined ctor(hkpEntityListener * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEntityListener__ctor: u64 = 19274;
-/// `hkpEntityListener::vdtor` at 0x2d3ad0 (layout_inference, medium); signature (low): `hkpEntityListener * vdtor(hkpEntityListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpEntityListener__vdtor: u64 = 19305;
-/// `hkpEntityListener::vfunc_1` at 0x2d6a90 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const hkpEntityListener__vfunc_1: u64 = 19401;
-/// `hkpEntityListener::vfunc_2` at 0x2d6ab0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const hkpEntityListener__vfunc_2: u64 = 19403;
-/// `hkpEntityListener::vfunc_3` at 0x2d6ad0 (rtti, medium); signature (low): `undefined vfunc_3(hkpEntityListener * this, longlong param_1)`
-pub const hkpEntityListener__vfunc_3: u64 = 19405;
-/// `hkpEntityListener::vfunc_4` at 0x2d6ac0 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-pub const hkpEntityListener__vfunc_4: u64 = 19404;
-/// `hkpEntityListener::vfunc_5` at 0x2d6aa0 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-pub const hkpEntityListener__vfunc_5: u64 = 19402;
-/// `hkpExtendedMeshShape::ctor` at 0xc56dc0 (layout_inference, high); signature (low): `hkpExtendedMeshShape * ctor(hkpExtendedMeshShape * this, float param_1, undefined4 param_2)`
-pub const hkpExtendedMeshShape__ctor: u64 = 65715;
-/// `hkpExtendedMeshShape::ctor` at 0xc56ef0 (layout_inference, medium); signature (low): `hkpExtendedMeshShape * ctor(hkpExtendedMeshShape * this, longlong param_1)`
-pub const hkpExtendedMeshShape__ctor_2: u64 = 65716;
-/// `hkpExtendedMeshShape::ctor` at 0xc58660 (layout_inference, high); signature (low): `hkpExtendedMeshShape * ctor(hkpExtendedMeshShape * this, ulonglong param_1)`
-pub const hkpExtendedMeshShape__ctor_3: u64 = 65733;
-/// `hkpExtendedMeshShape::dtor` at 0xc57280 (layout_inference, high); signature (high): `undefined dtor(hkpExtendedMeshShape * this)`
-pub const hkpExtendedMeshShape__dtor: u64 = 65717;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vdtor` at 0xc58a94 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpExtendedMeshShape * this)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vdtor: u64 = 65739;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_1` at 0xc57600 (rtti, medium); signature (high): `int hkpShapeContainer_vfunc_1(hkpExtendedMeshShape * this)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_1: u64 = 65720;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_2` at 0xc57640 (rtti, medium); signature (high): `ulonglong hkpShapeContainer_vfunc_2(hkpExtendedMeshShape * this)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_2: u64 = 65721;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_3` at 0xc57700 (rtti, medium); signature (low): `uint hkpShapeContainer_vfunc_3(hkpExtendedMeshShape * this, uint param_1)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_3: u64 = 65722;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_4` at 0xc580b0 (rtti, medium); signature (high): `undefined4 hkpShapeContainer_vfunc_4(hkpExtendedMeshShape * this)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_4: u64 = 65727;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_4_sub0` at 0xc57aa0 (callgraph, medium); signature (untiered): `longlong hkpShapeContainer_vfunc_4_sub0(longlong param_1, uint param_2)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_4_sub0: u64 = 65725;
-/// `hkpExtendedMeshShape::hkpShapeContainer_vfunc_5` at 0xc57b60 (rtti, medium); signature (low): `hkpConvexTransformShapeBase * hkpShapeContainer_vfunc_5(hkpExtendedMeshShape * this, uint param_1, hkpConvexTransformShapeBase * param_2)`
-pub const hkpExtendedMeshShape__hkpShapeContainer_vfunc_5: u64 = 65726;
-/// `hkpExtendedMeshShape::vdtor` at 0xc58aa0 (slot_propagation, medium); signature (low): `hkpExtendedMeshShape * vdtor(hkpExtendedMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpExtendedMeshShape__vdtor: u64 = 65740;
-/// `hkpExtendedMeshShape::vfunc_11` at 0xc57980 (rtti, medium); signature (low): `undefined vfunc_11(hkpExtendedMeshShape * this, int param_1)`
-pub const hkpExtendedMeshShape__vfunc_11: u64 = 65724;
-/// `hkpExtendedMeshShape::vfunc_12` at 0xc57830 (rtti, medium); signature (low): `undefined vfunc_12(hkpExtendedMeshShape * this, uint param_1, undefined2 param_2)`
-pub const hkpExtendedMeshShape__vfunc_12: u64 = 65723;
-/// `hkpExtendedMeshShape::vfunc_13` at 0xc573e0 (rtti, high); signature (low): `undefined vfunc_13(hkpExtendedMeshShape * this, undefined8 * param_1)`
-pub const hkpExtendedMeshShape__vfunc_13: u64 = 65718;
-/// `hkpExtendedMeshShape::vfunc_14` at 0xc57540 (rtti, high); signature (low): `int vfunc_14(hkpExtendedMeshShape * this, undefined8 * param_1)`
-pub const hkpExtendedMeshShape__vfunc_14: u64 = 65719;
-/// `hkpExtendedMeshShape::vfunc_6` at 0xc58580 (rtti, medium); signature (low): `undefined8 vfunc_6(hkpExtendedMeshShape * this, undefined8 param_1)`
-pub const hkpExtendedMeshShape__vfunc_6: u64 = 65732;
-/// `hkpExtendedMeshShape::vfunc_7` at 0xc580f0 (rtti, medium); signature (low): `undefined vfunc_7(hkpExtendedMeshShape * this, float * param_1, float param_2, float * param_3)`
-pub const hkpExtendedMeshShape__vfunc_7: u64 = 65728;
-/// `hkpFastMeshShape::ctor` at 0xc2cb30 (layout_inference, high); signature (low): `undefined ctor(hkpFastMeshShape * this, int param_1)`
-pub const hkpFastMeshShape__ctor: u64 = 64874;
-/// `hkpFastMeshShape::ctor` at 0xc79300 (layout_inference, high); signature (low): `hkpFastMeshShape * ctor(hkpFastMeshShape * this, undefined4 param_2, undefined4 param_3)`
-pub const hkpFastMeshShape__ctor_2: u64 = 66647;
-/// `hkpFastMeshShape::hkpShapeContainer_vdtor` at 0xc2cc18 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpFastMeshShape * this)`
-pub const hkpFastMeshShape__hkpShapeContainer_vdtor: u64 = 64883;
-/// `hkpFastMeshShape::hkpShapeContainer_vfunc_5` at 0xc79340 (rtti, high); signature (low): `undefined8 * hkpShapeContainer_vfunc_5(hkpFastMeshShape * this, uint param_1, undefined8 * param_2)`
-pub const hkpFastMeshShape__hkpShapeContainer_vfunc_5: u64 = 66648;
-/// `hkpFastMeshShape::vdtor` at 0xc2cc30 (slot_propagation, medium); signature (low): `hkpFastMeshShape * vdtor(hkpFastMeshShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFastMeshShape__vdtor: u64 = 64884;
-/// `hkpFirstCdBodyPairCollector::vdtor` at 0x769630 (layout_inference, medium); signature (low): `hkpFirstCdBodyPairCollector * vdtor(hkpFirstCdBodyPairCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFirstCdBodyPairCollector__vdtor: u64 = 40950;
-/// `hkpFirstCdBodyPairCollector::vfunc_1` at 0xb3b180 (rtti, high); signature (low): `undefined vfunc_1(hkpFirstCdBodyPairCollector * this, hkpFirstCdBodyPairCollector_vtbl * param_1, hkpFirstCdBodyPairCollector_vtbl * param_2)`
-pub const hkpFirstCdBodyPairCollector__vfunc_1: u64 = 60364;
-/// `hkpFirstPersonGun::GetName` at 0xba6be0 (semantic, high); signature (untiered): `ulonglong GetName(hkpFirstPersonGun * this)`; semantic: slot 7: the name string pointer +0x18 with its ownership tag bit 0 cleared (high); signature `const char* (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__GetName: u64 = 62780;
-/// `hkpFirstPersonGun::GetName` as a function pointer type (high).
-pub type hkpFirstPersonGun__GetName_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun) -> *const c_char;
-/// `hkpFirstPersonGun::Slot3_NoOp` at 0xba6f50 (semantic, high); signature (untiered): `undefined Slot3_NoOp(void)`; semantic: slot 3: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__Slot3_NoOp: u64 = 62785;
-/// `hkpFirstPersonGun::Slot3_NoOp` as a function pointer type (high).
-pub type hkpFirstPersonGun__Slot3_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot4_NoOp` at 0xba6f40 (semantic, high); signature (untiered): `undefined Slot4_NoOp(void)`; semantic: slot 4: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__Slot4_NoOp: u64 = 62784;
-/// `hkpFirstPersonGun::Slot4_NoOp` as a function pointer type (high).
-pub type hkpFirstPersonGun__Slot4_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot5_NoOp` at 0xba6f70 (semantic, high); signature (untiered): `undefined Slot5_NoOp(void)`; semantic: slot 5: empty (ret) (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__Slot5_NoOp: u64 = 62787;
-/// `hkpFirstPersonGun::Slot5_NoOp` as a function pointer type (high).
-pub type hkpFirstPersonGun__Slot5_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot6_ForwardToSlot8` at 0xba6bd0 (semantic, high); signature (untiered): `undefined Slot6_ForwardToSlot8(hkpFirstPersonGun * this)`; semantic: slot 6: tail-jumps to slot 8 (+0x40) with the same registers (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__Slot6_ForwardToSlot8: u64 = 62779;
-/// `hkpFirstPersonGun::Slot6_ForwardToSlot8` as a function pointer type (high).
-pub type hkpFirstPersonGun__Slot6_ForwardToSlot8_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::Slot8_NoOp` at 0xba6f60 (semantic, high); signature (untiered): `undefined Slot8_NoOp(void)`; semantic: slot 8: empty (ret) in the base (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__Slot8_NoOp: u64 = 62786;
-/// `hkpFirstPersonGun::Slot8_NoOp` as a function pointer type (high).
-pub type hkpFirstPersonGun__Slot8_NoOp_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::ctor` at 0xba6a70 (semantic, high); signature (high): `hkpFirstPersonGun * ctor(hkpFirstPersonGun * this)`; semantic: default constructor: memSizeAndFlags +8 = 0x1ffff, vtable, +0x10 = 0, name +0x18 = "", +0x20 = 0x71, listener array +0x28 (data null, size +0x30 = 0, capacity +0x34 = 0x80000000) (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__ctor: u64 = 62776;
-/// `hkpFirstPersonGun::ctor` as a function pointer type (high).
-pub type hkpFirstPersonGun__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun) -> *mut crate::hkpFirstPersonGun;
-/// `hkpFirstPersonGun::ctor_finish` at 0xba6ad0 (semantic, high); signature (untiered): `hkpFirstPersonGun * ctor_finish(hkpFirstPersonGun * this, int param_1)`; semantic: serialization constructor: vtable, name pointer fix-up, empty listener array; +0x10 = 0 only when finishing != 0 (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this, i32 finishing)`
-pub const hkpFirstPersonGun__ctor_finish: u64 = 62777;
-/// `hkpFirstPersonGun::ctor_finish` as a function pointer type (high).
-pub type hkpFirstPersonGun__ctor_finish_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun, finishing: i32) -> *mut crate::hkpFirstPersonGun;
-/// `hkpFirstPersonGun::dtor` at 0xba6b20 (layout_inference, high); signature (high): `undefined dtor(hkpFirstPersonGun * this)`; semantic: releases every listener (+0x28[i], ReleaseRefCounted16UnderLock), frees the array through the container heap allocator when owned, clears the name, resets the vtable to hkBaseObject (high); signature `void (hkpFirstPersonGun* this)`
-pub const hkpFirstPersonGun__dtor: u64 = 62778;
-/// `hkpFirstPersonGun::dtor` as a function pointer type (high).
-pub type hkpFirstPersonGun__dtor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun);
-/// `hkpFirstPersonGun::vdtor` at 0xba6ec0 (semantic, high); signature (low): `hkpFirstPersonGun * vdtor(hkpFirstPersonGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 0: dtor, then when flags bit 0: frees 0x38 bytes (memory router of the thread, or the default heap with bit 2) (high); signature `hkpFirstPersonGun* (hkpFirstPersonGun* this, u32 flags)`
-pub const hkpFirstPersonGun__vdtor: u64 = 62783;
-/// `hkpFirstPersonGun::vdtor` as a function pointer type (high).
-pub type hkpFirstPersonGun__vdtor_fn = unsafe extern "C" fn(this: *mut crate::hkpFirstPersonGun, flags: u32) -> *mut crate::hkpFirstPersonGun;
-/// `hkpFixedBufferCdPointCollector::vdtor` at 0x7e9ce0 (layout_inference, medium); signature (low): `hkpFixedBufferCdPointCollector * vdtor(hkpFixedBufferCdPointCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFixedBufferCdPointCollector__vdtor: u64 = 43882;
-/// `hkpFixedBufferCdPointCollector::vfunc_1` at 0x7ea180 (rtti, high); signature (low): `undefined vfunc_1(hkpFixedBufferCdPointCollector * this, undefined8 param_1)`
-pub const hkpFixedBufferCdPointCollector__vfunc_1: u64 = 43888;
-/// `hkpFixedBufferCdPointCollector::vfunc_2` at 0x7ea190 (rtti, high); signature (high): `undefined vfunc_2(hkpFixedBufferCdPointCollector * this)`
-pub const hkpFixedBufferCdPointCollector__vfunc_2: u64 = 43889;
-/// `hkpFixedBufferRayHitCollector::vdtor` at 0x1126710 (layout_inference, medium); signature (low): `hkpFixedBufferRayHitCollector * vdtor(hkpFixedBufferRayHitCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFixedBufferRayHitCollector__vdtor: u64 = 81395;
-/// `hkpFixedBufferRayHitCollector::vfunc_0` at 0x1126770 (rtti, high); signature (low): `undefined vfunc_0(hkpFixedBufferRayHitCollector * this, undefined8 param_1, undefined8 param_2)`
-pub const hkpFixedBufferRayHitCollector__vfunc_0: u64 = 81396;
-/// `hkpFixedRigidMotion::ctor` at 0xb4c0a0 (layout_inference, high); signature (low): `hkpFixedRigidMotion * ctor(hkpFixedRigidMotion * this, int param_1)`
-pub const hkpFixedRigidMotion__ctor: u64 = 60870;
-/// `hkpFixedRigidMotion::ctor` at 0xb68f30 (layout_inference, high); signature (high): `hkpFixedRigidMotion * ctor(hkpFixedRigidMotion * this)`
-pub const hkpFixedRigidMotion__ctor_2: u64 = 61712;
-/// `hkpFixedRigidMotion::vdtor` at 0xb4c4c0 (slot_propagation, medium); signature (low): `hkpFixedRigidMotion * vdtor(hkpFixedRigidMotion * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFixedRigidMotion__vdtor: u64 = 60879;
-/// `hkpFixedRigidMotion::vfunc_16` at 0xb68fb0 (rtti, high); signature (low): `undefined vfunc_16(void)`
-pub const hkpFixedRigidMotion__vfunc_16: u64 = 61715;
-/// `hkpFixedRigidMotion::vfunc_17` at 0xb68fc0 (rtti, high); signature (low): `undefined vfunc_17(void)`
-pub const hkpFixedRigidMotion__vfunc_17: u64 = 61716;
-/// `hkpFixedRigidMotion::vfunc_26` at 0xb68fa0 (rtti, high); signature (low): `undefined vfunc_26(void)`
-pub const hkpFixedRigidMotion__vfunc_26: u64 = 61714;
-/// `hkpFixedRigidMotion::vfunc_28` at 0xb68f60 (rtti, high); signature (low): `undefined vfunc_28(hkpFixedRigidMotion * this, longlong param_1)`
-pub const hkpFixedRigidMotion__vfunc_28: u64 = 61713;
-/// `hkpFlagCdBodyPairCollector::vdtor` at 0xc7b8c0 (layout_inference, medium); signature (low): `hkpFlagCdBodyPairCollector * vdtor(hkpFlagCdBodyPairCollector * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpFlagCdBodyPairCollector__vdtor: u64 = 66687;
-/// `hkpFlagCdBodyPairCollector::vfunc_1` at 0xcc3a40 (rtti, high); signature (high): `undefined vfunc_1(hkpFlagCdBodyPairCollector * this)`
-pub const hkpFlagCdBodyPairCollector__vfunc_1: u64 = 67548;
-/// `hkpGenericConstraintData::ctor` at 0xb78760 (layout_inference, medium); signature (high): `hkpGenericConstraintData * ctor(hkpGenericConstraintData * this)`
-pub const hkpGenericConstraintData__ctor: u64 = 62024;
-/// `hkpGenericConstraintData::ctor` at 0xb796d0 (layout_inference, medium); signature (low): `hkpGenericConstraintData * ctor(hkpGenericConstraintData * this, int param_1)`
-pub const hkpGenericConstraintData__ctor_2: u64 = 62037;
-/// `hkpGenericConstraintData::dtor` at 0xb787f0 (layout_inference, high); signature (high): `undefined dtor(hkpGenericConstraintData * this)`
-pub const hkpGenericConstraintData__dtor: u64 = 62025;
-/// `hkpGenericConstraintData::vdtor` at 0xb79730 (slot_propagation, medium); signature (low): `hkpGenericConstraintData * vdtor(hkpGenericConstraintData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGenericConstraintData__vdtor: u64 = 62038;
-/// `hkpGenericConstraintData::vfunc_10` at 0xb789b0 (rtti, high); signature (low): `undefined1 * vfunc_10(hkpGenericConstraintData * this, undefined1 * param_1)`
-pub const hkpGenericConstraintData__vfunc_10: u64 = 62028;
-/// `hkpGenericConstraintData::vfunc_11` at 0xb796a0 (rtti, high); signature (low): `undefined8 vfunc_11(void)`
-pub const hkpGenericConstraintData__vfunc_11: u64 = 62035;
-/// `hkpGenericConstraintData::vfunc_12` at 0xb796b0 (rtti, high); signature (low): `undefined vfunc_12(hkpGenericConstraintData * this, undefined8 param_1, int * param_2)`
-pub const hkpGenericConstraintData__vfunc_12: u64 = 62036;
-/// `hkpGenericConstraintData::vfunc_15` at 0xb79610 (rtti, high); signature (low): `undefined vfunc_15(hkpGenericConstraintData * this, longlong param_1, undefined8 * param_2)`
-pub const hkpGenericConstraintData__vfunc_15: u64 = 62033;
-/// `hkpGenericConstraintData::vfunc_15_sub0` at 0xb78b10 (callgraph, medium); signature (untiered): `undefined vfunc_15_sub0(undefined8 param_1, longlong param_2, undefined8 * param_3, longlong * param_4)`
-pub const hkpGenericConstraintData__vfunc_15_sub0: u64 = 62032;
-/// `hkpGenericConstraintData::vfunc_18` at 0xb79670 (rtti, high); signature (low): `undefined vfunc_18(hkpGenericConstraintData * this, undefined8 * param_1)`
-pub const hkpGenericConstraintData__vfunc_18: u64 = 62034;
-/// `hkpGravityGun::ctor` at 0xba7750 (layout_inference, high); signature (high): `hkpGravityGun * ctor(hkpGravityGun * this)`
-pub const hkpGravityGun__ctor: u64 = 62797;
-/// `hkpGravityGun::ctor` at 0xba77e0 (layout_inference, high); signature (low): `hkpGravityGun * ctor(hkpGravityGun * this, int param_1)`
-pub const hkpGravityGun__ctor_2: u64 = 62798;
-/// `hkpGravityGun::vdtor` at 0xba8250 (slot_propagation, medium); signature (low): `hkpGravityGun * vdtor(hkpGravityGun * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGravityGun__vdtor: u64 = 62808;
-/// `hkpGravityGun::vfunc_5` at 0xba7830 (rtti, high); signature (low): `undefined vfunc_5(hkpGravityGun * this, undefined4 param_2, longlong param_3, longlong param_4, float * param_5, char param_6, char param_7)`
-pub const hkpGravityGun__vfunc_5: u64 = 62799;
-/// `hkpGravityGun::vfunc_5_sub0` at 0xba7db0 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub0(longlong param_1, float * param_2, longlong param_3, longlong param_4)`
-pub const hkpGravityGun__vfunc_5_sub0: u64 = 62804;
-/// `hkpGravityGun::vfunc_5_sub1` at 0xba7e70 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub1(longlong param_1, float * param_2, longlong param_3, longlong param_4)`
-pub const hkpGravityGun__vfunc_5_sub1: u64 = 62805;
-/// `hkpGravityGun::vfunc_5_sub2` at 0xba7f50 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub2(longlong param_1, float param_2, float * param_3, longlong param_4)`
-pub const hkpGravityGun__vfunc_5_sub2: u64 = 62806;
-/// `hkpGravityGun::vfunc_5_sub3` at 0xba8240 (callgraph, medium); signature (untiered): `undefined vfunc_5_sub3(longlong param_1)`
-pub const hkpGravityGun__vfunc_5_sub3: u64 = 62807;
-/// `hkpGravityGun::vfunc_8` at 0xba79b0 (rtti, high); signature (high): `undefined vfunc_8(hkpGravityGun * this)`
-pub const hkpGravityGun__vfunc_8: u64 = 62800;
-/// `hkpGroupCollisionFilter::ctor` at 0xba5fb0 (layout_inference, high); signature (high): `hkpGroupCollisionFilter * ctor(hkpGroupCollisionFilter * this)`
-pub const hkpGroupCollisionFilter__ctor: u64 = 62752;
-/// `hkpGroupCollisionFilter::hkpCollidableCollidableFilter_vdtor` at 0xb9bccc (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpGroupCollisionFilter * this)`
-pub const hkpGroupCollisionFilter__hkpCollidableCollidableFilter_vdtor: u64 = 62573;
-/// `hkpGroupCollisionFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xba6370 (rtti, high); signature (low): `undefined8 hkpCollidableCollidableFilter_vfunc_1(hkpGroupCollisionFilter * this, undefined8 param_1, longlong param_2, longlong param_3)`
-pub const hkpGroupCollisionFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 62763;
-/// `hkpGroupCollisionFilter::hkpRayCollidableFilter_vdtor` at 0xb9bcf0 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpGroupCollisionFilter * this)`
-pub const hkpGroupCollisionFilter__hkpRayCollidableFilter_vdtor: u64 = 62576;
-/// `hkpGroupCollisionFilter::hkpRayCollidableFilter_vfunc_1` at 0xba64e0 (rtti, high); signature (low): `undefined8 hkpRayCollidableFilter_vfunc_1(hkpGroupCollisionFilter * this, undefined8 param_1, longlong param_2, longlong param_3)`
-pub const hkpGroupCollisionFilter__hkpRayCollidableFilter_vfunc_1: u64 = 62767;
-/// `hkpGroupCollisionFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb9bce4 (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpGroupCollisionFilter * this)`
-pub const hkpGroupCollisionFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 62575;
-/// `hkpGroupCollisionFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xba6480 (rtti, high); signature (low): `undefined8 hkpRayShapeCollectionFilter_vfunc_0(hkpGroupCollisionFilter * this, undefined8 param_1, longlong param_2, undefined8 param_3, longlong * param_4, undefined4 param_5)`
-pub const hkpGroupCollisionFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 62766;
-/// `hkpGroupCollisionFilter::hkpShapeCollectionFilter_vdtor` at 0xb9bcd8 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpGroupCollisionFilter * this)`
-pub const hkpGroupCollisionFilter__hkpShapeCollectionFilter_vdtor: u64 = 62574;
-/// `hkpGroupCollisionFilter::hkpShapeCollectionFilter_vfunc_0` at 0xba6410 (rtti, high); signature (low): `undefined8 hkpShapeCollectionFilter_vfunc_0(hkpGroupCollisionFilter * this, undefined8 param_1)`
-pub const hkpGroupCollisionFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 62765;
-/// `hkpGroupCollisionFilter::hkpShapeCollectionFilter_vfunc_1` at 0xba63a0 (rtti, high); signature (low): `undefined8 hkpShapeCollectionFilter_vfunc_1(hkpGroupCollisionFilter * this, undefined8 param_1, undefined8 param_2, longlong param_3, undefined8 param_4, longlong * param_5, undefined4 param_6)`
-pub const hkpGroupCollisionFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 62764;
-/// `hkpGroupCollisionFilter::vdtor` at 0xb9c1c0 (layout_inference, medium); signature (low): `hkpGroupCollisionFilter * vdtor(hkpGroupCollisionFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGroupCollisionFilter__vdtor: u64 = 62586;
-/// `hkpGroupFilter::ctor` at 0xb3c050 (layout_inference, high); signature (high): `hkpGroupFilter * ctor(hkpGroupFilter * this)`
-pub const hkpGroupFilter__ctor: u64 = 60388;
-/// `hkpGroupFilter::hkpCollidableCollidableFilter_vdtor` at 0xb3c4f4 (slot_propagation, medium); signature (high): `undefined hkpCollidableCollidableFilter_vdtor(hkpGroupFilter * this)`
-pub const hkpGroupFilter__hkpCollidableCollidableFilter_vdtor: u64 = 60402;
-/// `hkpGroupFilter::hkpCollidableCollidableFilter_vfunc_1` at 0xb3c200 (rtti, high); signature (low): `undefined1 * hkpCollidableCollidableFilter_vfunc_1(hkpGroupFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
-pub const hkpGroupFilter__hkpCollidableCollidableFilter_vfunc_1: u64 = 60396;
-/// `hkpGroupFilter::hkpRayCollidableFilter_vdtor` at 0xb3c518 (slot_propagation, medium); signature (high): `undefined hkpRayCollidableFilter_vdtor(hkpGroupFilter * this)`
-pub const hkpGroupFilter__hkpRayCollidableFilter_vdtor: u64 = 60405;
-/// `hkpGroupFilter::hkpRayCollidableFilter_vfunc_1` at 0xb3c460 (rtti, high); signature (low): `undefined1 * hkpRayCollidableFilter_vfunc_1(hkpGroupFilter * this, undefined1 * param_1, longlong param_2, longlong param_3)`
-pub const hkpGroupFilter__hkpRayCollidableFilter_vfunc_1: u64 = 60400;
-/// `hkpGroupFilter::hkpRayShapeCollectionFilter_vdtor` at 0xb3c50c (slot_propagation, medium); signature (high): `undefined hkpRayShapeCollectionFilter_vdtor(hkpGroupFilter * this)`
-pub const hkpGroupFilter__hkpRayShapeCollectionFilter_vdtor: u64 = 60404;
-/// `hkpGroupFilter::hkpRayShapeCollectionFilter_vfunc_0` at 0xb3c400 (rtti, high); signature (low): `undefined1 * hkpRayShapeCollectionFilter_vfunc_0(hkpGroupFilter * this, undefined1 * param_1, longlong param_2, undefined8 param_3, longlong * param_4, undefined4 param_5)`
-pub const hkpGroupFilter__hkpRayShapeCollectionFilter_vfunc_0: u64 = 60399;
-/// `hkpGroupFilter::hkpShapeCollectionFilter_vdtor` at 0xb3c500 (slot_propagation, medium); signature (high): `undefined hkpShapeCollectionFilter_vdtor(hkpGroupFilter * this)`
-pub const hkpGroupFilter__hkpShapeCollectionFilter_vdtor: u64 = 60403;
-/// `hkpGroupFilter::hkpShapeCollectionFilter_vfunc_0` at 0xb3c350 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_0(hkpGroupFilter * this, undefined1 * param_1, undefined8 param_2, longlong param_3, longlong param_4, longlong * param_5, longlong * param_6, undefined4 param_7, undefined4 param_8)`
-pub const hkpGroupFilter__hkpShapeCollectionFilter_vfunc_0: u64 = 60398;
-/// `hkpGroupFilter::hkpShapeCollectionFilter_vfunc_1` at 0xb3c230 (rtti, high); signature (low): `undefined1 * hkpShapeCollectionFilter_vfunc_1(hkpGroupFilter * this, undefined1 * param_1, longlong * param_2, longlong * param_3, longlong param_4, longlong * param_5, undefined4 param_6)`
-pub const hkpGroupFilter__hkpShapeCollectionFilter_vfunc_1: u64 = 60397;
-/// `hkpGroupFilter::vdtor` at 0xb3c530 (slot_propagation, medium); signature (low): `hkpGroupFilter * vdtor(hkpGroupFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGroupFilter__vdtor: u64 = 60407;
-/// `hkpGroupFilter::vfunc_4` at 0xb3c5b0 (rtti, high); signature (low): `undefined8 vfunc_4(void)`
-pub const hkpGroupFilter__vfunc_4: u64 = 60411;
-/// `hkpGskBaseAgent::ctor` at 0xcc2ef0 (layout_inference, medium); signature (low): `hkpGskBaseAgent * ctor(hkpGskBaseAgent * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-pub const hkpGskBaseAgent__ctor: u64 = 67528;
-/// `hkpGskBaseAgent::vdtor` at 0xcc3320 (layout_inference, medium); signature (low): `hkpGskBaseAgent * vdtor(hkpGskBaseAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGskBaseAgent__vdtor: u64 = 67533;
-/// `hkpGskBaseAgent::vfunc_10` at 0xcc3300 (rtti, medium); signature (low): `undefined vfunc_10(hkpGskBaseAgent * this, float param_2, undefined4 param_3)`
-pub const hkpGskBaseAgent__vfunc_10: u64 = 67532;
-/// `hkpGskBaseAgent::vfunc_3` at 0xcc25c0 (rtti, medium); signature (low): `undefined vfunc_3(hkpGskBaseAgent * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3, longlong * param_4)`
-pub const hkpGskBaseAgent__vfunc_3: u64 = 67523;
-/// `hkpGskBaseAgent::vfunc_4` at 0xcc29a0 (rtti, medium); signature (low): `undefined vfunc_4(hkpGskBaseAgent * this, undefined8 * param_1, undefined8 * param_2, longlong param_3, longlong * param_4)`
-pub const hkpGskBaseAgent__vfunc_4: u64 = 67525;
-/// `hkpGskBaseAgent::vfunc_6` at 0xcc25b0 (rtti, high); signature (low): `undefined vfunc_6(void)`
-pub const hkpGskBaseAgent__vfunc_6: u64 = 67522;
-/// `hkpGskBaseAgent::vfunc_7` at 0xcc2ed0 (rtti, high); signature (high): `undefined vfunc_7(hkpGskBaseAgent * this)`
-pub const hkpGskBaseAgent__vfunc_7: u64 = 67527;
-/// `hkpGskBaseAgent::vfunc_9` at 0xcc32e0 (rtti, medium); signature (high): `undefined vfunc_9(hkpGskBaseAgent * this)`
-pub const hkpGskBaseAgent__vfunc_9: u64 = 67531;
-/// `hkpGskfAgent::ctor` at 0xcc3720 (layout_inference, high); signature (high): `hkpGskfAgent * ctor(hkpGskfAgent * this)`
-pub const hkpGskfAgent__ctor: u64 = 67541;
-/// `hkpGskfAgent::vdtor` at 0xcc38a0 (layout_inference, medium); signature (low): `hkpGskfAgent * vdtor(hkpGskfAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpGskfAgent__vdtor: u64 = 67544;
-/// `hkpGskfAgent::vfunc_11` at 0xcc3660 (rtti, medium); signature (low): `undefined vfunc_11(hkpGskfAgent * this, short param_1)`
-pub const hkpGskfAgent__vfunc_11: u64 = 67538;
-/// `hkpGskfAgent::vfunc_12` at 0xcc36a0 (rtti, medium); signature (low): `undefined vfunc_12(hkpGskfAgent * this, undefined2 param_1)`
-pub const hkpGskfAgent__vfunc_12: u64 = 67539;

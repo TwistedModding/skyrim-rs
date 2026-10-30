@@ -151,6 +151,8 @@ pub type AIProcess__SetTurnDelta_fn = unsafe extern "C" fn(this: *mut crate::AIP
 pub const AIProcess__StartDeferredKill: u64 = 40033;
 /// `AIProcess::StartDeferredKill` as a function pointer type (high).
 pub type AIProcess__StartDeferredKill_fn = unsafe extern "C" fn(this: *mut crate::AIProcess, flags: u8);
+/// `AIProcess::TickGraphUpdateShutoffTimer` at 0x725e80 (semantic, medium); signature (untiered): `undefined TickGraphUpdateShutoffTimer(longlong param_1, longlong param_2)`; semantic: counts down MiddleHighProcessData+0x2d0; when it expires clears the actor's boolFlags2 bit 8 (graph updates off) and sets bit 17 (one last forced update) (medium); signature `void (AIProcess* process, Actor* actor, float delta)`
+pub const AIProcess__TickGraphUpdateShutoffTimer: u64 = 39942;
 /// `AIProcess::ctor` at 0x6e66a0 (runtime, high); signature (untiered): `undefined8 * ctor(undefined8 * param_1)`; semantic: constructs an AI process (high); signature `AIProcess* AIProcess::ctor(AIProcess* this)`
 pub const AIProcess__ctor: u64 = 39107;
 /// `AIProcess::ctor` as a function pointer type (high).
@@ -659,6 +661,10 @@ pub type Actor__GetEquippedObject_fn = unsafe extern "C" fn(this: *mut crate::Ac
 pub const Actor__GetEyeHeight: u64 = 37477;
 /// `Actor::GetEyeHeight` as a function pointer type (high).
 pub type Actor__GetEyeHeight_fn = unsafe extern "C" fn(actor: *const crate::Actor) -> f32;
+/// `Actor::GetFaceGenAnimationData` at 0x69bba0 (semantic, high); signature (untiered): `longlong GetFaceGenAnimationData(Actor * this)`; semantic: Actor's own slot 99 (non-Character actors): process cache 0x720640 first; else, with the race FaceGen flag, looks up the named node in Get3D(), checks it is a BSFaceGenNiNode by RTTI walk and returns node+0x150 (caching it through 0x727db0) (high); signature `BSFaceGenAnimationData* (Actor* this)`
+pub const Actor__GetFaceGenAnimationData: u64 = 37655;
+/// `Actor::GetFaceGenAnimationData` as a function pointer type (high).
+pub type Actor__GetFaceGenAnimationData_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> *mut crate::BSFaceGenAnimationData;
 /// `Actor::GetFurnitureAnimType` at 0x6a0f50 (semantic, high); signature (untiered): `undefined8 GetFurnitureAnimType(longlong param_1)`; semantic: anim type of the furniture the actor's process is using: 1 Sit (+0xe4 bit 30), else 2 Lay (bit 31), else 4 Lean (bit 28), else 0; 0 without a process or furniture (high); signature `u32 (const Actor* this)`
 pub const Actor__GetFurnitureAnimType: u64 = 37732;
 /// `Actor::GetFurnitureAnimType` as a function pointer type (high).
@@ -685,10 +691,16 @@ pub type Actor__GetMovementControllerPtr_fn = unsafe extern "C" fn(this: *mut cr
 pub const Actor__GetMovementDirection: u64 = 37960;
 /// `Actor::GetMovementDirection` as a function pointer type (high).
 pub type Actor__GetMovementDirection_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> f32;
+/// `Actor::GetMovementStateClass` at 0x6a6dd0 (semantic, high); signature (untiered): `undefined4 GetMovementStateClass(longlong param_1)`; semantic: 3 flying (bits 18-20 set and not state 5), 2 swimming (0x400), 4 sneaking (0x200), 1 running (0x80), 5 sprinting (0x100), else 0 (high); signature `u32 (Actor* this)`
+pub const Actor__GetMovementStateClass: u64 = 37841;
+/// `Actor::GetMovementStateClass` as a function pointer type (high).
+pub type Actor__GetMovementStateClass_fn = unsafe extern "C" fn(this: *mut crate::Actor) -> u32;
 /// `Actor::GetPermanentActorValueImpl` at 0x6c62e0 (runtime, high); signature (untiered): `float GetPermanentActorValueImpl(longlong param_1, int param_2)`; semantic: base plus permanent modifier (high); signature `float Actor::GetPermanentActorValueImpl(Actor* this, ActorValue value)`
 pub const Actor__GetPermanentActorValueImpl: u64 = 38484;
 /// `Actor::GetPermanentActorValueImpl` as a function pointer type (high).
 pub type Actor__GetPermanentActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, value: u32) -> f32;
+/// `Actor::GetRaceShieldBipedIndex` at 0x2e5ba0 (semantic, medium); signature (untiered): `undefined4 GetRaceShieldBipedIndex(longlong param_1)`; semantic: base (this+0x40) must be a TESNPC (form type 0x2b) with a race (+0x158): returns race+0x138, else -1; the biped index for shields, left-hand weapons and lights (medium); signature `i32 (Actor* this)`
+pub const Actor__GetRaceShieldBipedIndex: u64 = 19630;
 /// `Actor::GetRiderHandle` at 0x6d31f0 (semantic, high); signature (untiered): `undefined4 * GetRiderHandle(longlong param_1, undefined4 * param_2, undefined8 param_3, undefined8 param_4)`; semantic: for a mount (boolFlags2 bit 1) with an ExtraInteraction: *out = interaction+0x14 (the actor handle of the MountInteraction, i.e. the rider); else g_InvalidRefHandle (high); signature `u32* (const Actor* this, u32* outHandle)`
 pub const Actor__GetRiderHandle: u64 = 38701;
 /// `Actor::GetRiderHandle` as a function pointer type (high).
@@ -697,6 +709,10 @@ pub type Actor__GetRiderHandle_fn = unsafe extern "C" fn(this: *const crate::Act
 pub const Actor__GetScaledHeight: u64 = 37445;
 /// `Actor::GetScaledHeight` as a function pointer type (high).
 pub type Actor__GetScaledHeight_fn = unsafe extern "C" fn(actor: *const crate::Actor, eyeHeight: bool) -> f32;
+/// `Actor::GetWalkRunInterpolation` at 0x6860d0 (semantic, high); signature (untiered): `float GetWalkRunInterpolation(longlong param_1, char param_2, char param_3)`; semantic: run/walk blend: forceRun or flags1 0x80 -> run value (ID_186632), forceWalk -> 1.0, 0x1000 -> fJogInterpolationBetweenWalkAndRun + 1, 0x2000 -> fFastWalkInterpolationBetweenWalkAndRun + 1, else 1.0 (walk) (high); signature `float (Actor* this, bool forceRun, bool forceWalk)`
+pub const Actor__GetWalkRunInterpolation: u64 = 37457;
+/// `Actor::GetWalkRunInterpolation` as a function pointer type (high).
+pub type Actor__GetWalkRunInterpolation_fn = unsafe extern "C" fn(this: *mut crate::Actor, forceRun: bool, forceWalk: bool) -> f32;
 /// `Actor::HasKeyword` at 0x671bf0 (semantic, high); signature (untiered): `bool HasKeyword(Actor * this, longlong param_1, longlong param_2, undefined8 param_3)`; semantic: Actor slot 72: TESObjectREFR::HasKeyword (base object, then the reference's keywords); when false and keyword != null, the race's BGSKeywordForm (+0x70 of TESRace) slot 4 (high); signature `bool (const Actor* this, const BGSKeyword* keyword)`
 pub const Actor__HasKeyword: u64 = 37183;
 /// `Actor::HasKeyword` as a function pointer type (high).
@@ -709,12 +725,8 @@ pub type Actor__HeadTrackingOff_fn = unsafe extern "C" fn(actor: *mut crate::Act
 pub const Actor__IAnimationGraphManagerHolder_vdtor: u64 = 38191;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_11` at 0x6b0180 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_11(Actor * this, longlong * param_1)`
 pub const Actor__IAnimationGraphManagerHolder_vfunc_11: u64 = 37980;
-/// `Actor::IAnimationGraphManagerHolder_vfunc_12` at 0x6b1180 (rtti, medium); signature (high): `undefined IAnimationGraphManagerHolder_vfunc_12(Actor * this)`
-pub const Actor__IAnimationGraphManagerHolder_vfunc_12: u64 = 37986;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_13` at 0x6b1290 (rtti, medium); signature (low): `undefined IAnimationGraphManagerHolder_vfunc_13(Actor * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
 pub const Actor__IAnimationGraphManagerHolder_vfunc_13: u64 = 37987;
-/// `Actor::IAnimationGraphManagerHolder_vfunc_14` at 0x6b1160 (rtti, medium); signature (high): `uint IAnimationGraphManagerHolder_vfunc_14(Actor * this)`
-pub const Actor__IAnimationGraphManagerHolder_vfunc_14: u64 = 37985;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_15` at 0x6b61b0 (rtti, medium); signature (low): `undefined4 IAnimationGraphManagerHolder_vfunc_15(void)`
 pub const Actor__IAnimationGraphManagerHolder_vfunc_15: u64 = 38049;
 /// `Actor::IAnimationGraphManagerHolder_vfunc_16` at 0x6b6280 (rtti, medium); signature (low): `undefined8 IAnimationGraphManagerHolder_vfunc_16(Actor * this, undefined8 param_1, undefined8 param_2)`
@@ -735,10 +747,16 @@ pub const Actor__IAnimationGraphManagerHolder_vfunc_8: u64 = 37983;
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_0: u64 = 38197;
 /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_1` at 0x6b62e0 (rtti, medium); signature (high): `undefined IPostAnimationChannelUpdateFunctor_vfunc_1(Actor * this)`
 pub const Actor__IPostAnimationChannelUpdateFunctor_vfunc_1: u64 = 38053;
+/// `Actor::InitAnimationPoseAfterGraphLoad` at 0x6b1180 (semantic, medium); signature (untiered): `undefined InitAnimationPoseAfterGraphLoad(Actor * this)`; semantic: holder slot 12: with a process and not while loading a save: runs the procedures' pose init when boolFlags2 bit 28 is set, or when bit 25 is clear and the actor is not dead, not in the player's cell (unless ID_400336) and ProcessLists+0x1e7 is clear; then clears bit 25 (medium); signature `void (IAnimationGraphManagerHolder* this /* Actor + 0x38 */)`
+pub const Actor__InitAnimationPoseAfterGraphLoad: u64 = 37986;
 /// `Actor::IsAnimationDriven` at 0x687ac0 (semantic, high); signature (untiered): `undefined8 IsAnimationDriven(longlong param_1)`; semantic: true when the movement controller's IMovementMotionDrivenControl reports not motion-driven (high); signature `bool (Actor* actor)`
 pub const Actor__IsAnimationDriven: u64 = 37486;
 /// `Actor::IsAnimationDriven` as a function pointer type (high).
 pub type Actor__IsAnimationDriven_fn = unsafe extern "C" fn(actor: *mut crate::Actor) -> bool;
+/// `Actor::IsAnimationUpdateEnabled` at 0x6b1160 (semantic, high); signature (untiered): `uint IsAnimationUpdateEnabled(Actor * this)`; semantic: holder slot 14: (Actor+0x204 >> 8) & 1, i.e. boolFlags2 bit 8 (high); signature `bool (IAnimationGraphManagerHolder* this /* Actor + 0x38 */)`
+pub const Actor__IsAnimationUpdateEnabled: u64 = 37985;
+/// `Actor::IsAnimationUpdateEnabled` as a function pointer type (high).
+pub type Actor__IsAnimationUpdateEnabled_fn = unsafe extern "C" fn(this: *mut crate::IAnimationGraphManagerHolder) -> bool;
 /// `Actor::IsAttacking` at 0x6cb920 (semantic, high); signature (untiered): `bool IsAttacking(longlong param_1)`; semantic: attack state (flags1 bits 28-31) != 0 (high); signature `bool (Actor* actor)`
 pub const Actor__IsAttacking: u64 = 38590;
 /// `Actor::IsAttacking` as a function pointer type (high).
@@ -817,6 +835,10 @@ pub const Actor__MagicTarget_vfunc_9: u64 = 38740;
 pub const Actor__ModActorValueImpl: u64 = 38468;
 /// `Actor::ModActorValueImpl` as a function pointer type (high).
 pub type Actor__ModActorValueImpl_fn = unsafe extern "C" fn(this: *mut crate::Actor, modifier: i32, value: u32, delta: f32, source: *mut c_void);
+/// `Actor::MoveToPosition` at 0x677370 (semantic, high); signature (untiered): `ulonglong MoveToPosition(TESObjectCELL * param_1, float * param_2, undefined8 param_3, float param_4, TESObjectCELL * param_5, TESObjectCELL * param_6, char param_7)`; semantic: actor move: stops furniture use, clears the knock state, SetPosition, SetAngleZ(heading), SetAngleX(pitch), finds the cell for the position, MoveRefToCellOrWorldspace and the location-change event; when the target cell is attached and no other thread is in its update phase it then calls an actor virtual with the new position, SetHeading(heading) again and AlignControllerToPathingSurface (else queues task 0x20 with position and heading); with the last bool it also resets the process (ID_37818, ID_39114). It never writes the 3D root directly (high); signature `bool (Actor* this, const NiPoint3* position, float heading, float pitch, TESObjectCELL* cell, TESWorldSpace* worldspace, bool)`
+pub const Actor__MoveToPosition: u64 = 37313;
+/// `Actor::MoveToPosition` as a function pointer type (high).
+pub type Actor__MoveToPosition_fn = unsafe extern "C" fn(this: *mut crate::Actor, position: *const crate::NiPoint3, heading: f32, pitch: f32, cell: *mut crate::TESObjectCELL, worldspace: *mut crate::TESWorldSpace, a6: bool) -> bool;
 /// `Actor::NotifyAnimationGraph` at 0x6b61a0 (semantic, high); signature (untiered): `undefined1 NotifyAnimationGraph(Actor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: 5-byte thunk 'jmp 0x554220' to IAnimationGraphManagerHolder::NotifyAnimationGraph (gets the manager through slot 2, BSAnimationGraphManager::NotifyAnimationGraph 0xbc0c90, true when a graph accepted the event) (high); signature `bool (IAnimationGraphManagerHolder* this, const BSFixedString& eventName)`
 pub const Actor__NotifyAnimationGraph: u64 = 38048;
 /// `Actor::NotifyAnimationGraph` as a function pointer type (high).
@@ -859,8 +881,16 @@ pub type Actor__RetryPendingWeaponRequest_fn = unsafe extern "C" fn(this: *mut c
 pub const Actor__SaveGame: u64 = 37649;
 /// `Actor::SendAssaultAlarm` at 0x682e70 (decompiler, medium); signature (medium): `undefined SendAssaultAlarm(Actor * param_1, longlong * * * * * * * param_2, char param_3)`
 pub const Actor__SendAssaultAlarm: u64 = 37424;
+/// `Actor::SetAIEnabled` at 0x688fb0 (runtime, high); signature (untiered): `undefined SetAIEnabled(longlong param_1, char param_2)`; semantic: boolFlags (+0xe8) bit 1 = enable; when disabling an actor with a process, the character controller (MiddleHighProcessData+0x250) gets SetLinearVelocity(0) (slot 7) (high); signature `void (Actor* this, bool enable)`
+pub const Actor__SetAIEnabled: u64 = 37504;
+/// `Actor::SetAIEnabled` as a function pointer type (high).
+pub type Actor__SetAIEnabled_fn = unsafe extern "C" fn(this: *mut crate::Actor, enable: bool);
 /// `Actor::SetAlpha` at 0x6d4510 (semantic, high); signature (untiered): `undefined SetAlpha(Actor * this, undefined4 param_2)`
 pub const Actor__SetAlpha: u64 = 38722;
+/// `Actor::SetHeading` at 0x6740b0 (semantic, high); signature (untiered): `undefined SetHeading(longlong * param_1, float param_2)`; semantic: the actor heading setter: refused while the life state (flags1 bits 21-24) is not 0, 4, 7, 8 (6 only while sitting) or while the actor has a process and knock state bits 25-27 are set; wraps to [0, 2*pi]; races with TESRace+0x108 bit 9 store the difference to rotZ (wrapped to [-pi, pi)) in rotY instead; otherwise SetAngleZ (high); signature `void (Actor* this, float headingRadians)`
+pub const Actor__SetHeading: u64 = 37230;
+/// `Actor::SetHeading` as a function pointer type (high).
+pub type Actor__SetHeading_fn = unsafe extern "C" fn(this: *mut crate::Actor, headingRadians: f32);
 /// `Actor::SetLifeState` at 0x693200 (runtime, high); signature (untiered): `undefined SetLifeState(TESObjectREFR * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`; semantic: stores the life state into bits 21..24 of Actor+0xc8 (flags1) and applies the transition: state 2 (dead) stops sounds and 3D effects; entering/leaving bleedout (states 7/8) pushes or leaves the player's bleedout camera (high); signature `void (Actor* this, u32 lifeState)`
 pub const Actor__SetLifeState: u64 = 37612;
 /// `Actor::SetLifeState` as a function pointer type (high).
@@ -879,6 +909,8 @@ pub type Actor__SetWeaponDrawn_fn = unsafe extern "C" fn(this: *mut crate::Actor
 pub const Actor__StartKillMove: u64 = 38613;
 /// `Actor::StartKillMove` as a function pointer type (high).
 pub type Actor__StartKillMove_fn = unsafe extern "C" fn(actor: *mut crate::Actor, partner: *mut crate::Actor);
+/// `Actor::StopMovingAndClearSprintSync` at 0x6a6050 (semantic, medium); signature (untiered): `undefined StopMovingAndClearSprintSync(longlong param_1, undefined4 param_2, undefined8 param_3, undefined8 param_4)`; semantic: unmounted, not flying: RequestStopMoving on the actor's (or root mount's) movement object (+0x148) with the float; then graph variable g_AnimationVariableNames+0x358 ('iSyncSprintState') set through the bool setter to false (medium); signature `void (Actor* this, float)`
+pub const Actor__StopMovingAndClearSprintSync: u64 = 37817;
 /// `Actor::StopUsingFurniture` at 0x6d2a40 (runtime, high); signature (untiered): `undefined StopUsingFurniture(longlong * param_1, byte param_2)`; semantic: gets the actor out of its furniture: sets +0x204 bit 8; when instant, moves it to the furniture's exit point (default-object action 0x37 positions, slot 0x548 SetPosition), restores the player's controls and calls PlayerCamera::ExitFurnitureCamera(0); updates the furniture state and the process bytes +0x320 (= !instant) and +0x32c (= instant); mounted actors take the mount path (extra 0xa9) (high); signature `void (Actor* this, bool instant)`
 pub const Actor__StopUsingFurniture: u64 = 38697;
 /// `Actor::StopUsingFurniture` as a function pointer type (high).
@@ -1353,8 +1385,6 @@ pub const Actor__vfunc_90: u64 = 37525;
 pub const Actor__vfunc_91: u64 = 37605;
 /// `Actor::vfunc_93` at 0x6d8550 (rtti, medium); signature (high): `Actor_vtbl_A0 * * vfunc_93(Actor * this)`
 pub const Actor__vfunc_93: u64 = 38793;
-/// `Actor::vfunc_99` at 0x69bba0 (rtti, high); signature (high): `longlong vfunc_99(Actor * this)`
-pub const Actor__vfunc_99: u64 = 37655;
 /// `Actor::vfunc_99_sub0` at 0x720640 (callgraph, medium); signature (untiered): `undefined8 vfunc_99_sub0(longlong param_1)`
 pub const Actor__vfunc_99_sub0: u64 = 39805;
 /// `Actor::vfunc_99_sub1` at 0x727db0 (callgraph, medium); signature (untiered): `undefined vfunc_99_sub1(longlong param_1, undefined8 param_2)`
@@ -1603,6 +1633,10 @@ pub const ActorPackageData__vfunc_8: u64 = 29766;
 pub const ActorState__HasFlags: u64 = 38986;
 /// `ActorState::HasFlags` as a function pointer type (high).
 pub type ActorState__HasFlags_fn = unsafe extern "C" fn(this: *const crate::ActorState, mask: u16) -> bool;
+/// `ActorState::SetMovementFlags` at 0x6e1490 (semantic, high); signature (untiered): `undefined8 SetMovementFlags(longlong param_1, ushort param_2)`; semantic: flags1 (+0x8 of ActorState = Actor+0xc8) low 14 bits = flags & 0x3fff, upper bits kept (high); signature `bool (ActorState* this, u16 flags)`
+pub const ActorState__SetMovementFlags: u64 = 38982;
+/// `ActorState::SetMovementFlags` as a function pointer type (high).
+pub type ActorState__SetMovementFlags_fn = unsafe extern "C" fn(this: *mut crate::ActorState, flags: u16) -> bool;
 /// `ActorState::SetSitSleepState` at 0x6c2cc0 (semantic, high); signature (untiered): `undefined1 SetSitSleepState(ActorState * this, uint param_1)`
 pub const ActorState__SetSitSleepState: u64 = 38395;
 /// `ActorState::SetWeaponDrawn` at 0x6e13c0 (runtime, high); signature (untiered): `undefined8 SetWeaponDrawn(ActorState * this, char param_1)`
@@ -5279,8 +5313,10 @@ pub const ApplyKeyTypeFunctionsToKeyArrays: u64 = 74986;
 pub const ApplyLODFadeOutMultSettings: u64 = 13418;
 /// `ApplyLayoutParamsToField58` at 0xe70760 (decompiler, medium); signature (untiered): `undefined ApplyLayoutParamsToField58(longlong param_1, uint * param_2)`
 pub const ApplyLayoutParamsToField58: u64 = 88069;
-/// `ApplyLightAttenuationSettings` at 0x275600 (decompiler, medium); signature (medium): `undefined ApplyLightAttenuationSettings(longlong * param_1, uint param_2)`
+/// `ApplyLightAttenuationSettings` at 0x275600 (semantic, high); signature (medium): `undefined ApplyLightAttenuationSettings(longlong * param_1, uint param_2)`; semantic: if the light is a NiPointLight (TypeNode walk): +0x140 = fConstantValue:LightAttenuation (when the attenuation mode word 0x31a5498 bit 0), +0x144 = linear term, +0x148 = quadratic term from radius and the [LightAttenuation] INI settings; same code as the tail of Fmt_PtLight (high); signature `void (NiLight* light, uint radius)`
 pub const ApplyLightAttenuationSettings: u64 = 17626;
+/// `ApplyLightAttenuationSettings` as a function pointer type (high).
+pub type ApplyLightAttenuationSettings_fn = unsafe extern "C" fn(light: *mut crate::NiLight, radius: u32);
 /// `ApplyLongestDurationAndLargestArea` at 0x7ecf20 (decompiler, medium); signature (medium): `undefined ApplyLongestDurationAndLargestArea(longlong * param_1, longlong param_2, longlong param_3, char param_4, float param_5)`
 pub const ApplyLongestDurationAndLargestArea: u64 = 43942;
 /// `ApplyLookInputSensitivity` at 0x7aeba0 (runtime, high); signature (medium): `undefined ApplyLookInputSensitivity(longlong param_1, float * param_2)`; semantic: bInvertYValues:Controls -> look.y negated first; mouse: x *= fMouseHeadingSensitivity * fMouseHeadingXScale / g_FrameDeltaReal, y *= sensitivity * YScale (mounted: both * fHorseHeadingMovementMult); gamepad: snap-to-axis, look curve, exponent, acceleration, sensitivity threshold, X/Y scale, optional time normalisation (high); signature `void (PlayerControls* this, NiPoint2* look)`
@@ -5349,8 +5385,6 @@ pub const ApplyScaleOffsetClampToBytes4: u64 = 84465;
 pub const ApplySessionTokenOrFail: u64 = 449369;
 /// `ApplySettingsDefaults` at 0x65ca50 (semantic, medium); signature (untiered): `undefined ApplySettingsDefaults(void)`; semantic: re-applies the settings values; for every SNCT with flags bit 1 calls SetCategoryVolume(&p with p = form+0x30) (medium); signature `void ()`
 pub const ApplySettingsDefaults: u64 = 36622;
-/// `ApplySingleExpressionWeight` at 0x4248d0 (decompiler, medium); signature (untiered): `undefined ApplySingleExpressionWeight(longlong param_1, int param_2, float param_3)`
-pub const ApplySingleExpressionWeight: u64 = 26594;
 /// `ApplySpeechHighlightByDistance` at 0x5eade0 (decompiler, medium); signature (untiered): `undefined8 ApplySpeechHighlightByDistance(undefined8 * param_1, uint * param_2)`
 pub const ApplySpeechHighlightByDistance: u64 = 35169;
 /// `ApplySpellImpactWithDeathForce` at 0x8010c0 (decompiler, medium); signature (untiered): `undefined ApplySpellImpactWithDeathForce(longlong param_1, TESObjectREFR * param_2, float * param_3, undefined4 param_4, undefined4 param_5)`
@@ -7253,29 +7287,3 @@ pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff
 pub const AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_BST_ea1c3c507d96: u64 = 45470;
 /// `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f460 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMelee,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const AutoRegisterCreator_CombatInventoryItemMelee_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45111;
-/// `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f880 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemOneHandedBlock,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemOneHandedBlock_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45129;
-/// `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f5c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemRanged,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemRanged_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45117;
-/// `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f720 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemShield,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemShield_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45123;
-/// `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82f9e0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemTorch,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatInventoryItemTorch_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45135;
-/// `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x849970 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterArmor,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterArmor_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46430;
-/// `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x847dd0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterBoundItem,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterBoundItem_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46315;
-/// `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8417c0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterCloak,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterCloak_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45906;
-/// `AutoRegisterCreator<CombatMagicCasterDisarm,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x83f280 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterDisarm,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterDisarm,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterDisarm_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45763;
-/// `AutoRegisterCreator<CombatMagicCasterInvisibility,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x845b50 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterInvisibility,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterInvisibility,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterInvisibility_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46180;
-/// `AutoRegisterCreator<CombatMagicCasterLight,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x843a80 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterLight,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterLight,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterLight_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46046;
-/// `AutoRegisterCreator<CombatMagicCasterOffensive,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8316b0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterOffensive,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterOffensive,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterOffensive_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45216;
-/// `AutoRegisterCreator<CombatMagicCasterParalyze,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x830d10 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterParalyze,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterParalyze,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterParalyze_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 45167;
-/// `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8303d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManager_unsigned_int_CombatObject_256____vdtor: u64 = 46524;

@@ -48,6 +48,13 @@ impl crate::TESDataHandler {
 }
 
 impl crate::TESForm {
+    /// `TESForm::SetDelete`, vtable slot 35, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 14636, rva 0x1e6070).
+    /// `undefined SetDelete(TESForm * this, byte param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_delete(&self, param_1: u8) -> u64 { unsafe { virtual_function!(self, 35, (*const Self, u8) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TESForm::dtor` (decompiler signature, tier untiered; ledger callgraph evidence, name high; id 13840, rva 0x1c69e0).
     /// `undefined dtor(TESForm * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///

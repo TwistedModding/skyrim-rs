@@ -964,37 +964,6 @@ impl crate::BSFaceGenKeyframeExclusive {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26809, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BSFaceGenKeyframeMultiple {
-    /// `BSFaceGenKeyframeMultiple::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 26789, rva 0x431080).
-    /// `BSFaceGenKeyframeMultiple * ctor(BSFaceGenKeyframeMultiple * this, undefined4 param_1, ulonglong param_2, longlong param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self, param_1: u32, param_2: u64, param_3: i64) -> *mut Self { unsafe { function!(26789, (*const Self, u32, u64, i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BSFaceGenKeyframeMultiple::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 26790, rva 0x431230).
-    /// `BSFaceGenKeyframeMultiple * ctor(BSFaceGenKeyframeMultiple * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: i64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26790, (*const Self, i64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BSFaceGenKeyframeMultiple::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 26791, rva 0x431310).
-    /// `undefined dtor(BSFaceGenKeyframeMultiple * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(26791, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `BSFaceGenKeyframeMultiple::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 26810, rva 0x4323a0).
-    /// `BSFaceGenKeyframeMultiple * vdtor(BSFaceGenKeyframeMultiple * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(26810, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BSFaceGenModel {
     /// `BSFaceGenModel::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 26876, rva 0x435020).
     /// `BSFaceGenModel * ctor(BSFaceGenModel * this, longlong param_1)`
@@ -12617,6 +12586,36 @@ impl crate::BSTEventSink_DisarmedEvent__Event {
 impl crate::BSTEventSink_DragonSoulGained__Event {
     /// `BSTEventSink<DragonSoulGained::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37097, rva 0x66e6b0).
     /// `BSTEventSink<DragonSoulGained::Event> * vdtor(BSTEventSink<DragonSoulGained::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_FinePaid__Event {
+    /// `BSTEventSink<FinePaid::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37049, rva 0x66dcf0).
+    /// `BSTEventSink<FinePaid::Event> * vdtor(BSTEventSink<FinePaid::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_GrandTheftHorse__Event {
+    /// `BSTEventSink<GrandTheftHorse::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37115, rva 0x66e9b0).
+    /// `BSTEventSink<GrandTheftHorse::Event> * vdtor(BSTEventSink<GrandTheftHorse::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_HoursPassed__Event {
+    /// `BSTEventSink<HoursPassed::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37052, rva 0x66dd70).
+    /// `BSTEventSink<HoursPassed::Event> * vdtor(BSTEventSink<HoursPassed::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.

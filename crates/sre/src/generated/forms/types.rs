@@ -1050,6 +1050,8 @@ pub struct TESForm_formFlags(pub u32);
 impl TESForm_formFlags {
     /// scriptRunnable (medium)
     pub const SCRIPT_RUNNABLE: Self = Self(0x8);
+    /// NoCollision (medium)
+    pub const NO_COLLISION: Self = Self(0x10);
     /// record deleted (high)
     pub const DELETED: Self = Self(0x20);
     /// known to the player (high)

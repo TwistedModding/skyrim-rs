@@ -3770,30 +3770,6 @@ impl crate::ModManagerMenu {
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(33752, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::ModelReferenceEffect {
-    /// `ModelReferenceEffect::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 34680, rva 0x5d87bc).
-    /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(ModelReferenceEffect * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vdtor(&self) -> u64 { unsafe { function!(34680, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x60)) } }
-    /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 34679, rva 0x5d87b0).
-    /// `undefined SimpleAnimationGraphManagerHolder_vdtor(ModelReferenceEffect * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(34679, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x48)) } }
-    /// `ModelReferenceEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 34652, rva 0x5d67d0).
-    /// `ModelReferenceEffect * ctor(ModelReferenceEffect * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(34652, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::Moon {
     /// `Moon::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 26167, rva 0x40d7a0).
     /// `undefined ctor(Moon * this)`
@@ -4369,16 +4345,6 @@ impl crate::RagdollFurnitureListener {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn hkp_entity_listener_vdtor(&self) -> u64 { unsafe { function!(25976, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x8)) } }
-}
-
-impl crate::ReferenceEffect {
-    /// `ReferenceEffect::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 34758, rva 0x5dafd0).
-    /// `ReferenceEffect * ctor(ReferenceEffect * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(34758, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::ReferenceEffectController {
@@ -15291,3 +15257,38 @@ pub unsafe fn get_byte_field_da5(param_1: i64) -> u8 { unsafe { function!(441532
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_channel_byte_ptr(param_1: i64, param_2: i64) -> i64 { unsafe { function!(77775, (i64, i64) -> i64)(param_1, param_2) } }
+/// `GetChannelBytePtr_2` (decompiler signature, tier high; ledger decompiler evidence, name high; id 77776, rva 0x1044160).
+/// `longlong GetChannelBytePtr_2(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_channel_byte_ptr_2(param_1: i64, param_2: i64) -> i64 { unsafe { function!(77776, (i64, i64) -> i64)(param_1, param_2) } }
+/// `GetCheckForMissingContentOnStartup` (decompiler signature, tier high; ledger decompiler evidence, name high; id 442573, rva 0x623d80).
+/// `undefined1 GetCheckForMissingContentOnStartup(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_check_for_missing_content_on_startup() -> u8 { unsafe { function!(442573, () -> u8)() } }
+/// `GetClientOrServerString` (decompiler signature, tier high; ledger decompiler evidence, name high; id 449894, rva 0x13d2940).
+/// `char * GetClientOrServerString(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_client_or_server_string(param_1: i64) -> *mut c_char { unsafe { function!(449894, (i64) -> *mut c_char)(param_1) } }
+/// `GetColorField20AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18288, rva 0x295610).
+/// `undefined GetColorField20AsFloat3(longlong param_1, float * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_color_field20_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18288, (i64, *mut f32) -> u64)(param_1, param_2) } }
+/// `GetColorField24AsFloat3` (decompiler signature, tier high; ledger decompiler evidence, name high; id 18290, rva 0x295690).
+/// `undefined GetColorField24AsFloat3(longlong param_1, float * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn get_color_field24_as_float3(param_1: i64, param_2: *mut f32) -> u64 { unsafe { function!(18290, (i64, *mut f32) -> u64)(param_1, param_2) } }

@@ -317,16 +317,6 @@ impl crate::BGSBipedModelList {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(14111, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::BGSBipedObjectForm {
-    /// `BGSBipedObjectForm::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 14122, rva 0x1d21f0).
-    /// `BGSBipedObjectForm * vdtor(BGSBipedObjectForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(14122, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::BGSBlockBashData {
     /// `BGSBlockBashData::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 14129, rva 0x1d23c0).
     /// `BGSBlockBashData * vdtor(BGSBlockBashData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`

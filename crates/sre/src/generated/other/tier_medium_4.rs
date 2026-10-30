@@ -3,69 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `ResolveRefHandleIntoSmartPtr` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 12971, rva 0x1917d0).
-/// `undefined ResolveRefHandleIntoSmartPtr(uint * param_1, longlong * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_ref_handle_into_smart_ptr(param_1: *mut u32, param_2: *mut i64) -> u64 { unsafe { function!(12971, (*mut u32, *mut i64) -> u64)(param_1, param_2) } }
-/// `ResolveRelativePathAgainstFileDirectory` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 69220, rva 0xeb3d00).
-/// `undefined ResolveRelativePathAgainstFileDirectory(char * param_1, char * param_2, char * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn resolve_relative_path_against_file_directory(param_1: *mut c_char, param_2: *mut c_char, param_3: *mut c_char) -> u64 { unsafe { function!(69220, (*mut c_char, *mut c_char, *mut c_char) -> u64)(param_1, param_2, param_3) } }
-/// `RestartLoopSoundAtRefPosition` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 43976, rva 0x7ee9d0).
-/// `undefined RestartLoopSoundAtRefPosition(TESObjectREFR * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn restart_loop_sound_at_ref_position(param_1: *mut crate::TESObjectREFR) -> u64 { unsafe { function!(43976, (*mut crate::TESObjectREFR) -> u64)(param_1) } }
-/// `RestoreActorValue` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 38455, rva 0x6c47f0).
-/// `undefined RestoreActorValue(longlong param_1, int param_2, float param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn restore_actor_value(param_1: i64, param_2: i32, param_3: f32) -> u64 { unsafe { function!(38455, (i64, i32, f32) -> u64)(param_1, param_2, param_3) } }
-/// `RestoreBit0OfFieldF4OnGlobals` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 31823, rva 0x5171f0).
-/// `undefined RestoreBit0OfFieldF4OnGlobals(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn restore_bit0_of_field_f4_on_globals(param_1: i64) -> u64 { unsafe { function!(31823, (i64) -> u64)(param_1) } }
-/// `RestorePlaneMasks` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 76844, rva 0xff9230).
-/// `undefined RestorePlaneMasks(longlong * param_1, undefined4 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn restore_plane_masks(param_1: *mut i64, param_2: *mut u32) -> u64 { unsafe { function!(76844, (*mut i64, *mut u32) -> u64)(param_1, param_2) } }
-/// `ReturnEntryToPool` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 15419, rva 0x20b8d0).
-/// `undefined ReturnEntryToPool(ulonglong param_1, ulonglong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn return_entry_to_pool(param_1: u64, param_2: u64) -> u64 { unsafe { function!(15419, (u64, u64) -> u64)(param_1, param_2) } }
-/// `ReturnStreamBufferToPool` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 68052, rva 0xcdc470).
-/// `undefined ReturnStreamBufferToPool(void * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn return_stream_buffer_to_pool(param_1: *mut c_void, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(68052, (*mut c_void, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `ReverseByteRange` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 453589, rva 0x15a6fa8).
-/// `undefined ReverseByteRange(undefined1[32] * param_1, undefined1[32] * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn reverse_byte_range(param_1: *mut c_void, param_2: *mut c_void) -> u64 { unsafe { function!(453589, (*mut c_void, *mut c_void) -> u64)(param_1, param_2) } }
 /// `RewindCursorToHead` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35222, rva 0x5ec750).
 /// `undefined8 RewindCursorToHead(longlong param_1)`
 ///
@@ -1599,13 +1536,6 @@ pub unsafe fn send_notification_if_web_socket_connected(param_1: i64, param_2: *
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set32_byte_array_capacity_global_heap(param_1: *mut i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(83944, (*mut i64, u64, i64) -> u64)(param_1, param_2, param_3) } }
-/// `SetAIEnabled` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37504, rva 0x688fb0).
-/// `undefined SetAIEnabled(longlong param_1, char param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_ai_enabled(param_1: i64, param_2: c_char) -> u64 { unsafe { function!(37504, (i64, c_char) -> u64)(param_1, param_2) } }
 /// `SetActionEntity` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 61002, rva 0xb50210).
 /// `undefined SetActionEntity(longlong param_1, longlong param_2)`
 ///
@@ -1634,27 +1564,6 @@ pub unsafe fn set_actor_base_level(param_1: i64, param_2: u16) -> u64 { unsafe {
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_and_play_sound_handle698(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(40564, (*mut i64, i32) -> u64)(param_1, param_2) } }
-/// `SetAngleField48` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19787, rva 0x2f0d20).
-/// `undefined SetAngleField48(longlong * param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_angle_field48(param_1: *mut i64, param_2: f32) -> u64 { unsafe { function!(19787, (*mut i64, f32) -> u64)(param_1, param_2) } }
-/// `SetAngleField4C` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19788, rva 0x2f0da0).
-/// `undefined SetAngleField4C(longlong * param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_angle_field4_c(param_1: *mut i64, param_2: f32) -> u64 { unsafe { function!(19788, (*mut i64, f32) -> u64)(param_1, param_2) } }
-/// `SetAngleOnAxis` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 22054, rva 0x350a40).
-/// `undefined SetAngleOnAxis(longlong * param_1, char param_2, float param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_angle_on_axis(param_1: *mut i64, param_2: c_char, param_3: f32) -> u64 { unsafe { function!(22054, (*mut i64, c_char, f32) -> u64)(param_1, param_2, param_3) } }
 /// `SetAnglesTowardPoint` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 44201, rva 0x800160).
 /// `undefined SetAnglesTowardPoint(longlong * param_1, float * param_2)`
 ///
@@ -3174,13 +3083,6 @@ pub unsafe fn set_matrix4_rotation_y(param_1: *mut f32, param_2: f32) -> u64 { u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_matrix_from_euler_angles(param_1: u32, param_2: f32, param_3: f32, param_4: *mut f32) -> u64 { unsafe { function!(91791, (u32, f32, f32, *mut f32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetMatrixFromEulerAngles_2` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70221, rva 0xede280).
-/// `undefined SetMatrixFromEulerAngles_2(undefined8 * param_1, uint param_2, uint param_3, uint param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_matrix_from_euler_angles_2(param_1: *mut u64, param_2: u32, param_3: u32, param_4: u32) -> u64 { unsafe { function!(70221, (*mut u64, u32, u32, u32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `SetMatrixMembersFromFloats` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 85845, rva 0xda38b0).
 /// `undefined SetMatrixMembersFromFloats(longlong param_1, longlong param_2, float * param_3)`
 ///
@@ -3524,20 +3426,6 @@ pub unsafe fn set_pointer_array_size(param_1: *mut i64, param_2: u32, param_3: u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_pointer_array_size_2(param_1: *mut i64, param_2: u32, param_3: u64, param_4: u64) -> u8 { unsafe { function!(30429, (*mut i64, u32, u64, u64) -> u8)(param_1, param_2, param_3, param_4) } }
-/// `SetPosition` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 19790, rva 0x2f0ef0).
-/// `undefined SetPosition(longlong * param_1, float * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_position(param_1: *mut i64, param_2: *mut f32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(19790, (*mut i64, *mut f32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `SetPositionOnAxis` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 22053, rva 0x3508d0).
-/// `undefined SetPositionOnAxis(longlong * param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_position_on_axis(param_1: *mut i64, param_2: c_char, param_3: u64, param_4: u64) -> u64 { unsafe { function!(22053, (*mut i64, c_char, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `SetPtrArrayCapacityGlobalHeap` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 83937, rva 0xd50100).
 /// `undefined SetPtrArrayCapacityGlobalHeap(longlong * param_1, undefined8 param_2, longlong param_3)`
 ///
@@ -3762,13 +3650,6 @@ pub unsafe fn set_rotation_z_matrix(param_1: *mut f32, param_2: f32) -> u64 { un
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_rotations_from_quaternions(param_1: i64, param_2: *mut f32, param_3: *mut f32) -> u64 { unsafe { function!(61956, (i64, *mut f32, *mut f32) -> u64)(param_1, param_2, param_3) } }
-/// `SetScaleAndUpdate3D` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 22055, rva 0x350ae0).
-/// `undefined SetScaleAndUpdate3D(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_scale_and_update3_d(param_1: *mut i64) -> u64 { unsafe { function!(22055, (*mut i64) -> u64)(param_1) } }
 /// `SetScaledBoundsRect158` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 84772, rva 0x1184570).
 /// `undefined SetScaledBoundsRect158(longlong param_1, float * param_2)`
 ///

@@ -179,23 +179,6 @@ impl crate::BSFaceGenKeyframeExclusive {
     pub unsafe fn vfunc_1_sub0(param_1: *mut i64, param_2: u64) -> u64 { unsafe { function!(26807, (*mut i64, u64) -> u64)(param_1, param_2) } }
 }
 
-impl crate::BSFaceGenKeyframeMultiple {
-    /// `BSFaceGenKeyframeMultiple::vfunc_10_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 26563, rva 0x423de0).
-    /// `float vfunc_10_sub0(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_10_sub0() -> f32 { unsafe { function!(26563, () -> f32)() } }
-    /// `BSFaceGenKeyframeMultiple::vfunc_10_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 26564, rva 0x423e00).
-    /// `float vfunc_10_sub1(void)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vfunc_10_sub1() -> f32 { unsafe { function!(26564, () -> f32)() } }
-}
-
 impl crate::BSFaceGenMorphDataHead {
     /// `BSFaceGenMorphDataHead::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 26945, rva 0x438e00).
     /// `undefined ctor_sub0(int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`

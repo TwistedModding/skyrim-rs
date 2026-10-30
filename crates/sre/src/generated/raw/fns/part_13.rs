@@ -3,6 +3,184 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit` at 0x17b63d0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit: u64 = 174105;
+/// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init` at 0xf1ef0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init(void)`
+pub const INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init: u64 = 9985;
+/// `INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit` at 0x17b6420 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__atexit: u64 = 174106;
+/// `INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init` at 0xf1f70 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init(void)`
+pub const INISetting_fAvoidPreferredTriangleMultiplier_Pathfinding__init: u64 = 9986;
+/// `INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit` at 0x17b5d80 (crt_init, medium); signature (high): `void INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__atexit: u64 = 174072;
+/// `INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init` at 0xf12e0 (crt_init, medium); signature (high): `void INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init(void)`
+pub const INISetting_fAvoidanceDistanceRadiusMult_Pathfinding__init: u64 = 9957;
+/// `INISetting_fAvoidanceTimeDelta_Pathfinding__atexit` at 0x17b6f00 (crt_init, medium); signature (high): `void INISetting_fAvoidanceTimeDelta_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidanceTimeDelta_Pathfinding__atexit: u64 = 174160;
+/// `INISetting_fAvoidanceTimeDelta_Pathfinding__init` at 0xf3770 (crt_init, medium); signature (high): `void INISetting_fAvoidanceTimeDelta_Pathfinding__init(void)`
+pub const INISetting_fAvoidanceTimeDelta_Pathfinding__init: u64 = 10035;
+/// `INISetting_fBSTaskTime_General__atexit` at 0x17b21c0 (crt_init, medium); signature (high): `void INISetting_fBSTaskTime_General__atexit(void)`
+pub const INISetting_fBSTaskTime_General__atexit: u64 = 173734;
+/// `INISetting_fBSTaskTime_General__init` at 0xe7cf0 (crt_init, medium); signature (high): `void INISetting_fBSTaskTime_General__init(void)`
+pub const INISetting_fBSTaskTime_General__init: u64 = 9416;
+/// `INISetting_fBackPedalAngle_Pathfinding__atexit` at 0x17b75c0 (crt_init, medium); signature (high): `void INISetting_fBackPedalAngle_Pathfinding__atexit(void)`
+pub const INISetting_fBackPedalAngle_Pathfinding__atexit: u64 = 174212;
+/// `INISetting_fBackPedalAngle_Pathfinding__init` at 0xf4d50 (crt_init, medium); signature (high): `void INISetting_fBackPedalAngle_Pathfinding__init(void)`
+pub const INISetting_fBackPedalAngle_Pathfinding__init: u64 = 10070;
+/// `INISetting_fBadTriangleMultiplier_Pathfinding__atexit` at 0x17b6470 (crt_init, medium); signature (high): `void INISetting_fBadTriangleMultiplier_Pathfinding__atexit(void)`
+pub const INISetting_fBadTriangleMultiplier_Pathfinding__atexit: u64 = 174107;
+/// `INISetting_fBadTriangleMultiplier_Pathfinding__init` at 0xf1ff0 (crt_init, medium); signature (high): `void INISetting_fBadTriangleMultiplier_Pathfinding__init(void)`
+pub const INISetting_fBadTriangleMultiplier_Pathfinding__init: u64 = 9987;
+/// `INISetting_fBetaDeferredKillTimer_General__atexit` at 0x179a7e0 (crt_init, medium); signature (high): `void INISetting_fBetaDeferredKillTimer_General__atexit(void)`
+pub const INISetting_fBetaDeferredKillTimer_General__atexit: u64 = 171363;
+/// `INISetting_fBetaDeferredKillTimer_General__init` at 0xa4020 (crt_init, medium); signature (high): `void INISetting_fBetaDeferredKillTimer_General__init(void)`
+pub const INISetting_fBetaDeferredKillTimer_General__init: u64 = 6167;
+/// `INISetting_fBoneLODDistanceScale_Animation__atexit` at 0x17b0a00 (crt_init, medium); signature (high): `void INISetting_fBoneLODDistanceScale_Animation__atexit(void)`
+pub const INISetting_fBoneLODDistanceScale_Animation__atexit: u64 = 173619;
+/// `INISetting_fBoneLODDistanceScale_Animation__init` at 0xde260 (crt_init, medium); signature (high): `void INISetting_fBoneLODDistanceScale_Animation__init(void)`
+pub const INISetting_fBoneLODDistanceScale_Animation__init: u64 = 8861;
+/// `INISetting_fBookDistance_Interface__atexit` at 0x17a4a60 (crt_init, medium); signature (high): `void INISetting_fBookDistance_Interface__atexit(void)`
+pub const INISetting_fBookDistance_Interface__atexit: u64 = 172256;
+/// `INISetting_fBookDistance_Interface__init` at 0xb41c0 (crt_init, medium); signature (high): `void INISetting_fBookDistance_Interface__init(void)`
+pub const INISetting_fBookDistance_Interface__init: u64 = 6800;
+/// `INISetting_fBookLight2DiffuseColorB_Interface__atexit` at 0x17aa0b0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorB_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorB_Interface__atexit: u64 = 172816;
+/// `INISetting_fBookLight2DiffuseColorB_Interface__init` at 0xbe4e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorB_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorB_Interface__init: u64 = 7384;
+/// `INISetting_fBookLight2DiffuseColorG_Interface__atexit` at 0x17aa100 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorG_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorG_Interface__atexit: u64 = 172817;
+/// `INISetting_fBookLight2DiffuseColorG_Interface__init` at 0xbe560 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorG_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorG_Interface__init: u64 = 7385;
+/// `INISetting_fBookLight2DiffuseColorR_Interface__atexit` at 0x17aa150 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorR_Interface__atexit(void)`
+pub const INISetting_fBookLight2DiffuseColorR_Interface__atexit: u64 = 172818;
+/// `INISetting_fBookLight2DiffuseColorR_Interface__init` at 0xbe5e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DiffuseColorR_Interface__init(void)`
+pub const INISetting_fBookLight2DiffuseColorR_Interface__init: u64 = 7386;
+/// `INISetting_fBookLight2DimmerValue_Interface__atexit` at 0x17aa1a0 (crt_init, medium); signature (high): `void INISetting_fBookLight2DimmerValue_Interface__atexit(void)`
+pub const INISetting_fBookLight2DimmerValue_Interface__atexit: u64 = 172819;
+/// `INISetting_fBookLight2DimmerValue_Interface__init` at 0xbe660 (crt_init, medium); signature (high): `void INISetting_fBookLight2DimmerValue_Interface__init(void)`
+pub const INISetting_fBookLight2DimmerValue_Interface__init: u64 = 7387;
+/// `INISetting_fBookLight2Radius_Interface__atexit` at 0x17aa1f0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Radius_Interface__atexit(void)`
+pub const INISetting_fBookLight2Radius_Interface__atexit: u64 = 172820;
+/// `INISetting_fBookLight2Radius_Interface__init` at 0xbe6e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Radius_Interface__init(void)`
+pub const INISetting_fBookLight2Radius_Interface__init: u64 = 7388;
+/// `INISetting_fBookLight2X_Interface__atexit` at 0x17aa240 (crt_init, medium); signature (high): `void INISetting_fBookLight2X_Interface__atexit(void)`
+pub const INISetting_fBookLight2X_Interface__atexit: u64 = 172821;
+/// `INISetting_fBookLight2X_Interface__init` at 0xbe760 (crt_init, medium); signature (high): `void INISetting_fBookLight2X_Interface__init(void)`
+pub const INISetting_fBookLight2X_Interface__init: u64 = 7389;
+/// `INISetting_fBookLight2Y_Interface__atexit` at 0x17aa290 (crt_init, medium); signature (high): `void INISetting_fBookLight2Y_Interface__atexit(void)`
+pub const INISetting_fBookLight2Y_Interface__atexit: u64 = 172822;
+/// `INISetting_fBookLight2Y_Interface__init` at 0xbe7e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Y_Interface__init(void)`
+pub const INISetting_fBookLight2Y_Interface__init: u64 = 7390;
+/// `INISetting_fBookLight2Z_Interface__atexit` at 0x17aa2e0 (crt_init, medium); signature (high): `void INISetting_fBookLight2Z_Interface__atexit(void)`
+pub const INISetting_fBookLight2Z_Interface__atexit: u64 = 172823;
+/// `INISetting_fBookLight2Z_Interface__init` at 0xbe860 (crt_init, medium); signature (high): `void INISetting_fBookLight2Z_Interface__init(void)`
+pub const INISetting_fBookLight2Z_Interface__init: u64 = 7391;
+/// `INISetting_fBookLightDiffuseColorB_Interface__atexit` at 0x17aa330 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorB_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorB_Interface__atexit: u64 = 172824;
+/// `INISetting_fBookLightDiffuseColorB_Interface__init` at 0xbe8e0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorB_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorB_Interface__init: u64 = 7392;
+/// `INISetting_fBookLightDiffuseColorG_Interface__atexit` at 0x17aa380 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorG_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorG_Interface__atexit: u64 = 172825;
+/// `INISetting_fBookLightDiffuseColorG_Interface__init` at 0xbe960 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorG_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorG_Interface__init: u64 = 7393;
+/// `INISetting_fBookLightDiffuseColorR_Interface__atexit` at 0x17aa3d0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorR_Interface__atexit(void)`
+pub const INISetting_fBookLightDiffuseColorR_Interface__atexit: u64 = 172826;
+/// `INISetting_fBookLightDiffuseColorR_Interface__init` at 0xbe9e0 (crt_init, medium); signature (high): `void INISetting_fBookLightDiffuseColorR_Interface__init(void)`
+pub const INISetting_fBookLightDiffuseColorR_Interface__init: u64 = 7394;
+/// `INISetting_fBookLightDimmerValue_Interface__atexit` at 0x17aa420 (crt_init, medium); signature (high): `void INISetting_fBookLightDimmerValue_Interface__atexit(void)`
+pub const INISetting_fBookLightDimmerValue_Interface__atexit: u64 = 172827;
+/// `INISetting_fBookLightDimmerValue_Interface__init` at 0xbea60 (crt_init, medium); signature (high): `void INISetting_fBookLightDimmerValue_Interface__init(void)`
+pub const INISetting_fBookLightDimmerValue_Interface__init: u64 = 7395;
+/// `INISetting_fBookLightRadius_Interface__atexit` at 0x17aa470 (crt_init, medium); signature (high): `void INISetting_fBookLightRadius_Interface__atexit(void)`
+pub const INISetting_fBookLightRadius_Interface__atexit: u64 = 172828;
+/// `INISetting_fBookLightRadius_Interface__init` at 0xbeae0 (crt_init, medium); signature (high): `void INISetting_fBookLightRadius_Interface__init(void)`
+pub const INISetting_fBookLightRadius_Interface__init: u64 = 7396;
+/// `INISetting_fBookLightX_Interface__atexit` at 0x17aa4c0 (crt_init, medium); signature (high): `void INISetting_fBookLightX_Interface__atexit(void)`
+pub const INISetting_fBookLightX_Interface__atexit: u64 = 172829;
+/// `INISetting_fBookLightX_Interface__init` at 0xbeb60 (crt_init, medium); signature (high): `void INISetting_fBookLightX_Interface__init(void)`
+pub const INISetting_fBookLightX_Interface__init: u64 = 7397;
+/// `INISetting_fBookLightY_Interface__atexit` at 0x17aa510 (crt_init, medium); signature (high): `void INISetting_fBookLightY_Interface__atexit(void)`
+pub const INISetting_fBookLightY_Interface__atexit: u64 = 172830;
+/// `INISetting_fBookLightY_Interface__init` at 0xbebe0 (crt_init, medium); signature (high): `void INISetting_fBookLightY_Interface__init(void)`
+pub const INISetting_fBookLightY_Interface__init: u64 = 7398;
+/// `INISetting_fBookLightZ_Interface__atexit` at 0x17aa560 (crt_init, medium); signature (high): `void INISetting_fBookLightZ_Interface__atexit(void)`
+pub const INISetting_fBookLightZ_Interface__atexit: u64 = 172831;
+/// `INISetting_fBookLightZ_Interface__init` at 0xbec60 (crt_init, medium); signature (high): `void INISetting_fBookLightZ_Interface__init(void)`
+pub const INISetting_fBookLightZ_Interface__init: u64 = 7399;
+/// `INISetting_fBookOpenTime_Interface__atexit` at 0x17a4ab0 (crt_init, medium); signature (high): `void INISetting_fBookOpenTime_Interface__atexit(void)`
+pub const INISetting_fBookOpenTime_Interface__atexit: u64 = 172257;
+/// `INISetting_fBookOpenTime_Interface__init` at 0xb4240 (crt_init, medium); signature (high): `void INISetting_fBookOpenTime_Interface__init(void)`
+pub const INISetting_fBookOpenTime_Interface__init: u64 = 6801;
+/// `INISetting_fBookPosHeightPercentage_Interface__atexit` at 0x17a4b00 (crt_init, medium); signature (high): `void INISetting_fBookPosHeightPercentage_Interface__atexit(void)`
+pub const INISetting_fBookPosHeightPercentage_Interface__atexit: u64 = 172258;
+/// `INISetting_fBookPosHeightPercentage_Interface__init` at 0xb42c0 (crt_init, medium); signature (high): `void INISetting_fBookPosHeightPercentage_Interface__init(void)`
+pub const INISetting_fBookPosHeightPercentage_Interface__init: u64 = 6802;
+/// `INISetting_fBookPosWidthPercentage_Interface__atexit` at 0x17a4b50 (crt_init, medium); signature (high): `void INISetting_fBookPosWidthPercentage_Interface__atexit(void)`
+pub const INISetting_fBookPosWidthPercentage_Interface__atexit: u64 = 172259;
+/// `INISetting_fBookPosWidthPercentage_Interface__init` at 0xb4340 (crt_init, medium); signature (high): `void INISetting_fBookPosWidthPercentage_Interface__init(void)`
+pub const INISetting_fBookPosWidthPercentage_Interface__init: u64 = 6803;
+/// `INISetting_fBookXRotation_Interface__atexit` at 0x17a4ba0 (crt_init, medium); signature (high): `void INISetting_fBookXRotation_Interface__atexit(void)`
+pub const INISetting_fBookXRotation_Interface__atexit: u64 = 172260;
+/// `INISetting_fBookXRotation_Interface__init` at 0xb43c0 (crt_init, medium); signature (high): `void INISetting_fBookXRotation_Interface__init(void)`
+pub const INISetting_fBookXRotation_Interface__init: u64 = 6804;
+/// `INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit` at 0x178e560 (crt_init, medium); signature (high): `void INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit(void)`
+pub const INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__atexit: u64 = 170301;
+/// `INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init` at 0x8ad10 (crt_init, medium); signature (high): `void INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init(void)`
+pub const INISetting_fCameraAboveMaxHeightThreshold_TerrainManager__init: u64 = 5032;
+/// `INISetting_fCameraCasterBleedOutSize_Camera__atexit` at 0x17a3be0 (crt_init, medium); signature (high): `void INISetting_fCameraCasterBleedOutSize_Camera__atexit(void)`
+pub const INISetting_fCameraCasterBleedOutSize_Camera__atexit: u64 = 172191;
+/// `INISetting_fCameraCasterBleedOutSize_Camera__init` at 0xb29f0 (crt_init, medium); signature (high): `void INISetting_fCameraCasterBleedOutSize_Camera__init(void)`
+pub const INISetting_fCameraCasterBleedOutSize_Camera__init: u64 = 6732;
+/// `INISetting_fCameraCasterFadeSittingRadius_HAVOK__atexit` at 0x1790330 (crt_init, medium); signature (high): `void INISetting_fCameraCasterFadeSittingRadius_HAVOK__atexit(void)`
+pub const INISetting_fCameraCasterFadeSittingRadius_HAVOK__atexit: u64 = 170534;
+/// `INISetting_fCameraCasterFadeSittingRadius_HAVOK__init` at 0x90460 (crt_init, medium); signature (high): `void INISetting_fCameraCasterFadeSittingRadius_HAVOK__init(void)`
+pub const INISetting_fCameraCasterFadeSittingRadius_HAVOK__init: u64 = 5301;
+/// `INISetting_fCameraCasterSize_Camera__atexit` at 0x17a3c30 (crt_init, medium); signature (high): `void INISetting_fCameraCasterSize_Camera__atexit(void)`
+pub const INISetting_fCameraCasterSize_Camera__atexit: u64 = 172192;
+/// `INISetting_fCameraCasterSize_Camera__init` at 0xb2a70 (crt_init, medium); signature (high): `void INISetting_fCameraCasterSize_Camera__init(void)`
+pub const INISetting_fCameraCasterSize_Camera__init: u64 = 6733;
+/// `INISetting_fCameraCasterTargetSize_Camera__atexit` at 0x17a3c80 (crt_init, medium); signature (high): `void INISetting_fCameraCasterTargetSize_Camera__atexit(void)`
+pub const INISetting_fCameraCasterTargetSize_Camera__atexit: u64 = 172193;
+/// `INISetting_fCameraCasterTargetSize_Camera__init` at 0xb2af0 (crt_init, medium); signature (high): `void INISetting_fCameraCasterTargetSize_Camera__init(void)`
+pub const INISetting_fCameraCasterTargetSize_Camera__init: u64 = 6734;
+/// `INISetting_fCameraDist_RagdollAnim__atexit` at 0x17b4380 (crt_init, medium); signature (high): `void INISetting_fCameraDist_RagdollAnim__atexit(void)`
+pub const INISetting_fCameraDist_RagdollAnim__atexit: u64 = 173891;
+/// `INISetting_fCameraDist_RagdollAnim__init` at 0xeba20 (crt_init, medium); signature (high): `void INISetting_fCameraDist_RagdollAnim__init(void)`
+pub const INISetting_fCameraDist_RagdollAnim__init: u64 = 9638;
+/// `INISetting_fCartLimitMax_Cart__atexit` at 0x174d260 (crt_init, medium); signature (high): `void INISetting_fCartLimitMax_Cart__atexit(void)`
+pub const INISetting_fCartLimitMax_Cart__atexit: u64 = 166681;
+/// `INISetting_fCartLimitMax_Cart__init` at 0x22550 (crt_init, medium); signature (high): `void INISetting_fCartLimitMax_Cart__init(void)`
+pub const INISetting_fCartLimitMax_Cart__init: u64 = 1472;
+/// `INISetting_fCartLimitMin_Cart__atexit` at 0x174d2b0 (crt_init, medium); signature (high): `void INISetting_fCartLimitMin_Cart__atexit(void)`
+pub const INISetting_fCartLimitMin_Cart__atexit: u64 = 166682;
+/// `INISetting_fCartLimitMin_Cart__init` at 0x225d0 (crt_init, medium); signature (high): `void INISetting_fCartLimitMin_Cart__init(void)`
+pub const INISetting_fCartLimitMin_Cart__init: u64 = 1473;
+/// `INISetting_fCartPivotX_Cart__atexit` at 0x174d300 (crt_init, medium); signature (high): `void INISetting_fCartPivotX_Cart__atexit(void)`
+pub const INISetting_fCartPivotX_Cart__atexit: u64 = 166683;
+/// `INISetting_fCartPivotX_Cart__init` at 0x22650 (crt_init, medium); signature (high): `void INISetting_fCartPivotX_Cart__init(void)`
+pub const INISetting_fCartPivotX_Cart__init: u64 = 1474;
+/// `INISetting_fCartPivotY_Cart__atexit` at 0x174d350 (crt_init, medium); signature (high): `void INISetting_fCartPivotY_Cart__atexit(void)`
+pub const INISetting_fCartPivotY_Cart__atexit: u64 = 166684;
+/// `INISetting_fCartPivotY_Cart__init` at 0x226d0 (crt_init, medium); signature (high): `void INISetting_fCartPivotY_Cart__init(void)`
+pub const INISetting_fCartPivotY_Cart__init: u64 = 1475;
+/// `INISetting_fCartPivotZ_Cart__atexit` at 0x174d3a0 (crt_init, medium); signature (high): `void INISetting_fCartPivotZ_Cart__atexit(void)`
+pub const INISetting_fCartPivotZ_Cart__atexit: u64 = 166685;
+/// `INISetting_fCartPivotZ_Cart__init` at 0x22750 (crt_init, medium); signature (high): `void INISetting_fCartPivotZ_Cart__init(void)`
+pub const INISetting_fCartPivotZ_Cart__init: u64 = 1476;
+/// `INISetting_fCartRot1_Cart__atexit` at 0x174d3f0 (crt_init, medium); signature (high): `void INISetting_fCartRot1_Cart__atexit(void)`
+pub const INISetting_fCartRot1_Cart__atexit: u64 = 166686;
+/// `INISetting_fCartRot1_Cart__init` at 0x227d0 (crt_init, medium); signature (high): `void INISetting_fCartRot1_Cart__init(void)`
+pub const INISetting_fCartRot1_Cart__init: u64 = 1477;
+/// `INISetting_fCartRot2_Cart__atexit` at 0x174d440 (crt_init, medium); signature (high): `void INISetting_fCartRot2_Cart__atexit(void)`
+pub const INISetting_fCartRot2_Cart__atexit: u64 = 166687;
+/// `INISetting_fCartRot2_Cart__init` at 0x22850 (crt_init, medium); signature (high): `void INISetting_fCartRot2_Cart__init(void)`
+pub const INISetting_fCartRot2_Cart__init: u64 = 1478;
+/// `INISetting_fCharControllerCheckHeightOffset_Camera__atexit` at 0x17a3cd0 (crt_init, medium); signature (high): `void INISetting_fCharControllerCheckHeightOffset_Camera__atexit(void)`
+pub const INISetting_fCharControllerCheckHeightOffset_Camera__atexit: u64 = 172194;
+/// `INISetting_fCharControllerCheckHeightOffset_Camera__init` at 0xb2b70 (crt_init, medium); signature (high): `void INISetting_fCharControllerCheckHeightOffset_Camera__init(void)`
+pub const INISetting_fCharControllerCheckHeightOffset_Camera__init: u64 = 6735;
+/// `INISetting_fCharControllerWarpDistSqr_HAVOK__atexit` at 0x17b3d70 (crt_init, medium); signature (high): `void INISetting_fCharControllerWarpDistSqr_HAVOK__atexit(void)`
+pub const INISetting_fCharControllerWarpDistSqr_HAVOK__atexit: u64 = 173869;
 /// `INISetting_fCharControllerWarpDistSqr_HAVOK__init` at 0xeb170 (crt_init, medium); signature (high): `void INISetting_fCharControllerWarpDistSqr_HAVOK__init(void)`
 pub const INISetting_fCharControllerWarpDistSqr_HAVOK__init: u64 = 9615;
 /// `INISetting_fCharacterLightLumMax_Display__atexit` at 0x17c1410 (crt_init, medium); signature (high): `void INISetting_fCharacterLightLumMax_Display__atexit(void)`
@@ -5607,6 +5785,10 @@ pub const InitAndComputeAttributesAtPosition: u64 = 89323;
 pub const InitAndComputeNextRangeRun: u64 = 89324;
 /// `InitAndGetGlobal505587` at 0x10be70 (decompiler, medium); signature (untiered): `undefined4 * InitAndGetGlobal505587(void)`
 pub const InitAndGetGlobal505587: u64 = 439821;
+/// `InitAndRegisterOrDestroy` at 0x5db480 (semantic, high); signature (untiered): `undefined InitAndRegisterOrDestroy(longlong * param_1, undefined4 param_2, undefined1 param_3)`; semantic: effect+0x10 = duration, +0x41 = 1, slot 49 (vtable +0x188) Init(param); when slot 54 (+0x1b0) returns true, RunOrQueueIfOtherThread(g_ProcessLists_ptr, effect) adds it to the temp-effect list, else the effect is destroyed (slot 0) (high); signature `void (ReferenceEffect* effect, float duration, bool param)`
+pub const InitAndRegisterOrDestroy: u64 = 34762;
+/// `InitAndRegisterOrDestroy` as a function pointer type (high).
+pub type InitAndRegisterOrDestroy_fn = unsafe extern "C" fn(effect: *mut crate::ReferenceEffect, duration: f32, param: bool);
 /// `InitAndRegisterSingleton` at 0x532f90 (decompiler, medium); signature (untiered): `undefined8 * InitAndRegisterSingleton(undefined8 * param_1)`
 pub const InitAndRegisterSingleton: u64 = 32346;
 /// `InitAndRegisterWithParent` at 0x872ae0 (decompiler, medium); signature (medium): `undefined8 * InitAndRegisterWithParent(undefined8 * param_1, longlong param_2, undefined8 param_3)`
@@ -5917,8 +6099,6 @@ pub const InitFields10To47: u64 = 42761;
 pub const InitFields38ToC8: u64 = 62419;
 /// `InitFields8To18` at 0x7b9550 (decompiler, medium); signature (untiered): `undefined InitFields8To18(longlong param_1, undefined4 * param_2, longlong param_3)`
 pub const InitFields8To18: u64 = 42550;
-/// `InitFields8To30FromFormIds35To3A` at 0x645c80 (decompiler, medium); signature (untiered): `longlong InitFields8To30FromFormIds35To3A(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InitFields8To30FromFormIds35To3A: u64 = 36289;
 /// `InitFieldsAndContainerAt68` at 0xe63a40 (decompiler, medium); signature (untiered): `undefined4 * InitFieldsAndContainerAt68(undefined4 * param_1)`
 pub const InitFieldsAndContainerAt68: u64 = 89222;
 /// `InitFiveFixedStrings` at 0xf5b430 (decompiler, medium); signature (untiered): `undefined InitFiveFixedStrings(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8209,181 +8389,3 @@ pub const IntrosortQwordsWithPredicate: u64 = 440688;
 pub const InvalidateField28: u64 = 90372;
 /// `InvalidateRefHandleInGlobalList433262` at 0x4420d0 (decompiler, medium); signature (untiered): `DWORD InvalidateRefHandleInGlobalList433262(longlong param_1)`
 pub const InvalidateRefHandleInGlobalList433262: u64 = 418633;
-/// `Inventory3DManager::UpdateItemZoom` at 0x93efe0 (semantic, high); signature (untiered): `undefined UpdateItemZoom(longlong param_1)`; semantic: while zoom direction (+0x150) != 0: progress (+0x154) += fInventory3DItemZoomSpeed:Interface * real delta * direction, clamped to [0,1] (direction cleared at an end); item position (+0x14..+0x1c) = lerp(+0x20..+0x28, fInventory3DItemZoomX/Y/Z:Interface), scale (+0x2c) = lerp(+0x30, fInventory3DItemZoomScale:Interface); re-applies the last loaded item's scale/position (array +0x68, count +0x148, stride 0x20); +0x162 = 0 (high); signature `void (Inventory3DManager* this)`
-pub const Inventory3DManager__UpdateItemZoom: u64 = 51777;
-/// `Inventory3DManager::UpdateItemZoom` as a function pointer type (high).
-pub type Inventory3DManager__UpdateItemZoom_fn = unsafe extern "C" fn(this: *mut crate::Inventory3DManager);
-/// `Inventory3DManager::ctor` at 0x93d7b0 (layout_inference, medium); signature (high): `Inventory3DManager * ctor(Inventory3DManager * this)`
-pub const Inventory3DManager__ctor: u64 = 51752;
-/// `Inventory3DManager::ctor_sub0` at 0x93f660 (callgraph, medium); signature (untiered): `undefined ctor_sub0(void)`
-pub const Inventory3DManager__ctor_sub0: u64 = 51782;
-/// `Inventory3DManager::dtor` at 0x93d8c0 (layout_inference, high); signature (low): `undefined dtor(Inventory3DManager * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
-pub const Inventory3DManager__dtor: u64 = 51753;
-/// `Inventory3DManager::vdtor` at 0x93f730 (slot_propagation, medium); signature (low): `Inventory3DManager * vdtor(Inventory3DManager * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
-pub const Inventory3DManager__vdtor: u64 = 51787;
-/// `Inventory3DManager::vfunc_1` at 0x93e530 (rtti, high); signature (low): `undefined8 vfunc_1(Inventory3DManager * this, longlong * param_1)`
-pub const Inventory3DManager__vfunc_1: u64 = 51768;
-/// `Inventory3DManager::vfunc_5` at 0x93e5a0 (rtti, high); signature (low): `undefined1 vfunc_5(Inventory3DManager * this, longlong param_1)`
-pub const Inventory3DManager__vfunc_5: u64 = 51769;
-/// `Inventory3DManager::vfunc_6` at 0x93e620 (rtti, high); signature (low): `undefined1 vfunc_6(Inventory3DManager * this, longlong param_1)`
-pub const Inventory3DManager__vfunc_6: u64 = 51770;
-/// `Inventory::GetEventSource` at 0x241aa0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of Inventory::Event events (medium); signature `BSTEventSource<Inventory::Event>* ()`
-pub const Inventory__GetEventSource: u64 = 16225;
-/// `Inventory::RegisterSink` at 0x227e00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
-pub const Inventory__RegisterSink: u64 = 15978;
-/// `Inventory::StatInventoryVisitor::vdtor` at 0x240740 (layout_inference, medium); signature (low): `StatInventoryVisitor * vdtor(StatInventoryVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const Inventory__StatInventoryVisitor__vdtor: u64 = 16191;
-/// `Inventory::StatInventoryVisitor::vfunc_1` at 0x242440 (rtti, high); signature (low): `undefined8 vfunc_1(StatInventoryVisitor * this, longlong param_1)`
-pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
-/// `Inventory::UnregisterSink` at 0x227e30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
-pub const Inventory__UnregisterSink: u64 = 15979;
-/// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; semantic: count of an item, base plus delta (high); signature `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
-pub const InventoryChanges__CountItem: u64 = 16214;
-/// `InventoryChanges::CountItem` as a function pointer type (high).
-pub type InventoryChanges__CountItem_fn = unsafe extern "C" fn(item: *mut crate::TESForm, changes: *mut crate::InventoryChanges, filter: *mut c_void) -> i32;
-/// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; semantic: count of items carrying a keyword (medium); signature `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
-pub const InventoryChanges__CountItemsWithKeyword: u64 = 16111;
-/// `InventoryChanges::FindBestSoulGemVisitor::vdtor` at 0x6daba0 (layout_inference, medium); signature (low): `FindBestSoulGemVisitor * vdtor(FindBestSoulGemVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryChanges__FindBestSoulGemVisitor__vdtor: u64 = 38858;
-/// `InventoryChanges::FindBestSoulGemVisitor::vfunc_1` at 0x237180 (rtti, high); signature (low): `undefined8 vfunc_1(FindBestSoulGemVisitor * this, longlong * param_1)`
-pub const InventoryChanges__FindBestSoulGemVisitor__vfunc_1: u64 = 16094;
-/// `InventoryChanges::GetItemCount` at 0x2395c0 (runtime, high); signature (untiered): `undefined GetItemCount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: count of an item in the inventory (high); signature `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
-pub const InventoryChanges__GetItemCount: u64 = 16108;
-/// `InventoryChanges::GetItemCount` as a function pointer type (high).
-pub type InventoryChanges__GetItemCount_fn = unsafe extern "C" fn(this: *mut crate::InventoryChanges, item: *mut crate::TESForm) -> i32;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240230 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryChanges__IItemChangeVisitor__dtor: u64 = 16167;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240260 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_2: u64 = 16168;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240280 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_3: u64 = 16170;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240290 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_4: u64 = 16171;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402a0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_5: u64 = 16172;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_6: u64 = 16173;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402c0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_7: u64 = 16174;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_8: u64 = 16175;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240360 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_9: u64 = 16178;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240370 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_10: u64 = 16179;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x3cb660 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_11: u64 = 24850;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x3cb6d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_12: u64 = 24851;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x41e3b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_13: u64 = 26399;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5df0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_14: u64 = 34628;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5e60 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_15: u64 = 34630;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5e70 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_16: u64 = 34631;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5ec0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_17: u64 = 34633;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x6da4d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_18: u64 = 38838;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x6df890 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_19: u64 = 38939;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x735210 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_20: u64 = 40137;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa20 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_21: u64 = 40274;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa80 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_22: u64 = 40275;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa90 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_23: u64 = 40276;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9426c0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_24: u64 = 51839;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x955bf0 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_25: u64 = 52070;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9728b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_26: u64 = 52434;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9bb450 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_27: u64 = 53537;
-/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9bb460 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
-pub const InventoryChanges__IItemChangeVisitor__dtor_28: u64 = 53538;
-/// `InventoryChanges::IItemChangeVisitor::vdtor` at 0x240680 (layout_inference, medium); signature (low): `IItemChangeVisitor * vdtor(IItemChangeVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryChanges__IItemChangeVisitor__vdtor: u64 = 16187;
-/// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
-pub const InventoryChanges__IItemChangeVisitor__vfunc_2: u64 = 16215;
-/// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-pub const InventoryChanges__IItemChangeVisitor__vfunc_3: u64 = 16238;
-/// `InventoryMenu::CloseTweenMenuCallback` at 0x943ed0 (runtime, high); signature (untiered): `undefined CloseTweenMenuCallback(longlong param_1)`; semantic: the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1) (high); signature `void (const FxDelegateArgs* args)`
-pub const InventoryMenu__CloseTweenMenuCallback: u64 = 51855;
-/// `InventoryMenu::CloseTweenMenuCallback` as a function pointer type (high).
-pub type InventoryMenu__CloseTweenMenuCallback_fn = unsafe extern "C" fn(args: *const c_void);
-/// `InventoryMenu::Create` at 0x946710 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'InventoryMenu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
-pub const InventoryMenu__Create: u64 = 51886;
-/// `InventoryMenu::Create` as a function pointer type (high).
-pub type InventoryMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
-/// `InventoryMenu::UpdateItemList` at 0x9452b0 (semantic, high); signature (untiered): `undefined UpdateItemList(longlong param_1, undefined8 param_2, uint * param_3, undefined8 param_4)`; semantic: rebuilds the player's item list, sorts by sortMode, pushes each entry's GFxValue into entryList and Invokes 'InvalidateListData' (high); signature `void (InventoryMenu* this)`
-pub const InventoryMenu__UpdateItemList: u64 = 51866;
-/// `InventoryMenu::UpdateItemList` as a function pointer type (high).
-pub type InventoryMenu__UpdateItemList_fn = unsafe extern "C" fn(this: *mut crate::InventoryMenu);
-/// `InventoryMenu::ctor` at 0x942900 (layout_inference, high); signature (high): `InventoryMenu * ctor(InventoryMenu * this)`
-pub const InventoryMenu__ctor: u64 = 51846;
-/// `InventoryMenu::ctor` at 0x942a90 (layout_inference, medium); signature (low): `undefined ctor(InventoryMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryMenu__ctor_2: u64 = 51847;
-/// `InventoryMenu::vdtor` at 0x946460 (slot_propagation, medium); signature (low): `InventoryMenu * vdtor(InventoryMenu * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
-pub const InventoryMenu__vdtor: u64 = 51880;
-/// `InventoryMenu::vfunc_1` at 0x943850 (rtti, high); signature (low): `undefined vfunc_1(InventoryMenu * this, longlong * param_1)`
-pub const InventoryMenu__vfunc_1: u64 = 51850;
-/// `InventoryMenu::vfunc_1_cb0` at 0x943d00 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_1_cb0: u64 = 51851;
-/// `InventoryMenu::vfunc_1_cb1` at 0x943d80 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb1(undefined8 * param_1)`
-pub const InventoryMenu__vfunc_1_cb1: u64 = 51852;
-/// `InventoryMenu::vfunc_1_cb10` at 0x944d50 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb10(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_1_cb10: u64 = 51863;
-/// `InventoryMenu::vfunc_1_cb3` at 0x943f20 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_1_cb3: u64 = 51856;
-/// `InventoryMenu::vfunc_1_cb4` at 0x943fb0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb4(longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryMenu__vfunc_1_cb4: u64 = 51857;
-/// `InventoryMenu::vfunc_1_cb5` at 0x9440d0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb5(longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryMenu__vfunc_1_cb5: u64 = 51858;
-/// `InventoryMenu::vfunc_1_cb6` at 0x944590 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb6(longlong param_1)`
-pub const InventoryMenu__vfunc_1_cb6: u64 = 51859;
-/// `InventoryMenu::vfunc_1_cb7` at 0x944910 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_1_cb7: u64 = 51860;
-/// `InventoryMenu::vfunc_1_cb8` at 0x9449e0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb8(longlong param_1)`
-pub const InventoryMenu__vfunc_1_cb8: u64 = 51861;
-/// `InventoryMenu::vfunc_1_cb9` at 0x944b60 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb9(longlong param_1)`
-pub const InventoryMenu__vfunc_1_cb9: u64 = 51862;
-/// `InventoryMenu::vfunc_4` at 0x942b80 (rtti, high); signature (low): `BaseExtraList_vtbl * vfunc_4(InventoryMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryMenu__vfunc_4: u64 = 51848;
-/// `InventoryMenu::vfunc_4_sub0` at 0x945050 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_4_sub0: u64 = 51864;
-/// `InventoryMenu::vfunc_4_sub1` at 0x9451e0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub1(longlong param_1)`
-pub const InventoryMenu__vfunc_4_sub1: u64 = 51865;
-/// `InventoryMenu::vfunc_4_sub3` at 0x945e20 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const InventoryMenu__vfunc_4_sub3: u64 = 51871;
-/// `InventoryMenu::vfunc_6` at 0x943810 (rtti, high); signature (low): `undefined vfunc_6(InventoryMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
-pub const InventoryMenu__vfunc_6: u64 = 51849;
-/// `InventoryUpdateData::vdtor` at 0x98d8a0 (layout_inference, medium); signature (low): `InventoryUpdateData * vdtor(InventoryUpdateData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUpdateData__vdtor: u64 = 52836;
-/// `InventoryUtils::ItemFilter::dtor` at 0x22b710 (layout_inference, high); signature (high): `undefined dtor(ItemFilter * this)`
-pub const InventoryUtils__ItemFilter__dtor: u64 = 16047;
-/// `InventoryUtils::ItemFilter::dtor` at 0x25e790 (callgraph, high); signature (untiered): `undefined dtor(ItemFilter * this)`
-pub const InventoryUtils__ItemFilter__dtor_2: u64 = 16923;
-/// `InventoryUtils::ItemFilter::vdtor` at 0x240710 (layout_inference, medium); signature (low): `ItemFilter * vdtor(ItemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils__ItemFilter__vdtor: u64 = 16190;
-/// `InventoryUtils::ItemFilter::vfunc_1` at 0x22b730 (rtti, high); signature (low): `undefined1 vfunc_1(void)`
-pub const InventoryUtils__ItemFilter__vfunc_1: u64 = 16048;
-/// `InventoryUtils::QuestItemFilter::vdtor` at 0x25e830 (slot_propagation, medium); signature (low): `QuestItemFilter * vdtor(QuestItemFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils__QuestItemFilter__vdtor: u64 = 16925;
-/// `InventoryUtils::QuestItemFilter::vfunc_1` at 0x22b740 (rtti, high); signature (low): `bool vfunc_1(QuestItemFilter * this, longlong param_1)`
-pub const InventoryUtils__QuestItemFilter__vfunc_1: u64 = 16049;
-/// `InventoryUtils::_anon_3F954FDF::GetWornMaskVisitor::vdtor` at 0x240650 (layout_inference, medium); signature (low): `GetWornMaskVisitor * vdtor(GetWornMaskVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils___anon_3F954FDF__GetWornMaskVisitor__vdtor: u64 = 16186;
-/// `InventoryUtils::_anon_3F954FDF::GetWornMaskVisitor::vfunc_1` at 0x2422f0 (rtti, high); signature (low): `undefined8 vfunc_1(GetWornMaskVisitor * this, longlong * param_1)`
-pub const InventoryUtils___anon_3F954FDF__GetWornMaskVisitor__vfunc_1: u64 = 16233;
-/// `InventoryUtils::_anon_3F954FDF::IsFavoriteVisitor::vdtor` at 0x2406b0 (layout_inference, medium); signature (low): `IsFavoriteVisitor * vdtor(IsFavoriteVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vdtor: u64 = 16188;
-/// `InventoryUtils::_anon_3F954FDF::IsFavoriteVisitor::vfunc_1` at 0x242390 (rtti, high); signature (low): `int vfunc_1(IsFavoriteVisitor * this, longlong * param_1)`
-pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vfunc_1: u64 = 16234;
-/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vdtor` at 0x2406e0 (layout_inference, medium); signature (low): `IsWornVisitor * vdtor(IsWornVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vdtor: u64 = 16189;

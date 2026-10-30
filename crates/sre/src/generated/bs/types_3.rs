@@ -3,112 +3,6 @@
 
 use core::ffi::c_void;
 
-/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
-/// Evidence: allocation sites (high): {'136': 2}.
-/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
-pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413 {
-    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
-    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
-    pub unknown_44: [u8; 60],
-    /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, field_80) == 0x80);
-
-/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
-/// Evidence: allocation sites (high): {'136': 14}.
-/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
-pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1 {
-    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
-    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
-    pub unknown_44: [u8; 60],
-    /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, field_80) == 0x80);
-
-/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
-/// Evidence: allocation sites (medium): {'136': 1}.
-/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
-pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44 {
-    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
-    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
-    pub unknown_44: [u8; 68],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, field_40) == 0x40);
-
-/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
-/// Evidence: allocation sites (medium): {'136': 1}.
-/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
-pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f {
-    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
-    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
-    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
-    pub unknown_44: [u8; 68],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, field_40) == 0x40);
-
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: allocation sites (medium): {'136': 1}.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
@@ -16523,4 +16417,138 @@ const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_B0) == 0xB0);
+
+/// `BSTextureDB::QueuedHandles`: size 0x88 (exact, high); primary base `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>`.
+/// Evidence: runtime: 0x88 at 2 allocation sites; agrees with the static allocation sites.
+/// Bases: `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
+#[repr(C)]
+pub struct BSTextureDB__QueuedHandles {
+    /// +0x0 `vtbl:BSTextureDB::QueuedHandles:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSTextureDB__QueuedHandles_vtable,
+    /// +0x8 `undefined4`, base QueuedFile
+    pub field_8: u32,
+    /// +0xC `undefined4`, base QueuedFile
+    pub field_C: u32,
+    /// +0x10 `undefined8`, base QueuedFile
+    pub field_10: u64,
+    /// +0x18 `undefined4`, base QueuedFile
+    pub field_18: u32,
+    pub unknown_1C: [u8; 4],
+    /// +0x20 `undefined8`, base QueuedFile
+    pub field_20: u64,
+    /// +0x28 `undefined8`, base QueuedFile
+    pub field_28: u64,
+    /// +0x30 `undefined4`, base QueuedFile
+    pub field_30: u32,
+    pub unknown_34: [u8; 4],
+    /// +0x38 `vtbl:BSTextureDB::QueuedHandles:38`, rtti
+    #[doc(hidden)]
+    pub __vftable_38: *const crate::raw::vtables::BSTextureDB__QueuedHandles_vtable_38,
+    /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
+    pub field_40: u32,
+    pub unknown_44: [u8; 4],
+    /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
+    pub field_48: u64,
+    /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
+    pub field_50: u32,
+    /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
+    pub field_54: u16,
+    pub unknown_56: [u8; 2],
+    /// +0x58 `undefined4`, ctor store
+    pub field_58: u32,
+    pub unknown_5C: [u8; 44],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSTextureDB__QueuedHandles>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, __vftable_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_58) == 0x58);
+
+/// `BSTextureDB::_anon_4306A7DC::NiTextureDBForwarded`: size 0x8 (exact, medium); primary base `ITextureDB`.
+/// Evidence: runtime: 0x8 at 1 allocation sites.
+/// Bases: `ITextureDB`@0x0.
+#[repr(C)]
+pub struct BSTextureDB___anon_4306A7DC__NiTextureDBForwarded {
+    /// +0x0 `vtbl:BSTextureDB::_anon_4306A7DC::NiTextureDBForwarded:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSTextureDB___anon_4306A7DC__NiTextureDBForwarded_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSTextureDB___anon_4306A7DC__NiTextureDBForwarded>() == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTextureDB___anon_4306A7DC__NiTextureDBForwarded, __vftable) == 0x0);
+
+/// `BSTextureSet`: size 0x58 (exact, medium); primary base `NiObject`.
+/// Evidence: lower bound BSShaderTextureSet (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSShaderTextureSet size 0x58 at 0x0.
+/// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
+#[repr(C)]
+pub struct BSTextureSet {
+    /// +0x0 `vtbl:BSTextureSet:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSTextureSet_vtable,
+    /// +0x8 `undefined4`, base NiObject
+    pub field_8: u32,
+    pub unknown_C: [u8; 76],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSTextureSet>() == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSTextureSet, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSTextureSet, field_8) == 0x8);
+
+/// `BSThread`: size 0x50 (exact, medium).
+/// Evidence: lower bound _anon_D351A927::VMInitThread (size 0x50 at 0x0) adds no fields or bases meets upper bound derived _anon_D351A927::VMInitThread size 0x50 at 0x0.
+#[repr(C)]
+pub struct BSThread {
+    /// +0x0 `vtbl:BSThread:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSThread_vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, ctor store
+    pub field_30: u64,
+    /// +0x38 `undefined8`, ctor store
+    pub field_38: u64,
+    /// +0x40 `undefined8`, ctor store
+    pub field_40: u64,
+    /// +0x48 `undefined1`, ctor store
+    pub field_48: u8,
+    pub unknown_49: [u8; 7],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSThread>() == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSThread, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSThread, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSThread, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSThread, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSThread, field_48) == 0x48);
+
+/// `BSThreadEvent::_anon_939FB6BB::Source`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound.
+/// Evidence: field source_BSThreadEvent_ThreadEvent.
+/// Bases: `BSTEventSource<BSThreadEvent::ThreadEvent>`@0x8, `BSTSingletonSDM<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer>`@0x60, `BSTSingletonSDMBase<BSTSDMTraits<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>_>_>`@0x60, `BSTSDMTraits<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>_>`@0x60, `BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>`@0x61.
+#[repr(C)]
+pub struct BSThreadEvent___anon_939FB6BB__Source {
+    /// +0x0 `vtbl:BSThreadEvent::_anon_939FB6BB::Source:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSThreadEvent___anon_939FB6BB__Source_vtable,
+    /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSThreadEvent::ThreadEvent>
+    pub source_BSThreadEvent_ThreadEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSThreadEvent___anon_939FB6BB__Source, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSThreadEvent___anon_939FB6BB__Source, source_BSThreadEvent_ThreadEvent) == 0x8);
 

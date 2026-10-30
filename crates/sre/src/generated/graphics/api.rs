@@ -126,16 +126,13 @@ pub fn end_depth_shift() { unsafe { function!(107126, ())() } }
 /// `void (void)`
 #[inline]
 pub fn flush_first_person_accumulator() { unsafe { function!(107128, ())() } }
-/// `Fmt_PtLight`: (existing row) the reference light path: form flags +0xec bits 10-12 make it a shadow light; bit 10 spot (fov from the reference, degrees), bit 11 hemisphere (fov pi -> one parabolic map), else omni (2pi -> two maps); near = form+0xf8 (default 5.0), mask parameter = form+0xf0
+/// `Fmt_PtLight`: creates (or reuses the '%s PtLight' child of) the reference's NiPointLight from the LIGH data, files it with ShadowSceneNode::CreateLight and sets the attenuation and fade
 ///
-/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 17610, rva 0x274390.
-/// `NiPointLight* (TESObjectLIGH* form, TESObjectREFR* ref, NiNode* root, u8 flag, bool, bool)`
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 17610, rva 0x274390.
+/// `NiPointLight* (TESObjectLIGH* light, TESObjectREFR* ref, NiNode* root, bool param4, bool keepRadius, bool noRefList)`
 /// May be null: `ref_`, `root`.
-///
-/// # Safety
-/// The pass rates the signature medium.
 #[inline]
-pub unsafe fn fmt_pt_light(form: *mut crate::TESObjectLIGH, ref_: *mut crate::TESObjectREFR, root: *mut crate::NiNode, flag: u8, a4: bool, a5: bool) -> *mut crate::NiPointLight { unsafe { function!(17610, (*mut crate::TESObjectLIGH, *mut crate::TESObjectREFR, *mut crate::NiNode, u8, bool, bool) -> *mut crate::NiPointLight)(form, ref_, root, flag, a4, a5) } }
+pub fn fmt_pt_light(light: &crate::TESObjectLIGH, ref_: Option<&crate::TESObjectREFR>, root: Option<&crate::NiNode>, param4: bool, keepRadius: bool, noRefList: bool) -> Option<&'static crate::NiPointLight> { unsafe { function!(17610, (*const crate::TESObjectLIGH, *const crate::TESObjectREFR, *const crate::NiNode, bool, bool, bool) -> Option<&'static crate::NiPointLight>)(core::ptr::from_ref(light), ref_.map_or(core::ptr::null(), core::ptr::from_ref), root.map_or(core::ptr::null(), core::ptr::from_ref), param4, keepRadius, noRefList) } }
 /// `GetCurrentAccumulator`: returns 0x33d3da8 (set by RenderAccumulator / BeginAccumulatorDraw)
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 105651, rva 0x14ecb90.

@@ -1648,8 +1648,8 @@ pub struct Sky {
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
-    /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    /// +0x28 `pointer`, semantic; the worldspace's +0x160 value (set by UpdateSkyModeForCell); Sun::Update takes the light rotation from it in modes 0-2 when no interior cell (low)
+    pub skyOverride: *mut c_void,
     /// +0x30 `undefined4`, ctor store (widths [4, 8])
     pub field_30: u32,
     /// +0x34 `undefined4`, ctor store
@@ -1658,16 +1658,16 @@ pub struct Sky {
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
-    /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    /// +0x48 `ptr:TESWeather`, semantic; the current weather (high)
+    pub currentWeather: *mut crate::TESWeather,
+    /// +0x50 `ptr:TESWeather`, semantic; the outgoing weather during a transition (high)
+    pub lastWeather: *mut crate::TESWeather,
+    /// +0x58 `ptr:TESWeather`, semantic; target weather without override (high)
+    pub defaultWeather: *mut crate::TESWeather,
+    /// +0x60 `ptr:TESWeather`, semantic; script/console override; ReleaseWeatherOverride clears it (high)
+    pub overrideWeather: *mut crate::TESWeather,
+    /// +0x68 `pointer`, semantic; cleared when a default weather is set (low)
+    pub field_68: *mut c_void,
     /// +0x70 `ptr:Atmosphere`, semantic (high)
     pub atmosphere: *mut crate::Atmosphere,
     /// +0x78 `ptr:Stars`, semantic (high)
@@ -1765,9 +1765,9 @@ pub struct Sky {
     /// +0x1B0 `float`, ctor store, semantic, runtime; game hour 0..24 the sun follows, copied from the GameHour global every sky update (high)
     pub currentGameHour: f32,
     pub unknown_1B4: [u8; 4],
-    /// +0x1B8 `undefined4`, ctor store
-    pub field_1B8: u32,
-    /// +0x1BC `undefined4`, semantic; sky mode; the sun follows its daily path for 3, a fixed rotation for 0 (medium)
+    /// +0x1B8 `float`, semantic; weather transition 0..1 (1 = done) (high)
+    pub transition: f32,
+    /// +0x1BC `u32`, semantic; sky mode: 0 off (ToggleSky), 1 interior, 2 sky dome only, 3 full (see enum SkyMode) (high)
     pub mode: u32,
     /// +0x1C0 `undefined8`, ctor store
     pub field_1C0: u64,
@@ -1780,8 +1780,8 @@ pub struct Sky {
     pub field_1D4: f32,
     /// +0x1D8 `undefined4`, ctor store
     pub field_1D8: u32,
-    /// +0x1DC `undefined4`, ctor store
-    pub field_1DC: u32,
+    /// +0x1DC `u32`, semantic; bit 1 set by ForceWeather, bit 3 accelerate (SetWeather), bit 7 sky-root hidden request, bit 8 mode changed, 0x200000 override released (medium)
+    pub flags: u32,
     /// +0x1E0 `undefined8`, ctor store
     pub field_1E0: u64,
     /// +0x1E8 `undefined8`, ctor store
@@ -1843,15 +1843,15 @@ const _: () = assert!(core::mem::offset_of!(Sky, root) == 0x8);
 const _: () = assert!(core::mem::offset_of!(Sky, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(Sky, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Sky, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Sky, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Sky, skyOverride) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Sky, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Sky, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(Sky, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(Sky, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(Sky, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(Sky, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(Sky, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(Sky, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(Sky, currentWeather) == 0x48);
+const _: () = assert!(core::mem::offset_of!(Sky, lastWeather) == 0x50);
+const _: () = assert!(core::mem::offset_of!(Sky, defaultWeather) == 0x58);
+const _: () = assert!(core::mem::offset_of!(Sky, overrideWeather) == 0x60);
 const _: () = assert!(core::mem::offset_of!(Sky, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(Sky, atmosphere) == 0x70);
 const _: () = assert!(core::mem::offset_of!(Sky, stars) == 0x78);
@@ -1900,14 +1900,14 @@ const _: () = assert!(core::mem::offset_of!(Sky, field_188) == 0x188);
 const _: () = assert!(core::mem::offset_of!(Sky, field_18C) == 0x18C);
 const _: () = assert!(core::mem::offset_of!(Sky, field_190) == 0x190);
 const _: () = assert!(core::mem::offset_of!(Sky, currentGameHour) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(Sky, field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(Sky, transition) == 0x1B8);
 const _: () = assert!(core::mem::offset_of!(Sky, mode) == 0x1BC);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1C0) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1D4) == 0x1D4);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(Sky, field_1DC) == 0x1DC);
+const _: () = assert!(core::mem::offset_of!(Sky, flags) == 0x1DC);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(Sky, field_1F0) == 0x1F0);
@@ -1942,23 +1942,23 @@ pub struct Sun {
     /// +0x0 `vtbl:Sun:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Sun_vtable,
-    /// +0x8 `ptr:NiNode`, base SkyObject, semantic; sun root (medium)
+    /// +0x8 `ptr:NiNode`, base SkyObject, semantic; sun root: Sun::Update (mode 3) writes its local translation = the sun position; parent of the disc billboard and the lights (high)
     pub root: *mut crate::NiNode,
-    /// +0x10 `ptr:NiBillboardNode`, semantic (medium)
+    /// +0x10 `ptr:NiBillboardNode`, semantic; disc billboard (child of root); hidden in modes 1/2 (high)
     pub sunBillboard: *mut crate::NiBillboardNode,
-    /// +0x18 `ptr:NiBillboardNode`, semantic (medium)
+    /// +0x18 `ptr:NiBillboardNode`, semantic; glare node: under g_WeatherNode, translation copied from the root each update, local scale = glareScale (high)
     pub glareBillboard: *mut crate::NiBillboardNode,
-    /// +0x20 `ptr:BSTriShape`, semantic; sun disc with BSSkyShaderProperty (medium)
+    /// +0x20 `ptr:BSTriShape`, semantic; the sun disc quad (fSunBaseSize), BSSkyShaderProperty (high)
     pub sunBase: *mut crate::BSTriShape,
-    /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
-    /// +0x30 `ptr:BSTriShape`, semantic; glare geometry (medium)
+    /// +0x28 `ptr:NiAVObject`, semantic; hidden copy of the disc at local scale 0.04 (medium)
+    pub sunBaseCopy: *mut crate::NiAVObject,
+    /// +0x30 `ptr:BSTriShape`, semantic; glare quad (fSunGlareSize) (high)
     pub sunGlare: *mut crate::BSTriShape,
     /// +0x38 `ptr:NiDirectionalLight`, ctor store, semantic, runtime; directional light; its local rotation (+0x48, 3x3) is the sun direction from the hour and fSunX/Y/ZExtreme (high)
     pub light: *mut crate::NiDirectionalLight,
     /// +0x40 `ptr:NiDirectionalLight`, semantic; second light, not written by the update (low)
     pub light2: *mut crate::NiDirectionalLight,
-    /// +0x48 `float`, semantic; glare fade value (medium)
+    /// +0x48 `float`, semantic; current glare scale (high)
     pub glareScale: f32,
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
@@ -1974,7 +1974,7 @@ const _: () = assert!(core::mem::offset_of!(Sun, root) == 0x8);
 const _: () = assert!(core::mem::offset_of!(Sun, sunBillboard) == 0x10);
 const _: () = assert!(core::mem::offset_of!(Sun, glareBillboard) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Sun, sunBase) == 0x20);
-const _: () = assert!(core::mem::offset_of!(Sun, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(Sun, sunBaseCopy) == 0x28);
 const _: () = assert!(core::mem::offset_of!(Sun, sunGlare) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Sun, light) == 0x38);
 const _: () = assert!(core::mem::offset_of!(Sun, light2) == 0x40);

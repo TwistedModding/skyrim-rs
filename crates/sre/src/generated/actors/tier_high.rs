@@ -109,20 +109,6 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn i_animation_graph_manager_holder_vdtor(&self) -> u64 { unsafe { function!(38191, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_12` (decompiler signature, tier high; ledger rtti evidence, name medium; id 37986, rva 0x6b1180).
-    /// `undefined IAnimationGraphManagerHolder_vfunc_12(Actor * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vfunc_12(&self) -> u64 { unsafe { function!(37986, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x38)) } }
-    /// `Actor::IAnimationGraphManagerHolder_vfunc_14` (decompiler signature, tier high; ledger rtti evidence, name medium; id 37985, rva 0x6b1160).
-    /// `uint IAnimationGraphManagerHolder_vfunc_14(Actor * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn i_animation_graph_manager_holder_vfunc_14(&self) -> u32 { unsafe { function!(37985, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(0x38)) } }
     /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_0` (decompiler signature, tier high; ledger rtti evidence, name high; id 38197, rva 0x6bbd44).
     /// `undefined IPostAnimationChannelUpdateFunctor_vfunc_0(Actor * this)`
     ///

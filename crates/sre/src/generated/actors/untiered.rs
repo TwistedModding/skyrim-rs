@@ -11,6 +11,13 @@ impl crate::Actor {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn attach_weapon3_d(&self, param_1: *mut u64, param_2: u8, param_3: c_char) -> u64 { unsafe { virtual_function!(self, 180, (*const Self, *mut u64, u8, c_char) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `Actor::GetFaceGenAnimationData`, vtable slot 99, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 37655, rva 0x69bba0).
+    /// `longlong GetFaceGenAnimationData(Actor * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_face_gen_animation_data(&self) -> i64 { unsafe { virtual_function!(self, 99, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
     /// `Actor::GetLookOriginAndDirection`, vtable slot 194, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 37479, rva 0x6874c0).
     /// `undefined GetLookOriginAndDirection(Actor * this, undefined4 * param_1, float * param_2)`
     ///
@@ -433,6 +440,20 @@ impl crate::BaseExtraList {
 }
 
 impl crate::Character {
+    /// `Character::GetBiped`, vtable slot 127, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 40263, rva 0x73a760).
+    /// `undefined8 * GetBiped(Character * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_biped(&self) -> *mut u64 { unsafe { virtual_function!(self, 127, (*const Self) -> *mut u64)(core::ptr::from_ref(self)) } }
+    /// `Character::GetFaceNode`, vtable slot 97, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 40259, rva 0x73a250).
+    /// `longlong GetFaceNode(Character * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn get_face_node(&self) -> i64 { unsafe { virtual_function!(self, 97, (*const Self) -> i64)(core::ptr::from_ref(self)) } }
     /// `Character::IsChild` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 40272, rva 0x73a9d0).
     /// `uint IsChild(Character * this)`
     ///
@@ -1023,6 +1044,13 @@ impl crate::TESNPC {
 }
 
 impl crate::TESObjectREFR {
+    /// `TESObjectREFR::Disable`, vtable slot 137, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 19801, rva 0x2f2d70).
+    /// `undefined Disable(TESObjectREFR * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn disable(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 137, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `TESObjectREFR::IsDead`, vtable slot 153, through the object's vtable (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 19820, rva 0x2f4060).
     /// `uint IsDead(TESObjectREFR * this)`
     ///
@@ -1030,6 +1058,13 @@ impl crate::TESObjectREFR {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn is_dead(&self) -> u32 { unsafe { virtual_function!(self, 153, (*const Self) -> u32)(core::ptr::from_ref(self)) } }
+    /// `TESObjectREFR::Update3DCollision`, vtable slot 133, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 19794, rva 0x2f10d0).
+    /// `undefined Update3DCollision(TESObjectREFR * this, byte param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn update3_d_collision(&self, param_1: u8) -> u64 { unsafe { virtual_function!(self, 133, (*const Self, u8) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `TESObjectREFR::AsReference` (decompiler signature, tier untiered; ledger slot_propagation evidence, name medium; id 20030, rva 0x2fa350).
     /// `TESObjectREFR * AsReference(TESObjectREFR * this)`
     ///

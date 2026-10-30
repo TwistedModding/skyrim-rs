@@ -435,12 +435,6 @@ impl core::ops::Deref for crate::NiKeyframeManager {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `NiLight` is laid out from its primary base `NiAVObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::NiLight {
-    type Target = crate::NiAVObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `NiLightColorController` is laid out from its primary base `NiPoint3InterpController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiLightColorController {
     type Target = crate::NiPoint3InterpController;
@@ -900,12 +894,6 @@ impl core::ops::Deref for crate::NiPoint3InterpController {
 /// `NiPoint3Interpolator` is laid out from its primary base `NiKeyBasedInterpolator`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::NiPoint3Interpolator {
     type Target = crate::NiKeyBasedInterpolator;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
-/// `NiPointLight` is laid out from its primary base `NiLight`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::NiPointLight {
-    type Target = crate::NiLight;
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }

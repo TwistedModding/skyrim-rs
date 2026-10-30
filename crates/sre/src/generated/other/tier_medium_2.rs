@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
-/// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447631, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
-/// `DetachResultSetField90_13` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 97831, rva 0x135ef30).
-/// `undefined8 * DetachResultSetField90_13(longlong param_1, undefined8 * param_2, undefined8 param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn detach_result_set_field90_13(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(97831, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
 /// `DetachResultSetField90_14` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447601, rva 0x1360380).
 /// `undefined8 * DetachResultSetField90_14(longlong param_1, undefined8 * param_2, undefined8 param_3)`
 ///
@@ -2355,13 +2341,6 @@ pub unsafe fn find_string_hash_map_slot(param_1: *mut i64, param_2: *mut u8) -> 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn find_string_in_hash_table(param_1: i64, param_2: *mut c_char, param_3: u64) -> *mut c_char { unsafe { function!(71688, (i64, *mut c_char, u64) -> *mut c_char)(param_1, param_2, param_3) } }
-/// `FindStringInNameTables` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 27016, rva 0x43afa0).
-/// `uint FindStringInNameTables(char * param_1, undefined4 * param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn find_string_in_name_tables(param_1: *mut c_char, param_2: *mut u32) -> u32 { unsafe { function!(27016, (*mut c_char, *mut u32) -> u32)(param_1, param_2) } }
 /// `FindStringIndexInTable368096` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 21387, rva 0x32e8e0).
 /// `int FindStringIndexInTable368096(undefined8 param_1, char * param_2)`
 ///
@@ -5631,13 +5610,6 @@ pub unsafe fn get_entry_pointer_locked(param_1: i64, param_2: i32) -> u64 { unsa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn get_entry_soul_level_value(param_1: *mut i64) -> i32 { unsafe { function!(15997, (*mut i64) -> i32)(param_1) } }
-/// `GetEulerAnglesFromMatrix` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 70232, rva 0xedf800).
-/// `undefined1 GetEulerAnglesFromMatrix(uint * param_1, uint * param_2, float * param_3, uint * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn get_euler_angles_from_matrix(param_1: *mut u32, param_2: *mut u32, param_3: *mut f32, param_4: *mut u32) -> u8 { unsafe { function!(70232, (*mut u32, *mut u32, *mut f32, *mut u32) -> u8)(param_1, param_2, param_3, param_4) } }
 /// `GetExtraGhostFlag` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 11698, rva 0x164790).
 /// `undefined1 GetExtraGhostFlag(longlong param_1)`
 ///
@@ -14143,3 +14115,31 @@ pub unsafe fn pack_quaternion_smallest_three40(param_1: *mut u32, param_2: *mut 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pack_quaternion_smallest_three48(param_1: *mut u32, param_2: *mut u16) -> u64 { unsafe { function!(65641, (*mut u32, *mut u16) -> u64)(param_1, param_2) } }
+/// `PackStridedVerticesAndComputeAabb` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65106, rva 0xc3b990).
+/// `undefined PackStridedVerticesAndComputeAabb(longlong param_1, undefined1[12] * param_2, int param_3, int param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_strided_vertices_and_compute_aabb(param_1: i64, param_2: *mut c_void, param_3: i32, param_4: i32) -> u64 { unsafe { function!(65106, (i64, *mut c_void, i32, i32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `PackVector4ToBytes` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 64487, rva 0xc01f50).
+/// `uint PackVector4ToBytes(float * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pack_vector4_to_bytes(param_1: *mut f32) -> u32 { unsafe { function!(64487, (*mut f32) -> u32)(param_1) } }
+/// `PadByteArrayToAlignment` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 65568, rva 0xc4ec80).
+/// `undefined PadByteArrayToAlignment(int param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pad_byte_array_to_alignment(param_1: i32, param_2: *mut i64) -> u64 { unsafe { function!(65568, (i32, *mut i64) -> u64)(param_1, param_2) } }
+/// `PadWriterByteArrayToAlignment` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 64439, rva 0xc005d0).
+/// `undefined PadWriterByteArrayToAlignment(longlong * param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn pad_writer_byte_array_to_alignment(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(64439, (*mut i64, i32) -> u64)(param_1, param_2) } }

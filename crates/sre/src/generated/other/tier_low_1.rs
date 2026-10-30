@@ -7448,58 +7448,6 @@ impl crate::ModManagerMenu {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut i64, param_3: u64) -> *mut Self { unsafe { function!(33914, (*const Self, u64, *mut i64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::ModelReferenceEffect {
-    /// `ModelReferenceEffect::BSTEventSink_BSAnimationGraphEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 34663, rva 0x5d7770).
-    /// `undefined8 BSTEventSink_BSAnimationGraphEvent_vfunc_1(ModelReferenceEffect * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn bst_event_sink_bs_animation_graph_event_vfunc_1(&self, param_1: *mut i64) -> u64 { unsafe { function!(34663, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1) } }
-    /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name high; id 34671, rva 0x5d8150).
-    /// `undefined8 SimpleAnimationGraphManagerHolder_vfunc_10(ModelReferenceEffect * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_10(&self, param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34671, (*const Self, i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2, param_3) } }
-    /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_13` (decompiler signature, tier low; ledger rtti evidence, name high; id 34670, rva 0x5d80a0).
-    /// `undefined SimpleAnimationGraphManagerHolder_vfunc_13(ModelReferenceEffect * this, longlong * param_1, longlong * param_2)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_13(&self, param_1: *mut i64, param_2: *mut i64) -> u64 { unsafe { function!(34670, (*const Self, *mut i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1, param_2) } }
-    /// `ModelReferenceEffect::SimpleAnimationGraphManagerHolder_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 34672, rva 0x5d82e0).
-    /// `undefined8 SimpleAnimationGraphManagerHolder_vfunc_8(ModelReferenceEffect * this, longlong * param_1)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn simple_animation_graph_manager_holder_vfunc_8(&self, param_1: *mut i64) -> u64 { unsafe { function!(34672, (*const Self, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x48), param_1) } }
-    /// `ModelReferenceEffect::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34653, rva 0x5d6890).
-    /// `ModelReferenceEffect * ctor(ModelReferenceEffect * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34653, (*const Self, *mut i64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `ModelReferenceEffect::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34654, rva 0x5d6970).
-    /// `undefined dtor(ModelReferenceEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34654, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `ModelReferenceEffect::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 34681, rva 0x5d87d0).
-    /// `ModelReferenceEffect * vdtor(ModelReferenceEffect * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34681, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::Moon {
     /// `Moon::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 26166, rva 0x40d500).
     /// `Moon * ctor(Moon * this, undefined8 param_1, float param_2, float param_3, float param_4, float param_5, float param_6, undefined4 param_7)`
@@ -8912,30 +8860,6 @@ impl crate::RefHandleUIData {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(52837, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::ReferenceEffect {
-    /// `ReferenceEffect::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34759, rva 0x5db020).
-    /// `ReferenceEffect * ctor(ReferenceEffect * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn ctor_2(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34759, (*const Self, *mut i64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `ReferenceEffect::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 34760, rva 0x5db120).
-    /// `undefined dtor(ReferenceEffect * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(34760, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `ReferenceEffect::vdtor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 34780, rva 0x5dbd90).
-    /// `ReferenceEffect * vdtor(ReferenceEffect * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(34780, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::ReferenceEffectController {
@@ -13796,3 +13720,73 @@ pub unsafe fn cmd__complete_all_quest_stages_execute() -> u64 { unsafe { functio
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__complete_quest_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22260, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::ConfigureDDOF_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23127, rva 0x37d0e0).
+/// `undefined8 ConfigureDDOF_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__configure_ddof_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(23127, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CopySaves_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22107, rva 0x353760).
+/// `ulonglong CopySaves_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__copy_saves_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22107, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::Cos_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22698, rva 0x36a920).
+/// `ulonglong Cos_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, double * param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__cos_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: *mut f64, param_8: *mut u32) -> u64 { unsafe { function!(22698, (i64, i64, i64, u64, i64, i64, *mut f64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateDetectionEvent_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22556, rva 0x364bb0).
+/// `ulonglong CreateDetectionEvent_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_detection_event_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22556, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateEvent_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22587, rva 0x366730).
+/// `ulonglong CreateEvent_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_event_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22587, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::CreateGameData_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23023, rva 0x378cd0).
+/// `undefined1 CreateGameData_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_game_data_execute() -> u8 { unsafe { function!(23023, () -> u8)() } }
+/// `Cmd::CreateGrassAt_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23072, rva 0x37a8f0).
+/// `undefined1 CreateGrassAt_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_grass_at_execute() -> u8 { unsafe { function!(23072, () -> u8)() } }
+/// `Cmd::CreateSaveData_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 23022, rva 0x378cc0).
+/// `undefined1 CreateSaveData_Execute(void)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__create_save_data_execute() -> u8 { unsafe { function!(23022, () -> u8)() } }
+/// `Cmd::DamageActorValue_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22029, rva 0x34e910).
+/// `ulonglong DamageActorValue_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_actor_value_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22029, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DamageObject_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22443, rva 0x35fdf0).
+/// `undefined8 DamageObject_Execute(longlong param_1, longlong param_2, double param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_object_execute(param_1: i64, param_2: i64, param_3: f64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22443, (i64, i64, f64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }

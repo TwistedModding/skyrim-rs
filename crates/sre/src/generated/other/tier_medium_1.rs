@@ -2941,13 +2941,6 @@ pub unsafe fn apply_format_to_text_range(param_1: i64, param_2: i64, param_3: u6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn apply_lod_fade_out_mult_settings() -> u64 { unsafe { function!(13418, () -> u64)() } }
-/// `ApplyLightAttenuationSettings` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 17626, rva 0x275600).
-/// `undefined ApplyLightAttenuationSettings(longlong * param_1, uint param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn apply_light_attenuation_settings(param_1: *mut i64, param_2: u32) -> u64 { unsafe { function!(17626, (*mut i64, u32) -> u64)(param_1, param_2) } }
 /// `ApplyLongestDurationAndLargestArea` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 43942, rva 0x7ecf20).
 /// `undefined ApplyLongestDurationAndLargestArea(longlong * param_1, longlong param_2, longlong param_3, char param_4, float param_5)`
 ///
@@ -7785,13 +7778,6 @@ pub unsafe fn compute_vector4_array_bounds_midpoint_and_extent(param_1: *mut c_v
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn compute_vertex_centroid_if_unset(param_1: i64) -> u64 { unsafe { function!(80942, (i64) -> u64)(param_1) } }
-/// `ComputeWalkRunInterpolation` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 37457, rva 0x6860d0).
-/// `float ComputeWalkRunInterpolation(longlong param_1, char param_2, char param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn compute_walk_run_interpolation(param_1: i64, param_2: c_char, param_3: c_char) -> f32 { unsafe { function!(37457, (i64, c_char, c_char) -> f32)(param_1, param_2, param_3) } }
 /// `ComputeWalkSpeedFromWeight` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 26456, rva 0x420900).
 /// `float ComputeWalkSpeedFromWeight(longlong * param_1, float param_2)`
 ///
@@ -13770,3 +13756,17 @@ pub unsafe fn detach_result_set_field90_10(param_1: i64, param_2: *mut u64, para
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn detach_result_set_field90_11(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447968, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_12` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 447631, rva 0x135dc40).
+/// `undefined8 * DetachResultSetField90_12(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_12(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(447631, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }
+/// `DetachResultSetField90_13` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 97831, rva 0x135ef30).
+/// `undefined8 * DetachResultSetField90_13(longlong param_1, undefined8 * param_2, undefined8 param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn detach_result_set_field90_13(param_1: i64, param_2: *mut u64, param_3: u64) -> *mut u64 { unsafe { function!(97831, (i64, *mut u64, u64) -> *mut u64)(param_1, param_2, param_3) } }

@@ -345,12 +345,6 @@ impl core::ops::Deref for crate::TESObjectLAND {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `TESObjectLIGH` is laid out from its primary base `TESBoundAnimObject`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESObjectLIGH {
-    type Target = crate::TESBoundAnimObject;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `TESObjectMISC` is laid out from its primary base `TESBoundObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESObjectMISC {
     type Target = crate::TESBoundObject;
@@ -573,12 +567,6 @@ impl core::ops::Deref for crate::TESWaterReflections {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `TESWeather` is laid out from its primary base `TESForm`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::TESWeather {
-    type Target = crate::TESForm;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `TESWeightForm` is laid out from its primary base `BaseFormComponent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::TESWeightForm {
     type Target = crate::BaseFormComponent;
@@ -633,6 +621,24 @@ impl crate::TES {
     /// `void ()`
     #[inline]
     pub fn create_save_load_manager() { unsafe { function!(35722, ())() } }
+    /// `TES::ForEachReferenceInRadius`: current-space walk: interior (*0x32303b8 TES+0xc0 set) -> TESObjectCELL::ForEachReferenceInRadius on that cell (tail jump); exterior -> the worldspace walk 0x312810 over the cells around origin
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13699, rva 0x1ba610.
+    /// `void (void* unused, const NiPoint3* origin, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
+    ///
+    /// # Safety
+    /// `unused`, `callback`, `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn for_each_reference_in_radius(unused: *mut c_void, origin: *const crate::NiPoint3, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void) { unsafe { function!(13699, (*mut c_void, *const crate::NiPoint3, f32, *const crate::NiPoint3, f32, *const c_void, *mut c_void))(unused, origin, radius, origin2, radius2, callback, data) } }
+    /// `TES::ForEachReferenceInRadiusOfRef`: same walk centred on a reference's position (+0x54): its cell when that cell is interior (cell+0x40 bit 0), else its worldspace
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13701, rva 0x1ba750.
+    /// `void (void* unused, TESObjectREFR* center, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
+    ///
+    /// # Safety
+    /// `unused`, `callback`, `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn for_each_reference_in_radius_of_ref(unused: *mut c_void, center: *mut crate::TESObjectREFR, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void) { unsafe { function!(13701, (*mut c_void, *mut crate::TESObjectREFR, f32, *const crate::NiPoint3, f32, *const c_void, *mut c_void))(unused, center, radius, origin2, radius2, callback, data) } }
     /// `TES::Pick`: picks in the loaded world around the player: cell = tes+0xc0 (the interior cell) or the centre cell of the grid tes+0x78 (uGridsToLoad/2, uGridsToLoad/2); returns TESObjectCELL::Pick(cell, pick)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13371, rva 0x1a6f80.
@@ -642,6 +648,12 @@ impl crate::TES {
     /// `pick` must point to what the engine expects.
     #[inline]
     pub unsafe fn pick(&self, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(13371, (*const Self, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(core::ptr::from_ref(self), pick) } }
+    /// `TES::UpdateSkyModeForCell`: picks the sky mode for the cell: no cell or an exterior -> 3 (2 or 1 when the worldspace has a +0x160 override and its +0xa0 bit 5); an interior (cell+0x40 bit 0) -> 1, or for an interior flagged +0x40 bit 7 (sky-like interior) -> 3 when bit 8 else 2; skipped while the mode is 0 (sky toggled off); also Sky+0x28 = the worldspace +0x160 value
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13326, rva 0x1a3f40.
+    /// `void (TES* this, TESObjectCELL* cell)`
+    #[inline]
+    pub fn update_sky_mode_for_cell(&self, cell: &crate::TESObjectCELL) { unsafe { function!(13326, (*const Self, *const crate::TESObjectCELL))(core::ptr::from_ref(self), core::ptr::from_ref(cell)) } }
 }
 
 impl crate::TESActorBase {
@@ -1121,6 +1133,15 @@ impl crate::TESObjectCELL {
     /// May be null: `ref_`.
     #[inline]
     pub fn attach_reference3_d(&self, ref_: Option<&crate::TESObjectREFR>, forceRoomSearch: bool, skipOwnMultiBound: bool) { unsafe { function!(19165, (*const Self, *const crate::TESObjectREFR, bool, bool))(core::ptr::from_ref(self), ref_.map_or(core::ptr::null(), core::ptr::from_ref), forceRoomSearch, skipOwnMultiBound) } }
+    /// `TESObjectCELL::ForEachReferenceInRadius`: visits the cell's references under the cell spin lock (+0x120): skips refs with |pos - origin| >= radius and, when radius2 differs, refs outside radius2 of origin2; calls callback(ref, data); a true return stops the walk; load doors met during the walk queue their linked cells (inside the remaining radius) and those are walked afterwards recursively; returns false when the callback stopped it
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 19068, rva 0x2c28f0.
+    /// `bool (TESObjectCELL* cell, const NiPoint3* origin, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR* ref, void* data), void* data)`
+    ///
+    /// # Safety
+    /// `callback`, `data` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn for_each_reference_in_radius(&self, origin: *const crate::NiPoint3, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void) -> bool { unsafe { function!(19068, (*const Self, *const crate::NiPoint3, f32, *const crate::NiPoint3, f32, *const c_void, *mut c_void) -> bool)(core::ptr::from_ref(self), origin, radius, origin2, radius2, callback, data) } }
     /// `TESObjectCELL::GetbhkWorld`: interior (cell+0x40 bit 0): the bhkWorld stored in the cell's extra list (+0x48, ExtraData type 1, value +0x10) through GetExtraType0x01Value 0x16f140; exterior: **(0x21a0598)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 18995, rva 0x2be9b0.
@@ -1208,63 +1229,6 @@ impl crate::TESObjectLAND {
     /// The `TESChildCell` base at +0x20.
     #[inline]
     pub fn as_tes_child_cell(&self) -> &crate::TESChildCell { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
-}
-
-impl crate::TESObjectLIGH {
-    /// The `BGSDestructibleObjectForm` base at +0xC0.
-    #[inline]
-    pub fn as_bgs_destructible_object_form(&self) -> &crate::BGSDestructibleObjectForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
-    /// The `BGSEquipType` base at +0xD0.
-    #[inline]
-    pub fn as_bgs_equip_type(&self) -> &crate::BGSEquipType { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
-    /// The `BGSMessageIcon` base at +0x88.
-    #[inline]
-    pub fn as_bgs_message_icon(&self) -> &crate::BGSMessageIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
-    /// The `BaseFormComponent` base at +0x30.
-    #[inline]
-    pub fn as_base_form_component(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// The `BaseFormComponent` base at +0x40.
-    #[inline]
-    pub fn as_base_form_component_2(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `BaseFormComponent` base at +0x78.
-    #[inline]
-    pub fn as_base_form_component_3(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `BaseFormComponent` base at +0x88.
-    #[inline]
-    pub fn as_base_form_component_4(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0x88).cast() } }
-    /// The `BaseFormComponent` base at +0xA0.
-    #[inline]
-    pub fn as_base_form_component_5(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
-    /// The `BaseFormComponent` base at +0xB0.
-    #[inline]
-    pub fn as_base_form_component_6(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
-    /// The `BaseFormComponent` base at +0xC0.
-    #[inline]
-    pub fn as_base_form_component_7(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xC0).cast() } }
-    /// The `BaseFormComponent` base at +0xD0.
-    #[inline]
-    pub fn as_base_form_component_8(&self) -> &crate::BaseFormComponent { unsafe { &*core::ptr::from_ref(self).byte_add(0xD0).cast() } }
-    /// The `TESFullName` base at +0x30.
-    #[inline]
-    pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
-    /// The `TESIcon` base at +0x78.
-    #[inline]
-    pub fn as_tes_icon(&self) -> &crate::TESIcon { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `TESModel` base at +0x40.
-    #[inline]
-    pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `TESModelTextureSwap` base at +0x40.
-    #[inline]
-    pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
-    /// The `TESTexture` base at +0x78.
-    #[inline]
-    pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x78).cast() } }
-    /// The `TESValueForm` base at +0xB0.
-    #[inline]
-    pub fn as_tes_value_form(&self) -> &crate::TESValueForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
-    /// The `TESWeightForm` base at +0xA0.
-    #[inline]
-    pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
 }
 
 impl crate::TESObjectMISC {
@@ -1406,6 +1370,12 @@ impl crate::TESRace {
     /// The `TESSpellList` base at +0x40.
     #[inline]
     pub fn as_tes_spell_list(&self) -> &crate::TESSpellList { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    /// `TESRace::GetFormEditorID`: TESRace slot 50: the string at +0x2e0, or '' (ID_469508) when null
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 25468, rva 0x3ebd80.
+    /// `const char* (TESRace* this)`
+    #[inline]
+    pub fn get_form_editor_id(&self) -> *const c_char { unsafe { function!(25468, (*const Self) -> *const c_char)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::TESShout {
@@ -1496,6 +1466,15 @@ impl crate::TESWorldSpace {
     /// The `TESModel` base at +0x30.
     #[inline]
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    /// `TESWorldSpace::ForEachReferenceInRadius`: exterior walk: starts at the 4096-unit cell containing origin and spirals outward over the worldspace's cell map (read lock 0x31df4d0), taking cells whose bounds are within radius (and radius2) and that are loaded (cell formFlags bit 3, or a TLS override), visiting each with the per-cell walk; stops when a callback returns true
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 523544, rva 0x312810.
+    /// `void (TESWorldSpace* ws, const NiPoint3* origin, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn for_each_reference_in_radius(&self, origin: *const crate::NiPoint3, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void) { unsafe { function!(523544, (*const Self, *const crate::NiPoint3, f32, *const crate::NiPoint3, f32, *const c_void, *mut c_void))(core::ptr::from_ref(self), origin, radius, origin2, radius2, callback, data) } }
     /// `TESWorldSpace::GetClimate`: the worldspace's climate, walking up the parent worldspace (+0x158) while flag 0x10 of +0xa2 (use parent climate) is set
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 20468, rva 0x30dad0.

@@ -3,6 +3,184 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Inventory3DManager::UpdateItemZoom` at 0x93efe0 (semantic, high); signature (untiered): `undefined UpdateItemZoom(longlong param_1)`; semantic: while zoom direction (+0x150) != 0: progress (+0x154) += fInventory3DItemZoomSpeed:Interface * real delta * direction, clamped to [0,1] (direction cleared at an end); item position (+0x14..+0x1c) = lerp(+0x20..+0x28, fInventory3DItemZoomX/Y/Z:Interface), scale (+0x2c) = lerp(+0x30, fInventory3DItemZoomScale:Interface); re-applies the last loaded item's scale/position (array +0x68, count +0x148, stride 0x20); +0x162 = 0 (high); signature `void (Inventory3DManager* this)`
+pub const Inventory3DManager__UpdateItemZoom: u64 = 51777;
+/// `Inventory3DManager::UpdateItemZoom` as a function pointer type (high).
+pub type Inventory3DManager__UpdateItemZoom_fn = unsafe extern "C" fn(this: *mut crate::Inventory3DManager);
+/// `Inventory3DManager::ctor` at 0x93d7b0 (layout_inference, medium); signature (high): `Inventory3DManager * ctor(Inventory3DManager * this)`
+pub const Inventory3DManager__ctor: u64 = 51752;
+/// `Inventory3DManager::ctor_sub0` at 0x93f660 (callgraph, medium); signature (untiered): `undefined ctor_sub0(void)`
+pub const Inventory3DManager__ctor_sub0: u64 = 51782;
+/// `Inventory3DManager::dtor` at 0x93d8c0 (layout_inference, high); signature (low): `undefined dtor(Inventory3DManager * this, undefined8 param_1, ulonglong param_2, undefined8 param_3)`
+pub const Inventory3DManager__dtor: u64 = 51753;
+/// `Inventory3DManager::vdtor` at 0x93f730 (slot_propagation, medium); signature (low): `Inventory3DManager * vdtor(Inventory3DManager * this, ulonglong param_1, ulonglong param_2, undefined8 param_3)`
+pub const Inventory3DManager__vdtor: u64 = 51787;
+/// `Inventory3DManager::vfunc_1` at 0x93e530 (rtti, high); signature (low): `undefined8 vfunc_1(Inventory3DManager * this, longlong * param_1)`
+pub const Inventory3DManager__vfunc_1: u64 = 51768;
+/// `Inventory3DManager::vfunc_5` at 0x93e5a0 (rtti, high); signature (low): `undefined1 vfunc_5(Inventory3DManager * this, longlong param_1)`
+pub const Inventory3DManager__vfunc_5: u64 = 51769;
+/// `Inventory3DManager::vfunc_6` at 0x93e620 (rtti, high); signature (low): `undefined1 vfunc_6(Inventory3DManager * this, longlong param_1)`
+pub const Inventory3DManager__vfunc_6: u64 = 51770;
+/// `Inventory::GetEventSource` at 0x241aa0 (semantic, medium); signature (untiered): `undefined8 * GetEventSource(void)`; semantic: the one source of Inventory::Event events (medium); signature `BSTEventSource<Inventory::Event>* ()`
+pub const Inventory__GetEventSource: u64 = 16225;
+/// `Inventory::RegisterSink` at 0x227e00 (semantic, medium); signature (untiered): `undefined RegisterSink(undefined8 param_1)`; semantic: registers a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
+pub const Inventory__RegisterSink: u64 = 15978;
+/// `Inventory::StatInventoryVisitor::vdtor` at 0x240740 (layout_inference, medium); signature (low): `StatInventoryVisitor * vdtor(StatInventoryVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const Inventory__StatInventoryVisitor__vdtor: u64 = 16191;
+/// `Inventory::StatInventoryVisitor::vfunc_1` at 0x242440 (rtti, high); signature (low): `undefined8 vfunc_1(StatInventoryVisitor * this, longlong param_1)`
+pub const Inventory__StatInventoryVisitor__vfunc_1: u64 = 16236;
+/// `Inventory::UnregisterSink` at 0x227e30 (semantic, medium); signature (untiered): `undefined UnregisterSink(undefined8 param_1)`; semantic: unregisters a Inventory::Event sink with the singleton source (medium); signature `void (BSTEventSink<Inventory::Event>* sink)`
+pub const Inventory__UnregisterSink: u64 = 15979;
+/// `InventoryChanges::CountItem` at 0x240fe0 (runtime, high); signature (untiered): `int CountItem(longlong param_1, undefined8 * param_2, longlong * param_3)`; semantic: count of an item, base plus delta (high); signature `int InventoryChanges::CountItem(TESForm* item, InventoryChanges* changes, ItemFilter* filter)`
+pub const InventoryChanges__CountItem: u64 = 16214;
+/// `InventoryChanges::CountItem` as a function pointer type (high).
+pub type InventoryChanges__CountItem_fn = unsafe extern "C" fn(item: *mut crate::TESForm, changes: *mut crate::InventoryChanges, filter: *mut c_void) -> i32;
+/// `InventoryChanges::CountItemsWithKeyword` at 0x239750 (semantic, medium); signature (untiered): `ulonglong CountItemsWithKeyword(undefined8 * param_1, longlong param_2)`; semantic: count of items carrying a keyword (medium); signature `uint InventoryChanges::CountItemsWithKeyword(InventoryChanges* this, BGSKeyword* keyword)`
+pub const InventoryChanges__CountItemsWithKeyword: u64 = 16111;
+/// `InventoryChanges::FindBestSoulGemVisitor::vdtor` at 0x6daba0 (layout_inference, medium); signature (low): `FindBestSoulGemVisitor * vdtor(FindBestSoulGemVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryChanges__FindBestSoulGemVisitor__vdtor: u64 = 38858;
+/// `InventoryChanges::FindBestSoulGemVisitor::vfunc_1` at 0x237180 (rtti, high); signature (low): `undefined8 vfunc_1(FindBestSoulGemVisitor * this, longlong * param_1)`
+pub const InventoryChanges__FindBestSoulGemVisitor__vfunc_1: u64 = 16094;
+/// `InventoryChanges::GetItemCount` at 0x2395c0 (runtime, high); signature (untiered): `undefined GetItemCount(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: count of an item in the inventory (high); signature `int InventoryChanges::GetItemCount(InventoryChanges* this, TESForm* item)`
+pub const InventoryChanges__GetItemCount: u64 = 16108;
+/// `InventoryChanges::GetItemCount` as a function pointer type (high).
+pub type InventoryChanges__GetItemCount_fn = unsafe extern "C" fn(this: *mut crate::InventoryChanges, item: *mut crate::TESForm) -> i32;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240230 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryChanges__IItemChangeVisitor__dtor: u64 = 16167;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240260 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_2: u64 = 16168;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240280 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_3: u64 = 16170;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240290 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_4: u64 = 16171;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402a0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_5: u64 = 16172;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_6: u64 = 16173;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402c0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_7: u64 = 16174;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x2402d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_8: u64 = 16175;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240360 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_9: u64 = 16178;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x240370 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_10: u64 = 16179;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x3cb660 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_11: u64 = 24850;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x3cb6d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_12: u64 = 24851;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x41e3b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_13: u64 = 26399;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5df0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_14: u64 = 34628;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5e60 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_15: u64 = 34630;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5e70 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_16: u64 = 34631;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x5d5ec0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_17: u64 = 34633;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x6da4d0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_18: u64 = 38838;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x6df890 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_19: u64 = 38939;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x735210 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_20: u64 = 40137;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa20 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_21: u64 = 40274;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa80 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_22: u64 = 40275;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x73aa90 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_23: u64 = 40276;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9426c0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_24: u64 = 51839;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x955bf0 (layout_inference, high); signature (low): `undefined dtor(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_25: u64 = 52070;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9728b0 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_26: u64 = 52434;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9bb450 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_27: u64 = 53537;
+/// `InventoryChanges::IItemChangeVisitor::dtor` at 0x9bb460 (layout_inference, high); signature (high): `undefined dtor(IItemChangeVisitor * this)`
+pub const InventoryChanges__IItemChangeVisitor__dtor_28: u64 = 53538;
+/// `InventoryChanges::IItemChangeVisitor::vdtor` at 0x240680 (layout_inference, medium); signature (low): `IItemChangeVisitor * vdtor(IItemChangeVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryChanges__IItemChangeVisitor__vdtor: u64 = 16187;
+/// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
+pub const InventoryChanges__IItemChangeVisitor__vfunc_2: u64 = 16215;
+/// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
+pub const InventoryChanges__IItemChangeVisitor__vfunc_3: u64 = 16238;
+/// `InventoryMenu::CloseTweenMenuCallback` at 0x943ed0 (runtime, high); signature (untiered): `undefined CloseTweenMenuCallback(longlong param_1)`; semantic: the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1) (high); signature `void (const FxDelegateArgs* args)`
+pub const InventoryMenu__CloseTweenMenuCallback: u64 = 51855;
+/// `InventoryMenu::CloseTweenMenuCallback` as a function pointer type (high).
+pub type InventoryMenu__CloseTweenMenuCallback_fn = unsafe extern "C" fn(args: *const c_void);
+/// `InventoryMenu::Create` at 0x946710 (semantic, high); signature (untiered): `void Create(void)`; semantic: menu creator registered under 'InventoryMenu' (ctor inlined except ContainerMenu) (high); signature `IMenu* ()`
+pub const InventoryMenu__Create: u64 = 51886;
+/// `InventoryMenu::Create` as a function pointer type (high).
+pub type InventoryMenu__Create_fn = unsafe extern "C" fn() -> *mut crate::IMenu;
+/// `InventoryMenu::UpdateItemList` at 0x9452b0 (semantic, high); signature (untiered): `undefined UpdateItemList(longlong param_1, undefined8 param_2, uint * param_3, undefined8 param_4)`; semantic: rebuilds the player's item list, sorts by sortMode, pushes each entry's GFxValue into entryList and Invokes 'InvalidateListData' (high); signature `void (InventoryMenu* this)`
+pub const InventoryMenu__UpdateItemList: u64 = 51866;
+/// `InventoryMenu::UpdateItemList` as a function pointer type (high).
+pub type InventoryMenu__UpdateItemList_fn = unsafe extern "C" fn(this: *mut crate::InventoryMenu);
+/// `InventoryMenu::ctor` at 0x942900 (layout_inference, high); signature (high): `InventoryMenu * ctor(InventoryMenu * this)`
+pub const InventoryMenu__ctor: u64 = 51846;
+/// `InventoryMenu::ctor` at 0x942a90 (layout_inference, medium); signature (low): `undefined ctor(InventoryMenu * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryMenu__ctor_2: u64 = 51847;
+/// `InventoryMenu::vdtor` at 0x946460 (slot_propagation, medium); signature (low): `InventoryMenu * vdtor(InventoryMenu * this, ulonglong param_1, longlong * param_2, undefined8 param_3)`
+pub const InventoryMenu__vdtor: u64 = 51880;
+/// `InventoryMenu::vfunc_1` at 0x943850 (rtti, high); signature (low): `undefined vfunc_1(InventoryMenu * this, longlong * param_1)`
+pub const InventoryMenu__vfunc_1: u64 = 51850;
+/// `InventoryMenu::vfunc_1_cb0` at 0x943d00 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_1_cb0: u64 = 51851;
+/// `InventoryMenu::vfunc_1_cb1` at 0x943d80 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb1(undefined8 * param_1)`
+pub const InventoryMenu__vfunc_1_cb1: u64 = 51852;
+/// `InventoryMenu::vfunc_1_cb10` at 0x944d50 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb10(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_1_cb10: u64 = 51863;
+/// `InventoryMenu::vfunc_1_cb3` at 0x943f20 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_1_cb3: u64 = 51856;
+/// `InventoryMenu::vfunc_1_cb4` at 0x943fb0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb4(longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryMenu__vfunc_1_cb4: u64 = 51857;
+/// `InventoryMenu::vfunc_1_cb5` at 0x9440d0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb5(longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryMenu__vfunc_1_cb5: u64 = 51858;
+/// `InventoryMenu::vfunc_1_cb6` at 0x944590 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb6(longlong param_1)`
+pub const InventoryMenu__vfunc_1_cb6: u64 = 51859;
+/// `InventoryMenu::vfunc_1_cb7` at 0x944910 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb7(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_1_cb7: u64 = 51860;
+/// `InventoryMenu::vfunc_1_cb8` at 0x9449e0 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb8(longlong param_1)`
+pub const InventoryMenu__vfunc_1_cb8: u64 = 51861;
+/// `InventoryMenu::vfunc_1_cb9` at 0x944b60 (callgraph, medium); signature (untiered): `undefined vfunc_1_cb9(longlong param_1)`
+pub const InventoryMenu__vfunc_1_cb9: u64 = 51862;
+/// `InventoryMenu::vfunc_4` at 0x942b80 (rtti, high); signature (low): `BaseExtraList_vtbl * vfunc_4(InventoryMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryMenu__vfunc_4: u64 = 51848;
+/// `InventoryMenu::vfunc_4_sub0` at 0x945050 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_4_sub0: u64 = 51864;
+/// `InventoryMenu::vfunc_4_sub1` at 0x9451e0 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub1(longlong param_1)`
+pub const InventoryMenu__vfunc_4_sub1: u64 = 51865;
+/// `InventoryMenu::vfunc_4_sub3` at 0x945e20 (callgraph, medium); signature (untiered): `undefined vfunc_4_sub3(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const InventoryMenu__vfunc_4_sub3: u64 = 51871;
+/// `InventoryMenu::vfunc_6` at 0x943810 (rtti, high); signature (low): `undefined vfunc_6(InventoryMenu * this, undefined8 param_1, undefined8 param_2, longlong param_3)`
+pub const InventoryMenu__vfunc_6: u64 = 51849;
+/// `InventoryUpdateData::vdtor` at 0x98d8a0 (layout_inference, medium); signature (low): `InventoryUpdateData * vdtor(InventoryUpdateData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUpdateData__vdtor: u64 = 52836;
+/// `InventoryUtils::ItemFilter::dtor` at 0x22b710 (layout_inference, high); signature (high): `undefined dtor(ItemFilter * this)`
+pub const InventoryUtils__ItemFilter__dtor: u64 = 16047;
+/// `InventoryUtils::ItemFilter::dtor` at 0x25e790 (callgraph, high); signature (untiered): `undefined dtor(ItemFilter * this)`
+pub const InventoryUtils__ItemFilter__dtor_2: u64 = 16923;
+/// `InventoryUtils::ItemFilter::vdtor` at 0x240710 (layout_inference, medium); signature (low): `ItemFilter * vdtor(ItemFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils__ItemFilter__vdtor: u64 = 16190;
+/// `InventoryUtils::ItemFilter::vfunc_1` at 0x22b730 (rtti, high); signature (low): `undefined1 vfunc_1(void)`
+pub const InventoryUtils__ItemFilter__vfunc_1: u64 = 16048;
+/// `InventoryUtils::QuestItemFilter::vdtor` at 0x25e830 (slot_propagation, medium); signature (low): `QuestItemFilter * vdtor(QuestItemFilter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils__QuestItemFilter__vdtor: u64 = 16925;
+/// `InventoryUtils::QuestItemFilter::vfunc_1` at 0x22b740 (rtti, high); signature (low): `bool vfunc_1(QuestItemFilter * this, longlong param_1)`
+pub const InventoryUtils__QuestItemFilter__vfunc_1: u64 = 16049;
+/// `InventoryUtils::_anon_3F954FDF::GetWornMaskVisitor::vdtor` at 0x240650 (layout_inference, medium); signature (low): `GetWornMaskVisitor * vdtor(GetWornMaskVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils___anon_3F954FDF__GetWornMaskVisitor__vdtor: u64 = 16186;
+/// `InventoryUtils::_anon_3F954FDF::GetWornMaskVisitor::vfunc_1` at 0x2422f0 (rtti, high); signature (low): `undefined8 vfunc_1(GetWornMaskVisitor * this, longlong * param_1)`
+pub const InventoryUtils___anon_3F954FDF__GetWornMaskVisitor__vfunc_1: u64 = 16233;
+/// `InventoryUtils::_anon_3F954FDF::IsFavoriteVisitor::vdtor` at 0x2406b0 (layout_inference, medium); signature (low): `IsFavoriteVisitor * vdtor(IsFavoriteVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vdtor: u64 = 16188;
+/// `InventoryUtils::_anon_3F954FDF::IsFavoriteVisitor::vfunc_1` at 0x242390 (rtti, high); signature (low): `int vfunc_1(IsFavoriteVisitor * this, longlong * param_1)`
+pub const InventoryUtils___anon_3F954FDF__IsFavoriteVisitor__vfunc_1: u64 = 16234;
+/// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vdtor` at 0x2406e0 (layout_inference, medium); signature (low): `IsWornVisitor * vdtor(IsWornVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vdtor: u64 = 16189;
 /// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1` at 0x242410 (rtti, high); signature (low): `undefined8 vfunc_1(IsWornVisitor * this, longlong * param_1)`
 pub const InventoryUtils___anon_3F954FDF__IsWornVisitor__vfunc_1: u64 = 16235;
 /// `InventoryUtils::_anon_3F954FDF::IsWornVisitor::vfunc_1_sub0` at 0x2294f0 (callgraph, medium); signature (untiered): `undefined4 vfunc_1_sub0(longlong * param_1)`
@@ -5623,12 +5801,12 @@ pub const MoveRangeVector218: u64 = 95973;
 pub const MoveRefToReferenceWithOffset: u64 = 22279;
 /// `MoveReferenceToCellAndNotifyLocationChange` at 0x311510 (decompiler, medium); signature (untiered): `undefined MoveReferenceToCellAndNotifyLocationChange(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const MoveReferenceToCellAndNotifyLocationChange: u64 = 20542;
-/// `MoveReferenceToCellAndPosition` at 0xa5d370 (decompiler, medium); signature (untiered): `undefined MoveReferenceToCellAndPosition(TESObjectCELL * param_1, undefined4 * param_2, TESObjectCELL * param_3, TESObjectCELL * param_4, float * param_5, float * param_6)`
+/// `MoveReferenceToCellAndPosition` at 0xa5d370 (semantic, high); signature (untiered): `undefined MoveReferenceToCellAndPosition(TESObjectCELL * param_1, undefined4 * param_2, TESObjectCELL * param_3, TESObjectCELL * param_4, float * param_5, float * param_6)`; semantic: what Papyrus MoveTo / SetPosition / SetAngle run (through their delay functors): non-actor: SetPosition; if the cell is attached: SetAngles, root.local.translate = position, root.local.rotate = GetRotationMatrix (XYZ), UpdateCollisionForTransform(root, true), UpdateNode; then MoveRefToCellOrWorldspace. Actor: StopUsingFurniture(1) and MoveReferenceToPosition(actor, position, heading = angles.z, pitch = 0.0, cell, worldspace, true). Player: queued move block at PlayerCharacter+0x650 with angles.z only (high); signature `void (TESObjectREFR* ref, const RefHandle* target, TESObjectCELL* cell, TESWorldSpace* worldspace, const NiPoint3* position, const NiPoint3* anglesRadians)`
 pub const MoveReferenceToCellAndPosition: u64 = 56626;
+/// `MoveReferenceToCellAndPosition` as a function pointer type (high).
+pub type MoveReferenceToCellAndPosition_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, target: *const c_void, cell: *mut crate::TESObjectCELL, worldspace: *mut crate::TESWorldSpace, position: *const crate::NiPoint3, anglesRadians: *const crate::NiPoint3);
 /// `MoveReferenceToCurrentLocationRef` at 0x6ac8e0 (decompiler, medium); signature (untiered): `bool MoveReferenceToCurrentLocationRef(longlong * param_1, TESObjectCELL * param_2, undefined8 param_3, undefined8 param_4)`
 pub const MoveReferenceToCurrentLocationRef: u64 = 37909;
-/// `MoveReferenceToPosition` at 0x677370 (decompiler, medium); signature (untiered): `ulonglong MoveReferenceToPosition(TESObjectCELL * param_1, float * param_2, undefined8 param_3, float param_4, TESObjectCELL * param_5, TESObjectCELL * param_6, char param_7)`
-pub const MoveReferenceToPosition: u64 = 37313;
 /// `MoveReferenceToPositionIfCellGiven` at 0x6845f0 (decompiler, medium); signature (untiered): `undefined MoveReferenceToPositionIfCellGiven(TESObjectCELL * param_1, float * param_2, undefined8 param_3, float param_4, TESObjectCELL * param_5, TESObjectCELL * param_6, undefined1 param_7, undefined1 param_8, char param_9)`
 pub const MoveReferenceToPositionIfCellGiven: u64 = 37432;
 /// `MoveResolvedEntriesFromHeap` at 0xbea760 (decompiler, medium); signature (untiered): `undefined1 MoveResolvedEntriesFromHeap(longlong * param_1, undefined8 * param_2, undefined1 * param_3, undefined8 param_4)`
@@ -6245,10 +6423,16 @@ pub const MovementControllerNPC__IMovementMessageInterface_vfunc_1: u64 = 41761;
 pub const MovementControllerNPC__IMovementMessageInterface_vfunc_2: u64 = 41762;
 /// `MovementControllerNPC::IMovementMessageInterface_vfunc_3` at 0x798ef0 (rtti, high); signature (low): `undefined8 * IMovementMessageInterface_vfunc_3(MovementControllerNPC * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementControllerNPC__IMovementMessageInterface_vfunc_3: u64 = 41763;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_IsAllowRotation` at 0x796910 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsAllowRotation(MovementControllerNPC * this)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_IsAllowRotation: u64 = 41708;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_IsAnimationOrRotationDriven` at 0x7968e0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsAnimationOrRotationDriven(MovementControllerNPC * this)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_IsAnimationOrRotationDriven: u64 = 41707;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` at 0x7968b0 (semantic, high); signature (untiered): `longlong IMovementMotionDrivenControl_IsMotionDriven(MovementControllerNPC * this)`; semantic: slot 6 of the +0x128 sub-object: mode (this+0x98 = controller+0x1c0) in {1,2,3,7,8,10..14} (high); signature `bool (IMovementMotionDrivenControl* this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_IsMotionDriven: u64 = 41706;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_IsMotionDriven` as a function pointer type (high).
 pub type MovementControllerNPC__IMovementMotionDrivenControl_IsMotionDriven_fn = unsafe extern "C" fn(this: *mut crate::IMovementMotionDrivenControl) -> bool;
+/// `MovementControllerNPC::IMovementMotionDrivenControl_StartAllowRotation` at 0x7967d0 (semantic, high); signature (untiered): `undefined IMovementMotionDrivenControl_StartAllowRotation(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const MovementControllerNPC__IMovementMotionDrivenControl_StartAllowRotation: u64 = 41705;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_StartAnimationDriven` at 0x796760 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartAnimationDriven(MovementControllerNPC * this)`; semantic: slot 3 of the +0x128 sub-object: switch to animation-driven movement; AnimationDrivenHandler 0x7ce7e0 calls it (medium); signature `void (IMovementMotionDrivenControl* this)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_StartAnimationDriven: u64 = 41704;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_StartMotionDriven` at 0x796550 (semantic, medium); signature (untiered): `undefined IMovementMotionDrivenControl_StartMotionDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: slot 4 of the +0x128 sub-object: switch to motion-driven movement; MotionDrivenHandler 0x7ce770 calls it (medium); signature `void (IMovementMotionDrivenControl* this)`
@@ -6269,12 +6453,6 @@ pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub2: u64 
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub3: u64 = 41750;
 /// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_4_sub4` at 0x798900 (callgraph, medium); signature (untiered): `undefined IMovementMotionDrivenControl_vfunc_4_sub4(longlong * param_1)`
 pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_4_sub4: u64 = 41751;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_5` at 0x7967d0 (rtti, high); signature (low): `undefined IMovementMotionDrivenControl_vfunc_5(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_5: u64 = 41705;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_7` at 0x7968e0 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_7(MovementControllerNPC * this)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_7: u64 = 41707;
-/// `MovementControllerNPC::IMovementMotionDrivenControl_vfunc_8` at 0x796910 (rtti, high); signature (high): `longlong IMovementMotionDrivenControl_vfunc_8(MovementControllerNPC * this)`
-pub const MovementControllerNPC__IMovementMotionDrivenControl_vfunc_8: u64 = 41708;
 /// `MovementControllerNPC::IMovementPlannerDirectControl_vdtor` at 0x79a658 (slot_propagation, medium); signature (low): `undefined IMovementPlannerDirectControl_vdtor(MovementControllerNPC * this, ulonglong param_1, undefined1 * param_2, undefined8 param_3)`
 pub const MovementControllerNPC__IMovementPlannerDirectControl_vdtor: u64 = 41799;
 /// `MovementControllerNPC::IMovementPlannerDirectControl_vfunc_1` at 0x798150 (rtti, high); signature (high): `undefined IMovementPlannerDirectControl_vfunc_1(MovementControllerNPC * this)`
@@ -6319,6 +6497,10 @@ pub const MovementControllerNPC__IsControlsDriven: u64 = 41712;
 pub const MovementControllerNPC__SetAIDriven: u64 = 41709;
 /// `MovementControllerNPC::SetControlsDriven` at 0x7969f0 (runtime, high); signature (untiered): `undefined SetControlsDriven(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementControllerNPC__SetControlsDriven: u64 = 41710;
+/// `MovementControllerNPC::StartAnimationDrivenList` at 0x798500 (semantic, high); signature (untiered): `undefined StartAnimationDrivenList(longlong * param_1)`; semantic: animation-driven switch (from slot 3 0x796760 when +0x1c9 is set): picks the type list by controlsDriven (+0x1c5: 0x3242388 set, 0x3242390 clear) and sets mode +0x1c0 = 0 (high); signature `void (MovementControllerNPC* this)`
+pub const MovementControllerNPC__StartAnimationDrivenList: u64 = 41738;
+/// `MovementControllerNPC::StartAnimationDrivenList` as a function pointer type (high).
+pub type MovementControllerNPC__StartAnimationDrivenList_fn = unsafe extern "C" fn(this: *mut crate::MovementControllerNPC);
 /// `MovementControllerNPC::ctor` at 0x794d20 (layout_inference, high); signature (low): `MovementControllerNPC * ctor(MovementControllerNPC * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const MovementControllerNPC__ctor: u64 = 41691;
 /// `MovementControllerNPC::ctor_sub0` at 0x79a500 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1)`
@@ -8273,217 +8455,3 @@ pub const NiAutoNormalParticles__Create: u64 = 71094;
 pub const NiAutoNormalParticlesData__Create: u64 = 71485;
 /// `NiBSBoneLODController::Create` at 0xfecc00 (string, medium); signature (low): `NiBSBoneLODController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const NiBSBoneLODController__Create: u64 = 76514;
-/// `NiBSBoneLODController::ctor` at 0xfecc60 (layout_inference, high); signature (high): `NiBSBoneLODController * ctor(NiBSBoneLODController * this)`
-pub const NiBSBoneLODController__ctor: u64 = 76515;
-/// `NiBSBoneLODController::ctor` at 0xfece30 (layout_inference, medium); signature (low): `undefined ctor(NiBSBoneLODController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSBoneLODController__ctor_2: u64 = 76522;
-/// `NiBSBoneLODController::vdtor` at 0xfed0c0 (layout_inference, medium); signature (low): `NiBSBoneLODController * vdtor(NiBSBoneLODController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSBoneLODController__vdtor: u64 = 76529;
-/// `NiBSBoneLODController::vfunc_2` at 0xfed250 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSBoneLODController__vfunc_2: u64 = 76536;
-/// `NiBSBoneLODController::vfunc_23` at 0xfeb370 (rtti, high); signature (low): `longlong vfunc_23(NiBSBoneLODController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSBoneLODController__vfunc_23: u64 = 76490;
-/// `NiBSBoneLODController::vfunc_24` at 0xfeb450 (rtti, high); signature (low): `undefined vfunc_24(NiBSBoneLODController * this, longlong param_1)`
-pub const NiBSBoneLODController__vfunc_24: u64 = 76492;
-/// `NiBSBoneLODController::vfunc_25` at 0xfeb730 (rtti, high); signature (low): `undefined vfunc_25(NiBSBoneLODController * this, longlong param_1)`
-pub const NiBSBoneLODController__vfunc_25: u64 = 76493;
-/// `NiBSBoneLODController::vfunc_26` at 0xfeb7d0 (rtti, high); signature (low): `bool vfunc_26(NiBSBoneLODController * this, longlong * param_1)`
-pub const NiBSBoneLODController__vfunc_26: u64 = 76494;
-/// `NiBSBoneLODController::vfunc_27` at 0xfeb7f0 (rtti, high); signature (low): `undefined vfunc_27(NiBSBoneLODController * this, longlong * param_1)`
-pub const NiBSBoneLODController__vfunc_27: u64 = 76495;
-/// `NiBSBoneLODController::vfunc_28` at 0xfeb960 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSBoneLODController * this, longlong * param_1)`
-pub const NiBSBoneLODController__vfunc_28: u64 = 76496;
-/// `NiBSBoneLODController::vfunc_29` at 0xfec7b0 (rtti, high); signature (low): `undefined vfunc_29(NiBSBoneLODController * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-pub const NiBSBoneLODController__vfunc_29: u64 = 76512;
-/// `NiBSBoneLODController::vfunc_30` at 0xfecbd0 (rtti, high); signature (high): `undefined vfunc_30(NiBSBoneLODController * this)`
-pub const NiBSBoneLODController__vfunc_30: u64 = 76513;
-/// `NiBSBoneLODController::vfunc_39` at 0xfed6d0 (rtti, high); signature (low): `undefined vfunc_39(void)`
-pub const NiBSBoneLODController__vfunc_39: u64 = 76550;
-/// `NiBSBoneLODController::vfunc_46` at 0xfed6a0 (rtti, high); signature (high): `undefined8 vfunc_46(NiBSBoneLODController * this)`
-pub const NiBSBoneLODController__vfunc_46: u64 = 76549;
-/// `NiBSBoneLODController::vfunc_47` at 0xfed1e0 (rtti, high); signature (low): `undefined1 vfunc_47(void)`
-pub const NiBSBoneLODController__vfunc_47: u64 = 76531;
-/// `NiBSPNode::Create` at 0xf103c0 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSPNode__Create: u64 = 71369;
-/// `NiBSPNode::ctor` at 0xf10830 (layout_inference, high); signature (low): `NiBSPNode * ctor(NiBSPNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSPNode__ctor: u64 = 71374;
-/// `NiBSPNode::vdtor` at 0xf108a0 (slot_propagation, medium); signature (low): `NiBSPNode * vdtor(NiBSPNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSPNode__vdtor: u64 = 71375;
-/// `NiBSPNode::vfunc_2` at 0xf108e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSPNode__vfunc_2: u64 = 71376;
-/// `NiBSPNode::vfunc_23` at 0xf10140 (rtti, high); signature (low): `longlong * vfunc_23(NiBSPNode * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSPNode__vfunc_23: u64 = 71362;
-/// `NiBSPNode::vfunc_24` at 0xf102a0 (rtti, high); signature (low): `undefined vfunc_24(NiBSPNode * this, longlong param_1)`
-pub const NiBSPNode__vfunc_24: u64 = 71364;
-/// `NiBSPNode::vfunc_25` at 0xf102e0 (rtti, high); signature (untiered): `undefined vfunc_25(NiBSPNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSPNode__vfunc_25: u64 = 71365;
-/// `NiBSPNode::vfunc_26` at 0xf102f0 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiBSPNode * this, undefined8 param_1)`
-pub const NiBSPNode__vfunc_26: u64 = 71366;
-/// `NiBSPNode::vfunc_27` at 0xf10300 (rtti, high); signature (low): `undefined vfunc_27(NiBSPNode * this, longlong * param_1)`
-pub const NiBSPNode__vfunc_27: u64 = 71367;
-/// `NiBSPNode::vfunc_28` at 0xf10340 (rtti, high); signature (low): `undefined8 vfunc_28(NiBSPNode * this, longlong param_1)`
-pub const NiBSPNode__vfunc_28: u64 = 71368;
-/// `NiBSPNode::vfunc_48` at 0xf10590 (rtti, high); signature (low): `undefined vfunc_48(NiBSPNode * this, longlong param_1)`
-pub const NiBSPNode__vfunc_48: u64 = 71371;
-/// `NiBSPNode::vfunc_52` at 0xf10460 (rtti, high); signature (low): `undefined vfunc_52(NiBSPNode * this, longlong * param_1)`
-pub const NiBSPNode__vfunc_52: u64 = 71370;
-/// `NiBSplineBasisData::Create` at 0xf76a30 (string, high); signature (low): `NiObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineBasisData__Create: u64 = 73337;
-/// `NiBSplineBasisData::ctor` at 0xf769a0 (layout_inference, high); signature (high): `NiBSplineBasisData * ctor(NiBSplineBasisData * this)`
-pub const NiBSplineBasisData__ctor: u64 = 73334;
-/// `NiBSplineBasisData::vdtor` at 0xf76af0 (layout_inference, medium); signature (low): `NiBSplineBasisData * vdtor(NiBSplineBasisData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineBasisData__vdtor: u64 = 73338;
-/// `NiBSplineBasisData::vfunc_2` at 0xf76b30 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineBasisData__vfunc_2: u64 = 73339;
-/// `NiBSplineBasisData::vfunc_23` at 0xf76860 (rtti, high); signature (low): `NiObject * vfunc_23(NiBSplineBasisData * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineBasisData__vfunc_23: u64 = 73332;
-/// `NiBSplineBasisData::vfunc_24` at 0xf76670 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineBasisData * this, longlong param_1)`
-pub const NiBSplineBasisData__vfunc_24: u64 = 73326;
-/// `NiBSplineBasisData::vfunc_25` at 0xf766d0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineBasisData__vfunc_25: u64 = 73327;
-/// `NiBSplineBasisData::vfunc_26` at 0xf766e0 (rtti, high); signature (untiered): `undefined vfunc_26(NiBSplineBasisData * this, longlong * param_1)`
-pub const NiBSplineBasisData__vfunc_26: u64 = 73328;
-/// `NiBSplineBasisData::vfunc_27` at 0xf766f0 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineBasisData * this, longlong param_1)`
-pub const NiBSplineBasisData__vfunc_27: u64 = 73329;
-/// `NiBSplineBasisData::vfunc_28` at 0xf76750 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineBasisData * this, longlong * param_1)`
-pub const NiBSplineBasisData__vfunc_28: u64 = 73330;
-/// `NiBSplineColorInterpolator::Create` at 0xf783f0 (string, high); signature (low): `NiBSplineInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineColorInterpolator__Create: u64 = 73378;
-/// `NiBSplineColorInterpolator::ctor` at 0xf781a0 (layout_inference, high); signature (low): `NiBSplineColorInterpolator * ctor(NiBSplineColorInterpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
-pub const NiBSplineColorInterpolator__ctor: u64 = 73367;
-/// `NiBSplineColorInterpolator::ctor` at 0xf781f0 (layout_inference, high); signature (low): `NiBSplineColorInterpolator * ctor(NiBSplineColorInterpolator * this, undefined8 * param_1)`
-pub const NiBSplineColorInterpolator__ctor_2: u64 = 73368;
-/// `NiBSplineColorInterpolator::vdtor` at 0xf784b0 (slot_propagation, medium); signature (low): `NiBSplineColorInterpolator * vdtor(NiBSplineColorInterpolator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineColorInterpolator__vdtor: u64 = 73379;
-/// `NiBSplineColorInterpolator::vfunc_2` at 0xf784f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineColorInterpolator__vfunc_2: u64 = 73380;
-/// `NiBSplineColorInterpolator::vfunc_23` at 0xf77e20 (rtti, high); signature (low): `NiBSplineInterpolator * vfunc_23(NiBSplineColorInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineColorInterpolator__vfunc_23: u64 = 73359;
-/// `NiBSplineColorInterpolator::vfunc_24` at 0xf77f50 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineColorInterpolator * this, longlong param_1)`
-pub const NiBSplineColorInterpolator__vfunc_24: u64 = 73361;
-/// `NiBSplineColorInterpolator::vfunc_25` at 0xf77fc0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineColorInterpolator__vfunc_25: u64 = 73362;
-/// `NiBSplineColorInterpolator::vfunc_26` at 0xf77fd0 (rtti, high); signature (low): `bool vfunc_26(void)`
-pub const NiBSplineColorInterpolator__vfunc_26: u64 = 73363;
-/// `NiBSplineColorInterpolator::vfunc_27` at 0xf77ff0 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineColorInterpolator * this, longlong param_1)`
-pub const NiBSplineColorInterpolator__vfunc_27: u64 = 73364;
-/// `NiBSplineColorInterpolator::vfunc_28` at 0xf78060 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineColorInterpolator * this, longlong param_1)`
-pub const NiBSplineColorInterpolator__vfunc_28: u64 = 73365;
-/// `NiBSplineColorInterpolator::vfunc_37` at 0xf78520 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBSplineColorInterpolator__vfunc_37: u64 = 73383;
-/// `NiBSplineColorInterpolator::vfunc_38` at 0xf78240 (rtti, high); signature (low): `undefined8 vfunc_38(NiBSplineColorInterpolator * this, float param_1, undefined8 param_2, undefined8 * param_3)`
-pub const NiBSplineColorInterpolator__vfunc_38: u64 = 73369;
-/// `NiBSplineColorInterpolator::vfunc_39` at 0xf78510 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBSplineColorInterpolator__vfunc_39: u64 = 73382;
-/// `NiBSplineColorInterpolator::vfunc_40` at 0xf78530 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplineColorInterpolator__vfunc_40: u64 = 73384;
-/// `NiBSplineColorInterpolator::vfunc_41` at 0xf78500 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBSplineColorInterpolator__vfunc_41: u64 = 73381;
-/// `NiBSplineColorInterpolator::vfunc_42` at 0xf78540 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplineColorInterpolator__vfunc_42: u64 = 73385;
-/// `NiBSplineColorInterpolator::vfunc_47` at 0xf782f0 (rtti, medium); signature (low): `undefined1 vfunc_47(void)`
-pub const NiBSplineColorInterpolator__vfunc_47: u64 = 73370;
-/// `NiBSplineColorInterpolator::vfunc_57` at 0xf78340 (rtti, medium); signature (low): `undefined8 vfunc_57(void)`
-pub const NiBSplineColorInterpolator__vfunc_57: u64 = 73372;
-/// `NiBSplineColorInterpolator::vfunc_59` at 0xf78350 (rtti, medium); signature (low): `undefined8 vfunc_59(NiBSplineColorInterpolator * this, short param_1)`
-pub const NiBSplineColorInterpolator__vfunc_59: u64 = 73373;
-/// `NiBSplineColorInterpolator::vfunc_60` at 0xf78370 (rtti, medium); signature (low): `undefined8 vfunc_60(NiBSplineColorInterpolator * this, short param_1)`
-pub const NiBSplineColorInterpolator__vfunc_60: u64 = 73374;
-/// `NiBSplineColorInterpolator::vfunc_61` at 0xf78390 (rtti, medium); signature (low): `bool vfunc_61(NiBSplineColorInterpolator * this, short param_1)`
-pub const NiBSplineColorInterpolator__vfunc_61: u64 = 73375;
-/// `NiBSplineColorInterpolator::vfunc_64` at 0xf783c0 (rtti, medium); signature (low): `undefined4 vfunc_64(NiBSplineColorInterpolator * this, short param_1)`
-pub const NiBSplineColorInterpolator__vfunc_64: u64 = 73376;
-/// `NiBSplineColorInterpolator::vfunc_65` at 0xf783e0 (rtti, medium); signature (low): `undefined vfunc_65(NiBSplineColorInterpolator * this, undefined4 param_1, short param_2)`
-pub const NiBSplineColorInterpolator__vfunc_65: u64 = 73377;
-/// `NiBSplineCompColorInterpolator::Create` at 0xf78a70 (string, high); signature (low): `NiBSplineColorInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineCompColorInterpolator__Create: u64 = 73403;
-/// `NiBSplineCompColorInterpolator::ctor` at 0xf788a0 (layout_inference, high); signature (low): `NiBSplineCompColorInterpolator * ctor(NiBSplineCompColorInterpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
-pub const NiBSplineCompColorInterpolator__ctor: u64 = 73394;
-/// `NiBSplineCompColorInterpolator::ctor` at 0xf788e0 (layout_inference, high); signature (low): `NiBSplineCompColorInterpolator * ctor(NiBSplineCompColorInterpolator * this, undefined8 * param_1)`
-pub const NiBSplineCompColorInterpolator__ctor_2: u64 = 73395;
-/// `NiBSplineCompColorInterpolator::vdtor` at 0xf78b30 (slot_propagation, medium); signature (low): `NiBSplineCompColorInterpolator * vdtor(NiBSplineCompColorInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompColorInterpolator__vdtor: u64 = 73404;
-/// `NiBSplineCompColorInterpolator::vfunc_2` at 0xf78b70 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_2: u64 = 73405;
-/// `NiBSplineCompColorInterpolator::vfunc_23` at 0xf78550 (rtti, high); signature (low): `NiBSplineColorInterpolator * vfunc_23(NiBSplineCompColorInterpolator * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompColorInterpolator__vfunc_23: u64 = 73386;
-/// `NiBSplineCompColorInterpolator::vfunc_24` at 0xf78680 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineCompColorInterpolator * this, longlong param_1)`
-pub const NiBSplineCompColorInterpolator__vfunc_24: u64 = 73388;
-/// `NiBSplineCompColorInterpolator::vfunc_25` at 0xf786e0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_25: u64 = 73389;
-/// `NiBSplineCompColorInterpolator::vfunc_26` at 0xf786f0 (rtti, high); signature (low): `bool vfunc_26(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_26: u64 = 73390;
-/// `NiBSplineCompColorInterpolator::vfunc_27` at 0xf78710 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineCompColorInterpolator * this, longlong param_1)`
-pub const NiBSplineCompColorInterpolator__vfunc_27: u64 = 73391;
-/// `NiBSplineCompColorInterpolator::vfunc_28` at 0xf78770 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineCompColorInterpolator * this, longlong param_1)`
-pub const NiBSplineCompColorInterpolator__vfunc_28: u64 = 73392;
-/// `NiBSplineCompColorInterpolator::vfunc_37` at 0xf78ba0 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_37: u64 = 73408;
-/// `NiBSplineCompColorInterpolator::vfunc_38` at 0xf78920 (rtti, high); signature (low): `undefined8 vfunc_38(NiBSplineCompColorInterpolator * this, float param_1, undefined8 param_2, undefined8 * param_3)`
-pub const NiBSplineCompColorInterpolator__vfunc_38: u64 = 73396;
-/// `NiBSplineCompColorInterpolator::vfunc_39` at 0xf78b90 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_39: u64 = 73407;
-/// `NiBSplineCompColorInterpolator::vfunc_40` at 0xf78bb0 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_40: u64 = 73409;
-/// `NiBSplineCompColorInterpolator::vfunc_41` at 0xf78b80 (rtti, high); signature (untiered): `undefined1 vfunc_41(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_41: u64 = 73406;
-/// `NiBSplineCompColorInterpolator::vfunc_42` at 0xf78bc0 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_42: u64 = 73410;
-/// `NiBSplineCompColorInterpolator::vfunc_62` at 0xf78a60 (rtti, high); signature (low): `undefined1 vfunc_62(void)`
-pub const NiBSplineCompColorInterpolator__vfunc_62: u64 = 73402;
-/// `NiBSplineCompFloatInterpolator::Create` at 0xf790e0 (string, high); signature (low): `NiBSplineFloatInterpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineCompFloatInterpolator__Create: u64 = 73428;
-/// `NiBSplineCompFloatInterpolator::ctor` at 0xf78f20 (layout_inference, high); signature (low): `NiBSplineCompFloatInterpolator * ctor(NiBSplineCompFloatInterpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
-pub const NiBSplineCompFloatInterpolator__ctor: u64 = 73419;
-/// `NiBSplineCompFloatInterpolator::ctor` at 0xf78f60 (layout_inference, high); signature (high): `NiBSplineCompFloatInterpolator * ctor(NiBSplineCompFloatInterpolator * this)`
-pub const NiBSplineCompFloatInterpolator__ctor_2: u64 = 73420;
-/// `NiBSplineCompFloatInterpolator::vdtor` at 0xf791a0 (slot_propagation, medium); signature (low): `NiBSplineCompFloatInterpolator * vdtor(NiBSplineCompFloatInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompFloatInterpolator__vdtor: u64 = 73429;
-/// `NiBSplineCompFloatInterpolator::vfunc_2` at 0xf791e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_2: u64 = 73430;
-/// `NiBSplineCompFloatInterpolator::vfunc_23` at 0xf78bd0 (rtti, high); signature (low): `NiBSplineFloatInterpolator * vfunc_23(NiBSplineCompFloatInterpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompFloatInterpolator__vfunc_23: u64 = 73411;
-/// `NiBSplineCompFloatInterpolator::vfunc_24` at 0xf78d00 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineCompFloatInterpolator * this, longlong param_1)`
-pub const NiBSplineCompFloatInterpolator__vfunc_24: u64 = 73413;
-/// `NiBSplineCompFloatInterpolator::vfunc_25` at 0xf78d60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_25: u64 = 73414;
-/// `NiBSplineCompFloatInterpolator::vfunc_26` at 0xf78d70 (rtti, high); signature (low): `bool vfunc_26(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_26: u64 = 73415;
-/// `NiBSplineCompFloatInterpolator::vfunc_27` at 0xf78d90 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineCompFloatInterpolator * this, longlong param_1)`
-pub const NiBSplineCompFloatInterpolator__vfunc_27: u64 = 73416;
-/// `NiBSplineCompFloatInterpolator::vfunc_28` at 0xf78df0 (rtti, high); signature (low): `ulonglong vfunc_28(NiBSplineCompFloatInterpolator * this, longlong param_1)`
-pub const NiBSplineCompFloatInterpolator__vfunc_28: u64 = 73417;
-/// `NiBSplineCompFloatInterpolator::vfunc_37` at 0xf79210 (rtti, high); signature (untiered): `undefined1 vfunc_37(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_37: u64 = 73433;
-/// `NiBSplineCompFloatInterpolator::vfunc_38` at 0xf791f0 (rtti, high); signature (untiered): `undefined1 vfunc_38(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_38: u64 = 73431;
-/// `NiBSplineCompFloatInterpolator::vfunc_39` at 0xf79200 (rtti, high); signature (untiered): `undefined1 vfunc_39(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_39: u64 = 73432;
-/// `NiBSplineCompFloatInterpolator::vfunc_40` at 0xf79220 (rtti, high); signature (untiered): `undefined1 vfunc_40(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_40: u64 = 73434;
-/// `NiBSplineCompFloatInterpolator::vfunc_41` at 0xf78fa0 (rtti, high); signature (low): `undefined8 vfunc_41(NiBSplineCompFloatInterpolator * this, float param_1, undefined8 param_2, float * param_3)`
-pub const NiBSplineCompFloatInterpolator__vfunc_41: u64 = 73421;
-/// `NiBSplineCompFloatInterpolator::vfunc_42` at 0xf79230 (rtti, high); signature (untiered): `undefined1 vfunc_42(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_42: u64 = 73435;
-/// `NiBSplineCompFloatInterpolator::vfunc_62` at 0xf790d0 (rtti, high); signature (low): `undefined1 vfunc_62(void)`
-pub const NiBSplineCompFloatInterpolator__vfunc_62: u64 = 73427;
-/// `NiBSplineCompPoint3Interpolator::Create` at 0xf79790 (string, high); signature (low): `NiBSplinePoint3Interpolator * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const NiBSplineCompPoint3Interpolator__Create: u64 = 73453;
-/// `NiBSplineCompPoint3Interpolator::ctor` at 0xf79590 (layout_inference, high); signature (low): `NiBSplineCompPoint3Interpolator * ctor(NiBSplineCompPoint3Interpolator * this, longlong param_1, undefined4 param_2, longlong param_3)`
-pub const NiBSplineCompPoint3Interpolator__ctor: u64 = 73444;
-/// `NiBSplineCompPoint3Interpolator::ctor` at 0xf795d0 (layout_inference, high); signature (high): `NiBSplineCompPoint3Interpolator * ctor(NiBSplineCompPoint3Interpolator * this)`
-pub const NiBSplineCompPoint3Interpolator__ctor_2: u64 = 73445;
-/// `NiBSplineCompPoint3Interpolator::vdtor` at 0xf79850 (slot_propagation, medium); signature (low): `NiBSplineCompPoint3Interpolator * vdtor(NiBSplineCompPoint3Interpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompPoint3Interpolator__vdtor: u64 = 73454;
-/// `NiBSplineCompPoint3Interpolator::vfunc_2` at 0xf79890 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_2: u64 = 73455;
-/// `NiBSplineCompPoint3Interpolator::vfunc_23` at 0xf79240 (rtti, high); signature (low): `NiBSplinePoint3Interpolator * vfunc_23(NiBSplineCompPoint3Interpolator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_23: u64 = 73436;
-/// `NiBSplineCompPoint3Interpolator::vfunc_24` at 0xf79370 (rtti, high); signature (low): `undefined vfunc_24(NiBSplineCompPoint3Interpolator * this, longlong param_1)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_24: u64 = 73438;
-/// `NiBSplineCompPoint3Interpolator::vfunc_25` at 0xf793d0 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_25: u64 = 73439;
-/// `NiBSplineCompPoint3Interpolator::vfunc_26` at 0xf793e0 (rtti, high); signature (low): `bool vfunc_26(void)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_26: u64 = 73440;
-/// `NiBSplineCompPoint3Interpolator::vfunc_27` at 0xf79400 (rtti, high); signature (low): `undefined vfunc_27(NiBSplineCompPoint3Interpolator * this, longlong param_1)`
-pub const NiBSplineCompPoint3Interpolator__vfunc_27: u64 = 73441;

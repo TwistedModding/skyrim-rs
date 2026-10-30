@@ -1046,6 +1046,15 @@ impl crate::RenderTargetManager {
 }
 
 impl crate::Renderer {
+    /// `CreateRenderWindowSwapChain`: extra windows: IDXGIFactory::CreateSwapChain with the same desc (Format 0x1c, usage 0x30, 1 sample, 2 buffers, DISCARD, flags 2)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 77242, rva 0x1009b00.
+    /// `u32 (Renderer* this, HWND* window, bool makeCurrent)`
+    ///
+    /// # Safety
+    /// `window` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn create_render_window_swap_chain(&self, window: *mut *mut c_void, makeCurrent: bool) -> u32 { unsafe { function!(77242, (*const Self, *mut *mut c_void, bool) -> u32)(core::ptr::from_ref(self), window, makeCurrent) } }
     /// `RecreateRenderTargetsOnWindowResize`: on a rect or fullscreen change: ClearState/Flush, release every colour and depth target and the back buffer views, ResizeBuffers(0,0,0,0,2), recreate the back buffer views and all targets (g_CreateRenderTargetsCallback), recompute the viewport
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 77238, rva 0x1009360.
@@ -1161,12 +1170,36 @@ impl crate::Sky {
     /// `void (Sky* this)`
     #[inline]
     pub fn append_layer_node_pairs(&self) { unsafe { function!(26285, (*const Self))(core::ptr::from_ref(self)) } }
+    /// `Sky::ForceWeather`: immediate switch: ResetFields48To68 0x4154c0, then +0x48 current = weather, +0x50 outgoing = 0, +0x60 = weather if override else +0x58 = weather, +0x1b8 transition = 1.0, game hour copied to +0x1b0/+0x1b4, +0x1dc = (bit 0 cleared) | 2
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26243, rva 0x415540.
+    /// `void (Sky* this, TESWeather* weather, bool override)`
+    #[inline]
+    pub fn force_weather(&self, weather: &crate::TESWeather, override_: bool) { unsafe { function!(26243, (*const Self, *const crate::TESWeather, bool))(core::ptr::from_ref(self), core::ptr::from_ref(weather), override_) } }
+    /// `Sky::ReleaseWeatherOverride`: if +0x60 (override weather) is set: +0x1dc |= 0x200000, +0x60 = 0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26244, rva 0x4155f0.
+    /// `void (Sky* this)`
+    #[inline]
+    pub fn release_weather_override(&self) { unsafe { function!(26244, (*const Self))(core::ptr::from_ref(self)) } }
     /// `Sky::SetFlags1DCBit4`: Sky +0x1dc bit 4 = set
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26227, rva 0x411940.
     /// `void (Sky* sky, bool set)`
     #[inline]
     pub fn set_flags1_dc_bit4(&self, set: bool) { unsafe { function!(26227, (*const Self, bool))(core::ptr::from_ref(self), set) } }
+    /// `Sky::SetMode`: sets the sky mode +0x1bc: hides the sky root (+8) and the sun glare unless mode is 2 or 3, re-registers weather sounds for modes 2/3, releases +0x268/+0x270 unless 3
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26222, rva 0x411660.
+    /// `void (Sky* this, u32 mode)`
+    #[inline]
+    pub fn set_mode(&self, mode: u32) { unsafe { function!(26222, (*const Self, u32))(core::ptr::from_ref(self), mode) } }
+    /// `Sky::SetWeather`: with no current weather (+0x48) begins at once (Sky::ForceWeather); else stores the target: override -> +0x60, otherwise +0x58 (and clears +0x68 and ID_400477+0x48); the Sky update then transitions; the 4th argument sets +0x1dc bit 3 and +0x1d8 = +0x1b8 while an outgoing weather (+0x50) exists, else clears them
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26241, rva 0x415440.
+    /// `void (Sky* this, TESWeather* weather, bool override, bool accelerate)`
+    #[inline]
+    pub fn set_weather(&self, weather: &crate::TESWeather, override_: bool, accelerate: bool) { unsafe { function!(26241, (*const Self, *const crate::TESWeather, bool, bool))(core::ptr::from_ref(self), core::ptr::from_ref(weather), override_, accelerate) } }
     /// `Sky::Update`: sky update: hour from the GameHour global into +0x1b0, then each sky object's slot 3 (the sun at 0x412238)
     ///
     /// Semantic, frame pass, high; ledger semantic evidence, name high; id 26229, rva 0x411ec0.
@@ -1184,6 +1217,26 @@ impl crate::Sky {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn atmosphere(&self) -> Option<&crate::Atmosphere> { unsafe { { self.atmosphere }.as_ref() } }
+    /// `Sky::currentWeather` at +0x48: the current weather
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn current_weather(&self) -> Option<&crate::TESWeather> { unsafe { { self.currentWeather }.as_ref() } }
+    /// `Sky::defaultWeather` at +0x58: target weather without override
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn default_weather(&self) -> Option<&crate::TESWeather> { unsafe { { self.defaultWeather }.as_ref() } }
+    /// `Sky::lastWeather` at +0x50: the outgoing weather during a transition
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn last_weather(&self) -> Option<&crate::TESWeather> { unsafe { { self.lastWeather }.as_ref() } }
+    /// `Sky::overrideWeather` at +0x60: script/console override; ReleaseWeatherOverride clears it
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn override_weather(&self) -> Option<&crate::TESWeather> { unsafe { { self.overrideWeather }.as_ref() } }
     /// `Sky::precipitation` at +0xA0: null when bPrecipitation:Weather is off
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
@@ -1229,11 +1282,36 @@ impl crate::Sun {
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn accumulator(&self) -> Option<&crate::BSShaderAccumulator> { unsafe { { self.accumulator }.as_ref() } }
+    /// `Sun::glareBillboard` at +0x18: glare node: under g_WeatherNode, translation copied from the root each update, local scale = glareScale
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn glare_billboard(&self) -> Option<&crate::NiBillboardNode> { unsafe { { self.glareBillboard }.as_ref() } }
     /// `Sun::light` at +0x38: directional light; its local rotation (+0x48, 3x3) is the sun direction from the hour and fSunX/Y/ZExtreme
     ///
     /// Semantic field, frame pass, high; `None` while the pointer is null.
     #[inline]
     pub fn light(&self) -> Option<&crate::NiDirectionalLight> { unsafe { { self.light }.as_ref() } }
+    /// `Sun::root` at +0x8: sun root: Sun::Update (mode 3) writes its local translation = the sun position; parent of the disc billboard and the lights
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn root(&self) -> Option<&crate::NiNode> { unsafe { { self.root }.as_ref() } }
+    /// `Sun::sunBase` at +0x20: the sun disc quad (fSunBaseSize), BSSkyShaderProperty
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun_base(&self) -> Option<&crate::BSTriShape> { unsafe { { self.sunBase }.as_ref() } }
+    /// `Sun::sunBillboard` at +0x10: disc billboard (child of root); hidden in modes 1/2
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun_billboard(&self) -> Option<&crate::NiBillboardNode> { unsafe { { self.sunBillboard }.as_ref() } }
+    /// `Sun::sunGlare` at +0x30: glare quad (fSunGlareSize)
+    ///
+    /// Semantic field, frame pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn sun_glare(&self) -> Option<&crate::BSTriShape> { unsafe { { self.sunGlare }.as_ref() } }
 }
 
 /// `AppendRenderPass`: allocates a pass and appends it to a property's pass list (+0x28 chain)

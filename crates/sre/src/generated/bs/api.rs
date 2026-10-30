@@ -303,12 +303,6 @@ impl core::ops::Deref for crate::BSFaceGenKeyframeExclusive {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
-/// `BSFaceGenKeyframeMultiple` is laid out from its primary base `BSFaceGenKeyframe`, so its methods and fields are reachable through it.
-impl core::ops::Deref for crate::BSFaceGenKeyframeMultiple {
-    type Target = crate::BSFaceGenKeyframe;
-    #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
-}
 /// `BSFaceGenModel` is laid out from its primary base `NiRefObject`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSFaceGenModel {
     type Target = crate::NiRefObject;

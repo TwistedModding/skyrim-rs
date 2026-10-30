@@ -130,30 +130,52 @@ pub struct BSFaceGenAnimationData {
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
-    /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
-    /// +0x20 `undefined1`, semantic; 12 BSFaceGenKeyframeMultiple channels, 0x20 each (medium)
-    pub keyframes: [u8; 384],
-    /// +0x1A0 `float`, ctor store (widths [4, 8])
-    pub field_1A0: f32,
-    /// +0x1A4 `float`, ctor store
-    pub field_1A4: f32,
-    /// +0x1A8 `float`, ctor store (widths [4, 4])
-    pub field_1A8: f32,
+    /// +0x18 `ptr:BSFaceGenKeyframeMultiple`, semantic; pending expression target (17 weights) that +0x20 steps towards; pooled, null when none (high)
+    pub expressionTarget: *mut crate::BSFaceGenKeyframeMultiple,
+    /// +0x20 `class:BSFaceGenKeyframeMultiple`, semantic; current expression (type 1, 17 values), stepped towards +0x18 (high)
+    pub expression: crate::BSFaceGenKeyframeMultiple,
+    /// +0x40 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; second expression input (type 1, 17), merged into the output (high)
+    pub expressionInput: crate::BSFaceGenKeyframeMultiple,
+    /// +0x60 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; modifier input (type 2, 17 values: Blink*, Brow*, Look*, Squint*, Head*) (high)
+    pub modifierInput: crate::BSFaceGenKeyframeMultiple,
+    /// +0x80 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; phoneme input (type 0, 16 values) (high)
+    pub phonemeInput: crate::BSFaceGenKeyframeMultiple,
+    /// +0xA0 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; custom input (type 3, 1 value: SkinnyMorph) (high)
+    pub customInput: crate::BSFaceGenKeyframeMultiple,
+    /// +0xC0 `class:BSFaceGenKeyframeMultiple`, semantic; final expression weights read by the morpher (+0xd0 values, +0xd8 count) (high)
+    pub expressionOutput: crate::BSFaceGenKeyframeMultiple,
+    /// +0xE0 `class:BSFaceGenKeyframeMultiple`, semantic; modifier track sampled from the speech animation +0x228 (17 floats into +0xf0) (medium)
+    pub modifierSpeech: crate::BSFaceGenKeyframeMultiple,
+    /// +0x100 `class:BSFaceGenKeyframeMultiple`, semantic; final modifier weights (values +0x110, count +0x118, changed flag +0x11c); blink writes [0]/[1], eye tracking [8]..[11] (high)
+    pub modifierOutput: crate::BSFaceGenKeyframeMultiple,
+    /// +0x120 `class:BSFaceGenKeyframeMultiple`, semantic; phoneme track sampled from the speech animation (16 floats into +0x130) (medium)
+    pub phonemeSpeech: crate::BSFaceGenKeyframeMultiple,
+    /// +0x140 `class:BSFaceGenKeyframeMultiple`, semantic; final phoneme weights (values +0x150, count +0x158) (high)
+    pub phonemeOutput: crate::BSFaceGenKeyframeMultiple,
+    /// +0x160 `class:BSFaceGenKeyframeMultiple`, semantic; custom keyframe reset with the speech tracks (type 3) (low)
+    pub customSpeech: crate::BSFaceGenKeyframeMultiple,
+    /// +0x180 `class:BSFaceGenKeyframeMultiple`, semantic; final custom weight (values +0x190) (medium)
+    pub customOutput: crate::BSFaceGenKeyframeMultiple,
+    /// +0x1A0 `undefined12`, semantic; eye/head look-at vector (NiPoint3); a magnitude of 0 means no target (medium)
+    pub lookAtVector: [u8; 12],
     /// +0x1AC `undefined8`, ctor store
     pub field_1AC: u64,
-    /// +0x1B4 `undefined8`, ctor store
-    pub field_1B4: u64,
-    /// +0x1BC `undefined8`, ctor store
-    pub field_1BC: u64,
+    /// +0x1B4 `undefined8`, semantic; current head heading/pitch used for the track speeds (low)
+    pub headAngles: u64,
+    /// +0x1BC `float`, semantic; current eye heading (radians), rate-limited towards base+offset and clamped to fTrackEyeXY (high)
+    pub eyeHeading: f32,
+    /// +0x1C0 `float`, semantic; current eye pitch (radians), clamped to fTrackEyeZ (high)
+    pub eyePitch: f32,
     pub unknown_1C4: [u8; 4],
     /// +0x1C8 `undefined8`, ctor store
     pub field_1C8: u64,
     /// +0x1D0 `undefined1`, ctor store
     pub field_1D0: u8,
     pub unknown_1D1: [u8; 3],
-    /// +0x1D4 `undefined8`, ctor store
-    pub field_1D4: u64,
+    /// +0x1D4 `float`, semantic; base eye heading from the look-at target (high)
+    pub eyeHeadingBase: f32,
+    /// +0x1D8 `float`, semantic; base eye pitch from the look-at target (high)
+    pub eyePitchBase: f32,
     /// +0x1DC `undefined8`, ctor store
     pub field_1DC: u64,
     /// +0x1E4 `undefined8`, ctor store
@@ -164,13 +186,18 @@ pub struct BSFaceGenAnimationData {
     pub field_1F4: u32,
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
-    /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
-    /// +0x204 `float`, ctor store
-    pub field_204: f32,
-    /// +0x208 `undefined4`, ctor store
-    pub field_208: u32,
-    pub unknown_20C: [u8; 9],
+    /// +0x200 `u32`, semantic; blink state: 0 waiting, 1 closing, 2 opening, 3 held (looking down), 4 eyes-closed state, 5 frozen by Reset(closeEyes) (high)
+    pub blinkStage: u32,
+    /// +0x204 `float`, semantic; seconds left in the blink stage (stage 0: until the next blink) (high)
+    pub blinkTimer: f32,
+    /// +0x208 `float`, semantic; time until the emotion eye offset is re-rolled (high)
+    pub eyeOffsetTimer: f32,
+    /// +0x20C `float`, semantic; emotion eye heading offset added to the base (fEyeHeading{Min,Max}OffsetEmotion*) (high)
+    pub eyeHeadingOffset: f32,
+    /// +0x210 `float`, semantic; emotion eye pitch offset (fEyePitch{Min,Max}OffsetEmotion*) (high)
+    pub eyePitchOffset: f32,
+    /// +0x214 `u8`, semantic; next ComputeTrackTargetAngles snaps the current eye/head angles to the target (medium)
+    pub snapEyes: u8,
     /// +0x215 `undefined1`, semantic; set by every face node update; gates the head-tracking update (low)
     pub updated: u8,
     pub unknown_216: [u8; 1],
@@ -178,12 +205,14 @@ pub struct BSFaceGenAnimationData {
     pub changed: u8,
     /// +0x218 `undefined1`, semantic; update requested without the update-data flag (low)
     pub forceUpdate: u8,
-    /// +0x219 `undefined2`, ctor store
-    pub field_219: u16,
+    pub unknown_219: [u8; 1],
+    /// +0x21A `u8`, semantic; eyes-closed state (death/knockout): blocks expression writes and eye tracking, blink stage 4 (medium)
+    pub eyesClosed: u8,
     /// +0x21B `undefined2`, ctor store
     pub field_21B: u16,
-    /// +0x21D `undefined2`, ctor store
-    pub field_21D: u16,
+    pub unknown_21D: [u8; 1],
+    /// +0x21E `u8`, semantic; expression override lock: while set SetExpression/SetMood/SetExpressionTarget do nothing (high)
+    pub expressionOverride: u8,
     pub unknown_21F: [u8; 1],
     /// +0x220 `class:BSSpinLock`, semantic; guards the keyframes (medium)
     pub lock: crate::BSSpinLock,
@@ -196,31 +225,45 @@ const _: () = assert!(size_of::<BSFaceGenAnimationData>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, keyframes) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A0) == 0x1A0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A4) == 0x1A4);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1A8) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expressionTarget) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expression) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expressionInput) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierInput) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeInput) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, customInput) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expressionOutput) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierSpeech) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierOutput) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeSpeech) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeOutput) == 0x140);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, customSpeech) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, customOutput) == 0x180);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, lookAtVector) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1AC) == 0x1AC);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1B4) == 0x1B4);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1BC) == 0x1BC);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, headAngles) == 0x1B4);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeading) == 0x1BC);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitch) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1D4) == 0x1D4);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingBase) == 0x1D4);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchBase) == 0x1D8);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1DC) == 0x1DC);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1E4) == 0x1E4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1F4) == 0x1F4);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_204) == 0x204);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkStage) == 0x200);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, blinkTimer) == 0x204);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeOffsetTimer) == 0x208);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyeHeadingOffset) == 0x20C);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyePitchOffset) == 0x210);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, snapEyes) == 0x214);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, updated) == 0x215);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, changed) == 0x217);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, forceUpdate) == 0x218);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_219) == 0x219);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, eyesClosed) == 0x21A);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_21B) == 0x21B);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, field_21D) == 0x21D);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, expressionOverride) == 0x21E);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, lock) == 0x220);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeAnim) == 0x228);
 

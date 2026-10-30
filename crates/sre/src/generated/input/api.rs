@@ -879,15 +879,12 @@ impl crate::PlayerControls {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn set_turn_rate_from_look_input(&self) { unsafe { function!(42373, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `PlayerControls::UpdateMovementState`: applies auto-move and computes the player movement state after the events
+    /// `PlayerControls::UpdateMovementState`: builds the player's flags1 movement bits each input update and stores them with SetMovementFlags: keeps 0x100/0x200/0x400 (sprint, sneak, swim); while moving adds direction bits 0-3 from GetMovementDirection, 0x10 or 0x20 by the sign of ActorState slot 6's float, and 0x80 (running) when a gamepad is connected or PlayerControls+0x49 is set, else 0x40 (walking); not moving: only the kept bits
     ///
-    /// Semantic, input pass, low; ledger semantic evidence, name low; id 42371, rva 0x7b03c0.
+    /// Semantic, input pass, high; ledger semantic evidence, name high; id 42371, rva 0x7b03c0.
     /// `void (PlayerControls* this)`
-    ///
-    /// # Safety
-    /// The pass rates the signature low.
     #[inline]
-    pub unsafe fn update_movement_state(&self) { unsafe { function!(42371, (*const Self))(core::ptr::from_ref(self)) } }
+    pub fn update_movement_state(&self) { unsafe { function!(42371, (*const Self))(core::ptr::from_ref(self)) } }
     /// `PlayerControls::ctor`: sets the vtables and globals, registers 4 sinks, creates handlers
     ///
     /// Semantic, input pass, high; ledger layout_inference evidence, name high; id 42336, rva 0x7ad450.

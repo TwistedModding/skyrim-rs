@@ -3,6 +3,546 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiDirectionalLight::vftable` at 0x1a4af98, id 237324 (rtti, high); 53 slots.
+#[repr(C)]
+pub struct NiDirectionalLight_vtable {
+    /// `NiDirectionalLight::vdtor` at 0xf046d0 (slot_propagation, medium); signature (low): `NiDirectionalLight * vdtor(NiDirectionalLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiDirectionalLight::vfunc_2` at 0xf04710 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiDirectionalLight::vfunc_23` at 0xf042e0 (rtti, high); signature (low): `NiLight * vfunc_23(NiDirectionalLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `NiDirectionalLight::vfunc_24` at 0xf04450 (rtti, high); signature (untiered): `undefined vfunc_24(NiDirectionalLight * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiDirectionalLight::vfunc_25` at 0xf04460 (rtti, high); signature (untiered): `undefined vfunc_25(NiDirectionalLight * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiDirectionalLight::vfunc_26` at 0xf04470 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiDirectionalLight * this, undefined8 param_1)`
+    pub slot_26: *const c_void,
+    /// `NiDirectionalLight::vfunc_27` at 0xf04480 (rtti, high); signature (untiered): `undefined vfunc_27(NiDirectionalLight * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiDirectionalLight::vfunc_28` at 0xf04490 (rtti, high); signature (untiered): `undefined8 vfunc_28(NiDirectionalLight * this, longlong param_1)`
+    pub slot_28: *const c_void,
+    /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObjectNET::PostLinkObject` at 0xeeb800 (semantic, low); signature (untiered): `undefined PostLinkObject(NiObjectNET * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiAVObject::UpdateControllers` at 0xee09b0 (semantic, high); signature (untiered): `undefined UpdateControllers(NiAVObject * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `NiAVObject::AcceptVisitor` at 0xee0a00 (semantic, medium); signature (untiered): `undefined AcceptVisitor(NiAVObject * this, longlong * param_1)`
+    pub slot_38: *const c_void,
+    /// `NiAVObject::Slot39Recursive` at 0xee1300 (semantic, low); signature (untiered): `undefined Slot39Recursive(void)`
+    pub slot_39: *const c_void,
+    /// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiAVObject::GetObjectByName` at 0xee0a40 (semantic, high); signature (untiered): `NiAVObject * GetObjectByName(NiAVObject * this, longlong * param_1)`
+    pub slot_42: *const c_void,
+    /// `NiAVObject::SetSelectiveUpdateFlags` at 0xee0a60 (semantic, medium); signature (untiered): `undefined SetSelectiveUpdateFlags(NiAVObject * this, char * param_1, byte param_2, byte * param_3)`
+    pub slot_43: *const c_void,
+    /// `NiAVObject::UpdateDownwardPass` at 0xee0b30 (semantic, high); signature (untiered): `undefined UpdateDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_44: *const c_void,
+    /// `NiAVObject::UpdateSelectedDownwardPass` at 0xee0bb0 (semantic, high); signature (untiered): `undefined UpdateSelectedDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_45: *const c_void,
+    /// `NiAVObject::UpdateRigidDownwardPass` at 0xee0c90 (semantic, high); signature (untiered): `undefined UpdateRigidDownwardPass(NiAVObject * this, longlong param_1)`
+    pub slot_46: *const c_void,
+    /// `NiAVObject::UpdateWorldBound` at 0xee1320 (semantic, high); signature (untiered): `undefined UpdateWorldBound(void)`
+    pub slot_47: *const c_void,
+    /// `NiDirectionalLight::UpdateWorldData` at 0xf045c0 (semantic, high); signature (untiered): `undefined UpdateWorldData(NiDirectionalLight * this, longlong param_1)`
+    pub slot_48: *const c_void,
+    /// `NiAVObject::UpdateTransformsAndBound` at 0xee0e50 (semantic, medium); signature (untiered): `undefined UpdateTransformsAndBound(NiAVObject * this)`
+    pub slot_49: *const c_void,
+    /// `NiAVObject::UpdateDownwardPassUnderParent` at 0xee0e90 (semantic, medium); signature (untiered): `undefined UpdateDownwardPassUnderParent(NiAVObject * this, undefined8 param_1, undefined8 param_2)`
+    pub slot_50: *const c_void,
+    /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
+    pub slot_51: *const c_void,
+    /// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
+    pub slot_52: *const c_void,
+}
+impl NiDirectionalLight_vtable {
+    pub const ID: u64 = 237324;
+}
+
+/// `NiExtraData::vftable` at 0x1a49cc8, id 237244 (rtti, high); 39 slots.
+#[repr(C)]
+pub struct NiExtraData_vtable {
+    /// `NiExtraData::vdtor` at 0xef9c50 (layout_inference, medium); signature (low): `NiExtraData * vdtor(NiExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiExtraData::vfunc_2` at 0xef9cb0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiExtraData::vfunc_24` at 0xef9880 (rtti, medium); signature (low): `undefined vfunc_24(NiExtraData * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiExtraData::vfunc_25` at 0xef98c0 (rtti, medium); signature (low): `undefined vfunc_25(void)`
+    pub slot_25: *const c_void,
+    /// `NiExtraData::vfunc_26` at 0xef98d0 (rtti, medium); signature (low): `undefined8 vfunc_26(NiExtraData * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiExtraData::vfunc_27` at 0xef9920 (rtti, medium); signature (low): `undefined vfunc_27(NiExtraData * this, longlong param_1)`
+    pub slot_27: *const c_void,
+    /// `NiExtraData::vfunc_28` at 0xef9960 (rtti, medium); signature (low): `ulonglong vfunc_28(NiExtraData * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiExtraData::IsStreamable` at 0xef9b60 (semantic, medium); signature (untiered): `undefined1 IsStreamable(void)`; `IsStreamable`: true for every class seen here (medium); semantic signature: `bool (const NiExtraData* this)`
+    pub slot_37: *const c_void,
+    /// `NiExtraData::Slot38ReturnsTrue` at 0xef9b70 (semantic, low); signature (untiered): `undefined1 Slot38ReturnsTrue(void)`; `Slot38ReturnsTrue`: returns true; purpose not established (low); semantic signature: `bool (const NiExtraData* this)`
+    pub slot_38: *const c_void,
+}
+impl NiExtraData_vtable {
+    pub const ID: u64 = 237244;
+    pub const SLOT_IsStreamable: usize = 37;
+    pub const SLOT_Slot38ReturnsTrue: usize = 38;
+}
+
+/// `NiExtraDataController::vftable` at 0x1a5de90, id 237870 (rtti, high); 61 slots.
+#[repr(C)]
+pub struct NiExtraDataController_vtable {
+    /// `NiExtraDataController::vdtor` at 0xf973a0 (layout_inference, medium); signature (low): `NiExtraDataController * vdtor(NiExtraDataController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiExtraDataController::vfunc_2` at 0xf97440 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiExtraDataController::vfunc_24` at 0xf96df0 (rtti, high); signature (low): `undefined vfunc_24(NiExtraDataController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiExtraDataController::vfunc_25` at 0xf96e30 (rtti, high); signature (untiered): `undefined vfunc_25(NiExtraDataController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiExtraDataController::vfunc_26` at 0xf96e40 (rtti, high); signature (low): `undefined1 vfunc_26(NiExtraDataController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiExtraDataController::vfunc_27` at 0xf96e90 (rtti, high); signature (low): `undefined vfunc_27(NiExtraDataController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiExtraDataController::vfunc_28` at 0xf96ed0 (rtti, high); signature (low): `ulonglong vfunc_28(NiExtraDataController * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiExtraDataController::vfunc_29` at 0xf97060 (rtti, medium); signature (low): `undefined vfunc_29(NiExtraDataController * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiExtraDataController::vfunc_30` at 0xf97180 (rtti, medium); signature (high): `undefined vfunc_30(NiExtraDataController * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_39: *const c_void,
+    /// `NiExtraDataController::vfunc_40` at 0xf96fc0 (rtti, medium); signature (low): `undefined vfunc_40(NiExtraDataController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `NiSingleInterpController::vfunc_46` at 0xf63140 (rtti, medium); signature (high): `undefined vfunc_46(NiSingleInterpController * this)`
+    pub slot_46: *const c_void,
+    /// `NiSingleInterpController::vfunc_47` at 0xf62fc0 (rtti, medium); signature (low): `undefined8 vfunc_47(void)`
+    pub slot_47: *const c_void,
+    /// `NiSingleInterpController::vfunc_48` at 0xf62fd0 (rtti, medium); signature (low): `undefined8 vfunc_48(void)`
+    pub slot_48: *const c_void,
+    /// `NiSingleInterpController::vfunc_49` at 0xf62fe0 (rtti, medium); signature (low): `undefined8 vfunc_49(void)`
+    pub slot_49: *const c_void,
+    /// `NiSingleInterpController::vfunc_50` at 0xf62ff0 (rtti, medium); signature (low): `undefined2 vfunc_50(NiSingleInterpController * this, longlong * param_1)`
+    pub slot_50: *const c_void,
+    /// `NiSingleInterpController::vfunc_51` at 0xf63010 (rtti, medium); signature (high): `undefined8 vfunc_51(NiSingleInterpController * this)`
+    pub slot_51: *const c_void,
+    /// `NiSingleInterpController::vfunc_52` at 0xf63020 (rtti, medium); signature (low): `undefined vfunc_52(NiSingleInterpController * this, longlong * param_1)`
+    pub slot_52: *const c_void,
+    /// `NiSingleInterpController::vfunc_53` at 0xf63060 (rtti, medium); signature (high): `undefined vfunc_53(NiSingleInterpController * this)`
+    pub slot_53: *const c_void,
+    /// `NiExtraDataController::vfunc_54` at 0xf971f0 (rtti, medium); signature (high): `undefined8 vfunc_54(NiExtraDataController * this)`
+    pub slot_54: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_55: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_56: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_57: *const c_void,
+    /// `NiSingleInterpController::vfunc_58` at 0xf630b0 (rtti, medium); signature (high): `undefined vfunc_58(NiSingleInterpController * this)`
+    pub slot_58: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_59: *const c_void,
+    /// `NiExtraDataController::vfunc_60` at 0xf972a0 (rtti, medium); signature (low): `undefined8 vfunc_60(NiExtraDataController * this, longlong * param_1)`
+    pub slot_60: *const c_void,
+}
+impl NiExtraDataController_vtable {
+    pub const ID: u64 = 237870;
+}
+
+/// `NiFile::vftable` at 0x1a41490, id 236871 (rtti, high); 8 slots.
+#[repr(C)]
+pub struct NiFile_vtable {
+    /// `NiFile::vdtor` at 0xeae0b0 (layout_inference, medium); signature (low): `NiFile * vdtor(NiFile * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiFile::vfunc_1` at 0xeaf5b0 (rtti, medium); signature (high): `undefined1 vfunc_1(NiFile * this)`
+    pub slot_1: *const c_void,
+    /// `NiFile::vfunc_2` at 0xeaf5c0 (rtti, high); signature (low): `undefined vfunc_2(NiFile * this, undefined8 param_1)`
+    pub slot_2: *const c_void,
+    /// `NiBinaryStream::vfunc_3` at 0xeae180 (rtti, medium); signature (high): `undefined4 vfunc_3(NiBinaryStream * this)`
+    pub slot_3: *const c_void,
+    /// `NiFile::vfunc_4` at 0xeaf630 (rtti, medium); signature (low): `undefined vfunc_4(NiFile * this, undefined8 * param_1)`
+    pub slot_4: *const c_void,
+    /// `NiFile::vfunc_5` at 0xeaf5e0 (rtti, high); signature (low): `undefined vfunc_5(NiFile * this, char param_1)`
+    pub slot_5: *const c_void,
+    /// `NiFile::vfunc_6` at 0xeadc50 (rtti, high); signature (low): `undefined vfunc_6(NiFile * this, int param_1, int param_2)`
+    pub slot_6: *const c_void,
+    /// `NiFile::vfunc_7` at 0xeadd20 (rtti, high); signature (high): `long vfunc_7(NiFile * this)`
+    pub slot_7: *const c_void,
+}
+impl NiFile_vtable {
+    pub const ID: u64 = 236871;
+}
+
+/// `NiFloatController::vftable` at 0x1a5b000, id 237775 (rtti, high); 47 slots.
+#[repr(C)]
+pub struct NiFloatController_vtable {
+    /// `NiFloatController::vdtor` at 0xf864d0 (slot_propagation, medium); signature (low): `NiFloatController * vdtor(NiFloatController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiFloatController::vfunc_2` at 0xf86550 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiFloatController::vfunc_24` at 0xf98200 (rtti, high); signature (low): `undefined vfunc_24(NiFloatController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiFloatController::vfunc_25` at 0xf98230 (rtti, high); signature (low): `undefined vfunc_25(NiFloatController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `NiFloatController::vfunc_26` at 0xf98290 (rtti, high); signature (low): `undefined1 vfunc_26(NiFloatController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiFloatController::vfunc_27` at 0xf982e0 (rtti, high); signature (low): `undefined vfunc_27(NiFloatController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiFloatController::vfunc_28` at 0xf98320 (rtti, high); signature (low): `undefined8 vfunc_28(NiFloatController * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiFloatController::vfunc_29` at 0xf98540 (rtti, medium); signature (low): `undefined vfunc_29(NiFloatController * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_39: *const c_void,
+    /// `NiTimeController::vfunc_40` at 0xef8370 (rtti, medium); signature (low): `undefined vfunc_40(NiTimeController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
+    pub slot_46: *const c_void,
+}
+impl NiFloatController_vtable {
+    pub const ID: u64 = 237775;
+}
+
+/// `NiFloatData::vftable` at 0x181fa18, id 190021 (rtti, high); 37 slots.
+#[repr(C)]
+pub struct NiFloatData_vtable {
+    /// `NiFloatData::vdtor` at 0x2a8db0 (slot_propagation, medium); signature (low): `NiFloatData * vdtor(NiFloatData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiFloatData::vfunc_2` at 0x2a8e60 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiAVObject::CreateClone` at 0xedc740 (semantic, high); signature (untiered): `NiObject * CreateClone(NiAVObject * this)`
+    pub slot_23: *const c_void,
+    /// `NiFloatData::vfunc_24` at 0xf60960 (rtti, high); signature (low): `undefined vfunc_24(NiFloatData * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiFloatData::vfunc_25` at 0xf60a60 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+    pub slot_25: *const c_void,
+    /// `NiFloatData::vfunc_26` at 0xf60a70 (rtti, high); signature (untiered): `undefined vfunc_26(NiFloatData * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiFloatData::vfunc_27` at 0xf60a80 (rtti, high); signature (low): `undefined vfunc_27(NiFloatData * this, longlong param_1)`
+    pub slot_27: *const c_void,
+    /// `NiFloatData::vfunc_28` at 0xf60b40 (rtti, high); signature (low): `undefined8 vfunc_28(NiFloatData * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+}
+impl NiFloatData_vtable {
+    pub const ID: u64 = 190021;
+}
+
 /// `NiFloatExtraData::vftable` at 0x1a4d440, id 237423 (rtti, high); 39 slots.
 #[repr(C)]
 pub struct NiFloatExtraData_vtable {
@@ -13042,339 +13582,5 @@ pub struct NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInte
 }
 impl NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable {
     pub const ID: u64 = 237979;
-}
-
-/// `NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_>::vftable` at 0x1a6e9f0, id 238398 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64___vtable {
-    /// `NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_>::vdtor` at 0xfece80 (layout_inference, medium); signature (low): `NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_> * vdtor(NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64___vtable {
-    pub const ID: u64 = 238398;
-}
-
-/// `NiTArray<TESObjectCELL*___ptr64,NiTMallocInterface<TESObjectCELL*___ptr64>_>::vftable` at 0x17f5d68, id 187462 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_TESObjectCELL____ptr64_NiTMallocInterface_TESObjectCELL____ptr64___vtable {
-    /// `NiTArray<TESObjectCELL*___ptr64,NiTMallocInterface<TESObjectCELL*___ptr64>_>::vdtor` at 0x1c7040 (layout_inference, medium); signature (low): `NiTArray<TESObjectCELL*___ptr64,NiTMallocInterface<TESObjectCELL*___ptr64>_> * vdtor(NiTArray<TESObjectCELL*___ptr64,NiTMallocInterface<TESObjectCELL*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_TESObjectCELL____ptr64_NiTMallocInterface_TESObjectCELL____ptr64___vtable {
-    pub const ID: u64 = 187462;
-}
-
-/// `NiTArray<bool,NiTMallocInterface<bool>_>::vftable` at 0x1b47fa0, id 255131 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_bool_NiTMallocInterface_bool___vtable {
-    /// `NiTArray<bool,NiTMallocInterface<bool>_>::vdtor` at 0x1551e70 (layout_inference, medium); signature (low): `NiTArray<bool,NiTMallocInterface<bool>_> * vdtor(NiTArray<bool,NiTMallocInterface<bool>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_bool_NiTMallocInterface_bool___vtable {
-    pub const ID: u64 = 255131;
-}
-
-/// `NiTArray<char*___ptr64,NiTMallocInterface<char*___ptr64>_>::vftable` at 0x1a4f8f8, id 237461 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_char____ptr64_NiTMallocInterface_char____ptr64___vtable {
-    /// `NiTArray<char*___ptr64,NiTMallocInterface<char*___ptr64>_>::vdtor` at 0xf1af30 (layout_inference, medium); signature (low): `NiTArray<char*___ptr64,NiTMallocInterface<char*___ptr64>_> * vdtor(NiTArray<char*___ptr64,NiTMallocInterface<char*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_char____ptr64_NiTMallocInterface_char____ptr64___vtable {
-    pub const ID: u64 = 237461;
-}
-
-/// `NiTArray<int,NiTMallocInterface<int>_>::vftable` at 0x1b48820, id 255183 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_int_NiTMallocInterface_int___vtable {
-    /// `NiTArray<int,NiTMallocInterface<int>_>::vdtor` at 0x1554aa0 (layout_inference, medium); signature (low): `NiTArray<int,NiTMallocInterface<int>_> * vdtor(NiTArray<int,NiTMallocInterface<int>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_int_NiTMallocInterface_int___vtable {
-    pub const ID: u64 = 255183;
-}
-
-/// `NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::vftable` at 0x1a480a8, id 237181 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable {
-    /// `NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::vdtor` at 0xeee270 (layout_inference, medium); signature (low): `NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_> * vdtor(NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable {
-    pub const ID: u64 = 237181;
-}
-
-/// `NiTArray<unsigned_short,NiTMallocInterface<unsigned_short>_>::vftable` at 0x1a47ae0, id 237168 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_unsigned_short_NiTMallocInterface_unsigned_short___vtable {
-    /// `NiTArray<unsigned_short,NiTMallocInterface<unsigned_short>_>::vdtor` at 0xeebb00 (layout_inference, medium); signature (low): `NiTArray<unsigned_short,NiTMallocInterface<unsigned_short>_> * vdtor(NiTArray<unsigned_short,NiTMallocInterface<unsigned_short>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_unsigned_short_NiTMallocInterface_unsigned_short___vtable {
-    pub const ID: u64 = 237168;
-}
-
-/// `NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_>::vftable` at 0x1a47350, id 237136 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_NiTMallocInterface_void____cdecl_NiSt_d3b4c6c0bccf_vtable {
-    /// `NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_>::vdtor` at 0xee8e20 (layout_inference, medium); signature (low): `NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_> * vdtor(NiTArray<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64),NiTMallocInterface<void_(__cdecl*)(NiStream&___ptr64,NiObject*___ptr64)>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_void____cdecl_NiStream____ptr64_NiObject____ptr64_NiTMallocInterface_void____cdecl_NiSt_d3b4c6c0bccf_vtable {
-    pub const ID: u64 = 237136;
-}
-
-/// `NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::vftable` at 0x1a470e8, id 237118 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeArray_BSFixedString_NiTNewInterface_BSFixedString___vtable {
-    /// `NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_>::vdtor` at 0xee8f50 (layout_inference, medium); signature (low): `NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_> * vdtor(NiTLargeArray<BSFixedString,NiTNewInterface<BSFixedString>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeArray_BSFixedString_NiTNewInterface_BSFixedString___vtable {
-    pub const ID: u64 = 237118;
-}
-
-/// `NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::vftable` at 0x1a470a8, id 237110 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeArray_NiPointer_NiObject_NiTNewInterface_NiPointer_NiObject_____vtable {
-    /// `NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_>::vdtor` at 0xee8ec0 (layout_inference, medium); signature (low): `NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_> * vdtor(NiTLargeArray<NiPointer<NiObject>,NiTNewInterface<NiPointer<NiObject>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeArray_NiPointer_NiObject_NiTNewInterface_NiPointer_NiObject_____vtable {
-    pub const ID: u64 = 237110;
-}
-
-/// `NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_>::vftable` at 0x182ce10, id 190453 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeArray_TESForm____ptr64_NiTMallocInterface_TESForm____ptr64___vtable {
-    /// `NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_>::vdtor` at 0x317c40 (layout_inference, medium); signature (low): `NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_> * vdtor(NiTLargeArray<TESForm*___ptr64,NiTMallocInterface<TESForm*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeArray_TESForm____ptr64_NiTMallocInterface_TESForm____ptr64___vtable {
-    pub const ID: u64 = 190453;
-}
-
-/// `NiTLargeArray<hkNiTriStripsData,NiTNewInterface<hkNiTriStripsData>_>::vftable` at 0x1a83b18, id 239300 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeArray_hkNiTriStripsData_NiTNewInterface_hkNiTriStripsData___vtable {
-    /// `NiTLargeArray<hkNiTriStripsData,NiTNewInterface<hkNiTriStripsData>_>::vdtor` at 0x1084b40 (layout_inference, medium); signature (low): `NiTLargeArray<hkNiTriStripsData,NiTNewInterface<hkNiTriStripsData>_> * vdtor(NiTLargeArray<hkNiTriStripsData,NiTNewInterface<hkNiTriStripsData>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeArray_hkNiTriStripsData_NiTNewInterface_hkNiTriStripsData___vtable {
-    pub const ID: u64 = 239300;
-}
-
-/// `NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::vftable` at 0x1a470c8, id 237114 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable {
-    /// `NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_>::vdtor` at 0xee8e70 (layout_inference, medium); signature (low): `NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_> * vdtor(NiTLargeArray<unsigned_int,NiTMallocInterface<unsigned_int>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeArray_unsigned_int_NiTMallocInterface_unsigned_int___vtable {
-    pub const ID: u64 = 237114;
-}
-
-/// `NiTLargeObjectArray<BSFixedString>::vftable` at 0x1a470f8, id 237120 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeObjectArray_BSFixedString_vtable {
-    /// `NiTLargeObjectArray<BSFixedString>::vdtor` at 0xee9070 (layout_inference, medium); signature (low): `NiTLargeObjectArray<BSFixedString> * vdtor(NiTLargeObjectArray<BSFixedString> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeObjectArray_BSFixedString_vtable {
-    pub const ID: u64 = 237120;
-}
-
-/// `NiTLargeObjectArray<NiPointer<NiObject>_>::vftable` at 0x1a470b8, id 237112 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeObjectArray_NiPointer_NiObject___vtable {
-    /// `NiTLargeObjectArray<NiPointer<NiObject>_>::vdtor` at 0xee8fe0 (layout_inference, medium); signature (low): `NiTLargeObjectArray<NiPointer<NiObject>_> * vdtor(NiTLargeObjectArray<NiPointer<NiObject>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeObjectArray_NiPointer_NiObject___vtable {
-    pub const ID: u64 = 237112;
-}
-
-/// `NiTLargeObjectArray<hkNiTriStripsData>::vftable` at 0x1a83b28, id 239302 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargeObjectArray_hkNiTriStripsData_vtable {
-    /// `NiTLargeObjectArray<hkNiTriStripsData>::vdtor` at 0x1084bd0 (layout_inference, medium); signature (low): `NiTLargeObjectArray<hkNiTriStripsData> * vdtor(NiTLargeObjectArray<hkNiTriStripsData> * this, uint param_1, longlong param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargeObjectArray_hkNiTriStripsData_vtable {
-    pub const ID: u64 = 239302;
-}
-
-/// `NiTLargePrimitiveArray<TESForm*___ptr64>::vftable` at 0x182ce20, id 190455 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargePrimitiveArray_TESForm____ptr64_vtable {
-    /// `NiTLargePrimitiveArray<TESForm*___ptr64>::vdtor` at 0x317c90 (layout_inference, medium); signature (low): `NiTLargePrimitiveArray<TESForm*___ptr64> * vdtor(NiTLargePrimitiveArray<TESForm*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargePrimitiveArray_TESForm____ptr64_vtable {
-    pub const ID: u64 = 190455;
-}
-
-/// `NiTLargePrimitiveArray<unsigned_int>::vftable` at 0x1a470d8, id 237116 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTLargePrimitiveArray_unsigned_int_vtable {
-    /// `NiTLargePrimitiveArray<unsigned_int>::vdtor` at 0xee9100 (layout_inference, medium); signature (low): `NiTLargePrimitiveArray<unsigned_int> * vdtor(NiTLargePrimitiveArray<unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTLargePrimitiveArray_unsigned_int_vtable {
-    pub const ID: u64 = 237116;
-}
-
-/// `NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vftable` at 0x18244a0, id 190161 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable {
-    /// `NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vdtor` at 0x2d34f0 (layout_inference, medium); signature (low): `NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * vdtor(NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_1` at 0x2d4790 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, ulonglong param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_2` at 0x2d4740 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, longlong param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_3` at 0x2d6400 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, undefined8 param_2, undefined4 * param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>_>,BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_4` at 0x2d4410 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_5` at 0x2d4840 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_>::vfunc_6` at 0x2d44a0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<BSMultiBoundNode*___ptr64,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>_> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_BSMultiBoundNode____ptr64_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6_____vtable {
-    pub const ID: u64 = 190161;
-}
-
-/// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vftable` at 0x18293b0, id 190310 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointerHandle_class_TESObje_4af09b38d46e_vtable {
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vdtor` at 0x2f8d10 (layout_inference, medium); signature (low): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * vdtor(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_1` at 0x2fa370 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, uint * param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_2` at 0x2fa330 (rtti, medium); signature (low): `undefined4 vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, int * param_1, int * param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_3` at 0x2fbde0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, longlong param_1, undefined4 * param_2, undefined4 * param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_4` at 0x2f9e80 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_5` at 0x2fa450 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_>::vfunc_6` at 0x2f9ef0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,BSPointerHandle<class_TESObjectREFR,class_BSUntypedPointerHandle<20,6>_>_> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___BSPointerHandle_class_TESObje_4af09b38d46e_vtable {
-    pub const ID: u64 = 190310;
-}
-
-/// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vftable` at 0x18243a0, id 190153 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode____ptr64_vtable {
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vdtor` at 0x2d35d0 (layout_inference, medium); signature (low): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * vdtor(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_1` at 0x2d47b0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, uint * param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_2` at 0x2d4760 (rtti, medium); signature (low): `undefined4 vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, int * param_1, int * param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_3` at 0x2d6420 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, longlong param_1, undefined4 * param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_4` at 0x2d4430 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_5` at 0x2d4900 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64>::vfunc_6` at 0x2d44e0 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiNode*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiNode____ptr64_vtable {
-    pub const ID: u64 = 190153;
-}
-
-/// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vftable` at 0x1824420, id 190157 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointer_BSMultiBoundNode___vtable {
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vdtor` at 0x2d3640 (layout_inference, medium); signature (low): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * vdtor(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_1` at 0x2d47c0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, uint * param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_2` at 0x2d4770 (rtti, medium); signature (low): `undefined4 vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, int * param_1, int * param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_3` at 0x2d6430 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, longlong param_1, undefined4 * param_2, longlong * param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_4` at 0x2d4440 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_5` at 0x2d4960 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_>::vfunc_6` at 0x2d4500 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,NiPointer<BSMultiBoundNode>_> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___NiPointer_BSMultiBoundNode___vtable {
-    pub const ID: u64 = 190157;
-}
-
-/// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vftable` at 0x17f7cb8, id 187669 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int_vtable {
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vdtor` at 0x1d6720 (layout_inference, medium); signature (low): `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * vdtor(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_1` at 0x1d6aa0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, uint * param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_2` at 0x1d6a90 (rtti, medium); signature (low): `undefined4 vfunc_2(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, int * param_1, int * param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_3` at 0x1d71a0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, longlong param_1, undefined4 * param_2, undefined4 param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>_>,BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_4` at 0x1d6a30 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_5` at 0x1d6ab0 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int>::vfunc_6` at 0x1d6a40 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<BSPointerHandle<TESObjectREFR,BSUntypedPointerHandle<20,6>_>,unsigned_int> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_BSPointerHandle_TESObjectREFR_BSUntypedPointerHandle_20_6___unsigned_int_vtable {
-    pub const ID: u64 = 187669;
-}
-
-/// `NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vftable` at 0x190b9d8, id 206677 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64_vtable {
-    /// `NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vdtor` at 0x636ab0 (layout_inference, medium); signature (low): `NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * vdtor(NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_1` at 0x636ca0 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, ulonglong param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_2` at 0x636c90 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, int param_1, int param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_3` at 0x637360 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, longlong param_1, undefined4 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>_>,ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_4` at 0x636c50 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_5` at 0x636cb0 (rtti, medium); signature (low): `undefined vfunc_5(NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64>::vfunc_6` at 0x636c60 (rtti, medium); signature (low): `undefined vfunc_6(NiTMap<ENUM_FORM_ID,BSSimpleList<SavedFormData*___ptr64>*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_ENUM_FORM_ID_BSSimpleList_SavedFormData____ptr64____ptr64_vtable {
-    pub const ID: u64 = 206677;
-}
-
-/// `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vftable` at 0x1825138, id 190203 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct NiTMap_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH_vtable {
-    /// `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vdtor` at 0x2dc8c0 (layout_inference, medium); signature (low): `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * vdtor(NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_1` at 0x2dcb80 (rtti, medium); signature (low): `ulonglong vfunc_1(NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, ulonglong param_1)`
-    pub slot_1: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_2` at 0x2dcb70 (rtti, medium); signature (low): `bool vfunc_2(NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, longlong param_1, longlong param_2)`
-    pub slot_2: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_3` at 0x2dd2a0 (rtti, medium); signature (low): `undefined vfunc_3(NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, longlong param_1, undefined8 param_2, longlong * param_3)`
-    pub slot_3: *const c_void,
-    /// `NiTMapBase<DFALL<NiTMapItem<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>_>,NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_4` at 0x2dca50 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
-    /// `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_5` at 0x2dcb90 (rtti, high); signature (low): `void * vfunc_5(NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
-    /// `NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH>::vfunc_6` at 0x2dca60 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<NiAVObject*___ptr64,_anon_9F6D6E70::QUEUED_ATTACH> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl NiTMap_NiAVObject____ptr64__anon_9F6D6E70__QUEUED_ATTACH_vtable {
-    pub const ID: u64 = 190203;
 }
 

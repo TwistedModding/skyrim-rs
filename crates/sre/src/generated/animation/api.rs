@@ -170,6 +170,71 @@ impl crate::BSFaceGenAnimationData {
     /// The pass rates the signature low.
     #[inline]
     pub unsafe fn advance(&self, dt: f32, advance: bool) -> bool { unsafe { function!(26598, (*const Self, f32, bool) -> bool)(core::ptr::from_ref(self), dt, advance) } }
+    /// `BSFaceGenAnimationData::FindKeyframeName`: case-insensitive lookup of a face channel name: expression table 0x20b0830 (17, type 1), modifier table 0x20b08c0 (17, type 2), phoneme table 0x20b0950 (16, type 0), custom 'SkinnyMorph' 0x20b0828 (type 3); returns the index or -1
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 27016, rva 0x43afa0.
+    /// `u32 (const char* name, u32* outType)`
+    ///
+    /// # Safety
+    /// `name`, `outType` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn find_keyframe_name(name: *const c_char, outType: *mut u32) -> u32 { unsafe { function!(27016, (*const c_char, *mut u32) -> u32)(name, outType) } }
+    /// `BSFaceGenAnimationData::Reset`: under the data spin lock +0x220: 0x423510 resets the animated keyframes (expression target to zero over blendTime or at once when blendTime <= 0; the lip-sync modifier/phoneme tracks +0xe0/+0x120 and the speech animation +0x228; custom +0x160), 0x4236d0 resets the input keyframes (+0x40 expression, +0x60 modifier, +0x80 phoneme, +0xa0 custom); when blendTime == 0 it also clears the outputs (+0xc0 expression, +0x100 modifier, +0x140 phoneme, +0x180 custom). closeEyes sets both blink modifiers to 1.0 and blink stage 5 (or, with blendTime > 0, stage 5 with timer = blendTime)
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26586, rva 0x4241d0.
+    /// `void (BSFaceGenAnimationData* this, float blendTime, bool expressions, bool modifiersAndPhonemes, bool custom, bool closeEyes)`
+    #[inline]
+    pub fn reset(&self, blendTime: f32, expressions: bool, modifiersAndPhonemes: bool, custom: bool, closeEyes: bool) { unsafe { function!(26586, (*const Self, f32, bool, bool, bool, bool))(core::ptr::from_ref(self), blendTime, expressions, modifiersAndPhonemes, custom, closeEyes) } }
+    /// `BSFaceGenAnimationData::SetExpression`: when +0x21e (override lock) is 0, expression in [-1,16] and weight in [0,1]: builds 17 zero floats, sets [expression] = weight (-1 = all zero) and calls SetExpressionTarget 0x4246c0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26594, rva 0x4248d0.
+    /// `void (BSFaceGenAnimationData* this, i32 expression, float weight)`
+    #[inline]
+    pub fn set_expression(&self, expression: i32, weight: f32) { unsafe { function!(26594, (*const Self, i32, f32))(core::ptr::from_ref(self), expression, weight) } }
+    /// `BSFaceGenAnimationData::SetExpressionTarget`: unless +0x21a (eyes-closed state) or +0x21e (override lock) is set: if the 17 weights differ from the expression keyframe +0x20's values, stores them in the pending target keyframe +0x18 (pooled BSFaceGenKeyframeMultiple, type 1, 17 values) that Advance blends +0x20 towards; with +0x21a set it releases +0x18
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26593, rva 0x4246c0.
+    /// `void (BSFaceGenAnimationData* this, const float* weights17)`
+    ///
+    /// # Safety
+    /// `weights17` must point to what the engine expects.
+    #[inline]
+    pub unsafe fn set_expression_target(&self, weights17: *const f32) { unsafe { function!(26593, (*const Self, *const f32))(core::ptr::from_ref(self), weights17) } }
+    /// `BSFaceGenAnimationData::SetEyesClosedState`: sets/clears +0x21a; setting calls Reset(this, immediate ? 0 : 1, true, true, false, true); clearing zeroes the expression target and the animated/input keyframes and sets +0x215. While +0x21a is set Advance forces both blink modifiers towards 1 (stage 4) and SetExpressionTarget/SetMood/eye tracking are skipped
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 26591, rva 0x424410.
+    /// `u32 (BSFaceGenAnimationData* this, bool closed, bool immediate)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn set_eyes_closed_state(&self, closed: bool, immediate: bool) -> u32 { unsafe { function!(26591, (*const Self, bool, bool) -> u32)(core::ptr::from_ref(self), closed, immediate) } }
+    /// `BSFaceGenAnimationData::SetMood`: mood < 8 sets expression index mood+7 (the Mood* names 7..14) when +0x21e, +0x21a and +0x21d are all 0
+    ///
+    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 26595, rva 0x424950.
+    /// `void (BSFaceGenAnimationData* this, u32 mood, float weight)`
+    ///
+    /// # Safety
+    /// The pass rates the signature medium.
+    #[inline]
+    pub unsafe fn set_mood(&self, mood: u32, weight: f32) { unsafe { function!(26595, (*const Self, u32, f32))(core::ptr::from_ref(self), mood, weight) } }
+    /// `BSFaceGenAnimationData::UpdateBlink`: blink state machine on +0x200 (stage) and +0x204 (timer), writing modifier output +0x100 values [0] BlinkLeft and [1] BlinkRight directly and clearing that keyframe's +0x1c
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26553, rva 0x423250.
+    /// `void (BSFaceGenAnimationData* this, float dt)`
+    #[inline]
+    pub fn update_blink(&self, dt: f32) { unsafe { function!(26553, (*const Self, f32))(core::ptr::from_ref(self), dt) } }
+    /// `BSFaceGenAnimationData::UpdateEyeTracking`: unless +0x21a: base eye angles (heading +0x1d4, pitch +0x1d8) plus the emotion offset (0x4253b0: +0x20c heading, +0x210 pitch, re-rolled when timer +0x208 runs out, by the strongest expression from 0x425c60) are approached by the current angles +0x1bc/+0x1c0 at fTrackSpeed*dt per axis, then 0x4251b0 clamps them to fTrackEyeXY/fTrackEyeZ (degrees -> radians) and writes the Look modifiers of output +0x100 ([8] LookDown, [9] LookLeft, [10] LookRight, [11] LookUp) as angle/limit
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 26601, rva 0x4256e0.
+    /// `bool (BSFaceGenAnimationData* this, float dt)`
+    #[inline]
+    pub fn update_eye_tracking(&self, dt: f32) -> bool { unsafe { function!(26601, (*const Self, f32) -> bool)(core::ptr::from_ref(self), dt) } }
+    /// `BSFaceGenAnimationData::expressionTarget` at +0x18: pending expression target (17 weights) that +0x20 steps towards; pooled, null when none
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn expression_target(&self) -> Option<&crate::BSFaceGenKeyframeMultiple> { unsafe { { self.expressionTarget }.as_ref() } }
 }
 
 impl crate::BSFaceGenNiNode {
