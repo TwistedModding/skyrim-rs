@@ -189,7 +189,7 @@ impl Drop for RwGuard {
     }
 }
 
-#[cfg(any(feature = "events", feature = "ui"))]
+#[cfg(any(feature = "events", feature = "render", feature = "ui"))]
 mod spin {
     use core::sync::atomic::{AtomicU32, Ordering};
 

@@ -16,7 +16,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, Calendar, Sky, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
+use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -706,6 +706,70 @@ impl BSTextureSetExt for BSTextureSet {
         }
         let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);
         if p.is_null() { None } else { Some(unsafe { CStr::from_ptr(p) }) }
+    }
+}
+
+/// Holds an art object on `target` for `duration` seconds (-1 until stopped) as Papyrus
+/// `VisualEffect.Play` does: `CreateModelReferenceEffect` (id 22769) with no facing target and
+/// no camera attachment (RE `camera.md` IC8 F). Main thread.
+pub fn play_art_object(target: &TESObjectREFR, art: &BGSArtObject, duration: f32) {
+    type PlayFn = unsafe extern "C" fn(*const TESObjectREFR, *const BGSArtObject, f32, *const TESObjectREFR, bool, bool, *const NiAVObject, bool);
+    let play: PlayFn = unsafe { crate::engine_fn(fns::CreateModelReferenceEffect) };
+    unsafe { play(target, art, duration, core::ptr::null(), false, false, core::ptr::null(), false) };
+}
+
+/// Holds an effect shader on `target` as Papyrus `EffectShader.Play` does
+/// (`PlayShaderReferenceEffect`, id 19872). Main thread.
+pub fn play_effect_shader(target: &TESObjectREFR, shader: &TESEffectShader, duration: f32) {
+    type PlayFn = unsafe extern "C" fn(*const TESObjectREFR, *const TESEffectShader, f32, *const TESObjectREFR, bool, bool, *const NiAVObject, bool);
+    let play: PlayFn = unsafe { crate::engine_fn(fns::PlayShaderReferenceEffect) };
+    unsafe { play(target, shader, duration, core::ptr::null(), false, false, core::ptr::null(), false) };
+}
+
+/// The reference effect list in `ProcessLists` (data +0x108, count +0x118, spin lock +0x120).
+const EFFECTS: usize = 0x108;
+const EFFECT_COUNT: usize = 0x118;
+const EFFECT_LOCK: usize = 0x120;
+
+/// Whether the effect's class is `node` or derives from it: the type node of slot 2, walked up
+/// through the parent at +8.
+fn derives_from(effect: &ReferenceEffect, node: *const u8) -> bool {
+    type TypeFn = unsafe extern "C" fn(*const ReferenceEffect) -> *const u8;
+    let get: TypeFn = unsafe { core::mem::transmute(sre::vtable_entry(effect, 2)) };
+    let mut current = unsafe { get(effect) };
+    while !current.is_null() {
+        if current == node {
+            return true;
+        }
+        current = unsafe { current.add(8).cast::<*const u8>().read_unaligned() };
+    }
+    false
+}
+
+/// Ends the art object (`art`) or effect shader effects of form `form_id` on the reference with
+/// handle `target`, as the engine ends one: their `finished` flag set, under the effect list's
+/// lock (RE `camera.md` IC8 F). Main thread.
+pub fn stop_reference_effects(target: u32, form_id: u32, art: bool) {
+    let Ok(holder) = crate::reloc().address(sre::raw::globals::g_ProcessLists_ptr) else { return };
+    let lists = unsafe { *(holder as *const *const u8) };
+    if lists.is_null() {
+        return;
+    }
+    let _guard = crate::spin::SpinGuard::lock(unsafe { &*((lists as usize + EFFECT_LOCK) as *const sre::BSSpinLock) });
+    let (data, count) = unsafe { (lists.add(EFFECTS).cast::<*const c_void>().read_unaligned(), lists.add(EFFECT_COUNT).cast::<u32>().read_unaligned()) };
+    let node = if art { sre::g_type_node_model_reference_effect() } else { sre::g_type_node_shader_reference_effect() };
+    for effect in unsafe { ptr_slice::<ReferenceEffect>(data, count) }.iter().flatten() {
+        if effect.target != target || !derives_from(effect, node) {
+            continue;
+        }
+        let form = if art {
+            unsafe { (*core::ptr::from_ref(effect).cast::<ModelReferenceEffect>()).artObject.as_ref() }.map(|a| a.formID)
+        } else {
+            unsafe { (*core::ptr::from_ref(effect).cast::<ShaderReferenceEffect>()).effectShader.as_ref() }.map(|s| s.formID)
+        };
+        if form == Some(form_id) {
+            crate::store(&effect.finished, 1);
+        }
     }
 }
 
