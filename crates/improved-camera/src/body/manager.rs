@@ -390,9 +390,8 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
             normalize_radian(desired - body_yaw)
         };
         if delta.abs() > 1e-5 {
-            let p = parent.world_transform().rotation;
             let mut local = root.local_transform();
-            local.rotation = point::mul(&point::mul(&point::mul(&point::transpose(&p), &point::z_rotation(delta)), &p), &local.rotation);
+            local.rotation = turned(&parent.world_transform().rotation, &local.rotation, delta);
             root.set_local_transform(local);
             root.update_transforms();
         }
@@ -424,6 +423,12 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     m.anchored = Some(Forced { translate: local.translation, rotate: local.rotation });
     m.anchored_spine = spine.map(|s| s.local_transform().translation);
     (false, true)
+}
+
+/// The local rotation under `parent` whose world heading (`atan2(x, y)` of the forward axis) is
+/// `local`'s turned by `yaw` about the world's up axis.
+fn turned(parent: &point::M3, local: &point::M3, yaw: f32) -> point::M3 {
+    point::mul(&point::mul(&point::mul(&point::transpose(parent), &point::z_rotation(-yaw)), parent), local)
 }
 
 /// A world-space move as a translation in `parent`'s local space.
@@ -797,7 +802,21 @@ impl Manager {
 
 #[cfg(test)]
 mod tests {
-    use super::{ActionType, DirectionType, HandsType, snapshot, swim_sheathe};
+    use super::{ActionType, DirectionType, HandsType, point, snapshot, swim_sheathe, turned};
+
+    #[test]
+    fn the_turn_moves_the_world_heading_toward_the_target() {
+        let heading = |m: &point::M3| {
+            let f = point::mul_vec(m, [0.0, 1.0, 0.0]);
+            f[0].atan2(f[1])
+        };
+        let (s, c) = 0.3f32.sin_cos();
+        let parent = point::mul(&point::z_rotation(0.4), &[[1.0, 0.0, 0.0], [0.0, c, -s], [0.0, s, c]]);
+        let local = point::z_rotation(-0.3);
+        let before = heading(&point::mul(&parent, &local));
+        let after = heading(&point::mul(&parent, &turned(&parent, &local, 0.25)));
+        assert!((after - before - 0.25).abs() < 1e-5, "{before} -> {after}");
+    }
 
     #[test]
     fn sheathes_once_while_swimming_with_the_hands_up() {
