@@ -249,6 +249,56 @@ pub fn release_volumetric_near() {
     }
 }
 
+/// The engine's `j` in the depth shift's constants `kDepthShiftMaxDepth` = 1 - j 2^-23 and
+/// `kDepthShiftFarScale` = 1 + j 2^-23, two adjacent `.rdata` floats (`graphics.md` "Request IC11").
+const DEPTH_SHIFT_STEPS: u32 = 17;
+
+static DEPTH_SHIFT_WRITTEN: AtomicU32 = AtomicU32::new(DEPTH_SHIFT_STEPS);
+
+fn depth_shift_constants(steps: u32) -> [u8; 8] {
+    #[allow(clippy::cast_precision_loss)]
+    let e = steps as f32 * f32::EPSILON;
+    let mut bytes = [0; 8];
+    bytes[..4].copy_from_slice(&(1.0 - e).to_le_bytes());
+    bytes[4..].copy_from_slice(&(1.0 + e).to_le_bytes());
+    bytes
+}
+
+fn write_depth_shift(steps: u32) {
+    let at = sre::k_depth_shift_max_depth();
+    let current = unsafe { at.cast::<[u8; 8]>().read_volatile() };
+    if current != depth_shift_constants(DEPTH_SHIFT_WRITTEN.load(Ordering::Relaxed)) {
+        return;
+    }
+    if unsafe { hook::write_code(at as usize, &depth_shift_constants(steps)) }.is_ok() {
+        DEPTH_SHIFT_WRITTEN.store(steps, Ordering::Relaxed);
+    }
+}
+
+/// Keeps what the depth shift does to reconstructed positions as at the `reference` near while
+/// the world draws with `near`: the world is drawn under the shift's narrowed depth range and the
+/// shadow mask, SAO, SSR and DOF rebuild positions with the unshifted projection, pulling every
+/// surface toward the camera by about (1 - max depth) z^2 / near, so a lower near loses shadows.
+/// Scales the shift's constants with near; left alone when another module changed them. Main
+/// thread, before `RenderWorld`; [`release_depth_shift`] before the caller's module unloads.
+pub fn compensate_depth_shift(reference: f32, near: f32) {
+    let steps = if near > 0.0 && reference > 0.0 {
+        #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss, clippy::cast_precision_loss)]
+        let steps = (DEPTH_SHIFT_STEPS as f32 * near / reference).round() as u32;
+        steps.max(1)
+    } else {
+        DEPTH_SHIFT_STEPS
+    };
+    if DEPTH_SHIFT_WRITTEN.load(Ordering::Relaxed) != steps {
+        write_depth_shift(steps);
+    }
+}
+
+/// Puts the engine's depth shift constants back.
+pub fn release_depth_shift() {
+    write_depth_shift(DEPTH_SHIFT_STEPS);
+}
+
 /// `g_ShadowDistance` (id 415263): the live shadow distance, `fShadowDistance` outdoors and
 /// 3000 indoors (`SetShadowDistanceForInterior` rewrites it at every cell change).
 #[must_use]
@@ -965,7 +1015,16 @@ pub fn is_interior() -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::{Matrix3, Transform, axis_turn, from_euler_xyz, from_euler_zxy, mul3, near_inverse_repartition, near_repartition, to_euler_xyz};
+    use super::{Matrix3, Transform, axis_turn, depth_shift_constants, from_euler_xyz, from_euler_zxy, mul3, near_inverse_repartition, near_repartition, to_euler_xyz};
+
+    #[test]
+    fn the_engine_depth_shift_constants_come_back_at_seventeen_steps() {
+        let engine = [0x3f7f_ffdeu32.to_le_bytes(), 0x3f80_0011u32.to_le_bytes()].concat();
+        assert_eq!(depth_shift_constants(super::DEPTH_SHIFT_STEPS).as_slice(), engine.as_slice());
+        let two = depth_shift_constants(2);
+        assert_eq!(f32::from_le_bytes(two[..4].try_into().unwrap()), 1.0 - 2.0 * f32::EPSILON);
+        assert_eq!(f32::from_le_bytes(two[4..].try_into().unwrap()), 1.0 + 2.0 * f32::EPSILON);
+    }
 
     #[test]
     fn volumetric_slices_keep_their_distance_under_the_reference_near() {

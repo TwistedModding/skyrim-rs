@@ -199,6 +199,7 @@ pub fn update(camera: &PlayerCamera) {
         m.update_fov(camera, &profile, delta);
         m.update_near_distance(camera, &profile.Advanced);
     }
+    skyrim::render::compensate_depth_shift(engine_near(), skyrim::render::near_distance());
     let data = m.snapshot();
     snapshot::set(data);
     crate::api::provider::notify_pov(data.current, util::is_first_person());
