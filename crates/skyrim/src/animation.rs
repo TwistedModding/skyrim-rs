@@ -47,6 +47,9 @@ pub struct BoneNodeEntry {
 
 const _: () = assert!(size_of::<BoneNodeEntry>() == 0x10);
 
+/// `hkbFootIkDriver`'s disabled byte (`SetDisabled`, id 58428).
+const FOOT_IK_DISABLED: usize = 0x4a;
+
 /// Creates, disabled, a post-hook target on `ApplyPoseToBoneNodes`; store it, then
 /// [`hook::Hook::enable`]. The detour runs on a job worker thread while the main thread draws:
 /// call the original first, then edit bone locals of the graph's own nodes and nothing else.
@@ -107,6 +110,12 @@ pub trait BSAnimationGraphManagerExt {
     fn graphs(&self) -> &[Option<&BShkbAnimationGraph>];
     /// The graph at `activeGraph` (0 in third person, 1 in first person on the player).
     fn active_graph(&self) -> Option<&BShkbAnimationGraph>;
+    /// Disables or enables graph 0's foot IK driver through
+    /// `BSAnimationGraphManager::SetGraph0FootIkDisabled` (id 40846), which holds the manager's
+    /// spin lock (+0xa0) the animation update holds: disabling frees the per-leg state the foot IK
+    /// run reads. The engine disables it on every switch to first person and graph re-attach
+    /// (RE `camera.md` request IC7 B), so a mod that keeps it on applies again after those.
+    fn set_foot_ik_disabled(&self, disabled: bool);
 }
 
 impl BSAnimationGraphManagerExt for BSAnimationGraphManager {
@@ -119,6 +128,12 @@ impl BSAnimationGraphManagerExt for BSAnimationGraphManager {
 
     fn active_graph(&self) -> Option<&BShkbAnimationGraph> {
         self.graphs().get(self.activeGraph as usize).copied().flatten()
+    }
+
+    fn set_foot_ik_disabled(&self, disabled: bool) {
+        let mut value = disabled;
+        let mut pointer = &raw mut value;
+        unsafe { BSAnimationGraphManager::set_graph0_foot_ik_disabled(self, &raw mut pointer) };
     }
 }
 
@@ -138,6 +153,9 @@ pub trait BShkbAnimationGraphExt {
     fn skeleton_bone_count(&self) -> Option<u32>;
     /// The graph's `BSAnimationGraphEvent` source (+0x68).
     fn event_source(&self) -> Option<&'static BSTEventSource<BSAnimationGraphEvent>>;
+    /// Whether the graph's foot IK driver (`character.footIkDriver`) is disabled, its byte +0x4a;
+    /// `None` without a driver.
+    fn foot_ik_disabled(&self) -> Option<bool>;
 }
 
 impl BShkbAnimationGraphExt for BShkbAnimationGraph {
@@ -178,5 +196,10 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
 
     fn event_source(&self) -> Option<&'static BSTEventSource<BSAnimationGraphEvent>> {
         unsafe { BSTEventSource::from_ptr((&raw const self.animationGraphEventSource).cast()) }
+    }
+
+    fn foot_ik_disabled(&self) -> Option<bool> {
+        let driver = self.character.footIkDriver.cast::<u8>();
+        (!driver.is_null()).then(|| unsafe { driver.add(FOOT_IK_DISABLED).read() } != 0)
     }
 }
