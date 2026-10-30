@@ -221,7 +221,7 @@ pub fn load(skse: &skse::Interface) -> bool {
         log!("no messaging or Papyrus interface");
         return false;
     };
-    if !messaging.listen_skse(skse.plugin_handle(), on_skse_message) || !messaging.listen_plugins(skse.plugin_handle(), on_plugin_dispatch) || !papyrus.register(on_papyrus_pass) {
+    if !listen(messaging, skse.plugin_handle()) || !papyrus.register(on_papyrus_pass) {
         log!("the loader refused the message listener or the Papyrus callback");
         return false;
     }
@@ -542,6 +542,15 @@ fn detach(owner: &str) -> String {
 fn vm() -> Option<&'static VirtualMachine> {
     let vm = VM.load(Ordering::Acquire);
     (vm != 0).then(|| unsafe { &*(vm as *const VirtualMachine) })
+}
+
+/// The loader's messages, which the host needs, and other plugins' for `on_plugin_message`, which
+/// it can do without.
+fn listen(messaging: &skse::MessagingInterface, handle: skse::PluginHandle) -> bool {
+    if !messaging.listen_plugins(handle, on_plugin_dispatch) {
+        log!("the loader refused the listener for other plugins' messages");
+    }
+    messaging.listen_skse(handle, on_skse_message)
 }
 
 unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
