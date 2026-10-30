@@ -6,4 +6,5 @@ pub mod manager;
 pub mod snapshot;
 pub mod state;
 pub mod states;
+pub mod studio;
 pub mod util;

@@ -573,6 +573,19 @@ sections! {
         bEnable: bool = false,
         bOverlay: bool = false,
     }
+    Studio = "Studio" {
+        bRevertOnExit: bool = true,
+        fNearbyRadius: f32 = 2048.0,
+        fUIScale: f32 = 1.35,
+        bHideHUD: bool = false,
+        bCaptureCropToGuide: bool = false,
+        fBracketDelay: f32 = 0.35,
+        iGuideGrid: i32 = 0,
+        iGuideAspect: i32 = 0,
+        bGuideCenter: bool = false,
+        bGuideSafeArea: bool = false,
+        bGuideHorizon: bool = false,
+    }
 }
 
 impl CameraFirstperson {
@@ -614,6 +627,7 @@ pub struct Profile {
     pub Dialogue: Dialogue,
     pub Vanity: Vanity,
     pub RestrictAngles: RestrictAngles,
+    pub Studio: Studio,
 }
 
 impl Profile {
@@ -628,6 +642,7 @@ impl Profile {
             Dialogue: Dialogue::read(store),
             Vanity: Vanity::read(store),
             RestrictAngles: RestrictAngles::read(store),
+            Studio: Studio::read(store),
             General: General::read(store),
             Hide: Hide::read(store),
             Body: Body::read(store),
@@ -664,6 +679,7 @@ impl Profile {
         self.Dialogue.write(store);
         self.Vanity.write(store);
         self.RestrictAngles.write(store);
+        self.Studio.write(store);
     }
 }
 
@@ -724,6 +740,9 @@ mod tests {
         assert_eq!(store.get_f32("Dialogue.fNpcShoulderPosX"), Some(-60.0));
         assert_eq!(store.get_bool("Body.bFreeLook"), Some(true));
         assert_eq!(store.get_f32("RestrictAngles.fInteractionHeadingLeft"), Some(-70.0));
+        assert_eq!(store.get_bool("Studio.bRevertOnExit"), Some(true));
+        assert_eq!(store.get_f32("Studio.fBracketDelay"), Some(0.35));
+        assert_eq!(store.get_i32("Studio.iGuideAspect"), Some(0));
         assert_eq!(Profile::read(&store), p);
     }
 

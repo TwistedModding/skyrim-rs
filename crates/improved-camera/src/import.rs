@@ -13,11 +13,14 @@ use crate::profiles;
 use crate::settings::{Memory, Profile, Store};
 
 /// IC's keys that are the host's hotkeys here, with the action that holds them.
-const KEYS: [(&str, &str); 4] = [
+const KEYS: [(&str, &str); 7] = [
     ("Effects.Zoom.iKey", "improved-camera.zoom"),
     ("FreeCamera.iKeyRollLeft", "improved-camera.free-camera-roll-left"),
     ("FreeCamera.iKeyRollRight", "improved-camera.free-camera-roll-right"),
     ("FreeCamera.iKeyReset", "improved-camera.free-camera-reset"),
+    ("Studio.iToggleInputKey", "improved-camera.photo-mode-input"),
+    ("Studio.iCaptureKey", "improved-camera.photo-mode-capture"),
+    ("Studio.iHideUIKey", "improved-camera.photo-mode-hide-menu"),
 ];
 
 /// What an import did.
@@ -55,7 +58,6 @@ pub fn profile(json: &Json, file: &str, notes: &mut Vec<String>) -> Profile {
     let staged = Memory::default();
     let mut values = Vec::new();
     flatten("", json, &mut values);
-    let mut studio = false;
     for (key, value) in values {
         let setting = match &value {
             Json::Bool(v) => Some(Setting::Bool(*v)),
@@ -66,15 +68,11 @@ pub fn profile(json: &Json, file: &str, notes: &mut Vec<String>) -> Profile {
             (Some(default), Some(setting)) if core::mem::discriminant(&default) == core::mem::discriminant(&setting) => staged.set(&key, setting),
             (Some(_), _) => notes.push(format!("{file}: {key} is {value:?}, not the type IC writes; the default is kept")),
             (None, _) if key == "version" || key == "name" => {}
-            (None, _) if key.starts_with("Studio.") => studio = true,
             (None, _) => match KEYS.iter().find(|(ic, _)| *ic == key) {
                 Some((_, action)) => notes.push(format!("{file}: {key} = {value:?} is a hotkey here: bind {action} in the host's Settings tab")),
                 None => notes.push(format!("{file}: unknown option {key} ignored")),
             },
         }
-    }
-    if studio {
-        notes.push(format!("{file}: the Studio options are not ported (photo mode) and were ignored"));
     }
     Profile::read(&staged)
 }
@@ -138,7 +136,7 @@ mod tests {
     use crate::settings::Offset;
 
     /// A trimmed `Profiles\Default.json` as IC writes it, with an edited value in each kind of
-    /// nesting, an option this port does not know, a hotkey and the studio.
+    /// nesting, an option this port does not know, hotkeys and the studio.
     const PROFILE: &str = r#"{
     "Advanced": [{ "bHeadbob": true, "fNearDistanceMin": 6.0, "fForwardBumperOffset": 40.0 }],
     "Body": [{
@@ -158,7 +156,7 @@ mod tests {
     "FreeCamera": [{ "bEnable": true, "iKeyReset": 82, "iKeyRollLeft": 81, "iKeyRollRight": 69 }],
     "General": [{ "bEnableBody": true, "bEnableHead": true, "bShowCape": true }],
     "Stabilization": [{ "Horse": [{ "bEnable": false, "fHeadFollowStrength": 0.5, "fSmoothingMaxOffset": 6.0, "fSmoothingSpeed": 14.0 }] }],
-    "Studio": [{ "bHideHUD": false, "fUIScale": 1.35 }],
+    "Studio": [{ "bHideHUD": true, "fUIScale": 1.35, "iCaptureKey": 121 }],
     "Vanity": [{ "iCollisionPullInMethod": 4, "fFocusChance": 50.0 }],
     "name": "Default",
     "version": 1
@@ -185,6 +183,7 @@ mod tests {
         assert!(p.General.bEnableHead && p.General.bEnableBody);
         assert!(!p.Stabilization.Horse.bEnable && (p.Stabilization.Horse.fHeadFollowStrength - 0.5).abs() < f32::EPSILON);
         assert_eq!(p.Vanity.iCollisionPullInMethod, 4);
+        assert!(p.Studio.bHideHUD && p.Studio.bRevertOnExit);
         assert!((p.Vanity.fFocusChance - 50.0).abs() < f32::EPSILON && (p.Vanity.fDistance - 200.0).abs() < f32::EPSILON);
         assert_eq!(
             notes,
@@ -195,7 +194,7 @@ mod tests {
                 "Default.json: FreeCamera.iKeyRollLeft = Number(81.0) is a hotkey here: bind improved-camera.free-camera-roll-left in the host's Settings tab",
                 "Default.json: FreeCamera.iKeyRollRight = Number(69.0) is a hotkey here: bind improved-camera.free-camera-roll-right in the host's Settings tab",
                 "Default.json: unknown option General.bShowCape ignored",
-                "Default.json: the Studio options are not ported (photo mode) and were ignored",
+                "Default.json: Studio.iCaptureKey = Number(121.0) is a hotkey here: bind improved-camera.photo-mode-capture in the host's Settings tab",
             ]
         );
     }
@@ -207,9 +206,8 @@ mod tests {
         let mut notes = Vec::new();
         let p = profile(&parse_json(include_str!("../fixtures/Default.json")).unwrap(), "Default.json", &mut notes);
         assert_eq!(p, Profile::default());
-        assert_eq!(notes.len(), 5, "{notes:?}");
-        assert!(notes[..4].iter().all(|n| n.contains("is a hotkey here")), "{notes:?}");
-        assert!(notes[4].contains("Studio"));
+        assert_eq!(notes.len(), 7, "{notes:?}");
+        assert!(notes.iter().all(|n| n.contains("is a hotkey here")), "{notes:?}");
     }
 
     #[test]
