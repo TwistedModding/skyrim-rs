@@ -3,7 +3,8 @@
 //! cull list replay), the render globals the engine keeps as raw values, and what the generated
 //! scene graph, light, culler and shader classes leave `unsafe`: transforms and the children array
 //! decoded from their bytes, the hidden bit set atomically, light and shadow map arrays as slices,
-//! checked casts by vtable, and the shadow pass tests a cull detour makes.
+//! checked casts by vtable, the shadow pass tests a cull detour makes, and an effect shader's data
+//! applied to or removed from a tree.
 //!
 //! Reads follow the pass's thread model: light lists, roots and flags are stable while the frame
 //! culls (the main thread changes them between frames); a [`CullFn`] detour runs on the job
@@ -15,7 +16,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BSCullingProcess, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TextureSetSlot};
+use sre::{BSCullingProcess, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiSkinInstance, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -367,6 +368,9 @@ pub trait NiAVObjectExt {
     /// Calls `f` with this object and every object below it, parents before children. Main thread,
     /// between frames, or from a render step that runs while the main thread waits.
     fn for_each(&self, f: &mut dyn FnMut(&NiAVObject));
+    /// Whether a geometry under this object holds `data` as its shader property's effect data
+    /// (`BSShaderProperty`+0x68).
+    fn holds_effect_data(&self, data: &BSEffectShaderData) -> bool;
 }
 
 impl NiAVObjectExt for NiAVObject {
@@ -431,6 +435,27 @@ impl NiAVObjectExt for NiAVObject {
             }
         }
     }
+
+    fn holds_effect_data(&self, data: &BSEffectShaderData) -> bool {
+        let data = core::ptr::from_ref(data).cast::<c_void>();
+        let mut found = false;
+        self.for_each(&mut |object| {
+            found |= object.cast::<BSGeometry>().and_then(|g| unsafe { g.shaderProperty.as_ref() }).is_some_and(|p| core::ptr::eq(p.effectOverlay.cast_const(), data));
+        });
+        found
+    }
+}
+
+/// Puts an effect shader's data on every geometry under `root` that takes it, through
+/// `ApplyEffectShaderData` (id 17330), as `ShaderReferenceEffect` does for its own root; the
+/// number of geometries. Main thread, or the effect update that owns `data`.
+pub fn apply_effect_shader_data(shader: &TESEffectShader, root: &NiAVObject, data: &BSEffectShaderData) -> i32 {
+    unsafe { sre::apply_effect_shader_data(core::ptr::from_ref(shader).cast_mut(), core::ptr::from_ref(root).cast_mut(), core::ptr::from_ref(data).cast_mut(), false) }
+}
+
+/// Clears `data` from every geometry under `root` that holds it (`RemoveEffectShaderData`, id 17331).
+pub fn remove_effect_shader_data(shader: &TESEffectShader, root: &NiAVObject, data: &BSEffectShaderData) {
+    unsafe { sre::remove_effect_shader_data(core::ptr::from_ref(shader).cast_mut(), core::ptr::from_ref(root).cast_mut(), core::ptr::from_ref(data).cast_mut()) }
 }
 
 pub trait NiNodeExt {
