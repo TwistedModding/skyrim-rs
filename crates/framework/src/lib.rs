@@ -180,6 +180,8 @@ pub(crate) struct Table {
     pub show_tab: fn(&'static str),
     pub setting: fn(&str, &str) -> Option<Setting>,
     pub set_setting: fn(&str, &str, Setting),
+    pub setting_keys: fn(&str, &str) -> Vec<String>,
+    pub remove_settings: fn(&str, &str) -> usize,
     pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
     pub add_player_graph_sink: fn(&'static str, ErasedHandler),
     pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,

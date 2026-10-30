@@ -137,6 +137,19 @@ impl Settings {
             (self.table.set_setting)(self.owner, key, value);
         }
     }
+
+    /// Every key that starts with `prefix`, in order (`""` lists them all).
+    #[must_use]
+    pub fn keys(&self, prefix: &str) -> Vec<String> {
+        (self.table.setting_keys)(self.owner, prefix)
+    }
+
+    /// Removes every key that starts with `prefix` (a whole key removes that one); returns how
+    /// many went. The file is written within a second.
+    #[must_use = "the count says whether anything was there"]
+    pub fn remove(&self, prefix: &str) -> usize {
+        (self.table.remove_settings)(self.owner, prefix)
+    }
 }
 
 struct Store {
@@ -199,6 +212,20 @@ pub(crate) fn set(owner: &str, key: &str, value: Setting) {
     }
 }
 
+pub(crate) fn keys(owner: &str, prefix: &str) -> Vec<String> {
+    stores().get(owner).map(|store| store.values.range(prefix.to_owned()..).map(|(k, _)| k).take_while(|k| k.starts_with(prefix)).cloned().collect()).unwrap_or_default()
+}
+
+pub(crate) fn remove(owner: &str, prefix: &str) -> usize {
+    let mut stores = stores();
+    let Some(store) = stores.get_mut(owner) else { return 0 };
+    let before = store.values.len();
+    store.values.retain(|k, _| !k.starts_with(prefix));
+    let removed = before - store.values.len();
+    store.dirty |= removed > 0;
+    removed
+}
+
 /// Writes every changed store, or only `owner`'s; returns each file written or the error.
 pub(crate) fn flush(owner: Option<&str>) -> Vec<Result<PathBuf, String>> {
     let mut stores = stores();
@@ -249,6 +276,26 @@ fn encode(values: &BTreeMap<String, Setting>) -> String {
     out
 }
 
+/// A JSON value as [`parse_json`] reads it; an object keeps its members in order.
+#[derive(Clone, Debug, PartialEq)]
+pub enum Json {
+    Null,
+    Bool(bool),
+    Number(f64),
+    Text(String),
+    Array(Vec<Json>),
+    Object(Vec<(String, Json)>),
+}
+
+/// Reads a whole JSON document, such as another program's configuration a plugin imports. A
+/// byte order mark is allowed; an error names its line and column.
+pub fn parse_json(text: &str) -> Result<Json, String> {
+    let text = text.strip_prefix('\u{feff}').unwrap_or(text);
+    let mut p = Parser { chars: text.char_indices().peekable(), text };
+    let value = p.value()?;
+    p.end().map(|()| value)
+}
+
 /// A flat JSON object of booleans, numbers and strings; `null` values are skipped. A byte order
 /// mark (Notepad and `PowerShell` write one) is allowed. An error names its line and column.
 fn decode(text: &str) -> Result<BTreeMap<String, Setting>, String> {
@@ -262,7 +309,16 @@ fn decode(text: &str) -> Result<BTreeMap<String, Setting>, String> {
     loop {
         let key = p.string()?;
         p.expect(':')?;
-        if let Some(value) = p.value()? {
+        p.skip();
+        let at = p.position();
+        let value = match p.value()? {
+            Json::Null => None,
+            Json::Bool(v) => Some(Setting::Bool(v)),
+            Json::Number(v) => Some(Setting::Number(v)),
+            Json::Text(v) => Some(Setting::Text(v)),
+            Json::Array(_) | Json::Object(_) => return Err(p.error(at, "expected a boolean, number or string")),
+        };
+        if let Some(value) = value {
             values.insert(key, value);
         }
         if p.eat('}') {
@@ -342,17 +398,47 @@ impl Parser<'_> {
         }
     }
 
-    fn value(&mut self) -> Result<Option<Setting>, String> {
+    fn value(&mut self) -> Result<Json, String> {
         self.skip();
         let start = self.position();
         match self.chars.peek().map(|&(_, c)| c) {
-            Some('"') => return self.string().map(|s| Some(Setting::Text(s))),
+            Some('"') => return self.string().map(Json::Text),
+            Some('{') => {
+                self.chars.next();
+                let mut members = Vec::new();
+                if !self.eat('}') {
+                    loop {
+                        let key = self.string()?;
+                        self.expect(':')?;
+                        members.push((key, self.value()?));
+                        if self.eat('}') {
+                            break;
+                        }
+                        self.expect(',')?;
+                    }
+                }
+                return Ok(Json::Object(members));
+            }
+            Some('[') => {
+                self.chars.next();
+                let mut items = Vec::new();
+                if !self.eat(']') {
+                    loop {
+                        items.push(self.value()?);
+                        if self.eat(']') {
+                            break;
+                        }
+                        self.expect(',')?;
+                    }
+                }
+                return Ok(Json::Array(items));
+            }
             Some('t' | 'f' | 'n') => {
                 while self.chars.next_if(|(_, c)| c.is_ascii_alphabetic()).is_some() {}
                 return match &self.text[start..self.position()] {
-                    "true" => Ok(Some(Setting::Bool(true))),
-                    "false" => Ok(Some(Setting::Bool(false))),
-                    "null" => Ok(None),
+                    "true" => Ok(Json::Bool(true)),
+                    "false" => Ok(Json::Bool(false)),
+                    "null" => Ok(Json::Null),
                     other => Err(self.error(start, &format!("unknown value {other}"))),
                 };
             }
@@ -360,7 +446,7 @@ impl Parser<'_> {
         }
         while self.chars.next_if(|(_, c)| c.is_ascii_digit() || "+-.eE".contains(*c)).is_some() {}
         let end = self.position();
-        self.text[start..end].parse::<f64>().map(|n| Some(Setting::Number(n))).map_err(|_| self.error(start, "expected a value"))
+        self.text[start..end].parse::<f64>().map(Json::Number).map_err(|_| self.error(start, "expected a value"))
     }
 }
 
@@ -387,6 +473,44 @@ mod tests {
         assert_eq!(decode("{\"a\": \"x"), Err("line 1, column 9: unterminated string".to_owned()));
         assert!(decode("{\"a\": 1} x").is_err());
         assert_eq!(decode("\u{feff}{\"a\": 1}").unwrap().len(), 1);
+        assert_eq!(decode("{\"a\": [1]}"), Err("line 1, column 7: expected a boolean, number or string".to_owned()));
+    }
+
+    #[test]
+    fn parses_nested_json() {
+        let doc = parse_json("\u{feff}{\"General\": [{\"on\": true, \"x\": -1.5}], \"name\": \"Default\", \"e\": [], \"o\": {}, \"n\": null}").unwrap();
+        let general = Json::Array(vec![Json::Object(vec![("on".to_owned(), Json::Bool(true)), ("x".to_owned(), Json::Number(-1.5))])]);
+        assert_eq!(
+            doc,
+            Json::Object(vec![
+                ("General".to_owned(), general),
+                ("name".to_owned(), Json::Text("Default".to_owned())),
+                ("e".to_owned(), Json::Array(Vec::new())),
+                ("o".to_owned(), Json::Object(Vec::new())),
+                ("n".to_owned(), Json::Null),
+            ])
+        );
+        assert_eq!(parse_json("[1, 2"), Err("line 1, column 6: expected ','".to_owned()));
+        assert_eq!(parse_json("{\"a\": [1,\n x]}"), Err("line 2, column 2: expected a value".to_owned()));
+        assert!(parse_json("[] x").is_err());
+    }
+
+    #[test]
+    fn lists_and_removes_keys_by_prefix() {
+        let owner = "settings-test-prefix";
+        let dir = std::env::temp_dir().join(format!("skyrim-rs-settings-prefix-{}", std::process::id()));
+        assert_eq!(open(owner, &dir), Ok(0));
+        for key in ["Profiles.A.x", "Profiles.A.y", "Profiles.B.x", "Profilesx", "other"] {
+            set(owner, key, Setting::Bool(true));
+        }
+        assert_eq!(keys(owner, "Profiles."), ["Profiles.A.x", "Profiles.A.y", "Profiles.B.x"]);
+        assert_eq!(keys(owner, "").len(), 5);
+        assert_eq!(keys("settings-test-none", ""), Vec::<String>::new());
+        assert_eq!(remove(owner, "Profiles.A."), 2);
+        assert_eq!(remove(owner, "Profiles.A."), 0);
+        assert_eq!(keys(owner, "Profiles"), ["Profiles.B.x", "Profilesx"]);
+        assert_eq!(get(owner, "Profiles.A.x"), None);
+        assert_eq!(remove(owner, "other"), 1);
     }
 
     #[test]

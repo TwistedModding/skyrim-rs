@@ -118,6 +118,8 @@ static TABLE: Table = Table {
     show_tab: gui::show_tab,
     setting: settings::get,
     set_setting: settings::set,
+    setting_keys: settings::keys,
+    remove_settings: settings::remove,
     add_sink,
     add_player_graph_sink,
     register_native,
