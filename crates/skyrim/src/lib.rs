@@ -202,26 +202,26 @@ mod spin {
     use windows_sys::Win32::System::Threading::Sleep;
 
     /// A held `BSSpinLock`, the engine's recursive lock (owner thread id at +0, recursion count at +4),
-    /// spun on the way the engine does (`Sleep(0)`, then `Sleep(1)` after 10,000 tries) and released on drop.
+    /// taken and released as the engine does (UI `0x1169590`): the count is the lock word, moved
+    /// 0 -> 1 by compare-exchange, and the owner is written after it; `Sleep(0)`, then `Sleep(1)`
+    /// after 10,000 tries. Released on drop.
     pub(crate) struct SpinGuard(*const sre::BSSpinLock);
 
     impl SpinGuard {
         pub(crate) fn lock(lock: &sre::BSSpinLock) -> Self {
             let (owner, count) = Self::words(lock);
             let me = super::thread_id();
+            if owner.load(Ordering::Acquire) == me {
+                count.fetch_add(1, Ordering::AcqRel);
+                return Self(lock);
+            }
             let mut spins = 0u32;
-            loop {
-                if owner.load(Ordering::Acquire) == me {
-                    count.fetch_add(1, Ordering::Relaxed);
-                    return Self(lock);
-                }
-                if owner.compare_exchange(0, me, Ordering::Acquire, Ordering::Relaxed).is_ok() {
-                    count.store(1, Ordering::Relaxed);
-                    return Self(lock);
-                }
+            while count.compare_exchange(0, 1, Ordering::Acquire, Ordering::Relaxed).is_err() {
                 spins += 1;
                 unsafe { Sleep(u32::from(spins > 10_000)) };
             }
+            owner.store(me, Ordering::Release);
+            Self(lock)
         }
 
         fn words(lock: &sre::BSSpinLock) -> (&AtomicU32, &AtomicU32) {
@@ -232,8 +232,11 @@ mod spin {
     impl Drop for SpinGuard {
         fn drop(&mut self) {
             let (owner, count) = Self::words(unsafe { &*self.0 });
-            if count.fetch_sub(1, Ordering::Relaxed) == 1 {
-                owner.store(0, Ordering::Release);
+            if count.load(Ordering::Acquire) == 1 {
+                owner.store(0, Ordering::SeqCst);
+                count.store(0, Ordering::SeqCst);
+            } else {
+                count.fetch_sub(1, Ordering::AcqRel);
             }
         }
     }
