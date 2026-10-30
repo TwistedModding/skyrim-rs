@@ -6,8 +6,10 @@
 //! dialogue's framing and speaker focus shots, the race menu orbit, the world, hands and tween
 //! menu FOV with the zoom effect, the pitch-driven world near plane, and the gameplay sites: the
 //! magic casters' and effect shaders' root, the crosshair pick, the movement input buffer, the
-//! scroll wheel, the POV toggle and the scripts' forced first and third person.
+//! scroll wheel, the POV toggle and the scripts' forced first and third person; foot IK kept on
+//! for the anchored body, and FSMP told when the body is camera-driven.
 
+mod api;
 mod body;
 mod camera;
 mod event;
@@ -121,6 +123,7 @@ fn load(host: &'static Host) -> bool {
         skse::MessagingInterface::POST_LOAD_GAME => hook::fixes::apply_body_visibility(),
         _ => {}
     });
+    host.on_plugin_message(api::fsmp::SENDER, api::fsmp::handle_message);
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
     let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);
     let shoulders = [camera::base::PAD_LEFT_SHOULDER, camera::base::PAD_RIGHT_SHOULDER].map(|mask| (InputDevice::Gamepad, mask));
@@ -138,11 +141,14 @@ fn load(host: &'static Host) -> bool {
     true
 }
 
-/// Puts the body back as the engine keeps it: full scales, and the third-person root hidden in
-/// first person; and the engine's world FOV, FOV offset and near plane.
+/// Puts the body back as the engine keeps it: full scales, the third-person root hidden in first
+/// person and its foot IK parked; the engine's world FOV, FOV offset and near plane; and FSMP
+/// simulating the player as usual.
 fn unload() {
     camera::manager::release();
     body::free_look::release();
+    body::manager::release_foot_ik();
+    api::fsmp::set_player_body_camera_driven(false);
     camera::manager::reset_fov();
     camera::manager::reset_near();
     let Some(player) = util::skyrim_util::player() else { return };
@@ -158,13 +164,14 @@ fn save_state() -> Vec<u8> {
     let body = body::manager::with(|m| *m);
     let camera = camera::manager::with(|m| m.clone());
     let world_fov = util::skyrim_util::camera().map_or(0.0, |c| c.worldFOV);
-    handoff::save(&body, &camera,handoff::Written { world_fov, near: skyrim::render::near_distance() })
+    handoff::save(&body, &camera, handoff::Written { world_fov, near: skyrim::render::near_distance() }, api::fsmp::saved())
 }
 
-/// Takes the old build's state, and the world FOV and near plane it had written over the ones
-/// `unload` put back.
+/// Takes the old build's state, FSMP's interface it received, and the world FOV and near plane it
+/// had written over the ones `unload` put back.
 fn restore_state(bytes: &[u8]) {
-    if let Some((body, camera, written)) = handoff::restore(bytes) {
+    if let Some((body, camera, written, fsmp)) = handoff::restore(bytes) {
+        api::fsmp::restore(fsmp);
         body::manager::with(|m| *m = body);
         camera::manager::with(|m| *m = camera);
         if let Some(c) = util::skyrim_util::camera() {

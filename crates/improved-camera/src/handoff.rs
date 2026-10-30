@@ -1,7 +1,7 @@
 //! The state a hot reload hands from one build to the next: the body manager (states, offsets,
 //! the full scales of the parts it shrinks and the frozen pose), the camera manager's state type,
-//! modifier, mode, look and FOV and near-plane state, and the engine values the old build had
-//! written. The new build makes the state object again without its `OnEnter` (what a state keeps
+//! modifier, mode, look and FOV and near-plane state, the engine values the old build had
+//! written, and FSMP's interface it received. The new build makes the state object again without its `OnEnter` (what a state keeps
 //! of its own starts over) and with no transition running. Little-endian fields behind a version
 //! byte; bytes of another version are ignored.
 
@@ -16,7 +16,7 @@ use crate::camera::state::{CameraMode, CameraType};
 use crate::camera::states::State;
 use crate::camera::util::look::LookState;
 
-const VERSION: u8 = 4;
+const VERSION: u8 = 5;
 
 const MODES: [CameraMode; 4] = [CameraMode::First, CameraMode::Head, CameraMode::Third, CameraMode::None];
 
@@ -45,6 +45,10 @@ impl Writer {
             self.f32(x);
         }
     }
+
+    fn u64(&mut self, v: u64) {
+        self.0.extend_from_slice(&v.to_le_bytes());
+    }
 }
 
 struct Reader<'a>(&'a [u8]);
@@ -63,10 +67,16 @@ impl Reader<'_> {
     fn v3(&mut self) -> Option<[f32; 3]> {
         Some([self.f32()?, self.f32()?, self.f32()?])
     }
+
+    fn u64(&mut self) -> Option<u64> {
+        let (head, rest) = self.0.split_first_chunk::<8>()?;
+        self.0 = rest;
+        Some(u64::from_le_bytes(*head))
+    }
 }
 
 #[must_use]
-pub fn save(body: &Body, camera: &Camera, written: Written) -> Vec<u8> {
+pub fn save(body: &Body, camera: &Camera, written: Written, fsmp: u64) -> Vec<u8> {
     let mut w = Writer(vec![VERSION]);
     w.u32(body.race.race as u32);
     w.v3(body.race.offset);
@@ -104,6 +114,7 @@ pub fn save(body: &Body, camera: &Camera, written: Written) -> Vec<u8> {
         w.f32(v);
     }
     w.u32(u32::from(camera.defer_fov) | u32::from(camera.zoom_active) << 1 | u32::from(c.modifier.sim_first_person) << 2 | u32::from(c.first_person) << 3);
+    w.u64(fsmp);
     w.0
 }
 
@@ -127,7 +138,7 @@ fn camera(kind: CameraType, previous: CameraType, mode: CameraMode, offset: [f32
 }
 
 #[must_use]
-pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written)> {
+pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written, u64)> {
     let (&version, rest) = bytes.split_first()?;
     if version != VERSION {
         return None;
@@ -163,7 +174,8 @@ pub fn restore(bytes: &[u8]) -> Option<(Body, Camera, Written)> {
     let (world_fov, written_near) = (r.f32()?, r.f32()?);
     let flags = r.u32()?;
     let camera = camera(kind, previous, mode, offset, f, flags);
-    r.0.is_empty().then_some((body, camera, Written { world_fov, near: written_near }))
+    let fsmp = r.u64()?;
+    r.0.is_empty().then_some((body, camera, Written { world_fov, near: written_near }, fsmp))
 }
 
 #[cfg(test)]
@@ -199,8 +211,8 @@ mod tests {
         camera.current.mode = CameraMode::Third;
         camera.look.state.pitch = 0.3;
         let written = Written { world_fov: 84.5, near: 7.0 };
-        let (b, c, w) = restore(&save(&body, &camera, written)).unwrap();
-        assert_eq!((b, w), (body, written));
+        let (b, c, w, fsmp) = restore(&save(&body, &camera, written, 0x7ff6_1234_5678)).unwrap();
+        assert_eq!((b, w, fsmp), (body, written, 0x7ff6_1234_5678));
         assert_eq!(c.state.kind(), CameraType::Horse);
         assert_eq!(c.look.mode, LookMode::ThirdPerson);
         assert_eq!((c.current.modifier, c.current.mode, c.present.modifier), (camera.current.modifier, CameraMode::Third, camera.current.modifier));
@@ -210,7 +222,7 @@ mod tests {
 
     #[test]
     fn other_versions_and_short_bytes_are_ignored() {
-        let bytes = save(&Body::default(), &Camera::default(), Written { world_fov: 80.0, near: 15.0 });
+        let bytes = save(&Body::default(), &Camera::default(), Written { world_fov: 80.0, near: 15.0 }, 0);
         assert!(restore(&bytes[..bytes.len() - 1]).is_none());
         let mut other = bytes;
         other[0] = 0;

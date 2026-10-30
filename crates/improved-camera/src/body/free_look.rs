@@ -155,7 +155,7 @@ pub fn send_turn_event(event: Option<&'static str>) {
 /// The player's third-person graph: the twist writes reach it alone, since the first-person
 /// arms ride the camera and a spine twist there would swing them off screen.
 fn body_graph(player: &PlayerCharacter) -> Option<&sre::BShkbAnimationGraph> {
-    player.current_process()?.middle_high()?.animation_graph_manager()?.graphs().first().copied().flatten()
+    util::player_graphs(player).first().copied().flatten()
 }
 
 fn set_head_tracking(player: &PlayerCharacter, on: bool) {

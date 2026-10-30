@@ -5,6 +5,7 @@
 
 use std::sync::Mutex;
 
+use skyrim::BSFixedString;
 use skyrim::prelude::*;
 use skyrim::render::Transform;
 use sre::{ActorAttackState, ActorState_flags1, ActorWeaponState, FormType, NiAVObject, PlayerCharacter, PlayerControls, TESFurniture, TESObjectWEAP};
@@ -17,6 +18,7 @@ use super::state::approach;
 use super::state::hands::{EquipmentType, HandsState, HandsType, InteractionType};
 use super::state::movement::{MovementState, MovementType};
 use super::state::race::{RaceState, RaceType};
+use crate::api::fsmp;
 use crate::camera::snapshot as camera_snapshot;
 use crate::camera::state::{CameraMode, CameraType};
 use crate::plugin::{self, ModInfo};
@@ -130,6 +132,11 @@ pub struct Manager {
     pub bash_aim_fix: bool,
     /// The root's pose after the last anchor to the camera (`m_lastAnchoredTranslate`, `Rotate`).
     pub anchored: Option<Forced>,
+    /// The spine's translation after the last anchor, when foot IK held the vertical part of it
+    /// there (`m_lastAnchoredSpineTranslate`).
+    pub anchored_spine: Option<[f32; 3]>,
+    /// Foot IK runs on the third-person graph this frame (`m_footIKActive`).
+    pub foot_ik_active: bool,
     /// The yaw smoothing's eased turn toward the movement (`m_bodyYaw`), `None` until it starts.
     pub body_yaw: Option<f32>,
     /// `m_humanoidRace`.
@@ -159,11 +166,17 @@ impl Default for Manager {
             key_release_timer: 0.0,
             bash_aim_fix: false,
             anchored: None,
+            anchored_spine: None,
+            foot_ik_active: false,
             body_yaw: None,
             humanoid: false,
         }
     }
 }
+
+const SPINE: &str = "NPC Spine [Spn0]";
+/// How far the spine takes the anchor's vertical correction while foot IK is live.
+const SPINE_DELTA_LIMIT: f32 = 20.0;
 
 /// `m_keyReleaseDelay`: how long the movement input may read zero speed before the sway lets go.
 const KEY_RELEASE_DELAY: f32 = 0.1;
@@ -222,6 +235,11 @@ pub fn update_animation_third_person(third: &NiAVObject, forced: bool) {
             let local = root.local_transform();
             let pose = *m.forced.get_or_insert(m.anchored.unwrap_or(Forced { translate: local.translation, rotate: local.rotation }));
             root.set_local_transform(Transform { rotation: pose.rotate, translation: pose.translate, ..local });
+            if let Some(translation) = m.anchored_spine
+                && let Some(spine) = util::object_by_name(third, SPINE)
+            {
+                spine.set_local_transform(Transform { translation, ..spine.local_transform() });
+            }
             root.update_transforms();
             return;
         }
@@ -262,15 +280,19 @@ pub fn smooth_movement_offset(previous: Option<f32>, target: f32, speed: f32, ma
 /// `BODY::Manager::AnchorCamera`, after the camera update: in first person the body's root is
 /// turned by the yaw smoothing or the free look's deadzone and moved so the head sits
 /// `fAnchorForward` behind and `fAnchorUp` below the presented camera, less the state offsets.
-/// IC's foot IK and FSMP hand-off are later items.
+/// FSMP is told the body is camera-driven only once it is anchored.
 pub fn anchor_camera(dt: f32) {
     if util::game_is_paused() {
         return;
     }
+    fsmp::set_player_body_camera_driven(false);
     let camera = camera_snapshot::get();
     let profile = *settings::profile();
     let mut events = [None; 2];
-    let release = with(|m| anchor(m, &camera, &profile, dt, &mut events));
+    let release = with(|m| {
+        m.foot_ik_active = update_foot_ik(&profile);
+        anchor(m, &camera, &profile, dt, &mut events)
+    });
     for event in events {
         free_look::send_turn_event(event);
     }
@@ -285,6 +307,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     let snap = |events: &mut [Option<&'static str>; 2]| events[1] = free_look::with(FreeLook::snap_body_yaw);
     if camera.mode != CameraMode::First {
         m.anchored = None;
+        m.anchored_spine = None;
         m.body_yaw = None;
         snap(events);
         return true;
@@ -325,7 +348,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
         let forward = point::mul_vec(&root.world_transform().rotation, [0.0, 1.0, 0.0]);
         let body_yaw = forward[0].atan2(forward[1]);
         if magnitude > 0.1
-            && let Some(spine) = util::object_by_name(third, "NPC Spine [Spn0]")
+            && let Some(spine) = util::object_by_name(third, SPINE)
         {
             let spine_forward = point::mul_vec(&spine.world_transform().rotation, [0.0, 1.0, 0.0]);
             let turn = normalize_radian(spine_forward[0].atan2(spine_forward[1]) - body_yaw);
@@ -363,15 +386,69 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     let world = third.world_transform();
     let nudge = anchor_offset(m, profile);
     let anchor = point::scale([-nudge[0], body.fAnchorForward - nudge[1], body.fAnchorUp - nudge[2]], world.scale);
-    let delta = point::sub(camera.position, point::add(head.world_transform().translation, point::mul_vec(&world.rotation, anchor)));
-    let parent = parent.world_transform();
-    let parent_scale = if parent.scale > 0.0001 { parent.scale } else { 1.0 };
+    let mut delta = point::sub(camera.position, point::add(head.world_transform().translation, point::mul_vec(&world.rotation, anchor)));
+    // With foot IK live the engine owns the legs' ground contact: the vertical part of the anchor
+    // rides in the spine instead of pushing the planted feet through the ground, up to a limit
+    // past which (transitions) it spills back into the root.
+    let spine = m.foot_ik_active.then(|| util::object_by_name(third, SPINE)).flatten().filter(|s| !s.parent.is_null());
+    let spine_delta = spine.map_or(0.0, |_| delta[2].clamp(-SPINE_DELTA_LIMIT, SPINE_DELTA_LIMIT));
+    delta[2] -= spine_delta;
     let mut local = root.local_transform();
-    local.translation = point::add(local.translation, point::mul_vec(&point::transpose(&parent.rotation), point::scale(delta, 1.0 / parent_scale)));
+    local.translation = point::add(local.translation, to_parent_local(parent, delta));
     root.set_local_transform(local);
+    if let Some(spine) = spine
+        && let Some(spine_parent) = unsafe { spine.parent.cast::<NiAVObject>().as_ref() }
+    {
+        let mut spine_local = spine.local_transform();
+        spine_local.translation = point::add(spine_local.translation, to_parent_local(spine_parent, [0.0, 0.0, spine_delta]));
+        spine.set_local_transform(spine_local);
+    }
     root.update_transforms();
     m.anchored = Some(Forced { translate: local.translation, rotate: local.rotation });
+    m.anchored_spine = spine.map(|s| s.local_transform().translation);
+    fsmp::set_player_body_camera_driven(true);
     false
+}
+
+/// A world-space move as a translation in `parent`'s local space.
+fn to_parent_local(parent: &NiAVObject, delta: [f32; 3]) -> [f32; 3] {
+    let parent = parent.world_transform();
+    let parent_scale = if parent.scale > 0.0001 { parent.scale } else { 1.0 };
+    point::mul_vec(&point::transpose(&parent.rotation), point::scale(delta, 1.0 / parent_scale))
+}
+
+/// `UpdateFootIK`: in the engine's first person the POV switch leaves the third-person graph's
+/// foot IK driver disabled and the engine drives only the active graph's, so the anchored body
+/// would never plant its feet. Drive it from the behaviour graph's own `bHumanoidFootIKDisable`,
+/// which riding and swimming still raise. Whether foot IK is live.
+fn update_foot_ik(profile: &Profile) -> bool {
+    if !profile.General.bEnableBody || !util::is_engine_first_person() {
+        return false;
+    }
+    let Some(player) = util::player() else { return false };
+    let graphs = util::player_graphs(player);
+    if graphs.len() < 2 {
+        return false;
+    }
+    let Some(graph) = graphs[0] else { return false };
+    let Some(driver) = (unsafe { graph.character.footIkDriver.as_ref() }) else { return false };
+    let mut disabled = false;
+    unsafe { graph.get_graph_variable_bool(BSFixedString::new("bHumanoidFootIKDisable").raw(), &raw mut disabled) };
+    driver.set_disabled(disabled);
+    !disabled
+}
+
+/// Parks the third-person graph's foot IK driver disabled again, as the engine leaves it in first
+/// person, when this build had turned it on.
+pub fn release_foot_ik() {
+    if !with(|m| core::mem::take(&mut m.foot_ik_active)) {
+        return;
+    }
+    if let Some(graph) = util::player().and_then(|p| util::player_graphs(p).first().copied().flatten())
+        && let Some(driver) = unsafe { graph.character.footIkDriver.as_ref() }
+    {
+        driver.set_disabled(true);
+    }
 }
 
 impl Manager {
