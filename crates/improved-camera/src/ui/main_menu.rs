@@ -1,5 +1,5 @@
-//! `ui/menu/MainMenu`'s File menu ("Profiles", "Save", "Save As...", "Delete") and the profile
-//! name of its title bar, with the importer of IC's own files beside them.
+//! `ui/menu/MainMenu`'s File menu ("Profiles", "Save", "Save As...", "Delete"), the profile name
+//! of its title bar and its Help menu's Reset State, with the importer of IC's own files beside them.
 
 use framework::egui;
 
@@ -91,6 +91,11 @@ pub fn draw(ui: &mut egui::Ui) {
     }
     if !state.imported.is_empty() {
         ui.label(&state.imported);
+    }
+
+    section_header(ui, "Help");
+    if ui.button("Reset State").on_hover_text("Puts the player's camera, controls and animation state back to plain third person").clicked() {
+        crate::util::skyrim_util::reset_player_state();
     }
     ui.data_mut(|d| d.insert_temp(id, state));
 }

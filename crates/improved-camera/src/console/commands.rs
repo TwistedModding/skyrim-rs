@@ -1,6 +1,6 @@
 //! `console/ConsoleCommands`: the `ic` command (IC renames `Show1stPerson` to it; here it is a
 //! command of its own through the host): `ic [version]`, `ic enable`, `ic disable`, `ic menu`,
-//! `ic console`, `ic profile [name]`, `ic spec`/`ic spectate` and `ic pm`/`ic photomode`; and
+//! `ic console`, `ic resetstate`, `ic profile [name]`, `ic spec`/`ic spectate` and `ic pm`/`ic photomode`; and
 //! `SetCameraFOV`, whose engine function IC replaces. The commands run on the console queue's
 //! thread, so what changes the camera or the profile is handed to the next frame.
 
@@ -25,6 +25,7 @@ enum Request {
     Menu,
     Profile(String),
     PhotoMode,
+    ResetState,
     /// `SetCameraFOV`: the world FOV and, when given, the hands FOV.
     CameraFov(f32, Option<f32>),
 }
@@ -55,6 +56,7 @@ pub fn run_pending() {
             }
             Request::PhotoMode => crate::camera::studio::manager::with(|m| if m.active { m.exit() } else { m.enter() }),
             Request::CameraFov(world, hands) => apply_camera_fov(world, hands),
+            Request::ResetState => util::reset_player_state(),
         }
     }
 }
@@ -171,7 +173,7 @@ fn run(command: &str, argument: Option<&str>, free_camera: bool, in_game: bool, 
         }
         "enable" => ("enabled >> TRUE".to_owned(), Some(Request::Body(true))),
         "menu" | "console" => ("opening the menu".to_owned(), Some(Request::Menu)),
-        "resetstate" => ("resetstate is not ported".to_owned(), None),
+        "resetstate" => (format!("resetstate >> {}", if in_game { "TRUE" } else { "FALSE" }), in_game.then_some(Request::ResetState)),
         "profile" => match argument {
             None => (format!("profile active >> {active}"), None),
             Some(name) if name == active => (format!("profile is already active '{active}'"), None),
@@ -188,7 +190,7 @@ static PARAMS: [Param; 2] = [Param::new(c"command", ScriptParamType::String, tru
 
 impl Command for Ic {
     const NAME: &'static CStr = c"IC";
-    const HELP: &'static CStr = c"Improved Camera: ic [version|enable|disable|menu|profile [name]|spec|pm]";
+    const HELP: &'static CStr = c"Improved Camera: ic [version|enable|disable|menu|resetstate|profile [name]|spec|pm]";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -201,7 +203,7 @@ impl Command for Ic {
             spectate(context.this_ref());
             return true;
         }
-        let close = matches!(command.as_str(), "menu");
+        let close = matches!(command.as_str(), "menu" | "resetstate");
         let in_game = check_console(close);
         let (line, request) = run(&command, argument.as_deref(), util::is_free_camera(), in_game, crate::settings::profile().General.bEnableBody, &crate::active_profile(), &crate::profile_names());
         print(&line);
@@ -244,6 +246,8 @@ mod tests {
         assert_eq!(ic("profile", Some("Combat")), ("profile set >> Combat".to_owned(), Some(Request::Profile("Combat".to_owned()))));
         assert_eq!(ic("profile", Some("Cold")), ("profile not found 'Cold'".to_owned(), None));
         assert_eq!(ic("dance", None).0, "unknown command 'dance'");
+        assert_eq!(ic("resetstate", None), ("resetstate >> TRUE".to_owned(), Some(Request::ResetState)));
+        assert_eq!(run("resetstate", None, false, false, true, "Default", &[]).1, None, "not in the main or loading menu");
         assert_eq!(run("pm", None, true, true, true, "Default", &[]).1, Some(Request::PhotoMode), "photo mode toggles in TFC");
         assert_eq!(run("enable", None, true, true, true, "Default", &[]), ("commands are disabled during TFC mode".to_owned(), None));
         assert_eq!(run("version", None, true, true, true, "Default", &[]).1, None, "the version answers in TFC");

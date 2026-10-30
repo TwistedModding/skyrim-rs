@@ -475,6 +475,53 @@ pub fn set_camera_target(actor: Option<&Actor>) {
     camera.set_target(Some(actor.map_or(&***player, |a| &**a)));
 }
 
+/// The zoom `Reset_Player_State` puts the third-person camera and `fMinCurrentZoom` at.
+const RESET_ZOOM: f32 = -0.2;
+
+/// `Reset_Player_State` (`ic resetstate`, the menu's Reset State), outside the main and loading
+/// menus, beast form and a mount: the first-person root shown in first person, the camera back on
+/// the player, the third-person state's input handler on (its enabled byte, RE `camera.md` IC9 D),
+/// the movement, looking, POV and fighting controls on, third person forced at the -0.2 zoom with
+/// the body shown, the script's POV lock released, `IdleForceDefaultState` sent to the graph and
+/// the player knocked at its own position with force 0.1 (`PushActorAway`, IC9 D). Main thread.
+pub fn reset_player_state() {
+    let (Some(player), Some(camera)) = (player(), camera()) else { return };
+    if is_menu_open("Main Menu") || is_menu_open("Loading Menu") || is_beast_mode() || player.is_on_mount() {
+        return;
+    }
+    if is_engine_first_person()
+        && let Some(root) = player.first_person_root()
+    {
+        root.set_hidden(false);
+    }
+    crate::camera::extended::request_target(None);
+    let third = camera.third_person();
+    if let Some(third) = third {
+        skyrim::store(&third.inputHandler.enabled, 1);
+    }
+    if let Some(c) = controls() {
+        let on = [ControlGroupFlag::Movement, ControlGroupFlag::Looking, ControlGroupFlag::POVSwitch, ControlGroupFlag::Fighting].iter().fold(0, |bits, f| bits | *f as u32);
+        skyrim::store(&c.enabledControls, c.enabledControls | on);
+    }
+    camera.force_third_person();
+    skyrim::store(min_current_zoom(), RESET_ZOOM);
+    if let Some(third) = third {
+        set_zoom(third, RESET_ZOOM);
+    }
+    if let Some(root) = player.third_person_root() {
+        root.set_hidden(false);
+    }
+    if let Some(c) = PlayerControls::singleton() {
+        skyrim::store(&c.bDisablePOVChange[DisablePOVType::Script as usize], 0);
+    }
+    player.notify_animation_graph(BSFixedString::new(crate::camera::studio::idles::RESET_IDLE).raw());
+    if !player.currentProcess.is_null() {
+        let origin = sre::NiPoint3 { x: player.posX, y: player.posY, z: player.posZ, __engine: sre::Engine::new() };
+        let actor = core::ptr::from_ref::<Actor>(player).cast_mut();
+        unsafe { sre::push_actor_away(player.currentProcess, actor, &raw const origin, 0.1) };
+    }
+}
+
 /// The third-person family state object for `state` (horse, bleedout and dragon share its layout).
 pub fn family(camera: &PlayerCamera, state: CameraState) -> Option<&ThirdPersonState> {
     zoom_state(camera, state)
