@@ -2,19 +2,19 @@
 //! lookup returns, and what the generated `TESObjectREFR`, `InventoryChanges`, `TESContainer`,
 //! `TESFullName` and `ActorValueList` methods leave `unsafe`: the handle out-parameter, the
 //! inventory list, the base container's entries, the full name as `&CStr`, the actor value table
-//! as a slice and a lookup by name; the mount a rider sits on, the motion mode and the process lists'
-//! high actor handles.
+//! as a slice and a lookup by name; the mount a rider sits on, the motion mode, a graph pause, the
+//! display name and the process lists' high actor handles.
 //!
 //! Read and write on the game's main thread, as with forms.
 
-use core::ffi::CStr;
+use core::ffi::{CStr, c_void};
 use core::ptr::NonNull;
 use core::sync::atomic::{AtomicU32, Ordering};
 use std::ffi::CString;
 use std::fmt;
 
 use sre::raw::{fns, globals};
-use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
+use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, MotionDriveMode, NiAVObject, NiPoint3, PlayerCharacter, TESContainer, TESForm_formFlags, TESFullName, TESObjectCELL, TESObjectREFR};
 
 use crate::ptr_slice;
 
@@ -83,6 +83,9 @@ pub trait TESObjectREFRExt {
     /// The reference's handle through `TESObjectREFR::GetHandle` (id 19846), created on first use;
     /// [`RefHandle::INVALID`] for an object nothing references.
     fn handle(&self) -> RefHandle;
+    /// The name the game shows for the reference (`GetDisplayFullName`, id 19781). Main thread: it
+    /// may add extra data (RE `camera.md` IC8 C).
+    fn display_name(&self) -> Option<&CStr>;
 }
 
 impl TESObjectREFRExt for TESObjectREFR {
@@ -90,6 +93,11 @@ impl TESObjectREFRExt for TESObjectREFR {
         let mut handle = 0;
         unsafe { self.get_handle(&raw mut handle) };
         RefHandle(handle)
+    }
+
+    fn display_name(&self) -> Option<&CStr> {
+        let name = self.get_display_full_name();
+        if name.is_null() { None } else { Some(unsafe { CStr::from_ptr(name) }) }
     }
 }
 
@@ -105,6 +113,22 @@ pub trait ActorExt {
     /// `IsMotionDriven` tests; RE `camera.md` request IC8 M); `None` without a controller or for a
     /// value outside the enum.
     fn motion_mode(&self) -> Option<MotionDriveMode>;
+    /// Stops the actor's animation graph updates as the engine does (`boolFlags2` bit 8 cleared
+    /// and bit 17, one forced update, set in one store; RE `camera.md` IC8 A), or lets them run
+    /// again with one forced update. The engine re-enables them, so a pause is re-asserted every
+    /// frame. Main thread.
+    fn set_graph_paused(&self, paused: bool);
+}
+
+/// `boolFlags2` bit 8: the animation graph updates.
+const GRAPH_UPDATE: u32 = 1 << 8;
+/// `boolFlags2` bit 17: one graph update is forced (cleared by `PrepareAnimationUpdate`).
+const FORCE_GRAPH_UPDATE: u32 = 1 << 17;
+
+/// `boolFlags2` with the graph paused or running.
+#[must_use]
+const fn graph_flags(flags: u32, paused: bool) -> u32 {
+    if paused { (flags & !GRAPH_UPDATE) | FORCE_GRAPH_UPDATE } else { flags | GRAPH_UPDATE | FORCE_GRAPH_UPDATE }
 }
 
 impl ActorExt for Actor {
@@ -127,6 +151,27 @@ impl ActorExt for Actor {
         let controller = unsafe { self.movementController.as_ref() }?;
         MotionDriveMode::from_u32(controller.motionMode)
     }
+
+    fn set_graph_paused(&self, paused: bool) {
+        crate::store(&self.boolFlags2, graph_flags(self.boolFlags2, paused));
+    }
+}
+
+/// The live references of `cell` within `radius` of `origin`, disabled and deleted ones left out,
+/// through `TESObjectCELL::ForEachReferenceInRadius` (id 19068), which walks under the cell's lock
+/// and follows load doors into linked cells within the radius (RE `camera.md` IC8 C). Main thread.
+#[must_use]
+pub fn references_in_radius(cell: &TESObjectCELL, origin: [f32; 3], radius: f32) -> Vec<RefHandle> {
+    unsafe extern "C" fn collect(reference: *mut TESObjectREFR, data: *mut c_void) -> bool {
+        unsafe { (*data.cast::<Vec<*mut TESObjectREFR>>()).push(reference) };
+        false
+    }
+    let mut found: Vec<*mut TESObjectREFR> = Vec::new();
+    let [x, y, z] = origin;
+    let origin = NiPoint3 { x, y, z, __engine: sre::Engine::new() };
+    unsafe { cell.for_each_reference_in_radius(&raw const origin, radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
+    let skip = TESForm_formFlags::DELETED.bits() | TESForm_formFlags::DISABLED.bits();
+    found.into_iter().filter_map(|r| unsafe { r.as_ref() }).filter(|r| r.formFlags & skip == 0).map(TESObjectREFRExt::handle).collect()
 }
 
 /// Offset of the high actor handle array in `ProcessLists` (data +0, capacity +8, size +0x10).
@@ -239,7 +284,14 @@ pub fn lookup_actor_value(name: &str) -> Option<ActorValue> {
 
 #[cfg(test)]
 mod tests {
-    use super::{HIGH_ACTOR_HANDLES, RefHandle, handles_at};
+    use super::{HIGH_ACTOR_HANDLES, RefHandle, graph_flags, handles_at};
+
+    #[test]
+    fn a_pause_clears_the_update_bit_and_forces_one_update() {
+        assert_eq!(graph_flags(0x3820_21a3, true), (0x3820_21a3 & !0x100) | 0x2_0000);
+        assert_eq!(graph_flags(0x2, false), 0x2_0102);
+        assert_eq!(graph_flags(graph_flags(0x1_0101, true), false), 0x3_0101);
+    }
 
     #[test]
     fn the_high_array_is_read_from_its_data_and_size() {

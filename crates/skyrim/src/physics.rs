@@ -1,7 +1,8 @@
 //! Ray picks against the Havok world (RE `camera.md` request IC5 A): a `bhkPickData` filled as the
 //! engine fills its own, cast by `TESObjectCELL::Pick` (`bhkWorld::PickObject` on the cell's world,
 //! which takes the world's read lock itself), and the hit's position, normal, fraction, collision
-//! layer and reference; the character controller's collision shapes are in [`controller`].
+//! layer and reference; the character controller's collision shapes are in [`controller`]. Placing a
+//! reference (IC8 A): its collision switch, a move that carries its controller and its 3D along.
 //!
 //! Pick on the main thread (or on a job the engine runs Havok work on): `PickObject` reads Havok
 //! thread-local state a thread the engine did not set up does not have.
@@ -9,9 +10,11 @@
 pub mod controller;
 
 use sre::raw::{fns, globals};
-use sre::{CollisionLayer, PlayerCharacter, TESObjectCELL, bhkPickData};
+use sre::{CollisionLayer, NiAVObject, PlayerCharacter, TESObjectCELL, TESObjectREFR, bhkPickData};
 
 use crate::actors::{RefHandle, TESObjectREFRExt};
+use crate::forms::TESFormExt;
+use crate::render::NiAVObjectExt;
 
 /// Game units to Havok units (`g_HavokWorldScale`).
 pub const HAVOK_SCALE: f32 = 0.014_287_5;
@@ -158,6 +161,63 @@ pub fn pick_in(cell: &TESObjectCELL, from: [f32; 3], to: [f32; 3], filter_info: 
 pub fn pick(from: [f32; 3], to: [f32; 3], filter_info: u32) -> Option<Hit> {
     let cell = unsafe { PlayerCharacter::singleton()?.parentCell.as_ref() }?;
     pick_in(cell, from, to, filter_info)
+}
+
+/// The `formFlags` bit `TESObjectREFR::SetCollisionDisabled` writes (RE `camera.md` IC8 A).
+const COLLISION_DISABLED: u32 = 1 << 4;
+
+fn is_player(reference: &TESObjectREFR) -> bool {
+    PlayerCharacter::singleton().is_some_and(|p| core::ptr::eq(core::ptr::from_ref(reference), core::ptr::from_ref(p).cast()))
+}
+
+/// Whether the reference moves without collision (console `tcl` on it; for the player, `tcl`
+/// without a reference).
+#[must_use]
+pub fn collision_disabled(reference: &TESObjectREFR) -> bool {
+    if is_player(reference) {
+        unsafe { *sre::g_collisions_disabled() != 0 }
+    } else {
+        reference.formFlags & COLLISION_DISABLED != 0
+    }
+}
+
+/// Switches the reference's collision as console `tcl` does: `SetCollisionDisabled` (id 14634)
+/// on any reference but the player, whose bit the engine rewrites every update from
+/// `g_CollisionsDisabled`, so that is written instead. Main thread.
+pub fn set_collision_disabled(reference: &TESObjectREFR, disabled: bool) {
+    if is_player(reference) {
+        crate::store(unsafe { &*sre::g_collisions_disabled() }, u8::from(disabled));
+    } else {
+        sre::TESObjectREFR::set_collision_disabled(reference, disabled);
+    }
+}
+
+/// Moves a reference as the console's move task does (RE `camera.md` IC8 A): its position, an
+/// actor's character controller (slot 3, which takes the world's write lock), then its 3D through
+/// [`sync_3d`]. Main thread.
+pub fn move_reference(reference: &TESObjectREFR, position: [f32; 3]) {
+    let [x, y, z] = position;
+    reference.set_position(&sre::NiPoint3 { x, y, z, __engine: sre::Engine::new() });
+    if let Some(controller) = reference.cast::<sre::Actor>().and_then(sre::Actor::get_char_controller) {
+        type SetPositionFn = unsafe extern "C" fn(*const sre::bhkCharacterController, *const sre::hkVector4, bool, bool);
+        let set: SetPositionFn = unsafe { core::mem::transmute(sre::vtable_entry(controller, 3)) };
+        let havok = sre::hkVector4 { x: x * HAVOK_SCALE, y: y * HAVOK_SCALE, z: z * HAVOK_SCALE, w: 0.0, __engine: sre::Engine::new() };
+        unsafe { set(controller, &raw const havok, true, false) };
+    }
+    sync_3d(reference);
+}
+
+/// Writes a reference's position and rotation into its 3D root's local transform (an actor turns
+/// by its heading only, any other reference by its XYZ angles), marks the root's collision for the
+/// new transform (id 78383) and updates the tree. Main thread.
+pub fn sync_3d(reference: &TESObjectREFR) {
+    let Some(root) = reference.loaded_data().and_then(|d| unsafe { d.node3D.as_ref() }) else { return };
+    let mut local = root.local_transform();
+    local.translation = [reference.posX, reference.posY, reference.posZ];
+    local.rotation = if reference.cast::<sre::Actor>().is_some() { crate::render::axis_turn(2, reference.rotZ) } else { crate::render::from_euler_xyz(reference.rotX, reference.rotY, reference.rotZ) };
+    root.set_local_transform(local);
+    unsafe { sre::update_collision_for_transform(core::ptr::from_ref::<NiAVObject>(root).cast_mut(), true) };
+    root.update_transforms();
 }
 
 #[cfg(test)]
