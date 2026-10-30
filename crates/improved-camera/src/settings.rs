@@ -3,41 +3,87 @@
 //! `Body.Race.HalfDragon.fForward`, `FOV.fFirstPersonHands`, `Effects.Zoom.fFOV`, `Camera.Dragon.forward`,
 //! `Stabilization.Horse.fSmoothingSpeed`, `Advanced.fNearDistanceMin`, `RestrictAngles.fPitchUp`).
 
+use std::cell::RefCell;
+use std::collections::BTreeMap;
 use std::sync::{LazyLock, RwLock, RwLockReadGuard};
 
-/// Where the profile is read from and written to: the host's settings, or a map in tests.
-pub trait Store {
-    fn get_bool(&self, key: &str) -> Option<bool>;
-    fn get_f32(&self, key: &str) -> Option<f32>;
-    fn get_i32(&self, key: &str) -> Option<i32>;
-    fn set_bool(&self, key: &str, value: bool);
-    fn set_f32(&self, key: &str, value: f32);
-    fn set_i32(&self, key: &str, value: i32);
-}
+use framework::settings::{Setting, Value};
 
-impl Store for framework::settings::Settings {
+/// Where profiles are read from and written to: the host's settings, or memory (the importer's
+/// staging and the tests).
+pub trait Store {
+    fn get(&self, key: &str) -> Option<Setting>;
+    fn set(&self, key: &str, value: Setting);
+    /// Every key starting with `prefix`, in order.
+    fn keys(&self, prefix: &str) -> Vec<String>;
+    /// Removes every key starting with `prefix`.
+    fn remove(&self, prefix: &str) -> usize;
+
     fn get_bool(&self, key: &str) -> Option<bool> {
-        self.get(key)
+        self.get(key).as_ref().and_then(bool::from_setting)
     }
 
     fn get_f32(&self, key: &str) -> Option<f32> {
-        self.get(key)
+        self.get(key).as_ref().and_then(f32::from_setting)
     }
 
     fn get_i32(&self, key: &str) -> Option<i32> {
-        self.get(key)
+        self.get(key).as_ref().and_then(i32::from_setting)
     }
 
     fn set_bool(&self, key: &str, value: bool) {
-        self.set(key, value);
+        self.set(key, value.into());
     }
 
     fn set_f32(&self, key: &str, value: f32) {
-        self.set(key, value);
+        self.set(key, value.into());
     }
 
     fn set_i32(&self, key: &str, value: i32) {
-        self.set(key, value);
+        self.set(key, value.into());
+    }
+}
+
+impl Store for framework::settings::Settings {
+    fn get(&self, key: &str) -> Option<Setting> {
+        self.get::<bool>(key).map(Setting::Bool).or_else(|| self.get::<f64>(key).map(Setting::Number)).or_else(|| self.get::<String>(key).map(Setting::Text))
+    }
+
+    fn set(&self, key: &str, value: Setting) {
+        Self::set(self, key, value);
+    }
+
+    fn keys(&self, prefix: &str) -> Vec<String> {
+        Self::keys(self, prefix)
+    }
+
+    fn remove(&self, prefix: &str) -> usize {
+        Self::remove(self, prefix)
+    }
+}
+
+/// Settings held in memory.
+#[derive(Default)]
+pub struct Memory(RefCell<BTreeMap<String, Setting>>);
+
+impl Store for Memory {
+    fn get(&self, key: &str) -> Option<Setting> {
+        self.0.borrow().get(key).cloned()
+    }
+
+    fn set(&self, key: &str, value: Setting) {
+        self.0.borrow_mut().insert(key.to_owned(), value);
+    }
+
+    fn keys(&self, prefix: &str) -> Vec<String> {
+        self.0.borrow().keys().filter(|k| k.starts_with(prefix)).cloned().collect()
+    }
+
+    fn remove(&self, prefix: &str) -> usize {
+        let mut map = self.0.borrow_mut();
+        let before = map.len();
+        map.retain(|k, _| !k.starts_with(prefix));
+        before - map.len()
     }
 }
 
@@ -261,6 +307,7 @@ sections! {
         fFreeLookSettleAngle: f32 = 35.0,
         fFreeLookCatchupSpeed: f32 = 15.0,
         fFreeLookTwistStrength: f32 = 1.0,
+        bDisableTurnAnimation: bool = true,
         Combat: Offset = Offset::default(),
     }
     BodyDirectional = "Body.Directional" {
@@ -397,6 +444,11 @@ sections! {
         bHeadbob: bool = false,
         bHeadbobCombat: bool = false,
         bCameraTransition: bool = true,
+        fPlayerDeathReloadTime: f32 = 5.0,
+        fForwardBumperOffset: f32 = 45.0,
+        fSideBumperOffset: f32 = 15.0,
+        fBackBumperOffset: f32 = 15.0,
+        fWerewolfBumperOffset: f32 = 15.0,
         fNearDistanceDefault: f32 = 15.0,
         fNearDistanceMax: f32 = 15.0,
         fNearDistanceMin: f32 = 4.0,
@@ -455,14 +507,22 @@ sections! {
     }
     Dialogue = "Dialogue" {
         bEnable: bool = false,
+        bEnableFirstPerson: bool = true,
+        bEnableThirdPerson: bool = true,
         bForceFirstPerson: bool = true,
         bForceThirdPerson: bool = false,
         bSmoothTransition: bool = true,
+        bSmoothCamAPI: bool = true,
         bFaceSpeaker: bool = true,
         bHeadTracking: bool = true,
         bHideDialogueMenu: bool = true,
+        bRepositionHUDMessages: bool = true,
         bSwitchTarget: bool = false,
         bLockOn: bool = true,
+        bFadeToBlack: bool = false,
+        bLetterbox: bool = true,
+        fLetterboxRatio: f32 = 0.12,
+        fLetterboxTransitionSpeed: f32 = 2.5,
         fPlayerShoulderPosX: f32 = 60.0,
         fPlayerShoulderPosY: f32 = 0.0,
         fPlayerShoulderPosZ: f32 = 0.0,
@@ -475,7 +535,10 @@ sections! {
         fCreatureCamOffsetX: f32 = 0.0,
         fCreatureCamOffsetY: f32 = 0.0,
         fCreatureCamOffsetZ: f32 = 15.0,
+        fMessagePosX: f32 = -601.0,
+        fMessagePosY: f32 = -400.0,
         fCameraSpeed: f32 = 500.0,
+        fFadeSpeed: f32 = 4.0,
         fFirstPersonZoom: f32 = 50.0,
         fThirdPersonZoom: f32 = 75.0,
         fDragonZoom: f32 = 125.0,
@@ -484,7 +547,11 @@ sections! {
     Vanity = "Vanity" {
         bEnable: bool = false,
         bToggleMenus: bool = true,
+        bLetterbox: bool = true,
+        bNPCFocus: bool = true,
         bCollisionSmoothing: bool = true,
+        fLetterboxRatio: f32 = 0.12,
+        fLetterboxTransitionSpeed: f32 = 2.5,
         fIdleDelay: f32 = 120.0,
         fOrbitSpeed: f32 = 10.0,
         fDistance: f32 = 200.0,
@@ -494,6 +561,17 @@ sections! {
         fCollisionPullInDuration: f32 = 0.2,
         iCollisionRecoveryMethod: i32 = 15,
         fCollisionRecoveryDuration: f32 = 0.6,
+        fFocusRadius: f32 = 1500.0,
+        fFocusChance: f32 = 75.0,
+        fFocusOffset: f32 = 100.0,
+        fFocusDuration: f32 = 6.0,
+        fFocusCooldown: f32 = 8.0,
+        fFocusBlendTime: f32 = 1.5,
+        fFocusFOVOffset: f32 = -10.0,
+    }
+    EffectsLetterbox = "Effects.Letterbox" {
+        bEnable: bool = false,
+        bOverlay: bool = false,
     }
 }
 
@@ -526,6 +604,7 @@ pub struct Profile {
     pub Race: BodyRace,
     pub FOV: Fov,
     pub Zoom: EffectsZoom,
+    pub Letterbox: EffectsLetterbox,
     pub Advanced: Advanced,
     pub Firstperson: CameraFirstperson,
     pub Horse: CameraHorse,
@@ -559,6 +638,7 @@ impl Profile {
             Race: BodyRace::read(store),
             FOV: Fov::read(store),
             Zoom: EffectsZoom::read(store),
+            Letterbox: EffectsLetterbox::read(store),
             Advanced: Advanced::read(store),
         }
     }
@@ -574,6 +654,7 @@ impl Profile {
         self.Race.write(store);
         self.FOV.write(store);
         self.Zoom.write(store);
+        self.Letterbox.write(store);
         self.Advanced.write(store);
         self.Firstperson.write(store);
         self.Horse.write(store);
@@ -600,41 +681,7 @@ pub fn set_profile(profile: &Profile) {
 
 #[cfg(test)]
 mod tests {
-    use std::cell::RefCell;
-    use std::collections::HashMap;
-
-    use super::{Offset, Profile, Store};
-
-    #[derive(Default)]
-    struct Map(RefCell<HashMap<String, f64>>);
-
-    impl Store for Map {
-        fn get_bool(&self, key: &str) -> Option<bool> {
-            self.0.borrow().get(key).map(|v| *v != 0.0)
-        }
-
-        #[allow(clippy::cast_possible_truncation)]
-        fn get_f32(&self, key: &str) -> Option<f32> {
-            self.0.borrow().get(key).map(|v| *v as f32)
-        }
-
-        #[allow(clippy::cast_possible_truncation)]
-        fn get_i32(&self, key: &str) -> Option<i32> {
-            self.0.borrow().get(key).map(|v| *v as i32)
-        }
-
-        fn set_bool(&self, key: &str, value: bool) {
-            self.0.borrow_mut().insert(key.to_owned(), f64::from(u8::from(value)));
-        }
-
-        fn set_f32(&self, key: &str, value: f32) {
-            self.0.borrow_mut().insert(key.to_owned(), f64::from(value));
-        }
-
-        fn set_i32(&self, key: &str, value: i32) {
-            self.0.borrow_mut().insert(key.to_owned(), f64::from(value));
-        }
-    }
+    use super::{Memory as Map, Offset, Profile, Store};
 
     #[test]
     fn an_empty_store_reads_ic_defaults() {

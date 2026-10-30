@@ -1,51 +1,60 @@
-//! `ui/menu/FOVMenu`: the FOV of each camera, greyed out while the body is off, and the zoom
-//! effect's FOV from `ui/menu/EffectsMenu` (its key is the `improved-camera.zoom` action).
+//! `ui/menu/FOVMenu` ("Field of View Settings"): the FOV of each camera, greyed out while the body
+//! is off.
 
 use framework::egui;
 
-use crate::settings::{self, Profile};
+use super::widgets::{rows, section_header, slider};
 
-fn slider(ui: &mut egui::Ui, value: &mut f32, label: &str) {
-    ui.add(egui::Slider::new(value, 1.0..=165.0).fixed_decimals(0).text(label));
+fn fov(ui: &mut egui::Ui, label: &str, value: &mut f32, tooltip: &str) {
+    slider(ui, label, value, 1.0, 165.0, 0, tooltip);
 }
 
 pub fn draw(ui: &mut egui::Ui) {
-    let before = *settings::profile();
-    let mut p: Profile = before;
-    let enable_body = p.General.bEnableBody;
-    let f = &mut p.FOV;
-    ui.add_enabled_ui(enable_body, |ui| {
-        ui.heading("First Person");
-        slider(ui, &mut f.fFirstPersonHands, "Hands");
-        slider(ui, &mut f.fFirstPerson, "Default");
-        slider(ui, &mut f.fFirstPersonCombat, "Combat");
-        ui.heading("Activities");
-        slider(ui, &mut f.fFurniture, "Furniture");
-        slider(ui, &mut f.fCrafting, "Crafting");
-        slider(ui, &mut f.fKillmove, "Killmove");
-        slider(ui, &mut f.fRagdoll, "Ragdoll");
-        slider(ui, &mut f.fDeath, "Death");
-        slider(ui, &mut f.fCannibal, "Cannibal");
-        ui.heading("Horse");
-        slider(ui, &mut f.fHorse, "Riding");
-        slider(ui, &mut f.fHorseCombat, "Combat");
-        slider(ui, &mut f.fHorseTransition, "Transition");
-        ui.heading("Dragon");
-        slider(ui, &mut f.fDragon, "Riding");
-        slider(ui, &mut f.fDragonCombat, "Combat");
-        slider(ui, &mut f.fDragonTransition, "Transition");
-        ui.heading("Transformations");
-        slider(ui, &mut f.fVampireLord, "Vampire Lord");
-        slider(ui, &mut f.fWerewolf, "Werewolf");
-        slider(ui, &mut f.fLich, "Lich");
-        ui.heading("Other");
-        slider(ui, &mut f.fSex, "Sex");
-        slider(ui, &mut f.fThirdPerson, "Third Person");
+    super::edit(ui, |ui, p| {
+        if !p.General.bEnableBody {
+            ui.disable();
+        }
+        let f = &mut p.FOV;
+        super::halves(ui, |ui, right| {
+            section_header(ui, "First Person");
+            rows(ui, "fov_fp", |ui| {
+                fov(ui, "Hands", &mut f.fFirstPersonHands, "Adjust field of view for hands");
+                fov(ui, "Default", &mut f.fFirstPerson, "Adjust field of view during first person");
+                fov(ui, "Combat", &mut f.fFirstPersonCombat, "Adjust field of view during first person combat");
+            });
+            section_header(ui, "Activities");
+            rows(ui, "fov_activities", |ui| {
+                fov(ui, "Furniture", &mut f.fFurniture, "Adjust field of view during furniture (bed, chair, bench, etc)");
+                fov(ui, "Crafting", &mut f.fCrafting, "Adjust field of view during crafting (forge, smelter. grinding stone, ect)");
+                fov(ui, "Killmove", &mut f.fKillmove, "Adjust field of view during killmoves");
+                fov(ui, "Ragdoll", &mut f.fRagdoll, "Adjust field of view during ragdolling");
+                fov(ui, "Death", &mut f.fDeath, "Adjust field of view during death");
+                fov(ui, "Cannibal", &mut f.fCannibal, "Adjust field of view during cannibal");
+            });
+            section_header(ui, "Horse");
+            rows(ui, "fov_horse", |ui| {
+                fov(ui, "Riding", &mut f.fHorse, "Adjust field of view during horse riding");
+                fov(ui, "Combat", &mut f.fHorseCombat, "Adjust field of view during horse riding combat");
+                fov(ui, "Transition", &mut f.fHorseTransition, "Adjust field of view during horse transitions (mounting and dismounting)");
+            });
+            let ui = right;
+            section_header(ui, "Dragon");
+            rows(ui, "fov_dragon", |ui| {
+                fov(ui, "Riding", &mut f.fDragon, "Adjust field of view during dragon riding");
+                fov(ui, "Combat", &mut f.fDragonCombat, "Adjust field of view during dragon riding combat");
+                fov(ui, "Transition", &mut f.fDragonTransition, "Adjust field of view during dragon transitions (mounting and dismounting)");
+            });
+            section_header(ui, "Transformations");
+            rows(ui, "fov_transform", |ui| {
+                fov(ui, "Vampire Lord", &mut f.fVampireLord, "Adjust field of view during vampire lord");
+                fov(ui, "Werewolf", &mut f.fWerewolf, "Adjust field of view during werewolf");
+                fov(ui, "Lich", &mut f.fLich, "Adjust field of view during lich");
+            });
+            section_header(ui, "Other");
+            rows(ui, "fov_other", |ui| {
+                fov(ui, "Sex", &mut f.fSex, "Adjust field of view during sex");
+                fov(ui, "Third Person", &mut f.fThirdPerson, "Adjust field of view during third person");
+            });
+        });
     });
-    ui.heading("Zoom");
-    ui.add(egui::Slider::new(&mut p.Zoom.fFOV, -60.0..=-5.0).fixed_decimals(0).text("FOV"));
-
-    if p != before {
-        crate::apply_profile(&p);
-    }
 }

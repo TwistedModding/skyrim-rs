@@ -8,7 +8,9 @@
 //! magic casters' and effect shaders' root, the crosshair pick, the movement input buffer, the
 //! scroll wheel, the POV toggle and the scripts' forced first and third person; foot IK kept on
 //! for the anchored body, FSMP told when the body is camera-driven; the look limits, the sitting
-//! look-down limit, the body in interior rooms and the camera's fades skipped.
+//! look-down limit, the body in interior rooms and the camera's fades skipped; IC's menu as the
+//! tab's sections, its profiles kept in the plugin's settings with the importer of IC's own files,
+//! and its `ic` console command.
 
 mod api;
 mod body;
@@ -16,7 +18,9 @@ mod camera;
 mod event;
 mod handoff;
 mod hook;
+mod import;
 mod plugin;
+mod profiles;
 mod settings;
 mod ui;
 mod util;
@@ -38,9 +42,9 @@ framework::plugin! {
 
 static HOST: OnceLock<&'static Host> = OnceLock::new();
 /// IC's zoom key (`Effects.Zoom.iKey`, unbound by default).
-static ZOOM: OnceLock<Action> = OnceLock::new();
+pub(crate) static ZOOM: OnceLock<Action> = OnceLock::new();
 /// IC's free camera keys (`FreeCamera.iKeyRollLeft`, `iKeyRollRight`, `iKeyReset`): Q, E and R.
-static FREE_CAMERA: OnceLock<[Action; 3]> = OnceLock::new();
+pub(crate) static FREE_CAMERA: OnceLock<[Action; 3]> = OnceLock::new();
 /// What IC's free camera swallows while its controls run: the menu keys (`is_blackListedEvent`)
 /// and the shoulders it rolls with.
 static FREE_CAMERA_FILTER: OnceLock<InputFilter> = OnceLock::new();
@@ -72,6 +76,7 @@ pub(crate) fn swallow_free_camera_input(active: bool) {
 }
 
 pub(crate) fn log(line: &str) {
+    ui::console_menu::push(line);
     if let Some(host) = HOST.get()
         && let Ok(mut f) = skse::log::append(host.skse().runtime_version, "improved-camera")
     {
@@ -96,6 +101,9 @@ fn apply_profile(profile: &settings::Profile) {
     if arms {
         util::skyrim_util::reset_magic_nodes();
     }
+    if before.General.bEnableFakeFirstPerson && !profile.General.bEnableFakeFirstPerson {
+        leave_fake_first_person();
+    }
     let Some(host) = HOST.get() else { return };
     profile.write(&host.settings());
     let body = profile.General.bEnableBody;
@@ -109,12 +117,116 @@ fn apply_profile(profile: &settings::Profile) {
     }
 }
 
+/// `GeneralMenu`'s reaction to "Fake First Person" turned off: a camera held at the fake
+/// first-person zoom goes to the engine's first person, and the POV switch is allowed again.
+fn leave_fake_first_person() {
+    if let Some(camera) = util::skyrim_util::camera()
+        && let Some(third) = camera.third_person()
+        && third.targetZoom.to_bits() == util::skyrim_util::FAKE_FIRST_PERSON_ZOOM.to_bits()
+    {
+        util::skyrim_util::set_zoom(third, camera::base::THIRD_PERSON_ZOOM);
+        camera.force_first_person();
+        camera::manager::with(|m| m.forced_first_person = true);
+    }
+    util::skyrim_util::set_pov_switch(true);
+}
+
+/// The active profile's name.
+pub(crate) fn active_profile() -> String {
+    HOST.get().and_then(|h| profiles::active(&h.settings())).unwrap_or_else(|| profiles::DEFAULT.to_owned())
+}
+
+pub(crate) fn profile_names() -> Vec<String> {
+    HOST.get().map(|h| profiles::names(&h.settings())).unwrap_or_default()
+}
+
+/// The menu's and `ic profile`'s switch (`ReadProfile` under the new active name): the saved
+/// profile replaces the one in use from the next frame, after IC's `Reset_FirstPerson`.
+pub(crate) fn switch_profile(name: &str) -> bool {
+    let Some(host) = HOST.get() else { return false };
+    let Some(profile) = profiles::switch(&host.settings(), name) else { return false };
+    camera::manager::reset_fov();
+    camera::manager::reset_near();
+    apply_profile(&profile);
+    log(&format!("Profile {name} loaded"));
+    true
+}
+
+/// `WriteProfile`: the profile in use saved as `name`, which becomes the active one.
+pub(crate) fn save_profile(name: &str) {
+    let Some(host) = HOST.get() else { return };
+    let store = host.settings();
+    profiles::save(&store, name, &settings::profile());
+    profiles::set_active(&store, name);
+    log(&format!("Profile {name} saved"));
+}
+
+/// `DeleteProfile`: the active profile goes and Default is loaded.
+pub(crate) fn delete_profile() {
+    let Some(host) = HOST.get() else { return };
+    let name = active_profile();
+    if name == profiles::DEFAULT {
+        return;
+    }
+    profiles::delete(&host.settings(), &name);
+    switch_profile(profiles::DEFAULT);
+    log(&format!("Profile {name} deleted"));
+}
+
+/// Imports IC's files, logs every note and reloads the active profile when the import replaced it.
+/// Returns a one-line summary.
+pub(crate) fn import_profiles() -> String {
+    let Some(host) = HOST.get() else { return String::new() };
+    let Some(dir) = import::ic_directory() else { return "no working directory".to_owned() };
+    let summary = match import::import(&dir, &host.settings()) {
+        Ok(report) => {
+            for note in &report.notes {
+                log(&format!("Import: {note}"));
+            }
+            let active = active_profile();
+            if report.imported.contains(&active) {
+                switch_profile(&active);
+            }
+            format!("{} profile(s) imported from {} ({} note(s) in the console)", report.imported.len(), dir.display(), report.notes.len())
+        }
+        Err(e) => format!("nothing imported: {e}"),
+    };
+    log(&format!("Import: {summary}"));
+    summary
+}
+
+/// `ReadConfig` and `ReadProfile` at load. On the first run (no active profile stored yet) IC's
+/// own files are imported and IC's active profile is used; then the active profile is validated
+/// (`Default` when it is gone, written from the profile in use when missing).
+fn start_profiles(host: &Host) {
+    let store = host.settings();
+    let first = profiles::active(&store).is_none();
+    if first && let Some(dir) = import::ic_directory().filter(|d| d.is_dir()) {
+        match import::import(&dir, &store) {
+            Ok(report) => {
+                for note in &report.notes {
+                    log(&format!("Import: {note}"));
+                }
+                log(&format!("Import: {} profile(s) from {}", report.imported.len(), dir.display()));
+                profiles::set_active(&store, report.active.as_deref().unwrap_or(profiles::DEFAULT));
+            }
+            Err(e) => log(&format!("Import: {e}")),
+        }
+    }
+    let live = settings::Profile::read(&store);
+    let name = profiles::validate(&store, &live);
+    let profile = if first { profiles::load(&store, &name).unwrap_or(live) } else { live };
+    settings::set_profile(&profile);
+    profile.write(&store);
+    log(&format!("Profile {name} active"));
+}
+
 fn load(host: &'static Host) -> bool {
     if skyrim::init(host.skse()).is_err() {
         return false;
     }
     let _ = HOST.set(host);
-    settings::set_profile(&settings::Profile::read(&host.settings()));
+    start_profiles(host);
     if let Err(e) = hook::install(host) {
         log(&format!("hooks refused: {e}"));
         return false;
@@ -140,7 +252,21 @@ fn load(host: &'static Host) -> bool {
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
     });
-    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw).section("Camera", ui::camera_menu::draw).section("Restrict angles", ui::restrict_angles_menu::draw);
+    host.add_tab("Improved Camera")
+        .section("Profiles", ui::main_menu::draw)
+        .section("General", ui::general_menu::draw)
+        .section("Advanced", ui::advanced_menu::draw)
+        .section("Hide", ui::hide_menu::draw)
+        .section("Restrict Angles", ui::restrict_angles_menu::draw)
+        .section("Stabilization", ui::stabilization_menu::draw)
+        .section("Body", ui::body_menu::draw)
+        .section("Dialogue", ui::dialogue_menu::draw)
+        .section("Free Camera", ui::free_camera_menu::draw)
+        .section("Idle Camera", ui::vanity_menu::draw)
+        .section("Effects", ui::effects_menu::draw)
+        .section("FOV", ui::fov_menu::draw)
+        .section("Camera", ui::camera_menu::draw)
+        .section("Console", ui::console_menu::draw);
     hook::fixes::apply_body_visibility();
     log("loaded");
     true

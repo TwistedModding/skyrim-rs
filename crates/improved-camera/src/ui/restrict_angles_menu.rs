@@ -1,31 +1,29 @@
-//! `ui/menu/RestrictAnglesMenu`: the look limits in IC's first person, greyed out while the body
-//! is off.
+//! `ui/menu/RestrictAnglesMenu` ("Restrict Angles Settings"): the look limits in IC's first
+//! person, greyed out while the body is off.
 
 use framework::egui;
 
-use crate::settings::{self, Profile};
-
-fn slider(ui: &mut egui::Ui, value: &mut f32, range: core::ops::RangeInclusive<f32>, label: &str, hint: &str) {
-    ui.add(egui::Slider::new(value, range).fixed_decimals(1).text(label)).on_hover_text(hint);
-}
+use super::widgets::{rows, section_header, slider};
 
 pub fn draw(ui: &mut egui::Ui) {
-    let before = *settings::profile();
-    let mut p: Profile = before;
-    let r = &mut p.RestrictAngles;
-    ui.add_enabled_ui(before.General.bEnableBody, |ui| {
-        ui.heading("Standing");
-        slider(ui, &mut r.fPitchUp, 1.0..=89.0, "Pitch Up", "Restricts upward pitch");
-        slider(ui, &mut r.fPitchDown, -89.0..=-1.0, "Pitch Down", "Restricts downward pitch");
-        slider(ui, &mut r.fHeadingLeft, -89.0..=-1.0, "Heading Left", "Restricts leftward heading");
-        slider(ui, &mut r.fHeadingRight, 1.0..=89.0, "Heading Right", "Restricts rightward heading");
-        ui.heading("Interaction");
-        slider(ui, &mut r.fInteractionPitchUp, 1.0..=89.0, "Interaction Pitch Up", "Restricts upward pitch when sitting, horseback, dragon, etc");
-        slider(ui, &mut r.fInteractionPitchDown, -89.0..=-1.0, "Interaction Pitch Down", "Restricts downward pitch when sitting, horseback, dragon, etc");
-        slider(ui, &mut r.fInteractionHeadingLeft, -89.0..=-1.0, "Interaction Heading Left", "Restricts leftward heading when sitting, horseback, dragon, etc");
-        slider(ui, &mut r.fInteractionHeadingRight, 1.0..=89.0, "Interaction Heading Right", "Restricts rightward heading when sitting, horseback, dragon, etc");
+    super::edit(ui, |ui, p| {
+        if !p.General.bEnableBody {
+            ui.disable();
+        }
+        let r = &mut p.RestrictAngles;
+        section_header(ui, "Standing");
+        rows(ui, "RestrictTableTop", |ui| {
+            slider(ui, "Pitch Up", &mut r.fPitchUp, 1.0, 89.0, 1, "Restricts upward pitch");
+            slider(ui, "Pitch Down", &mut r.fPitchDown, -1.0, -89.0, 1, "Restricts downward pitch");
+            slider(ui, "Heading Left", &mut r.fHeadingLeft, -1.0, -89.0, 1, "Restricts leftward heading");
+            slider(ui, "Heading Right", &mut r.fHeadingRight, 1.0, 89.0, 1, "Restricts rightward heading");
+        });
+        section_header(ui, "Interaction");
+        rows(ui, "RestrictTableBottom", |ui| {
+            slider(ui, "Interaction Pitch Up", &mut r.fInteractionPitchUp, 1.0, 89.0, 1, "Restricts upward pitch when sitting, horseback, dragon, etc");
+            slider(ui, "Interaction Pitch Down", &mut r.fInteractionPitchDown, -1.0, -89.0, 1, "Restricts downward pitch when sitting, horseback, dragon, etc");
+            slider(ui, "Interaction Heading Left", &mut r.fInteractionHeadingLeft, -1.0, -89.0, 1, "Restricts leftward heading when sitting, horseback, dragon, etc");
+            slider(ui, "Interaction Heading Right", &mut r.fInteractionHeadingRight, 1.0, 89.0, 1, "Restricts rightward heading when sitting, horseback, dragon, etc");
+        });
     });
-    if p != before {
-        crate::apply_profile(&p);
-    }
 }

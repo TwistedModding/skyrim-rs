@@ -210,6 +210,14 @@ pub fn vanity_enabled(profile: &crate::settings::Profile) -> bool {
     profile.Vanity.bEnable && profile.General.bEnableBody
 }
 
+/// `VanityState::TriggerIdle`: the engine enters the idle camera once its idle timer passes the
+/// live `fAutoVanityModeDelay` (any input resets it), so the timer is set just past it.
+pub fn trigger_idle() {
+    if let Some(camera) = util::camera() {
+        skyrim::store(&camera.idleTimer, *util::auto_vanity_delay() + 1.0);
+    }
+}
+
 /// How far in front of an obstruction the idle camera stops.
 const VANITY_PULLBACK: f32 = 10.0;
 

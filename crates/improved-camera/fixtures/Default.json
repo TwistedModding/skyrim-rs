@@ -1,0 +1,1036 @@
+{
+    "Advanced": [
+        {
+            "bCameraTransition": true,
+            "bHeadbob": false,
+            "bHeadbobCombat": false,
+            "fBackBumperOffset": 15.0,
+            "fForwardBumperOffset": 45.0,
+            "fNearDistanceCombatEndAngle": -50.0,
+            "fNearDistanceCombatMax": 15.0,
+            "fNearDistanceCombatMin": 4.0,
+            "fNearDistanceCombatStartAngle": -15.0,
+            "fNearDistanceDefault": 15.0,
+            "fNearDistanceEndAngle": -50.0,
+            "fNearDistanceMax": 15.0,
+            "fNearDistanceMin": 4.0,
+            "fNearDistanceStartAngle": -15.0,
+            "fPlayerDeathReloadTime": 5.0,
+            "fSideBumperOffset": 15.0,
+            "fWerewolfBumperOffset": 15.0
+        }
+    ],
+    "Body": [
+        {
+            "Action": [
+                {
+                    "AI": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Animation": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Bathing": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "BoatRide": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "CartRide": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Craft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Dialogue": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Fall": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Fish": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Gather": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Giantess": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "LichTransition": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Parkour": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Ride": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Sex": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Sit": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Sleep": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Sneak": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Stagger": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Swim": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "VampirelordTransition": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "View": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "WerewolfTransition": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "fLerp": 12.0
+                }
+            ],
+            "Combat": [
+                {
+                    "fForward": 0.0,
+                    "fRight": 0.0,
+                    "fUp": 0.0
+                }
+            ],
+            "Directional": [
+                {
+                    "Back": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "BackLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "BackRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Forward": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "ForwardLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "ForwardRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Left": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Right": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ]
+                }
+            ],
+            "Hands": [
+                {
+                    "Aim": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Attack": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Block": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Cast": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "PowerAttack": [
+                        {
+                            "fForward": -12.600000381469727,
+                            "fRight": -6.400000095367432,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Sheath": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Show": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "fLerp": 12.0
+                }
+            ],
+            "Movement": [
+                {
+                    "DirBack": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirBackLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirBackRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirDefault": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirForward": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirForwardLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirForwardRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DirRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Idle": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "RunBase": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintBack": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintBackLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintBackRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintBase": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintDefault": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintForward": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintForwardLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintForwardRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintLeft": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "SprintRight": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "WalkBase": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "fIdleLerp": 8.0,
+                    "fRunIntensity": 1.2000000476837158,
+                    "fRunLerp": 12.0,
+                    "fSprintIntensity": 1.2000000476837158,
+                    "fSprintLerp": 15.0,
+                    "fWalkIntensity": 0.6000000238418579,
+                    "fWalkLerp": 8.0
+                }
+            ],
+            "Race": [
+                {
+                    "Argonian": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "ArgonianVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Breton": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "BretonVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Darkelf": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "DarkelfVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "HalfDragon": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "HalfDragonVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Highelf": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "HighelfVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Imperial": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "ImperialVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Khajiit": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "KhajiitVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Lich": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Nord": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "NordVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Orc": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "OrcVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Redguard": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "RedguardVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Vampirelord": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Werebear": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Werewolf": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "Woodelf": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ],
+                    "WoodelfVampire": [
+                        {
+                            "fForward": 0.0,
+                            "fRight": 0.0,
+                            "fUp": 0.0
+                        }
+                    ]
+                }
+            ],
+            "bDisableTurnAnimation": true,
+            "bFreeLook": true,
+            "bFreeLookSpine": false,
+            "bYawSmoothing": true,
+            "fAnchorForward": 14.0,
+            "fAnchorUp": 6.0,
+            "fDirectionalIntensity": 1.0,
+            "fDirectionalSpeed": 8.0,
+            "fForward": 0.0,
+            "fFreeLookCatchupSpeed": 15.0,
+            "fFreeLookMaxAngle": 80.0,
+            "fFreeLookSettleAngle": 35.0,
+            "fFreeLookTwistStrength": 1.0,
+            "fRight": 0.0,
+            "fUp": 0.0,
+            "fYawSmoothingMaxAngle": 90.0,
+            "fYawSmoothingSpeed": 10.0
+        }
+    ],
+    "Camera": [
+        {
+            "Dragon": [
+                {
+                    "forward": 10.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ],
+            "Firstperson": [
+                {
+                    "Combat": [
+                        {
+                            "forward": 0.0,
+                            "right": 0.0,
+                            "up": 0.0
+                        }
+                    ],
+                    "forward": 0.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ],
+            "Horse": [
+                {
+                    "Combat": [
+                        {
+                            "forward": 0.0,
+                            "right": 0.0,
+                            "up": 0.0
+                        }
+                    ],
+                    "forward": 0.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ],
+            "Lich": [
+                {
+                    "forward": 9.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ],
+            "Sex": [
+                {
+                    "forward": -12.0,
+                    "right": 0.0,
+                    "up": -5.0
+                }
+            ],
+            "Spectator": [
+                {
+                    "forward": 5.0,
+                    "right": 0.0,
+                    "up": 5.0
+                }
+            ],
+            "VampireLord": [
+                {
+                    "forward": 0.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ],
+            "Werewolf": [
+                {
+                    "forward": -9.0,
+                    "right": 0.0,
+                    "up": 0.0
+                }
+            ]
+        }
+    ],
+    "Dialogue": [
+        {
+            "bEnable": false,
+            "bEnableFirstPerson": true,
+            "bEnableThirdPerson": true,
+            "bFaceSpeaker": true,
+            "bFadeToBlack": false,
+            "bForceFirstPerson": true,
+            "bForceThirdPerson": false,
+            "bHeadTracking": true,
+            "bHideDialogueMenu": true,
+            "bLetterbox": true,
+            "bLockOn": true,
+            "bRepositionHUDMessages": true,
+            "bSmoothCamAPI": true,
+            "bSmoothTransition": true,
+            "bSwitchTarget": false,
+            "fCameraSpeed": 500.0,
+            "fCreatureCamOffsetX": 0.0,
+            "fCreatureCamOffsetY": 0.0,
+            "fCreatureCamOffsetZ": 15.0,
+            "fDefaultWorldFOV": 55.0,
+            "fDragonZoom": 125.0,
+            "fFadeSpeed": 4.0,
+            "fFirstPersonZoom": 50.0,
+            "fHumanCamOffsetX": 0.0,
+            "fHumanCamOffsetY": 0.0,
+            "fHumanCamOffsetZ": 5.0,
+            "fLetterboxRatio": 0.11999999731779099,
+            "fLetterboxTransitionSpeed": 2.5,
+            "fMessagePosX": -601.0,
+            "fMessagePosY": -400.0,
+            "fNpcShoulderPosX": -60.0,
+            "fNpcShoulderPosY": 0.0,
+            "fNpcShoulderPosZ": 0.0,
+            "fPlayerShoulderPosX": 60.0,
+            "fPlayerShoulderPosY": 0.0,
+            "fPlayerShoulderPosZ": 0.0,
+            "fThirdPersonZoom": 75.0
+        }
+    ],
+    "Effects": [
+        {
+            "Letterbox": [
+                {
+                    "bEnable": false,
+                    "bOverlay": false
+                }
+            ],
+            "Zoom": [
+                {
+                    "fFOV": -30.0,
+                    "iKey": 0
+                }
+            ]
+        }
+    ],
+    "FOV": [
+        {
+            "fCannibal": 80.0,
+            "fCrafting": 80.0,
+            "fDeath": 80.0,
+            "fDragon": 80.0,
+            "fDragonCombat": 80.0,
+            "fDragonTransition": 80.0,
+            "fFirstPerson": 80.0,
+            "fFirstPersonCombat": 80.0,
+            "fFirstPersonHands": 80.0,
+            "fFurniture": 80.0,
+            "fHorse": 80.0,
+            "fHorseCombat": 80.0,
+            "fHorseTransition": 80.0,
+            "fKillmove": 80.0,
+            "fLich": 80.0,
+            "fRagdoll": 80.0,
+            "fSex": 80.0,
+            "fThirdPerson": 80.0,
+            "fVampireLord": 80.0,
+            "fWerewolf": 80.0
+        }
+    ],
+    "FreeCamera": [
+        {
+            "bEnable": true,
+            "iKeyReset": 82,
+            "iKeyRollLeft": 81,
+            "iKeyRollRight": 69
+        }
+    ],
+    "General": [
+        {
+            "bEnableBody": true,
+            "bEnableBodyConsole": false,
+            "bEnableFakeFirstPerson": false,
+            "bEnableFirstPersonArms": true,
+            "bEnableFirstPersonArmsMovement": false,
+            "bEnableHead": false,
+            "bEnableHeadCombat": false,
+            "bEnableHeadDragon": false,
+            "bEnableHeadHorse": false,
+            "bEnableHeadSex": false,
+            "bEnableHeadSpectator": false,
+            "bEnableHeadVampireLord": false,
+            "bEnableHeadWerewolf": false,
+            "bEnableThirdPersonBow": false,
+            "bEnableThirdPersonBowAim": false,
+            "bEnableThirdPersonCrossbow": false,
+            "bEnableThirdPersonCrossbowAim": false,
+            "bEnableThirdPersonShield": false,
+            "bEnableThirdPersonShieldBlock": false,
+            "bEnableThirdPersonTorch": false,
+            "bEnableThirdPersonTorchBlock": false
+        }
+    ],
+    "Hide": [
+        {
+            "bAiming": false,
+            "bBody": false,
+            "bBow": true,
+            "bJumpCombat": false,
+            "bJumping": false,
+            "bPowerAttack": false,
+            "bQuiver": true,
+            "bSneakRoll": false,
+            "bSwimming": false,
+            "bTwoHanded": true,
+            "bWeaponDrawn": false
+        }
+    ],
+    "RestrictAngles": [
+        {
+            "fHeadingLeft": -89.0,
+            "fHeadingRight": 89.0,
+            "fInteractionHeadingLeft": -70.0,
+            "fInteractionHeadingRight": 70.0,
+            "fInteractionPitchDown": -75.0,
+            "fInteractionPitchUp": 75.0,
+            "fPitchDown": -89.0,
+            "fPitchUp": 89.0
+        }
+    ],
+    "Stabilization": [
+        {
+            "Bleedout": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Crafting": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Dragon": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Furniture": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Gathering": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Horse": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Lich": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Sex": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Transition": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "VampireLord": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ],
+            "Werewolf": [
+                {
+                    "bEnable": true,
+                    "fHeadFollowStrength": 0.3499999940395355,
+                    "fSmoothingMaxOffset": 6.0,
+                    "fSmoothingSpeed": 14.0
+                }
+            ]
+        }
+    ],
+    "Studio": [
+        {
+            "bCaptureCropToGuide": false,
+            "bGuideCenter": false,
+            "bGuideHorizon": false,
+            "bGuideSafeArea": false,
+            "bHideHUD": false,
+            "bRevertOnExit": true,
+            "fBracketDelay": 0.3499999940395355,
+            "fNearbyRadius": 2048.0,
+            "fUIScale": 1.350000023841858,
+            "iCaptureKey": 121,
+            "iGuideAspect": 0,
+            "iGuideGrid": 0,
+            "iHideUIKey": 122,
+            "iToggleInputKey": 45
+        }
+    ],
+    "Vanity": [
+        {
+            "bCollisionSmoothing": true,
+            "bEnable": false,
+            "bLetterbox": true,
+            "bNPCFocus": true,
+            "bToggleMenus": true,
+            "fCollisionPullInDuration": 0.20000000298023224,
+            "fCollisionRecoveryDuration": 0.6000000238418579,
+            "fDistance": 200.0,
+            "fFOV": 65.0,
+            "fFocusBlendTime": 1.5,
+            "fFocusChance": 75.0,
+            "fFocusCooldown": 8.0,
+            "fFocusDuration": 6.0,
+            "fFocusFOVOffset": -10.0,
+            "fFocusOffset": 100.0,
+            "fFocusRadius": 1500.0,
+            "fHeight": 35.0,
+            "fIdleDelay": 120.0,
+            "fLetterboxRatio": 0.11999999731779099,
+            "fLetterboxTransitionSpeed": 2.5,
+            "fOrbitSpeed": 10.0,
+            "iCollisionPullInMethod": 2,
+            "iCollisionRecoveryMethod": 15
+        }
+    ],
+    "name": "Default",
+    "version": 1
+}
