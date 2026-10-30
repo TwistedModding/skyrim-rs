@@ -1,12 +1,14 @@
 //! `body/BodyBumper`: while the camera sits away from the player's own eyes, the player's convex
 //! controller shape is widened by the profile's forward, back and side bumper offsets so the body
-//! keeps clear of walls and doorways the camera would otherwise clip into; the original goes back
-//! when the camera returns to first person, on unload and before a reload.
+//! keeps clear of walls and doorways the camera would otherwise clip into; the werewolf, whose
+//! controller is two capsules, has both lengthened and thickened by the werewolf offset instead.
+//! The original goes back when the camera returns to first person, on unload and before a reload.
+//! It runs on the main thread, where Havok start-up installs a memory router (RE `camera.md` IC9 E).
 
 use std::sync::Mutex;
 
 use skyrim::physics::HAVOK_SCALE;
-use skyrim::physics::controller::{self, ConvexBuild, Replacement, ShapeExt};
+use skyrim::physics::controller::{self, Capsule, ConvexBuild, Replacement, ShapeExt};
 use sre::{PlayerCharacter, bhkCharacterController, hkpShape, hkpShapeType};
 
 use crate::settings::Advanced;
@@ -25,6 +27,9 @@ const BUILD: ConvexBuild = ConvexBuild {
 
 /// The most vertices IC caches.
 const MAX_VERTICES: usize = 1024;
+/// The material the werewolf's two controller capsules carry (RE `camera.md` IC9 E; the vampire
+/// lord has the human convex shape and bumper capsule).
+const WEREWOLF_MATERIAL: u32 = 0x5ed4_dfd3;
 
 #[derive(Default)]
 struct Bumper {
@@ -33,6 +38,8 @@ struct Bumper {
     /// The original hull's vertices.
     original: Vec<[f32; 4]>,
     replacement: Option<Replacement>,
+    /// The werewolf's capsules while lengthened: each shape's address and its capsule as it was.
+    capsules: Vec<(usize, Capsule)>,
 }
 
 // The replacement holds Havok references; it is built, checked and released on the main thread.
@@ -51,6 +58,22 @@ fn controller_convex(root: &hkpShape) -> Option<&hkpShape> {
         _ => root,
     };
     (shape.shape_type()? == hkpShapeType::ConvexVertices).then_some(shape)
+}
+
+/// `FindWerewolfCapsules`: the root list's first two children, both capsules of the werewolf's material.
+fn werewolf_capsules(root: &hkpShape) -> Option<[&hkpShape; 2]> {
+    let [back, front, ..] = root.children() else { return None };
+    let pair = [unsafe { back.shape.as_ref() }?, unsafe { front.shape.as_ref() }?];
+    pair.iter().all(|s| s.material() == Some(WEREWOLF_MATERIAL)).then_some(pair)
+}
+
+/// `ModifyCapsule`: the first end point lowered, the second raised and the radius grown by `offset`.
+#[must_use]
+pub fn lengthened(capsule: Capsule, offset: f32) -> Capsule {
+    let Capsule { mut a, mut b, radius } = capsule;
+    a[2] -= offset;
+    b[2] += offset;
+    Capsule { a, b, radius: radius + offset }
 }
 
 /// `CreateModifiedConvexShape`'s vertices: stretched along y, the front by `forward` and the back
@@ -99,11 +122,25 @@ impl Bumper {
         if self.controller != address {
             *self = Self { controller: address, ..Self::default() };
         }
+        let Some(root) = controller::root_shape(controller) else { return };
+        if let Some(pair) = werewolf_capsules(root) {
+            self.replacement = None;
+            let addresses = pair.map(|s| core::ptr::from_ref(s) as usize);
+            if self.capsules.iter().map(|(a, _)| *a).ne(addresses) {
+                let offset = advanced.fWerewolfBumperOffset * HAVOK_SCALE;
+                self.capsules = pair.iter().filter_map(|s| Some((core::ptr::from_ref(*s) as usize, s.capsule()?))).collect();
+                for (shape, (_, original)) in pair.iter().zip(&self.capsules) {
+                    controller::set_capsule(controller, shape, lengthened(*original, offset));
+                }
+            }
+            return;
+        }
+        self.capsules.clear();
         if self.replacement.as_ref().is_some_and(|r| r.is_current(controller)) {
             return;
         }
         self.replacement = None;
-        let Some(convex) = controller::root_shape(controller).and_then(controller_convex) else { return };
+        let Some(convex) = controller_convex(root) else { return };
         if self.original.is_empty() {
             let vertices = convex.convex_vertices();
             if vertices.is_empty() || vertices.len() > MAX_VERTICES {
@@ -124,6 +161,14 @@ impl Bumper {
         if let Some(replacement) = self.replacement.take() {
             replacement.restore(controller);
         }
+        let capsules = core::mem::take(&mut self.capsules);
+        if let Some(pair) = controller::root_shape(controller).and_then(werewolf_capsules) {
+            for shape in pair {
+                if let Some((_, original)) = capsules.iter().find(|(a, _)| *a == core::ptr::from_ref(shape) as usize) {
+                    controller::set_capsule(controller, shape, *original);
+                }
+            }
+        }
     }
 }
 
@@ -138,7 +183,16 @@ pub fn release() {
 
 #[cfg(test)]
 mod tests {
-    use super::widened;
+    use skyrim::physics::controller::Capsule;
+
+    use super::{lengthened, widened};
+
+    #[test]
+    fn the_werewolf_capsule_grows_at_both_ends_and_around() {
+        let capsule = Capsule { a: [0.0, 0.25, -0.5], b: [0.0, 0.25, 0.5], radius: 0.375 };
+        assert_eq!(lengthened(capsule, 0.25), Capsule { a: [0.0, 0.25, -0.75], b: [0.0, 0.25, 0.75], radius: 0.625 });
+        assert_eq!(lengthened(capsule, 0.0), capsule);
+    }
 
     #[test]
     fn the_hull_stretches_front_and_back_and_out_to_the_sides() {

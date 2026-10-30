@@ -115,6 +115,10 @@ pub trait ShapeExt {
     fn children(&self) -> &[ListChild];
     /// A capsule's end points and radius.
     fn capsule(&self) -> Option<Capsule>;
+    /// A capsule's material id, which its wrapper (0x28 bytes, as the controller shape's) keeps at
+    /// +0x20: `CharacterBumper` is 0x5dd8a028, the only one the engine compares (RE `camera.md` IC7
+    /// A, IC9 E). `None` for any other shape.
+    fn material(&self) -> Option<u32>;
     /// A convex hull's vertices (x, y, z, w = 0) through `hkpConvexVerticesShape::GetVertices`
     /// (id 65093); empty for any other shape.
     fn convex_vertices(&self) -> Vec<[f32; 4]>;
@@ -142,6 +146,13 @@ impl ShapeExt for hkpShape {
             let c = unsafe { &*core::ptr::from_ref(self).cast::<sre::hkpCapsuleShape>() };
             Capsule { a: [c.vertexA.x, c.vertexA.y, c.vertexA.z], b: [c.vertexB.x, c.vertexB.y, c.vertexB.z], radius: c.radius }
         })
+    }
+
+    fn material(&self) -> Option<u32> {
+        if self.shape_type()? != hkpShapeType::Capsule {
+            return None;
+        }
+        self.wrapper().map(|w| unsafe { core::ptr::from_ref(w).byte_add(0x20).cast::<u32>().read() })
     }
 
     fn convex_vertices(&self) -> Vec<[f32; 4]> {
