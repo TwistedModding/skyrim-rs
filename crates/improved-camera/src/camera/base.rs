@@ -8,6 +8,7 @@ use framework::GamePad;
 use skyrim::prelude::*;
 use sre::{CameraState, InputContextEnum, PlayerCamera};
 
+use super::manager::PitchLimits;
 use super::state::{CameraType, Modifier};
 use super::states::Ctx;
 use super::util::interpolation::{Collision, Easing};
@@ -405,7 +406,7 @@ pub fn furniture_exit(m: &mut Modifier, ctx: &Ctx<'_>) {
 /// `HorseState::OnEnter` and `DragonState::OnEnter`: full pitch range, and the mount state takes
 /// the third-person zoom.
 pub fn mount_enter(ctx: &Ctx<'_>, state: CameraState) {
-    super::manager::raise_pitch_limits(state == CameraState::Horse);
+    super::manager::raise_pitch_limits(if state == CameraState::Horse { PitchLimits::Horse } else { PitchLimits::Dragon });
     if let (Some(third), Some(mount)) = (third(ctx), util::family(ctx.camera, state)) {
         util::copy_zoom(third, mount);
     }

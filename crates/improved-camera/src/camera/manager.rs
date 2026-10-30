@@ -12,7 +12,7 @@
 //! whole step or settled on an end of its range.
 
 use std::sync::Mutex;
-use std::sync::atomic::{AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 
 use skyrim::prelude::*;
 use sre::{Actor, CameraState, NiAVObject, PlayerCamera, PlayerCharacter, ThirdPersonState};
@@ -20,7 +20,7 @@ use sre::{Actor, CameraState, NiAVObject, PlayerCamera, PlayerCharacter, ThirdPe
 use super::snapshot;
 use super::state::{CameraMode, CameraType, Modifier};
 use super::states::{Ctx, Input, Notes, State};
-use super::util::look::{LookController, LookMode};
+use super::util::look::{LookController, LookMode, camera_heading};
 use crate::body::snapshot as body_snapshot;
 use crate::body::state::action::ActionType;
 use crate::body::state::hands::HandsType;
@@ -163,6 +163,20 @@ pub fn notify_camera_toggle() {
     with(|m| m.toggle_pov = true);
 }
 
+static NOTIFY_FREE_LOOK: AtomicBool = AtomicBool::new(false);
+
+/// `NotifyFreeLook`: the look's base yaw is taken again at the next camera update. The body states
+/// call it from their own update, which must not wait on the manager.
+pub fn notify_free_look() {
+    NOTIFY_FREE_LOOK.store(true, Ordering::Relaxed);
+}
+
+/// The base yaw a look reset takes: the camera actor's heading, else the camera root's.
+fn look_base(camera: &PlayerCamera) -> Option<f32> {
+    let root = camera.camera_root()?;
+    Some(util::camera_actor_heading().unwrap_or_else(|| camera_heading(Quat::from_matrix(&root.local_transform().rotation).orientation().yaw)))
+}
+
 /// `CameraManager::Update`. An engine call a state makes that runs the camera update again
 /// (`ForceFirstPerson` and the like) finds the manager busy and is skipped.
 pub fn update(camera: &PlayerCamera) {
@@ -173,6 +187,9 @@ pub fn update(camera: &PlayerCamera) {
     let input = crate::frame_input();
     sync_idle_delay(&profile);
     m.update_camera_state(camera, &profile, &input);
+    if NOTIFY_FREE_LOOK.swap(false, Ordering::Relaxed) {
+        m.look.reset_yaw(look_base(camera));
+    }
     m.capture_camera_state(camera, &profile);
     m.anchor_head_node(&profile, delta);
     m.transition_camera_state(&profile, delta);
@@ -202,12 +219,12 @@ fn update_dialogue_head_tracking(camera: &PlayerCamera, profile: &Profile, data:
     }
 }
 
-/// The engine values IC writes and the port puts back at unload: `fMinCurrentZoom`, the four
-/// mount pitch limits and `fAutoVanityModeDelay`, each as found before the first write.
+/// The engine values IC writes and the port puts back at unload: `fMinCurrentZoom`, the mount
+/// and sitting pitch limits and `fAutoVanityModeDelay`, each as found before the first write.
 #[derive(Clone, Copy, Debug, Default)]
 struct Originals {
     min_zoom: Option<f32>,
-    pitch_limits: Option<[f32; 4]>,
+    pitch_limits: Option<[f32; 5]>,
     idle_delay: Option<f32>,
 }
 
@@ -223,11 +240,24 @@ fn set_min_zoom(zoom: f32) {
     skyrim::store(setting, zoom);
 }
 
-/// Raises the mount pitch limits as `HorseState` and `DragonState` do on entry.
-pub fn raise_pitch_limits(horse: bool) {
-    let limits = util::mount_pitch_limits();
+/// The limits to raise: the horse's, the dragon's or sitting's.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum PitchLimits {
+    Horse,
+    Dragon,
+    Sitting,
+}
+
+/// Raises pitch limits to 90 degrees: the mounts' as `HorseState` and `DragonState` do on entry,
+/// sitting's as `FixesHook`'s delayed install does.
+pub fn raise_pitch_limits(which: PitchLimits) {
+    let limits = util::pitch_limits();
     originals(|o| { o.pitch_limits.get_or_insert(limits.map(|l| *l)); });
-    let range = if horse { 0..2 } else { 2..4 };
+    let range = match which {
+        PitchLimits::Horse => 0..2,
+        PitchLimits::Dragon => 2..4,
+        PitchLimits::Sitting => 4..5,
+    };
     for limit in &limits[range] {
         skyrim::store(*limit, 90.0);
     }
@@ -263,7 +293,7 @@ pub fn release() {
         skyrim::store(util::min_current_zoom(), zoom);
     }
     if let Some(limits) = o.pitch_limits {
-        for (setting, value) in util::mount_pitch_limits().into_iter().zip(limits) {
+        for (setting, value) in util::pitch_limits().into_iter().zip(limits) {
             skyrim::store(setting, value);
         }
     }
@@ -655,7 +685,9 @@ impl Manager {
             self.cancel_transition();
         }
         self.look.mode = look;
-        self.look.reset();
+        if let Some(camera) = util::camera() {
+            self.look.reset(look_base(camera));
+        }
         if enabled {
             self.state.enter(from, ctx);
         }

@@ -1,7 +1,7 @@
 //! IC's profile (`settings.h`): the options ported so far, with IC's names and defaults, kept in
 //! the plugin's settings under `<Section>.<option>` keys (`General.bEnableBody`,
 //! `Body.Race.HalfDragon.fForward`, `FOV.fFirstPersonHands`, `Effects.Zoom.fFOV`, `Camera.Dragon.forward`,
-//! `Stabilization.Horse.fSmoothingSpeed`, `Advanced.fNearDistanceMin`).
+//! `Stabilization.Horse.fSmoothingSpeed`, `Advanced.fNearDistanceMin`, `RestrictAngles.fPitchUp`).
 
 use std::sync::{LazyLock, RwLock, RwLockReadGuard};
 
@@ -443,6 +443,16 @@ sections! {
     FreeCamera = "FreeCamera" {
         bEnable: bool = true,
     }
+    RestrictAngles = "RestrictAngles" {
+        fPitchUp: f32 = 89.0,
+        fPitchDown: f32 = -89.0,
+        fHeadingLeft: f32 = -89.0,
+        fHeadingRight: f32 = 89.0,
+        fInteractionPitchUp: f32 = 75.0,
+        fInteractionPitchDown: f32 = -75.0,
+        fInteractionHeadingLeft: f32 = -70.0,
+        fInteractionHeadingRight: f32 = 70.0,
+    }
     Dialogue = "Dialogue" {
         bEnable: bool = false,
         bForceFirstPerson: bool = true,
@@ -524,6 +534,7 @@ pub struct Profile {
     pub FreeCamera: FreeCamera,
     pub Dialogue: Dialogue,
     pub Vanity: Vanity,
+    pub RestrictAngles: RestrictAngles,
 }
 
 impl Profile {
@@ -537,6 +548,7 @@ impl Profile {
             FreeCamera: FreeCamera::read(store),
             Dialogue: Dialogue::read(store),
             Vanity: Vanity::read(store),
+            RestrictAngles: RestrictAngles::read(store),
             General: General::read(store),
             Hide: Hide::read(store),
             Body: Body::read(store),
@@ -570,6 +582,7 @@ impl Profile {
         self.FreeCamera.write(store);
         self.Dialogue.write(store);
         self.Vanity.write(store);
+        self.RestrictAngles.write(store);
     }
 }
 
@@ -663,6 +676,7 @@ mod tests {
         assert_eq!(store.get_i32("Vanity.iCollisionRecoveryMethod"), Some(15));
         assert_eq!(store.get_f32("Dialogue.fNpcShoulderPosX"), Some(-60.0));
         assert_eq!(store.get_bool("Body.bFreeLook"), Some(true));
+        assert_eq!(store.get_f32("RestrictAngles.fInteractionHeadingLeft"), Some(-70.0));
         assert_eq!(Profile::read(&store), p);
     }
 

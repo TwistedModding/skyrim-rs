@@ -7,7 +7,8 @@
 //! menu FOV with the zoom effect, the pitch-driven world near plane, and the gameplay sites: the
 //! magic casters' and effect shaders' root, the crosshair pick, the movement input buffer, the
 //! scroll wheel, the POV toggle and the scripts' forced first and third person; foot IK kept on
-//! for the anchored body, and FSMP told when the body is camera-driven.
+//! for the anchored body, FSMP told when the body is camera-driven; the look limits, the sitting
+//! look-down limit, the body in interior rooms and the camera's fades skipped.
 
 mod api;
 mod body;
@@ -139,7 +140,7 @@ fn load(host: &'static Host) -> bool {
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
     });
-    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw).section("Camera", ui::camera_menu::draw);
+    host.add_tab("Improved Camera").section("Body", ui::body_menu::draw).section("FOV", ui::fov_menu::draw).section("Near plane", ui::near_menu::draw).section("Camera", ui::camera_menu::draw).section("Restrict angles", ui::restrict_angles_menu::draw);
     hook::fixes::apply_body_visibility();
     log("loaded");
     true
@@ -178,6 +179,7 @@ fn restore_state(bytes: &[u8]) {
         api::fsmp::restore(fsmp);
         body::manager::with(|m| *m = body);
         camera::manager::with(|m| *m = camera);
+        camera::manager::notify_free_look();
         if let Some(c) = util::skyrim_util::camera() {
             if written.world_fov > 0.0 {
                 skyrim::store(&c.worldFOV, written.world_fov);

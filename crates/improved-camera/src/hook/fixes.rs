@@ -4,7 +4,9 @@
 //! main view, with the skins' palettes and the rigid gear's previous transforms fixed up. The
 //! hands camera takes the hands FOV, and the tween menu starts from the live world FOV. The magic
 //! casters and the effect shaders on the player pick the root IC's arms are on, the crosshair pick
-//! starts at the presented camera, and the scroll wheel zooms with the POV switch off.
+//! starts at the presented camera, and the scroll wheel zooms with the POV switch off. The cell
+//! places the body in interior rooms, the camera fades neither the player nor the actors it
+//! passes, and seated players look down to 90 degrees.
 
 use std::collections::HashMap;
 use std::sync::Mutex;
@@ -21,6 +23,7 @@ use sre::{BSFadeNode, BSGeometry, NiAVObject, NiNode};
 use super::IsThirdPerson;
 use crate::body::manager::{sync_bone_tree, third_person_arms};
 use crate::body::parts::{self, SHEATHED_NODES, SHRUNK};
+use crate::camera::manager::{self, PitchLimits};
 use crate::camera::snapshot;
 use crate::settings;
 use crate::util::skyrim_util as util;
@@ -70,6 +73,27 @@ const EFFECT_SHADER_CALLS: [usize; 2] = [0xe1, 0x1f5];
 
 type EffectUpdate = unsafe extern "C" fn(usize, usize) -> usize;
 
+/// `TESObjectCELL::AttachReference3D` +0x7a, `call [rax+0x468]` (the reference's slot 141): the 3D
+/// placed in the cell's rooms and portals, which for the player is the view's root, so with the
+/// third-person root not in view the body is left out of interior rooms (`camera.md` section 10).
+const CELL_ATTACH_3D_CALL: usize = 0x7a;
+
+type Reference3D = unsafe extern "C" fn(usize) -> usize;
+
+/// `ComputeCameraCasterCollision` +0x4dd, `movss xmm6, [...]` at the start of the overlap test of
+/// the camera with the target; `EB 58` jumps to the occluder bookkeeping at +0x537, so the player
+/// is never faded for the camera's closeness (`camera.md` section 9).
+const PLAYER_FADE_TEST: usize = 0x4dd;
+const PLAYER_FADE_ORIGINAL: [u8; 8] = [0xF3, 0x0F, 0x10, 0x35, 0xB3, 0xF9, 0x7B, 0x01];
+const PLAYER_FADE_SKIP: [u8; 8] = [0xEB, 0x58, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90];
+
+/// `ComputeCameraCasterCollision` +0x38e, the call to `CastCameraLinearAndCollectHits` `(holder,
+/// world, from*, to*, hit*, Actor** occluder, float radius)`; the radius is the seventh argument, on
+/// the stack, so the raw shape carries it untouched.
+const CAMERA_CAST_CALL: usize = 0x38e;
+
+type CameraCast = unsafe extern "C" fn(usize, usize, usize, usize, usize, usize, usize) -> usize;
+
 static BODY_PATCH: Mutex<Option<PatchId>> = Mutex::new(None);
 
 pub fn install(host: &'static Host) -> Result<(), Error> {
@@ -95,6 +119,35 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
     for offset in EFFECT_SHADER_CALLS {
         hooks.around(Call::<EffectUpdate>::at(Location::id(fns::ShaderReferenceEffect__vfunc_40, offset)).passing(Register::Rbx), Options::new(host.name()), shader_reference_effect)?;
     }
+    hooks.replace(Call::<Reference3D>::at(Location::id(fns::TESObjectCELL__AttachReference3D, CELL_ATTACH_3D_CALL)), Options::new(host.name()), |args, original| {
+        third_person_3d(args.0).unwrap_or_else(|| unsafe { original.call(args) })
+    })?;
+    install_fades(host)?;
+    manager::raise_pitch_limits(PitchLimits::Sitting);
+    Ok(())
+}
+
+/// `TESObjectCell`: IC calls `TESObjectREFR::Get3D` there, the loaded third-person 3D; only the
+/// player's differs from the slot's answer.
+fn third_person_3d(reference: usize) -> Option<usize> {
+    let player = util::player()?;
+    (core::ptr::from_ref::<sre::PlayerCharacter>(player) as usize == reference).then(|| player.third_person_root().map_or(0, |root| core::ptr::from_ref(root) as usize))
+}
+
+/// `DelayInstall`'s fade patches: the player is never faded for the camera's closeness, and no
+/// actor between the camera and the player is chosen to fade. A refused patch (another plugin
+/// changed the bytes first) is logged and the rest of the plugin runs.
+fn install_fades(host: &'static Host) -> Result<(), Error> {
+    let hooks = host.hooks();
+    if let Err(e) = unsafe { hooks.patch(host.name(), Location::id(fns::ComputeCameraCasterCollision, PLAYER_FADE_TEST), &PLAYER_FADE_ORIGINAL, &PLAYER_FADE_SKIP) } {
+        crate::log(&format!("player fade patch refused: {e}"));
+    }
+    hooks.after(Call::<CameraCast>::at(Location::id(fns::ComputeCameraCasterCollision, CAMERA_CAST_CALL)), Options::new(host.name()), |args, _, _| {
+        let occluder = args.5 as *mut usize;
+        if !occluder.is_null() {
+            unsafe { occluder.write(0) };
+        }
+    })?;
     Ok(())
 }
 

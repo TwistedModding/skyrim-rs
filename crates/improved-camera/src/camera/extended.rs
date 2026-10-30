@@ -532,6 +532,7 @@ impl Spectator {
             }
         }
         util::show_crosshair(false);
+        super::manager::notify_free_look();
     }
 
     /// `OnExit`; IC switches to first person before the target goes back to the player, where

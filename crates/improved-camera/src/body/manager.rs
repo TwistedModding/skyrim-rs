@@ -19,6 +19,7 @@ use super::state::hands::{EquipmentType, HandsState, HandsType, InteractionType}
 use super::state::movement::{MovementState, MovementType};
 use super::state::race::{RaceState, RaceType};
 use crate::api::fsmp;
+use crate::camera::manager::notify_free_look;
 use crate::camera::snapshot as camera_snapshot;
 use crate::camera::state::{CameraMode, CameraType};
 use crate::plugin::{self, ModInfo};
@@ -522,7 +523,7 @@ impl Manager {
         ];
         let kind = tagged.into_iter().rev().find(|(form, _)| *form == Some(id)).map_or_else(|| RaceType::from_u32(id), |(_, tag)| tag);
         self.race = RaceState { race: kind, offset: kind.offset(&profile.Race).map_or([0.0; 3], Offset::point) };
-        self.humanoid = race.as_form().keywords().iter().flatten().any(|k| k.editor_id() == Some(c"ActorTypeNPC"));
+        self.humanoid = util::is_humanoid(player);
     }
 
     fn update_movement_state(&mut self, player: &PlayerCharacter, profile: &Profile) {
@@ -536,7 +537,13 @@ impl Manager {
             MovementType::Walk
         };
         if self.movement.kind != kind {
+            if kind == MovementType::Idle {
+                notify_free_look();
+            }
             self.movement = MovementState::enter(kind, &self.movement, &profile.Movement, self.direction);
+        }
+        if kind > MovementType::Idle {
+            notify_free_look();
         }
     }
 
@@ -617,6 +624,9 @@ impl Manager {
         } else {
             ActionType::None
         };
+        if matches!(kind, ActionType::Animation | ActionType::Sleep | ActionType::Dialogue | ActionType::Sit) {
+            notify_free_look();
+        }
         if self.action.kind != kind {
             if kind == ActionType::AI {
                 util::set_pitch(player, 0.0);
@@ -713,6 +723,9 @@ impl Manager {
         }
         if self.hands.kind != kind {
             self.hands = HandsState::enter(kind, &self.hands);
+        }
+        if kind > HandsType::Sheath {
+            notify_free_look();
         }
     }
 

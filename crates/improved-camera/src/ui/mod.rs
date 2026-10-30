@@ -4,3 +4,4 @@ pub mod body_menu;
 pub mod camera_menu;
 pub mod fov_menu;
 pub mod near_menu;
+pub mod restrict_angles_menu;

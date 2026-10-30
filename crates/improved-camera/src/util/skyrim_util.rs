@@ -132,8 +132,8 @@ pub fn player_graphs(player: &PlayerCharacter) -> &[Option<&sre::BShkbAnimationG
     player.current_process().and_then(|p| p.middle_high()).and_then(|m| m.animation_graph_manager()).map_or(&[], |m| m.graphs())
 }
 
-pub fn graph_bool(player: &PlayerCharacter, name: &str) -> bool {
-    player.as_i_animation_graph_manager_holder().variable_bool(&BSFixedString::new(name)).unwrap_or(false)
+pub fn graph_bool(reference: &TESObjectREFR, name: &str) -> bool {
+    reference.as_i_animation_graph_manager_holder().variable_bool(&BSFixedString::new(name)).unwrap_or(false)
 }
 
 pub fn has_movement_flag(player: &PlayerCharacter, flag: ActorState_flags1) -> bool {
@@ -396,6 +396,41 @@ pub fn camera_target() -> Option<RefPtr> {
     (!core::ptr::eq(core::ptr::from_ref::<TESObjectREFR>(&target), player) && actor_of(&target).is_some()).then_some(target)
 }
 
+/// `IsHumanoid`: the race carries the `ActorTypeNPC` keyword.
+pub fn is_humanoid(actor: &Actor) -> bool {
+    actor.race().is_some_and(|race| race.as_form().keywords().iter().flatten().any(|k| k.editor_id() == Some(c"ActorTypeNPC")))
+}
+
+/// `GetCameraActor` (`CameraLook`): the heading of the camera's target (the player included) when
+/// its 3D is loaded and it is humanoid, or of the rider of a ridden target.
+pub fn camera_actor_heading() -> Option<f32> {
+    let target = RefHandle(camera()?.targetHandle).lookup()?;
+    let actor = actor_of(&target)?;
+    actor.get3_d()?;
+    if is_humanoid(actor) {
+        return Some(actor.rotZ);
+    }
+    if !actor.is_being_ridden() {
+        return None;
+    }
+    let mut handle = 0;
+    unsafe { actor.get_rider_handle(&raw mut handle) };
+    let rider = RefHandle(handle).lookup()?;
+    Some(rider.rotZ)
+}
+
+/// `Is_BeastMode`: the werewolf or vampire lord's beast form (`MenuControls`+0x81, written by
+/// `Game.SetBeastForm`).
+pub fn is_beast_mode() -> bool {
+    sre::g_menu_controls().menuHotkeysDisabled != 0
+}
+
+/// `Is_ScriptMode`, without the movement controller's test (its field is not in the RE): outside
+/// beast form, the movement controls are off (IC's POV script lock test reduces to that).
+pub fn is_script_mode() -> bool {
+    player().is_some() && !is_beast_mode() && !movement_controls_enabled()
+}
+
 /// Writes a reference's pitch (`data.angle.x`); the reference's fields are unaligned.
 pub fn set_pitch(reference: &TESObjectREFR, pitch: f32) {
     unsafe { core::ptr::addr_of!(reference.rotX).cast_mut().write_volatile(pitch) };
@@ -512,15 +547,16 @@ pub fn auto_vanity_delay() -> &'static f32 {
     setting_f32(sre::ini_setting_f_auto_vanity_mode_delay_camera())
 }
 
-/// The mount pitch limits IC raises: `fHorseMaxUpwardPitch`, `fMountedMaxLookingDown`,
-/// `fDragonMaxUpwardPitch`, `fFlyingMountedMaxLookingDown`.
-pub fn mount_pitch_limits() -> [&'static f32; 4] {
+/// The pitch limits IC raises: `fHorseMaxUpwardPitch`, `fMountedMaxLookingDown`,
+/// `fDragonMaxUpwardPitch`, `fFlyingMountedMaxLookingDown`, `fSittingMaxLookingDown`.
+pub fn pitch_limits() -> [&'static f32; 5] {
     unsafe {
         [
             &*sre::game_setting_f_horse_max_upward_pitch_value(),
             &*sre::game_setting_f_mounted_max_looking_down_value(),
             &*sre::game_setting_f_dragon_max_upward_pitch_value(),
             &*sre::game_setting_f_flying_mounted_max_looking_down_value(),
+            &*sre::game_setting_f_sitting_max_looking_down_value(),
         ]
     }
 }
