@@ -11,7 +11,7 @@ use skyrim::actors::RefHandle;
 use skyrim::input::{Arg, Command, CommandContext, Param};
 use skyrim::prelude::*;
 use skyrim::ui::UIMessageQueueExt;
-use sre::{ScriptParamType, TESNPC, TESObjectREFR, UIMessageQueue};
+use sre::{ScriptParamType, TESObjectREFR, UIMessageQueue};
 
 use crate::camera::extended;
 use crate::util::skyrim_util as util;
@@ -84,7 +84,7 @@ fn spectate(selected: Option<&TESObjectREFR>) {
         print("spectating >> disabled");
     } else if actor.get3_d().is_some() {
         extended::request_target(Some(actor.handle()));
-        let name = actor.base_object().and_then(|b| b.cast::<TESNPC>()).and_then(|npc| npc.as_tes_full_name().full_name()).and_then(|n| n.to_str().ok()).unwrap_or_default();
+        let name = actor.display_name().and_then(|n| n.to_str().ok()).unwrap_or_default();
         print(&format!("spectating >> {name}"));
     }
 }
