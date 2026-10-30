@@ -292,19 +292,24 @@ pub fn smooth_movement_offset(previous: Option<f32>, target: f32, speed: f32, ma
 /// `BODY::Manager::AnchorCamera`, after the camera update: in first person the body's root is
 /// turned by the yaw smoothing or the free look's deadzone and moved so the head sits
 /// `fAnchorForward` behind and `fAnchorUp` below the presented camera, less the state offsets.
-/// FSMP is told the body is camera-driven only once it is anchored.
+/// FSMP is told the body is camera-driven only once it is anchored. The bumper is updated here
+/// because the controller shape swap must run on the main thread.
 pub fn anchor_camera(dt: f32) {
+    let camera = camera_snapshot::get();
+    let profile = *settings::profile();
+    if let Some(player) = util::player() {
+        let head = matches!(camera.mode, CameraMode::Head | CameraMode::Third);
+        super::bumper::update(player, head || !util::is_engine_first_person(), &profile.Advanced);
+    }
     if util::game_is_paused() {
         return;
     }
-    fsmp::set_player_body_camera_driven(false);
-    let camera = camera_snapshot::get();
-    let profile = *settings::profile();
     let mut events = [None; 2];
-    let release = with(|m| {
+    let (release, driven) = with(|m| {
         m.foot_ik_active = update_foot_ik(&profile);
         anchor(m, &camera, &profile, dt, &mut events)
     });
+    fsmp::set_player_body_camera_driven(driven);
     for event in events {
         free_look::send_turn_event(event);
     }
@@ -314,20 +319,20 @@ pub fn anchor_camera(dt: f32) {
 }
 
 /// `AnchorCamera` under the body manager's lock; the turn events to send after it, and whether the
-/// free look's twist lets go.
-fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt: f32, events: &mut [Option<&'static str>; 2]) -> bool {
+/// free look's twist lets go and whether the body is anchored.
+fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt: f32, events: &mut [Option<&'static str>; 2]) -> (bool, bool) {
     let snap = |events: &mut [Option<&'static str>; 2]| events[1] = free_look::with(FreeLook::snap_body_yaw);
     if camera.mode != CameraMode::First {
         m.anchored = None;
         m.anchored_spine = None;
         m.body_yaw = None;
         snap(events);
-        return true;
+        return (true, false);
     }
     if !profile.General.bEnableBody || camera.transition != CameraType::Unknown {
         m.body_yaw = None;
         snap(events);
-        return true;
+        return (true, false);
     }
     let nodes = util::player().and_then(|player| {
         let third = player.third_person_root()?;
@@ -339,7 +344,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     let Some((player, third, head, root, parent)) = nodes else {
         m.body_yaw = None;
         snap(events);
-        return false;
+        return (false, false);
     };
     let body = profile.Body;
     let state = snapshot::get();
@@ -418,8 +423,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     root.update_transforms();
     m.anchored = Some(Forced { translate: local.translation, rotate: local.rotation });
     m.anchored_spine = spine.map(|s| s.local_transform().translation);
-    fsmp::set_player_body_camera_driven(true);
-    false
+    (false, true)
 }
 
 /// A world-space move as a translation in `parent`'s local space.
@@ -474,7 +478,6 @@ impl Manager {
     fn update(&mut self, player: &PlayerCharacter, profile: &Profile, info: &ModInfo, mode: CameraMode) -> [f32; 3] {
         self.update_states(player, profile, info);
         let head = matches!(mode, CameraMode::Head | CameraMode::Third);
-        super::bumper::update(player, head || !util::is_engine_first_person(), &profile.Advanced);
         if profile.General.bEnableBody && !head { self.final_offset } else { [0.0; 3] }
     }
 

@@ -113,7 +113,7 @@ impl Restriction {
 /// not in the tween or dialogue menus. The actor is the camera target, or the player on a horse
 /// or dragon.
 fn restriction() -> Option<Restriction> {
-    let profile = settings::profile();
+    let profile = *settings::profile();
     if !util::is_first_person() || !profile.General.bEnableBody || util::is_menu_open("TweenMenu") || util::is_menu_open("Dialogue Menu") {
         return None;
     }
