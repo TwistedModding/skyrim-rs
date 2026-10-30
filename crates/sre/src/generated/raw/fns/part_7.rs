@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vdtor` at 0x87bff0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_84dd3a17e219: u64 = 47692;
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c870 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_6d733a619824: u64 = 47727;
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x88cc40 (callgraph, medium); signature (untiered): `undefined4 * vfunc_2_sub0(undefined4 * param_1, undefined4 param_2)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_c7fa814d1d09: u64 = 48117;
 /// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vdtor` at 0x8812e0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * vdtor(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNode2_CombatBehaviorContextBlock_CombatBehaviorExpression_CombatB_d178199fe24a: u64 = 47848;
 /// `CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE>::vfunc_2` at 0x8815f0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode2<CombatBehaviorContextBlock,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>,CombatBehaviorContextMelee::ATTACK_TYPE> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
@@ -5591,21 +5597,3 @@ pub const CombatProjectileAimController__ctor_sub0: u64 = 47290;
 pub const CombatProjectileAimController__vdtor: u64 = 44403;
 /// `CombatProjectileAimController::vfunc_10` at 0x80c820 (rtti, high); signature (low): `undefined vfunc_10(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatProjectileAimController__vfunc_10: u64 = 44394;
-/// `CombatProjectileAimController::vfunc_2` at 0x80c970 (rtti, high); signature (untiered): `uint vfunc_2(void)`
-pub const CombatProjectileAimController__vfunc_2: u64 = 44395;
-/// `CombatProjectileAimController::vfunc_3` at 0x80c4c0 (rtti, high); signature (low): `undefined vfunc_3(CombatProjectileAimController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatProjectileAimController__vfunc_3: u64 = 44392;
-/// `CombatProjectileAimController::vfunc_4` at 0x80c670 (rtti, high); signature (low): `undefined vfunc_4(CombatProjectileAimController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatProjectileAimController__vfunc_4: u64 = 44393;
-/// `CombatProjectileAimController::vfunc_5` at 0x80bdc0 (rtti, high); signature (low): `bool vfunc_5(CombatProjectileAimController * this, float * param_1, float * param_2)`
-pub const CombatProjectileAimController__vfunc_5: u64 = 44388;
-/// `CombatProjectileAimController::vfunc_6` at 0x80bd60 (rtti, high); signature (high): `undefined vfunc_6(CombatProjectileAimController * this)`
-pub const CombatProjectileAimController__vfunc_6: u64 = 44387;
-/// `CombatProjectileAimController::vfunc_7` at 0x80bad0 (rtti, high); signature (medium): `char vfunc_7(CombatProjectileAimController * this, float param_1)`
-pub const CombatProjectileAimController__vfunc_7: u64 = 44386;
-/// `CombatProjectileAimController::vfunc_8` at 0x80b950 (rtti, high); signature (low): `undefined vfunc_8(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatProjectileAimController__vfunc_8: u64 = 44384;
-/// `CombatProjectileAimController::vfunc_8_sub0` at 0x80c980 (callgraph, medium); signature (untiered): `undefined vfunc_8_sub0(longlong param_1, longlong * param_2)`
-pub const CombatProjectileAimController__vfunc_8_sub0: u64 = 44396;
-/// `CombatProjectileAimController::vfunc_9` at 0x80c290 (rtti, high); signature (low): `undefined8 * vfunc_9(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatProjectileAimController__vfunc_9: u64 = 44391;

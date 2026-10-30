@@ -3,6 +3,86 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseRefArray280` at 0x4187b0 (decompiler, medium); signature (medium): `undefined ReleaseRefArray280(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArray280: u64 = 26286;
+/// `ReleaseRefArrayAndFree` at 0x82b3e0 (decompiler, high); signature (untiered): `undefined ReleaseRefArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArrayAndFree: u64 = 44930;
+/// `ReleaseRefArrayAndFreeThunk` at 0x82b760 (decompiler, high); signature (untiered): `undefined ReleaseRefArrayAndFreeThunk(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArrayAndFreeThunk: u64 = 44939;
+/// `ReleaseRefArrayAndFree_2` at 0x857e10 (decompiler, high); signature (untiered): `undefined ReleaseRefArrayAndFree_2(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArrayAndFree_2: u64 = 46970;
+/// `ReleaseRefArrayAndFree_3` at 0x9ec2a0 (decompiler, medium); signature (untiered): `undefined ReleaseRefArrayAndFree_3(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArrayAndFree_3: u64 = 54113;
+/// `ReleaseRefArraysUnderLock` at 0x64eb80 (decompiler, medium); signature (untiered): `DWORD ReleaseRefArraysUnderLock(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefArraysUnderLock: u64 = 36470;
+/// `ReleaseRefAt28` at 0x7ef9e0 (decompiler, medium); signature (medium): `undefined ReleaseRefAt28(longlong param_1)`
+pub const ReleaseRefAt28: u64 = 43997;
+/// `ReleaseRefAt28OfField18` at 0x805aa0 (decompiler, high); signature (untiered): `undefined ReleaseRefAt28OfField18(longlong param_1)`
+pub const ReleaseRefAt28OfField18: u64 = 44278;
+/// `ReleaseRefAtField20` at 0x3de8d0 (decompiler, medium); signature (medium): `undefined ReleaseRefAtField20(longlong param_1)`
+pub const ReleaseRefAtField20: u64 = 25157;
+/// `ReleaseRefAtField8` at 0x227dc0 (decompiler, medium); signature (untiered): `undefined ReleaseRefAtField8(longlong param_1)`
+pub const ReleaseRefAtField8: u64 = 15977;
+/// `ReleaseRefAtField8_2` at 0x3de910 (decompiler, medium); signature (medium): `undefined ReleaseRefAtField8_2(longlong param_1)`
+pub const ReleaseRefAtField8_2: u64 = 25158;
+/// `ReleaseRefAtField8_3` at 0x2d1ac0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_3(longlong param_1)`
+pub const ReleaseRefAtField8_3: u64 = 19273;
+/// `ReleaseRefAtField8_4` at 0xbeb0f0 (decompiler, high); signature (high): `undefined ReleaseRefAtField8_4(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefAtField8_4: u64 = 64026;
+/// `ReleaseRefCount28` at 0x18eb20 (decompiler, medium); signature (untiered): `undefined ReleaseRefCount28(longlong * param_1)`
+pub const ReleaseRefCount28: u64 = 12875;
+/// `ReleaseRefCount28Ptr` at 0x55ec50 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr(longlong * param_1)`
+pub const ReleaseRefCount28Ptr: u64 = 33153;
+/// `ReleaseRefCount28Ptr_2` at 0x6baf70 (decompiler, medium); signature (medium): `undefined ReleaseRefCount28Ptr_2(longlong * param_1)`
+pub const ReleaseRefCount28Ptr_2: u64 = 38160;
+/// `ReleaseRefCount28_2` at 0x18e990 (decompiler, medium); signature (untiered): `undefined ReleaseRefCount28_2(longlong * param_1)`
+pub const ReleaseRefCount28_2: u64 = 12871;
+/// `ReleaseRefCount8` at 0xcf3270 (decompiler, high); signature (high): `undefined ReleaseRefCount8(undefined8 * param_1)`
+pub const ReleaseRefCount8: u64 = 82198;
+/// `ReleaseRefCountAt08` at 0x12f9750 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt08(longlong param_1)`
+pub const ReleaseRefCountAt08: u64 = 446743;
+/// `ReleaseRefCountAt10` at 0x12f9bf0 (decompiler, medium); signature (medium): `undefined ReleaseRefCountAt10(longlong param_1)`
+pub const ReleaseRefCountAt10: u64 = 446758;
+/// `ReleaseRefCountAt18` at 0xe2b2b0 (decompiler, high); signature (high): `undefined ReleaseRefCountAt18(undefined8 * param_1)`
+pub const ReleaseRefCountAt18: u64 = 88276;
+/// `ReleaseRefCountField14AndDelete` at 0x441f30 (decompiler, medium); signature (medium): `undefined ReleaseRefCountField14AndDelete(longlong param_1)`
+pub const ReleaseRefCountField14AndDelete: u64 = 418626;
+/// `ReleaseRefCountField14Ptr` at 0x666d10 (decompiler, high); signature (high): `undefined ReleaseRefCountField14Ptr(longlong * param_1)`
+pub const ReleaseRefCountField14Ptr: u64 = 36883;
+/// `ReleaseRefCounted16AndClear` at 0xc47320 (decompiler, high); signature (untiered): `undefined ReleaseRefCounted16AndClear(undefined8 * param_1)`
+pub const ReleaseRefCounted16AndClear: u64 = 65364;
+/// `ReleaseRefCounted16ArrayAndClearGlobal401100` at 0x54f700 (decompiler, medium); signature (untiered): `undefined ReleaseRefCounted16ArrayAndClearGlobal401100(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted16ArrayAndClearGlobal401100: u64 = 32800;
+/// `ReleaseRefCounted16PtrAndClear` at 0x17bce0 (decompiler, high); signature (high): `undefined ReleaseRefCounted16PtrAndClear(undefined8 * param_1)`
+pub const ReleaseRefCounted16PtrAndClear: u64 = 12175;
+/// `ReleaseRefCounted16PtrAndClear_2` at 0x527970 (decompiler, high); signature (untiered): `undefined ReleaseRefCounted16PtrAndClear_2(undefined8 * param_1)`
+pub const ReleaseRefCounted16PtrAndClear_2: u64 = 32135;
+/// `ReleaseRefCounted16PtrArray` at 0x5513f0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCounted16PtrArray(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted16PtrArray: u64 = 32823;
+/// `ReleaseRefCounted18` at 0x9ecda0 (decompiler, high); signature (untiered): `undefined ReleaseRefCounted18(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted18: u64 = 54184;
+/// `ReleaseRefCounted2F8ElementRange` at 0x1212de0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCounted2F8ElementRange(longlong * param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
+pub const ReleaseRefCounted2F8ElementRange: u64 = 91870;
+/// `ReleaseRefCounted2F8ElementsAndClear` at 0x1212d30 (decompiler, medium); signature (untiered): `undefined ReleaseRefCounted2F8ElementsAndClear(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCounted2F8ElementsAndClear: u64 = 91869;
+/// `ReleaseRefCountedArray20` at 0x4ee980 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArray20(undefined8 param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArray20: u64 = 31124;
+/// `ReleaseRefCountedArrayAt` at 0x502970 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedArrayAt(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayAt: u64 = 31536;
+/// `ReleaseRefCountedArrayAt0` at 0x11cc130 (decompiler, high); signature (untiered): `undefined ReleaseRefCountedArrayAt0(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayAt0: u64 = 90657;
+/// `ReleaseRefCountedArrayField28` at 0xc56d20 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArrayField28(longlong param_1)`
+pub const ReleaseRefCountedArrayField28: u64 = 65714;
+/// `ReleaseRefCountedArrayHolder` at 0x9cb040 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArrayHolder(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayHolder: u64 = 53749;
+/// `ReleaseRefCountedArrayHolder_2` at 0x9caf70 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArrayHolder_2(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayHolder_2: u64 = 53746;
+/// `ReleaseRefCountedArrayHolder_3` at 0x9ce2c0 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArrayHolder_3(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayHolder_3: u64 = 53798;
+/// `ReleaseRefCountedArrayObjectPtr` at 0x428670 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedArrayObjectPtr(undefined8 * param_1, undefined8 param_2, longlong param_3, undefined8 param_4)`
+pub const ReleaseRefCountedArrayObjectPtr: u64 = 26657;
+/// `ReleaseRefCountedB0Object` at 0x47c800 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedB0Object(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseRefCountedB0Object: u64 = 28948;
 /// `ReleaseRefCountedBlock20` at 0x9ecd80 (decompiler, medium); signature (untiered): `undefined ReleaseRefCountedBlock20(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReleaseRefCountedBlock20: u64 = 54182;
 /// `ReleaseRefCountedBuffer` at 0x156b700 (decompiler, medium); signature (medium): `undefined ReleaseRefCountedBuffer(longlong * param_1)`
@@ -8989,89 +9069,3 @@ pub const SetBit4OfField154IfField257Is16: u64 = 90138;
 pub const SetBit4OfField28IfPointInLandGrid: u64 = 18710;
 /// `SetBit5OfField154` at 0x11a7740 (decompiler, high); signature (high): `undefined SetBit5OfField154(longlong param_1)`
 pub const SetBit5OfField154: u64 = 90134;
-/// `SetBit6OfField10AndNotify` at 0x1e5f10 (decompiler, medium); signature (medium): `undefined SetBit6OfField10AndNotify(longlong * param_1, byte param_2)`
-pub const SetBit6OfField10AndNotify: u64 = 14629;
-/// `SetBit6OfField10AndNotify_2` at 0x1e6150 (decompiler, medium); signature (untiered): `undefined SetBit6OfField10AndNotify_2(longlong * param_1, byte param_2)`
-pub const SetBit6OfField10AndNotify_2: u64 = 14639;
-/// `SetBit80000OfFieldE8Object25E0` at 0xd2b1c0 (decompiler, medium); signature (untiered): `undefined SetBit80000OfFieldE8Object25E0(longlong param_1)`
-pub const SetBit80000OfFieldE8Object25E0: u64 = 83307;
-/// `SetBit800OfNthSizerItem` at 0x15e5bb0 (decompiler, medium); signature (untiered): `undefined8 SetBit800OfNthSizerItem(longlong param_1, int param_2)`
-pub const SetBit800OfNthSizerItem: u64 = 454165;
-/// `SetBitArrayPaddingBits` at 0xbec9c0 (decompiler, medium); signature (medium): `undefined SetBitArrayPaddingBits(longlong * param_1, int param_2)`
-pub const SetBitArrayPaddingBits: u64 = 64069;
-/// `SetBitForKeyInMap68` at 0x538150 (decompiler, medium); signature (medium): `undefined SetBitForKeyInMap68(longlong param_1, ulonglong param_2, byte param_3, char param_4)`
-pub const SetBitForKeyInMap68: u64 = 32445;
-/// `SetBitInByteArray` at 0x53e9b0 (decompiler, high); signature (high): `undefined SetBitInByteArray(longlong param_1, uint param_2, char param_3)`
-pub const SetBitInByteArray: u64 = 32566;
-/// `SetBitInField10Bitmap` at 0x1565e0 (decompiler, medium); signature (medium): `undefined SetBitInField10Bitmap(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetBitInField10Bitmap: u64 = 11566;
-/// `SetBitInField70AndDecrementCount42` at 0xb402e0 (decompiler, high); signature (high): `undefined SetBitInField70AndDecrementCount42(longlong param_1, uint param_2)`
-pub const SetBitInField70AndDecrementCount42: u64 = 60648;
-/// `SetBitRange` at 0x11854f0 (decompiler, medium); signature (medium): `undefined SetBitRange(longlong param_1, ulonglong param_2, longlong param_3)`
-pub const SetBitRange: u64 = 84793;
-/// `SetBits2001000OfField154` at 0x11a0ed0 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154(longlong param_1)`
-pub const SetBits2001000OfField154: u64 = 89525;
-/// `SetBits2001000OfField154Unchecked` at 0x11a1070 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154Unchecked(longlong param_1)`
-pub const SetBits2001000OfField154Unchecked: u64 = 89533;
-/// `SetBits2001000OfField154_2` at 0x11a0ef0 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154_2(longlong param_1)`
-pub const SetBits2001000OfField154_2: u64 = 89527;
-/// `SetBlendCollisionField38Recursive` at 0x766a90 (decompiler, medium); signature (untiered): `longlong * SetBlendCollisionField38Recursive(longlong * param_1, longlong * param_2)`
-pub const SetBlendCollisionField38Recursive: u64 = 40864;
-/// `SetBlenderChildBoneWeight` at 0xb02660 (decompiler, medium); signature (untiered): `undefined SetBlenderChildBoneWeight(longlong param_1, int param_2, int param_3, float param_4)`
-pub const SetBlenderChildBoneWeight: u64 = 59533;
-/// `SetBlenderChildGenerator` at 0xb02510 (decompiler, medium); signature (untiered): `undefined SetBlenderChildGenerator(longlong param_1, int param_2, longlong param_3)`
-pub const SetBlenderChildGenerator: u64 = 59532;
-/// `SetBlurFilterMember` at 0xde2be0 (decompiler, medium); signature (untiered): `undefined1 SetBlurFilterMember(byte * param_1, longlong * param_2, ulonglong * param_3, byte * param_4, byte * param_5)`
-pub const SetBlurFilterMember: u64 = 87065;
-/// `SetBodyField4AFromBoneList` at 0x1073830 (decompiler, medium); signature (untiered): `undefined SetBodyField4AFromBoneList(longlong param_1)`
-pub const SetBodyField4AFromBoneList: u64 = 78461;
-/// `SetBodySpaceAxesAndPivots` at 0xb721f0 (decompiler, medium); signature (untiered): `undefined SetBodySpaceAxesAndPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, undefined8 * param_5, undefined8 * param_6, undefined4 param_7)`
-pub const SetBodySpaceAxesAndPivots: u64 = 61895;
-/// `SetBodySpaceAxesAndPivotsWithFlag` at 0xb74920 (decompiler, medium); signature (untiered): `undefined SetBodySpaceAxesAndPivotsWithFlag(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4, undefined8 * param_5, undefined4 param_6, int param_7)`
-pub const SetBodySpaceAxesAndPivotsWithFlag: u64 = 61935;
-/// `SetBoundsRect158` at 0xe500c0 (decompiler, medium); signature (medium): `undefined SetBoundsRect158(longlong param_1, float * param_2, int param_3)`
-pub const SetBoundsRect158: u64 = 88655;
-/// `SetBufferBeginEndCapacity` at 0x128d780 (decompiler, medium); signature (medium): `undefined SetBufferBeginEndCapacity(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
-pub const SetBufferBeginEndCapacity: u64 = 100443;
-/// `SetBufferField8AndFlag40` at 0xe00900 (decompiler, medium); signature (untiered): `undefined SetBufferField8AndFlag40(longlong param_1, uint * param_2)`
-pub const SetBufferField8AndFlag40: u64 = 87459;
-/// `SetButtonHighlighted` at 0x15f2070 (decompiler, medium); signature (untiered): `undefined SetButtonHighlighted(longlong param_1, char param_2)`
-pub const SetButtonHighlighted: u64 = 454404;
-/// `SetButtonState` at 0x15f1f60 (decompiler, medium); signature (medium): `undefined SetButtonState(longlong param_1, int param_2)`
-pub const SetButtonState: u64 = 454397;
-/// `SetByte12AOnAllEntries` at 0x54e0d0 (decompiler, medium); signature (untiered): `undefined SetByte12AOnAllEntries(longlong param_1)`
-pub const SetByte12AOnAllEntries: u64 = 32791;
-/// `SetByte136Bit3` at 0x6ea020 (decompiler, high); signature (high): `undefined SetByte136Bit3(longlong param_1, char param_2)`
-pub const SetByte136Bit3: u64 = 39165;
-/// `SetByte13A` at 0x6eb4f0 (decompiler, high); signature (high): `undefined SetByte13A(longlong param_1, undefined1 param_2)`
-pub const SetByte13A: u64 = 39198;
-/// `SetByte13B` at 0x6e97a0 (decompiler, high); signature (untiered): `undefined SetByte13B(longlong param_1, undefined1 param_2)`
-pub const SetByte13B: u64 = 39141;
-/// `SetByte190IfParticleSystem` at 0x2264c0 (decompiler, medium); signature (untiered): `undefined8 SetByte190IfParticleSystem(longlong * param_1)`
-pub const SetByte190IfParticleSystem: u64 = 15925;
-/// `SetByte190OnField140Entries` at 0xffb9b0 (decompiler, medium); signature (medium): `undefined SetByte190OnField140Entries(longlong param_1)`
-pub const SetByte190OnField140Entries: u64 = 76891;
-/// `SetByte1BForEntriesOfType` at 0x180880 (decompiler, medium); signature (untiered): `undefined SetByte1BForEntriesOfType(longlong param_1, uint param_2, undefined1 param_3)`
-pub const SetByte1BForEntriesOfType: u64 = 12388;
-/// `SetByte1C5` at 0x798640 (decompiler, medium); signature (medium): `undefined SetByte1C5(longlong * param_1, char param_2)`
-pub const SetByte1C5: u64 = 41741;
-/// `SetByte21BResettingFields40To80` at 0x423d40 (decompiler, medium); signature (untiered): `undefined SetByte21BResettingFields40To80(longlong param_1, char param_2)`
-pub const SetByte21BResettingFields40To80: u64 = 26562;
-/// `SetByte242` at 0xbd3030 (decompiler, high); signature (high): `undefined SetByte242(longlong param_1)`
-pub const SetByte242: u64 = 63606;
-/// `SetByte324OfField8` at 0x727d50 (decompiler, high); signature (untiered): `undefined SetByte324OfField8(longlong param_1, undefined1 param_2)`
-pub const SetByte324OfField8: u64 = 39997;
-/// `SetByte327OfField8` at 0x7235a0 (decompiler, high); signature (untiered): `undefined SetByte327OfField8(longlong param_1, undefined1 param_2)`
-pub const SetByte327OfField8: u64 = 39890;
-/// `SetByte328OfField8` at 0x7265a0 (decompiler, high); signature (untiered): `undefined SetByte328OfField8(longlong param_1)`
-pub const SetByte328OfField8: u64 = 39947;
-/// `SetByte32OnMatchingNodesRecursive` at 0x1517920 (decompiler, medium); signature (untiered): `ulonglong SetByte32OnMatchingNodesRecursive(longlong * param_1, undefined8 * param_2)`
-pub const SetByte32OnMatchingNodesRecursive: u64 = 106474;
-/// `SetByte34` at 0x561bf0 (decompiler, high); signature (high): `undefined SetByte34(longlong param_1, undefined1 param_2)`
-pub const SetByte34: u64 = 33241;
-/// `SetByte3DAlongChainUntilSet` at 0x112d510 (decompiler, medium); signature (medium): `undefined SetByte3DAlongChainUntilSet(undefined8 param_1, undefined8 * param_2)`
-pub const SetByte3DAlongChainUntilSet: u64 = 81479;
-/// `SetByte402985` at 0x5e9770 (decompiler, high); signature (high): `undefined SetByte402985(undefined1 param_1)`
-pub const SetByte402985: u64 = 35129;
-/// `SetByte452OfField10` at 0x7025e0 (decompiler, high); signature (untiered): `undefined SetByte452OfField10(longlong param_1, undefined1 param_2)`
-pub const SetByte452OfField10: u64 = 39605;

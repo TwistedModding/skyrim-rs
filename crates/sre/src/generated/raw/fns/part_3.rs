@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_30` at 0x485630 (rtti, medium); signature (low): `undefined8 * vfunc_30(void)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_30: u64 = 29113;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes>::vfunc_34` at 0x485610 (rtti, medium); signature (low): `undefined vfunc_34(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureShoutParamTypes> * this, uint param_1)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureShoutParamTypes__vfunc_34: u64 = 29112;
+/// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vdtor` at 0x487ac0 (slot_propagation, medium); signature (low): `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * vdtor(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vdtor: u64 = 29160;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_18` at 0x487ef0 (rtti, medium); signature (low): `undefined8 vfunc_18(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
 pub const BGSProcedureTyped_BGSProcedureBase_struct_BGSProcedureParamInfo_const__const_kProcedureSitParamTypes__vfunc_18: u64 = 29176;
 /// `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes>::vfunc_19` at 0x487eb0 (rtti, medium); signature (low): `undefined * vfunc_19(BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSitParamTypes> * this, uint param_1)`
@@ -7991,15 +7997,3 @@ pub const BSProceduralLightningController__ctor_sub2: u64 = 76948;
 pub const BSProceduralLightningController__vdtor: u64 = 76950;
 /// `BSProceduralLightningController::vfunc_2` at 0xffe530 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
 pub const BSProceduralLightningController__vfunc_2: u64 = 76952;
-/// `BSProceduralLightningController::vfunc_23` at 0xffc5e0 (rtti, high); signature (low): `longlong * vfunc_23(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSProceduralLightningController__vfunc_23: u64 = 76908;
-/// `BSProceduralLightningController::vfunc_24` at 0xffc810 (rtti, high); signature (low): `undefined vfunc_24(BSProceduralLightningController * this, longlong param_1)`
-pub const BSProceduralLightningController__vfunc_24: u64 = 76910;
-/// `BSProceduralLightningController::vfunc_24_sub0` at 0x1005820 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(longlong param_1, longlong param_2)`
-pub const BSProceduralLightningController__vfunc_24_sub0: u64 = 77193;
-/// `BSProceduralLightningController::vfunc_24_sub1` at 0x1005ac0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub1(longlong param_1, longlong param_2)`
-pub const BSProceduralLightningController__vfunc_24_sub1: u64 = 77196;
-/// `BSProceduralLightningController::vfunc_25` at 0xffc880 (rtti, high); signature (low): `undefined vfunc_25(BSProceduralLightningController * this, longlong param_1)`
-pub const BSProceduralLightningController__vfunc_25: u64 = 76911;
-/// `BSProceduralLightningController::vfunc_26` at 0xffc920 (rtti, high); signature (low): `char vfunc_26(BSProceduralLightningController * this, longlong * param_1)`
-pub const BSProceduralLightningController__vfunc_26: u64 = 76912;

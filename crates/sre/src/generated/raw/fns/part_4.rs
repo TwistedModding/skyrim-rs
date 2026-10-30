@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSProceduralLightningController::vfunc_23` at 0xffc5e0 (rtti, high); signature (low): `longlong * vfunc_23(BSProceduralLightningController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSProceduralLightningController__vfunc_23: u64 = 76908;
+/// `BSProceduralLightningController::vfunc_24` at 0xffc810 (rtti, high); signature (low): `undefined vfunc_24(BSProceduralLightningController * this, longlong param_1)`
+pub const BSProceduralLightningController__vfunc_24: u64 = 76910;
+/// `BSProceduralLightningController::vfunc_24_sub0` at 0x1005820 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub0(longlong param_1, longlong param_2)`
+pub const BSProceduralLightningController__vfunc_24_sub0: u64 = 77193;
+/// `BSProceduralLightningController::vfunc_24_sub1` at 0x1005ac0 (callgraph, medium); signature (untiered): `undefined vfunc_24_sub1(longlong param_1, longlong param_2)`
+pub const BSProceduralLightningController__vfunc_24_sub1: u64 = 77196;
+/// `BSProceduralLightningController::vfunc_25` at 0xffc880 (rtti, high); signature (low): `undefined vfunc_25(BSProceduralLightningController * this, longlong param_1)`
+pub const BSProceduralLightningController__vfunc_25: u64 = 76911;
+/// `BSProceduralLightningController::vfunc_26` at 0xffc920 (rtti, high); signature (low): `char vfunc_26(BSProceduralLightningController * this, longlong * param_1)`
+pub const BSProceduralLightningController__vfunc_26: u64 = 76912;
 /// `BSProceduralLightningController::vfunc_27` at 0xffc9c0 (rtti, high); signature (low): `undefined vfunc_27(BSProceduralLightningController * this, longlong * param_1)`
 pub const BSProceduralLightningController__vfunc_27: u64 = 76913;
 /// `BSProceduralLightningController::vfunc_27_sub0` at 0x1005760 (callgraph, medium); signature (untiered): `undefined vfunc_27_sub0(longlong param_1, longlong param_2)`
@@ -6303,13 +6315,3 @@ pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState_
 pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_2: u64 = 28101;
 /// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vdtor` at 0x47d300 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePursue,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vdtor: u64 = 28978;
-/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_1` at 0x47d370 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vfunc_1: u64 = 28980;
-/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_2` at 0x47d3f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vfunc_2: u64 = 28981;
-/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vdtor` at 0x482b50 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vdtor: u64 = 29039;
-/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vfunc_1` at 0x482d70 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vfunc_1: u64 = 29043;
-/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vfunc_2` at 0x482df0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vfunc_2: u64 = 29044;

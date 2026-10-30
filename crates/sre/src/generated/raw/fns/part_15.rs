@@ -3,6 +3,66 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAlphaAccumulator::vfunc_2` at 0xf0f4e0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAlphaAccumulator__vfunc_2: u64 = 71325;
+/// `NiAlphaAccumulator::vfunc_23` at 0xf0f120 (rtti, medium); signature (low): `NiBackToFrontAccumulator * vfunc_23(NiAlphaAccumulator * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaAccumulator__vfunc_23: u64 = 71312;
+/// `NiAlphaAccumulator::vfunc_24` at 0xf0f250 (rtti, medium); signature (untiered): `undefined vfunc_24(void)`
+pub const NiAlphaAccumulator__vfunc_24: u64 = 71314;
+/// `NiAlphaAccumulator::vfunc_25` at 0xf0f260 (rtti, medium); signature (untiered): `undefined vfunc_25(void)`
+pub const NiAlphaAccumulator__vfunc_25: u64 = 71315;
+/// `NiAlphaAccumulator::vfunc_26` at 0xf0f270 (rtti, medium); signature (untiered): `undefined vfunc_26(NiAlphaAccumulator * this, longlong * param_1)`
+pub const NiAlphaAccumulator__vfunc_26: u64 = 71316;
+/// `NiAlphaAccumulator::vfunc_27` at 0xf0f280 (rtti, medium); signature (untiered): `undefined vfunc_27(void)`
+pub const NiAlphaAccumulator__vfunc_27: u64 = 71317;
+/// `NiAlphaAccumulator::vfunc_28` at 0xf0f290 (rtti, medium); signature (low): `bool vfunc_28(void)`
+pub const NiAlphaAccumulator__vfunc_28: u64 = 71318;
+/// `NiAlphaProperty::Create` at 0xef2a20 (string, high); signature (low): `NiObjectNET * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAlphaProperty__Create: u64 = 70684;
+/// `NiAlphaProperty::vdtor` at 0x20b3d0 (slot_propagation, medium); signature (low): `NiAlphaProperty * vdtor(NiAlphaProperty * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaProperty__vdtor: u64 = 15411;
+/// `NiAlphaProperty::vfunc_2` at 0x20bea0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAlphaProperty__vfunc_2: u64 = 15431;
+/// `NiAlphaProperty::vfunc_23` at 0xef2700 (rtti, high); signature (low): `NiAlphaProperty * vfunc_23(NiAlphaProperty * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaProperty__vfunc_23: u64 = 70677;
+/// `NiAlphaProperty::vfunc_24` at 0xef2830 (rtti, high); signature (low): `undefined vfunc_24(NiAlphaProperty * this, longlong param_1)`
+pub const NiAlphaProperty__vfunc_24: u64 = 70679;
+/// `NiAlphaProperty::vfunc_25` at 0xef28c0 (rtti, high); signature (untiered): `undefined vfunc_25(NiAlphaProperty * this, longlong param_1)`
+pub const NiAlphaProperty__vfunc_25: u64 = 70680;
+/// `NiAlphaProperty::vfunc_26` at 0xef28d0 (rtti, high); signature (untiered): `undefined8 vfunc_26(NiAlphaProperty * this, longlong * param_1)`
+pub const NiAlphaProperty__vfunc_26: u64 = 70681;
+/// `NiAlphaProperty::vfunc_27` at 0xef28e0 (rtti, high); signature (low): `undefined vfunc_27(NiAlphaProperty * this, longlong * param_1)`
+pub const NiAlphaProperty__vfunc_27: u64 = 70682;
+/// `NiAlphaProperty::vfunc_28` at 0xef2970 (rtti, high); signature (low): `ulonglong vfunc_28(NiAlphaProperty * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAlphaProperty__vfunc_28: u64 = 70683;
+/// `NiAlphaProperty::vfunc_37` at 0x20ceb0 (rtti, high); signature (low): `undefined8 vfunc_37(void)`
+pub const NiAlphaProperty__vfunc_37: u64 = 15448;
+/// `NiAmbientLight::Create` at 0xf0f640 (string, high); signature (low): `NiLight * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAmbientLight__Create: u64 = 71335;
+/// `NiAmbientLight::ctor` at 0xf0f700 (layout_inference, high); signature (low): `NiAmbientLight * ctor(NiAmbientLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAmbientLight__ctor: u64 = 71336;
+/// `NiAmbientLight::vdtor` at 0xf0f7e0 (slot_propagation, medium); signature (low): `NiAmbientLight * vdtor(NiAmbientLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAmbientLight__vdtor: u64 = 76153;
+/// `NiAmbientLight::vfunc_2` at 0xf0f820 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAmbientLight__vfunc_2: u64 = 71339;
+/// `NiAmbientLight::vfunc_23` at 0xf0f510 (rtti, high); signature (low): `NiLight * vfunc_23(NiAmbientLight * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAmbientLight__vfunc_23: u64 = 71328;
+/// `NiAmbientLight::vfunc_24` at 0xf0f5f0 (rtti, high); signature (untiered): `undefined vfunc_24(NiAmbientLight * this, longlong param_1)`
+pub const NiAmbientLight__vfunc_24: u64 = 71330;
+/// `NiAmbientLight::vfunc_25` at 0xf0f600 (rtti, high); signature (untiered): `undefined vfunc_25(NiAmbientLight * this, longlong param_1)`
+pub const NiAmbientLight__vfunc_25: u64 = 71331;
+/// `NiAmbientLight::vfunc_26` at 0xf0f610 (rtti, high); signature (untiered): `undefined1 vfunc_26(NiAmbientLight * this, undefined8 param_1)`
+pub const NiAmbientLight__vfunc_26: u64 = 71332;
+/// `NiAmbientLight::vfunc_27` at 0xf0f620 (rtti, high); signature (untiered): `undefined vfunc_27(NiAmbientLight * this, longlong * param_1)`
+pub const NiAmbientLight__vfunc_27: u64 = 71333;
+/// `NiAmbientLight::vfunc_28` at 0xf0f630 (rtti, high); signature (untiered): `undefined8 vfunc_28(NiAmbientLight * this, longlong param_1)`
+pub const NiAmbientLight__vfunc_28: u64 = 71334;
+/// `NiAutoNormalParticles::Create` at 0xf05380 (string, high); signature (low): `BSGeometry * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAutoNormalParticles__Create: u64 = 71094;
+/// `NiAutoNormalParticlesData::Create` at 0xf14550 (string, medium); signature (low): `undefined Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiAutoNormalParticlesData__Create: u64 = 71485;
+/// `NiBSBoneLODController::Create` at 0xfecc00 (string, medium); signature (low): `NiBSBoneLODController * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const NiBSBoneLODController__Create: u64 = 76514;
 /// `NiBSBoneLODController::ctor` at 0xfecc60 (layout_inference, high); signature (high): `NiBSBoneLODController * ctor(NiBSBoneLODController * this)`
 pub const NiBSBoneLODController__ctor: u64 = 76515;
 /// `NiBSBoneLODController::ctor` at 0xfece30 (layout_inference, medium); signature (low): `undefined ctor(NiBSBoneLODController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5189,8 +5249,10 @@ pub const NiSphereTriIntersector__vdtor: u64 = 72327;
 pub const NiSphereTriIntersector__vfunc_3: u64 = 72325;
 /// `NiSphereTriIntersector::vfunc_4` at 0xf49f90 (rtti, high); signature (low): `undefined vfunc_4(NiSphereTriIntersector * this, undefined8 param_1, float * param_2)`
 pub const NiSphereTriIntersector__vfunc_4: u64 = 72326;
-/// `NiSpotLight::Create` at 0xf163e0 (string, high); signature (low): `NiPointLight * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+/// `NiSpotLight::Create` at 0xf163e0 (string, high); signature (low): `NiPointLight * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: NiStream factory for 'NiSpotLight' (registered by 0xee5570 at 0xf0663a with the class name 0x1a4b7a0); with the clone slot (vfunc_23 0xf16000) the only ways an NiSpotLight comes into being (high); signature `NiObject* (void)`
 pub const NiSpotLight__Create: u64 = 71548;
+/// `NiSpotLight::Create` as a function pointer type (high).
+pub type NiSpotLight__Create_fn = unsafe extern "C" fn() -> *mut crate::NiObject;
 /// `NiSpotLight::ctor` at 0xf164b0 (layout_inference, high); signature (high): `NiSpotLight * ctor(NiSpotLight * this)`
 pub const NiSpotLight__ctor: u64 = 71549;
 /// `NiSpotLight::vdtor` at 0xf16610 (slot_propagation, medium); signature (low): `NiSpotLight * vdtor(NiSpotLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -8655,49 +8717,3 @@ pub const Papyrus__Debug__GetPlatformName: u64 = 55374;
 pub const Papyrus__Debug__GetPlatformName_sub0: u64 = 68970;
 /// `Papyrus::Debug::GetVersionNumber` at 0xa1f470 (papyrus_native, high); signature (medium): `bool GetVersionNumber(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
 pub const Papyrus__Debug__GetVersionNumber: u64 = 55375;
-/// `Papyrus::Debug::MessageBox` at 0xa1f520 (papyrus_native, high); signature (medium): `void MessageBox(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; semantic: ShowMessageBox(text, null, 0, 4, 10, "OK", null) (high); signature `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
-pub const Papyrus__Debug__MessageBox: u64 = 55376;
-/// `Papyrus::Debug::MessageBox` as a function pointer type (high).
-pub type Papyrus__Debug__MessageBox_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, text: *const crate::BSFixedString);
-/// `Papyrus::Debug::Notification` at 0xa1f570 (papyrus_native, high); signature (medium): `void Notification(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`; semantic: Debug.Notification native: ShowHUDMessage(text, nullptr, true) if the text is not empty (high); signature `void (IVirtualMachine* vm, u32 stackId, void*, const BSFixedString* text)`
-pub const Papyrus__Debug__Notification: u64 = 55377;
-/// `Papyrus::Debug::Notification` as a function pointer type (high).
-pub type Papyrus__Debug__Notification_fn = unsafe extern "C" fn(vm: *mut c_void, stackId: u32, a2: *mut c_void, text: *const crate::BSFixedString);
-/// `Papyrus::Debug::OpenUserLog` at 0xa1f5b0 (papyrus_native, high); signature (medium): `bool OpenUserLog(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__OpenUserLog: u64 = 55378;
-/// `Papyrus::Debug::PlayerMoveToAndWait` at 0xa1f000 (papyrus_native, high); signature (medium): `bool PlayerMoveToAndWait(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__PlayerMoveToAndWait: u64 = 55369;
-/// `Papyrus::Debug::QuitGame` at 0xa1f600 (runtime, high); signature (untiered): `void QuitGame(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`; semantic: the QuitGame native of Debug (high); signature `void (BSScript::IVirtualMachine* vm, u32 stackId, BSScript::StaticFunctionTag* self)`
-pub const Papyrus__Debug__QuitGame: u64 = 55379;
-/// `Papyrus::Debug::QuitGame` as a function pointer type (high).
-pub type Papyrus__Debug__QuitGame_fn = unsafe extern "C" fn(vm: *mut crate::BSScript__IVirtualMachine, stackId: u32, self_: *mut c_void);
-/// `Papyrus::Debug::RegisterFuncs` at 0xa1fbf0 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Debug__RegisterFuncs: u64 = 55394;
-/// `Papyrus::Debug::SendAnimationEvent` at 0xa1f620 (papyrus_native, high); signature (medium): `void SendAnimationEvent(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1)`
-pub const Papyrus__Debug__SendAnimationEvent: u64 = 55380;
-/// `Papyrus::Debug::SetFootIK` at 0xa1f670 (papyrus_native, high); signature (medium): `void SetFootIK(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`; semantic: writes INI bFootIK:RagdollAnim only (the ragdoll foot IK path), not the behaviour graph's driver (high); signature `void (vm, stackId, unused, bool)`
-pub const Papyrus__Debug__SetFootIK: u64 = 55381;
-/// `Papyrus::Debug::SetGodMode` at 0xa1f680 (papyrus_native, high); signature (medium): `void SetGodMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
-pub const Papyrus__Debug__SetGodMode: u64 = 55382;
-/// `Papyrus::Debug::StartScriptProfiling` at 0xa1f690 (papyrus_native, high); signature (medium): `void StartScriptProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__StartScriptProfiling: u64 = 55383;
-/// `Papyrus::Debug::StartStackProfiling` at 0xa1f7f0 (papyrus_native, high); signature (medium): `void StartStackProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__StartStackProfiling: u64 = 55384;
-/// `Papyrus::Debug::StartStackProfiling_sub0` at 0x9c33f0 (callgraph, medium); signature (untiered): `ulonglong StartStackProfiling_sub0(longlong param_1, uint param_2)`
-pub const Papyrus__Debug__StartStackProfiling_sub0: u64 = 53659;
-/// `Papyrus::Debug::StopScriptProfiling` at 0xa1f850 (papyrus_native, high); signature (medium): `void StopScriptProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__StopScriptProfiling: u64 = 55385;
-/// `Papyrus::Debug::StopStackProfiling` at 0xa1f8f0 (papyrus_native, high); signature (medium): `void StopStackProfiling(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__StopStackProfiling: u64 = 55386;
-/// `Papyrus::Debug::StopStackProfiling_sub0` at 0x9c3640 (callgraph, medium); signature (untiered): `ulonglong StopStackProfiling_sub0(longlong param_1, uint param_2)`
-pub const Papyrus__Debug__StopStackProfiling_sub0: u64 = 53660;
-/// `Papyrus::Debug::TakeScreenshot` at 0xa1f950 (papyrus_native, high); signature (medium): `void TakeScreenshot(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, BSFixedString * a0)`
-pub const Papyrus__Debug__TakeScreenshot: u64 = 55387;
-/// `Papyrus::Debug::ToggleAI` at 0xa1f9a0 (papyrus_native, high); signature (medium): `void ToggleAI(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__ToggleAI: u64 = 55388;
-/// `Papyrus::Debug::ToggleCollisions` at 0xa1f9c0 (papyrus_native, high); signature (medium): `void ToggleCollisions(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused)`
-pub const Papyrus__Debug__ToggleCollisions: u64 = 55389;
-/// `Papyrus::Debug::ToggleCollisions_Impl` at 0x1a7270 (semantic, high); signature (low): `undefined ToggleCollisions_Impl(void)`; semantic: global collision toggle: flips g_CollisionsDisabled 0x219e5f4, writes the current world's bhkWorld+0xc701 = disabled and bRagdollAnim:RagdollAnim = disabled (high); signature `void ()`
-pub const Papyrus__Debug__ToggleCollisions_Impl: u64 = 13375;
-/// `Papyrus::Debug::ToggleCollisions_Impl` as a function pointer type (high).
-pub type Papyrus__Debug__ToggleCollisions_Impl_fn = unsafe extern "C" fn();

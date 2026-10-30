@@ -1579,6 +1579,15 @@ impl crate::NiDirectionalLight {
     pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { function!(71074, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
 }
 
+impl crate::NiSpotLight {
+    /// `NiSpotLight::Create`: NiStream factory for 'NiSpotLight' (registered by 0xee5570 at 0xf0663a with the class name 0x1a4b7a0); with the clone slot (vfunc_23 0xf16000) the only ways an NiSpotLight comes into being
+    ///
+    /// Semantic, camera pass, high; ledger string evidence, name high; id 71548, rva 0xf163e0.
+    /// `NiObject* (void)`
+    #[inline]
+    pub fn create() -> Option<&'static crate::NiObject> { unsafe { function!(71548, () -> Option<&'static crate::NiObject>)() } }
+}
+
 /// `g_NiNode_ptr` at 0x3230510, id 403441 (xref_inference, medium)
 #[inline]
 pub fn g_ni_node_ptr() -> *mut c_void { address!(403441) as *mut c_void }

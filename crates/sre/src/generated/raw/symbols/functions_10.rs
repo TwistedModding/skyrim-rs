@@ -4,6 +4,17 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13b75d0, id: 450752, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_70" },
+    Function { rva: 0x13b7600, id: 450753, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_71" },
+    Function { rva: 0x13b7a50, id: 450764, confidence: Confidence::Medium, name: "ConstructJsonRequest1B05CC0" },
+    Function { rva: 0x13b8190, id: 450778, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut" },
+    Function { rva: 0x13b8cd0, id: 98652, confidence: Confidence::Medium, name: "SetResultField88AndMoveOut" },
+    Function { rva: 0x13b8d30, id: 98654, confidence: Confidence::Medium, name: "StorePlatformErrorMessage" },
+    Function { rva: 0x13b9020, id: 98656, confidence: Confidence::Medium, name: "memcpy_s_7" },
+    Function { rva: 0x13b9610, id: 451285, confidence: Confidence::Medium, name: "InvokeDeleterAndClear_15" },
+    Function { rva: 0x13b9ca0, id: 527016, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut_2" },
+    Function { rva: 0x13b9ff0, id: 527019, confidence: Confidence::High, name: "Memcpy_s" },
+    Function { rva: 0x13ba0a0, id: 527020, confidence: Confidence::Medium, name: "ConstructJsonRequest1B063D0" },
     Function { rva: 0x13bab90, id: 450800, confidence: Confidence::Medium, name: "ConstructJsonRequestWithSessionToken" },
     Function { rva: 0x13bad50, id: 527024, confidence: Confidence::Medium, name: "FreeVectorStorage_15" },
     Function { rva: 0x13bae20, id: 527025, confidence: Confidence::Medium, name: "AppendFixedString1000" },
@@ -8193,13 +8204,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x17703d0, id: 168535, confidence: Confidence::Medium, name: "GameSetting_fHorseMountOffsetY__atexit" },
     Function { rva: 0x1770420, id: 168536, confidence: Confidence::Medium, name: "GameSetting_fHostileActorExteriorDistance__atexit" },
     Function { rva: 0x1770470, id: 168537, confidence: Confidence::Medium, name: "GameSetting_fHostileActorInteriorDistance__atexit" },
-    Function { rva: 0x17704c0, id: 168538, confidence: Confidence::Medium, name: "GameSetting_fHostileFlyingActorExteriorDistance__atexit" },
-    Function { rva: 0x1770510, id: 168539, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxDistance__atexit" },
-    Function { rva: 0x1770560, id: 168540, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxMagnitude__atexit" },
-    Function { rva: 0x17705b0, id: 168541, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMinMagnitude__atexit" },
-    Function { rva: 0x1770600, id: 168542, confidence: Confidence::Medium, name: "GameSetting_fItemRepairCostMult__atexit" },
-    Function { rva: 0x1770650, id: 168543, confidence: Confidence::Medium, name: "GameSetting_fJumpDoubleMult__atexit" },
-    Function { rva: 0x17706a0, id: 168544, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightExponent__atexit" },
-    Function { rva: 0x17706f0, id: 168545, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightExponentNPC__atexit" },
-    Function { rva: 0x1770740, id: 168546, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightMin__atexit" },
 ];

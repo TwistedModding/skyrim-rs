@@ -2236,13 +2236,6 @@ pub unsafe fn prune_invalid_targets_and_members(param_1: i64) -> u64 { unsafe { 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn prune_invalid_vats_targets(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(44287, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PruneRefArrayByVfunc140` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41463, rva 0x78a070).
-/// `undefined PruneRefArrayByVfunc140(longlong * param_1, undefined4 * param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn prune_ref_array_by_vfunc140(param_1: *mut i64, param_2: *mut u32, param_3: u64) -> u64 { unsafe { function!(41463, (*mut i64, *mut u32, u64) -> u64)(param_1, param_2, param_3) } }
 /// `PruneRefArrayEntriesWithNullField30` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 15223, rva 0x2009f0).
 /// `undefined PruneRefArrayEntriesWithNullField30(longlong param_1)`
 ///
@@ -2257,13 +2250,6 @@ pub unsafe fn prune_ref_array_entries_with_null_field30(param_1: i64) -> u64 { u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn prune_ref_arrays_and_signal_frame_phase1(param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(39048, (u64, u64, u64) -> u64)(param_1, param_2, param_3) } }
-/// `PruneRefArraysAndUpdateTESNode` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 36583, rva 0x65a1b0).
-/// `undefined PruneRefArraysAndUpdateTESNode(longlong param_1, undefined8 param_2, ulonglong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn prune_ref_arrays_and_update_tes_node(param_1: i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(36583, (i64, u64, u64) -> u64)(param_1, param_2, param_3) } }
 /// `PruneRefCountedList1B8` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41315, rva 0x77e050).
 /// `DWORD PruneRefCountedList1B8(longlong param_1)`
 ///
@@ -2327,20 +2313,6 @@ pub unsafe fn purge_unreferenced_hash_entries_2(param_1: i64, param_2: c_char) -
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn purge_unreferenced_strings_from_hash_table(param_1: i64) -> u64 { unsafe { function!(71691, (i64) -> u64)(param_1) } }
-/// `PushActorAway` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39895, rva 0x7237c0).
-/// `undefined PushActorAway(longlong param_1, TESObjectREFR * param_2, float * param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn push_actor_away(param_1: i64, param_2: *mut crate::TESObjectREFR, param_3: *mut f32, param_4: f32) -> u64 { unsafe { function!(39895, (i64, *mut crate::TESObjectREFR, *mut f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `PushActorAwayIfAboveExplosionKnockdownForce` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 43853, rva 0x7e8020).
-/// `undefined PushActorAwayIfAboveExplosionKnockdownForce(longlong param_1, TESObjectREFR * param_2, float param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn push_actor_away_if_above_explosion_knockdown_force(param_1: i64, param_2: *mut crate::TESObjectREFR, param_3: f32) -> u64 { unsafe { function!(43853, (i64, *mut crate::TESObjectREFR, f32) -> u64)(param_1, param_2, param_3) } }
 /// `PushAndSetRuntimeField100` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19430, rva 0x2d9f10).
 /// `undefined PushAndSetRuntimeField100(longlong param_1, int * param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -13583,3 +13555,31 @@ pub unsafe fn remove_actor_value_storage_entry(param_1: i64, param_2: c_char, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn remove_actor_value_storage_entry_unless_excluded(param_1: i64, param_2: i32) -> u64 { unsafe { function!(38476, (i64, i32) -> u64)(param_1, param_2) } }
+/// `RemoveActorValueStorageEntry_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39018, rva 0x6e3120).
+/// `undefined RemoveActorValueStorageEntry_2(longlong * param_1, char param_2, byte * param_3, byte * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_actor_value_storage_entry_2(param_1: *mut i64, param_2: c_char, param_3: *mut u8, param_4: *mut u8) -> u64 { unsafe { function!(39018, (*mut i64, c_char, *mut u8, *mut u8) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RemoveAllEntriesInFieldB0List` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 72392, rva 0xf529a0).
+/// `undefined RemoveAllEntriesInFieldB0List(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_entries_in_field_b0_list(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(72392, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RemoveAllInventoryEventFilters` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53952, rva 0x9da960).
+/// `ulonglong RemoveAllInventoryEventFilters(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_inventory_event_filters(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(53952, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RemoveAllMapItems` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41107, rva 0x7721d0).
+/// `undefined RemoveAllMapItems(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_map_items(param_1: *mut i64) -> u64 { unsafe { function!(41107, (*mut i64) -> u64)(param_1) } }

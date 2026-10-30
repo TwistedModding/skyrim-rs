@@ -4,6 +4,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x9161c0, id: 51200, confidence: Confidence::High, name: "CraftingMenu::vfunc_4" },
+    Function { rva: 0x9167d0, id: 51201, confidence: Confidence::High, name: "CraftingMenu::vfunc_5" },
+    Function { rva: 0x916820, id: 51202, confidence: Confidence::High, name: "CraftingMenu::vfunc_6" },
+    Function { rva: 0x916890, id: 442710, confidence: Confidence::Medium, name: "QueueUIStrings168MessageWithStringPayload" },
+    Function { rva: 0x916970, id: 442711, confidence: Confidence::Medium, name: "QueueUIStrings168Message" },
+    Function { rva: 0x9169d0, id: 51203, confidence: Confidence::High, name: "SendItemCraftedEvent" },
+    Function { rva: 0x916a10, id: 51204, confidence: Confidence::Medium, name: "SetCrafting3DItemTransform" },
     Function { rva: 0x916b20, id: 51207, confidence: Confidence::Medium, name: "AppendArrayElement0x28" },
     Function { rva: 0x916ba0, id: 51208, confidence: Confidence::Medium, name: "AppendRefCountedPtrToHeapArray" },
     Function { rva: 0x916c20, id: 51210, confidence: Confidence::Medium, name: "PartitionPtrArrayWithComparatorAt8" },
@@ -7989,12 +7996,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xb52e60, id: 61265, confidence: Confidence::Medium, name: "StaticInit_8544_sub0" },
     Function { rva: 0xb52e70, id: 61266, confidence: Confidence::Medium, name: "StaticInit_8582_sub0" },
     Function { rva: 0xb52e80, id: 61267, confidence: Confidence::Medium, name: "StaticInit_8637_sub0" },
-    Function { rva: 0xb52e90, id: 61268, confidence: Confidence::Medium, name: "StaticInit_8547_sub0" },
-    Function { rva: 0xb52ea0, id: 61269, confidence: Confidence::Medium, name: "StaticInit_8549_sub0" },
-    Function { rva: 0xb52eb0, id: 61270, confidence: Confidence::Medium, name: "StaticInit_8599_sub0" },
-    Function { rva: 0xb52ed0, id: 61271, confidence: Confidence::Medium, name: "StaticInit_8639_sub0" },
-    Function { rva: 0xb52ee0, id: 61272, confidence: Confidence::Medium, name: "StaticInit_8531_sub0" },
-    Function { rva: 0xb52ef0, id: 61273, confidence: Confidence::Medium, name: "StaticInit_8660_sub0" },
-    Function { rva: 0xb52f20, id: 61274, confidence: Confidence::Medium, name: "StaticInit_8553_sub0" },
-    Function { rva: 0xb52f30, id: 61275, confidence: Confidence::Medium, name: "StaticInit_8556_sub0" },
 ];

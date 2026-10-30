@@ -11191,7 +11191,7 @@ impl _anon_D3A8ACBA__ClearPrecomputedPathFlag_vtable {
 pub struct _anon_D74036DD__HavokThreadMemorySink_vtable {
     /// `_anon_D74036DD::HavokThreadMemorySink::vdtor` at 0x1095aa0 (slot_propagation, medium); signature (low): `HavokThreadMemorySink * vdtor(HavokThreadMemorySink * this, uint param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
-    /// `_anon_D74036DD::HavokThreadMemorySink::vfunc_1` at 0x1095d60 (rtti, high); signature (low): `undefined8 vfunc_1(HavokThreadMemorySink * this, ulonglong * param_1, undefined8 param_2, ulonglong * param_3)`
+    /// `HavokThreadMemorySink::ProcessEvent` at 0x1095d60 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, ulonglong * param_1, undefined8 param_2, ulonglong * param_3)`
     pub slot_1: *const c_void,
 }
 impl _anon_D74036DD__HavokThreadMemorySink_vtable {

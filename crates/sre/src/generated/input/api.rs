@@ -864,12 +864,12 @@ impl crate::PlayerControls {
     /// `void (PlayerControls* this, BGSSaveFormBuffer* buffer)`
     #[inline]
     pub fn save_game(&self, buffer: &crate::BGSSaveFormBuffer) { unsafe { function!(42362, (*const Self, *const crate::BGSSaveFormBuffer))(core::ptr::from_ref(self), core::ptr::from_ref(buffer)) } }
-    /// `PlayerControls::SetActivateEnabled`: ActivateHandler (PlayerControls+0x1a0) byte +0x1b = !enabled, when the handler exists
+    /// `PlayerControls::SetActivateEnabled`: activateHandler (+0x1a0) +0x1b = !enable (ActivateHandler's own disable byte, not the generic +8)
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 42345, rva 0x7ae150.
-    /// `void (PlayerControls* this, bool enabled)`
+    /// `void (PlayerControls* this, bool enable)`
     #[inline]
-    pub fn set_activate_enabled(&self, enabled: bool) { unsafe { function!(42345, (*const Self, bool))(core::ptr::from_ref(self), enabled) } }
+    pub fn set_activate_enabled(&self, enable: bool) { unsafe { function!(42345, (*const Self, bool))(core::ptr::from_ref(self), enable) } }
     /// `PlayerControls::SetTurnRateFromLookInput`: player process turn delta = lookInput.x * pi, or 0 in third-person free look (AIProcess::SetTurnDelta tail call)
     ///
     /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 42373, rva 0x7b0790.
@@ -1446,16 +1446,6 @@ pub fn create_input_device(slot: i32) -> Option<&'static crate::BSIInputDevice> 
 /// `void (BSPCGamepadDeviceHandler* handler)`
 #[inline]
 pub fn detect_and_create_gamepad_device(handler: &crate::BSPCGamepadDeviceHandler) { unsafe { function!(68762, (*const crate::BSPCGamepadDeviceHandler))(core::ptr::from_ref(handler)) } }
-/// `EvaluateScriptOperandAsDouble`: evaluates one numeric operand ('n' int literal, 'z' double literal, variables)
-///
-/// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21911, rva 0x3455a0.
-/// `bool (double* out, const void* data, uint32* offset, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script*, ScriptLocals*, bool)`
-/// May be null: `param_6`.
-///
-/// # Safety
-/// The pass rates the signature medium.
-#[inline]
-pub unsafe fn evaluate_script_operand_as_double(out: *mut f64, data: *const c_void, offset: *mut u32, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, a5: *mut crate::Script, a6: *mut c_void, a7: bool) -> bool { unsafe { function!(21911, (*mut f64, *const c_void, *mut u32, *mut crate::TESObjectREFR, *mut crate::TESObjectREFR, *mut crate::Script, *mut c_void, bool) -> bool)(out, data, offset, thisRef, containingObj, a5, a6, a7) } }
 /// `FindOrAddScriptRefVariable`: resolves an editor id or form id text to a form and adds a reference variable to the script being compiled; the second argument is the token buffer (name at +0), and the results are written back at +0x200, +0x20c and +0x210
 ///
 /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 21946, rva 0x347400.

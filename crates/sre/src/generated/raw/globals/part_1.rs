@@ -3349,7 +3349,7 @@ pub const GameSetting_fPickupWeaponTargetUnreachableDistanceMult: u64 = 373055;
 pub const GameSetting_fPickupWeaponUnarmedDistanceMax: u64 = 373043;
 /// `GameSetting_fPickupWeaponUnarmedDistanceMin` at 0x20a46c8 (setting, high)
 pub const GameSetting_fPickupWeaponUnarmedDistanceMin: u64 = 373041;
-/// `GameSetting_fPlayerDeathReloadTime` at 0x20a0548 (setting, high)
+/// `GameSetting_fPlayerDeathReloadTime` at 0x20a0548 (runtime, high); Setting object (Address Library id 371051): vtable +0, float value +8 (0x20a0550, exe default 5.0), name +0x10 (high); type `class:Setting`
 pub const GameSetting_fPlayerDeathReloadTime: u64 = 371051;
 /// `GameSetting_fPlayerDetectActorValue` at 0x20aa2a8 (setting, high)
 pub const GameSetting_fPlayerDetectActorValue: u64 = 375542;
@@ -7043,6 +7043,8 @@ pub const GameSetting_sYour: u64 = 376312;
 pub const GameSetting_ssCreationsEnableMissingCreationCheck: u64 = 502022;
 /// `GameSetting_uiMuteMusicPauseTime` at 0x20aeb80 (setting, high)
 pub const GameSetting_uiMuteMusicPauseTime: u64 = 377755;
+/// `ID_202329` at 0x18cb828 (semantic, high); 8000.0, the radius and second radius both radius-walk callers pass (high); type `float`
+pub const ID_202329: u64 = 202329;
 /// `INIPrefSetting_bAlwaysRunByDefault_Controls` at 0x20b83e0 (setting, high)
 pub const INIPrefSetting_bAlwaysRunByDefault_Controls: u64 = 381968;
 /// `INIPrefSetting_bBorderless_Display` at 0x20d0328 (setting, high)
@@ -8007,7 +8009,7 @@ pub const INISetting_bUseTaskletsToRecomputeBounds_Pathfinding: u64 = 379854;
 pub const INISetting_bUseThreadedMorpher_General: u64 = 380861;
 /// `INISetting_bUseThreadedParticleSystem_General` at 0x20b5bd0 (setting, high)
 pub const INISetting_bUseThreadedParticleSystem_General: u64 = 380859;
-/// `INISetting_bUseThreadedTempEffects_General` at 0x20b5bb8 (setting, high)
+/// `INISetting_bUseThreadedTempEffects_General` at 0x20b5bb8 (semantic, high); registered INI setting (default byte 1) with no code reader of its value (high); type `class:Setting`
 pub const INISetting_bUseThreadedTempEffects_General: u64 = 380857;
 /// `INISetting_bUseTweenedAnimations_Pathfinding` at 0x20d4a28 (setting, high)
 pub const INISetting_bUseTweenedAnimations_Pathfinding: u64 = 390476;
@@ -12037,6 +12039,8 @@ pub const g_ConcreteTempEffectFactory_SummonPlacementEffect_11: u64 = 380362;
 pub const g_ConsoleCommandQueue: u64 = 406625;
 /// `g_ConsoleCommandTable` at 0x208d130 (console_cmd, high); console commands, opcodes 0x100-0x2c0, plus the sentinel 0x2c1 ' ' (high); type `CommandTableEntry[450]`
 pub const g_ConsoleCommandTable: u64 = 365650;
+/// `g_ConsoleCommandTable_SetCameraFOV_execute` at 0x208e4c0 (semantic, high); the SetCameraFOV entry's execute field (entry 0x208e490 + 0x30); 8-aligned, in read-write .data (high); type `pointer`
+pub const g_ConsoleCommandTable_SetCameraFOV_execute: u64 = 365995;
 /// `g_ConsoleHotkeyManager` at 0x32560a0 (runtime, high); console hotkey sink, first registered sink of the input source (high); type `undefined1`
 pub const g_ConsoleHotkeyManager: u64 = 504104;
 /// `g_ConsoleHotkeys` at 0x3256050 (semantic, medium); console hotkeys (key, modifiers, command text at +0x10) (medium); type `BSTArray of 0x30 records (data +0, size 0x3256060)`
@@ -12509,7 +12513,7 @@ pub const g_PlayerCharacter_ptr: u64 = 403521;
 pub const g_PlayerControls: u64 = 403657;
 /// `g_PlayerControls_ptr` at 0x31a5698 (semantic, high); pointer to `PlayerControls`: PlayerControls singleton; PlayerControls singleton (high); type `ptr:PlayerControls`
 pub const g_PlayerControls_ptr: u64 = 400864;
-/// `g_PlayerDeathReloadTimer` at 0x20b746c (semantic, high); seconds left before the automatic reload after the player's death; reset to the constant at 0x17e2820 when the state bits are outside 0x200000/0x400000 and to ID_186426 after firing; a negative value restarts it from the setting (high); type `float`
+/// `g_PlayerDeathReloadTimer` at 0x20b746c (semantic, high); the death reload countdown (id 381535); -1 when idle; set to the setting when it is negative and the player is dying or dead (high); type `float`
 pub const g_PlayerDeathReloadTimer: u64 = 381535;
 /// `g_PlayerHandle` at 0x3230774 (semantic, high); the player's ObjectRefHandle (high); type `u32`
 pub const g_PlayerHandle: u64 = 403520;
@@ -12519,6 +12523,8 @@ pub const g_PlayerNoCollisionOverride: u64 = 381537;
 pub const g_PlayerRef_ptr: u64 = 401069;
 /// `g_PlayerSleepWaitMovementControllerAdapter` at 0x20b6340 (layout_inference, medium)
 pub const g_PlayerSleepWaitMovementControllerAdapter: u64 = 381082;
+/// `g_PortalLinkStatic` at 0x31df258 (xref_inference, medium); pointer to `TESObjectSTAT`: the built-in STAT with form id 0x20 (FindFormByID(0x20) cast to TESObjectSTAT, or a new TESObjectSTAT when missing); CreateReferenceAtLocation's linkedRefHandle argument is used only for this base; the built-in STAT with form id 0x20 (FindFormByID(0x20) cast to TESObjectSTAT, or a new TESObjectSTAT when missing); CreateReferenceAtLocation's linkedRefHandle argument is used only for this base (medium); type `ptr:TESObjectSTAT`
+pub const g_PortalLinkStatic: u64 = 401048;
 /// `g_PrecipitationOcclusionMapEnabled` at 0x209e550 (semantic, medium); precipitation occlusion map toggle (console tocm) (medium); type `u8`
 pub const g_PrecipitationOcclusionMapEnabled: u64 = 370126;
 /// `g_ProcessListMovementInterface` at 0x20b8040 (layout_inference, medium)
@@ -13549,21 +13555,3 @@ pub const g_TypeNode_bhkPointToPathConstraint: u64 = 411942;
 pub const g_TypeNode_bhkPoseArray: u64 = 411733;
 /// `g_TypeNode_bhkPositionConstraintMotor` at 0x3338bc0 (string, high)
 pub const g_TypeNode_bhkPositionConstraintMotor: u64 = 411743;
-/// `g_TypeNode_bhkPrismaticConstraint` at 0x3337a88 (string, high)
-pub const g_TypeNode_bhkPrismaticConstraint: u64 = 411635;
-/// `g_TypeNode_bhkRagdollConstraint` at 0x33389d0 (string, high)
-pub const g_TypeNode_bhkRagdollConstraint: u64 = 411709;
-/// `g_TypeNode_bhkRagdollLimitsConstraint` at 0x33389e8 (string, high)
-pub const g_TypeNode_bhkRagdollLimitsConstraint: u64 = 411711;
-/// `g_TypeNode_bhkRagdollTemplate` at 0x3338770 (string, high)
-pub const g_TypeNode_bhkRagdollTemplate: u64 = 411658;
-/// `g_TypeNode_bhkRagdollTemplateData` at 0x3338760 (string, high)
-pub const g_TypeNode_bhkRagdollTemplateData: u64 = 411657;
-/// `g_TypeNode_bhkRefObject` at 0x3337830 (string, high)
-pub const g_TypeNode_bhkRefObject: u64 = 411583;
-/// `g_TypeNode_bhkRigidBody` at 0x3337678 (string, high)
-pub const g_TypeNode_bhkRigidBody: u64 = 411544;
-/// `g_TypeNode_bhkRigidBodyT` at 0x33377f8 (string, high)
-pub const g_TypeNode_bhkRigidBodyT: u64 = 411581;
-/// `g_TypeNode_bhkSPCollisionObject` at 0x3338780 (string, high)
-pub const g_TypeNode_bhkSPCollisionObject: u64 = 411659;

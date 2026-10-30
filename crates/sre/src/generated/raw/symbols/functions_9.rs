@@ -4,6 +4,17 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x116c380, id: 82106, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArrayAt8" },
+    Function { rva: 0x116c400, id: 82107, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArray" },
+    Function { rva: 0x116c520, id: 82109, confidence: Confidence::High, name: "BSTMessageQueue<UIMessage*___ptr64>::dtor" },
+    Function { rva: 0x116c530, id: 82110, confidence: Confidence::High, name: "IBSTCreator<IUIMessageData>::dtor" },
+    Function { rva: 0x116c540, id: 82111, confidence: Confidence::High, name: "IBSTCreator<IUIMessageData>::dtor" },
+    Function { rva: 0x116c550, id: 82112, confidence: Confidence::Medium, name: "FreeThreeArrayBuffers_72" },
+    Function { rva: 0x116c610, id: 82113, confidence: Confidence::Medium, name: "FreeThreeArrayBuffers_73" },
+    Function { rva: 0x116c6d0, id: 82114, confidence: Confidence::Medium, name: "FreeThreeArrayBuffers_74" },
+    Function { rva: 0x116c7c0, id: 82117, confidence: Confidence::Medium, name: "ClearFixedStringKeyedHashTable" },
+    Function { rva: 0x116c880, id: 82118, confidence: Confidence::Medium, name: "ClearFixedStringToRefPtrHashTable" },
+    Function { rva: 0x116c960, id: 82119, confidence: Confidence::High, name: "ClearEventSourceHolder_MenuOpenClosePtr" },
     Function { rva: 0x116c970, id: 82120, confidence: Confidence::High, name: "ClearUIMessageQueuePtr" },
     Function { rva: 0x116c980, id: 82121, confidence: Confidence::High, name: "ReleaseRefPtr_20" },
     Function { rva: 0x116c9a0, id: 82122, confidence: Confidence::High, name: "BSFixedString::Release_2" },
@@ -6645,15 +6656,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13b6a30, id: 526990, confidence: Confidence::Medium, name: "IsEnabledChildReadyAndField148Null_3" },
     Function { rva: 0x13b7010, id: 450744, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_45" },
     Function { rva: 0x13b70d0, id: 450746, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_5" },
-    Function { rva: 0x13b75d0, id: 450752, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_70" },
-    Function { rva: 0x13b7600, id: 450753, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_71" },
-    Function { rva: 0x13b7a50, id: 450764, confidence: Confidence::Medium, name: "ConstructJsonRequest1B05CC0" },
-    Function { rva: 0x13b8190, id: 450778, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut" },
-    Function { rva: 0x13b8cd0, id: 98652, confidence: Confidence::Medium, name: "SetResultField88AndMoveOut" },
-    Function { rva: 0x13b8d30, id: 98654, confidence: Confidence::Medium, name: "StorePlatformErrorMessage" },
-    Function { rva: 0x13b9020, id: 98656, confidence: Confidence::Medium, name: "memcpy_s_7" },
-    Function { rva: 0x13b9610, id: 451285, confidence: Confidence::Medium, name: "InvokeDeleterAndClear_15" },
-    Function { rva: 0x13b9ca0, id: 527016, confidence: Confidence::Medium, name: "SetResultField90AndMoveOut_2" },
-    Function { rva: 0x13b9ff0, id: 527019, confidence: Confidence::High, name: "Memcpy_s" },
-    Function { rva: 0x13ba0a0, id: 527020, confidence: Confidence::Medium, name: "ConstructJsonRequest1B063D0" },
 ];

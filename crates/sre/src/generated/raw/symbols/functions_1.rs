@@ -1096,7 +1096,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x2e240, id: 1898, confidence: Confidence::Medium, name: "GameSetting_fPickSpring4__init" },
     Function { rva: 0x2e2c0, id: 1899, confidence: Confidence::Medium, name: "GameSetting_fPickSpring5__init" },
     Function { rva: 0x2e340, id: 1900, confidence: Confidence::Medium, name: "GameSetting_fPickUpWeaponDelay__init" },
-    Function { rva: 0x2e3c0, id: 1901, confidence: Confidence::Medium, name: "GameSetting_fPlayerDeathReloadTime__init" },
+    Function { rva: 0x2e3c0, id: 1901, confidence: Confidence::High, name: "GameSetting_fPlayerDeathReloadTime__init" },
     Function { rva: 0x2e440, id: 1902, confidence: Confidence::Medium, name: "GameSetting_fPlayerDetectionSneakBase__init" },
     Function { rva: 0x2e4c0, id: 1903, confidence: Confidence::Medium, name: "GameSetting_fPlayerDetectionSneakMult__init" },
     Function { rva: 0x2e540, id: 1904, confidence: Confidence::Medium, name: "GameSetting_fPlayerTeleportFadeSeconds__init" },

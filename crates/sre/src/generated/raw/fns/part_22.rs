@@ -3,6 +3,112 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpConvexShape::vfunc_3` at 0xb376c0 (rtti, medium); signature (low): `float vfunc_3(hkpConvexShape * this, float * param_1)`
+pub const hkpConvexShape__vfunc_3: u64 = 60304;
+/// `hkpConvexShape::vfunc_5` at 0xb376b0 (rtti, medium); signature (low): `undefined1 vfunc_5(void)`
+pub const hkpConvexShape__vfunc_5: u64 = 60303;
+/// `hkpConvexShape::vfunc_9` at 0xb37720 (rtti, medium); signature (low): `undefined vfunc_9(hkpConvexShape * this, undefined8 param_1, longlong param_2, undefined8 * param_3)`
+pub const hkpConvexShape__vfunc_9: u64 = 60305;
+/// `hkpConvexTransformShape::ctor` at 0xb41880 (layout_inference, high); signature (low): `hkpConvexTransformShape * ctor(hkpConvexTransformShape * this, longlong param_1, undefined8 * param_2, int param_3)`
+pub const hkpConvexTransformShape__ctor: u64 = 60690;
+/// `hkpConvexTransformShape::vdtor` at 0xb3ddb0 (layout_inference, medium); signature (low): `hkpConvexTransformShape * vdtor(hkpConvexTransformShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vdtor: u64 = 60530;
+/// `hkpConvexTransformShape::vfunc_11` at 0xb41b10 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_11: u64 = 60695;
+/// `hkpConvexTransformShape::vfunc_12` at 0xb41b30 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTransformShape * this, longlong param_1)`
+pub const hkpConvexTransformShape__vfunc_12: u64 = 60696;
+/// `hkpConvexTransformShape::vfunc_13` at 0xb41fe0 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_13: u64 = 60700;
+/// `hkpConvexTransformShape::vfunc_14` at 0xb41920 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTransformShape * this, float * param_1, float * param_2)`
+pub const hkpConvexTransformShape__vfunc_14: u64 = 60692;
+/// `hkpConvexTransformShape::vfunc_15` at 0xb419f0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTransformShape * this, undefined8 param_1, int param_2, longlong param_3)`
+pub const hkpConvexTransformShape__vfunc_15: u64 = 60693;
+/// `hkpConvexTransformShape::vfunc_17` at 0xb41ab0 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_17: u64 = 60694;
+/// `hkpConvexTransformShape::vfunc_2` at 0xb42120 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTransformShape * this, longlong * param_1)`
+pub const hkpConvexTransformShape__vfunc_2: u64 = 60702;
+/// `hkpConvexTransformShape::vfunc_3` at 0xb42040 (rtti, high); signature (low): `float vfunc_3(hkpConvexTransformShape * this, float * param_1)`
+pub const hkpConvexTransformShape__vfunc_3: u64 = 60701;
+/// `hkpConvexTransformShape::vfunc_4` at 0xb42170 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTransformShape * this)`
+pub const hkpConvexTransformShape__vfunc_4: u64 = 60703;
+/// `hkpConvexTransformShape::vfunc_6` at 0xb3e490 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTransformShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTransformShape__vfunc_6: u64 = 60544;
+/// `hkpConvexTransformShape::vfunc_7` at 0xb41c00 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTransformShape * this, float * param_2, undefined4 param_3, undefined8 param_4)`
+pub const hkpConvexTransformShape__vfunc_7: u64 = 60697;
+/// `hkpConvexTransformShape::vfunc_8` at 0xb41c60 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTransformShape * this, char * param_1, float * param_2, float * param_3)`
+pub const hkpConvexTransformShape__vfunc_8: u64 = 60698;
+/// `hkpConvexTransformShape::vfunc_9` at 0xb41e20 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTransformShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTransformShape__vfunc_9: u64 = 60699;
+/// `hkpConvexTransformShapeBase::ctor` at 0xb37830 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * ctor(hkpConvexTransformShapeBase * this, undefined4 param_2, undefined4 param_3, longlong param_4, int param_5)`
+pub const hkpConvexTransformShapeBase__ctor: u64 = 60308;
+/// `hkpConvexTransformShapeBase::vdtor` at 0xb37890 (layout_inference, medium); signature (low): `hkpConvexTransformShapeBase * vdtor(hkpConvexTransformShapeBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTransformShapeBase__vdtor: u64 = 60309;
+/// `hkpConvexTranslateShape::vdtor` at 0xb3de60 (layout_inference, medium); signature (low): `hkpConvexTranslateShape * vdtor(hkpConvexTranslateShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vdtor: u64 = 60531;
+/// `hkpConvexTranslateShape::vfunc_11` at 0xb42260 (rtti, high); signature (high): `undefined vfunc_11(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_11: u64 = 60707;
+/// `hkpConvexTranslateShape::vfunc_12` at 0xb42280 (rtti, high); signature (low): `longlong vfunc_12(hkpConvexTranslateShape * this, longlong param_1)`
+pub const hkpConvexTranslateShape__vfunc_12: u64 = 60708;
+/// `hkpConvexTranslateShape::vfunc_13` at 0xb42540 (rtti, high); signature (low): `undefined vfunc_13(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_13: u64 = 60712;
+/// `hkpConvexTranslateShape::vfunc_14` at 0xb42180 (rtti, high); signature (low): `undefined vfunc_14(hkpConvexTranslateShape * this, undefined8 param_1, float * param_2)`
+pub const hkpConvexTranslateShape__vfunc_14: u64 = 60704;
+/// `hkpConvexTranslateShape::vfunc_15` at 0xb421c0 (rtti, high); signature (low): `undefined vfunc_15(hkpConvexTranslateShape * this, undefined8 param_1, int param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_15: u64 = 60705;
+/// `hkpConvexTranslateShape::vfunc_17` at 0xb42220 (rtti, high); signature (low): `undefined vfunc_17(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_17: u64 = 60706;
+/// `hkpConvexTranslateShape::vfunc_2` at 0xb425e0 (rtti, high); signature (low): `undefined vfunc_2(hkpConvexTranslateShape * this, longlong * param_1)`
+pub const hkpConvexTranslateShape__vfunc_2: u64 = 60714;
+/// `hkpConvexTranslateShape::vfunc_3` at 0xb42580 (rtti, high); signature (low): `float vfunc_3(hkpConvexTranslateShape * this, float * param_1)`
+pub const hkpConvexTranslateShape__vfunc_3: u64 = 60713;
+/// `hkpConvexTranslateShape::vfunc_4` at 0xb42630 (rtti, high); signature (high): `undefined8 * vfunc_4(hkpConvexTranslateShape * this)`
+pub const hkpConvexTranslateShape__vfunc_4: u64 = 60715;
+/// `hkpConvexTranslateShape::vfunc_6` at 0xb42640 (rtti, high); signature (low): `longlong vfunc_6(hkpConvexTranslateShape * this, undefined8 param_1, int param_2)`
+pub const hkpConvexTranslateShape__vfunc_6: u64 = 60716;
+/// `hkpConvexTranslateShape::vfunc_7` at 0xb422f0 (rtti, high); signature (low): `undefined vfunc_7(hkpConvexTranslateShape * this, float * param_1, undefined8 param_2, float * param_3)`
+pub const hkpConvexTranslateShape__vfunc_7: u64 = 60709;
+/// `hkpConvexTranslateShape::vfunc_8` at 0xb42370 (rtti, high); signature (low): `char * vfunc_8(hkpConvexTranslateShape * this, char * param_1, float * param_2, longlong param_3)`
+pub const hkpConvexTranslateShape__vfunc_8: u64 = 60710;
+/// `hkpConvexTranslateShape::vfunc_9` at 0xb42470 (rtti, high); signature (low): `undefined vfunc_9(hkpConvexTranslateShape * this, float * param_1, longlong param_2, undefined8 param_3)`
+pub const hkpConvexTranslateShape__vfunc_9: u64 = 60711;
+/// `hkpConvexVerticesConnectivity::vdtor` at 0xb3df10 (slot_propagation, medium); signature (low): `hkpConvexVerticesConnectivity * vdtor(hkpConvexVerticesConnectivity * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesConnectivity__vdtor: u64 = 60532;
+/// `hkpConvexVerticesConnectivity::vfunc_3` at 0xb428b0 (rtti, high); signature (high): `undefined vfunc_3(hkpConvexVerticesConnectivity * this)`
+pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
+/// `hkpConvexVerticesShape::BuildFromPoints` at 0x10ee650 (semantic, high); signature (untiered): `hkpConvexVerticesShape * BuildFromPoints(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; semantic: builds the convex hull of the points (hkgpConvexHull) and constructs from it: radius = config+4, planes into +0x78, vertices +0x50/+0x60; config byte 0 keeps an hkpConvexVerticesConnectivity (+0x88); config byte 1 with radius > 0 shrinks by the convex radius (floats +0xc/+0x10, byte +2); int +8 > 3 limits the vertex count (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* points, const hkpConvexVerticesShape::BuildConfig* config)`
+pub const hkpConvexVerticesShape__BuildFromPoints: u64 = 80831;
+/// `hkpConvexVerticesShape::BuildFromPoints` as a function pointer type (high).
+pub type hkpConvexVerticesShape__BuildFromPoints_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, points: *const c_void, config: *const c_void) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::GetVertices` at 0xc3abd0 (semantic, high); signature (untiered): `undefined GetVertices(longlong param_1, longlong * param_2)`; semantic: unpacks the SoA vertex blocks (+0x50, 0x30 bytes per 4 vertices: x[4] +0, y[4] +0x10, z[4] +0x20) into out (count +0x60, w = 0), growing out with hkContainerHeapAllocator (high); signature `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* out)`
+pub const hkpConvexVerticesShape__GetVertices: u64 = 65093;
+/// `hkpConvexVerticesShape::GetVertices` as a function pointer type (high).
+pub type hkpConvexVerticesShape__GetVertices_fn = unsafe extern "C" fn(this: *const crate::hkpConvexVerticesShape, out: *mut c_void);
+/// `hkpConvexVerticesShape::ctor` at 0xc3a870 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined8 * param_2, longlong * param_3, undefined4 param_4)`; semantic: direct constructor: +8 = 0x1ffff, radius +0x20, type +0x18 = 6, copies the planes into +0x78 (hkContainerHeapAllocator), packs the vertices into the SoA array +0x50 and computes the AABB (PackStridedVerticesAndComputeAabb 0xc3b990) (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* vertices, const hkArray<hkVector4>* planeEquations, float radius)`
+pub const hkpConvexVerticesShape__ctor: u64 = 65089;
+/// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
+pub type hkpConvexVerticesShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const c_void, planeEquations: *const c_void, radius: f32) -> *mut crate::hkpConvexVerticesShape;
+/// `hkpConvexVerticesShape::ctor` at 0xc3a9a0 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined4 param_2)`
+pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
+/// `hkpConvexVerticesShape::ctor` at 0xc3aac0 (layout_inference, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, int param_1)`
+pub const hkpConvexVerticesShape__ctor_3: u64 = 65091;
+/// `hkpConvexVerticesShape::dtor` at 0xc3ab10 (layout_inference, high); signature (high): `undefined dtor(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__dtor: u64 = 65092;
+/// `hkpConvexVerticesShape::vdtor` at 0xc3c180 (slot_propagation, medium); signature (low): `hkpConvexVerticesShape * vdtor(hkpConvexVerticesShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConvexVerticesShape__vdtor: u64 = 65108;
+/// `hkpConvexVerticesShape::vfunc_11` at 0xc3b390 (rtti, medium); signature (high): `undefined4 vfunc_11(hkpConvexVerticesShape * this)`
+pub const hkpConvexVerticesShape__vfunc_11: u64 = 65100;
+/// `hkpConvexVerticesShape::vfunc_12` at 0xc3b3a0 (rtti, medium); signature (low): `undefined4 * vfunc_12(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_12: u64 = 65101;
+/// `hkpConvexVerticesShape::vfunc_13` at 0xc3b8f0 (rtti, medium); signature (low): `undefined vfunc_13(hkpConvexVerticesShape * this, undefined4 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_13: u64 = 65104;
+/// `hkpConvexVerticesShape::vfunc_14` at 0xc3b020 (rtti, medium); signature (low): `undefined vfunc_14(hkpConvexVerticesShape * this, float * param_1, undefined4 * param_2)`
+pub const hkpConvexVerticesShape__vfunc_14: u64 = 65097;
+/// `hkpConvexVerticesShape::vfunc_15` at 0xc3b1b0 (rtti, medium); signature (low): `undefined vfunc_15(hkpConvexVerticesShape * this, ushort * param_1, uint param_2, undefined4 * param_3)`
+pub const hkpConvexVerticesShape__vfunc_15: u64 = 65098;
+/// `hkpConvexVerticesShape::vfunc_17` at 0xc3b380 (rtti, medium); signature (low): `undefined vfunc_17(hkpConvexVerticesShape * this, undefined8 * param_1)`
+pub const hkpConvexVerticesShape__vfunc_17: u64 = 65099;
+/// `hkpConvexVerticesShape::vfunc_6` at 0xc3c2f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+pub const hkpConvexVerticesShape__vfunc_6: u64 = 65111;
 /// `hkpConvexVerticesShape::vfunc_7` at 0xc3b510 (rtti, medium); signature (low): `undefined vfunc_7(hkpConvexVerticesShape * this, float * param_1, float param_2, float * param_3)`
 pub const hkpConvexVerticesShape__vfunc_7: u64 = 65102;
 /// `hkpConvexVerticesShape::vfunc_8` at 0xc3b5c0 (rtti, medium); signature (low): `undefined1 * vfunc_8(hkpConvexVerticesShape * this, undefined1 * param_1, float * param_2, float * param_3)`

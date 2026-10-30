@@ -132,7 +132,7 @@ pub struct BSFaceGenAnimationData {
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:BSFaceGenKeyframeMultiple`, semantic; pending expression target (17 weights) that +0x20 steps towards; pooled, null when none (high)
     pub expressionTarget: *mut crate::BSFaceGenKeyframeMultiple,
-    /// +0x20 `class:BSFaceGenKeyframeMultiple`, semantic; current expression (type 1, 17 values), stepped towards +0x18 (high)
+    /// +0x20 `class:BSFaceGenKeyframeMultiple`, semantic; the current expression keyframe; the other 11 BSFaceGenKeyframeMultiple channels follow at +0x40..+0x180 (0x20 each) (high)
     pub expression: crate::BSFaceGenKeyframeMultiple,
     /// +0x40 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; second expression input (type 1, 17), merged into the output (high)
     pub expressionInput: crate::BSFaceGenKeyframeMultiple,

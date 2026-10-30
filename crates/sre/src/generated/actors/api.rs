@@ -871,15 +871,15 @@ impl crate::Actor {
     /// `process` must point to what the engine expects.
     #[inline]
     pub unsafe fn perform_queued_channel_actions(process: *mut crate::AIProcess, actor: *mut Self) { unsafe { function!(39299, (*mut crate::AIProcess, *mut Self))(process, actor) } }
-    /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle/PlayIdleWithTarget body: AIProcess::PlayIdle(process, this, 0x40, idle, 1, 0, target)
+    /// `Actor::PlayIdle_Impl`: Papyrus Actor.PlayIdle / PlayIdleWithTarget: AIProcess::PlayIdle(this->currentProcess, this, 0x40, idle, true, false, target); errors for a None actor, None idle or no process
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 55105, rva 0xa12e60.
-    /// `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, VM*, uint stackId)`
+    /// `bool (Actor* this, TESIdleForm* idle, TESObjectREFR* target, IVirtualMachine* vm, u32 stackId)`
     ///
     /// # Safety
-    /// `a3` must point to what the engine expects.
+    /// `vm` must point to what the engine expects.
     #[inline]
-    pub unsafe fn play_idle_impl(&self, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, a3: *mut c_void, stackId: u32) -> bool { unsafe { function!(55105, (*const Self, *mut crate::TESIdleForm, *mut crate::TESObjectREFR, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), idle, target, a3, stackId) } }
+    pub unsafe fn play_idle_impl(&self, idle: *mut crate::TESIdleForm, target: *mut crate::TESObjectREFR, vm: *mut c_void, stackId: u32) -> bool { unsafe { function!(55105, (*const Self, *mut crate::TESIdleForm, *mut crate::TESObjectREFR, *mut c_void, u32) -> bool)(core::ptr::from_ref(self), idle, target, vm, stackId) } }
     /// `Actor::ProcessAnimationGraphEvent`: handles the actor's own animation events after TESObjectREFR's handler; a tag found in the footstep source's filter list (BSTArray<BSFixedString> at source+0x60, tested by 0x737040) is re-sent as a BGSFootstepEvent {actor handle, tag} through g_FootstepEventSource_ptr
     ///
     /// Semantic, events pass, high; ledger runtime evidence, name high; id 37997, rva 0x6b2000.
@@ -932,6 +932,12 @@ impl crate::Actor {
     /// `void (ActorState* this, bool drawn)`
     #[inline]
     pub fn set_weapon_drawn(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self).byte_add(0xC0), drawn) } }
+    /// `Actor::SetupCharacterControllerCinfo`: fills the controller cinfo before construction: cinfo+0x10 = the actor's loaded 3D (or the loaded data's first root when it differs), position * Havok scale (cinfo slot 1), +0x28 from actor slot (vtable[1] 37), +0x5c = (actor != player), +0x54 = the reference scale (1.0 for some actors), +0xa4 flag, cinfo+0x74 bit 25 = race+0x108 bit 3, bit 26 = race+0x108 bit 4; then the shape builder 0x10629a0
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38281, rva 0x6bdb10.
+    /// `void (Actor* this, bhkCharacterControllerCinfo* cinfo)`
+    #[inline]
+    pub fn setup_character_controller_cinfo(&self, cinfo: &crate::bhkCharacterControllerCinfo) { unsafe { function!(38281, (*const Self, *const crate::bhkCharacterControllerCinfo))(core::ptr::from_ref(self), core::ptr::from_ref(cinfo)) } }
     /// `Actor::StartKillMove`: for an actor whose process byte 0x137 is 0 or 1: kill-move time to max, deferred kill on the process, flag 0x4000 in +0x204, partner handle at +0x108; for the player with a partner and the VATS camera (+0xc8) neither current nor stacked: PlayerCamera::ForceThirdPerson
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38613, rva 0x6cc740.
@@ -1693,7 +1699,7 @@ impl crate::PlayerCharacter {
     /// `void (PlayerCharacter* this)`
     #[inline]
     pub fn update_crosshair_target_hud(&self) { unsafe { function!(40621, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `PlayerCharacter::UpdateDeathReloadAndActor`: part of PlayerCharacter::Update: Actor::UpdateState unless the camera is in cameraStates[6]; the death reload: with the actor state bits (+0xc8 & 0x1e00000) equal to 0x200000 or 0x400000 and fPlayerDeathReloadTime > 0, the timer 0x20b746c starts at the setting, counts down by delta and at < 0 queues save-load request 0xd0000100 (load the last save) or sets ID_403449+0x11; with the setting <= 0 and state 0x400000 shows the sMiscPlayerDeadMessage box once; then the base Actor slot 173, UpdateCamera and TESObjectCELL::AttachReference3D(parentCell, this, true, false)
+    /// `PlayerCharacter::UpdateDeathReloadAndActor`: part of PlayerCharacter::Update: the only reader of fPlayerDeathReloadTime's value. Each call: state = flags1 (+0xc8) & 0x1e00000 (life state bits 21-24). If the setting is <= 0: in life state 2 (0x400000) shows sMiscPlayerDeadMessage once (a once-only byte, ledger ID_404259) or sets Main+0x11. Else if life state is 1 or 2 (0x200000 / 0x400000): when the timer 0x20b746c is negative it starts at the setting's value, then counts down by delta; when it goes below 0 it is reset to -1 and the last save is loaded (QueueSaveLoadRequest(0xd0000100)) or Main+0x11 is set. In any other life state the timer is reset to -1
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40748, rva 0x7600f0.
     /// `void (PlayerCharacter* this, float delta)`

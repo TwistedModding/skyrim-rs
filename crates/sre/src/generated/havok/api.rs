@@ -4596,6 +4596,15 @@ impl crate::bhkCapsuleShape {
     pub fn create_havok_shape(&self, a: &crate::hkVector4, b: &crate::hkVector4, radius: f32) { unsafe { function!(78800, (*const Self, *const crate::hkVector4, *const crate::hkVector4, f32))(core::ptr::from_ref(self), core::ptr::from_ref(a), core::ptr::from_ref(b), radius) } }
 }
 
+impl crate::bhkCharacterControllerCinfo {
+    /// `bhkCharacterControllerCinfo::BuildShapes`: builds the controller's shapes into cinfo+0x90 and +0x98 (later copied to the controller's +0x280/+0x288). It walks the actor's 3D (VisitSubtree 0x1068b20 -> CollectLayer30CollisionObjects 0x1069520) for collision objects on layer 30 (CHARCONTROLLER): one whose shape is a capsule with the CharacterBumper material becomes the bumper source, the others are collected. With no collected objects it makes the body from the 3D's bound (GetBSBoundByKey 0xff19f0) or default sizes times the scale: an upright capsule, or for a long horizontal body three capsules in a bhkListShape, plus (upright case) the convex controller shape (0x10629a0_sub2, cached in ID_411557 when +0xa2 is set); each is wrapped by BuildBumperListShape 0x1069be0 with the bumper capsule. With collected objects (a skeleton that carries its own CHARCONTROLLER collision), the first one's shape is used, its AABB sets the controller's sizes, and it is wrapped with the bumper
+    ///
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 78253, rva 0x10629a0.
+    /// `void (bhkCharacterControllerCinfo* cinfo)`
+    #[inline]
+    pub fn build_shapes(&self) { unsafe { function!(78253, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
 impl crate::bhkCollisionFilter {
     /// `g_bhkCollisionFilter_ptr` at 0x21a3e00, id 400562 (semantic, high); pointer to `bhkCollisionFilter`: the world collision filter; the world collision filter (high, camera pass), type `ptr:bhkCollisionFilter`
     ///

@@ -3,6 +3,18 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildManifestFilePath` at 0x647570 (decompiler, medium); signature (untiered): `undefined BuildManifestFilePath(longlong param_1, longlong param_2, ulonglong param_3, ulonglong * param_4)`
+pub const BuildManifestFilePath: u64 = 442620;
+/// `BuildManifestPathInCreationsDownloadDirectory` at 0x647660 (decompiler, medium); signature (untiered): `undefined BuildManifestPathInCreationsDownloadDirectory(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildManifestPathInCreationsDownloadDirectory: u64 = 442621;
+/// `BuildMeshesPathWithDmOrDsSuffix` at 0x276210 (decompiler, medium); signature (medium): `undefined BuildMeshesPathWithDmOrDsSuffix(longlong param_1, longlong param_2, char * param_3, char param_4)`
+pub const BuildMeshesPathWithDmOrDsSuffix: u64 = 17651;
+/// `BuildMissingContentControls` at 0x1621fb0 (decompiler, medium); signature (untiered): `undefined BuildMissingContentControls(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildMissingContentControls: u64 = 454906;
+/// `BuildMissingContentPageControls` at 0x1612560 (decompiler, medium); signature (untiered): `undefined BuildMissingContentPageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildMissingContentPageControls: u64 = 454540;
+/// `BuildModManifestPathFromValue` at 0x6476e0 (decompiler, medium); signature (untiered): `undefined BuildModManifestPathFromValue(undefined8 * param_1, ulonglong param_2, ulonglong * param_3, undefined8 param_4)`
+pub const BuildModManifestPathFromValue: u64 = 442622;
 /// `BuildMoppCinfoFromShape` at 0x10b30e0 (decompiler, medium); signature (untiered): `undefined BuildMoppCinfoFromShape(longlong * param_1, longlong param_2, undefined1 param_3)`
 pub const BuildMoppCinfoFromShape: u64 = 79645;
 /// `BuildMoppCode` at 0x11176b0 (decompiler, medium); signature (untiered): `undefined8 * BuildMoppCode(longlong * param_1, longlong * param_2, undefined8 * param_3, int param_4)`
@@ -6357,10 +6369,10 @@ pub const Cmd__SetBloodParam_Execute: u64 = 23038;
 pub const Cmd__SetBloodParam_Execute_sub0: u64 = 30156;
 /// `Cmd::SetBroadcastState_Execute` at 0x363780 (console_cmd, high); signature (low): `bool SetBroadcastState_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetBroadcastState_Execute: u64 = 22514;
-/// `Cmd::SetCameraFOV_Execute` at 0x3757c0 (console_cmd, high); signature (low): `ulonglong SetCameraFOV_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: SetFieldOfView on g_SceneGraph, global tangent, worldFOV = firstPersonFOV = fov, and both INI default values (high); signature `bool (void* paramInfo, void* scriptData, TESObjectREFR* thisObj, void* containingObj, void* script, void* locals, double* result, u32* opcodeOffset)`
+/// `Cmd::SetCameraFOV_Execute` at 0x3757c0 (console_cmd, high); signature (low): `ulonglong SetCameraFOV_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`; semantic: the console SetCameraFOV (FOV) callback: unpacks two optional floats, picks the FOV, then BSSceneGraph::SetFieldOfView, SetGlobalTanFromAngle, PlayerCamera worldFOV and firstPersonFOV, and the fDefaultWorldFOV / fDefault1stPersonFOV INI values (high); signature `bool (const ParamInfo* params, const void* scriptData, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script* script, ScriptLocals* locals, double* result, u32* offset)`
 pub const Cmd__SetCameraFOV_Execute: u64 = 22949;
 /// `Cmd::SetCameraFOV_Execute` as a function pointer type (high).
-pub type Cmd__SetCameraFOV_Execute_fn = unsafe extern "C" fn(paramInfo: *mut c_void, scriptData: *mut c_void, thisObj: *mut crate::TESObjectREFR, containingObj: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, opcodeOffset: *mut u32) -> bool;
+pub type Cmd__SetCameraFOV_Execute_fn = unsafe extern "C" fn(params: *const crate::ParamInfo, scriptData: *const c_void, thisRef: *mut crate::TESObjectREFR, containingObj: *mut crate::TESObjectREFR, script: *mut crate::Script, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 /// `Cmd::SetCellFullName_Execute` at 0x35d630 (console_cmd, high); signature (low): `ulonglong SetCellFullName_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
 pub const Cmd__SetCellFullName_Execute: u64 = 22376;
 /// `Cmd::SetCellImageSpace_Execute` at 0x360e20 (console_cmd, high); signature (low): `ulonglong SetCellImageSpace_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
@@ -7445,6 +7457,10 @@ pub const CollectJsonErrorsWithOffsets: u64 = 443149;
 pub const CollectJsonErrorsWithOffsets_2: u64 = 443150;
 /// `CollectJsonStringArrayViews` at 0x1426aa0 (decompiler, medium); signature (medium): `int CollectJsonStringArrayViews(int * param_1, char * param_2, longlong * param_3)`
 pub const CollectJsonStringArrayViews: u64 = 452034;
+/// `CollectLayer30CollisionObjects` at 0x1069520 (semantic, high); signature (untiered): `undefined8 CollectLayer30CollisionObjects(longlong param_1, longlong param_2)`; semantic: for a node's collision object whose collision layer (filter info & 0x7f) is 0x1e: if its shape's material (wrapper+0x20) is CharacterBumper and the hkpShape type is 5 (capsule) it is the bumper (+0x20; a second one sets +0x28), a CharacterBumper non-capsule sets +0x29; any other material goes into the collected array (high); signature `u32 (ControllerShapeCollector* collector, NiAVObject* node)`
+pub const CollectLayer30CollisionObjects: u64 = 78341;
+/// `CollectLayer30CollisionObjects` as a function pointer type (high).
+pub type CollectLayer30CollisionObjects_fn = unsafe extern "C" fn(collector: *mut c_void, node: *mut crate::NiAVObject) -> u32;
 /// `CollectLightingShaderType6Entries` at 0x1518370 (decompiler, medium); signature (untiered): `undefined8 CollectLightingShaderType6Entries(longlong * param_1, longlong * param_2)`
 pub const CollectLightingShaderType6Entries: u64 = 106485;
 /// `CollectLinkedField28RefsIntoHeapArrayCallback` at 0x4daa70 (decompiler, high); signature (untiered): `undefined CollectLinkedField28RefsIntoHeapArrayCallback(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -7909,9 +7925,3 @@ pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_Combat
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_c0e42d602af3: u64 = 49922;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d8620 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextUsePotion_CombatBehaviorExpression_Com_9dc939ae7610: u64 = 49927;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vdtor` at 0x87bff0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_84dd3a17e219: u64 = 47692;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c870 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_6d733a619824: u64 = 47727;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorEquipContext,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorThread,unsigned_int_(__cdecl_CombatBehaviorThread::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x88cc40 (callgraph, medium); signature (untiered): `undefined4 * vfunc_2_sub0(undefined4 * param_1, undefined4 param_2)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorEquipContext_CombatBehaviorExpression_CombatB_c7fa814d1d09: u64 = 48117;

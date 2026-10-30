@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (untiered): `ulonglong GetFormID(longlong param_1, uint param_2)`; semantic: index -> form id through the reverse map, 0 when absent (high); signature `u32 (FormIDIndexMap* map, u32 index)`
+pub const FormIDIndexMap__GetFormID: u64 = 35555;
+/// `FormIDIndexMap::GetFormID` as a function pointer type (high).
+pub type FormIDIndexMap__GetFormID_fn = unsafe extern "C" fn(map: *mut c_void, index: u32) -> u32;
+/// `FormatAndDispatchWideLogMessage` at 0x128c5f0 (decompiler, medium); signature (untiered): `undefined FormatAndDispatchWideLogMessage(undefined4 param_1, undefined4 param_2, longlong param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatAndDispatchWideLogMessage: u64 = 94344;
+/// `FormatAndLogMessage` at 0x9d55a0 (decompiler, medium); signature (untiered): `undefined FormatAndLogMessage(undefined8 param_1, char * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
+pub const FormatAndLogMessage: u64 = 53914;
+/// `FormatBoolArgument` at 0xd71020 (decompiler, medium); signature (untiered): `undefined FormatBoolArgument(longlong param_1)`
+pub const FormatBoolArgument: u64 = 84844;
+/// `FormatBoolToString` at 0xa91400 (decompiler, high); signature (high): `longlong * FormatBoolToString(longlong * param_1, char param_2)`
+pub const FormatBoolToString: u64 = 443336;
+/// `FormatBufferV` at 0x1265d0 (decompiler, medium); signature (medium): `int FormatBufferV(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatBufferV: u64 = 440412;
+/// `FormatBufferV_2` at 0x126660 (decompiler, medium); signature (medium): `int FormatBufferV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const FormatBufferV_2: u64 = 440413;
+/// `FormatBufferWithLocaleV` at 0x126560 (decompiler, medium); signature (medium): `int FormatBufferWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
+pub const FormatBufferWithLocaleV: u64 = 440411;
+/// `FormatColorAsRGBAString` at 0xe75140 (decompiler, medium); signature (untiered): `undefined FormatColorAsRGBAString(byte * param_1, undefined8 param_2)`
+pub const FormatColorAsRGBAString: u64 = 89311;
+/// `FormatColorTransformObjectAsString` at 0xda4090 (decompiler, medium); signature (untiered): `undefined FormatColorTransformObjectAsString(longlong param_1)`
+pub const FormatColorTransformObjectAsString: u64 = 85848;
+/// `FormatCurrentTimestamp` at 0x629ba0 (decompiler, high); signature (high): `undefined FormatCurrentTimestamp(undefined8 param_1)`
+pub const FormatCurrentTimestamp: u64 = 35788;
+/// `FormatDefaultOrTable369674Label` at 0x3bf4b0 (decompiler, medium); signature (untiered): `undefined FormatDefaultOrTable369674Label(undefined8 param_1, ulonglong param_2, int param_3, undefined8 param_4, char param_5)`
+pub const FormatDefaultOrTable369674Label: u64 = 24693;
+/// `FormatDigestHexIntoField1A0` at 0x13db5d0 (decompiler, medium); signature (untiered): `undefined FormatDigestHexIntoField1A0(longlong param_1)`
+pub const FormatDigestHexIntoField1A0: u64 = 101109;
+/// `FormatDoubleArgument` at 0xd71090 (decompiler, medium); signature (untiered): `undefined FormatDoubleArgument(longlong param_1)`
+pub const FormatDoubleArgument: u64 = 84845;
+/// `FormatDoubleToString` at 0xa91120 (decompiler, high); signature (high): `undefined FormatDoubleToString(longlong * param_1, undefined8 param_2)`
+pub const FormatDoubleToString: u64 = 443333;
+/// `FormatEdgeDebugStrings` at 0x1118e00 (decompiler, medium); signature (untiered): `undefined FormatEdgeDebugStrings(longlong param_1)`
+pub const FormatEdgeDebugStrings: u64 = 81247;
 /// `FormatErrorAndStopScript` at 0x386df0 (decompiler, medium); signature (untiered): `undefined FormatErrorAndStopScript(longlong param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const FormatErrorAndStopScript: u64 = 23333;
 /// `FormatField40AndSelfNames` at 0x3ecd00 (decompiler, medium); signature (medium): `undefined FormatField40AndSelfNames(longlong * param_1, undefined1 * param_2, uint param_3)`
@@ -8503,37 +8537,3 @@ pub const GameSetting_fIronSightsGunMotionBlur__init: u64 = 2888;
 pub const GameSetting_fIronSightsMotionBlur__atexit: u64 = 168099;
 /// `GameSetting_fIronSightsMotionBlur__init` at 0x4cce0 (crt_init, medium); signature (high): `void GameSetting_fIronSightsMotionBlur__init(void)`
 pub const GameSetting_fIronSightsMotionBlur__init: u64 = 2889;
-/// `GameSetting_fItemPointsMult__atexit` at 0x17771d0 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__atexit(void)`
-pub const GameSetting_fItemPointsMult__atexit: u64 = 168887;
-/// `GameSetting_fItemPointsMult__init` at 0x64d00 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__init(void)`
-pub const GameSetting_fItemPointsMult__init: u64 = 3677;
-/// `GameSetting_fItemRepairCostMult__atexit` at 0x1770600 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__atexit(void)`
-pub const GameSetting_fItemRepairCostMult__atexit: u64 = 168542;
-/// `GameSetting_fItemRepairCostMult__init` at 0x5a670 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__init(void)`
-pub const GameSetting_fItemRepairCostMult__init: u64 = 3332;
-/// `GameSetting_fJogInterpolationBetweenWalkAndRun__atexit` at 0x1753910 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__atexit(void)`
-pub const GameSetting_fJogInterpolationBetweenWalkAndRun__atexit: u64 = 167067;
-/// `GameSetting_fJogInterpolationBetweenWalkAndRun__init` at 0x2cdc0 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__init(void)`
-pub const GameSetting_fJogInterpolationBetweenWalkAndRun__init: u64 = 1857;
-/// `GameSetting_fJumpDoubleMult__atexit` at 0x1770650 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__atexit(void)`
-pub const GameSetting_fJumpDoubleMult__atexit: u64 = 168543;
-/// `GameSetting_fJumpDoubleMult__init` at 0x5a6f0 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__init(void)`
-pub const GameSetting_fJumpDoubleMult__init: u64 = 3333;
-/// `GameSetting_fJumpFallHeightExponentNPC__atexit` at 0x17706f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightExponentNPC__atexit: u64 = 168545;
-/// `GameSetting_fJumpFallHeightExponentNPC__init` at 0x5a7f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__init(void)`
-pub const GameSetting_fJumpFallHeightExponentNPC__init: u64 = 3335;
-/// `GameSetting_fJumpFallHeightExponent__atexit` at 0x17706a0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__atexit(void)`
-pub const GameSetting_fJumpFallHeightExponent__atexit: u64 = 168544;
-/// `GameSetting_fJumpFallHeightExponent__init` at 0x5a770 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__init(void)`
-pub const GameSetting_fJumpFallHeightExponent__init: u64 = 3334;
-/// `GameSetting_fJumpFallHeightMinNPC__atexit` at 0x1770790 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightMinNPC__atexit: u64 = 168547;
-/// `GameSetting_fJumpFallHeightMinNPC__init` at 0x5a8f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__init(void)`
-pub const GameSetting_fJumpFallHeightMinNPC__init: u64 = 3337;
-/// `GameSetting_fJumpFallHeightMin__atexit` at 0x1770740 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__atexit(void)`
-pub const GameSetting_fJumpFallHeightMin__atexit: u64 = 168546;
-/// `GameSetting_fJumpFallHeightMin__init` at 0x5a870 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__init(void)`
-pub const GameSetting_fJumpFallHeightMin__init: u64 = 3336;
-/// `GameSetting_fJumpFallHeightMultNPC__atexit` at 0x1770830 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMultNPC__atexit(void)`
-pub const GameSetting_fJumpFallHeightMultNPC__atexit: u64 = 168549;

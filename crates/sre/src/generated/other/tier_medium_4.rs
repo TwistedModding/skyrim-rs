@@ -3,27 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RewindCursorToHead` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35222, rva 0x5ec750).
-/// `undefined8 RewindCursorToHead(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rewind_cursor_to_head(param_1: i64) -> u64 { unsafe { function!(35222, (i64) -> u64)(param_1) } }
-/// `RollRandomChance` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 26618, rva 0x4270d0).
-/// `undefined8 RollRandomChance(float param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn roll_random_chance(param_1: f32) -> u64 { unsafe { function!(26618, (f32) -> u64)(param_1) } }
-/// `RotateAndScaleMatrix2x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 83457, rva 0xd33270).
-/// `undefined RotateAndScaleMatrix2x3(float * param_1, float param_2, float param_3, float param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_and_scale_matrix2x3(param_1: *mut f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(83457, (*mut f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `RotateModelByClampedAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52324, rva 0x9666f0).
 /// `undefined RotateModelByClampedAngle(longlong param_1, float param_2)`
 ///

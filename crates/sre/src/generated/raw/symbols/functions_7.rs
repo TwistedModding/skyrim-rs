@@ -4,6 +4,14 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0xb52e90, id: 61268, confidence: Confidence::Medium, name: "StaticInit_8547_sub0" },
+    Function { rva: 0xb52ea0, id: 61269, confidence: Confidence::Medium, name: "StaticInit_8549_sub0" },
+    Function { rva: 0xb52eb0, id: 61270, confidence: Confidence::Medium, name: "StaticInit_8599_sub0" },
+    Function { rva: 0xb52ed0, id: 61271, confidence: Confidence::Medium, name: "StaticInit_8639_sub0" },
+    Function { rva: 0xb52ee0, id: 61272, confidence: Confidence::Medium, name: "StaticInit_8531_sub0" },
+    Function { rva: 0xb52ef0, id: 61273, confidence: Confidence::Medium, name: "StaticInit_8660_sub0" },
+    Function { rva: 0xb52f20, id: 61274, confidence: Confidence::Medium, name: "StaticInit_8553_sub0" },
+    Function { rva: 0xb52f30, id: 61275, confidence: Confidence::Medium, name: "StaticInit_8556_sub0" },
     Function { rva: 0xb52f40, id: 61276, confidence: Confidence::Medium, name: "StaticInit_8604_sub0" },
     Function { rva: 0xb52f50, id: 61277, confidence: Confidence::Medium, name: "StaticInit_8559_sub0" },
     Function { rva: 0xb52f60, id: 61278, confidence: Confidence::Medium, name: "StaticInit_8614_sub0" },
@@ -8897,13 +8905,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0xee2420, id: 70300, confidence: Confidence::Medium, name: "NiNode::vfunc_37" },
     Function { rva: 0xee24d0, id: 70301, confidence: Confidence::Medium, name: "NiNode::vfunc_44" },
     Function { rva: 0xee2680, id: 70302, confidence: Confidence::Medium, name: "NiNode::vfunc_45" },
-    Function { rva: 0xee28e0, id: 70303, confidence: Confidence::High, name: "NiNode::UpdateUpwardPass" },
-    Function { rva: 0xee2920, id: 70304, confidence: Confidence::Medium, name: "NiNode::vfunc_47" },
-    Function { rva: 0xee2a40, id: 70305, confidence: Confidence::Medium, name: "NiNode::vfunc_46" },
-    Function { rva: 0xee2b70, id: 70306, confidence: Confidence::Medium, name: "NiNode::vfunc_49" },
-    Function { rva: 0xee2cc0, id: 70307, confidence: Confidence::High, name: "NiNode::OnVisible" },
-    Function { rva: 0xee2e30, id: 70309, confidence: Confidence::Medium, name: "NiNode::vfunc_43" },
-    Function { rva: 0xee2f60, id: 70310, confidence: Confidence::Medium, name: "NiNode::vfunc_29" },
-    Function { rva: 0xee3010, id: 70311, confidence: Confidence::Medium, name: "NiNode::vfunc_39" },
-    Function { rva: 0xee3090, id: 74695, confidence: Confidence::Medium, name: "CreateNiNode" },
 ];

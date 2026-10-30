@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RemoveActorValueStorageEntry_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39018, rva 0x6e3120).
-/// `undefined RemoveActorValueStorageEntry_2(longlong * param_1, char param_2, byte * param_3, byte * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_actor_value_storage_entry_2(param_1: *mut i64, param_2: c_char, param_3: *mut u8, param_4: *mut u8) -> u64 { unsafe { function!(39018, (*mut i64, c_char, *mut u8, *mut u8) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RemoveAllEntriesInFieldB0List` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 72392, rva 0xf529a0).
-/// `undefined RemoveAllEntriesInFieldB0List(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_entries_in_field_b0_list(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(72392, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RemoveAllInventoryEventFilters` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 53952, rva 0x9da960).
-/// `ulonglong RemoveAllInventoryEventFilters(longlong param_1, ulonglong param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_inventory_event_filters(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(53952, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `RemoveAllMapItems` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 41107, rva 0x7721d0).
-/// `undefined RemoveAllMapItems(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_map_items(param_1: *mut i64) -> u64 { unsafe { function!(41107, (*mut i64) -> u64)(param_1) } }
 /// `RemoveAllMapItems_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19369, rva 0x2d5ba0).
 /// `undefined RemoveAllMapItems_2(longlong * param_1)`
 ///
@@ -14150,3 +14122,38 @@ pub unsafe fn set_bit4000_of_field154(param_1: i64) -> u64 { unsafe { function!(
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_bit400_of_owner_field25_e0(param_1: *mut i64) -> u64 { unsafe { function!(83586, (*mut i64) -> u64)(param_1) } }
+/// `SetBit40OfField20FromArg` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77900, rva 0x104ddf0).
+/// `undefined SetBit40OfField20FromArg(longlong param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bit40_of_field20_from_arg(param_1: i64, param_2: i64) -> u64 { unsafe { function!(77900, (i64, i64) -> u64)(param_1, param_2) } }
+/// `SetBit6OfField10AndNotify_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 14639, rva 0x1e6150).
+/// `undefined SetBit6OfField10AndNotify_2(longlong * param_1, byte param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bit6_of_field10_and_notify_2(param_1: *mut i64, param_2: u8) -> u64 { unsafe { function!(14639, (*mut i64, u8) -> u64)(param_1, param_2) } }
+/// `SetBit80000OfFieldE8Object25E0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83307, rva 0xd2b1c0).
+/// `undefined SetBit80000OfFieldE8Object25E0(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bit80000_of_field_e8_object25_e0(param_1: i64) -> u64 { unsafe { function!(83307, (i64) -> u64)(param_1) } }
+/// `SetBit800OfNthSizerItem` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 454165, rva 0x15e5bb0).
+/// `undefined8 SetBit800OfNthSizerItem(longlong param_1, int param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bit800_of_nth_sizer_item(param_1: i64, param_2: i32) -> u64 { unsafe { function!(454165, (i64, i32) -> u64)(param_1, param_2) } }
+/// `SetBits2001000OfField154` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89525, rva 0x11a0ed0).
+/// `undefined SetBits2001000OfField154(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_bits2001000_of_field154(param_1: i64) -> u64 { unsafe { function!(89525, (i64) -> u64)(param_1) } }

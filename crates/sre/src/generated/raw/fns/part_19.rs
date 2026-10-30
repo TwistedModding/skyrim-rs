@@ -3,6 +3,104 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESCamera::ctor` at 0x558c80 (semantic, high); signature (high): `TESCamera * ctor(TESCamera * this)`; semantic: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1 (high); signature `TESCamera* (TESCamera* this)`
+pub const TESCamera__ctor: u64 = 33018;
+/// `TESCamera::ctor` as a function pointer type (high).
+pub type TESCamera__ctor_fn = unsafe extern "C" fn(this: *mut crate::TESCamera) -> *mut crate::TESCamera;
+/// `TESCamera::dtor` at 0x558cf0 (layout_inference, high); signature (low): `undefined dtor(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: base destructor: restores TESCamera's vtable, releases currentState (refcount +8, slot 0 with 1 at zero) and cameraRoot (NiRefObject refcount +8, slot 1 at zero) (high); signature `void (TESCamera* this)`
+pub const TESCamera__dtor: u64 = 33019;
+/// `TESCamera::dtor` as a function pointer type (high).
+pub type TESCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::TESCamera);
+/// `TESCameraState::Begin` at 0x24a000 (semantic, high); signature (untiered): `undefined Begin(void)`
+pub const TESCameraState__Begin: u64 = 16348;
+/// `TESCameraState::Destroy` at 0x249fd0 (semantic, high); signature (untiered): `TESCameraState * Destroy(TESCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCameraState__Destroy: u64 = 16347;
+/// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
+pub const TESCameraState__End: u64 = 16349;
+/// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (untiered): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
+pub const TESCameraState__GetRotation: u64 = 16350;
+/// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (untiered): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`
+pub const TESCameraState__GetTranslation: u64 = 16351;
+/// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
+pub const TESCameraState__LoadGame: u64 = 16352;
+/// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
+pub const TESCameraState__Revert: u64 = 16353;
+/// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
+pub const TESCameraState__SaveGame: u64 = 16354;
+/// `TESCameraState::Update` at 0x24a090 (semantic, high); signature (untiered): `undefined Update(TESCameraState * this, longlong * param_1)`
+pub const TESCameraState__Update: u64 = 16355;
+/// `TESChildCell::dtor` at 0x2b6020 (layout_inference, high); signature (high): `undefined dtor(TESChildCell * this)`
+pub const TESChildCell__dtor: u64 = 18816;
+/// `TESChildCell::vdtor` at 0x2b6290 (layout_inference, medium); signature (low): `TESChildCell * vdtor(TESChildCell * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESChildCell__vdtor: u64 = 18822;
+/// `TESClass::LoadGame` at 0x3b2ba0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESClass * this, longlong param_1)`
+pub const TESClass__LoadGame: u64 = 24457;
+/// `TESClass::SaveGame` at 0x3b2b90 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESClass * this, longlong param_1)`
+pub const TESClass__SaveGame: u64 = 24456;
+/// `TESClass::TESDescription_vdtor` at 0x3b2c00 (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(TESClass * this)`
+pub const TESClass__TESDescription_vdtor: u64 = 24461;
+/// `TESClass::TESFullName_vdtor` at 0x3b2bf4 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESClass * this)`
+pub const TESClass__TESFullName_vdtor: u64 = 24460;
+/// `TESClass::TESTexture_vdtor` at 0x3b2c0c (slot_propagation, medium); signature (high): `undefined TESTexture_vdtor(TESClass * this)`
+pub const TESClass__TESTexture_vdtor: u64 = 24462;
+/// `TESClass::ctor` at 0x3b2740 (layout_inference, high); signature (low): `TESClass * ctor(TESClass * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESClass__ctor: u64 = 24444;
+/// `TESClass::dtor` at 0x3b2810 (layout_inference, high); signature (low): `undefined dtor(TESClass * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESClass__dtor: u64 = 24445;
+/// `TESClass::vdtor` at 0x3b2c20 (layout_inference, medium); signature (low): `TESClass * vdtor(TESClass * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESClass__vdtor: u64 = 24463;
+/// `TESClass::vfunc_18` at 0x3b2bb0 (rtti, high); signature (untiered): `undefined vfunc_18(void)`
+pub const TESClass__vfunc_18: u64 = 24458;
+/// `TESClass::vfunc_4` at 0x3b2890 (rtti, high); signature (high): `undefined vfunc_4(TESClass * this)`
+pub const TESClass__vfunc_4: u64 = 24446;
+/// `TESClass::vfunc_6` at 0x3b28d0 (rtti, high); signature (low): `undefined8 vfunc_6(TESClass * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESClass__vfunc_6: u64 = 24447;
+/// `TESClimate::ctor` at 0x2a5900 (layout_inference, high); signature (low): `TESClimate * ctor(TESClimate * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESClimate__ctor: u64 = 18614;
+/// `TESClimate::dtor` at 0x2a5980 (layout_inference, high); signature (high): `undefined dtor(TESClimate * this)`
+pub const TESClimate__dtor: u64 = 18615;
+/// `TESClimate::vdtor` at 0x2a5e70 (layout_inference, medium); signature (low): `TESClimate * vdtor(TESClimate * this, uint param_1)`
+pub const TESClimate__vdtor: u64 = 18620;
+/// `TESClimate::vfunc_4` at 0x2a5c10 (rtti, high); signature (high): `undefined vfunc_4(TESClimate * this)`
+pub const TESClimate__vfunc_4: u64 = 18617;
+/// `TESClimate::vfunc_6` at 0x2a59f0 (rtti, high); signature (low): `undefined8 vfunc_6(TESClimate * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
+pub const TESClimate__vfunc_6: u64 = 18616;
+/// `TESCombatStyle::ctor` at 0x269bd0 (layout_inference, high); signature (low): `TESCombatStyle * ctor(TESCombatStyle * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+pub const TESCombatStyle__ctor: u64 = 523532;
+/// `TESCombatStyle::vdtor` at 0x26a890 (layout_inference, medium); signature (low): `TESCombatStyle * vdtor(TESCombatStyle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCombatStyle__vdtor: u64 = 17307;
+/// `TESCombatStyle::vfunc_19` at 0x26a160 (rtti, high); signature (high): `undefined vfunc_19(TESCombatStyle * this)`
+pub const TESCombatStyle__vfunc_19: u64 = 17299;
+/// `TESCombatStyle::vfunc_4` at 0x269df0 (rtti, high); signature (high): `undefined vfunc_4(TESCombatStyle * this)`
+pub const TESCombatStyle__vfunc_4: u64 = 17297;
+/// `TESCombatStyle::vfunc_6` at 0x269e90 (rtti, high); signature (low): `undefined8 vfunc_6(TESCombatStyle * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESCombatStyle__vfunc_6: u64 = 17298;
+/// `TESCombatStyle::vfunc_6_sub0` at 0x26a570 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
+/// `TESCombatStyle::vfunc_6_sub1` at 0x26a640 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub1(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
+/// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
+pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;
+/// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (untiered): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; semantic: count of an item in the base container (high); signature `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
+pub const TESContainer__CountObjectsInContainer: u64 = 14529;
+/// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
+pub type TESContainer__CountObjectsInContainer_fn = unsafe extern "C" fn(this: *mut crate::TESContainer, item: *mut crate::TESForm) -> i32;
+/// `TESContainer::ctor` at 0x1dffe0 (layout_inference, medium); signature (high): `TESContainer * ctor(TESContainer * this)`
+pub const TESContainer__ctor: u64 = 14510;
+/// `TESContainer::dtor` at 0x1e0000 (layout_inference, high); signature (high): `undefined dtor(TESContainer * this)`
+pub const TESContainer__dtor: u64 = 14511;
+/// `TESContainer::vdtor` at 0x1e1160 (layout_inference, medium); signature (low): `TESContainer * vdtor(TESContainer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESContainer__vdtor: u64 = 14545;
+/// `TESContainer::vfunc_1` at 0x1e0040 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const TESContainer__vfunc_1: u64 = 14512;
+/// `TESContainer::vfunc_2` at 0x1e0050 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const TESContainer__vfunc_2: u64 = 14513;
+/// `TESContainer::vfunc_3` at 0x1e0060 (rtti, medium); signature (low): `undefined vfunc_3(TESContainer * this, undefined8 param_1)`
+pub const TESContainer__vfunc_3: u64 = 14514;
+/// `TESCustomPackageData::ctor` at 0x49ecc0 (layout_inference, medium); signature (high): `TESCustomPackageData * ctor(TESCustomPackageData * this)`
+pub const TESCustomPackageData__ctor: u64 = 29654;
+/// `TESCustomPackageData::ctor` at 0x49ed10 (layout_inference, medium); signature (low): `TESCustomPackageData * ctor(TESCustomPackageData * this, longlong param_1, uint * param_2, undefined8 param_3)`
+pub const TESCustomPackageData__ctor_2: u64 = 29655;
 /// `TESCustomPackageData::dtor` at 0x49ee70 (layout_inference, high); signature (low): `undefined dtor(TESCustomPackageData * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESCustomPackageData__dtor: u64 = 29656;
 /// `TESCustomPackageData::vdtor` at 0x49fec0 (layout_inference, medium); signature (low): `TESCustomPackageData * vdtor(TESCustomPackageData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -35,8 +133,10 @@ pub type TESDataHandler__BuildFileList_fn = unsafe extern "C" fn(this: *mut crat
 pub const TESDataHandler__CallSlot19OnArray1D8: u64 = 13766;
 /// `TESDataHandler::CallSlot19OnArray1D8` as a function pointer type (high).
 pub type TESDataHandler__CallSlot19OnArray1D8_fn = unsafe extern "C" fn(this: *mut crate::TESDataHandler);
-/// `TESDataHandler::CreateReferenceAtLocation` at 0x1bc1c0 (semantic, medium); signature (untiered): `uint * CreateReferenceAtLocation(undefined8 param_1, uint * param_2, Character_vtbl * param_3, float * param_4, float * param_5, Character_vtbl * param_6, Character_vtbl * param_7, Character_vtbl * param_8, void * param_9, Character_vtbl_20 * param_10, char param_11, char param_12)`; semantic: creates (or re-places existingRef) a reference of base at position/angles in cell/worldspace, adds it to the cell, applies SetAngles and the root's local translation, and returns its handle (invalid on failure) (medium); signature `RefHandle* (TESDataHandler* dh, RefHandle* out, TESBoundObject* base, const NiPoint3* position, const NiPoint3* anglesRadians, TESObjectCELL* cell, TESWorldSpace* worldspace, TESObjectREFR* existingRef, void* primitive, void* linkedRef, bool forcePersist, bool arg12)`
+/// `TESDataHandler::CreateReferenceAtLocation` at 0x1bc1c0 (semantic, high); signature (untiered): `uint * CreateReferenceAtLocation(undefined8 param_1, uint * param_2, Character_vtbl * param_3, float * param_4, float * param_5, Character_vtbl * param_6, Character_vtbl * param_7, Character_vtbl * param_8, void * param_9, Character_vtbl_20 * param_10, char param_11, char param_12)`; semantic: creates a reference of base (or re-places existingRef) at position/angles, in the interior cell or in the worldspace's cell under position; returns out holding its handle (g_InvalidRefHandle on failure) (high); signature `RefHandle* (void* unused, RefHandle* out, TESBoundObject* base, const NiPoint3* position, const NiPoint3* anglesRadians, TESObjectCELL* cell, TESWorldSpace* worldspace, TESObjectREFR* existingRef, void* primitive, u32 linkedRefHandle, bool forcePersist, bool clearFlag21)`
 pub const TESDataHandler__CreateReferenceAtLocation: u64 = 13723;
+/// `TESDataHandler::CreateReferenceAtLocation` as a function pointer type (high).
+pub type TESDataHandler__CreateReferenceAtLocation_fn = unsafe extern "C" fn(unused: *mut c_void, out: *mut c_void, base: *mut crate::TESBoundObject, position: *const crate::NiPoint3, anglesRadians: *const crate::NiPoint3, cell: *mut crate::TESObjectCELL, worldspace: *mut crate::TESWorldSpace, existingRef: *mut crate::TESObjectREFR, primitive: *mut c_void, linkedRefHandle: u32, forcePersist: bool, clearFlag21: bool) -> *mut c_void;
 /// `TESDataHandler::FreeFormID` at 0x1bd9f0 (runtime, high); signature (untiered): `undefined FreeFormID(longlong param_1, uint param_2)`; semantic: returns a runtime form id for reuse (high); signature `void TESDataHandler::FreeFormID(TESDataHandler* this, uint formID)`
 pub const TESDataHandler__FreeFormID: u64 = 13739;
 /// `TESDataHandler::FreeFormID` as a function pointer type (high).
@@ -3027,8 +3127,10 @@ pub const TESWordOfPower__ctor_2: u64 = 23408;
 pub const TESWordOfPower__vdtor: u64 = 23412;
 /// `TESWordOfPower::vfunc_6` at 0x388bc0 (rtti, high); signature (low): `undefined8 vfunc_6(TESWordOfPower * this, longlong param_1, undefined8 param_2, char * param_3)`
 pub const TESWordOfPower__vfunc_6: u64 = 23409;
-/// `TESWorldSpace::ForEachReferenceInRadius` at 0x312810 (semantic, medium); signature (untiered): `undefined ForEachReferenceInRadius(longlong param_1, float * param_2, float param_3, float * param_4, float param_5, longlong param_6)`; semantic: exterior walk: starts at the 4096-unit cell containing origin and spirals outward over the worldspace's cell map (read lock 0x31df4d0), taking cells whose bounds are within radius (and radius2) and that are loaded (cell formFlags bit 3, or a TLS override), visiting each with the per-cell walk; stops when a callback returns true (medium); signature `void (TESWorldSpace* ws, const NiPoint3* origin, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
+/// `TESWorldSpace::ForEachReferenceInRadius` at 0x312810 (semantic, high); signature (untiered): `undefined ForEachReferenceInRadius(longlong param_1, float * param_2, float param_3, float * param_4, float param_5, longlong param_6)`; semantic: worldspace part of the walk (grid cells around origin); signature correction: it takes the data pointer as a 7th argument (high); signature `void (TESWorldSpace* ws, const NiPoint3* origin, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
 pub const TESWorldSpace__ForEachReferenceInRadius: u64 = 523544;
+/// `TESWorldSpace::ForEachReferenceInRadius` as a function pointer type (high).
+pub type TESWorldSpace__ForEachReferenceInRadius_fn = unsafe extern "C" fn(ws: *mut crate::TESWorldSpace, origin: *const crate::NiPoint3, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void);
 /// `TESWorldSpace::GetClimate` at 0x30dad0 (semantic, high); signature (untiered): `undefined8 GetClimate(longlong param_1)`; semantic: the worldspace's climate, walking up the parent worldspace (+0x158) while flag 0x10 of +0xa2 (use parent climate) is set (high); signature `TESClimate* (TESWorldSpace* this)`
 pub const TESWorldSpace__GetClimate: u64 = 20468;
 /// `TESWorldSpace::GetClimate` as a function pointer type (high).
@@ -5421,7 +5523,7 @@ pub const UpdateLargeRefVisibilityForCell: u64 = 18223;
 pub const UpdateLeafNodesRecursive: u64 = 19387;
 /// `UpdateLightEnableDisableFade` at 0x275530 (decompiler, medium); signature (medium): `bool UpdateLightEnableDisableFade(longlong param_1, float param_2, char param_3)`
 pub const UpdateLightEnableDisableFade: u64 = 17625;
-/// `UpdateLightFlicker` at 0x274be0 (semantic, high); signature (untiered): `undefined UpdateLightFlicker(longlong param_1, longlong * param_2, longlong param_3, float param_4)`; semantic: per-update light animation: with fade < 0, flags 0x8 = random flicker (three phases in NiPointLight+0x140/+0x144/+0x148, moves the light's local translation +0x6c..+0x74 by LIGH+0x104 and modulates NiLight+0x134 by LIGH+0x100), flags 0x180 = sine pulse (phase +0x140 advanced by LIGH+0xfc per second); with fade >= 0 it sets NiLight+0x134 = fade; then updates the node (or queues the update off-thread) (high); signature `void (TESObjectLIGH* light, NiPointer<NiPointLight>* niLight, TESObjectREFR* ref, float fade)`
+/// `UpdateLightFlicker` at 0x274be0 (semantic, high); signature (untiered): `undefined UpdateLightFlicker(longlong param_1, longlong * param_2, longlong param_3, float param_4)`; semantic: per-update light animation; the only flag tests are 0x8 (flicker) and 0x180 (pulse); 0x40 alone and 0x200 have no branch, and no flag changes the speed (high); signature `void (TESObjectLIGH* light, NiPointer<NiPointLight>* niLight, TESObjectREFR* ref, float fade)`
 pub const UpdateLightFlicker: u64 = 17614;
 /// `UpdateLightFlicker` as a function pointer type (high).
 pub type UpdateLightFlicker_fn = unsafe extern "C" fn(light: *mut crate::TESObjectLIGH, niLight: *mut c_void, ref_: *mut crate::TESObjectREFR, fade: f32);
@@ -5593,6 +5695,12 @@ pub const UpdateTelekinesisDistance: u64 = 40551;
 pub const UpdateTeleportFade: u64 = 39457;
 /// `UpdateTeleportFade` as a function pointer type (high).
 pub type UpdateTeleportFade_fn = unsafe extern "C" fn(process: *mut crate::AIProcess, actor: *mut crate::TESObjectREFR, seconds: f32) -> bool;
+/// `UpdateTempEffectArray` at 0x78a070 (semantic, high); signature (untiered): `undefined UpdateTempEffectArray(longlong * param_1, undefined4 * param_2, ulonglong param_3)`; semantic: for each effect: slot 40 Update(delta) (+0x140); when it returns false: slot 39 (+0x138), notify the matching entries (0x78a780), hand the effect to the garbage collector and remove it from the array (high); signature `void (BSTArray<NiPointer<BSTempEffect>>* effects, const float* delta)`
+pub const UpdateTempEffectArray: u64 = 41463;
+/// `UpdateTempEffectArray` as a function pointer type (high).
+pub type UpdateTempEffectArray_fn = unsafe extern "C" fn(effects: *mut c_void, delta: *const f32);
+/// `UpdateTempEffectsJobBody` at 0x65a1b0 (semantic, medium); signature (untiered): `undefined UpdateTempEffectsJobBody(longlong param_1, undefined8 param_2, ulonglong param_3)`; semantic: the same gated call (0x784e70 with g_FrameDelta) followed by 0x7f8400 and a tail call; reached only from 0x6e4fe0, which ends with SignalFramePhase(1) (medium); signature `void (Main* main)`
+pub const UpdateTempEffectsJobBody: u64 = 36583;
 /// `UpdateTempNodeLifetimes` at 0xfd90b0 (decompiler, medium); signature (medium): `undefined UpdateTempNodeLifetimes(longlong * param_1, float param_2)`
 pub const UpdateTempNodeLifetimes: u64 = 76110;
 /// `UpdateTerrainLOD` at 0x5160c0 (semantic, high); signature (untiered): `ulonglong UpdateTerrainLOD(char * param_1, float * param_2, uint * param_3, undefined8 param_4)`; semantic: per-worldspace terrain LOD update around a position: closes on a menu, decides the above-max-height state (fCameraAboveMaxHeightThreshold, skipped in the free camera state cameraStates[3]), then with bUseNewTerrainSystem updates the quadtree (flag bit 0 full, bit 1 recursive) (high); signature `void (TerrainManager* manager, const NiPoint3* position, u32* updateFlags)`
@@ -8921,89 +9029,3 @@ pub const _anon_025735F6__ScriptFoundCallback__vfunc_1: u64 = 54248;
 pub const _anon_025735F6__SingleActorArgument__vfunc_0: u64 = 54388;
 /// `_anon_025735F6::SingleActorArgument::vfunc_1` at 0x9eefb0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleActorArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
 pub const _anon_025735F6__SingleActorArgument__vfunc_1: u64 = 54249;
-/// `_anon_025735F6::SingleObjectRefrHandleArgument::vfunc_0` at 0x9f0ca0 (rtti, high); signature (low): `SingleObjectRefrHandleArgument * vfunc_0(SingleObjectRefrHandleArgument * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SingleObjectRefrHandleArgument__vfunc_0: u64 = 54389;
-/// `_anon_025735F6::SingleObjectRefrHandleArgument::vfunc_1` at 0x9ef080 (rtti, high); signature (low): `undefined8 vfunc_1(SingleObjectRefrHandleArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleObjectRefrHandleArgument__vfunc_1: u64 = 54250;
-/// `_anon_025735F6::SinglePackageArgument::vfunc_0` at 0x9f0d10 (rtti, high); signature (low): `SinglePackageArgument * vfunc_0(SinglePackageArgument * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SinglePackageArgument__vfunc_0: u64 = 54390;
-/// `_anon_025735F6::SinglePackageArgument::vfunc_1` at 0x9ef130 (rtti, high); signature (low): `undefined8 vfunc_1(SinglePackageArgument * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SinglePackageArgument__vfunc_1: u64 = 54251;
-/// `_anon_025735F6::SinglePackageArgument::vfunc_1_sub0` at 0x9ea3b0 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__SinglePackageArgument__vfunc_1_sub0: u64 = 54089;
-/// `_anon_025735F6::SingleRefAliasFunctionArguments::vfunc_0` at 0x9f0d50 (rtti, high); signature (low): `SingleRefAliasFunctionArguments * vfunc_0(SingleRefAliasFunctionArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SingleRefAliasFunctionArguments__vfunc_0: u64 = 54391;
-/// `_anon_025735F6::SingleRefAliasFunctionArguments::vfunc_1` at 0x9ef1f0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleRefAliasFunctionArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleRefAliasFunctionArguments__vfunc_1: u64 = 54252;
-/// `_anon_025735F6::SingleRefAliasFunctionArguments::vfunc_1_sub0` at 0x9e90e0 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__SingleRefAliasFunctionArguments__vfunc_1_sub0: u64 = 54082;
-/// `_anon_025735F6::SingleSimpleArgument<bool>::vfunc_0` at 0x9f03a0 (rtti, high); signature (low): `SingleSimpleArgument<bool> * vfunc_0(SingleSimpleArgument<bool> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SingleSimpleArgument_bool__vfunc_0: u64 = 54356;
-/// `_anon_025735F6::SingleSimpleArgument<bool>::vfunc_1` at 0x9edb60 (rtti, high); signature (low): `undefined8 vfunc_1(SingleSimpleArgument<bool> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleSimpleArgument_bool__vfunc_1: u64 = 54232;
-/// `_anon_025735F6::SingleSimpleArgument<float>::vfunc_0` at 0x9f0360 (rtti, high); signature (low): `SingleSimpleArgument<float> * vfunc_0(SingleSimpleArgument<float> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SingleSimpleArgument_float__vfunc_0: u64 = 54355;
-/// `_anon_025735F6::SingleSimpleArgument<float>::vfunc_1` at 0x9edaa0 (rtti, high); signature (low): `undefined8 vfunc_1(SingleSimpleArgument<float> * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SingleSimpleArgument_float__vfunc_1: u64 = 54231;
-/// `_anon_025735F6::SpellCastArguments::vfunc_0` at 0x9f0e50 (rtti, high); signature (low): `SpellCastArguments * vfunc_0(SpellCastArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__SpellCastArguments__vfunc_0: u64 = 54395;
-/// `_anon_025735F6::SpellCastArguments::vfunc_1` at 0x9ef300 (rtti, high); signature (low): `undefined8 vfunc_1(SpellCastArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__SpellCastArguments__vfunc_1: u64 = 54253;
-/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_0` at 0x9f0e90 (rtti, high); signature (low): `TrackedStatsEventFunctor * vfunc_0(TrackedStatsEventFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_0: u64 = 54396;
-/// `_anon_025735F6::TrackedStatsEventFunctor::vfunc_1` at 0x9e87a0 (rtti, high); signature (low): `undefined8 vfunc_1(TrackedStatsEventFunctor * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__TrackedStatsEventFunctor__vfunc_1: u64 = 54077;
-/// `_anon_025735F6::TrapHitArguments::vfunc_0` at 0x9f0ed0 (rtti, high); signature (low): `TrapHitArguments * vfunc_0(TrapHitArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__TrapHitArguments__vfunc_0: u64 = 54397;
-/// `_anon_025735F6::TrapHitArguments::vfunc_1` at 0x9ef3d0 (rtti, high); signature (low): `undefined8 vfunc_1(TrapHitArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__TrapHitArguments__vfunc_1: u64 = 54254;
-/// `_anon_03AF8C4C::AttachLightHitEffectVisitor::vdtor` at 0x5c9c10 (layout_inference, medium); signature (low): `AttachLightHitEffectVisitor * vdtor(AttachLightHitEffectVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_03AF8C4C__AttachLightHitEffectVisitor__vdtor: u64 = 34390;
-/// `_anon_03AF8C4C::AttachLightHitEffectVisitor::vfunc_1` at 0x5c9af0 (rtti, high); signature (low): `bool vfunc_1(AttachLightHitEffectVisitor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_03AF8C4C__AttachLightHitEffectVisitor__vfunc_1: u64 = 34388;
-/// `_anon_11669552::InitItemPerkRankDataVisitor::vfunc_0` at 0x1db5e0 (rtti, high); signature (low): `undefined8 vfunc_0(InitItemPerkRankDataVisitor * this, uint * param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_11669552__InitItemPerkRankDataVisitor__vfunc_0: u64 = 14326;
-/// `_anon_11B7475C::PlayerParentCellListener::vdtor` at 0x527e10 (layout_inference, medium); signature (low): `PlayerParentCellListener * vdtor(PlayerParentCellListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_11B7475C__PlayerParentCellListener__vdtor: u64 = 32155;
-/// `_anon_11B7475C::PlayerParentCellListener::vfunc_1` at 0x527da0 (rtti, high); signature (low): `undefined8 vfunc_1(PlayerParentCellListener * this, longlong param_1, longlong param_2)`
-pub const _anon_11B7475C__PlayerParentCellListener__vfunc_1: u64 = 32154;
-/// `_anon_14F04957::Win32FileType::GetSize` at 0x159d440 (semantic, medium); signature (untiered): `undefined4 GetSize(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__GetSize: u64 = 109368;
-/// `_anon_14F04957::Win32FileType::Open` at 0x159d770 (semantic, medium); signature (untiered): `bool Open(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__Open: u64 = 109370;
-/// `_anon_14F04957::Win32FileType::Seek` at 0x159d8c0 (semantic, medium); signature (untiered): `int Seek(Win32FileType * this, int param_1, int param_2)`
-pub const _anon_14F04957__Win32FileType__Seek: u64 = 109375;
-/// `_anon_14F04957::Win32FileType::ctor` at 0x159d320 (layout_inference, medium); signature (high): `undefined ctor(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__ctor: u64 = 109362;
-/// `_anon_14F04957::Win32FileType::vdtor` at 0x159d3e0 (layout_inference, medium); signature (low): `Win32FileType * vdtor(Win32FileType * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_14F04957__Win32FileType__vdtor: u64 = 109365;
-/// `_anon_14F04957::Win32FileType::vfunc_17` at 0x159d800 (rtti, high); signature (low): `uint vfunc_17(Win32FileType * this, void * param_1, uint param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_17: u64 = 109373;
-/// `_anon_14F04957::Win32FileType::vfunc_18` at 0x159d9d0 (rtti, high); signature (low): `ulonglong vfunc_18(Win32FileType * this, void * param_1, ulonglong param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_18: u64 = 109378;
-/// `_anon_14F04957::Win32FileType::vfunc_18_sub0` at 0x159d940 (callgraph, medium); signature (untiered): `bool vfunc_18_sub0(longlong param_1, longlong param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_18_sub0: u64 = 109376;
-/// `_anon_14F04957::Win32FileType::vfunc_19` at 0x159d9c0 (rtti, high); signature (untiered): `bool vfunc_19(longlong param_1, longlong param_2)`
-pub const _anon_14F04957__Win32FileType__vfunc_19: u64 = 109377;
-/// `_anon_14F04957::Win32FileType::vfunc_2` at 0x159d890 (rtti, high); signature (low): `undefined vfunc_2(Win32FileType * this, int param_1)`
-pub const _anon_14F04957__Win32FileType__vfunc_2: u64 = 109374;
-/// `_anon_14F04957::Win32FileType::vfunc_20` at 0x159d7e0 (rtti, high); signature (high): `undefined8 vfunc_20(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__vfunc_20: u64 = 109371;
-/// `_anon_14F04957::Win32FileType::vfunc_21` at 0x159d7f0 (rtti, high); signature (high): `undefined8 vfunc_21(Win32FileType * this)`
-pub const _anon_14F04957__Win32FileType__vfunc_21: u64 = 109372;
-/// `_anon_1613A816::ConsoleHotkeyManager::vdtor` at 0x90cfb0 (layout_inference, medium); signature (low): `ConsoleHotkeyManager * vdtor(ConsoleHotkeyManager * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_1613A816__ConsoleHotkeyManager__vdtor: u64 = 442691;
-/// `_anon_1613A816::ConsoleLogPrinter::vdtor` at 0x90d020 (layout_inference, medium); signature (low): `ConsoleLogPrinter * vdtor(ConsoleLogPrinter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_1613A816__ConsoleLogPrinter__vdtor: u64 = 51101;
-/// `_anon_207FFA87::AudioLoadTask::vdtor` at 0xcd2a70 (layout_inference, medium); signature (low): `AudioLoadTask * vdtor(AudioLoadTask * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_207FFA87__AudioLoadTask__vdtor: u64 = 67780;
-/// `_anon_228DD50F::AutoDoorFadeCallback::vdtor` at 0x285790 (layout_inference, medium); signature (low): `AutoDoorFadeCallback * vdtor(AutoDoorFadeCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_228DD50F__AutoDoorFadeCallback__vdtor: u64 = 17959;
-/// `_anon_228DD50F::AutoDoorFadeCallback::vfunc_1` at 0x285cf0 (rtti, high); signature (low): `undefined vfunc_1(AutoDoorFadeCallback * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_228DD50F__AutoDoorFadeCallback__vfunc_1: u64 = 17967;
-/// `_anon_228DD50F::NormalDoorFadeCallback::vdtor` at 0x2857f0 (layout_inference, medium); signature (low): `NormalDoorFadeCallback * vdtor(NormalDoorFadeCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_228DD50F__NormalDoorFadeCallback__vdtor: u64 = 17961;
-/// `_anon_228DD50F::NormalDoorFadeCallback::vfunc_1` at 0x285df0 (rtti, high); signature (high): `undefined vfunc_1(NormalDoorFadeCallback * this)`
-pub const _anon_228DD50F__NormalDoorFadeCallback__vfunc_1: u64 = 17968;
-/// `_anon_250B49FB::hkpCompressedMeshShapeShared::hkpShapeContainer_vdtor` at 0x10ac0d0 (slot_propagation, medium); signature (high): `undefined hkpShapeContainer_vdtor(hkpCompressedMeshShapeShared * this)`
-pub const _anon_250B49FB__hkpCompressedMeshShapeShared__hkpShapeContainer_vdtor: u64 = 79474;

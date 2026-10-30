@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreateREFRSyncControllers` at 0x304e80 (decompiler, medium); signature (untiered): `bool CreateREFRSyncControllers(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, undefined1 param_5)`
+pub const CreateREFRSyncControllers: u64 = 20312;
+/// `CreateRGBA8Texture2DWithSRV` at 0x100d990 (decompiler, medium); signature (untiered): `longlong * CreateRGBA8Texture2DWithSRV(undefined8 param_1, undefined4 param_2, undefined4 param_3)`
+pub const CreateRGBA8Texture2DWithSRV: u64 = 77299;
+/// `CreateRadialBlurModifierInstance` at 0x2a5020 (decompiler, medium); signature (untiered): `ImageSpaceModifierInstanceTemp * CreateRadialBlurModifierInstance(float param_1, undefined4 param_2, float param_3, undefined4 param_4, float param_5, undefined4 * param_6, float param_7)`
+pub const CreateRadialBlurModifierInstance: u64 = 18590;
+/// `CreateRagdollTemplateDataForNode` at 0x109e250 (decompiler, medium); signature (untiered): `undefined8 CreateRagdollTemplateDataForNode(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreateRagdollTemplateDataForNode: u64 = 79246;
+/// `CreateRandomConditionalNode` at 0x880fb0 (decompiler, medium); signature (untiered): `CombatBehaviorTreeNode * CreateRandomConditionalNode(CombatBehaviorTreeNode * param_1, char * param_2, undefined8 * param_3, longlong param_4)`
+pub const CreateRandomConditionalNode: u64 = 47844;
+/// `CreateRefCountedHandlerAndAppendToLockedArray` at 0xd75b00 (decompiler, medium); signature (untiered): `undefined8 * CreateRefCountedHandlerAndAppendToLockedArray(longlong param_1, undefined4 param_2)`
+pub const CreateRefCountedHandlerAndAppendToLockedArray: u64 = 85102;
+/// `CreateRefHandle` at 0x687400 (decompiler, high); signature (high): `undefined4 * CreateRefHandle(longlong param_1, undefined4 * param_2)`
+pub const CreateRefHandle: u64 = 37476;
+/// `CreateRefHandle_2` at 0x36d8a0 (decompiler, medium); signature (medium): `uint * CreateRefHandle_2(uint * param_1, longlong param_2)`
+pub const CreateRefHandle_2: u64 = 22786;
 /// `CreateReferenceByFormType` at 0x2e3780 (decompiler, high); signature (high): `uint * CreateReferenceByFormType(uint * param_1, undefined1 param_2, ulonglong param_3)`
 pub const CreateReferenceByFormType: u64 = 19544;
 /// `CreateReferenceNearRefAndGetHandle` at 0x230e10 (decompiler, medium); signature (untiered): `uint * CreateReferenceNearRefAndGetHandle(undefined8 param_1, uint * param_2, longlong * param_3, undefined8 param_4, int param_5, undefined8 param_6, float * param_7, longlong * param_8)`
@@ -5317,7 +5333,7 @@ pub const EvaluatePlaneTestOrDecisionTree: u64 = 76824;
 pub const EvaluatePlayerMountPackage: u64 = 40815;
 /// `EvaluateQuadraticBSplineVec4` at 0xc4e4a0 (decompiler, medium); signature (medium): `undefined EvaluateQuadraticBSplineVec4(float param_1, undefined8 param_2, float * param_3, float * param_4, float * param_5)`
 pub const EvaluateQuadraticBSplineVec4: u64 = 65559;
-/// `EvaluateScriptOperandAsDouble` at 0x3455a0 (semantic, medium); signature (untiered): `undefined8 EvaluateScriptOperandAsDouble(double * param_1, longlong param_2, uint * param_3, longlong param_4, undefined8 param_5, longlong param_6, longlong param_7, char param_8)`; semantic: evaluates one numeric operand ('n' int literal, 'z' double literal, variables) (medium); signature `bool (double* out, const void* data, uint32* offset, TESObjectREFR* thisRef, TESObjectREFR* containingObj, Script*, ScriptLocals*, bool)`
+/// `EvaluateScriptOperandAsDouble` at 0x3455a0 (semantic, high); signature (untiered): `undefined8 EvaluateScriptOperandAsDouble(double * param_1, longlong param_2, uint * param_3, longlong param_4, undefined8 param_5, longlong param_6, longlong param_7, char param_8)`; semantic: evaluates a function-call operand inside an expression: reads the s16 opcode from the bytecode, looks the entry up with GetCommandTableEntryByOpcode and calls entry->execute the same way (high); signature `bool (double* out, const void* scriptData, u32* offset, TESObjectREFR* thisRef, ..., bool skip)`
 pub const EvaluateScriptOperandAsDouble: u64 = 21911;
 /// `EvaluateSignedPiecewiseLinearFromFields20And24` at 0x120f6f0 (decompiler, medium); signature (medium): `float EvaluateSignedPiecewiseLinearFromFields20And24(float param_1, longlong param_2)`
 pub const EvaluateSignedPiecewiseLinearFromFields20And24: u64 = 91812;
@@ -8055,6 +8071,10 @@ pub const FindRefCountedValueByKey_2: u64 = 27420;
 pub const FindRefCountedValueByKey_3: u64 = 32611;
 /// `FindRefField28InSubtree` at 0xca2f30 (decompiler, medium); signature (untiered): `undefined8 * FindRefField28InSubtree(longlong param_1, undefined8 * param_2, longlong param_3)`
 pub const FindRefField28InSubtree: u64 = 67174;
+/// `FindRefInRadiusAndSetHandle64` at 0x46bc90 (semantic, high); signature (untiered): `undefined FindRefInRadiusAndSetHandle64(longlong param_1, longlong * param_2)`; semantic: same walk with callback 0x46c370 and data = a stack block {TESObjectREFR* center; u8 copy of owner+0x6c}; the match (global 0x31ec7b8) becomes a handle at owner+0x64 (high); signature `void (void* owner, TESObjectREFR* center)`
+pub const FindRefInRadiusAndSetHandle64: u64 = 28549;
+/// `FindRefInRadiusAndSetHandle64` as a function pointer type (high).
+pub type FindRefInRadiusAndSetHandle64_fn = unsafe extern "C" fn(owner: *mut c_void, center: *mut crate::TESObjectREFR);
 /// `FindRefInRadiusMatchingCallback` at 0x2ce880 (decompiler, medium); signature (untiered): `undefined FindRefInRadiusMatchingCallback(longlong param_1, undefined8 * param_2)`
 pub const FindRefInRadiusMatchingCallback: u64 = 19221;
 /// `FindRefMatchingBaseOrModelName` at 0x1996e0 (decompiler, medium); signature (untiered): `char FindRefMatchingBaseOrModelName(longlong param_1, longlong * param_2)`
@@ -8655,6 +8675,10 @@ pub const FmtExtraType88QuestAliasPackageList: u64 = 12049;
 pub const Fmt_PtLight: u64 = 17610;
 /// `Fmt_PtLight` as a function pointer type (high).
 pub type Fmt_PtLight_fn = unsafe extern "C" fn(light: *mut crate::TESObjectLIGH, ref_: *mut crate::TESObjectREFR, root: *mut crate::NiNode, param4: bool, keepRadius: bool, noRefList: bool) -> *mut crate::NiPointLight;
+/// `Fmt_PtLight_sub1` at 0x2757e0 (semantic, high); signature (untiered): `longlong * Fmt_PtLight_sub1(longlong param_1)`; semantic: depth-first search of node's children (+0x118 array, u16 count +0x122) for the first object whose type chain reaches g_TypeNode_NiLight 0x331c660; recurses into children that are nodes (slot 3 non-null) (high); signature `NiLight* (NiNode* node)`
+pub const Fmt_PtLight_sub1: u64 = 17627;
+/// `Fmt_PtLight_sub1` as a function pointer type (high).
+pub type Fmt_PtLight_sub1_fn = unsafe extern "C" fn(node: *mut crate::NiNode) -> *mut crate::NiLight;
 /// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (untiered): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
 pub const FocusListAndSelectIndex: u64 = 454102;
 /// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (untiered): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8717,37 +8741,3 @@ pub const ForEachResolvedRefHandle: u64 = 19031;
 pub const ForEachRigidBodyInTreeRecursive: u64 = 78507;
 /// `ForceRefIntoAlias` at 0x3d4fa0 (decompiler, medium); signature (untiered): `undefined ForceRefIntoAlias(uint * param_1, uint param_2, longlong * * param_3)`
 pub const ForceRefIntoAlias: u64 = 25052;
-/// `FormIDIndexMap::GetFormID` at 0x614dc0 (semantic, high); signature (untiered): `ulonglong GetFormID(longlong param_1, uint param_2)`; semantic: index -> form id through the reverse map, 0 when absent (high); signature `u32 (FormIDIndexMap* map, u32 index)`
-pub const FormIDIndexMap__GetFormID: u64 = 35555;
-/// `FormIDIndexMap::GetFormID` as a function pointer type (high).
-pub type FormIDIndexMap__GetFormID_fn = unsafe extern "C" fn(map: *mut c_void, index: u32) -> u32;
-/// `FormatAndDispatchWideLogMessage` at 0x128c5f0 (decompiler, medium); signature (untiered): `undefined FormatAndDispatchWideLogMessage(undefined4 param_1, undefined4 param_2, longlong param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatAndDispatchWideLogMessage: u64 = 94344;
-/// `FormatAndLogMessage` at 0x9d55a0 (decompiler, medium); signature (untiered): `undefined FormatAndLogMessage(undefined8 param_1, char * param_2, longlong * param_3, undefined4 param_4, undefined4 param_5)`
-pub const FormatAndLogMessage: u64 = 53914;
-/// `FormatBoolArgument` at 0xd71020 (decompiler, medium); signature (untiered): `undefined FormatBoolArgument(longlong param_1)`
-pub const FormatBoolArgument: u64 = 84844;
-/// `FormatBoolToString` at 0xa91400 (decompiler, high); signature (high): `longlong * FormatBoolToString(longlong * param_1, char param_2)`
-pub const FormatBoolToString: u64 = 443336;
-/// `FormatBufferV` at 0x1265d0 (decompiler, medium); signature (medium): `int FormatBufferV(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const FormatBufferV: u64 = 440412;
-/// `FormatBufferV_2` at 0x126660 (decompiler, medium); signature (medium): `int FormatBufferV_2(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const FormatBufferV_2: u64 = 440413;
-/// `FormatBufferWithLocaleV` at 0x126560 (decompiler, medium); signature (medium): `int FormatBufferWithLocaleV(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5)`
-pub const FormatBufferWithLocaleV: u64 = 440411;
-/// `FormatColorAsRGBAString` at 0xe75140 (decompiler, medium); signature (untiered): `undefined FormatColorAsRGBAString(byte * param_1, undefined8 param_2)`
-pub const FormatColorAsRGBAString: u64 = 89311;
-/// `FormatColorTransformObjectAsString` at 0xda4090 (decompiler, medium); signature (untiered): `undefined FormatColorTransformObjectAsString(longlong param_1)`
-pub const FormatColorTransformObjectAsString: u64 = 85848;
-/// `FormatCurrentTimestamp` at 0x629ba0 (decompiler, high); signature (high): `undefined FormatCurrentTimestamp(undefined8 param_1)`
-pub const FormatCurrentTimestamp: u64 = 35788;
-/// `FormatDefaultOrTable369674Label` at 0x3bf4b0 (decompiler, medium); signature (untiered): `undefined FormatDefaultOrTable369674Label(undefined8 param_1, ulonglong param_2, int param_3, undefined8 param_4, char param_5)`
-pub const FormatDefaultOrTable369674Label: u64 = 24693;
-/// `FormatDigestHexIntoField1A0` at 0x13db5d0 (decompiler, medium); signature (untiered): `undefined FormatDigestHexIntoField1A0(longlong param_1)`
-pub const FormatDigestHexIntoField1A0: u64 = 101109;
-/// `FormatDoubleArgument` at 0xd71090 (decompiler, medium); signature (untiered): `undefined FormatDoubleArgument(longlong param_1)`
-pub const FormatDoubleArgument: u64 = 84845;
-/// `FormatDoubleToString` at 0xa91120 (decompiler, high); signature (high): `undefined FormatDoubleToString(longlong * param_1, undefined8 param_2)`
-pub const FormatDoubleToString: u64 = 443333;
-/// `FormatEdgeDebugStrings` at 0x1118e00 (decompiler, medium); signature (untiered): `undefined FormatEdgeDebugStrings(longlong param_1)`
-pub const FormatEdgeDebugStrings: u64 = 81247;

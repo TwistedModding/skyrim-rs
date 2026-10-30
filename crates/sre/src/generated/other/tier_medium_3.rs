@@ -1683,13 +1683,6 @@ pub unsafe fn papyrus__debug__open_user_log(vm: *mut c_void, stackId: u32, unuse
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__debug__player_move_to_and_wait(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::BSFixedString) -> u8 { unsafe { function!(55369, (*mut c_void, u32, *mut c_void, *mut crate::BSFixedString) -> u8)(vm, stackId, unused, a0) } }
-/// `Papyrus::Debug::SendAnimationEvent` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55380, rva 0xa1f620).
-/// `void SendAnimationEvent(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, TESObjectREFR * a0, BSFixedString * a1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__debug__send_animation_event(vm: *mut c_void, stackId: u32, unused: *mut c_void, a0: *mut crate::TESObjectREFR, a1: *mut crate::BSFixedString) { unsafe { function!(55380, (*mut c_void, u32, *mut c_void, *mut crate::TESObjectREFR, *mut crate::BSFixedString))(vm, stackId, unused, a0, a1) } }
 /// `Papyrus::Debug::SetGodMode` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 55382, rva 0xa1f680).
 /// `void SetGodMode(IVirtualMachine * vm, uint stackId, IVirtualMachine * unused, bool a0)`
 ///
@@ -3566,13 +3559,6 @@ pub unsafe fn papyrus__object_reference__move_to_node(vm: *mut c_void, stackId: 
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__object_reference__place_actor_at_me(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESNPC, a1: u32, a2: *mut crate::BGSEncounterZone) -> *mut crate::Actor { unsafe { function!(56204, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESNPC, u32, *mut crate::BGSEncounterZone) -> *mut crate::Actor)(vm, stackId, self_, a0, a1, a2) } }
-/// `Papyrus::ObjectReference::PlaceAtMe` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56203, rva 0xa46de0).
-/// `TESObjectREFR * PlaceAtMe(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, TESForm * a0, uint a1, bool a2, bool a3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__object_reference__place_at_me(vm: *mut c_void, stackId: u32, self_: *mut crate::TESObjectREFR, a0: *mut crate::TESForm, a1: u32, a2: u8, a3: u8) -> *mut crate::TESObjectREFR { unsafe { function!(56203, (*mut c_void, u32, *mut crate::TESObjectREFR, *mut crate::TESForm, u32, u8, u8) -> *mut crate::TESObjectREFR)(vm, stackId, self_, a0, a1, a2, a3) } }
 /// `Papyrus::ObjectReference::PlayAnimation` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 56205, rva 0xa47370).
 /// `bool PlayAnimation(IVirtualMachine * vm, uint stackId, TESObjectREFR * self, BSFixedString * a0)`
 ///
@@ -13485,3 +13471,24 @@ pub unsafe fn return_stream_buffer_to_pool(param_1: *mut c_void, param_2: u64, p
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn reverse_byte_range(param_1: *mut c_void, param_2: *mut c_void) -> u64 { unsafe { function!(453589, (*mut c_void, *mut c_void) -> u64)(param_1, param_2) } }
+/// `RewindCursorToHead` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 35222, rva 0x5ec750).
+/// `undefined8 RewindCursorToHead(longlong param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rewind_cursor_to_head(param_1: i64) -> u64 { unsafe { function!(35222, (i64) -> u64)(param_1) } }
+/// `RollRandomChance` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 26618, rva 0x4270d0).
+/// `undefined8 RollRandomChance(float param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn roll_random_chance(param_1: f32) -> u64 { unsafe { function!(26618, (f32) -> u64)(param_1) } }
+/// `RotateAndScaleMatrix2x3` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 83457, rva 0xd33270).
+/// `undefined RotateAndScaleMatrix2x3(float * param_1, float param_2, float param_3, float param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_and_scale_matrix2x3(param_1: *mut f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(83457, (*mut f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }

@@ -5067,9 +5067,6 @@ pub fn game_setting_f_pickup_weapon_unarmed_distance_max() -> *mut c_void { addr
 /// `GameSetting_fPickupWeaponUnarmedDistanceMin` at 0x20a46c8, id 373041 (setting, high)
 #[inline]
 pub fn game_setting_f_pickup_weapon_unarmed_distance_min() -> *mut c_void { address!(373041) as *mut c_void }
-/// `GameSetting_fPlayerDeathReloadTime` at 0x20a0548, id 371051 (setting, high)
-#[inline]
-pub fn game_setting_f_player_death_reload_time() -> *mut c_void { address!(371051) as *mut c_void }
 /// `GameSetting_fPlayerDetectActorValue` at 0x20aa2a8, id 375542 (setting, high)
 #[inline]
 pub fn game_setting_f_player_detect_actor_value() -> *mut c_void { address!(375542) as *mut c_void }
@@ -12036,9 +12033,6 @@ pub fn ini_setting_b_use_threaded_morpher_general() -> *mut c_void { address!(38
 /// `INISetting_bUseThreadedParticleSystem_General` at 0x20b5bd0, id 380859 (setting, high)
 #[inline]
 pub fn ini_setting_b_use_threaded_particle_system_general() -> *mut c_void { address!(380859) as *mut c_void }
-/// `INISetting_bUseThreadedTempEffects_General` at 0x20b5bb8, id 380857 (setting, high)
-#[inline]
-pub fn ini_setting_b_use_threaded_temp_effects_general() -> *mut c_void { address!(380857) as *mut c_void }
 /// `INISetting_bUseTweenedAnimations_Pathfinding` at 0x20d4a28, id 390476 (setting, high)
 #[inline]
 pub fn ini_setting_b_use_tweened_animations_pathfinding() -> *mut c_void { address!(390476) as *mut c_void }
@@ -15315,3 +15309,9 @@ pub fn ini_setting_i_volumetric_lighting_noise_texture_depth_display() -> *mut c
 /// `INISetting_iVolumetricLightingNoiseTextureHeight_Display` at 0x20d7090, id 391196 (setting, high)
 #[inline]
 pub fn ini_setting_i_volumetric_lighting_noise_texture_height_display() -> *mut c_void { address!(391196) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureWidth_Display` at 0x20d7078, id 391193 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_width_display() -> *mut c_void { address!(391193) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureDepthHigh_Display` at 0x20d7048, id 391188 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_depth_high_display() -> *mut c_void { address!(391188) as *mut c_void }

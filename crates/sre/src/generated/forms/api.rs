@@ -122,15 +122,15 @@ impl crate::TESDataHandler {
     /// `void (TESDataHandler* this)`
     #[inline]
     pub fn call_slot19_on_array1_d8(&self) { unsafe { function!(13766, (*const Self))(core::ptr::from_ref(self)) } }
-    /// `TESDataHandler::CreateReferenceAtLocation`: creates (or re-places existingRef) a reference of base at position/angles in cell/worldspace, adds it to the cell, applies SetAngles and the root's local translation, and returns its handle (invalid on failure)
+    /// `TESDataHandler::CreateReferenceAtLocation`: creates a reference of base (or re-places existingRef) at position/angles, in the interior cell or in the worldspace's cell under position; returns out holding its handle (g_InvalidRefHandle on failure)
     ///
-    /// Semantic, camera pass, medium; ledger semantic evidence, name medium; id 13723, rva 0x1bc1c0.
-    /// `RefHandle* (TESDataHandler* dh, RefHandle* out, TESBoundObject* base, const NiPoint3* position, const NiPoint3* anglesRadians, TESObjectCELL* cell, TESWorldSpace* worldspace, TESObjectREFR* existingRef, void* primitive, void* linkedRef, bool forcePersist, bool arg12)`
+    /// Semantic, camera pass, high; ledger semantic evidence, name high; id 13723, rva 0x1bc1c0.
+    /// `RefHandle* (void* unused, RefHandle* out, TESBoundObject* base, const NiPoint3* position, const NiPoint3* anglesRadians, TESObjectCELL* cell, TESWorldSpace* worldspace, TESObjectREFR* existingRef, void* primitive, u32 linkedRefHandle, bool forcePersist, bool clearFlag21)`
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `unused`, `out`, `primitive` must point to what the engine expects, and the result is an untyped pointer.
     #[inline]
-    pub unsafe fn create_reference_at_location(&self, out: *mut c_void, base: *mut crate::TESBoundObject, position: *const crate::NiPoint3, anglesRadians: *const crate::NiPoint3, cell: *mut crate::TESObjectCELL, worldspace: *mut crate::TESWorldSpace, existingRef: *mut crate::TESObjectREFR, primitive: *mut c_void, linkedRef: *mut c_void, forcePersist: bool, arg12: bool) -> *mut c_void { unsafe { function!(13723, (*const Self, *mut c_void, *mut crate::TESBoundObject, *const crate::NiPoint3, *const crate::NiPoint3, *mut crate::TESObjectCELL, *mut crate::TESWorldSpace, *mut crate::TESObjectREFR, *mut c_void, *mut c_void, bool, bool) -> *mut c_void)(core::ptr::from_ref(self), out, base, position, anglesRadians, cell, worldspace, existingRef, primitive, linkedRef, forcePersist, arg12) } }
+    pub unsafe fn create_reference_at_location(unused: *mut c_void, out: *mut c_void, base: *mut crate::TESBoundObject, position: *const crate::NiPoint3, anglesRadians: *const crate::NiPoint3, cell: *mut crate::TESObjectCELL, worldspace: *mut crate::TESWorldSpace, existingRef: *mut crate::TESObjectREFR, primitive: *mut c_void, linkedRefHandle: u32, forcePersist: bool, clearFlag21: bool) -> *mut c_void { unsafe { function!(13723, (*mut c_void, *mut c_void, *mut crate::TESBoundObject, *const crate::NiPoint3, *const crate::NiPoint3, *mut crate::TESObjectCELL, *mut crate::TESWorldSpace, *mut crate::TESObjectREFR, *mut c_void, u32, bool, bool) -> *mut c_void)(unused, out, base, position, anglesRadians, cell, worldspace, existingRef, primitive, linkedRefHandle, forcePersist, clearFlag21) } }
     /// `TESDataHandler::FreeFormID`: returns a runtime form id for reuse
     ///
     /// Semantic, forms pass, high; ledger runtime evidence, name high; id 13739, rva 0x1bd9f0.

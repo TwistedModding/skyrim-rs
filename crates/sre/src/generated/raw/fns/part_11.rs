@@ -3,6 +3,40 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fItemPointsMult__atexit` at 0x17771d0 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__atexit(void)`
+pub const GameSetting_fItemPointsMult__atexit: u64 = 168887;
+/// `GameSetting_fItemPointsMult__init` at 0x64d00 (crt_init, medium); signature (high): `void GameSetting_fItemPointsMult__init(void)`
+pub const GameSetting_fItemPointsMult__init: u64 = 3677;
+/// `GameSetting_fItemRepairCostMult__atexit` at 0x1770600 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__atexit(void)`
+pub const GameSetting_fItemRepairCostMult__atexit: u64 = 168542;
+/// `GameSetting_fItemRepairCostMult__init` at 0x5a670 (crt_init, medium); signature (high): `void GameSetting_fItemRepairCostMult__init(void)`
+pub const GameSetting_fItemRepairCostMult__init: u64 = 3332;
+/// `GameSetting_fJogInterpolationBetweenWalkAndRun__atexit` at 0x1753910 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__atexit(void)`
+pub const GameSetting_fJogInterpolationBetweenWalkAndRun__atexit: u64 = 167067;
+/// `GameSetting_fJogInterpolationBetweenWalkAndRun__init` at 0x2cdc0 (crt_init, medium); signature (high): `void GameSetting_fJogInterpolationBetweenWalkAndRun__init(void)`
+pub const GameSetting_fJogInterpolationBetweenWalkAndRun__init: u64 = 1857;
+/// `GameSetting_fJumpDoubleMult__atexit` at 0x1770650 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__atexit(void)`
+pub const GameSetting_fJumpDoubleMult__atexit: u64 = 168543;
+/// `GameSetting_fJumpDoubleMult__init` at 0x5a6f0 (crt_init, medium); signature (high): `void GameSetting_fJumpDoubleMult__init(void)`
+pub const GameSetting_fJumpDoubleMult__init: u64 = 3333;
+/// `GameSetting_fJumpFallHeightExponentNPC__atexit` at 0x17706f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__atexit(void)`
+pub const GameSetting_fJumpFallHeightExponentNPC__atexit: u64 = 168545;
+/// `GameSetting_fJumpFallHeightExponentNPC__init` at 0x5a7f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponentNPC__init(void)`
+pub const GameSetting_fJumpFallHeightExponentNPC__init: u64 = 3335;
+/// `GameSetting_fJumpFallHeightExponent__atexit` at 0x17706a0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__atexit(void)`
+pub const GameSetting_fJumpFallHeightExponent__atexit: u64 = 168544;
+/// `GameSetting_fJumpFallHeightExponent__init` at 0x5a770 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightExponent__init(void)`
+pub const GameSetting_fJumpFallHeightExponent__init: u64 = 3334;
+/// `GameSetting_fJumpFallHeightMinNPC__atexit` at 0x1770790 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__atexit(void)`
+pub const GameSetting_fJumpFallHeightMinNPC__atexit: u64 = 168547;
+/// `GameSetting_fJumpFallHeightMinNPC__init` at 0x5a8f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMinNPC__init(void)`
+pub const GameSetting_fJumpFallHeightMinNPC__init: u64 = 3337;
+/// `GameSetting_fJumpFallHeightMin__atexit` at 0x1770740 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__atexit(void)`
+pub const GameSetting_fJumpFallHeightMin__atexit: u64 = 168546;
+/// `GameSetting_fJumpFallHeightMin__init` at 0x5a870 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMin__init(void)`
+pub const GameSetting_fJumpFallHeightMin__init: u64 = 3336;
+/// `GameSetting_fJumpFallHeightMultNPC__atexit` at 0x1770830 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMultNPC__atexit(void)`
+pub const GameSetting_fJumpFallHeightMultNPC__atexit: u64 = 168549;
 /// `GameSetting_fJumpFallHeightMultNPC__init` at 0x5a9f0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMultNPC__init(void)`
 pub const GameSetting_fJumpFallHeightMultNPC__init: u64 = 3339;
 /// `GameSetting_fJumpFallHeightMult__atexit` at 0x17707e0 (crt_init, medium); signature (high): `void GameSetting_fJumpFallHeightMult__atexit(void)`
@@ -1471,8 +1505,10 @@ pub const GameSetting_fPickupWeaponUnarmedDistanceMin__atexit: u64 = 168158;
 pub const GameSetting_fPickupWeaponUnarmedDistanceMin__init: u64 = 2948;
 /// `GameSetting_fPlayerDeathReloadTime__atexit` at 0x17546d0 (crt_init, medium); signature (high): `void GameSetting_fPlayerDeathReloadTime__atexit(void)`
 pub const GameSetting_fPlayerDeathReloadTime__atexit: u64 = 167111;
-/// `GameSetting_fPlayerDeathReloadTime__init` at 0x2e3c0 (crt_init, medium); signature (high): `void GameSetting_fPlayerDeathReloadTime__init(void)`
+/// `GameSetting_fPlayerDeathReloadTime__init` at 0x2e3c0 (semantic, high); signature (high): `void GameSetting_fPlayerDeathReloadTime__init(void)`; semantic: static init: registers the Setting object 0x20a0548 with GameSettingCollection (collection slot 1) (high); signature `void ()`
 pub const GameSetting_fPlayerDeathReloadTime__init: u64 = 1901;
+/// `GameSetting_fPlayerDeathReloadTime__init` as a function pointer type (high).
+pub type GameSetting_fPlayerDeathReloadTime__init_fn = unsafe extern "C" fn();
 /// `GameSetting_fPlayerDetectActorValue__atexit` at 0x1772e00 (crt_init, medium); signature (high): `void GameSetting_fPlayerDetectActorValue__atexit(void)`
 pub const GameSetting_fPlayerDetectActorValue__atexit: u64 = 168670;
 /// `GameSetting_fPlayerDetectActorValue__init` at 0x5e670 (crt_init, medium); signature (high): `void GameSetting_fPlayerDetectActorValue__init(void)`
@@ -9407,41 +9443,3 @@ pub type GetCommandTableEntryByOpcode_fn = unsafe extern "C" fn(opcode: i32) -> 
 pub const GetComplementOfField10: u64 = 57666;
 /// `GetComponentByFormType` at 0x1d7310 (decompiler, medium); signature (untiered): `longlong GetComponentByFormType(longlong param_1)`
 pub const GetComponentByFormType: u64 = 14218;
-/// `GetComponentForFormType1AOr66` at 0x1d21c0 (decompiler, medium); signature (untiered): `longlong GetComponentForFormType1AOr66(longlong param_1)`
-pub const GetComponentForFormType1AOr66: u64 = 14121;
-/// `GetConcatenatedText` at 0xe413d0 (decompiler, medium); signature (medium): `ulonglong * GetConcatenatedText(longlong param_1, ulonglong * param_2)`
-pub const GetConcatenatedText: u64 = 88441;
-/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; semantic: returns the static queue 0x3258bc8 (thread-safe static init) (medium); signature `ConsoleCommandQueue* ()`
-pub const GetConsoleCommandQueue: u64 = 52950;
-/// `GetConstant0x4000000` at 0x63bce0 (decompiler, high); signature (high): `undefined8 GetConstant0x4000000(void)`
-pub const GetConstant0x4000000: u64 = 36095;
-/// `GetConstant92068` at 0x1274e30 (decompiler, high); signature (untiered): `undefined8 GetConstant92068(void)`
-pub const GetConstant92068: u64 = 444061;
-/// `GetContentByte88ByKeyName` at 0x58b080 (decompiler, medium); signature (untiered): `undefined1 GetContentByte88ByKeyName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetContentByte88ByKeyName: u64 = 441823;
-/// `GetContentField8CByKey` at 0x5891d0 (decompiler, medium); signature (untiered): `undefined1 GetContentField8CByKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const GetContentField8CByKey: u64 = 441801;
-/// `GetConvexHullField1B0Checked` at 0x10f4190 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B0Checked(longlong param_1)`
-pub const GetConvexHullField1B0Checked: u64 = 80917;
-/// `GetConvexHullField1B4Checked` at 0x10f4270 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B4Checked(longlong param_1)`
-pub const GetConvexHullField1B4Checked: u64 = 80918;
-/// `GetConvexHullFirstVertex` at 0x10f36c0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullFirstVertex(longlong param_1)`
-pub const GetConvexHullFirstVertex: u64 = 80883;
-/// `GetConvexHullInternalsField160Checked` at 0x10f4540 (decompiler, medium); signature (untiered): `longlong GetConvexHullInternalsField160Checked(longlong param_1)`
-pub const GetConvexHullInternalsField160Checked: u64 = 80921;
-/// `GetConvexHullInternalsField1B8` at 0x10f3230 (decompiler, high); signature (untiered): `undefined4 GetConvexHullInternalsField1B8(longlong param_1)`
-pub const GetConvexHullInternalsField1B8: u64 = 80876;
-/// `GetConvexHullInternalsFieldF0Ptr` at 0x10f34d0 (decompiler, high); signature (untiered): `longlong GetConvexHullInternalsFieldF0Ptr(longlong param_1)`
-pub const GetConvexHullInternalsFieldF0Ptr: u64 = 80879;
-/// `GetConvexHullItemField34Checked` at 0x10f36d0 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField34Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField34Checked: u64 = 80884;
-/// `GetConvexHullItemField58Checked` at 0x10f3930 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField58Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField58Checked: u64 = 80892;
-/// `GetConvexHullItemField64Checked` at 0x10f3840 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField64Checked(longlong param_1, longlong param_2)`
-pub const GetConvexHullItemField64Checked: u64 = 80890;
-/// `GetConvexHullNextVertex` at 0x10f37b0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullNextVertex(undefined8 param_1, undefined8 * param_2)`
-pub const GetConvexHullNextVertex: u64 = 80885;
-/// `GetConvexHullVertexCount` at 0x10f36b0 (decompiler, medium); signature (untiered): `undefined4 GetConvexHullVertexCount(longlong param_1)`
-pub const GetConvexHullVertexCount: u64 = 80882;
-/// `GetConvexHullVertexPositionPtr` at 0x10f3810 (decompiler, medium); signature (untiered): `longlong GetConvexHullVertexPositionPtr(undefined8 param_1, longlong param_2)`
-pub const GetConvexHullVertexPositionPtr: u64 = 80887;

@@ -5663,7 +5663,7 @@ impl crate::Main {
     /// The `BSTEventSink<BSGamerProfileEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_bs_gamer_profile_event(&self) -> &crate::BSTEventSink_BSGamerProfileEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
-    /// `Main::Update`: The main thread's per-frame step: save/load requests, file caching, scene and calendar time, the player update, process and world updates, VM and input when unpaused, LOD fade multipliers, grid update, frame phase signals, world FOV, main culler setup, UI messages, RenderFrame, audio, script queues and the task queue.
+    /// `Main::Update`: the main thread's frame update; after SignalFramePhase(1..4) and the optional WaitFramePhase(0, 1) it calls ProcessLists::UpdateTempEffects(g_ProcessLists_ptr, g_FrameDelta) when (g_GamePaused == 0 or byte 0x3230520 != 0) and Main+0x16 == 0, before the world render
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 36564, rva 0x658870.
     /// `void (Main* this)`

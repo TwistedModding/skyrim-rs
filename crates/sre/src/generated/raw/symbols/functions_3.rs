@@ -4,6 +4,8 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x3685c0, id: 22636, confidence: Confidence::High, name: "Cmd::GetPathingCurrentSpeed_Execute" },
+    Function { rva: 0x368620, id: 22637, confidence: Confidence::High, name: "Cmd::GetPathingCurrentSpeedAngle_Execute" },
     Function { rva: 0x3686a0, id: 22638, confidence: Confidence::High, name: "Cmd::GetPlayerAction_Execute" },
     Function { rva: 0x3686c0, id: 22639, confidence: Confidence::High, name: "Cmd::DualCast_Execute" },
     Function { rva: 0x368790, id: 22640, confidence: Confidence::High, name: "Cmd::IsDualCasting_Execute" },
@@ -4454,6 +4456,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x46b300, id: 28543, confidence: Confidence::Medium, name: "ComputeExteriorFleeDestination" },
     Function { rva: 0x46bb40, id: 28547, confidence: Confidence::Medium, name: "AppendUniqueDwordToField48Array" },
     Function { rva: 0x46bbf0, id: 28548, confidence: Confidence::Medium, name: "RemoveValueFromArray48" },
+    Function { rva: 0x46bc90, id: 28549, confidence: Confidence::High, name: "FindRefInRadiusAndSetHandle64" },
     Function { rva: 0x46bd20, id: 28550, confidence: Confidence::High, name: "SetHandleField64" },
     Function { rva: 0x46bd70, id: 28551, confidence: Confidence::High, name: "SetHandleField60" },
     Function { rva: 0x46c500, id: 28555, confidence: Confidence::Medium, name: "TriggerCombatFleeDialogue" },
@@ -8129,7 +8132,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x5824e0, id: 441751, confidence: Confidence::Medium, name: "MarketplaceMenu::errorCallback::vdtor" },
     Function { rva: 0x582510, id: 33628, confidence: Confidence::Medium, name: "StaticInit_5252_cb0" },
     Function { rva: 0x582580, id: 416263, confidence: Confidence::Medium, name: "ReleaseFixedStringRange_3" },
-    Function { rva: 0x5825c0, id: 523614, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessButtonEvent" },
-    Function { rva: 0x5825d0, id: 523615, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessKinectEvent" },
-    Function { rva: 0x5825f0, id: 523616, confidence: Confidence::Medium, name: "MenuEventHandler::ProcessMouseMoveEvent" },
 ];

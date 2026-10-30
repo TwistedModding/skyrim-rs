@@ -816,6 +816,58 @@ impl crate::TESQuest {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(25164, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
+impl crate::TESRace {
+    /// `TESRace::BGSAttackDataForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25450, rva 0x3eb760).
+    /// `undefined BGSAttackDataForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_attack_data_form_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25450, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x88), param_1, param_2, param_3) } }
+    /// `TESRace::BGSBipedObjectForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25448, rva 0x3eb748).
+    /// `undefined BGSBipedObjectForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_biped_object_form_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25448, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x60), param_1, param_2, param_3) } }
+    /// `TESRace::BGSKeywordForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25449, rva 0x3eb754).
+    /// `undefined BGSKeywordForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_keyword_form_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25449, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x70), param_1, param_2, param_3) } }
+    /// `TESRace::BGSSkinForm_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25447, rva 0x3eb73c).
+    /// `undefined BGSSkinForm_vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn bgs_skin_form_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25447, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x50), param_1, param_2, param_3) } }
+    /// `TESRace::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 25296, rva 0x3e3050).
+    /// `TESRace * ctor(TESRace * this, undefined8 param_1, uint * param_2, longlong * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor(&self, param_1: u64, param_2: *mut u32, param_3: *mut i64) -> *mut Self { unsafe { function!(25296, (*const Self, u64, *mut u32, *mut i64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESRace::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 25297, rva 0x3e3350).
+    /// `undefined dtor(TESRace * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25297, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESRace::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25454, rva 0x3eb840).
+    /// `TESRace * vdtor(TESRace * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(25454, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::TESWeather {
     /// `TESWeather::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 20392, rva 0x307dc0).
     /// `TESWeather * ctor(TESWeather * this, undefined8 param_1, uint * param_2, longlong * param_3)`

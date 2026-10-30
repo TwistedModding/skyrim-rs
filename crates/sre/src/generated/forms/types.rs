@@ -1060,6 +1060,8 @@ impl TESForm_formFlags {
     pub const DISABLED: Self = Self(0x800);
     /// form is kept out of the form id map (high)
     pub const NOT_IN_FORM_MAP: Self = Self(0x4000);
+    /// Flag200000 (medium)
+    pub const FLAG200000: Self = Self(0x200000);
 
     #[must_use]
     pub const fn bits(self) -> u32 {

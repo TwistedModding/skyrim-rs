@@ -3,34 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `UnequipShoutAndPlayUnselectSound` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38924, rva 0x6de3e0).
-/// `undefined UnequipShoutAndPlayUnselectSound(undefined8 param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unequip_shout_and_play_unselect_sound(param_1: u64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38924, (u64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnequipWornEntryExtraLists` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 16150, rva 0x23f770).
-/// `undefined UnequipWornEntryExtraLists(undefined8 * param_1, undefined8 * param_2, TESObjectREFR * param_3, char * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unequip_worn_entry_extra_lists(param_1: *mut u64, param_2: *mut u64, param_3: *mut crate::TESObjectREFR, param_4: *mut c_char) -> u64 { unsafe { function!(16150, (*mut u64, *mut u64, *mut crate::TESObjectREFR, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnequipWornEntryObject` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38900, rva 0x6dc980).
-/// `undefined UnequipWornEntryObject(undefined8 param_1, longlong param_2, longlong * param_3, longlong param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unequip_worn_entry_object(param_1: u64, param_2: i64, param_3: *mut i64, param_4: i64) -> u64 { unsafe { function!(38900, (u64, i64, *mut i64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `UnescapeJsonString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 448022, rva 0x1370d90).
-/// `undefined UnescapeJsonString(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn unescape_json_string(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(448022, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `UnescapeJsonStringIntoFixedString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 527475, rva 0x14068d0).
 /// `undefined UnescapeJsonStringIntoFixedString(undefined8 * param_1, byte * param_2, undefined8 param_3, undefined8 param_4)`
 ///

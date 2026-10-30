@@ -3,6 +3,92 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetBit6OfField10AndNotify` at 0x1e5f10 (decompiler, medium); signature (medium): `undefined SetBit6OfField10AndNotify(longlong * param_1, byte param_2)`
+pub const SetBit6OfField10AndNotify: u64 = 14629;
+/// `SetBit6OfField10AndNotify_2` at 0x1e6150 (decompiler, medium); signature (untiered): `undefined SetBit6OfField10AndNotify_2(longlong * param_1, byte param_2)`
+pub const SetBit6OfField10AndNotify_2: u64 = 14639;
+/// `SetBit80000OfFieldE8Object25E0` at 0xd2b1c0 (decompiler, medium); signature (untiered): `undefined SetBit80000OfFieldE8Object25E0(longlong param_1)`
+pub const SetBit80000OfFieldE8Object25E0: u64 = 83307;
+/// `SetBit800OfNthSizerItem` at 0x15e5bb0 (decompiler, medium); signature (untiered): `undefined8 SetBit800OfNthSizerItem(longlong param_1, int param_2)`
+pub const SetBit800OfNthSizerItem: u64 = 454165;
+/// `SetBitArrayPaddingBits` at 0xbec9c0 (decompiler, medium); signature (medium): `undefined SetBitArrayPaddingBits(longlong * param_1, int param_2)`
+pub const SetBitArrayPaddingBits: u64 = 64069;
+/// `SetBitForKeyInMap68` at 0x538150 (decompiler, medium); signature (medium): `undefined SetBitForKeyInMap68(longlong param_1, ulonglong param_2, byte param_3, char param_4)`
+pub const SetBitForKeyInMap68: u64 = 32445;
+/// `SetBitInByteArray` at 0x53e9b0 (decompiler, high); signature (high): `undefined SetBitInByteArray(longlong param_1, uint param_2, char param_3)`
+pub const SetBitInByteArray: u64 = 32566;
+/// `SetBitInField10Bitmap` at 0x1565e0 (decompiler, medium); signature (medium): `undefined SetBitInField10Bitmap(longlong param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+pub const SetBitInField10Bitmap: u64 = 11566;
+/// `SetBitInField70AndDecrementCount42` at 0xb402e0 (decompiler, high); signature (high): `undefined SetBitInField70AndDecrementCount42(longlong param_1, uint param_2)`
+pub const SetBitInField70AndDecrementCount42: u64 = 60648;
+/// `SetBitRange` at 0x11854f0 (decompiler, medium); signature (medium): `undefined SetBitRange(longlong param_1, ulonglong param_2, longlong param_3)`
+pub const SetBitRange: u64 = 84793;
+/// `SetBits2001000OfField154` at 0x11a0ed0 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154(longlong param_1)`
+pub const SetBits2001000OfField154: u64 = 89525;
+/// `SetBits2001000OfField154Unchecked` at 0x11a1070 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154Unchecked(longlong param_1)`
+pub const SetBits2001000OfField154Unchecked: u64 = 89533;
+/// `SetBits2001000OfField154_2` at 0x11a0ef0 (decompiler, high); signature (untiered): `undefined SetBits2001000OfField154_2(longlong param_1)`
+pub const SetBits2001000OfField154_2: u64 = 89527;
+/// `SetBlendCollisionField38Recursive` at 0x766a90 (decompiler, medium); signature (untiered): `longlong * SetBlendCollisionField38Recursive(longlong * param_1, longlong * param_2)`
+pub const SetBlendCollisionField38Recursive: u64 = 40864;
+/// `SetBlenderChildBoneWeight` at 0xb02660 (decompiler, medium); signature (untiered): `undefined SetBlenderChildBoneWeight(longlong param_1, int param_2, int param_3, float param_4)`
+pub const SetBlenderChildBoneWeight: u64 = 59533;
+/// `SetBlenderChildGenerator` at 0xb02510 (decompiler, medium); signature (untiered): `undefined SetBlenderChildGenerator(longlong param_1, int param_2, longlong param_3)`
+pub const SetBlenderChildGenerator: u64 = 59532;
+/// `SetBlurFilterMember` at 0xde2be0 (decompiler, medium); signature (untiered): `undefined1 SetBlurFilterMember(byte * param_1, longlong * param_2, ulonglong * param_3, byte * param_4, byte * param_5)`
+pub const SetBlurFilterMember: u64 = 87065;
+/// `SetBodyField4AFromBoneList` at 0x1073830 (decompiler, medium); signature (untiered): `undefined SetBodyField4AFromBoneList(longlong param_1)`
+pub const SetBodyField4AFromBoneList: u64 = 78461;
+/// `SetBodySpaceAxesAndPivots` at 0xb721f0 (decompiler, medium); signature (untiered): `undefined SetBodySpaceAxesAndPivots(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined4 param_4, undefined8 * param_5, undefined8 * param_6, undefined4 param_7)`
+pub const SetBodySpaceAxesAndPivots: u64 = 61895;
+/// `SetBodySpaceAxesAndPivotsWithFlag` at 0xb74920 (decompiler, medium); signature (untiered): `undefined SetBodySpaceAxesAndPivotsWithFlag(longlong param_1, undefined8 * param_2, undefined8 * param_3, undefined8 * param_4, undefined8 * param_5, undefined4 param_6, int param_7)`
+pub const SetBodySpaceAxesAndPivotsWithFlag: u64 = 61935;
+/// `SetBoundsRect158` at 0xe500c0 (decompiler, medium); signature (medium): `undefined SetBoundsRect158(longlong param_1, float * param_2, int param_3)`
+pub const SetBoundsRect158: u64 = 88655;
+/// `SetBufferBeginEndCapacity` at 0x128d780 (decompiler, medium); signature (medium): `undefined SetBufferBeginEndCapacity(longlong * param_1, longlong param_2, longlong param_3, longlong param_4)`
+pub const SetBufferBeginEndCapacity: u64 = 100443;
+/// `SetBufferField8AndFlag40` at 0xe00900 (decompiler, medium); signature (untiered): `undefined SetBufferField8AndFlag40(longlong param_1, uint * param_2)`
+pub const SetBufferField8AndFlag40: u64 = 87459;
+/// `SetButtonHighlighted` at 0x15f2070 (decompiler, medium); signature (untiered): `undefined SetButtonHighlighted(longlong param_1, char param_2)`
+pub const SetButtonHighlighted: u64 = 454404;
+/// `SetButtonState` at 0x15f1f60 (decompiler, medium); signature (medium): `undefined SetButtonState(longlong param_1, int param_2)`
+pub const SetButtonState: u64 = 454397;
+/// `SetByte12AOnAllEntries` at 0x54e0d0 (decompiler, medium); signature (untiered): `undefined SetByte12AOnAllEntries(longlong param_1)`
+pub const SetByte12AOnAllEntries: u64 = 32791;
+/// `SetByte136Bit3` at 0x6ea020 (decompiler, high); signature (high): `undefined SetByte136Bit3(longlong param_1, char param_2)`
+pub const SetByte136Bit3: u64 = 39165;
+/// `SetByte13A` at 0x6eb4f0 (decompiler, high); signature (high): `undefined SetByte13A(longlong param_1, undefined1 param_2)`
+pub const SetByte13A: u64 = 39198;
+/// `SetByte13B` at 0x6e97a0 (decompiler, high); signature (untiered): `undefined SetByte13B(longlong param_1, undefined1 param_2)`
+pub const SetByte13B: u64 = 39141;
+/// `SetByte190IfParticleSystem` at 0x2264c0 (decompiler, medium); signature (untiered): `undefined8 SetByte190IfParticleSystem(longlong * param_1)`
+pub const SetByte190IfParticleSystem: u64 = 15925;
+/// `SetByte190OnField140Entries` at 0xffb9b0 (decompiler, medium); signature (medium): `undefined SetByte190OnField140Entries(longlong param_1)`
+pub const SetByte190OnField140Entries: u64 = 76891;
+/// `SetByte1BForEntriesOfType` at 0x180880 (decompiler, medium); signature (untiered): `undefined SetByte1BForEntriesOfType(longlong param_1, uint param_2, undefined1 param_3)`
+pub const SetByte1BForEntriesOfType: u64 = 12388;
+/// `SetByte1C5` at 0x798640 (decompiler, medium); signature (medium): `undefined SetByte1C5(longlong * param_1, char param_2)`
+pub const SetByte1C5: u64 = 41741;
+/// `SetByte21BResettingFields40To80` at 0x423d40 (decompiler, medium); signature (untiered): `undefined SetByte21BResettingFields40To80(longlong param_1, char param_2)`
+pub const SetByte21BResettingFields40To80: u64 = 26562;
+/// `SetByte242` at 0xbd3030 (decompiler, high); signature (high): `undefined SetByte242(longlong param_1)`
+pub const SetByte242: u64 = 63606;
+/// `SetByte324OfField8` at 0x727d50 (decompiler, high); signature (untiered): `undefined SetByte324OfField8(longlong param_1, undefined1 param_2)`
+pub const SetByte324OfField8: u64 = 39997;
+/// `SetByte327OfField8` at 0x7235a0 (decompiler, high); signature (untiered): `undefined SetByte327OfField8(longlong param_1, undefined1 param_2)`
+pub const SetByte327OfField8: u64 = 39890;
+/// `SetByte328OfField8` at 0x7265a0 (decompiler, high); signature (untiered): `undefined SetByte328OfField8(longlong param_1)`
+pub const SetByte328OfField8: u64 = 39947;
+/// `SetByte32OnMatchingNodesRecursive` at 0x1517920 (decompiler, medium); signature (untiered): `ulonglong SetByte32OnMatchingNodesRecursive(longlong * param_1, undefined8 * param_2)`
+pub const SetByte32OnMatchingNodesRecursive: u64 = 106474;
+/// `SetByte34` at 0x561bf0 (decompiler, high); signature (high): `undefined SetByte34(longlong param_1, undefined1 param_2)`
+pub const SetByte34: u64 = 33241;
+/// `SetByte3DAlongChainUntilSet` at 0x112d510 (decompiler, medium); signature (medium): `undefined SetByte3DAlongChainUntilSet(undefined8 param_1, undefined8 * param_2)`
+pub const SetByte3DAlongChainUntilSet: u64 = 81479;
+/// `SetByte402985` at 0x5e9770 (decompiler, high); signature (high): `undefined SetByte402985(undefined1 param_1)`
+pub const SetByte402985: u64 = 35129;
+/// `SetByte452OfField10` at 0x7025e0 (decompiler, high); signature (untiered): `undefined SetByte452OfField10(longlong param_1, undefined1 param_2)`
+pub const SetByte452OfField10: u64 = 39605;
 /// `SetByte455OrClearByte456OfField10` at 0x6f1280 (decompiler, medium); signature (medium): `undefined SetByte455OrClearByte456OfField10(longlong param_1, undefined1 param_2)`
 pub const SetByte455OrClearByte456OfField10: u64 = 39259;
 /// `SetByte457OfField10` at 0x6f22b0 (decompiler, high); signature (high): `undefined SetByte457OfField10(longlong param_1, undefined1 param_2)`
@@ -6869,6 +6955,10 @@ pub const StoreCurrentTimeNsAtField28Locked: u64 = 450233;
 pub const StoreErrorMessageAndLongjmp: u64 = 87711;
 /// `StoreGFxValuesAndBindMovie` at 0x5b13b0 (decompiler, medium); signature (untiered): `undefined StoreGFxValuesAndBindMovie(undefined8 * param_1, undefined8 * param_2, undefined8 * param_3)`
 pub const StoreGFxValuesAndBindMovie: u64 = 418952;
+/// `StoreHandleOfRefFoundInRadius` at 0x7bacf0 (semantic, high); signature (untiered): `undefined StoreHandleOfRefFoundInRadius(longlong param_1, longlong * param_2)`; semantic: calls ForEachReferenceInRadiusOfRef(*g_TESDataHandler_ptr, center, 8000.0, &center->pos, 8000.0, 0x7bafd0, center), then stores the handle of the match the callback left in 0x3250798 (or g_InvalidRefHandle) at owner+0x10c and clears the global (high); signature `void (void* owner, TESObjectREFR* center)`
+pub const StoreHandleOfRefFoundInRadius: u64 = 42568;
+/// `StoreHandleOfRefFoundInRadius` as a function pointer type (high).
+pub type StoreHandleOfRefFoundInRadius_fn = unsafe extern "C" fn(owner: *mut c_void, center: *mut crate::TESObjectREFR);
 /// `StoreMessageAt880AndCallVfunc28` at 0x1422350 (decompiler, medium); signature (untiered): `undefined StoreMessageAt880AndCallVfunc28(longlong * param_1, undefined8 param_2, void * param_3, undefined8 param_4)`
 pub const StoreMessageAt880AndCallVfunc28: u64 = 451945;
 /// `StoreNamesAndOpenMarketplace` at 0x57ebe0 (decompiler, medium); signature (untiered): `undefined StoreNamesAndOpenMarketplace(longlong * param_1, undefined8 param_2, undefined8 param_3, ulonglong param_4)`
@@ -7681,7 +7771,7 @@ pub type TES__CreateSaveLoadManager_fn = unsafe extern "C" fn();
 pub const TES__ForEachReferenceInRadius: u64 = 13699;
 /// `TES::ForEachReferenceInRadius` as a function pointer type (high).
 pub type TES__ForEachReferenceInRadius_fn = unsafe extern "C" fn(unused: *mut c_void, origin: *const crate::NiPoint3, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void);
-/// `TES::ForEachReferenceInRadiusOfRef` at 0x1ba750 (semantic, high); signature (untiered): `undefined ForEachReferenceInRadiusOfRef(undefined8 param_1, longlong * param_2, float param_3, float * param_4, float param_5, longlong param_6, undefined8 param_7)`; semantic: same walk centred on a reference's position (+0x54): its cell when that cell is interior (cell+0x40 bit 0), else its worldspace (high); signature `void (void* unused, TESObjectREFR* center, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR*, void*), void* data)`
+/// `TES::ForEachReferenceInRadiusOfRef` at 0x1ba750 (semantic, high); signature (untiered): `undefined ForEachReferenceInRadiusOfRef(undefined8 param_1, longlong * param_2, float param_3, float * param_4, float param_5, longlong param_6, undefined8 param_7)`; semantic: walks the references of center's interior cell, or of center's worldspace, in the sphere (center->pos +0x54, radius) and the second sphere (origin2, radius2), calling callback(ref, data) until it returns true (high); signature `void (void* unused, TESObjectREFR* center, float radius, const NiPoint3* origin2, float radius2, bool (*callback)(TESObjectREFR* ref, void* data), void* data)`
 pub const TES__ForEachReferenceInRadiusOfRef: u64 = 13701;
 /// `TES::ForEachReferenceInRadiusOfRef` as a function pointer type (high).
 pub type TES__ForEachReferenceInRadiusOfRef_fn = unsafe extern "C" fn(unused: *mut c_void, center: *mut crate::TESObjectREFR, radius: f32, origin2: *const crate::NiPoint3, radius2: f32, callback: *const c_void, data: *mut c_void);
@@ -8015,101 +8105,3 @@ pub const TESCamera__SetState: u64 = 33026;
 pub type TESCamera__SetState_fn = unsafe extern "C" fn(this: *mut crate::TESCamera, state: *mut crate::TESCameraState);
 /// `TESCamera::Update` at 0x558e70 (semantic, high); signature (untiered): `undefined Update(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESCamera__Update: u64 = 33025;
-/// `TESCamera::ctor` at 0x558c80 (semantic, high); signature (high): `TESCamera * ctor(TESCamera * this)`; semantic: base constructor: vtable 0x18ebbe0, rotationInput (+0x8) and translationInput (+0x10) from zero constants (0x20ccb20, 0x20ccb24, 0x20ccc28, 0x20ccc2c, 0x20ccc30), zoomInput 0, cameraRoot null, currentState null, enabled (+0x30) = 1 (high); signature `TESCamera* (TESCamera* this)`
-pub const TESCamera__ctor: u64 = 33018;
-/// `TESCamera::ctor` as a function pointer type (high).
-pub type TESCamera__ctor_fn = unsafe extern "C" fn(this: *mut crate::TESCamera) -> *mut crate::TESCamera;
-/// `TESCamera::dtor` at 0x558cf0 (layout_inference, high); signature (low): `undefined dtor(TESCamera * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`; semantic: base destructor: restores TESCamera's vtable, releases currentState (refcount +8, slot 0 with 1 at zero) and cameraRoot (NiRefObject refcount +8, slot 1 at zero) (high); signature `void (TESCamera* this)`
-pub const TESCamera__dtor: u64 = 33019;
-/// `TESCamera::dtor` as a function pointer type (high).
-pub type TESCamera__dtor_fn = unsafe extern "C" fn(this: *mut crate::TESCamera);
-/// `TESCameraState::Begin` at 0x24a000 (semantic, high); signature (untiered): `undefined Begin(void)`
-pub const TESCameraState__Begin: u64 = 16348;
-/// `TESCameraState::Destroy` at 0x249fd0 (semantic, high); signature (untiered): `TESCameraState * Destroy(TESCameraState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCameraState__Destroy: u64 = 16347;
-/// `TESCameraState::End` at 0x24a010 (semantic, high); signature (untiered): `undefined End(void)`
-pub const TESCameraState__End: u64 = 16349;
-/// `TESCameraState::GetRotation` at 0x24a020 (semantic, high); signature (untiered): `undefined GetRotation(TESCameraState * this, undefined8 * param_1)`
-pub const TESCameraState__GetRotation: u64 = 16350;
-/// `TESCameraState::GetTranslation` at 0x24a030 (semantic, high); signature (untiered): `undefined GetTranslation(TESCameraState * this, undefined4 * param_1)`
-pub const TESCameraState__GetTranslation: u64 = 16351;
-/// `TESCameraState::LoadGame` at 0x24a060 (semantic, high); signature (untiered): `undefined LoadGame(void)`
-pub const TESCameraState__LoadGame: u64 = 16352;
-/// `TESCameraState::Revert` at 0x24a070 (semantic, high); signature (untiered): `undefined Revert(void)`
-pub const TESCameraState__Revert: u64 = 16353;
-/// `TESCameraState::SaveGame` at 0x24a080 (semantic, high); signature (untiered): `undefined SaveGame(void)`
-pub const TESCameraState__SaveGame: u64 = 16354;
-/// `TESCameraState::Update` at 0x24a090 (semantic, high); signature (untiered): `undefined Update(TESCameraState * this, longlong * param_1)`
-pub const TESCameraState__Update: u64 = 16355;
-/// `TESChildCell::dtor` at 0x2b6020 (layout_inference, high); signature (high): `undefined dtor(TESChildCell * this)`
-pub const TESChildCell__dtor: u64 = 18816;
-/// `TESChildCell::vdtor` at 0x2b6290 (layout_inference, medium); signature (low): `TESChildCell * vdtor(TESChildCell * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESChildCell__vdtor: u64 = 18822;
-/// `TESClass::LoadGame` at 0x3b2ba0 (slot_propagation, medium); signature (untiered): `undefined LoadGame(TESClass * this, longlong param_1)`
-pub const TESClass__LoadGame: u64 = 24457;
-/// `TESClass::SaveGame` at 0x3b2b90 (slot_propagation, medium); signature (untiered): `undefined SaveGame(TESClass * this, longlong param_1)`
-pub const TESClass__SaveGame: u64 = 24456;
-/// `TESClass::TESDescription_vdtor` at 0x3b2c00 (slot_propagation, medium); signature (high): `undefined TESDescription_vdtor(TESClass * this)`
-pub const TESClass__TESDescription_vdtor: u64 = 24461;
-/// `TESClass::TESFullName_vdtor` at 0x3b2bf4 (slot_propagation, medium); signature (high): `undefined TESFullName_vdtor(TESClass * this)`
-pub const TESClass__TESFullName_vdtor: u64 = 24460;
-/// `TESClass::TESTexture_vdtor` at 0x3b2c0c (slot_propagation, medium); signature (high): `undefined TESTexture_vdtor(TESClass * this)`
-pub const TESClass__TESTexture_vdtor: u64 = 24462;
-/// `TESClass::ctor` at 0x3b2740 (layout_inference, high); signature (low): `TESClass * ctor(TESClass * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-pub const TESClass__ctor: u64 = 24444;
-/// `TESClass::dtor` at 0x3b2810 (layout_inference, high); signature (low): `undefined dtor(TESClass * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESClass__dtor: u64 = 24445;
-/// `TESClass::vdtor` at 0x3b2c20 (layout_inference, medium); signature (low): `TESClass * vdtor(TESClass * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESClass__vdtor: u64 = 24463;
-/// `TESClass::vfunc_18` at 0x3b2bb0 (rtti, high); signature (untiered): `undefined vfunc_18(void)`
-pub const TESClass__vfunc_18: u64 = 24458;
-/// `TESClass::vfunc_4` at 0x3b2890 (rtti, high); signature (high): `undefined vfunc_4(TESClass * this)`
-pub const TESClass__vfunc_4: u64 = 24446;
-/// `TESClass::vfunc_6` at 0x3b28d0 (rtti, high); signature (low): `undefined8 vfunc_6(TESClass * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESClass__vfunc_6: u64 = 24447;
-/// `TESClimate::ctor` at 0x2a5900 (layout_inference, high); signature (low): `TESClimate * ctor(TESClimate * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-pub const TESClimate__ctor: u64 = 18614;
-/// `TESClimate::dtor` at 0x2a5980 (layout_inference, high); signature (high): `undefined dtor(TESClimate * this)`
-pub const TESClimate__dtor: u64 = 18615;
-/// `TESClimate::vdtor` at 0x2a5e70 (layout_inference, medium); signature (low): `TESClimate * vdtor(TESClimate * this, uint param_1)`
-pub const TESClimate__vdtor: u64 = 18620;
-/// `TESClimate::vfunc_4` at 0x2a5c10 (rtti, high); signature (high): `undefined vfunc_4(TESClimate * this)`
-pub const TESClimate__vfunc_4: u64 = 18617;
-/// `TESClimate::vfunc_6` at 0x2a59f0 (rtti, high); signature (low): `undefined8 vfunc_6(TESClimate * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
-pub const TESClimate__vfunc_6: u64 = 18616;
-/// `TESCombatStyle::ctor` at 0x269bd0 (layout_inference, high); signature (low): `TESCombatStyle * ctor(TESCombatStyle * this, undefined8 param_1, uint * param_2, longlong * param_3)`
-pub const TESCombatStyle__ctor: u64 = 523532;
-/// `TESCombatStyle::vdtor` at 0x26a890 (layout_inference, medium); signature (low): `TESCombatStyle * vdtor(TESCombatStyle * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCombatStyle__vdtor: u64 = 17307;
-/// `TESCombatStyle::vfunc_19` at 0x26a160 (rtti, high); signature (high): `undefined vfunc_19(TESCombatStyle * this)`
-pub const TESCombatStyle__vfunc_19: u64 = 17299;
-/// `TESCombatStyle::vfunc_4` at 0x269df0 (rtti, high); signature (high): `undefined vfunc_4(TESCombatStyle * this)`
-pub const TESCombatStyle__vfunc_4: u64 = 17297;
-/// `TESCombatStyle::vfunc_6` at 0x269e90 (rtti, high); signature (low): `undefined8 vfunc_6(TESCombatStyle * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESCombatStyle__vfunc_6: u64 = 17298;
-/// `TESCombatStyle::vfunc_6_sub0` at 0x26a570 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub0(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub0: u64 = 17302;
-/// `TESCombatStyle::vfunc_6_sub1` at 0x26a640 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub1(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub1: u64 = 17303;
-/// `TESCombatStyle::vfunc_6_sub2` at 0x26a780 (callgraph, medium); signature (untiered): `ulonglong vfunc_6_sub2(longlong param_1, uint * param_2)`
-pub const TESCombatStyle__vfunc_6_sub2: u64 = 17305;
-/// `TESContainer::CountObjectsInContainer` at 0x1e0b10 (runtime, high); signature (untiered): `int CountObjectsInContainer(longlong param_1, longlong param_2)`; semantic: count of an item in the base container (high); signature `int TESContainer::CountObjectsInContainer(TESContainer* this, TESForm* item)`
-pub const TESContainer__CountObjectsInContainer: u64 = 14529;
-/// `TESContainer::CountObjectsInContainer` as a function pointer type (high).
-pub type TESContainer__CountObjectsInContainer_fn = unsafe extern "C" fn(this: *mut crate::TESContainer, item: *mut crate::TESForm) -> i32;
-/// `TESContainer::ctor` at 0x1dffe0 (layout_inference, medium); signature (high): `TESContainer * ctor(TESContainer * this)`
-pub const TESContainer__ctor: u64 = 14510;
-/// `TESContainer::dtor` at 0x1e0000 (layout_inference, high); signature (high): `undefined dtor(TESContainer * this)`
-pub const TESContainer__dtor: u64 = 14511;
-/// `TESContainer::vdtor` at 0x1e1160 (layout_inference, medium); signature (low): `TESContainer * vdtor(TESContainer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESContainer__vdtor: u64 = 14545;
-/// `TESContainer::vfunc_1` at 0x1e0040 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const TESContainer__vfunc_1: u64 = 14512;
-/// `TESContainer::vfunc_2` at 0x1e0050 (rtti, medium); signature (untiered): `undefined vfunc_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const TESContainer__vfunc_2: u64 = 14513;
-/// `TESContainer::vfunc_3` at 0x1e0060 (rtti, medium); signature (low): `undefined vfunc_3(TESContainer * this, undefined8 param_1)`
-pub const TESContainer__vfunc_3: u64 = 14514;
-/// `TESCustomPackageData::ctor` at 0x49ecc0 (layout_inference, medium); signature (high): `TESCustomPackageData * ctor(TESCustomPackageData * this)`
-pub const TESCustomPackageData__ctor: u64 = 29654;
-/// `TESCustomPackageData::ctor` at 0x49ed10 (layout_inference, medium); signature (low): `TESCustomPackageData * ctor(TESCustomPackageData * this, longlong param_1, uint * param_2, undefined8 param_3)`
-pub const TESCustomPackageData__ctor_2: u64 = 29655;

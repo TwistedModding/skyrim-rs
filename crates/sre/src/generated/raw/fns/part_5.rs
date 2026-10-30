@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_1` at 0x47d370 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vfunc_1: u64 = 28980;
+/// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vfunc_2` at 0x47d3f0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedurePursue_IProcedure__vfunc_2: u64 = 28981;
+/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vdtor` at 0x482b50 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vdtor: u64 = 29039;
+/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vfunc_1` at 0x482d70 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vfunc_1: u64 = 29043;
+/// `BSTDerivedCreator<BGSProcedureSandbox,IProcedure>::vfunc_2` at 0x482df0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedureSandbox,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedureSandbox_IProcedure__vfunc_2: u64 = 29044;
 /// `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState>::vdtor` at 0x4588a0 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedureSandboxExecState_IProcedureTreeExecState__vdtor: u64 = 27989;
 /// `BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState>::vfunc_1` at 0x459dd0 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedureSandboxExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
@@ -5595,15 +5605,3 @@ pub const BuildLinkedMeshFromCompactArrays: u64 = 91302;
 pub const BuildLoadOrderAndDescriptionBoxPage: u64 = 454714;
 /// `BuildLoadOrderArchivePageControls` at 0x16192c0 (decompiler, medium); signature (untiered): `undefined BuildLoadOrderArchivePageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const BuildLoadOrderArchivePageControls: u64 = 454621;
-/// `BuildManifestFilePath` at 0x647570 (decompiler, medium); signature (untiered): `undefined BuildManifestFilePath(longlong param_1, longlong param_2, ulonglong param_3, ulonglong * param_4)`
-pub const BuildManifestFilePath: u64 = 442620;
-/// `BuildManifestPathInCreationsDownloadDirectory` at 0x647660 (decompiler, medium); signature (untiered): `undefined BuildManifestPathInCreationsDownloadDirectory(longlong param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildManifestPathInCreationsDownloadDirectory: u64 = 442621;
-/// `BuildMeshesPathWithDmOrDsSuffix` at 0x276210 (decompiler, medium); signature (medium): `undefined BuildMeshesPathWithDmOrDsSuffix(longlong param_1, longlong param_2, char * param_3, char param_4)`
-pub const BuildMeshesPathWithDmOrDsSuffix: u64 = 17651;
-/// `BuildMissingContentControls` at 0x1621fb0 (decompiler, medium); signature (untiered): `undefined BuildMissingContentControls(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildMissingContentControls: u64 = 454906;
-/// `BuildMissingContentPageControls` at 0x1612560 (decompiler, medium); signature (untiered): `undefined BuildMissingContentPageControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildMissingContentPageControls: u64 = 454540;
-/// `BuildModManifestPathFromValue` at 0x6476e0 (decompiler, medium); signature (untiered): `undefined BuildModManifestPathFromValue(undefined8 * param_1, ulonglong param_2, ulonglong * param_3, undefined8 param_4)`
-pub const BuildModManifestPathFromValue: u64 = 442622;

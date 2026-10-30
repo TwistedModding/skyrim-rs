@@ -3,41 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `SetBit40OfField20FromArg` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77900, rva 0x104ddf0).
-/// `undefined SetBit40OfField20FromArg(longlong param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit40_of_field20_from_arg(param_1: i64, param_2: i64) -> u64 { unsafe { function!(77900, (i64, i64) -> u64)(param_1, param_2) } }
-/// `SetBit6OfField10AndNotify_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 14639, rva 0x1e6150).
-/// `undefined SetBit6OfField10AndNotify_2(longlong * param_1, byte param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit6_of_field10_and_notify_2(param_1: *mut i64, param_2: u8) -> u64 { unsafe { function!(14639, (*mut i64, u8) -> u64)(param_1, param_2) } }
-/// `SetBit80000OfFieldE8Object25E0` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 83307, rva 0xd2b1c0).
-/// `undefined SetBit80000OfFieldE8Object25E0(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit80000_of_field_e8_object25_e0(param_1: i64) -> u64 { unsafe { function!(83307, (i64) -> u64)(param_1) } }
-/// `SetBit800OfNthSizerItem` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 454165, rva 0x15e5bb0).
-/// `undefined8 SetBit800OfNthSizerItem(longlong param_1, int param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bit800_of_nth_sizer_item(param_1: i64, param_2: i32) -> u64 { unsafe { function!(454165, (i64, i32) -> u64)(param_1, param_2) } }
-/// `SetBits2001000OfField154` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89525, rva 0x11a0ed0).
-/// `undefined SetBits2001000OfField154(longlong param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn set_bits2001000_of_field154(param_1: i64) -> u64 { unsafe { function!(89525, (i64) -> u64)(param_1) } }
 /// `SetBits2001000OfField154Unchecked` (decompiler signature, tier untiered; ledger decompiler evidence, name high; id 89533, rva 0x11a1070).
 /// `undefined SetBits2001000OfField154Unchecked(longlong param_1)`
 ///
@@ -13933,3 +13898,31 @@ pub unsafe fn unequip_collected_objects(param_1: u64, param_2: i64, param_3: i64
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn unequip_object_from_entry(param_1: *mut i64, param_2: i64, param_3: *mut i64, param_4: u64) -> u64 { unsafe { function!(38002, (*mut i64, i64, *mut i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnequipShoutAndPlayUnselectSound` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38924, rva 0x6de3e0).
+/// `undefined UnequipShoutAndPlayUnselectSound(undefined8 param_1, longlong param_2, ulonglong param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unequip_shout_and_play_unselect_sound(param_1: u64, param_2: i64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(38924, (u64, i64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnequipWornEntryExtraLists` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 16150, rva 0x23f770).
+/// `undefined UnequipWornEntryExtraLists(undefined8 * param_1, undefined8 * param_2, TESObjectREFR * param_3, char * param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unequip_worn_entry_extra_lists(param_1: *mut u64, param_2: *mut u64, param_3: *mut crate::TESObjectREFR, param_4: *mut c_char) -> u64 { unsafe { function!(16150, (*mut u64, *mut u64, *mut crate::TESObjectREFR, *mut c_char) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnequipWornEntryObject` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 38900, rva 0x6dc980).
+/// `undefined UnequipWornEntryObject(undefined8 param_1, longlong param_2, longlong * param_3, longlong param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unequip_worn_entry_object(param_1: u64, param_2: i64, param_3: *mut i64, param_4: i64) -> u64 { unsafe { function!(38900, (u64, i64, *mut i64, i64) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `UnescapeJsonString` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 448022, rva 0x1370d90).
+/// `undefined UnescapeJsonString(undefined8 * param_1, ulonglong * param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn unescape_json_string(param_1: *mut u64, param_2: *mut u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(448022, (*mut u64, *mut u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }

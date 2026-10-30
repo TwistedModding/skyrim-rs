@@ -3551,13 +3551,6 @@ impl crate::NiSphereTriIntersector {
 }
 
 impl crate::NiSpotLight {
-    /// `NiSpotLight::Create` (decompiler signature, tier low; ledger string evidence, name high; id 71548, rva 0xf163e0).
-    /// `NiPointLight * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn create(param_1: u64, param_2: u64, param_3: u64, param_4: u64) -> *mut crate::NiPointLight { unsafe { function!(71548, (u64, u64, u64, u64) -> *mut crate::NiPointLight)(param_1, param_2, param_3, param_4) } }
     /// `NiSpotLight::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 71552, rva 0xf16610).
     /// `NiSpotLight * vdtor(NiSpotLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///

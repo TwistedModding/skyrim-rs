@@ -3,6 +3,48 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAudioRumbleBigLerpMin_audio__init` at 0x90790 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__init(void)`
+pub const INISetting_fAudioRumbleBigLerpMin_audio__init: u64 = 5308;
+/// `INISetting_fAudioRumblePowerAttackAdj_audio__atexit` at 0x1790520 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__atexit(void)`
+pub const INISetting_fAudioRumblePowerAttackAdj_audio__atexit: u64 = 170541;
+/// `INISetting_fAudioRumblePowerAttackAdj_audio__init` at 0x90810 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__init(void)`
+pub const INISetting_fAudioRumblePowerAttackAdj_audio__init: u64 = 5309;
+/// `INISetting_fAudioRumbleSmallDeadZone_audio__atexit` at 0x1790570 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallDeadZone_audio__atexit: u64 = 170542;
+/// `INISetting_fAudioRumbleSmallDeadZone_audio__init` at 0x90890 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallDeadZone_audio__init: u64 = 5310;
+/// `INISetting_fAudioRumbleSmallExponent_audio__atexit` at 0x17905c0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallExponent_audio__atexit: u64 = 170543;
+/// `INISetting_fAudioRumbleSmallExponent_audio__init` at 0x90910 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallExponent_audio__init: u64 = 5311;
+/// `INISetting_fAudioRumbleSmallLerpMax_audio__atexit` at 0x1790610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallLerpMax_audio__atexit: u64 = 170544;
+/// `INISetting_fAudioRumbleSmallLerpMax_audio__init` at 0x90990 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallLerpMax_audio__init: u64 = 5312;
+/// `INISetting_fAudioRumbleSmallLerpMin_audio__atexit` at 0x1790660 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__atexit(void)`
+pub const INISetting_fAudioRumbleSmallLerpMin_audio__atexit: u64 = 170545;
+/// `INISetting_fAudioRumbleSmallLerpMin_audio__init` at 0x90a10 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__init(void)`
+pub const INISetting_fAudioRumbleSmallLerpMin_audio__init: u64 = 5313;
+/// `INISetting_fAutoDoorFadeSecs_General__atexit` at 0x1746f40 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__atexit(void)`
+pub const INISetting_fAutoDoorFadeSecs_General__atexit: u64 = 166080;
+/// `INISetting_fAutoDoorFadeSecs_General__init` at 0x18230 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__init(void)`
+pub const INISetting_fAutoDoorFadeSecs_General__init: u64 = 876;
+/// `INISetting_fAutoVanityIncrement_Camera__atexit` at 0x17a2e00 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__atexit(void)`
+pub const INISetting_fAutoVanityIncrement_Camera__atexit: u64 = 172143;
+/// `INISetting_fAutoVanityIncrement_Camera__init` at 0xb1320 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__init(void)`
+pub const INISetting_fAutoVanityIncrement_Camera__init: u64 = 6683;
+/// `INISetting_fAutoVanityModeDelay_Camera__atexit` at 0x17a3b90 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__atexit(void)`
+pub const INISetting_fAutoVanityModeDelay_Camera__atexit: u64 = 172190;
+/// `INISetting_fAutoVanityModeDelay_Camera__init` at 0xb2970 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__init(void)`
+pub const INISetting_fAutoVanityModeDelay_Camera__init: u64 = 6731;
+/// `INISetting_fAvoidNodeCost_Pathfinding__atexit` at 0x17b6e60 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidNodeCost_Pathfinding__atexit: u64 = 174158;
+/// `INISetting_fAvoidNodeCost_Pathfinding__init` at 0xf3670 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__init(void)`
+pub const INISetting_fAvoidNodeCost_Pathfinding__init: u64 = 10033;
+/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit` at 0x17b6eb0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit(void)`
+pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit: u64 = 174159;
+/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__init` at 0xf36f0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__init(void)`
+pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__init: u64 = 10034;
 /// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit` at 0x17b63d0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit(void)`
 pub const INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__atexit: u64 = 174105;
 /// `INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init` at 0xf1ef0 (crt_init, medium); signature (high): `void INISetting_fAvoidPreferredTriangleCrossingMultiplier_Pathfinding__init(void)`
@@ -8351,41 +8393,3 @@ pub const IntersectRayWithTriangle: u64 = 60577;
 pub const IntersectRectangleObject: u64 = 85885;
 /// `IntersectSegmentWithLineXY` at 0x11fb1a0 (decompiler, medium); signature (medium): `undefined8 IntersectSegmentWithLineXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
 pub const IntersectSegmentWithLineXY: u64 = 91522;
-/// `IntersectSegmentWithPlane` at 0x11fa760 (decompiler, medium); signature (untiered): `undefined8 IntersectSegmentWithPlane(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectSegmentWithPlane: u64 = 91515;
-/// `IntersectSegmentWithPolyline2D` at 0x1247310 (decompiler, medium); signature (medium): `int IntersectSegmentWithPolyline2D(longlong param_1, float * param_2, float * param_3, char param_4, float * param_5)`
-pub const IntersectSegmentWithPolyline2D: u64 = 93238;
-/// `IntersectSegmentWithRect` at 0xfccc30 (decompiler, medium); signature (medium): `ulonglong IntersectSegmentWithRect(int * param_1, float * param_2, float * param_3, float * param_4)`
-pub const IntersectSegmentWithRect: u64 = 75857;
-/// `IntersectSegmentWithSphere` at 0x5666c0 (decompiler, medium); signature (medium): `undefined1 IntersectSegmentWithSphere(float * param_1, longlong param_2, float * param_3, float * param_4)`
-pub const IntersectSegmentWithSphere: u64 = 33324;
-/// `IntersectSegments2D` at 0x11fb320 (decompiler, medium); signature (medium): `undefined8 IntersectSegments2D(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectSegments2D: u64 = 91524;
-/// `IntersectSegments2DWithTolerance` at 0x11fbb50 (decompiler, medium); signature (medium): `undefined8 IntersectSegments2DWithTolerance(float * param_1, float * param_2, float * param_3, float * param_4, float param_5, float * param_6, char * param_7, undefined1 * param_8)`
-pub const IntersectSegments2DWithTolerance: u64 = 91528;
-/// `IntersectSegmentsXY` at 0x11faaf0 (decompiler, medium); signature (medium): `undefined8 IntersectSegmentsXY(float * param_1, float * param_2, float * param_3, float * param_4, float * param_5)`
-pub const IntersectSegmentsXY: u64 = 91517;
-/// `IntersectSphereWithCapsule` at 0x1088ce0 (decompiler, medium); signature (medium): `undefined8 IntersectSphereWithCapsule(longlong param_1, float * param_2, float * param_3, float * param_4)`
-pub const IntersectSphereWithCapsule: u64 = 78801;
-/// `IntersectThreePlanes` at 0x1128a70 (decompiler, medium); signature (untiered): `undefined8 IntersectThreePlanes(longlong * param_1, float param_2, float param_3, float param_4, float * param_5)`
-pub const IntersectThreePlanes: u64 = 81431;
-/// `IntersectThreePlanes_2` at 0x111fec0 (decompiler, medium); signature (medium): `int IntersectThreePlanes_2(undefined4 * param_1, undefined4 * param_2, undefined4 * param_3, float * param_4)`
-pub const IntersectThreePlanes_2: u64 = 81290;
-/// `IntroSort0xA8` at 0x13c1ba0 (decompiler, medium); signature (untiered): `undefined IntroSort0xA8(ulonglong * param_1, longlong param_2, longlong param_3, ulonglong * param_4)`
-pub const IntroSort0xA8: u64 = 99334;
-/// `IntroSortByStringKey` at 0x13dfaa0 (decompiler, medium); signature (untiered): `undefined IntroSortByStringKey(ulonglong * param_1, ulonglong * param_2, longlong param_3, undefined1 param_4)`
-pub const IntroSortByStringKey: u64 = 100161;
-/// `IntroSortByStringKeyStride0x48` at 0x1474960 (decompiler, medium); signature (untiered): `undefined IntroSortByStringKeyStride0x48(undefined8 * param_1, undefined8 * param_2, longlong param_3, byte param_4)`
-pub const IntroSortByStringKeyStride0x48: u64 = 103603;
-/// `IntroSortSharedPtrsByField18` at 0x12681b0 (decompiler, medium); signature (untiered): `undefined IntroSortSharedPtrsByField18(longlong * param_1, longlong param_2, longlong param_3, undefined1 param_4)`
-pub const IntroSortSharedPtrsByField18: u64 = 505861;
-/// `IntroSortSharedPtrsByField18_2` at 0x1268480 (decompiler, medium); signature (untiered): `undefined IntroSortSharedPtrsByField18_2(longlong * param_1, longlong param_2, longlong param_3, undefined1 param_4)`
-pub const IntroSortSharedPtrsByField18_2: u64 = 524440;
-/// `IntroSortSharedPtrsByField18_3` at 0x1279630 (decompiler, medium); signature (untiered): `undefined IntroSortSharedPtrsByField18_3(longlong * param_1, longlong param_2, longlong param_3, undefined1 param_4)`
-pub const IntroSortSharedPtrsByField18_3: u64 = 505881;
-/// `IntrosortQwordsWithPredicate` at 0x12b260 (decompiler, medium); signature (untiered): `undefined IntrosortQwordsWithPredicate(undefined8 * param_1, undefined8 * param_2, longlong param_3, undefined * param_4)`
-pub const IntrosortQwordsWithPredicate: u64 = 440688;
-/// `InvalidateField28` at 0x11b7d80 (decompiler, high); signature (untiered): `undefined InvalidateField28(longlong param_1)`
-pub const InvalidateField28: u64 = 90372;
-/// `InvalidateRefHandleInGlobalList433262` at 0x4420d0 (decompiler, medium); signature (untiered): `DWORD InvalidateRefHandleInGlobalList433262(longlong param_1)`
-pub const InvalidateRefHandleInGlobalList433262: u64 = 418633;

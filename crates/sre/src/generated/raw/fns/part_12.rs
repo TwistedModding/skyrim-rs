@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetComponentForFormType1AOr66` at 0x1d21c0 (decompiler, medium); signature (untiered): `longlong GetComponentForFormType1AOr66(longlong param_1)`
+pub const GetComponentForFormType1AOr66: u64 = 14121;
+/// `GetConcatenatedText` at 0xe413d0 (decompiler, medium); signature (medium): `ulonglong * GetConcatenatedText(longlong param_1, ulonglong * param_2)`
+pub const GetConcatenatedText: u64 = 88441;
+/// `GetConsoleCommandQueue` at 0x992740 (semantic, medium); signature (untiered): `undefined * GetConsoleCommandQueue(void)`; semantic: returns the static queue 0x3258bc8 (thread-safe static init) (medium); signature `ConsoleCommandQueue* ()`
+pub const GetConsoleCommandQueue: u64 = 52950;
+/// `GetConstant0x4000000` at 0x63bce0 (decompiler, high); signature (high): `undefined8 GetConstant0x4000000(void)`
+pub const GetConstant0x4000000: u64 = 36095;
+/// `GetConstant92068` at 0x1274e30 (decompiler, high); signature (untiered): `undefined8 GetConstant92068(void)`
+pub const GetConstant92068: u64 = 444061;
+/// `GetContentByte88ByKeyName` at 0x58b080 (decompiler, medium); signature (untiered): `undefined1 GetContentByte88ByKeyName(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetContentByte88ByKeyName: u64 = 441823;
+/// `GetContentField8CByKey` at 0x5891d0 (decompiler, medium); signature (untiered): `undefined1 GetContentField8CByKey(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const GetContentField8CByKey: u64 = 441801;
+/// `GetConvexHullField1B0Checked` at 0x10f4190 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B0Checked(longlong param_1)`
+pub const GetConvexHullField1B0Checked: u64 = 80917;
+/// `GetConvexHullField1B4Checked` at 0x10f4270 (decompiler, medium); signature (medium): `ulonglong GetConvexHullField1B4Checked(longlong param_1)`
+pub const GetConvexHullField1B4Checked: u64 = 80918;
+/// `GetConvexHullFirstVertex` at 0x10f36c0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullFirstVertex(longlong param_1)`
+pub const GetConvexHullFirstVertex: u64 = 80883;
+/// `GetConvexHullInternalsField160Checked` at 0x10f4540 (decompiler, medium); signature (untiered): `longlong GetConvexHullInternalsField160Checked(longlong param_1)`
+pub const GetConvexHullInternalsField160Checked: u64 = 80921;
+/// `GetConvexHullInternalsField1B8` at 0x10f3230 (decompiler, high); signature (untiered): `undefined4 GetConvexHullInternalsField1B8(longlong param_1)`
+pub const GetConvexHullInternalsField1B8: u64 = 80876;
+/// `GetConvexHullInternalsFieldF0Ptr` at 0x10f34d0 (decompiler, high); signature (untiered): `longlong GetConvexHullInternalsFieldF0Ptr(longlong param_1)`
+pub const GetConvexHullInternalsFieldF0Ptr: u64 = 80879;
+/// `GetConvexHullItemField34Checked` at 0x10f36d0 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField34Checked(longlong param_1, longlong param_2)`
+pub const GetConvexHullItemField34Checked: u64 = 80884;
+/// `GetConvexHullItemField58Checked` at 0x10f3930 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField58Checked(longlong param_1, longlong param_2)`
+pub const GetConvexHullItemField58Checked: u64 = 80892;
+/// `GetConvexHullItemField64Checked` at 0x10f3840 (decompiler, medium); signature (untiered): `ulonglong GetConvexHullItemField64Checked(longlong param_1, longlong param_2)`
+pub const GetConvexHullItemField64Checked: u64 = 80890;
+/// `GetConvexHullNextVertex` at 0x10f37b0 (decompiler, medium); signature (untiered): `undefined8 GetConvexHullNextVertex(undefined8 param_1, undefined8 * param_2)`
+pub const GetConvexHullNextVertex: u64 = 80885;
+/// `GetConvexHullVertexCount` at 0x10f36b0 (decompiler, medium); signature (untiered): `undefined4 GetConvexHullVertexCount(longlong param_1)`
+pub const GetConvexHullVertexCount: u64 = 80882;
+/// `GetConvexHullVertexPositionPtr` at 0x10f3810 (decompiler, medium); signature (untiered): `longlong GetConvexHullVertexPositionPtr(undefined8 param_1, longlong param_2)`
+pub const GetConvexHullVertexPositionPtr: u64 = 80887;
 /// `GetConvexListClosestPoints` at 0xc8c440 (decompiler, medium); signature (untiered): `undefined GetConvexListClosestPoints(undefined8 param_1, longlong * param_2, undefined8 param_3, longlong * param_4)`
 pub const GetConvexListClosestPoints: u64 = 66995;
 /// `GetConvexListClosestPointsFlipped` at 0xc8d3d0 (decompiler, medium); signature (untiered): `undefined GetConvexListClosestPointsFlipped(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -5011,6 +5049,8 @@ pub const HavokStreambufWriter__vfunc_5: u64 = 25871;
 pub const HavokStreambufWriter__vfunc_7: u64 = 25872;
 /// `HavokStreambufWriter::vfunc_8` at 0x3fdc50 (rtti, high); signature (low): `undefined8 vfunc_8(void)`
 pub const HavokStreambufWriter__vfunc_8: u64 = 25873;
+/// `HavokThreadMemorySink::ProcessEvent` at 0x1095d60 (semantic, high); signature (untiered): `undefined8 ProcessEvent(void * this, ulonglong * param_1, undefined8 param_2, ulonglong * param_3)`; semantic: per-thread Havok memory: on event type 0 (thread start) creates a 0x258 hkThreadMemory entry (InitHkThreadMemoryEntry 0x10a0d10, 0x5000-byte stack) keyed by the thread id in the map 0x3337af8 and installs it as the thread's router (InitThreadLocalMemoryOnce 0x10a1030 -> SetTlsValueAndInitThread), unless the thread already has one; on type 1 (thread end) removes and destroys it (high); signature `BSEventNotifyControl (HavokThreadMemorySink* this, const BSThreadEvent::ThreadEvent* event, ...)`
+pub const HavokThreadMemorySink__ProcessEvent: u64 = 79103;
 /// `Hazard::BSHandleRefObject_vdtor` at 0x7ef6b4 (slot_propagation, medium); signature (high): `undefined BSHandleRefObject_vdtor(Hazard * this)`
 pub const Hazard__BSHandleRefObject_vdtor: u64 = 43988;
 /// `Hazard::BSTEventSink_BSAnimationGraphEvent_vdtor` at 0x7ef6c0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(Hazard * this)`
@@ -9055,45 +9095,3 @@ pub const INISetting_fAudioRumbleBigLerpMax_audio__atexit: u64 = 170539;
 pub const INISetting_fAudioRumbleBigLerpMax_audio__init: u64 = 5307;
 /// `INISetting_fAudioRumbleBigLerpMin_audio__atexit` at 0x17904d0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__atexit(void)`
 pub const INISetting_fAudioRumbleBigLerpMin_audio__atexit: u64 = 170540;
-/// `INISetting_fAudioRumbleBigLerpMin_audio__init` at 0x90790 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleBigLerpMin_audio__init(void)`
-pub const INISetting_fAudioRumbleBigLerpMin_audio__init: u64 = 5308;
-/// `INISetting_fAudioRumblePowerAttackAdj_audio__atexit` at 0x1790520 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__atexit(void)`
-pub const INISetting_fAudioRumblePowerAttackAdj_audio__atexit: u64 = 170541;
-/// `INISetting_fAudioRumblePowerAttackAdj_audio__init` at 0x90810 (crt_init, medium); signature (high): `void INISetting_fAudioRumblePowerAttackAdj_audio__init(void)`
-pub const INISetting_fAudioRumblePowerAttackAdj_audio__init: u64 = 5309;
-/// `INISetting_fAudioRumbleSmallDeadZone_audio__atexit` at 0x1790570 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallDeadZone_audio__atexit: u64 = 170542;
-/// `INISetting_fAudioRumbleSmallDeadZone_audio__init` at 0x90890 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallDeadZone_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallDeadZone_audio__init: u64 = 5310;
-/// `INISetting_fAudioRumbleSmallExponent_audio__atexit` at 0x17905c0 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallExponent_audio__atexit: u64 = 170543;
-/// `INISetting_fAudioRumbleSmallExponent_audio__init` at 0x90910 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallExponent_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallExponent_audio__init: u64 = 5311;
-/// `INISetting_fAudioRumbleSmallLerpMax_audio__atexit` at 0x1790610 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallLerpMax_audio__atexit: u64 = 170544;
-/// `INISetting_fAudioRumbleSmallLerpMax_audio__init` at 0x90990 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMax_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallLerpMax_audio__init: u64 = 5312;
-/// `INISetting_fAudioRumbleSmallLerpMin_audio__atexit` at 0x1790660 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__atexit(void)`
-pub const INISetting_fAudioRumbleSmallLerpMin_audio__atexit: u64 = 170545;
-/// `INISetting_fAudioRumbleSmallLerpMin_audio__init` at 0x90a10 (crt_init, medium); signature (high): `void INISetting_fAudioRumbleSmallLerpMin_audio__init(void)`
-pub const INISetting_fAudioRumbleSmallLerpMin_audio__init: u64 = 5313;
-/// `INISetting_fAutoDoorFadeSecs_General__atexit` at 0x1746f40 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__atexit(void)`
-pub const INISetting_fAutoDoorFadeSecs_General__atexit: u64 = 166080;
-/// `INISetting_fAutoDoorFadeSecs_General__init` at 0x18230 (crt_init, medium); signature (high): `void INISetting_fAutoDoorFadeSecs_General__init(void)`
-pub const INISetting_fAutoDoorFadeSecs_General__init: u64 = 876;
-/// `INISetting_fAutoVanityIncrement_Camera__atexit` at 0x17a2e00 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__atexit(void)`
-pub const INISetting_fAutoVanityIncrement_Camera__atexit: u64 = 172143;
-/// `INISetting_fAutoVanityIncrement_Camera__init` at 0xb1320 (crt_init, medium); signature (high): `void INISetting_fAutoVanityIncrement_Camera__init(void)`
-pub const INISetting_fAutoVanityIncrement_Camera__init: u64 = 6683;
-/// `INISetting_fAutoVanityModeDelay_Camera__atexit` at 0x17a3b90 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__atexit(void)`
-pub const INISetting_fAutoVanityModeDelay_Camera__atexit: u64 = 172190;
-/// `INISetting_fAutoVanityModeDelay_Camera__init` at 0xb2970 (crt_init, medium); signature (high): `void INISetting_fAutoVanityModeDelay_Camera__init(void)`
-pub const INISetting_fAutoVanityModeDelay_Camera__init: u64 = 6731;
-/// `INISetting_fAvoidNodeCost_Pathfinding__atexit` at 0x17b6e60 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__atexit(void)`
-pub const INISetting_fAvoidNodeCost_Pathfinding__atexit: u64 = 174158;
-/// `INISetting_fAvoidNodeCost_Pathfinding__init` at 0xf3670 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeCost_Pathfinding__init(void)`
-pub const INISetting_fAvoidNodeCost_Pathfinding__init: u64 = 10033;
-/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit` at 0x17b6eb0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit(void)`
-pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__atexit: u64 = 174159;
-/// `INISetting_fAvoidNodeRadiusAdd_Pathfinding__init` at 0xf36f0 (crt_init, medium); signature (high): `void INISetting_fAvoidNodeRadiusAdd_Pathfinding__init(void)`
-pub const INISetting_fAvoidNodeRadiusAdd_Pathfinding__init: u64 = 10034;

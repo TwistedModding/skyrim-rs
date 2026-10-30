@@ -4,6 +4,15 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x17704c0, id: 168538, confidence: Confidence::Medium, name: "GameSetting_fHostileFlyingActorExteriorDistance__atexit" },
+    Function { rva: 0x1770510, id: 168539, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxDistance__atexit" },
+    Function { rva: 0x1770560, id: 168540, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMaxMagnitude__atexit" },
+    Function { rva: 0x17705b0, id: 168541, confidence: Confidence::Medium, name: "GameSetting_fImpactShaderMinMagnitude__atexit" },
+    Function { rva: 0x1770600, id: 168542, confidence: Confidence::Medium, name: "GameSetting_fItemRepairCostMult__atexit" },
+    Function { rva: 0x1770650, id: 168543, confidence: Confidence::Medium, name: "GameSetting_fJumpDoubleMult__atexit" },
+    Function { rva: 0x17706a0, id: 168544, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightExponent__atexit" },
+    Function { rva: 0x17706f0, id: 168545, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightExponentNPC__atexit" },
+    Function { rva: 0x1770740, id: 168546, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightMin__atexit" },
     Function { rva: 0x1770790, id: 168547, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightMinNPC__atexit" },
     Function { rva: 0x17707e0, id: 168548, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightMult__atexit" },
     Function { rva: 0x1770830, id: 168549, confidence: Confidence::Medium, name: "GameSetting_fJumpFallHeightMultNPC__atexit" },

@@ -443,6 +443,30 @@ impl crate::TESQuest {
     pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25161, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x28)) } }
 }
 
+impl crate::TESRace {
+    /// `TESRace::TESDescription_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25445, rva 0x3eb724).
+    /// `undefined TESDescription_vdtor(TESRace * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_description_vdtor(&self) -> u64 { unsafe { function!(25445, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    /// `TESRace::TESFullName_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25444, rva 0x3eb718).
+    /// `undefined TESFullName_vdtor(TESRace * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_full_name_vdtor(&self) -> u64 { unsafe { function!(25444, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x20)) } }
+    /// `TESRace::TESSpellList_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 25446, rva 0x3eb730).
+    /// `undefined TESSpellList_vdtor(TESRace * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn tes_spell_list_vdtor(&self) -> u64 { unsafe { function!(25446, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x40)) } }
+}
+
 impl crate::bhkCharProxyController {
     /// `bhkCharProxyController::bhkCharacterController_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 79160, rva 0x109940c).
     /// `undefined bhkCharacterController_vdtor(bhkCharProxyController * this)`

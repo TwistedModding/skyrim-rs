@@ -3,6 +3,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatProjectileAimController::vfunc_2` at 0x80c970 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+pub const CombatProjectileAimController__vfunc_2: u64 = 44395;
+/// `CombatProjectileAimController::vfunc_3` at 0x80c4c0 (rtti, high); signature (low): `undefined vfunc_3(CombatProjectileAimController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vfunc_3: u64 = 44392;
+/// `CombatProjectileAimController::vfunc_4` at 0x80c670 (rtti, high); signature (low): `undefined vfunc_4(CombatProjectileAimController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vfunc_4: u64 = 44393;
+/// `CombatProjectileAimController::vfunc_5` at 0x80bdc0 (rtti, high); signature (low): `bool vfunc_5(CombatProjectileAimController * this, float * param_1, float * param_2)`
+pub const CombatProjectileAimController__vfunc_5: u64 = 44388;
+/// `CombatProjectileAimController::vfunc_6` at 0x80bd60 (rtti, high); signature (high): `undefined vfunc_6(CombatProjectileAimController * this)`
+pub const CombatProjectileAimController__vfunc_6: u64 = 44387;
+/// `CombatProjectileAimController::vfunc_7` at 0x80bad0 (rtti, high); signature (medium): `char vfunc_7(CombatProjectileAimController * this, float param_1)`
+pub const CombatProjectileAimController__vfunc_7: u64 = 44386;
+/// `CombatProjectileAimController::vfunc_8` at 0x80b950 (rtti, high); signature (low): `undefined vfunc_8(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vfunc_8: u64 = 44384;
+/// `CombatProjectileAimController::vfunc_8_sub0` at 0x80c980 (callgraph, medium); signature (untiered): `undefined vfunc_8_sub0(longlong param_1, longlong * param_2)`
+pub const CombatProjectileAimController__vfunc_8_sub0: u64 = 44396;
+/// `CombatProjectileAimController::vfunc_9` at 0x80c290 (rtti, high); signature (low): `undefined8 * vfunc_9(CombatProjectileAimController * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatProjectileAimController__vfunc_9: u64 = 44391;
 /// `CombatSearchLockData::vdtor` at 0x8cbf60 (slot_propagation, medium); signature (low): `CombatSearchLockData * vdtor(CombatSearchLockData * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatSearchLockData__vdtor: u64 = 49572;
 /// `CombatSearchLockData::vfunc_1` at 0x8cbf50 (rtti, high); signature (untiered): `undefined4 vfunc_1(void)`
@@ -7799,19 +7817,3 @@ pub const CreateProjectilePickCache: u64 = 44071;
 pub const CreateQueuedHead: u64 = 13055;
 /// `CreateREFRSyncController` at 0x305550 (decompiler, medium); signature (medium): `undefined8 CreateREFRSyncController(undefined4 * param_1, longlong param_2, undefined4 * param_3, longlong param_4, undefined8 param_5, char param_6)`
 pub const CreateREFRSyncController: u64 = 20319;
-/// `CreateREFRSyncControllers` at 0x304e80 (decompiler, medium); signature (untiered): `bool CreateREFRSyncControllers(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4, undefined1 param_5)`
-pub const CreateREFRSyncControllers: u64 = 20312;
-/// `CreateRGBA8Texture2DWithSRV` at 0x100d990 (decompiler, medium); signature (untiered): `longlong * CreateRGBA8Texture2DWithSRV(undefined8 param_1, undefined4 param_2, undefined4 param_3)`
-pub const CreateRGBA8Texture2DWithSRV: u64 = 77299;
-/// `CreateRadialBlurModifierInstance` at 0x2a5020 (decompiler, medium); signature (untiered): `ImageSpaceModifierInstanceTemp * CreateRadialBlurModifierInstance(float param_1, undefined4 param_2, float param_3, undefined4 param_4, float param_5, undefined4 * param_6, float param_7)`
-pub const CreateRadialBlurModifierInstance: u64 = 18590;
-/// `CreateRagdollTemplateDataForNode` at 0x109e250 (decompiler, medium); signature (untiered): `undefined8 CreateRagdollTemplateDataForNode(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreateRagdollTemplateDataForNode: u64 = 79246;
-/// `CreateRandomConditionalNode` at 0x880fb0 (decompiler, medium); signature (untiered): `CombatBehaviorTreeNode * CreateRandomConditionalNode(CombatBehaviorTreeNode * param_1, char * param_2, undefined8 * param_3, longlong param_4)`
-pub const CreateRandomConditionalNode: u64 = 47844;
-/// `CreateRefCountedHandlerAndAppendToLockedArray` at 0xd75b00 (decompiler, medium); signature (untiered): `undefined8 * CreateRefCountedHandlerAndAppendToLockedArray(longlong param_1, undefined4 param_2)`
-pub const CreateRefCountedHandlerAndAppendToLockedArray: u64 = 85102;
-/// `CreateRefHandle` at 0x687400 (decompiler, high); signature (high): `undefined4 * CreateRefHandle(longlong param_1, undefined4 * param_2)`
-pub const CreateRefHandle: u64 = 37476;
-/// `CreateRefHandle_2` at 0x36d8a0 (decompiler, medium); signature (medium): `uint * CreateRefHandle_2(uint * param_1, longlong param_2)`
-pub const CreateRefHandle_2: u64 = 22786;

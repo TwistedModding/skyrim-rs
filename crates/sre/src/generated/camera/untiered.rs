@@ -1974,6 +1974,128 @@ impl crate::TESQuest {
     pub unsafe fn vfunc_6_sub9(param_1: *mut u8) -> *mut u8 { unsafe { function!(25278, (*mut u8) -> *mut u8)(param_1) } }
 }
 
+impl crate::TESRace {
+    /// `TESRace::SetFormEditorID` (decompiler signature, tier untiered; ledger slot_propagation evidence, name high; id 25385, rva 0x3e8a90).
+    /// `undefined8 SetFormEditorID(TESRace * this, char * param_1, undefined8 param_2, ulonglong param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn set_form_editor_id(&self, param_1: *mut c_char, param_2: u64, param_3: u64) -> u64 { unsafe { function!(25385, (*const Self, *mut c_char, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    /// `TESRace::ctor_cb0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25417, rva 0x3eaf20).
+    /// `undefined8 * ctor_cb0(undefined8 * param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_cb0(param_1: *mut u64) -> *mut u64 { unsafe { function!(25417, (*mut u64) -> *mut u64)(param_1) } }
+    /// `TESRace::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25427, rva 0x3eb180).
+    /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub0(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25427, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::ctor_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25429, rva 0x3eb260).
+    /// `undefined ctor_sub1(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn ctor_sub1(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25429, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_19_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25387, rva 0x3e8bf0).
+    /// `undefined vfunc_19_sub0(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub0(param_1: i64, param_2: i32, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25387, (i64, i32, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_19_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25393, rva 0x3e9a90).
+    /// `undefined vfunc_19_sub1(longlong param_1, longlong param_2, TypeDescriptor * param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub1(param_1: i64, param_2: i64, param_3: *mut c_void) -> u64 { unsafe { function!(25393, (i64, i64, *mut c_void) -> u64)(param_1, param_2, param_3) } }
+    /// `TESRace::vfunc_19_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25394, rva 0x3ea280).
+    /// `undefined vfunc_19_sub2(longlong param_1, undefined8 param_2, int param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_19_sub2(param_1: i64, param_2: u64, param_3: i32) -> u64 { unsafe { function!(25394, (i64, u64, i32) -> u64)(param_1, param_2, param_3) } }
+    /// `TESRace::vfunc_5_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25392, rva 0x3e97e0).
+    /// `undefined vfunc_5_sub0(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_5_sub0(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25392, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 23726, rva 0x393780).
+    /// `undefined vfunc_6_sub0(longlong param_1, uint * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub0(param_1: i64, param_2: *mut u32) -> u64 { unsafe { function!(23726, (i64, *mut u32) -> u64)(param_1, param_2) } }
+    /// `TESRace::vfunc_6_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25320, rva 0x3e6d20).
+    /// `undefined vfunc_6_sub1(longlong param_1, int param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub1(param_1: i64, param_2: i32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(25320, (i64, i32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub2` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25321, rva 0x3e6e70).
+    /// `undefined vfunc_6_sub2(longlong param_1, int param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub2(param_1: i64, param_2: i32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(25321, (i64, i32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub3` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25322, rva 0x3e6fc0).
+    /// `undefined vfunc_6_sub3(longlong param_1, int param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub3(param_1: i64, param_2: i32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(25322, (i64, i32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub4` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25323, rva 0x3e7080).
+    /// `undefined vfunc_6_sub4(longlong param_1, int param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub4(param_1: i64, param_2: i32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(25323, (i64, i32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub5` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25382, rva 0x3e8850).
+    /// `undefined vfunc_6_sub5(longlong param_1, int param_2, longlong param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub5(param_1: i64, param_2: i32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(25382, (i64, i32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub6` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25426, rva 0x3eb120).
+    /// `undefined vfunc_6_sub6(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub6(param_1: *mut i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(25426, (*mut i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
+    /// `TESRace::vfunc_6_sub7` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25456, rva 0x3eb8f0).
+    /// `ulonglong vfunc_6_sub7(longlong * param_1, undefined8 * param_2)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub7(param_1: *mut i64, param_2: *mut u64) -> u64 { unsafe { function!(25456, (*mut i64, *mut u64) -> u64)(param_1, param_2) } }
+    /// `TESRace::vfunc_6_sub8` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 25467, rva 0x3ebc10).
+    /// `undefined vfunc_6_sub8(longlong param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vfunc_6_sub8(param_1: i64) -> u64 { unsafe { function!(25467, (i64) -> u64)(param_1) } }
+}
+
 impl crate::TESWeather {
     /// `TESWeather::ctor_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 20413, rva 0x309bd0).
     /// `undefined ctor_sub0(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`

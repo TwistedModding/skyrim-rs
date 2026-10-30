@@ -3,12 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `INISetting_iVolumetricLightingNoiseTextureWidth_Display` at 0x20d7078, id 391193 (setting, high)
-#[inline]
-pub fn ini_setting_i_volumetric_lighting_noise_texture_width_display() -> *mut c_void { address!(391193) as *mut c_void }
-/// `INISetting_iVolumetricLightingTextureDepthHigh_Display` at 0x20d7048, id 391188 (setting, high)
-#[inline]
-pub fn ini_setting_i_volumetric_lighting_texture_depth_high_display() -> *mut c_void { address!(391188) as *mut c_void }
 /// `INISetting_iVolumetricLightingTextureDepthLow_Display` at 0x20d6f88, id 391166 (setting, high)
 #[inline]
 pub fn ini_setting_i_volumetric_lighting_texture_depth_low_display() -> *mut c_void { address!(391166) as *mut c_void }

@@ -4,6 +4,13 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x7df700, id: 43726, confidence: Confidence::Medium, name: "BarrierProjectile::LoadGame" },
+    Function { rva: 0x7df740, id: 43727, confidence: Confidence::High, name: "BarrierProjectile::vfunc_16" },
+    Function { rva: 0x7df750, id: 43728, confidence: Confidence::High, name: "BarrierProjectile::vfunc_17" },
+    Function { rva: 0x7df760, id: 43729, confidence: Confidence::High, name: "BarrierProjectile::vfunc_18" },
+    Function { rva: 0x7df7d0, id: 43731, confidence: Confidence::Medium, name: "IncrementTrackedRefCountForNode" },
+    Function { rva: 0x7df980, id: 43732, confidence: Confidence::Medium, name: "DecrementTrackedRefCountForNode" },
+    Function { rva: 0x7dfa20, id: 43733, confidence: Confidence::Medium, name: "RemoveTrackedRefAtIndex" },
     Function { rva: 0x7dfb50, id: 43734, confidence: Confidence::High, name: "BarrierProjectile::vfunc_184" },
     Function { rva: 0x7dfb54, id: 43735, confidence: Confidence::Medium, name: "BarrierProjectile::BSHandleRefObject_vdtor" },
     Function { rva: 0x7dfb60, id: 43736, confidence: Confidence::Medium, name: "BarrierProjectile::BSTEventSink_BSAnimationGraphEvent_vdtor" },
@@ -94,7 +101,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x7e5a70, id: 43847, confidence: Confidence::High, name: "Explosion::vfunc_164" },
     Function { rva: 0x7e5d00, id: 43848, confidence: Confidence::Medium, name: "Explosion::vfunc_164_sub0" },
     Function { rva: 0x7e6850, id: 43851, confidence: Confidence::Medium, name: "Explosion::vfunc_163_sub0" },
-    Function { rva: 0x7e8020, id: 43853, confidence: Confidence::Medium, name: "PushActorAwayIfAboveExplosionKnockdownForce" },
+    Function { rva: 0x7e8020, id: 43853, confidence: Confidence::High, name: "KnockActorWithExplosionForce" },
     Function { rva: 0x7e8440, id: 43855, confidence: Confidence::Medium, name: "RestartRefSoundsFromBaseObject" },
     Function { rva: 0x7e8540, id: 43856, confidence: Confidence::High, name: "StopSoundHandlesD8AndE4" },
     Function { rva: 0x7e8670, id: 43860, confidence: Confidence::Medium, name: "DetachFieldF0FromShadowSceneNodeAndRelease" },
@@ -6431,11 +6438,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x916010, id: 51197, confidence: Confidence::Medium, name: "ItemCrafted::UnregisterSink" },
     Function { rva: 0x916040, id: 51198, confidence: Confidence::High, name: "CraftingMenu::ctor" },
     Function { rva: 0x916140, id: 51199, confidence: Confidence::Medium, name: "CraftingMenu::ctor" },
-    Function { rva: 0x9161c0, id: 51200, confidence: Confidence::High, name: "CraftingMenu::vfunc_4" },
-    Function { rva: 0x9167d0, id: 51201, confidence: Confidence::High, name: "CraftingMenu::vfunc_5" },
-    Function { rva: 0x916820, id: 51202, confidence: Confidence::High, name: "CraftingMenu::vfunc_6" },
-    Function { rva: 0x916890, id: 442710, confidence: Confidence::Medium, name: "QueueUIStrings168MessageWithStringPayload" },
-    Function { rva: 0x916970, id: 442711, confidence: Confidence::Medium, name: "QueueUIStrings168Message" },
-    Function { rva: 0x9169d0, id: 51203, confidence: Confidence::High, name: "SendItemCraftedEvent" },
-    Function { rva: 0x916a10, id: 51204, confidence: Confidence::Medium, name: "SetCrafting3DItemTransform" },
 ];
