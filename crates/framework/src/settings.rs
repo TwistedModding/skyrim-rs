@@ -287,6 +287,66 @@ pub enum Json {
     Object(Vec<(String, Json)>),
 }
 
+impl Json {
+    /// The member `key` of an object; `None` for other values.
+    #[must_use]
+    pub fn get(&self, key: &str) -> Option<&Self> {
+        match self {
+            Self::Object(members) => members.iter().find(|(k, _)| k == key).map(|(_, v)| v),
+            _ => None,
+        }
+    }
+
+    fn write(&self, out: &mut String, depth: usize) {
+        let indent = |out: &mut String, depth: usize| {
+            out.push('\n');
+            out.extend(core::iter::repeat_n('\t', depth));
+        };
+        match self {
+            Self::Bool(v) => out.push_str(if *v { "true" } else { "false" }),
+            Self::Number(v) if v.is_finite() => {
+                let _ = write!(out, "{v}");
+            }
+            Self::Null | Self::Number(_) => out.push_str("null"),
+            Self::Text(v) => quote(out, v),
+            Self::Array(items) if items.is_empty() => out.push_str("[]"),
+            Self::Object(members) if members.is_empty() => out.push_str("{}"),
+            Self::Array(items) => {
+                out.push('[');
+                for (i, item) in items.iter().enumerate() {
+                    out.push_str(if i == 0 { "" } else { "," });
+                    indent(out, depth + 1);
+                    item.write(out, depth + 1);
+                }
+                indent(out, depth);
+                out.push(']');
+            }
+            Self::Object(members) => {
+                out.push('{');
+                for (i, (key, value)) in members.iter().enumerate() {
+                    out.push_str(if i == 0 { "" } else { "," });
+                    indent(out, depth + 1);
+                    quote(out, key);
+                    out.push_str(": ");
+                    value.write(out, depth + 1);
+                }
+                indent(out, depth);
+                out.push('}');
+            }
+        }
+    }
+}
+
+/// The document as text, one tab per level; a number that is not finite is written as `null`.
+/// [`parse_json`] reads it back.
+impl core::fmt::Display for Json {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        let mut out = String::new();
+        self.write(&mut out, 0);
+        f.write_str(&out)
+    }
+}
+
 /// Reads a whole JSON document, such as another program's configuration a plugin imports. A
 /// byte order mark is allowed; an error names its line and column.
 pub fn parse_json(text: &str) -> Result<Json, String> {
@@ -453,6 +513,27 @@ impl Parser<'_> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn a_written_document_reads_back() {
+        let doc = Json::Object(vec![
+            ("version".to_owned(), Json::Number(1.0)),
+            ("name".to_owned(), Json::Text("a \"b\"\n".to_owned())),
+            ("pos".to_owned(), Json::Array(vec![Json::Number(0.5), Json::Number(-2.0), Json::Number(f64::NAN)])),
+            ("bones".to_owned(), Json::Object(vec![("NPC Head [Head]".to_owned(), Json::Object(vec![("scale".to_owned(), Json::Bool(true))]))])),
+            ("empty".to_owned(), Json::Array(Vec::new())),
+            ("none".to_owned(), Json::Object(Vec::new())),
+        ]);
+        let text = doc.to_string();
+        assert!(text.starts_with("{\n\t\"version\": 1,\n\t\"name\""), "{text}");
+        let back = parse_json(&text).unwrap();
+        assert_eq!(back.get("pos"), Some(&Json::Array(vec![Json::Number(0.5), Json::Number(-2.0), Json::Null])));
+        assert_eq!(back.get("name"), doc.get("name"));
+        assert_eq!(back.get("bones"), doc.get("bones"));
+        assert_eq!(back.get("empty"), Some(&Json::Array(Vec::new())));
+        assert_eq!(back.get("none"), Some(&Json::Object(Vec::new())));
+        assert_eq!(Json::Number(1.0).get("x"), None);
+    }
 
     #[test]
     fn round_trips_through_the_file_format() {
