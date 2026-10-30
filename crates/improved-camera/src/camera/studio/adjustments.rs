@@ -8,7 +8,7 @@ use std::collections::{BTreeMap, HashMap};
 
 use skyrim::actors::{PlayerCharacterExt, RefHandle};
 use skyrim::forms::TESFormExt;
-use skyrim::render::{NiAVObjectExt, Transform};
+use skyrim::render::{NiAVObjectExt, Transform, from_euler_xyz, to_euler_xyz};
 use sre::{NiAVObject, PlayerCharacter, TESObjectREFR};
 
 use crate::util::point::{self, M3, P3};
@@ -37,50 +37,23 @@ impl BoneDelta {
     }
 }
 
-fn axis_rotation(axis: usize, angle: f32) -> M3 {
-    let (sin, cos) = angle.sin_cos();
-    let (first, second) = ((axis + 1) % 3, (axis + 2) % 3);
-    let mut out = point::IDENTITY;
-    out[first][first] = cos;
-    out[first][second] = -sin;
-    out[second][first] = sin;
-    out[second][second] = cos;
-    out
-}
-
-/// `NiMatrix3::SetEulerAnglesXYZ`: X, then Y, then Z, each turning as `MakeZRotation` does.
-#[must_use]
-pub fn euler_xyz(x: f32, y: f32, z: f32) -> M3 {
-    point::mul(&point::mul(&axis_rotation(0, x), &axis_rotation(1, y)), &axis_rotation(2, z))
-}
-
-/// `ExtractEulerXYZ`: the angles [`euler_xyz`] builds `m` from (radians); at Y = ±90 degrees Z is 0.
-#[must_use]
-pub fn extract_euler_xyz(m: &M3) -> P3 {
-    let y = m[0][2].clamp(-1.0, 1.0).asin();
-    if m[0][2].abs() < 0.999_999 {
-        [(-m[1][2]).atan2(m[2][2]), y, (-m[0][1]).atan2(m[0][0])]
-    } else {
-        [m[2][1].atan2(m[1][1]), y, 0.0]
-    }
-}
-
 /// `RotationFromEulerDegrees`.
 #[must_use]
 pub fn rotation_from_degrees(degrees: P3) -> M3 {
-    euler_xyz(degrees[0].to_radians(), degrees[1].to_radians(), degrees[2].to_radians())
+    from_euler_xyz(degrees[0].to_radians(), degrees[1].to_radians(), degrees[2].to_radians())
 }
 
 /// `EulerDegreesFromRotation`, the inverse of [`rotation_from_degrees`].
 #[must_use]
 pub fn degrees_from_rotation(m: &M3) -> P3 {
-    extract_euler_xyz(m).map(f32::to_degrees)
+    to_euler_xyz(m).map(f32::to_degrees)
 }
 
-/// `NiMatrix3::MakeRotation`: `angle` radians about the unit `axis`, turning as [`euler_xyz`] does.
+/// `NiMatrix3::MakeRotation`: `angle` radians about the unit `axis`, turning as the engine's
+/// elementary turns do (counter-clockwise about the negative axis).
 #[must_use]
 pub fn axis_angle(angle: f32, axis: P3) -> M3 {
-    let (sin, cos) = angle.sin_cos();
+    let (sin, cos) = (-angle).sin_cos();
     let k = 1.0 - cos;
     let [ax, ay, az] = axis;
     [[k * ax * ax + cos, k * ax * ay - sin * az, k * ax * az + sin * ay], [k * ax * ay + sin * az, k * ay * ay + cos, k * ay * az - sin * ax], [k * ax * az - sin * ay, k * ay * az + sin * ax, k * az * az + cos]]
@@ -360,7 +333,9 @@ impl PoseEngine {
 mod tests {
     use skyrim::render::Transform;
 
-    use super::{BoneDelta, BoneState, axis_angle, compose, degrees_from_rotation, euler_xyz, extract_euler_xyz, pose_delta, rotation_from_degrees};
+    use skyrim::render::from_euler_xyz as euler_xyz;
+
+    use super::{BoneDelta, BoneState, axis_angle, compose, degrees_from_rotation, pose_delta, rotation_from_degrees};
     use crate::util::point::{self, IDENTITY};
 
     fn close(a: &[[f32; 3]; 3], b: &[[f32; 3]; 3]) -> bool {
@@ -368,18 +343,11 @@ mod tests {
     }
 
     #[test]
-    fn euler_angles_round_trip_and_z_turns_as_make_z_rotation() {
-        for angles in [[0.3, -0.7, 1.2], [-2.0, 0.4, -0.1], [0.0, 0.0, 0.0], [1.0, 1.4, -3.0]] {
-            let m = euler_xyz(angles[0], angles[1], angles[2]);
-            let back = extract_euler_xyz(&m);
-            assert!(close(&euler_xyz(back[0], back[1], back[2]), &m), "{angles:?} -> {back:?}");
-        }
-        assert!(close(&euler_xyz(0.0, 0.0, 0.5), &point::z_rotation(0.5)));
-        let gimbal = euler_xyz(0.4, core::f32::consts::FRAC_PI_2, 0.0);
-        let back = extract_euler_xyz(&gimbal);
-        assert!(close(&euler_xyz(back[0], back[1], back[2]), &gimbal) && back[2] == 0.0);
+    fn bone_degrees_go_through_the_engines_xyz() {
         let d = degrees_from_rotation(&rotation_from_degrees([10.0, 20.0, 30.0]));
         assert!(d.iter().zip([10.0, 20.0, 30.0]).all(|(a, b)| (a - b).abs() < 1e-3), "{d:?}");
+        let (s, c) = 30f32.to_radians().sin_cos();
+        assert!(close(&rotation_from_degrees([0.0, 0.0, 30.0]), &[[c, s, 0.0], [-s, c, 0.0], [0.0, 0.0, 1.0]]), "Z(a) of IC8 O");
     }
 
     #[test]

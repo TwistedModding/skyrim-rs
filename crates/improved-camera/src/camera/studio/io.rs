@@ -482,7 +482,7 @@ mod tests {
     use skyrim::render::Transform;
 
     use super::*;
-    use crate::camera::studio::adjustments::euler_xyz;
+    use skyrim::render::from_euler_xyz as euler_xyz;
 
     fn temp(name: &str) -> PathBuf {
         let dir = std::env::temp_dir().join(format!("ic-studio-{}-{name}", std::process::id()));
@@ -519,7 +519,7 @@ mod tests {
         assert_eq!(load_pose(&dir, "Stand").unwrap()["NPC Spine [Spn0]"], t);
         std::fs::write(dir.join("Euler.json"), r#"{"bones": {"B": {"pos": [1, 2, 3], "rot": [0, 0, 90], "scale": 2}}}"#).unwrap();
         let b = load_pose(&dir, "Euler").unwrap()["B"];
-        assert!((b.rotation[0][1] + 1.0).abs() < 1e-6 && (b.scale - 2.0).abs() < f32::EPSILON && b.translation.iter().zip([1.0, 2.0, 3.0]).all(|(a, e)| (a - e).abs() < f32::EPSILON));
+        assert!((b.rotation[0][1] - 1.0).abs() < 1e-6 && (b.scale - 2.0).abs() < f32::EPSILON && b.translation.iter().zip([1.0, 2.0, 3.0]).all(|(a, e)| (a - e).abs() < f32::EPSILON));
         let _ = std::fs::remove_dir_all(&dir);
     }
 

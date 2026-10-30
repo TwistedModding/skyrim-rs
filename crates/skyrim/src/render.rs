@@ -275,16 +275,64 @@ impl Transform {
     #[must_use]
     pub fn compose(&self, child: &Self) -> Self {
         let r = &self.rotation;
-        let mut rotation = [[0.0; 3]; 3];
         let mut translation = self.translation;
-        for (i, row) in rotation.iter_mut().enumerate() {
-            for (j, value) in row.iter_mut().enumerate() {
-                *value = (0..3).map(|k| r[i][k] * child.rotation[k][j]).sum();
-            }
-            translation[i] += self.scale * (0..3).map(|k| r[i][k] * child.translation[k]).sum::<f32>();
+        for (i, value) in translation.iter_mut().enumerate() {
+            *value += self.scale * (0..3).map(|k| r[i][k] * child.translation[k]).sum::<f32>();
         }
-        Self { rotation, translation, scale: self.scale * child.scale }
+        Self { rotation: mul3(r, &child.rotation), translation, scale: self.scale * child.scale }
     }
+}
+
+/// A row-major `NiMatrix3`.
+pub type Matrix3 = [[f32; 3]; 3];
+
+fn mul3(a: &Matrix3, b: &Matrix3) -> Matrix3 {
+    core::array::from_fn(|i| core::array::from_fn(|j| (0..3).map(|k| a[i][k] * b[k][j]).sum()))
+}
+
+/// The engine's elementary turn by `angle` radians about axis `axis` (0 X, 1 Y, 2 Z):
+/// counter-clockwise about the negative axis, so `X(a)` is `[[1,0,0],[0,c,s],[0,-s,c]]`, the
+/// transpose of the textbook rotation (RE `camera.md` IC8 O).
+#[must_use]
+pub fn axis_turn(axis: usize, angle: f32) -> Matrix3 {
+    let (sin, cos) = angle.sin_cos();
+    let (first, second) = ((axis + 1) % 3, (axis + 2) % 3);
+    let mut out = [[0.0; 3]; 3];
+    out[axis][axis] = 1.0;
+    out[first][first] = cos;
+    out[first][second] = sin;
+    out[second][first] = -sin;
+    out[second][second] = cos;
+    out
+}
+
+/// `NiMatrix3::FromEulerAnglesXYZ` (id 70221): `X(x) * Y(y) * Z(z)`, the order of a reference's
+/// `rotX`/`rotY`/`rotZ` and of bone Euler angles.
+#[must_use]
+pub fn from_euler_xyz(x: f32, y: f32, z: f32) -> Matrix3 {
+    mul3(&mul3(&axis_turn(0, x), &axis_turn(1, y)), &axis_turn(2, z))
+}
+
+/// The `[x, y, z]` [`from_euler_xyz`] builds `m` from: `NiMatrix3::ToEulerAnglesXYZ` (id 70215)
+/// off the poles; at a pole `z` is 0 and `x` is solved so the angles build `m` again (the RE row
+/// gives `x` the opposite sign there, which would not).
+#[must_use]
+pub fn to_euler_xyz(m: &Matrix3) -> [f32; 3] {
+    let y = -m[0][2].clamp(-1.0, 1.0).asin();
+    if m[0][2] <= -1.0 {
+        [m[1][0].atan2(m[1][1]), y, 0.0]
+    } else if m[0][2] >= 1.0 {
+        [-m[1][0].atan2(m[1][1]), y, 0.0]
+    } else {
+        [m[1][2].atan2(m[2][2]), y, m[0][1].atan2(m[0][0])]
+    }
+}
+
+/// `NiMatrix3::FromEulerAnglesZXY` (id 70233): `Z(z) * X(x) * Y(y)`, heading, pitch (positive
+/// looking down) and roll as actor movement and the cameras turn.
+#[must_use]
+pub fn from_euler_zxy(z: f32, x: f32, y: f32) -> Matrix3 {
+    mul3(&mul3(&axis_turn(2, z), &axis_turn(0, x)), &axis_turn(1, y))
 }
 
 impl From<&NiTransform> for Transform {
@@ -655,7 +703,54 @@ impl BSTextureSetExt for BSTextureSet {
 
 #[cfg(test)]
 mod tests {
-    use super::Transform;
+    use super::{Matrix3, Transform, axis_turn, from_euler_xyz, from_euler_zxy, mul3, to_euler_xyz};
+
+    fn close(a: &Matrix3, b: &Matrix3) -> bool {
+        (0..3).all(|i| (0..3).all(|j| (a[i][j] - b[i][j]).abs() < 1e-4))
+    }
+
+    #[test]
+    fn euler_xyz_is_the_engines_matrix() {
+        let (sin, cos) = 0.5_f32.sin_cos();
+        assert!(close(&from_euler_xyz(0.5, 0.0, 0.0), &[[1.0, 0.0, 0.0], [0.0, cos, sin], [0.0, -sin, cos]]));
+        assert!(close(&from_euler_xyz(0.0, 0.5, 0.0), &[[cos, 0.0, -sin], [0.0, 1.0, 0.0], [sin, 0.0, cos]]));
+        assert!(close(&from_euler_xyz(0.0, 0.0, 0.5), &[[cos, sin, 0.0], [-sin, cos, 0.0], [0.0, 0.0, 1.0]]));
+        let chair = from_euler_xyz(0.0, 0.0, 5.883);
+        let seen: Matrix3 = [[0.921, -0.389, 0.0], [0.389, 0.921, 0.0], [0.0, 0.0, 1.0]];
+        assert!((0..3).all(|i| (0..3).all(|j| (chair[i][j] - seen[i][j]).abs() < 1e-3)), "the run's chair: {chair:?}");
+        let (x, y, z) = (0.3_f32, -0.7_f32, 1.2_f32);
+        let textbook = |axis: usize, a: f32| axis_turn(axis, -a);
+        let product = mul3(&mul3(&textbook(2, z), &textbook(1, y)), &textbook(0, x));
+        let transposed: Matrix3 = core::array::from_fn(|i| core::array::from_fn(|j| product[j][i]));
+        let m = from_euler_xyz(x, y, z);
+        assert!(close(&m, &transposed), "(Rz Ry Rx)^T");
+        assert!((m[0][2] + y.sin()).abs() < 1e-6);
+    }
+
+    #[test]
+    fn euler_xyz_round_trips_through_the_getter() {
+        for angles in [[0.3, -0.7, 1.2], [-2.0, 0.4, -0.1], [0.0, 0.0, 0.0], [1.0, 1.4, -3.0], [-0.5, -1.5, 2.5]] {
+            let back = to_euler_xyz(&from_euler_xyz(angles[0], angles[1], angles[2]));
+            assert!(angles.iter().zip(back).all(|(a, b)| (a - b).abs() < 1e-3), "{angles:?} -> {back:?}");
+        }
+        for y in [core::f32::consts::FRAC_PI_2, -core::f32::consts::FRAC_PI_2] {
+            let mut pole = from_euler_xyz(0.4, y, 0.0);
+            pole[0][2] = pole[0][2].signum();
+            let back = to_euler_xyz(&pole);
+            assert!(back[2] == 0.0 && close(&from_euler_xyz(back[0], back[1], back[2]), &pole), "{y}: {back:?}");
+        }
+    }
+
+    #[test]
+    fn euler_zxy_turns_heading_pitch_then_roll() {
+        let forward = |m: &Matrix3| [m[0][1], m[1][1], m[2][1]];
+        let (pitch, heading) = (0.4_f32, 1.1_f32);
+        let f = forward(&from_euler_zxy(heading, pitch, 0.0));
+        let expected = [heading.sin() * pitch.cos(), heading.cos() * pitch.cos(), -pitch.sin()];
+        assert!((0..3).all(|i| (f[i] - expected[i]).abs() < 1e-5), "{f:?}");
+        let rolled = forward(&from_euler_zxy(0.0, 0.0, 0.3));
+        assert!((rolled[1] - 1.0).abs() < 1e-6, "roll keeps the forward axis");
+    }
 
     #[test]
     fn compose_scales_rotates_then_translates_the_child() {

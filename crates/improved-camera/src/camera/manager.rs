@@ -15,6 +15,7 @@ use std::sync::Mutex;
 use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
 
 use skyrim::prelude::*;
+use skyrim::render::from_euler_zxy;
 use sre::{Actor, CameraState, NiAVObject, PlayerCamera, PlayerCharacter, ThirdPersonState};
 
 use super::snapshot;
@@ -27,7 +28,7 @@ use crate::body::state::hands::HandsType;
 use crate::body::state::movement::MovementType;
 use crate::body::state::race::RaceType;
 use crate::settings::{self, Advanced, Profile, Stab};
-use crate::util::math_util::{damped_alpha, lerp, normalize_relative_angle, rotation_from_angles, smoother_step};
+use crate::util::math_util::{damped_alpha, lerp, normalize_relative_angle, smoother_step};
 use crate::util::point::{self, IDENTITY, M3, P3};
 use crate::util::quaternion_util::{self, Quat};
 use crate::util::skyrim_util::{self as util, FAKE_FIRST_PERSON_ZOOM};
@@ -724,7 +725,7 @@ impl Manager {
             {
                 position[0] = player.posX;
                 position[1] = player.posY;
-                rotation = rotation_from_angles(player.rotX, player.rotY, player.rotZ);
+                rotation = from_euler_zxy(player.rotZ, player.rotX, player.rotY);
             }
             if self.look.mode != LookMode::Disabled {
                 let o = Quat::from_matrix(&rotation).orientation();
