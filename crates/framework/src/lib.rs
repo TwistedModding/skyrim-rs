@@ -31,7 +31,7 @@ use std::fmt;
 pub use overlay::{Frame, GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
 use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
-use skyrim::input::{Command, CommandSlot, ErasedExecute, Param};
+use skyrim::input::{Command, CommandContext, CommandSlot, ErasedExecute, Param};
 use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 
 pub mod hooks;
@@ -194,6 +194,7 @@ pub(crate) struct Table {
     pub add_player_graph_sink: fn(&'static str, ErasedHandler),
     pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
     pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
+    pub replace_command: fn(&'static str, &CStr, ErasedExecute) -> Result<CommandSlot, Error>,
     pub plugins: fn() -> &'static [Plugin],
 }
 
@@ -473,6 +474,20 @@ impl Host {
     /// re-pointed at its `execute`; the name, help and parameters stay those of the first.
     pub fn register_command<C: Command>(&self) -> Result<CommandSlot, Error> {
         (self.table.register_command)(self.name, CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE, execute: Box::new(C::execute) })
+    }
+
+    /// Runs `execute` in place of the engine console command `name` (its long or short name),
+    /// with the arguments its own parameters unpack, on the thread that drains the console
+    /// queue. The swap is one store of the entry's execute pointer, which the runner reads at
+    /// every statement, so it is safe at any time; unloading the plugin puts the engine's own
+    /// function back, and a later generation replacing the same name is re-pointed. A command
+    /// another plugin registered or replaced is refused. `SkyrimRs commands` lists them.
+    ///
+    /// ```ignore
+    /// host.replace_command(c"SetCameraFOV", |ctx| { /* ctx.args(): the command's own parameters */ true })?;
+    /// ```
+    pub fn replace_command(&self, name: &CStr, execute: impl Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'static) -> Result<CommandSlot, Error> {
+        (self.table.replace_command)(self.name, name, Box::new(execute))
     }
 
     /// Every plugin whose descriptor the host accepted, in load order, known before the first `load` runs.

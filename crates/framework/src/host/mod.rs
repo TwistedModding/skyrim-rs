@@ -18,7 +18,7 @@ use std::sync::{Mutex, OnceLock, PoisonError};
 use skyrim::events::{ErasedHandler, ErasedSink, ErasedSource};
 use skyrim::prelude::*;
 use sre::BSEventNotifyControl;
-use skyrim::input::{CommandSlot, ErasedCommand};
+use skyrim::input::{CommandSlot, ErasedCommand, ErasedExecute, ReplacedCommand};
 use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use windows_sys::Win32::System::LibraryLoader::{DONT_RESOLVE_DLL_REFERENCES, GetModuleHandleW, GetProcAddress, LoadLibraryExW, LoadLibraryW};
@@ -85,6 +85,7 @@ static PLAYER_GRAPH: Owned<ErasedHandler> = Owned::new();
 static PLAYER_GRAPH_SINK: OnceLock<&'static ErasedSink> = OnceLock::new();
 static NATIVES: Mutex<Vec<Native>> = Mutex::new(Vec::new());
 static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
+static REPLACED: Mutex<Vec<EngineCommand>> = Mutex::new(Vec::new());
 /// The startup message kinds seen so far, replayed to a handler registered after them.
 static STARTUP: Mutex<Vec<u32>> = Mutex::new(Vec::new());
 /// The VM once the Papyrus registration pass has run.
@@ -133,6 +134,7 @@ static TABLE: Table = Table {
     add_player_graph_sink,
     register_native,
     register_command,
+    replace_command,
     plugins,
 };
 
@@ -189,6 +191,13 @@ struct ConsoleCommand {
     name: String,
     owner: &'static str,
     erased: ErasedCommand,
+}
+
+/// An engine console command a plugin's execute function replaces.
+struct EngineCommand {
+    name: String,
+    owner: &'static str,
+    replaced: ReplacedCommand,
 }
 
 /// Initializes the game layer, installs the overlay, registers the host's message listener and
@@ -545,7 +554,9 @@ fn detach(owner: &str) -> String {
             true
         }));
     }
-    let (natives, commands) = (natives.len(), commands.len());
+    let restored: Vec<ReplacedCommand> = REPLACED.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|c| c.owner == owner).map(|c| c.replaced).collect();
+    restored.iter().for_each(ReplacedCommand::restore);
+    let (natives, commands, restored) = (natives.len(), commands.len(), restored.len());
     let (sections, huds) = gui::remove(owner);
     if sections + huds > 0 {
         overlay::reset_context();
@@ -558,7 +569,7 @@ fn detach(owner: &str) -> String {
         0 => String::new(),
         n => format!(", {n} active input filters"),
     };
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {interfaces} interfaces parked, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {restored} engine commands restored, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {interfaces} interfaces parked, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {
@@ -720,6 +731,33 @@ fn register_native(owner: &'static str, request: NativeRequest<'_>) -> Result<&'
     log!("{owner}: {what} bound");
     natives.push(Native { class: request.class.to_owned(), name: request.name.to_owned(), owner, erased: native });
     Ok(native.function())
+}
+
+fn replace_command(owner: &'static str, name: &CStr, execute: ErasedExecute) -> Result<CommandSlot, Error> {
+    let text = name.to_string_lossy().into_owned();
+    if let Some(taken) = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner).iter().find(|c| c.name.eq_ignore_ascii_case(&text)) {
+        return Err(Error::Taken { what: text, owner: taken.owner.to_owned() });
+    }
+    let mut replaced = REPLACED.lock().unwrap_or_else(PoisonError::into_inner);
+    if let Some(existing) = replaced.iter().find(|c| c.name.eq_ignore_ascii_case(&text)) {
+        if existing.owner != owner {
+            return Err(Error::Taken { what: text, owner: existing.owner.to_owned() });
+        }
+        existing.replaced.set(execute);
+        log!("{owner}: command {text} replaced again");
+        return Ok(existing.replaced.slot());
+    }
+    let command = skyrim::input::replace_erased(name, execute)?;
+    log!("{owner}: command {text} (opcode {:#x}) replaced", command.slot().opcode);
+    replaced.push(EngineCommand { name: text, owner, replaced: command });
+    Ok(command.slot())
+}
+
+/// One line per command a plugin registered or replaced, for the console inspector.
+fn command_lines() -> Vec<String> {
+    let mut lines: Vec<String> = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|c| format!("command {} ({}): opcode {:#x}, in place of the unused {}", c.name, c.owner, c.erased.slot().opcode, c.erased.slot().replaced)).collect();
+    lines.extend(REPLACED.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|c| format!("command {} ({}): opcode {:#x}, the engine's execute {}", c.name, c.owner, c.replaced.slot().opcode, if c.replaced.active() { "replaced" } else { "restored" })));
+    lines
 }
 
 fn register_command(owner: &'static str, request: CommandRequest<'_>) -> Result<CommandSlot, Error> {

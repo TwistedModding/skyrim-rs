@@ -9,6 +9,7 @@
 //! keyboard's state arrays: `keyState` answers for physical keys only.
 
 use core::ffi::{CStr, c_char, c_void};
+use core::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::{Mutex, OnceLock, PoisonError, RwLock};
 
 use sre::raw::fns;
@@ -279,6 +280,8 @@ pub enum CommandError {
     NameTaken,
     /// Every unused console entry is taken.
     NoFreeEntry,
+    /// No console command answers to the name.
+    NotFound,
 }
 
 impl core::fmt::Display for CommandError {
@@ -287,6 +290,7 @@ impl core::fmt::Display for CommandError {
             Self::TooManyParams => write!(f, "more than {MAX_ARGS} parameters"),
             Self::NameTaken => write!(f, "the name is already a command"),
             Self::NoFreeEntry => write!(f, "no unused console entry is left"),
+            Self::NotFound => write!(f, "no console command answers to the name"),
         }
     }
 }
@@ -386,6 +390,67 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     Ok(ErasedCommand { index, slot })
 }
 
+/// An engine console command whose execute function [`replace_erased`] replaced.
+#[derive(Clone, Copy, Debug)]
+pub struct ReplacedCommand {
+    index: usize,
+    execute: &'static AtomicUsize,
+    original: usize,
+    slot: CommandSlot,
+}
+
+impl ReplacedCommand {
+    /// Runs `execute` in place of the command's own from now on; returns once no call is inside
+    /// the previous one.
+    pub fn set(&self, execute: ErasedExecute) {
+        *ERASED[self.index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
+        self.execute.store(EXECUTES[self.index] as usize, Ordering::Release);
+    }
+
+    /// Puts the command's own execute function back and drops the replacement once no call is
+    /// inside it.
+    pub fn restore(&self) {
+        self.execute.store(self.original, Ordering::Release);
+        *ERASED[self.index].execute.write().unwrap_or_else(PoisonError::into_inner) = None;
+    }
+
+    /// Whether the entry runs the replacement now.
+    #[must_use]
+    pub fn active(&self) -> bool {
+        self.execute.load(Ordering::Acquire) == EXECUTES[self.index] as usize
+    }
+
+    /// The command's opcode and its own name.
+    #[must_use]
+    pub fn slot(&self) -> CommandSlot {
+        self.slot
+    }
+}
+
+/// Replaces the execute function of the console command `name` (long or short name) with
+/// `execute` behind an [`ErasedCommand`]-style slot, its arguments unpacked by the command's own
+/// parameters. The runner reads the pointer at every statement and nothing caches it, so the one
+/// aligned store is safe at any time (RE `camera.md` IC9 B); a call already running finishes with
+/// the old function. Shares the [`ERASED_COMMANDS`] slots.
+pub fn replace_erased(name: &CStr, execute: ErasedExecute) -> Result<ReplacedCommand, CommandError> {
+    let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
+    let entry = table(sre::g_console_command_table(), CONSOLE_COMMANDS).iter_mut().find(|e| answers_to(e, name) && !is_stub(e)).ok_or(CommandError::NotFound)?;
+    replace_entry(entry, execute)
+}
+
+fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExecute) -> Result<ReplacedCommand, CommandError> {
+    if usize::from(entry.numParams) > MAX_ARGS {
+        return Err(CommandError::TooManyParams);
+    }
+    let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
+    let params: &'static [Param] = if entry.params.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(entry.params.cast::<Param>(), usize::from(entry.numParams)) } };
+    let _ = ERASED[index].params.set(params);
+    let execute_field = unsafe { AtomicUsize::from_ptr((&raw mut entry.execute).cast()) };
+    let replaced = ReplacedCommand { index, execute: execute_field, original: execute_field.load(Ordering::Acquire), slot: CommandSlot { opcode: entry.opcode, replaced: text(entry.name) } };
+    replaced.set(execute);
+    Ok(replaced)
+}
+
 fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param], needs_reference: bool, execute: ExecuteFn) -> Result<CommandSlot, CommandError> {
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
@@ -463,5 +528,33 @@ fn decode(kind: u32, slot: &ArgSlot) -> Arg<'_> {
         k if k == ScriptParamType::Float as u32 => Arg::Float(f32::from_le_bytes(bytes[..4].try_into().expect("4 bytes"))),
         k if k == ScriptParamType::Axis as u32 => Arg::Char(bytes[0]),
         _ => Arg::Int(i32::from_le_bytes(bytes[..4].try_into().expect("4 bytes"))),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    unsafe extern "C" fn own(_: *const sre::ParamInfo, _: *const c_void, _: *mut c_void, _: *mut c_void, _: *mut c_void, _: *mut c_void, _: *mut f64, _: *mut u32) -> bool {
+        true
+    }
+
+    #[test]
+    fn a_replaced_command_runs_the_replacement_until_restored() {
+        let entry: &'static mut sre::CommandTableEntry = Box::leak(Box::new(unsafe { core::mem::zeroed() }));
+        entry.name = c"SetCameraFOV".as_ptr().cast_mut().cast();
+        entry.opcode = 0x13e;
+        entry.execute = own as *mut c_void;
+        let replaced = replace_entry(entry, Box::new(|_| true)).unwrap();
+        let entry = unsafe { &*core::ptr::from_ref(replaced.execute).cast::<*mut c_void>() };
+        assert!(replaced.active());
+        assert_eq!(*entry as usize, EXECUTES[replaced.index] as usize);
+        assert_eq!((replaced.slot().opcode, replaced.slot().replaced), (0x13e, "SetCameraFOV"));
+        replaced.restore();
+        assert!(!replaced.active());
+        assert_eq!(*entry as usize, own as *const () as usize);
+        assert!(ERASED[replaced.index].execute.read().unwrap().is_none(), "the replacement is dropped");
+        replaced.set(Box::new(|_| false));
+        assert!(replaced.active(), "a later generation swaps it in again");
     }
 }
