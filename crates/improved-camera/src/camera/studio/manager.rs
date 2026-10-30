@@ -20,6 +20,7 @@ use super::adjustments::{PoseEngine, third_person_3d};
 use super::capture::{self, Capture, Step};
 use super::environment;
 use super::io::{self, CameraBookmark};
+use super::gear::GearEngine;
 use super::shaders::{self, Applied, ShaderEngine};
 use crate::settings;
 use crate::util::point::{self, P3};
@@ -252,6 +253,7 @@ pub struct Manager {
     /// The weather the studio forced, released when it closes.
     pub forced_weather: u32,
     pub shaders: ShaderEngine,
+    pub gear: GearEngine,
     /// The camera pins onto the target (the Camera page's switch).
     pub orbit_enabled: bool,
     orbit: Orbit,
@@ -415,6 +417,7 @@ impl Manager {
         self.clear_imod();
         self.release_weather();
         self.remove_all_effects();
+        self.gear.revert_all();
         self.restore_collision();
         for handle in core::mem::take(&mut self.foot_ik_off) {
             self.tasks.push(Task::FootIk(handle, false));
@@ -910,6 +913,7 @@ pub fn on_global_update() {
         }
         let apply_all = m.active || !settings::profile().Studio.bRevertOnExit;
         m.pose.on_game_update(apply_all);
+        m.gear.on_game_update(apply_all);
     });
 }
 
@@ -931,6 +935,7 @@ pub fn release() {
             environment::release_weather();
         }
         m.shaders.take_all().into_iter().for_each(shaders::stop);
+        m.gear.revert_all();
         if m.hid_hud || m.capture.hid_hud {
             util::show_menus(true);
         }

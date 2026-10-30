@@ -3,6 +3,7 @@
 pub mod adjustments;
 pub mod capture;
 pub mod environment;
+pub mod gear;
 pub mod idles;
 pub mod io;
 pub mod manager;

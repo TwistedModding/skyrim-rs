@@ -21,7 +21,7 @@ use crate::camera::studio::environment::{self, ImodInfo};
 use crate::camera::studio::idles::{self, PosePack};
 use crate::camera::studio::io::{self, CameraBookmark, SamPack, Scene, SceneSun};
 use crate::camera::studio::manager::{self, CameraPose, Manager};
-use crate::camera::studio::{node_names, shaders};
+use crate::camera::studio::{gear, node_names, shaders};
 use crate::util::point;
 use crate::util::skyrim_util as util;
 
@@ -36,6 +36,7 @@ enum Page {
     Bones,
     Position,
     Effects,
+    Gear,
     Camera,
     Environment,
     Scenes,
@@ -282,6 +283,7 @@ pub fn draw(ui: &mut egui::Ui) {
         Page::Bones => bones(ui),
         Page::Position => position(ui),
         Page::Effects => effects_page(ui),
+        Page::Gear => gear_page(ui),
         Page::Camera => camera(ui),
         Page::Environment => environment_page(ui),
         Page::Scenes => scenes(ui),
@@ -304,6 +306,9 @@ fn home(ui: &mut egui::Ui, target_name: &str) {
     }
     if row(ui, "Position", None, "") {
         go(Page::Position);
+    }
+    if row(ui, "Gear", None, "Hide the target's helmet, hair, shield, quiver or weapons for the shot") {
+        go(Page::Gear);
     }
     if row(ui, "Effects", None, "Hold an effect shader or art object on the target - glows, membranes, auras") {
         go(Page::Effects);
@@ -380,6 +385,34 @@ fn nearby_list(ui: &mut egui::Ui, id: &str, entries: &[manager::Nearby], target:
             }
         });
     });
+}
+
+fn gear_page(ui: &mut egui::Ui) -> bool {
+    if page_header(ui, "Gear") {
+        return true;
+    }
+    let Some(target) = manager::with(|m| m.target()).filter(IsActor::cast_actor) else {
+        ui.weak("Target an actor to hide its equipment.");
+        return false;
+    };
+    let Some(actor) = target.cast::<sre::Actor>() else { return false };
+    ui.weak("Hidden for the shot only - equipment is restored when Photo Mode closes.");
+    rows(ui, "StudioTableGear", |ui| {
+        for slot in gear::Slot::ALL {
+            let equipped = gear::is_slot_filled(actor, slot);
+            let mut hidden = manager::with(|s| s.gear.is_hidden(actor.formID, slot));
+            ui.label(slot.name());
+            let response = ui.add_enabled(equipped, egui::Checkbox::without_text(&mut hidden)).on_hover_text(if equipped { "Hide this for the shot" } else { "Nothing equipped in this slot" });
+            if response.changed() {
+                manager::with(|s| s.gear.set_hidden(actor, slot, hidden));
+            }
+            ui.end_row();
+        }
+    });
+    if ui.add_sized([ui.available_width(), 22.0], egui::Button::new("Show Everything")).clicked() {
+        manager::with(|s| s.gear.set_hidden_mask(actor, 0));
+    }
+    false
 }
 
 fn effects_page(ui: &mut egui::Ui) -> bool {
