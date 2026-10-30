@@ -450,6 +450,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "improved-camera-stub"
+version = "0.1.0"
+dependencies = [
+ "skse",
+]
+
+[[package]]
 name = "itertools"
 version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

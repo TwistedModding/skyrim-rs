@@ -53,9 +53,11 @@ macro_rules! log {
     };
 }
 
+mod alias;
 mod console;
 mod filters;
 mod gui;
+mod interface;
 mod keys;
 mod owned;
 mod reload;
@@ -87,6 +89,8 @@ static COMMANDS: Mutex<Vec<ConsoleCommand>> = Mutex::new(Vec::new());
 static STARTUP: Mutex<Vec<u32>> = Mutex::new(Vec::new());
 /// The VM once the Papyrus registration pass has run.
 static VM: AtomicUsize = AtomicUsize::new(0);
+/// The interface the loader gave the host, for what runs after `load`.
+static SKSE: OnceLock<&'static skse::Interface> = OnceLock::new();
 /// Which loader hosts the game, for the crash log.
 static HOSTED_BY: OnceLock<&'static str> = OnceLock::new();
 /// The last loader message's kind (`u32::MAX` before the first) and the tick it arrived at.
@@ -98,6 +102,9 @@ static HOOKS: Hooks = Hooks::HOST;
 static TABLE: Table = Table {
     on_message,
     on_plugin_message,
+    serve_alias,
+    alias_send: alias::send,
+    export_interface: interface::export,
     on_frame,
     on_papyrus,
     action: keys::declare,
@@ -135,6 +142,8 @@ struct LegacyPlugin {
     file: String,
     /// Whether the loader kept it mapped, which it does only for the plugins it accepted.
     loaded: bool,
+    /// Built by `skse::alias_stub!`: a name a framework plugin serves.
+    stub: bool,
     /// What its `SKSEPlugin_Version` holds; `None` when it exports none.
     data: Option<VersionData>,
 }
@@ -154,7 +163,9 @@ impl core::fmt::Display for LegacyPlugin {
             Some(d) => write!(f, "{}: {} version {:#x} by {}, flags {:#x}, method {:#x}", self.file, d.name, d.version, d.author, d.flags, d.method)?,
             None => write!(f, "{}: no version data", self.file)?,
         }
-        if !self.loaded {
+        if self.stub {
+            f.write_str(", a stub")?;
+        } else if !self.loaded {
             f.write_str(", not loaded")?;
         }
         Ok(())
@@ -185,7 +196,7 @@ struct ConsoleCommand {
 /// in the order their descriptors resolve to, and watches their files from then on.
 pub fn load(skse: &skse::Interface) -> bool {
     // The loader hands every plugin the same object in its read-only data, alive for the whole game.
-    let skse: &'static skse::Interface = unsafe { &*core::ptr::from_ref(skse) };
+    let skse: &'static skse::Interface = SKSE.get_or_init(|| unsafe { &*core::ptr::from_ref(skse) });
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
         let _ = LOG_DIR.set(dir);
     }
@@ -428,11 +439,12 @@ fn snapshot_skse_plugins() {
             VersionData { name: text(&data.name), version: data.plugin_version, author: text(&data.author), flags: data.flags, method: data.method }
         });
         let is_plugin = data.is_some() || export(c"SKSEPlugin_Load").is_some();
+        let stub = export(skse::ALIAS_STUB_SYMBOL).is_some();
         if mapped.is_null() {
             unsafe { FreeLibrary(module) };
         }
         if is_plugin {
-            found.push(LegacyPlugin { file, loaded: !mapped.is_null(), data });
+            found.push(LegacyPlugin { file, loaded: !mapped.is_null(), stub, data });
         }
     }
     *SKSE_PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = found;
@@ -461,7 +473,7 @@ fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::
             }
             match SKSE_PLUGINS.try_lock() {
                 Ok(plugins) if plugins.is_empty() => {
-                    let _ = writeln!(w, "SKSE plugins: not read yet (before PLUGINS_LOADED_2)");
+                    let _ = writeln!(w, "SKSE plugins: not read yet (before PLUGINS_LOADED)");
                 }
                 Ok(plugins) => {
                     let _ = writeln!(w, "SKSE plugins:");
@@ -538,14 +550,15 @@ fn detach(owner: &str) -> String {
     if sections + huds > 0 {
         overlay::reset_context();
     }
-    let messages = MESSAGES.remove_owner(owner) + PLUGIN_MESSAGES.remove_owner(owner);
+    let messages = MESSAGES.remove_owner(owner) + PLUGIN_MESSAGES.remove_owner(owner) + alias::remove_owner(owner);
+    let interfaces = interface::remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);
     let frames = FRAMES.remove_owner(owner);
     let filters = match filters::remove_owner(owner) {
         0 => String::new(),
         n => format!(", {n} active input filters"),
     };
-    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
+    format!("{hooks} hook subscriptions, {sinks} sinks, {natives} natives stubbed, {commands} commands stubbed, {sections} tab sections, {huds} HUD painters, {messages} message handlers, {interfaces} interfaces parked, {papyrus} Papyrus callbacks, {frames} frame callbacks{filters}")
 }
 
 fn vm() -> Option<&'static VirtualMachine> {
@@ -567,10 +580,11 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
     LAST_MESSAGE.store(msg.kind, Ordering::Relaxed);
     LAST_MESSAGE_AT.store(unsafe { GetTickCount64() }, Ordering::Relaxed);
     match msg.kind {
-        skse::MessagingInterface::PLUGINS_LOADED_2 => {
-            Hooks::revalidate("PLUGINS_LOADED_2");
+        skse::MessagingInterface::PLUGINS_LOADED => {
             snapshot_skse_plugins();
+            alias::resolve_waiting();
         }
+        skse::MessagingInterface::PLUGINS_LOADED_2 => Hooks::revalidate("PLUGINS_LOADED_2"),
         skse::MessagingInterface::DATA_LOADED => Hooks::revalidate("DATA_LOADED"),
         _ => {}
     }
@@ -623,12 +637,20 @@ fn sent_by(msg: &skse::Message, name: &str) -> bool {
 
 unsafe extern "C" fn on_plugin_dispatch(msg: *mut skse::Message) {
     let Some(msg) = (unsafe { msg.as_ref() }) else { return };
+    if alias::take_probe(msg) {
+        return;
+    }
     PLUGIN_MESSAGES.each(|(sender, f)| {
         if sent_by(msg, sender) {
             f(msg);
         }
         true
     });
+}
+
+fn serve_alias(owner: &'static str, name: &str, f: MessageFn) -> Result<usize, Error> {
+    let started = STARTUP.lock().unwrap_or_else(PoisonError::into_inner).contains(&skse::MessagingInterface::PLUGINS_LOADED);
+    alias::serve(owner, name, f, started)
 }
 
 fn on_frame(owner: &'static str, f: FrameFn) {

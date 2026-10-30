@@ -25,7 +25,7 @@
 //! `skyrim::init` with [`Host::skse`] before using the game layer and never installs the overlay
 //! itself.
 
-use core::ffi::{CStr, c_char};
+use core::ffi::{CStr, c_char, c_void};
 use std::fmt;
 
 pub use overlay::{Frame, GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
@@ -105,6 +105,8 @@ pub enum Error {
     NoSource,
     /// Another plugin registered the native or command of that name.
     Taken { what: String, owner: String },
+    /// The host holds no more than `limit` of these.
+    Full { what: String, limit: usize },
     Papyrus(skyrim::papyrus::Error),
     Command(skyrim::input::CommandError),
 }
@@ -114,6 +116,7 @@ impl fmt::Display for Error {
         match self {
             Self::NoSource => f.write_str("the event source does not exist yet"),
             Self::Taken { what, owner } => write!(f, "{what} is registered by {owner}"),
+            Self::Full { what, limit } => write!(f, "{what}: the host holds at most {limit}"),
             Self::Papyrus(e) => e.fmt(f),
             Self::Command(e) => e.fmt(f),
         }
@@ -160,6 +163,9 @@ pub(crate) type DeclareFilterFn = fn(&str, &str, &[&str], &[(InputDevice, u32)])
 pub(crate) struct Table {
     pub on_message: fn(&'static str, MessageFn),
     pub on_plugin_message: fn(&'static str, &str, MessageFn),
+    pub serve_alias: fn(&'static str, &str, MessageFn) -> Result<usize, Error>,
+    pub alias_send: fn(usize, *const c_char, u32, *mut c_void, u32) -> bool,
+    pub export_interface: fn(&'static str, &str, &[Method]) -> Result<usize, Error>,
     pub on_frame: fn(&'static str, FrameFn),
     pub on_papyrus: fn(&'static str, PapyrusFn),
     pub action: fn(&'static str, &str, &str, Scope) -> usize,
@@ -227,6 +233,37 @@ impl Host {
     /// plugin keeps what an earlier one received through its state handoff.
     pub fn on_plugin_message(&self, sender: &str, f: MessageFn) {
         (self.table.on_plugin_message)(self.name, sender, f);
+    }
+
+    /// Serves the SKSE plugin name `name` for other SKSE plugins, as if this plugin were the SKSE
+    /// plugin of that name: `f` receives on the dispatching thread what they dispatch to `name`
+    /// (and, as for any listener to every sender, their broadcasts), and [`Alias::send`] answers
+    /// with `name` as the sender. The name needs its stub in `Data\SKSE\Plugins` (a DLL built with
+    /// `skse::alias_stub!`) and SKSE 2.3.1: once every SKSE plugin's `Load` has run the host looks
+    /// the stub's messaging index up, checks the loader really names that index `name`, and logs
+    /// that it serves the name or why not (no stub, a real plugin of that name installed beside
+    /// it, the loader's names shifted by a plugin that failed to load). A message sent to `name`
+    /// before then is lost, so consumers that ask at `PLUGINS_LOADED_2` or later are served. A
+    /// later generation of the plugin serving the same name gets the same alias; a name another
+    /// plugin serves is refused.
+    pub fn serve_alias(&self, name: &str, f: MessageFn) -> Result<Alias, Error> {
+        Ok(Alias { slot: (self.table.serve_alias)(self.name, name, f)?, table: self.table })
+    }
+
+    /// Exports a C++ interface object (single inheritance, no data members) for other SKSE plugins
+    /// and returns its address: `methods` are its virtual table in declaration order, each an
+    /// `extern "C"` function taking the object first (MSVC x64 passes `this` that way). The object
+    /// and the table belong to the host and each slot jumps through an address it keeps: while
+    /// this plugin is unloaded, every method answers with its [`Returns`] stand-in instead of
+    /// reaching the freed DLL, and a later generation exporting the same name gets the same
+    /// object, re-pointed at its functions (the method count stays the first export's).
+    ///
+    /// ```ignore
+    /// extern "C" fn version(_this: *const c_void) -> u32 { 2 }
+    /// let api = host.export_interface("MyModAPI", &[framework::Method::new(version as *const (), framework::Returns::Value)])?;
+    /// ```
+    pub fn export_interface(&self, name: &str, methods: &[Method]) -> Result<*const c_void, Error> {
+        (self.table.export_interface)(self.name, name, methods).map(|object| object as *const c_void)
     }
 
     /// Calls `f` once a frame on the main thread, at the frame's present whether the overlay is
@@ -464,6 +501,51 @@ impl Tab {
     pub fn section(&self, name: &str, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> &Self {
         (self.table.add_section)(self.owner, name, Box::new(draw));
         self
+    }
+}
+
+/// What a method of an exported interface returns, which decides the stand-in that answers
+/// while the plugin is unloaded.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Returns {
+    /// Nothing, an integer, a `bool`, an enum or a pointer: the stand-in returns 0.
+    Value,
+    /// A `float` or `double`: 0.0.
+    Float,
+    /// A structure written through the caller's buffer, which the method receives after `this`
+    /// and returns: the stand-in returns the buffer as it was.
+    Buffer,
+}
+
+/// One method of an interface for [`Host::export_interface`].
+#[derive(Clone, Copy, Debug)]
+pub struct Method {
+    pub(crate) f: usize,
+    pub(crate) returns: Returns,
+}
+
+impl Method {
+    /// `f` is the method's `extern "C"` function (`my_method as *const ()`).
+    #[must_use]
+    pub fn new(f: *const (), returns: Returns) -> Self {
+        Self { f: f.addr(), returns }
+    }
+}
+
+/// A plugin name served through [`Host::serve_alias`].
+#[derive(Clone, Copy)]
+pub struct Alias {
+    slot: usize,
+    table: &'static Table,
+}
+
+impl Alias {
+    /// Dispatches `data` as the served name to the plugin named `receiver` (a message's `sender`
+    /// for a reply), or to every plugin listening to the name when it is null; false while the
+    /// name is not served or when no listener took it.
+    #[must_use]
+    pub fn send(&self, receiver: *const c_char, kind: u32, data: *mut c_void, len: u32) -> bool {
+        (self.table.alias_send)(self.slot, receiver, kind, data, len)
     }
 }
 

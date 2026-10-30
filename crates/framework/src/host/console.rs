@@ -1,5 +1,5 @@
 //! The console command `SkyrimRs`: `gui [n]` opens the overlay (on page `n`) and lists the pages,
-//! the framework plugins and the SKSE plugins; `hooks` lists every hook site with its entry state
+//! the framework plugins, the SKSE plugins, the plugin names served and the interfaces exported; `hooks` lists every hook site with its entry state
 //! and subscribers, every byte patch and the dispatcher's last messages; `toggle <id>` switches a subscriber or a patch; `keys`
 //! lists the hotkeys and the input filters; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
@@ -8,7 +8,7 @@
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
-use super::{HOOKS, NAME, filters, flush_settings, gui, keys, skse_plugins};
+use super::{HOOKS, NAME, alias, filters, flush_settings, gui, interface, keys, skse_plugins};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -34,12 +34,14 @@ fn gui_lines() -> Vec<String> {
     }
     lines.push(format!("legacy plugins, loaded by {}:", gui::hosted_by()));
     for p in skse_plugins() {
-        let state = if p.loaded { "loaded" } else { "not loaded" };
+        let state = if p.stub { "a stub" } else if p.loaded { "loaded" } else { "not loaded" };
         lines.push(match &p.data {
             Some(d) => format!("legacy {}: {} {} by {}, {state}", p.file, d.name, gui::version_text(d.version), d.author),
             None => format!("legacy {}: no version data, {state}", p.file),
         });
     }
+    lines.extend(alias::lines());
+    lines.extend(interface::lines());
     lines
 }
 

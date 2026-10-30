@@ -20,6 +20,17 @@ pub struct PluginInfo {
 
 impl PluginInfo {
     pub const VERSION: u32 = 1;
+
+    /// The handle SKSE 2.3.1 stored for the plugin, the dword after the info in the loader's
+    /// record (+0x18). It is the plugin's messaging index only while no plugin scanned before it
+    /// failed to load, since the loader then shifts later records down one slot.
+    ///
+    /// # Safety
+    /// `self` must be what SKSE 2.3.1's `GetPluginInfo` returned.
+    #[must_use]
+    pub unsafe fn loader_handle(&self) -> PluginHandle {
+        unsafe { core::ptr::from_ref(self).byte_add(0x18).cast::<PluginHandle>().read() }
+    }
 }
 
 #[repr(u32)]
@@ -152,6 +163,16 @@ impl MessagingInterface {
     #[must_use]
     pub fn listen_plugins(&self, handle: PluginHandle, handler: MessageCallback) -> bool {
         unsafe { (self.register_listener)(handle, core::ptr::null(), handler) }
+    }
+
+    /// Dispatches as `sender` to the plugin named `receiver`, or to every listener of `sender`
+    /// when it is null. The loader checks the handle only against its table's size.
+    ///
+    /// # Safety
+    /// `receiver` is null or a nul-terminated name, and `data` is what the receivers expect for `kind`.
+    #[must_use]
+    pub unsafe fn send(&self, sender: PluginHandle, kind: u32, data: *mut c_void, len: u32, receiver: *const c_char) -> bool {
+        unsafe { (self.dispatch)(sender, kind, data, len, receiver) }
     }
 }
 
@@ -380,5 +401,30 @@ macro_rules! plugin {
     };
     (@method $e:expr) => {
         $e
+    };
+}
+
+/// The export that marks a DLL built by [`alias_stub!`], which the host looks for to tell its
+/// stub from a real plugin of the same name.
+pub const ALIAS_STUB_SYMBOL: &core::ffi::CStr = c"SkyrimRs_AliasStub";
+
+/// Declares a stub plugin: `SKSEPlugin_Version` naming `$name` and no entry point, so SKSE 2.3.1
+/// gives it a record and a messaging index under that name and never runs its code; a framework
+/// plugin then serves the name through the host (`framework::Host::serve_alias`). Version
+/// independent with no file check, so the loader tests nothing else.
+///
+/// ```ignore
+/// skse::alias_stub!("ImprovedCameraSE");
+/// ```
+#[macro_export]
+macro_rules! alias_stub {
+    ($name:literal) => {
+        #[unsafe(no_mangle)]
+        #[allow(non_upper_case_globals)]
+        pub static SKSEPlugin_Version: $crate::PluginVersionData = $crate::PluginVersionData::new($name, "skyrim-rs", 1, 0, $crate::compat::METHOD_NO_FILE_CHECK | $crate::compat::METHOD_STRUCTS_1_6_629);
+
+        #[unsafe(no_mangle)]
+        #[allow(non_upper_case_globals)]
+        pub static SkyrimRs_AliasStub: u8 = 1;
     };
 }
