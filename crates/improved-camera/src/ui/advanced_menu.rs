@@ -1,6 +1,5 @@
-//! `ui/menu/AdvancedMenu` ("Advanced Settings"): head bob, transitions, the collision bumpers and
-//! the near distance. The death reload time and the bumpers are stored but not applied (their
-//! features are not ported).
+//! `ui/menu/AdvancedMenu` ("Advanced Settings"): head bob, transitions, the death reload time,
+//! the collision bumpers and the near distance.
 
 use framework::egui;
 

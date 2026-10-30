@@ -540,6 +540,13 @@ fn setting_f32(setting: *mut core::ffi::c_void) -> &'static f32 {
     unsafe { &*skyrim::render::setting_value::<f32>(setting) }
 }
 
+/// `fPlayerDeathReloadTime`: the seconds from the player's death to the last save's load. The
+/// engine reads it only when the countdown starts at death (RE `camera.md` IC9 C), so a write
+/// lands at the next death.
+pub fn death_reload_time() -> &'static f32 {
+    setting_f32(core::ptr::from_ref(sre::game_setting_f_player_death_reload_time()).cast_mut().cast())
+}
+
 /// `fMinCurrentZoom:Camera`.
 pub fn min_current_zoom() -> &'static f32 {
     setting_f32(sre::ini_setting_f_min_current_zoom_camera())

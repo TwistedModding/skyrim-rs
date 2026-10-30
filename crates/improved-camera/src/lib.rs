@@ -30,6 +30,7 @@ mod util;
 
 use std::io::Write as _;
 use std::sync::OnceLock;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 use framework::{Action, Host, InputFilter, Scope};
 use sre::InputDevice;
@@ -56,6 +57,16 @@ pub(crate) static PHOTO_MODE: OnceLock<[Action; 2]> = OnceLock::new();
 static FREE_CAMERA_FILTER: OnceLock<InputFilter> = OnceLock::new();
 /// Left shift, the free camera's fixed wheel modifier in IC.
 const LEFT_SHIFT: u32 = 0x2A;
+/// `fPlayerDeathReloadTime` as the engine had it before the first write, as bits; 0 before it.
+static DEATH_RELOAD_ORIGINAL: AtomicU32 = AtomicU32::new(0);
+
+/// Writes `Advanced.fPlayerDeathReloadTime` into the game (IC: at install and from the menu),
+/// keeping the engine's value for unload.
+fn write_death_reload_time(seconds: f32) {
+    let setting = util::skyrim_util::death_reload_time();
+    let _ = DEATH_RELOAD_ORIGINAL.compare_exchange(0, setting.to_bits(), Ordering::Relaxed, Ordering::Relaxed);
+    skyrim::store(setting, seconds);
+}
 
 /// The frame's input for the camera states: the game's mouse and gamepad, the free camera's keys
 /// and the game's Toggle POV key released.
@@ -104,6 +115,7 @@ fn apply_profile(profile: &settings::Profile) {
     }
     let profile = &profile;
     settings::set_profile(profile);
+    write_death_reload_time(profile.Advanced.fPlayerDeathReloadTime);
     if arms {
         util::skyrim_util::reset_magic_nodes();
     }
@@ -224,6 +236,7 @@ fn start_profiles(host: &Host) {
     let profile = if first { profiles::load(&store, &name).unwrap_or(live) } else { live };
     settings::set_profile(&profile);
     profile.write(&store);
+    write_death_reload_time(profile.Advanced.fPlayerDeathReloadTime);
     log(&format!("Profile {name} active"));
 }
 
@@ -318,8 +331,8 @@ fn studio_frame() {
 }
 
 /// Puts the body back as the engine keeps it: full scales, the third-person root hidden in first
-/// person, its foot IK parked and its original controller shape; the engine's world FOV, FOV offset and near plane; and FSMP
-/// simulating the player as usual.
+/// person, its foot IK parked and its original controller shape; the engine's world FOV, FOV offset, near plane and death
+/// reload time; and FSMP simulating the player as usual.
 fn unload() {
     camera::studio::manager::release();
     camera::manager::release();
@@ -329,6 +342,10 @@ fn unload() {
     api::fsmp::set_player_body_camera_driven(false);
     camera::manager::reset_fov();
     camera::manager::reset_near();
+    match DEATH_RELOAD_ORIGINAL.load(Ordering::Relaxed) {
+        0 => {}
+        bits => skyrim::store(util::skyrim_util::death_reload_time(), f32::from_bits(bits)),
+    }
     let Some(player) = util::skyrim_util::player() else { return };
     body::manager::with(|m| m.parts.restore(player));
     if !player.is_third_person()
