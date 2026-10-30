@@ -131,13 +131,13 @@ pub const g_VATSPlaybackEndDelay: u64 = 404872;
 pub const g_VATSShotMaxTime: u64 = 404874;
 /// `g_VATS_ptr` at 0x31a5720 (semantic, medium); VATS object: +0x20 mode (0 = not in VATS playback), +0x30 target, +0x80 time scale (medium); type `pointer`
 pub const g_VATS_ptr: u64 = 400883;
-/// `g_VolumetricLighting` at 0x20d7230 (runtime, high)
+/// `g_VolumetricLighting` at 0x20d7230 (runtime, high); VolumetricLightingParams, static (GetVolumetricLightingParams 0x1530c50): +0x0 intensity, +0x4 custom colour contribution, +0x8 custom colour, +0x14 density contribution, +0x18 density size, +0x1c wind speed, +0x20 falling speed, +0x24 phase contribution, +0x28 phase scattering, +0x2c range factor (40), +0x30/+0x34/+0x38 volume width/height/depth (320x192x90 at quality 2), +0x40 repartition function, +0x48 inverse repartition function, +0x50/+0x58 generate/raymarch shaders, +0x60 noise volume, +0x68/+0x70 the two volumes, +0x78/+0x80 the repartition/inverse 1D textures, +0x88 frame counter (high); type `u8[0x90]`
 pub const g_VolumetricLighting: u64 = 391247;
-/// `g_VolumetricLightingEnabled` at 0x3435f44 (semantic, high)
+/// `g_VolumetricLightingEnabled` at 0x3435f44 (semantic, high); copy of bVolumetricLightingEnable:Display made at init; gates the volumetric step (RenderWorldScene 0x65716f) and the apply (RenderImageSpace 0x153ad46) (high); type `u8`
 pub const g_VolumetricLightingEnabled: u64 = 414913;
-/// `g_VolumetricLightingGenerateConstants` at 0x3435db0 (semantic, high)
+/// `g_VolumetricLightingGenerateConstants` at 0x3435db0 (semantic, high); the generate shader's constant buffer data (layout in UpdateVolumetricLightingConstants), uploaded with UploadDynamicBufferData (high); type `u8[0x180]`
 pub const g_VolumetricLightingGenerateConstants: u64 = 414886;
-/// `g_VolumetricLightingWeatherUpdate` at 0x3435f45 (runtime, high)
+/// `g_VolumetricLightingWeatherUpdate` at 0x3435f45 (runtime, high); copy of bVolumetricLightingUpdateWeather:Display (1); svlp weather 0/1 writes it (high); type `u8`
 pub const g_VolumetricLightingWeatherUpdate: u64 = 414914;
 /// `g_WaterShader` at 0x33d3e58 (semantic, high); pointer to `BSWaterShader`: holder; holder (high); type `ptr:BSWaterShader`
 pub const g_WaterShader: u64 = 414615;
@@ -149,7 +149,7 @@ pub const g_WaterSystem_ptr: u64 = 400450;
 pub const g_WeaponTypeBipedIndex: u64 = 360260;
 /// `g_WeatherNode` at 0x3230760 (semantic, high); pointer to `NiNode`: NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController; NiNode named "Weather" attached under a scene root at world setup; attach root of OwnedCameraEffectController (high); type `ptr:NiNode`
 pub const g_WeatherNode: u64 = 403517;
-/// `g_WeatherVolumetricLighting` at 0x33d3ea8 (semantic, high)
+/// `g_WeatherVolumetricLighting` at 0x33d3ea8 (semantic, high); the weather's volumetric parameters (the first 12 floats of g_VolumetricLighting), blended per time of day; copied into g_VolumetricLighting every volumetric step while g_VolumetricLightingWeatherUpdate (high); type `float[12]`
 pub const g_WeatherVolumetricLighting: u64 = 414627;
 /// `g_WorldAccumulator` at 0x3436230 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition; renderMode 0: the main colour draw; its +0x12c is ToggleDecalRendering's switch; RenderWorld writes its eyePosition (high); type `ptr:BSShaderAccumulator`
 pub const g_WorldAccumulator: u64 = 415009;
@@ -347,9 +347,9 @@ pub const g_hkpEntityListener: u64 = 370091;
 pub const g_hkpNullAgent: u64 = 409740;
 /// `g_strIsAttacking` at 0x3252908 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high); type `class:BSFixedString`
 pub const g_strIsAttacking: u64 = 404830;
-/// `kDepthShiftFarScale` at 0x1b436b4 (semantic, high); 1.000002 (0x3f800011) (high); type `float`
+/// `kDepthShiftFarScale` at 0x1b436b4 (runtime, high); 1.000002 (0x3f800011, 1 + 17 x 2^-23): k of the shifted far n f / ((n - f) k + f) (BeginDepthShift 0x153788b, RenderWorldDepthPrepass 0x15391ec), k ~ 1 / kDepthShiftMaxDepth so CPU constants built from the shifted camera match the narrowed depth (high); type `f32`
 pub const kDepthShiftFarScale: u64 = 254903;
-/// `kDepthShiftMaxDepth` at 0x1b436b0 (semantic, high); 0.999998 (0x3f7fffde) (high); type `float`
+/// `kDepthShiftMaxDepth` at 0x1b436b0 (runtime, high); 0.999998 (0x3f7fffde, 1 - 34 x 2^-24): the viewport's maximum depth during the depth shift (BeginDepthShift 0x15378f2, RenderWorldDepthPrepass 0x1539276); .rdata, read on every shift. Request IC11's fix scales 1 - M with the world near (high); type `f32`
 pub const kDepthShiftMaxDepth: u64 = 254902;
 /// `kFarDistanceWithLOD` at 0x1a70458 (semantic, high); 353840 (high); type `float`
 pub const kFarDistanceWithLOD: u64 = 238490;

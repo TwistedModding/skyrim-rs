@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAVObject::vfunc_28` at 0xee0810 (rtti, high); signature (low): `undefined8 vfunc_28(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__vfunc_28: u64 = 70249;
+/// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
+pub const NiAVObject__vfunc_29: u64 = 70269;
+/// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
+pub const NiAVObject__vfunc_40: u64 = 70255;
+/// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+pub const NiAVObject__vfunc_41: u64 = 70256;
+/// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
+pub const NiAVObject__vfunc_52: u64 = 70268;
+/// `NiAVObjectPalette::vdtor` at 0xf009d0 (layout_inference, medium); signature (low): `NiAVObjectPalette * vdtor(NiAVObjectPalette * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAVObjectPalette__vdtor: u64 = 71000;
+/// `NiAVObjectPalette::vfunc_2` at 0xf00b00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAVObjectPalette__vfunc_2: u64 = 71003;
+/// `NiAVObjectPalette::vfunc_24` at 0xf0a900 (rtti, high); signature (untiered): `undefined vfunc_24(void)`
+pub const NiAVObjectPalette__vfunc_24: u64 = 71233;
+/// `NiAVObjectPalette::vfunc_25` at 0xf0a910 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
+pub const NiAVObjectPalette__vfunc_25: u64 = 71234;
+/// `NiAVObjectPalette::vfunc_26` at 0xf0a920 (rtti, high); signature (low): `bool vfunc_26(NiAVObjectPalette * this, longlong * param_1)`
+pub const NiAVObjectPalette__vfunc_26: u64 = 71235;
+/// `NiAVObjectPalette::vfunc_27` at 0xf0a940 (rtti, high); signature (untiered): `undefined vfunc_27(void)`
+pub const NiAVObjectPalette__vfunc_27: u64 = 71236;
+/// `NiAVObjectPalette::vfunc_28` at 0xf0a950 (rtti, high); signature (low): `bool vfunc_28(NiAVObjectPalette * this, longlong * param_1)`
+pub const NiAVObjectPalette__vfunc_28: u64 = 71237;
+/// `NiAVObjectPalette::vfunc_39` at 0xf01180 (rtti, high); signature (low): `undefined vfunc_39(void)`
+pub const NiAVObjectPalette__vfunc_39: u64 = 71011;
+/// `NiAccumulator::ctor` at 0xf1eda0 (layout_inference, high); signature (high): `NiAccumulator * ctor(NiAccumulator * this)`
+pub const NiAccumulator__ctor: u64 = 71825;
 /// `NiAccumulator::vdtor` at 0xf1ee00 (layout_inference, medium); signature (low): `NiAccumulator * vdtor(NiAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const NiAccumulator__vdtor: u64 = 76381;
 /// `NiAccumulator::vfunc_2` at 0xf1ee40 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -8707,25 +8735,3 @@ pub const Papyrus__Alias__UnregisterForLOS: u64 = 55140;
 pub const Papyrus__Alias__UnregisterForSleep: u64 = 55141;
 /// `Papyrus::Alias::UnregisterForTrackedStatsEvent` at 0xa14080 (papyrus_native, high); signature (medium): `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 pub const Papyrus__Alias__UnregisterForTrackedStatsEvent: u64 = 55142;
-/// `Papyrus::Alias::UnregisterForUpdate` at 0xa140d0 (papyrus_native, high); signature (medium): `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__UnregisterForUpdate: u64 = 55143;
-/// `Papyrus::Alias::UnregisterForUpdateGameTime` at 0xa14120 (papyrus_native, high); signature (medium): `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__UnregisterForUpdateGameTime: u64 = 55144;
-/// `Papyrus::Armor::GetWarmthRating` at 0xa3ea20 (papyrus_native, high); signature (medium): `float GetWarmthRating(IVirtualMachine * vm, uint stackId, TESObjectARMO * self)`
-pub const Papyrus__Armor__GetWarmthRating: u64 = 56029;
-/// `Papyrus::Armor::RegisterFuncs` at 0xa3ea50 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Armor__RegisterFuncs: u64 = 56031;
-/// `Papyrus::Cell::GetActorOwner` at 0xa3ed30 (papyrus_native, high); signature (medium): `TESNPC * GetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
-pub const Papyrus__Cell__GetActorOwner: u64 = 56036;
-/// `Papyrus::Cell::GetFactionOwner` at 0xa3ed60 (papyrus_native, high); signature (medium): `TESFaction * GetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
-pub const Papyrus__Cell__GetFactionOwner: u64 = 56037;
-/// `Papyrus::Cell::IsAttached` at 0xa3ff60 (papyrus_native, high); signature (medium): `bool IsAttached(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
-pub const Papyrus__Cell__IsAttached: u64 = 56055;
-/// `Papyrus::Cell::IsInterior` at 0xa3ff70 (papyrus_native, high); signature (medium): `bool IsInterior(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
-pub const Papyrus__Cell__IsInterior: u64 = 56056;
-/// `Papyrus::Cell::RegisterFuncs` at 0xa3ef10 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const Papyrus__Cell__RegisterFuncs: u64 = 56042;
-/// `Papyrus::Cell::Reset` at 0xa3ed90 (papyrus_native, high); signature (medium): `void Reset(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
-pub const Papyrus__Cell__Reset: u64 = 56038;
-/// `Papyrus::Cell::SetActorOwner` at 0xa3ff80 (papyrus_native, high); signature (medium): `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESNPC * a0)`
-pub const Papyrus__Cell__SetActorOwner: u64 = 56057;

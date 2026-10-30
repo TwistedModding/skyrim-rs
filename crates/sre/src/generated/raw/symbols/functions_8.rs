@@ -5690,7 +5690,7 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x102a680, id: 77645, confidence: Confidence::Medium, name: "ReleaseComPtr_16" },
     Function { rva: 0x102a6b0, id: 77646, confidence: Confidence::High, name: "FreeMemoryIfSet_3" },
     Function { rva: 0x102ab20, id: 77648, confidence: Confidence::High, name: "CopyMemoryChecked_3" },
-    Function { rva: 0x102b6c0, id: 77652, confidence: Confidence::Medium, name: "InitRasterizerStateTable" },
+    Function { rva: 0x102b6c0, id: 77652, confidence: Confidence::High, name: "InitRasterizerStateTable" },
     Function { rva: 0x102b910, id: 77653, confidence: Confidence::Medium, name: "InitSamplerStateTable" },
     Function { rva: 0x102bb40, id: 77654, confidence: Confidence::Medium, name: "ReleaseGlobalObjectArrays411362To411366" },
     Function { rva: 0x102bc90, id: 77655, confidence: Confidence::Medium, name: "ConvertImageFormat" },

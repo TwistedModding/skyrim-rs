@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleasePagesAndClearSegmentBitmap` at 0x1185c30 (decompiler, medium); signature (untiered): `ulonglong ReleasePagesAndClearSegmentBitmap(longlong param_1, ulonglong param_2, ulonglong param_3)`
+pub const ReleasePagesAndClearSegmentBitmap: u64 = 84799;
+/// `ReleasePair16Vector` at 0x142b6d0 (decompiler, medium); signature (medium): `undefined ReleasePair16Vector(undefined8 * param_1)`
+pub const ReleasePair16Vector: u64 = 452130;
+/// `ReleasePair16Vector_2` at 0x142b770 (decompiler, medium); signature (medium): `undefined ReleasePair16Vector_2(undefined8 * param_1)`
+pub const ReleasePair16Vector_2: u64 = 452131;
+/// `ReleasePairRefArrayAndFree` at 0x82b480 (decompiler, high); signature (untiered): `undefined ReleasePairRefArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleasePairRefArrayAndFree: u64 = 44931;
+/// `ReleasePendingSemaphoreSignals` at 0xbf9e60 (decompiler, medium); signature (medium): `undefined ReleasePendingSemaphoreSignals(longlong param_1, longlong param_2)`
+pub const ReleasePendingSemaphoreSignals: u64 = 64243;
+/// `ReleasePointerArray128Locked` at 0x785240 (decompiler, medium); signature (medium): `DWORD ReleasePointerArray128Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleasePointerArray128Locked: u64 = 41394;
+/// `ReleasePortalGraphAndNodes` at 0x30fa00 (decompiler, medium); signature (untiered): `undefined ReleasePortalGraphAndNodes(longlong param_1)`
+pub const ReleasePortalGraphAndNodes: u64 = 20515;
+/// `ReleaseProcessAndClearFieldF8` at 0x690df0 (decompiler, medium); signature (untiered): `undefined ReleaseProcessAndClearFieldF8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseProcessAndClearFieldF8: u64 = 37563;
+/// `ReleaseProcessSubobjects` at 0x6f00a0 (decompiler, medium); signature (untiered): `undefined ReleaseProcessSubobjects(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const ReleaseProcessSubobjects: u64 = 39250;
+/// `ReleasePtrAndSetField8` at 0x1554f40 (decompiler, medium); signature (untiered): `undefined ReleasePtrAndSetField8(longlong * param_1, undefined4 param_2)`
+pub const ReleasePtrAndSetField8: u64 = 107477;
+/// `ReleaseQueuedBlocksToFreeLists` at 0xce61d0 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedBlocksToFreeLists(longlong param_1, longlong param_2)`
+pub const ReleaseQueuedBlocksToFreeLists: u64 = 68318;
 /// `ReleaseQueuedEntryHandle` at 0x244f30 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedEntryHandle(longlong * param_1)`
 pub const ReleaseQueuedEntryHandle: u64 = 16288;
 /// `ReleaseQueuedEntryRef_2` at 0xbc62a0 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedEntryRef_2(longlong * param_1)`
@@ -3003,11 +3025,15 @@ pub type RenderPassImmediately_fn = unsafe extern "C" fn(pass: *mut c_void, tech
 pub const RenderPrecipitationOcclusion_thunk: u64 = 107144;
 /// `RenderPrecipitationOcclusion_thunk` as a function pointer type (high).
 pub type RenderPrecipitationOcclusion_thunk_fn = unsafe extern "C" fn();
+/// `RenderSAOCompute` at 0x15436b0 (semantic, high); signature (untiered): `undefined RenderSAOCompute(undefined8 * param_1, longlong param_2)`; semantic: the compute path of SAO (RenderWorldScene 0x6578c9 while ImageSpaceState +0x1d0): uploads (far x near, near - far, far) for ISSAOCameraZAndMipsCS, which writes camera Z = n f / ((n - f) depth + f) with two min mips, then the raw AO (projection from the frustum's left/right/top/bottom, random rotation), and the two separable blurs. Camera Z inverts the unshifted projection, so it carries BeginDepthShift's pull like the shadow masks; it also cancels badly in float32 (the sum's rounding is about 0.03 against n f / z), 7.5 times worse at near 2 (high); signature `void (SAOComputeShaders* shaders, NiCamera* camera)`
+pub const RenderSAOCompute: u64 = 107252;
+/// `RenderSAOCompute` as a function pointer type (high).
+pub type RenderSAOCompute_fn = unsafe extern "C" fn(shaders: *mut c_void, camera: *mut crate::NiCamera);
 /// `RenderScreenSpaceReflectionPass` at 0x15419a0 (decompiler, medium); signature (untiered): `int RenderScreenSpaceReflectionPass(undefined8 * param_1, int param_2)`
 pub const RenderScreenSpaceReflectionPass: u64 = 107239;
 /// `RenderShadowMaps` at 0x1538430 (runtime, high); signature (untiered): `undefined RenderShadowMaps(void)`; semantic: draws the shadow maps: the sun's slot 10 (cascades and focus maps) and the other shadow lights (high); signature `void (...)`
 pub const RenderShadowMaps: u64 = 107133;
-/// `RenderShadowMaskPasses` at 0x1539b10 (semantic, high); signature (untiered): `undefined RenderShadowMaskPasses(void)`; semantic: one full-screen BSUtilityShader pass per frame shadow light into colour target 0x12 (screen x iShadowMaskQuarter/4), channel by the light's frameIndex (high); signature `void (void)`
+/// `RenderShadowMaskPasses` at 0x1539b10 (runtime, high); signature (untiered): `undefined RenderShadowMaskPasses(void)`; semantic: one full-screen BSUtilityShader pass per frame shadow light into colour target 0x12, no depth target: technique (0x2002 | kind) + 0x2b with kind 0x400000 (directional, | 0x100 with focus maps), 0x800000 or 0x1000000 by the light's slots 6/5/8; the sun's is ((filter + 0x20) << 8 | 0x200002) + 0x2b. Run from RenderShadowMasks 0x1539a70 with g_CurrentRenderCamera = the frame camera and its cached projection entry bound (FindOrInitEntry290), after the pre-pass's EndDepthShift (high); signature `void ()`
 pub const RenderShadowMaskPasses: u64 = 107141;
 /// `RenderShadowMaskPasses` as a function pointer type (high).
 pub type RenderShadowMaskPasses_fn = unsafe extern "C" fn();
@@ -9029,39 +9055,3 @@ pub const SetBit0OfField20OfExtraType19: u64 = 11643;
 pub const SetBit0OfField40: u64 = 19013;
 /// `SetBit0OfField8` at 0x525010 (decompiler, medium); signature (medium): `undefined SetBit0OfField8(longlong * param_1, char param_2)`
 pub const SetBit0OfField8: u64 = 32086;
-/// `SetBit0OfFieldF4OnArrayEntries` at 0x50bf50 (decompiler, high); signature (high): `undefined SetBit0OfFieldF4OnArrayEntries(longlong * param_1, char param_2)`
-pub const SetBit0OfFieldF4OnArrayEntries: u64 = 31661;
-/// `SetBit0OfFieldF4OnCellNodes` at 0x9a1370 (decompiler, medium); signature (medium): `undefined4 SetBit0OfFieldF4OnCellNodes(char * param_1, longlong param_2)`
-pub const SetBit0OfFieldF4OnCellNodes: u64 = 53165;
-/// `SetBit0OfFieldF4OnGridCellNodes` at 0x9a0e60 (decompiler, medium); signature (untiered): `undefined4 SetBit0OfFieldF4OnGridCellNodes(longlong param_1, char * param_2, ulonglong param_3, undefined8 param_4)`
-pub const SetBit0OfFieldF4OnGridCellNodes: u64 = 53160;
-/// `SetBit0OfFieldF4OnLightsInSubtree` at 0x15120a0 (decompiler, medium); signature (untiered): `undefined SetBit0OfFieldF4OnLightsInSubtree(longlong param_1, longlong param_2, char param_3, char param_4)`
-pub const SetBit0OfFieldF4OnLightsInSubtree: u64 = 106391;
-/// `SetBit0OfFieldF4OnMarkerNodes` at 0x226510 (decompiler, medium); signature (untiered): `ulonglong SetBit0OfFieldF4OnMarkerNodes(longlong * param_1, char * param_2)`
-pub const SetBit0OfFieldF4OnMarkerNodes: u64 = 15926;
-/// `SetBit0OfFieldF4OnMarkerNodesRecursive` at 0xff06e0 (decompiler, medium); signature (untiered): `ulonglong SetBit0OfFieldF4OnMarkerNodesRecursive(longlong * param_1, char * param_2)`
-pub const SetBit0OfFieldF4OnMarkerNodesRecursive: u64 = 76613;
-/// `SetBit0OfRef3DFieldF4ForChildNode7Refs` at 0x2cacc0 (decompiler, medium); signature (untiered): `undefined SetBit0OfRef3DFieldF4ForChildNode7Refs(longlong param_1, char param_2, int param_3)`
-pub const SetBit0OfRef3DFieldF4ForChildNode7Refs: u64 = 19166;
-/// `SetBit0OnAllArrayEntries` at 0x2c1330 (decompiler, medium); signature (untiered): `undefined SetBit0OnAllArrayEntries(longlong param_1, char param_2)`
-pub const SetBit0OnAllArrayEntries: u64 = 19055;
-/// `SetBit10OfField10` at 0x2bb150 (decompiler, high); signature (high): `undefined SetBit10OfField10(longlong param_1, char param_2)`
-pub const SetBit10OfField10: u64 = 18904;
-/// `SetBit10OfField154` at 0x11a1050 (decompiler, high); signature (high): `undefined SetBit10OfField154(longlong param_1)`
-pub const SetBit10OfField154: u64 = 89531;
-/// `SetBit10OfField40` at 0x2c5c70 (decompiler, high); signature (high): `undefined SetBit10OfField40(longlong param_1, char param_2)`
-pub const SetBit10OfField40: u64 = 19115;
-/// `SetBit13OfField10` at 0x1e64c0 (decompiler, high); signature (high): `undefined SetBit13OfField10(longlong param_1, char param_2)`
-pub const SetBit13OfField10: u64 = 14647;
-/// `SetBit13OfField10_2` at 0x1e64f0 (decompiler, high); signature (high): `undefined SetBit13OfField10_2(longlong param_1, char param_2)`
-pub const SetBit13OfField10_2: u64 = 14648;
-/// `SetBit15OfField10` at 0x2e49f0 (decompiler, high); signature (high): `undefined SetBit15OfField10(longlong param_1, char param_2)`
-pub const SetBit15OfField10: u64 = 19588;
-/// `SetBit15OfField8` at 0xaa9690 (decompiler, high); signature (high): `undefined SetBit15OfField8(longlong param_1)`
-pub const SetBit15OfField8: u64 = 57276;
-/// `SetBit16OfField10AndNotify` at 0x1e6190 (decompiler, medium); signature (untiered): `undefined SetBit16OfField10AndNotify(longlong * param_1, byte param_2)`
-pub const SetBit16OfField10AndNotify: u64 = 14640;
-/// `SetBit16OfField154IfField257Below8` at 0x11a7770 (decompiler, high); signature (high): `undefined SetBit16OfField154IfField257Below8(longlong param_1)`
-pub const SetBit16OfField154IfField257Below8: u64 = 90136;
-/// `SetBit17OfField154` at 0x11a77d0 (decompiler, high); signature (high): `undefined SetBit17OfField154(longlong param_1)`
-pub const SetBit17OfField154: u64 = 90139;

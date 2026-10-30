@@ -7564,21 +7564,6 @@ pub fn g_ui_blur_manager_ptr() -> *mut c_void { address!(403350) as *mut c_void 
 /// `g_UISaveLoadManager_ptr` at 0x31e0140, id 401336 (xref_inference, medium)
 #[inline]
 pub fn g_ui_save_load_manager_ptr() -> *mut c_void { address!(401336) as *mut c_void }
-/// `g_VolumetricLighting` at 0x20d7230, id 391247 (runtime, high)
-#[inline]
-pub fn g_volumetric_lighting() -> *mut c_void { address!(391247) as *mut c_void }
-/// `g_VolumetricLightingEnabled` at 0x3435f44, id 414913 (semantic, high)
-#[inline]
-pub fn g_volumetric_lighting_enabled() -> *mut c_void { address!(414913) as *mut c_void }
-/// `g_VolumetricLightingGenerateConstants` at 0x3435db0, id 414886 (semantic, high)
-#[inline]
-pub fn g_volumetric_lighting_generate_constants() -> *mut c_void { address!(414886) as *mut c_void }
-/// `g_VolumetricLightingWeatherUpdate` at 0x3435f45, id 414914 (runtime, high)
-#[inline]
-pub fn g_volumetric_lighting_weather_update() -> *mut c_void { address!(414914) as *mut c_void }
-/// `g_WeatherVolumetricLighting` at 0x33d3ea8, id 414627 (semantic, high)
-#[inline]
-pub fn g_weather_volumetric_lighting() -> *mut c_void { address!(414627) as *mut c_void }
 /// `g_anon_025735F6_ScriptFoundCallback` at 0x20bcb10, id 383748 (layout_inference, medium)
 #[inline]
 pub fn g_anon_025735_f6_script_found_callback() -> *mut c_void { address!(383748) as *mut c_void }

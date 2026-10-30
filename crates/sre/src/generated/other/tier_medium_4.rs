@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RotateModelByClampedAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52324, rva 0x9666f0).
-/// `undefined RotateModelByClampedAngle(longlong param_1, float param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn rotate_model_by_clamped_angle(param_1: i64, param_2: f32) -> u64 { unsafe { function!(52324, (i64, f32) -> u64)(param_1, param_2) } }
 /// `RotateTreeNodeLeft` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 419725, rva 0x12b3fa0).
 /// `undefined RotateTreeNodeLeft(longlong * param_1, longlong param_2)`
 ///

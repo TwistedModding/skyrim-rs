@@ -6137,16 +6137,16 @@ impl crate::BSUtilityShader {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn get_technique_defines(technique: u32, out: *mut c_void) -> *mut c_void { unsafe { function!(527789, (u32, *mut c_void) -> *mut c_void)(technique, out) } }
-    /// `BSUtilityShader::SetShadowBiasConstants`: depth bias = light.biasScale * 0.00025 * (fShadowDirectionalBiasScale for a directional light) * 1.0, slope term = biasScale * 8.33e-5
+    /// `BSUtilityShader::SetShadowBiasConstants`: the mask's per-map matrices (the light's map matrices with the eye position folded in, so they take eye-relative positions) and the bias pair: light biasScale (+0x540) x 0.00025 x fShadowDirectionalBiasScale (directional) and biasScale x 8.33e-5, both x ID_415265 (1.0) and the slope term also x ID_391716 (1.0); none of it depends on near
     ///
-    /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107764, rva 0x1568300.
-    /// `void (BSUtilityShader* this, BSShadowLight* light, RenderPass* pass)`
+    /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107764, rva 0x1568300.
+    /// `void (BSUtilityShader* this, u32 lightIndex, RenderPass* pass)`
     /// May be null: `light`.
     ///
     /// # Safety
-    /// The pass rates the signature medium.
+    /// `pass` must point to what the engine expects.
     #[inline]
-    pub unsafe fn set_shadow_bias_constants(&self, light: *mut crate::BSShadowLight, pass: *mut crate::RenderPass) { unsafe { function!(107764, (*const Self, *mut crate::BSShadowLight, *mut crate::RenderPass))(core::ptr::from_ref(self), light, pass) } }
+    pub unsafe fn set_shadow_bias_constants(&self, lightIndex: u32, pass: *mut crate::RenderPass) { unsafe { function!(107764, (*const Self, u32, *mut crate::RenderPass))(core::ptr::from_ref(self), lightIndex, pass) } }
 }
 
 /// `g_BSClearZNode_ptr` at 0x3230498, id 403439 (xref_inference, medium)

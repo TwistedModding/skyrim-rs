@@ -8956,13 +8956,6 @@ pub unsafe fn init_plane_entry_range(param_1: *mut i64, param_2: u32, param_3: u
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_quantized_copy_from(param_1: *mut f32, param_2: *mut f32, param_3: i64, param_4: u64) -> u64 { unsafe { function!(91294, (*mut f32, *mut f32, i64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
-/// `InitRasterizerStateTable` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 77652, rva 0x102b6c0).
-/// `undefined InitRasterizerStateTable(void)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_rasterizer_state_table() -> u64 { unsafe { function!(77652, () -> u64)() } }
 /// `InitRecord38Range` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 445585, rva 0x12af040).
 /// `undefined InitRecord38Range(longlong * param_1, ulonglong param_2, ulonglong param_3, undefined8 param_4)`
 ///
@@ -14143,3 +14136,10 @@ pub unsafe fn pad_byte_array_to_alignment(param_1: i32, param_2: *mut i64) -> u6
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn pad_writer_byte_array_to_alignment(param_1: *mut i64, param_2: i32) -> u64 { unsafe { function!(64439, (*mut i64, i32) -> u64)(param_1, param_2) } }
+/// `Papyrus::ActiveMagicEffect::AddInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54576, rva 0x9fba70).
+/// `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESForm) { unsafe { function!(54576, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESForm))(vm, stackId, self_, a0) } }

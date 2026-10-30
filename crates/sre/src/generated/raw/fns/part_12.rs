@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetComImageMetadataFromMemory` at 0x10261a0 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromMemory(longlong param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
+pub const GetComImageMetadataFromMemory: u64 = 77606;
+/// `GetCombatGrenadeBounceTime` at 0x4202f0 (decompiler, medium); signature (medium): `float GetCombatGrenadeBounceTime(void)`
+pub const GetCombatGrenadeBounceTime: u64 = 26448;
+/// `GetCombatGroupStrength` at 0x81f950 (decompiler, medium); signature (untiered): `float GetCombatGroupStrength(longlong param_1, longlong param_2)`
+pub const GetCombatGroupStrength: u64 = 44781;
+/// `GetCombatMagicScoreForTypeAndDistance` at 0x82ec10 (decompiler, medium); signature (medium): `float GetCombatMagicScoreForTypeAndDistance(longlong param_1, undefined8 param_2, int param_3, float param_4)`
+pub const GetCombatMagicScoreForTypeAndDistance: u64 = 45085;
+/// `GetCombatPathDestinationLocationNameCrc` at 0x8f0830 (decompiler, high); signature (high): `uint GetCombatPathDestinationLocationNameCrc(void)`
+pub const GetCombatPathDestinationLocationNameCrc: u64 = 50602;
+/// `GetCombatPathDestinationNoneHash` at 0x8a7cc0 (decompiler, high); signature (high): `uint GetCombatPathDestinationNoneHash(void)`
+pub const GetCombatPathDestinationNoneHash: u64 = 48750;
+/// `GetCombatPathDestinationRefNameCrc32` at 0x89d820 (decompiler, high); signature (high): `uint GetCombatPathDestinationRefNameCrc32(void)`
+pub const GetCombatPathDestinationRefNameCrc32: u64 = 48482;
+/// `GetCombatPathingGoalPolicyLocationCrc` at 0x8e7b40 (decompiler, high); signature (high): `undefined4 GetCombatPathingGoalPolicyLocationCrc(void)`
+pub const GetCombatPathingGoalPolicyLocationCrc: u64 = 50226;
+/// `GetCombatPathingRequestGenericExitWaterStandardHash` at 0x8c2050 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericExitWaterStandardHash(void)`
+pub const GetCombatPathingRequestGenericExitWaterStandardHash: u64 = 49416;
+/// `GetCombatPathingRequestGenericFindAttackLocationStandardHash` at 0x892830 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindAttackLocationStandardHash(void)`
+pub const GetCombatPathingRequestGenericFindAttackLocationStandardHash: u64 = 48240;
 /// `GetCombatPathingRequestGenericFindCoverStandardHash` at 0x8d7130 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindCoverStandardHash(void)`
 pub const GetCombatPathingRequestGenericFindCoverStandardHash: u64 = 49891;
 /// `GetCombatPathingRequestGenericFindHideCoverStandardHash` at 0x8a7b60 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindHideCoverStandardHash(void)`
@@ -9075,23 +9095,3 @@ pub const INISetting_fAimDownDegrees_Combat__init: u64 = 6165;
 pub const INISetting_fAimUpDegrees_Combat__atexit: u64 = 171362;
 /// `INISetting_fAimUpDegrees_Combat__init` at 0xa3fa0 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__init(void)`
 pub const INISetting_fAimUpDegrees_Combat__init: u64 = 6166;
-/// `INISetting_fAlphaReduce_Weather__atexit` at 0x173ee20 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__atexit(void)`
-pub const INISetting_fAlphaReduce_Weather__atexit: u64 = 165459;
-/// `INISetting_fAlphaReduce_Weather__init` at 0xba70 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__init(void)`
-pub const INISetting_fAlphaReduce_Weather__init: u64 = 264;
-/// `INISetting_fAlphaWeight_Display__atexit` at 0x17c42f0 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__atexit(void)`
-pub const INISetting_fAlphaWeight_Display__atexit: u64 = 174674;
-/// `INISetting_fAlphaWeight_Display__init` at 0x104e40 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__init(void)`
-pub const INISetting_fAlphaWeight_Display__init: u64 = 10524;
-/// `INISetting_fAngleMaxEase_LookIK__atexit` at 0x17b42e0 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__atexit(void)`
-pub const INISetting_fAngleMaxEase_LookIK__atexit: u64 = 173889;
-/// `INISetting_fAngleMaxEase_LookIK__init` at 0xeb920 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__init(void)`
-pub const INISetting_fAngleMaxEase_LookIK__init: u64 = 9636;
-/// `INISetting_fAngleMax_LookIK__atexit` at 0x17b4290 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__atexit(void)`
-pub const INISetting_fAngleMax_LookIK__atexit: u64 = 173888;
-/// `INISetting_fAngleMax_LookIK__init` at 0xeb8a0 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__init(void)`
-pub const INISetting_fAngleMax_LookIK__init: u64 = 9635;
-/// `INISetting_fAnimInterpFarDist_Animation__atexit` at 0x17b0870 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__atexit(void)`
-pub const INISetting_fAnimInterpFarDist_Animation__atexit: u64 = 173614;
-/// `INISetting_fAnimInterpFarDist_Animation__init` at 0xddfe0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__init(void)`
-pub const INISetting_fAnimInterpFarDist_Animation__init: u64 = 8856;

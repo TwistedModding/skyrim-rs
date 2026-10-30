@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::ActiveMagicEffect::AddInventoryEventFilter` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54576, rva 0x9fba70).
-/// `void AddInventoryEventFilter(IVirtualMachine * vm, uint stackId, ActiveEffect * self, TESForm * a0)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__active_magic_effect__add_inventory_event_filter(vm: *mut c_void, stackId: u32, self_: *mut crate::ActiveEffect, a0: *mut crate::TESForm) { unsafe { function!(54576, (*mut c_void, u32, *mut crate::ActiveEffect, *mut crate::TESForm))(vm, stackId, self_, a0) } }
 /// `Papyrus::ActiveMagicEffect::GetBaseObject` (decompiler signature, tier medium; ledger papyrus_native evidence, name high; id 54615, rva 0x9fdee0).
 /// `EffectSetting * GetBaseObject(IVirtualMachine * vm, uint stackId, ActiveEffect * self)`
 ///
@@ -13492,3 +13485,10 @@ pub unsafe fn roll_random_chance(param_1: f32) -> u64 { unsafe { function!(26618
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn rotate_and_scale_matrix2x3(param_1: *mut f32, param_2: f32, param_3: f32, param_4: f32) -> u64 { unsafe { function!(83457, (*mut f32, f32, f32, f32) -> u64)(param_1, param_2, param_3, param_4) } }
+/// `RotateModelByClampedAngle` (decompiler signature, tier medium; ledger decompiler evidence, name medium; id 52324, rva 0x9666f0).
+/// `undefined RotateModelByClampedAngle(longlong param_1, float param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn rotate_model_by_clamped_angle(param_1: i64, param_2: f32) -> u64 { unsafe { function!(52324, (i64, f32) -> u64)(param_1, param_2) } }

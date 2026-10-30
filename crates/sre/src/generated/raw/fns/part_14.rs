@@ -3,6 +3,32 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InterpolateSweptTransformToTime` at 0xc02dc0 (decompiler, medium); signature (medium): `undefined InterpolateSweptTransformToTime(float param_1, float * param_2)`
+pub const InterpolateSweptTransformToTime: u64 = 64500;
+/// `InterpolateTable359115` at 0x1dea40 (decompiler, medium); signature (medium): `float InterpolateTable359115(float param_1)`
+pub const InterpolateTable359115: u64 = 14456;
+/// `InterpolateThreePointRange` at 0x8f1bd0 (decompiler, medium); signature (medium): `float InterpolateThreePointRange(float param_1, float param_2, float param_3, float param_4)`
+pub const InterpolateThreePointRange: u64 = 50641;
+/// `InterpolateTransform` at 0xaeee10 (decompiler, medium); signature (medium): `undefined InterpolateTransform(float * param_1, float * param_2, float * param_3, float * param_4)`
+pub const InterpolateTransform: u64 = 59308;
+/// `InterpolateVec3KeysAtTime` at 0x5400c0 (decompiler, medium); signature (medium): `undefined InterpolateVec3KeysAtTime(ulonglong * param_1, float param_2, float * param_3)`
+pub const InterpolateVec3KeysAtTime: u64 = 32582;
+/// `InterpolateXAtY` at 0x259640 (decompiler, medium); signature (medium): `float InterpolateXAtY(float * param_1, float * param_2, float param_3)`
+pub const InterpolateXAtY: u64 = 16759;
+/// `InterpretMoppBytecode` at 0xb91270 (decompiler, medium); signature (untiered): `undefined InterpretMoppBytecode(longlong param_1, float * param_2, byte * param_3, float * param_4, int param_5)`
+pub const InterpretMoppBytecode: u64 = 62402;
+/// `InterruptAllCasts` at 0x6d6690 (decompiler, high); signature (high): `undefined InterruptAllCasts(longlong param_1)`
+pub const InterruptAllCasts: u64 = 38757;
+/// `InterruptCast` at 0x5caae0 (decompiler, medium); signature (untiered): `undefined InterruptCast(longlong * param_1)`
+pub const InterruptCast: u64 = 34408;
+/// `InterruptCastAndClearField3CFlags` at 0x8b4780 (decompiler, medium); signature (untiered): `undefined InterruptCastAndClearField3CFlags(undefined8 * param_1)`
+pub const InterruptCastAndClearField3CFlags: u64 = 49087;
+/// `InterruptCastAndExitNodeIfActorFieldF8Field10Zero` at 0x8d13e0 (decompiler, medium); signature (untiered): `undefined InterruptCastAndExitNodeIfActorFieldF8Field10Zero(void)`
+pub const InterruptCastAndExitNodeIfActorFieldF8Field10Zero: u64 = 49765;
+/// `InterruptCastHandler::vdtor` at 0x7d41e0 (layout_inference, medium); signature (low): `InterruptCastHandler * vdtor(InterruptCastHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const InterruptCastHandler__vdtor: u64 = 43340;
+/// `InterruptCastHandler::vfunc_1` at 0x7ce0e0 (rtti, high); signature (low): `undefined1 vfunc_1(InterruptCastHandler * this, longlong param_1)`
+pub const InterruptCastHandler__vfunc_1: u64 = 42862;
 /// `InterruptCastingAndReset` at 0x5cd2f0 (decompiler, medium); signature (untiered): `undefined InterruptCastingAndReset(longlong * param_1)`
 pub const InterruptCastingAndReset: u64 = 34427;
 /// `InterruptContextCastIfActive` at 0x8b53a0 (decompiler, medium); signature (untiered): `undefined InterruptContextCastIfActive(void)`
@@ -8015,8 +8041,6 @@ pub const MoviePlayer__vdtor: u64 = 90281;
 pub const MoviePlayer__vfunc_13: u64 = 90273;
 /// `Msg_ClearLists_sub0_sub1_sub5` at 0x5282a0 (semantic, high); signature (untiered): `ulonglong Msg_ClearLists_sub0_sub1_sub5(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: water cube-map camera: copies only the main camera's far (GetMainCamera +0x164) into its own frustum; near unaffected (high); signature `bool (void* water, ...)`
 pub const Msg_ClearLists_sub0_sub1_sub5: u64 = 32160;
-/// `Msg_ClearLists_sub22` at 0x15436b0 (semantic, medium); signature (untiered): `undefined Msg_ClearLists_sub22(undefined8 * param_1, longlong param_2)`; semantic: uploads the depth linearisation pair (far * near, near - far) and the projection scale of the given camera before image space (medium); signature `void (void* params, NiCamera* camera)`
-pub const Msg_ClearLists_sub22: u64 = 107252;
 /// `Msg_NecromancerGrimoireAkaNecromanticArts_sub0` at 0x604de0 (callgraph, medium); signature (untiered): `undefined4 * Msg_NecromancerGrimoireAkaNecromanticArts_sub0(undefined4 * param_1, undefined1 * param_2, undefined1 * param_3, undefined8 param_4, undefined8 param_5, undefined8 param_6, undefined8 param_7, undefined8 param_8, undefined8 param_9, undefined8 param_10)`
 pub const Msg_NecromancerGrimoireAkaNecromanticArts_sub0: u64 = 523888;
 /// `Msg_PortalSharedGeometry` at 0x2d77d0 (semantic, medium); signature (low): `undefined Msg_PortalSharedGeometry(longlong param_1, BSMultiBoundRoom_vtbl * param_2, undefined8 param_3, undefined8 param_4)`; semantic: the only other readers of the animation bits: for a reference whose base is a LIGH (formType 0x1f) with (flags & 0x1c8) != 0 it files the reference's handle in its cell's animated-light bookkeeping (medium); signature `(existing row; attach-3D path of a reference)`
@@ -8395,31 +8419,3 @@ pub const NiAVObject__vfunc_25: u64 = 70246;
 pub const NiAVObject__vfunc_26: u64 = 70247;
 /// `NiAVObject::vfunc_27` at 0xee0750 (rtti, high); signature (low): `undefined vfunc_27(NiAVObject * this, longlong * param_1)`
 pub const NiAVObject__vfunc_27: u64 = 70248;
-/// `NiAVObject::vfunc_28` at 0xee0810 (rtti, high); signature (low): `undefined8 vfunc_28(NiAVObject * this, longlong param_1)`
-pub const NiAVObject__vfunc_28: u64 = 70249;
-/// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
-pub const NiAVObject__vfunc_29: u64 = 70269;
-/// `NiAVObject::vfunc_40` at 0xee0a20 (rtti, medium); signature (low): `undefined vfunc_40(void)`
-pub const NiAVObject__vfunc_40: u64 = 70255;
-/// `NiAVObject::vfunc_41` at 0xee0a30 (rtti, medium); signature (low): `undefined vfunc_41(void)`
-pub const NiAVObject__vfunc_41: u64 = 70256;
-/// `NiAVObject::vfunc_52` at 0xee0f60 (rtti, medium); signature (low): `undefined vfunc_52(void)`
-pub const NiAVObject__vfunc_52: u64 = 70268;
-/// `NiAVObjectPalette::vdtor` at 0xf009d0 (layout_inference, medium); signature (low): `NiAVObjectPalette * vdtor(NiAVObjectPalette * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAVObjectPalette__vdtor: u64 = 71000;
-/// `NiAVObjectPalette::vfunc_2` at 0xf00b00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiAVObjectPalette__vfunc_2: u64 = 71003;
-/// `NiAVObjectPalette::vfunc_24` at 0xf0a900 (rtti, high); signature (untiered): `undefined vfunc_24(void)`
-pub const NiAVObjectPalette__vfunc_24: u64 = 71233;
-/// `NiAVObjectPalette::vfunc_25` at 0xf0a910 (rtti, high); signature (untiered): `undefined vfunc_25(void)`
-pub const NiAVObjectPalette__vfunc_25: u64 = 71234;
-/// `NiAVObjectPalette::vfunc_26` at 0xf0a920 (rtti, high); signature (low): `bool vfunc_26(NiAVObjectPalette * this, longlong * param_1)`
-pub const NiAVObjectPalette__vfunc_26: u64 = 71235;
-/// `NiAVObjectPalette::vfunc_27` at 0xf0a940 (rtti, high); signature (untiered): `undefined vfunc_27(void)`
-pub const NiAVObjectPalette__vfunc_27: u64 = 71236;
-/// `NiAVObjectPalette::vfunc_28` at 0xf0a950 (rtti, high); signature (low): `bool vfunc_28(NiAVObjectPalette * this, longlong * param_1)`
-pub const NiAVObjectPalette__vfunc_28: u64 = 71237;
-/// `NiAVObjectPalette::vfunc_39` at 0xf01180 (rtti, high); signature (low): `undefined vfunc_39(void)`
-pub const NiAVObjectPalette__vfunc_39: u64 = 71011;
-/// `NiAccumulator::ctor` at 0xf1eda0 (layout_inference, high); signature (high): `NiAccumulator * ctor(NiAccumulator * this)`
-pub const NiAccumulator__ctor: u64 = 71825;

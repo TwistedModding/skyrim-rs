@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fIntimidateConfidenceMultBrave__atexit` at 0x1753780 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultBrave__atexit(void)`
+pub const GameSetting_fIntimidateConfidenceMultBrave__atexit: u64 = 167062;
+/// `GameSetting_fIntimidateConfidenceMultBrave__init` at 0x2cb40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultBrave__init(void)`
+pub const GameSetting_fIntimidateConfidenceMultBrave__init: u64 = 1852;
+/// `GameSetting_fIntimidateConfidenceMultCautious__atexit` at 0x17537d0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCautious__atexit(void)`
+pub const GameSetting_fIntimidateConfidenceMultCautious__atexit: u64 = 167063;
+/// `GameSetting_fIntimidateConfidenceMultCautious__init` at 0x2cbc0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCautious__init(void)`
+pub const GameSetting_fIntimidateConfidenceMultCautious__init: u64 = 1853;
+/// `GameSetting_fIntimidateConfidenceMultCowardly__atexit` at 0x1753820 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCowardly__atexit(void)`
+pub const GameSetting_fIntimidateConfidenceMultCowardly__atexit: u64 = 167064;
+/// `GameSetting_fIntimidateConfidenceMultCowardly__init` at 0x2cc40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultCowardly__init(void)`
+pub const GameSetting_fIntimidateConfidenceMultCowardly__init: u64 = 1854;
+/// `GameSetting_fIntimidateConfidenceMultFoolhardy__atexit` at 0x1753870 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultFoolhardy__atexit(void)`
+pub const GameSetting_fIntimidateConfidenceMultFoolhardy__atexit: u64 = 167065;
+/// `GameSetting_fIntimidateConfidenceMultFoolhardy__init` at 0x2ccc0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultFoolhardy__init(void)`
+pub const GameSetting_fIntimidateConfidenceMultFoolhardy__init: u64 = 1855;
 /// `GameSetting_fIntimidateSpeechcraftCurve__atexit` at 0x17538c0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__atexit(void)`
 pub const GameSetting_fIntimidateSpeechcraftCurve__atexit: u64 = 167066;
 /// `GameSetting_fIntimidateSpeechcraftCurve__init` at 0x2cd40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateSpeechcraftCurve__init(void)`
@@ -9425,23 +9441,3 @@ pub const GetColorTransformMemberByName: u64 = 85871;
 pub const GetColorTransformMembers: u64 = 85869;
 /// `GetComImageMetadataFromFile` at 0x1026330 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromFile(longlong param_1, uint param_2, ulonglong * param_3)`
 pub const GetComImageMetadataFromFile: u64 = 77607;
-/// `GetComImageMetadataFromMemory` at 0x10261a0 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromMemory(longlong param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
-pub const GetComImageMetadataFromMemory: u64 = 77606;
-/// `GetCombatGrenadeBounceTime` at 0x4202f0 (decompiler, medium); signature (medium): `float GetCombatGrenadeBounceTime(void)`
-pub const GetCombatGrenadeBounceTime: u64 = 26448;
-/// `GetCombatGroupStrength` at 0x81f950 (decompiler, medium); signature (untiered): `float GetCombatGroupStrength(longlong param_1, longlong param_2)`
-pub const GetCombatGroupStrength: u64 = 44781;
-/// `GetCombatMagicScoreForTypeAndDistance` at 0x82ec10 (decompiler, medium); signature (medium): `float GetCombatMagicScoreForTypeAndDistance(longlong param_1, undefined8 param_2, int param_3, float param_4)`
-pub const GetCombatMagicScoreForTypeAndDistance: u64 = 45085;
-/// `GetCombatPathDestinationLocationNameCrc` at 0x8f0830 (decompiler, high); signature (high): `uint GetCombatPathDestinationLocationNameCrc(void)`
-pub const GetCombatPathDestinationLocationNameCrc: u64 = 50602;
-/// `GetCombatPathDestinationNoneHash` at 0x8a7cc0 (decompiler, high); signature (high): `uint GetCombatPathDestinationNoneHash(void)`
-pub const GetCombatPathDestinationNoneHash: u64 = 48750;
-/// `GetCombatPathDestinationRefNameCrc32` at 0x89d820 (decompiler, high); signature (high): `uint GetCombatPathDestinationRefNameCrc32(void)`
-pub const GetCombatPathDestinationRefNameCrc32: u64 = 48482;
-/// `GetCombatPathingGoalPolicyLocationCrc` at 0x8e7b40 (decompiler, high); signature (high): `undefined4 GetCombatPathingGoalPolicyLocationCrc(void)`
-pub const GetCombatPathingGoalPolicyLocationCrc: u64 = 50226;
-/// `GetCombatPathingRequestGenericExitWaterStandardHash` at 0x8c2050 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericExitWaterStandardHash(void)`
-pub const GetCombatPathingRequestGenericExitWaterStandardHash: u64 = 49416;
-/// `GetCombatPathingRequestGenericFindAttackLocationStandardHash` at 0x892830 (decompiler, high); signature (high): `uint GetCombatPathingRequestGenericFindAttackLocationStandardHash(void)`
-pub const GetCombatPathingRequestGenericFindAttackLocationStandardHash: u64 = 48240;

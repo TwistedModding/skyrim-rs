@@ -3,6 +3,22 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatPathingRequestMultiGoal::vfunc_11` at 0x8e5ad0 (rtti, high); signature (low): `undefined vfunc_11(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestMultiGoal__vfunc_11: u64 = 50178;
+/// `CombatPathingRequestMultiGoal::vfunc_12` at 0x8e5be0 (rtti, high); signature (low): `undefined vfunc_12(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestMultiGoal__vfunc_12: u64 = 50179;
+/// `CombatPathingRequestMultiGoal::vfunc_2` at 0x8e5a10 (rtti, high); signature (low): `undefined vfunc_2(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatPathingRequestMultiGoal__vfunc_2: u64 = 50176;
+/// `CombatPathingRequestMultiGoal::vfunc_2_sub0` at 0x8e6ab0 (callgraph, medium); signature (untiered): `undefined8 vfunc_2_sub0(longlong * param_1, longlong * param_2)`
+pub const CombatPathingRequestMultiGoal__vfunc_2_sub0: u64 = 50195;
+/// `CombatPathingRequestMultiGoal::vfunc_7` at 0x8e54f0 (rtti, high); signature (low): `undefined4 vfunc_7(CombatPathingRequestMultiGoal * this, longlong * param_1)`
+pub const CombatPathingRequestMultiGoal__vfunc_7: u64 = 50172;
+/// `CombatPathingRequestMultiGoal::vfunc_8` at 0x8e5530 (rtti, high); signature (low): `bool vfunc_8(CombatPathingRequestMultiGoal * this, longlong * param_1, undefined8 param_2, undefined4 * param_3)`
+pub const CombatPathingRequestMultiGoal__vfunc_8: u64 = 50173;
+/// `CombatPathingRequestMultiGoal::vfunc_8_sub0` at 0x8df2b0 (callgraph, medium); signature (untiered): `char vfunc_8_sub0(longlong param_1, float * param_2, float param_3, undefined4 * param_4)`
+pub const CombatPathingRequestMultiGoal__vfunc_8_sub0: u64 = 50065;
+/// `CombatPathingRequestMultiGoal::vfunc_9` at 0x8e5830 (rtti, high); signature (low): `undefined8 vfunc_9(CombatPathingRequestMultiGoal * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
+pub const CombatPathingRequestMultiGoal__vfunc_9: u64 = 50174;
 /// `CombatPathingRequestMultiGoal::vfunc_9_sub0` at 0x8e71a0 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub0(longlong param_1)`
 pub const CombatPathingRequestMultiGoal__vfunc_9_sub0: u64 = 50201;
 /// `CombatPathingRequestMultiGoal::vfunc_9_sub1` at 0x8e7200 (callgraph, medium); signature (untiered): `undefined vfunc_9_sub1(longlong param_1)`
@@ -7805,21 +7821,3 @@ pub const CreatePathingDoor: u64 = 30688;
 pub const CreatePerkEntryByType: u64 = 23787;
 /// `CreatePhysicsSystem` at 0xb5b420 (decompiler, medium); signature (medium): `hkpPhysicsSystem * CreatePhysicsSystem(longlong param_1)`
 pub const CreatePhysicsSystem: u64 = 61422;
-/// `CreatePhysicsWorldAndIslandListener` at 0x2cc620 (decompiler, medium); signature (untiered): `undefined CreatePhysicsWorldAndIslandListener(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePhysicsWorldAndIslandListener: u64 = 19193;
-/// `CreatePhysicsWorldWithListeners` at 0x2cc880 (decompiler, medium); signature (untiered): `bhkWorldM * CreatePhysicsWorldWithListeners(float * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePhysicsWorldWithListeners: u64 = 19195;
-/// `CreatePixelShaderRecord` at 0x100ff30 (decompiler, medium); signature (untiered): `void * CreatePixelShaderRecord(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePixelShaderRecord: u64 = 77352;
-/// `CreatePlayerCharacter` at 0x65d250 (decompiler, medium); signature (medium): `undefined CreatePlayerCharacter(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePlayerCharacter: u64 = 36629;
-/// `CreatePngInfo` at 0x1196c20 (decompiler, medium); signature (untiered): `void * CreatePngInfo(longlong param_1)`
-pub const CreatePngInfo: u64 = 89421;
-/// `CreatePngWriteStruct` at 0x1198fc0 (decompiler, medium); signature (untiered): `undefined CreatePngWriteStruct(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined * param_6, undefined8 param_7)`
-pub const CreatePngWriteStruct: u64 = 89462;
-/// `CreatePointFromPolar` at 0xdae400 (decompiler, medium); signature (untiered): `undefined CreatePointFromPolar(longlong param_1)`
-pub const CreatePointFromPolar: u64 = 86008;
-/// `CreatePooledWideString` at 0xeb1950 (decompiler, medium); signature (untiered): `longlong * CreatePooledWideString(longlong * param_1, wchar_t * param_2)`
-pub const CreatePooledWideString: u64 = 69176;
-/// `CreatePositionedSoundHandlesForChildren` at 0x523ac0 (decompiler, medium); signature (untiered): `undefined CreatePositionedSoundHandlesForChildren(undefined8 param_1, ulonglong param_2, longlong param_3, undefined8 param_4)`
-pub const CreatePositionedSoundHandlesForChildren: u64 = 32058;

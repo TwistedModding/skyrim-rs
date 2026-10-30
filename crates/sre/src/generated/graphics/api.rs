@@ -68,10 +68,10 @@ pub fn apply_viewport_depth_range() { unsafe { function!(77241, ())() } }
 /// `effect` must point to what the engine expects.
 #[inline]
 pub unsafe fn apply_volumetric_lighting(effect: *mut c_void, historyTarget: i32, outTarget: i32) -> i32 { unsafe { function!(107193, (*mut c_void, i32, i32) -> i32)(effect, historyTarget, outTarget) } }
-/// `BeginDepthShift`: when g_DepthShiftEnabled (0x20d72c0) and (Map Menu open (0x3436058) or 0x3436311 clear): caches far = slot 62 in 0x3436050 and near = slot 63 in 0x3436054, reframes the frame camera with SetPerspectiveFromFov(sg+0x13c, near, n*f / (f + (n - f) * 1.000002)) and narrows the viewport depth range to [min, min(max, 0.999998)] (saved in 0x34362b8/0x34362bc)
+/// `BeginDepthShift`: the depth shift around every world accumulator draw (and inline in RenderWorldDepthPrepass at 0x15391ec/0x1539276): reframes the frame camera with far' = n f / ((n - f) k + f), k = kDepthShiftFarScale 0x1b436b4 (1.000002), and sets the viewport's maximum depth to min(current, kDepthShiftMaxDepth 0x1b436b0) (0.999998). The GPU draws with the snapshot's unshifted projection under that narrowed range, so the stored depth is M d(z); every later reader that inverts the unshifted projection (the shadow masks through the cached inverse view-projection, SAO's camera Z) reads a surface at distance z as z / (M + (1 - M) z / n): pulled towards the camera by about (1 - M) z^2 / n, 7.5 times more at near 2 than at 15
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107125, rva 0x15377f0.
-/// `void (void)`
+/// `void ()`
 #[inline]
 pub fn begin_depth_shift() { unsafe { function!(107125, ())() } }
 /// `BlendWeatherVolumetricLighting`: blends the current weather's (sky+0x48) and the previous weather's (sky+0x50, by the transition sky+0x1b8) BGSVolumetricLighting records per time of day (weather +0x8a8 + index*8, record +0x20, 12 floats; missing records fall back to the INI values) and stores the result with SetWeatherVolumetricLighting
@@ -263,6 +263,12 @@ pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { f
 /// `this` must point to what the engine expects, and the result is an untyped pointer.
 #[inline]
 pub unsafe fn init_culling_params(this: *mut c_void) -> *mut c_void { unsafe { function!(106919, (*mut c_void) -> *mut c_void)(this) } }
+/// `InitRasterizerStateTable`: creates the 2 x 3 x 12 x 2 rasterizer states (fill solid/wireframe, cull none/back/front, 12 depth-bias modes: 0; -3/-0.4; -9/-1.2; 3/0.4; 6/0.8; -1/-0.65, clamp -100; scissor off/on), every one with DepthClipEnable 1. Shadow casters are therefore clipped to each cascade camera's depth range (the slice's corners +-20 units); only four position-only vertex shaders in the archive clamp z to 0
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77652, rva 0x102b6c0.
+/// `void ()`
+#[inline]
+pub fn init_rasterizer_state_table() { unsafe { function!(77652, ())() } }
 /// `InitVolumetricLighting`: renderer init (InitShaders) and RefreshShaders: the console defaults table, the texture sizes per quality (low/medium/high from the iVolumetricLightingTexture* settings), the enable and weather-update copies, the volumes (0x1532330), the two 4096-entry R32_FLOAT 1D textures 'Volumetric Lighting Repartition' (+0x78) and 'Volumetric Lighting Inverse Repartition' (+0x80), the compute shaders ISVolumetricLightingGenerateCS (+0x50) and ISVolumetricLightingRaymarchCS (+0x58), then fills both tables with +0x40 and +0x48
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107021, rva 0x1530f10.
@@ -290,15 +296,6 @@ pub unsafe fn main_window_proc(hwnd: *mut c_void, msg: u32, wParam: usize, lPara
 /// The pass rates the signature low.
 #[inline]
 pub unsafe fn msg_clear_lists_sub17_sub1(this: *mut c_void, target: u32, param: u32) -> u32 { unsafe { function!(107245, (*mut c_void, u32, u32) -> u32)(this, target, param) } }
-/// `Msg_ClearLists_sub22`: uploads the depth linearisation pair (far * near, near - far) and the projection scale of the given camera before image space
-///
-/// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107252, rva 0x15436b0.
-/// `void (void* params, NiCamera* camera)`
-///
-/// # Safety
-/// The pass rates the signature medium.
-#[inline]
-pub unsafe fn msg_clear_lists_sub22(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107252, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
 /// `ProcessCullObjectList`: (existing row) first object through slot 23 Process (-> NiAVObject::Cull), the rest through slot 22 CullNode directly; with skipHidden, objects whose own flag bit 0 is set are skipped
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 76561, rva 0xfee650.
@@ -333,10 +330,19 @@ pub unsafe fn register_child_geometries_with_accumulator(ctx: *mut c_void, node:
 /// `this` must point to what the engine expects.
 #[inline]
 pub unsafe fn render_active_image_space_effects(this: *mut c_void, sourceTarget: i32, finalTarget: i32) { unsafe { function!(105674, (*mut c_void, i32, i32))(this, sourceTarget, finalTarget) } }
-/// `RenderShadowMaskPasses`: one full-screen BSUtilityShader pass per frame shadow light into colour target 0x12 (screen x iShadowMaskQuarter/4), channel by the light's frameIndex
+/// `RenderSAOCompute`: the compute path of SAO (RenderWorldScene 0x6578c9 while ImageSpaceState +0x1d0): uploads (far x near, near - far, far) for ISSAOCameraZAndMipsCS, which writes camera Z = n f / ((n - f) depth + f) with two min mips, then the raw AO (projection from the frustum's left/right/top/bottom, random rotation), and the two separable blurs. Camera Z inverts the unshifted projection, so it carries BeginDepthShift's pull like the shadow masks; it also cancels badly in float32 (the sum's rounding is about 0.03 against n f / z), 7.5 times worse at near 2
 ///
-/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107141, rva 0x1539b10.
-/// `void (void)`
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107252, rva 0x15436b0.
+/// `void (SAOComputeShaders* shaders, NiCamera* camera)`
+///
+/// # Safety
+/// `shaders` must point to what the engine expects.
+#[inline]
+pub unsafe fn render_sao_compute(shaders: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107252, (*mut c_void, *mut crate::NiCamera))(shaders, camera) } }
+/// `RenderShadowMaskPasses`: one full-screen BSUtilityShader pass per frame shadow light into colour target 0x12, no depth target: technique (0x2002 | kind) + 0x2b with kind 0x400000 (directional, | 0x100 with focus maps), 0x800000 or 0x1000000 by the light's slots 6/5/8; the sun's is ((filter + 0x20) << 8 | 0x200002) + 0x2b. Run from RenderShadowMasks 0x1539a70 with g_CurrentRenderCamera = the frame camera and its cached projection entry bound (FindOrInitEntry290), after the pre-pass's EndDepthShift
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107141, rva 0x1539b10.
+/// `void ()`
 #[inline]
 pub fn render_shadow_mask_passes() { unsafe { function!(107141, ())() } }
 /// `ReplayGeometryList`: ProcessCullObjectList(culler, list+0x128, culler->camera, skipHidden=1, parallel)
@@ -616,10 +622,25 @@ pub fn g_system_timers() -> &'static crate::SystemTimerRecord { unsafe { &*(addr
 /// `g_UseHDRTonemap` at 0x20d75e4, id 391301 (semantic, medium); non-zero (static 1): the chain's tonemap step runs effect 30 (HDR) instead of the copy 0x22 (medium, graphics pass), type `u8`
 #[inline]
 pub fn g_use_hdr_tonemap() -> *mut u8 { address!(391301) as *mut u8 }
-/// `kDepthShiftFarScale` at 0x1b436b4, id 254903 (semantic, high); 1.000002 (0x3f800011) (high, graphics pass), type `float`
+/// `g_VolumetricLighting` at 0x20d7230, id 391247 (runtime, high); VolumetricLightingParams, static (GetVolumetricLightingParams 0x1530c50): +0x0 intensity, +0x4 custom colour contribution, +0x8 custom colour, +0x14 density contribution, +0x18 density size, +0x1c wind speed, +0x20 falling speed, +0x24 phase contribution, +0x28 phase scattering, +0x2c range factor (40), +0x30/+0x34/+0x38 volume width/height/depth (320x192x90 at quality 2), +0x40 repartition function, +0x48 inverse repartition function, +0x50/+0x58 generate/raymarch shaders, +0x60 noise volume, +0x68/+0x70 the two volumes, +0x78/+0x80 the repartition/inverse 1D textures, +0x88 frame counter (high, graphics pass), type `u8[0x90]`
+#[inline]
+pub fn g_volumetric_lighting() -> *mut c_void { address!(391247) as *mut c_void }
+/// `g_VolumetricLightingEnabled` at 0x3435f44, id 414913 (semantic, high); copy of bVolumetricLightingEnable:Display made at init; gates the volumetric step (RenderWorldScene 0x65716f) and the apply (RenderImageSpace 0x153ad46) (high, graphics pass), type `u8`
+#[inline]
+pub fn g_volumetric_lighting_enabled() -> *mut u8 { address!(414913) as *mut u8 }
+/// `g_VolumetricLightingGenerateConstants` at 0x3435db0, id 414886 (semantic, high); the generate shader's constant buffer data (layout in UpdateVolumetricLightingConstants), uploaded with UploadDynamicBufferData (high, graphics pass), type `u8[0x180]`
+#[inline]
+pub fn g_volumetric_lighting_generate_constants() -> *mut c_void { address!(414886) as *mut c_void }
+/// `g_VolumetricLightingWeatherUpdate` at 0x3435f45, id 414914 (runtime, high); copy of bVolumetricLightingUpdateWeather:Display (1); svlp weather 0/1 writes it (high, graphics pass), type `u8`
+#[inline]
+pub fn g_volumetric_lighting_weather_update() -> *mut u8 { address!(414914) as *mut u8 }
+/// `g_WeatherVolumetricLighting` at 0x33d3ea8, id 414627 (semantic, high); the weather's volumetric parameters (the first 12 floats of g_VolumetricLighting), blended per time of day; copied into g_VolumetricLighting every volumetric step while g_VolumetricLightingWeatherUpdate (high, graphics pass), type `float[12]`
+#[inline]
+pub fn g_weather_volumetric_lighting() -> *mut c_void { address!(414627) as *mut c_void }
+/// `kDepthShiftFarScale` at 0x1b436b4, id 254903 (runtime, high); 1.000002 (0x3f800011, 1 + 17 x 2^-23): k of the shifted far n f / ((n - f) k + f) (BeginDepthShift 0x153788b, RenderWorldDepthPrepass 0x15391ec), k ~ 1 / kDepthShiftMaxDepth so CPU constants built from the shifted camera match the narrowed depth (high, graphics pass), type `f32`
 #[inline]
 pub fn k_depth_shift_far_scale() -> *mut f32 { address!(254903) as *mut f32 }
-/// `kDepthShiftMaxDepth` at 0x1b436b0, id 254902 (semantic, high); 0.999998 (0x3f7fffde) (high, graphics pass), type `float`
+/// `kDepthShiftMaxDepth` at 0x1b436b0, id 254902 (runtime, high); 0.999998 (0x3f7fffde, 1 - 34 x 2^-24): the viewport's maximum depth during the depth shift (BeginDepthShift 0x15378f2, RenderWorldDepthPrepass 0x1539276); .rdata, read on every shift. Request IC11's fix scales 1 - M with the world near (high, graphics pass), type `f32`
 #[inline]
 pub fn k_depth_shift_max_depth() -> *mut f32 { address!(254902) as *mut f32 }
 /// `kFarDistanceWithLOD` at 0x1a70458, id 238490 (semantic, high); 353840 (high, graphics pass), type `float`

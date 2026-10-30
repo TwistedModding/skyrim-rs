@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Alias::UnregisterForUpdate` at 0xa140d0 (papyrus_native, high); signature (medium): `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
+pub const Papyrus__Alias__UnregisterForUpdate: u64 = 55143;
+/// `Papyrus::Alias::UnregisterForUpdateGameTime` at 0xa14120 (papyrus_native, high); signature (medium): `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
+pub const Papyrus__Alias__UnregisterForUpdateGameTime: u64 = 55144;
+/// `Papyrus::Armor::GetWarmthRating` at 0xa3ea20 (papyrus_native, high); signature (medium): `float GetWarmthRating(IVirtualMachine * vm, uint stackId, TESObjectARMO * self)`
+pub const Papyrus__Armor__GetWarmthRating: u64 = 56029;
+/// `Papyrus::Armor::RegisterFuncs` at 0xa3ea50 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Armor__RegisterFuncs: u64 = 56031;
+/// `Papyrus::Cell::GetActorOwner` at 0xa3ed30 (papyrus_native, high); signature (medium): `TESNPC * GetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
+pub const Papyrus__Cell__GetActorOwner: u64 = 56036;
+/// `Papyrus::Cell::GetFactionOwner` at 0xa3ed60 (papyrus_native, high); signature (medium): `TESFaction * GetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
+pub const Papyrus__Cell__GetFactionOwner: u64 = 56037;
+/// `Papyrus::Cell::IsAttached` at 0xa3ff60 (papyrus_native, high); signature (medium): `bool IsAttached(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
+pub const Papyrus__Cell__IsAttached: u64 = 56055;
+/// `Papyrus::Cell::IsInterior` at 0xa3ff70 (papyrus_native, high); signature (medium): `bool IsInterior(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
+pub const Papyrus__Cell__IsInterior: u64 = 56056;
+/// `Papyrus::Cell::RegisterFuncs` at 0xa3ef10 (xref_inference, medium); signature (low): `undefined RegisterFuncs(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const Papyrus__Cell__RegisterFuncs: u64 = 56042;
+/// `Papyrus::Cell::Reset` at 0xa3ed90 (papyrus_native, high); signature (medium): `void Reset(IVirtualMachine * vm, uint stackId, TESObjectCELL * self)`
+pub const Papyrus__Cell__Reset: u64 = 56038;
+/// `Papyrus::Cell::SetActorOwner` at 0xa3ff80 (papyrus_native, high); signature (medium): `void SetActorOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESNPC * a0)`
+pub const Papyrus__Cell__SetActorOwner: u64 = 56057;
 /// `Papyrus::Cell::SetFactionOwner` at 0xa3ff90 (papyrus_native, high); signature (medium): `void SetFactionOwner(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, TESFaction * a0)`
 pub const Papyrus__Cell__SetFactionOwner: u64 = 56058;
 /// `Papyrus::Cell::SetFogColor` at 0xa3ee00 (papyrus_native, high); signature (medium): `void SetFogColor(IVirtualMachine * vm, uint stackId, TESObjectCELL * self, uint a0, uint a1, uint a2, uint a3, uint a4, uint a5)`
@@ -8225,25 +8247,3 @@ pub const ReleasePackageSlotUnderLock: u64 = 38972;
 pub const ReleasePackedOpcodeBuffer: u64 = 104557;
 /// `ReleasePackedRefCountPtr` at 0x1270b0 (decompiler, high); signature (untiered): `undefined ReleasePackedRefCountPtr(longlong * param_1)`
 pub const ReleasePackedRefCountPtr: u64 = 11349;
-/// `ReleasePagesAndClearSegmentBitmap` at 0x1185c30 (decompiler, medium); signature (untiered): `ulonglong ReleasePagesAndClearSegmentBitmap(longlong param_1, ulonglong param_2, ulonglong param_3)`
-pub const ReleasePagesAndClearSegmentBitmap: u64 = 84799;
-/// `ReleasePair16Vector` at 0x142b6d0 (decompiler, medium); signature (medium): `undefined ReleasePair16Vector(undefined8 * param_1)`
-pub const ReleasePair16Vector: u64 = 452130;
-/// `ReleasePair16Vector_2` at 0x142b770 (decompiler, medium); signature (medium): `undefined ReleasePair16Vector_2(undefined8 * param_1)`
-pub const ReleasePair16Vector_2: u64 = 452131;
-/// `ReleasePairRefArrayAndFree` at 0x82b480 (decompiler, high); signature (untiered): `undefined ReleasePairRefArrayAndFree(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleasePairRefArrayAndFree: u64 = 44931;
-/// `ReleasePendingSemaphoreSignals` at 0xbf9e60 (decompiler, medium); signature (medium): `undefined ReleasePendingSemaphoreSignals(longlong param_1, longlong param_2)`
-pub const ReleasePendingSemaphoreSignals: u64 = 64243;
-/// `ReleasePointerArray128Locked` at 0x785240 (decompiler, medium); signature (medium): `DWORD ReleasePointerArray128Locked(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleasePointerArray128Locked: u64 = 41394;
-/// `ReleasePortalGraphAndNodes` at 0x30fa00 (decompiler, medium); signature (untiered): `undefined ReleasePortalGraphAndNodes(longlong param_1)`
-pub const ReleasePortalGraphAndNodes: u64 = 20515;
-/// `ReleaseProcessAndClearFieldF8` at 0x690df0 (decompiler, medium); signature (untiered): `undefined ReleaseProcessAndClearFieldF8(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseProcessAndClearFieldF8: u64 = 37563;
-/// `ReleaseProcessSubobjects` at 0x6f00a0 (decompiler, medium); signature (untiered): `undefined ReleaseProcessSubobjects(longlong * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ReleaseProcessSubobjects: u64 = 39250;
-/// `ReleasePtrAndSetField8` at 0x1554f40 (decompiler, medium); signature (untiered): `undefined ReleasePtrAndSetField8(longlong * param_1, undefined4 param_2)`
-pub const ReleasePtrAndSetField8: u64 = 107477;
-/// `ReleaseQueuedBlocksToFreeLists` at 0xce61d0 (decompiler, medium); signature (untiered): `undefined ReleaseQueuedBlocksToFreeLists(longlong param_1, longlong param_2)`
-pub const ReleaseQueuedBlocksToFreeLists: u64 = 68318;

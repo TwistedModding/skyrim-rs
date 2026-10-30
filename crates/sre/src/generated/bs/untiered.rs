@@ -2201,7 +2201,7 @@ impl crate::BSTweenerModifier {
 }
 
 impl crate::BSUtilityShader {
-    /// `BSUtilityShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name medium; id 107759, rva 0x1566710).
+    /// `BSUtilityShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger runtime evidence, name high; id 107759, rva 0x1566710).
     /// `char SetupTechnique(BSUtilityShader * this, int param_1)`
     ///
     /// # Safety

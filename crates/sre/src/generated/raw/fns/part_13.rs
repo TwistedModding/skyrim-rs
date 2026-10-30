@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAlphaReduce_Weather__atexit` at 0x173ee20 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__atexit(void)`
+pub const INISetting_fAlphaReduce_Weather__atexit: u64 = 165459;
+/// `INISetting_fAlphaReduce_Weather__init` at 0xba70 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__init(void)`
+pub const INISetting_fAlphaReduce_Weather__init: u64 = 264;
+/// `INISetting_fAlphaWeight_Display__atexit` at 0x17c42f0 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__atexit(void)`
+pub const INISetting_fAlphaWeight_Display__atexit: u64 = 174674;
+/// `INISetting_fAlphaWeight_Display__init` at 0x104e40 (crt_init, medium); signature (high): `void INISetting_fAlphaWeight_Display__init(void)`
+pub const INISetting_fAlphaWeight_Display__init: u64 = 10524;
+/// `INISetting_fAngleMaxEase_LookIK__atexit` at 0x17b42e0 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__atexit(void)`
+pub const INISetting_fAngleMaxEase_LookIK__atexit: u64 = 173889;
+/// `INISetting_fAngleMaxEase_LookIK__init` at 0xeb920 (crt_init, medium); signature (high): `void INISetting_fAngleMaxEase_LookIK__init(void)`
+pub const INISetting_fAngleMaxEase_LookIK__init: u64 = 9636;
+/// `INISetting_fAngleMax_LookIK__atexit` at 0x17b4290 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__atexit(void)`
+pub const INISetting_fAngleMax_LookIK__atexit: u64 = 173888;
+/// `INISetting_fAngleMax_LookIK__init` at 0xeb8a0 (crt_init, medium); signature (high): `void INISetting_fAngleMax_LookIK__init(void)`
+pub const INISetting_fAngleMax_LookIK__init: u64 = 9635;
+/// `INISetting_fAnimInterpFarDist_Animation__atexit` at 0x17b0870 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__atexit(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__atexit: u64 = 173614;
+/// `INISetting_fAnimInterpFarDist_Animation__init` at 0xddfe0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpFarDist_Animation__init(void)`
+pub const INISetting_fAnimInterpFarDist_Animation__init: u64 = 8856;
 /// `INISetting_fAnimInterpMaxTime_Animation__atexit` at 0x17b08c0 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__atexit(void)`
 pub const INISetting_fAnimInterpMaxTime_Animation__atexit: u64 = 173615;
 /// `INISetting_fAnimInterpMaxTime_Animation__init` at 0xde060 (crt_init, medium); signature (high): `void INISetting_fAnimInterpMaxTime_Animation__init(void)`
@@ -6635,8 +6655,10 @@ pub const InitRange28ByteEntries: u64 = 24000;
 pub const InitRange38ByteEntries: u64 = 23998;
 /// `InitRange6ByteEntriesToAllOnes` at 0x39eb00 (decompiler, high); signature (high): `undefined InitRange6ByteEntriesToAllOnes(longlong * param_1, ulonglong param_2, uint param_3)`
 pub const InitRange6ByteEntriesToAllOnes: u64 = 23999;
-/// `InitRasterizerStateTable` at 0x102b6c0 (decompiler, medium); signature (medium): `undefined InitRasterizerStateTable(void)`
+/// `InitRasterizerStateTable` at 0x102b6c0 (semantic, high); signature (medium): `undefined InitRasterizerStateTable(void)`; semantic: creates the 2 x 3 x 12 x 2 rasterizer states (fill solid/wireframe, cull none/back/front, 12 depth-bias modes: 0; -3/-0.4; -9/-1.2; 3/0.4; 6/0.8; -1/-0.65, clamp -100; scissor off/on), every one with DepthClipEnable 1. Shadow casters are therefore clipped to each cascade camera's depth range (the slice's corners +-20 units); only four position-only vertex shaders in the archive clamp z to 0 (high); signature `void ()`
 pub const InitRasterizerStateTable: u64 = 77652;
+/// `InitRasterizerStateTable` as a function pointer type (high).
+pub type InitRasterizerStateTable_fn = unsafe extern "C" fn();
 /// `InitReadLockGuard` at 0xed7810 (decompiler, high); signature (high): `undefined8 * InitReadLockGuard(undefined8 * param_1, DWORD * param_2)`
 pub const InitReadLockGuard: u64 = 70058;
 /// `InitRecord0x2F0` at 0x143d3b0 (decompiler, high); signature (high): `undefined8 * InitRecord0x2F0(undefined8 * param_1)`
@@ -8371,29 +8393,3 @@ pub const InterpolateQuaternionKeysSquad_2: u64 = 74385;
 pub const InterpolateQuaternionNormalized: u64 = 70836;
 /// `InterpolateRgbByWeightTable` at 0x1044ae0 (decompiler, medium); signature (medium): `undefined InterpolateRgbByWeightTable(byte * param_1, byte * param_2, longlong param_3, longlong param_4, undefined2 * param_5)`
 pub const InterpolateRgbByWeightTable: u64 = 77779;
-/// `InterpolateSweptTransformToTime` at 0xc02dc0 (decompiler, medium); signature (medium): `undefined InterpolateSweptTransformToTime(float param_1, float * param_2)`
-pub const InterpolateSweptTransformToTime: u64 = 64500;
-/// `InterpolateTable359115` at 0x1dea40 (decompiler, medium); signature (medium): `float InterpolateTable359115(float param_1)`
-pub const InterpolateTable359115: u64 = 14456;
-/// `InterpolateThreePointRange` at 0x8f1bd0 (decompiler, medium); signature (medium): `float InterpolateThreePointRange(float param_1, float param_2, float param_3, float param_4)`
-pub const InterpolateThreePointRange: u64 = 50641;
-/// `InterpolateTransform` at 0xaeee10 (decompiler, medium); signature (medium): `undefined InterpolateTransform(float * param_1, float * param_2, float * param_3, float * param_4)`
-pub const InterpolateTransform: u64 = 59308;
-/// `InterpolateVec3KeysAtTime` at 0x5400c0 (decompiler, medium); signature (medium): `undefined InterpolateVec3KeysAtTime(ulonglong * param_1, float param_2, float * param_3)`
-pub const InterpolateVec3KeysAtTime: u64 = 32582;
-/// `InterpolateXAtY` at 0x259640 (decompiler, medium); signature (medium): `float InterpolateXAtY(float * param_1, float * param_2, float param_3)`
-pub const InterpolateXAtY: u64 = 16759;
-/// `InterpretMoppBytecode` at 0xb91270 (decompiler, medium); signature (untiered): `undefined InterpretMoppBytecode(longlong param_1, float * param_2, byte * param_3, float * param_4, int param_5)`
-pub const InterpretMoppBytecode: u64 = 62402;
-/// `InterruptAllCasts` at 0x6d6690 (decompiler, high); signature (high): `undefined InterruptAllCasts(longlong param_1)`
-pub const InterruptAllCasts: u64 = 38757;
-/// `InterruptCast` at 0x5caae0 (decompiler, medium); signature (untiered): `undefined InterruptCast(longlong * param_1)`
-pub const InterruptCast: u64 = 34408;
-/// `InterruptCastAndClearField3CFlags` at 0x8b4780 (decompiler, medium); signature (untiered): `undefined InterruptCastAndClearField3CFlags(undefined8 * param_1)`
-pub const InterruptCastAndClearField3CFlags: u64 = 49087;
-/// `InterruptCastAndExitNodeIfActorFieldF8Field10Zero` at 0x8d13e0 (decompiler, medium); signature (untiered): `undefined InterruptCastAndExitNodeIfActorFieldF8Field10Zero(void)`
-pub const InterruptCastAndExitNodeIfActorFieldF8Field10Zero: u64 = 49765;
-/// `InterruptCastHandler::vdtor` at 0x7d41e0 (layout_inference, medium); signature (low): `InterruptCastHandler * vdtor(InterruptCastHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const InterruptCastHandler__vdtor: u64 = 43340;
-/// `InterruptCastHandler::vfunc_1` at 0x7ce0e0 (rtti, high); signature (low): `undefined1 vfunc_1(InterruptCastHandler * this, longlong param_1)`
-pub const InterruptCastHandler__vfunc_1: u64 = 42862;

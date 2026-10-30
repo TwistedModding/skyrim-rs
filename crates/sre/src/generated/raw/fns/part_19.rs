@@ -3,6 +3,34 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESAttackDamageForm::vdtor` at 0x1df1a0 (layout_inference, medium); signature (low): `TESAttackDamageForm * vdtor(TESAttackDamageForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAttackDamageForm__vdtor: u64 = 14485;
+/// `TESAttackDamageForm::vfunc_1` at 0x1df0c0 (rtti, medium); signature (high): `undefined vfunc_1(TESAttackDamageForm * this)`
+pub const TESAttackDamageForm__vfunc_1: u64 = 14479;
+/// `TESAttackDamageForm::vfunc_2` at 0x1df0d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const TESAttackDamageForm__vfunc_2: u64 = 14480;
+/// `TESAttackDamageForm::vfunc_3` at 0x1df0e0 (rtti, medium); signature (low): `undefined vfunc_3(TESAttackDamageForm * this, undefined8 param_1)`
+pub const TESAttackDamageForm__vfunc_3: u64 = 14481;
+/// `TESAttackDamageForm::vfunc_4` at 0x1df130 (rtti, medium); signature (high): `undefined2 vfunc_4(TESAttackDamageForm * this)`
+pub const TESAttackDamageForm__vfunc_4: u64 = 14482;
+/// `TESAudio::ScriptedMusicState::Add` at 0x5e9f70 (semantic, high); signature (untiered): `undefined Add(ScriptedMusicState * this, longlong param_1)`; semantic: appends the type to the scripted list and sends BSMusicEvent{type+0x20, 0} (high); signature `void (ScriptedMusicState* this, BGSMusicType* type)`
+pub const TESAudio__ScriptedMusicState__Add: u64 = 35145;
+/// `TESAudio::ScriptedMusicState::Add` as a function pointer type (high).
+pub type TESAudio__ScriptedMusicState__Add_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut crate::BGSMusicType);
+/// `TESAudio::ScriptedMusicState::Remove` at 0x5ea010 (semantic, high); signature (untiered): `undefined Remove(ScriptedMusicState * this, longlong param_1)`; semantic: removes the type from the scripted list and sends BSMusicEvent{type+0x20, 1} (high); signature `void (ScriptedMusicState* this, BGSMusicType* type)`
+pub const TESAudio__ScriptedMusicState__Remove: u64 = 35146;
+/// `TESAudio::ScriptedMusicState::Remove` as a function pointer type (high).
+pub type TESAudio__ScriptedMusicState__Remove_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut crate::BGSMusicType);
+/// `TESAudio::ScriptedMusicState::ctor` at 0x5ead20 (layout_inference, medium); signature (low): `undefined ctor(ScriptedMusicState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAudio__ScriptedMusicState__ctor: u64 = 35167;
+/// `TESAudio::ScriptedMusicState::vdtor` at 0x5eaf70 (layout_inference, medium); signature (low): `ScriptedMusicState * vdtor(ScriptedMusicState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAudio__ScriptedMusicState__vdtor: u64 = 35173;
+/// `TESAudio::UpdatePerFrame` at 0x5e8a50 (semantic, medium); signature (untiered): `undefined UpdatePerFrame(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: main thread once per frame after the UI: category default object 0x92 frequency follows the time multiplier (0x33/0xe), then 0x5e8b80 and 0x5e8e30 (acoustic space, ambient) (medium); signature `void ()`
+pub const TESAudio__UpdatePerFrame: u64 = 35125;
+/// `TESBipedModelForm::ctor` at 0x1df1d0 (layout_inference, medium); signature (high): `TESBipedModelForm * ctor(TESBipedModelForm * this)`
+pub const TESBipedModelForm__ctor: u64 = 14486;
+/// `TESBipedModelForm::dtor` at 0x1df2e0 (layout_inference, high); signature (low): `undefined dtor(TESBipedModelForm * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
+pub const TESBipedModelForm__dtor: u64 = 14487;
 /// `TESBipedModelForm::vdtor` at 0x1dfc30 (slot_propagation, medium); signature (low): `TESBipedModelForm * vdtor(TESBipedModelForm * this, ulonglong param_1, longlong param_2, undefined1 * param_3)`
 pub const TESBipedModelForm__vdtor: u64 = 14504;
 /// `TESBipedModelForm::vfunc_1` at 0x1df3e0 (rtti, medium); signature (high): `undefined vfunc_1(TESBipedModelForm * this)`
@@ -9023,27 +9051,3 @@ pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_1: u64 = 24097;
 pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_2: u64 = 24098;
 /// `_anon_01A9FA1F::SceneResultsCallBack::vfunc_3` at 0x3a5d90 (rtti, high); signature (low): `undefined8 * vfunc_3(void)`
 pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_3: u64 = 24099;
-/// `_anon_01A9FA1F::SceneResultsCallBack::vfunc_4` at 0x3a5da0 (rtti, high); signature (low): `undefined8 vfunc_4(SceneResultsCallBack * this, longlong * param_1)`
-pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_4: u64 = 24100;
-/// `_anon_025735F6::ActiveMagicEffectEventArguments::vfunc_0` at 0x9f03e0 (rtti, high); signature (low): `ActiveMagicEffectEventArguments * vfunc_0(ActiveMagicEffectEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ActiveMagicEffectEventArguments__vfunc_0: u64 = 54357;
-/// `_anon_025735F6::ActiveMagicEffectEventArguments::vfunc_1` at 0x9edc10 (rtti, high); signature (low): `undefined8 vfunc_1(ActiveMagicEffectEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__ActiveMagicEffectEventArguments__vfunc_1: u64 = 54233;
-/// `_anon_025735F6::ActorEquipArguments::vfunc_0` at 0x9f0420 (rtti, high); signature (low): `ActorEquipArguments * vfunc_0(ActorEquipArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ActorEquipArguments__vfunc_0: u64 = 54358;
-/// `_anon_025735F6::ActorEquipArguments::vfunc_1` at 0x9edd50 (rtti, high); signature (low): `undefined8 vfunc_1(ActorEquipArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__ActorEquipArguments__vfunc_1: u64 = 54234;
-/// `_anon_025735F6::ActorLocationChangeArguments::vfunc_0` at 0x9f0460 (rtti, high); signature (low): `ActorLocationChangeArguments * vfunc_0(ActorLocationChangeArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__ActorLocationChangeArguments__vfunc_0: u64 = 54359;
-/// `_anon_025735F6::ActorLocationChangeArguments::vfunc_1` at 0x9ede30 (rtti, high); signature (low): `undefined8 vfunc_1(ActorLocationChangeArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__ActorLocationChangeArguments__vfunc_1: u64 = 54235;
-/// `_anon_025735F6::ActorLocationChangeArguments::vfunc_1_sub0` at 0x9e8b80 (callgraph, medium); signature (untiered): `ulonglong * vfunc_1_sub0(ulonglong * param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const _anon_025735F6__ActorLocationChangeArguments__vfunc_1_sub0: u64 = 54080;
-/// `_anon_025735F6::AmiiboTouchArguments::vfunc_0` at 0x9f04a0 (rtti, high); signature (low): `AmiiboTouchArguments * vfunc_0(AmiiboTouchArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__AmiiboTouchArguments__vfunc_0: u64 = 524042;
-/// `_anon_025735F6::AmiiboTouchArguments::vfunc_1` at 0x9edf10 (rtti, high); signature (low): `undefined8 vfunc_1(AmiiboTouchArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__AmiiboTouchArguments__vfunc_1: u64 = 524037;
-/// `_anon_025735F6::AnimationEventArguments::vfunc_0` at 0x9f04e0 (rtti, high); signature (low): `AnimationEventArguments * vfunc_0(AnimationEventArguments * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_025735F6__AnimationEventArguments__vfunc_0: u64 = 54360;
-/// `_anon_025735F6::AnimationEventArguments::vfunc_1` at 0x9ee060 (rtti, high); signature (low): `undefined8 vfunc_1(AnimationEventArguments * this, longlong * param_1, undefined8 param_2, ulonglong param_3)`
-pub const _anon_025735F6__AnimationEventArguments__vfunc_1: u64 = 54236;

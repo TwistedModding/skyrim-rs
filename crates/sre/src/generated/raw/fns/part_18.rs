@@ -3,6 +3,42 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetBit0OfFieldF4OnArrayEntries` at 0x50bf50 (decompiler, high); signature (high): `undefined SetBit0OfFieldF4OnArrayEntries(longlong * param_1, char param_2)`
+pub const SetBit0OfFieldF4OnArrayEntries: u64 = 31661;
+/// `SetBit0OfFieldF4OnCellNodes` at 0x9a1370 (decompiler, medium); signature (medium): `undefined4 SetBit0OfFieldF4OnCellNodes(char * param_1, longlong param_2)`
+pub const SetBit0OfFieldF4OnCellNodes: u64 = 53165;
+/// `SetBit0OfFieldF4OnGridCellNodes` at 0x9a0e60 (decompiler, medium); signature (untiered): `undefined4 SetBit0OfFieldF4OnGridCellNodes(longlong param_1, char * param_2, ulonglong param_3, undefined8 param_4)`
+pub const SetBit0OfFieldF4OnGridCellNodes: u64 = 53160;
+/// `SetBit0OfFieldF4OnLightsInSubtree` at 0x15120a0 (decompiler, medium); signature (untiered): `undefined SetBit0OfFieldF4OnLightsInSubtree(longlong param_1, longlong param_2, char param_3, char param_4)`
+pub const SetBit0OfFieldF4OnLightsInSubtree: u64 = 106391;
+/// `SetBit0OfFieldF4OnMarkerNodes` at 0x226510 (decompiler, medium); signature (untiered): `ulonglong SetBit0OfFieldF4OnMarkerNodes(longlong * param_1, char * param_2)`
+pub const SetBit0OfFieldF4OnMarkerNodes: u64 = 15926;
+/// `SetBit0OfFieldF4OnMarkerNodesRecursive` at 0xff06e0 (decompiler, medium); signature (untiered): `ulonglong SetBit0OfFieldF4OnMarkerNodesRecursive(longlong * param_1, char * param_2)`
+pub const SetBit0OfFieldF4OnMarkerNodesRecursive: u64 = 76613;
+/// `SetBit0OfRef3DFieldF4ForChildNode7Refs` at 0x2cacc0 (decompiler, medium); signature (untiered): `undefined SetBit0OfRef3DFieldF4ForChildNode7Refs(longlong param_1, char param_2, int param_3)`
+pub const SetBit0OfRef3DFieldF4ForChildNode7Refs: u64 = 19166;
+/// `SetBit0OnAllArrayEntries` at 0x2c1330 (decompiler, medium); signature (untiered): `undefined SetBit0OnAllArrayEntries(longlong param_1, char param_2)`
+pub const SetBit0OnAllArrayEntries: u64 = 19055;
+/// `SetBit10OfField10` at 0x2bb150 (decompiler, high); signature (high): `undefined SetBit10OfField10(longlong param_1, char param_2)`
+pub const SetBit10OfField10: u64 = 18904;
+/// `SetBit10OfField154` at 0x11a1050 (decompiler, high); signature (high): `undefined SetBit10OfField154(longlong param_1)`
+pub const SetBit10OfField154: u64 = 89531;
+/// `SetBit10OfField40` at 0x2c5c70 (decompiler, high); signature (high): `undefined SetBit10OfField40(longlong param_1, char param_2)`
+pub const SetBit10OfField40: u64 = 19115;
+/// `SetBit13OfField10` at 0x1e64c0 (decompiler, high); signature (high): `undefined SetBit13OfField10(longlong param_1, char param_2)`
+pub const SetBit13OfField10: u64 = 14647;
+/// `SetBit13OfField10_2` at 0x1e64f0 (decompiler, high); signature (high): `undefined SetBit13OfField10_2(longlong param_1, char param_2)`
+pub const SetBit13OfField10_2: u64 = 14648;
+/// `SetBit15OfField10` at 0x2e49f0 (decompiler, high); signature (high): `undefined SetBit15OfField10(longlong param_1, char param_2)`
+pub const SetBit15OfField10: u64 = 19588;
+/// `SetBit15OfField8` at 0xaa9690 (decompiler, high); signature (high): `undefined SetBit15OfField8(longlong param_1)`
+pub const SetBit15OfField8: u64 = 57276;
+/// `SetBit16OfField10AndNotify` at 0x1e6190 (decompiler, medium); signature (untiered): `undefined SetBit16OfField10AndNotify(longlong * param_1, byte param_2)`
+pub const SetBit16OfField10AndNotify: u64 = 14640;
+/// `SetBit16OfField154IfField257Below8` at 0x11a7770 (decompiler, high); signature (high): `undefined SetBit16OfField154IfField257Below8(longlong param_1)`
+pub const SetBit16OfField154IfField257Below8: u64 = 90136;
+/// `SetBit17OfField154` at 0x11a77d0 (decompiler, high); signature (high): `undefined SetBit17OfField154(longlong param_1)`
+pub const SetBit17OfField154: u64 = 90139;
 /// `SetBit18OnEntriesMatchingField58` at 0x5d0db0 (decompiler, medium); signature (untiered): `undefined SetBit18OnEntriesMatchingField58(longlong * param_1, longlong param_2, char param_3)`
 pub const SetBit18OnEntriesMatchingField58: u64 = 34503;
 /// `SetBit19OfField10` at 0x2e4a30 (decompiler, high); signature (high): `undefined SetBit19OfField10(longlong param_1, char param_2)`
@@ -8075,31 +8111,3 @@ pub const TESAnimGroup__dtor: u64 = 24395;
 pub const TESAnimGroup__vdtor: u64 = 24435;
 /// `TESAttackDamageForm::ctor` at 0x1df080 (layout_inference, medium); signature (high): `TESAttackDamageForm * ctor(TESAttackDamageForm * this)`
 pub const TESAttackDamageForm__ctor: u64 = 14477;
-/// `TESAttackDamageForm::vdtor` at 0x1df1a0 (layout_inference, medium); signature (low): `TESAttackDamageForm * vdtor(TESAttackDamageForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAttackDamageForm__vdtor: u64 = 14485;
-/// `TESAttackDamageForm::vfunc_1` at 0x1df0c0 (rtti, medium); signature (high): `undefined vfunc_1(TESAttackDamageForm * this)`
-pub const TESAttackDamageForm__vfunc_1: u64 = 14479;
-/// `TESAttackDamageForm::vfunc_2` at 0x1df0d0 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const TESAttackDamageForm__vfunc_2: u64 = 14480;
-/// `TESAttackDamageForm::vfunc_3` at 0x1df0e0 (rtti, medium); signature (low): `undefined vfunc_3(TESAttackDamageForm * this, undefined8 param_1)`
-pub const TESAttackDamageForm__vfunc_3: u64 = 14481;
-/// `TESAttackDamageForm::vfunc_4` at 0x1df130 (rtti, medium); signature (high): `undefined2 vfunc_4(TESAttackDamageForm * this)`
-pub const TESAttackDamageForm__vfunc_4: u64 = 14482;
-/// `TESAudio::ScriptedMusicState::Add` at 0x5e9f70 (semantic, high); signature (untiered): `undefined Add(ScriptedMusicState * this, longlong param_1)`; semantic: appends the type to the scripted list and sends BSMusicEvent{type+0x20, 0} (high); signature `void (ScriptedMusicState* this, BGSMusicType* type)`
-pub const TESAudio__ScriptedMusicState__Add: u64 = 35145;
-/// `TESAudio::ScriptedMusicState::Add` as a function pointer type (high).
-pub type TESAudio__ScriptedMusicState__Add_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut crate::BGSMusicType);
-/// `TESAudio::ScriptedMusicState::Remove` at 0x5ea010 (semantic, high); signature (untiered): `undefined Remove(ScriptedMusicState * this, longlong param_1)`; semantic: removes the type from the scripted list and sends BSMusicEvent{type+0x20, 1} (high); signature `void (ScriptedMusicState* this, BGSMusicType* type)`
-pub const TESAudio__ScriptedMusicState__Remove: u64 = 35146;
-/// `TESAudio::ScriptedMusicState::Remove` as a function pointer type (high).
-pub type TESAudio__ScriptedMusicState__Remove_fn = unsafe extern "C" fn(this: *mut c_void, type_: *mut crate::BGSMusicType);
-/// `TESAudio::ScriptedMusicState::ctor` at 0x5ead20 (layout_inference, medium); signature (low): `undefined ctor(ScriptedMusicState * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAudio__ScriptedMusicState__ctor: u64 = 35167;
-/// `TESAudio::ScriptedMusicState::vdtor` at 0x5eaf70 (layout_inference, medium); signature (low): `ScriptedMusicState * vdtor(ScriptedMusicState * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAudio__ScriptedMusicState__vdtor: u64 = 35173;
-/// `TESAudio::UpdatePerFrame` at 0x5e8a50 (semantic, medium); signature (untiered): `undefined UpdatePerFrame(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`; semantic: main thread once per frame after the UI: category default object 0x92 frequency follows the time multiplier (0x33/0xe), then 0x5e8b80 and 0x5e8e30 (acoustic space, ambient) (medium); signature `void ()`
-pub const TESAudio__UpdatePerFrame: u64 = 35125;
-/// `TESBipedModelForm::ctor` at 0x1df1d0 (layout_inference, medium); signature (high): `TESBipedModelForm * ctor(TESBipedModelForm * this)`
-pub const TESBipedModelForm__ctor: u64 = 14486;
-/// `TESBipedModelForm::dtor` at 0x1df2e0 (layout_inference, high); signature (low): `undefined dtor(TESBipedModelForm * this, undefined8 param_1, longlong param_2, undefined1 * param_3)`
-pub const TESBipedModelForm__dtor: u64 = 14487;

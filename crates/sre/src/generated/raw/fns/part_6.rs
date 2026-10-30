@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildInstanceTableFromNode` at 0x55b7c0 (decompiler, medium); signature (untiered): `undefined BuildInstanceTableFromNode(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
+pub const BuildInstanceTableFromNode: u64 = 33078;
+/// `BuildInterpolatedEndpointPalette` at 0x103b990 (decompiler, medium); signature (untiered): `undefined BuildInterpolatedEndpointPalette(undefined8 param_1, longlong param_2, uint * param_3, undefined8 * param_4)`
+pub const BuildInterpolatedEndpointPalette: u64 = 77742;
+/// `BuildInventoryEntryAtIndex` at 0x238940 (decompiler, medium); signature (untiered): `BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * BuildInventoryEntryAtIndex(undefined8 * param_1, uint param_2)`
+pub const BuildInventoryEntryAtIndex: u64 = 16106;
+/// `BuildInventoryEntryForObject` at 0x23cb30 (decompiler, medium); signature (untiered): `undefined8 * BuildInventoryEntryForObject(longlong param_1, longlong param_2, ulonglong param_3)`
+pub const BuildInventoryEntryForObject: u64 = 16133;
+/// `BuildInvertedPointerMap` at 0xabfe20 (decompiler, medium); signature (untiered): `undefined BuildInvertedPointerMap(longlong * param_1, undefined8 param_2)`
+pub const BuildInvertedPointerMap: u64 = 58074;
 /// `BuildItemEnchantmentSoulGemRequirementList` at 0x9280e0 (decompiler, medium); signature (untiered): `undefined BuildItemEnchantmentSoulGemRequirementList(longlong param_1)`
 pub const BuildItemEnchantmentSoulGemRequirementList: u64 = 51457;
 /// `BuildKdTreeIfNotEmpty` at 0x11606e0 (decompiler, medium); signature (untiered): `undefined BuildKdTreeIfNotEmpty(undefined8 param_1, undefined8 * param_2)`
@@ -7929,7 +7939,3 @@ pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_Comba
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_2bf56e492cf4: u64 = 33174;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x55d650 (callgraph, medium); signature (untiered): `longlong * vfunc_2_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_24206f7532d7: u64 = 33135;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8d1cc0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2ea7c7153aac: u64 = 49769;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d1e80 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2df364ec15ce: u64 = 49775;

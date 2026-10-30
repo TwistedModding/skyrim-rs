@@ -4071,10 +4071,14 @@ pub const BSUIScaleformData__vdtor: u64 = 82071;
 pub const BSUtilityShader__GetTechniqueDefines: u64 = 527789;
 /// `BSUtilityShader::NiBoneMatrixSetterI_vdtor` at 0x1568e18 (slot_propagation, medium); signature (low): `undefined NiBoneMatrixSetterI_vdtor(BSUtilityShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSUtilityShader__NiBoneMatrixSetterI_vdtor: u64 = 107771;
-/// `BSUtilityShader::SetShadowBiasConstants` at 0x1568300 (semantic, medium); signature (untiered): `undefined SetShadowBiasConstants(longlong param_1, ulonglong param_2, longlong param_3)`; semantic: depth bias = light.biasScale * 0.00025 * (fShadowDirectionalBiasScale for a directional light) * 1.0, slope term = biasScale * 8.33e-5 (medium); signature `void (BSUtilityShader* this, BSShadowLight* light, RenderPass* pass)`
+/// `BSUtilityShader::SetShadowBiasConstants` at 0x1568300 (semantic, high); signature (untiered): `undefined SetShadowBiasConstants(longlong param_1, ulonglong param_2, longlong param_3)`; semantic: the mask's per-map matrices (the light's map matrices with the eye position folded in, so they take eye-relative positions) and the bias pair: light biasScale (+0x540) x 0.00025 x fShadowDirectionalBiasScale (directional) and biasScale x 8.33e-5, both x ID_415265 (1.0) and the slope term also x ID_391716 (1.0); none of it depends on near (high); signature `void (BSUtilityShader* this, u32 lightIndex, RenderPass* pass)`
 pub const BSUtilityShader__SetShadowBiasConstants: u64 = 107764;
-/// `BSUtilityShader::SetupTechnique` at 0x1566710 (semantic, medium); signature (untiered): `char SetupTechnique(BSUtilityShader * this, int param_1)`; semantic: slot 2: for the shadow-mask techniques converts every cascade split to depth with g_CurrentRenderCamera's near/far (same formula) and stores far (+0x164) as a constant (medium); signature `void (BSUtilityShader* this, u32 technique)`
+/// `BSUtilityShader::SetShadowBiasConstants` as a function pointer type (high).
+pub type BSUtilityShader__SetShadowBiasConstants_fn = unsafe extern "C" fn(this: *mut crate::BSUtilityShader, lightIndex: u32, pass: *mut crate::RenderPass);
+/// `BSUtilityShader::SetupTechnique` at 0x1566710 (runtime, high); signature (untiered): `char SetupTechnique(BSUtilityShader * this, int param_1)`; semantic: slot 2. For the sun's mask (technique bit 21) turns cascadeFar and cascadeNear (sun +0x5a4, +0x598) into depth with g_CurrentRenderCamera's near and far, (s f - f n) / (s (f - n)), for the shader's cascade choice and the cascade-0/1 blend (both done in depth, so they hold their distances at any near); far depth 2 = the last cascade's (no shadow beyond), w = cascade count; binds depth 0 and, with focus maps, its stencil; the Poisson radius (fPoissonRadiusScale / shadow map resolution) for filter types 2-4; per focus node a fade from fMaxFocusShadowMapDistance and fFadingFracStart (high); signature `bool (BSUtilityShader* this, u32 technique)`
 pub const BSUtilityShader__SetupTechnique: u64 = 107759;
+/// `BSUtilityShader::SetupTechnique` as a function pointer type (high).
+pub type BSUtilityShader__SetupTechnique_fn = unsafe extern "C" fn(this: *mut crate::BSUtilityShader, technique: u32) -> bool;
 /// `BSUtilityShader::ctor` at 0x1566460 (layout_inference, high); signature (high): `BSUtilityShader * ctor(BSUtilityShader * this)`
 pub const BSUtilityShader__ctor: u64 = 107755;
 /// `BSUtilityShader::vdtor` at 0x1568e30 (layout_inference, medium); signature (low): `BSUtilityShader * vdtor(BSUtilityShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -5169,7 +5173,7 @@ pub const BeginBlendedSequencePairByNames: u64 = 72380;
 pub const BeginContentIdResolution: u64 = 442498;
 /// `BeginContentIdResolution_2` at 0x60c250 (decompiler, medium); signature (untiered): `undefined BeginContentIdResolution_2(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const BeginContentIdResolution_2: u64 = 442509;
-/// `BeginDepthShift` at 0x15377f0 (runtime, high); signature (untiered): `undefined BeginDepthShift(void)`; semantic: when g_DepthShiftEnabled (0x20d72c0) and (Map Menu open (0x3436058) or 0x3436311 clear): caches far = slot 62 in 0x3436050 and near = slot 63 in 0x3436054, reframes the frame camera with SetPerspectiveFromFov(sg+0x13c, near, n*f / (f + (n - f) * 1.000002)) and narrows the viewport depth range to [min, min(max, 0.999998)] (saved in 0x34362b8/0x34362bc) (high); signature `void (void)`
+/// `BeginDepthShift` at 0x15377f0 (runtime, high); signature (untiered): `undefined BeginDepthShift(void)`; semantic: the depth shift around every world accumulator draw (and inline in RenderWorldDepthPrepass at 0x15391ec/0x1539276): reframes the frame camera with far' = n f / ((n - f) k + f), k = kDepthShiftFarScale 0x1b436b4 (1.000002), and sets the viewport's maximum depth to min(current, kDepthShiftMaxDepth 0x1b436b0) (0.999998). The GPU draws with the snapshot's unshifted projection under that narrowed range, so the stored depth is M d(z); every later reader that inverts the unshifted projection (the shadow masks through the cached inverse view-projection, SAO's camera Z) reads a surface at distance z as z / (M + (1 - M) z / n): pulled towards the camera by about (1 - M) z^2 / n, 7.5 times more at near 2 than at 15 (high); signature `void ()`
 pub const BeginDepthShift: u64 = 107125;
 /// `BeginDepthShift` as a function pointer type (high).
 pub type BeginDepthShift_fn = unsafe extern "C" fn();
@@ -5587,13 +5591,3 @@ pub const BuildImagesTextAndBottomBarControls: u64 = 454669;
 pub const BuildIndexPairMapBySubstringSwap: u64 = 58375;
 /// `BuildIndexedNameArrayFromMap` at 0xbdf3b0 (decompiler, medium); signature (untiered): `undefined BuildIndexedNameArrayFromMap(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
 pub const BuildIndexedNameArrayFromMap: u64 = 63852;
-/// `BuildInstanceTableFromNode` at 0x55b7c0 (decompiler, medium); signature (untiered): `undefined BuildInstanceTableFromNode(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
-pub const BuildInstanceTableFromNode: u64 = 33078;
-/// `BuildInterpolatedEndpointPalette` at 0x103b990 (decompiler, medium); signature (untiered): `undefined BuildInterpolatedEndpointPalette(undefined8 param_1, longlong param_2, uint * param_3, undefined8 * param_4)`
-pub const BuildInterpolatedEndpointPalette: u64 = 77742;
-/// `BuildInventoryEntryAtIndex` at 0x238940 (decompiler, medium); signature (untiered): `BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * BuildInventoryEntryAtIndex(undefined8 * param_1, uint param_2)`
-pub const BuildInventoryEntryAtIndex: u64 = 16106;
-/// `BuildInventoryEntryForObject` at 0x23cb30 (decompiler, medium); signature (untiered): `undefined8 * BuildInventoryEntryForObject(longlong param_1, longlong param_2, ulonglong param_3)`
-pub const BuildInventoryEntryForObject: u64 = 16133;
-/// `BuildInvertedPointerMap` at 0xabfe20 (decompiler, medium); signature (untiered): `undefined BuildInvertedPointerMap(longlong * param_1, undefined8 param_2)`
-pub const BuildInvertedPointerMap: u64 = 58074;

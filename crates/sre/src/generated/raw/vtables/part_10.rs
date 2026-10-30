@@ -6566,7 +6566,7 @@ pub struct BSUtilityShader_vtable {
     pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
-    /// `BSUtilityShader::SetupTechnique` at 0x1566710 (semantic, medium); signature (untiered): `char SetupTechnique(BSUtilityShader * this, int param_1)`
+    /// `BSUtilityShader::SetupTechnique` at 0x1566710 (runtime, high); signature (untiered): `char SetupTechnique(BSUtilityShader * this, int param_1)`
     pub slot_2: *const c_void,
     /// `BSUtilityShader::vfunc_3` at 0x1566500 (rtti, high); signature (low): `undefined vfunc_3(BSUtilityShader * this, uint param_1)`
     pub slot_3: *const c_void,

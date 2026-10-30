@@ -3,6 +3,38 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpContactMgr::vdtor` at 0xb5c9a0 (layout_inference, medium); signature (low): `hkpContactMgr * vdtor(hkpContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactMgr__vdtor: u64 = 61450;
+/// `hkpContactMgr::vfunc_9` at 0xb5cf00 (rtti, medium); signature (low): `undefined vfunc_9(void)`
+pub const hkpContactMgr__vfunc_9: u64 = 61463;
+/// `hkpContactMgrFactory::vdtor` at 0xb5ca30 (layout_inference, medium); signature (low): `hkpContactMgrFactory * vdtor(hkpContactMgrFactory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactMgrFactory__vdtor: u64 = 61451;
+/// `hkpContactMgrFactory::vfunc_2` at 0xb5ced0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContactMgrFactory * this, longlong * param_1)`
+pub const hkpContactMgrFactory__vfunc_2: u64 = 61462;
+/// `hkpContinuousSimulation::ctor` at 0x10d4140 (layout_inference, high); signature (low): `hkpContinuousSimulation * ctor(hkpContinuousSimulation * this, longlong param_1)`
+pub const hkpContinuousSimulation__ctor: u64 = 80426;
+/// `hkpContinuousSimulation::ctor` at 0x10d4220 (layout_inference, medium); signature (high): `undefined ctor(hkpContinuousSimulation * this)`
+pub const hkpContinuousSimulation__ctor_2: u64 = 80427;
+/// `hkpContinuousSimulation::ctor_caller` at 0x10d42c0 (callgraph, medium); signature (untiered): `undefined ctor_caller(undefined8 param_1)`
+pub const hkpContinuousSimulation__ctor_caller: u64 = 80428;
+/// `hkpContinuousSimulation::vdtor` at 0x10d9ee0 (slot_propagation, medium); signature (low): `hkpContinuousSimulation * vdtor(hkpContinuousSimulation * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContinuousSimulation__vdtor: u64 = 80471;
+/// `hkpContinuousSimulation::vfunc_12` at 0x10d4650 (rtti, medium); signature (low): `undefined vfunc_12(hkpContinuousSimulation * this, longlong * param_1, int param_2, undefined8 param_3, byte param_4)`
+pub const hkpContinuousSimulation__vfunc_12: u64 = 80432;
+/// `hkpContinuousSimulation::vfunc_13` at 0x10d46c0 (rtti, high); signature (low): `undefined vfunc_13(void)`
+pub const hkpContinuousSimulation__vfunc_13: u64 = 80433;
+/// `hkpContinuousSimulation::vfunc_14` at 0x10d46d0 (rtti, medium); signature (low): `undefined vfunc_14(hkpContinuousSimulation * this, longlong param_1)`
+pub const hkpContinuousSimulation__vfunc_14: u64 = 80434;
+/// `hkpContinuousSimulation::vfunc_15` at 0x10d4780 (rtti, high); signature (low): `undefined vfunc_15(void)`
+pub const hkpContinuousSimulation__vfunc_15: u64 = 80435;
+/// `hkpContinuousSimulation::vfunc_16` at 0x10d4420 (rtti, medium); signature (low): `undefined vfunc_16(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong param_3, uint param_4)`
+pub const hkpContinuousSimulation__vfunc_16: u64 = 80430;
+/// `hkpContinuousSimulation::vfunc_17` at 0x10d5600 (rtti, medium); signature (low): `undefined vfunc_17(hkpContinuousSimulation * this, undefined8 * param_1)`
+pub const hkpContinuousSimulation__vfunc_17: u64 = 80441;
+/// `hkpContinuousSimulation::vfunc_18` at 0x10d4610 (rtti, medium); signature (medium): `undefined vfunc_18(hkpContinuousSimulation * this, float param_1)`
+pub const hkpContinuousSimulation__vfunc_18: u64 = 80431;
+/// `hkpContinuousSimulation::vfunc_19` at 0x10d63d0 (rtti, high); signature (low): `undefined vfunc_19(hkpContinuousSimulation * this, longlong * param_1, int param_2, longlong * param_3, longlong * param_4)`
+pub const hkpContinuousSimulation__vfunc_19: u64 = 80447;
 /// `hkpContinuousSimulation::vfunc_2` at 0x10d6ca0 (rtti, medium); signature (low): `undefined vfunc_2(hkpContinuousSimulation * this, longlong * param_1)`
 pub const hkpContinuousSimulation__vfunc_2: u64 = 80449;
 /// `hkpContinuousSimulation::vfunc_20` at 0x10d6810 (rtti, high); signature (low): `undefined vfunc_20(hkpContinuousSimulation * this, longlong * param_1, longlong * param_2)`

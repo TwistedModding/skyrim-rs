@@ -3,6 +3,24 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreatePhysicsWorldAndIslandListener` at 0x2cc620 (decompiler, medium); signature (untiered): `undefined CreatePhysicsWorldAndIslandListener(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreatePhysicsWorldAndIslandListener: u64 = 19193;
+/// `CreatePhysicsWorldWithListeners` at 0x2cc880 (decompiler, medium); signature (untiered): `bhkWorldM * CreatePhysicsWorldWithListeners(float * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreatePhysicsWorldWithListeners: u64 = 19195;
+/// `CreatePixelShaderRecord` at 0x100ff30 (decompiler, medium); signature (untiered): `void * CreatePixelShaderRecord(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreatePixelShaderRecord: u64 = 77352;
+/// `CreatePlayerCharacter` at 0x65d250 (decompiler, medium); signature (medium): `undefined CreatePlayerCharacter(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreatePlayerCharacter: u64 = 36629;
+/// `CreatePngInfo` at 0x1196c20 (decompiler, medium); signature (untiered): `void * CreatePngInfo(longlong param_1)`
+pub const CreatePngInfo: u64 = 89421;
+/// `CreatePngWriteStruct` at 0x1198fc0 (decompiler, medium); signature (untiered): `undefined CreatePngWriteStruct(char * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4, undefined8 param_5, undefined * param_6, undefined8 param_7)`
+pub const CreatePngWriteStruct: u64 = 89462;
+/// `CreatePointFromPolar` at 0xdae400 (decompiler, medium); signature (untiered): `undefined CreatePointFromPolar(longlong param_1)`
+pub const CreatePointFromPolar: u64 = 86008;
+/// `CreatePooledWideString` at 0xeb1950 (decompiler, medium); signature (untiered): `longlong * CreatePooledWideString(longlong * param_1, wchar_t * param_2)`
+pub const CreatePooledWideString: u64 = 69176;
+/// `CreatePositionedSoundHandlesForChildren` at 0x523ac0 (decompiler, medium); signature (untiered): `undefined CreatePositionedSoundHandlesForChildren(undefined8 param_1, ulonglong param_2, longlong param_3, undefined8 param_4)`
+pub const CreatePositionedSoundHandlesForChildren: u64 = 32058;
 /// `CreatePrimitiveByType` at 0x212710 (decompiler, high); signature (untiered): `longlong * CreatePrimitiveByType(int param_1, uint * param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreatePrimitiveByType: u64 = 15518;
 /// `CreatePrimitiveFromRecord` at 0x2126b0 (decompiler, medium); signature (medium): `undefined8 CreatePrimitiveFromRecord(longlong param_1)`
@@ -8711,19 +8729,3 @@ pub const FocusNextListEntry: u64 = 454941;
 pub const FocusPreviousListEntry: u64 = 454942;
 /// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (untiered): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ForEachActorInHandleArray: u64 = 41326;
-/// `ForEachAliasInstanceOfRef` at 0x2e6a70 (semantic, high); signature (untiered): `undefined ForEachAliasInstanceOfRef(longlong param_1, longlong * param_2)`; semantic: the reference's ExtraAliasInstanceArray (extra 0x88), or, when the reference carries an ExtraReferenceHandle (0x1c) whose target has form flag bit 5 set, that target's array; each alias goes to functor slot 1 (high); signature `void (TESObjectREFR* ref, void* functor)`
-pub const ForEachAliasInstanceOfRef: u64 = 19656;
-/// `ForEachAliasInstanceOfRef` as a function pointer type (high).
-pub type ForEachAliasInstanceOfRef_fn = unsafe extern "C" fn(ref_: *mut crate::TESObjectREFR, functor: *mut c_void);
-/// `ForEachArrayEmitterInTree` at 0x1f7720 (decompiler, medium); signature (untiered): `ulonglong ForEachArrayEmitterInTree(longlong * param_1, undefined8 * param_2)`
-pub const ForEachArrayEmitterInTree: u64 = 15054;
-/// `ForEachArrayEntryLocked` at 0x9723f0 (decompiler, medium); signature (medium): `undefined ForEachArrayEntryLocked(longlong param_1, undefined * param_2)`
-pub const ForEachArrayEntryLocked: u64 = 52423;
-/// `ForEachCommaSeparatedToken` at 0xecfec0 (decompiler, medium); signature (untiered): `undefined ForEachCommaSeparatedToken(char * param_1, undefined8 * param_2)`
-pub const ForEachCommaSeparatedToken: u64 = 69870;
-/// `ForEachCommaSeparatedTokenWithContext` at 0xecf510 (decompiler, medium); signature (untiered): `undefined ForEachCommaSeparatedTokenWithContext(undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const ForEachCommaSeparatedTokenWithContext: u64 = 69853;
-/// `ForEachElementInBlockList` at 0xabc410 (decompiler, medium); signature (untiered): `undefined ForEachElementInBlockList(longlong param_1, longlong * param_2, undefined * param_3, undefined4 param_4, undefined8 param_5)`
-pub const ForEachElementInBlockList: u64 = 57955;
-/// `ForEachEntryCallVfunc41` at 0x1059330 (decompiler, medium); signature (untiered): `undefined ForEachEntryCallVfunc41(longlong param_1, undefined8 param_2)`
-pub const ForEachEntryCallVfunc41: u64 = 78098;

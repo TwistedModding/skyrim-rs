@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8d1cc0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2ea7c7153aac: u64 = 49769;
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d1e80 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2df364ec15ce: u64 = 49775;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x8d1b00 (callgraph, medium); signature (untiered): `undefined8 * vfunc_2_sub0(longlong * param_1, undefined8 * param_2, undefined8 * param_3, undefined8 param_4)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_37dd6f47002b: u64 = 49767;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8d84f0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextUsePotion,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -5569,19 +5573,3 @@ pub const CombatPathingRequestMultiGoal__vdtor: u64 = 50194;
 pub const CombatPathingRequestMultiGoal__vfunc_1: u64 = 50177;
 /// `CombatPathingRequestMultiGoal::vfunc_10` at 0x8e5a00 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 * * param_2, undefined8 param_3, undefined8 param_4)`
 pub const CombatPathingRequestMultiGoal__vfunc_10: u64 = 50175;
-/// `CombatPathingRequestMultiGoal::vfunc_11` at 0x8e5ad0 (rtti, high); signature (low): `undefined vfunc_11(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatPathingRequestMultiGoal__vfunc_11: u64 = 50178;
-/// `CombatPathingRequestMultiGoal::vfunc_12` at 0x8e5be0 (rtti, high); signature (low): `undefined vfunc_12(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatPathingRequestMultiGoal__vfunc_12: u64 = 50179;
-/// `CombatPathingRequestMultiGoal::vfunc_2` at 0x8e5a10 (rtti, high); signature (low): `undefined vfunc_2(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const CombatPathingRequestMultiGoal__vfunc_2: u64 = 50176;
-/// `CombatPathingRequestMultiGoal::vfunc_2_sub0` at 0x8e6ab0 (callgraph, medium); signature (untiered): `undefined8 vfunc_2_sub0(longlong * param_1, longlong * param_2)`
-pub const CombatPathingRequestMultiGoal__vfunc_2_sub0: u64 = 50195;
-/// `CombatPathingRequestMultiGoal::vfunc_7` at 0x8e54f0 (rtti, high); signature (low): `undefined4 vfunc_7(CombatPathingRequestMultiGoal * this, longlong * param_1)`
-pub const CombatPathingRequestMultiGoal__vfunc_7: u64 = 50172;
-/// `CombatPathingRequestMultiGoal::vfunc_8` at 0x8e5530 (rtti, high); signature (low): `bool vfunc_8(CombatPathingRequestMultiGoal * this, longlong * param_1, undefined8 param_2, undefined4 * param_3)`
-pub const CombatPathingRequestMultiGoal__vfunc_8: u64 = 50173;
-/// `CombatPathingRequestMultiGoal::vfunc_8_sub0` at 0x8df2b0 (callgraph, medium); signature (untiered): `char vfunc_8_sub0(longlong param_1, float * param_2, float param_3, undefined4 * param_4)`
-pub const CombatPathingRequestMultiGoal__vfunc_8_sub0: u64 = 50065;
-/// `CombatPathingRequestMultiGoal::vfunc_9` at 0x8e5830 (rtti, high); signature (low): `undefined8 vfunc_9(CombatPathingRequestMultiGoal * this, longlong * param_1, ulonglong param_2, ulonglong param_3)`
-pub const CombatPathingRequestMultiGoal__vfunc_9: u64 = 50174;
