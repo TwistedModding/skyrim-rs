@@ -268,6 +268,12 @@ fn load(host: &'static Host) -> bool {
             util::skyrim_util::clear_idle();
             hook::fixes::apply_body_visibility();
         }
+        skse::MessagingInterface::SAVE_GAME => {
+            // The dialogue camera's head tracking sets IsNPC on the player's graph; the save must not keep it.
+            if let Some(player) = util::skyrim_util::player() {
+                player.as_i_animation_graph_manager_holder().set_graph_variable_bool(skyrim::BSFixedString::new("IsNPC").raw(), false);
+            }
+        }
         _ => {}
     });
     event::game_event_manager::register(host);
