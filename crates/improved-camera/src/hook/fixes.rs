@@ -168,20 +168,46 @@ fn crosshair_pick(origin: usize) {
 }
 
 /// `ShaderReferenceEffect_Update`'s `Effect`: an effect on the player in first person or the free
-/// camera goes on the third-person root, unless the first-person arms fight with a weapon drawn.
-/// IC's `MirrorEffect` afterwards is left out (the effect's fields are not in the RE).
+/// camera goes on the third-person root, unless the first-person arms fight with a weapon drawn;
+/// then the effect is mirrored onto the player's other root.
 fn shader_reference_effect(args: (usize, usize), next: Next<'_, EffectUpdate>) -> usize {
+    let Some(player) = util::player().filter(|p| core::ptr::from_ref::<sre::PlayerCharacter>(p) as usize == args.1) else { return unsafe { next.call(args) } };
     let free = util::is_free_camera();
-    let player = util::player().filter(|p| core::ptr::from_ref::<sre::PlayerCharacter>(p) as usize == args.1 && (util::is_engine_first_person() || free));
-    let Some(player) = player else { return unsafe { next.call(args) } };
-    if util::is_weapon_drawn(player) && !third_person_arms(&settings::profile().General) && !free {
-        return unsafe { next.call(args) };
+    let ret = if (util::is_engine_first_person() || free) && (free || !util::is_weapon_drawn(player) || third_person_arms(&settings::profile().General)) {
+        let saved = util::third_person_flag(player);
+        util::set_third_person_flag(player, true);
+        let ret = unsafe { next.call(args) };
+        util::set_third_person_flag(player, saved);
+        ret
+    } else {
+        unsafe { next.call(args) }
+    };
+    if let Some(effect) = unsafe { (args.0 as *const sre::ShaderReferenceEffect).as_ref() } {
+        mirror_effect(player, effect);
     }
-    let saved = util::third_person_flag(player);
-    util::set_third_person_flag(player, true);
-    let ret = unsafe { next.call(args) };
-    util::set_third_person_flag(player, saved);
     ret
+}
+
+/// `MirrorEffect`: the effect's data goes on the player's other root too while that root is shown,
+/// and comes off it once hidden or gone from the effect's own root. Run in every view, since after
+/// a POV switch the engine clears only the root it moved the data from (RE `camera.md` IC7 C).
+fn mirror_effect(player: &sre::PlayerCharacter, effect: &sre::ShaderReferenceEffect) {
+    let (Some(shader), Some(data), Some(primary)) = (unsafe { effect.effectShader.as_ref() }, unsafe { effect.effectData.as_ref() }, unsafe { effect.attachedRoot.as_ref() }) else { return };
+    let first = player.first_person_root().map(|n| -> &NiAVObject { n });
+    let third = player.third_person_root();
+    let secondary = match (first, third) {
+        (Some(f), Some(t)) if core::ptr::eq(primary, t) => f,
+        (Some(f), Some(t)) if core::ptr::eq(primary, f) => t,
+        _ => return,
+    };
+    let secondary_visible = secondary.flags & skyrim::render::HIDDEN == 0;
+    let primary_owned = primary.holds_effect_data(data);
+    let secondary_owned = secondary.holds_effect_data(data);
+    if primary_owned && secondary_visible && !secondary_owned {
+        skyrim::render::apply_effect_shader_data(shader, secondary, data);
+    } else if secondary_owned && (!primary_owned || !secondary_visible) {
+        skyrim::render::remove_effect_shader_data(shader, secondary, data);
+    }
 }
 
 /// Applies or restores the `SetFirstPerson` patch for the body option.
