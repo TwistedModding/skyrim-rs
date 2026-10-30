@@ -2,7 +2,8 @@
 //! lookup returns, and what the generated `TESObjectREFR`, `InventoryChanges`, `TESContainer`,
 //! `TESFullName` and `ActorValueList` methods leave `unsafe`: the handle out-parameter, the
 //! inventory list, the base container's entries, the full name as `&CStr`, the actor value table
-//! as a slice and a lookup by name.
+//! as a slice and a lookup by name; the mount a rider sits on and the process lists' high actor
+//! handles.
 //!
 //! Read and write on the game's main thread, as with forms.
 
@@ -12,7 +13,7 @@ use core::sync::atomic::{AtomicU32, Ordering};
 use std::ffi::CString;
 use std::fmt;
 
-use sre::raw::fns;
+use sre::raw::{fns, globals};
 use sre::{AIProcess, Actor, ActorValue, ActorValueInfo, ActorValueList, ContainerEntry, InventoryChanges, InventoryEntry, NiAVObject, PlayerCharacter, TESContainer, TESFullName, TESObjectREFR};
 
 use crate::ptr_slice;
@@ -97,6 +98,9 @@ pub trait ActorExt {
     /// `Actor::GetFurnitureAnimType` classifies: the handle `GetField8RefHandle` (id 39916) reads
     /// from `currentProcess` (RE `camera.md` request IC2 E). `None` without a process or furniture.
     fn occupied_furniture(&self) -> Option<RefPtr>;
+    /// The mount the actor rides through `Actor::GetMountRef` (id 38702), which fills a counted
+    /// pointer; `None` when the actor rides nothing.
+    fn mount(&self) -> Option<RefPtr>;
 }
 
 impl ActorExt for Actor {
@@ -108,6 +112,43 @@ impl ActorExt for Actor {
         unsafe { get(process, &raw mut handle) };
         RefHandle(handle).lookup()
     }
+
+    fn mount(&self) -> Option<RefPtr> {
+        let mut out: *mut TESObjectREFR = core::ptr::null_mut();
+        unsafe { self.get_mount_ref((&raw mut out).cast()) };
+        NonNull::new(out).map(RefPtr)
+    }
+}
+
+/// Offset of the high actor handle array in `ProcessLists` (data +0, capacity +8, size +0x10).
+const HIGH_ACTOR_HANDLES: usize = 0x30;
+
+/// The handles of an engine array of `u32` handles laid out as `{ data, capacity, size }` at `array`.
+///
+/// # Safety
+/// `array` must point to such an array whose data stays readable while this runs.
+unsafe fn handles_at(array: *const u8) -> Vec<RefHandle> {
+    let data = unsafe { array.cast::<*const u32>().read_unaligned() };
+    let size = unsafe { array.add(0x10).cast::<u32>().read_unaligned() };
+    if data.is_null() {
+        return Vec::new();
+    }
+    unsafe { core::slice::from_raw_parts(data, size as usize) }.iter().map(|&h| RefHandle(h)).collect()
+}
+
+/// The actors in high process, as the handles of the process lists' high array (`ProcessLists`
+/// +0x30), copied under the lists' lock as the engine copies them (RE `camera.md` request IC7 D).
+/// The player is never among them. Main thread.
+#[must_use]
+pub fn high_actor_handles() -> Vec<RefHandle> {
+    let reloc = crate::reloc();
+    let (Ok(holder), Ok(lock)) = (reloc.address(globals::g_ProcessLists_ptr), reloc.address(globals::g_ProcessListsHandleLock)) else { return Vec::new() };
+    let lists = unsafe { *(holder as *const *const u8) };
+    if lists.is_null() {
+        return Vec::new();
+    }
+    let _guard = crate::RwGuard::read(unsafe { &*(lock as *const sre::BSReadWriteLock) });
+    unsafe { handles_at(lists.add(HIGH_ACTOR_HANDLES)) }
 }
 
 pub trait PlayerCharacterExt {
@@ -185,4 +226,22 @@ pub fn lookup_actor_value(name: &str) -> Option<ActorValue> {
     let name = CString::new(name).ok()?;
     let id = unsafe { ActorValueList::lookup_actor_value_by_name(name.as_ptr()) };
     id.ok()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::{HIGH_ACTOR_HANDLES, RefHandle, handles_at};
+
+    #[test]
+    fn the_high_array_is_read_from_its_data_and_size() {
+        let handles = [0x0010_0001u32, 0x0020_0002, 0x0030_0003];
+        let mut lists = [0u8; 0x80];
+        let array = &mut lists[HIGH_ACTOR_HANDLES..];
+        array[..8].copy_from_slice(&(handles.as_ptr() as usize).to_le_bytes());
+        array[8..12].copy_from_slice(&8u32.to_le_bytes());
+        array[0x10..0x14].copy_from_slice(&2u32.to_le_bytes());
+        let read = unsafe { handles_at(lists.as_ptr().add(HIGH_ACTOR_HANDLES)) };
+        assert_eq!(read, [RefHandle(0x0010_0001), RefHandle(0x0020_0002)]);
+        assert_eq!(unsafe { handles_at([0u8; 0x18].as_ptr()) }, []);
+    }
 }

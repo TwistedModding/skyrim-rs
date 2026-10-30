@@ -154,6 +154,41 @@ pub(crate) unsafe fn ptr_slice<'a, T>(data: *const core::ffi::c_void, len: u32) 
     unsafe { core::slice::from_raw_parts(data.cast::<Option<&'a T>>(), len as usize) }
 }
 
+/// A held `BSReadWriteLock` (the engine's recursive reader/writer lock), taken and released through
+/// the engine's own functions so a writer on this thread may take it again.
+#[cfg(feature = "actors")]
+pub(crate) struct RwGuard {
+    lock: *const sre::BSReadWriteLock,
+    write: bool,
+}
+
+#[cfg(feature = "actors")]
+impl RwGuard {
+    pub(crate) fn read(lock: &sre::BSReadWriteLock) -> Self {
+        Self::take(lock, false)
+    }
+
+    pub(crate) fn write(lock: &sre::BSReadWriteLock) -> Self {
+        Self::take(lock, true)
+    }
+
+    fn take(lock: &sre::BSReadWriteLock, write: bool) -> Self {
+        let id = if write { sre::raw::fns::BSReadWriteLock__LockForWrite } else { sre::raw::fns::BSReadWriteLock__LockForRead };
+        let f: unsafe extern "C" fn(*const sre::BSReadWriteLock) = unsafe { engine_fn(id) };
+        unsafe { f(lock) };
+        Self { lock, write }
+    }
+}
+
+#[cfg(feature = "actors")]
+impl Drop for RwGuard {
+    fn drop(&mut self) {
+        let id = if self.write { sre::raw::fns::BSReadWriteLock__UnlockForWrite } else { sre::raw::fns::BSReadWriteLock__UnlockForRead };
+        let f: unsafe extern "C" fn(*const sre::BSReadWriteLock) = unsafe { engine_fn(id) };
+        unsafe { f(self.lock) };
+    }
+}
+
 #[cfg(any(feature = "events", feature = "ui"))]
 mod spin {
     use core::sync::atomic::{AtomicU32, Ordering};
