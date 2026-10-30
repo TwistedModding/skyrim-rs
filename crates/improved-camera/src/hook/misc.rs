@@ -2,11 +2,11 @@
 //! `PlayerCharacter::UpdateNodesAfterRender` (+0x94; the first-person update follows at +0xd7);
 //! the movement controller's third-person test, so first person with head bob buffers its input
 //! as third person does; the events sent into the player's graph and the tags it sends, for
-//! `Is_Animation_Playing`; and the Papyrus `Game.ForceFirstPerson` and `Game.ForceThirdPerson`,
-//! rebound to tell the camera manager.
+//! `Is_Animation_Playing`; the photo mode's sun override after `Sky::Update`; and the Papyrus
+//! `Game.ForceFirstPerson` and `Game.ForceThirdPerson`, rebound to tell the camera manager.
 
 use framework::Host;
-use framework::hooks::ops::{Call, Raw};
+use framework::hooks::ops::{Call, Raw, Sky__Update};
 use framework::hooks::{Error, Location, Options};
 use skyrim::papyrus::VirtualMachine;
 use skyrim::BSFixedString;
@@ -50,6 +50,11 @@ pub fn install(host: &'static Host) -> Result<(), Error> {
             && args.0 == core::ptr::from_ref(player.as_i_animation_graph_manager_holder()) as usize
         {
             util::on_player_graph_event(BSFixedString::view(event).as_bytes());
+        }
+    })?;
+    hooks.after(Sky__Update, Options::new(host.name()), |args, (), _| {
+        if let Some(sky) = unsafe { args.0.as_ref() } {
+            crate::camera::studio::environment::apply_sun(sky);
         }
     })?;
     host.add_player_graph_sink(|event| {

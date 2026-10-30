@@ -10,7 +10,8 @@
 //! for the anchored body, FSMP told when the body is camera-driven; the look limits, the sitting
 //! look-down limit, the body in interior rooms and the camera's fades skipped; IC's menu as the
 //! tab's sections, its profiles kept in the plugin's settings with the importer of IC's own files,
-//! and its `ic` console command.
+//! its `ic` console command, and the photo mode (the studio: pose layers, the orbit camera, bone
+//! markers, guides, the sun, colour grading, pose packs, bookmarks, scenes and PNG capture).
 
 mod api;
 mod body;
@@ -46,6 +47,9 @@ pub(crate) static HOST: OnceLock<&'static Host> = OnceLock::new();
 pub(crate) static ZOOM: OnceLock<Action> = OnceLock::new();
 /// IC's free camera keys (`FreeCamera.iKeyRollLeft`, `iKeyRollRight`, `iKeyReset`): Q, E and R.
 pub(crate) static FREE_CAMERA: OnceLock<[Action; 3]> = OnceLock::new();
+/// IC's photo mode keys (`Studio.iToggleInputKey`, `iCaptureKey`): Insert brings the studio's
+/// menu back, F10 takes a shot.
+pub(crate) static PHOTO_MODE: OnceLock<[Action; 2]> = OnceLock::new();
 /// What IC's free camera swallows while its controls run: the menu keys (`is_blackListedEvent`)
 /// and the shoulders it rolls with.
 static FREE_CAMERA_FILTER: OnceLock<InputFilter> = OnceLock::new();
@@ -241,7 +245,8 @@ fn load(host: &'static Host) -> bool {
                 log(&format!("ic command refused: {e}"));
             }
         }
-        skse::MessagingInterface::POST_LOAD_GAME => {
+        skse::MessagingInterface::POST_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
+            camera::studio::manager::with(camera::studio::manager::Manager::on_session_reset);
             util::skyrim_util::clear_idle();
             hook::fixes::apply_body_visibility();
         }
@@ -250,6 +255,7 @@ fn load(host: &'static Host) -> bool {
     host.on_plugin_message(api::fsmp::SENDER, api::fsmp::handle_message);
     let _ = ZOOM.set(host.action("zoom", "", Scope::Game));
     let _ = FREE_CAMERA.set([host.action("free-camera-roll-left", "Q", Scope::Game), host.action("free-camera-roll-right", "E", Scope::Game), host.action("free-camera-reset", "R", Scope::Game)]);
+    let _ = PHOTO_MODE.set([host.action("photo-mode-input", "Insert", Scope::Game), host.action("photo-mode-capture", "F10", Scope::Game)]);
     let shoulders = [camera::base::PAD_LEFT_SHOULDER, camera::base::PAD_RIGHT_SHOULDER].map(|mask| (InputDevice::Gamepad, mask));
     let _ = FREE_CAMERA_FILTER.set(host.input_filter("free-camera", &["Favorites", "Journal", "Quick Map", "Quick Stats", "Wait"], &shoulders));
     host.on_frame(|| {
@@ -260,8 +266,10 @@ fn load(host: &'static Host) -> bool {
         body::manager::sheathe_while_swimming();
         hook::cameras::on_frame();
         camera::extended::apply_deferred();
+        studio_frame();
     });
     host.add_hud(ui::effect::paint);
+    host.add_hud(ui::studio_guides::paint);
     host.add_tab("Improved Camera")
         .section("Profiles", ui::main_menu::draw)
         .section("General", ui::general_menu::draw)
@@ -276,16 +284,37 @@ fn load(host: &'static Host) -> bool {
         .section("Effects", ui::effects_menu::draw)
         .section("FOV", ui::fov_menu::draw)
         .section("Camera", ui::camera_menu::draw)
+        .section(ui::studio_menu::SECTION, ui::studio_menu::draw)
         .section("Console", ui::console_menu::draw);
     hook::fixes::apply_body_visibility();
     log("loaded");
     true
 }
 
+/// The photo mode's frame: its keys, its queued engine work and the capture.
+fn studio_frame() {
+    use camera::studio::manager::{self, Manager};
+    ui::studio_menu::tick();
+    if let Some([input, shoot]) = PHOTO_MODE.get()
+        && manager::with(|m| m.active)
+    {
+        if input.fired()
+            && let Some(host) = HOST.get()
+        {
+            host.show_section(ui::studio_menu::SECTION);
+        }
+        if shoot.fired() {
+            manager::with(Manager::request_shot);
+        }
+    }
+    manager::on_frame();
+}
+
 /// Puts the body back as the engine keeps it: full scales, the third-person root hidden in first
 /// person and its foot IK parked; the engine's world FOV, FOV offset and near plane; and FSMP
 /// simulating the player as usual.
 fn unload() {
+    camera::studio::manager::release();
     camera::manager::release();
     body::free_look::release();
     body::manager::release_foot_ik();

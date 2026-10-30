@@ -15,6 +15,8 @@ pub mod hide_menu;
 pub mod main_menu;
 pub mod restrict_angles_menu;
 pub mod stabilization_menu;
+pub mod studio_guides;
+pub mod studio_menu;
 pub mod vanity_menu;
 pub mod widgets;
 

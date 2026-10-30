@@ -38,14 +38,14 @@ impl BoneDelta {
 }
 
 fn axis_rotation(axis: usize, angle: f32) -> M3 {
-    let (s, c) = angle.sin_cos();
-    let (i, j) = ((axis + 1) % 3, (axis + 2) % 3);
-    let mut m = point::IDENTITY;
-    m[i][i] = c;
-    m[i][j] = -s;
-    m[j][i] = s;
-    m[j][j] = c;
-    m
+    let (sin, cos) = angle.sin_cos();
+    let (first, second) = ((axis + 1) % 3, (axis + 2) % 3);
+    let mut out = point::IDENTITY;
+    out[first][first] = cos;
+    out[first][second] = -sin;
+    out[second][first] = sin;
+    out[second][second] = cos;
+    out
 }
 
 /// `NiMatrix3::SetEulerAnglesXYZ`: X, then Y, then Z, each turning as `MakeZRotation` does.
@@ -80,10 +80,10 @@ pub fn degrees_from_rotation(m: &M3) -> P3 {
 /// `NiMatrix3::MakeRotation`: `angle` radians about the unit `axis`, turning as [`euler_xyz`] does.
 #[must_use]
 pub fn axis_angle(angle: f32, axis: P3) -> M3 {
-    let (s, c) = angle.sin_cos();
-    let t = 1.0 - c;
-    let [x, y, z] = axis;
-    [[t * x * x + c, t * x * y - s * z, t * x * z + s * y], [t * x * y + s * z, t * y * y + c, t * y * z - s * x], [t * x * z - s * y, t * y * z + s * x, t * z * z + c]]
+    let (sin, cos) = angle.sin_cos();
+    let k = 1.0 - cos;
+    let [ax, ay, az] = axis;
+    [[k * ax * ax + cos, k * ax * ay - sin * az, k * ax * az + sin * ay], [k * ax * ay + sin * az, k * ay * ay + cos, k * ay * az - sin * ax], [k * ax * az - sin * ay, k * ay * az + sin * ax, k * az * az + cos]]
 }
 
 /// `ComposeBoneDelta`: one delta over a local transform.
@@ -175,7 +175,6 @@ pub fn third_person_3d(reference: &TESObjectREFR) -> Option<&'static NiAVObject>
 /// An actor's stack of layers and the per-bone capture that lets them re-assert every frame.
 #[derive(Clone, Debug)]
 pub struct ActorAdjustments {
-    pub form_id: u32,
     handle: RefHandle,
     pub stack: Vec<Adjustment>,
     states: HashMap<String, BoneState>,
@@ -183,8 +182,8 @@ pub struct ActorAdjustments {
 
 impl ActorAdjustments {
     #[must_use]
-    pub fn new(form_id: u32, handle: RefHandle) -> Self {
-        Self { form_id, handle, stack: Vec::new(), states: HashMap::new() }
+    pub fn new(handle: RefHandle) -> Self {
+        Self { handle, stack: Vec::new(), states: HashMap::new() }
     }
 
     #[must_use]
@@ -213,13 +212,10 @@ impl ActorAdjustments {
 
     /// `EnsurePoseLayer`: the pose layer, created at the bottom of the stack.
     fn pose_layer(&mut self) -> &mut Adjustment {
-        let index = match self.stack.iter().position(|a| a.is_pose) {
-            Some(i) => i,
-            None => {
-                self.stack.insert(0, Adjustment { is_pose: true, ..Adjustment::default() });
-                0
-            }
-        };
+        let index = self.stack.iter().position(|a| a.is_pose).unwrap_or_else(|| {
+            self.stack.insert(0, Adjustment { is_pose: true, ..Adjustment::default() });
+            0
+        });
         &mut self.stack[index]
     }
 
@@ -346,7 +342,7 @@ impl PoseEngine {
         let id = reference.formID;
         self.actors.entry(id).or_insert_with(|| {
             crate::log(&format!("<Photo Mode> Pose stack created for {id:08X}"));
-            ActorAdjustments::new(id, skyrim::actors::TESObjectREFRExt::handle(reference))
+            ActorAdjustments::new(skyrim::actors::TESObjectREFRExt::handle(reference))
         })
     }
 

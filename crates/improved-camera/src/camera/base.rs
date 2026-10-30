@@ -666,6 +666,7 @@ impl Free {
     /// left the free camera, the free camera input contexts the console's `tfc` leaves on the
     /// control map's stack go too (`PopInputContext` removes every occurrence).
     pub fn exit(&mut self) {
+        super::studio::manager::on_free_camera_exit();
         crate::swallow_free_camera_input(false);
         if self.handlers_off {
             set_free_handlers(true);
@@ -679,6 +680,18 @@ impl Free {
         if leaked > 0 && map.pop_context(InputContextEnum::FreeCamera) {
             crate::log(&format!("<Camera> Removed {leaked} TFC input context(s) on free camera exit"));
         }
+    }
+
+    /// The roll in degrees (`controls.rotate`).
+    #[must_use]
+    pub const fn roll(&self) -> f32 {
+        self.rotate
+    }
+
+    /// Sets the roll, applied at the next update.
+    pub const fn set_roll(&mut self, degrees: f32) {
+        self.rotate = degrees;
+        self.dirty = true;
     }
 
     /// For an unload: the handlers, and the fly speed found on entry.

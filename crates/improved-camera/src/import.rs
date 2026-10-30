@@ -20,7 +20,7 @@ const KEYS: [(&str, &str); 7] = [
     ("FreeCamera.iKeyReset", "improved-camera.free-camera-reset"),
     ("Studio.iToggleInputKey", "improved-camera.photo-mode-input"),
     ("Studio.iCaptureKey", "improved-camera.photo-mode-capture"),
-    ("Studio.iHideUIKey", "improved-camera.photo-mode-hide-menu"),
+    ("Studio.iHideUIKey", "skyrim-rs.toggle"),
 ];
 
 /// What an import did.

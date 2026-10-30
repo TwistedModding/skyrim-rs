@@ -519,7 +519,7 @@ mod tests {
         assert_eq!(load_pose(&dir, "Stand").unwrap()["NPC Spine [Spn0]"], t);
         std::fs::write(dir.join("Euler.json"), r#"{"bones": {"B": {"pos": [1, 2, 3], "rot": [0, 0, 90], "scale": 2}}}"#).unwrap();
         let b = load_pose(&dir, "Euler").unwrap()["B"];
-        assert!((b.rotation[0][1] + 1.0).abs() < 1e-6 && (b.scale - 2.0).abs() < f32::EPSILON && b.translation == [1.0, 2.0, 3.0]);
+        assert!((b.rotation[0][1] + 1.0).abs() < 1e-6 && (b.scale - 2.0).abs() < f32::EPSILON && b.translation.iter().zip([1.0, 2.0, 3.0]).all(|(a, e)| (a - e).abs() < f32::EPSILON));
         let _ = std::fs::remove_dir_all(&dir);
     }
 
@@ -547,7 +547,7 @@ mod tests {
     #[test]
     fn bookmarks_and_scenes_round_trip() {
         let dir = temp("camera");
-        assert!(load_camera_bookmarks(&dir).is_empty());
+        assert_eq!(load_camera_bookmarks(&dir), []);
         let shots = vec![CameraBookmark { name: "Shot 1".into(), position: [10.0, -20.5, 300.0], pitch: 0.1, yaw: 3.0, roll: -5.0, fov: 55.0 }, CameraBookmark { name: "Wide".into(), ..CameraBookmark::default() }];
         save_camera_bookmarks(&dir, &shots).unwrap();
         assert_eq!(load_camera_bookmarks(&dir), shots);
@@ -555,7 +555,7 @@ mod tests {
         save_scene(&dir, &scene, "Dusk").unwrap();
         let mut notes = Vec::new();
         assert_eq!(load_scene(&dir, "Dusk", &mut notes).unwrap(), scene);
-        assert!(notes.is_empty());
+        assert_eq!(notes, Vec::<String>::new());
         std::fs::write(dir.join("Ic.json"), r#"{"type": "scene", "camera": {"fov": 40}, "hour": 6.5, "actors": [{"actor": "Skyrim.esm|00000007"}], "lights": []}"#).unwrap();
         let ic = load_scene(&dir, "Ic", &mut notes).unwrap();
         assert!((ic.camera.fov - 40.0).abs() < f32::EPSILON && ic.sun.is_none());

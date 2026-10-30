@@ -201,6 +201,7 @@ pub fn update(camera: &PlayerCamera) {
     let data = m.snapshot();
     snapshot::set(data);
     drop(guard);
+    super::studio::manager::on_global_update();
     crate::body::manager::anchor_camera(delta);
     let world_delta = util::delta_world_time();
     crate::body::free_look::drive(&profile, &data, world_delta);

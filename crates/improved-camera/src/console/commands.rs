@@ -1,6 +1,6 @@
 //! `console/ConsoleCommands`: the `ic` command (IC renames `Show1stPerson` to it; here it is a
 //! command of its own through the host): `ic [version]`, `ic enable`, `ic disable`, `ic menu`,
-//! `ic console`, `ic profile [name]` and `ic spec`/`ic spectate`. The command runs on the console
+//! `ic console`, `ic profile [name]`, `ic spec`/`ic spectate` and `ic pm`/`ic photomode`. The command runs on the console
 //! queue's thread, so what changes the camera or the profile is handed to the next frame.
 
 use std::ffi::CStr;
@@ -23,6 +23,7 @@ enum Request {
     Body(bool),
     Menu,
     Profile(String),
+    PhotoMode,
 }
 
 static PENDING: Mutex<Vec<Request>> = Mutex::new(Vec::new());
@@ -49,6 +50,7 @@ pub fn run_pending() {
             Request::Profile(name) => {
                 crate::switch_profile(&name);
             }
+            Request::PhotoMode => crate::camera::studio::manager::with(|m| if m.active { m.exit() } else { m.enter() }),
         }
     }
 }
@@ -91,7 +93,7 @@ fn run(command: &str, argument: Option<&str>, free_camera: bool, in_game: bool, 
     let version = format!("version >> {}", env!("CARGO_PKG_VERSION"));
     match command {
         "" | "version" => (version, None),
-        "pm" | "photomode" => ("photo mode is not ported".to_owned(), None),
+        "pm" | "photomode" => ("photo mode toggled".to_owned(), Some(Request::PhotoMode)),
         _ if free_camera => ("commands are disabled during TFC mode".to_owned(), None),
         "disable" => {
             let off = in_game && body;
@@ -116,7 +118,7 @@ static PARAMS: [Param; 2] = [Param::new(c"command", ScriptParamType::String, tru
 
 impl Command for Ic {
     const NAME: &'static CStr = c"IC";
-    const HELP: &'static CStr = c"Improved Camera: ic [version|enable|disable|menu|profile [name]|spec]";
+    const HELP: &'static CStr = c"Improved Camera: ic [version|enable|disable|menu|profile [name]|spec|pm]";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -161,6 +163,7 @@ mod tests {
         assert_eq!(ic("profile", Some("Combat")), ("profile set >> Combat".to_owned(), Some(Request::Profile("Combat".to_owned()))));
         assert_eq!(ic("profile", Some("Cold")), ("profile not found 'Cold'".to_owned(), None));
         assert_eq!(ic("dance", None).0, "unknown command 'dance'");
+        assert_eq!(run("pm", None, true, true, true, "Default", &[]).1, Some(Request::PhotoMode), "photo mode toggles in TFC");
         assert_eq!(run("enable", None, true, true, true, "Default", &[]), ("commands are disabled during TFC mode".to_owned(), None));
         assert_eq!(run("version", None, true, true, true, "Default", &[]).1, None, "the version answers in TFC");
     }

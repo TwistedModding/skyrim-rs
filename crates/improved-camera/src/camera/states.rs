@@ -97,6 +97,14 @@ fn offset_sim(m: &mut Modifier, fov: f32, offset: [f32; 3]) {
 }
 
 impl State {
+    /// The free camera's state object while it is current.
+    pub const fn free_mut(&mut self) -> Option<&mut Free> {
+        match self {
+            Self::Free(free) => Some(free),
+            _ => None,
+        }
+    }
+
     /// The state object `UpdateCameraState` makes for `camera`, and the look mode it sets with it.
     #[must_use]
     pub fn new(camera: CameraType) -> (Self, LookMode) {
