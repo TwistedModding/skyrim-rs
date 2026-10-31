@@ -32,7 +32,7 @@ fn raw(f: Fn2) -> Raw<Fn2> {
 
 #[test]
 fn phases_run_in_order_and_see_the_outcome() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let seen = Arc::new(Mutex::new(Vec::new()));
     let log = Arc::clone(&seen);
     assert_eq!(validate(phases as *const () as usize, None), Validation::Pristine);
@@ -57,7 +57,7 @@ fn phases_run_in_order_and_see_the_outcome() {
 
 #[test]
 fn replace_is_exclusive() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let seen = Arc::new(Mutex::new(Vec::new()));
     let log = Arc::clone(&seen);
     hooks.replace(raw(exclusive), Options::new("r1"), |args, original| unsafe { original.call((args.0, 0)) } + 1000).unwrap();
@@ -70,7 +70,7 @@ fn replace_is_exclusive() {
 
 #[test]
 fn constraint_cycle_is_refused() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     hooks.before(raw(cycle), Options::new("p").before(&["q"]), |_| {}).unwrap();
     hooks.before(raw(cycle), Options::new("q").after(&["p"]), |_| {}).unwrap();
     let refused = hooks.before(raw(cycle), Options::new("q").before(&["p"]), |_| {}).unwrap_err();
@@ -80,13 +80,13 @@ fn constraint_cycle_is_refused() {
 
 #[test]
 fn constraints_then_priority_then_rank_then_registration() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let order = Arc::new(Mutex::new(String::new()));
     let tag = |t: char| {
         let order = Arc::clone(&order);
         move |_: &mut (usize, usize)| order.lock().unwrap().push(t)
     };
-    hooks.set_rank("w", -1);
+    Hooks::set_rank("w", -1);
     hooks.before(raw(ordering), Options::new("x"), tag('x')).unwrap();
     hooks.before(raw(ordering), Options::new("y").after(&["x"]), tag('y')).unwrap();
     hooks.before(raw(ordering), Options::new("z").priority(5), tag('z')).unwrap();
@@ -94,7 +94,7 @@ fn constraints_then_priority_then_rank_then_registration() {
     hooks.before(raw(ordering), Options::new("z").priority(5), tag('Z')).unwrap();
     call(ordering, 0, 0);
     assert_eq!(*order.lock().unwrap(), "zZwxy");
-    hooks.set_rank("w", 1);
+    Hooks::set_rank("w", 1);
     order.lock().unwrap().clear();
     call(ordering, 0, 0);
     assert_eq!(*order.lock().unwrap(), "zZxyw");
@@ -104,7 +104,7 @@ fn constraints_then_priority_then_rank_then_registration() {
 fn removal_waits_for_the_subscriber_in_flight() {
     static RUNS: AtomicUsize = AtomicUsize::new(0);
     static STOP: AtomicBool = AtomicBool::new(false);
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     hooks
         .before(raw(removal), Options::new("slow"), |_| {
             std::thread::sleep(Duration::from_millis(40));
@@ -134,11 +134,11 @@ fn removal_waits_for_the_subscriber_in_flight() {
 #[test]
 fn registration_inside_a_subscriber_is_refused() {
     static INSIDE: OnceLock<(Result<SubscriptionId, Error>, bool)> = OnceLock::new();
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let id = hooks
         .before(raw(reentrant), Options::new("outer"), |_| {
-            let nested = Hooks::HOST.before(raw(reentrant), Options::new("inner"), |_| {});
-            let _ = INSIDE.set((nested, Hooks::HOST.remove_owner("outer") == 0));
+            let nested = crate::host::hooks().before(raw(reentrant), Options::new("inner"), |_| {});
+            let _ = INSIDE.set((nested, crate::host::hooks().remove_owner("outer") == 0));
         })
         .unwrap();
     call(reentrant, 1, 1);
@@ -149,7 +149,7 @@ fn registration_inside_a_subscriber_is_refused() {
 
 #[test]
 fn raw_shape_is_fixed_per_address() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     hooks.before(raw(shape), Options::new("s"), |_| {}).unwrap();
     let other = Raw::<unsafe extern "C" fn(usize) -> usize>::at(shape as *const () as usize);
     assert!(matches!(hooks.before(other, Options::new("s"), |_| {}), Err(Error::Raw { .. })));
@@ -183,7 +183,7 @@ fn unmanaged_patches_are_refused_stacked_or_break_the_site() {
     unsafe extern "C" fn late(a: usize, b: usize) -> usize {
         unsafe { core::mem::transmute::<usize, Fn2>(NEXT.load(SeqCst))(a, b) * 100 }
     }
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let address = prepatched as *const () as usize;
     patch_jump(address, early as *const () as usize);
     let validation = validate(address, None);
@@ -242,7 +242,7 @@ fn compat_parses() {
 
 #[test]
 fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let before = hooks.before(raw(toggled), Options::new("t1"), |args| args.0 += 10).unwrap();
     let around = hooks.around(raw(toggled), Options::new("t2"), |args, next| unsafe { next.call((args.0, args.1 * 3)) }).unwrap();
     let replace = hooks.replace(raw(toggled), Options::new("t3"), |args, _| args.0 * 100).unwrap();
@@ -265,7 +265,7 @@ fn a_disabled_subscriber_keeps_its_place_and_is_skipped() {
 
 /// Checks the shared hook log right away: the parallel tests fill its 64 lines quickly.
 fn logged(line: &str) {
-    let messages = Hooks::HOST.messages();
+    let messages = crate::host::hooks().messages();
     assert!(messages.iter().any(|m| m.ends_with(line)), "{line} not in {messages:?}");
 }
 
@@ -273,7 +273,7 @@ targets! { called rerouted elsewhere slotted spare_slot tail_called }
 
 #[test]
 fn a_tail_jump_is_a_call_site() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let callee = tail_called as *const () as usize;
     let stub = hook::Trampoline::shared().alloc(callee, &[0xE9, 0, 0, 0, 0]).unwrap();
     unsafe { hook::write_branch(stub, callee) }.unwrap();
@@ -313,7 +313,7 @@ fn callee_at(site: usize) -> usize {
 }
 
 fn report_at(address: usize) -> Option<SiteReport> {
-    Hooks::HOST.diagnostics().into_iter().find(|s| s.address == address)
+    crate::host::hooks().diagnostics().into_iter().find(|s| s.address == address)
 }
 
 fn call_at(site: usize) -> ops::Call<Fn2> {
@@ -322,7 +322,7 @@ fn call_at(site: usize) -> ops::Call<Fn2> {
 
 #[test]
 fn call_sites_share_one_chain_beside_the_callee_entry() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let (caller, site) = caller_of(called);
     let outcomes = Arc::new(Mutex::new(Vec::new()));
     let log = Arc::clone(&outcomes);
@@ -354,7 +354,7 @@ fn call_sites_share_one_chain_beside_the_callee_entry() {
 
 #[test]
 fn a_call_site_another_writer_changed_is_left_as_it_is() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let (caller, site) = caller_of(rerouted);
     hooks.before(call_at(site), Options::new("rw"), |args| args.0 += 1).unwrap();
     assert_eq!(call(caller, 1, 1), 3);
@@ -388,7 +388,7 @@ fn object(slot: Fn2) -> usize {
 
 #[test]
 fn a_virtual_call_site_hands_on_the_callers_register() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     // push rbx; sub rsp, 0x20; mov rbx, rdx; mov rax, [rcx]; call [rax+8]; add rsp, 0x20; pop rbx; ret
     let code = [0x53, 0x48, 0x83, 0xEC, 0x20, 0x48, 0x89, 0xD3, 0x48, 0x8B, 0x01, 0xFF, 0x90, 8, 0, 0, 0, 0x48, 0x83, 0xC4, 0x20, 0x5B, 0xC3];
     let stub = hook::Trampoline::shared().alloc(called as *const () as usize, &code).unwrap();
@@ -417,7 +417,7 @@ static TABLE: [Fn2; 2] = [slotted, spare_slot];
 
 #[test]
 fn vtable_slots_dispatch_in_order_and_restore() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     assert_eq!(validate_slot(core::ptr::from_ref(&TABLE[1]) as usize, None), Validation::Pristine, "the file's pointer, relocated to the loaded image");
     let table: &'static [usize; 2] = Box::leak(Box::new([slotted as *const () as usize, spare_slot as *const () as usize]));
     let entry = core::ptr::from_ref(&table[1]) as usize;
@@ -450,7 +450,7 @@ fn run(f: unsafe extern "C" fn() -> u32) -> u32 {
 
 #[test]
 fn patches_are_checked_reserved_toggled_and_restored() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let (f, stub) = returning(1);
     let at = Location::Address(stub + 1);
     let id = unsafe { hooks.patch("p1", at, &[1, 0], &[2, 0]) }.unwrap();
@@ -479,7 +479,7 @@ fn patches_are_checked_reserved_toggled_and_restored() {
 
 #[test]
 fn a_cave_patch_jumps_to_its_code_and_back() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     // mov eax, 1; add eax, 2; ret
     let stub = hook::Trampoline::shared().alloc(called as *const () as usize, &[0xB8, 1, 0, 0, 0, 0x83, 0xC0, 0x02, 0xC3]).unwrap();
     let f = unsafe { core::mem::transmute::<usize, unsafe extern "C" fn() -> u32>(stub) };
@@ -502,7 +502,7 @@ fn a_cave_patch_jumps_to_its_code_and_back() {
 
 #[test]
 fn patches_refuse_other_bytes_lengths_and_owners() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let (f, stub) = returning(4);
     let at = Location::Address(stub + 1);
     let mismatch = unsafe { hooks.patch("q", at, &[5], &[6]) }.unwrap_err();
@@ -510,8 +510,7 @@ fn patches_refuse_other_bytes_lengths_and_owners() {
     assert!(hooks.messages().iter().any(|m| m == &format!("refused: {mismatch}")));
     assert!(matches!(unsafe { hooks.patch("q", at, &[], &[]) }, Err(Error::Install { .. })));
     assert!(matches!(unsafe { hooks.patch("q", at, &[4], &[5, 6]) }, Err(Error::Install { .. })));
-    assert!(matches!(unsafe { Hooks::for_plugin("q").patch("r", at, &[4], &[5]) }, Err(Error::Owner { .. })));
-    let id = unsafe { Hooks::for_plugin("q").patch("q", at, &[4], &[5]) }.unwrap();
+    let id = unsafe { hooks.patch("q", at, &[4], &[5]) }.unwrap();
     assert_eq!(run(f), 5);
     assert!(hooks.unpatch(id));
     assert_eq!(run(f), 4);
@@ -520,7 +519,7 @@ fn patches_refuse_other_bytes_lengths_and_owners() {
 #[test]
 fn patches_and_hook_sites_hold_their_bytes_against_each_other() {
     targets! { reserved }
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     let (caller, site) = caller_of(reserved);
     let rel = unsafe { ((site + 1) as *const [u8; 4]).read_unaligned() };
     let id = unsafe { hooks.patch("h1", Location::Address(site + 1), &rel, &rel) }.unwrap();
@@ -556,7 +555,7 @@ unsafe extern "C" fn default_fov(_: *mut sre::PlayerCamera) -> f32 {
 
 #[test]
 fn typed_call_sites_carry_float_arguments_and_results() {
-    let hooks = &Hooks::HOST;
+    let hooks = crate::host::hooks();
     // sub rsp, 0x58; the caller's five stack arguments copied below the home space; call; add rsp, 0x58; ret
     let mut code = vec![0x48, 0x83, 0xEC, 0x58];
     for i in 0..5u8 {
@@ -586,4 +585,111 @@ fn typed_call_sites_carry_float_arguments_and_results() {
     let raw = ops::Call::<unsafe extern "C" fn(usize) -> usize>::at(Location::Address(stub + 4));
     assert!(matches!(hooks.before(raw, Options::new("tween"), |_| {}), Err(Error::Raw { .. })), "one shape per site");
     assert_eq!(hooks.remove_owner("tween"), 2);
+}
+
+targets! { kinds shaped nested }
+
+/// Counts its drops, to see a subscriber's closure freed exactly once.
+struct Counted(&'static AtomicUsize);
+
+impl Counted {
+    fn alive(&self) -> bool {
+        self.0.load(SeqCst) == 0
+    }
+}
+
+impl Drop for Counted {
+    fn drop(&mut self) {
+        self.0.fetch_add(1, SeqCst);
+    }
+}
+
+#[test]
+fn each_kind_of_subscriber_crosses_runs_and_drops_once() {
+    static DROPS: [AtomicUsize; 4] = [const { AtomicUsize::new(0) }; 4];
+    let hooks = crate::host::hooks();
+    let seen = Arc::new(Mutex::new(Vec::new()));
+    let log = Arc::clone(&seen);
+    let [b, a, r, f] = [0, 1, 2, 3].map(|i| Counted(&DROPS[i]));
+    hooks.before(raw(kinds), Options::new("k"), move |args| args.0 += usize::from(b.alive())).unwrap();
+    hooks.around(raw(kinds), Options::new("k"), move |args, next| unsafe { next.call(args) } * if a.alive() { 2 } else { 0 }).unwrap();
+    hooks.replace(raw(kinds), Options::new("k"), move |args, original| unsafe { original.call(args) } + if r.alive() { 100 } else { 0 }).unwrap();
+    hooks.after(raw(kinds), Options::new("k"), move |args, ret, outcome| log.lock().unwrap().push((*args, *ret, outcome, f.alive()))).unwrap();
+    assert_eq!(call(kinds, 1, 2), 208);
+    assert_eq!(*seen.lock().unwrap(), [((2, 2), 208, Outcome::Replaced, true)]);
+    assert_eq!(DROPS.each_ref().map(|d| d.load(SeqCst)), [0; 4], "a call keeps the closures");
+    assert_eq!(hooks.remove_owner("k"), 4);
+    assert_eq!(DROPS.each_ref().map(|d| d.load(SeqCst)), [1; 4]);
+    assert_eq!(call(kinds, 1, 2), 3);
+}
+
+/// A raw entry of shape 2 subscribed with the function type `F`, as a plugin built against
+/// another `sre` might type it.
+struct Shaped<F>(usize, core::marker::PhantomData<F>);
+
+impl<F: Signature> Hookable for Shaped<F> {
+    type Fn = F;
+
+    fn target(self) -> Target {
+        Target::Raw { address: self.0, shape: 2 }
+    }
+}
+
+/// An operation of a later framework, past the host's `ops!` list.
+struct Later;
+
+impl Hookable for Later {
+    type Fn = Fn2;
+
+    fn target(self) -> Target {
+        Target::Op(ops::OPS.len() + 7)
+    }
+}
+
+#[test]
+fn a_subscription_is_checked_by_its_slot_shape() {
+    let hooks = crate::host::hooks();
+    let address = shaped as *const () as usize;
+    let float_first = Shaped::<unsafe extern "C" fn(f32, usize) -> usize>(address, core::marker::PhantomData);
+    let refused = hooks.before(float_first, Options::new("sh"), |_| {}).unwrap_err();
+    assert_eq!(refused, Error::Callback { site: format!("raw {address:#x}/2"), owner: "sh".into() });
+    assert!(report_at(address).is_none(), "refused before the detour went in");
+    let same_shape = Shaped::<unsafe extern "C" fn(*mut u8, u64) -> isize>(address, core::marker::PhantomData);
+    hooks.before(same_shape, Options::new("sh"), |args| args.1 += 10).unwrap();
+    assert_eq!(call(shaped, 1, 2), 13, "other types of the same classes are the site's shape");
+    assert_eq!(hooks.remove_owner("sh"), 1);
+    let unknown = hooks.after(Later, Options::new("sh"), |_, _, _| {}).unwrap_err();
+    assert_eq!(unknown, Error::Unsupported { what: format!("hook operation {}", ops::OPS.len() + 7) });
+}
+
+#[test]
+fn next_runs_the_rest_of_the_chain_in_the_host() {
+    fn inside() -> Option<u64> {
+        let thread = unsafe { windows_sys::Win32::System::Threading::GetCurrentThreadId() };
+        site::thread_state(thread).and_then(|(_, entry)| entry).map(|m| m.id)
+    }
+    let hooks = crate::host::hooks();
+    let seen = Arc::new(Mutex::new(Vec::new()));
+    let (outer_log, inner_log) = (Arc::clone(&seen), Arc::clone(&seen));
+    let outer = hooks
+        .around(raw(nested), Options::new("n1").priority(1), move |args, next| {
+            let entered = inside();
+            let r = unsafe { next.call((args.0 + 1, args.1)) };
+            outer_log.lock().unwrap().push(("outer", entered, inside()));
+            r * 10
+        })
+        .unwrap();
+    let inner = hooks
+        .around(raw(nested), Options::new("n2"), move |args, next| {
+            inner_log.lock().unwrap().push(("inner", inside(), None));
+            unsafe { next.call(args) + 1 }
+        })
+        .unwrap();
+    assert_eq!(call(nested, 1, 2), 50, "the outer's edit, the inner, the original, back out");
+    let (o, i) = (Some(outer.get()), Some(inner.get()));
+    assert_eq!(*seen.lock().unwrap(), [("inner", i, None), ("outer", o, o)], "the crash logger sees the inner around inside the outer's Next::call");
+    let report = report_at(nested as *const () as usize).unwrap();
+    assert_eq!(report.entries.iter().map(|e| (e.owner.as_str(), e.timing.calls)).collect::<Vec<_>>(), [("n1", 1), ("n2", 1)]);
+    assert_eq!(report.last_outcome, Some(Outcome::Original));
+    assert_eq!(hooks.remove_owner("n1") + hooks.remove_owner("n2"), 2);
 }

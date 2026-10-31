@@ -1,14 +1,13 @@
 //! The host's registry: one lock serializes every change to the sites and answers the plugins' requests.
 
-use core::any::Any;
 use core::sync::atomic::{AtomicBool, Ordering::Relaxed};
 use std::collections::{BTreeMap, VecDeque};
 use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use super::ops::{self, OpVisitor, RAW_SLOTS, SHAPES};
-use super::site::{self, Callback, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
+use super::site::{self, Callee, Chain, Entry, Kind, Meta, Op, Ranks, Signature, Site, SiteMeta, Stats, Timing};
 use super::validate::{Validation, branch_kind, hex, read_bytes, validate};
-use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Phase, Register, Request, SiteReport, SubscriptionId, Target};
+use super::{Compat, EntryReport, Error, Location, PatchId, PatchReport, PatchRequest, PatchState, Register, Request, SiteReport, SubscriptionId, Target};
 
 /// A managed byte patch.
 struct Patch {
@@ -233,10 +232,10 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
     let mut reg = lock();
     let unresolved = |name: String, detail: String| Error::Install { site: name, owner: req.owner.clone(), detail };
     let place = match req.target {
-        Target::Op(index) => {
-            let (name, id) = ops::OPS[index];
-            skyrim::reloc().address(id).map(|address| (Kind::Entry, address, None, name.to_owned())).map_err(|e| unresolved(name.to_owned(), e.to_string()))
-        }
+        Target::Op(index) => match ops::OPS.get(index) {
+            Some(&(name, id)) => skyrim::reloc().address(id).map(|address| (Kind::Entry, address, None, name.to_owned())).map_err(|e| unresolved(name.to_owned(), e.to_string())),
+            None => Err(Error::Unsupported { what: format!("hook operation {index}") }),
+        },
         Target::Raw { address, shape } => Ok((Kind::Entry, address, Some(shape), format!("raw {address:#x}/{}", label(shape, None)))),
         Target::Call { at, shape, register } => {
             let name = |kind: &str| format!("{kind} {at}/{}", label(shape, register));
@@ -252,11 +251,11 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
         _ => None,
     };
     let result = place.and_then(|(kind, address, shape, name)| match (req.target, shape) {
-        (Target::Op(index), _) => ops::with_op(index, Subscriber { reg: &mut reg, req, name, kind, address, pass: None }).expect("index from the op table"),
+        (Target::Op(index), _) => ops::with_op(index, Subscribe { reg: &mut reg, req, name, kind, address, pass: None }).expect("index from the op table"),
         (_, shape) => {
             let shape = shape.expect("every raw target has a shape");
             let pass = passing(address, shape, register)?;
-            reg.raw_slot(kind, address, shape, register).and_then(|slot| ops::with_raw(shape, slot, Subscriber { reg: &mut reg, req, name, kind, address, pass }).expect("slot and shape checked"))
+            reg.raw_slot(kind, address, shape, register).and_then(|slot| ops::with_raw(shape, slot, Subscribe { reg: &mut reg, req, name, kind, address, pass }).expect("slot and shape checked"))
         }
     });
     if let Err(e) = &result {
@@ -266,7 +265,7 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
     result
 }
 
-struct Subscriber<'a> {
+struct Subscribe<'a> {
     reg: &'a mut Registry,
     req: Request,
     name: String,
@@ -276,44 +275,30 @@ struct Subscriber<'a> {
     pass: Option<(u8, u8)>,
 }
 
-impl OpVisitor<Result<SubscriptionId, Error>> for Subscriber<'_> {
+impl OpVisitor<Result<SubscriptionId, Error>> for Subscribe<'_> {
     fn visit<O: Op>(self) -> Result<SubscriptionId, Error> {
         let Self { reg, req, name, kind, address, pass } = self;
+        if req.signature != <O::Fn as Signature>::SLOTS {
+            return Err(Error::Callback { site: name, owner: req.owner });
+        }
         let site = O::site();
         install::<O>(reg, site, &name, kind, address, pass, &req.owner)?;
-        let callback = downcast::<O::Fn>(req.phase, req.signature, req.callback).ok_or_else(|| Error::Callback { site: name.clone(), owner: req.owner.clone() })?;
         let id = reg.next_id;
         reg.next_id += 1;
-        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.phase, constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true) });
+        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.subscriber.phase(), constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true) });
         let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
         let site_meta = guard.as_mut().expect("installed above");
         let new = {
-            let chain = unsafe { site.chain::<O::Fn>() }.expect("published at install");
+            let chain = site.chain().expect("published at install");
             let mut entries = chain.entries.clone();
-            entries.push(Arc::new(Entry { meta: Arc::clone(&meta), callback }));
-            Chain::build(chain.original, entries, &reg.ranks, &site_meta.name)?
+            entries.push(Arc::new(Entry { meta: Arc::clone(&meta), subscriber: req.subscriber }));
+            Chain::build(chain.callee, entries, &reg.ranks, &site_meta.name)?
         };
         site_meta.order = new.order();
         unsafe { site.publish(new) };
         reg.log(&format!("{name}: {} {:?} subscribed as #{id}", meta.owner, meta.phase));
         Ok(SubscriptionId(id))
     }
-}
-
-fn downcast<F: Signature>(phase: Phase, signature: &str, callback: Box<dyn Any + Send + Sync>) -> Option<Callback<F>> {
-    Some(match phase {
-        Phase::Before => Callback::Before(cast(signature, callback)?),
-        Phase::Around => Callback::Around(cast(signature, callback)?),
-        Phase::Replace => Callback::Replace(cast(signature, callback)?),
-        Phase::After => Callback::After(cast(signature, callback)?),
-    })
-}
-
-/// The callback as `T` when the plugin named its type as the host names `T`. A plugin is loaded
-/// only when its descriptor's ABI number, framework version, rustc and source hash match the
-/// host's, so the same type name stands for the same type even where crate metadata differs.
-fn cast<T: Send + Sync + 'static>(signature: &str, callback: Box<dyn Any + Send + Sync>) -> Option<T> {
-    (signature == core::any::type_name::<T>()).then(|| *unsafe { Box::from_raw(Box::into_raw(callback).cast::<T>()) })
 }
 
 /// Puts a created detour in.
@@ -363,12 +348,12 @@ fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kin
             (unsafe { core::mem::transmute_copy(&previous) }, Box::new(move || unsafe { hook::write_pointer(address, detour_address) }.map(drop)))
         }
     };
-    let chain = Chain::build(original, Vec::new(), &reg.ranks, name).expect("an empty chain has no conflicts");
+    let original = unsafe { core::mem::transmute_copy::<O::Fn, usize>(&original) };
+    let chain = Chain::build(Callee::new::<O::Fn>(original), Vec::new(), &reg.ranks, name).expect("an empty chain has no conflicts");
     unsafe { site.publish(chain) };
     enable().map_err(failed)?;
     site.broken.store(false, Relaxed);
-    let original = unsafe { core::mem::transmute_copy(&original) };
-    *guard = Some(SiteMeta { name: name.to_owned(), kind, address, span, detour: entry, original, validation, patched_by, order: Vec::new(), rebuild: site::rebuild::<O::Fn> });
+    *guard = Some(SiteMeta { name: name.to_owned(), kind, address, span, detour: entry, original, validation, patched_by, order: Vec::new() });
     reg.sites.push(site);
     reg.log(&format!("{name} at {address:#x}: detour installed, entry {validation}"));
     Ok(())
@@ -383,8 +368,7 @@ fn edit(reg: &mut Registry, keep: &dyn Fn(&Meta) -> bool) -> usize {
         let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
         let Some(meta) = guard.as_mut() else { continue };
         if !meta.order.iter().all(|m| keep(m)) {
-            let rebuild = meta.rebuild;
-            removed += unsafe { rebuild(site, meta, &reg.ranks, keep) };
+            removed += unsafe { site::rebuild(site, meta, &reg.ranks, keep) };
         }
         if meta.order.is_empty() && meta.kind != Kind::Entry {
             retired.push((site, meta.address, restore(meta)));
@@ -519,8 +503,7 @@ pub(crate) fn set_rank(owner: &str, rank: i32) {
     for site in &reg.sites {
         let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
         if let Some(meta) = guard.as_mut() {
-            let rebuild = meta.rebuild;
-            unsafe { rebuild(site, meta, &reg.ranks, &|_| true) };
+            unsafe { site::rebuild(site, meta, &reg.ranks, &|_| true) };
         }
     }
 }

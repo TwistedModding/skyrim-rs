@@ -4,8 +4,8 @@
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
 //! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
-//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; hooks,
-//! tab sections and HUD painters still cross with the Rust ABI, which holds only for one compiler
+//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; tab
+//! sections and HUD painters still cross with the Rust ABI, which holds only for one compiler
 //! and one build of this crate and its dependencies, so until they move (`docs/subsystems/abi.md`)
 //! a plugin is built against the same framework release (its `Cargo.lock`) with the same `rustc`.
 //! A refused DLL is unloaded and named in `skyrim-rs.log`.
@@ -175,7 +175,6 @@ pub(crate) struct Table {
 /// What a plugin reaches through [`abi::HostApi`]'s `legacy` until every crossing is C.
 pub(crate) struct Legacy {
     pub table: &'static Table,
-    pub hooks: hooks::Hooks,
 }
 
 /// The host as one plugin's `load` receives it, for the life of the DLL: every registration made
@@ -187,6 +186,7 @@ pub struct Host {
     name: &'static str,
     skse: &'static skse::Interface,
     legacy: &'static Legacy,
+    hooks: &'static hooks::Hooks,
 }
 
 impl Host {
@@ -200,7 +200,7 @@ impl Host {
         let name = unsafe { (*api.0).name.as_str() };
         let skse = unsafe { (*api.0).skse.as_ref() }?;
         let legacy = if api.reaches(core::mem::offset_of!(HostApi, legacy)) { unsafe { (*api.0).legacy.as_ref() } } else { None }?;
-        Some(Self { api, name, skse, legacy })
+        Some(Self { api, name, skse, legacy, hooks: Box::leak(Box::new(hooks::Hooks::new(api.0))) })
     }
 
     /// The SKSE interface the host was loaded with.
@@ -553,7 +553,7 @@ impl Host {
     /// handle accepts subscriptions whose `Options` owner is this plugin's name.
     #[must_use]
     pub fn hooks(&self) -> &'static hooks::Hooks {
-        &self.legacy.hooks
+        self.hooks
     }
 }
 

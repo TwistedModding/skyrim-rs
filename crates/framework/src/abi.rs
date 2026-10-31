@@ -11,11 +11,12 @@ use skyrim::input::{Arg, CommandContext, CommandError, CommandSlot, Param};
 use skyrim::papyrus::{self, NativeCall, NativeFunction, NativeKind, ParamType, Variable, VirtualMachine};
 use sre::{BSEventNotifyControl, TESForm, VMTypeID};
 
+use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, RawValidation, ReplaceCallback};
 use crate::settings::Setting;
 use crate::{CommandRequest, Error, FrameFn, Host, Legacy, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The [`HostApi`] layout this crate builds and reads; entries are only ever appended.
-pub const API: u32 = 2;
+pub const API: u32 = 3;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -38,6 +39,16 @@ impl Str {
     /// The text; bytes that are not UTF-8 read as empty.
     pub(crate) unsafe fn as_str<'a>(self) -> &'a str {
         core::str::from_utf8(unsafe { self.bytes() }).unwrap_or_default()
+    }
+
+    /// `bytes`, or a null pointer for none.
+    pub(crate) fn maybe(bytes: Option<&[u8]>) -> Self {
+        bytes.map_or(Self { ptr: core::ptr::null(), len: 0 }, Self::new)
+    }
+
+    /// The bytes, `None` for a null pointer.
+    pub(crate) unsafe fn maybe_bytes<'a>(self) -> Option<&'a [u8]> {
+        (!self.ptr.is_null()).then(|| unsafe { self.bytes() })
     }
 }
 
@@ -118,7 +129,7 @@ unsafe impl<F: Sync> Sync for Callback<F> {}
 
 impl<F> Callback<F> {
     /// `closure` boxed behind `call`, which receives it as `ctx`; `drop` frees the box.
-    fn boxed<C: Send + Sync + 'static>(closure: C, call: F) -> Self {
+    pub(crate) fn boxed<C: Send + Sync + 'static>(closure: C, call: F) -> Self {
         extern "C" fn drop_box<C>(ctx: *mut c_void) {
             drop(unsafe { Box::from_raw(ctx.cast::<C>()) });
         }
@@ -407,13 +418,15 @@ pub enum Status {
     Full = 4,
     Papyrus = 5,
     Command = 6,
+    Hook = 7,
 }
 
-/// The detail of a failed entry's [`Error`]: the thing refused, its owner, the limit. A `Papyrus`
-/// or `Command` error names its variant in `code` (`papyrus::Error`: 0 `UnknownType` with the type
-/// id in `limit`, 1 `Bind` with the class in `what` and the name in `owner`; `CommandError`: 0
-/// `TooManyParams`, 1 `NameTaken`, 2 `NoFreeEntry`, 3 `NotFound`), and `text` is its message, which
-/// a side that does not know the code reports as `Unsupported`.
+/// The detail of a failed entry's error: the thing refused, its owner, the limit. A `Papyrus` or
+/// `Command` error names its variant in `code` (`papyrus::Error`: 0 `UnknownType` with the type id
+/// in `limit`, 1 `Bind` with the class in `what` and the name in `owner`; `CommandError`: 0
+/// `TooManyParams`, 1 `NameTaken`, 2 `NoFreeEntry`, 3 `NotFound`), and `text` is its message,
+/// which a side that does not know the code reports as `Unsupported`. The fields after `text`
+/// carry a hook error (`hooks::Error`'s [`Crossing`]); empty or null where unused.
 #[repr(C)]
 pub struct RawError {
     pub what: Str,
@@ -421,58 +434,117 @@ pub struct RawError {
     pub limit: usize,
     pub code: u32,
     pub text: Str,
+    pub other: Str,
+    pub names: *const Str,
+    pub names_len: usize,
+    pub expected: Str,
+    pub found: Str,
+    pub validation: RawValidation,
+}
+
+impl RawError {
+    /// The error with only its message.
+    pub(crate) fn text(text: &str) -> Self {
+        let empty = Str::new(&[]);
+        Self { what: empty, owner: empty, limit: 0, code: 0, text: Str::from(text), other: empty, names: core::ptr::null(), names_len: 0, expected: empty, found: empty, validation: RawValidation::default() }
+    }
+}
+
+/// An error that crosses as a [`Status`] and a [`RawError`].
+pub(crate) trait Crossing: Sized {
+    /// The host's side: puts the detail through `detail` and returns the status.
+    fn fail(&self, detail: &Sink<'_, RawError>) -> u32;
+    /// The plugin's side: the error for a status other than `Ok`.
+    fn read(status: u32, detail: Detail) -> Self;
+    fn unsupported(what: String) -> Self;
 }
 
 const COMMAND_ERRORS: [CommandError; 4] = [CommandError::TooManyParams, CommandError::NameTaken, CommandError::NoFreeEntry, CommandError::NotFound];
 
-/// The host's side of a fallible entry: the status for `e`, its detail through `detail`.
-pub(crate) fn fail(e: &Error, detail: &Sink<'_, RawError>) -> u32 {
-    let text = e.to_string();
-    let (status, what, owner, limit, code) = match e {
-        Error::NoSource => (Status::NoSource, "", "", 0, 0),
-        Error::Taken { what, owner } => (Status::Taken, what.as_str(), owner.as_str(), 0, 0),
-        Error::Full { what, limit } => (Status::Full, what.as_str(), "", *limit, 0),
-        Error::Unsupported { what } => (Status::Unsupported, what.as_str(), "", 0, 0),
-        Error::Papyrus(papyrus::Error::UnknownType(id)) => (Status::Papyrus, "", "", *id as usize, 0),
-        Error::Papyrus(papyrus::Error::Bind { class, name }) => (Status::Papyrus, class.as_str(), name.as_str(), 0, 1),
-        Error::Command(e) => (Status::Command, "", "", 0, COMMAND_ERRORS.iter().position(|c| core::mem::discriminant(c) == core::mem::discriminant(e)).unwrap_or_default()),
-    };
-    detail.put(RawError { what: Str::from(what), owner: Str::from(owner), limit, code: u32::try_from(code).unwrap_or_default(), text: Str::from(text.as_str()) });
-    status as u32
+impl Crossing for Error {
+    fn fail(&self, detail: &Sink<'_, RawError>) -> u32 {
+        let text = self.to_string();
+        let (status, what, owner, limit, code) = match self {
+            Self::NoSource => (Status::NoSource, "", "", 0, 0),
+            Self::Taken { what, owner } => (Status::Taken, what.as_str(), owner.as_str(), 0, 0),
+            Self::Full { what, limit } => (Status::Full, what.as_str(), "", *limit, 0),
+            Self::Unsupported { what } => (Status::Unsupported, what.as_str(), "", 0, 0),
+            Self::Papyrus(papyrus::Error::UnknownType(id)) => (Status::Papyrus, "", "", *id as usize, 0),
+            Self::Papyrus(papyrus::Error::Bind { class, name }) => (Status::Papyrus, class.as_str(), name.as_str(), 0, 1),
+            Self::Command(e) => (Status::Command, "", "", 0, COMMAND_ERRORS.iter().position(|c| core::mem::discriminant(c) == core::mem::discriminant(e)).unwrap_or_default()),
+        };
+        detail.put(RawError { what: Str::from(what), owner: Str::from(owner), limit, code: u32::try_from(code).unwrap_or_default(), ..RawError::text(&text) });
+        status as u32
+    }
+
+    fn read(status: u32, d: Detail) -> Self {
+        let Detail { what, owner, limit, code, text, .. } = d;
+        match status {
+            s if s == Status::NoSource as u32 => Self::NoSource,
+            s if s == Status::Taken as u32 => Self::Taken { what, owner },
+            s if s == Status::Full as u32 => Self::Full { what, limit },
+            s if s == Status::Papyrus as u32 => match code {
+                0 => u32::try_from(limit).ok().and_then(VMTypeID::from_u32).map_or(Self::Unsupported { what: text }, |id| Self::Papyrus(papyrus::Error::UnknownType(id))),
+                1 => Self::Papyrus(papyrus::Error::Bind { class: what, name: owner }),
+                _ => Self::Unsupported { what: text },
+            },
+            s if s == Status::Command as u32 => usize::try_from(code).ok().and_then(|c| COMMAND_ERRORS.into_iter().nth(c)).map_or(Self::Unsupported { what: text }, Self::Command),
+            _ => Self::Unsupported { what },
+        }
+    }
+
+    fn unsupported(what: String) -> Self {
+        Self::Unsupported { what }
+    }
 }
 
 /// The plugin's side of a fallible entry: `call` returns its status, or `None` when the loader
 /// lacks the entry, which is `Unsupported` for `what`.
-pub(crate) fn status(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), Error> {
+pub(crate) fn outcome<E: Crossing>(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), E> {
     let mut detail = Detail::default();
-    let mut keep = |d: RawError| detail = unsafe { Detail { what: d.what.as_str().to_owned(), owner: d.owner.as_str().to_owned(), limit: d.limit, code: d.code, text: d.text.as_str().to_owned() } };
+    let mut keep = |d: RawError| detail = unsafe { Detail::copy(&d) };
     let Some(status) = call(Sink::new(&mut keep)) else {
-        return Err(Error::Unsupported { what: what.to_owned() });
+        return Err(E::unsupported(what.to_owned()));
     };
-    let Detail { what, owner, limit, code, text } = detail;
-    match status {
-        s if s == Status::Ok as u32 => Ok(()),
-        s if s == Status::NoSource as u32 => Err(Error::NoSource),
-        s if s == Status::Taken as u32 => Err(Error::Taken { what, owner }),
-        s if s == Status::Full as u32 => Err(Error::Full { what, limit }),
-        s if s == Status::Papyrus as u32 => Err(match code {
-            0 => u32::try_from(limit).ok().and_then(VMTypeID::from_u32).map_or(Error::Unsupported { what: text }, |id| Error::Papyrus(papyrus::Error::UnknownType(id))),
-            1 => Error::Papyrus(papyrus::Error::Bind { class: what, name: owner }),
-            _ => Error::Unsupported { what: text },
-        }),
-        s if s == Status::Command as u32 => Err(usize::try_from(code).ok().and_then(|c| COMMAND_ERRORS.into_iter().nth(c)).map_or(Error::Unsupported { what: text }, Error::Command)),
-        _ => Err(Error::Unsupported { what }),
-    }
+    if status == Status::Ok as u32 { Ok(()) } else { Err(E::read(status, detail)) }
+}
+
+/// [`outcome`] for the framework's own [`Error`].
+pub(crate) fn status(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), Error> {
+    outcome(what, call)
 }
 
 /// A [`RawError`] copied out of the call.
 #[derive(Default)]
-struct Detail {
-    what: String,
-    owner: String,
-    limit: usize,
-    code: u32,
-    text: String,
+pub(crate) struct Detail {
+    pub what: String,
+    pub owner: String,
+    pub limit: usize,
+    pub code: u32,
+    pub text: String,
+    pub other: String,
+    pub names: Vec<String>,
+    pub expected: Vec<u8>,
+    pub found: Vec<u8>,
+    pub validation: RawValidation,
+}
+
+impl Detail {
+    unsafe fn copy(d: &RawError) -> Self {
+        let text = |s: Str| unsafe { s.as_str() }.to_owned();
+        Self {
+            what: text(d.what),
+            owner: text(d.owner),
+            limit: d.limit,
+            code: d.code,
+            text: text(d.text),
+            other: text(d.other),
+            names: unsafe { slice(d.names, d.names_len) }.iter().map(|&n| text(n)).collect(),
+            expected: unsafe { d.expected.bytes() }.to_vec(),
+            found: unsafe { d.found.bytes() }.to_vec(),
+            validation: d.validation,
+        }
+    }
 }
 
 /// The mouse's movement in [`HostApi::mouse`].
@@ -610,6 +682,21 @@ pub struct HostApi {
     pub register_command: Option<unsafe extern "C" fn(*const Self, *const RawCommandRequest, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
     /// The engine command's name; writes its entry on success.
     pub replace_command: Option<unsafe extern "C" fn(*const Self, *const c_char, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
+    /// A hook subscription of each phase; writes its id on success.
+    pub hook_before: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, BeforeCallback, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_around: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AroundCallback, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_replace: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, ReplaceCallback, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_after: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AfterCallback, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_unsubscribe: Option<unsafe extern "C" fn(*const Self, u64) -> bool>,
+    pub hook_remove_owner: Option<unsafe extern "C" fn(*const Self, Str) -> usize>,
+    pub hook_set_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool) -> bool>,
+    pub hook_diagnostics: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawSiteReport>)>,
+    pub hook_messages: Option<unsafe extern "C" fn(*const Self, Sink<'_, Str>)>,
+    /// Writes the patch's id on success.
+    pub hook_patch: Option<unsafe extern "C" fn(*const Self, *const RawPatch, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_set_patch_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool, Sink<'_, RawError>) -> u32>,
+    pub hook_unpatch: Option<unsafe extern "C" fn(*const Self, u64) -> bool>,
+    pub hook_patches: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawPatchReport>)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.
@@ -703,7 +790,7 @@ mod tests {
     #[test]
     fn a_status_comes_back_as_its_error() {
         let detail = |code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, code: 0, text: Str::from("message") });
+            sink.put(RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, ..RawError::text("message") });
             Some(code)
         };
         assert!(status("x", detail(Status::Ok as u32)).is_ok());
@@ -714,13 +801,13 @@ mod tests {
         let mut back = Vec::new();
         let mut keep = |d: RawError| back.push(unsafe { (d.what.as_str().to_owned(), d.owner.as_str().to_owned(), d.limit) });
         let taken = Error::Taken { what: "thing".to_owned(), owner: "other".to_owned() };
-        assert_eq!(fail(&taken, &Sink::new(&mut keep)), Status::Taken as u32);
+        assert_eq!(taken.fail(&Sink::new(&mut keep)), Status::Taken as u32);
         assert_eq!(back, [("thing".to_owned(), "other".to_owned(), 0)]);
     }
 
     /// `e` through the host's side of an entry and back through the plugin's.
     fn cross(e: &Error) -> Error {
-        status("x", |sink| Some(fail(e, &sink))).unwrap_err()
+        status("x", |sink| Some(e.fail(&sink))).unwrap_err()
     }
 
     #[test]
@@ -736,7 +823,7 @@ mod tests {
         assert!(matches!(cross(&Error::Unsupported { what: "sinks".to_owned() }), Error::Unsupported { what } if what == "sinks"));
 
         let later = |status: Status, code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { what: Str::from(""), owner: Str::from(""), limit: 0, code, text: Str::from("a later error") });
+            sink.put(RawError { code, ..RawError::text("a later error") });
             Some(status as u32)
         };
         assert!(matches!(status("x", later(Status::Papyrus, 7)), Err(Error::Unsupported { what }) if what == "a later error"));

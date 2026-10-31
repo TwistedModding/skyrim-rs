@@ -1,5 +1,5 @@
 //! The host's [`HostApi`] entries: each finds its plugin by the table it is called with and
-//! forwards to the host's registries.
+//! forwards to the host's registries, the hook dispatcher's among them.
 
 use core::ffi::{c_char, c_void};
 use core::mem::ManuallyDrop;
@@ -11,13 +11,14 @@ use skyrim::papyrus::{ErasedNativeFn, NativeCall, NativeFunction, Variable};
 use sre::InputDevice;
 
 use super::{FRAMES, TABLE, alias, filters, gui, interface, keys};
-use crate::abi::{API, Alloc, CommandCallback, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Sink, SinkCallback, Status, Str, c_str, fail, slice};
-use crate::hooks::Hooks;
-use crate::{Error, Legacy, Method, settings};
+use crate::abi::{API, Alloc, CommandCallback, Crossing, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Sink, SinkCallback, Status, Str, c_str, slice};
+use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, ReplaceCallback, put_site};
+use crate::hooks::{self, PatchId, Subscriber, SubscriptionId, registry};
+use crate::{Legacy, Method, settings};
 
 /// The table for the plugin `name`, made once and kept for every generation of it.
 pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'static HostApi {
-    let legacy: &'static Legacy = Box::leak(Box::new(Legacy { table: &TABLE, hooks: Hooks::for_plugin(name) }));
+    let legacy: &'static Legacy = Box::leak(Box::new(Legacy { table: &TABLE }));
     Box::leak(Box::new(HostApi {
         version: API,
         size: u32::try_from(size_of::<HostApi>()).expect("the table is small"),
@@ -57,6 +58,19 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         register_native: Some(register_native),
         register_command: Some(register_command),
         replace_command: Some(replace_command),
+        hook_before: Some(hook_before),
+        hook_around: Some(hook_around),
+        hook_replace: Some(hook_replace),
+        hook_after: Some(hook_after),
+        hook_unsubscribe: Some(hook_unsubscribe),
+        hook_remove_owner: Some(hook_remove_owner),
+        hook_set_enabled: Some(hook_set_enabled),
+        hook_diagnostics: Some(hook_diagnostics),
+        hook_messages: Some(hook_messages),
+        hook_patch: Some(hook_patch),
+        hook_set_patch_enabled: Some(hook_set_patch_enabled),
+        hook_unpatch: Some(hook_unpatch),
+        hook_patches: Some(hook_patches),
     }))
 }
 
@@ -66,13 +80,13 @@ fn owner(api: *const HostApi) -> &'static str {
 }
 
 /// Writes a registration's handle to `out`, or reports why there is none.
-fn report<T>(result: Result<T, Error>, out: *mut T, error: &Sink<'_, RawError>) -> u32 {
+fn report<T, E: Crossing>(result: Result<T, E>, out: *mut T, error: &Sink<'_, RawError>) -> u32 {
     match result {
         Ok(handle) => {
             unsafe { out.write(handle) };
             Status::Ok as u32
         }
-        Err(e) => fail(&e, error),
+        Err(e) => e.fail(error),
     }
 }
 
@@ -249,6 +263,86 @@ unsafe extern "C" fn replace_command(api: *const HostApi, name: *const c_char, f
     report(super::replace_command(owner(api), unsafe { c_str(name) }, execute_fn(f)).map(RawCommandSlot::new), slot, &error)
 }
 
+/// `given` as the owner of a subscription or patch made through the table of `api`; the host's
+/// own table, whose name is empty, may name any owner.
+fn check_owner(api: *const HostApi, given: &str) -> Result<(), hooks::Error> {
+    match owner(api) {
+        "" => Ok(()),
+        plugin if plugin == given => Ok(()),
+        plugin => Err(hooks::Error::Owner { given: given.to_owned(), plugin: plugin.to_owned() }),
+    }
+}
+
+fn subscribe(api: *const HostApi, request: *const RawSubscription, subscriber: Subscriber, id: *mut u64, error: &Sink<'_, RawError>) -> u32 {
+    let result = unsafe { (*request).to_request(subscriber) }.and_then(|request| {
+        check_owner(api, &request.owner)?;
+        registry::subscribe(request)
+    });
+    report(result.map(SubscriptionId::get), id, error)
+}
+
+unsafe extern "C" fn hook_before(api: *const HostApi, request: *const RawSubscription, f: BeforeCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+    subscribe(api, request, Subscriber::Before(f), id, &error)
+}
+
+unsafe extern "C" fn hook_around(api: *const HostApi, request: *const RawSubscription, f: AroundCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+    subscribe(api, request, Subscriber::Around(f), id, &error)
+}
+
+unsafe extern "C" fn hook_replace(api: *const HostApi, request: *const RawSubscription, f: ReplaceCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+    subscribe(api, request, Subscriber::Replace(f), id, &error)
+}
+
+unsafe extern "C" fn hook_after(api: *const HostApi, request: *const RawSubscription, f: AfterCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+    subscribe(api, request, Subscriber::After(f), id, &error)
+}
+
+unsafe extern "C" fn hook_unsubscribe(_: *const HostApi, id: u64) -> bool {
+    registry::unsubscribe(SubscriptionId::new(id))
+}
+
+unsafe extern "C" fn hook_remove_owner(_: *const HostApi, owner: Str) -> usize {
+    registry::remove_owner(unsafe { owner.as_str() })
+}
+
+unsafe extern "C" fn hook_set_enabled(_: *const HostApi, id: u64, enabled: bool) -> bool {
+    registry::set_enabled(SubscriptionId::new(id), enabled)
+}
+
+unsafe extern "C" fn hook_diagnostics(_: *const HostApi, reports: Sink<'_, RawSiteReport>) {
+    for report in registry::diagnostics() {
+        put_site(&report, &reports);
+    }
+}
+
+unsafe extern "C" fn hook_messages(_: *const HostApi, lines: Sink<'_, Str>) {
+    for line in registry::messages() {
+        lines.put(Str::from(line.as_str()));
+    }
+}
+
+unsafe extern "C" fn hook_patch(api: *const HostApi, request: *const RawPatch, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+    let result = unsafe { (*request).to_request() }.and_then(|request| {
+        check_owner(api, &request.owner)?;
+        registry::patch(request)
+    });
+    report(result.map(PatchId::get), id, &error)
+}
+
+unsafe extern "C" fn hook_set_patch_enabled(_: *const HostApi, id: u64, enabled: bool, error: Sink<'_, RawError>) -> u32 {
+    report(registry::set_patch_enabled(PatchId::new(id), enabled), &mut (), &error)
+}
+
+unsafe extern "C" fn hook_unpatch(_: *const HostApi, id: u64) -> bool {
+    registry::unpatch(PatchId::new(id))
+}
+
+unsafe extern "C" fn hook_patches(_: *const HostApi, reports: Sink<'_, RawPatchReport>) {
+    for patch in registry::patches() {
+        reports.put(RawPatchReport::new(&patch));
+    }
+}
+
 /// A plugin's native as the host binds it; the plugin writes the value over a None it owns nothing in.
 fn native_fn(f: NativeCallback) -> ErasedNativeFn {
     Box::new(move |call: &NativeCall<'_>| {
@@ -281,7 +375,7 @@ mod tests {
     use super::*;
     use crate::abi::{self, Api, Callback, call, entry, names, status};
     use crate::settings::{Setting, Settings};
-    use crate::{Action, BUILD, Host};
+    use crate::{Action, BUILD, Error, Host};
 
     unsafe extern "C" fn query(_: u32) -> *mut c_void {
         core::ptr::null_mut()
@@ -467,6 +561,44 @@ mod tests {
         assert!(run(&execute));
         drop(execute);
         assert_eq!((FIRST.load(Ordering::Relaxed), SECOND.load(Ordering::Relaxed)), (1, 1));
+    }
+
+    #[inline(never)]
+    unsafe extern "C" fn hooked(a: usize, b: usize) -> usize {
+        core::hint::black_box("abi-test hooked");
+        core::hint::black_box(a) * b
+    }
+
+    #[test]
+    fn hooks_go_through_the_plugins_table() {
+        use crate::hooks::ops::Raw;
+        use crate::hooks::{self, Hooks, Location, Options};
+        static DROPS: AtomicU32 = AtomicU32::new(0);
+        static KEPT: AtomicU32 = AtomicU32::new(0);
+        let target = || Raw::<unsafe extern "C" fn(usize, usize) -> usize>::at(hooked as *const () as usize);
+        let full = build("abi-test-hooks", &raw const SKSE);
+        let stage_2 = HostApi { size: u32::try_from(core::mem::offset_of!(HostApi, hook_before)).unwrap(), ..*full };
+        let older = Hooks::new(&raw const stage_2);
+        let counted = Counted(&DROPS);
+        assert_eq!(older.before(target(), Options::new("abi-test-hooks"), move |_| _ = counted.alive()), Err(hooks::Error::Unsupported { what: "hook subscriptions".to_owned() }));
+        assert_eq!(DROPS.load(Ordering::Relaxed), 1, "the closure a loader without the entry never saw is dropped");
+        assert!(matches!(unsafe { older.patch("abi-test-hooks", Location::Address(0), &[0], &[0]) }, Err(hooks::Error::Unsupported { .. })));
+        assert!(matches!(older.set_patch_enabled(hooks::PatchId::new(1), false), Err(hooks::Error::Unsupported { .. })));
+        assert!(older.diagnostics().is_empty() && older.messages().is_empty() && older.patches().is_empty());
+        assert_eq!(older.remove_owner("abi-test-hooks"), 0);
+        assert!(!older.unsubscribe(SubscriptionId::new(1)) && !older.set_enabled(SubscriptionId::new(1), false) && !older.unpatch(PatchId::new(1)));
+
+        let plugin = Hooks::new(full);
+        let foreign = plugin.before(target(), Options::new("abi-test-other"), |_| {}).unwrap_err();
+        assert_eq!(foreign, hooks::Error::Owner { given: "abi-test-other".to_owned(), plugin: "abi-test-hooks".to_owned() });
+        assert!(matches!(unsafe { plugin.patch("abi-test-other", Location::Address(0), &[0], &[0]) }, Err(hooks::Error::Owner { .. })));
+        let counted = Counted(&KEPT);
+        plugin.before(target(), Options::new("abi-test-hooks"), move |args| args.0 += usize::from(counted.alive())).unwrap();
+        assert_eq!(unsafe { core::hint::black_box(hooked as unsafe extern "C" fn(usize, usize) -> usize)(2, 3) }, 9);
+        assert_eq!(KEPT.load(Ordering::Relaxed), 0);
+        assert!(super::super::detach("abi-test-hooks").starts_with("1 hook subscriptions"));
+        assert_eq!(KEPT.load(Ordering::Relaxed), 1, "detach drops the subscriber once, before the DLL would go");
+        assert_eq!(unsafe { core::hint::black_box(hooked as unsafe extern "C" fn(usize, usize) -> usize)(2, 3) }, 6);
     }
 
     #[test]

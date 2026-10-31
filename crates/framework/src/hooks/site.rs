@@ -1,4 +1,5 @@
-//! The per-function state the detour reads without a lock, and the typed chain of subscribers it runs.
+//! The per-function state the detour reads without a lock, and the chain of subscribers it runs
+//! over the call's argument slots.
 
 use core::cell::Cell;
 use core::sync::atomic::Ordering::{Relaxed, SeqCst};
@@ -9,6 +10,7 @@ use std::time::{Duration, Instant};
 
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
+use super::raw::{AfterCallback, ArgSlots, AroundCallback, BeforeCallback, NextApi, RawSignature, ReplaceCallback, RetSlot, Slot};
 use super::validate::{self, Validation};
 use super::{Error, Phase};
 use crate::order::{self, Constraints};
@@ -16,14 +18,24 @@ use crate::order::{self, Constraints};
 /// Plugin name to load position; the tie-breaker after priority.
 pub(crate) type Ranks = BTreeMap<String, i32>;
 
-/// An `unsafe extern "C" fn` type as the dispatcher sees it: the arguments as a tuple and the result.
+/// An `unsafe extern "C" fn` type as the dispatcher sees it: the arguments as a tuple, the result,
+/// and both as the slots they cross in.
 pub trait Signature: Copy + Send + Sync + 'static {
     type Args: Copy + 'static;
-    type Ret: Copy + 'static;
+    type Ret: Slot;
+
+    /// The slot shape the host checks a subscription by.
+    const SLOTS: RawSignature;
 
     /// # Safety
     /// `self` must be callable with `args`.
     unsafe fn call(self, args: Self::Args) -> Self::Ret;
+
+    /// Each argument in its own slot, in order.
+    fn to_slots(args: Self::Args) -> ArgSlots;
+
+    /// The arguments back from their slots.
+    fn from_slots(slots: &ArgSlots) -> Self::Args;
 
     /// The detour that routes a call of this signature to `O`'s site.
     fn detour<O: Op<Fn = Self>>() -> Self;
@@ -39,18 +51,29 @@ pub trait Op: 'static {
 }
 
 macro_rules! signatures {
-    ($(($($a:ident $A:ident),*)) => {$(
-        impl<$($A: Copy + 'static, R: Copy + 'static> Signature for unsafe extern "C" fn($($A),*) -> R {
+    ($(($($a:ident $A:ident $i:tt),*)) => {$(
+        impl<$($A: Slot, R: Slot> Signature for unsafe extern "C" fn($($A),*) -> R {
             type Args = ($($A,);
             type Ret = R;
+
+            const SLOTS: RawSignature = RawSignature::new(&[$($A::CLASS),*], R::CLASS);
 
             unsafe fn call(self, ($($a,): Self::Args) -> R {
                 unsafe { self($($a),*) }
             }
 
+            fn to_slots(($($a,): Self::Args) -> ArgSlots {
+                ArgSlots::new(&[$($a.to_slot()),*])
+            }
+
+            #[allow(unused_variables, clippy::unused_unit)]
+            fn from_slots(slots: &ArgSlots) -> Self::Args {
+                ($($A::from_slot(slots.slots[$i]),)
+            }
+
             fn detour<O: Op<Fn = Self>>() -> Self {
-                unsafe extern "C" fn detour<O: Op<Fn = unsafe extern "C" fn($($A),*) -> R>, $($A: Copy + 'static, R: Copy + 'static>($($a: $A),*) -> R {
-                    dispatch::<O>(($($a,))
+                unsafe extern "C" fn detour<O: Op, $($A: Slot, R: Slot>($($a: $A),*) -> R {
+                    R::from_slot(dispatch(O::site(), ArgSlots::new(&[$($a.to_slot()),*])).bits)
                 }
                 detour::<O, $($A, R>
             }
@@ -60,15 +83,39 @@ macro_rules! signatures {
 
 signatures! {
     ()
-    (a A)
-    (a A, b B)
-    (a A, b B, c C)
-    (a A, b B, c C, d D)
-    (a A, b B, c C, d D, e E)
-    (a A, b B, c C, d D, e E, f F)
-    (a A, b B, c C, d D, e E, f F, g G)
-    (a A, b B, c C, d D, e E, f F, g G, h H)
-    (a A, b B, c C, d D, e E, f F, g G, h H, i I)
+    (a A 0)
+    (a A 0, b B 1)
+    (a A 0, b B 1, c C 2)
+    (a A 0, b B 1, c C 2, d D 3)
+    (a A 0, b B 1, c C 2, d D 3, e E 4)
+    (a A 0, b B 1, c C 2, d D 3, e E 4, f F 5)
+    (a A 0, b B 1, c C 2, d D 3, e E 4, f F 5, g G 6)
+    (a A 0, b B 1, c C 2, d D 3, e E 4, f F 5, g G 6, h H 7)
+    (a A 0, b B 1, c C 2, d D 3, e E 4, f F 5, g G 6, h H 7, i I 8)
+}
+
+/// Calls the function at `address`, of the type `F`, with the arguments in `args`.
+unsafe fn call_slots<F: Signature>(address: usize, args: &ArgSlots) -> RetSlot {
+    let f = unsafe { core::mem::transmute_copy::<usize, F>(&address) };
+    RetSlot { bits: unsafe { f.call(F::from_slots(args)) }.to_slot() }
+}
+
+/// What the chain's innermost link calls: the engine function (or what stands in for it) and how.
+#[derive(Clone, Copy)]
+pub(crate) struct Callee {
+    pub address: usize,
+    call: unsafe fn(usize, &ArgSlots) -> RetSlot,
+}
+
+impl Callee {
+    /// `address` called as `F`.
+    pub(crate) fn new<F: Signature>(address: usize) -> Self {
+        Self { address, call: call_slots::<F> }
+    }
+
+    fn call(self, args: &ArgSlots) -> RetSlot {
+        unsafe { (self.call)(self.address, args) }
+    }
 }
 
 thread_local! {
@@ -115,25 +162,24 @@ pub(crate) fn thread_state(thread: u32) -> Option<(Option<&'static str>, Option<
     Some((site, entry))
 }
 
-/// Runs one subscriber with its `Meta` marked as the thread's current entry.
+/// Runs one subscriber with its `Meta` marked as the thread's current entry, timed.
 fn track<R>(meta: &Arc<Meta>, f: impl FnOnce() -> R) -> R {
     let slot = slot();
     let previous = slot.map(|s| s.entry.swap(Arc::as_ptr(meta).cast_mut(), Relaxed));
-    let r = f();
+    let r = meta.stats.timed(f);
     if let (Some(s), Some(p)) = (slot, previous) {
         s.entry.store(p, Relaxed);
     }
     r
 }
 
-fn dispatch<O: Op>(args: Args<O::Fn>) -> Ret<O::Fn> {
-    let site = O::site();
+fn dispatch(site: &Site, mut args: ArgSlots) -> RetSlot {
     let parity = site.enter();
     DEPTH.with(|d| d.set(d.get() + 1));
-    let chain = unsafe { &*site.chain.load(SeqCst).cast::<Chain<O::Fn>>() };
+    let chain = unsafe { &*site.chain.load(SeqCst) };
     let slot = slot();
     let previous = slot.map(|s| (s.site_name.swap(chain.name.as_ptr().cast_mut(), Relaxed), s.site_len.swap(chain.name.len(), Relaxed)));
-    let ret = if site.broken.load(Relaxed) { unsafe { chain.original.call(args) } } else { chain.run(site, args) };
+    let ret = if site.broken.load(Relaxed) { chain.callee.call(&args) } else { chain.run(site, &mut args) };
     if let (Some(s), Some((name, len))) = (slot, previous) {
         s.site_name.store(name, Relaxed);
         s.site_len.store(len, Relaxed);
@@ -156,7 +202,7 @@ pub enum Outcome {
 }
 
 impl Outcome {
-    fn from_u8(v: u8) -> Option<Self> {
+    pub(crate) fn from_u8(v: u8) -> Option<Self> {
         match v {
             1 => Some(Self::Original),
             2 => Some(Self::Replaced),
@@ -167,6 +213,7 @@ impl Outcome {
 }
 
 /// Call count and timing of a site or a subscriber.
+#[repr(C)]
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct Timing {
     pub calls: u64,
@@ -222,95 +269,102 @@ impl Meta {
     }
 }
 
-pub type BeforeFn<F> = dyn Fn(&mut Args<F>) + Send + Sync + 'static;
-pub type AroundFn<F> = dyn for<'a> Fn(Args<F>, Next<'a, F>) -> Ret<F> + Send + Sync + 'static;
-pub type ReplaceFn<F> = dyn Fn(Args<F>, Original<F>) -> Ret<F> + Send + Sync + 'static;
-pub type AfterFn<F> = dyn Fn(&Args<F>, &Ret<F>, Outcome) + Send + Sync + 'static;
-
-pub(crate) enum Callback<F: Signature> {
-    Before(Box<BeforeFn<F>>),
-    Around(Box<AroundFn<F>>),
-    Replace(Box<ReplaceFn<F>>),
-    After(Box<AfterFn<F>>),
+/// A subscriber as the plugin handed it over.
+pub(crate) enum Subscriber {
+    Before(BeforeCallback),
+    Around(AroundCallback),
+    Replace(ReplaceCallback),
+    After(AfterCallback),
 }
 
-pub(crate) struct Entry<F: Signature> {
-    pub meta: Arc<Meta>,
-    pub callback: Callback<F>,
-}
-
-/// The engine function, handed to a `Replace` subscriber.
-pub struct Original<F: Signature>(F);
-
-impl<F: Signature> Original<F> {
-    /// # Safety
-    /// `args` must be valid for the engine function.
-    pub unsafe fn call(&self, args: Args<F>) -> Ret<F> {
-        unsafe { self.0.call(args) }
+impl Subscriber {
+    pub(crate) fn phase(&self) -> Phase {
+        match self {
+            Self::Before(_) => Phase::Before,
+            Self::Around(_) => Phase::Around,
+            Self::Replace(_) => Phase::Replace,
+            Self::After(_) => Phase::After,
+        }
     }
 }
 
-struct State<F: Signature> {
-    received: Args<F>,
+pub(crate) struct Entry {
+    pub meta: Arc<Meta>,
+    pub subscriber: Subscriber,
+}
+
+struct State {
+    received: ArgSlots,
     outcome: Outcome,
 }
 
-/// The rest of the `Around` chain, ending at the engine function or the `Replace`; calling it is optional.
-pub struct Next<'a, F: Signature> {
-    chain: &'a Chain<F>,
-    state: &'a mut State<F>,
+/// The rest of the `Around` chain from `index`, which a plugin's `Next` runs through [`NextApi`].
+struct Link<'a> {
+    chain: &'a Chain,
+    state: &'a mut State,
     index: usize,
 }
 
-impl<F: Signature> Next<'_, F> {
+impl Link<'_> {
     /// Runs the next `Around`, or the innermost link, with `args`.
-    ///
-    /// # Safety
-    /// `args` must be valid for the engine function.
-    pub unsafe fn call(self, args: Args<F>) -> Ret<F> {
+    fn run(self, args: ArgSlots) -> RetSlot {
         if let Some(entry) = self.chain.arounds.get(self.index) {
-            let next = Next { chain: self.chain, state: self.state, index: self.index + 1 };
+            let next = Link { chain: self.chain, state: self.state, index: self.index + 1 };
             if !entry.meta.runs() {
-                return unsafe { next.call(args) };
+                return next.run(args);
             }
-            let Callback::Around(f) = &entry.callback else { unreachable!() };
-            return track(&entry.meta, || entry.meta.stats.timed(|| f(args, next)));
+            let Subscriber::Around(f) = &entry.subscriber else { unreachable!() };
+            let mut link = Some(next);
+            let api = NextApi { call: next_call, state: (&raw mut link).cast() };
+            let mut ret = RetSlot::default();
+            track(&entry.meta, || (f.call)(f.ctx, &raw const args, &raw const api, &raw mut ret));
+            return ret;
         }
         self.state.received = args;
         if let Some(entry) = self.chain.replace.as_ref().filter(|e| e.meta.runs()) {
-            let Callback::Replace(f) = &entry.callback else { unreachable!() };
+            let Subscriber::Replace(f) = &entry.subscriber else { unreachable!() };
             self.state.outcome = Outcome::Replaced;
-            return track(&entry.meta, || entry.meta.stats.timed(|| f(args, Original(self.chain.original))));
+            let mut ret = RetSlot::default();
+            track(&entry.meta, || (f.call)(f.ctx, &raw const args, self.chain.callee.address, &raw mut ret));
+            return ret;
         }
         self.state.outcome = Outcome::Original;
-        unsafe { self.chain.original.call(args) }
+        self.chain.callee.call(&args)
+    }
+}
+
+/// [`NextApi::call`]: runs the [`Link`] its state holds, the first time only.
+extern "C" fn next_call(api: *const NextApi, args: *const ArgSlots, ret: *mut RetSlot) {
+    let link = unsafe { &mut *(*api).state.cast::<Option<Link<'_>>>() };
+    if let Some(link) = link.take() {
+        unsafe { ret.write(link.run(*args)) };
     }
 }
 
 /// An immutable snapshot of a site's subscribers in execution order; replaced whole on every change.
-pub(crate) struct Chain<F: Signature> {
-    pub original: F,
+pub(crate) struct Chain {
+    pub callee: Callee,
     /// The site's name, read by the dispatch for the thread's slot.
     pub name: String,
     /// Every entry in registration order, the input of the next rebuild.
-    pub entries: Vec<Arc<Entry<F>>>,
-    befores: Vec<Arc<Entry<F>>>,
-    arounds: Vec<Arc<Entry<F>>>,
-    replace: Option<Arc<Entry<F>>>,
-    afters: Vec<Arc<Entry<F>>>,
+    pub entries: Vec<Arc<Entry>>,
+    befores: Vec<Arc<Entry>>,
+    arounds: Vec<Arc<Entry>>,
+    replace: Option<Arc<Entry>>,
+    afters: Vec<Arc<Entry>>,
 }
 
-impl<F: Signature> Chain<F> {
+impl Chain {
     /// Orders `entries` per phase with the plugin loader's sort (constraints, then priority, then
     /// position, which here is the plugin's load rank and then registration order); refuses a
     /// second `Replace` and any constraint cycle.
-    pub(crate) fn build(original: F, entries: Vec<Arc<Entry<F>>>, ranks: &Ranks, site: &str) -> Result<Box<Self>, Error> {
+    pub(crate) fn build(callee: Callee, entries: Vec<Arc<Entry>>, ranks: &Ranks, site: &str) -> Result<Box<Self>, Error> {
         let replaces: Vec<_> = entries.iter().filter(|e| e.meta.phase == Phase::Replace).collect();
         if let [first, .., last] = replaces[..] {
             return Err(Error::Exclusive { site: site.to_owned(), existing: first.meta.owner.clone(), refused: last.meta.owner.clone() });
         }
-        let sorted = |phase: Phase| -> Result<Vec<Arc<Entry<F>>>, Error> {
-            let mut of_phase: Vec<&Arc<Entry<F>>> = entries.iter().filter(|e| e.meta.phase == phase).collect();
+        let sorted = |phase: Phase| -> Result<Vec<Arc<Entry>>, Error> {
+            let mut of_phase: Vec<&Arc<Entry>> = entries.iter().filter(|e| e.meta.phase == phase).collect();
             of_phase.sort_by_key(|e| (ranks.get(&e.meta.owner).copied().unwrap_or(0), e.meta.id));
             let items: Vec<(&str, &Constraints)> = of_phase.iter().map(|e| (e.meta.owner.as_str(), &e.meta.constraints)).collect();
             let order = order::sort(&items);
@@ -323,7 +377,7 @@ impl<F: Signature> Chain<F> {
             Ok(order.sorted.iter().map(|&i| Arc::clone(of_phase[i])).collect())
         };
         Ok(Box::new(Self {
-            original,
+            callee,
             name: site.to_owned(),
             befores: sorted(Phase::Before)?,
             arounds: sorted(Phase::Around)?,
@@ -338,26 +392,23 @@ impl<F: Signature> Chain<F> {
         self.befores.iter().chain(&self.arounds).chain(&self.replace).chain(&self.afters).map(|e| Arc::clone(&e.meta)).collect()
     }
 
-    fn run(&self, site: &Site, mut args: Args<F>) -> Ret<F> {
+    fn run(&self, site: &Site, args: &mut ArgSlots) -> RetSlot {
         let start = Instant::now();
         for entry in self.befores.iter().filter(|e| e.meta.runs()) {
-            let Callback::Before(f) = &entry.callback else { unreachable!() };
-            track(&entry.meta, || entry.meta.stats.timed(|| f(&mut args)));
+            let Subscriber::Before(f) = &entry.subscriber else { unreachable!() };
+            track(&entry.meta, || (f.call)(f.ctx, args));
         }
-        let mut state = State { received: args, outcome: Outcome::Skipped };
-        let ret = unsafe { Next { chain: self, state: &mut state, index: 0 }.call(args) };
+        let mut state = State { received: *args, outcome: Outcome::Skipped };
+        let ret = Link { chain: self, state: &mut state, index: 0 }.run(*args);
         for entry in self.afters.iter().filter(|e| e.meta.runs()) {
-            let Callback::After(f) = &entry.callback else { unreachable!() };
-            track(&entry.meta, || entry.meta.stats.timed(|| f(&state.received, &ret, state.outcome)));
+            let Subscriber::After(f) = &entry.subscriber else { unreachable!() };
+            track(&entry.meta, || (f.call)(f.ctx, &raw const state.received, &raw const ret, state.outcome as u8));
         }
         site.stats.record(start.elapsed());
         site.last_outcome.store(state.outcome as u8, Relaxed);
         ret
     }
 }
-
-/// Republishes a site's chain keeping the entries a predicate accepts; `rebuild::<F>` for the site's signature.
-pub(crate) type Rebuild = unsafe fn(&Site, &mut SiteMeta, &Ranks, &dyn Fn(&Meta) -> bool) -> usize;
 
 /// What a site's detour replaces: a function entry (through `MinHook`), a `call rel32` or a vtable slot.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -403,14 +454,13 @@ pub(crate) struct SiteMeta {
     pub patched_by: Option<String>,
     /// The subscribers in execution order, for the reports.
     pub order: Vec<Arc<Meta>>,
-    pub rebuild: Rebuild,
 }
 
 /// One engine function's hook state. The detour reads `chain` under the epoch counters; the
 /// registry, holding its lock, swaps a new chain in and waits for every call that could see the
 /// old one to leave before freeing it.
 pub struct Site {
-    chain: AtomicPtr<()>,
+    chain: AtomicPtr<Chain>,
     epoch: AtomicUsize,
     active: [AtomicUsize; 2],
     stats: Stats,
@@ -450,9 +500,9 @@ impl Site {
     /// Swaps `chain` in and returns once no call can still be inside the previous one.
     ///
     /// # Safety
-    /// `F` must be the signature the site was installed with, and the caller must hold the registry lock.
-    pub(crate) unsafe fn publish<F: Signature>(&self, chain: Box<Chain<F>>) {
-        let old = self.chain.swap(Box::into_raw(chain).cast(), SeqCst);
+    /// The caller must hold the registry lock, and `chain` must call the site's own original.
+    pub(crate) unsafe fn publish(&self, chain: Box<Chain>) {
+        let old = self.chain.swap(Box::into_raw(chain), SeqCst);
         let parity = self.epoch.fetch_add(1, SeqCst) & 1;
         let mut spins = 0u32;
         while self.active[parity].load(SeqCst) != 0 {
@@ -464,16 +514,13 @@ impl Site {
             }
         }
         if !old.is_null() {
-            drop(unsafe { Box::from_raw(old.cast::<Chain<F>>()) });
+            drop(unsafe { Box::from_raw(old) });
         }
     }
 
-    /// The published chain.
-    ///
-    /// # Safety
-    /// Same as [`Site::publish`].
-    pub(crate) unsafe fn chain<F: Signature>(&self) -> Option<&Chain<F>> {
-        unsafe { self.chain.load(SeqCst).cast::<Chain<F>>().as_ref() }
+    /// The published chain; the registry lock keeps it alive.
+    pub(crate) fn chain(&self) -> Option<&Chain> {
+        unsafe { self.chain.load(SeqCst).as_ref() }
     }
 
     pub(crate) fn snapshot(&self) -> (Timing, Option<Outcome>) {
@@ -490,13 +537,13 @@ impl Default for Site {
 /// Publishes the site's entries that `keep` accepts, reordered, and returns how many were dropped.
 ///
 /// # Safety
-/// Same as [`Site::publish`].
-pub(crate) unsafe fn rebuild<F: Signature>(site: &Site, meta: &mut SiteMeta, ranks: &Ranks, keep: &dyn Fn(&Meta) -> bool) -> usize {
+/// The caller must hold the registry lock.
+pub(crate) unsafe fn rebuild(site: &Site, meta: &mut SiteMeta, ranks: &Ranks, keep: &dyn Fn(&Meta) -> bool) -> usize {
     let (new, removed) = {
-        let chain = unsafe { site.chain::<F>() }.expect("published at install");
+        let chain = site.chain().expect("published at install");
         let entries: Vec<_> = chain.entries.iter().filter(|e| keep(&e.meta)).cloned().collect();
         let removed = chain.entries.len() - entries.len();
-        (Chain::build(chain.original, entries, ranks, &meta.name).expect("a subset of an ordered chain is ordered"), removed)
+        (Chain::build(chain.callee, entries, ranks, &meta.name).expect("a subset of an ordered chain is ordered"), removed)
     };
     meta.order = new.order();
     unsafe { site.publish(new) };

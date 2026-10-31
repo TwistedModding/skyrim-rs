@@ -31,18 +31,26 @@
 //! Subscriptions are added and removed from any thread while the detours run; a removal returns
 //! only once no call can still be inside the removed subscriber. Registering or removing from
 //! inside a subscriber is refused, since it would wait for itself.
+//!
+//! The dispatcher's state is the host's alone: a plugin's [`Hooks`] reaches it through its
+//! `HostApi` entries, its subscribers cross as `Callback`s over the call's argument slots
+//! ([`raw`]), and [`Next::call`] runs the rest of the chain in the host.
 
-use core::any::Any;
 use std::fmt;
 
+use crate::abi::{self, Api, HostApi, RawError, Sink, Str, call};
 use crate::order::Constraints;
 
 pub mod ops;
-mod registry;
+pub mod raw;
+pub(crate) mod registry;
 mod site;
 mod validate;
 
-pub use site::{AfterFn, Args, AroundFn, BeforeFn, Next, Op, Original, Outcome, ReplaceFn, Ret, Signature, Site, Timing};
+use raw::{RawLocation, RawPatch, RawPatchReport, RawSignature, RawSiteReport, RawSubscription, RawTarget};
+pub use raw::{Next, Original, Slot};
+pub(crate) use site::Subscriber;
+pub use site::{Args, Op, Outcome, Ret, Signature, Site, Timing};
 pub use validate::{Bytes, Validation, owner, validate, validate_call, validate_slot};
 
 /// What the dispatcher does with a site another module has patched.
@@ -79,12 +87,19 @@ impl fmt::Display for Compat {
 }
 
 /// When a subscriber runs relative to the engine function.
+#[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Phase {
-    Before,
-    Around,
-    Replace,
-    After,
+    Before = 0,
+    Around = 1,
+    Replace = 2,
+    After = 3,
+}
+
+impl Phase {
+    pub(crate) fn from_u32(value: u32) -> Option<Self> {
+        [Self::Before, Self::Around, Self::Replace, Self::After].into_iter().find(|p| *p as u32 == value)
+    }
 }
 
 /// What a subscription says about itself: its owner (the plugin name constraints refer to), the
@@ -149,7 +164,7 @@ pub enum Error {
     Install { site: String, owner: String, detail: String },
     /// A raw address with a shape or slot problem.
     Raw { address: usize, detail: String },
-    /// The callback's type is not the site's (a mismatch between the plugin's and the host's framework builds).
+    /// The subscriber's function type does not have the site's slot shape (argument count and classes, result class).
     Callback { site: String, owner: String },
     /// Called from inside a subscriber.
     Reentrant,
@@ -161,6 +176,8 @@ pub enum Error {
     Mismatch { site: String, owner: String, expected: Vec<u8>, found: Vec<u8> },
     /// No patch has this id.
     NoPatch(PatchId),
+    /// The loader lacks what the call needs: the hook entries, or a target kind or operation of a later framework.
+    Unsupported { what: String },
 }
 
 impl fmt::Display for Error {
@@ -180,6 +197,7 @@ impl fmt::Display for Error {
             Self::Overlap { site, owner, with } => write!(f, "{site}: refused for {owner}, the bytes overlap {with}"),
             Self::Mismatch { site, owner, expected, found } => write!(f, "{site}: refused for {owner}, expected {}, found {}", validate::hex(expected), validate::hex(found)),
             Self::NoPatch(id) => write!(f, "no patch #{}", id.0),
+            Self::Unsupported { what } => write!(f, "{what}: not supported by this loader"),
         }
     }
 }
@@ -241,6 +259,12 @@ pub enum Register {
 }
 
 impl Register {
+    const ALL: [Self; 8] = [Self::Rbx, Self::Rbp, Self::Rsi, Self::Rdi, Self::R12, Self::R13, Self::R14, Self::R15];
+
+    pub(crate) fn from_number(number: u32) -> Option<Self> {
+        Self::ALL.into_iter().find(|r| u32::from(r.number()) == number)
+    }
+
     /// The x86 register number.
     pub(crate) const fn number(self) -> u8 {
         match self {
@@ -287,7 +311,7 @@ impl PatchId {
     }
 }
 
-/// A byte patch as it crosses from a plugin to the host.
+/// A byte patch as the host's registry takes it.
 pub(crate) struct PatchRequest {
     pub owner: String,
     pub at: Location,
@@ -342,25 +366,14 @@ pub trait Hookable {
     fn target(self) -> Target;
 }
 
-/// A registration as it crosses from a plugin to the host.
+/// A subscription as the host's registry takes it.
 pub(crate) struct Request {
     pub target: Target,
-    pub phase: Phase,
     pub owner: String,
     pub constraints: Constraints,
-    /// `type_name` of the callback's type: the host matches it against the site's instead of a
-    /// `TypeId`, which hashes crate metadata (features, dependency builds) that a plugin built on
-    /// its own may not share with the host.
-    pub signature: &'static str,
-    pub callback: Box<dyn Any + Send + Sync>,
-}
-
-impl Request {
-    fn new<C: Send + Sync + 'static>(target: Target, phase: Phase, options: Options<'_>, callback: C) -> Self {
-        let names = |list: &[&str]| list.iter().map(|s| (*s).to_owned()).collect();
-        let constraints = Constraints { before: names(options.before), after: names(options.after), priority: options.priority };
-        Self { target, phase, owner: options.owner.to_owned(), constraints, signature: core::any::type_name::<C>(), callback: Box::new(callback) }
-    }
+    /// The slot shape of the subscriber's function type, compared with the target's.
+    pub signature: RawSignature,
+    pub subscriber: site::Subscriber,
 }
 
 /// One site's state and subscribers, as [`Hooks::diagnostics`] reports it. A typed operation's
@@ -427,43 +440,17 @@ impl fmt::Display for EntryReport {
     }
 }
 
-/// The host's dispatcher as a plugin reaches it through `Host::hooks`: the handle of one plugin
-/// accepts subscriptions whose `Options` owner is that plugin's name, so a reload removes exactly them.
+/// The host's dispatcher as a plugin reaches it through `Host::hooks`, a wrapper over the
+/// plugin's `HostApi` entries: subscriptions and patches are accepted only for an `Options` owner
+/// that is the plugin's own name, so a reload removes exactly them. On a loader without the
+/// entries, registrations fail with [`Error::Unsupported`] and the rest answer as if empty.
 pub struct Hooks {
-    owner: Option<&'static str>,
-    subscribe: fn(Request) -> Result<SubscriptionId, Error>,
-    unsubscribe: fn(SubscriptionId) -> bool,
-    remove_owner: fn(&str) -> usize,
-    set_rank: fn(&str, i32),
-    set_enabled: fn(SubscriptionId, bool) -> bool,
-    diagnostics: fn() -> Vec<SiteReport>,
-    messages: fn() -> Vec<String>,
-    patch: fn(PatchRequest) -> Result<PatchId, Error>,
-    set_patch_enabled: fn(PatchId, bool) -> Result<(), Error>,
-    unpatch: fn(PatchId) -> bool,
-    patches: fn() -> Vec<PatchReport>,
+    api: Api,
 }
 
 impl Hooks {
-    /// The host's own registry; only the host hands this out.
-    pub(crate) const HOST: Self = Self {
-        owner: None,
-        subscribe: registry::subscribe,
-        unsubscribe: registry::unsubscribe,
-        remove_owner: registry::remove_owner,
-        set_rank: registry::set_rank,
-        set_enabled: registry::set_enabled,
-        diagnostics: registry::diagnostics,
-        messages: registry::messages,
-        patch: registry::patch,
-        set_patch_enabled: registry::set_patch_enabled,
-        unpatch: registry::unpatch,
-        patches: registry::patches,
-    };
-
-    /// The registry as the plugin `name` sees it.
-    pub(crate) const fn for_plugin(name: &'static str) -> Self {
-        Self { owner: Some(name), ..Self::HOST }
+    pub(crate) fn new(api: *const HostApi) -> Self {
+        Self { api: Api(api) }
     }
 
     pub(crate) fn set_logger(f: fn(&str)) {
@@ -490,16 +477,35 @@ impl Hooks {
         registry::revalidate(moment, &resolved);
     }
 
-    fn check_owner(&self, owner: &str) -> Result<(), Error> {
-        match self.owner {
-            Some(plugin) if plugin != owner => Err(Error::Owner { given: owner.to_owned(), plugin: plugin.to_owned() }),
-            _ => Ok(()),
-        }
+    /// Sets a plugin's load rank, the tie-breaker after `priority`; the host sets it from the
+    /// resolved load order before any plugin's `load` runs.
+    pub(crate) fn set_rank(owner: &str, rank: i32) {
+        registry::set_rank(owner, rank);
     }
 
-    fn request<C: Send + Sync + 'static>(&self, target: Target, phase: Phase, options: Options<'_>, callback: C) -> Result<SubscriptionId, Error> {
-        self.check_owner(options.owner)?;
-        (self.subscribe)(Request::new(target, phase, options, callback))
+    /// Hands `request` to `enter` with the target, options and slot shape of `F`, and reads back
+    /// the subscription's id.
+    fn subscribe<F: Signature>(target: Target, options: Options<'_>, enter: impl FnOnce(&RawSubscription, *mut u64, Sink<'_, RawError>) -> Option<u32>) -> Result<SubscriptionId, Error> {
+        let names = |list: &[&str]| list.iter().map(|s| Str::from(*s)).collect::<Vec<_>>();
+        let (before, after) = (names(options.before), names(options.after));
+        let request = RawSubscription {
+            target: RawTarget::new(target),
+            owner: Str::from(options.owner),
+            priority: options.priority,
+            before: before.as_ptr(),
+            before_len: before.len(),
+            after: after.as_ptr(),
+            after_len: after.len(),
+            signature: F::SLOTS,
+        };
+        let mut id = 0;
+        abi::outcome("hook subscriptions", |error| enter(&request, &raw mut id, error)).map(|()| SubscriptionId(id))
+    }
+
+    fn add_patch(&self, owner: &str, at: Location, expected: &[u8], replacement: &[u8], cave: Option<&[u8]>) -> Result<PatchId, Error> {
+        let request = RawPatch { owner: Str::from(owner), at: RawLocation::new(at), expected: Str::new(expected), replacement: Str::new(replacement), cave: Str::maybe(cave) };
+        let mut id = 0;
+        abi::outcome("byte patches", |error| call!(self.api, hook_patch(&raw const request, &raw mut id, error))).map(|()| PatchId(id))
     }
 
     /// Writes `replacement` over the bytes at `at`, which must hold `expected` (of the same length,
@@ -513,8 +519,7 @@ impl Hooks {
     /// The replacement must be valid code or data where it lands for every thread that runs or
     /// reads it, and no thread may be executing those bytes while they are written.
     pub unsafe fn patch(&self, owner: &str, at: Location, expected: &[u8], replacement: &[u8]) -> Result<PatchId, Error> {
-        self.check_owner(owner)?;
-        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: replacement.to_vec(), cave: None })
+        self.add_patch(owner, at, expected, replacement, None)
     }
 
     /// A patch whose replacement is a `jmp rel32` (padded with `nop`s) to `code`, which the host
@@ -527,71 +532,63 @@ impl Hooks {
     /// jumps into, and `code` must run anywhere: no rip-relative operand and no relative branch
     /// out of it.
     pub unsafe fn patch_cave(&self, owner: &str, at: Location, expected: &[u8], code: &[u8]) -> Result<PatchId, Error> {
-        self.check_owner(owner)?;
-        (self.patch)(PatchRequest { owner: owner.to_owned(), at, expected: expected.to_vec(), replacement: Vec::new(), cave: Some(code.to_vec()) })
+        self.add_patch(owner, at, expected, &[], Some(code))
     }
 
     /// Writes a patch's replacement back (`true`) or its original bytes (`false`); refused with
     /// `Error::Mismatch` when another writer changed the bytes since.
     pub fn set_patch_enabled(&self, id: PatchId, enabled: bool) -> Result<(), Error> {
-        (self.set_patch_enabled)(id, enabled)
+        abi::outcome("byte patches", |error| call!(self.api, hook_set_patch_enabled(id.0, enabled, error)))
     }
 
     /// Restores a patch's original bytes and forgets it; false when no such patch exists. Bytes
     /// another writer changed since are left as they are.
     #[must_use]
     pub fn unpatch(&self, id: PatchId) -> bool {
-        (self.unpatch)(id)
+        call!(self.api, hook_unpatch(id.0)).unwrap_or(false)
     }
 
     /// Every managed patch with its owner, bytes and state.
     #[must_use]
     pub fn patches(&self) -> Vec<PatchReport> {
-        (self.patches)()
+        let mut reports = Vec::new();
+        let mut keep = |p: RawPatchReport| reports.push(unsafe { p.to_report() });
+        call!(self.api, hook_patches(Sink::new(&mut keep)));
+        reports
     }
 
     /// Runs `f` before the function with the arguments, which it may edit.
     pub fn before<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&mut Args<H::Fn>) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        let f: Box<BeforeFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Before, options, f)
+        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_before(request, raw::before::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` around the function: it receives the arguments and the rest of the chain, which it
     /// may call once with any arguments or not at all, and returns the result.
     pub fn around<H: Hookable>(&self, target: H, options: Options<'_>, f: impl for<'a> Fn(Args<H::Fn>, Next<'a, H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        let f: Box<AroundFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Around, options, f)
+        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_around(request, raw::around::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` in place of the function, with the original to delegate to; one per site.
     pub fn replace<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(Args<H::Fn>, Original<H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        let f: Box<ReplaceFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::Replace, options, f)
+        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_replace(request, raw::replace::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` after the function with the arguments it received, its result and the outcome.
     pub fn after<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&Args<H::Fn>, &Ret<H::Fn>, Outcome) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        let f: Box<AfterFn<H::Fn>> = Box::new(f);
-        self.request(target.target(), Phase::After, options, f)
+        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_after(request, raw::after::<H::Fn, _>(f), id, error)))
     }
 
     /// Removes one subscription; true when it existed. Returns once no call is inside it.
     #[must_use]
     pub fn unsubscribe(&self, id: SubscriptionId) -> bool {
-        (self.unsubscribe)(id)
+        call!(self.api, hook_unsubscribe(id.0)).unwrap_or(false)
     }
 
     /// Removes every subscription of `owner` and returns how many; once it returns, no call is
     /// inside any of them. The owner's patches are restored and removed with them.
     #[must_use]
     pub fn remove_owner(&self, owner: &str) -> usize {
-        (self.remove_owner)(owner)
-    }
-
-    /// Sets a plugin's load rank, the tie-breaker after `priority`; the host sets it from the
-    /// resolved load order before any plugin's `load` runs.
-    pub fn set_rank(&self, owner: &str, rank: i32) {
-        (self.set_rank)(owner, rank);
+        call!(self.api, hook_remove_owner(Str::from(owner))).unwrap_or(0)
     }
 
     /// Disables or re-enables one subscription; a disabled one keeps its place in the order and
@@ -599,19 +596,25 @@ impl Hooks {
     /// `Replace` leaves the original to run). False when no such subscription exists.
     #[must_use]
     pub fn set_enabled(&self, id: SubscriptionId, enabled: bool) -> bool {
-        (self.set_enabled)(id, enabled)
+        call!(self.api, hook_set_enabled(id.0, enabled)).unwrap_or(false)
     }
 
     /// Every installed site with its subscribers in execution order.
     #[must_use]
     pub fn diagnostics(&self) -> Vec<SiteReport> {
-        (self.diagnostics)()
+        let mut reports = Vec::new();
+        let mut keep = |r: RawSiteReport| reports.push(unsafe { r.to_report() });
+        call!(self.api, hook_diagnostics(Sink::new(&mut keep)));
+        reports
     }
 
     /// The registry's last log lines, oldest first: installs, subscriptions, refusals, removals and toggles.
     #[must_use]
     pub fn messages(&self) -> Vec<String> {
-        (self.messages)()
+        let mut lines = Vec::new();
+        let mut keep = |line: Str| lines.push(unsafe { line.as_str() }.to_owned());
+        call!(self.api, hook_messages(Sink::new(&mut keep)));
+        lines
     }
 }
 

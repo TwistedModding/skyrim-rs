@@ -12,7 +12,7 @@ use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
 use super::reload::{self, Request};
-use super::{HOOKS, NAME, alias, command_lines, filters, flush_settings, gui, interface, keys, plugins, sink_lines, skse_plugins};
+use super::{NAME, hooks, alias, command_lines, filters, flush_settings, gui, interface, keys, plugins, sink_lines, skse_plugins};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -66,13 +66,13 @@ fn key_lines() -> Vec<String> {
 
 fn hook_lines() -> Vec<String> {
     let mut lines = vec![format!("hook compatibility mode {}", Hooks::compat())];
-    for site in HOOKS.diagnostics() {
+    for site in hooks().diagnostics() {
         lines.push(format!("site {} at {:#x}: {} calls, last {} ns, mean {} ns, last outcome {:?}, {}", site.name, site.address, site.timing.calls, site.timing.last_ns, site.timing.mean_ns, site.last_outcome, site_state(&site)));
         lines.extend(site.entries.iter().map(|e| format!("  {e}")));
     }
-    lines.extend(HOOKS.patches().iter().map(ToString::to_string));
+    lines.extend(hooks().patches().iter().map(ToString::to_string));
     lines.extend(sink_lines());
-    lines.extend(HOOKS.messages().iter().map(|m| format!("message: {m}")));
+    lines.extend(hooks().messages().iter().map(|m| format!("message: {m}")));
     lines
 }
 
@@ -80,15 +80,15 @@ fn hook_lines() -> Vec<String> {
 fn toggle(id: u64) -> String {
     let word = |enabled: bool| if enabled { "enabled" } else { "disabled" };
     let sub = SubscriptionId::new(id);
-    if let Some(enabled) = HOOKS.diagnostics().iter().flat_map(|site| &site.entries).find(|e| e.id == sub).map(|e| e.enabled) {
-        return if HOOKS.set_enabled(sub, !enabled) { format!("#{id} {}", word(!enabled)) } else { format!("no subscription #{id}") };
+    if let Some(enabled) = hooks().diagnostics().iter().flat_map(|site| &site.entries).find(|e| e.id == sub).map(|e| e.enabled) {
+        return if hooks().set_enabled(sub, !enabled) { format!("#{id} {}", word(!enabled)) } else { format!("no subscription #{id}") };
     }
     let patch = PatchId::new(id);
-    match HOOKS.patches().into_iter().find(|p| p.id == patch) {
+    match hooks().patches().into_iter().find(|p| p.id == patch) {
         Some(p) if p.state != PatchState::Applied && p.state != PatchState::Disabled => p.to_string(),
         Some(p) => {
             let applied = p.state == PatchState::Applied;
-            HOOKS.set_patch_enabled(patch, !applied).map_or_else(|e| e.to_string(), |()| format!("patch #{id} {}", word(!applied)))
+            hooks().set_patch_enabled(patch, !applied).map_or_else(|e| e.to_string(), |()| format!("patch #{id} {}", word(!applied)))
         }
         None => format!("no subscription or patch #{id}"),
     }

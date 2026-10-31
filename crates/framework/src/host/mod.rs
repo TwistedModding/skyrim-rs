@@ -102,8 +102,14 @@ static LAST_MESSAGE: AtomicU32 = AtomicU32::new(u32::MAX);
 static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
 /// The SKSE plugins in `Data\SKSE\Plugins`, read once the loader has loaded them all.
 static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
-static HOOKS: Hooks = Hooks::HOST;
 static TABLE: Table = Table { add_section: gui::add_section, add_hud: gui::add_hud };
+
+/// The dispatcher as the host reaches it: through a table of its own, whose empty name lets it
+/// act for any owner.
+pub(crate) fn hooks() -> &'static Hooks {
+    static HOOKS: OnceLock<Hooks> = OnceLock::new();
+    HOOKS.get_or_init(|| Hooks::new(api::build("", core::ptr::null())))
+}
 
 /// An SKSE plugin in `Data\SKSE\Plugins`: a DLL exporting `SKSEPlugin_Version` or `SKSEPlugin_Load`.
 #[derive(Clone)]
@@ -225,7 +231,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     let sorted = read_plugins(plugin_files(&dir), &shadow, &[]);
     log!("load order: {}", sorted.iter().map(|(_, _, p, _, _)| if p.constraints == Constraints::default() { p.name.clone() } else { format!("{} ({})", p.name, p.constraints) }).collect::<Vec<_>>().join(", "));
     for (rank, (_, _, plugin, _, _)) in sorted.iter().enumerate() {
-        HOOKS.set_rank(&plugin.name, i32::try_from(rank).unwrap_or(i32::MAX));
+        Hooks::set_rank(&plugin.name, i32::try_from(rank).unwrap_or(i32::MAX));
     }
     *PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = Box::leak(sorted.iter().map(|(_, _, p, _, _)| p.clone()).collect());
     let loaded = sorted.into_iter().map(|read| start_plugin(skse, &dir, read)).collect();
@@ -301,7 +307,7 @@ fn rescan(loaded: &mut Vec<reload::Loaded>) {
     let sorted = read_plugins(files, &dir.join(reload::SHADOW_DIR), running);
     log!("rescan: {}", if sorted.is_empty() { "no plugin to load".to_owned() } else { format!("loading {} after the running plugins", sorted.iter().map(|(_, _, p, _, _)| p.name.as_str()).collect::<Vec<_>>().join(", ")) });
     for (rank, (_, _, plugin, _, _)) in sorted.iter().enumerate() {
-        HOOKS.set_rank(&plugin.name, i32::try_from(running.len() + rank).unwrap_or(i32::MAX));
+        Hooks::set_rank(&plugin.name, i32::try_from(running.len() + rank).unwrap_or(i32::MAX));
     }
     *PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = Box::leak(running.iter().chain(sorted.iter().map(|(_, _, p, _, _)| p)).cloned().collect());
     loaded.extend(sorted.into_iter().map(|read| start_plugin(skse, &dir, read)));
@@ -546,7 +552,7 @@ fn describe(descriptor: &Descriptor, file: String) -> Plugin {
 /// drained. Each registry's lock is released before the drain, so a callback still running
 /// may register through the host while it is waited for.
 fn detach(owner: &str) -> String {
-    let hooks = HOOKS.remove_owner(owner);
+    let hooks = hooks().remove_owner(owner);
     let sources: Vec<&'static Owned<SinkCallback>> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers).collect();
     let sinks = sources.iter().map(|handlers| handlers.remove_owner(owner)).sum::<usize>() + PLAYER_GRAPH.remove_owner(owner);
     let natives: Vec<(String, &'static str, ErasedNative)> = NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|n| n.owner == owner).map(|n| (format!("{}.{}", n.class, n.name), n.owner, n.erased)).collect();
