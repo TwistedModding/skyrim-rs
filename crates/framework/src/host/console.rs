@@ -4,12 +4,15 @@
 //! commands plugins registered or replaced and the Papyrus natives they bound; `toggle <id>` switches a subscriber or a patch; `keys`
 //! lists the hotkeys and the input filters; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
-//! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder.
+//! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder; `reload <n>`, `unload <n>` and `load <n>`
+//! do what plugin `n`'s buttons in the Plugins tab do and `rescan` what its "Rescan folder" does, at
+//! the next frame.
 
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
-use super::{HOOKS, NAME, alias, command_lines, filters, flush_settings, gui, interface, keys, sink_lines, skse_plugins};
+use super::reload::{self, Request};
+use super::{HOOKS, NAME, alias, command_lines, filters, flush_settings, gui, interface, keys, plugins, sink_lines, skse_plugins};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -93,12 +96,23 @@ fn toggle(id: u64) -> String {
 
 static PARAMS: [Param; 2] = [Param::new(c"what", ScriptParamType::String, false), Param::new(c"n", ScriptParamType::Integer, true)];
 
-/// `SkyrimRs gui [n] | hooks | toggle <id> | keys | commands | bind <n> | capture [n]`.
+/// Queues `make(name)` for framework plugin `n` (as `gui` numbers them).
+fn ask(n: i32, word: &str, make: fn(String) -> Request) -> String {
+    match usize::try_from(n).ok().and_then(|n| plugins().get(n)) {
+        Some(p) => {
+            reload::request(make(p.name.clone()));
+            format!("SkyrimRs: {word} {} at the next frame", p.name)
+        }
+        None => format!("SkyrimRs: no plugin {n}"),
+    }
+}
+
+/// `SkyrimRs gui [n] | hooks | toggle <id> | keys | commands | bind <n> | capture [n] | reload <n> | unload <n> | load <n> | rescan`.
 pub(super) struct Command;
 
 impl skyrim::input::Command for Command {
     const NAME: &'static core::ffi::CStr = c"SkyrimRs";
-    const HELP: &'static core::ffi::CStr = c"skyrim-rs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number]";
+    const HELP: &'static core::ffi::CStr = c"skyrim-rs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -144,7 +158,14 @@ impl skyrim::input::Command for Command {
                 });
                 vec![format!("SkyrimRs: the next overlay frame goes to {}", path.display())]
             }
-            _ => vec!["SkyrimRs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number> or capture [number]".to_owned()],
+            [Arg::Str(what), Arg::Int(n)] if is(what, "reload") => vec![ask(*n, "reloading", Request::Reload)],
+            [Arg::Str(what), Arg::Int(n)] if is(what, "unload") => vec![ask(*n, "unloading", Request::Unload)],
+            [Arg::Str(what), Arg::Int(n)] if is(what, "load") => vec![ask(*n, "loading", Request::Load)],
+            [Arg::Str(what), ..] if is(what, "rescan") => {
+                reload::request(Request::Rescan);
+                vec!["SkyrimRs: rescanning the plugin folder at the next frame".to_owned()]
+            }
+            _ => vec!["SkyrimRs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number> or rescan".to_owned()],
         };
         flush_settings(Some(NAME));
         for line in lines {

@@ -1,6 +1,6 @@
 //! The overlay's one window, in the look of the game's journal: a row of tabs across the top, Mods,
-//! Plugins (the framework plugins with their version, file and state, and the files the host did
-//! not load), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
+//! Plugins (the framework plugins with their version, file and state, buttons that reload, unload
+//! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
 //! set by capturing the next key pressed, and the capture rule). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), the selected one's sections under
 //! it when it has two or more, and the selected section beside it.
@@ -11,7 +11,8 @@ use overlay::egui::{self, Align, Layout, RichText, Sense, TextStyle, TextWrapMod
 use overlay::theme;
 
 use super::owned::Owned;
-use super::{HOSTED_BY, NAME, keys, plugins, refused, reload, skse_plugins};
+use super::reload::{self, Request, Status};
+use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins};
 use crate::{DrawFn, HudDrawFn};
 use crate::settings::{self, Setting, Value};
 
@@ -225,6 +226,8 @@ pub(super) struct PluginRow {
     pub status: String,
     /// Why it is not running, empty while it is.
     pub reason: String,
+    /// The plugin's state; `None` for a file the host did not load.
+    pub state: Option<Status>,
 }
 
 pub(super) fn plugin_rows() -> Vec<PluginRow> {
@@ -232,17 +235,18 @@ pub(super) fn plugin_rows() -> Vec<PluginRow> {
     let mut rows: Vec<PluginRow> = plugins()
         .iter()
         .map(|p| {
-            let (generation, live) = generations.iter().find(|g| g.0 == p.name).map_or((1, true), |g| (g.1, g.2));
-            let (status, reason) = match generation {
-                _ if !live => ("Stopped".to_owned(), "its load returned false".to_owned()),
-                1 => ("Running".to_owned(), String::new()),
-                2 => ("Running, reloaded once".to_owned(), String::new()),
-                n => (format!("Running, reloaded {} times", n - 1), String::new()),
+            let (generation, state) = generations.iter().find(|g| g.0 == p.name).map_or((1, Status::Running), |g| (g.1, g.2));
+            let (status, reason) = match (state, generation) {
+                (Status::Stopped, _) => ("Stopped".to_owned(), "its load returned false".to_owned()),
+                (Status::Unloaded, _) => ("Unloaded".to_owned(), "unloaded from this menu or the console; Load starts it again from its file".to_owned()),
+                (Status::Running, 1) => ("Running".to_owned(), String::new()),
+                (Status::Running, 2) => ("Running, reloaded once".to_owned(), String::new()),
+                (Status::Running, n) => (format!("Running, reloaded {} times", n - 1), String::new()),
             };
-            PluginRow { name: p.name.clone(), version: p.version.clone(), file: p.file.clone(), status, reason }
+            PluginRow { name: p.name.clone(), version: p.version.clone(), file: p.file.clone(), status, reason, state: Some(state) }
         })
         .collect();
-    rows.extend(refused().into_iter().map(|(file, reason)| PluginRow { name: String::new(), version: String::new(), file, status: "Not loaded".to_owned(), reason }));
+    rows.extend(refused().into_iter().map(|(file, reason)| PluginRow { name: String::new(), version: String::new(), file, status: "Not loaded".to_owned(), reason, state: None }));
     rows
 }
 
@@ -356,21 +360,53 @@ fn table(ui: &mut egui::Ui, id: &str, header: &[&str], rows: Vec<Vec<(RichText, 
     });
 }
 
+/// The buttons of a plugin's row, each with its hover text and what it asks for.
+fn plugin_buttons(name: &str, state: Status) -> Vec<(&'static str, &'static str, Request)> {
+    match state {
+        Status::Unloaded => vec![("Load", "Load the plugin from its file again", Request::Load(name.to_owned()))],
+        Status::Running | Status::Stopped => vec![
+            ("Reload", "Unload the plugin and load its file again, handing over its state", Request::Reload(name.to_owned())),
+            ("Unload", "Unload the plugin until Load is clicked; it keeps its state for then", Request::Unload(name.to_owned())),
+        ],
+    }
+}
+
 fn plugins_tab(ui: &mut egui::Ui) {
-    ui.label(dim(format!("skyrim-rs {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", env!("CARGO_PKG_VERSION"), hosted_by())));
+    ui.horizontal(|ui| {
+        ui.label(dim(format!("skyrim-rs {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", env!("CARGO_PKG_VERSION"), hosted_by())));
+        if ui.button("Rescan folder").on_hover_text("Load the plugins added to the folder since the game started, and try the ones not loaded again").clicked() {
+            reload::request(Request::Rescan);
+        }
+    });
     ui.add_space(RULE_SPACE);
-    let rows: Vec<_> = plugin_rows()
-        .into_iter()
-        .map(|r| {
-            let status = if r.reason.is_empty() { RichText::new(r.status) } else { warn(ui, r.status) };
-            vec![(RichText::new(r.name), String::new()), (dim(r.version), String::new()), (dim(r.file), String::new()), (status, r.reason)]
-        })
-        .collect();
+    let rows = plugin_rows();
     if rows.is_empty() {
         ui.label(dim("No framework plugin is installed."));
-    } else {
-        table(ui, "plugins", &["Name", "Version", "File", "Status"], rows);
+        return;
     }
+    egui::Grid::new("plugins").striped(true).spacing([36.0, 10.0]).show(ui, |ui| {
+        for h in ["Name", "Version", "File", "Status", ""] {
+            ui.label(dim(h).small());
+        }
+        ui.end_row();
+        for r in rows {
+            ui.label(RichText::new(&r.name));
+            ui.label(dim(r.version));
+            ui.label(dim(r.file));
+            let status = ui.label(if r.reason.is_empty() { RichText::new(r.status) } else { warn(ui, r.status) });
+            if !r.reason.is_empty() {
+                status.on_hover_text(r.reason);
+            }
+            ui.horizontal(|ui| {
+                for (label, hover, request) in r.state.map(|s| plugin_buttons(&r.name, s)).unwrap_or_default() {
+                    if ui.button(label).on_hover_text(hover).clicked() {
+                        reload::request(request);
+                    }
+                }
+            });
+            ui.end_row();
+        }
+    });
 }
 
 fn legacy_tab(ui: &mut egui::Ui) {

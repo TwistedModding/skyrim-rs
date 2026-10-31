@@ -71,7 +71,8 @@ pub const CONFIG: &str = "skyrim-rs.ini";
 /// The host's own name, as the owner of its window and settings.
 pub const NAME: &str = "skyrim-rs";
 
-static PLUGINS: OnceLock<Vec<Plugin>> = OnceLock::new();
+/// The accepted plugins in load order; a rescan appends the ones it loads.
+static PLUGINS: Mutex<&'static [Plugin]> = Mutex::new(&[]);
 /// The DLLs in the plugin folder the host did not load, each with the reason.
 static REFUSED: Mutex<Vec<(String, String)>> = Mutex::new(Vec::new());
 static MESSAGES: Owned<MessageFn> = Owned::new();
@@ -255,56 +256,89 @@ pub fn load(skse: &skse::Interface) -> bool {
     }
     gui::install();
     let shadow = reload::clean(&dir);
+    let sorted = read_plugins(plugin_files(&dir), &shadow, &[]);
+    log!("load order: {}", sorted.iter().map(|(_, _, p, _, _)| if p.constraints == Constraints::default() { p.name.clone() } else { format!("{} ({})", p.name, p.constraints) }).collect::<Vec<_>>().join(", "));
+    for (rank, (_, _, plugin, _, _)) in sorted.iter().enumerate() {
+        HOOKS.set_rank(&plugin.name, i32::try_from(rank).unwrap_or(i32::MAX));
+    }
+    *PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = Box::leak(sorted.iter().map(|(_, _, p, _, _)| p.clone()).collect());
+    let loaded = sorted.into_iter().map(|read| start_plugin(skse, &dir, read)).collect();
+    reload::watch(loaded);
+    overlay::on_frame(frame);
+    true
+}
+
+/// A plugin file read for loading: its module, descriptor, what it declares, its file and its shadow copy.
+type Read = (HMODULE, &'static Descriptor, Plugin, PathBuf, PathBuf);
+
+/// Copies each of `files` into `shadow` and reads it, then orders what was read by the descriptors'
+/// constraints. Refused: a file that cannot be read, one named as the host or as a plugin in
+/// `running`, and those in a load order cycle.
+fn read_plugins(files: Vec<PathBuf>, shadow: &Path, running: &[Plugin]) -> Vec<Read> {
     let mut read = Vec::new();
-    for path in plugin_files(&dir) {
+    for path in files {
         let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
-        let loaded = reload::copy(&path, &shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_descriptor(&copy).map(|(module, descriptor)| (module, descriptor, copy)));
+        let loaded = reload::copy(&path, shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_descriptor(&copy).map(|(module, descriptor)| (module, descriptor, copy)));
         match loaded {
             Ok((module, descriptor, _)) if plugin_name(descriptor) == NAME => {
                 refuse(file, format!("{NAME} is the host's own name, which its settings file and keys use"));
                 unsafe { FreeLibrary(module) };
             }
-            Ok((module, descriptor, copy)) => read.push((module, descriptor, describe(descriptor, file), path, copy)),
+            Ok((module, descriptor, _)) if let Some(p) = running.iter().find(|p| p.name == plugin_name(descriptor)) => {
+                refuse(file, format!("{} is loaded from {}", p.name, p.file));
+                unsafe { FreeLibrary(module) };
+            }
+            Ok((module, descriptor, copy)) => read.push(Some((module, descriptor, describe(descriptor, file), path, copy))),
             Err(e) => refuse(file, e),
         }
     }
-    let items: Vec<(&str, &Constraints)> = read.iter().map(|(_, _, p, _, _)| (p.name.as_str(), &p.constraints)).collect();
+    let items: Vec<(&str, &Constraints)> = read.iter().flatten().map(|(_, _, p, _, _)| (p.name.as_str(), &p.constraints)).collect();
     let order = order::sort(&items);
-    for (asker, name) in &order.missing {
-        log!("no plugin named {name} (asked by {})", read[*asker].2.name);
+    for (asker, name) in order.missing.iter().filter(|(_, name)| !running.iter().any(|p| p.name == *name)) {
+        log!("no plugin named {name} (asked by {})", items[*asker].0);
     }
-    let in_cycle: Vec<&str> = order.cycle.iter().map(|&i| read[i].2.name.as_str()).collect();
+    let in_cycle: Vec<String> = order.cycle.iter().map(|&i| items[i].0.to_owned()).collect();
     for &i in &order.cycle {
-        let (module, _, plugin, _, _) = &read[i];
-        refuse(plugin.file.clone(), format!("{} is in a load order cycle with {}", plugin.name, in_cycle.iter().filter(|n| **n != plugin.name).copied().collect::<Vec<_>>().join(", ")));
-        unsafe { FreeLibrary(*module) };
-    }
-    let sorted: Vec<Plugin> = order.sorted.iter().map(|&i| read[i].2.clone()).collect();
-    log!("load order: {}", sorted.iter().map(|p| if p.constraints == Constraints::default() { p.name.clone() } else { format!("{} ({})", p.name, p.constraints) }).collect::<Vec<_>>().join(", "));
-    for (rank, plugin) in sorted.iter().enumerate() {
-        HOOKS.set_rank(&plugin.name, i32::try_from(rank).unwrap_or(i32::MAX));
-    }
-    let _ = PLUGINS.set(sorted);
-    let mut loaded = Vec::new();
-    for &i in &order.sorted {
-        let (module, descriptor, plugin, source, copy) = &read[i];
-        let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
-        let host: &'static Host = Box::leak(Box::new(Host { skse, name, hooks: Box::leak(Box::new(Hooks::for_plugin(name))), table: &TABLE }));
-        open_settings(name, &dir);
-        crash::note_image(&plugin.name, 1, *module as usize, true);
-        let live = (descriptor.load)(host);
-        if live {
-            log!("loaded {}: {}", plugin.file, plugin.name);
-            log!("{}: generation 1 loaded, image at {:#x}", plugin.name, *module as usize);
-        } else {
-            log!("skipped {}: {}: load returned false", plugin.file, plugin.name);
-            detach(name);
+        if let Some((module, _, plugin, _, _)) = read[i].take() {
+            refuse(plugin.file.clone(), format!("{} is in a load order cycle with {}", plugin.name, in_cycle.iter().filter(|n| **n != plugin.name).cloned().collect::<Vec<_>>().join(", ")));
+            unsafe { FreeLibrary(module) };
         }
-        loaded.push(reload::Loaded::new(plugin.clone(), host, *module, descriptor, live, source.clone(), copy.clone()));
     }
-    reload::watch(loaded);
-    overlay::on_frame(frame);
-    true
+    order.sorted.iter().filter_map(|&i| read[i].take()).collect()
+}
+
+/// Starts a read plugin with its own [`Host`] and settings, as generation 1.
+fn start_plugin(skse: &'static skse::Interface, dir: &Path, (module, descriptor, plugin, source, copy): Read) -> reload::Loaded {
+    let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
+    let host: &'static Host = Box::leak(Box::new(Host { skse, name, hooks: Box::leak(Box::new(Hooks::for_plugin(name))), table: &TABLE }));
+    open_settings(name, dir);
+    crash::note_image(&plugin.name, 1, module as usize, true);
+    let live = (descriptor.load)(host);
+    if live {
+        log!("loaded {}: {}", plugin.file, plugin.name);
+        log!("{}: generation 1 loaded, image at {:#x}", plugin.name, module as usize);
+    } else {
+        log!("skipped {}: {}: load returned false", plugin.file, plugin.name);
+        detach(name);
+    }
+    reload::Loaded::new(plugin, host, module, descriptor, live, source, copy)
+}
+
+/// Loads every DLL in the plugin folder that is not loaded (files added since the game started, and
+/// the ones refused, tried again), ordered among themselves, after the running plugins.
+fn rescan(loaded: &mut Vec<reload::Loaded>) {
+    let Some(skse) = SKSE.get() else { return };
+    let dir = plugins_dir().join(PLUGIN_DIR);
+    let files: Vec<PathBuf> = plugin_files(&dir).into_iter().filter(|f| !loaded.iter().any(|l| l.source() == f)).collect();
+    REFUSED.lock().unwrap_or_else(PoisonError::into_inner).clear();
+    let running = plugins();
+    let sorted = read_plugins(files, &dir.join(reload::SHADOW_DIR), running);
+    log!("rescan: {}", if sorted.is_empty() { "no plugin to load".to_owned() } else { format!("loading {} after the running plugins", sorted.iter().map(|(_, _, p, _, _)| p.name.as_str()).collect::<Vec<_>>().join(", ")) });
+    for (rank, (_, _, plugin, _, _)) in sorted.iter().enumerate() {
+        HOOKS.set_rank(&plugin.name, i32::try_from(running.len() + rank).unwrap_or(i32::MAX));
+    }
+    *PLUGINS.lock().unwrap_or_else(PoisonError::into_inner) = Box::leak(running.iter().chain(sorted.iter().map(|(_, _, p, _, _)| p)).cloned().collect());
+    loaded.extend(sorted.into_iter().map(|read| start_plugin(skse, &dir, read)));
 }
 
 /// The overlay's frame callback: reloads first, then every plugin's [`Host::on_frame`].
@@ -358,7 +392,7 @@ fn skse_plugins() -> Vec<LegacyPlugin> {
 /// The accepted plugins in load order, empty before [`load`] resolved it.
 #[must_use]
 pub fn plugins() -> &'static [Plugin] {
-    PLUGINS.get().map_or(&[], Vec::as_slice)
+    *PLUGINS.lock().unwrap_or_else(PoisonError::into_inner)
 }
 
 /// `Data\SKSE\Plugins` next to the executable.
@@ -471,8 +505,13 @@ fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::
                 }
                 Some(generations) => {
                     let _ = write!(w, "framework plugins:");
-                    for (name, generation, live) in generations {
-                        let _ = write!(w, " {name} generation {generation}{};", if live { "" } else { " (stopped)" });
+                    for (name, generation, status) in generations {
+                        let state = match status {
+                            reload::Status::Running => "",
+                            reload::Status::Stopped => " (stopped)",
+                            reload::Status::Unloaded => " (unloaded)",
+                        };
+                        let _ = write!(w, " {name} generation {generation}{state};");
                     }
                     let _ = writeln!(w);
                 }
