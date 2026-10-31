@@ -299,6 +299,50 @@ pub fn release_depth_shift() {
     write_depth_shift(DEPTH_SHIFT_STEPS);
 }
 
+/// The viewport depth pulls per rasterizer depth-bias mode (id 411359, `.data`, copied from
+/// `.rdata` at renderer init): `ApplyDirtyRenderStates` lowers the viewport's maximum depth by the
+/// bound mode's pull, so decals (modes 6-9) draw in front of the surface they lie on
+/// (`graphics.md` "Request IC12"). The engine's values, as bits.
+const DEPTH_BIAS_PULLS: u64 = 411_359;
+const ENGINE_DEPTH_BIAS_PULLS: [u32; 12] = [0, 0x377b_a882, 0, 0, 0, 0, 0x37da_1a93, 0x377b_a882, 0x37ea_e18b, 0x378e_9b39, 0x37fb_a882, 0x379f_6230];
+
+static DEPTH_BIAS_SCALE: AtomicU32 = AtomicU32::new(0x3f80_0000);
+
+fn depth_bias_pulls(scale: f32) -> [f32; 12] {
+    ENGINE_DEPTH_BIAS_PULLS.map(|bits| f32::from_bits(bits) * scale)
+}
+
+/// Writes the pulls scaled by `scale` unless another module changed them; the engine refilling
+/// its own values (renderer init or reset) counts as unchanged.
+fn write_depth_bias(scale: f32) {
+    let Ok(at) = crate::reloc().address(DEPTH_BIAS_PULLS) else { return };
+    let table = at as *mut [f32; 12];
+    let bits = |pulls: [f32; 12]| pulls.map(f32::to_bits);
+    let current = bits(unsafe { table.read_volatile() });
+    let written = bits(depth_bias_pulls(f32::from_bits(DEPTH_BIAS_SCALE.load(Ordering::Relaxed))));
+    let wanted = depth_bias_pulls(scale);
+    if current == bits(wanted) {
+        DEPTH_BIAS_SCALE.store(scale.to_bits(), Ordering::Relaxed);
+    } else if current == written || current == ENGINE_DEPTH_BIAS_PULLS {
+        unsafe { table.write_volatile(wanted) };
+        DEPTH_BIAS_SCALE.store(scale.to_bits(), Ordering::Relaxed);
+    }
+}
+
+/// Keeps the decals' pull toward the camera as at the `reference` near while the world draws with
+/// `near`: a fixed pull in depth is about pull z^2 / near in distance, so at a lower near decals on
+/// far terrain jump through the cloud and mist meshes in front of it. Scales the pulls with near.
+/// Main thread, before `RenderWorld`; [`release_depth_bias`] before the caller's module unloads.
+pub fn compensate_depth_bias(reference: f32, near: f32) {
+    let scale = if near > 0.0 && reference > 0.0 { near / reference } else { 1.0 };
+    write_depth_bias(scale);
+}
+
+/// Puts the engine's depth-bias pulls back.
+pub fn release_depth_bias() {
+    write_depth_bias(1.0);
+}
+
 /// `g_ShadowDistance` (id 415263): the live shadow distance, `fShadowDistance` outdoors and
 /// 3000 indoors (`SetShadowDistanceForInterior` rewrites it at every cell change).
 #[must_use]
@@ -1015,7 +1059,17 @@ pub fn is_interior() -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::{Matrix3, Transform, axis_turn, depth_shift_constants, from_euler_xyz, from_euler_zxy, mul3, near_inverse_repartition, near_repartition, to_euler_xyz};
+    use super::{Matrix3, Transform, axis_turn, depth_bias_pulls, depth_shift_constants, from_euler_xyz, from_euler_zxy, mul3, near_inverse_repartition, near_repartition, to_euler_xyz};
+
+    #[test]
+    fn the_depth_bias_pulls_scale_with_near() {
+        let engine = depth_bias_pulls(1.0);
+        assert_eq!(engine.map(f32::to_bits), super::ENGINE_DEPTH_BIAS_PULLS);
+        assert!((engine[6] - 2.6e-5).abs() < 1e-9);
+        let two = depth_bias_pulls(2.0 / 15.0);
+        assert!((two[6] - engine[6] * 2.0 / 15.0).abs() < 1e-12);
+        assert_eq!(two[0].to_bits(), 0);
+    }
 
     #[test]
     fn the_engine_depth_shift_constants_come_back_at_seventeen_steps() {
