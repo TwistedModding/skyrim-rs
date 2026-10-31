@@ -18,7 +18,18 @@ impl View {
     /// The frame camera (`g_SceneGraph` +0x128), `None` until the scene graph exists.
     pub(crate) fn current(screen: Rect) -> Option<Self> {
         sre::g_scene_graph()?;
-        Some(Self { camera: sre::get_main_camera()?, screen })
+        Some(Self::new(sre::get_main_camera()?, screen))
+    }
+
+    /// `camera` seen on `screen` (in points): the view a framework plugin rebuilds from what its loader hands over.
+    #[must_use]
+    pub fn new(camera: &'static NiCamera, screen: Rect) -> Self {
+        Self { camera, screen }
+    }
+
+    #[must_use]
+    pub fn camera(&self) -> &'static NiCamera {
+        self.camera
     }
 
     /// The screen in points, as the painter's coordinates use them.

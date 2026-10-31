@@ -10,15 +10,15 @@ use skyrim::input::ErasedExecute;
 use skyrim::papyrus::{ErasedNativeFn, NativeCall, NativeFunction, Variable};
 use sre::InputDevice;
 
-use super::{FRAMES, TABLE, alias, filters, gui, interface, keys};
+use super::{FRAMES, alias, filters, gui, interface, keys};
 use crate::abi::{API, Alloc, CommandCallback, Crossing, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Sink, SinkCallback, Status, Str, c_str, slice};
 use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, ReplaceCallback, put_site};
 use crate::hooks::{self, PatchId, Subscriber, SubscriptionId, registry};
-use crate::{Legacy, Method, settings};
+use crate::ui::{RawFamily, RawFont, UiCallback};
+use crate::{Method, settings};
 
 /// The table for the plugin `name`, made once and kept for every generation of it.
 pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'static HostApi {
-    let legacy: &'static Legacy = Box::leak(Box::new(Legacy { table: &TABLE }));
     Box::leak(Box::new(HostApi {
         version: API,
         size: u32::try_from(size_of::<HostApi>()).expect("the table is small"),
@@ -52,7 +52,7 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         show_section: Some(show_section),
         read_frame: Some(read_frame),
         plugins: Some(plugins),
-        legacy,
+        legacy: core::ptr::null(),
         add_sink: Some(add_sink),
         add_player_graph_sink: Some(add_player_graph_sink),
         register_native: Some(register_native),
@@ -71,6 +71,9 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         hook_set_patch_enabled: Some(hook_set_patch_enabled),
         hook_unpatch: Some(hook_unpatch),
         hook_patches: Some(hook_patches),
+        add_section: Some(add_section),
+        add_hud: Some(add_hud),
+        fonts: Some(fonts),
     }))
 }
 
@@ -343,6 +346,25 @@ unsafe extern "C" fn hook_patches(_: *const HostApi, reports: Sink<'_, RawPatchR
     }
 }
 
+unsafe extern "C" fn add_section(api: *const HostApi, name: Str, f: UiCallback) {
+    gui::add_section(owner(api), unsafe { name.as_str() }, f);
+}
+
+unsafe extern "C" fn add_hud(api: *const HostApi, f: UiCallback) {
+    gui::add_hud(owner(api), f);
+}
+
+unsafe extern "C" fn fonts(_: *const HostApi, files: Sink<'_, RawFont>, families: Sink<'_, RawFamily>) {
+    let Some(fonts) = overlay::font_definitions() else { return };
+    for (name, data) in &fonts.font_data {
+        files.put(RawFont { name: Str::from(name.as_str()), bytes: Str::new((*data.font).as_ref()) });
+    }
+    for (family, names) in &fonts.families {
+        let names: Vec<Str> = names.iter().map(|n| Str::from(n.as_str())).collect();
+        families.put(RawFamily::new(family, &names));
+    }
+}
+
 /// A plugin's native as the host binds it; the plugin writes the value over a None it owns nothing in.
 fn native_fn(f: NativeCallback) -> ErasedNativeFn {
     Box::new(move |call: &NativeCall<'_>| {
@@ -452,8 +474,7 @@ mod tests {
         let (full, older) = (Api(full), Api(&raw const older));
         assert!(entry!(older, on_plugin_message).is_some());
         assert!(entry!(older, serve_alias).is_none() && entry!(older, action).is_none() && entry!(older, plugins).is_none());
-        assert!(Host::new(older.0).is_none(), "a stage 1 plugin needs the legacy registrations");
-        assert!(Host::new(full.0).is_some());
+        assert!(Host::new(older.0).is_some() && Host::new(full.0).is_some());
 
         Settings::new(full).set("scale", 1.5);
         assert_eq!(Settings::new(full).get::<f64>("scale"), Some(1.5));
@@ -472,12 +493,19 @@ mod tests {
         assert!(matches!(refused, Err(Error::Unsupported { .. })));
 
         let stage_1 = unsafe { HostApi { size: u32::try_from(core::mem::offset_of!(HostApi, add_sink)).unwrap(), ..*full.0 } };
-        let host = Host::new(&raw const stage_1).expect("a stage 1 loader has the legacy registrations");
+        let host = Host::new(&raw const stage_1).expect("a stage 1 loader");
         let vm: &VirtualMachine = Box::leak(Box::new(unsafe { core::mem::zeroed() }));
         assert!(matches!(host.register_native(vm, "Mod", "One", || 1i32), Err(Error::Unsupported { what }) if what == "native Mod.One"));
         assert!(matches!(host.register_command::<Test>(), Err(Error::Unsupported { .. })));
         assert!(matches!(host.replace_command(c"SetCameraFOV", |_| true), Err(Error::Unsupported { .. })));
         host.add_player_graph_sink(|_| BSEventNotifyControl::Continue);
+
+        let stage_3 = unsafe { HostApi { size: u32::try_from(core::mem::offset_of!(HostApi, add_section)).unwrap(), ..*full.0 } };
+        let stage_3 = Api(&raw const stage_3);
+        assert!(!crate::ui::add_section(stage_3, "Main", |_| {}) && !crate::ui::add_hud(stage_3, |_, _| {}), "a stage 3 loader takes no UI");
+        let host = Host::new(stage_3.0).expect("a stage 3 loader");
+        host.add_tab("Older").section("Main", |ui| _ = ui.label("never drawn")).section("Other", |_| {});
+        host.add_hud(|_, _| {});
     }
 
     struct Test;

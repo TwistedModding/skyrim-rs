@@ -3,8 +3,12 @@
 //! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
 //! set by capturing the next key pressed, and the capture rule). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), the selected one's sections under
-//! it when it has two or more, and the selected section beside it.
+//! it when it has two or more, and the selected section beside it. A plugin's sections and HUD
+//! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
+//! selected section's rect empty and the overlay draws the plugin's meshes over it as its guest,
+//! with the plugin's textures under overlay ids of their own.
 
+use core::cell::RefCell;
 use std::sync::{Mutex, PoisonError};
 
 use overlay::egui::{self, Align, Layout, RichText, Sense, TextStyle, TextWrapMode, WidgetText, vec2};
@@ -13,8 +17,9 @@ use overlay::theme;
 use super::owned::Owned;
 use super::reload::{self, Request, Status};
 use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins};
-use crate::{DrawFn, HudDrawFn};
+use crate::abi::Sink;
 use crate::settings::{self, Setting, Value};
+use crate::ui::{RawEvent, RawFrameInput, RawFrameOutput, RawMesh, RawPlatformOutput, RawTexture, RawView, UiCallback, corners, raw_modifiers};
 
 /// The host setting holding the capture rule: `focus` (the default) or `all`.
 const CAPTURE: &str = "overlay.capture";
@@ -25,23 +30,81 @@ const MIN_SIZE: egui::Vec2 = vec2(820.0, 500.0);
 const MARGIN: egui::Margin = egui::Margin { left: 36, right: 36, top: 22, bottom: 18 };
 const RULE_SPACE: f32 = 12.0;
 
-/// One section of a plugin's tab; only the main thread draws it, under the entry's exclusive lock.
+/// One section of a plugin's tab.
 struct Section {
     owner: &'static str,
     name: String,
-    draw: DrawFn,
+    draw: UiCallback,
 }
-
-unsafe impl Sync for Section {}
 
 static SECTIONS: Owned<Section> = Owned::new();
 
-/// A plugin's HUD painter; only the main thread draws it, under the entry's exclusive lock.
-struct Hud(HudDrawFn);
-
-unsafe impl Sync for Hud {}
+/// A plugin's HUD painter.
+struct Hud {
+    owner: &'static str,
+    draw: UiCallback,
+}
 
 static HUDS: Owned<Hud> = Owned::new();
+/// The rect this frame's window left for the selected section, and whose section it is.
+static RESERVED: Mutex<Option<(String, String, egui::Rect)>> = Mutex::new(None);
+static TEXTURES: Mutex<Textures> = Mutex::new(Textures { ids: Vec::new(), next: 0 });
+
+/// The plugins' textures under overlay ids of their own (`TextureId::User`, never reused).
+struct Textures {
+    ids: Vec<(&'static str, u64, egui::TextureId)>,
+    next: u64,
+}
+
+impl Textures {
+    /// The overlay's id for the plugin `owner`'s texture `id`, made at its first use.
+    fn id(&mut self, owner: &'static str, id: u64) -> egui::TextureId {
+        if let Some((_, _, texture)) = self.ids.iter().find(|(o, i, _)| *o == owner && *i == id) {
+            return *texture;
+        }
+        let texture = egui::TextureId::User(self.next);
+        self.next += 1;
+        self.ids.push((owner, id, texture));
+        texture
+    }
+
+    fn free(&mut self, owner: &str, id: u64) -> Option<egui::TextureId> {
+        let index = self.ids.iter().position(|(o, i, _)| *o == owner && *i == id)?;
+        Some(self.ids.swap_remove(index).2)
+    }
+
+    fn remove_owner(&mut self, owner: &str) -> Vec<egui::TextureId> {
+        let (gone, kept): (Vec<_>, Vec<_>) = core::mem::take(&mut self.ids).into_iter().partition(|(o, _, _)| *o == owner);
+        self.ids = kept;
+        gone.into_iter().map(|(_, _, texture)| texture).collect()
+    }
+}
+
+/// Runs a plugin's section or HUD painter over `input` and gathers what it drew, with its texture
+/// ids made the overlay's, and its platform output.
+fn paint(owner: &'static str, draw: &UiCallback, input: &RawFrameInput) -> (overlay::Painted, Option<RawPlatformOutput>) {
+    let drawn = RefCell::new(overlay::Painted::default());
+    let mut textures = TEXTURES.lock().unwrap_or_else(PoisonError::into_inner);
+    let textures = RefCell::new(&mut *textures);
+    let mut platform = None;
+    let mut mesh = |m: RawMesh| {
+        let texture = textures.borrow_mut().id(owner, m.texture);
+        drawn.borrow_mut().primitives.push(unsafe { m.to_primitive(texture) });
+    };
+    let mut set = |t: RawTexture| {
+        let texture = textures.borrow_mut().id(owner, t.id);
+        drawn.borrow_mut().textures.push(texture, unsafe { t.to_delta() });
+    };
+    let mut free = |id: u64| {
+        if let Some(texture) = textures.borrow_mut().free(owner, id) {
+            drawn.borrow_mut().textures.free(texture);
+        }
+    };
+    let mut keep = |p: RawPlatformOutput| platform = Some(p);
+    let output = RawFrameOutput { meshes: Sink::new(&mut mesh), textures: Sink::new(&mut set), freed: Sink::new(&mut free), platform: Sink::new(&mut keep) };
+    (draw.call)(draw.ctx, input, &raw const output);
+    (drawn.into_inner(), platform)
+}
 /// Each plugin's tab title.
 static TITLES: Mutex<Vec<(&'static str, String)>> = Mutex::new(Vec::new());
 
@@ -81,23 +144,59 @@ pub(super) fn set_title(owner: &'static str, title: &str) {
     }
 }
 
-pub(super) fn add_section(owner: &'static str, name: &str, draw: DrawFn) {
+pub(super) fn add_section(owner: &'static str, name: &str, draw: UiCallback) {
     SECTIONS.add(owner, Section { owner, name: name.to_owned(), draw });
 }
 
-pub(super) fn add_hud(owner: &'static str, draw: HudDrawFn) {
-    HUDS.add(owner, Hud(draw));
+pub(super) fn add_hud(owner: &'static str, draw: UiCallback) {
+    HUDS.add(owner, Hud { owner, draw });
 }
 
-/// Puts the window and every plugin's HUD painters on the overlay.
+/// Puts the window, the selected section and every plugin's HUD painters on the overlay.
 pub(super) fn install() {
     overlay::add(draw);
+    overlay::on_guest(draw_section);
     overlay::on_hud(draw_hud);
 }
 
-/// The overlay's HUD callback: every plugin's painter in registration order.
-fn draw_hud(painter: &egui::Painter, view: &overlay::View) {
-    HUDS.each_mut(|hud| (hud.0)(painter, view));
+/// The overlay's HUD callback: every plugin's painter in registration order, on the whole screen.
+fn draw_hud(input: &overlay::HudInput) -> overlay::Painted {
+    let screen = input.view.screen();
+    let view = RawView { camera: input.view.camera(), screen: corners(screen) };
+    let raw = RawFrameInput { rect: view.screen, screen: [screen.width(), screen.height()], pixels_per_point: input.pixels_per_point, time: input.time, events: core::ptr::null(), len: 0, modifiers: 0, focused: true, view };
+    let mut all = overlay::Painted::default();
+    HUDS.each_mut(|hud| {
+        let (drawn, _) = paint(hud.owner, &hud.draw, &raw);
+        all.primitives.extend(drawn.primitives);
+        all.textures.append(drawn.textures);
+    });
+    all
+}
+
+/// The overlay's guest: the selected section in the rect the window left for it this frame.
+fn draw_section(input: &overlay::GuestInput) -> Option<overlay::GuestOutput> {
+    let (owner, name, rect) = RESERVED.lock().unwrap_or_else(PoisonError::into_inner).take()?;
+    let events: Vec<RawEvent> = input.events.iter().filter_map(RawEvent::new).collect();
+    let raw = RawFrameInput {
+        rect: corners(rect),
+        screen: [input.screen.width(), input.screen.height()],
+        pixels_per_point: input.pixels_per_point,
+        time: input.time,
+        events: events.as_ptr(),
+        len: events.len(),
+        modifiers: raw_modifiers(input.modifiers),
+        focused: input.focused,
+        view: RawView { camera: core::ptr::null(), screen: corners(input.screen) },
+    };
+    let mut drawn = None;
+    SECTIONS.each_mut(|s| {
+        if drawn.is_none() && s.owner == owner && s.name == name {
+            drawn = Some(paint(s.owner, &s.draw, &raw));
+        }
+    });
+    let (painted, platform) = drawn?;
+    let (wants_pointer, wants_keyboard) = platform.map_or((false, false), |p| (p.wants_pointer, p.wants_keyboard));
+    Some(overlay::GuestOutput { rect, painted, wants_pointer, wants_keyboard })
 }
 
 pub(super) fn show_tab(owner: &'static str) {
@@ -110,9 +209,11 @@ pub(super) fn show_section(owner: &'static str, section: &str) {
     overlay::set_open(true);
 }
 
-/// Drops a plugin's tab and HUD painters and returns how many sections and painters it had.
+/// Drops a plugin's tab and HUD painters, frees its textures after the next frame, and returns
+/// how many sections and painters it had.
 pub(super) fn remove(owner: &str) -> (usize, usize) {
     TITLES.lock().unwrap_or_else(PoisonError::into_inner).retain(|(o, _)| *o != owner);
+    overlay::free_textures(TEXTURES.lock().unwrap_or_else(PoisonError::into_inner).remove_owner(owner));
     (SECTIONS.remove_owner(owner), HUDS.remove_owner(owner))
 }
 
@@ -331,13 +432,8 @@ fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
     });
     let (owner, name) = (&mods[index].owner, &mods[index].sections[section]);
     egui::CentralPanel::no_frame().frame(egui::Frame::NONE.inner_margin(egui::Margin { left: 28, right: 8, top: 4, bottom: 0 })).show(ui, |ui| {
-        egui::ScrollArea::vertical().id_salt((owner, name)).auto_shrink(false).show(ui, |ui| {
-            SECTIONS.each_mut(|s| {
-                if s.owner == owner && s.name == *name {
-                    (s.draw)(ui);
-                }
-            });
-        });
+        let (rect, _) = ui.allocate_exact_size(ui.available_size(), Sense::hover());
+        *RESERVED.lock().unwrap_or_else(PoisonError::into_inner) = Some((owner.clone(), name.clone(), rect));
     });
 }
 
@@ -532,5 +628,87 @@ fn draw(ctx: &egui::Context) {
     });
     if let Some(shown) = shown {
         resize_grip(ctx, shown.response.rect);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use egui::epaint::Primitive;
+
+    use super::*;
+    use crate::abi::Api;
+    use crate::ui::{self, RawFrameInput};
+
+    /// A frame of the section in `rect` on a 1920 by 1080 screen, the events crossing as the host
+    /// sends them: the primitives, the textures uploaded whole, and the platform output.
+    fn frame(owner: &str, rect: egui::Rect, events: &[egui::Event], focused: bool, time: f64) -> (Vec<egui::ClippedPrimitive>, Vec<egui::TextureId>, Option<RawPlatformOutput>) {
+        let events: Vec<RawEvent> = events.iter().filter_map(RawEvent::new).collect();
+        let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1920.0, 1080.0));
+        let raw = RawFrameInput { rect: corners(rect), screen: [1920.0, 1080.0], pixels_per_point: 1.0, time, events: events.as_ptr(), len: events.len(), modifiers: 0, focused, view: RawView { camera: core::ptr::null(), screen: corners(screen) } };
+        let mut drawn = None;
+        SECTIONS.each_mut(|s| {
+            if s.owner == owner {
+                drawn = Some(paint(s.owner, &s.draw, &raw));
+            }
+        });
+        let (mut painted, platform) = drawn.expect("the section was added");
+        let whole = painted.textures.set.iter().filter(|(_, deltas)| deltas.iter().any(|d| d.pos.is_none())).map(|(id, _)| *id).collect();
+        painted.textures.clear();
+        (painted.primitives, whole, platform)
+    }
+
+    #[test]
+    fn a_section_draws_through_the_c_path_with_its_own_textures() {
+        let rect = egui::Rect::from_min_size(egui::pos2(400.0, 200.0), vec2(600.0, 400.0));
+        for owner in ["gui-test-a", "gui-test-b"] {
+            let mut text = String::new();
+            assert!(ui::add_section(Api(super::super::api::build(owner, core::ptr::null())), "Main", move |ui| {
+                ui.label("Damage scale");
+                ui.text_edit_singleline(&mut text);
+            }));
+        }
+        let (a, font, platform) = frame("gui-test-a", rect, &[], true, 0.0);
+        let meshes: Vec<_> = a.iter().filter_map(|p| if let Primitive::Mesh(m) = &p.primitive { Some(m) } else { None }).collect();
+        assert!(!meshes.is_empty() && meshes.iter().all(|m| !m.vertices.is_empty()), "the label and the field are meshes");
+        assert_eq!(font.len(), 1, "the font atlas is uploaded whole in the first frame");
+        assert!(meshes.iter().any(|m| m.texture_id == font[0]));
+        assert!(meshes.iter().all(|m| m.vertices.iter().all(|v| rect.expand(1.0).contains(v.pos))), "the section stays in its rect");
+        assert!(platform.is_some_and(|p| !p.wants_keyboard && !p.wants_pointer));
+
+        let (_, b, _) = frame("gui-test-b", rect, &[], true, 0.0);
+        assert!(matches!(font[0], egui::TextureId::User(_)));
+        assert_ne!(b, font, "each plugin's atlas has an id of its own");
+        let (_, again, _) = frame("gui-test-a", rect, &[], true, 0.1);
+        assert!(again.is_empty(), "the atlas is not sent again");
+
+        let field = egui::pos2(420.0, 245.0);
+        let click = |pressed| egui::Event::PointerButton { pos: field, button: egui::PointerButton::Primary, pressed, modifiers: egui::Modifiers::NONE };
+        let (_, _, hovered) = frame("gui-test-a", rect, &[egui::Event::PointerMoved(field)], true, 0.2);
+        assert!(hovered.is_some_and(|p| p.wants_pointer), "the pointer over the section");
+        let (_, _, clicked) = frame("gui-test-a", rect, &[click(true), click(false)], true, 0.3);
+        assert!(clicked.is_some_and(|p| p.wants_keyboard), "a click on the field focuses it");
+        let (typed, _, _) = frame("gui-test-a", rect, &[egui::Event::Text("x".to_owned())], true, 0.4);
+        assert!(!typed.is_empty());
+        let (_, _, released) = frame("gui-test-a", rect, &[], false, 0.5);
+        assert!(released.is_some_and(|p| !p.wants_keyboard), "a press on the host's widgets takes the focus away");
+
+        let owned = TEXTURES.lock().unwrap().ids.iter().filter(|(o, _, _)| *o == "gui-test-a").count();
+        assert_eq!(remove("gui-test-a"), (1, 0));
+        assert!(owned > 0 && !TEXTURES.lock().unwrap().ids.iter().any(|(o, _, _)| *o == "gui-test-a"), "the plugin's textures go with it");
+        assert_eq!(remove("gui-test-b"), (1, 0));
+    }
+
+    #[test]
+    fn texture_ids_are_per_plugin_and_never_reused() {
+        let mut t = Textures { ids: Vec::new(), next: 0 };
+        let (a, b) = (t.id("a", 1), t.id("b", 1));
+        assert_ne!(a, b);
+        assert_eq!(t.id("a", 1), a);
+        assert_eq!(t.free("a", 1), Some(a));
+        assert_eq!(t.free("a", 1), None);
+        assert_ne!(t.id("a", 1), a, "an id freed is not given out again");
+        t.id("a", 2);
+        assert_eq!(t.remove_owner("a").len(), 2);
+        assert_eq!(t.ids, [("b", 1, b)]);
     }
 }

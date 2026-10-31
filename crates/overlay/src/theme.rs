@@ -23,7 +23,7 @@ pub const HIGHLIGHT: Color32 = Color32::from_rgba_premultiplied(51, 51, 51, 51);
 pub const HEADING: &str = "heading";
 
 /// Applies the theme to every style of `ctx`.
-pub(crate) fn apply(ctx: &Context) {
+pub fn apply(ctx: &Context) {
     ctx.set_theme(Theme::Dark);
     ctx.all_styles_mut(|style| {
         style.text_styles = [

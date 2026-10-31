@@ -4,10 +4,10 @@
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
 //! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
-//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; tab
-//! sections and HUD painters still cross with the Rust ABI, which holds only for one compiler
-//! and one build of this crate and its dependencies, so until they move (`docs/subsystems/abi.md`)
-//! a plugin is built against the same framework release (its `Cargo.lock`) with the same `rustc`.
+//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C, and a
+//! plugin draws its UI with `egui` contexts of its own and hands the host meshes ([`ui`]); until
+//! stage 5 of `docs/subsystems/abi.md` drops the check, a plugin is still built against the same
+//! framework release (its `Cargo.lock`) with the same `rustc`.
 //! A refused DLL is unloaded and named in `skyrim-rs.log`.
 //!
 //! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
@@ -42,6 +42,7 @@ pub mod hooks;
 pub mod host;
 pub mod order;
 pub mod settings;
+pub mod ui;
 
 use abi::{Api, HostApi, PluginRecord, RawButton, RawCommandRequest, RawCommandSlot, RawMouse, RawNativeRequest, RawPad, RawParamType, RawPress, RawRestoreFn, RawSaveFn, Sink, Str, call};
 use settings::Settings;
@@ -64,10 +65,6 @@ pub type MessageFn = fn(&skse::Message);
 pub type PapyrusFn = fn(&'static VirtualMachine);
 /// Runs once a frame on the main thread.
 pub type FrameFn = fn();
-/// Draws one section of a plugin's tab in the host's window.
-pub type DrawFn = Box<dyn FnMut(&mut egui::Ui) + Send>;
-/// Paints a plugin's shapes into the game, placed through the frame camera's [`View`].
-pub type HudDrawFn = Box<dyn FnMut(&egui::Painter, &View) + Send>;
 
 /// What [`plugin!`] exports as `SkyrimRs_Plugin`, all C: the host reads `abi` before anything
 /// else, so it stays first in every future layout.
@@ -166,17 +163,6 @@ pub(crate) struct CommandRequest<'a> {
     pub needs_reference: bool,
 }
 
-/// The Rust-ABI registrations, one table shared by every plugin's [`Host`]; the owner comes first.
-pub(crate) struct Table {
-    pub add_section: fn(&'static str, &str, DrawFn),
-    pub add_hud: fn(&'static str, HudDrawFn),
-}
-
-/// What a plugin reaches through [`abi::HostApi`]'s `legacy` until every crossing is C.
-pub(crate) struct Legacy {
-    pub table: &'static Table,
-}
-
 /// The host as one plugin's `load` receives it, for the life of the DLL: every registration made
 /// through it belongs to that plugin and is detached when the plugin's DLL is unloaded. On a
 /// loader older than the plugin a function the loader lacks does nothing and answers `false`,
@@ -185,13 +171,11 @@ pub struct Host {
     api: Api,
     name: &'static str,
     skse: &'static skse::Interface,
-    legacy: &'static Legacy,
     hooks: &'static hooks::Hooks,
 }
 
 impl Host {
-    /// The plugin's side of the table the host built for it; `None` without the SKSE interface or
-    /// the Rust-ABI registrations.
+    /// The plugin's side of the table the host built for it; `None` without the SKSE interface.
     pub(crate) fn new(api: *const HostApi) -> Option<Self> {
         let api = Api(api);
         if api.0.is_null() {
@@ -199,8 +183,7 @@ impl Host {
         }
         let name = unsafe { (*api.0).name.as_str() };
         let skse = unsafe { (*api.0).skse.as_ref() }?;
-        let legacy = if api.reaches(core::mem::offset_of!(HostApi, legacy)) { unsafe { (*api.0).legacy.as_ref() } } else { None }?;
-        Some(Self { api, name, skse, legacy, hooks: Box::leak(Box::new(hooks::Hooks::new(api.0))) })
+        Some(Self { api, name, skse, hooks: Box::leak(Box::new(hooks::Hooks::new(api.0))) })
     }
 
     /// The SKSE interface the host was loaded with.
@@ -364,7 +347,8 @@ impl Host {
     /// in the sidebar of the window's Mods page, in load order, shown once it has a section; with
     /// two or more, the sections are listed under it while it is selected. While the overlay is
     /// open, the selected section's `draw` runs every frame on the main thread, in a scroll area
-    /// beside the sidebar, in the framework theme:
+    /// beside the sidebar, in the framework theme, with an `egui` context of the plugin's own that
+    /// receives the input over the section, its popups and drags, and over no window of the host:
     ///
     /// ```ignore
     /// host.add_tab("My mod")
@@ -377,7 +361,7 @@ impl Host {
     #[must_use = "a tab shows once it has a section"]
     pub fn add_tab(&self, title: &str) -> Tab {
         call!(self.api, set_tab_title(Str::from(title)));
-        Tab { owner: self.name, table: self.legacy.table }
+        Tab { api: self.api }
     }
 
     /// Adds a HUD painter: `draw` runs every frame on the main thread at the present, whether the
@@ -395,9 +379,10 @@ impl Host {
     /// ```
     ///
     /// The painters are dropped with the plugin's generation. The game's own menus are not
-    /// considered: a painter that should hide under the inventory or the map checks for them.
+    /// considered: a painter that should hide under the inventory or the map checks for them. On
+    /// a loader without HUD painters this does nothing.
     pub fn add_hud(&self, draw: impl FnMut(&egui::Painter, &View) + Send + 'static) {
-        (self.legacy.table.add_hud)(self.name, Box::new(draw));
+        ui::add_hud(self.api, draw);
     }
 
     /// Opens the overlay on this plugin's tab.
@@ -560,14 +545,14 @@ impl Host {
 /// A plugin's tab from [`Host::add_tab`].
 #[derive(Clone, Copy)]
 pub struct Tab {
-    owner: &'static str,
-    table: &'static Table,
+    api: Api,
 }
 
 impl Tab {
-    /// Adds a section named `name`, unique within the tab, after those added before.
+    /// Adds a section named `name`, unique within the tab, after those added before; on a loader
+    /// without tab sections this does nothing.
     pub fn section(&self, name: &str, draw: impl FnMut(&mut egui::Ui) + Send + 'static) -> &Self {
-        (self.table.add_section)(self.owner, name, Box::new(draw));
+        ui::add_section(self.api, name, draw);
         self
     }
 }

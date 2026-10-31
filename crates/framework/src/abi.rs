@@ -13,10 +13,11 @@ use sre::{BSEventNotifyControl, TESForm, VMTypeID};
 
 use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, RawValidation, ReplaceCallback};
 use crate::settings::Setting;
-use crate::{CommandRequest, Error, FrameFn, Host, Legacy, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
+use crate::ui::{RawFamily, RawFont, UiCallback};
+use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The [`HostApi`] layout this crate builds and reads; entries are only ever appended.
-pub const API: u32 = 3;
+pub const API: u32 = 4;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -672,8 +673,8 @@ pub struct HostApi {
     pub read_frame: Option<unsafe extern "C" fn(*const Self, Alloc<'_>, Sink<'_, Str>) -> bool>,
     /// Puts each plugin's record, each followed by its `load_before` and `load_after` names.
     pub plugins: Option<unsafe extern "C" fn(*const Self, Sink<'_, PluginRecord>, Sink<'_, Str>, Sink<'_, Str>)>,
-    /// The Rust-ABI registrations not converted yet; removed with `BUILD` in stage 5.
-    pub(crate) legacy: *const Legacy,
+    /// The Rust-ABI table of stages 1 to 3, null since; the slot stays so the entries after it keep their offsets.
+    pub legacy: *const c_void,
     pub add_sink: Option<unsafe extern "C" fn(*const Self, ErasedSource, SinkCallback)>,
     pub add_player_graph_sink: Option<unsafe extern "C" fn(*const Self, SinkCallback)>,
     /// Writes the host's function object on success.
@@ -697,6 +698,11 @@ pub struct HostApi {
     pub hook_set_patch_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool, Sink<'_, RawError>) -> u32>,
     pub hook_unpatch: Option<unsafe extern "C" fn(*const Self, u64) -> bool>,
     pub hook_patches: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawPatchReport>)>,
+    /// A section of the plugin's tab, named, after those added before.
+    pub add_section: Option<unsafe extern "C" fn(*const Self, Str, UiCallback)>,
+    pub add_hud: Option<unsafe extern "C" fn(*const Self, UiCallback)>,
+    /// Puts every font file the overlay draws with, then every family with its fonts in fallback order.
+    pub fonts: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawFont>, Sink<'_, RawFamily>)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.

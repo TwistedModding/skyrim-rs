@@ -28,7 +28,7 @@ use crate::abi::{self, API, FrameCallback, MessageCallback, PapyrusCallback, Sin
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::settings;
-use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, NativeRequest, Plugin, Table};
+use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, NativeRequest, Plugin};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 /// The SKSE log folder, where the host writes its log and `SkyrimRs capture` its frame captures.
@@ -102,7 +102,6 @@ static LAST_MESSAGE: AtomicU32 = AtomicU32::new(u32::MAX);
 static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
 /// The SKSE plugins in `Data\SKSE\Plugins`, read once the loader has loaded them all.
 static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
-static TABLE: Table = Table { add_section: gui::add_section, add_hud: gui::add_hud };
 
 /// The dispatcher as the host reaches it: through a table of its own, whose empty name lets it
 /// act for any owner.
@@ -575,9 +574,6 @@ fn detach(owner: &str) -> String {
     restored.iter().for_each(ReplacedCommand::restore);
     let (natives, commands, restored) = (natives.len(), commands.len(), restored.len());
     let (sections, huds) = gui::remove(owner);
-    if sections + huds > 0 {
-        overlay::reset_context();
-    }
     let messages = MESSAGES.remove_owner(owner) + PLUGIN_MESSAGES.remove_owner(owner) + alias::remove_owner(owner);
     let interfaces = interface::remove_owner(owner);
     let papyrus = PAPYRUS.remove_owner(owner);

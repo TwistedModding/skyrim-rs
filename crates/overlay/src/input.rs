@@ -9,7 +9,7 @@ use std::str::FromStr;
 use std::sync::atomic::{AtomicBool, AtomicU8, Ordering};
 use std::sync::{Mutex, OnceLock};
 
-use egui::{Context, Event, Key, Modifiers, MouseWheelSource, MouseWheelUnit, PointerButton, Pos2, TouchPhase, Vec2};
+use egui::{Event, Key, Modifiers, MouseWheelSource, MouseWheelUnit, PointerButton, Pos2, TouchPhase, Vec2};
 use skyrim::events::{BSTEventSource, Event as _, EventSink, InputEventList, Sink};
 use skyrim::prelude::*;
 use sre::{BSEventNotifyControl, ButtonEvent, InputDevice, InputEvent};
@@ -379,28 +379,103 @@ pub(crate) fn ensure_sink() {
     }
 }
 
-/// The events since the last frame and the pointer, with the screen size in points the next moves
-/// are clamped to and its scale.
-pub(crate) fn take(screen: Vec2, pixels_per_point: f32) -> (Vec<Event>, Pos2) {
+/// The events since the last frame, the pointer and the modifiers held, with the screen size in
+/// points the next moves are clamped to and its scale.
+pub(crate) fn take(screen: Vec2, pixels_per_point: f32) -> (Vec<Event>, Pos2, Modifiers) {
     let mut p = PENDING.lock().unwrap();
     p.pixels_per_point = pixels_per_point;
     if p.screen != screen {
         p.screen = screen;
         p.pointer = (screen / 2.0).to_pos2();
     }
-    (core::mem::take(&mut p.events), p.pointer)
+    (core::mem::take(&mut p.events), p.pointer, p.modifiers)
 }
 
 /// The game hides the system cursor, so the overlay draws one: the game's (its texture and size in
 /// points, its top left corner the point), or an arrow of its own.
-pub(crate) fn draw_cursor(ctx: &Context, at: Pos2, game: Option<(egui::TextureId, Vec2)>) {
-    let painter = ctx.layer_painter(egui::LayerId::new(egui::Order::Tooltip, egui::Id::unique("overlay cursor")));
+pub(crate) fn cursor_shape(at: Pos2, game: Option<(egui::TextureId, Vec2)>) -> egui::Shape {
     if let Some((texture, size)) = game {
-        painter.image(texture, egui::Rect::from_min_size(at, size), egui::Rect::from_min_max(Pos2::ZERO, egui::pos2(1.0, 1.0)), egui::Color32::WHITE);
-        return;
+        return egui::Shape::image(texture, egui::Rect::from_min_size(at, size), egui::Rect::from_min_max(Pos2::ZERO, egui::pos2(1.0, 1.0)), egui::Color32::WHITE);
     }
     let points = vec![at, at + egui::vec2(0.0, 18.0), at + egui::vec2(5.0, 13.5), at + egui::vec2(12.5, 13.0)];
-    painter.add(egui::Shape::convex_polygon(points, egui::Color32::WHITE, egui::Stroke::new(1.0, egui::Color32::BLACK)));
+    egui::Shape::convex_polygon(points, egui::Color32::WHITE, egui::Stroke::new(1.0, egui::Color32::BLACK))
+}
+
+/// What the guest drew last frame: its rect and whether it wanted the pointer and the keyboard.
+#[derive(Clone, Copy, Debug)]
+pub(crate) struct Claim {
+    pub rect: egui::Rect,
+    pub pointer: bool,
+    pub keyboard: bool,
+}
+
+/// The pointer across frames: where it is, the buttons down, and whether the guest has them.
+#[derive(Default)]
+pub(crate) struct Router {
+    pointer: Pos2,
+    down: u8,
+    guest_has: Option<bool>,
+}
+
+/// A frame's events split between the overlay's context and the guest, and who got a press.
+#[derive(Default)]
+pub(crate) struct Routed {
+    pub host: Vec<Event>,
+    pub guest: Vec<Event>,
+    pub host_pressed: bool,
+    pub guest_pressed: bool,
+}
+
+impl Router {
+    /// Splits `events` by the guest's last frame; `host_at` says whether one of the overlay's own
+    /// areas is at a point. Without a guest everything is the overlay's.
+    pub(crate) fn route(&mut self, events: Vec<Event>, claim: Option<Claim>, host_at: impl Fn(Pos2) -> bool) -> Routed {
+        let mut routed = Routed::default();
+        let Some(claim) = claim else {
+            self.guest_has = None;
+            routed.host = events;
+            return routed;
+        };
+        for event in events {
+            match event {
+                Event::PointerMoved(pos) => {
+                    self.pointer = pos;
+                    routed.host.push(if self.to_guest(claim, &host_at) { Event::PointerGone } else { event.clone() });
+                    routed.guest.push(event);
+                }
+                Event::PointerButton { pos, button, pressed, .. } => {
+                    self.pointer = pos;
+                    let guest = self.to_guest(claim, &host_at);
+                    let bit = 1 << button as u8;
+                    if pressed {
+                        self.down |= bit;
+                        self.guest_has.get_or_insert(guest);
+                        if guest { routed.guest_pressed = true } else { routed.host_pressed = true }
+                    } else {
+                        self.down &= !bit;
+                        if self.down == 0 {
+                            self.guest_has = None;
+                        }
+                    }
+                    if guest { routed.guest.push(event) } else { routed.host.push(event) }
+                }
+                Event::MouseWheel { .. } => {
+                    if self.to_guest(claim, &host_at) { routed.guest.push(event) } else { routed.host.push(event) }
+                }
+                Event::PointerGone => {
+                    routed.host.push(event.clone());
+                    routed.guest.push(event);
+                }
+                _ if claim.keyboard => routed.guest.push(event),
+                _ => routed.host.push(event),
+            }
+        }
+        routed
+    }
+
+    fn to_guest(&self, claim: Claim, host_at: impl Fn(Pos2) -> bool) -> bool {
+        self.guest_has.unwrap_or_else(|| claim.pointer || claim.rect.contains(self.pointer) || !host_at(self.pointer))
+    }
 }
 
 struct Gate;
@@ -708,6 +783,59 @@ mod tests {
         r.key(0x21, 0.0, 0.25);
         r.key(0x12, 1.0, 0.0);
         assert_eq!(r.releases, vec![(0x21, 0.25)]);
+    }
+
+    fn button(x: f32, pressed: bool) -> Event {
+        Event::PointerButton { pos: egui::pos2(x, 10.0), button: PointerButton::Primary, pressed, modifiers: Modifiers::NONE }
+    }
+
+    fn key(pressed: bool) -> Event {
+        Event::Key { key: Key::A, physical_key: None, pressed, repeat: false, modifiers: Modifiers::NONE }
+    }
+
+    /// The guest's rect is x 100..200; the overlay's own window covers x 0..300.
+    fn claim(pointer: bool, keyboard: bool) -> Claim {
+        Claim { rect: egui::Rect::from_min_max(egui::pos2(100.0, 0.0), egui::pos2(200.0, 100.0)), pointer, keyboard }
+    }
+
+    fn window(p: Pos2) -> bool {
+        p.x < 300.0
+    }
+
+    #[test]
+    fn pointer_events_reach_the_guest_inside_its_rect_and_while_it_wants_them() {
+        let mut router = Router::default();
+        let inside = router.route(vec![Event::PointerMoved(egui::pos2(150.0, 10.0)), button(150.0, true), button(150.0, false), key(true)], Some(claim(false, false)), window);
+        assert_eq!(inside.guest, [Event::PointerMoved(egui::pos2(150.0, 10.0)), button(150.0, true), button(150.0, false)]);
+        assert_eq!(inside.host, [Event::PointerGone, key(true)], "the window sees the pointer leave and keeps the keyboard");
+        assert!(inside.guest_pressed && !inside.host_pressed);
+
+        let outside = router.route(vec![Event::PointerMoved(egui::pos2(50.0, 10.0)), button(50.0, true), button(50.0, false)], Some(claim(false, false)), window);
+        assert_eq!(outside.guest, [Event::PointerMoved(egui::pos2(50.0, 10.0))], "the guest follows the pointer but gets no press over the window");
+        assert_eq!(outside.host.len(), 3);
+        assert!(outside.host_pressed && !outside.guest_pressed);
+
+        let popup = router.route(vec![button(50.0, true), button(50.0, false)], Some(claim(true, false)), window);
+        assert_eq!((popup.guest.len(), popup.host.len()), (2, 0), "outside its rect while it wants the pointer, over its popup");
+
+        let world = router.route(vec![Event::PointerMoved(egui::pos2(400.0, 10.0)), button(400.0, true), Event::PointerMoved(egui::pos2(50.0, 10.0)), button(50.0, false)], Some(claim(false, false)), window);
+        assert_eq!(world.guest.len(), 4, "a press over no window, and its drag across the window to the release");
+        assert_eq!(world.host, [Event::PointerGone, Event::PointerGone]);
+
+        let drag = router.route(vec![button(150.0, true), Event::PointerMoved(egui::pos2(50.0, 10.0)), button(50.0, false), button(50.0, true)], Some(claim(false, false)), window);
+        assert_eq!(drag.guest.len(), 3, "a drag begun in the rect stays the guest's until released");
+        assert_eq!(drag.host, [Event::PointerGone, button(50.0, true)]);
+    }
+
+    #[test]
+    fn keys_reach_the_guest_only_while_it_wants_the_keyboard() {
+        let mut router = Router::default();
+        let focused = router.route(vec![key(true), Event::Text("a".to_owned()), key(false)], Some(claim(false, true)), window);
+        assert_eq!((focused.guest.len(), focused.host.len()), (3, 0));
+        let unfocused = router.route(vec![key(true), Event::Text("a".to_owned())], Some(claim(false, false)), window);
+        assert_eq!((unfocused.guest.len(), unfocused.host.len()), (0, 2));
+        let alone = router.route(vec![button(150.0, true), key(true)], None, window);
+        assert_eq!((alone.guest.len(), alone.host.len()), (0, 2), "without a guest everything is the window's");
     }
 
     #[test]

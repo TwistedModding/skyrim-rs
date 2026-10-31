@@ -18,6 +18,9 @@
 //! fonts are not under a license the workspace allows), and the game's own mouse cursor from
 //! `Interface\cursormenu.swf`. The HUD layer set with [`on_hud`] draws every frame, open or not,
 //! under the windows, with a [`View`] that places shapes in the world through the frame camera.
+//! The HUD layer and the guest set with [`on_guest`] are drawn by other `egui` contexts (a framework
+//! plugin's, in its own DLL) and handed over as [`Painted`] meshes: the guest over the windows, in a
+//! rect the windows leave for it, with the pointer and keyboard events routed to it.
 
 use std::fmt;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -25,7 +28,8 @@ use std::sync::{Mutex, OnceLock};
 use std::time::Instant;
 
 pub use egui;
-use egui::{Context, Pos2, RawInput, Rect, ViewportId, ViewportInfo};
+use egui::epaint::{ClippedShape, textures::TexturesDelta};
+use egui::{ClippedPrimitive, Context, Event, Modifiers, Pos2, RawInput, Rect, TextureId, ViewportId, ViewportInfo};
 use sre::raw::{fns, globals};
 use skyrim::render::PresentFn;
 
@@ -80,6 +84,9 @@ struct State {
     start: Instant,
     /// The game's cursor as a texture of `ctx`, made at the first frame drawn with it.
     cursor: Option<egui::TextureHandle>,
+    router: input::Router,
+    /// What the guest drew last frame, which routes this frame's input.
+    claim: Option<input::Claim>,
 }
 
 static SITE: OnceLock<hook::CallSite<PresentFn>> = OnceLock::new();
@@ -89,6 +96,9 @@ static OPEN: AtomicBool = AtomicBool::new(false);
 static FAILURE: OnceLock<String> = OnceLock::new();
 static FRAME: OnceLock<fn()> = OnceLock::new();
 static HUD: OnceLock<HudFn> = OnceLock::new();
+static GUEST: OnceLock<GuestFn> = OnceLock::new();
+/// Textures of other contexts to free after the next frame is painted.
+static FREED: Mutex<Vec<TextureId>> = Mutex::new(Vec::new());
 static FONTS: OnceLock<Option<(egui::FontDefinitions, String)>> = OnceLock::new();
 static CURSOR: OnceLock<Result<vanilla::Cursor, String>> = OnceLock::new();
 static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
@@ -96,7 +106,7 @@ static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 /// Installs the overlay. Call it once from `SKSEPlugin_Load`, after `skyrim::init`, before the
 /// first frame is drawn: the call site is patched in place.
 pub fn install() -> Result<(), Error> {
-    let ctx = new_context().ok_or(Error::NoFont)?;
+    let ctx = themed_context(font_definitions().ok_or(Error::NoFont)?.clone());
     let reloc = skyrim::reloc();
     let render_frame = reloc.address(fns::RenderFrame)?;
     let present = reloc.address(fns::PresentFrame)?;
@@ -105,7 +115,7 @@ pub fn install() -> Result<(), Error> {
     if state.is_some() {
         return Err(Error::AlreadyInstalled);
     }
-    *state = Some(State { ctx, painter: None, start: Instant::now(), cursor: None });
+    *state = Some(State { ctx, painter: None, start: Instant::now(), cursor: None, router: input::Router::default(), claim: None });
     let _ = SITE.set(unsafe { hook::CallSite::install(site, present_detour as PresentFn) }?);
     Ok(())
 }
@@ -122,26 +132,67 @@ pub fn on_frame(f: fn()) {
     let _ = FRAME.set(f);
 }
 
-/// Draws the HUD layer: a painter on the background layer, under the windows, and the frame camera.
-pub type HudFn = fn(&egui::Painter, &View);
+/// What another `egui` context drew for a frame: meshes in points whose texture ids are the
+/// overlay's (`TextureId::User`, unique to the drawing context), and the changes to those textures.
+#[derive(Default)]
+pub struct Painted {
+    pub primitives: Vec<ClippedPrimitive>,
+    pub textures: TexturesDelta,
+}
+
+/// The frame as the HUD layer sees it.
+pub struct HudInput {
+    pub view: View,
+    pub time: f64,
+    pub pixels_per_point: f32,
+}
+
+/// Draws the HUD layer: shapes under the windows, placed through the frame camera.
+pub type HudFn = fn(&HudInput) -> Painted;
 
 /// Runs `f` on the main thread at every present the overlay sees, open or not, once the scene
-/// graph exists; what it paints is drawn into the frame under the overlay's windows and takes no
+/// graph exists; what it returns is drawn into the frame under the overlay's windows and takes no
 /// input. The first call sets it for the life of the game.
 pub fn on_hud(f: HudFn) {
     let _ = HUD.set(f);
 }
 
-/// Replaces the `egui` context with a fresh one. What a context accumulates (widget state, the
-/// fonts' shaping tables, caches) holds objects and function pointers of the copy of `egui` that
-/// first used it, which is the DLL that drew the windows, so a host resets the context before
-/// unloading such a DLL. Every window starts afresh; the font atlas is sent again.
-pub fn reset_context() {
-    let Some(ctx) = new_context() else { return };
-    if let Some(state) = STATE.lock().unwrap().as_mut() {
-        state.ctx = ctx;
-        state.cursor = None;
-    }
+/// A frame's input for the guest: the events routed to it, the modifiers held, the time, the screen
+/// in points and its scale. `focused` is false when a press this frame went to the overlay's own
+/// widgets: the guest then gives up the keyboard focus and closes its popups, as a click elsewhere does.
+pub struct GuestInput {
+    pub events: Vec<Event>,
+    pub modifiers: Modifiers,
+    pub time: f64,
+    pub screen: Rect,
+    pub pixels_per_point: f32,
+    pub focused: bool,
+}
+
+/// What the guest drew in `rect` (in points; its popups may leave it) and whether it wants the
+/// pointer (over one of its areas, or a drag in progress) and the keyboard (a widget focused).
+pub struct GuestOutput {
+    pub rect: Rect,
+    pub painted: Painted,
+    pub wants_pointer: bool,
+    pub wants_keyboard: bool,
+}
+
+/// Draws the guest after the windows, or returns `None` when the windows left no rect for one.
+pub type GuestFn = fn(&GuestInput) -> Option<GuestOutput>;
+
+/// Runs `f` on the main thread every frame the overlay is open, after its windows: UI another
+/// context draws over them. Pointer events go to the guest inside its rect, while it wants the
+/// pointer, over no window of the overlay, and until the buttons pressed there are released;
+/// keyboard events while it wants the keyboard. The overlay's windows get none of those, and the
+/// guest sees every pointer move. The first call sets it for the life of the game.
+pub fn on_guest(f: GuestFn) {
+    let _ = GUEST.set(f);
+}
+
+/// Frees textures the HUD layer or the guest uploaded, after the next frame is painted.
+pub fn free_textures(ids: Vec<TextureId>) {
+    FREED.lock().unwrap().extend(ids);
 }
 
 /// Which font the proportional text uses and where it came from, or why the game's font was not used.
@@ -168,7 +219,7 @@ fn game_data() -> Option<std::path::PathBuf> {
     std::env::current_exe().ok().and_then(|exe| Some(exe.parent()?.join("Data")))
 }
 
-/// Whether a widget held the keyboard focus at the end of the last frame drawn.
+/// Whether a widget, the overlay's or the guest's, held the keyboard focus at the end of the last frame drawn.
 #[must_use]
 pub fn keyboard_focus() -> bool {
     KEYBOARD_FOCUS.load(Ordering::Relaxed)
@@ -234,51 +285,76 @@ fn draw() {
         return;
     };
     let ppp = (size[1] as f32 / 1080.0).max(1.0);
-    let screen = egui::vec2(size[0] as f32, size[1] as f32) / ppp;
+    let screen = Rect::from_min_size(Pos2::ZERO, egui::vec2(size[0] as f32, size[1] as f32) / ppp);
     let open = is_open();
-    let (mut events, mouse) = input::take(screen, ppp);
+    let time = state.start.elapsed().as_secs_f64();
+    let (mut events, mouse, modifiers) = input::take(screen.size(), ppp);
     if !open {
         events.clear();
     }
+    let host = &state.ctx;
+    let routed = state.router.route(events, state.claim.filter(|_| open), |p| host.layer_id_at(p).is_some());
+    if routed.guest_pressed {
+        host.memory_mut(egui::Memory::stop_text_input);
+    }
+    let mut drawn = HUD.get().zip(View::current(screen)).map(|(hud, view)| hud(&HudInput { view, time, pixels_per_point: ppp })).unwrap_or_default();
     if state.cursor.is_none()
         && let Ok(c) = cursor()
     {
         state.cursor = Some(state.ctx.load_texture("game cursor", c.image.clone(), egui::TextureOptions::LINEAR));
     }
     let cursor = state.cursor.as_ref().zip(cursor().as_ref().ok()).map(|(texture, c)| (texture.id(), c.size));
-    let mut raw = RawInput { screen_rect: Some(Rect::from_min_size(Pos2::ZERO, screen)), time: Some(state.start.elapsed().as_secs_f64()), events, focused: true, ..RawInput::default() };
+    let mut raw = RawInput { screen_rect: Some(screen), time: Some(time), events: routed.host, focused: true, ..RawInput::default() };
     raw.viewports.insert(ViewportId::ROOT, ViewportInfo { native_pixels_per_point: Some(ppp), focused: Some(true), ..ViewportInfo::default() });
     let mut windows = core::mem::take(&mut *WINDOWS.lock().unwrap());
     let output = state.ctx.run_pass(raw, |ctx| {
-        if let (Some(hud), Some(view)) = (HUD.get(), View::current(Rect::from_min_size(Pos2::ZERO, screen))) {
-            hud(&ctx.layer_painter(egui::LayerId::background()), &view);
-        }
         if open {
             for window in &mut windows {
                 window(ctx);
             }
-            input::draw_cursor(ctx, mouse, cursor);
         }
     });
     let mut added = WINDOWS.lock().unwrap();
     windows.append(&mut added);
     *added = windows;
     drop(added);
-    KEYBOARD_FOCUS.store(state.ctx.egui_wants_keyboard_input(), Ordering::Relaxed);
-    let primitives = state.ctx.tessellate(output.shapes, output.pixels_per_point);
-    if let Err(e) = unsafe { painter.paint(rtv, size, output.pixels_per_point, &primitives, &output.textures_delta) } {
+    let guest = GUEST.get().filter(|_| open).and_then(|f| f(&GuestInput { events: routed.guest, modifiers, time, screen, pixels_per_point: ppp, focused: !routed.host_pressed }));
+    state.claim = guest.as_ref().map(|g| input::Claim { rect: g.rect, pointer: g.wants_pointer, keyboard: g.wants_keyboard });
+    KEYBOARD_FOCUS.store(state.ctx.egui_wants_keyboard_input() || state.claim.is_some_and(|c| c.keyboard), Ordering::Relaxed);
+    let mut textures = core::mem::take(&mut drawn.textures);
+    textures.append(output.textures_delta);
+    drawn.primitives.extend(state.ctx.tessellate(output.shapes, output.pixels_per_point));
+    if let Some(guest) = guest {
+        drawn.primitives.extend(guest.painted.primitives);
+        textures.append(guest.painted.textures);
+    }
+    if open {
+        drawn.primitives.extend(state.ctx.tessellate(vec![ClippedShape::new(screen, input::cursor_shape(mouse, cursor))], output.pixels_per_point));
+    }
+    for id in core::mem::take(&mut *FREED.lock().unwrap()) {
+        textures.free(id);
+    }
+    if let Err(e) = unsafe { painter.paint(rtv, size, output.pixels_per_point, &drawn.primitives, &textures) } {
         let _ = FAILURE.set(format!("paint: {e}"));
     }
+    textures.clear();
     frame::after_draw();
 }
 
-/// A context with the fonts and the theme.
-fn new_context() -> Option<Context> {
-    let (fonts, _) = fonts()?;
+/// A context with `fonts` and the framework [`theme`]: the overlay's own, and a framework plugin's
+/// with the fonts its loader handed over.
+#[must_use]
+pub fn themed_context(fonts: egui::FontDefinitions) -> Context {
     let ctx = Context::default();
-    ctx.set_fonts(fonts.clone());
+    ctx.set_fonts(fonts);
     theme::apply(&ctx);
-    Some(ctx)
+    ctx
+}
+
+/// The fonts the overlay draws with ([`font_source`] says which), `None` when no font could be read.
+#[must_use]
+pub fn font_definitions() -> Option<&'static egui::FontDefinitions> {
+    fonts().map(|(fonts, _)| fonts)
 }
 
 fn fonts() -> Option<&'static (egui::FontDefinitions, String)> {
