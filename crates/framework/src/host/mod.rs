@@ -15,16 +15,16 @@ use std::os::windows::ffi::OsStrExt as _;
 use std::path::{Path, PathBuf};
 use std::sync::{Mutex, OnceLock, PoisonError};
 
-use skyrim::events::{ErasedHandler, ErasedSink, ErasedSource};
+use skyrim::events::{ErasedSink, ErasedSource};
 use skyrim::prelude::*;
 use sre::BSEventNotifyControl;
 use skyrim::input::{CommandSlot, ErasedCommand, ErasedExecute, ReplacedCommand};
-use skyrim::papyrus::{ErasedNative, NativeFunction, VirtualMachine};
+use skyrim::papyrus::{ErasedNative, ErasedNativeFn, NativeFunction, VirtualMachine};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use windows_sys::Win32::System::LibraryLoader::{DONT_RESOLVE_DLL_REFERENCES, GetModuleHandleW, GetProcAddress, LoadLibraryExW, LoadLibraryW};
 use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 
-use crate::abi::{self, API, FrameCallback, MessageCallback, PapyrusCallback};
+use crate::abi::{self, API, FrameCallback, MessageCallback, PapyrusCallback, SinkCallback};
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::settings;
@@ -83,7 +83,7 @@ static PLUGIN_MESSAGES: Owned<(String, MessageCallback)> = Owned::new();
 static FRAMES: Owned<FrameCallback> = Owned::new();
 static PAPYRUS: Owned<PapyrusCallback> = Owned::new();
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
-static PLAYER_GRAPH: Owned<ErasedHandler> = Owned::new();
+static PLAYER_GRAPH: Owned<SinkCallback> = Owned::new();
 /// The host's sink on the player's graph source, made at the first [`Host::add_player_graph_sink`].
 static PLAYER_GRAPH_SINK: OnceLock<&'static ErasedSink> = OnceLock::new();
 static NATIVES: Mutex<Vec<Native>> = Mutex::new(Vec::new());
@@ -103,7 +103,7 @@ static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
 /// The SKSE plugins in `Data\SKSE\Plugins`, read once the loader has loaded them all.
 static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
-static TABLE: Table = Table { add_section: gui::add_section, add_hud: gui::add_hud, add_sink, add_player_graph_sink, register_native, register_command, replace_command };
+static TABLE: Table = Table { add_section: gui::add_section, add_hud: gui::add_hud };
 
 /// An SKSE plugin in `Data\SKSE\Plugins`: a DLL exporting `SKSEPlugin_Version` or `SKSEPlugin_Load`.
 #[derive(Clone)]
@@ -144,7 +144,7 @@ impl core::fmt::Display for LegacyPlugin {
 /// The host's sink on one source and the plugins' handlers behind it.
 struct SourceSinks {
     source: ErasedSource,
-    handlers: &'static Owned<ErasedHandler>,
+    handlers: &'static Owned<SinkCallback>,
 }
 
 struct Native {
@@ -547,7 +547,7 @@ fn describe(descriptor: &Descriptor, file: String) -> Plugin {
 /// may register through the host while it is waited for.
 fn detach(owner: &str) -> String {
     let hooks = HOOKS.remove_owner(owner);
-    let sources: Vec<&'static Owned<ErasedHandler>> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers).collect();
+    let sources: Vec<&'static Owned<SinkCallback>> = SINKS.lock().unwrap_or_else(PoisonError::into_inner).iter().map(|s| s.handlers).collect();
     let sinks = sources.iter().map(|handlers| handlers.remove_owner(owner)).sum::<usize>() + PLAYER_GRAPH.remove_owner(owner);
     let natives: Vec<(String, &'static str, ErasedNative)> = NATIVES.lock().unwrap_or_else(PoisonError::into_inner).iter().filter(|n| n.owner == owner).map(|n| (format!("{}.{}", n.class, n.name), n.owner, n.erased)).collect();
     for (what, plugin, erased) in &natives {
@@ -685,21 +685,21 @@ fn on_papyrus(owner: &'static str, f: PapyrusCallback) {
 }
 
 /// Runs `handlers` in registration order until one returns `Stop`.
-fn dispatch(handlers: &Owned<ErasedHandler>, event: *const c_void, source: *const sre::BSTEventSource) -> BSEventNotifyControl {
+fn dispatch(handlers: &Owned<SinkCallback>, event: *const c_void, source: *const sre::BSTEventSource) -> BSEventNotifyControl {
     let mut control = BSEventNotifyControl::Continue;
     handlers.each(|f| {
-        control = f(event, source);
+        control = abi::control((f.call)(f.ctx, event, source));
         control == BSEventNotifyControl::Continue
     });
     control
 }
 
-fn add_sink(owner: &'static str, source: ErasedSource, handler: ErasedHandler) {
+fn add_sink(owner: &'static str, source: ErasedSource, handler: SinkCallback) {
     let mut sinks = SINKS.lock().unwrap_or_else(PoisonError::into_inner);
     let handlers = if let Some(s) = sinks.iter().find(|s| s.source == source) {
         s.handlers
     } else {
-        let handlers: &'static Owned<ErasedHandler> = Box::leak(Box::new(Owned::new()));
+        let handlers: &'static Owned<SinkCallback> = Box::leak(Box::new(Owned::new()));
         source.add_sink(ErasedSink::new(Box::new(move |event, source| dispatch(handlers, event, source))));
         sinks.push(SourceSinks { source, handlers });
         handlers
@@ -708,7 +708,7 @@ fn add_sink(owner: &'static str, source: ErasedSource, handler: ErasedHandler) {
     log!("{owner}: sink added on the source at {:#x}", source.address());
 }
 
-fn add_player_graph_sink(owner: &'static str, handler: ErasedHandler) {
+fn add_player_graph_sink(owner: &'static str, handler: SinkCallback) {
     PLAYER_GRAPH.add(owner, handler);
     PLAYER_GRAPH_SINK.get_or_init(|| ErasedSink::new(Box::new(|event, source| dispatch(&PLAYER_GRAPH, event, source))));
     log!("{owner}: sink added on the player's graph");
@@ -725,18 +725,18 @@ fn follow_player_graph() {
     }
 }
 
-fn register_native(owner: &'static str, request: NativeRequest<'_>) -> Result<&'static NativeFunction, Error> {
+fn register_native(owner: &'static str, request: &NativeRequest<'_>, f: ErasedNativeFn) -> Result<&'static NativeFunction, Error> {
     let mut natives = NATIVES.lock().unwrap_or_else(PoisonError::into_inner);
     let what = format!("{}.{}", request.class, request.name);
     if let Some(existing) = natives.iter().find(|n| n.class.eq_ignore_ascii_case(request.class) && n.name.eq_ignore_ascii_case(request.name)) {
         if existing.owner != owner {
             return Err(Error::Taken { what, owner: existing.owner.to_owned() });
         }
-        existing.erased.set(request.f);
+        existing.erased.set(f);
         log!("{owner}: {what} re-pointed");
         return Ok(existing.erased.function());
     }
-    let native = request.vm.register_erased(request.class, request.name, request.kind, request.params, request.ret, request.f)?;
+    let native = request.vm.register_erased(request.class, request.name, request.kind, request.params, request.ret, f)?;
     log!("{owner}: {what} bound");
     natives.push(Native { class: request.class.to_owned(), name: request.name.to_owned(), owner, erased: native });
     Ok(native.function())
@@ -780,18 +780,18 @@ fn command_lines() -> Vec<String> {
     lines
 }
 
-fn register_command(owner: &'static str, request: CommandRequest<'_>) -> Result<CommandSlot, Error> {
+fn register_command(owner: &'static str, request: &CommandRequest<'_>, execute: ErasedExecute) -> Result<CommandSlot, Error> {
     let mut commands = COMMANDS.lock().unwrap_or_else(PoisonError::into_inner);
     let name = request.name.to_string_lossy().into_owned();
     if let Some(existing) = commands.iter().find(|c| c.name.eq_ignore_ascii_case(&name)) {
         if existing.owner != owner {
             return Err(Error::Taken { what: name, owner: existing.owner.to_owned() });
         }
-        existing.erased.set(request.execute);
+        existing.erased.set(execute);
         log!("{owner}: command {name} re-pointed");
         return Ok(existing.erased.slot());
     }
-    let command = skyrim::input::register_erased(request.name, request.help, request.params, request.needs_reference, request.execute)?;
+    let command = skyrim::input::register_erased(request.name, request.help, request.params, request.needs_reference, execute)?;
     let slot = command.slot();
     log!("{owner}: command {name} took over console opcode {:#x} ({})", slot.opcode, slot.replaced);
     commands.push(ConsoleCommand { name, owner, erased: command });
@@ -831,8 +831,8 @@ mod tests {
     #[test]
     fn player_graph_handlers_run_in_order_and_go_with_their_plugin() {
         static SEEN: AtomicU32 = AtomicU32::new(0);
-        let record = |bit: u32, control: BSEventNotifyControl| -> ErasedHandler {
-            Box::new(move |_, _| {
+        let record = |bit: u32, control: BSEventNotifyControl| {
+            abi::sink(move |_, _| {
                 assert_eq!(SEEN.fetch_or(bit, Ordering::Relaxed) & !(bit - 1), 0, "a later handler ran first");
                 control
             })

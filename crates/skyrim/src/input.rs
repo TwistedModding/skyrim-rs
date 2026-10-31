@@ -241,7 +241,20 @@ pub struct CommandContext<'a> {
     result: *mut f64,
 }
 
-impl CommandContext<'_> {
+impl<'a> CommandContext<'a> {
+    /// A context from the parts the engine passed, rebuilt on the far side of the framework's plugin ABI.
+    #[doc(hidden)]
+    #[must_use]
+    pub fn new(this_ref: *mut c_void, args: &'a [Arg<'a>], result: *mut f64) -> Self {
+        Self { this_ref, args, result }
+    }
+
+    #[doc(hidden)]
+    #[must_use]
+    pub fn result_ptr(&self) -> *mut f64 {
+        self.result
+    }
+
     /// The explicit `x.` reference or the console's selection, `None` when there is neither.
     #[must_use]
     pub fn this_ref(&self) -> Option<&TESObjectREFR> {

@@ -4,11 +4,11 @@
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
 //! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
-//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; event
-//! sinks, natives, commands, hooks, tab sections and HUD painters still cross with the Rust ABI,
-//! which holds only for one compiler and one build of this crate and its dependencies, so until
-//! they move (`docs/subsystems/abi.md`) a plugin is built against the same framework release (its
-//! `Cargo.lock`) with the same `rustc`. A refused DLL is unloaded and named in `skyrim-rs.log`.
+//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; hooks,
+//! tab sections and HUD painters still cross with the Rust ABI, which holds only for one compiler
+//! and one build of this crate and its dependencies, so until they move (`docs/subsystems/abi.md`)
+//! a plugin is built against the same framework release (its `Cargo.lock`) with the same `rustc`.
+//! A refused DLL is unloaded and named in `skyrim-rs.log`.
 //!
 //! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
 //! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a
@@ -32,10 +32,10 @@ use std::fmt;
 use std::sync::{Mutex, PoisonError};
 
 pub use overlay::{Frame, GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
-use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
+use skyrim::events::{BSTEventSource, ErasedSource, Event};
 use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
-use skyrim::input::{Command, CommandContext, CommandSlot, ErasedExecute, Param};
-use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
+use skyrim::input::{Command, CommandContext, CommandSlot, Param};
+use skyrim::papyrus::{IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, Variable, VirtualMachine};
 
 pub mod abi;
 pub mod hooks;
@@ -43,7 +43,7 @@ pub mod host;
 pub mod order;
 pub mod settings;
 
-use abi::{Api, HostApi, PluginRecord, RawButton, RawMouse, RawPad, RawPress, RawRestoreFn, RawSaveFn, Sink, Str, call};
+use abi::{Api, HostApi, PluginRecord, RawButton, RawCommandRequest, RawCommandSlot, RawMouse, RawNativeRequest, RawPad, RawParamType, RawPress, RawRestoreFn, RawSaveFn, Sink, Str, call};
 use settings::Settings;
 
 /// The descriptor's layout version.
@@ -148,35 +148,28 @@ impl From<skyrim::input::CommandError> for Error {
     }
 }
 
-/// A native as it crosses from a plugin to the host.
+/// A native's declaration, as [`abi::RawNativeRequest`] carries it.
 pub(crate) struct NativeRequest<'a> {
     pub vm: &'a VirtualMachine,
     pub class: &'a str,
     pub name: &'a str,
     pub kind: NativeKind,
-    pub params: &'static [ParamType],
+    pub params: &'a [ParamType],
     pub ret: Option<ParamType>,
-    pub f: ErasedNativeFn,
 }
 
-/// A console command as it crosses from a plugin to the host.
+/// A console command's declaration, as [`abi::RawCommandRequest`] carries it.
 pub(crate) struct CommandRequest<'a> {
     pub name: &'a CStr,
     pub help: &'a CStr,
     pub params: &'a [Param],
     pub needs_reference: bool,
-    pub execute: ErasedExecute,
 }
 
 /// The Rust-ABI registrations, one table shared by every plugin's [`Host`]; the owner comes first.
 pub(crate) struct Table {
     pub add_section: fn(&'static str, &str, DrawFn),
     pub add_hud: fn(&'static str, HudDrawFn),
-    pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
-    pub add_player_graph_sink: fn(&'static str, ErasedHandler),
-    pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
-    pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
-    pub replace_command: fn(&'static str, &CStr, ErasedExecute) -> Result<CommandSlot, Error>,
 }
 
 /// What a plugin reaches through [`abi::HostApi`]'s `legacy` until every crossing is C.
@@ -455,12 +448,11 @@ impl Host {
     /// on one source run in registration order until one returns `Stop`.
     pub fn add_sink<E: Event>(&self, f: impl Fn(&E, &BSTEventSource<E>) -> BSEventNotifyControl + Send + Sync + 'static) -> Result<(), Error> {
         let source = ErasedSource::of::<E>().ok_or(Error::NoSource)?;
-        let handler: ErasedHandler = Box::new(move |event, source| match (unsafe { event.cast::<E>().as_ref() }, unsafe { BSTEventSource::<E>::from_ptr(source) }) {
+        let handler = move |event: *const c_void, source| match (unsafe { event.cast::<E>().as_ref() }, unsafe { BSTEventSource::<E>::from_ptr(source) }) {
             (Some(event), Some(source)) => f(event, source),
             _ => BSEventNotifyControl::Continue,
-        });
-        (self.legacy.table.add_sink)(self.name, source, handler);
-        Ok(())
+        };
+        call!(self.api, add_sink(source, abi::sink(handler))).ok_or_else(|| Error::Unsupported { what: "event sinks".to_owned() })
     }
 
     /// Registers `f` for the player's behaviour graph events (`BSAnimationGraphEvent`: the tag, the
@@ -469,40 +461,45 @@ impl Host {
     /// events between a 3D rebuild and the next frame are missed. `f` runs on the sending thread,
     /// often a job thread, with the source lock held.
     pub fn add_player_graph_sink(&self, f: impl Fn(&BSAnimationGraphEvent) -> BSEventNotifyControl + Send + Sync + 'static) {
-        let handler: ErasedHandler = Box::new(move |event, _| match unsafe { event.cast::<BSAnimationGraphEvent>().as_ref() } {
+        let handler = move |event: *const c_void, _| match unsafe { event.cast::<BSAnimationGraphEvent>().as_ref() } {
             Some(event) => f(event),
             None => BSEventNotifyControl::Continue,
-        });
-        (self.legacy.table.add_player_graph_sink)(self.name, handler);
+        };
+        call!(self.api, add_player_graph_sink(abi::sink(handler)));
     }
 
     /// Registers `f` as `class.name`, a `native global` function, through a function object the
     /// host owns (`VirtualMachine::register_native` otherwise). Registered again by a later
     /// generation of the plugin, the same `class.name` is re-pointed at the new `f`.
     pub fn register_native<F: NativeFn<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.native(NativeRequest { vm, class, name, kind: NativeKind::Global, params: F::PARAMS, ret: F::RETURN, f: Box::new(move |call: &NativeCall<'_>| call.global(f)) })
+        self.native(&NativeRequest { vm, class, name, kind: NativeKind::Global, params: F::PARAMS, ret: F::RETURN }, move |call| call.global(f))
     }
 
     /// Registers `f` as `class.name`, a `native` method of a script extending the form class of
     /// its first parameter, as `VirtualMachine::register_method` does.
     pub fn register_method<F: NativeMethod<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.native(NativeRequest { vm, class, name, kind: NativeKind::Method, params: F::PARAMS, ret: F::RETURN, f: Box::new(move |call: &NativeCall<'_>| call.method(f)) })
+        self.native(&NativeRequest { vm, class, name, kind: NativeKind::Method, params: F::PARAMS, ret: F::RETURN }, move |call| call.method(f))
     }
 
     /// Registers `f` as `class.name`, a latent `native global` function, as `VirtualMachine::register_latent` does.
     pub fn register_latent<F: LatentFn<M>, M>(&self, vm: &VirtualMachine, class: &str, name: &str, f: F) -> Result<&'static NativeFunction, Error> {
-        self.native(NativeRequest { vm, class, name, kind: NativeKind::Latent, params: F::PARAMS, ret: <F::Output as IntoVariable>::TYPE, f: Box::new(move |call: &NativeCall<'_>| call.latent(f)) })
+        self.native(&NativeRequest { vm, class, name, kind: NativeKind::Latent, params: F::PARAMS, ret: <F::Output as IntoVariable>::TYPE }, move |call| call.latent(f))
     }
 
-    fn native(&self, request: NativeRequest<'_>) -> Result<&'static NativeFunction, Error> {
-        (self.legacy.table.register_native)(self.name, request)
+    fn native(&self, request: &NativeRequest<'_>, f: impl Fn(&NativeCall<'_>) -> Option<Variable> + Send + Sync + 'static) -> Result<&'static NativeFunction, Error> {
+        let params: Vec<RawParamType> = request.params.iter().map(|p| RawParamType::new(Some(*p))).collect();
+        let raw = RawNativeRequest::new(request, &params);
+        let mut function = core::ptr::null();
+        abi::status(&format!("native {}.{}", request.class, request.name), |error| call!(self.api, register_native(&raw const raw, abi::native(f), &raw mut function, error)))?;
+        Ok(unsafe { &*function })
     }
 
     /// Takes over an unused console entry for `C` through the host (`skyrim::input::register`
     /// otherwise); register at `DATA_LOADED`. A later generation registering the same name is
     /// re-pointed at its `execute`; the name, help and parameters stay those of the first.
     pub fn register_command<C: Command>(&self) -> Result<CommandSlot, Error> {
-        (self.legacy.table.register_command)(self.name, CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE, execute: Box::new(C::execute) })
+        let request = RawCommandRequest::new(&CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE });
+        Self::slot(&format!("command {}", C::NAME.to_string_lossy()), |slot, error| call!(self.api, register_command(&raw const request, abi::command(C::execute), slot, error)))
     }
 
     /// Runs `execute` in place of the engine console command `name` (its long or short name),
@@ -516,7 +513,14 @@ impl Host {
     /// host.replace_command(c"SetCameraFOV", |ctx| { /* ctx.args(): the command's own parameters */ true })?;
     /// ```
     pub fn replace_command(&self, name: &CStr, execute: impl Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'static) -> Result<CommandSlot, Error> {
-        (self.legacy.table.replace_command)(self.name, name, Box::new(execute))
+        Self::slot(&format!("replacing the command {}", name.to_string_lossy()), |slot, error| call!(self.api, replace_command(name.as_ptr(), abi::command(execute), slot, error)))
+    }
+
+    /// The console entry a command registration writes, or why there is none.
+    fn slot(what: &str, call: impl FnOnce(*mut RawCommandSlot, Sink<'_, abi::RawError>) -> Option<u32>) -> Result<CommandSlot, Error> {
+        let mut slot = RawCommandSlot { opcode: 0, replaced: Str::new(&[]) };
+        abi::status(what, |error| call(&raw mut slot, error))?;
+        Ok(unsafe { slot.to_slot() })
     }
 
     /// Every plugin whose descriptor the host accepted, in load order, known before the first `load` runs.

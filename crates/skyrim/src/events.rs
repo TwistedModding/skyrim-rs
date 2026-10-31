@@ -117,7 +117,9 @@ impl ErasedSink {
     }
 }
 
-/// A source known by address with its event type's registration function, for an [`ErasedSink`].
+/// A source known by address with its event type's registration function, for an [`ErasedSink`];
+/// laid out as C, as it crosses the framework's plugin ABI.
+#[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct ErasedSource {
     source: *mut sre::BSTEventSource,

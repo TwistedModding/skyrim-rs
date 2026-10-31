@@ -2,12 +2,16 @@
 //! forwards to the host's registries.
 
 use core::ffi::{c_char, c_void};
+use core::mem::ManuallyDrop;
 
 use overlay::{Hotkey, Scope};
+use skyrim::events::ErasedSource;
+use skyrim::input::ErasedExecute;
+use skyrim::papyrus::{ErasedNativeFn, NativeCall, NativeFunction, Variable};
 use sre::InputDevice;
 
 use super::{FRAMES, TABLE, alias, filters, gui, interface, keys};
-use crate::abi::{API, Alloc, FrameCallback, HostApi, MessageCallback, PapyrusCallback, PluginRecord, RawButton, RawError, RawMouse, RawPad, RawPress, RawSetting, Sink, Status, Str, fail, slice};
+use crate::abi::{API, Alloc, CommandCallback, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Sink, SinkCallback, Status, Str, c_str, fail, slice};
 use crate::hooks::Hooks;
 use crate::{Error, Legacy, Method, settings};
 
@@ -48,6 +52,11 @@ pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'stati
         read_frame: Some(read_frame),
         plugins: Some(plugins),
         legacy,
+        add_sink: Some(add_sink),
+        add_player_graph_sink: Some(add_player_graph_sink),
+        register_native: Some(register_native),
+        register_command: Some(register_command),
+        replace_command: Some(replace_command),
     }))
 }
 
@@ -57,7 +66,7 @@ fn owner(api: *const HostApi) -> &'static str {
 }
 
 /// Writes a registration's handle to `out`, or reports why there is none.
-fn report(result: Result<usize, Error>, out: *mut usize, error: &Sink<'_, RawError>) -> u32 {
+fn report<T>(result: Result<T, Error>, out: *mut T, error: &Sink<'_, RawError>) -> u32 {
     match result {
         Ok(handle) => {
             unsafe { out.write(handle) };
@@ -218,13 +227,59 @@ unsafe extern "C" fn plugins(_: *const HostApi, records: Sink<'_, PluginRecord>,
     }
 }
 
+unsafe extern "C" fn add_sink(api: *const HostApi, source: ErasedSource, f: SinkCallback) {
+    super::add_sink(owner(api), source, f);
+}
+
+unsafe extern "C" fn add_player_graph_sink(api: *const HostApi, f: SinkCallback) {
+    super::add_player_graph_sink(owner(api), f);
+}
+
+unsafe extern "C" fn register_native(api: *const HostApi, request: *const RawNativeRequest, f: NativeCallback, function: *mut *const NativeFunction, error: Sink<'_, RawError>) -> u32 {
+    let request = unsafe { &*request };
+    let registered = unsafe { request.params() }.and_then(|params| super::register_native(owner(api), &unsafe { request.to_request(&params) }?, native_fn(f)));
+    report(registered.map(core::ptr::from_ref), function, &error)
+}
+
+unsafe extern "C" fn register_command(api: *const HostApi, request: *const RawCommandRequest, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, RawError>) -> u32 {
+    report(super::register_command(owner(api), &unsafe { (*request).to_request() }, execute_fn(f)).map(RawCommandSlot::new), slot, &error)
+}
+
+unsafe extern "C" fn replace_command(api: *const HostApi, name: *const c_char, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, RawError>) -> u32 {
+    report(super::replace_command(owner(api), unsafe { c_str(name) }, execute_fn(f)).map(RawCommandSlot::new), slot, &error)
+}
+
+/// A plugin's native as the host binds it; the plugin writes the value over a None it owns nothing in.
+fn native_fn(f: NativeCallback) -> ErasedNativeFn {
+    Box::new(move |call: &NativeCall<'_>| {
+        // Captures the whole callback, which is Send, rather than its raw fields.
+        let f = &f;
+        let mut out = ManuallyDrop::new(Variable::none());
+        (f.call)(f.ctx, &RawNativeCall::new(call), (&raw mut out).cast()).then(|| ManuallyDrop::into_inner(out))
+    })
+}
+
+/// A plugin's command as the host's console entry runs it.
+fn execute_fn(f: CommandCallback) -> ErasedExecute {
+    Box::new(move |context| {
+        let f = &f;
+        let args: Vec<RawArg> = context.args().iter().map(RawArg::new).collect();
+        let mut raw = RawCommandContext { this_ref: context.this_ref().map_or(core::ptr::null(), core::ptr::from_ref), args: args.as_ptr(), len: args.len(), result: context.result_ptr() };
+        (f.call)(f.ctx, &raw mut raw)
+    })
+}
+
 #[cfg(test)]
 mod tests {
     use core::sync::atomic::{AtomicU32, Ordering};
     use std::sync::Mutex;
 
+    use skyrim::input::{Arg, Command, CommandContext};
+    use skyrim::papyrus::VirtualMachine;
+    use sre::BSEventNotifyControl;
+
     use super::*;
-    use crate::abi::{Api, Callback, call, entry, names, status};
+    use crate::abi::{self, Api, Callback, call, entry, names, status};
     use crate::settings::{Setting, Settings};
     use crate::{Action, BUILD, Host};
 
@@ -321,6 +376,97 @@ mod tests {
         let mut slot = 0;
         let refused = status("serving a name", |error| call!(older, serve_alias(Str::from("Name"), crate::abi::message(|_| {}), &raw mut slot, error)));
         assert!(matches!(refused, Err(Error::Unsupported { .. })));
+
+        let stage_1 = unsafe { HostApi { size: u32::try_from(core::mem::offset_of!(HostApi, add_sink)).unwrap(), ..*full.0 } };
+        let host = Host::new(&raw const stage_1).expect("a stage 1 loader has the legacy registrations");
+        let vm: &VirtualMachine = Box::leak(Box::new(unsafe { core::mem::zeroed() }));
+        assert!(matches!(host.register_native(vm, "Mod", "One", || 1i32), Err(Error::Unsupported { what }) if what == "native Mod.One"));
+        assert!(matches!(host.register_command::<Test>(), Err(Error::Unsupported { .. })));
+        assert!(matches!(host.replace_command(c"SetCameraFOV", |_| true), Err(Error::Unsupported { .. })));
+        host.add_player_graph_sink(|_| BSEventNotifyControl::Continue);
+    }
+
+    struct Test;
+
+    impl Command for Test {
+        const NAME: &'static core::ffi::CStr = c"SkyrimRsAbiTest";
+        const HELP: &'static core::ffi::CStr = c"";
+        const PARAMS: &'static [skyrim::input::Param] = &[];
+        fn execute(_: &mut CommandContext<'_>) -> bool {
+            true
+        }
+    }
+
+    /// Counts its drops, to see a plugin's closure freed exactly once.
+    struct Counted(&'static AtomicU32);
+
+    impl Counted {
+        fn alive(&self) -> bool {
+            self.0.load(Ordering::Relaxed) == 0
+        }
+    }
+
+    impl Drop for Counted {
+        fn drop(&mut self) {
+            self.0.fetch_add(1, Ordering::Relaxed);
+        }
+    }
+
+    #[test]
+    fn a_sink_closure_runs_through_the_host_and_drops_once() {
+        static DROPS: AtomicU32 = AtomicU32::new(0);
+        let counted = Counted(&DROPS);
+        let handlers = super::super::Owned::new();
+        handlers.add("sink-test", abi::sink(move |event, _| if event.is_null() && counted.alive() { BSEventNotifyControl::Stop } else { BSEventNotifyControl::Continue }));
+        assert_eq!(super::super::dispatch(&handlers, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Stop);
+        assert_eq!(DROPS.load(Ordering::Relaxed), 0, "a call keeps the closure");
+        assert_eq!(handlers.remove_owner("sink-test"), 1);
+        assert_eq!(DROPS.load(Ordering::Relaxed), 1);
+        assert_eq!(super::super::dispatch(&handlers, core::ptr::null(), core::ptr::null()), BSEventNotifyControl::Continue);
+    }
+
+    #[test]
+    fn a_native_closure_runs_through_the_host_and_drops_once() {
+        static DROPS: AtomicU32 = AtomicU32::new(0);
+        let counted = Counted(&DROPS);
+        let f = native_fn(abi::native(move |call| {
+            let first = call.args.first()?.as_int().filter(|_| counted.alive())?;
+            Some(Variable::int(first + i32::try_from(call.args.len() + call.stack_id as usize).unwrap()))
+        }));
+        let vm: &VirtualMachine = Box::leak(Box::new(unsafe { core::mem::zeroed() }));
+        // The engine resets a Variable on drop; there is no engine here.
+        let (none, five, text) = (ManuallyDrop::new(Variable::none()), ManuallyDrop::new(Variable::int(5)), ManuallyDrop::new(Variable::bool(true)));
+        let value = ManuallyDrop::new(f(&NativeCall { vm, self_: &none, args: &[&five, &text], stack_id: 7 }).expect("the native answers"));
+        assert_eq!(value.as_int(), Some(14));
+        assert!(f(&NativeCall { vm, self_: &none, args: &[&text], stack_id: 7 }).is_none(), "a native that fails the call writes nothing");
+        assert_eq!(DROPS.load(Ordering::Relaxed), 0);
+        drop(f);
+        assert_eq!(DROPS.load(Ordering::Relaxed), 1);
+    }
+
+    #[test]
+    fn a_command_closure_runs_through_the_host_and_drops_once_when_replaced() {
+        static FIRST: AtomicU32 = AtomicU32::new(0);
+        static SECOND: AtomicU32 = AtomicU32::new(0);
+        let command = |counted: Counted| {
+            execute_fn(abi::command(move |context| {
+                let read = counted.alive() && matches!(context.args(), [Arg::Int(3), Arg::Str("pos"), Arg::Missing]) && context.this_ref().is_none();
+                context.set_result(if read { 1.0 } else { -1.0 });
+                read
+            }))
+        };
+        let args = [Arg::Int(3), Arg::Str("pos"), Arg::Missing];
+        let run = |execute: &ErasedExecute| {
+            let mut result = 0.0;
+            execute(&mut CommandContext::new(core::ptr::null_mut(), &args, &raw mut result)) && (result - 1.0).abs() < f64::EPSILON
+        };
+        let mut execute = command(Counted(&FIRST));
+        assert!(run(&execute), "the arguments and the result cross");
+        execute = command(Counted(&SECOND));
+        assert_eq!((FIRST.load(Ordering::Relaxed), SECOND.load(Ordering::Relaxed)), (1, 0), "a later generation's command drops the earlier one");
+        assert!(run(&execute));
+        drop(execute);
+        assert_eq!((FIRST.load(Ordering::Relaxed), SECOND.load(Ordering::Relaxed)), (1, 1));
     }
 
     #[test]

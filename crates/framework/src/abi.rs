@@ -2,17 +2,20 @@
 //! plain data its entries take, and the helpers [`plugin!`](crate::plugin) wraps a plugin's Rust
 //! functions with.
 
-use core::ffi::{c_char, c_void};
+use core::ffi::{CStr, c_char, c_void};
 use core::marker::PhantomData;
 
 use overlay::Hotkey;
-use skyrim::papyrus::VirtualMachine;
+use skyrim::events::ErasedSource;
+use skyrim::input::{Arg, CommandContext, CommandError, CommandSlot, Param};
+use skyrim::papyrus::{self, NativeCall, NativeFunction, NativeKind, ParamType, Variable, VirtualMachine};
+use sre::{BSEventNotifyControl, TESForm, VMTypeID};
 
 use crate::settings::Setting;
-use crate::{Error, FrameFn, Host, Legacy, LoadFn, MessageFn, Method, PapyrusFn};
+use crate::{CommandRequest, Error, FrameFn, Host, Legacy, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
 /// The [`HostApi`] layout this crate builds and reads; entries are only ever appended.
-pub const API: u32 = 1;
+pub const API: u32 = 2;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
@@ -113,9 +116,25 @@ impl<F> Drop for Callback<F> {
 unsafe impl<F: Send> Send for Callback<F> {}
 unsafe impl<F: Sync> Sync for Callback<F> {}
 
+impl<F> Callback<F> {
+    /// `closure` boxed behind `call`, which receives it as `ctx`; `drop` frees the box.
+    fn boxed<C: Send + Sync + 'static>(closure: C, call: F) -> Self {
+        extern "C" fn drop_box<C>(ctx: *mut c_void) {
+            drop(unsafe { Box::from_raw(ctx.cast::<C>()) });
+        }
+        Self { call, ctx: Box::into_raw(Box::new(closure)).cast(), drop: Some(drop_box::<C>) }
+    }
+}
+
 pub type MessageCallback = Callback<extern "C" fn(*mut c_void, *const skse::Message)>;
 pub type FrameCallback = Callback<extern "C" fn(*mut c_void)>;
 pub type PapyrusCallback = Callback<extern "C" fn(*mut c_void, *const VirtualMachine)>;
+/// An event handler: the event and the source as the engine passes them, a `BSEventNotifyControl` back.
+pub type SinkCallback = Callback<extern "C" fn(*mut c_void, *const c_void, *const sre::BSTEventSource) -> u32>;
+/// A Papyrus native: true once the value is written to the `Variable`, which holds None on entry.
+pub type NativeCallback = Callback<extern "C" fn(*mut c_void, *const RawNativeCall, *mut sre::BSScript__Variable) -> bool>;
+/// A console command's execute function.
+pub type CommandCallback = Callback<extern "C" fn(*mut c_void, *mut RawCommandContext) -> bool>;
 
 pub(crate) fn message(f: MessageFn) -> MessageCallback {
     extern "C" fn call(ctx: *mut c_void, msg: *const skse::Message) {
@@ -145,6 +164,238 @@ pub(crate) fn papyrus(f: PapyrusFn) -> PapyrusCallback {
     Callback { call, ctx: f as *mut c_void, drop: None }
 }
 
+pub(crate) fn sink<C: Fn(*const c_void, *const sre::BSTEventSource) -> BSEventNotifyControl + Send + Sync + 'static>(f: C) -> SinkCallback {
+    extern "C" fn call<C: Fn(*const c_void, *const sre::BSTEventSource) -> BSEventNotifyControl>(ctx: *mut c_void, event: *const c_void, source: *const sre::BSTEventSource) -> u32 {
+        unsafe { (*ctx.cast::<C>())(event, source) as u32 }
+    }
+    SinkCallback::boxed(f, call::<C>)
+}
+
+/// What a handler returned; a value this side does not know continues the walk.
+pub(crate) fn control(value: u32) -> BSEventNotifyControl {
+    BSEventNotifyControl::from_u32(value).unwrap_or(BSEventNotifyControl::Continue)
+}
+
+pub(crate) fn native<C: Fn(&NativeCall<'_>) -> Option<Variable> + Send + Sync + 'static>(f: C) -> NativeCallback {
+    extern "C" fn call<C: Fn(&NativeCall<'_>) -> Option<Variable>>(ctx: *mut c_void, raw: *const RawNativeCall, out: *mut sre::BSScript__Variable) -> bool {
+        let value = unsafe { raw.as_ref() }.and_then(|raw| unsafe { raw.call() }).and_then(|call| unsafe { (*ctx.cast::<C>())(&call) });
+        // The None the host put there owns nothing, so it is overwritten without a reset.
+        value.map(|v| unsafe { out.cast::<Variable>().write(v) }).is_some()
+    }
+    NativeCallback::boxed(f, call::<C>)
+}
+
+pub(crate) fn command<C: Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'static>(f: C) -> CommandCallback {
+    extern "C" fn call<C: Fn(&mut CommandContext<'_>) -> bool>(ctx: *mut c_void, raw: *mut RawCommandContext) -> bool {
+        let Some(raw) = (unsafe { raw.as_ref() }) else { return false };
+        let args: Vec<Arg<'_>> = unsafe { slice(raw.args, raw.len) }.iter().map(|a| unsafe { a.to_arg() }).collect();
+        unsafe { (*ctx.cast::<C>())(&mut CommandContext::new(raw.this_ref.cast_mut().cast(), &args, raw.result)) }
+    }
+    CommandCallback::boxed(f, call::<C>)
+}
+
+/// A native call as it crosses: the engine's VM, `self` and argument variables, and the stack.
+#[repr(C)]
+pub struct RawNativeCall {
+    pub vm: *const VirtualMachine,
+    pub self_: *const sre::BSScript__Variable,
+    pub args: *const *const sre::BSScript__Variable,
+    pub len: usize,
+    pub stack_id: u32,
+}
+
+impl RawNativeCall {
+    pub(crate) fn new(call: &NativeCall<'_>) -> Self {
+        Self { vm: call.vm, self_: call.self_.raw(), args: call.args.as_ptr().cast(), len: call.args.len(), stack_id: call.stack_id }
+    }
+
+    /// The call as the plugin's native reads it, `None` without the VM or `self`.
+    unsafe fn call(&self) -> Option<NativeCall<'_>> {
+        let vm = unsafe { self.vm.as_ref() }?;
+        let self_ = Variable::view(unsafe { self.self_.as_ref() }?);
+        Some(NativeCall { vm, self_, args: unsafe { slice(self.args.cast::<&Variable>(), self.len) }, stack_id: self.stack_id })
+    }
+}
+
+/// A [`ParamType`], or none for a native that returns nothing: `kind` 0 none, 1 Int, 2 Float,
+/// 3 Bool, 4 String, 5 a form, then 6 to 10 the arrays of those in the same order; `type_id` is
+/// the form's `VMTypeID`.
+#[repr(C)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub struct RawParamType {
+    pub kind: u32,
+    pub type_id: u32,
+}
+
+impl RawParamType {
+    pub(crate) fn new(ty: Option<ParamType>) -> Self {
+        let (kind, type_id) = match ty {
+            None => (0, 0),
+            Some(ParamType::Int) => (1, 0),
+            Some(ParamType::Float) => (2, 0),
+            Some(ParamType::Bool) => (3, 0),
+            Some(ParamType::String) => (4, 0),
+            Some(ParamType::Form(id)) => (5, id as u32),
+            Some(ParamType::IntArray) => (6, 0),
+            Some(ParamType::FloatArray) => (7, 0),
+            Some(ParamType::BoolArray) => (8, 0),
+            Some(ParamType::StringArray) => (9, 0),
+            Some(ParamType::FormArray(id)) => (10, id as u32),
+        };
+        Self { kind, type_id }
+    }
+
+    /// `Unsupported` for a kind or a type id this side does not know.
+    pub(crate) fn to_param(self) -> Result<Option<ParamType>, Error> {
+        let unknown = || Error::Unsupported { what: format!("Papyrus type {} ({})", self.kind, self.type_id) };
+        let form = || VMTypeID::from_u32(self.type_id).ok_or_else(unknown);
+        Ok(Some(match self.kind {
+            0 => return Ok(None),
+            1 => ParamType::Int,
+            2 => ParamType::Float,
+            3 => ParamType::Bool,
+            4 => ParamType::String,
+            5 => ParamType::Form(form()?),
+            6 => ParamType::IntArray,
+            7 => ParamType::FloatArray,
+            8 => ParamType::BoolArray,
+            9 => ParamType::StringArray,
+            10 => ParamType::FormArray(form()?),
+            _ => return Err(unknown()),
+        }))
+    }
+}
+
+/// A native to register: `kind` 0 global, 1 method, 2 latent.
+#[repr(C)]
+pub struct RawNativeRequest {
+    pub vm: *const VirtualMachine,
+    pub class: Str,
+    pub name: Str,
+    pub kind: u32,
+    pub params: *const RawParamType,
+    pub len: usize,
+    pub ret: RawParamType,
+}
+
+const NATIVE_KINDS: [NativeKind; 3] = [NativeKind::Global, NativeKind::Method, NativeKind::Latent];
+
+impl RawNativeRequest {
+    /// `request` as it crosses, with `params` made from its parameters by [`RawParamType::new`].
+    pub(crate) fn new(request: &NativeRequest<'_>, params: &[RawParamType]) -> Self {
+        let kind = NATIVE_KINDS.iter().position(|k| *k == request.kind).unwrap_or_default();
+        Self { vm: request.vm, class: Str::from(request.class), name: Str::from(request.name), kind: u32::try_from(kind).unwrap_or_default(), params: params.as_ptr(), len: params.len(), ret: RawParamType::new(request.ret) }
+    }
+
+    /// The parameter types, copied out of the plugin's memory.
+    pub(crate) unsafe fn params(&self) -> Result<Vec<ParamType>, Error> {
+        unsafe { slice(self.params, self.len) }.iter().map(|p| p.to_param()?.ok_or_else(|| Error::Unsupported { what: "a parameter without a type".to_owned() })).collect()
+    }
+
+    /// The request with the parameter types `params` from [`params`](Self::params).
+    pub(crate) unsafe fn to_request<'a>(&'a self, params: &'a [ParamType]) -> Result<NativeRequest<'a>, Error> {
+        let vm = unsafe { self.vm.as_ref() }.ok_or_else(|| Error::Unsupported { what: "a native without the VM".to_owned() })?;
+        let kind = *usize::try_from(self.kind).ok().and_then(|k| NATIVE_KINDS.get(k)).ok_or_else(|| Error::Unsupported { what: format!("native kind {}", self.kind) })?;
+        Ok(NativeRequest { vm, class: unsafe { self.class.as_str() }, name: unsafe { self.name.as_str() }, kind, params, ret: self.ret.to_param()? })
+    }
+}
+
+/// A console command to register, its name and help NUL-terminated.
+#[repr(C)]
+pub struct RawCommandRequest {
+    pub name: *const c_char,
+    pub help: *const c_char,
+    pub params: *const sre::ParamInfo,
+    pub len: usize,
+    pub needs_reference: bool,
+}
+
+impl RawCommandRequest {
+    pub(crate) fn new(request: &CommandRequest<'_>) -> Self {
+        Self { name: request.name.as_ptr(), help: request.help.as_ptr(), params: request.params.as_ptr().cast(), len: request.params.len(), needs_reference: request.needs_reference }
+    }
+
+    pub(crate) unsafe fn to_request(&self) -> CommandRequest<'_> {
+        CommandRequest { name: unsafe { c_str(self.name) }, help: unsafe { c_str(self.help) }, params: unsafe { slice(self.params.cast::<Param>(), self.len) }, needs_reference: self.needs_reference }
+    }
+}
+
+/// The text at `p`, empty for null.
+pub(crate) unsafe fn c_str<'a>(p: *const c_char) -> &'a CStr {
+    if p.is_null() { c"" } else { unsafe { CStr::from_ptr(p) } }
+}
+
+/// A command's console entry; `replaced` is the host's text, alive for the life of the game.
+#[repr(C)]
+pub struct RawCommandSlot {
+    pub opcode: u32,
+    pub replaced: Str,
+}
+
+impl RawCommandSlot {
+    pub(crate) fn new(slot: CommandSlot) -> Self {
+        Self { opcode: slot.opcode, replaced: Str::from(slot.replaced) }
+    }
+
+    pub(crate) unsafe fn to_slot(&self) -> CommandSlot {
+        CommandSlot { opcode: self.opcode, replaced: unsafe { self.replaced.as_str() } }
+    }
+}
+
+/// A command's run: the reference it runs on, the arguments, the statement's result.
+#[repr(C)]
+pub struct RawCommandContext {
+    pub this_ref: *const sre::TESObjectREFR,
+    pub args: *const RawArg,
+    pub len: usize,
+    pub result: *mut f64,
+}
+
+/// An [`Arg`]: `tag` 0 missing, 1 `int`, 2 `float`, 3 `text`, 4 `form`, 5 `char`.
+#[repr(C)]
+pub struct RawArg {
+    pub tag: u32,
+    pub int: i32,
+    pub float: f32,
+    pub text: Str,
+    pub form: *const TESForm,
+    pub char: u8,
+}
+
+impl RawArg {
+    const MISSING: u32 = 0;
+    const INT: u32 = 1;
+    const FLOAT: u32 = 2;
+    const TEXT: u32 = 3;
+    const FORM: u32 = 4;
+    const CHAR: u32 = 5;
+
+    /// `arg` as it crosses; its text and form stay borrowed.
+    pub(crate) fn new(arg: &Arg<'_>) -> Self {
+        let missing = Self { tag: Self::MISSING, int: 0, float: 0.0, text: Str::new(&[]), form: core::ptr::null(), char: 0 };
+        match *arg {
+            Arg::Missing => missing,
+            Arg::Int(int) => Self { tag: Self::INT, int, ..missing },
+            Arg::Float(float) => Self { tag: Self::FLOAT, float, ..missing },
+            Arg::Str(text) => Self { tag: Self::TEXT, text: Str::from(text), ..missing },
+            Arg::Form(form) => Self { tag: Self::FORM, form, ..missing },
+            Arg::Char(char) => Self { tag: Self::CHAR, char, ..missing },
+        }
+    }
+
+    /// A tag this side does not know reads as missing.
+    pub(crate) unsafe fn to_arg<'a>(&self) -> Arg<'a> {
+        match self.tag {
+            Self::INT => Arg::Int(self.int),
+            Self::FLOAT => Arg::Float(self.float),
+            Self::TEXT => Arg::Str(unsafe { self.text.as_str() }),
+            Self::FORM => unsafe { self.form.as_ref() }.map_or(Arg::Missing, Arg::Form),
+            Self::CHAR => Arg::Char(self.char),
+            _ => Arg::Missing,
+        }
+    }
+}
+
 /// Why an entry failed, as a `u32` beside its detail; numbers are never reused.
 #[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -158,45 +409,70 @@ pub enum Status {
     Command = 6,
 }
 
-/// The detail of a failed entry's [`Error`]: the thing refused, its owner, the limit.
+/// The detail of a failed entry's [`Error`]: the thing refused, its owner, the limit. A `Papyrus`
+/// or `Command` error names its variant in `code` (`papyrus::Error`: 0 `UnknownType` with the type
+/// id in `limit`, 1 `Bind` with the class in `what` and the name in `owner`; `CommandError`: 0
+/// `TooManyParams`, 1 `NameTaken`, 2 `NoFreeEntry`, 3 `NotFound`), and `text` is its message, which
+/// a side that does not know the code reports as `Unsupported`.
 #[repr(C)]
 pub struct RawError {
     pub what: Str,
     pub owner: Str,
     pub limit: usize,
+    pub code: u32,
+    pub text: Str,
 }
+
+const COMMAND_ERRORS: [CommandError; 4] = [CommandError::TooManyParams, CommandError::NameTaken, CommandError::NoFreeEntry, CommandError::NotFound];
 
 /// The host's side of a fallible entry: the status for `e`, its detail through `detail`.
 pub(crate) fn fail(e: &Error, detail: &Sink<'_, RawError>) -> u32 {
     let text = e.to_string();
-    let (status, what, owner, limit) = match e {
-        Error::NoSource => (Status::NoSource, "", "", 0),
-        Error::Taken { what, owner } => (Status::Taken, what.as_str(), owner.as_str(), 0),
-        Error::Full { what, limit } => (Status::Full, what.as_str(), "", *limit),
-        Error::Unsupported { what } => (Status::Unsupported, what.as_str(), "", 0),
-        Error::Papyrus(_) => (Status::Papyrus, text.as_str(), "", 0),
-        Error::Command(_) => (Status::Command, text.as_str(), "", 0),
+    let (status, what, owner, limit, code) = match e {
+        Error::NoSource => (Status::NoSource, "", "", 0, 0),
+        Error::Taken { what, owner } => (Status::Taken, what.as_str(), owner.as_str(), 0, 0),
+        Error::Full { what, limit } => (Status::Full, what.as_str(), "", *limit, 0),
+        Error::Unsupported { what } => (Status::Unsupported, what.as_str(), "", 0, 0),
+        Error::Papyrus(papyrus::Error::UnknownType(id)) => (Status::Papyrus, "", "", *id as usize, 0),
+        Error::Papyrus(papyrus::Error::Bind { class, name }) => (Status::Papyrus, class.as_str(), name.as_str(), 0, 1),
+        Error::Command(e) => (Status::Command, "", "", 0, COMMAND_ERRORS.iter().position(|c| core::mem::discriminant(c) == core::mem::discriminant(e)).unwrap_or_default()),
     };
-    detail.put(RawError { what: Str::from(what), owner: Str::from(owner), limit });
+    detail.put(RawError { what: Str::from(what), owner: Str::from(owner), limit, code: u32::try_from(code).unwrap_or_default(), text: Str::from(text.as_str()) });
     status as u32
 }
 
 /// The plugin's side of a fallible entry: `call` returns its status, or `None` when the loader
 /// lacks the entry, which is `Unsupported` for `what`.
 pub(crate) fn status(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), Error> {
-    let mut detail = (String::new(), String::new(), 0);
-    let mut keep = |d: RawError| detail = unsafe { (d.what.as_str().to_owned(), d.owner.as_str().to_owned(), d.limit) };
-    let Some(code) = call(Sink::new(&mut keep)) else {
+    let mut detail = Detail::default();
+    let mut keep = |d: RawError| detail = unsafe { Detail { what: d.what.as_str().to_owned(), owner: d.owner.as_str().to_owned(), limit: d.limit, code: d.code, text: d.text.as_str().to_owned() } };
+    let Some(status) = call(Sink::new(&mut keep)) else {
         return Err(Error::Unsupported { what: what.to_owned() });
     };
-    let (what, owner, limit) = detail;
-    match code {
-        c if c == Status::Ok as u32 => Ok(()),
-        c if c == Status::NoSource as u32 => Err(Error::NoSource),
-        c if c == Status::Taken as u32 => Err(Error::Taken { what, owner }),
-        c if c == Status::Full as u32 => Err(Error::Full { what, limit }),
+    let Detail { what, owner, limit, code, text } = detail;
+    match status {
+        s if s == Status::Ok as u32 => Ok(()),
+        s if s == Status::NoSource as u32 => Err(Error::NoSource),
+        s if s == Status::Taken as u32 => Err(Error::Taken { what, owner }),
+        s if s == Status::Full as u32 => Err(Error::Full { what, limit }),
+        s if s == Status::Papyrus as u32 => Err(match code {
+            0 => u32::try_from(limit).ok().and_then(VMTypeID::from_u32).map_or(Error::Unsupported { what: text }, |id| Error::Papyrus(papyrus::Error::UnknownType(id))),
+            1 => Error::Papyrus(papyrus::Error::Bind { class: what, name: owner }),
+            _ => Error::Unsupported { what: text },
+        }),
+        s if s == Status::Command as u32 => Err(usize::try_from(code).ok().and_then(|c| COMMAND_ERRORS.into_iter().nth(c)).map_or(Error::Unsupported { what: text }, Error::Command)),
         _ => Err(Error::Unsupported { what }),
     }
+}
+
+/// A [`RawError`] copied out of the call.
+#[derive(Default)]
+struct Detail {
+    what: String,
+    owner: String,
+    limit: usize,
+    code: u32,
+    text: String,
 }
 
 /// The mouse's movement in [`HostApi::mouse`].
@@ -326,6 +602,14 @@ pub struct HostApi {
     pub plugins: Option<unsafe extern "C" fn(*const Self, Sink<'_, PluginRecord>, Sink<'_, Str>, Sink<'_, Str>)>,
     /// The Rust-ABI registrations not converted yet; removed with `BUILD` in stage 5.
     pub(crate) legacy: *const Legacy,
+    pub add_sink: Option<unsafe extern "C" fn(*const Self, ErasedSource, SinkCallback)>,
+    pub add_player_graph_sink: Option<unsafe extern "C" fn(*const Self, SinkCallback)>,
+    /// Writes the host's function object on success.
+    pub register_native: Option<unsafe extern "C" fn(*const Self, *const RawNativeRequest, NativeCallback, *mut *const NativeFunction, Sink<'_, RawError>) -> u32>,
+    /// Writes the console entry on success.
+    pub register_command: Option<unsafe extern "C" fn(*const Self, *const RawCommandRequest, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
+    /// The engine command's name; writes its entry on success.
+    pub replace_command: Option<unsafe extern "C" fn(*const Self, *const c_char, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.
@@ -419,7 +703,7 @@ mod tests {
     #[test]
     fn a_status_comes_back_as_its_error() {
         let detail = |code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4 });
+            sink.put(RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, code: 0, text: Str::from("message") });
             Some(code)
         };
         assert!(status("x", detail(Status::Ok as u32)).is_ok());
@@ -432,5 +716,53 @@ mod tests {
         let taken = Error::Taken { what: "thing".to_owned(), owner: "other".to_owned() };
         assert_eq!(fail(&taken, &Sink::new(&mut keep)), Status::Taken as u32);
         assert_eq!(back, [("thing".to_owned(), "other".to_owned(), 0)]);
+    }
+
+    /// `e` through the host's side of an entry and back through the plugin's.
+    fn cross(e: &Error) -> Error {
+        status("x", |sink| Some(fail(e, &sink))).unwrap_err()
+    }
+
+    #[test]
+    fn papyrus_and_command_errors_come_back_typed() {
+        assert!(matches!(cross(&Error::Papyrus(papyrus::Error::UnknownType(VMTypeID::Keyword))), Error::Papyrus(papyrus::Error::UnknownType(VMTypeID::Keyword))));
+        assert!(matches!(cross(&Error::Papyrus(papyrus::Error::Bind { class: "Mod".to_owned(), name: "Twice".to_owned() })), Error::Papyrus(papyrus::Error::Bind { class, name }) if class == "Mod" && name == "Twice"));
+        for e in COMMAND_ERRORS {
+            let text = e.to_string();
+            assert!(matches!(cross(&Error::Command(e)), Error::Command(back) if back.to_string() == text));
+        }
+        assert!(matches!(cross(&Error::NoSource), Error::NoSource));
+        assert!(matches!(cross(&Error::Full { what: "commands".to_owned(), limit: 16 }), Error::Full { what, limit: 16 } if what == "commands"));
+        assert!(matches!(cross(&Error::Unsupported { what: "sinks".to_owned() }), Error::Unsupported { what } if what == "sinks"));
+
+        let later = |status: Status, code: u32| move |sink: Sink<'_, RawError>| {
+            sink.put(RawError { what: Str::from(""), owner: Str::from(""), limit: 0, code, text: Str::from("a later error") });
+            Some(status as u32)
+        };
+        assert!(matches!(status("x", later(Status::Papyrus, 7)), Err(Error::Unsupported { what }) if what == "a later error"));
+        assert!(matches!(status("x", later(Status::Command, 4)), Err(Error::Unsupported { what }) if what == "a later error"));
+    }
+
+    #[test]
+    fn a_param_type_crosses_and_comes_back() {
+        let all = [ParamType::Int, ParamType::Float, ParamType::Bool, ParamType::String, ParamType::Form(VMTypeID::Actor), ParamType::IntArray, ParamType::FloatArray, ParamType::BoolArray, ParamType::StringArray, ParamType::FormArray(VMTypeID::Keyword)];
+        for ty in all.map(Some).into_iter().chain([None]) {
+            assert_eq!(RawParamType::new(ty).to_param().ok(), Some(ty));
+        }
+        assert!(RawParamType { kind: 11, type_id: 0 }.to_param().is_err(), "a kind from a later side");
+        assert!(RawParamType { kind: 5, type_id: 1 }.to_param().is_err(), "a type id this side does not know");
+    }
+
+    #[test]
+    fn an_arg_crosses_and_comes_back() {
+        let form: &'static TESForm = Box::leak(Box::new(TESForm { formID: 0x14, ..unsafe { core::mem::zeroed() } }));
+        let text = String::from("pos");
+        for arg in [Arg::Missing, Arg::Int(-3), Arg::Float(1.5), Arg::Str(&text), Arg::Str(""), Arg::Form(form), Arg::Char(b'X')] {
+            assert_eq!(format!("{:?}", unsafe { RawArg::new(&arg).to_arg() }), format!("{arg:?}"));
+        }
+        let later = RawArg { tag: 9, ..RawArg::new(&Arg::Int(1)) };
+        assert!(matches!(unsafe { later.to_arg() }, Arg::Missing), "a tag from a later side");
+        let null_form = RawArg { form: core::ptr::null(), ..RawArg::new(&Arg::Form(form)) };
+        assert!(matches!(unsafe { null_form.to_arg() }, Arg::Missing));
     }
 }
