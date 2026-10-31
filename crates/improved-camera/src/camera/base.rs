@@ -144,7 +144,9 @@ impl ThirdPerson {
     pub fn enter(&mut self, previous: CameraType, ctx: &mut Ctx<'_>) {
         let Some(third) = third(ctx) else { return };
         let action = ctx.body.action;
-        if previous == CameraType::FirstPerson && third.inputHandler.enabled == 0 {
+        // Crafting turns the input handling off; the sit state also covers furniture the player is
+        // still walking up to.
+        if previous == CameraType::FirstPerson && (third.inputHandler.enabled == 0 || util::is_entering_interaction()) {
             util::set_zoom(third, FAKE_FIRST_PERSON_ZOOM);
             return;
         }
