@@ -14,7 +14,7 @@ $orderLine = @($hostLog | Where-Object { $_ -match '^load order: ' })
 $missing = @($hostLog | Where-Object { $_ -match '^no plugin named skyrim-rs-nowhere \(asked by skyrim-rs-order-head\)$' })
 $cycle = @($hostLog | Where-Object { $_ -match '^skipped skyrim_rs_order_cycle_[ab]\.dll: skyrim-rs-order-cycle-[ab] is in a load order cycle with skyrim-rs-order-cycle-[ab]$' })
 $hostHandle = Loaded "skyrim_rs.dll"
-$hudShot = HalfJpeg "$SkseLogs\skyrim-rs-overlay-9.bmp" "$OutDirramework-hud-1.7.104.jpg"
+$hudShot = HalfJpeg "$SkseLogs\skyrim-rs-overlay-9.bmp" "$OutDir\framework-hud-1.7.104.jpg"
 $subLoader = @($LoaderLog | Where-Object { $_ -match 'skyrim_rs_framework_test|skyrim_rs_order|decoy' })
 
 $rows = @(

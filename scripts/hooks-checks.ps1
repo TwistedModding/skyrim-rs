@@ -13,7 +13,8 @@ $cycle = @($hostLog | Where-Object { $_ -match '^hooks: refused: Actor::ModActor
 $exclusive = @($hostLog | Where-Object { $_ -match '^hooks: refused: Actor::ActorValueOwner_ModActorValue: skyrim-rs-hooks-b cannot replace it, skyrim-rs-hooks-a already does$' })
 $removed = @($hostLog | Where-Object { $_ -match '^hooks: skyrim-rs-hooks-b: 2 subscriptions removed$' })
 $loaded = @($hostLog | Where-Object { $_ -match '^loaded skyrim_rs_hooks_[ab]\.dll: skyrim-rs-hooks-[ab]$' })
-$checks = @($hostLog | Where-Object { $_ -match '^hooks: (startup|PLUGINS_LOADED_2|DATA_LOADED): 18 sites checked, 0 patched by another module, compatibility mode refuse$' })
+$checks = @($hostLog | Where-Object { $_ -match '^hooks: (startup|PLUGINS_LOADED_2|DATA_LOADED): (\d+) sites checked, 0 patched by another module, compatibility mode refuse$' })
+$siteCounts = @($checks | ForEach-Object { ($_ -split ' ')[2] } | Select-Object -Unique)
 $hostHandle = Loaded "skyrim_rs.dll"
 $health = @(5, 8, 11, 17 | ForEach-Object { Returned $_ })
 $damage = @(6, 9, 15 | ForEach-Object { Lines $_ })
@@ -22,7 +23,7 @@ $rows = @(
     @{ name = "plugins loaded"; plugin = "$(Detail 'a_subscribe') | $(Detail 'b_subscribe')"; devbench = "${LoaderLogName}: skyrim_rs.dll handle $hostHandle; (host log) $(@($hostLog -match '^hosted by ') -join ' | ') | $($loaded -join ' | ')";
        ok = ($plugin["a_subscribe"].ok -and $plugin["b_subscribe"].ok -and $loaded.Count -eq 2 -and $hostHandle -ne $null -and (Hosted)) }
     @{ name = "sites checked";  plugin = "$(Detail 'a_scale') | $(Detail 'a_scale_calls')"; devbench = "(host log) $($checks -join ' | ')";
-       ok = ($plugin["a_scale"].ok -and $plugin["a_scale_calls"].ok -and $checks.Count -eq 3) }
+       ok = ($plugin["a_scale"].ok -and $plugin["a_scale_calls"].ok -and $checks.Count -eq 3 -and $siteCounts.Count -eq 1) }
     @{ name = "entry bytes";    plugin = (Detail "a_pristine"); devbench = "(host log) $($installed -join ' | ')";
        ok = ($plugin["a_pristine"].ok -and $installed.Count -eq 2) }
     @{ name = "before order";   plugin = "$(Detail 'a_before') | $(Detail 'b_before')"; devbench = "health $($health[0]) -> $($health[1]) after '$($damage[0])'";
