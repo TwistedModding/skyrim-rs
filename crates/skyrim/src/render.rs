@@ -742,14 +742,15 @@ pub struct FlatBone {
     pub local: NiTransform,
     pub world: NiTransform,
     /// Index of the parent entry, negative for the tree node itself.
-    pub parent: i32,
-    unknown_6c: [u8; 4],
+    pub parent: i16,
+    unknown_6a: [u8; 6],
     /// The bone's own node, null for a bone dissolved into the tree.
     pub node: *mut NiAVObject,
     pub name: *const core::ffi::c_char,
 }
 
 const _: () = assert!(size_of::<FlatBone>() == 0x80);
+const _: () = assert!(core::mem::offset_of!(FlatBone, parent) == 0x68 && core::mem::offset_of!(FlatBone, node) == 0x70);
 
 pub trait BSFlattenedBoneTreeExt {
     fn bones(&self) -> &[FlatBone];
