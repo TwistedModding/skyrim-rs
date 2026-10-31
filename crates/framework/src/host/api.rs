@@ -474,6 +474,15 @@ mod tests {
         assert_eq!(*RESTORED.lock().unwrap(), [1, 2, 3]);
     }
 
+    /// The first entry and the last of api 1 to 4: a plugin built against any of them finds its
+    /// entries at the offsets it was built with on every later loader.
+    #[test]
+    fn the_table_keeps_every_versions_offsets() {
+        use core::mem::offset_of;
+        let offsets = [offset_of!(HostApi, on_message), offset_of!(HostApi, plugins), offset_of!(HostApi, replace_command), offset_of!(HostApi, hook_patches), offset_of!(HostApi, fonts), size_of::<HostApi>()];
+        assert_eq!(offsets, [32, 248, 296, 400, 424, 432]);
+    }
+
     #[test]
     fn an_older_loader_answers_for_what_its_table_lacks() {
         let full = build("abi-test-older", &raw const SKSE);
