@@ -397,7 +397,7 @@ mod tests {
     use super::*;
     use crate::abi::{self, Api, Callback, call, entry, names, status};
     use crate::settings::{Setting, Settings};
-    use crate::{Action, BUILD, Error, Host};
+    use crate::{Action, Error, Host};
 
     unsafe extern "C" fn query(_: u32) -> *mut c_void {
         core::ptr::null_mut()
@@ -447,7 +447,7 @@ mod tests {
     fn a_plugin_descriptor_reads_back_and_loads_through_its_table() {
         let d = &SkyrimRs_Plugin;
         assert_eq!((d.abi, d.api), (crate::ABI, API));
-        assert_eq!(unsafe { core::ffi::CStr::from_ptr(d.build) }, BUILD);
+        assert!(d.build.is_null());
         let plugin = super::super::describe(d, "abi-test.dll".to_owned());
         assert_eq!((plugin.name.as_str(), plugin.file.as_str(), plugin.version.as_str()), ("abi-test-plugin", "abi-test.dll", env!("CARGO_PKG_VERSION")));
         assert_eq!((plugin.constraints.before, plugin.constraints.after, plugin.constraints.priority), (vec!["first".to_owned(), "second".to_owned()], vec!["*".to_owned()], -3));

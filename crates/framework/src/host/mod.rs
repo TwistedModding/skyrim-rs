@@ -28,7 +28,7 @@ use crate::abi::{self, API, FrameCallback, MessageCallback, PapyrusCallback, Sin
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::settings;
-use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, NativeRequest, Plugin};
+use crate::{ABI, CommandRequest, Descriptor, Error, NativeRequest, Plugin};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 /// The SKSE log folder, where the host writes its log and `SkyrimRs capture` its frame captures.
@@ -72,6 +72,8 @@ pub const PLUGIN_DIR: &str = "skyrim-rs";
 pub const CONFIG: &str = "skyrim-rs.ini";
 /// The host's own name, as the owner of its window and settings.
 pub const NAME: &str = "skyrim-rs";
+/// The framework's version, as the log and the crash log show it.
+const VERSION: &str = concat!("framework ", env!("CARGO_PKG_VERSION"));
 
 /// The accepted plugins in load order; a rescan appends the ones it loads.
 static PLUGINS: Mutex<&'static [Plugin]> = Mutex::new(&[]);
@@ -184,12 +186,12 @@ pub fn load(skse: &skse::Interface) -> bool {
     if let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs") {
         *LOG.lock().unwrap() = Some(file);
     }
-    log!("{}, abi {ABI}, api {API}", BUILD.to_string_lossy());
+    log!("{VERSION}, abi {ABI}, api {API}");
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
     let symbol_path = [plugins_dir(), plugins_dir().join(PLUGIN_DIR), plugins_dir().join(PLUGIN_DIR).join(reload::SHADOW_DIR)].iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join(";");
-    match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: BUILD.to_str().unwrap_or(""), facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
+    match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: VERSION, facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
         Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
         Ok(crash::Installed::Elsewhere) => log!("crash handler: another copy in the process reports crashes"),
         Err(e) => log!("crash handler not installed: {e}"),
@@ -385,13 +387,14 @@ fn plugin_files(dir: &Path) -> Vec<PathBuf> {
     files
 }
 
-/// Whether a descriptor's C-typed head matches this host.
-fn accept(abi: u32, build: &CStr) -> Result<(), String> {
-    if abi != ABI {
-        return Err(format!("descriptor abi {abi}, the host's is {ABI}"));
+/// Whether this host knows the descriptor's layout. A stage 1 to 4 plugin of ABI 5 has the same
+/// layout with its build string in `build`, and still crosses Rust-ABI types this host no longer has.
+fn accept(d: &Descriptor) -> Result<(), String> {
+    if d.abi != ABI {
+        return Err(format!("descriptor abi {}, the host's is {ABI}", d.abi));
     }
-    if build != BUILD {
-        return Err(format!("built as \"{}\", the host is \"{}\"", build.to_string_lossy(), BUILD.to_string_lossy()));
+    if !d.build.is_null() {
+        return Err(format!("built as \"{}\", before the plugin ABI was stable: rebuild it against this framework", unsafe { CStr::from_ptr(d.build) }.to_string_lossy()));
     }
     Ok(())
 }
@@ -405,12 +408,7 @@ fn read_descriptor(path: &Path) -> Result<(HMODULE, &'static Descriptor), String
         return Err(format!("LoadLibrary: {}", std::io::Error::last_os_error()));
     }
     let descriptor = unsafe { GetProcAddress(module, c"SkyrimRs_Plugin".as_ptr().cast()) }.map(|p| unsafe { &*(p as *const Descriptor) });
-    let checked = descriptor.ok_or_else(|| "no SkyrimRs_Plugin export".to_owned()).and_then(|d| {
-        if d.build.is_null() {
-            return Err("null build string".to_owned());
-        }
-        accept(d.abi, unsafe { CStr::from_ptr(d.build) }).map(|()| d)
-    });
+    let checked = descriptor.ok_or_else(|| "no SkyrimRs_Plugin export".to_owned()).and_then(|d| accept(d).map(|()| d));
     match checked {
         Ok(d) => {
             if d.api > API {
@@ -475,7 +473,7 @@ fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::
     use core::fmt::Write as _;
     match section {
         crash::Section::Context => {
-            let _ = writeln!(w, "hosted by {}; {}", HOSTED_BY.get().unwrap_or(&"an unknown loader"), BUILD.to_str().unwrap_or(""));
+            let _ = writeln!(w, "hosted by {}; {}", HOSTED_BY.get().unwrap_or(&"an unknown loader"), VERSION);
             match reload::try_generations() {
                 Some(generations) if generations.is_empty() => {
                     let _ = writeln!(w, "framework plugins: none");
@@ -804,11 +802,42 @@ fn register_command(owner: &'static str, request: &CommandRequest<'_>, execute: 
 mod tests {
     use super::*;
 
+    extern "C" fn never(_: *const abi::HostApi) -> bool {
+        false
+    }
+
+    fn descriptor(abi: u32, api: u32, build: *const core::ffi::c_char) -> Descriptor {
+        Descriptor { abi, api, build, name: c"d".as_ptr(), version: c"1".as_ptr(), load: never, load_before: core::ptr::null(), load_after: core::ptr::null(), priority: 0, unload: None, save_state: None, restore_state: None }
+    }
+
     #[test]
-    fn accepts_only_its_own_build() {
-        assert!(accept(ABI, BUILD).is_ok());
-        assert!(accept(ABI + 1, BUILD).is_err());
-        assert!(accept(ABI, c"framework 0.0.0, rustc 1.0.0").is_err());
+    fn accepts_a_known_layout_with_any_api_and_refuses_a_build_string() {
+        assert!(accept(&descriptor(ABI, API, core::ptr::null())).is_ok());
+        assert!(accept(&descriptor(ABI, API + 3, core::ptr::null())).is_ok(), "a later api is only logged");
+        assert!(accept(&descriptor(ABI, 1, core::ptr::null())).is_ok());
+        assert!(accept(&descriptor(ABI + 1, API, core::ptr::null())).is_err());
+        let stage_4 = accept(&descriptor(ABI, 4, c"framework 0.1.0 0123456789abcdef, rustc 1.99.0".as_ptr())).unwrap_err();
+        assert!(stage_4.contains("\"framework 0.1.0 0123456789abcdef, rustc 1.99.0\"") && stage_4.contains("rebuild it"), "{stage_4}");
+    }
+
+    /// Plugin DLLs built elsewhere, read by the loader's own code (`docs/subsystems/abi.md`,
+    /// "Proof"): `SKYRIM_RS_ABI_PLUGIN` must be accepted and `SKYRIM_RS_ABI_REFUSED` refused.
+    #[test]
+    fn reads_built_plugins() {
+        match std::env::var_os("SKYRIM_RS_ABI_PLUGIN") {
+            Some(path) => {
+                let (module, d) = read_descriptor(Path::new(&path)).unwrap_or_else(|e| panic!("{} refused: {e}", path.display()));
+                let plugin = describe(d, String::new());
+                println!("accepted {}: {} {}, abi {}, api {}, {}", path.display(), plugin.name, plugin.version, d.abi, d.api, plugin.constraints);
+                assert!(!(d.load)(api::build("abi-built-plugin", core::ptr::null())), "the plugin's entry point reads this loader's table and stops without the SKSE interface");
+                unsafe { FreeLibrary(module) };
+            }
+            None => eprintln!("SKYRIM_RS_ABI_PLUGIN not set: no built plugin read"),
+        }
+        if let Some(path) = std::env::var_os("SKYRIM_RS_ABI_REFUSED") {
+            let refused = read_descriptor(Path::new(&path)).map(|_| ()).expect_err("refused");
+            println!("refused {}: {refused}", path.display());
+        }
     }
 
     #[test]

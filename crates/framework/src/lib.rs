@@ -3,12 +3,12 @@
 //! A framework plugin is a `cdylib` in `Data\SKSE\Plugins\skyrim-rs\` (SKSE loads only the folder
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
-//! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
-//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C, and a
-//! plugin draws its UI with `egui` contexts of its own and hands the host meshes ([`ui`]); until
-//! stage 5 of `docs/subsystems/abi.md` drops the check, a plugin is still built against the same
-//! framework release (its `Cargo.lock`) with the same `rustc`.
-//! A refused DLL is unloaded and named in `skyrim-rs.log`.
+//! plain C data and calls the plugin's `load` when the descriptor's [`ABI`] is one it knows. The
+//! descriptor, the per-plugin [`abi::HostApi`] behind [`Host`] and every record they carry are C
+//! (`docs/subsystems/abi.md`), and a plugin draws its UI with `egui` contexts of its own and hands
+//! the host meshes ([`ui`]), so a plugin runs on any loader that has the functions it uses, whatever
+//! compiler and framework commit either was built with. A refused DLL is unloaded and named in
+//! `skyrim-rs.log`.
 //!
 //! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
 //! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a
@@ -50,14 +50,6 @@ use settings::Settings;
 /// The descriptor's layout version.
 pub const ABI: u32 = 5;
 
-/// This crate's version, a hash of the sources whose types cross the host-plugin boundary (this
-/// crate, `overlay`, `skyrim`, `hook`, `skse`, `sre`, `versionlib` and `Cargo.lock`) and the
-/// compiler; a plugin is loaded only when its copy equals the host's.
-pub const BUILD: &CStr = match CStr::from_bytes_with_nul(concat!("framework ", env!("CARGO_PKG_VERSION"), " ", env!("SKYRIM_RS_API_HASH"), ", ", env!("SKYRIM_RS_RUSTC"), "\0").as_bytes()) {
-    Ok(build) => build,
-    Err(_) => panic!("BUILD holds one nul, at the end"),
-};
-
 pub type LoadFn = fn(&'static Host) -> bool;
 /// Receives every message the loader sends as sender "SKSE" (`skse::MessagingInterface` kinds).
 pub type MessageFn = fn(&skse::Message);
@@ -73,7 +65,7 @@ pub struct Descriptor {
     pub abi: u32,
     /// The [`abi::API`] the plugin was built against.
     pub api: u32,
-    /// [`BUILD`], until every crossing is C.
+    /// Null. A plugin of stages 1 to 4 of ABI 5 carries its build string here and is refused.
     pub build: *const c_char,
     pub name: *const c_char,
     /// The plugin crate's version, as the Plugins tab shows it.
@@ -700,7 +692,7 @@ macro_rules! plugin {
         pub static SkyrimRs_Plugin: $crate::Descriptor = $crate::Descriptor {
             abi: $crate::ABI,
             api: $crate::abi::API,
-            build: $crate::BUILD.as_ptr(),
+            build: ::core::ptr::null(),
             name: concat!($name, "\0").as_ptr().cast(),
             version: concat!(env!("CARGO_PKG_VERSION"), "\0").as_ptr().cast(),
             load: {

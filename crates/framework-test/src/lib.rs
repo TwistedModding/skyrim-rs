@@ -87,7 +87,7 @@ fn interface() -> Result<String, String> {
     let messaging = skse.messaging().ok_or("no messaging interface")?;
     check(messaging.interface_version == skse::MessagingInterface::VERSION, "messaging interface version")?;
     let [major, minor, build, _] = skse::runtime::unpack(skse.runtime_version);
-    Ok(format!("{}; runtime {major}.{minor}.{build}, skse {:08x}, handle {handle} (the host's), game layer initialized", framework::BUILD.to_string_lossy(), skse.skse_version))
+    Ok(format!("abi {}, api {}; runtime {major}.{minor}.{build}, skse {:08x}, handle {handle} (the host's), game layer initialized", framework::ABI, framework::abi::API, skse.skse_version))
 }
 
 /// The resolved order, inside `load`: the suite's three plugins as their constraints place them, the cycle pair absent.
