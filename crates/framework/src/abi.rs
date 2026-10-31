@@ -53,6 +53,12 @@ impl Str {
     }
 }
 
+impl Default for Str {
+    fn default() -> Self {
+        Self::new(&[])
+    }
+}
+
 impl From<&str> for Str {
     fn from(text: &str) -> Self {
         Self::new(text.as_bytes())
@@ -61,6 +67,47 @@ impl From<&str> for Str {
 
 pub(crate) unsafe fn slice<'a, T>(ptr: *const T, len: usize) -> &'a [T] {
     if ptr.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(ptr, len) } }
+}
+
+/// A record that may grow (`docs/subsystems/abi.md`, "Records"): its writer says how many bytes it
+/// wrote, in the record's leading `size` or, for an array's elements, beside the array, and a
+/// reader copies those over [`base`](Self::base). A field an older writer lacks keeps its base
+/// value and one a newer writer appended is not read. Records own nothing, so the copy is plain.
+pub trait Record: Sized {
+    /// The record where its writer wrote nothing; a leading `size` holds `size_of::<Self>()`.
+    fn base() -> Self;
+}
+
+/// `size_of::<T>()` as a record's `size` holds it.
+#[allow(clippy::cast_possible_truncation)]
+pub(crate) const fn size<T>() -> u32 {
+    size_of::<T>() as u32
+}
+
+/// The `size` bytes a writer wrote at `ptr`, over `T::base()`; `None` for null.
+pub(crate) unsafe fn read<T: Record>(ptr: *const T, size: usize) -> Option<T> {
+    if ptr.is_null() {
+        return None;
+    }
+    let mut record = T::base();
+    unsafe { core::ptr::copy_nonoverlapping(ptr.cast::<u8>(), (&raw mut record).cast::<u8>(), size.min(size_of::<T>())) };
+    Some(record)
+}
+
+/// [`read`] of a record that starts with its writer's `size`.
+pub(crate) unsafe fn read_sized<T: Record>(ptr: *const T) -> Option<T> {
+    if ptr.is_null() {
+        return None;
+    }
+    unsafe { read(ptr, ptr.cast::<u32>().read() as usize) }
+}
+
+/// The `len` records of an array whose elements are `size` bytes apart.
+pub(crate) unsafe fn read_array<T: Record>(ptr: *const T, len: usize, size: usize) -> Vec<T> {
+    if size == 0 {
+        return Vec::new();
+    }
+    (0..len).filter_map(|i| unsafe { read(ptr.cast::<u8>().add(i * size).cast::<T>(), size) }).collect()
 }
 
 /// Receives a call's variable-length results one item at a time, during the call; the receiver
@@ -82,6 +129,13 @@ impl<'a, T> Sink<'a, T> {
 
     pub fn put(&self, item: T) {
         (self.call)(self.ctx, item);
+    }
+
+    /// A sink that drops what it receives: a record's base for a sink its writer lacks.
+    #[must_use]
+    pub fn ignore() -> Self {
+        extern "C" fn ignore<T>(_: *mut c_void, _: T) {}
+        Self { call: ignore::<T>, ctx: core::ptr::null_mut(), lifetime: PhantomData }
     }
 }
 
@@ -190,7 +244,8 @@ pub(crate) fn control(value: u32) -> BSEventNotifyControl {
 
 pub(crate) fn native<C: Fn(&NativeCall<'_>) -> Option<Variable> + Send + Sync + 'static>(f: C) -> NativeCallback {
     extern "C" fn call<C: Fn(&NativeCall<'_>) -> Option<Variable>>(ctx: *mut c_void, raw: *const RawNativeCall, out: *mut sre::BSScript__Variable) -> bool {
-        let value = unsafe { raw.as_ref() }.and_then(|raw| unsafe { raw.call() }).and_then(|call| unsafe { (*ctx.cast::<C>())(&call) });
+        let raw = unsafe { read_sized(raw) };
+        let value = raw.as_ref().and_then(|raw| unsafe { raw.call() }).and_then(|call| unsafe { (*ctx.cast::<C>())(&call) });
         // The None the host put there owns nothing, so it is overwritten without a reset.
         value.map(|v| unsafe { out.cast::<Variable>().write(v) }).is_some()
     }
@@ -199,7 +254,7 @@ pub(crate) fn native<C: Fn(&NativeCall<'_>) -> Option<Variable> + Send + Sync + 
 
 pub(crate) fn command<C: Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'static>(f: C) -> CommandCallback {
     extern "C" fn call<C: Fn(&mut CommandContext<'_>) -> bool>(ctx: *mut c_void, raw: *mut RawCommandContext) -> bool {
-        let Some(raw) = (unsafe { raw.as_ref() }) else { return false };
+        let Some(raw) = (unsafe { read_sized(raw) }) else { return false };
         let args: Vec<Arg<'_>> = unsafe { slice(raw.args, raw.len) }.iter().map(|a| unsafe { a.to_arg() }).collect();
         unsafe { (*ctx.cast::<C>())(&mut CommandContext::new(raw.this_ref.cast_mut().cast(), &args, raw.result)) }
     }
@@ -209,6 +264,7 @@ pub(crate) fn command<C: Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'st
 /// A native call as it crosses: the engine's VM, `self` and argument variables, and the stack.
 #[repr(C)]
 pub struct RawNativeCall {
+    pub size: u32,
     pub vm: *const VirtualMachine,
     pub self_: *const sre::BSScript__Variable,
     pub args: *const *const sre::BSScript__Variable,
@@ -216,9 +272,15 @@ pub struct RawNativeCall {
     pub stack_id: u32,
 }
 
+impl Record for RawNativeCall {
+    fn base() -> Self {
+        Self { size: size::<Self>(), vm: core::ptr::null(), self_: core::ptr::null(), args: core::ptr::null(), len: 0, stack_id: 0 }
+    }
+}
+
 impl RawNativeCall {
     pub(crate) fn new(call: &NativeCall<'_>) -> Self {
-        Self { vm: call.vm, self_: call.self_.raw(), args: call.args.as_ptr().cast(), len: call.args.len(), stack_id: call.stack_id }
+        Self { size: size::<Self>(), vm: call.vm, self_: call.self_.raw(), args: call.args.as_ptr().cast(), len: call.args.len(), stack_id: call.stack_id }
     }
 
     /// The call as the plugin's native reads it, `None` without the VM or `self`.
@@ -281,6 +343,7 @@ impl RawParamType {
 /// A native to register: `kind` 0 global, 1 method, 2 latent.
 #[repr(C)]
 pub struct RawNativeRequest {
+    pub size: u32,
     pub vm: *const VirtualMachine,
     pub class: Str,
     pub name: Str,
@@ -292,11 +355,17 @@ pub struct RawNativeRequest {
 
 const NATIVE_KINDS: [NativeKind; 3] = [NativeKind::Global, NativeKind::Method, NativeKind::Latent];
 
+impl Record for RawNativeRequest {
+    fn base() -> Self {
+        Self { size: size::<Self>(), vm: core::ptr::null(), class: Str::default(), name: Str::default(), kind: 0, params: core::ptr::null(), len: 0, ret: RawParamType::new(None) }
+    }
+}
+
 impl RawNativeRequest {
     /// `request` as it crosses, with `params` made from its parameters by [`RawParamType::new`].
     pub(crate) fn new(request: &NativeRequest<'_>, params: &[RawParamType]) -> Self {
         let kind = NATIVE_KINDS.iter().position(|k| *k == request.kind).unwrap_or_default();
-        Self { vm: request.vm, class: Str::from(request.class), name: Str::from(request.name), kind: u32::try_from(kind).unwrap_or_default(), params: params.as_ptr(), len: params.len(), ret: RawParamType::new(request.ret) }
+        Self { size: size::<Self>(), vm: request.vm, class: Str::from(request.class), name: Str::from(request.name), kind: u32::try_from(kind).unwrap_or_default(), params: params.as_ptr(), len: params.len(), ret: RawParamType::new(request.ret) }
     }
 
     /// The parameter types, copied out of the plugin's memory.
@@ -315,6 +384,7 @@ impl RawNativeRequest {
 /// A console command to register, its name and help NUL-terminated.
 #[repr(C)]
 pub struct RawCommandRequest {
+    pub size: u32,
     pub name: *const c_char,
     pub help: *const c_char,
     pub params: *const sre::ParamInfo,
@@ -322,9 +392,15 @@ pub struct RawCommandRequest {
     pub needs_reference: bool,
 }
 
+impl Record for RawCommandRequest {
+    fn base() -> Self {
+        Self { size: size::<Self>(), name: core::ptr::null(), help: core::ptr::null(), params: core::ptr::null(), len: 0, needs_reference: false }
+    }
+}
+
 impl RawCommandRequest {
     pub(crate) fn new(request: &CommandRequest<'_>) -> Self {
-        Self { name: request.name.as_ptr(), help: request.help.as_ptr(), params: request.params.as_ptr().cast(), len: request.params.len(), needs_reference: request.needs_reference }
+        Self { size: size::<Self>(), name: request.name.as_ptr(), help: request.help.as_ptr(), params: request.params.as_ptr().cast(), len: request.params.len(), needs_reference: request.needs_reference }
     }
 
     pub(crate) unsafe fn to_request(&self) -> CommandRequest<'_> {
@@ -357,10 +433,17 @@ impl RawCommandSlot {
 /// A command's run: the reference it runs on, the arguments, the statement's result.
 #[repr(C)]
 pub struct RawCommandContext {
+    pub size: u32,
     pub this_ref: *const sre::TESObjectREFR,
     pub args: *const RawArg,
     pub len: usize,
     pub result: *mut f64,
+}
+
+impl Record for RawCommandContext {
+    fn base() -> Self {
+        Self { size: size::<Self>(), this_ref: core::ptr::null(), args: core::ptr::null(), len: 0, result: core::ptr::null_mut() }
+    }
 }
 
 /// An [`Arg`]: `tag` 0 missing, 1 `int`, 2 `float`, 3 `text`, 4 `form`, 5 `char`.
@@ -430,6 +513,7 @@ pub enum Status {
 /// carry a hook error (`hooks::Error`'s [`Crossing`]); empty or null where unused.
 #[repr(C)]
 pub struct RawError {
+    pub size: u32,
     pub what: Str,
     pub owner: Str,
     pub limit: usize,
@@ -443,18 +527,24 @@ pub struct RawError {
     pub validation: RawValidation,
 }
 
+impl Record for RawError {
+    fn base() -> Self {
+        let empty = Str::default();
+        Self { size: size::<Self>(), what: empty, owner: empty, limit: 0, code: 0, text: empty, other: empty, names: core::ptr::null(), names_len: 0, expected: empty, found: empty, validation: RawValidation::default() }
+    }
+}
+
 impl RawError {
     /// The error with only its message.
     pub(crate) fn text(text: &str) -> Self {
-        let empty = Str::new(&[]);
-        Self { what: empty, owner: empty, limit: 0, code: 0, text: Str::from(text), other: empty, names: core::ptr::null(), names_len: 0, expected: empty, found: empty, validation: RawValidation::default() }
+        Self { text: Str::from(text), ..Self::base() }
     }
 }
 
 /// An error that crosses as a [`Status`] and a [`RawError`].
 pub(crate) trait Crossing: Sized {
     /// The host's side: puts the detail through `detail` and returns the status.
-    fn fail(&self, detail: &Sink<'_, RawError>) -> u32;
+    fn fail(&self, detail: &Sink<'_, *const RawError>) -> u32;
     /// The plugin's side: the error for a status other than `Ok`.
     fn read(status: u32, detail: Detail) -> Self;
     fn unsupported(what: String) -> Self;
@@ -463,7 +553,7 @@ pub(crate) trait Crossing: Sized {
 const COMMAND_ERRORS: [CommandError; 4] = [CommandError::TooManyParams, CommandError::NameTaken, CommandError::NoFreeEntry, CommandError::NotFound];
 
 impl Crossing for Error {
-    fn fail(&self, detail: &Sink<'_, RawError>) -> u32 {
+    fn fail(&self, detail: &Sink<'_, *const RawError>) -> u32 {
         let text = self.to_string();
         let (status, what, owner, limit, code) = match self {
             Self::NoSource => (Status::NoSource, "", "", 0, 0),
@@ -474,7 +564,7 @@ impl Crossing for Error {
             Self::Papyrus(papyrus::Error::Bind { class, name }) => (Status::Papyrus, class.as_str(), name.as_str(), 0, 1),
             Self::Command(e) => (Status::Command, "", "", 0, COMMAND_ERRORS.iter().position(|c| core::mem::discriminant(c) == core::mem::discriminant(e)).unwrap_or_default()),
         };
-        detail.put(RawError { what: Str::from(what), owner: Str::from(owner), limit, code: u32::try_from(code).unwrap_or_default(), ..RawError::text(&text) });
+        detail.put(&RawError { what: Str::from(what), owner: Str::from(owner), limit, code: u32::try_from(code).unwrap_or_default(), ..RawError::text(&text) });
         status as u32
     }
 
@@ -501,9 +591,13 @@ impl Crossing for Error {
 
 /// The plugin's side of a fallible entry: `call` returns its status, or `None` when the loader
 /// lacks the entry, which is `Unsupported` for `what`.
-pub(crate) fn outcome<E: Crossing>(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), E> {
+pub(crate) fn outcome<E: Crossing>(what: &str, call: impl FnOnce(Sink<'_, *const RawError>) -> Option<u32>) -> Result<(), E> {
     let mut detail = Detail::default();
-    let mut keep = |d: RawError| detail = unsafe { Detail::copy(&d) };
+    let mut keep = |d: *const RawError| {
+        if let Some(d) = unsafe { read_sized(d) } {
+            detail = unsafe { Detail::copy(&d) };
+        }
+    };
     let Some(status) = call(Sink::new(&mut keep)) else {
         return Err(E::unsupported(what.to_owned()));
     };
@@ -511,7 +605,7 @@ pub(crate) fn outcome<E: Crossing>(what: &str, call: impl FnOnce(Sink<'_, RawErr
 }
 
 /// [`outcome`] for the framework's own [`Error`].
-pub(crate) fn status(what: &str, call: impl FnOnce(Sink<'_, RawError>) -> Option<u32>) -> Result<(), Error> {
+pub(crate) fn status(what: &str, call: impl FnOnce(Sink<'_, *const RawError>) -> Option<u32>) -> Result<(), Error> {
     outcome(what, call)
 }
 
@@ -619,10 +713,17 @@ impl RawSetting {
 /// One accepted plugin in [`HostApi::plugins`].
 #[repr(C)]
 pub struct PluginRecord {
+    pub size: u32,
     pub name: Str,
     pub version: Str,
     pub file: Str,
     pub priority: i32,
+}
+
+impl Record for PluginRecord {
+    fn base() -> Self {
+        Self { size: size::<Self>(), name: Str::default(), version: Str::default(), file: Str::default(), priority: 0 }
+    }
 }
 
 /// The host's functions for one plugin, leaked by the host for the life of the game and kept
@@ -639,10 +740,10 @@ pub struct HostApi {
     pub on_message: Option<unsafe extern "C" fn(*const Self, MessageCallback)>,
     pub on_plugin_message: Option<unsafe extern "C" fn(*const Self, Str, MessageCallback)>,
     /// Writes the alias's slot on success.
-    pub serve_alias: Option<unsafe extern "C" fn(*const Self, Str, MessageCallback, *mut usize, Sink<'_, RawError>) -> u32>,
+    pub serve_alias: Option<unsafe extern "C" fn(*const Self, Str, MessageCallback, *mut usize, Sink<'_, *const RawError>) -> u32>,
     pub alias_send: Option<unsafe extern "C" fn(*const Self, usize, *const c_char, u32, *mut c_void, u32) -> bool>,
     /// Writes the object's address on success.
-    pub export_interface: Option<unsafe extern "C" fn(*const Self, Str, *const Method, usize, *mut usize, Sink<'_, RawError>) -> u32>,
+    pub export_interface: Option<unsafe extern "C" fn(*const Self, Str, *const Method, usize, *mut usize, Sink<'_, *const RawError>) -> u32>,
     pub on_frame: Option<unsafe extern "C" fn(*const Self, FrameCallback)>,
     pub on_papyrus: Option<unsafe extern "C" fn(*const Self, PapyrusCallback)>,
     /// Name, default key and `Scope` (0 overlay, 1 game); returns the action, `usize::MAX` for an unknown scope.
@@ -672,37 +773,37 @@ pub struct HostApi {
     /// Fills the buffer and returns true, or puts why not and returns false.
     pub read_frame: Option<unsafe extern "C" fn(*const Self, Alloc<'_>, Sink<'_, Str>) -> bool>,
     /// Puts each plugin's record, each followed by its `load_before` and `load_after` names.
-    pub plugins: Option<unsafe extern "C" fn(*const Self, Sink<'_, PluginRecord>, Sink<'_, Str>, Sink<'_, Str>)>,
+    pub plugins: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const PluginRecord>, Sink<'_, Str>, Sink<'_, Str>)>,
     /// The Rust-ABI table of stages 1 to 3, null since; the slot stays so the entries after it keep their offsets.
     pub legacy: *const c_void,
     pub add_sink: Option<unsafe extern "C" fn(*const Self, ErasedSource, SinkCallback)>,
     pub add_player_graph_sink: Option<unsafe extern "C" fn(*const Self, SinkCallback)>,
     /// Writes the host's function object on success.
-    pub register_native: Option<unsafe extern "C" fn(*const Self, *const RawNativeRequest, NativeCallback, *mut *const NativeFunction, Sink<'_, RawError>) -> u32>,
+    pub register_native: Option<unsafe extern "C" fn(*const Self, *const RawNativeRequest, NativeCallback, *mut *const NativeFunction, Sink<'_, *const RawError>) -> u32>,
     /// Writes the console entry on success.
-    pub register_command: Option<unsafe extern "C" fn(*const Self, *const RawCommandRequest, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
+    pub register_command: Option<unsafe extern "C" fn(*const Self, *const RawCommandRequest, CommandCallback, *mut RawCommandSlot, Sink<'_, *const RawError>) -> u32>,
     /// The engine command's name; writes its entry on success.
-    pub replace_command: Option<unsafe extern "C" fn(*const Self, *const c_char, CommandCallback, *mut RawCommandSlot, Sink<'_, RawError>) -> u32>,
+    pub replace_command: Option<unsafe extern "C" fn(*const Self, *const c_char, CommandCallback, *mut RawCommandSlot, Sink<'_, *const RawError>) -> u32>,
     /// A hook subscription of each phase; writes its id on success.
-    pub hook_before: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, BeforeCallback, *mut u64, Sink<'_, RawError>) -> u32>,
-    pub hook_around: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AroundCallback, *mut u64, Sink<'_, RawError>) -> u32>,
-    pub hook_replace: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, ReplaceCallback, *mut u64, Sink<'_, RawError>) -> u32>,
-    pub hook_after: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AfterCallback, *mut u64, Sink<'_, RawError>) -> u32>,
+    pub hook_before: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, BeforeCallback, *mut u64, Sink<'_, *const RawError>) -> u32>,
+    pub hook_around: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AroundCallback, *mut u64, Sink<'_, *const RawError>) -> u32>,
+    pub hook_replace: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, ReplaceCallback, *mut u64, Sink<'_, *const RawError>) -> u32>,
+    pub hook_after: Option<unsafe extern "C" fn(*const Self, *const RawSubscription, AfterCallback, *mut u64, Sink<'_, *const RawError>) -> u32>,
     pub hook_unsubscribe: Option<unsafe extern "C" fn(*const Self, u64) -> bool>,
     pub hook_remove_owner: Option<unsafe extern "C" fn(*const Self, Str) -> usize>,
     pub hook_set_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool) -> bool>,
-    pub hook_diagnostics: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawSiteReport>)>,
+    pub hook_diagnostics: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawSiteReport>)>,
     pub hook_messages: Option<unsafe extern "C" fn(*const Self, Sink<'_, Str>)>,
     /// Writes the patch's id on success.
-    pub hook_patch: Option<unsafe extern "C" fn(*const Self, *const RawPatch, *mut u64, Sink<'_, RawError>) -> u32>,
-    pub hook_set_patch_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool, Sink<'_, RawError>) -> u32>,
+    pub hook_patch: Option<unsafe extern "C" fn(*const Self, *const RawPatch, *mut u64, Sink<'_, *const RawError>) -> u32>,
+    pub hook_set_patch_enabled: Option<unsafe extern "C" fn(*const Self, u64, bool, Sink<'_, *const RawError>) -> u32>,
     pub hook_unpatch: Option<unsafe extern "C" fn(*const Self, u64) -> bool>,
-    pub hook_patches: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawPatchReport>)>,
+    pub hook_patches: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawPatchReport>)>,
     /// A section of the plugin's tab, named, after those added before.
     pub add_section: Option<unsafe extern "C" fn(*const Self, Str, UiCallback)>,
     pub add_hud: Option<unsafe extern "C" fn(*const Self, UiCallback)>,
     /// Puts every font file the overlay draws with, then every family with its fonts in fallback order.
-    pub fonts: Option<unsafe extern "C" fn(*const Self, Sink<'_, RawFont>, Sink<'_, RawFamily>)>,
+    pub fonts: Option<unsafe extern "C" fn(*const Self, Sink<'_, *const RawFont>, Sink<'_, *const RawFamily>)>,
 }
 
 /// A plugin's [`HostApi`], read only through [`entry!`] past the header.
@@ -785,6 +886,33 @@ mod tests {
     use super::*;
 
     #[test]
+    fn a_record_reads_with_defaults_from_an_older_writer_and_without_a_newer_writers_fields() {
+        use core::mem::offset_of;
+        #[repr(C)]
+        struct Later {
+            error: RawError,
+            added: [u64; 3],
+        }
+        let error = || RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, other: Str::from("detail"), ..RawError::text("message") };
+        let older = RawError { size: u32::try_from(offset_of!(RawError, other)).unwrap(), ..error() };
+        let read = unsafe { read_sized(&raw const older) }.unwrap();
+        assert_eq!(unsafe { (read.what.as_str(), read.text.as_str(), read.limit, read.other.as_str()) }, ("thing", "message", 4, ""), "a field the writer lacks reads as its base");
+
+        let later = Later { error: RawError { size: size::<Later>(), ..error() }, added: [u64::MAX; 3] };
+        let read = unsafe { read_sized((&raw const later).cast::<RawError>()) }.unwrap();
+        assert_eq!((read.size, unsafe { read.other.as_str() }), (size::<Later>(), "detail"));
+        let taken = status("x", |sink| {
+            sink.put((&raw const later).cast());
+            Some(Status::Taken as u32)
+        });
+        assert!(matches!(taken, Err(Error::Taken { what, owner }) if what == "thing" && owner == "other"), "a later error through the entry's sink");
+
+        let record = PluginRecord { size: u32::try_from(offset_of!(PluginRecord, priority)).unwrap(), name: Str::from("a"), version: Str::from("1"), file: Str::from("a.dll"), priority: 7 };
+        assert_eq!(unsafe { read_sized(&raw const record) }.map(|r| r.priority), Some(0));
+        assert!(unsafe { read_sized(core::ptr::null::<PluginRecord>()) }.is_none());
+    }
+
+    #[test]
     fn a_setting_crosses_and_comes_back() {
         for setting in [Setting::Bool(true), Setting::Number(-2.5), Setting::Text("a \"b\" é".to_owned()), Setting::Text(String::new())] {
             assert_eq!(unsafe { RawSetting::new(&setting).to_setting() }, Some(setting));
@@ -795,8 +923,8 @@ mod tests {
 
     #[test]
     fn a_status_comes_back_as_its_error() {
-        let detail = |code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, ..RawError::text("message") });
+        let detail = |code: u32| move |sink: Sink<'_, *const RawError>| {
+            sink.put(&RawError { what: Str::from("thing"), owner: Str::from("other"), limit: 4, ..RawError::text("message") });
             Some(code)
         };
         assert!(status("x", detail(Status::Ok as u32)).is_ok());
@@ -805,7 +933,7 @@ mod tests {
         assert!(matches!(status("x", detail(99)), Err(Error::Unsupported { what }) if what == "thing"), "a status from a later side");
         assert!(matches!(status("serving a name", |_| None), Err(Error::Unsupported { what }) if what == "serving a name"), "no entry");
         let mut back = Vec::new();
-        let mut keep = |d: RawError| back.push(unsafe { (d.what.as_str().to_owned(), d.owner.as_str().to_owned(), d.limit) });
+        let mut keep = |d: *const RawError| back.push(unsafe { ((*d).what.as_str().to_owned(), (*d).owner.as_str().to_owned(), (*d).limit) });
         let taken = Error::Taken { what: "thing".to_owned(), owner: "other".to_owned() };
         assert_eq!(taken.fail(&Sink::new(&mut keep)), Status::Taken as u32);
         assert_eq!(back, [("thing".to_owned(), "other".to_owned(), 0)]);
@@ -828,8 +956,8 @@ mod tests {
         assert!(matches!(cross(&Error::Full { what: "commands".to_owned(), limit: 16 }), Error::Full { what, limit: 16 } if what == "commands"));
         assert!(matches!(cross(&Error::Unsupported { what: "sinks".to_owned() }), Error::Unsupported { what } if what == "sinks"));
 
-        let later = |status: Status, code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { code, ..RawError::text("a later error") });
+        let later = |status: Status, code: u32| move |sink: Sink<'_, *const RawError>| {
+            sink.put(&RawError { code, ..RawError::text("a later error") });
             Some(status as u32)
         };
         assert!(matches!(status("x", later(Status::Papyrus, 7)), Err(Error::Unsupported { what }) if what == "a later error"));

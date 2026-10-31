@@ -11,11 +11,11 @@ use skyrim::papyrus::{ErasedNativeFn, NativeCall, NativeFunction, Variable};
 use sre::InputDevice;
 
 use super::{FRAMES, alias, filters, gui, interface, keys};
-use crate::abi::{API, Alloc, CommandCallback, Crossing, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Sink, SinkCallback, Status, Str, c_str, slice};
+use crate::abi::{self, API, Alloc, CommandCallback, Crossing, FrameCallback, HostApi, MessageCallback, NativeCallback, PapyrusCallback, PluginRecord, RawArg, RawButton, RawCommandContext, RawCommandRequest, RawCommandSlot, RawError, RawMouse, RawNativeCall, RawNativeRequest, RawPad, RawPress, RawSetting, Record, Sink, SinkCallback, Status, Str, c_str, read_sized, slice};
 use crate::hooks::raw::{AfterCallback, AroundCallback, BeforeCallback, RawPatch, RawPatchReport, RawSiteReport, RawSubscription, ReplaceCallback, put_site};
 use crate::hooks::{self, PatchId, Subscriber, SubscriptionId, registry};
 use crate::ui::{RawFamily, RawFont, UiCallback};
-use crate::{Method, settings};
+use crate::{Error, Method, settings};
 
 /// The table for the plugin `name`, made once and kept for every generation of it.
 pub(super) fn build(name: &'static str, skse: *const skse::Interface) -> &'static HostApi {
@@ -83,7 +83,7 @@ fn owner(api: *const HostApi) -> &'static str {
 }
 
 /// Writes a registration's handle to `out`, or reports why there is none.
-fn report<T, E: Crossing>(result: Result<T, E>, out: *mut T, error: &Sink<'_, RawError>) -> u32 {
+fn report<T, E: Crossing>(result: Result<T, E>, out: *mut T, error: &Sink<'_, *const RawError>) -> u32 {
     match result {
         Ok(handle) => {
             unsafe { out.write(handle) };
@@ -91,6 +91,11 @@ fn report<T, E: Crossing>(result: Result<T, E>, out: *mut T, error: &Sink<'_, Ra
         }
         Err(e) => e.fail(error),
     }
+}
+
+/// A plugin's request as its writer laid it out; a null one is refused.
+fn read<T: Record, E: Crossing>(request: *const T) -> Result<T, E> {
+    unsafe { read_sized(request) }.ok_or_else(|| E::unsupported("a null request".to_owned()))
 }
 
 /// Writes `value` to `out` when there is one.
@@ -106,7 +111,7 @@ unsafe extern "C" fn on_plugin_message(api: *const HostApi, sender: Str, f: Mess
     super::on_plugin_message(owner(api), unsafe { sender.as_str() }, f);
 }
 
-unsafe extern "C" fn serve_alias(api: *const HostApi, name: Str, f: MessageCallback, slot: *mut usize, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn serve_alias(api: *const HostApi, name: Str, f: MessageCallback, slot: *mut usize, error: Sink<'_, *const RawError>) -> u32 {
     report(super::serve_alias(owner(api), unsafe { name.as_str() }, f), slot, &error)
 }
 
@@ -114,7 +119,7 @@ unsafe extern "C" fn alias_send(_: *const HostApi, slot: usize, receiver: *const
     alias::send(slot, receiver, kind, data, len)
 }
 
-unsafe extern "C" fn export_interface(api: *const HostApi, name: Str, methods: *const Method, len: usize, object: *mut usize, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn export_interface(api: *const HostApi, name: Str, methods: *const Method, len: usize, object: *mut usize, error: Sink<'_, *const RawError>) -> u32 {
     report(interface::export(owner(api), unsafe { name.as_str() }, unsafe { slice(methods, len) }), object, &error)
 }
 
@@ -236,9 +241,9 @@ unsafe extern "C" fn read_frame(_: *const HostApi, alloc: Alloc<'_>, error: Sink
     }
 }
 
-unsafe extern "C" fn plugins(_: *const HostApi, records: Sink<'_, PluginRecord>, before: Sink<'_, Str>, after: Sink<'_, Str>) {
+unsafe extern "C" fn plugins(_: *const HostApi, records: Sink<'_, *const PluginRecord>, before: Sink<'_, Str>, after: Sink<'_, Str>) {
     for p in super::plugins() {
-        records.put(PluginRecord { name: Str::from(p.name.as_str()), version: Str::from(p.version.as_str()), file: Str::from(p.file.as_str()), priority: p.constraints.priority });
+        records.put(&PluginRecord { size: abi::size::<PluginRecord>(), name: Str::from(p.name.as_str()), version: Str::from(p.version.as_str()), file: Str::from(p.file.as_str()), priority: p.constraints.priority });
         p.constraints.before.iter().for_each(|n| before.put(Str::from(n.as_str())));
         p.constraints.after.iter().for_each(|n| after.put(Str::from(n.as_str())));
     }
@@ -252,17 +257,20 @@ unsafe extern "C" fn add_player_graph_sink(api: *const HostApi, f: SinkCallback)
     super::add_player_graph_sink(owner(api), f);
 }
 
-unsafe extern "C" fn register_native(api: *const HostApi, request: *const RawNativeRequest, f: NativeCallback, function: *mut *const NativeFunction, error: Sink<'_, RawError>) -> u32 {
-    let request = unsafe { &*request };
-    let registered = unsafe { request.params() }.and_then(|params| super::register_native(owner(api), &unsafe { request.to_request(&params) }?, native_fn(f)));
+unsafe extern "C" fn register_native(api: *const HostApi, request: *const RawNativeRequest, f: NativeCallback, function: *mut *const NativeFunction, error: Sink<'_, *const RawError>) -> u32 {
+    let registered = read::<_, Error>(request).and_then(|request| {
+        let params = unsafe { request.params() }?;
+        super::register_native(owner(api), &unsafe { request.to_request(&params) }?, native_fn(f))
+    });
     report(registered.map(core::ptr::from_ref), function, &error)
 }
 
-unsafe extern "C" fn register_command(api: *const HostApi, request: *const RawCommandRequest, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, RawError>) -> u32 {
-    report(super::register_command(owner(api), &unsafe { (*request).to_request() }, execute_fn(f)).map(RawCommandSlot::new), slot, &error)
+unsafe extern "C" fn register_command(api: *const HostApi, request: *const RawCommandRequest, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, *const RawError>) -> u32 {
+    let registered = read::<_, Error>(request).and_then(|request| super::register_command(owner(api), &unsafe { request.to_request() }, execute_fn(f)));
+    report(registered.map(RawCommandSlot::new), slot, &error)
 }
 
-unsafe extern "C" fn replace_command(api: *const HostApi, name: *const c_char, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn replace_command(api: *const HostApi, name: *const c_char, f: CommandCallback, slot: *mut RawCommandSlot, error: Sink<'_, *const RawError>) -> u32 {
     report(super::replace_command(owner(api), unsafe { c_str(name) }, execute_fn(f)).map(RawCommandSlot::new), slot, &error)
 }
 
@@ -276,27 +284,27 @@ fn check_owner(api: *const HostApi, given: &str) -> Result<(), hooks::Error> {
     }
 }
 
-fn subscribe(api: *const HostApi, request: *const RawSubscription, subscriber: Subscriber, id: *mut u64, error: &Sink<'_, RawError>) -> u32 {
-    let result = unsafe { (*request).to_request(subscriber) }.and_then(|request| {
+fn subscribe(api: *const HostApi, request: *const RawSubscription, subscriber: Subscriber, id: *mut u64, error: &Sink<'_, *const RawError>) -> u32 {
+    let result = read(request).and_then(|request| unsafe { request.to_request(subscriber) }).and_then(|request| {
         check_owner(api, &request.owner)?;
         registry::subscribe(request)
     });
     report(result.map(SubscriptionId::get), id, error)
 }
 
-unsafe extern "C" fn hook_before(api: *const HostApi, request: *const RawSubscription, f: BeforeCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn hook_before(api: *const HostApi, request: *const RawSubscription, f: BeforeCallback, id: *mut u64, error: Sink<'_, *const RawError>) -> u32 {
     subscribe(api, request, Subscriber::Before(f), id, &error)
 }
 
-unsafe extern "C" fn hook_around(api: *const HostApi, request: *const RawSubscription, f: AroundCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn hook_around(api: *const HostApi, request: *const RawSubscription, f: AroundCallback, id: *mut u64, error: Sink<'_, *const RawError>) -> u32 {
     subscribe(api, request, Subscriber::Around(f), id, &error)
 }
 
-unsafe extern "C" fn hook_replace(api: *const HostApi, request: *const RawSubscription, f: ReplaceCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn hook_replace(api: *const HostApi, request: *const RawSubscription, f: ReplaceCallback, id: *mut u64, error: Sink<'_, *const RawError>) -> u32 {
     subscribe(api, request, Subscriber::Replace(f), id, &error)
 }
 
-unsafe extern "C" fn hook_after(api: *const HostApi, request: *const RawSubscription, f: AfterCallback, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn hook_after(api: *const HostApi, request: *const RawSubscription, f: AfterCallback, id: *mut u64, error: Sink<'_, *const RawError>) -> u32 {
     subscribe(api, request, Subscriber::After(f), id, &error)
 }
 
@@ -312,7 +320,7 @@ unsafe extern "C" fn hook_set_enabled(_: *const HostApi, id: u64, enabled: bool)
     registry::set_enabled(SubscriptionId::new(id), enabled)
 }
 
-unsafe extern "C" fn hook_diagnostics(_: *const HostApi, reports: Sink<'_, RawSiteReport>) {
+unsafe extern "C" fn hook_diagnostics(_: *const HostApi, reports: Sink<'_, *const RawSiteReport>) {
     for report in registry::diagnostics() {
         put_site(&report, &reports);
     }
@@ -324,15 +332,15 @@ unsafe extern "C" fn hook_messages(_: *const HostApi, lines: Sink<'_, Str>) {
     }
 }
 
-unsafe extern "C" fn hook_patch(api: *const HostApi, request: *const RawPatch, id: *mut u64, error: Sink<'_, RawError>) -> u32 {
-    let result = unsafe { (*request).to_request() }.and_then(|request| {
+unsafe extern "C" fn hook_patch(api: *const HostApi, request: *const RawPatch, id: *mut u64, error: Sink<'_, *const RawError>) -> u32 {
+    let result = read(request).and_then(|request| unsafe { request.to_request() }).and_then(|request| {
         check_owner(api, &request.owner)?;
         registry::patch(request)
     });
     report(result.map(PatchId::get), id, &error)
 }
 
-unsafe extern "C" fn hook_set_patch_enabled(_: *const HostApi, id: u64, enabled: bool, error: Sink<'_, RawError>) -> u32 {
+unsafe extern "C" fn hook_set_patch_enabled(_: *const HostApi, id: u64, enabled: bool, error: Sink<'_, *const RawError>) -> u32 {
     report(registry::set_patch_enabled(PatchId::new(id), enabled), &mut (), &error)
 }
 
@@ -340,9 +348,9 @@ unsafe extern "C" fn hook_unpatch(_: *const HostApi, id: u64) -> bool {
     registry::unpatch(PatchId::new(id))
 }
 
-unsafe extern "C" fn hook_patches(_: *const HostApi, reports: Sink<'_, RawPatchReport>) {
+unsafe extern "C" fn hook_patches(_: *const HostApi, reports: Sink<'_, *const RawPatchReport>) {
     for patch in registry::patches() {
-        reports.put(RawPatchReport::new(&patch));
+        reports.put(&RawPatchReport::new(&patch));
     }
 }
 
@@ -354,14 +362,14 @@ unsafe extern "C" fn add_hud(api: *const HostApi, f: UiCallback) {
     gui::add_hud(owner(api), f);
 }
 
-unsafe extern "C" fn fonts(_: *const HostApi, files: Sink<'_, RawFont>, families: Sink<'_, RawFamily>) {
+unsafe extern "C" fn fonts(_: *const HostApi, files: Sink<'_, *const RawFont>, families: Sink<'_, *const RawFamily>) {
     let Some(fonts) = overlay::font_definitions() else { return };
     for (name, data) in &fonts.font_data {
-        files.put(RawFont { name: Str::from(name.as_str()), bytes: Str::new((*data.font).as_ref()) });
+        files.put(&RawFont { size: abi::size::<RawFont>(), name: Str::from(name.as_str()), bytes: Str::new((*data.font).as_ref()) });
     }
     for (family, names) in &fonts.families {
         let names: Vec<Str> = names.iter().map(|n| Str::from(n.as_str())).collect();
-        families.put(RawFamily::new(family, &names));
+        families.put(&RawFamily::new(family, &names));
     }
 }
 
@@ -380,7 +388,7 @@ fn execute_fn(f: CommandCallback) -> ErasedExecute {
     Box::new(move |context| {
         let f = &f;
         let args: Vec<RawArg> = context.args().iter().map(RawArg::new).collect();
-        let mut raw = RawCommandContext { this_ref: context.this_ref().map_or(core::ptr::null(), core::ptr::from_ref), args: args.as_ptr(), len: args.len(), result: context.result_ptr() };
+        let mut raw = RawCommandContext { size: abi::size::<RawCommandContext>(), this_ref: context.this_ref().map_or(core::ptr::null(), core::ptr::from_ref), args: args.as_ptr(), len: args.len(), result: context.result_ptr() };
         (f.call)(f.ctx, &raw mut raw)
     })
 }

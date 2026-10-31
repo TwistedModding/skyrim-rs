@@ -212,7 +212,7 @@ impl Outcome {
     }
 }
 
-/// Call count and timing of a site or a subscriber.
+/// Call count and timing of a site or a subscriber; frozen, as it crosses the plugin ABI in the reports.
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub struct Timing {

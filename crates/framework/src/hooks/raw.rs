@@ -7,7 +7,7 @@ use core::marker::PhantomData;
 
 use super::site::Subscriber;
 use super::{Args, EntryReport, Error, Location, Outcome, PatchId, PatchReport, PatchRequest, PatchState, Phase, Register, Request, Ret, Signature, SiteReport, SubscriptionId, Target, Timing, Validation};
-use crate::abi::{Callback, Crossing, Detail, RawError, Sink, Status, Str, slice};
+use crate::abi::{Callback, Crossing, Detail, RawError, Record, Sink, Status, Str, read_array, size, slice};
 use crate::order::Constraints;
 
 mod sealed {
@@ -343,6 +343,7 @@ impl RawTarget {
 /// A subscription: the target, the `Options` and the slot shape of the subscriber's function type.
 #[repr(C)]
 pub struct RawSubscription {
+    pub size: u32,
     pub target: RawTarget,
     pub owner: Str,
     pub priority: i32,
@@ -351,6 +352,22 @@ pub struct RawSubscription {
     pub after: *const Str,
     pub after_len: usize,
     pub signature: RawSignature,
+}
+
+impl Record for RawSubscription {
+    fn base() -> Self {
+        Self {
+            size: size::<Self>(),
+            target: RawTarget::new(Target::Op(0)),
+            owner: Str::default(),
+            priority: 0,
+            before: core::ptr::null(),
+            before_len: 0,
+            after: core::ptr::null(),
+            after_len: 0,
+            signature: RawSignature::new(&[], RawSignature::NONE),
+        }
+    }
 }
 
 unsafe fn strings(ptr: *const Str, len: usize) -> Vec<String> {
@@ -408,7 +425,7 @@ impl From<RawValidation> for Validation {
     }
 }
 
-/// An [`EntryReport`]; the constraint names are borrowed for the call.
+/// An [`EntryReport`], an element of [`RawSiteReport::entries`]; the constraint names are borrowed for the call.
 #[repr(C)]
 pub struct RawEntryReport {
     pub id: u64,
@@ -425,9 +442,17 @@ pub struct RawEntryReport {
     pub enabled: bool,
 }
 
-/// A [`SiteReport`]; `patched_by` is null for none, and the entries are borrowed for the call.
+impl Record for RawEntryReport {
+    fn base() -> Self {
+        Self { id: 0, owner: Str::default(), phase: 0, priority: 0, before: core::ptr::null(), before_len: 0, after: core::ptr::null(), after_len: 0, rank: 0, timing: Timing::default(), enabled: true }
+    }
+}
+
+/// A [`SiteReport`]; `patched_by` is null for none, and the entries, `entry_size` bytes apart,
+/// are borrowed for the call.
 #[repr(C)]
 pub struct RawSiteReport {
+    pub size: u32,
     pub name: Str,
     pub address: usize,
     pub validation: RawValidation,
@@ -439,10 +464,30 @@ pub struct RawSiteReport {
     pub last_outcome: u8,
     pub entries: *const RawEntryReport,
     pub len: usize,
+    pub entry_size: u32,
+}
+
+impl Record for RawSiteReport {
+    fn base() -> Self {
+        Self {
+            size: size::<Self>(),
+            name: Str::default(),
+            address: 0,
+            validation: RawValidation::default(),
+            current: RawValidation::default(),
+            patched_by: Str::maybe(None),
+            broken: false,
+            timing: Timing::default(),
+            last_outcome: 0,
+            entries: core::ptr::null(),
+            len: 0,
+            entry_size: size::<RawEntryReport>(),
+        }
+    }
 }
 
 /// Puts `report` through `sink`.
-pub(crate) fn put_site(report: &SiteReport, sink: &Sink<'_, RawSiteReport>) {
+pub(crate) fn put_site(report: &SiteReport, sink: &Sink<'_, *const RawSiteReport>) {
     let names: Vec<(Vec<Str>, Vec<Str>)> = report.entries.iter().map(|e| (strs(&e.constraints.before), strs(&e.constraints.after))).collect();
     let entries: Vec<RawEntryReport> = report
         .entries
@@ -462,7 +507,8 @@ pub(crate) fn put_site(report: &SiteReport, sink: &Sink<'_, RawSiteReport>) {
             enabled: e.enabled,
         })
         .collect();
-    sink.put(RawSiteReport {
+    sink.put(&RawSiteReport {
+        size: size::<RawSiteReport>(),
         name: Str::from(report.name.as_str()),
         address: report.address,
         validation: report.validation.into(),
@@ -473,13 +519,14 @@ pub(crate) fn put_site(report: &SiteReport, sink: &Sink<'_, RawSiteReport>) {
         last_outcome: report.last_outcome.map_or(0, |o| o as u8),
         entries: entries.as_ptr(),
         len: entries.len(),
+        entry_size: size::<RawEntryReport>(),
     });
 }
 
 impl RawSiteReport {
     /// The report, copied; an entry of a phase this side does not know is left out.
     pub(crate) unsafe fn to_report(&self) -> SiteReport {
-        let entries = unsafe { slice(self.entries, self.len) }
+        let entries = unsafe { read_array(self.entries, self.len, self.entry_size as usize) }
             .iter()
             .filter_map(|e| {
                 Some(EntryReport {
@@ -511,11 +558,18 @@ impl RawSiteReport {
 /// the code a jump in their place leads to.
 #[repr(C)]
 pub struct RawPatch {
+    pub size: u32,
     pub owner: Str,
     pub at: RawLocation,
     pub expected: Str,
     pub replacement: Str,
     pub cave: Str,
+}
+
+impl Record for RawPatch {
+    fn base() -> Self {
+        Self { size: size::<Self>(), owner: Str::default(), at: RawLocation::new(Location::Address(0)), expected: Str::default(), replacement: Str::default(), cave: Str::maybe(None) }
+    }
 }
 
 impl RawPatch {
@@ -530,6 +584,7 @@ impl RawPatch {
 /// A [`PatchReport`]: `state` 0 applied, 1 disabled, 2 overwritten (with the bytes `found`).
 #[repr(C)]
 pub struct RawPatchReport {
+    pub size: u32,
     pub id: u64,
     pub owner: Str,
     pub site: RawLocation,
@@ -541,6 +596,13 @@ pub struct RawPatchReport {
     pub found: Str,
 }
 
+impl Record for RawPatchReport {
+    fn base() -> Self {
+        let empty = Str::default();
+        Self { size: size::<Self>(), id: 0, owner: empty, site: RawLocation::new(Location::Address(0)), address: 0, original: empty, replacement: empty, cave: Str::maybe(None), state: 0, found: empty }
+    }
+}
+
 impl RawPatchReport {
     pub(crate) fn new(p: &PatchReport) -> Self {
         let (state, found): (u32, &[u8]) = match &p.state {
@@ -549,6 +611,7 @@ impl RawPatchReport {
             PatchState::Overwritten { found } => (2, found),
         };
         Self {
+            size: size::<Self>(),
             id: p.id.get(),
             owner: Str::from(p.owner.as_str()),
             site: RawLocation::new(p.site),
@@ -588,7 +651,7 @@ impl RawPatchReport {
 /// `found`, a site's validation in `validation`. `Owner` puts the given name in `what` and the
 /// plugin's in `owner`; `Unsupported` crosses as [`Status::Unsupported`].
 impl Crossing for Error {
-    fn fail(&self, detail: &Sink<'_, RawError>) -> u32 {
+    fn fail(&self, detail: &Sink<'_, *const RawError>) -> u32 {
         let text = self.to_string();
         let names: Vec<Str> = match self {
             Self::Cycle { names, .. } => strs(names),
@@ -597,7 +660,7 @@ impl Crossing for Error {
         let at = |code: u32, what: &str, owner: &str| RawError { code, what: Str::from(what), owner: Str::from(owner), ..RawError::text(&text) };
         let raw = match self {
             Self::Unsupported { what } => {
-                detail.put(RawError { what: Str::from(what.as_str()), ..RawError::text(&text) });
+                detail.put(&RawError { what: Str::from(what.as_str()), ..RawError::text(&text) });
                 return Status::Unsupported as u32;
             }
             Self::Cycle { site, .. } => RawError { names: names.as_ptr(), names_len: names.len(), ..at(0, site, "") },
@@ -612,7 +675,7 @@ impl Crossing for Error {
             Self::Mismatch { site, owner, expected, found } => RawError { expected: Str::new(expected), found: Str::new(found), ..at(9, site, owner) },
             Self::NoPatch(id) => RawError { limit: usize::try_from(id.get()).unwrap_or(usize::MAX), ..at(10, "", "") },
         };
-        detail.put(raw);
+        detail.put(&raw const raw);
         Status::Hook as u32
     }
 
@@ -725,6 +788,24 @@ mod tests {
     }
 
     #[test]
+    fn site_entries_read_across_element_sizes() {
+        #[repr(C)]
+        struct LaterEntry {
+            entry: RawEntryReport,
+            added: u64,
+        }
+        let entry = |id, phase, enabled| RawEntryReport { id, owner: Str::from("o"), phase, enabled, ..RawEntryReport::base() };
+        let later = [LaterEntry { entry: entry(1, 0, false), added: u64::MAX }, LaterEntry { entry: entry(2, 3, true), added: u64::MAX }];
+        let site = RawSiteReport { name: Str::from("s"), entries: later.as_ptr().cast(), len: 2, entry_size: size::<LaterEntry>(), ..RawSiteReport::base() };
+        let read: Vec<_> = unsafe { site.to_report() }.entries.iter().map(|e| (e.id.get(), e.phase, e.enabled)).collect();
+        assert_eq!(read, [(1, Phase::Before, false), (2, Phase::After, true)]);
+
+        let older = [entry(5, 1, false)];
+        let site = RawSiteReport { entries: older.as_ptr(), len: 1, entry_size: u32::try_from(core::mem::offset_of!(RawEntryReport, enabled)).unwrap(), ..site };
+        assert!(unsafe { site.to_report() }.entries.iter().all(|e| e.id.get() == 5 && e.enabled), "an older entry without `enabled` reads as enabled");
+    }
+
+    #[test]
     fn validations_cross_and_come_back() {
         let found = [0xE9; 16];
         for v in [
@@ -761,8 +842,8 @@ mod tests {
         ] {
             assert_eq!(cross(&e), e);
         }
-        let later = |status: Status, code: u32| move |sink: Sink<'_, RawError>| {
-            sink.put(RawError { code, ..RawError::text("a later error") });
+        let later = |status: Status, code: u32| move |sink: Sink<'_, *const RawError>| {
+            sink.put(&RawError { code, ..RawError::text("a later error") });
             Some(status as u32)
         };
         assert_eq!(outcome::<Error>("x", later(Status::Hook, 11)), Err(Error::Unsupported { what: "a later error".into() }));

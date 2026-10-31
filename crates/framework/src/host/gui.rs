@@ -17,7 +17,7 @@ use overlay::theme;
 use super::owned::Owned;
 use super::reload::{self, Request, Status};
 use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins};
-use crate::abi::Sink;
+use crate::abi::{Record, Sink, read_sized, size};
 use crate::settings::{self, Setting, Value};
 use crate::ui::{RawEvent, RawFrameInput, RawFrameOutput, RawMesh, RawPlatformOutput, RawTexture, RawView, UiCallback, corners, raw_modifiers};
 
@@ -87,11 +87,13 @@ fn paint(owner: &'static str, draw: &UiCallback, input: &RawFrameInput) -> (over
     let mut textures = TEXTURES.lock().unwrap_or_else(PoisonError::into_inner);
     let textures = RefCell::new(&mut *textures);
     let mut platform = None;
-    let mut mesh = |m: RawMesh| {
+    let mut mesh = |m: *const RawMesh| {
+        let Some(m) = (unsafe { read_sized(m) }) else { return };
         let texture = textures.borrow_mut().id(owner, m.texture);
         drawn.borrow_mut().primitives.push(unsafe { m.to_primitive(texture) });
     };
-    let mut set = |t: RawTexture| {
+    let mut set = |t: *const RawTexture| {
+        let Some(t) = (unsafe { read_sized(t) }) else { return };
         let texture = textures.borrow_mut().id(owner, t.id);
         drawn.borrow_mut().textures.push(texture, unsafe { t.to_delta() });
     };
@@ -100,8 +102,8 @@ fn paint(owner: &'static str, draw: &UiCallback, input: &RawFrameInput) -> (over
             drawn.borrow_mut().textures.free(texture);
         }
     };
-    let mut keep = |p: RawPlatformOutput| platform = Some(p);
-    let output = RawFrameOutput { meshes: Sink::new(&mut mesh), textures: Sink::new(&mut set), freed: Sink::new(&mut free), platform: Sink::new(&mut keep) };
+    let mut keep = |p: *const RawPlatformOutput| platform = unsafe { read_sized(p) };
+    let output = RawFrameOutput { size: size::<RawFrameOutput<'_>>(), meshes: Sink::new(&mut mesh), textures: Sink::new(&mut set), freed: Sink::new(&mut free), platform: Sink::new(&mut keep) };
     (draw.call)(draw.ctx, input, &raw const output);
     (drawn.into_inner(), platform)
 }
@@ -163,7 +165,7 @@ pub(super) fn install() {
 fn draw_hud(input: &overlay::HudInput) -> overlay::Painted {
     let screen = input.view.screen();
     let view = RawView { camera: input.view.camera(), screen: corners(screen) };
-    let raw = RawFrameInput { rect: view.screen, screen: [screen.width(), screen.height()], pixels_per_point: input.pixels_per_point, time: input.time, events: core::ptr::null(), len: 0, modifiers: 0, focused: true, view };
+    let raw = RawFrameInput { rect: view.screen, screen: [screen.width(), screen.height()], pixels_per_point: input.pixels_per_point, time: input.time, view, ..RawFrameInput::base() };
     let mut all = overlay::Painted::default();
     HUDS.each_mut(|hud| {
         let (drawn, _) = paint(hud.owner, &hud.draw, &raw);
@@ -187,6 +189,7 @@ fn draw_section(input: &overlay::GuestInput) -> Option<overlay::GuestOutput> {
         modifiers: raw_modifiers(input.modifiers),
         focused: input.focused,
         view: RawView { camera: core::ptr::null(), screen: corners(input.screen) },
+        ..RawFrameInput::base()
     };
     let mut drawn = None;
     SECTIONS.each_mut(|s| {
@@ -644,7 +647,7 @@ mod tests {
     fn frame(owner: &str, rect: egui::Rect, events: &[egui::Event], focused: bool, time: f64) -> (Vec<egui::ClippedPrimitive>, Vec<egui::TextureId>, Option<RawPlatformOutput>) {
         let events: Vec<RawEvent> = events.iter().filter_map(RawEvent::new).collect();
         let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, vec2(1920.0, 1080.0));
-        let raw = RawFrameInput { rect: corners(rect), screen: [1920.0, 1080.0], pixels_per_point: 1.0, time, events: events.as_ptr(), len: events.len(), modifiers: 0, focused, view: RawView { camera: core::ptr::null(), screen: corners(screen) } };
+        let raw = RawFrameInput { rect: corners(rect), screen: [1920.0, 1080.0], time, events: events.as_ptr(), len: events.len(), focused, view: RawView { camera: core::ptr::null(), screen: corners(screen) }, ..RawFrameInput::base() };
         let mut drawn = None;
         SECTIONS.each_mut(|s| {
             if s.owner == owner {

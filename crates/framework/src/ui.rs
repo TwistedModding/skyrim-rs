@@ -14,13 +14,13 @@ use overlay::egui::{
     TextureFilter, TextureId, TextureOptions, TouchPhase, ViewportId, ViewportInfo, pos2, vec2,
 };
 
-use crate::abi::{Api, Callback, Sink, Str, call, slice};
+use crate::abi::{Api, Callback, Record, Sink, Str, call, read_array, read_sized, size, slice};
 
 /// A tab section or a HUD painter: called once a frame it is drawn, with the frame's input and the
 /// sinks its drawing goes through, during the call.
 pub type UiCallback = Callback<extern "C" fn(*mut c_void, *const RawFrameInput, *const RawFrameOutput<'_>)>;
 
-/// An input event: `kind` 0 the pointer moved to `pos`, 1 `button` (0 primary, 1 secondary,
+/// An input event, an element of [`RawFrameInput::events`]: `kind` 0 the pointer moved to `pos`, 1 `button` (0 primary, 1 secondary,
 /// 2 middle, 3 and 4 the extra ones) `pressed` or released at `pos`, 2 the wheel turned by `delta`
 /// lines, 3 the key named `text` (`egui`'s key names) `pressed` or released, 4 `text` typed, 5 the
 /// pointer gone. Positions are in points; `modifiers` as in [`RawFrameInput`]. A side that does
@@ -37,6 +37,12 @@ pub struct RawEvent {
     pub text: Str,
 }
 
+impl Record for RawEvent {
+    fn base() -> Self {
+        Self { kind: Self::GONE, pos: [0.0; 2], delta: [0.0; 2], button: 0, pressed: false, modifiers: 0, text: Str::default() }
+    }
+}
+
 const BUTTONS: [PointerButton; 5] = [PointerButton::Primary, PointerButton::Secondary, PointerButton::Middle, PointerButton::Extra1, PointerButton::Extra2];
 
 impl RawEvent {
@@ -49,7 +55,7 @@ impl RawEvent {
 
     /// `event` as it crosses, its text borrowed; `None` for an event the overlay never feeds.
     pub(crate) fn new(event: &Event) -> Option<Self> {
-        let gone = Self { kind: Self::GONE, pos: [0.0; 2], delta: [0.0; 2], button: 0, pressed: false, modifiers: 0, text: Str::new(&[]) };
+        let gone = Self::base();
         Some(match event {
             Event::PointerMoved(p) => Self { kind: Self::MOVED, pos: [p.x, p.y], ..gone },
             Event::PointerButton { pos, button, pressed, modifiers } => {
@@ -101,23 +107,44 @@ pub struct RawView {
 }
 
 /// One frame of a section or HUD painter: the area to fill (a section's rect, the screen for a
-/// HUD painter) and the screen, in points; the routed events; the modifiers held; and `focused`,
-/// false when a press this frame went to the host's own widgets, so the plugin gives up the
-/// keyboard focus and closes its popups as a click elsewhere does.
+/// HUD painter) and the screen, in points; the routed events, `event_size` bytes apart; the
+/// modifiers held; and `focused`, false when a press this frame went to the host's own widgets, so
+/// the plugin gives up the keyboard focus and closes its popups as a click elsewhere does.
 #[repr(C)]
 pub struct RawFrameInput {
+    pub size: u32,
     pub rect: [f32; 4],
     pub screen: [f32; 2],
     pub pixels_per_point: f32,
     pub time: f64,
     pub events: *const RawEvent,
     pub len: usize,
+    pub event_size: u32,
     pub modifiers: u32,
     pub focused: bool,
     pub view: RawView,
 }
 
-/// `egui`'s premultiplied vertex, in points, as the overlay's renderer reads it.
+impl Record for RawFrameInput {
+    fn base() -> Self {
+        Self {
+            size: size::<Self>(),
+            rect: [0.0; 4],
+            screen: [0.0; 2],
+            pixels_per_point: 1.0,
+            time: 0.0,
+            events: core::ptr::null(),
+            len: 0,
+            event_size: size::<RawEvent>(),
+            modifiers: 0,
+            focused: true,
+            view: RawView { camera: core::ptr::null(), screen: [0.0; 4] },
+        }
+    }
+}
+
+/// `egui`'s premultiplied vertex, in points, as the overlay's renderer reads it: frozen, and
+/// asserted against the `egui` each side is built with.
 #[repr(C)]
 #[derive(Clone, Copy)]
 pub struct RawVertex {
@@ -133,12 +160,19 @@ const _: () = assert!(
 /// A triangle list clipped to `clip` (points) on the plugin's texture `texture`, borrowed for the call.
 #[repr(C)]
 pub struct RawMesh {
+    pub size: u32,
     pub clip: [f32; 4],
     pub texture: u64,
     pub vertices: *const RawVertex,
     pub vertex_len: usize,
     pub indices: *const u32,
     pub index_len: usize,
+}
+
+impl Record for RawMesh {
+    fn base() -> Self {
+        Self { size: size::<Self>(), clip: [0.0; 4], texture: 0, vertices: core::ptr::null(), vertex_len: 0, indices: core::ptr::null(), index_len: 0 }
+    }
 }
 
 impl RawMesh {
@@ -150,21 +184,28 @@ impl RawMesh {
     }
 }
 
-/// A texture of the plugin's, whole or (`partial`) the region at `pos`: `size` premultiplied RGBA
-/// pixels, borrowed for the call; `linear` filtering, else nearest.
+/// A texture of the plugin's, whole or (`partial`) the region at `pos`: `extent` premultiplied
+/// RGBA pixels, borrowed for the call; `linear` filtering, else nearest.
 #[repr(C)]
 pub struct RawTexture {
+    pub size: u32,
     pub id: u64,
     pub partial: bool,
     pub pos: [u32; 2],
-    pub size: [u32; 2],
+    pub extent: [u32; 2],
     pub rgba: *const u8,
     pub linear: bool,
 }
 
+impl Record for RawTexture {
+    fn base() -> Self {
+        Self { size: size::<Self>(), id: 0, partial: false, pos: [0; 2], extent: [0; 2], rgba: core::ptr::null(), linear: true }
+    }
+}
+
 impl RawTexture {
     pub(crate) unsafe fn to_delta(&self) -> ImageDelta {
-        let size = self.size.map(|n| n as usize);
+        let size = self.extent.map(|n| n as usize);
         let image = egui::ColorImage::from_rgba_premultiplied(size, unsafe { slice(self.rgba, size[0] * size[1] * 4) });
         let options = if self.linear { TextureOptions::LINEAR } else { TextureOptions::NEAREST };
         if self.partial { ImageDelta::partial(self.pos.map(|n| n as usize), image, options) } else { ImageDelta::full(image, options) }
@@ -176,36 +217,64 @@ impl RawTexture {
 /// (over one of its areas, or a drag in progress).
 #[repr(C)]
 pub struct RawPlatformOutput {
+    pub size: u32,
     pub cursor: u32,
     pub copied: Str,
     pub wants_keyboard: bool,
     pub wants_pointer: bool,
 }
 
+impl Record for RawPlatformOutput {
+    fn base() -> Self {
+        Self { size: size::<Self>(), cursor: 0, copied: Str::default(), wants_keyboard: false, wants_pointer: false }
+    }
+}
+
 /// Where a frame's drawing goes: the meshes in paint order, the textures set before they are
 /// painted, the textures freed after, and the platform output.
 #[repr(C)]
 pub struct RawFrameOutput<'a> {
-    pub meshes: Sink<'a, RawMesh>,
-    pub textures: Sink<'a, RawTexture>,
+    pub size: u32,
+    pub meshes: Sink<'a, *const RawMesh>,
+    pub textures: Sink<'a, *const RawTexture>,
     pub freed: Sink<'a, u64>,
-    pub platform: Sink<'a, RawPlatformOutput>,
+    pub platform: Sink<'a, *const RawPlatformOutput>,
+}
+
+impl Record for RawFrameOutput<'_> {
+    fn base() -> Self {
+        Self { size: size::<Self>(), meshes: Sink::ignore(), textures: Sink::ignore(), freed: Sink::ignore(), platform: Sink::ignore() }
+    }
 }
 
 /// A font file the loader draws with, under the name the families use.
 #[repr(C)]
 pub struct RawFont {
+    pub size: u32,
     pub name: Str,
     pub bytes: Str,
+}
+
+impl Record for RawFont {
+    fn base() -> Self {
+        Self { size: size::<Self>(), name: Str::default(), bytes: Str::default() }
+    }
 }
 
 /// A font family: `kind` 0 proportional, 1 monospace, 2 the one `name` names; its fonts in fallback order.
 #[repr(C)]
 pub struct RawFamily {
+    pub size: u32,
     pub kind: u32,
     pub name: Str,
     pub fonts: *const Str,
     pub len: usize,
+}
+
+impl Record for RawFamily {
+    fn base() -> Self {
+        Self { size: size::<Self>(), kind: 0, name: Str::default(), fonts: core::ptr::null(), len: 0 }
+    }
 }
 
 impl RawFamily {
@@ -215,7 +284,7 @@ impl RawFamily {
             FontFamily::Monospace => (1, ""),
             FontFamily::Name(name) => (2, &**name),
         };
-        Self { kind, name: Str::from(name), fonts: fonts.as_ptr(), len: fonts.len() }
+        Self { size: size::<Self>(), kind, name: Str::from(name), fonts: fonts.as_ptr(), len: fonts.len() }
     }
 }
 
@@ -232,8 +301,9 @@ fn fonts(api: Api) -> Option<FontDefinitions> {
     let text = |s: Str| unsafe { s.as_str() }.to_owned();
     let mut files = Vec::new();
     let mut families = Vec::new();
-    let mut font = |f: RawFont| files.push((text(f.name), unsafe { f.bytes.bytes() }.to_vec()));
-    let mut family = |f: RawFamily| {
+    let mut font = |f: *const RawFont| files.extend(unsafe { read_sized(f) }.map(|f| (text(f.name), unsafe { f.bytes.bytes() }.to_vec())));
+    let mut family = |f: *const RawFamily| {
+        let Some(f) = (unsafe { read_sized(f) }) else { return };
         let family = match f.kind {
             0 => FontFamily::Proportional,
             1 => FontFamily::Monospace,
@@ -285,7 +355,7 @@ impl Surface {
             egui::Popup::close_all(ctx);
         }
         let mut events = vec![Event::ModifiersChanged(modifiers(input.modifiers))];
-        events.extend(unsafe { slice(input.events, input.len) }.iter().filter_map(|e| unsafe { e.to_event() }));
+        events.extend(unsafe { read_array(input.events, input.len, input.event_size as usize) }.into_iter().filter_map(|e| unsafe { e.to_event() }));
         let screen = Rect::from_min_size(Pos2::ZERO, vec2(input.screen[0], input.screen[1]));
         let mut raw = RawInput { screen_rect: Some(screen), time: Some(input.time), events, focused: true, ..RawInput::default() };
         raw.viewports.insert(ViewportId::ROOT, ViewportInfo { native_pixels_per_point: Some(input.pixels_per_point), focused: Some(true), ..ViewportInfo::default() });
@@ -293,14 +363,14 @@ impl Surface {
         for (id, deltas) in &full.textures_delta.set {
             for delta in deltas {
                 let ImageData::Color(image) = &delta.image;
-                let [pos, size] = [delta.pos.unwrap_or_default(), image.size].map(|p| p.map(|n| u32::try_from(n).unwrap_or(u32::MAX)));
-                output.textures.put(RawTexture { id: self.texture(*id), partial: delta.pos.is_some(), pos, size, rgba: image.pixels.as_ptr().cast(), linear: delta.options.magnification == TextureFilter::Linear });
+                let [pos, extent] = [delta.pos.unwrap_or_default(), image.size].map(|p| p.map(|n| u32::try_from(n).unwrap_or(u32::MAX)));
+                output.textures.put(&RawTexture { size: size::<RawTexture>(), id: self.texture(*id), partial: delta.pos.is_some(), pos, extent, rgba: image.pixels.as_ptr().cast(), linear: delta.options.magnification == TextureFilter::Linear });
             }
         }
         for p in ctx.tessellate(full.shapes, full.pixels_per_point) {
             if let Primitive::Mesh(mesh) = &p.primitive {
                 let vertices = mesh.vertices.as_ptr().cast::<RawVertex>();
-                output.meshes.put(RawMesh { clip: corners(p.clip_rect), texture: self.texture(mesh.texture_id), vertices, vertex_len: mesh.vertices.len(), indices: mesh.indices.as_ptr(), index_len: mesh.indices.len() });
+                output.meshes.put(&RawMesh { size: size::<RawMesh>(), clip: corners(p.clip_rect), texture: self.texture(mesh.texture_id), vertices, vertex_len: mesh.vertices.len(), indices: mesh.indices.as_ptr(), index_len: mesh.indices.len() });
             }
         }
         for id in &full.textures_delta.free {
@@ -310,15 +380,15 @@ impl Surface {
         let platform = &full.platform_output;
         let copied = platform.commands.iter().find_map(|c| if let OutputCommand::CopyText(text) = c { Some(text.as_str()) } else { None }).unwrap_or_default();
         let cursor = CursorIcon::ALL.iter().position(|c| *c == platform.cursor_icon).and_then(|i| u32::try_from(i).ok()).unwrap_or_default();
-        output.platform.put(RawPlatformOutput { cursor, copied: Str::from(copied), wants_keyboard: ctx.egui_wants_keyboard_input(), wants_pointer: ctx.egui_is_using_pointer() || ctx.is_pointer_over_egui() });
+        output.platform.put(&RawPlatformOutput { size: size::<RawPlatformOutput>(), cursor, copied: Str::from(copied), wants_keyboard: ctx.egui_wants_keyboard_input(), wants_pointer: ctx.egui_is_using_pointer() || ctx.is_pointer_over_egui() });
     }
 }
 
 /// `f` boxed behind a [`UiCallback`]; the host calls it from one thread at a time.
 fn callback<C: FnMut(&RawFrameInput, &RawFrameOutput<'_>) + Send + 'static>(f: C) -> UiCallback {
     extern "C" fn call<C: FnMut(&RawFrameInput, &RawFrameOutput<'_>)>(ctx: *mut c_void, input: *const RawFrameInput, output: *const RawFrameOutput<'_>) {
-        if let (Some(input), Some(output)) = unsafe { (input.as_ref(), output.as_ref()) } {
-            (unsafe { &*ctx.cast::<Mutex<C>>() }.lock().unwrap_or_else(PoisonError::into_inner))(input, output);
+        if let (Some(input), Some(output)) = unsafe { (read_sized(input), read_sized(output)) } {
+            (unsafe { &*ctx.cast::<Mutex<C>>() }.lock().unwrap_or_else(PoisonError::into_inner))(&input, &output);
         }
     }
     UiCallback::boxed(Mutex::new(f), call::<C>)
@@ -374,13 +444,56 @@ mod tests {
             Event::Text("é".to_owned()),
             Event::PointerGone,
         ];
-        for event in all {
+        for event in all.clone() {
             assert_eq!(RawEvent::new(&event).and_then(|raw| unsafe { raw.to_event() }), Some(event));
         }
         assert!(RawEvent::new(&Event::Copy).is_none());
         let later = RawEvent { kind: 9, ..RawEvent::new(&Event::PointerGone).unwrap() };
         assert!(unsafe { later.to_event() }.is_none(), "a kind from a later side");
+        let unknown = RawEvent { text: Str::from("NoSuchKey"), ..RawEvent::new(&all[3]).unwrap() };
+        assert!(unsafe { unknown.to_event() }.is_none(), "a key name this side's egui does not know");
         let all_bits = Modifiers { alt: true, ctrl: true, shift: true, mac_cmd: true, command: true };
         assert_eq!((raw_modifiers(all_bits), modifiers(raw_modifiers(all_bits))), (31, all_bits));
+    }
+
+    fn events(input: &RawFrameInput) -> Vec<Option<Event>> {
+        unsafe { read_array(input.events, input.len, input.event_size as usize) }.into_iter().map(|e| unsafe { e.to_event() }).collect()
+    }
+
+    #[test]
+    fn a_frame_reads_across_record_and_event_sizes() {
+        #[repr(C)]
+        struct LaterEvent {
+            event: RawEvent,
+            added: [u64; 3],
+        }
+        #[repr(C)]
+        struct LaterInput {
+            input: RawFrameInput,
+            added: f64,
+        }
+        let (moved, text) = (Event::PointerMoved(pos2(1.0, 2.0)), Event::Text("é".to_owned()));
+        let later_events = [&moved, &text].map(|e| LaterEvent { event: RawEvent::new(e).unwrap(), added: [u64::MAX; 3] });
+        let input = RawFrameInput { size: size::<LaterInput>(), time: 3.0, events: later_events.as_ptr().cast(), len: 2, event_size: size::<LaterEvent>(), ..RawFrameInput::base() };
+        let later = LaterInput { input, added: 1.0 };
+        let read = unsafe { read_sized((&raw const later).cast::<RawFrameInput>()) }.unwrap();
+        assert_eq!((read.time, events(&read)), (3.0, vec![Some(moved.clone()), Some(text)]), "a newer host's larger frame and events");
+
+        let older_events = [RawEvent::new(&Event::Text("dropped".to_owned())).unwrap(), RawEvent::new(&moved).unwrap()];
+        let camera = core::ptr::dangling::<sre::NiCamera>();
+        let input = RawFrameInput {
+            size: u32::try_from(offset_of!(RawFrameInput, view)).unwrap(),
+            events: older_events.as_ptr(),
+            len: 2,
+            event_size: size::<RawEvent>(),
+            focused: false,
+            view: RawView { camera, screen: [1.0; 4] },
+            ..RawFrameInput::base()
+        };
+        let read = unsafe { read_sized(&raw const input) }.unwrap();
+        assert!(read.view.camera.is_null() && !read.focused && events(&read).len() == 2, "the view an older host lacks reads as none");
+        let without_text = unsafe { slice((&raw const older_events[0]).cast::<u8>(), offset_of!(RawEvent, text)) }.to_vec();
+        let short = RawFrameInput { events: without_text.as_ptr().cast(), len: 1, event_size: u32::try_from(without_text.len()).unwrap(), ..read };
+        assert_eq!(events(&short), [Some(Event::Text(String::new()))], "an older event without its text");
     }
 }

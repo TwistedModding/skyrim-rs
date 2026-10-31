@@ -494,7 +494,7 @@ impl Host {
     }
 
     /// The console entry a command registration writes, or why there is none.
-    fn slot(what: &str, call: impl FnOnce(*mut RawCommandSlot, Sink<'_, abi::RawError>) -> Option<u32>) -> Result<CommandSlot, Error> {
+    fn slot(what: &str, call: impl FnOnce(*mut RawCommandSlot, Sink<'_, *const abi::RawError>) -> Option<u32>) -> Result<CommandSlot, Error> {
         let mut slot = RawCommandSlot { opcode: 0, replaced: Str::new(&[]) };
         abi::status(what, |error| call(&raw mut slot, error))?;
         Ok(unsafe { slot.to_slot() })
@@ -506,7 +506,7 @@ impl Host {
         static CACHED: Mutex<&'static [Plugin]> = Mutex::new(&[]);
         let read = RefCell::new(Vec::<Plugin>::new());
         let text = |s: Str| unsafe { s.as_str() }.to_owned();
-        let mut record = |r: PluginRecord| read.borrow_mut().push(Plugin { name: text(r.name), version: text(r.version), file: text(r.file), constraints: order::Constraints { priority: r.priority, ..Default::default() } });
+        let mut record = |r: *const PluginRecord| read.borrow_mut().extend(unsafe { abi::read_sized(r) }.map(|r| Plugin { name: text(r.name), version: text(r.version), file: text(r.file), constraints: order::Constraints { priority: r.priority, ..Default::default() } }));
         let mut before = |name: Str| {
             if let Some(p) = read.borrow_mut().last_mut() {
                 p.constraints.before.push(text(name));

@@ -485,10 +485,11 @@ impl Hooks {
 
     /// Hands `request` to `enter` with the target, options and slot shape of `F`, and reads back
     /// the subscription's id.
-    fn subscribe<F: Signature>(target: Target, options: Options<'_>, enter: impl FnOnce(&RawSubscription, *mut u64, Sink<'_, RawError>) -> Option<u32>) -> Result<SubscriptionId, Error> {
+    fn subscribe<F: Signature>(target: Target, options: Options<'_>, enter: impl FnOnce(&RawSubscription, *mut u64, Sink<'_, *const RawError>) -> Option<u32>) -> Result<SubscriptionId, Error> {
         let names = |list: &[&str]| list.iter().map(|s| Str::from(*s)).collect::<Vec<_>>();
         let (before, after) = (names(options.before), names(options.after));
         let request = RawSubscription {
+            size: abi::size::<RawSubscription>(),
             target: RawTarget::new(target),
             owner: Str::from(options.owner),
             priority: options.priority,
@@ -503,7 +504,7 @@ impl Hooks {
     }
 
     fn add_patch(&self, owner: &str, at: Location, expected: &[u8], replacement: &[u8], cave: Option<&[u8]>) -> Result<PatchId, Error> {
-        let request = RawPatch { owner: Str::from(owner), at: RawLocation::new(at), expected: Str::new(expected), replacement: Str::new(replacement), cave: Str::maybe(cave) };
+        let request = RawPatch { size: abi::size::<RawPatch>(), owner: Str::from(owner), at: RawLocation::new(at), expected: Str::new(expected), replacement: Str::new(replacement), cave: Str::maybe(cave) };
         let mut id = 0;
         abi::outcome("byte patches", |error| call!(self.api, hook_patch(&raw const request, &raw mut id, error))).map(|()| PatchId(id))
     }
@@ -552,7 +553,7 @@ impl Hooks {
     #[must_use]
     pub fn patches(&self) -> Vec<PatchReport> {
         let mut reports = Vec::new();
-        let mut keep = |p: RawPatchReport| reports.push(unsafe { p.to_report() });
+        let mut keep = |p: *const RawPatchReport| reports.extend(unsafe { abi::read_sized(p) }.map(|p| unsafe { p.to_report() }));
         call!(self.api, hook_patches(Sink::new(&mut keep)));
         reports
     }
@@ -603,7 +604,7 @@ impl Hooks {
     #[must_use]
     pub fn diagnostics(&self) -> Vec<SiteReport> {
         let mut reports = Vec::new();
-        let mut keep = |r: RawSiteReport| reports.push(unsafe { r.to_report() });
+        let mut keep = |r: *const RawSiteReport| reports.extend(unsafe { abi::read_sized(r) }.map(|r| unsafe { r.to_report() }));
         call!(self.api, hook_diagnostics(Sink::new(&mut keep)));
         reports
     }
