@@ -528,6 +528,7 @@ unsafe impl NodeClass for NiNode {
     const VTABLES: &'static [u64] = &[
         vtables::NiNode_vtable::ID,
         vtables::BSFadeNode_vtable::ID,
+        vtables::BSFlattenedBoneTree_vtable::ID,
         vtables::BSFaceGenNiNode_vtable::ID,
         vtables::BSLeafAnimNode_vtable::ID,
         vtables::BSTreeNode_vtable::ID,
