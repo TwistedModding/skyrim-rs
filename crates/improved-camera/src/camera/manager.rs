@@ -13,6 +13,7 @@
 
 use std::sync::Mutex;
 use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::time::{Duration, Instant};
 
 use skyrim::prelude::*;
 use skyrim::render::from_euler_zxy;
@@ -101,7 +102,13 @@ pub struct Manager {
     pub near: f32,
     /// The dialogue's speaker focus shots are wanted (`DialogueState::IsFocusActive`).
     pub dialogue_focus: bool,
+    /// When third person was last entered from first person.
+    pub third_from_first: Option<Instant>,
 }
+
+/// How long after first person is left for third person an event state entered next still counts as
+/// entered from first person: furniture and crafting pass through third person on the way in.
+const PASS_THROUGH: Duration = Duration::from_millis(1500);
 
 impl Default for Manager {
     fn default() -> Self {
@@ -135,6 +142,7 @@ impl Default for Manager {
             zoom_modifier: 0.0,
             near: 0.0,
             dialogue_focus: false,
+            third_from_first: None,
         }
     }
 }
@@ -692,6 +700,10 @@ impl Manager {
             previous.exit(&mut self.current.modifier, ctx);
         }
         let from = previous.kind();
+        let event = matches!(next, CameraType::Furniture | CameraType::Crafting | CameraType::VampirelordTransition | CameraType::WerewolfTransition | CameraType::LichTransition | CameraType::Werewolf);
+        let passed_through = from == CameraType::ThirdPerson && self.third_from_first.is_some_and(|t| t.elapsed() < PASS_THROUGH);
+        let entered_from = if event && passed_through { CameraType::FirstPerson } else { from };
+        self.third_from_first = (next == CameraType::ThirdPerson && from == CameraType::FirstPerson).then(Instant::now);
         self.previous_camera = from;
         self.transition_from = from;
         self.transition_time = 0.0;
@@ -705,7 +717,7 @@ impl Manager {
             self.look.reset(look_base(camera));
         }
         if enabled {
-            self.state.enter(from, ctx);
+            self.state.enter(entered_from, ctx);
         }
         if next == CameraType::Dialogue {
             self.cancel_transition();
