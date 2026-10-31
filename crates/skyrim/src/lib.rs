@@ -168,6 +168,7 @@ impl RwGuard {
         Self::take(lock, false)
     }
 
+    #[cfg(feature = "physics")]
     pub(crate) fn write(lock: &sre::BSReadWriteLock) -> Self {
         Self::take(lock, true)
     }
