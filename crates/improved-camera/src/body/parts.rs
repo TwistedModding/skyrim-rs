@@ -136,12 +136,13 @@ fn restore_scale(node: Option<&NiAVObject>, scale: f32) {
 impl Parts {
     pub fn update(&mut self, player: &PlayerCharacter, profile: &Profile) {
         let Some(nodes) = self.get_data(player) else { return };
-        let camera = camera_snapshot::get().current;
+        let camera_data = camera_snapshot::get();
+        let camera = camera_data.current;
         if !profile.General.bEnableBody || matches!(camera, CameraType::RaceMenu | CameraType::Free | CameraType::SexTFC) {
             self.restore_scales(&nodes);
             return;
         }
-        if nodes.eye.is_some() && util::is_first_person() {
+        if nodes.eye.is_some() && util::is_first_person() && camera_data.transition == CameraType::Unknown {
             self.process_body(&nodes, profile);
             if let (Some(lf), Some(rf), Some(lt), Some(rt)) = (nodes.left_first, nodes.right_first, nodes.left_third, nodes.right_third) {
                 self.process_arms([lf, rf, lt, rt], &profile.General);
@@ -266,6 +267,7 @@ impl Parts {
     #[allow(clippy::float_cmp)]
     fn restore_scales(&mut self, nodes: &Nodes<'_>) {
         set_hidden(|h| *h = HiddenParts::default());
+        let third_to_first = util::is_first_person() && camera_snapshot::get().transition == CameraType::ThirdPerson;
         if core::mem::take(&mut self.first_person_faded)
             && let Some(first) = nodes.first
         {
@@ -276,8 +278,8 @@ impl Parts {
             skyrim::store(&nodes.third.fadeAmount, s.fade_amount);
         }
         restore_scale(nodes.head, s.head);
-        restore_scale(nodes.left_first, s.left_first);
-        restore_scale(nodes.right_first, s.right_first);
+        restore_scale(nodes.left_first, if third_to_first { SHRUNK } else { s.left_first });
+        restore_scale(nodes.right_first, if third_to_first { SHRUNK } else { s.right_first });
         restore_scale(nodes.left_third, s.left_third);
         restore_scale(nodes.right_third, s.right_third);
         for (node, scale) in nodes.sheathed.iter().zip(s.sheathed) {
