@@ -2,7 +2,7 @@
 //! the overlay and a key being captured), and while the overlay is open every event of the frame as
 //! `egui` events, hidden from the sinks after it unless [`Capture::Focus`] lets the frame through to
 //! the game. A frame that reaches the game passes its button events through the host's filter
-//! ([`filter_game_buttons`]) first.
+//! ([`filter_game_buttons`]) first; one that does not reaches `PlayerControls` as an empty list.
 
 use std::fmt;
 use std::str::FromStr;
@@ -403,8 +403,18 @@ pub(crate) fn draw_cursor(ctx: &Context, at: Pos2, game: Option<(egui::TextureId
 
 struct Gate;
 
+/// Sends `PlayerControls` an empty list for a list the overlay stopped. It zeroes its look and move
+/// input at the start of every list it is sent, so a frame it never saw would keep the last mouse
+/// move turning the camera.
+fn no_player_input(source: &BSTEventSource<InputEventList>) {
+    if let Some(controls) = sre::PlayerControls::singleton() {
+        let mut head: *mut InputEvent = core::ptr::null_mut();
+        let _ = unsafe { controls.process_event(&raw mut head, core::ptr::from_ref(source).cast_mut().cast()) };
+    }
+}
+
 impl EventSink<InputEventList> for Gate {
-    fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
+    fn process(&self, list: &InputEventList, source: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
         let mut keys = KEYS.lock().unwrap();
         let mut p = PENDING.lock().unwrap();
         p.modifiers = held_modifiers(list);
@@ -498,7 +508,11 @@ impl EventSink<InputEventList> for Gate {
                 listener(report);
             }
         }
-        if stop { BSEventNotifyControl::Stop } else { BSEventNotifyControl::Continue }
+        if !stop {
+            return BSEventNotifyControl::Continue;
+        }
+        no_player_input(source);
+        BSEventNotifyControl::Stop
     }
 }
 
