@@ -8,7 +8,7 @@ use std::fmt::Write as _;
 use std::path::{Path, PathBuf};
 use std::sync::{Mutex, PoisonError};
 
-use crate::Table;
+use crate::abi::{Api, RawSetting, Sink, Str, call};
 
 /// One stored value.
 #[derive(Clone, Debug, PartialEq)]
@@ -108,19 +108,21 @@ impl Value for String {
 /// One plugin's settings, from [`crate::Host::settings`].
 #[derive(Clone, Copy)]
 pub struct Settings {
-    owner: &'static str,
-    table: &'static Table,
+    api: Api,
 }
 
 impl Settings {
-    pub(crate) const fn new(owner: &'static str, table: &'static Table) -> Self {
-        Self { owner, table }
+    pub(crate) const fn new(api: Api) -> Self {
+        Self { api }
     }
 
     /// The value under `key`, `None` when it is unset or of another type.
     #[must_use]
     pub fn get<T: Value>(&self, key: &str) -> Option<T> {
-        (self.table.setting)(self.owner, key).as_ref().and_then(T::from_setting)
+        let mut found = None;
+        let mut keep = |s: RawSetting| found = unsafe { s.to_setting() };
+        call!(self.api, setting(Str::from(key), Sink::new(&mut keep)));
+        found.as_ref().and_then(T::from_setting)
     }
 
     /// The value under `key`, or `default` when it is unset or of another type.
@@ -134,21 +136,24 @@ impl Settings {
     pub fn set(&self, key: &str, value: impl Into<Setting>) {
         let value = value.into();
         if !matches!(value, Setting::Number(n) if !n.is_finite()) {
-            (self.table.set_setting)(self.owner, key, value);
+            call!(self.api, set_setting(Str::from(key), RawSetting::new(&value)));
         }
     }
 
     /// Every key that starts with `prefix`, in order (`""` lists them all).
     #[must_use]
     pub fn keys(&self, prefix: &str) -> Vec<String> {
-        (self.table.setting_keys)(self.owner, prefix)
+        let mut keys = Vec::new();
+        let mut push = |k: Str| keys.push(unsafe { k.as_str() }.to_owned());
+        call!(self.api, setting_keys(Str::from(prefix), Sink::new(&mut push)));
+        keys
     }
 
     /// Removes every key that starts with `prefix` (a whole key removes that one); returns how
     /// many went. The file is written within a second.
     #[must_use = "the count says whether anything was there"]
     pub fn remove(&self, prefix: &str) -> usize {
-        (self.table.remove_settings)(self.owner, prefix)
+        call!(self.api, remove_settings(Str::from(prefix))).unwrap_or(0)
     }
 }
 

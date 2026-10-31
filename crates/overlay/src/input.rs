@@ -41,6 +41,7 @@ pub enum Capture {
 /// A keyboard key and the modifiers held with it, written as the settings file and the Keys
 /// section show it: `F11`, `Escape`, `Ctrl+Shift+K`. A key the name table lacks is written as its
 /// scan code (`0x2A`); either form is read back. A press matches only with exactly these modifiers.
+#[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub struct Hotkey {
     /// The key's `DirectInput` scan code.
@@ -96,12 +97,13 @@ impl FromStr for Hotkey {
 }
 
 /// Who has a key when an action bound to it fires.
+#[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scope {
     /// The overlay, open with no widget focused; while it is open the key never reaches the game.
-    Overlay,
+    Overlay = 0,
     /// The game: the frame of the press reached the game's handlers.
-    Game,
+    Game = 1,
 }
 
 /// What the overlay did with a key it took, as [`on_key`] reports it.

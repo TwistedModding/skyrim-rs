@@ -4,10 +4,11 @@
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
 //! plain C data and calls the plugin's `load` only when the descriptor's [`ABI`] and [`BUILD`]
-//! equal its own: that call and everything passed through [`Host`] use the Rust ABI, which holds
-//! only for one compiler and one build of this crate and its dependencies, so a plugin is built
-//! against the same framework release (its `Cargo.lock`) with the same `rustc`. A refused DLL is
-//! unloaded and named in `skyrim-rs.log`.
+//! equal its own. The descriptor and the per-plugin [`abi::HostApi`] behind [`Host`] are C; event
+//! sinks, natives, commands, hooks, tab sections and HUD painters still cross with the Rust ABI,
+//! which holds only for one compiler and one build of this crate and its dependencies, so until
+//! they move (`docs/subsystems/abi.md`) a plugin is built against the same framework release (its
+//! `Cargo.lock`) with the same `rustc`. A refused DLL is unloaded and named in `skyrim-rs.log`.
 //!
 //! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
 //! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a
@@ -25,8 +26,10 @@
 //! `skyrim::init` with [`Host::skse`] before using the game layer and never installs the overlay
 //! itself.
 
+use core::cell::RefCell;
 use core::ffi::{CStr, c_char, c_void};
 use std::fmt;
+use std::sync::{Mutex, PoisonError};
 
 pub use overlay::{Frame, GameMouse, GamePad, Hotkey, Scope, View, egui, theme};
 use skyrim::events::{BSTEventSource, ErasedHandler, ErasedSource, Event};
@@ -34,15 +37,17 @@ use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandContext, CommandSlot, ErasedExecute, Param};
 use skyrim::papyrus::{ErasedNativeFn, IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, VirtualMachine};
 
+pub mod abi;
 pub mod hooks;
 pub mod host;
 pub mod order;
 pub mod settings;
 
-use settings::{Setting, Settings};
+use abi::{Api, HostApi, PluginRecord, RawButton, RawMouse, RawPad, RawPress, RawRestoreFn, RawSaveFn, Sink, Str, call};
+use settings::Settings;
 
 /// The descriptor's layout version.
-pub const ABI: u32 = 4;
+pub const ABI: u32 = 5;
 
 /// This crate's version, a hash of the sources whose types cross the host-plugin boundary (this
 /// crate, `overlay`, `skyrim`, `hook`, `skse`, `sre`, `versionlib` and `Cargo.lock`) and the
@@ -64,27 +69,30 @@ pub type DrawFn = Box<dyn FnMut(&mut egui::Ui) + Send>;
 /// Paints a plugin's shapes into the game, placed through the frame camera's [`View`].
 pub type HudDrawFn = Box<dyn FnMut(&egui::Painter, &View) + Send>;
 
-/// What [`plugin!`] exports as `SkyrimRs_Plugin`. The host reads `abi` and `build` before anything
-/// else, so they stay first and C-typed in every future ABI.
+/// What [`plugin!`] exports as `SkyrimRs_Plugin`, all C: the host reads `abi` before anything
+/// else, so it stays first in every future layout.
 #[repr(C)]
 pub struct Descriptor {
     pub abi: u32,
+    /// The [`abi::API`] the plugin was built against.
+    pub api: u32,
+    /// [`BUILD`], until every crossing is C.
     pub build: *const c_char,
     pub name: *const c_char,
     /// The plugin crate's version, as the Plugins tab shows it.
     pub version: *const c_char,
-    pub load: LoadFn,
-    /// Plugin names this one loads before; [`order::ALL`] for every other plugin.
-    pub load_before: &'static [&'static str],
-    /// Plugin names this one loads after; [`order::ALL`] for every other plugin.
-    pub load_after: &'static [&'static str],
+    pub load: abi::RawLoadFn,
+    /// Plugin names this one loads before, null-terminated; [`order::ALL`] for every other plugin.
+    pub load_before: *const *const c_char,
+    /// Plugin names this one loads after, null-terminated; [`order::ALL`] for every other plugin.
+    pub load_after: *const *const c_char,
     /// Higher loads first among plugins whose constraints are satisfied.
     pub priority: i32,
     /// Runs before the DLL is unloaded for a reload, after `save_state`: stop threads and timers here.
-    pub unload: Option<fn()>,
-    /// The state handed to the version that replaces this one, which receives it in `restore_state` after its `load`.
-    pub save_state: Option<fn() -> Vec<u8>>,
-    pub restore_state: Option<fn(&[u8])>,
+    pub unload: Option<extern "C" fn()>,
+    /// Writes the state handed to the version that replaces this one, which receives it in `restore_state` after its `load`.
+    pub save_state: Option<RawSaveFn>,
+    pub restore_state: Option<RawRestoreFn>,
 }
 
 unsafe impl Sync for Descriptor {}
@@ -109,6 +117,8 @@ pub enum Error {
     Full { what: String, limit: usize },
     Papyrus(skyrim::papyrus::Error),
     Command(skyrim::input::CommandError),
+    /// The loader is older than the plugin and lacks the function.
+    Unsupported { what: String },
 }
 
 impl fmt::Display for Error {
@@ -119,6 +129,7 @@ impl fmt::Display for Error {
             Self::Full { what, limit } => write!(f, "{what}: the host holds at most {limit}"),
             Self::Papyrus(e) => e.fmt(f),
             Self::Command(e) => e.fmt(f),
+            Self::Unsupported { what } => write!(f, "{what}: not supported by this loader"),
         }
     }
 }
@@ -157,57 +168,48 @@ pub(crate) struct CommandRequest<'a> {
     pub execute: ErasedExecute,
 }
 
-pub(crate) type DeclareFilterFn = fn(&str, &str, &[&str], &[(InputDevice, u32)]) -> usize;
-
-/// The host's functions, one table shared by every plugin's [`Host`]; the owner comes first.
+/// The Rust-ABI registrations, one table shared by every plugin's [`Host`]; the owner comes first.
 pub(crate) struct Table {
-    pub on_message: fn(&'static str, MessageFn),
-    pub on_plugin_message: fn(&'static str, &str, MessageFn),
-    pub serve_alias: fn(&'static str, &str, MessageFn) -> Result<usize, Error>,
-    pub alias_send: fn(usize, *const c_char, u32, *mut c_void, u32) -> bool,
-    pub export_interface: fn(&'static str, &str, &[Method]) -> Result<usize, Error>,
-    pub on_frame: fn(&'static str, FrameFn),
-    pub on_papyrus: fn(&'static str, PapyrusFn),
-    pub action: fn(&'static str, &str, &str, Scope) -> usize,
-    pub action_fired: fn(usize) -> bool,
-    pub action_key: fn(usize) -> Option<Hotkey>,
-    pub action_held: fn(usize) -> bool,
-    pub action_released: fn(usize) -> Option<f32>,
-    pub key_held: fn(u32) -> bool,
-    pub key_released: fn(u32) -> Option<f32>,
-    pub game_mouse: fn() -> GameMouse,
-    pub game_pad: fn() -> GamePad,
-    pub input_filter: DeclareFilterFn,
-    pub filter_set_active: fn(usize, bool),
-    pub filter_active: fn(usize) -> bool,
-    pub set_tab_title: fn(&'static str, &str),
     pub add_section: fn(&'static str, &str, DrawFn),
     pub add_hud: fn(&'static str, HudDrawFn),
-    pub show_tab: fn(&'static str),
-    pub show_section: fn(&'static str, &str),
-    pub read_frame: fn() -> Result<Frame, String>,
-    pub setting: fn(&str, &str) -> Option<Setting>,
-    pub set_setting: fn(&str, &str, Setting),
-    pub setting_keys: fn(&str, &str) -> Vec<String>,
-    pub remove_settings: fn(&str, &str) -> usize,
     pub add_sink: fn(&'static str, ErasedSource, ErasedHandler),
     pub add_player_graph_sink: fn(&'static str, ErasedHandler),
     pub register_native: fn(&'static str, NativeRequest<'_>) -> Result<&'static NativeFunction, Error>,
     pub register_command: fn(&'static str, CommandRequest<'_>) -> Result<CommandSlot, Error>,
     pub replace_command: fn(&'static str, &CStr, ErasedExecute) -> Result<CommandSlot, Error>,
-    pub plugins: fn() -> &'static [Plugin],
 }
 
-/// The host as one plugin's `load` receives it, for the life of the game: every registration made
-/// through it belongs to that plugin and is detached when the plugin's DLL is unloaded.
+/// What a plugin reaches through [`abi::HostApi`]'s `legacy` until every crossing is C.
+pub(crate) struct Legacy {
+    pub table: &'static Table,
+    pub hooks: hooks::Hooks,
+}
+
+/// The host as one plugin's `load` receives it, for the life of the DLL: every registration made
+/// through it belongs to that plugin and is detached when the plugin's DLL is unloaded. On a
+/// loader older than the plugin a function the loader lacks does nothing and answers `false`,
+/// `None` or nothing; the fallible ones return [`Error::Unsupported`].
 pub struct Host {
-    skse: &'static skse::Interface,
+    api: Api,
     name: &'static str,
-    hooks: &'static hooks::Hooks,
-    table: &'static Table,
+    skse: &'static skse::Interface,
+    legacy: &'static Legacy,
 }
 
 impl Host {
+    /// The plugin's side of the table the host built for it; `None` without the SKSE interface or
+    /// the Rust-ABI registrations.
+    pub(crate) fn new(api: *const HostApi) -> Option<Self> {
+        let api = Api(api);
+        if api.0.is_null() {
+            return None;
+        }
+        let name = unsafe { (*api.0).name.as_str() };
+        let skse = unsafe { (*api.0).skse.as_ref() }?;
+        let legacy = if api.reaches(core::mem::offset_of!(HostApi, legacy)) { unsafe { (*api.0).legacy.as_ref() } } else { None }?;
+        Some(Self { api, name, skse, legacy })
+    }
+
     /// The SKSE interface the host was loaded with.
     #[must_use]
     pub fn skse(&self) -> &'static skse::Interface {
@@ -225,7 +227,7 @@ impl Host {
     /// seen (`PLUGINS_LOADED`, `PLUGINS_LOADED_2`, `CONTROLS_READY`, `DATA_LOADED`, without data)
     /// so setup done at `DATA_LOADED` is done again.
     pub fn on_message(&self, f: MessageFn) {
-        (self.table.on_message)(self.name, f);
+        call!(self.api, on_message(abi::message(f)));
     }
 
     /// Calls `f` with every message the SKSE plugin named `sender` dispatches from now on (the
@@ -233,7 +235,7 @@ impl Host {
     /// on the dispatching thread. Messages sent before the call are not replayed, so a reloaded
     /// plugin keeps what an earlier one received through its state handoff.
     pub fn on_plugin_message(&self, sender: &str, f: MessageFn) {
-        (self.table.on_plugin_message)(self.name, sender, f);
+        call!(self.api, on_plugin_message(Str::from(sender), abi::message(f)));
     }
 
     /// Serves the SKSE plugin name `name` for other SKSE plugins, as if this plugin were the SKSE
@@ -248,7 +250,9 @@ impl Host {
     /// later generation of the plugin serving the same name gets the same alias; a name another
     /// plugin serves is refused.
     pub fn serve_alias(&self, name: &str, f: MessageFn) -> Result<Alias, Error> {
-        Ok(Alias { slot: (self.table.serve_alias)(self.name, name, f)?, table: self.table })
+        let mut slot = 0;
+        abi::status(&format!("serving the plugin name {name}"), |error| call!(self.api, serve_alias(Str::from(name), abi::message(f), &raw mut slot, error)))?;
+        Ok(Alias { slot, api: self.api })
     }
 
     /// Exports a C++ interface object (single inheritance, no data members) for other SKSE plugins
@@ -264,13 +268,15 @@ impl Host {
     /// let api = host.export_interface("MyModAPI", &[framework::Method::new(version as *const (), framework::Returns::Value)])?;
     /// ```
     pub fn export_interface(&self, name: &str, methods: &[Method]) -> Result<*const c_void, Error> {
-        (self.table.export_interface)(self.name, name, methods).map(|object| object as *const c_void)
+        let mut object = 0;
+        abi::status(&format!("interface {name}"), |error| call!(self.api, export_interface(Str::from(name), methods.as_ptr(), methods.len(), &raw mut object, error)))?;
+        Ok(object as *const c_void)
     }
 
     /// Calls `f` once a frame on the main thread, at the frame's present whether the overlay is
     /// open or not, before the overlay's windows draw: the place to poll [`Action::fired`].
     pub fn on_frame(&self, f: FrameFn) {
-        (self.table.on_frame)(self.name, f);
+        call!(self.api, on_frame(abi::frame(f)));
     }
 
     /// Declares a hotkey named `<plugin>.<name>` in the host's binding table, bound to `default`
@@ -288,7 +294,7 @@ impl Host {
     /// ```
     #[must_use]
     pub fn action(&self, name: &str, default: &str, scope: Scope) -> Action {
-        Action { index: (self.table.action)(self.name, name, default, scope), table: self.table }
+        Action { index: call!(self.api, action(Str::from(name), Str::from(default), scope as u32)).unwrap_or(usize::MAX), api: self.api }
     }
 
     /// What the mouse did in the events that reached the game since the previous present, from the
@@ -298,7 +304,11 @@ impl Host {
     /// from the game are not in it. For a drag or an orbit a mod reads while the game has the mouse.
     #[must_use]
     pub fn mouse(&self) -> GameMouse {
-        (self.table.game_mouse)()
+        let mut moved = RawMouse::default();
+        let mut buttons = Vec::new();
+        let mut push = |p: RawPress| buttons.push((p.id, p.pressed));
+        call!(self.api, mouse(&raw mut moved, Sink::new(&mut push)));
+        GameMouse { dx: moved.dx, dy: moved.dy, buttons }
     }
 
     /// What the gamepad did in the events that reached the game, in the same window as
@@ -306,14 +316,18 @@ impl Host {
     /// [`GamePad`]), and the buttons held, the triggers and the sticks as the last event left them.
     #[must_use]
     pub fn gamepad(&self) -> GamePad {
-        (self.table.game_pad)()
+        let mut pad = RawPad::default();
+        let mut buttons = Vec::new();
+        let mut push = |p: RawPress| buttons.push((p.id, p.pressed));
+        call!(self.api, gamepad(&raw mut pad, Sink::new(&mut push)));
+        GamePad { buttons, held: pad.held, triggers: pad.triggers, sticks: pad.sticks }
     }
 
     /// Whether the keyboard key with this `DirectInput` scan code is down in the game (its press
     /// reached the game and its release has not yet): for a modifier a mod's own keys combine with.
     #[must_use]
     pub fn key_held(&self, scan_code: u32) -> bool {
-        (self.table.key_held)(scan_code)
+        call!(self.api, key_held(scan_code)).unwrap_or(false)
     }
 
     /// The seconds the keyboard key with this scan code had been held when its release reached the
@@ -321,7 +335,8 @@ impl Host {
     /// For a tap-or-hold key, or a key the game's control map names (`ControlMapExt::mapped_key`).
     #[must_use]
     pub fn key_released(&self, scan_code: u32) -> Option<f32> {
-        (self.table.key_released)(scan_code)
+        let mut secs = 0.0;
+        call!(self.api, key_released(scan_code, &raw mut secs)).unwrap_or(false).then_some(secs)
     }
 
     /// Declares the input filter `<plugin>.<name>`: while it is active, button events whose user
@@ -340,13 +355,16 @@ impl Host {
     /// ```
     #[must_use]
     pub fn input_filter(&self, name: &str, user_events: &[&str], buttons: &[(InputDevice, u32)]) -> InputFilter {
-        InputFilter { index: (self.table.input_filter)(self.name, name, user_events, buttons), table: self.table }
+        let events: Vec<Str> = user_events.iter().map(|e| Str::from(*e)).collect();
+        let buttons: Vec<RawButton> = buttons.iter().map(|&(device, id)| RawButton { device: device as u32, id }).collect();
+        let index = call!(self.api, input_filter(Str::from(name), events.as_ptr(), events.len(), buttons.as_ptr(), buttons.len())).unwrap_or(usize::MAX);
+        InputFilter { index, api: self.api }
     }
 
     /// Calls `f` with the VM at the Papyrus registration pass, or at once when the pass has run
     /// (a reloaded plugin registers its natives again from here).
     pub fn on_papyrus(&self, f: PapyrusFn) {
-        (self.table.on_papyrus)(self.name, f);
+        call!(self.api, on_papyrus(abi::papyrus(f)));
     }
 
     /// This plugin's tab in the host's window, titled `title` (a second call renames it): an entry
@@ -365,8 +383,8 @@ impl Host {
     /// adding the same section names finds the same one selected.
     #[must_use = "a tab shows once it has a section"]
     pub fn add_tab(&self, title: &str) -> Tab {
-        (self.table.set_tab_title)(self.name, title);
-        Tab { owner: self.name, table: self.table }
+        call!(self.api, set_tab_title(Str::from(title)));
+        Tab { owner: self.name, table: self.legacy.table }
     }
 
     /// Adds a HUD painter: `draw` runs every frame on the main thread at the present, whether the
@@ -386,17 +404,17 @@ impl Host {
     /// The painters are dropped with the plugin's generation. The game's own menus are not
     /// considered: a painter that should hide under the inventory or the map checks for them.
     pub fn add_hud(&self, draw: impl FnMut(&egui::Painter, &View) + Send + 'static) {
-        (self.table.add_hud)(self.name, Box::new(draw));
+        (self.legacy.table.add_hud)(self.name, Box::new(draw));
     }
 
     /// Opens the overlay on this plugin's tab.
     pub fn show_tab(&self) {
-        (self.table.show_tab)(self.name);
+        call!(self.api, show_tab());
     }
 
     /// Opens the overlay on the section `name` of this plugin's tab.
     pub fn show_section(&self, name: &str) {
-        (self.table.show_section)(self.name, name);
+        call!(self.api, show_section(Str::from(name)));
     }
 
     /// The frame the game drew, as it will be presented without the overlay's windows and HUD
@@ -412,13 +430,24 @@ impl Host {
     /// });
     /// ```
     pub fn read_frame(&self) -> Result<Frame, String> {
-        (self.table.read_frame)()
+        let mut frame = Frame { width: 0, height: 0, rgba: Vec::new() };
+        let mut error = String::new();
+        let mut alloc = |width, height| {
+            frame = Frame { width, height, rgba: vec![0; width * height * 4] };
+            frame.rgba.as_mut_ptr()
+        };
+        let mut fail = |e: Str| unsafe { e.as_str() }.clone_into(&mut error);
+        match call!(self.api, read_frame(abi::Alloc::new(&mut alloc), Sink::new(&mut fail))) {
+            Some(true) => Ok(frame),
+            Some(false) => Err(error),
+            None => Err("reading the frame is not supported by this loader".to_owned()),
+        }
     }
 
     /// This plugin's settings, read from its file before `load` and kept by the host across reloads.
     #[must_use]
     pub fn settings(&self) -> Settings {
-        Settings::new(self.name, self.table)
+        Settings::new(self.api)
     }
 
     /// Registers `f` for events of type `E` through a sink the host owns; `f` runs on the sending
@@ -430,7 +459,7 @@ impl Host {
             (Some(event), Some(source)) => f(event, source),
             _ => BSEventNotifyControl::Continue,
         });
-        (self.table.add_sink)(self.name, source, handler);
+        (self.legacy.table.add_sink)(self.name, source, handler);
         Ok(())
     }
 
@@ -444,7 +473,7 @@ impl Host {
             Some(event) => f(event),
             None => BSEventNotifyControl::Continue,
         });
-        (self.table.add_player_graph_sink)(self.name, handler);
+        (self.legacy.table.add_player_graph_sink)(self.name, handler);
     }
 
     /// Registers `f` as `class.name`, a `native global` function, through a function object the
@@ -466,14 +495,14 @@ impl Host {
     }
 
     fn native(&self, request: NativeRequest<'_>) -> Result<&'static NativeFunction, Error> {
-        (self.table.register_native)(self.name, request)
+        (self.legacy.table.register_native)(self.name, request)
     }
 
     /// Takes over an unused console entry for `C` through the host (`skyrim::input::register`
     /// otherwise); register at `DATA_LOADED`. A later generation registering the same name is
     /// re-pointed at its `execute`; the name, help and parameters stay those of the first.
     pub fn register_command<C: Command>(&self) -> Result<CommandSlot, Error> {
-        (self.table.register_command)(self.name, CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE, execute: Box::new(C::execute) })
+        (self.legacy.table.register_command)(self.name, CommandRequest { name: C::NAME, help: C::HELP, params: C::PARAMS, needs_reference: C::NEEDS_REFERENCE, execute: Box::new(C::execute) })
     }
 
     /// Runs `execute` in place of the engine console command `name` (its long or short name),
@@ -487,20 +516,40 @@ impl Host {
     /// host.replace_command(c"SetCameraFOV", |ctx| { /* ctx.args(): the command's own parameters */ true })?;
     /// ```
     pub fn replace_command(&self, name: &CStr, execute: impl Fn(&mut CommandContext<'_>) -> bool + Send + Sync + 'static) -> Result<CommandSlot, Error> {
-        (self.table.replace_command)(self.name, name, Box::new(execute))
+        (self.legacy.table.replace_command)(self.name, name, Box::new(execute))
     }
 
     /// Every plugin whose descriptor the host accepted, in load order, known before the first `load` runs.
     #[must_use]
     pub fn plugins(&self) -> &'static [Plugin] {
-        (self.table.plugins)()
+        static CACHED: Mutex<&'static [Plugin]> = Mutex::new(&[]);
+        let read = RefCell::new(Vec::<Plugin>::new());
+        let text = |s: Str| unsafe { s.as_str() }.to_owned();
+        let mut record = |r: PluginRecord| read.borrow_mut().push(Plugin { name: text(r.name), version: text(r.version), file: text(r.file), constraints: order::Constraints { priority: r.priority, ..Default::default() } });
+        let mut before = |name: Str| {
+            if let Some(p) = read.borrow_mut().last_mut() {
+                p.constraints.before.push(text(name));
+            }
+        };
+        let mut after = |name: Str| {
+            if let Some(p) = read.borrow_mut().last_mut() {
+                p.constraints.after.push(text(name));
+            }
+        };
+        call!(self.api, plugins(Sink::new(&mut record), Sink::new(&mut before), Sink::new(&mut after)));
+        let read = read.into_inner();
+        let mut cached = CACHED.lock().unwrap_or_else(PoisonError::into_inner);
+        if *cached != read.as_slice() {
+            *cached = Box::leak(read.into_boxed_slice());
+        }
+        *cached
     }
 
     /// The host's hook dispatcher: one detour per engine function, shared by every plugin; this
     /// handle accepts subscriptions whose `Options` owner is this plugin's name.
     #[must_use]
     pub fn hooks(&self) -> &'static hooks::Hooks {
-        self.hooks
+        &self.legacy.hooks
     }
 }
 
@@ -521,29 +570,38 @@ impl Tab {
 
 /// What a method of an exported interface returns, which decides the stand-in that answers
 /// while the plugin is unloaded.
+#[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Returns {
     /// Nothing, an integer, a `bool`, an enum or a pointer: the stand-in returns 0.
-    Value,
+    Value = 0,
     /// A `float` or `double`: 0.0.
-    Float,
+    Float = 1,
     /// A structure written through the caller's buffer, which the method receives after `this`
     /// and returns: the stand-in returns the buffer as it was.
-    Buffer,
+    Buffer = 2,
+}
+
+impl Returns {
+    pub(crate) fn from_u32(value: u32) -> Option<Self> {
+        [Self::Value, Self::Float, Self::Buffer].into_iter().find(|r| *r as u32 == value)
+    }
 }
 
 /// One method of an interface for [`Host::export_interface`].
+#[repr(C)]
 #[derive(Clone, Copy, Debug)]
 pub struct Method {
     pub(crate) f: usize,
-    pub(crate) returns: Returns,
+    /// A [`Returns`].
+    pub(crate) returns: u32,
 }
 
 impl Method {
     /// `f` is the method's `extern "C"` function (`my_method as *const ()`).
     #[must_use]
     pub fn new(f: *const (), returns: Returns) -> Self {
-        Self { f: f.addr(), returns }
+        Self { f: f.addr(), returns: returns as u32 }
     }
 }
 
@@ -551,7 +609,7 @@ impl Method {
 #[derive(Clone, Copy)]
 pub struct Alias {
     slot: usize,
-    table: &'static Table,
+    api: Api,
 }
 
 impl Alias {
@@ -559,8 +617,9 @@ impl Alias {
     /// for a reply), or to every plugin listening to the name when it is null; false while the
     /// name is not served or when no listener took it.
     #[must_use]
+    #[allow(clippy::not_unsafe_ptr_arg_deref)]
     pub fn send(&self, receiver: *const c_char, kind: u32, data: *mut c_void, len: u32) -> bool {
-        (self.table.alias_send)(self.slot, receiver, kind, data, len)
+        call!(self.api, alias_send(self.slot, receiver, kind, data, len)).unwrap_or(false)
     }
 }
 
@@ -568,7 +627,7 @@ impl Alias {
 #[derive(Clone, Copy)]
 pub struct Action {
     index: usize,
-    table: &'static Table,
+    api: Api,
 }
 
 impl Action {
@@ -577,14 +636,14 @@ impl Action {
     /// start of the one after, so once per press for a frame callback.
     #[must_use]
     pub fn fired(&self) -> bool {
-        (self.table.action_fired)(self.index)
+        call!(self.api, fired(self.index)).unwrap_or(false)
     }
 
     /// Whether the bound key and its modifiers are down in the game now: for an action that acts
     /// every frame while its key is held. False while the action is unbound.
     #[must_use]
     pub fn held(&self) -> bool {
-        (self.table.action_held)(self.index)
+        call!(self.api, held(self.index)).unwrap_or(false)
     }
 
     /// The seconds the bound key had been held when its release reached the game, for the frame
@@ -592,13 +651,15 @@ impl Action {
     /// `None` while the key is not released or the action is unbound.
     #[must_use]
     pub fn released(&self) -> Option<f32> {
-        (self.table.action_released)(self.index)
+        let mut secs = 0.0;
+        call!(self.api, released(self.index, &raw mut secs)).unwrap_or(false).then_some(secs)
     }
 
     /// The key bound now; `None` while a conflict leaves the action unbound.
     #[must_use]
     pub fn key(&self) -> Option<Hotkey> {
-        (self.table.action_key)(self.index)
+        let mut key = Hotkey::new(0);
+        call!(self.api, key(self.index, &raw mut key)).unwrap_or(false).then_some(key)
     }
 }
 
@@ -606,25 +667,25 @@ impl Action {
 #[derive(Clone, Copy)]
 pub struct InputFilter {
     index: usize,
-    table: &'static Table,
+    api: Api,
 }
 
 impl InputFilter {
     /// Starts or stops taking the filter's events from the game, from the next input frame.
     pub fn set_active(&self, active: bool) {
-        (self.table.filter_set_active)(self.index, active);
+        call!(self.api, set_filter_active(self.index, active));
     }
 
     #[must_use]
     pub fn active(&self) -> bool {
-        (self.table.filter_active)(self.index)
+        call!(self.api, filter_active(self.index)).unwrap_or(false)
     }
 }
 
 /// Declares a framework plugin: exports its [`Descriptor`], with the version of the crate it is
-/// invoked in. Everything after `load` is optional,
-/// in this order: the ordering fields (defaults: no constraints, priority 0) and the reload
-/// functions (defaults: none).
+/// invoked in, and the C entry points that call the plugin's Rust functions. Everything after
+/// `load` is optional, in this order: the ordering fields (defaults: no constraints, priority 0)
+/// and the reload functions (defaults: none).
 ///
 /// ```ignore
 /// framework::plugin! {
@@ -649,16 +710,37 @@ macro_rules! plugin {
         #[allow(non_upper_case_globals)]
         pub static SkyrimRs_Plugin: $crate::Descriptor = $crate::Descriptor {
             abi: $crate::ABI,
+            api: $crate::abi::API,
             build: $crate::BUILD.as_ptr(),
             name: concat!($name, "\0").as_ptr().cast(),
             version: concat!(env!("CARGO_PKG_VERSION"), "\0").as_ptr().cast(),
-            load: $load,
-            load_before: &[$($($before),*)?],
-            load_after: &[$($($after),*)?],
+            load: {
+                extern "C" fn skyrim_rs_load(api: *const $crate::abi::HostApi) -> bool {
+                    $crate::abi::start(api, $load)
+                }
+                skyrim_rs_load
+            },
+            load_before: &[$($(concat!($before, "\0").as_ptr().cast(),)? ::core::ptr::null()] as *const _,
+            load_after: &[$($(concat!($after, "\0").as_ptr().cast(),)? ::core::ptr::null()] as *const _,
             priority: ($($priority,)? 0i32,).0,
-            unload: ($(Some($unload as fn()),)? None::<fn()>,).0,
-            save_state: ($(Some($save as fn() -> Vec<u8>),)? None::<fn() -> Vec<u8>>,).0,
-            restore_state: ($(Some($restore as fn(&[u8])),)? None::<fn(&[u8])>,).0,
+            unload: ($(Some({
+                extern "C" fn skyrim_rs_unload() {
+                    $unload()
+                }
+                skyrim_rs_unload as extern "C" fn()
+            }),)? None::<extern "C" fn()>,).0,
+            save_state: ($(Some({
+                extern "C" fn skyrim_rs_save(writer: $crate::abi::Sink<'_, $crate::abi::Str>) {
+                    $crate::abi::save(&writer, $save)
+                }
+                skyrim_rs_save as $crate::abi::RawSaveFn
+            }),)? None::<$crate::abi::RawSaveFn>,).0,
+            restore_state: ($(Some({
+                extern "C" fn skyrim_rs_restore(ptr: *const u8, len: usize) {
+                    unsafe { $crate::abi::restore(ptr, len, $restore) }
+                }
+                skyrim_rs_restore as $crate::abi::RawRestoreFn
+            }),)? None::<$crate::abi::RawRestoreFn>,).0,
         };
     };
 }

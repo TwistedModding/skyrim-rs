@@ -10,7 +10,8 @@ use std::sync::{Mutex, PoisonError};
 
 use super::owned::Owned;
 use super::{HOSTED_BY, LegacyPlugin, NAME, SKSE, skse_plugins};
-use crate::{Error, MessageFn};
+use crate::Error;
+use crate::abi::MessageCallback;
 
 /// How many names the host serves: one listener function each, since a message does not say
 /// which name it was addressed to.
@@ -35,7 +36,7 @@ struct Alias {
 }
 
 static ALIASES: Mutex<Vec<Alias>> = Mutex::new(Vec::new());
-static HANDLERS: [Owned<MessageFn>; SLOTS] = [const { Owned::new() }; SLOTS];
+static HANDLERS: [Owned<MessageCallback>; SLOTS] = [const { Owned::new() }; SLOTS];
 const LISTENERS: [skse::MessageCallback; SLOTS] = [on_alias::<0>, on_alias::<1>, on_alias::<2>, on_alias::<3>];
 #[derive(Debug, PartialEq, Eq)]
 enum Probe {
@@ -50,14 +51,14 @@ static PROBE: Mutex<Probe> = Mutex::new(Probe::Idle);
 unsafe extern "C" fn on_alias<const I: usize>(msg: *mut skse::Message) {
     let Some(msg) = (unsafe { msg.as_ref() }) else { return };
     HANDLERS[I].each(|f| {
-        f(msg);
+        (f.call)(f.ctx, msg);
         true
     });
 }
 
 /// Registers `owner`'s handler for `name` and returns the name's slot; the name is resolved at
 /// once when `started` (the loader's `PLUGINS_LOADED` has been seen), else at that message.
-pub(super) fn serve(owner: &'static str, name: &str, f: MessageFn, started: bool) -> Result<usize, Error> {
+pub(super) fn serve(owner: &'static str, name: &str, f: MessageCallback, started: bool) -> Result<usize, Error> {
     let slot = {
         let mut aliases = ALIASES.lock().unwrap_or_else(PoisonError::into_inner);
         match aliases.iter().position(|a| a.name.eq_ignore_ascii_case(name)) {
@@ -192,6 +193,7 @@ mod tests {
     use core::sync::atomic::{AtomicU32, Ordering};
 
     use super::*;
+    use crate::abi::message;
     use crate::host::VersionData;
 
     fn plugin(file: &str, name: &str, stub: bool) -> LegacyPlugin {
@@ -238,9 +240,9 @@ mod tests {
         fn b(_: &skse::Message) {
             SEEN.fetch_add(1000, Ordering::Relaxed);
         }
-        let slot = serve("alias-a", "AliasTestOne", a, false).unwrap();
-        assert!(matches!(serve("alias-b", "aliastestone", b, false), Err(Error::Taken { .. })));
-        let other = serve("alias-b", "AliasTestTwo", b, false).unwrap();
+        let slot = serve("alias-a", "AliasTestOne", message(a), false).unwrap();
+        assert!(matches!(serve("alias-b", "aliastestone", message(b), false), Err(Error::Taken { .. })));
+        let other = serve("alias-b", "AliasTestTwo", message(b), false).unwrap();
         assert_ne!(slot, other);
         let mut msg = skse::Message { sender: c"Consumer".as_ptr(), kind: 3, data_len: 0, data: core::ptr::null_mut() };
         unsafe { LISTENERS[slot](&raw mut msg) };
@@ -249,7 +251,7 @@ mod tests {
         assert_eq!(remove_owner("alias-a"), 1);
         unsafe { LISTENERS[slot](&raw mut msg) };
         assert_eq!(SEEN.load(Ordering::Relaxed), 3);
-        assert_eq!(serve("alias-a", "AliasTestOne", a, false).unwrap(), slot, "a later generation keeps the slot");
+        assert_eq!(serve("alias-a", "AliasTestOne", message(a), false).unwrap(), slot, "a later generation keeps the slot");
         assert!(lines().iter().any(|l| l == "plugin name AliasTestOne (alias-a): waiting for PLUGINS_LOADED"));
         assert_eq!(remove_owner("alias-a") + remove_owner("alias-b"), 2);
     }

@@ -65,6 +65,7 @@ pub(super) fn export(owner: &'static str, name: &str, methods: &[Method]) -> Res
         }
         return Ok(e.object);
     }
+    let returns = methods.iter().map(|m| Returns::from_u32(m.returns).ok_or_else(|| Error::Unsupported { what: format!("interface {name}: return kind {}", m.returns) })).collect::<Result<Vec<_>, _>>()?;
     if methods.len() > MAX_METHODS {
         return Err(Error::Full { what: format!("methods of interface {name}"), limit: MAX_METHODS });
     }
@@ -78,7 +79,7 @@ pub(super) fn export(owner: &'static str, name: &str, methods: &[Method]) -> Res
     }
     let table: &'static [usize] = Box::leak((0..methods.len()).map(|slot| page + slot * THUNK).collect());
     let object = core::ptr::from_ref::<usize>(Box::leak(Box::new(table.as_ptr() as usize))) as usize;
-    exported.push(Exported { owner, name: name.to_owned(), object, page, returns: methods.iter().map(|m| m.returns).collect() });
+    exported.push(Exported { owner, name: name.to_owned(), object, page, returns });
     Ok(object)
 }
 

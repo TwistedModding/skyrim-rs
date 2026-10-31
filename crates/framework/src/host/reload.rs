@@ -5,7 +5,7 @@
 //! The swap: copy the file as the next generation and read its descriptor (a refusal keeps the
 //! running generation); ask the running generation for its state and call its `unload`; detach
 //! every registration of the plugin, which drains the calls inside them; unload the DLL; call the
-//! new generation's `load` through the plugin's own `Host`, so it registers again and the host
+//! new generation's `load` with the plugin's own `HostApi`, so it registers again and the host
 //! re-points what the engine keeps; hand it the state. A `load` that returns false is detached and
 //! unloaded, and the previous generation's copy is loaded again with the same state. A panic in
 //! `load` aborts the game (release builds abort), so only failures before `load` are recoverable.
@@ -24,7 +24,8 @@ use std::time::{Duration, Instant, SystemTime};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 
 use super::{detach, flush_settings, plugin_name, read_descriptor, rescan};
-use crate::{Descriptor, Host, Plugin};
+use crate::abi::{HostApi, Sink, Str};
+use crate::{Descriptor, Plugin};
 
 pub(super) const SHADOW_DIR: &str = ".loaded";
 const POLL: Duration = Duration::from_secs(1);
@@ -52,7 +53,7 @@ pub(super) enum Request {
 /// One plugin as the host runs it: the generation loaded now and the file it came from.
 pub(super) struct Loaded {
     plugin: Plugin,
-    host: &'static Host,
+    api: &'static HostApi,
     /// Null while the plugin is unloaded.
     module: HMODULE,
     descriptor: &'static Descriptor,
@@ -69,9 +70,9 @@ pub(super) struct Loaded {
 unsafe impl Send for Loaded {}
 
 impl Loaded {
-    pub(super) fn new(plugin: Plugin, host: &'static Host, module: HMODULE, descriptor: &'static Descriptor, live: bool, source: PathBuf, copy: PathBuf) -> Self {
+    pub(super) fn new(plugin: Plugin, api: &'static HostApi, module: HMODULE, descriptor: &'static Descriptor, live: bool, source: PathBuf, copy: PathBuf) -> Self {
         let stamp = stamp(&source);
-        Self { plugin, host, module, descriptor, live, source, copy, generation: 1, stamp, state: None }
+        Self { plugin, api, module, descriptor, live, source, copy, generation: 1, stamp, state: None }
     }
 
     pub(super) fn source(&self) -> &Path {
@@ -215,7 +216,12 @@ fn next(entry: &Loaded, generation: u32) -> Result<(HMODULE, &'static Descriptor
 /// detached, its settings written, its DLL freed. Its shadow copy stays.
 fn stop(entry: &Loaded) -> Option<Vec<u8>> {
     let name = &entry.plugin.name;
-    let state = if entry.live { entry.descriptor.save_state.map(|f| f()) } else { None };
+    let state = entry.descriptor.save_state.filter(|_| entry.live).map(|save| {
+        let mut bytes = Vec::new();
+        let mut keep = |written: Str| bytes.extend_from_slice(unsafe { written.bytes() });
+        save(Sink::new(&mut keep));
+        bytes
+    });
     if let Some(bytes) = &state {
         log!("{name}: generation {}: {} bytes of state saved", entry.generation, bytes.len());
     }
@@ -297,14 +303,14 @@ fn start(entry: &mut Loaded, module: HMODULE, descriptor: &'static Descriptor, c
     entry.copy = copy;
     entry.generation = generation;
     crash::note_image(&name, generation, module as usize, true);
-    entry.live = (descriptor.load)(entry.host);
+    entry.live = (descriptor.load)(entry.api);
     if !entry.live {
         log!("{name}: generation {generation}: load returned false; {} detached", detach(&name));
         return false;
     }
     log!("{name}: generation {generation} loaded, image at {:#x}", module as usize);
     if let (Some(bytes), Some(restore)) = (state, descriptor.restore_state) {
-        restore(bytes);
+        restore(bytes.as_ptr(), bytes.len());
         log!("{name}: generation {generation}: {} bytes of state restored", bytes.len());
     }
     true

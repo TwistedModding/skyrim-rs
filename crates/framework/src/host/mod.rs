@@ -24,10 +24,11 @@ use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 use windows_sys::Win32::System::LibraryLoader::{DONT_RESOLVE_DLL_REFERENCES, GetModuleHandleW, GetProcAddress, LoadLibraryExW, LoadLibraryW};
 use windows_sys::Win32::System::SystemInformation::GetTickCount64;
 
+use crate::abi::{self, API, FrameCallback, MessageCallback, PapyrusCallback};
 use crate::hooks::{Compat, Hooks};
 use crate::order::{self, Constraints};
 use crate::settings;
-use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, FrameFn, Host, MessageFn, NativeRequest, PapyrusFn, Plugin, Table};
+use crate::{ABI, BUILD, CommandRequest, Descriptor, Error, NativeRequest, Plugin, Table};
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 /// The SKSE log folder, where the host writes its log and `SkyrimRs capture` its frame captures.
@@ -54,6 +55,7 @@ macro_rules! log {
 }
 
 mod alias;
+mod api;
 mod console;
 mod filters;
 mod gui;
@@ -75,11 +77,11 @@ pub const NAME: &str = "skyrim-rs";
 static PLUGINS: Mutex<&'static [Plugin]> = Mutex::new(&[]);
 /// The DLLs in the plugin folder the host did not load, each with the reason.
 static REFUSED: Mutex<Vec<(String, String)>> = Mutex::new(Vec::new());
-static MESSAGES: Owned<MessageFn> = Owned::new();
+static MESSAGES: Owned<MessageCallback> = Owned::new();
 /// Handlers of other SKSE plugins' messages, each with the sender it listens to.
-static PLUGIN_MESSAGES: Owned<(String, MessageFn)> = Owned::new();
-static FRAMES: Owned<FrameFn> = Owned::new();
-static PAPYRUS: Owned<PapyrusFn> = Owned::new();
+static PLUGIN_MESSAGES: Owned<(String, MessageCallback)> = Owned::new();
+static FRAMES: Owned<FrameCallback> = Owned::new();
+static PAPYRUS: Owned<PapyrusCallback> = Owned::new();
 static SINKS: Mutex<Vec<SourceSinks>> = Mutex::new(Vec::new());
 static PLAYER_GRAPH: Owned<ErasedHandler> = Owned::new();
 /// The host's sink on the player's graph source, made at the first [`Host::add_player_graph_sink`].
@@ -101,43 +103,7 @@ static LAST_MESSAGE_AT: AtomicU64 = AtomicU64::new(0);
 /// The SKSE plugins in `Data\SKSE\Plugins`, read once the loader has loaded them all.
 static SKSE_PLUGINS: Mutex<Vec<LegacyPlugin>> = Mutex::new(Vec::new());
 static HOOKS: Hooks = Hooks::HOST;
-static TABLE: Table = Table {
-    on_message,
-    on_plugin_message,
-    serve_alias,
-    alias_send: alias::send,
-    export_interface: interface::export,
-    on_frame,
-    on_papyrus,
-    action: keys::declare,
-    action_fired: keys::fired,
-    action_key: keys::key,
-    action_held: keys::held,
-    action_released: keys::released,
-    key_held: overlay::game_key_held,
-    key_released: overlay::game_key_released,
-    game_mouse: overlay::game_mouse,
-    game_pad: overlay::game_pad,
-    input_filter: filters::declare,
-    filter_set_active: filters::set_active,
-    filter_active: filters::is_active,
-    set_tab_title: gui::set_title,
-    add_section: gui::add_section,
-    add_hud: gui::add_hud,
-    show_tab: gui::show_tab,
-    show_section: gui::show_section,
-    read_frame: overlay::read_back,
-    setting: settings::get,
-    set_setting: settings::set,
-    setting_keys: settings::keys,
-    remove_settings: settings::remove,
-    add_sink,
-    add_player_graph_sink,
-    register_native,
-    register_command,
-    replace_command,
-    plugins,
-};
+static TABLE: Table = Table { add_section: gui::add_section, add_hud: gui::add_hud, add_sink, add_player_graph_sink, register_native, register_command, replace_command };
 
 /// An SKSE plugin in `Data\SKSE\Plugins`: a DLL exporting `SKSEPlugin_Version` or `SKSEPlugin_Load`.
 #[derive(Clone)]
@@ -213,7 +179,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     if let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs") {
         *LOG.lock().unwrap() = Some(file);
     }
-    log!("{}, abi {ABI}", BUILD.to_string_lossy());
+    log!("{}, abi {ABI}, api {API}", BUILD.to_string_lossy());
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
@@ -307,13 +273,13 @@ fn read_plugins(files: Vec<PathBuf>, shadow: &Path, running: &[Plugin]) -> Vec<R
     order.sorted.iter().filter_map(|&i| read[i].take()).collect()
 }
 
-/// Starts a read plugin with its own [`Host`] and settings, as generation 1.
+/// Starts a read plugin with its own [`abi::HostApi`] and settings, as generation 1.
 fn start_plugin(skse: &'static skse::Interface, dir: &Path, (module, descriptor, plugin, source, copy): Read) -> reload::Loaded {
     let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
-    let host: &'static Host = Box::leak(Box::new(Host { skse, name, hooks: Box::leak(Box::new(Hooks::for_plugin(name))), table: &TABLE }));
+    let api = api::build(name, skse);
     open_settings(name, dir);
     crash::note_image(&plugin.name, 1, module as usize, true);
-    let live = (descriptor.load)(host);
+    let live = (descriptor.load)(api);
     if live {
         log!("loaded {}: {}", plugin.file, plugin.name);
         log!("{}: generation 1 loaded, image at {:#x}", plugin.name, module as usize);
@@ -321,7 +287,7 @@ fn start_plugin(skse: &'static skse::Interface, dir: &Path, (module, descriptor,
         log!("skipped {}: {}: load returned false", plugin.file, plugin.name);
         detach(name);
     }
-    reload::Loaded::new(plugin, host, module, descriptor, live, source, copy)
+    reload::Loaded::new(plugin, api, module, descriptor, live, source, copy)
 }
 
 /// Loads every DLL in the plugin folder that is not loaded (files added since the game started, and
@@ -346,7 +312,7 @@ fn frame() {
     reload::tick();
     follow_player_graph();
     FRAMES.each(|f| {
-        f();
+        (f.call)(f.ctx);
         true
     });
 }
@@ -425,7 +391,8 @@ fn accept(abi: u32, build: &CStr) -> Result<(), String> {
     Ok(())
 }
 
-/// Loads the DLL and checks its descriptor's head; a refused DLL is unloaded again.
+/// Loads the DLL and checks its descriptor's head; a refused DLL is unloaded again. A plugin built
+/// against a later [`abi::HostApi`] is accepted and logged: what this loader lacks reports `Unsupported`.
 fn read_descriptor(path: &Path) -> Result<(HMODULE, &'static Descriptor), String> {
     let wide: Vec<u16> = path.as_os_str().encode_wide().chain([0]).collect();
     let module = unsafe { LoadLibraryW(wide.as_ptr()) };
@@ -440,7 +407,12 @@ fn read_descriptor(path: &Path) -> Result<(HMODULE, &'static Descriptor), String
         accept(d.abi, unsafe { CStr::from_ptr(d.build) }).map(|()| d)
     });
     match checked {
-        Ok(d) => Ok((module, d)),
+        Ok(d) => {
+            if d.api > API {
+                log!("{}: built for api {}, the loader has {API}: functions after {API} report Unsupported", path.display(), d.api);
+            }
+            Ok((module, d))
+        }
         Err(e) => {
             unsafe { FreeLibrary(module) };
             Err(e)
@@ -565,9 +537,9 @@ fn plugin_name(descriptor: &Descriptor) -> String {
 }
 
 fn describe(descriptor: &Descriptor, file: String) -> Plugin {
-    let owned = |names: &[&str]| names.iter().map(|n| (*n).to_owned()).collect();
     let version = if descriptor.version.is_null() { String::new() } else { unsafe { CStr::from_ptr(descriptor.version) }.to_string_lossy().into_owned() };
-    Plugin { name: plugin_name(descriptor), version, file, constraints: Constraints { before: owned(descriptor.load_before), after: owned(descriptor.load_after), priority: descriptor.priority } }
+    let (before, after) = unsafe { (abi::names(descriptor.load_before), abi::names(descriptor.load_after)) };
+    Plugin { name: plugin_name(descriptor), version, file, constraints: Constraints { before, after, priority: descriptor.priority } }
 }
 
 /// Removes every registration of `owner` and returns what went, with every call inside them
@@ -651,7 +623,7 @@ unsafe extern "C" fn on_skse_message(msg: *mut skse::Message) {
         keys::describe_game_uses();
     }
     MESSAGES.each(|f| {
-        f(msg);
+        (f.call)(f.ctx, msg);
         true
     });
 }
@@ -663,20 +635,21 @@ unsafe extern "C" fn on_papyrus_pass(registry: *mut c_void) {
     };
     VM.store(core::ptr::from_ref(vm) as usize, Ordering::Release);
     PAPYRUS.each(|f| {
-        f(vm);
+        (f.call)(f.ctx, vm);
         true
     });
 }
 
-fn on_message(owner: &'static str, f: MessageFn) {
+fn on_message(owner: &'static str, f: MessageCallback) {
+    let (call, ctx) = (f.call, f.ctx);
     MESSAGES.add(owner, f);
     let seen = STARTUP.lock().unwrap_or_else(PoisonError::into_inner).clone();
     for kind in seen {
-        f(&skse::Message { sender: c"SKSE".as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() });
+        call(ctx, &skse::Message { sender: c"SKSE".as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() });
     }
 }
 
-fn on_plugin_message(owner: &'static str, sender: &str, f: MessageFn) {
+fn on_plugin_message(owner: &'static str, sender: &str, f: MessageCallback) {
     PLUGIN_MESSAGES.add(owner, (sender.to_owned(), f));
 }
 
@@ -692,25 +665,22 @@ unsafe extern "C" fn on_plugin_dispatch(msg: *mut skse::Message) {
     }
     PLUGIN_MESSAGES.each(|(sender, f)| {
         if sent_by(msg, sender) {
-            f(msg);
+            (f.call)(f.ctx, msg);
         }
         true
     });
 }
 
-fn serve_alias(owner: &'static str, name: &str, f: MessageFn) -> Result<usize, Error> {
+fn serve_alias(owner: &'static str, name: &str, f: MessageCallback) -> Result<usize, Error> {
     let started = STARTUP.lock().unwrap_or_else(PoisonError::into_inner).contains(&skse::MessagingInterface::PLUGINS_LOADED);
     alias::serve(owner, name, f, started)
 }
 
-fn on_frame(owner: &'static str, f: FrameFn) {
-    FRAMES.add(owner, f);
-}
-
-fn on_papyrus(owner: &'static str, f: PapyrusFn) {
+fn on_papyrus(owner: &'static str, f: PapyrusCallback) {
+    let (call, ctx) = (f.call, f.ctx);
     PAPYRUS.add(owner, f);
     if let Some(vm) = vm() {
-        f(vm);
+        call(ctx, vm);
     }
 }
 
@@ -849,7 +819,7 @@ mod tests {
             let mut msg = skse::Message { sender: sender.as_ptr(), kind, data_len: 0, data: core::ptr::null_mut() };
             unsafe { on_plugin_dispatch(&raw mut msg) };
         };
-        on_plugin_message("listener", "hdtsmp64", count);
+        on_plugin_message("listener", "hdtsmp64", abi::message(count));
         send(c"HDTSMP64", 1);
         send(c"other", 10);
         assert_eq!(SEEN.load(Ordering::Relaxed), 1);
