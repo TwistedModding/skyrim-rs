@@ -212,9 +212,9 @@ impl RawTexture {
     }
 }
 
-/// What the plugin wants after a frame: the cursor (an index of `egui::CursorIcon::ALL`), text it
-/// copied (empty for none), and whether it wants the keyboard (a widget focused) and the pointer
-/// (over one of its areas, or a drag in progress).
+/// What the plugin wants after a frame: the cursor (an index of [`CURSORS`]), text it copied
+/// (empty for none), and whether it wants the keyboard (a widget focused) and the pointer (over
+/// one of its areas, or a drag in progress).
 #[repr(C)]
 pub struct RawPlatformOutput {
     pub size: u32,
@@ -229,6 +229,46 @@ impl Record for RawPlatformOutput {
         Self { size: size::<Self>(), cursor: 0, copied: Str::default(), wants_keyboard: false, wants_pointer: false }
     }
 }
+
+/// The cursors as [`RawPlatformOutput::cursor`] numbers them, owned by the ABI rather than by an
+/// `egui` version; append only. A cursor missing here crosses as the default.
+pub const CURSORS: [CursorIcon; 35] = [
+    CursorIcon::Default,
+    CursorIcon::None,
+    CursorIcon::ContextMenu,
+    CursorIcon::Help,
+    CursorIcon::PointingHand,
+    CursorIcon::Progress,
+    CursorIcon::Wait,
+    CursorIcon::Cell,
+    CursorIcon::Crosshair,
+    CursorIcon::Text,
+    CursorIcon::VerticalText,
+    CursorIcon::Alias,
+    CursorIcon::Copy,
+    CursorIcon::Move,
+    CursorIcon::NoDrop,
+    CursorIcon::NotAllowed,
+    CursorIcon::Grab,
+    CursorIcon::Grabbing,
+    CursorIcon::AllScroll,
+    CursorIcon::ResizeHorizontal,
+    CursorIcon::ResizeNeSw,
+    CursorIcon::ResizeNwSe,
+    CursorIcon::ResizeVertical,
+    CursorIcon::ResizeEast,
+    CursorIcon::ResizeSouthEast,
+    CursorIcon::ResizeSouth,
+    CursorIcon::ResizeSouthWest,
+    CursorIcon::ResizeWest,
+    CursorIcon::ResizeNorthWest,
+    CursorIcon::ResizeNorth,
+    CursorIcon::ResizeNorthEast,
+    CursorIcon::ResizeColumn,
+    CursorIcon::ResizeRow,
+    CursorIcon::ZoomIn,
+    CursorIcon::ZoomOut,
+];
 
 /// Where a frame's drawing goes: the meshes in paint order, the textures set before they are
 /// painted, the textures freed after, and the platform output.
@@ -379,7 +419,7 @@ impl Surface {
         full.textures_delta.clear();
         let platform = &full.platform_output;
         let copied = platform.commands.iter().find_map(|c| if let OutputCommand::CopyText(text) = c { Some(text.as_str()) } else { None }).unwrap_or_default();
-        let cursor = CursorIcon::ALL.iter().position(|c| *c == platform.cursor_icon).and_then(|i| u32::try_from(i).ok()).unwrap_or_default();
+        let cursor = CURSORS.iter().position(|c| *c == platform.cursor_icon).and_then(|i| u32::try_from(i).ok()).unwrap_or_default();
         output.platform.put(&RawPlatformOutput { size: size::<RawPlatformOutput>(), cursor, copied: Str::from(copied), wants_keyboard: ctx.egui_wants_keyboard_input(), wants_pointer: ctx.egui_is_using_pointer() || ctx.is_pointer_over_egui() });
     }
 }
@@ -495,5 +535,12 @@ mod tests {
         let without_text = unsafe { slice((&raw const older_events[0]).cast::<u8>(), offset_of!(RawEvent, text)) }.to_vec();
         let short = RawFrameInput { events: without_text.as_ptr().cast(), len: 1, event_size: u32::try_from(without_text.len()).unwrap(), ..read };
         assert_eq!(events(&short), [Some(Event::Text(String::new()))], "an older event without its text");
+    }
+
+    #[test]
+    fn every_egui_cursor_has_an_abi_number() {
+        assert!(CursorIcon::ALL.iter().all(|c| CURSORS.contains(c)));
+        assert!(CURSORS.iter().enumerate().all(|(i, c)| CURSORS.iter().position(|d| d == c) == Some(i)), "numbers are unique");
+        assert_eq!((CURSORS[0], CURSORS[9], CURSORS[34]), (CursorIcon::Default, CursorIcon::Text, CursorIcon::ZoomOut));
     }
 }

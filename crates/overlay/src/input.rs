@@ -41,6 +41,7 @@ pub enum Capture {
 /// A keyboard key and the modifiers held with it, written as the settings file and the Keys
 /// section show it: `F11`, `Escape`, `Ctrl+Shift+K`. A key the name table lacks is written as its
 /// scan code (`0x2A`); either form is read back. A press matches only with exactly these modifiers.
+/// Laid out as C and frozen: the framework's plugin ABI writes it across.
 #[repr(C)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash)]
 pub struct Hotkey {
@@ -50,6 +51,8 @@ pub struct Hotkey {
     pub shift: bool,
     pub alt: bool,
 }
+
+const _: () = assert!(size_of::<Hotkey>() == 8 && core::mem::offset_of!(Hotkey, ctrl) == 4 && core::mem::offset_of!(Hotkey, shift) == 5 && core::mem::offset_of!(Hotkey, alt) == 6);
 
 impl Hotkey {
     #[must_use]
@@ -96,7 +99,7 @@ impl FromStr for Hotkey {
     }
 }
 
-/// Who has a key when an action bound to it fires.
+/// Who has a key when an action bound to it fires; the values cross the framework's plugin ABI.
 #[repr(u32)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Scope {
