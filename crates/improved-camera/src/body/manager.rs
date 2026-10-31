@@ -132,6 +132,8 @@ pub struct Manager {
     pub foot_ik_active: bool,
     /// The yaw smoothing's eased turn toward the movement (`m_bodyYaw`), `None` until it starts.
     pub body_yaw: Option<f32>,
+    /// The body's turn off the root shown last frame, held to `POSE_TURN_SPEED` while standing.
+    pub pose_turn: Option<f32>,
     /// `m_humanoidRace`.
     pub humanoid: bool,
 }
@@ -162,12 +164,19 @@ impl Default for Manager {
             anchored_spine: None,
             foot_ik_active: false,
             body_yaw: None,
+            pose_turn: None,
             humanoid: false,
         }
     }
 }
 
 const SPINE: &str = "NPC Spine [Spn0]";
+const COM: &str = "NPC COM [COM ]";
+/// How fast the body may turn off the root, in degrees a second, standing and moving: the stop
+/// animations after a strafe swing the whole body up to 90 degrees in one frame and back within half
+/// a second, while locomotion turns it under 140 a second.
+const POSE_TURN_SPEED: f32 = 45.0;
+const POSE_MOVING_TURN_SPEED: f32 = 180.0;
 /// How far the spine takes the anchor's vertical correction while foot IK is live.
 const SPINE_DELTA_LIMIT: f32 = 20.0;
 
@@ -325,12 +334,12 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
     if camera.mode != CameraMode::First {
         m.anchored = None;
         m.anchored_spine = None;
-        m.body_yaw = None;
+        m.reset_yaw_smoothing();
         snap(events);
         return (true, false);
     }
     if !profile.General.bEnableBody || camera.transition != CameraType::Unknown {
-        m.body_yaw = None;
+        m.reset_yaw_smoothing();
         snap(events);
         return (true, false);
     }
@@ -342,7 +351,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
         Some((player, third, head, root, parent))
     });
     let Some((player, third, head, root, parent)) = nodes else {
-        m.body_yaw = None;
+        m.reset_yaw_smoothing();
         snap(events);
         return (false, false);
     };
@@ -377,18 +386,20 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
                 offset -= total + max;
             }
         }
+        let counter = m.pose_counter(third, body_yaw, magnitude <= 0.1 && !look.turning(), dt);
         let desired = normalize_radian(look_yaw + offset);
-        let delta = if unwinding || free {
+        let target = if unwinding || free {
             let (target, event) = free_look::with(|f| f.update_body_yaw(desired, unwinding || magnitude > 0.1, &body, dt));
             events[0] = event;
             if unwinding && normalize_radian(desired - target).abs() < 1f32.to_radians() {
                 snap(events);
             }
-            normalize_radian(target - body_yaw)
+            target
         } else {
             snap(events);
-            normalize_radian(desired - body_yaw)
+            desired
         };
+        let delta = normalize_radian(target + counter - body_yaw);
         if delta.abs() > 1e-5 {
             let mut local = root.local_transform();
             local.rotation = turned(&parent.world_transform().rotation, &local.rotation, delta);
@@ -396,7 +407,7 @@ fn anchor(m: &mut Manager, camera: &camera_snapshot::Data, profile: &Profile, dt
             root.update_transforms();
         }
     } else {
-        m.body_yaw = None;
+        m.reset_yaw_smoothing();
         snap(events);
     }
     let world = third.world_transform();
@@ -478,7 +489,32 @@ pub fn release_foot_ik() {
     }
 }
 
+/// The body's turn off the root shown this frame: last frame's moved toward the animation's `turn`
+/// by at most `step`.
+#[must_use]
+pub fn limited_turn(shown: f32, turn: f32, step: f32) -> f32 {
+    normalize_radian(shown + normalize_radian(turn - shown).clamp(-step, step))
+}
+
 impl Manager {
+    /// `ResetYawSmoothing`.
+    fn reset_yaw_smoothing(&mut self) {
+        self.body_yaw = None;
+        self.pose_turn = None;
+    }
+
+    /// The root turn that keeps the animated body from turning off the root faster than
+    /// `POSE_TURN_SPEED` while `standing`; the root's heading is `root_yaw`.
+    fn pose_counter(&mut self, third: &NiAVObject, root_yaw: f32, standing: bool, dt: f32) -> f32 {
+        let Some(com) = util::object_by_name(third, COM) else { return 0.0 };
+        let forward = point::mul_vec(&com.world_transform().rotation, [0.0, 1.0, 0.0]);
+        let turn = normalize_radian(forward[0].atan2(forward[1]) - root_yaw);
+        let speed = if standing { POSE_TURN_SPEED } else { POSE_MOVING_TURN_SPEED };
+        let shown = self.pose_turn.map_or(turn, |shown| limited_turn(shown, turn, speed.to_radians() * dt));
+        self.pose_turn = Some(shown);
+        normalize_radian(shown - turn)
+    }
+
     /// `Update`: the states, and the offset the body takes; none while the camera rides the head.
     fn update(&mut self, player: &PlayerCharacter, profile: &Profile, info: &ModInfo, mode: CameraMode) -> [f32; 3] {
         self.update_states(player, profile, info);
@@ -802,7 +838,18 @@ impl Manager {
 
 #[cfg(test)]
 mod tests {
-    use super::{ActionType, DirectionType, HandsType, point, snapshot, swim_sheathe, turned};
+    use super::{ActionType, DirectionType, HandsType, limited_turn, point, snapshot, swim_sheathe, turned};
+
+    #[test]
+    fn a_stop_animation_swing_turns_the_shown_body_one_step_a_frame() {
+        let step = 0.75f32.to_radians();
+        let shown = limited_turn(3f32.to_radians(), -88f32.to_radians(), step);
+        assert!((shown - 2.25f32.to_radians()).abs() < 1e-6, "{shown}");
+        let settle = limited_turn(11f32.to_radians(), 11.5f32.to_radians(), step);
+        assert!((settle - 11.5f32.to_radians()).abs() < 1e-6, "{settle}");
+        let across = limited_turn(179.5f32.to_radians(), -179.5f32.to_radians(), step);
+        assert!((across + 179.75f32.to_radians()).abs() < 1e-5, "{across}");
+    }
 
     #[test]
     fn the_turn_moves_the_world_heading_toward_the_target() {

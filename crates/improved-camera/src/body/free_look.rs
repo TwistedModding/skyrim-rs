@@ -123,6 +123,12 @@ impl FreeLook {
         self.turn(false, 0.0)
     }
 
+    /// The standing shuffle's pivot animation plays.
+    #[must_use]
+    pub const fn turning(&self) -> bool {
+        self.turn_playing
+    }
+
     /// `UpdateTurnAnimation`: the pivot animation the standing shuffle plays in its direction.
     fn turn(&mut self, shuffling: bool, direction: f32) -> Option<&'static str> {
         if shuffling && (!self.turn_playing || direction * self.turn_direction < 0.0) {
