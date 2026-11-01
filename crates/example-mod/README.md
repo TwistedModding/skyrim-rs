@@ -1,6 +1,6 @@
 # skyrim-rs example plugin
 
-A small skyrim-rs plugin that scales the health damage the player takes. The factor starts at 1.0 (no change) and persists; it is a slider in the plugin's tab of the skyrim-rs menu, applied by a hook and settable from Papyrus. Its source is the worked example of skyrim-rs's `docs/MODS.md` (`crates/example-mod`).
+A small skyrim-rs plugin that scales the health damage the player takes. The factor starts at 1.0 (no change) and persists; it is a slider in the plugin's tab of the skyrim-rs menu, applied by a hook and settable from Papyrus. Its source is skyrim-rs's example mod (`crates/example-mod`).
 
 ## Requirements
 

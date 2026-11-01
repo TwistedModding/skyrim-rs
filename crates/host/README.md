@@ -30,17 +30,13 @@ Ignore `optional-standalone` unless you have a game without SKSE; its own README
 
 ## Plugins and hot reload
 
-Plugins talk to the loader through a stable C interface, so a plugin does not have to come from the same build as `skyrim_rs.dll`: it loads into any loader that has the functions it uses, and a function an older loader lacks reports Unsupported instead of crashing. Plugins built before that interface was settled (ABI 5 stage 5, 2026-10-31) are refused with a line in `skyrim-rs.log` asking to rebuild them.
+Plugins talk to the loader through a stable C interface, so a plugin does not have to come from the same build as `skyrim_rs.dll`: it loads into any loader that has the functions it uses, and a function an older loader lacks reports Unsupported instead of crashing. Plugins built before the stable interface are refused with a line in `skyrim-rs.log` asking to rebuild them.
 
 Replace a plugin's DLL in `Data\SKSE\Plugins\skyrim-rs\` while the game runs and the loader swaps the new build in within a second, logging every step in `skyrim-rs.log`. The Plugins tab's "Reload", "Unload", "Load" and "Rescan folder" buttons do the same without a new file.
 
 ## Crash logger
 
 When the game dies with an unhandled exception, the loader writes two files to `Documents\My Games\Skyrim Special Edition\SKSE\`: `skyrim-rs-crash-<yyyymmdd-hhmmss>.dmp`, a minidump, and `skyrim-rs-crash-<yyyymmdd-hhmmss>.log`, the report. The log starts with a `Summary` block: the exception and where it happened, the address accessed, a plain explanation, the likely culprit and a crash signature, followed by the loader's facts, the registers, the call stack with game function names, every thread, every module and what the game objects on the stack were. It runs next to Crash Logger SSE if you have it; both write their logs.
-
-## Untested outside the developer's machine
-
-Everything above was verified on one Windows 11 machine with a plain Steam install. Not tried anywhere: Mod Organizer 2's virtual file system (the loader finds its plugins through the game's `Data` folder), other Windows versions, and a machine without the fonts Segoe UI and Consolas, which are the fallback when the game's own font cannot be read from `Skyrim - Interface.bsa` (the `overlay font:` line in the log says which is in use).
 
 ## What to send back
 
