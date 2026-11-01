@@ -440,23 +440,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "improved-camera"
-version = "0.1.0"
-dependencies = [
- "framework",
- "skse",
- "skyrim",
- "skyrim-sre",
-]
-
-[[package]]
-name = "improved-camera-stub"
-version = "0.1.0"
-dependencies = [
- "skse",
-]
-
-[[package]]
 name = "itertools"
 version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -728,18 +711,6 @@ dependencies = [
  "skse",
  "skyrim",
  "skyrim-sre",
-]
-
-[[package]]
-name = "reversed-z"
-version = "0.1.0"
-dependencies = [
- "framework",
- "hook",
- "skse",
- "skyrim",
- "skyrim-sre",
- "windows",
 ]
 
 [[package]]
