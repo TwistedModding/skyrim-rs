@@ -701,8 +701,8 @@ macro_rules! plugin {
                 }
                 skyrim_rs_load
             },
-            load_before: &[$($(concat!($before, "\0").as_ptr().cast(),)? ::core::ptr::null()] as *const _,
-            load_after: &[$($(concat!($after, "\0").as_ptr().cast(),)? ::core::ptr::null()] as *const _,
+            load_before: &[$($(concat!($before, "\0").as_ptr().cast(),)*)? ::core::ptr::null()] as *const _,
+            load_after: &[$($(concat!($after, "\0").as_ptr().cast(),)*)? ::core::ptr::null()] as *const _,
             priority: ($($priority,)? 0i32,).0,
             unload: ($(Some({
                 extern "C" fn skyrim_rs_unload() {

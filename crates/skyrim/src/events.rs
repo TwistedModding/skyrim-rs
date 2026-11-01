@@ -250,20 +250,20 @@ unsafe fn source_at<E: Event>(p: *const sre::BSTEventSource) -> Option<&'static 
 }
 
 macro_rules! opaque_events {
-    ($($(#[$doc:meta] $name:ident;) => {
+    ($($(#[$doc:meta])* $name:ident;)*) => {
         $(
-            $(#[$doc]
+            $(#[$doc])*
             #[repr(C)]
             pub struct $name {
                 _payload: [u8; 0],
             }
-        
+        )*
     };
 }
 
 /// `impl Event` rows: the type, how to reach its source, and its `AddEventSink`/`RemoveEventSink` ids.
 macro_rules! sources {
-    ($($event:ty => $source:expr, $add:ident, $remove:ident;) => {
+    ($($event:ty => $source:expr, $add:ident, $remove:ident;)*) => {
         $(
             impl Event for $event {
                 const ADD_SINK: u64 = fns::$add;
@@ -272,7 +272,7 @@ macro_rules! sources {
                     unsafe { source_at($source) }
                 }
             }
-        
+        )*
     };
 }
 
@@ -423,7 +423,7 @@ pub mod story {
     use sre::raw::fns;
 
     macro_rules! story_events {
-        ($($name:ident: $get:ident, $add:ident, $remove:ident;) => {
+        ($($name:ident: $get:ident, $add:ident, $remove:ident;)*) => {
             $(
                 /// Payload not described by pass 3.
                 #[repr(C)]
@@ -438,7 +438,7 @@ pub mod story {
                         unsafe { source_at(sre::$get().cast()) }
                     }
                 }
-            
+            )*
         };
     }
 

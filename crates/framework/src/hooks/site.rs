@@ -51,34 +51,34 @@ pub trait Op: 'static {
 }
 
 macro_rules! signatures {
-    ($(($($a:ident $A:ident $i:tt),*)) => {$(
-        impl<$($A: Slot, R: Slot> Signature for unsafe extern "C" fn($($A),*) -> R {
-            type Args = ($($A,);
+    ($(($($a:ident $A:ident $i:tt),*))*) => {$(
+        impl<$($A: Slot,)* R: Slot> Signature for unsafe extern "C" fn($($A),*) -> R {
+            type Args = ($($A,)*);
             type Ret = R;
 
             const SLOTS: RawSignature = RawSignature::new(&[$($A::CLASS),*], R::CLASS);
 
-            unsafe fn call(self, ($($a,): Self::Args) -> R {
+            unsafe fn call(self, ($($a,)*): Self::Args) -> R {
                 unsafe { self($($a),*) }
             }
 
-            fn to_slots(($($a,): Self::Args) -> ArgSlots {
+            fn to_slots(($($a,)*): Self::Args) -> ArgSlots {
                 ArgSlots::new(&[$($a.to_slot()),*])
             }
 
             #[allow(unused_variables, clippy::unused_unit)]
             fn from_slots(slots: &ArgSlots) -> Self::Args {
-                ($($A::from_slot(slots.slots[$i]),)
+                ($($A::from_slot(slots.slots[$i]),)*)
             }
 
             fn detour<O: Op<Fn = Self>>() -> Self {
-                unsafe extern "C" fn detour<O: Op, $($A: Slot, R: Slot>($($a: $A),*) -> R {
+                unsafe extern "C" fn detour<O: Op, $($A: Slot,)* R: Slot>($($a: $A),*) -> R {
                     R::from_slot(dispatch(O::site(), ArgSlots::new(&[$($a.to_slot()),*])).bits)
                 }
-                detour::<O, $($A, R>
+                detour::<O, $($A,)* R>
             }
         }
-    };
+    )*};
 }
 
 signatures! {

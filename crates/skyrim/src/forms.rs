@@ -85,7 +85,7 @@ macro_rules! by_form_type {
                 form.formType == FormType::$ty as u8
             }
         }
-    };
+    )*};
 }
 
 by_form_type!(

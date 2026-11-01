@@ -18,7 +18,7 @@ pub(crate) trait OpVisitor<R> {
 }
 
 macro_rules! ops {
-    ($($id:ident / $fn:ident = $name:literal,) => {
+    ($($id:ident / $fn:ident = $name:literal,)*) => {
         #[allow(non_camel_case_types, clippy::enum_variant_names)]
         #[derive(Clone, Copy)]
         enum Index { $($id),* }
@@ -45,7 +45,7 @@ macro_rules! ops {
                     Target::Op(Index::$id as usize)
                 }
             }
-        
+        )*
 
         /// Display name and Address Library id of every operation, by index.
         pub(crate) const OPS: &[(&str, u64)] = &[$(($name, fns::$id)),*];
@@ -55,7 +55,7 @@ macro_rules! ops {
                 if index == Index::$id as usize {
                     return Some(visitor.visit::<$id>());
                 }
-            
+            )*
             None
         }
     };
@@ -185,16 +185,16 @@ macro_rules! raw_slots {
     ($n:literal, $slot:expr, $visitor:expr) => {
         raw_slots!(@ $n, $slot, $visitor, 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31)
     };
-    (@ $n:literal, $slot:expr, $visitor:expr, $($k:literal) => {
+    (@ $n:literal, $slot:expr, $visitor:expr, $($k:literal)*) => {
         match $slot {
-            $($k => Some($visitor.visit::<RawSlot<$n, $k>>()),
+            $($k => Some($visitor.visit::<RawSlot<$n, $k>>()),)*
             _ => None,
         }
     };
 }
 
 macro_rules! shapes {
-    ($($n:literal $label:literal => $fn:ty;) => {
+    ($($n:literal $label:literal => $fn:ty;)*) => {
         $(
             impl RawShape for $fn {
                 const SHAPE: usize = $n;
@@ -207,14 +207,14 @@ macro_rules! shapes {
                     &RAW_SITES[K]
                 }
             }
-        
+        )*
 
         /// Each shape as site names show it: a raw shape's arity, a typed shape's function.
         pub const SHAPES: &[&str] = &[$($label),*];
 
         pub(crate) fn with_raw<R>(shape: usize, slot: usize, visitor: impl OpVisitor<R>) -> Option<R> {
             match shape {
-                $($n => raw_slots!($n, slot, visitor),
+                $($n => raw_slots!($n, slot, visitor),)*
                 _ => None,
             }
         }

@@ -49,8 +49,8 @@ fn log_line(line: core::fmt::Arguments<'_>) {
 }
 
 macro_rules! log {
-    ($($arg:tt) => {
-        $crate::host::log_line(format_args!($($arg))
+    ($($arg:tt)*) => {
+        $crate::host::log_line(format_args!($($arg)*))
     };
 }
 

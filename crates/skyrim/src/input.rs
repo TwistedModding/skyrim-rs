@@ -505,7 +505,7 @@ unsafe extern "C" fn execute_erased<const I: usize>(params: *const sre::ParamInf
 }
 
 macro_rules! executes {
-    ($($i:literal) => {
+    ($($i:literal)*) => {
         const EXECUTES: [ExecuteFn; ERASED_COMMANDS] = [$(execute_erased::<$i>),*];
     };
 }

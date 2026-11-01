@@ -41,7 +41,7 @@ macro_rules! integer_slots {
                 bits as $u as $t
             }
         }
-    };
+    )*};
 }
 
 integer_slots!(u8 => u8, u16 => u16, u32 => u32, u64 => u64, usize => usize, i8 => u8, i16 => u16, i32 => u32, i64 => u64, isize => usize);

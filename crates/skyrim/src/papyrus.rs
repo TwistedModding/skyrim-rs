@@ -718,11 +718,11 @@ pub trait NativeMethod<M>: Copy + Send + Sync + 'static {
 
 macro_rules! native_fns {
     ($($a:ident $i:tt),*) => {
-        impl<F, R, $($a),*> LatentFn<(Latent<R>, $($a,)> for F
+        impl<F, R, $($a),*> LatentFn<(Latent<R>, $($a,)*)> for F
         where
             F: Fn(Latent<R>, $($a),*) + Copy + Send + Sync + 'static,
             R: IntoVariable,
-            $($a: FromVariable,
+            $($a: FromVariable,)*
         {
             type Output = R;
             const PARAMS: &'static [ParamType] = &[$($a::TYPE),*];
@@ -732,11 +732,11 @@ macro_rules! native_fns {
             }
         }
 
-        impl<F, R, $($a),*> NativeFn<(R, $($a,)> for F
+        impl<F, R, $($a),*> NativeFn<(R, $($a,)*)> for F
         where
             F: Fn($($a),*) -> R + Copy + Send + Sync + 'static,
             R: IntoVariable,
-            $($a: FromVariable,
+            $($a: FromVariable,)*
         {
             const PARAMS: &'static [ParamType] = &[$($a::TYPE),*];
             const RETURN: Option<ParamType> = R::TYPE;
@@ -746,12 +746,12 @@ macro_rules! native_fns {
             }
         }
 
-        impl<F, S, R, $($a),*> NativeMethod<(S, R, $($a,)> for F
+        impl<F, S, R, $($a),*> NativeMethod<(S, R, $($a,)*)> for F
         where
             F: for<'s> Fn(&'s S, $($a),*) -> R + Copy + Send + Sync + 'static,
             S: FormClass,
             R: IntoVariable,
-            $($a: FromVariable,
+            $($a: FromVariable,)*
         {
             type Receiver = S;
             const PARAMS: &'static [ParamType] = &[$($a::TYPE),*];
