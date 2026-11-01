@@ -634,6 +634,10 @@ mod tests {
         assert!(!older.unsubscribe(SubscriptionId::new(1)) && !older.set_enabled(SubscriptionId::new(1), false) && !older.unpatch(PatchId::new(1)));
 
         let plugin = Hooks::new(full);
+        let api_4 = HostApi { version: 4, ..*full };
+        let counted = Counted(&DROPS);
+        assert_eq!(Hooks::new(&raw const api_4).before(target(), Options::new("abi-test-hooks").exclusive(), move |_| _ = counted.alive()), Err(hooks::Error::Unsupported { what: "exclusive hook subscriptions".to_owned() }));
+        assert_eq!(DROPS.load(Ordering::Relaxed), 2, "an exclusive request is never silently downgraded on an older loader");
         let foreign = plugin.before(target(), Options::new("abi-test-other"), |_| {}).unwrap_err();
         assert_eq!(foreign, hooks::Error::Owner { given: "abi-test-other".to_owned(), plugin: "abi-test-hooks".to_owned() });
         assert!(matches!(unsafe { plugin.patch("abi-test-other", Location::Address(0), &[0], &[0]) }, Err(hooks::Error::Owner { .. })));

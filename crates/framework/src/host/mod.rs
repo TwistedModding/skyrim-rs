@@ -68,7 +68,7 @@ use owned::Owned;
 
 /// The folder under `Data\SKSE\Plugins` the host loads plugins from.
 pub const PLUGIN_DIR: &str = "skyrim-rs";
-/// The host's settings in `Data\SKSE\Plugins`: `compat = refuse` (the default) or `stack`, see [`Compat`].
+/// The host's settings in `Data\SKSE\Plugins`: `compat = stack` (the default) or `refuse`, see [`Compat`].
 pub const CONFIG: &str = "skyrim-rs.ini";
 /// The host's own name, as the owner of its window and settings.
 pub const NAME: &str = "skyrim-rs";
@@ -204,7 +204,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     let (compat, source) = match std::fs::read_to_string(plugins_dir().join(CONFIG)).ok().as_deref().and_then(|text| setting(text, "compat")).map(str::parse::<Compat>) {
         Some(Ok(compat)) => (compat, CONFIG.to_owned()),
         Some(Err(e)) => (Compat::Refuse, format!("{CONFIG}: {e}")),
-        None => (Compat::Refuse, "default".to_owned()),
+        None => (Compat::default(), "default".to_owned()),
     };
     log!("hooks: compatibility mode {compat} ({source})");
     Hooks::set_compat(compat);

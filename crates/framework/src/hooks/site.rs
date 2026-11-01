@@ -261,11 +261,13 @@ pub(crate) struct Meta {
     pub stats: Stats,
     /// A disabled subscriber keeps its place in the order and is skipped by the dispatch.
     pub enabled: AtomicBool,
+    pub exclusive: bool,
+    pub blocked: AtomicBool,
 }
 
 impl Meta {
     fn runs(&self) -> bool {
-        self.enabled.load(Relaxed)
+        self.enabled.load(Relaxed) && !self.blocked.load(Relaxed)
     }
 }
 

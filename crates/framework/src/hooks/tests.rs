@@ -20,7 +20,7 @@ macro_rules! targets {
     )*};
 }
 
-targets! { phases exclusive cycle ordering removal reentrant shape prepatched overwritten toggled }
+targets! { phases exclusive cycle ordering removal reentrant shape prepatched overwritten toggled mixed }
 
 fn call(f: Fn2, a: usize, b: usize) -> usize {
     unsafe { black_box(f)(a, b) }
@@ -177,6 +177,10 @@ fn patch_jump(at: usize, to: usize) -> usize {
 #[test]
 fn unmanaged_patches_are_refused_stacked_or_break_the_site() {
     static NEXT: AtomicUsize = AtomicUsize::new(0);
+    static MIXED_NEXT: AtomicUsize = AtomicUsize::new(0);
+    unsafe extern "C" fn chained(a: usize, b: usize) -> usize {
+        unsafe { core::mem::transmute::<usize, Fn2>(MIXED_NEXT.load(SeqCst))(a, b) * 100 }
+    }
     unsafe extern "C" fn early(a: usize, b: usize) -> usize {
         black_box(a).wrapping_add(black_box(b)) * 10
     }
@@ -197,7 +201,10 @@ fn unmanaged_patches_are_refused_stacked_or_break_the_site() {
     assert_eq!(call(prepatched, 1, 2), 30);
 
     registry::set_compat(Compat::Stack);
+    registry::revalidate("test", &[("prepatched", address)]);
+    assert!(matches!(hooks.before(raw(prepatched), Options::new("strict-first").exclusive(), |_| {}), Err(Error::Site { .. })));
     hooks.before(raw(prepatched), Options::new("s"), |args| args.0 += 1).unwrap();
+    assert!(matches!(hooks.before(raw(prepatched), Options::new("strict-later").exclusive(), |_| {}), Err(Error::Site { .. })), "an intact dispatcher can still wrap an earlier foreign patch");
     assert_eq!(call(prepatched, 1, 2), 40, "the subscriber runs, then the earlier patch as the original");
     let report = hooks.diagnostics().into_iter().find(|r| r.address == address).unwrap();
     assert!(!report.validation.accepted() && matches!(report.current, Validation::Managed { .. }) && report.patched_by == Some(exe_name()) && !report.broken, "{report}");
@@ -216,6 +223,56 @@ fn unmanaged_patches_are_refused_stacked_or_break_the_site() {
     let report = hooks.diagnostics().into_iter().find(|r| r.address == overwritten as *const () as usize).unwrap();
     assert!(report.broken && report.patched_by == Some(exe_name()) && !report.current.accepted(), "{report}");
     assert!(report.to_string().contains(&format!("patched by {}, broken; #", exe_name())), "{report}");
+
+    registry::set_compat(Compat::default());
+    registry::revalidate("test", &[]);
+    assert_eq!(call(overwritten, 1, 2), 300);
+    assert_eq!(runs.load(SeqCst), 3, "stack mode resumes a reachable chain even when the foreign patch is unchanged");
+    assert_eq!(Compat::default(), Compat::Stack);
+
+    let normal = Arc::new(AtomicUsize::new(0));
+    let counted = Arc::clone(&normal);
+    hooks.before(raw(mixed), Options::new("shared"), move |args| {
+        counted.fetch_add(1, SeqCst);
+        args.0 += 1;
+    }).unwrap();
+    let strict = Arc::new([const { AtomicUsize::new(0) }; 4]);
+    let counted = Arc::clone(&strict);
+    hooks.before(raw(mixed), Options::new("strict-before").exclusive(), move |_| { counted[0].fetch_add(1, SeqCst); }).unwrap();
+    let counted = Arc::clone(&strict);
+    hooks.around(raw(mixed), Options::new("strict-around").exclusive(), move |args, next| {
+        counted[1].fetch_add(1, SeqCst);
+        unsafe { next.call(args) }
+    }).unwrap();
+    let counted = Arc::clone(&strict);
+    hooks.replace(raw(mixed), Options::new("strict-replace").exclusive(), move |args, original| {
+        counted[2].fetch_add(1, SeqCst);
+        unsafe { original.call(args) + 10 }
+    }).unwrap();
+    let counted = Arc::clone(&strict);
+    let after = hooks.after(raw(mixed), Options::new("strict-after").exclusive(), move |_, _, _| { counted[3].fetch_add(1, SeqCst); }).unwrap();
+    assert_eq!(call(mixed, 1, 2), 14);
+    let mixed_address = mixed as *const () as usize;
+    let managed = unsafe { (mixed_address as *const [u8; 5]).read_unaligned() };
+    MIXED_NEXT.store(patch_jump(mixed_address, chained as *const () as usize), SeqCst);
+    assert_eq!(call(mixed, 1, 2), 1400);
+    registry::revalidate("test", &[]);
+    assert_eq!(call(mixed, 1, 2), 400);
+    assert_eq!(normal.load(SeqCst), 3, "the shared subscriber keeps running");
+    assert!(strict.iter().all(|n| n.load(SeqCst) == 2), "all exclusive phases are skipped");
+    let report = report_at(mixed_address).unwrap();
+    assert!(!report.broken && report.entries.iter().all(|e| e.enabled && e.exclusive == e.blocked));
+    assert!(report.to_string().contains("blocked by foreign patch"));
+    assert!(matches!(hooks.before(raw(mixed), Options::new("strict-new").exclusive(), |_| {}), Err(Error::Site { .. })));
+    assert!(hooks.set_enabled(after, false));
+    unsafe { hook::write_code(mixed_address, &managed) }.unwrap();
+    registry::revalidate("test", &[]);
+    assert_eq!(call(mixed, 1, 2), 14);
+    assert_eq!(strict.each_ref().map(|n| n.load(SeqCst)), [3, 3, 3, 2], "repair resumes exclusives without overriding a manual disable");
+    assert!(report_at(mixed_address).unwrap().entries.iter().all(|e| !e.blocked));
+    for owner in ["shared", "strict-before", "strict-around", "strict-replace", "strict-after"] {
+        assert_eq!(hooks.remove_owner(owner), 1);
+    }
 }
 
 #[test]

@@ -352,6 +352,9 @@ pub struct RawSubscription {
     pub after: *const Str,
     pub after_len: usize,
     pub signature: RawSignature,
+    pub reserved: [u8; 5],
+    /// 0 chain, 1 require no foreign patch; other values are unsupported.
+    pub exclusive: u32,
 }
 
 impl Record for RawSubscription {
@@ -366,6 +369,8 @@ impl Record for RawSubscription {
             after: core::ptr::null(),
             after_len: 0,
             signature: RawSignature::new(&[], RawSignature::NONE),
+            reserved: [0; 5],
+            exclusive: 0,
         }
     }
 }
@@ -381,9 +386,12 @@ fn strs(list: &[String]) -> Vec<Str> {
 impl RawSubscription {
     /// The request with `subscriber`, the owner's name, constraints and target copied.
     pub(crate) unsafe fn to_request(&self, subscriber: Subscriber) -> Result<Request, Error> {
+        if self.exclusive > 1 {
+            return Err(Error::Unsupported { what: format!("hook exclusivity {}", self.exclusive) });
+        }
         let target = self.target.to_target().ok_or_else(|| Error::Unsupported { what: format!("hook target kind {}", self.target.kind) })?;
         let constraints = Constraints { before: unsafe { strings(self.before, self.before_len) }, after: unsafe { strings(self.after, self.after_len) }, priority: self.priority };
-        Ok(Request { target, owner: unsafe { self.owner.as_str() }.to_owned(), constraints, signature: self.signature, subscriber })
+        Ok(Request { target, owner: unsafe { self.owner.as_str() }.to_owned(), constraints, signature: self.signature, subscriber, exclusive: self.exclusive == 1 })
     }
 }
 
@@ -440,11 +448,14 @@ pub struct RawEntryReport {
     pub rank: i32,
     pub timing: Timing,
     pub enabled: bool,
+    pub reserved: [u8; 7],
+    pub exclusive: bool,
+    pub blocked: bool,
 }
 
 impl Record for RawEntryReport {
     fn base() -> Self {
-        Self { id: 0, owner: Str::default(), phase: 0, priority: 0, before: core::ptr::null(), before_len: 0, after: core::ptr::null(), after_len: 0, rank: 0, timing: Timing::default(), enabled: true }
+        Self { id: 0, owner: Str::default(), phase: 0, priority: 0, before: core::ptr::null(), before_len: 0, after: core::ptr::null(), after_len: 0, rank: 0, timing: Timing::default(), enabled: true, reserved: [0; 7], exclusive: false, blocked: false }
     }
 }
 
@@ -505,6 +516,9 @@ pub(crate) fn put_site(report: &SiteReport, sink: &Sink<'_, *const RawSiteReport
             rank: e.rank,
             timing: e.timing,
             enabled: e.enabled,
+            reserved: [0; 7],
+            exclusive: e.exclusive,
+            blocked: e.blocked,
         })
         .collect();
     sink.put(&RawSiteReport {
@@ -537,6 +551,8 @@ impl RawSiteReport {
                     rank: e.rank,
                     timing: e.timing,
                     enabled: e.enabled,
+                    exclusive: e.exclusive,
+                    blocked: e.blocked,
                 })
             })
             .collect();
@@ -803,6 +819,29 @@ mod tests {
         let older = [entry(5, 1, false)];
         let site = RawSiteReport { entries: older.as_ptr(), len: 1, entry_size: u32::try_from(core::mem::offset_of!(RawEntryReport, enabled)).unwrap(), ..site };
         assert!(unsafe { site.to_report() }.entries.iter().all(|e| e.id.get() == 5 && e.enabled), "an older entry without `enabled` reads as enabled");
+    }
+
+    #[test]
+    fn exclusivity_starts_after_the_old_records_padding() {
+        use core::mem::{align_of, offset_of, size_of};
+        let subscription_size = (offset_of!(RawSubscription, signature) + size_of::<RawSignature>()).next_multiple_of(align_of::<RawSubscription>());
+        assert_eq!(offset_of!(RawSubscription, exclusive), subscription_size);
+        let old = RawSubscription { size: u32::try_from(subscription_size).unwrap(), reserved: [0xff; 5], exclusive: 1, ..RawSubscription::base() };
+        let read = unsafe { crate::abi::read_sized(&raw const old) }.unwrap();
+        assert_eq!(read.exclusive, 0, "an old plugin's padding cannot request exclusivity");
+        let current = RawSubscription { size: size::<RawSubscription>(), ..old };
+        let read = unsafe { crate::abi::read_sized(&raw const current) }.unwrap();
+        assert_eq!(read.exclusive, 1);
+        let invalid = RawSubscription { exclusive: 2, ..RawSubscription::base() };
+        assert!(matches!(unsafe { invalid.to_request(Subscriber::Before(before::<unsafe extern "C" fn(), _>(|()| {}))) }, Err(Error::Unsupported { .. })));
+
+        let entry_size = (offset_of!(RawEntryReport, enabled) + size_of::<bool>()).next_multiple_of(align_of::<RawEntryReport>());
+        assert_eq!(offset_of!(RawEntryReport, exclusive), entry_size);
+        let entry = RawEntryReport { reserved: [0xff; 7], exclusive: true, blocked: true, ..RawEntryReport::base() };
+        let read = unsafe { crate::abi::read(&raw const entry, entry_size) }.unwrap();
+        assert!(!read.exclusive && !read.blocked, "an old loader's padding cannot report a block");
+        let read = unsafe { crate::abi::read(&raw const entry, size_of::<RawEntryReport>()) }.unwrap();
+        assert!(read.exclusive && read.blocked);
     }
 
     #[test]

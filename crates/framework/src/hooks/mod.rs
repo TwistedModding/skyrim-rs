@@ -16,7 +16,8 @@
 //! host's [`Compat`] mode: refuse the detour, or stack on the patch as if it were the function. The
 //! host also re-validates every typed operation's site at startup and at the loader's
 //! `PLUGINS_LOADED_2` and `DATA_LOADED` messages, names the module behind each unmanaged patch, and
-//! marks an installed site whose detour another module overwrote as broken.
+//! keeps a reachable chain running behind later hooks by default. [`Options::exclusive`] opts
+//! one subscription out of chaining; `Refuse` mode opts the entire host out.
 //!
 //! Besides function entries, a site can be one `call rel32`, tail `jmp rel32` or virtual call on
 //! the first argument inside a function ([`ops::Call`]) or one vtable slot ([`ops::Vtable`]): the
@@ -58,10 +59,10 @@ pub use validate::{Bytes, Validation, owner, validate, validate_call, validate_s
 pub enum Compat {
     /// Refuse subscriptions on a pre-patched entry; stop running the subscribers of a site whose
     /// detour was overwritten.
-    #[default]
     Refuse,
     /// Install on a pre-patched entry anyway, calling the patch as the original; keep running the
     /// subscribers of an overwritten site behind the other module's detour.
+    #[default]
     Stack,
 }
 
@@ -111,12 +112,14 @@ pub struct Options<'a> {
     pub priority: i32,
     pub before: &'a [&'a str],
     pub after: &'a [&'a str],
+    /// Requires a site without foreign patches; see [`Self::exclusive`].
+    pub exclusive: bool,
 }
 
 impl<'a> Options<'a> {
     #[must_use]
     pub const fn new(owner: &'a str) -> Self {
-        Self { owner, priority: 0, before: &[], after: &[] }
+        Self { owner, priority: 0, before: &[], after: &[], exclusive: false }
     }
 
     #[must_use]
@@ -132,6 +135,13 @@ impl<'a> Options<'a> {
     #[must_use]
     pub const fn after(self, plugins: &'a [&'a str]) -> Self {
         Self { after: plugins, ..self }
+    }
+
+    /// Refuse this subscription on a foreign patch and skip it if another module later overwrites
+    /// the site. Other subscribers at the site keep running. Requires loader API 5.
+    #[must_use]
+    pub const fn exclusive(self) -> Self {
+        Self { exclusive: true, ..self }
     }
 }
 
@@ -374,6 +384,7 @@ pub(crate) struct Request {
     /// The slot shape of the subscriber's function type, compared with the target's.
     pub signature: RawSignature,
     pub subscriber: site::Subscriber,
+    pub exclusive: bool,
 }
 
 /// One site's state and subscribers, as [`Hooks::diagnostics`] reports it. A typed operation's
@@ -408,6 +419,9 @@ pub struct EntryReport {
     pub timing: Timing,
     /// False while [`Hooks::set_enabled`] has the subscriber skipped.
     pub enabled: bool,
+    pub exclusive: bool,
+    /// Skipped because this subscription requires a site without foreign patches.
+    pub blocked: bool,
 }
 
 impl fmt::Display for SiteReport {
@@ -435,6 +449,12 @@ impl fmt::Display for EntryReport {
         write!(f, ": {} calls, last {} ns, mean {} ns", self.timing.calls, self.timing.last_ns, self.timing.mean_ns)?;
         if !self.enabled {
             f.write_str(", disabled")?;
+        }
+        if self.exclusive {
+            f.write_str(", exclusive")?;
+        }
+        if self.blocked {
+            f.write_str(", blocked by foreign patch")?;
         }
         Ok(())
     }
@@ -485,7 +505,10 @@ impl Hooks {
 
     /// Hands `request` to `enter` with the target, options and slot shape of `F`, and reads back
     /// the subscription's id.
-    fn subscribe<F: Signature>(target: Target, options: Options<'_>, enter: impl FnOnce(&RawSubscription, *mut u64, Sink<'_, *const RawError>) -> Option<u32>) -> Result<SubscriptionId, Error> {
+    fn subscribe<F: Signature>(&self, target: Target, options: Options<'_>, enter: impl FnOnce(&RawSubscription, *mut u64, Sink<'_, *const RawError>) -> Option<u32>) -> Result<SubscriptionId, Error> {
+        if options.exclusive && unsafe { (*self.api.0).version } < 5 {
+            return Err(Error::Unsupported { what: "exclusive hook subscriptions".to_owned() });
+        }
         let names = |list: &[&str]| list.iter().map(|s| Str::from(*s)).collect::<Vec<_>>();
         let (before, after) = (names(options.before), names(options.after));
         let request = RawSubscription {
@@ -498,6 +521,8 @@ impl Hooks {
             after: after.as_ptr(),
             after_len: after.len(),
             signature: F::SLOTS,
+            reserved: [0; 5],
+            exclusive: u32::from(options.exclusive),
         };
         let mut id = 0;
         abi::outcome("hook subscriptions", |error| enter(&request, &raw mut id, error)).map(|()| SubscriptionId(id))
@@ -560,23 +585,23 @@ impl Hooks {
 
     /// Runs `f` before the function with the arguments, which it may edit.
     pub fn before<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&mut Args<H::Fn>) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_before(request, raw::before::<H::Fn, _>(f), id, error)))
+        self.subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_before(request, raw::before::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` around the function: it receives the arguments and the rest of the chain, which it
     /// may call once with any arguments or not at all, and returns the result.
     pub fn around<H: Hookable>(&self, target: H, options: Options<'_>, f: impl for<'a> Fn(Args<H::Fn>, Next<'a, H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_around(request, raw::around::<H::Fn, _>(f), id, error)))
+        self.subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_around(request, raw::around::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` in place of the function, with the original to delegate to; one per site.
     pub fn replace<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(Args<H::Fn>, Original<H::Fn>) -> Ret<H::Fn> + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_replace(request, raw::replace::<H::Fn, _>(f), id, error)))
+        self.subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_replace(request, raw::replace::<H::Fn, _>(f), id, error)))
     }
 
     /// Runs `f` after the function with the arguments it received, its result and the outcome.
     pub fn after<H: Hookable>(&self, target: H, options: Options<'_>, f: impl Fn(&Args<H::Fn>, &Ret<H::Fn>, Outcome) + Send + Sync + 'static) -> Result<SubscriptionId, Error> {
-        Self::subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_after(request, raw::after::<H::Fn, _>(f), id, error)))
+        self.subscribe::<H::Fn>(target.target(), options, |request, id, error| call!(self.api, hook_after(request, raw::after::<H::Fn, _>(f), id, error)))
     }
 
     /// Removes one subscription; true when it existed. Returns once no call is inside it.

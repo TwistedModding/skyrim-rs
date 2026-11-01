@@ -50,7 +50,7 @@ static REGISTRY: Mutex<Registry> = Mutex::new(Registry {
     patches: Vec::new(),
     sites: Vec::new(),
     log: None,
-    compat: Compat::Refuse,
+    compat: Compat::Stack,
     seen: BTreeMap::new(),
     messages: VecDeque::new(),
 });
@@ -88,7 +88,7 @@ impl Registry {
 
     /// What already holds any of the `len` bytes at `address`: a patch, an installed site or
     /// another module's jump at an entry the last check saw.
-    fn holder(&self, address: usize, len: usize) -> Option<String> {
+    fn holder(&self, address: usize, len: usize, unmanaged: bool) -> Option<String> {
         let overlaps = |start: usize, n: usize| start < address + len && address < start + n;
         if let Some(p) = self.patches.iter().find(|p| overlaps(p.address, p.original.len())) {
             return Some(format!("patch #{} of {} at {}", p.id, p.owner, p.at));
@@ -97,7 +97,12 @@ impl Registry {
             let guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
             guard.as_ref().filter(|m| overlaps(m.address, m.span)).map(|m| format!("the hook site {}", m.name))
         });
-        site.or_else(|| self.seen.iter().find(|&(&a, _)| overlaps(a, 5)).map(|(_, (name, v))| format!("{name}, patched by {}", patcher(v))))
+        site.or_else(|| {
+            if !unmanaged {
+                return None;
+            }
+            self.seen.iter().find(|&(&a, _)| overlaps(a, 5)).map(|(_, (name, v))| format!("{name}, patched by {}", patcher(v)))
+        })
     }
 
     /// Forgets a patch, writing its original bytes back when it is applied and still intact.
@@ -128,7 +133,7 @@ impl Registry {
             _ => {}
         }
         let address = req.at.resolve().map_err(refuse)?;
-        if let Some(with) = self.holder(address, len) {
+        if let Some(with) = self.holder(address, len, true) {
             return Err(Error::Overlap { site: site.to_owned(), owner: req.owner.clone(), with });
         }
         let found = read_bytes(address, len).ok_or_else(|| refuse(format!("{len} bytes at {address:#x} are not readable")))?;
@@ -179,19 +184,24 @@ pub(crate) fn revalidate(moment: &str, ops: &[(&str, usize)]) {
         let Some(meta) = guard.as_mut() else { continue };
         checked.push(meta.address);
         let now = meta.kind.validate(meta.address, Some(meta.detour));
+        let conflict = !meta.validation.accepted() || !now.accepted();
+        site.broken.store(reg.compat == Compat::Refuse && conflict, Relaxed);
+        for entry in &meta.order {
+            entry.blocked.store(entry.exclusive && conflict, Relaxed);
+        }
+        meta.patched_by = now.patched_by().or_else(|| meta.validation.patched_by());
         if !reg.note(&meta.name, meta.address, now) {
             continue;
         }
         let by = patcher(&now);
         let effect = match reg.compat {
-            Compat::Refuse => {
-                site.broken.store(true, Relaxed);
-                "broken, its subscribers no longer run"
-            }
+            Compat::Refuse => "broken, its subscribers no longer run",
             Compat::Stack => "stack mode, its subscribers still run behind it",
         };
         reg.log(&format!("{moment}: {} at {:#x}: managed detour overwritten by {by}: {now}; {effect}", meta.name, meta.address));
-        meta.patched_by = Some(by);
+        for entry in meta.order.iter().filter(|e| e.blocked.load(Relaxed)) {
+            reg.log(&format!("{}: #{} {} blocked by foreign patch (exclusive)", meta.name, entry.id, entry.owner));
+        }
     }
     for &(name, address) in ops {
         if checked.contains(&address) {
@@ -282,10 +292,10 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscribe<'_> {
             return Err(Error::Callback { site: name, owner: req.owner });
         }
         let site = O::site();
-        install::<O>(reg, site, &name, kind, address, pass, &req.owner)?;
+        install::<O>(reg, site, &name, kind, address, pass, &req)?;
         let id = reg.next_id;
         reg.next_id += 1;
-        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.subscriber.phase(), constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true) });
+        let meta = Arc::new(Meta { id, owner: req.owner, phase: req.subscriber.phase(), constraints: req.constraints, stats: Stats::new(), enabled: AtomicBool::new(true), exclusive: req.exclusive, blocked: AtomicBool::new(false) });
         let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
         let site_meta = guard.as_mut().expect("installed above");
         let new = {
@@ -305,13 +315,22 @@ impl OpVisitor<Result<SubscriptionId, Error>> for Subscribe<'_> {
 type Enable = Box<dyn FnOnce() -> Result<(), hook::Error>>;
 
 /// Validates the site and puts the one detour in, with an empty chain published first.
-fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kind, address: usize, pass: Option<(u8, u8)>, owner: &str) -> Result<(), Error> {
+fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kind, address: usize, pass: Option<(u8, u8)>, request: &Request) -> Result<(), Error> {
     let mut guard = site.meta.lock().unwrap_or_else(PoisonError::into_inner);
-    if guard.is_some() {
+    let owner = &request.owner;
+    let refuse = request.exclusive || reg.compat == Compat::Refuse;
+    if let Some(meta) = guard.as_ref() {
+        if refuse {
+            let current = kind.validate(address, Some(meta.detour));
+            let validation = if current.accepted() { meta.validation } else { current };
+            if !validation.accepted() {
+                return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
+            }
+        }
         return Ok(());
     }
     let span = kind.span(address);
-    if let Some(with) = reg.holder(address, span) {
+    if let Some(with) = reg.holder(address, span, false) {
         return Err(Error::Overlap { site: name.to_owned(), owner: owner.to_owned(), with });
     }
     let detour = <O::Fn as Signature>::detour::<O>();
@@ -320,7 +339,7 @@ fn install<O: Op>(reg: &mut Registry, site: &'static Site, name: &str, kind: Kin
     let patched_by = validation.patched_by();
     if !validation.accepted() {
         // Stacking calls the patch as the original, which needs a jump to call; other edits are always refused.
-        let Some(by) = patched_by.as_ref().filter(|_| reg.compat == Compat::Stack) else {
+        let Some(by) = patched_by.as_ref().filter(|_| !refuse) else {
             return Err(Error::Site { site: name.to_owned(), owner: owner.to_owned(), validation });
         };
         reg.log(&format!("{name} at {address:#x}: stacking on the patch by {by}: {validation}"));
@@ -586,6 +605,8 @@ pub(crate) fn diagnostics() -> Vec<SiteReport> {
                     rank: reg.ranks.get(&m.owner).copied().unwrap_or(0),
                     timing: m.stats.snapshot(),
                     enabled: m.enabled.load(Relaxed),
+                    exclusive: m.exclusive,
+                    blocked: m.blocked.load(Relaxed),
                 })
                 .collect();
             let current = meta.kind.validate(meta.address, Some(meta.detour));

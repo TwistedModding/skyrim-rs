@@ -16,8 +16,8 @@ use crate::settings::Setting;
 use crate::ui::{RawFamily, RawFont, UiCallback};
 use crate::{CommandRequest, Error, FrameFn, Host, LoadFn, MessageFn, Method, NativeRequest, PapyrusFn};
 
-/// The [`HostApi`] layout this crate builds and reads; entries are only ever appended.
-pub const API: u32 = 4;
+/// The host API revision, including its table and record semantics; entries are only ever appended.
+pub const API: u32 = 5;
 
 /// Bytes borrowed for the call, UTF-8 where they are text.
 #[repr(C)]
