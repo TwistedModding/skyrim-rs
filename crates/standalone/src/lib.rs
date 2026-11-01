@@ -106,7 +106,7 @@ fn system_export(name: &CStr) -> Option<unsafe extern "system" fn() -> isize> {
 const E_FAIL: i32 = 0x8000_4005_u32.cast_signed();
 
 macro_rules! forward {
-    ($($name:ident($($arg:ident: $ty:ty),*) -> $ret:ty, $fail:expr;) => {$(
+    ($($name:ident($($arg:ident: $ty:ty),*) -> $ret:ty, $fail:expr;)*) => {$(
         /// Forwards to the system `dinput8.dll`'s export of the same name.
         ///
         /// # Safety
@@ -120,7 +120,7 @@ macro_rules! forward {
                 None => $fail,
             }
         }
-    };
+    )*};
 }
 
 forward! {
