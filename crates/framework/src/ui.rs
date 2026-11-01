@@ -519,7 +519,8 @@ mod tests {
         let read = unsafe { read_sized((&raw const later).cast::<RawFrameInput>()) }.unwrap();
         assert_eq!((read.time, events(&read)), (3.0, vec![Some(moved.clone()), Some(text)]), "a newer host's larger frame and events");
 
-        let older_events = [RawEvent::new(&Event::Text("dropped".to_owned())).unwrap(), RawEvent::new(&moved).unwrap()];
+        let dropped = Event::Text("dropped".to_owned());
+        let older_events = [RawEvent::new(&dropped).unwrap(), RawEvent::new(&moved).unwrap()];
         let camera = core::ptr::dangling::<sre::NiCamera>();
         let input = RawFrameInput {
             size: u32::try_from(offset_of!(RawFrameInput, view)).unwrap(),
