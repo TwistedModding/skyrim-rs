@@ -1,8 +1,9 @@
 //! Cheaper shadow views: the frame's CPU cost of culling and building render passes for the shadow
 //! maps (the sun's cascades, the focus maps and the local lights' maps) on the game's own D3D11
 //! device, with Community Shaders and ENB untouched. `profile` records every step's time per frame
-//! to a CSV for the measurement that drives the design (RE `render.md`, request DC); the
-//! console command `DrawcallFix` controls both.
+//! to a CSV for the measurement that drives the design (RE `graphics.md`, request DC); `cache` is
+//! phase 1, the per-frame memo across the cascade views; the console command `DrawcallFix`
+//! controls both.
 
 use core::ffi::{CStr, c_void};
 use std::io::Write as _;
@@ -13,6 +14,7 @@ use skyrim::input::{Arg, Command, CommandContext, Param};
 use sre::ScriptParamType;
 use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleA, GetProcAddress};
 
+mod cache;
 mod detour;
 mod profile;
 
@@ -37,6 +39,7 @@ fn load(host: &'static Host) -> bool {
         return false;
     }
     let _ = HOST.set(host);
+    cache::set_enabled(host.settings().get_or("enabled", true));
     match profile::install() {
         Ok(()) => log("profiling hooks in"),
         Err(e) => {
@@ -92,7 +95,7 @@ struct DrawcallFix;
 
 impl Command for DrawcallFix {
     const NAME: &'static CStr = c"DrawcallFix";
-    const HELP: &'static CStr = c"DrawcallFix [status | profile <label>|off | shadowdistance <units> | vsync <interval> | capture]";
+    const HELP: &'static CStr = c"DrawcallFix [status | on | off | profile <label>|off | shadowdistance <units> | vsync <interval> | capture]";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -105,6 +108,14 @@ impl Command for DrawcallFix {
         let (action, value) = (text(context.args().first()).to_ascii_lowercase(), text(context.args().get(1)));
         let runtime = HOST.get().map_or(0, |h| h.skse().runtime_version);
         let reply = match action.as_str() {
+            "on" | "off" => {
+                let on = action == "on";
+                cache::set_enabled(on);
+                if let Some(host) = HOST.get() {
+                    host.settings().set("enabled", on);
+                }
+                format!("cascade memo {action}")
+            }
             "profile" if value.eq_ignore_ascii_case("off") || value.is_empty() => format!("profile stopped after {} frames", profile::stop()),
             "profile" => match profile::start(runtime, &value) {
                 Ok(()) => format!("profile {value} recording"),
@@ -128,7 +139,14 @@ impl Command for DrawcallFix {
                 Ok(()) => "RenderDoc capture triggered".into(),
                 Err(e) => format!("no capture: {e}"),
             },
-            _ => format!("drawcall-fix {}: shadow distance {}, present interval {}; {}", env!("CARGO_PKG_VERSION"), skyrim::render::shadow_distance(), unsafe { present_interval().read_unaligned() }, profile::status()),
+            _ => format!(
+                "drawcall-fix {}: cascade memo {}, shadow distance {}, present interval {}; {}",
+                env!("CARGO_PKG_VERSION"),
+                if cache::enabled() { "on" } else { "off" },
+                skyrim::render::shadow_distance(),
+                unsafe { present_interval().read_unaligned() },
+                profile::status()
+            ),
         };
         log(&reply);
         skyrim::input::print(&reply);

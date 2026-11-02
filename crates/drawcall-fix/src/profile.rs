@@ -17,6 +17,7 @@ use std::time::Instant;
 use sre::raw::fns;
 use sre::{BSGeometry, BSLightingShaderProperty, BSShaderAccumulator, BSShaderProperty, BSShadowDirectionalLight, BSShadowLight, BSTArray, NiCamera, ShadowMapData};
 
+use crate::cache;
 use crate::detour::Detour;
 
 /// `BSLightingShaderProperty` slot 43 as the ledger spells it: `(this, geometry, renderMode, accumulator) -> RenderPass*`.
@@ -65,11 +66,13 @@ const REG_DEPTH_OTHER: usize = 19;
 const GET_PASSES: usize = 20;
 
 /// Call counts without a time: `RegisterGeometry`, passes drawn inside a shadow map draw, passes
-/// drawn elsewhere.
-const COUNTS: &[&str] = &["reg_geom", "passes_shadow", "passes_other"];
+/// drawn elsewhere, the cascade registrations the memo answered and the drops it recorded.
+const COUNTS: &[&str] = &["reg_geom", "passes_shadow", "passes_other", "cache_skip", "cache_drop"];
 const COUNT_REG_GEOM: usize = 0;
 const COUNT_PASSES_SHADOW: usize = 1;
 const COUNT_PASSES_OTHER: usize = 2;
+const COUNT_CACHE_SKIP: usize = 3;
+const COUNT_CACHE_DROP: usize = 4;
 
 struct Region {
     ticks: AtomicU64,
@@ -170,6 +173,10 @@ unsafe extern "C" fn map_draw(this: *mut BSShadowLight, map: *mut ShadowMapData,
 
 unsafe extern "C" fn reg_depth(this: *mut BSShaderAccumulator, geometry: *mut BSGeometry, property: *mut BSShaderProperty) -> bool {
     let start = now();
+    if cache::skip(this, geometry as usize) {
+        count(COUNT_CACHE_SKIP);
+        return true;
+    }
     let out = unsafe { REG_DEPTH_HOOK.original()(this, geometry, property) };
     let mode = unsafe { this.as_ref() }.map_or(0, |a| a.renderMode);
     REGION[if (0xc..=0xf).contains(&mode) { REG_DEPTH + (mode - 0xc) as usize } else { REG_DEPTH_OTHER }].add(start);
@@ -185,6 +192,10 @@ unsafe extern "C" fn get_passes(this: *mut BSLightingShaderProperty, geometry: *
     let start = now();
     let out = unsafe { GET_PASSES_HOOK.original()(this, geometry, mode, accumulator) };
     REGION[GET_PASSES].add(start);
+    if out.is_null() {
+        cache::record_drop(accumulator, geometry as usize);
+        count(COUNT_CACHE_DROP);
+    }
     out
 }
 
