@@ -1,6 +1,6 @@
 //! The binding table: every hotkey of the host and its plugins as `<owner>.<action>` with its
-//! default and current key, stored in the host's settings as `key.<owner>.<action>` (a key name, or
-//! a scan code number on read) and handed to the overlay. Two actions never share a key: a set
+//! default and current key, stored in the host's settings as `key.<owner>.<action>` (a key name,
+//! a scan code number on read, or empty for unbound; removing the entry restores the default) and handed to the overlay. Two actions never share a key: a set
 //! that would is refused, and a key the file gives a second action leaves that action unbound.
 
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -87,15 +87,15 @@ pub(super) fn declare(owner: &str, action: &str, default: &str, scope: Scope) ->
     }
     let stored = settings::get(NAME, &setting_key(&name));
     let read = match &stored {
-        None => Ok(None),
+        None => Ok(default_key),
+        Some(Setting::Text(text)) if text.is_empty() => Ok(None),
         Some(Setting::Text(text)) => text.parse::<Hotkey>().map(Some),
         Some(other) => u32::from_setting(other).filter(|code| (1..0x100).contains(code)).map(|code| Some(Hotkey::new(code))).ok_or_else(|| format!("{other:?} is not a key name or scan code")),
     };
     let wanted = read.unwrap_or_else(|e| {
         report(format!("{} in the settings: {e}; {name} keeps its default {}", setting_key(&name), show(default_key)));
-        None
+        default_key
     });
-    let wanted = wanted.or(default_key);
     let key = match wanted.and_then(|k| holder(&list, k, usize::MAX).map(|other| (k, other.to_owned()))) {
         Some((k, other)) => {
             report(format!("{name}: {k} is bound to {other}; {name} stays unbound until a key is set"));
@@ -136,6 +136,19 @@ pub(super) fn set(index: usize, key: Hotkey) -> Result<String, String> {
         Ok(line) | Err(line) => report(line.clone()),
     }
     result
+}
+
+/// Leaves the action at `index` without a key, also on later runs.
+pub(super) fn unbind(index: usize) {
+    let mut list = bindings();
+    let Some(binding) = list.get_mut(index) else { return };
+    binding.key = None;
+    let name = binding.name.clone();
+    settings::set(NAME, &setting_key(&name), Setting::Text(String::new()));
+    drop(list);
+    describe_game_use(index);
+    apply();
+    report(format!("{name} unbound"));
 }
 
 /// Logs `line` and keeps it as the last message.
@@ -262,9 +275,9 @@ mod tests {
     fn resolves_the_file_and_refuses_conflicts() {
         let dir = std::env::temp_dir().join(format!("skyrim-rs-keys-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
-        let text = "{\"key.skyrim-rs.toggle\": 68, \"key.skyrim-rs.close\": \"F10\", \"key.test.a\": \"shift+k\", \"by.hand\": \"kept\"}";
+        let text = "{\"key.skyrim-rs.toggle\": 68, \"key.skyrim-rs.close\": \"F10\", \"key.test.a\": \"shift+k\", \"key.test.d\": \"\", \"by.hand\": \"kept\"}";
         std::fs::write(settings::file(&dir, NAME), text).unwrap();
-        assert_eq!(settings::open(NAME, &dir), Ok(4));
+        assert_eq!(settings::open(NAME, &dir), Ok(5));
         declare_host();
         let f10: Hotkey = "F10".parse().unwrap();
         let shift_k: Hotkey = "Shift+K".parse().unwrap();
@@ -290,6 +303,15 @@ mod tests {
         assert_eq!(last_message(), last, "no default is not a bad default");
         assert_eq!(settings::get(NAME, "key.test.c"), None);
         assert_eq!(set(c, "M".parse().unwrap()), Ok("test.c set to M".to_owned()));
+        let d = declare("test", "d", "N", Scope::Game);
+        assert_eq!(key(d), None, "an empty entry overrides the default");
+        assert_eq!(last_message(), "test.c set to M", "an empty entry is not a bad entry");
+        assert_eq!(settings::get(NAME, "key.test.d"), Some(Setting::Text(String::new())));
+        unbind(TOGGLE);
+        assert_eq!(key(TOGGLE), None);
+        assert_eq!(last_message(), "skyrim-rs.toggle unbound");
+        assert_eq!(settings::get(NAME, "key.skyrim-rs.toggle"), Some(Setting::Text(String::new())));
+        assert_eq!(set(d, f10), Ok("test.d set to F10".to_owned()), "unbinding frees the key");
         let _ = std::fs::remove_dir_all(&dir);
     }
 }

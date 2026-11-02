@@ -1,7 +1,7 @@
 //! The overlay's one window, in the look of the game's journal: a row of tabs across the top, Mods,
 //! Plugins (the framework plugins with their version, file and state, buttons that reload, unload
 //! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
-//! set by capturing the next key pressed, and the capture rule). Mods has a sidebar of every plugin
+//! set by capturing the next key pressed or unbound, and the capture rule). Mods has a sidebar of every plugin
 //! that added a tab ([`crate::Host::add_tab`], in load order), the selected one's sections under
 //! it when it has two or more, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
@@ -547,9 +547,15 @@ fn settings_tab(ui: &mut egui::Ui) {
                 key.on_hover_text(format!("The game uses this key too: {}", b.game));
             }
             let armed = capturing == Some(i);
-            if ui.button(if armed { "Press a key" } else { "Set" }).clicked() {
-                keys::capture((!armed).then_some(i));
-            }
+            ui.horizontal(|ui| {
+                if ui.button(if armed { "Press a key" } else { "Set" }).clicked() {
+                    keys::capture((!armed).then_some(i));
+                }
+                if ui.add_enabled(b.key.is_some(), egui::Button::new("Unbind")).clicked() {
+                    keys::capture(None);
+                    keys::unbind(i);
+                }
+            });
             ui.end_row();
         }
     });

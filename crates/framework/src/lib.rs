@@ -249,7 +249,7 @@ impl Host {
 
     /// Declares a hotkey named `<plugin>.<name>` in the host's binding table, bound to `default`
     /// (`"F10"`, `"Ctrl+Shift+K"`, as [`Hotkey`] reads it; `""` for none) until the player binds
-    /// another key in the host file (`key.<plugin>.<name>`) or the host window's Settings tab. `scope` says
+    /// another key or none in the host file (`key.<plugin>.<name>`) or the host window's Settings tab. `scope` says
     /// who must have the key: [`Scope::Overlay`] fires while the overlay is open with no widget
     /// focused and keeps the key from the game while it is open; [`Scope::Game`] fires when the
     /// press reached the game, which acts on it too. A key another action holds is refused, and
