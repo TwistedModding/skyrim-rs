@@ -73,6 +73,12 @@ fn renderdoc_capture() -> Result<(), &'static str> {
     Ok(())
 }
 
+/// `Renderer::presentInterval`, the swap chain's sync interval copied from `iVSyncPresentInterval`
+/// at startup and read by every `PresentFrame`.
+fn present_interval() -> *mut u32 {
+    (&raw const sre::g_renderer().presentInterval).cast_mut()
+}
+
 fn set_shadow_distance(distance: f32) {
     let mut settings = skyrim::render::cascade_settings();
     settings.shadow_distance = distance;
@@ -86,7 +92,7 @@ struct DrawcallFix;
 
 impl Command for DrawcallFix {
     const NAME: &'static CStr = c"DrawcallFix";
-    const HELP: &'static CStr = c"DrawcallFix [status | profile <label>|off | shadowdistance <units> | capture]";
+    const HELP: &'static CStr = c"DrawcallFix [status | profile <label>|off | shadowdistance <units> | vsync <interval> | capture]";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -111,11 +117,18 @@ impl Command for DrawcallFix {
                 }
                 _ => "shadowdistance needs a positive number".into(),
             },
+            "vsync" => match value.parse::<u32>() {
+                Ok(interval) if interval <= 4 => {
+                    unsafe { present_interval().write_unaligned(interval) };
+                    format!("present interval {interval}")
+                }
+                _ => "vsync needs an interval from 0 to 4".into(),
+            },
             "capture" => match renderdoc_capture() {
                 Ok(()) => "RenderDoc capture triggered".into(),
                 Err(e) => format!("no capture: {e}"),
             },
-            _ => format!("drawcall-fix {}: shadow distance {}; {}", env!("CARGO_PKG_VERSION"), skyrim::render::shadow_distance(), profile::status()),
+            _ => format!("drawcall-fix {}: shadow distance {}, present interval {}; {}", env!("CARGO_PKG_VERSION"), skyrim::render::shadow_distance(), unsafe { present_interval().read_unaligned() }, profile::status()),
         };
         log(&reply);
         skyrim::input::print(&reply);
