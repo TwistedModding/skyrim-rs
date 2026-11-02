@@ -73,11 +73,7 @@ pub const CONFIG: &str = "skyrim-rs.ini";
 /// The host's own name, as the owner of its window and settings.
 pub const NAME: &str = "skyrim-rs";
 /// The framework's version, as the log and the crash log show it.
-/// The version `scripts/package.ps1` stamps into a package, the crate's in any other build.
-const VERSION: &str = match option_env!("SKYRIM_RS_VERSION") {
-    Some(version) => version,
-    None => env!("CARGO_PKG_VERSION"),
-};
+const VERSION: &str = crate::version!();
 
 /// The accepted plugins in load order; a rescan appends the ones it loads.
 static PLUGINS: Mutex<&'static [Plugin]> = Mutex::new(&[]);

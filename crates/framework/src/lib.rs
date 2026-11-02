@@ -663,6 +663,30 @@ impl InputFilter {
     }
 }
 
+/// The calling crate's version: what its package script stamped in `SKYRIM_RS_VERSION`, else its Cargo version.
+#[macro_export]
+macro_rules! version {
+    () => {
+        match option_env!("SKYRIM_RS_VERSION") {
+            Some(version) => version,
+            None => env!("CARGO_PKG_VERSION"),
+        }
+    };
+}
+
+#[doc(hidden)]
+#[must_use]
+pub const fn nul_terminated<const N: usize>(text: &str) -> [u8; N] {
+    let mut out = [0; N];
+    let bytes = text.as_bytes();
+    let mut i = 0;
+    while i < bytes.len() {
+        out[i] = bytes[i];
+        i += 1;
+    }
+    out
+}
+
 /// Declares a framework plugin: exports its [`Descriptor`], with the version of the crate it is
 /// invoked in, and the C entry points that call the plugin's Rust functions. Everything after
 /// `load` is optional, in this order: the ordering fields (defaults: no constraints, priority 0)
@@ -694,7 +718,11 @@ macro_rules! plugin {
             api: $crate::abi::API,
             build: ::core::ptr::null(),
             name: concat!($name, "\0").as_ptr().cast(),
-            version: concat!(env!("CARGO_PKG_VERSION"), "\0").as_ptr().cast(),
+            version: {
+                const VERSION: &str = $crate::version!();
+                static TEXT: [u8; VERSION.len() + 1] = $crate::nul_terminated(VERSION);
+                TEXT.as_ptr().cast()
+            },
             load: {
                 extern "C" fn skyrim_rs_load(api: *const $crate::abi::HostApi) -> bool {
                     $crate::abi::start(api, $load)
