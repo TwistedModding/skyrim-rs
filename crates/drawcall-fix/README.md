@@ -22,7 +22,9 @@ Extra shadow-casting references spawned along a line inside the loaded cells; mi
 
 The cascade cull costs about 190 ns per registered geometry per cascade and the cascade draw about 170 ns per pass. At 10,000 extra references the two cascades alone are 10.9 ms of a 21.5 ms `RenderWorld`.
 
-PHASE1_README
+## Phase 1 result
+
+The memo on against off at every level of one session (`run-dc-phase1`): no measurable change in any region. Nothing a cascade registers in this scene is dropped by `GetDepthRenderPasses`, so the memo never has an answer to give (at most one skip per frame); for a casting geometry the engine's own per-frame memo in the property's pass lists already reuses the pass object and the technique, and each accumulator still needs its own pass. The per-view cache question is answered by measurement: it is not where the time goes.
 
 ## Phase 2
 
