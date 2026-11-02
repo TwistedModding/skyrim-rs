@@ -202,9 +202,9 @@ mod tests {
 
     #[test]
     fn only_a_stub_alone_with_the_name_is_served() {
-        let stub = plugin("skyrim_rs_improved_camera_stub.dll", "ImprovedCameraSE", true);
+        let stub = plugin("improved_camera_stub.dll", "ImprovedCameraSE", true);
         let other = plugin("hdtsmp64.dll", "hdtsmp64", false);
-        assert_eq!(stub_file("improvedcamerase", &[other.clone(), stub.clone()]), Ok("skyrim_rs_improved_camera_stub.dll".to_owned()));
+        assert_eq!(stub_file("improvedcamerase", &[other.clone(), stub.clone()]), Ok("improved_camera_stub.dll".to_owned()));
         let real = plugin("ImprovedCameraSE.dll", "ImprovedCameraSE", false);
         assert!(stub_file("ImprovedCameraSE", &[stub, real.clone()]).unwrap_err().starts_with("ImprovedCameraSE.dll is installed"));
         assert!(stub_file("ImprovedCameraSE", &[real]).is_err());
