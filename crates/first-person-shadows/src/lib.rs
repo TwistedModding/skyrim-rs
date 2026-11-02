@@ -40,10 +40,10 @@ static HEAD_SKIPPED: AtomicU32 = AtomicU32::new(0);
 static HEAD_SHADOW: AtomicU32 = AtomicU32::new(0);
 
 macro_rules! log {
-    ($($arg:tt) => {
+    ($($arg:tt)*) => {
         if let Some(f) = LOG.lock().unwrap().as_mut() {
             use ::std::io::Write;
-            let _ = writeln!(f, $($arg);
+            let _ = writeln!(f, $($arg)*);
         }
     };
 }

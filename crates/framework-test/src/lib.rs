@@ -32,9 +32,9 @@ static PROJECTION: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static HOST: OnceLock<&'static Host> = OnceLock::new();
 
 macro_rules! log {
-    ($($arg:tt) => {
+    ($($arg:tt)*) => {
         if let Some(f) = LOG.lock().unwrap().as_mut() {
-            let _ = writeln!(f, $($arg);
+            let _ = writeln!(f, $($arg)*);
         }
     };
 }

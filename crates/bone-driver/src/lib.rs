@@ -32,10 +32,10 @@ static APPLIED: AtomicU32 = AtomicU32::new(0);
 static LAST: Mutex<Option<(Transform, Transform)>> = Mutex::new(None);
 
 macro_rules! log {
-    ($($arg:tt) => {
+    ($($arg:tt)*) => {
         if let Some(f) = LOG.lock().unwrap().as_mut() {
             use ::std::io::Write;
-            let _ = writeln!(f, $($arg);
+            let _ = writeln!(f, $($arg)*);
         }
     };
 }
