@@ -73,7 +73,11 @@ pub const CONFIG: &str = "skyrim-rs.ini";
 /// The host's own name, as the owner of its window and settings.
 pub const NAME: &str = "skyrim-rs";
 /// The framework's version, as the log and the crash log show it.
-const VERSION: &str = concat!("framework ", env!("CARGO_PKG_VERSION"));
+/// The version `scripts/package.ps1` stamps into a package, the crate's in any other build.
+const VERSION: &str = match option_env!("SKYRIM_RS_VERSION") {
+    Some(version) => version,
+    None => env!("CARGO_PKG_VERSION"),
+};
 
 /// The accepted plugins in load order; a rescan appends the ones it loads.
 static PLUGINS: Mutex<&'static [Plugin]> = Mutex::new(&[]);
@@ -186,7 +190,7 @@ pub fn load(skse: &skse::Interface) -> bool {
     if let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs") {
         *LOG.lock().unwrap() = Some(file);
     }
-    log!("{VERSION}, abi {ABI}, api {API}");
+    log!("framework {VERSION}, abi {ABI}, api {API}");
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
@@ -476,7 +480,7 @@ fn crash_facts(w: &mut crash::Writer<'_>, crash: &crash::Crash, section: crash::
     use core::fmt::Write as _;
     match section {
         crash::Section::Context => {
-            let _ = writeln!(w, "hosted by {}; {}", HOSTED_BY.get().unwrap_or(&"an unknown loader"), VERSION);
+            let _ = writeln!(w, "hosted by {}; framework {VERSION}", HOSTED_BY.get().unwrap_or(&"an unknown loader"));
             match reload::try_generations() {
                 Some(generations) if generations.is_empty() => {
                     let _ = writeln!(w, "framework plugins: none");

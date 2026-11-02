@@ -472,7 +472,7 @@ fn plugin_buttons(name: &str, state: Status) -> Vec<(&'static str, &'static str,
 
 fn plugins_tab(ui: &mut egui::Ui) {
     ui.horizontal(|ui| {
-        ui.label(dim(format!("skyrim-rs {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", env!("CARGO_PKG_VERSION"), hosted_by())));
+        ui.label(dim(format!("skyrim-rs {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", super::VERSION, hosted_by())));
         if ui.button("Rescan folder").on_hover_text("Load the plugins added to the folder since the game started, and try the ones not loaded again").clicked() {
             reload::request(Request::Rescan);
         }
