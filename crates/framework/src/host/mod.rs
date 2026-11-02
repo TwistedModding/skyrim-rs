@@ -285,6 +285,9 @@ fn start_plugin(skse: &'static skse::Interface, dir: &Path, (module, descriptor,
     let name: &'static str = Box::leak(plugin.name.clone().into_boxed_str());
     let api = api::build(name, skse);
     open_settings(name, dir);
+    if let Err(e) = skse::log::open(skse.runtime_version, name) {
+        log!("{name}: could not clear plugin log: {e}");
+    }
     crash::note_image(&plugin.name, 1, module as usize, true);
     let live = (descriptor.load)(api);
     if live {
