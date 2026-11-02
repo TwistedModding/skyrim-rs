@@ -12,7 +12,7 @@ cargo build --release --manifest-path "$Root\Cargo.toml" -p host -p standalone
 if ($LASTEXITCODE -ne 0) { throw "cargo build failed" }
 $release = "$Root\target\release"
 $entries = [ordered]@{
-    "SKSE/Plugins/skyrim_rs.dll" = "$release\skyrim_rs.dll"
+    "SKSE/Plugins/skyrim_runtime_extender.dll" = "$release\skyrim_runtime_extender.dll"
     "optional-standalone/dinput8.dll" = "$release\dinput8.dll"
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"

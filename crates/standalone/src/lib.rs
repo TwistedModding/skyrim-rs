@@ -2,7 +2,7 @@
 //! `DirectInput` the game imports: every export forwards to the system's `dinput8.dll`. When the
 //! process starts it points the game's import of the C runtime's `_get_narrow_winmain_command_line`,
 //! which the startup code calls once right before `WinMain`, at a function of its own. There, unless
-//! the script extender is loaded (its loader then hosts everything, `skyrim_rs.dll` included), the
+//! the script extender is loaded (its loader then hosts everything, `skyrim_runtime_extender.dll` included), the
 //! [`loader`] loads the plugins in `Data\SKSE\Plugins` itself and gives them the plugin interface the
 //! script extender would (request S1), so SKSE plugins and the framework run without it.
 

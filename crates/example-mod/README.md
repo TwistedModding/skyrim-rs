@@ -4,11 +4,11 @@ A small skyrim-rs plugin that scales the health damage the player takes. The fac
 
 ## Requirements
 
-The Skyrim Runtime Extender loader (`Data\SKSE\Plugins\skyrim_rs.dll`), from its own package, with its requirements: Skyrim Special Edition 1.7.104 from Steam, SKSE 2.3.1 and Address Library for SKSE Plugins.
+The Skyrim Runtime Extender loader (`Data\SKSE\Plugins\skyrim_runtime_extender.dll`), from its own package, with its requirements: Skyrim Special Edition 1.7.104 from Steam, SKSE 2.3.1 and Address Library for SKSE Plugins.
 
 ## Install
 
-This mod is a template and is not packaged for release. Build it from this repository and install its DLL and compiled script by hand, so you end up with `Data\SKSE\Plugins\skyrim-rs\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-rs.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
+This mod is a template and is not packaged for release. Build it from this repository and install its DLL and compiled script by hand, so you end up with `Data\SKSE\Plugins\skyrim-runtime-extender\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-runtime-extender.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
 
 ## What to try
 
@@ -16,6 +16,6 @@ This mod is a template and is not packaged for release. Build it from this repos
 - In the game (menu closed), Shift+K opens the menu straight on the example's tab (`skyrim-rs-example.log` reads `open-tab fired on Shift+K: tab shown`). The menu's Settings tab lists the key as "Example mod: open-tab", where you can bind another.
 - `SkyrimRs hooks` in the console lists the example's hook on `Actor::ModActorValueImpl` with its call count; `SkyrimRs toggle <n>` on it switches the scaling off and on again.
 - The Papyrus native `SkyrimRsExample.SetDamageScale(float)` sets the factor and returns the value in effect. Any script can call it with `SkyrimRsExample.pex` in `Data\Scripts`, for example `SkyrimRsExample.SetDamageScale(1.5)`.
-- The factor is kept in `Data\SKSE\Plugins\skyrim-rs\skyrim-rs-example.settings.json`, written after the first change as `{"damage_scale": 0.5}`; start the game again and the slider shows your value. Edit it with the game closed.
+- The factor is kept in `Data\SKSE\Plugins\skyrim-runtime-extender\skyrim-rs-example.settings.json`, written after the first change as `{"damage_scale": 0.5}`; start the game again and the slider shows your value. Edit it with the game closed.
 
-Send back `skyrim-rs-example.log` and `skyrim-rs.log` from `Documents\My Games\Skyrim Special Edition\SKSE\` with anything that looks wrong.
+Send back `skyrim-rs-example.log` and `skyrim-runtime-extender.log` from `Documents\My Games\Skyrim Special Edition\SKSE\` with anything that looks wrong.

@@ -7,7 +7,7 @@
 $Phases = "tag1", "tag2", "tag3", "tag4"
 $Tags = 1, 2, 3, 4
 
-$hostLog = if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-rs.log" } else { @() }
+$hostLog = if (Test-Path "$OutDir\skyrim-runtime-extender.log") { Get-Content "$OutDir\skyrim-runtime-extender.log" } else { @() }
 $loaded = @($hostLog | Where-Object { $_ -match '^loaded skyrim_rs_reload_test\.dll: skyrim-rs-reload-test$' })
 $changed = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: skyrim_rs_reload_test\.dll changed, reloading as generation [234]$' })
 $saved = @($hostLog | Where-Object { $_ -match '^skyrim-rs-reload-test: generation [123]: 4 bytes of state saved$' })

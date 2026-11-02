@@ -97,10 +97,10 @@ static TRAMPOLINE_TABLE: TrampolineInterface = TrampolineInterface { interface_v
 
 /// Loads and starts the plugins, then hooks the moments; on the main thread right before `WinMain`.
 pub fn run() {
-    if let Ok(file) = skse::log::open(RUNTIME, "skyrim-rs-standalone") {
+    if let Ok(file) = skse::log::open(RUNTIME, "skyrim-runtime-extender-standalone") {
         *LOG.lock().unwrap() = Some(file);
     }
-    log!("skyrim-rs standalone host, plugin interface {LOADER_VERSION:08x}, runtime {RUNTIME:08x}");
+    log!("skyrim-runtime-extender standalone host, plugin interface {LOADER_VERSION:08x}, runtime {RUNTIME:08x}");
     match hook::Reloc::open(RUNTIME) {
         Ok(reloc) => {
             let _ = RELOC.set(reloc);
@@ -130,7 +130,7 @@ pub fn run() {
 
 /// Leaves everything to the script extender, which is loaded.
 pub fn defer() {
-    if let Ok(mut file) = skse::log::open(RUNTIME, "skyrim-rs-standalone") {
+    if let Ok(mut file) = skse::log::open(RUNTIME, "skyrim-runtime-extender-standalone") {
         let _ = writeln!(file, "the script extender is loaded; it hosts the plugins");
     }
 }

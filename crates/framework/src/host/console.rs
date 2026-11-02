@@ -3,8 +3,8 @@
 //! and subscribers, every byte patch, the plugins' event sinks and the dispatcher's last messages; `commands` lists the console
 //! commands plugins registered or replaced and the Papyrus natives they bound; `toggle <id>` switches a subscriber or a patch; `keys`
 //! lists the hotkeys and the input filters; `bind <n>` captures the next key pressed for hotkey `n` as the Settings tab's
-//! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-rs-overlay.bmp`
-//! (`skyrim-rs-overlay-<n>.bmp`) in the SKSE log folder; `reload <n>`, `unload <n>` and `load <n>`
+//! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-runtime-extender-overlay.bmp`
+//! (`skyrim-runtime-extender-overlay-<n>.bmp`) in the SKSE log folder; `reload <n>`, `unload <n>` and `load <n>`
 //! do what plugin `n`'s buttons in the Plugins tab do and `rescan` what its "Rescan folder" does, at
 //! the next frame.
 
@@ -115,7 +115,7 @@ pub(super) struct Command;
 
 impl skyrim::input::Command for Command {
     const NAME: &'static core::ffi::CStr = c"SkyrimRs";
-    const HELP: &'static core::ffi::CStr = c"skyrim-rs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan";
+    const HELP: &'static core::ffi::CStr = c"skyrim-runtime-extender: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -151,8 +151,8 @@ impl skyrim::input::Command for Command {
             [Arg::Str(what), Arg::Int(id)] if is(what, "toggle") => vec![format!("SkyrimRs: {}", u64::try_from(*id).map_or_else(|_| format!("no subscription #{id}"), toggle))],
             [Arg::Str(what), rest @ ..] if is(what, "capture") => {
                 let file = match rest {
-                    [Arg::Int(n)] => format!("skyrim-rs-overlay-{n}.bmp"),
-                    _ => "skyrim-rs-overlay.bmp".to_owned(),
+                    [Arg::Int(n)] => format!("skyrim-runtime-extender-overlay-{n}.bmp"),
+                    _ => "skyrim-runtime-extender-overlay.bmp".to_owned(),
                 };
                 let path = super::LOG_DIR.get().cloned().unwrap_or_default().join(file);
                 overlay::save_next_frame(path.clone(), |done| match done {

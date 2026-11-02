@@ -1,9 +1,9 @@
-//! The host's side: [`load`] is `skyrim_rs.dll`'s `SKSEPlugin_Load`. The host owns what the
+//! The host's side: [`load`] is `skyrim_runtime_extender.dll`'s `SKSEPlugin_Load`. The host owns what the
 //! engine and the loader keep for every plugin (one message listener and one Papyrus callback,
 //! the plugins' tabs in its window, one sink per event source, the native function objects, the
 //! console entries and the hook sites) and tags each registration with its plugin, so `reload`
 //! can detach a plugin and unload its DLL. It keeps every plugin's settings, its own in
-//! `skyrim-rs.settings.json` (the capture rule and every hotkey of the binding table `keys`),
+//! `skyrim-runtime-extender.settings.json` (the capture rule and every hotkey of the binding table `keys`),
 //! draws the overlay's one window (`gui`) and answers the console command `SkyrimRs` (`console`).
 
 use core::ffi::{CStr, c_void};
@@ -67,11 +67,14 @@ mod reload;
 use owned::Owned;
 
 /// The folder under `Data\SKSE\Plugins` the host loads plugins from.
-pub const PLUGIN_DIR: &str = "skyrim-rs";
+pub const PLUGIN_DIR: &str = NAME;
 /// The host's settings in `Data\SKSE\Plugins`: `compat = stack` (the default) or `refuse`, see [`Compat`].
-pub const CONFIG: &str = "skyrim-rs.ini";
+pub const CONFIG: &str = "skyrim-runtime-extender.ini";
 /// The host's own name, as the owner of its window and settings.
-pub const NAME: &str = "skyrim-rs";
+pub const NAME: &str = "skyrim-runtime-extender";
+/// What the folder, the settings owner and the DLL were called before the rename.
+const OLD_NAME: &str = "skyrim-rs";
+const OLD_DLL: &str = "skyrim_rs.dll";
 /// The framework's version, as the log and the crash log show it.
 const VERSION: &str = crate::version!();
 
@@ -175,7 +178,7 @@ struct EngineCommand {
 }
 
 /// Initializes the game layer, installs the overlay, registers the host's message listener and
-/// Papyrus callback, then loads every plugin in `Data\SKSE\Plugins\skyrim-rs\` from a shadow copy
+/// Papyrus callback, then loads every plugin in `Data\SKSE\Plugins\skyrim-runtime-extender\` from a shadow copy
 /// in the order their descriptors resolve to, and watches their files from then on.
 pub fn load(skse: &skse::Interface) -> bool {
     // The loader hands every plugin the same object in its read-only data, alive for the whole game.
@@ -183,10 +186,15 @@ pub fn load(skse: &skse::Interface) -> bool {
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
         let _ = LOG_DIR.set(dir);
     }
-    if let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs") {
+    if let Ok(file) = skse::log::open(skse.runtime_version, NAME) {
         *LOG.lock().unwrap() = Some(file);
     }
     log!("framework {VERSION}, abi {ABI}, api {API}");
+    let old_dll: Vec<u16> = OLD_DLL.encode_utf16().chain(Some(0)).collect();
+    if !unsafe { GetModuleHandleW(old_dll.as_ptr()) }.is_null() {
+        log!("{OLD_DLL} is the old name of this loader and is loaded too; remove it. This one does not start.");
+        return false;
+    }
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
@@ -210,6 +218,9 @@ pub fn load(skse: &skse::Interface) -> bool {
     Hooks::set_compat(compat);
     Hooks::revalidate("startup");
     let dir = plugins_dir().join(PLUGIN_DIR);
+    if !settings::file(&dir, NAME).exists() {
+        adopt_old_folder(&plugins_dir().join(OLD_NAME), &dir);
+    }
     open_settings(NAME, &dir);
     keys::declare_host();
     match overlay::install() {
@@ -333,6 +344,30 @@ fn data_loaded() -> bool {
 }
 
 /// Reads a plugin's settings file and logs what came of it.
+/// Copies what `old` holds into `to`, with the host's settings under their new names; plugin DLLs
+/// are only logged, since `to` is where a plugin's package installs it.
+fn adopt_old_folder(old: &Path, to: &Path) {
+    let Ok(entries) = std::fs::read_dir(old) else { return };
+    let _ = std::fs::create_dir_all(to);
+    let old_settings = settings::file(Path::new(""), OLD_NAME);
+    for entry in entries.flatten() {
+        let (path, name) = (entry.path(), entry.file_name());
+        if path.is_dir() {
+            if name != reload::SHADOW_DIR {
+                adopt_old_folder(&path, &to.join(&name));
+            }
+        } else if path.extension().is_some_and(|e| e.eq_ignore_ascii_case("dll")) {
+            log!("{} stays unloaded in the old folder; install it again", path.display());
+        } else if Path::new(&name) == old_settings {
+            if let Ok(text) = std::fs::read_to_string(&path) {
+                let _ = std::fs::write(settings::file(to, NAME), text.replace(&format!("\"key.{OLD_NAME}."), &format!("\"key.{NAME}.")));
+            }
+        } else if !to.join(&name).exists() {
+            let _ = std::fs::copy(&path, to.join(&name));
+        }
+    }
+}
+
 fn open_settings(owner: &str, dir: &Path) {
     match settings::open(owner, dir) {
         Ok(0) => {}
@@ -804,6 +839,24 @@ fn register_command(owner: &'static str, request: &CommandRequest<'_>, execute: 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn an_old_folder_is_adopted_with_the_new_key_names() {
+        let root = std::env::temp_dir().join(format!("skyrim-rs-adopt-{}", std::process::id()));
+        let (old, new) = (root.join("old"), root.join("new"));
+        std::fs::create_dir_all(old.join("improved-camera")).unwrap();
+        std::fs::create_dir_all(old.join(reload::SHADOW_DIR)).unwrap();
+        std::fs::write(settings::file(&old, OLD_NAME), "{\"key.skyrim-rs.toggle\": \"\", \"key.skyrim-rs-example.a\": \"K\"}").unwrap();
+        std::fs::write(old.join("improved-camera").join("profile.ini"), "kept").unwrap();
+        std::fs::write(old.join("a.dll"), "code").unwrap();
+        std::fs::write(old.join(reload::SHADOW_DIR).join("b.txt"), "shadow").unwrap();
+        adopt_old_folder(&old, &new);
+        let adopted = std::fs::read_to_string(settings::file(&new, NAME)).unwrap();
+        assert_eq!(adopted, "{\"key.skyrim-runtime-extender.toggle\": \"\", \"key.skyrim-rs-example.a\": \"K\"}");
+        assert_eq!(std::fs::read_to_string(new.join("improved-camera").join("profile.ini")).unwrap(), "kept");
+        assert!(!new.join("a.dll").exists() && !new.join(reload::SHADOW_DIR).exists() && !settings::file(&new, OLD_NAME).exists());
+        let _ = std::fs::remove_dir_all(&root);
+    }
 
     extern "C" fn never(_: *const abi::HostApi) -> bool {
         false

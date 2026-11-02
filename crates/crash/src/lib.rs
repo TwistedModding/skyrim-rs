@@ -1,6 +1,6 @@
 //! The framework's crash logger: a vectored exception handler and the unhandled-exception
 //! filter, a watchdog thread with its own stack and buffers set aside at install, a minidump
-//! written first and then a text log in the SKSE log folder (`skyrim-rs-crash-<time>.log`), with
+//! written first and then a text log in the SKSE log folder (`skyrim-runtime-extender-crash-<time>.log`), with
 //! the game's functions named from the ledger. One copy per process reports: the host installs
 //! it, and a plain SKSE mod that calls [`install`] next to the host is told the host already did.
 //!

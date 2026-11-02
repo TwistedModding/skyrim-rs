@@ -1,6 +1,6 @@
 //! The compat suite's two plain SKSE plugins, which hook engine functions with `MinHook` detours of
 //! their own the way plugins built without the framework do. `a` (`skyrim_legacy_patch_a.dll`,
-//! loaded before `skyrim_rs.dll` by file name) hooks `Actor::ModActorValueImpl` in its
+//! loaded before `skyrim_runtime_extender.dll` by file name) hooks `Actor::ModActorValueImpl` in its
 //! `SKSEPlugin_Load` and logs the player's health damage it receives; `z`
 //! (`skyrim_rs_legacy_patch_z.dll`, loaded after it) hooks `TESObjectREFR::GetScale` at
 //! `PLUGINS_LOADED_2`, once the host has checked its sites, and counts the calls.

@@ -11,7 +11,7 @@ $Refusals = @{}
 $Proof = @{
     CrashLogger = '^.*CrashLogger has finished loading.$'
 }
-$standaloneLog = @(if (Test-Path "$OutDir\skyrim-rs-standalone.log") { Get-Content "$OutDir\skyrim-rs-standalone.log" })
+$standaloneLog = @(if (Test-Path "$OutDir\skyrim-runtime-extender-standalone.log") { Get-Content "$OutDir\skyrim-runtime-extender-standalone.log" })
 function Refused($file) {
     $f = [regex]::Escape($file)
     foreach ($l in $LoaderLog) { if ($l -match "$f.*disabled, (.*)$") { return $Matches[1] } }
@@ -20,7 +20,7 @@ function Refused($file) {
 function Queried($handle) { @($standaloneLog | Where-Object { $_ -match "^QueryInterface\((\d+)\) from handle $handle`: (.*)$" } | ForEach-Object { "$($Matches[1]) $($Matches[2])" } | Select-Object -Unique) }
 function OwnLog($name) { Get-ChildItem "$OutDir\legacy-logs" -File -ErrorAction SilentlyContinue | Where-Object { $_.BaseName -like "$name*" } | Select-Object -First 1 }
 
-$hostHandle = Loaded "skyrim_rs.dll"
+$hostHandle = Loaded "skyrim_runtime_extender.dll"
 $rows = @()
 $before = @()
 foreach ($name in $Mod.legacy) {
@@ -43,7 +43,7 @@ foreach ($name in $Mod.legacy) {
                 ok = ($handle -ne $null -and $proof.Count -gt 0) }
     if ($handle -ne $null -and [string]::CompareOrdinal($file.ToUpperInvariant(), "SKYRIM_RS.DLL") -lt 0) { $before += $handle }
 }
-$rows += @{ name = "host after them"; plugin = "(host log) $(@($HostLog -match '^hosted by ') -join ' | ')"; devbench = "${LoaderLogName}: skyrim_rs.dll handle $hostHandle, plugins before it by name: handles $($before -join ', ')";
+$rows += @{ name = "host after them"; plugin = "(host log) $(@($HostLog -match '^hosted by ') -join ' | ')"; devbench = "${LoaderLogName}: skyrim_runtime_extender.dll handle $hostHandle, plugins before it by name: handles $($before -join ', ')";
             ok = ((Hosted) -and $hostHandle -ne $null -and @($before | Where-Object { $_ -gt $hostHandle }).Count -eq 0) }
 if ($Launch -eq "skse-proxy") {
     $deferred = @($standaloneLog | Where-Object { $_ -eq "the script extender is loaded; it hosts the plugins" })

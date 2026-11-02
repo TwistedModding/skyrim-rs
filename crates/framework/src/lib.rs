@@ -1,6 +1,6 @@
-//! The framework's own plugin ABI: plugins the host (`skyrim_rs.dll`, an SKSE plugin) loads itself.
+//! The framework's own plugin ABI: plugins the host (`skyrim_runtime_extender.dll`, an SKSE plugin) loads itself.
 //!
-//! A framework plugin is a `cdylib` in `Data\SKSE\Plugins\skyrim-rs\` (SKSE loads only the folder
+//! A framework plugin is a `cdylib` in `Data\SKSE\Plugins\skyrim-runtime-extender\` (SKSE loads only the folder
 //! above, so it never sees them) that declares itself with [`plugin!`]. The host loads every DLL
 //! there from its own `SKSEPlugin_Load`, reads the exported `SkyrimRs_Plugin` [`Descriptor`] as
 //! plain C data and calls the plugin's `load` when the descriptor's [`ABI`] is one it knows. The
@@ -8,7 +8,7 @@
 //! (`docs/subsystems/abi.md`), and a plugin draws its UI with `egui` contexts of its own and hands
 //! the host meshes ([`ui`]), so a plugin runs on any loader that has the functions it uses, whatever
 //! compiler and framework commit either was built with. A refused DLL is unloaded and named in
-//! `skyrim-rs.log`.
+//! `skyrim-runtime-extender.log`.
 //!
 //! The `load` calls run in the order [`order::sort`] resolves from every accepted descriptor's
 //! `load_before`, `load_after` and `priority`, file name order deciding what they leave open; a

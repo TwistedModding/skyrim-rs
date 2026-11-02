@@ -2,14 +2,14 @@
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them.
 # The papyrus suite also builds the equip-counter mod, compiles both crates' papyrus folders and installs the mod DLL and
 # the .pex files for the run; the shadows suite installs the first-person-shadows mod next to the test plugin.
-# The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_rs.dll) and puts its
-# test plugin, the four order-* plugins and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-rs; the test
+# The overlay suite runs the plugin in mode overlay. The framework suite installs the host (skyrim_runtime_extender.dll) and puts its
+# test plugin, the four order-* plugins and a decoy DLL without a descriptor into Data\SKSE\Plugins\skyrim-runtime-extender; the test
 # plugin writes the suite's report. The hooks suite installs the host with its two hook plugins, which share one report
 # log. The reload suite builds its plugin three more times with the build tags 2, 3 and 4 before the game starts, installs
 # the host with the tag 1 build, and between the parts of its scenario copies the next tag's DLL over the installed one
 # and waits for the host to report the reload. The compat suite runs the hooks scenario with the hooks plugins and two
 # plain SKSE plugins of its own that hook the same functions (legacy-patch-a before the host by file name,
-# legacy-patch-z after it), with skyrim-rs.ini setting the host's compatibility mode to -Compat. The legacy suite copies
+# legacy-patch-z after it), with skyrim-runtime-extender.ini setting the host's compatibility mode to -Compat. The legacy suite copies
 # the third-party SKSE plugins it lists from -LegacyDir into Data\SKSE\Plugins for the run, next to the host. The gui
 # suite installs the host with the example mod and the two hook plugins, captures each page of the host's window, copies
 # the example's build in again between its two parts (a reload) and keeps the settings files the host wrote; then it
@@ -19,7 +19,7 @@
 # drives it through its console command and reads its report log. The crash suite installs the host with its crash-test
 # plugin and runs one game session per scenario (null, hook, overflow, write, form, deleted, script), each ending in the crash the plugin's
 # console command armed; the host's crash log and minidump of each session go to <OutDir>\<scenario>. Any suite's run
-# that leaves a skyrim-rs-crash-* file in the SKSE folder has it moved into <OutDir>. The sample suite installs the sample
+# that leaves a skyrim-runtime-extender-crash-* file in the SKSE folder has it moved into <OutDir>. The sample suite installs the sample
 # plugin of docs/MODS.md and compares its log with DevBench. See docs/subsystems/<suite>.md.
 param(
     [Parameter(Mandatory)][ValidateSet("forms", "actors", "events", "papyrus", "render", "shadows", "frame", "animation", "bone", "ui", "input", "save", "audio", "overlay", "framework", "hooks", "reload", "compat", "legacy", "gui", "camera", "crash", "sample")][string]$Suite,
@@ -54,29 +54,29 @@ $Mods = @{
     bone = @{ crate = "bone-driver"; dll = "skyrim_rs_bone_driver.dll"; log = "skyrim-rs-bone-driver.log" }
     camera = @{ crate = "camera-demo"; dll = "skyrim_rs_camera_demo.dll"; log = "skyrim-rs-camera-demo.log"; report = $true }
     sample = @{ crate = "sample-plugin"; dll = "skyrim_rs_sample.dll"; log = "skyrim-rs-sample.log"; report = $true }
-    framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-rs"; report = $true;
+    framework = @{ crate = "framework-test"; dll = "skyrim_rs_framework_test.dll"; log = "skyrim-rs-framework-test.log"; dir = "skyrim-runtime-extender"; report = $true;
                    crates = @("order-head", "order-tail", "order-cycle-a", "order-cycle-b")
                    dlls = @("skyrim_rs_order_head.dll", "skyrim_rs_order_tail.dll", "skyrim_rs_order_cycle_a.dll", "skyrim_rs_order_cycle_b.dll") }
-    hooks = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true;
+    hooks = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-runtime-extender"; report = $true;
                crates = @("hooks-test-b"); dlls = @("skyrim_rs_hooks_b.dll") }
-    reload = @{ crate = "reload-test"; dll = "skyrim_rs_reload_test.dll"; log = "skyrim-rs-reload-test.log"; dir = "skyrim-rs"; report = $true; tags = @(2, 3, 4) }
-    compat = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-rs"; report = $true; steps = "hooks";
+    reload = @{ crate = "reload-test"; dll = "skyrim_rs_reload_test.dll"; log = "skyrim-rs-reload-test.log"; dir = "skyrim-runtime-extender"; report = $true; tags = @(2, 3, 4) }
+    compat = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-runtime-extender"; report = $true; steps = "hooks";
                 crates = @("hooks-test-b", "legacy-patch-a", "legacy-patch-z"); dlls = @("skyrim_rs_hooks_b.dll");
                 plugins = @("skyrim_legacy_patch_a.dll", "skyrim_rs_legacy_patch_z.dll"); logs = @("skyrim-rs-legacy-patch-a.log", "skyrim-rs-legacy-patch-z.log") }
     # Third-party plugins built for 1.7.x on the Address Library, each <name>.dll in $LegacyDir\<name>\SKSE\Plugins
     # (DevBench is the other one; it is installed for every suite).
-    legacy = @{ dir = "skyrim-rs"; legacy = @("CrashLogger") }
-    gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-rs"; report = $true; tags = @(2);
+    legacy = @{ dir = "skyrim-runtime-extender"; legacy = @("CrashLogger") }
+    gui = @{ crate = "example-mod"; dll = "skyrim_rs_example_mod.dll"; log = "skyrim-rs-example.log"; dir = "skyrim-runtime-extender"; report = $true; tags = @(2);
              crates = @("hooks-test-a", "hooks-test-b"); dlls = @("skyrim_rs_hooks_a.dll", "skyrim_rs_hooks_b.dll")
              # Each session's edit of the host's settings file before its launch.
              sessions = [ordered]@{
                  rebind = { param($file)
                      $text = Get-Content $file -Raw
-                     if ($text -notmatch '"key\.skyrim-rs\.toggle": "F11"') { throw "$file does not bind the toggle to F11" }
-                     ($text -replace '"key\.skyrim-rs\.toggle": "F11"', '"key.skyrim-rs.toggle": 68') -replace '^\{', "{`n  `"by.hand`": `"kept`"," | Set-Content $file -Encoding ascii -NoNewline }
-                 malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-rs.toggle`": `"F10`"`n  `"overlay.capture`": `"focus`"`n}`n" -Encoding ascii -NoNewline }
+                     if ($text -notmatch '"key\.skyrim-runtime-extender\.toggle": "F11"') { throw "$file does not bind the toggle to F11" }
+                     ($text -replace '"key\.skyrim-runtime-extender\.toggle": "F11"', '"key.skyrim-runtime-extender.toggle": 68') -replace '^\{', "{`n  `"by.hand`": `"kept`"," | Set-Content $file -Encoding ascii -NoNewline }
+                 malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-runtime-extender.toggle`": `"F10`"`n  `"overlay.capture`": `"focus`"`n}`n" -Encoding ascii -NoNewline }
              } }
-    crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-rs"; report = $true;
+    crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-runtime-extender"; report = $true;
                scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")
                # The step that triggers each armed crash, as the scenario's JSON.
                triggers = @{ null = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; overflow = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'; write = '{"tool": "console", "args": {"command": "save skyrim-rs-crash"}}'
@@ -88,13 +88,13 @@ $Mod = $Mods[$Suite]
 if ($Suite -eq "legacy" -and $Legacy) { $Mod.legacy = @($Legacy -split ",") }
 if ($Mod.scenarios -and $Scenarios) { $Mod.scenarios = @($Scenarios -split ",") }
 $PluginLog = "skyrim-rs-test.log"
-$HostDll = "skyrim_rs.dll"
-$ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @("skyrim-rs.log", "skyrim-rs-standalone.log", "skyrim-rs-order.log")
+$HostDll = "skyrim_runtime_extender.dll"
+$ModLogs = @($Mods.Values | ForEach-Object { $_.log; $_.logs } | Where-Object { $_ }) + @("skyrim-runtime-extender.log", "skyrim-runtime-extender-standalone.log", "skyrim-rs-order.log")
 $Proxy = "$GameDir\dinput8.dll"
 $Logs = @("skse64.log", "skse64_loader.log", "skse64_steam_loader.log", "devbench.log", "retrace.log", $PluginLog) + $ModLogs
 $StepsName = if ($Mod.steps) { $Mod.steps } else { $Suite }
 $TestSave = "skyrim-rs-$StepsName"
-$Ini = "$Plugins\skyrim-rs.ini"
+$Ini = "$Plugins\skyrim-runtime-extender.ini"
 
 if ($Suite -eq "overlay") { $Mode = "overlay" }
 if (-not $CheckOnly) {
@@ -183,7 +183,7 @@ $Between = {
     (Get-Item "$ModDir\$($Mod.dll)").LastWriteTime = Get-Date
     $shell = New-Object -ComObject WScript.Shell
     $t0 = Get-Date
-    while (-not (Select-String -Path "$SkseLogs\skyrim-rs.log" -Pattern "generation $tag loaded" -Quiet)) {
+    while (-not (Select-String -Path "$SkseLogs\skyrim-runtime-extender.log" -Pattern "generation $tag loaded" -Quiet)) {
         if (((Get-Date) - $t0).TotalSeconds -gt 90) { throw "the host did not report generation $tag within 90 s" }
         $game = Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue | Select-Object -First 1
         if ($game) { [void]$shell.AppActivate($game.Id) }
@@ -205,9 +205,9 @@ try {
             New-Item -ItemType Directory -Force $runDir | Out-Null
             (Get-Content "$PSScriptRoot\$StepsName-steps.json" -Raw).Replace("{scenario}", $s).Replace("{trigger}", $Mod.triggers[$s]) | Set-Content "$runDir\steps.json" -Encoding ascii
             try { & "$PSScriptRoot\devbench.ps1" -Steps "$runDir\steps.json" -OutDir $runDir -Launch $DevBenchLaunch } catch { "scenario $s`: the game ended: $($_.Exception.Message)" }
-            foreach ($f in @("skyrim-rs.log", $Mod.log)) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$runDir\$f" -Force } }
-            Get-ChildItem "$SkseLogs" -Filter "skyrim-rs-crash-????????-??????.*" | Move-Item -Destination $runDir -Force
-            if (-not (Get-ChildItem $runDir -Filter "skyrim-rs-crash-????????-??????.log")) { "scenario $s`: no crash log"; $scenarioOk = $false }
+            foreach ($f in @("skyrim-runtime-extender.log", $Mod.log)) { if (Test-Path "$SkseLogs\$f") { Copy-Item "$SkseLogs\$f" "$runDir\$f" -Force } }
+            Get-ChildItem "$SkseLogs" -Filter "skyrim-runtime-extender-crash-????????-??????.*" | Move-Item -Destination $runDir -Force
+            if (-not (Get-ChildItem $runDir -Filter "skyrim-runtime-extender-crash-????????-??????.log")) { "scenario $s`: no crash log"; $scenarioOk = $false }
         }
     } else {
         & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-steps.json" -Between $(if ($Mod.tags) { $Between }) -OutDir $OutDir -Launch $DevBenchLaunch
@@ -222,7 +222,7 @@ try {
             foreach ($s in $Mod.sessions.Keys) {
                 $runDir = "$OutDir\$s"
                 New-Item -ItemType Directory -Force $runDir | Out-Null
-                & $Mod.sessions[$s] "$Plugins\$($Mod.dir)\skyrim-rs.settings.json"
+                & $Mod.sessions[$s] "$Plugins\$($Mod.dir)\skyrim-runtime-extender.settings.json"
                 & "$PSScriptRoot\devbench.ps1" -Steps "$PSScriptRoot\$StepsName-$s-steps.json" -OutDir $runDir -Launch $DevBenchLaunch
                 $scenarioOk = $scenarioOk -and $LASTEXITCODE -eq 0
                 & $keep $runDir
@@ -230,7 +230,7 @@ try {
         }
     }
 } finally {
-    Get-ChildItem "$SkseLogs" -Filter "skyrim-rs-crash-????????-??????.*" | Move-Item -Destination $OutDir -Force
+    Get-ChildItem "$SkseLogs" -Filter "skyrim-runtime-extender-crash-????????-??????.*" | Move-Item -Destination $OutDir -Force
     if ($Mod.dir -and -not $Mod.sessions) { Get-ChildItem "$Plugins\$($Mod.dir)" -Filter "*.settings.json" -ErrorAction SilentlyContinue | Copy-Item -Destination $OutDir -Force }
     # A game that crashed may still hold the installed DLLs for a few seconds after Stop-Process.
     for ($try = 0; $try -lt 10; $try++) {
@@ -291,9 +291,9 @@ function RunDetail($run, $name) { if ($runs[$run] -and $runs[$run][$name]) { $ru
 function Captured($text, $pattern) { if ($text -match $pattern) { $Matches[1] } else { $null } }
 # The SKSE plugin loader of this launch, its log and the handle it gave a DLL; the host names the same loader in its log.
 $HostedBy = if ($Launch -eq "standalone") { "the standalone loader" } else { "the script extender" }
-$LoaderLogName = if ($Launch -eq "standalone") { "skyrim-rs-standalone.log" } else { "skse64.log" }
+$LoaderLogName = if ($Launch -eq "standalone") { "skyrim-runtime-extender-standalone.log" } else { "skse64.log" }
 $LoaderLog = @(if (Test-Path "$OutDir\$LoaderLogName") { Get-Content "$OutDir\$LoaderLogName" })
-$HostLog = @(if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-rs.log" })
+$HostLog = @(if (Test-Path "$OutDir\skyrim-runtime-extender.log") { Get-Content "$OutDir\skyrim-runtime-extender.log" })
 function Loaded($file) {
     $f = [regex]::Escape($file)
     $pattern = if ($Launch -eq "standalone") { "^$f`: loaded as handle (\d+)" } else { "^plugin $f \(.*\) loaded correctly \(handle (\d+)\)" }

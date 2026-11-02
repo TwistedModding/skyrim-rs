@@ -1,4 +1,4 @@
-//! Hot reload: every plugin runs from a shadow copy under `skyrim-rs\.loaded\`, the author's file
+//! Hot reload: every plugin runs from a shadow copy under `skyrim-runtime-extender\.loaded\`, the author's file
 //! is polled once a second from the frame, and a changed file that can be opened exclusively (the
 //! copy has finished) is swapped in at that frame boundary on the main thread.
 //!

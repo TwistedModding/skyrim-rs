@@ -7,9 +7,9 @@
 $Phases = @()
 
 function ScenarioFile($s, $pattern) { Get-ChildItem "$OutDir\$s" -Filter $pattern -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }
-function CrashLog($s) { $f = ScenarioFile $s "skyrim-rs-crash-????????-??????.log"; if ($f) { @(Get-Content $f.FullName) } else { @() } }
+function CrashLog($s) { $f = ScenarioFile $s "skyrim-runtime-extender-crash-????????-??????.log"; if ($f) { @(Get-Content $f.FullName) } else { @() } }
 function PluginLog($s) { if (Test-Path "$OutDir\$s\$($Mod.log)") { @(Get-Content "$OutDir\$s\$($Mod.log)") } else { @() } }
-function HostLogOf($s) { if (Test-Path "$OutDir\$s\skyrim-rs.log") { @(Get-Content "$OutDir\$s\skyrim-rs.log") } else { @() } }
+function HostLogOf($s) { if (Test-Path "$OutDir\$s\skyrim-runtime-extender.log") { @(Get-Content "$OutDir\$s\skyrim-runtime-extender.log") } else { @() } }
 function First($lines, $pattern) { $m = @($lines | Where-Object { $_ -match $pattern }); if ($m.Count) { $m[0] } else { "" } }
 function Count($lines, $pattern) { @($lines | Where-Object { $_ -match $pattern }).Count }
 function Captured2($text, $pattern) { if ($text -match $pattern) { $Matches[1] } else { $null } }
@@ -19,7 +19,7 @@ foreach ($s in $Mod.scenarios) {
     $crash = CrashLog $s
     $plugin = PluginLog $s
     $hostLogS = HostLogOf $s
-    $dump = ScenarioFile $s "skyrim-rs-crash-????????-??????.dmp"
+    $dump = ScenarioFile $s "skyrim-runtime-extender-crash-????????-??????.dmp"
     $installed = First $hostLogS '^crash handler installed, watchdog thread \d+, game symbols AddressLibrary \((\d+) functions, (\d+) offsets differ'
     $codeLine = First $crash '^code 0x[0-9a-f]{8} '
     $atLine = First $crash '^at '
@@ -59,7 +59,7 @@ foreach ($s in $Mod.scenarios) {
             $rows += @{ name = "hook: site and subscriber"; plugin = (First $plugin '^PASS hook:'); devbench = $hookLine;
                         ok = ($hookLine -match '^the crashing thread is inside hook site Actor::ModActorValueImpl, subscriber #\d+ skyrim-rs-crash-test Before$') }
             $rows += @{ name = "hook: stack"; plugin = "plugin frames $pluginFrames, game frames $gameFrames"; devbench = ($frames | Select-Object -First 8) -join ' | ';
-                        ok = ($pluginFrames -ge 1 -and (Count $frames 'skyrim_rs\.dll\+0x') -ge 1 -and (Count $frames 'Actor::(ActorValueOwner_ModActorValue|ModActorValueImpl)\+0x') -ge 1) }
+                        ok = ($pluginFrames -ge 1 -and (Count $frames 'skyrim_runtime_extender\.dll\+0x') -ge 1 -and (Count $frames 'Actor::(ActorValueOwner_ModActorValue|ModActorValueImpl)\+0x') -ge 1) }
         }
         "overflow" {
             $rows += @{ name = "overflow: exception"; plugin = $atLine; devbench = $codeLine;
@@ -91,7 +91,7 @@ foreach ($s in $Mod.scenarios) {
             # The native's function object and callback are the host's: a framework plugin registers natives through its Host, which owns the erased function.
             $papyrus = @($crash | Where-Object { $_ -match '^the crashing thread runs Papyrus: |^  #\d+ ' })
             $rows += @{ name = "script: papyrus stack"; plugin = "$(First $plugin '^PASS native:') | $pluginCrashLine"; devbench = ($papyrus -join ' | ');
-                        ok = ((First $crash '^the crashing thread runs Papyrus: ') -match "^the crashing thread runs Papyrus: (a native's binding, inside Call|a native called by the executor)" -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.Crash: native \(function object of skyrim_rs\.dll\), implemented at skyrim_rs\.dll\+0x') -ge 1 -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.CrashFromScript: script function from "SkyrimRsCrashTest\.psc", \d+ bits of code, no line table') -ge 1 -and $pluginCrashLine -ne "") }
+                        ok = ((First $crash '^the crashing thread runs Papyrus: ') -match "^the crashing thread runs Papyrus: (a native's binding, inside Call|a native called by the executor)" -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.Crash: native \(function object of skyrim_runtime_extender\.dll\), implemented at skyrim_runtime_extender\.dll\+0x') -ge 1 -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.CrashFromScript: script function from "SkyrimRsCrashTest\.psc", \d+ bits of code, no line table') -ge 1 -and $pluginCrashLine -ne "") }
         }
         "write" {
             $rows += @{ name = "write: exception"; plugin = $atLine; devbench = "$codeLine | $accessLine";

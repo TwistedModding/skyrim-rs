@@ -490,7 +490,7 @@ fn plugin_buttons(name: &str, state: Status) -> Vec<(&'static str, &'static str,
 
 fn plugins_tab(ui: &mut egui::Ui) {
     ui.horizontal(|ui| {
-        ui.label(dim(format!("Skyrim Runtime Extender {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-rs.", super::VERSION, hosted_by())));
+        ui.label(dim(format!("Skyrim Runtime Extender {}, loaded by {}. Framework plugins are read from Data\\SKSE\\Plugins\\skyrim-runtime-extender.", super::VERSION, hosted_by())));
         if ui.button("Rescan folder").on_hover_text("Load the plugins added to the folder since the game started, and try the ones not loaded again").clicked() {
             reload::request(Request::Rescan);
         }
@@ -527,7 +527,7 @@ fn plugins_tab(ui: &mut egui::Ui) {
 }
 
 fn legacy_tab(ui: &mut egui::Ui) {
-    let log = if hosted_by() == "the script extender" { "skse64.log" } else { "skyrim-rs-standalone.log" };
+    let log = if hosted_by() == "the script extender" { "skse64.log" } else { "skyrim-runtime-extender-standalone.log" };
     ui.label(dim(format!("SKSE plugins in Data\\SKSE\\Plugins, loaded by {}. The reason a plugin was not loaded is in {log}.", hosted_by())));
     ui.add_space(RULE_SPACE);
     let rows: Vec<_> = skse_plugins()

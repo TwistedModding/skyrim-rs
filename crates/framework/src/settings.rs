@@ -1,6 +1,6 @@
 //! Per-plugin settings: typed values under string keys, kept by the host for the life of the game
 //! (a reloaded plugin finds them unchanged) and stored as a flat JSON object in
-//! `Data\SKSE\Plugins\skyrim-rs\<plugin>.settings.json`, read before the plugin's `load` and
+//! `Data\SKSE\Plugins\skyrim-runtime-extender\<plugin>.settings.json`, read before the plugin's `load` and
 //! written within a second of a change and when the plugin is unloaded.
 
 use std::collections::BTreeMap;

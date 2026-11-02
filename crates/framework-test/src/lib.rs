@@ -1,4 +1,4 @@
-//! The framework suite's plugin, loaded by the host from `Data\SKSE\Plugins\skyrim-rs\`: it checks
+//! The framework suite's plugin, loaded by the host from `Data\SKSE\Plugins\skyrim-runtime-extender\`: it checks
 //! the forwarded SKSE interface and the resolved load order in `load` and appends its name to
 //! `skyrim-rs-order.log` like the `order-*` plugins, records the loader messages the host fans out,
 //! registers `SkyrimRsFrameworkTest.Twice` through the host's Papyrus callback, adds an overlay

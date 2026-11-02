@@ -19,7 +19,7 @@
   {"wait": 1000},
   {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": "w", "owner": "verify"}},
   {"wait": 1000},
-  {"tool": "console", "args": {"command": "save skyrim-rs-overlay"}},
+  {"tool": "console", "args": {"command": "save skyrim-runtime-extender-overlay"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

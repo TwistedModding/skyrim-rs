@@ -275,24 +275,24 @@ mod tests {
     fn resolves_the_file_and_refuses_conflicts() {
         let dir = std::env::temp_dir().join(format!("skyrim-rs-keys-{}", std::process::id()));
         std::fs::create_dir_all(&dir).unwrap();
-        let text = "{\"key.skyrim-rs.toggle\": 68, \"key.skyrim-rs.close\": \"F10\", \"key.test.a\": \"shift+k\", \"key.test.d\": \"\", \"by.hand\": \"kept\"}";
+        let text = "{\"key.skyrim-runtime-extender.toggle\": 68, \"key.skyrim-runtime-extender.close\": \"F10\", \"key.test.a\": \"shift+k\", \"key.test.d\": \"\", \"by.hand\": \"kept\"}";
         std::fs::write(settings::file(&dir, NAME), text).unwrap();
         assert_eq!(settings::open(NAME, &dir), Ok(5));
         declare_host();
         let f10: Hotkey = "F10".parse().unwrap();
         let shift_k: Hotkey = "Shift+K".parse().unwrap();
         assert_eq!((key(TOGGLE), key(CLOSE)), (Some(f10), None));
-        assert!(last_message().contains("skyrim-rs.close: F10 is bound to skyrim-rs.toggle"));
+        assert!(last_message().contains("skyrim-runtime-extender.close: F10 is bound to skyrim-runtime-extender.toggle"));
         let a = declare("test", "a", "J", Scope::Overlay);
         assert_eq!(key(a), Some(shift_k));
         let b = declare("test", "b", "Shift+K", Scope::Game);
         assert_eq!(key(b), None);
-        assert_eq!(set(b, f10), Err("F10 for test.b refused: F10 is bound to skyrim-rs.toggle".to_owned()));
+        assert_eq!(set(b, f10), Err("F10 for test.b refused: F10 is bound to skyrim-runtime-extender.toggle".to_owned()));
         assert_eq!(set(b, "L".parse().unwrap()), Ok("test.b set to L".to_owned()));
         assert_eq!(declare("test", "b", "Shift+K", Scope::Game), b);
         assert_eq!(key(b), Some("L".parse().unwrap()));
-        assert_eq!(settings::get(NAME, "key.skyrim-rs.toggle"), Some(Setting::Text("F10".to_owned())));
-        assert_eq!(settings::get(NAME, "key.skyrim-rs.close"), Some(Setting::Text("F10".to_owned())));
+        assert_eq!(settings::get(NAME, "key.skyrim-runtime-extender.toggle"), Some(Setting::Text("F10".to_owned())));
+        assert_eq!(settings::get(NAME, "key.skyrim-runtime-extender.close"), Some(Setting::Text("F10".to_owned())));
         assert_eq!(settings::get(NAME, "key.test.a"), Some(Setting::Text("Shift+K".to_owned())));
         assert_eq!(settings::get(NAME, "by.hand"), Some(Setting::Text("kept".to_owned())));
         assert!(!fired(a));
@@ -309,8 +309,8 @@ mod tests {
         assert_eq!(settings::get(NAME, "key.test.d"), Some(Setting::Text(String::new())));
         unbind(TOGGLE);
         assert_eq!(key(TOGGLE), None);
-        assert_eq!(last_message(), "skyrim-rs.toggle unbound");
-        assert_eq!(settings::get(NAME, "key.skyrim-rs.toggle"), Some(Setting::Text(String::new())));
+        assert_eq!(last_message(), "skyrim-runtime-extender.toggle unbound");
+        assert_eq!(settings::get(NAME, "key.skyrim-runtime-extender.toggle"), Some(Setting::Text(String::new())));
         assert_eq!(set(d, f10), Ok("test.d set to F10".to_owned()), "unbinding frees the key");
         let _ = std::fs::remove_dir_all(&dir);
     }

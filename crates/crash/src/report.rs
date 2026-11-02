@@ -56,7 +56,7 @@ fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>)
     let rec = ctx.rec;
     let [year, month, day, hour, minute, second] = rec.time;
     let [major, minor, build, store] = skse::runtime::unpack(rec.runtime);
-    writeln!(w, "skyrim-rs crash report")?;
+    writeln!(w, "Skyrim Runtime Extender crash report")?;
     writeln!(w, "time {year:04}-{month:02}-{day:02} {hour:02}:{minute:02}:{second:02} local, uptime {}", Uptime(rec.uptime_ms))?;
     writeln!(w, "game {major}.{minor}.{build}.{store}, SkyrimSE.exe at {:#x}", rec.exe_base)?;
     writeln!(w, "reported by {}: {}", rec.installer(), rec.build())?;

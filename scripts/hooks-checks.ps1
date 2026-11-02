@@ -15,12 +15,12 @@ $removed = @($hostLog | Where-Object { $_ -match '^hooks: skyrim-rs-hooks-b: 2 s
 $loaded = @($hostLog | Where-Object { $_ -match '^loaded skyrim_rs_hooks_[ab]\.dll: skyrim-rs-hooks-[ab]$' })
 $checks = @($hostLog | Where-Object { $_ -match '^hooks: (startup|PLUGINS_LOADED_2|DATA_LOADED): (\d+) sites checked, 0 patched by another module, compatibility mode refuse$' })
 $siteCounts = @($checks | ForEach-Object { ($_ -split ' ')[2] } | Select-Object -Unique)
-$hostHandle = Loaded "skyrim_rs.dll"
+$hostHandle = Loaded "skyrim_runtime_extender.dll"
 $health = @(5, 8, 11, 17 | ForEach-Object { Returned $_ })
 $damage = @(6, 9, 15 | ForEach-Object { Lines $_ })
 
 $rows = @(
-    @{ name = "plugins loaded"; plugin = "$(Detail 'a_subscribe') | $(Detail 'b_subscribe')"; devbench = "${LoaderLogName}: skyrim_rs.dll handle $hostHandle; (host log) $(@($hostLog -match '^hosted by ') -join ' | ') | $($loaded -join ' | ')";
+    @{ name = "plugins loaded"; plugin = "$(Detail 'a_subscribe') | $(Detail 'b_subscribe')"; devbench = "${LoaderLogName}: skyrim_runtime_extender.dll handle $hostHandle; (host log) $(@($hostLog -match '^hosted by ') -join ' | ') | $($loaded -join ' | ')";
        ok = ($plugin["a_subscribe"].ok -and $plugin["b_subscribe"].ok -and $loaded.Count -eq 2 -and $hostHandle -ne $null -and (Hosted)) }
     @{ name = "sites checked";  plugin = "$(Detail 'a_scale') | $(Detail 'a_scale_calls')"; devbench = "(host log) $($checks -join ' | ')";
        ok = ($plugin["a_scale"].ok -and $plugin["a_scale_calls"].ok -and $checks.Count -eq 3 -and $siteCounts.Count -eq 1) }

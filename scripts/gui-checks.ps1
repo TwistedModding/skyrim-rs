@@ -21,7 +21,7 @@
 # <OutDir>\<session>.
 $Phases = @()
 
-$hostLog = if (Test-Path "$OutDir\skyrim-rs.log") { Get-Content "$OutDir\skyrim-rs.log" } else { @() }
+$hostLog = if (Test-Path "$OutDir\skyrim-runtime-extender.log") { Get-Content "$OutDir\skyrim-runtime-extender.log" } else { @() }
 function HostLines($pattern) { @($hostLog | Where-Object { $_ -match $pattern }) }
 $loaded = HostLines '^loaded skyrim_rs_(example_mod|hooks_a|hooks_b)\.dll: skyrim-rs-(example|hooks-a|hooks-b)$'
 $font = HostLines '^overlay font: Futura CondensedLight from .*fonts_en\.swf$'
@@ -31,7 +31,7 @@ $reloading = HostLines '^skyrim-rs-example: skyrim_rs_example_mod\.dll changed, 
 $detached = HostLines '^skyrim-rs-example: generation 1: 1 hook subscriptions, 0 sinks, 1 natives stubbed, 0 commands stubbed, 0 engine commands restored, 2 tab sections, 0 HUD painters, 0 message handlers, 0 interfaces parked, 1 Papyrus callbacks, 1 frame callbacks detached$'
 $reloaded = HostLines '^skyrim-rs-example: generation 2 loaded, image at 0x[0-9a-f]+$'
 $settingsWritten = HostLines '^settings written to .*skyrim-rs-example\.settings\.json$'
-$framesWritten = HostLines '^overlay frame written to .*skyrim-rs-overlay-[0-4]\.bmp$'
+$framesWritten = HostLines '^overlay frame written to .*skyrim-runtime-extender-overlay-[0-4]\.bmp$'
 
 function Pos($i) { Captured (Lines $i) '>>\s*(-?[\d.]+)' }
 $moved = if ((Pos 9) -and (Pos 15)) { [math]::Sqrt([math]::Pow([double](Pos 15) - [double](Pos 9), 2) + [math]::Pow([double](Pos 16) - [double](Pos 10), 2)) } else { 0 }
@@ -50,7 +50,7 @@ $scaleOnDisk = if (Test-Path $settingsFile) { Captured (Get-Content $settingsFil
 
 # One capture per page, as "SkyrimRs gui <n>" numbers them.
 $pageNames = @("example-damage", "example-about", "plugins", "legacy", "settings")
-$shots = @(0..4 | ForEach-Object { HalfJpeg "$SkseLogs\skyrim-rs-overlay-$_.bmp" "$OutDir\gui-$($pageNames[$_])-1.7.104.jpg" })
+$shots = @(0..4 | ForEach-Object { HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-$_.bmp" "$OutDir\gui-$($pageNames[$_])-1.7.104.jpg" })
 $vanillaPath = (Step 66).path
 $vanilla = $vanillaPath -and (HalfJpeg $vanillaPath "$OutDir\gui-vanilla-1.7.104.jpg")
 # DevBench writes its capture's metadata beside the picture, inside the game install.
@@ -68,22 +68,22 @@ function Seen($lines, $save, $code) { $l = @($lines | Where-Object { $_ -match '
 $testLog = LogOf $OutDir "skyrim-rs-test.log"
 $exampleLog = LogOf $OutDir "skyrim-rs-example.log"
 $fired = @($exampleLog | Where-Object { $_ -match '^open-tab fired' })
-$hostFile = FileOf $OutDir "skyrim-rs.settings.json"
+$hostFile = FileOf $OutDir "skyrim-runtime-extender.settings.json"
 $rebind = SessionSteps "rebind"
-$rebindLog = LogOf "$OutDir\rebind" "skyrim-rs.log"
-$rebindFile = FileOf "$OutDir\rebind" "skyrim-rs.settings.json"
+$rebindLog = LogOf "$OutDir\rebind" "skyrim-runtime-extender.log"
+$rebindFile = FileOf "$OutDir\rebind" "skyrim-runtime-extender.settings.json"
 $rebindSeen = LogOf "$OutDir\rebind" "skyrim-rs-test.log"
 $malformed = SessionSteps "malformed"
-$malformedLog = LogOf "$OutDir\malformed" "skyrim-rs.log"
-$malformedFile = FileOf "$OutDir\malformed" "skyrim-rs.settings.json"
-$badFile = FileOf "$OutDir\malformed" "skyrim-rs.settings.json.bad"
+$malformedLog = LogOf "$OutDir\malformed" "skyrim-runtime-extender.log"
+$malformedFile = FileOf "$OutDir\malformed" "skyrim-runtime-extender.settings.json"
+$badFile = FileOf "$OutDir\malformed" "skyrim-runtime-extender.settings.json.bad"
 $released = HostLines '^Escape released the focused widget; the overlay stays open$'
 $closedByEscape = HostLines '^overlay closed with Escape$'
 $controlMap = HostLines "^keys: skyrim-rs\.(toggle F11|close Escape) \(Overlay\): in the game's control map"
 $setLine = HostLines '^keys: skyrim-rs-example\.open-tab set to Shift\+L$'
-$refusedLine = HostLines '^keys: F11 for skyrim-rs-example\.open-tab refused: F11 is bound to skyrim-rs\.toggle$'
-$hostWritten = HostLines '^settings written to .*\\skyrim-rs\.settings\.json$'
-$reported = @($malformedLog | Where-Object { $_ -match "^skyrim-rs: settings not read, .*\\skyrim-rs\.settings\.json: malformed at line 3, column 3: expected ','; renamed to .*\\skyrim-rs\.settings\.json\.bad, the defaults are used$" })
+$refusedLine = HostLines '^keys: F11 for skyrim-rs-example\.open-tab refused: F11 is bound to skyrim-runtime-extender\.toggle$'
+$hostWritten = HostLines '^settings written to .*\\skyrim-runtime-extender\.settings\.json$'
+$reported = @($malformedLog | Where-Object { $_ -match "^skyrim-runtime-extender: settings not read, .*\\skyrim-runtime-extender\.settings\.json: malformed at line 3, column 3: expected ','; renamed to .*\\skyrim-runtime-extender\.settings\.json\.bad, the defaults are used$" })
 $pages = @($gui1 -split ' \| ' | Where-Object { $_ -match '^page \d+: ' })
 $expectedPages = @("page 0: Example mod / Damage, shown", "page 1: Example mod / About", "page 2: Plugins", "page 3: Legacy plugins", "page 4: Settings")
 $shownPages = @(17, 21, 25, 29 | ForEach-Object { Captured (Lines $_) '(page \d+: [^|,]*), shown' })
@@ -100,7 +100,7 @@ $rows = @(
     @{ name = "page selection"; plugin = "SkyrimRs gui 1 to 4"; devbench = ($shownPages -join ' | ');
        ok = (($shownPages -join '|') -eq 'page 1: Example mod / About|page 2: Plugins|page 3: Legacy plugins|page 4: Settings') }
     @{ name = "legacy plugins"; plugin = "(from SkyrimRs gui)"; devbench = (@($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy' }) -join ' | ');
-       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_rs\.dll: skyrim-rs [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
+       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_runtime_extender\.dll: skyrim-rs [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
     @{ name = "captures"; plugin = "(host log) $($framesWritten.Count) frames written"; devbench = "kept as gui-<page>-1.7.104.jpg: $($shots -join ', '); journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";
        ok = ($framesWritten.Count -eq 5 -and @($shots | Where-Object { $_ }).Count -eq 5 -and $vanilla) }
     @{ name = "focus capture"; plugin = "overlay open with nothing focused, capture $(Captured $gui1 'capture (\w+)')"; devbench = "player moved $([math]::Round($moved, 1)) units during the 2 s W hold (x $(Pos 9) -> $(Pos 15), y $(Pos 10) -> $(Pos 16))";
@@ -132,11 +132,11 @@ $rows = @(
     @{ name = "capture"; plugin = "(host log) $($setLine -join ' | '); on disk: $(Captured $hostFile '("key\.skyrim-rs-example\.open-tab": "[^"]*")')"; devbench = "$(LinesOf $steps 104); $(Captured (LinesOf $steps 107) '(key 2 [^|]*)'); Shift+K after it: $(Captured (LinesOf $steps 112) '(overlay \w+)'); Shift+L: $(Captured (LinesOf $steps 115) '(overlay \w+)')";
        ok = ($setLine.Count -eq 1 -and (LinesOf $steps 104) -match 'press the key for skyrim-rs-example\.open-tab' -and (LinesOf $steps 107) -match 'key 2 skyrim-rs-example\.open-tab: Shift\+L \(default Shift\+K, Game' -and (LinesOf $steps 112) -match 'overlay closed' -and (LinesOf $steps 115) -match 'overlay open' -and $hostFile -match '"key\.skyrim-rs-example\.open-tab": "Shift\+L"') }
     @{ name = "conflict"; plugin = "(host log) $($refusedLine -join ' | ')"; devbench = "SkyrimRs keys: $(LinesOf $steps 119)";
-       ok = ($refusedLine.Count -eq 1 -and (LinesOf $steps 119) -match 'overlay open' -and (LinesOf $steps 119) -match 'keys: F11 for skyrim-rs-example\.open-tab refused: F11 is bound to skyrim-rs\.toggle' -and (LinesOf $steps 122) -match 'overlay closed') }
-    @{ name = "host file"; plugin = "(host log) $($hostWritten.Count) writes of skyrim-rs.settings.json"; devbench = ($hostFile -replace '\s+', ' ');
-       ok = ($hostWritten.Count -ge 1 -and $hostFile -match '"key\.skyrim-rs\.toggle": "F11"' -and $hostFile -match '"key\.skyrim-rs\.close": "Escape"' -and $hostFile -match '"overlay\.capture": "focus"' -and $hostFile -notmatch '"window\.') }
+       ok = ($refusedLine.Count -eq 1 -and (LinesOf $steps 119) -match 'overlay open' -and (LinesOf $steps 119) -match 'keys: F11 for skyrim-rs-example\.open-tab refused: F11 is bound to skyrim-runtime-extender\.toggle' -and (LinesOf $steps 122) -match 'overlay closed') }
+    @{ name = "host file"; plugin = "(host log) $($hostWritten.Count) writes of skyrim-runtime-extender.settings.json"; devbench = ($hostFile -replace '\s+', ' ');
+       ok = ($hostWritten.Count -ge 1 -and $hostFile -match '"key\.skyrim-runtime-extender\.toggle": "F11"' -and $hostFile -match '"key\.skyrim-runtime-extender\.close": "Escape"' -and $hostFile -match '"overlay\.capture": "focus"' -and $hostFile -notmatch '"window\.') }
     @{ name = "rebind by file"; plugin = "(rebind host log) $(@($rebindLog | Where-Object { $_ -match '^overlay installed' }) -join ' | '); on disk: $($rebindFile -replace '\s+', ' ')"; devbench = "F11: $(LinesOf $rebind 7); F10: $(LinesOf $rebind 11); F10: $(LinesOf $rebind 14); the game's sink saw F10: $(Seen $rebindSeen 0 '0x44')";
-       ok = (@($rebindLog | Where-Object { $_ -match '^overlay installed, toggled with F10, closed with Escape$' }).Count -eq 1 -and (LinesOf $rebind 7) -match 'overlay closed' -and (LinesOf $rebind 7) -match 'key 0 skyrim-rs\.toggle: F10 ' -and (LinesOf $rebind 11) -match 'overlay open' -and (LinesOf $rebind 14) -match 'overlay closed' -and (Seen $rebindSeen 0 '0x44') -eq 'not seen' -and $rebindFile -match '"key\.skyrim-rs\.toggle": "F10"' -and $rebindFile -match '"by\.hand": "kept"') }
-    @{ name = "malformed"; plugin = "(malformed host log) $($reported -join ' | ')"; devbench = ".bad holds what was written: $($badFile -match '^\{\n  "key\.skyrim-rs\.toggle": "F10"\n  "overlay'); new file: $($malformedFile -replace '\s+', ' '); $(LinesOf $malformed 4); F11: $(LinesOf $malformed 7); F11: $(LinesOf $malformed 10)";
-       ok = ($reported.Count -eq 1 -and $badFile -match '^\{\n  "key\.skyrim-rs\.toggle": "F10"\n  "overlay' -and $malformedFile -match '"key\.skyrim-rs\.toggle": "F11"' -and $malformedFile -notmatch 'F10|by\.hand' -and (LinesOf $malformed 4) -match 'key 0 skyrim-rs\.toggle: F11 ' -and (LinesOf $malformed 7) -match 'overlay open' -and (LinesOf $malformed 10) -match 'overlay closed') }
+       ok = (@($rebindLog | Where-Object { $_ -match '^overlay installed, toggled with F10, closed with Escape$' }).Count -eq 1 -and (LinesOf $rebind 7) -match 'overlay closed' -and (LinesOf $rebind 7) -match 'key 0 skyrim-runtime-extender\.toggle: F10 ' -and (LinesOf $rebind 11) -match 'overlay open' -and (LinesOf $rebind 14) -match 'overlay closed' -and (Seen $rebindSeen 0 '0x44') -eq 'not seen' -and $rebindFile -match '"key\.skyrim-runtime-extender\.toggle": "F10"' -and $rebindFile -match '"by\.hand": "kept"') }
+    @{ name = "malformed"; plugin = "(malformed host log) $($reported -join ' | ')"; devbench = ".bad holds what was written: $($badFile -match '^\{\n  "key\.skyrim-runtime-extender\.toggle": "F10"\n  "overlay'); new file: $($malformedFile -replace '\s+', ' '); $(LinesOf $malformed 4); F11: $(LinesOf $malformed 7); F11: $(LinesOf $malformed 10)";
+       ok = ($reported.Count -eq 1 -and $badFile -match '^\{\n  "key\.skyrim-runtime-extender\.toggle": "F10"\n  "overlay' -and $malformedFile -match '"key\.skyrim-runtime-extender\.toggle": "F11"' -and $malformedFile -notmatch 'F10|by\.hand' -and (LinesOf $malformed 4) -match 'key 0 skyrim-runtime-extender\.toggle: F11 ' -and (LinesOf $malformed 7) -match 'overlay open' -and (LinesOf $malformed 10) -match 'overlay closed') }
 )

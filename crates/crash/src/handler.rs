@@ -93,7 +93,7 @@ fn wide(s: &str, out: &mut [u16]) -> usize {
 
 pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> Result<Installed, Error> {
     let mut event_name = [0u16; 64];
-    wide(&format!("Local\\skyrim-rs-crash-{}", unsafe { GetCurrentProcessId() }), &mut event_name);
+    wide(&format!("Local\\skyrim-runtime-extender-crash-{}", unsafe { GetCurrentProcessId() }), &mut event_name);
     let crash = unsafe { CreateEventW(core::ptr::null(), 1, 0, event_name.as_ptr()) };
     if crash.is_null() {
         return Err(Error::Event(unsafe { GetLastError() }));
@@ -213,14 +213,14 @@ unsafe extern "system" fn watchdog(_: *mut core::ffi::c_void) -> u32 {
     }
 }
 
-/// `<log dir>\skyrim-rs-crash-<yyyymmdd-hhmmss>.<ext>` into `out`.
+/// `<log dir>\skyrim-runtime-extender-crash-<yyyymmdd-hhmmss>.<ext>` into `out`.
 fn path(out: &mut [u16; PATH_UNITS], time: [u16; 6], ext: &str) {
     let dir = unsafe { LOG_DIR.get() };
     let mut n = dir.1.min(PATH_UNITS - 64);
     out[..n].copy_from_slice(&dir.0[..n]);
     let mut buf = [0u8; 64];
     let mut w = Writer::new(&mut buf);
-    let _ = core::fmt::Write::write_fmt(&mut w, format_args!("\\skyrim-rs-crash-{:04}{:02}{:02}-{:02}{:02}{:02}.{ext}", time[0], time[1], time[2], time[3], time[4], time[5]));
+    let _ = core::fmt::Write::write_fmt(&mut w, format_args!("\\skyrim-runtime-extender-crash-{:04}{:02}{:02}-{:02}{:02}{:02}.{ext}", time[0], time[1], time[2], time[3], time[4], time[5]));
     for unit in w.as_str().encode_utf16() {
         out[n] = unit;
         n += 1;

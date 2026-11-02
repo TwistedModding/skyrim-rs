@@ -1,5 +1,5 @@
 # DevBench comparisons for the framework suite (step indices of framework-steps.json); dot-sourced by verify.ps1.
-# The host (skyrim_rs.dll) loads the suite's plugins from Data\SKSE\Plugins\skyrim-rs in the order their descriptors
+# The host (skyrim_runtime_extender.dll) loads the suite's plugins from Data\SKSE\Plugins\skyrim-runtime-extender in the order their descriptors
 # resolve to (order-head by priority, then the test plugin, order-tail after all; the order-cycle pair refused, the decoy
 # without a descriptor skipped); each loaded plugin appends its name to skyrim-rs-order.log. DevBench calls the test
 # plugin's native and opens and closes the host's overlay; the plugin reports at the save. A capture after the save,
@@ -13,12 +13,12 @@ $decoy = @($hostLog | Where-Object { $_ -match '^skipped decoy\.dll: no SkyrimRs
 $orderLine = @($hostLog | Where-Object { $_ -match '^load order: ' })
 $missing = @($hostLog | Where-Object { $_ -match '^no plugin named skyrim-rs-nowhere \(asked by skyrim-rs-order-head\)$' })
 $cycle = @($hostLog | Where-Object { $_ -match '^skipped skyrim_rs_order_cycle_[ab]\.dll: skyrim-rs-order-cycle-[ab] is in a load order cycle with skyrim-rs-order-cycle-[ab]$' })
-$hostHandle = Loaded "skyrim_rs.dll"
-$hudShot = HalfJpeg "$SkseLogs\skyrim-rs-overlay-9.bmp" "$OutDir\framework-hud-1.7.104.jpg"
+$hostHandle = Loaded "skyrim_runtime_extender.dll"
+$hudShot = HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-9.bmp" "$OutDir\framework-hud-1.7.104.jpg"
 $subLoader = @($LoaderLog | Where-Object { $_ -match 'skyrim_rs_framework_test|skyrim_rs_order|decoy' })
 
 $rows = @(
-    @{ name = "host loads";   plugin = "$(Detail 'interface') | (host log) $(@($hostLog -match '^hosted by ') -join ' | ')"; devbench = "${LoaderLogName}: skyrim_rs.dll handle $hostHandle; subfolder DLLs named by the loader: $($subLoader.Count)";
+    @{ name = "host loads";   plugin = "$(Detail 'interface') | (host log) $(@($hostLog -match '^hosted by ') -join ' | ')"; devbench = "${LoaderLogName}: skyrim_runtime_extender.dll handle $hostHandle; subfolder DLLs named by the loader: $($subLoader.Count)";
        ok = ($plugin["interface"].ok -and $hostHandle -ne $null -and $subLoader.Count -eq 0 -and (Hosted)) }
     @{ name = "plugins loaded"; plugin = ($hostLog -join ' | '); devbench = "(host log) loaded: $($loaded -join ', '); decoy refused: $($decoy.Count)";
        ok = ((Compare-Object $loaded $ExpectedOrder -SyncWindow 0).Count -eq 0 -and $decoy.Count -eq 1) }

@@ -1,6 +1,6 @@
 # Skyrim Runtime Extender
 
-A Rust library and plugin loader for Skyrim Special Edition 1.7.104 mods. Its crates, DLL, folders and console command are named `skyrim-rs`, `skyrim_rs` and `SkyrimRs`. `skyrim_rs.dll` is an SKSE plugin that loads Rust plugins from `Data\SKSE\Plugins\skyrim-rs\`, with an in-game menu (F11), settings, hotkeys, hook dispatch, hot reload and a crash logger. Plugins talk to the loader through a stable C ABI, so a plugin runs on any loader version that has the functions it uses.
+A Rust library and plugin loader for Skyrim Special Edition 1.7.104 mods. Its crates and console command are named `skyrim-rs` and `SkyrimRs`. `skyrim_runtime_extender.dll` is an SKSE plugin that loads Rust plugins from `Data\SKSE\Plugins\skyrim-runtime-extender\`, with an in-game menu (F11), settings, hotkeys, hook dispatch, hot reload and a crash logger. Plugins talk to the loader through a stable C ABI, so a plugin runs on any loader version that has the functions it uses.
 
 ## Build and package
 
@@ -53,4 +53,4 @@ fn load(host: &'static framework::Host) -> bool {
 }
 ```
 
-Copy `.cargo/config.toml` and `rust-toolchain.toml` from this repository. `crates/example-mod` is a complete example: a hook, a setting, a Papyrus native and a menu tab. Its DLL goes in `Data\SKSE\Plugins\skyrim-rs\`.
+Copy `.cargo/config.toml` and `rust-toolchain.toml` from this repository. `crates/example-mod` is a complete example: a hook, a setting, a Papyrus native and a menu tab. Its DLL goes in `Data\SKSE\Plugins\skyrim-runtime-extender\`.
