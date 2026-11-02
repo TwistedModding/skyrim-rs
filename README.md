@@ -15,7 +15,7 @@ To package every commit and merge on `master` in the background, with the output
 
 ```
 git config core.hooksPath .githooks
-``` Install by copying a package's `Data` folder over the game's.
+``` Install a package with a mod manager, or extract it into the game's `Data` folder.
 
 ## Writing a mod
 

@@ -10,7 +10,7 @@ skyrim-rs is a plugin loader for Skyrim Special Edition. `skyrim_rs.dll` is an S
 
 ## Install
 
-1. Copy the `Data` folder of this package over the game's `Data` folder (or install the package as a mod with your mod manager). You end up with `Data\SKSE\Plugins\skyrim_rs.dll`.
+1. Install this package as a mod with your mod manager, or copy its `SKSE` folder into the game's `Data` folder. You end up with `Data\SKSE\Plugins\skyrim_rs.dll`.
 2. Install any skyrim-rs plugins you want; each package puts its DLL in `Data\SKSE\Plugins\skyrim-rs\`.
 3. Start the game through `skse64_loader.exe` and load a save or start a new game.
 4. Check `Documents\My Games\Skyrim Special Edition\SKSE\skyrim-rs.log`. It should say which loader hosts it (`hosted by the script extender, ...`), that the crash handler is installed (`crash handler installed, ...`), which font and cursor the menu uses (`overlay font: Futura CondensedLight from ...`, `overlay cursor: the game's, from ...cursormenu.swf`) and one `loaded <file>: <plugin>` line per plugin.

@@ -8,7 +8,7 @@ The skyrim-rs loader (`Data\SKSE\Plugins\skyrim_rs.dll`), from its own package, 
 
 ## Install
 
-Copy the `Data` folder of this package over the game's `Data` folder (or install the package as a mod with your mod manager). You end up with `Data\SKSE\Plugins\skyrim-rs\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-rs.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
+Install this package as a mod with your mod manager, or copy its `SKSE` and `Scripts` folders into the game's `Data` folder. You end up with `Data\SKSE\Plugins\skyrim-rs\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-rs.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
 
 ## What to try
 
