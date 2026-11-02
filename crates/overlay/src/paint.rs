@@ -17,7 +17,6 @@ use windows::Win32::Graphics::Direct3D11::{
 };
 use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT, DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_R32_UINT, DXGI_FORMAT_R32G32_FLOAT, DXGI_SAMPLE_DESC};
 use windows::core::{Interface, PCSTR, Result, s};
-use windows::Win32::Graphics::Direct3D11::ID3D11DeviceContext1;
 
 const SHADER: &str = r"
 cbuffer Screen : register(b0) { float2 screen; };
@@ -79,7 +78,7 @@ impl Dynamic {
 
 pub(crate) struct Painter {
     device: ID3D11Device,
-    context: ID3D11DeviceContext1,
+    context: ID3D11DeviceContext,
     immediate: ID3D11DeviceContext,
     vertex_shader: ID3D11VertexShader,
     pixel_shader: ID3D11PixelShader,
@@ -147,8 +146,7 @@ impl Painter {
         let none = || windows::core::Error::from(windows::Win32::Foundation::E_POINTER);
         let device = unsafe { ID3D11Device::from_raw_borrowed(&device) }.ok_or_else(none)?.clone();
         let immediate = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or_else(none)?.clone();
-        let context: ID3D11DeviceContext = create(|out| unsafe { device.CreateDeferredContext(0, Some(out)) })?;
-        let context = context.cast::<ID3D11DeviceContext1>()?;
+        let context = create(|out| unsafe { device.CreateDeferredContext(0, Some(out)) })?;
         let vs = compile(s!("vs"), s!("vs_4_0"))?;
         let ps = compile(s!("ps"), s!("ps_4_0"))?;
         let elements = [element(s!("POSITION"), DXGI_FORMAT_R32G32_FLOAT, 0), element(s!("TEXCOORD"), DXGI_FORMAT_R32G32_FLOAT, 8), element(s!("COLOR"), DXGI_FORMAT_R8G8B8A8_UNORM, 16)];
@@ -293,7 +291,8 @@ impl Painter {
                 return Ok(());
             };
             let area = D3D11_BOX { left: x as u32, top: y as u32, front: 0, right: x as u32 + w, bottom: y as u32 + h, back: 1 };
-            unsafe { self.context.UpdateSubresource1(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0, 0) };
+            // A deferred context loses rows of a large update when the driver has no command lists (AMD, WARP).
+            unsafe { self.immediate.UpdateSubresource(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0) };
             return Ok(());
         }
         let desc = D3D11_TEXTURE2D_DESC {
@@ -339,12 +338,37 @@ mod tests {
         }
     }
 
+    fn warp() -> (ID3D11Device, ID3D11DeviceContext) {
+        let (mut device, mut immediate) = (None, None);
+        unsafe { D3D11CreateDevice(None, D3D_DRIVER_TYPE_WARP, windows::Win32::Foundation::HMODULE::default(), D3D11_CREATE_DEVICE_FLAG(0), None, D3D11_SDK_VERSION, Some(&raw mut device), None, Some(&raw mut immediate)) }.unwrap();
+        (device.unwrap(), immediate.unwrap())
+    }
+
+    #[test]
+    #[allow(clippy::cast_possible_truncation)]
+    fn a_large_partial_update_lands_where_it_was_asked() {
+        let (device, immediate) = warp();
+        let mut painter = unsafe { Painter::new(device.as_raw(), immediate.as_raw()) }.unwrap();
+        let id = TextureId::Managed(0);
+        let mut delta = TexturesDelta::default();
+        delta.push(id, ImageDelta::full(ColorImage::filled([2048, 64], Color32::BLACK), TextureOptions::LINEAR));
+        let [w, h] = [2031, 39];
+        let color = |x: usize, y: usize| Color32::from_rgba_premultiplied((x % 251) as u8, (x / 251) as u8, y as u8, 255);
+        let patch = (0..h).flat_map(|y| (0..w).map(move |x| color(x, y))).collect();
+        delta.push(id, ImageDelta::partial([0, 21], ColorImage::new([w, h], patch), TextureOptions::LINEAR));
+        unsafe { painter.paint(core::ptr::null_mut(), [0, 0], 1.0, &[], &delta) }.unwrap();
+        delta.clear();
+        let texture = &painter.textures[&id].texture;
+        for (x, y) in [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1), (1000, 20)] {
+            assert_eq!(pixel(&device, &immediate, texture, x, 21 + y), color(x, y).to_array(), "at {x}, {y}");
+        }
+        assert_eq!(pixel(&device, &immediate, texture, 0, 20), [0, 0, 0, 255], "the rows above are untouched");
+    }
+
     #[test]
     fn paints_the_active_frame_and_preserves_immediate_state() {
         unsafe {
-            let (mut device, mut immediate) = (None, None);
-            D3D11CreateDevice(None, D3D_DRIVER_TYPE_WARP, windows::Win32::Foundation::HMODULE::default(), D3D11_CREATE_DEVICE_FLAG(0), None, D3D11_SDK_VERSION, Some(&raw mut device), None, Some(&raw mut immediate)).unwrap();
-            let (device, immediate) = (device.unwrap(), immediate.unwrap());
+            let (device, immediate) = warp();
             let texture = |width| {
                 create(|out| {
                     device.CreateTexture2D(
