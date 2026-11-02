@@ -9,7 +9,13 @@ cargo build --release
 powershell -File scripts\package.ps1
 ```
 
-The package script writes `dist\skyrim-rs-<version>.zip` (the loader) and `dist\skyrim-rs-example-<version>.zip` (the example mod). The version is `<major.minor>.<commit count>`, with `-dirty` when the tree has uncommitted changes; the loader reports it in its log and on its Plugins tab. Major.minor is set at the top of the script. Install by copying a package's `Data` folder over the game's.
+The package script writes `dist\skyrim-rs-<version>.zip` (the loader) and `dist\skyrim-rs-example-<version>.zip` (the example mod). The version is `<major.minor>.<commit count>`, with `-dirty` when the tree has uncommitted changes; the loader reports it in its log and on its Plugins tab. Major.minor is set at the top of the script.
+
+To package every commit and merge on `master` in the background, with the output in `dist\package.log`, enable the hooks once per clone:
+
+```
+git config core.hooksPath .githooks
+``` Install by copying a package's `Data` folder over the game's.
 
 ## Writing a mod
 
