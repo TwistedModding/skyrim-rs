@@ -79,7 +79,7 @@ $malformedFile = FileOf "$OutDir\malformed" "skyrim-runtime-extender.settings.js
 $badFile = FileOf "$OutDir\malformed" "skyrim-runtime-extender.settings.json.bad"
 $released = HostLines '^Escape released the focused widget; the overlay stays open$'
 $closedByEscape = HostLines '^overlay closed with Escape$'
-$controlMap = HostLines "^keys: skyrim-rs\.(toggle F11|close Escape) \(Overlay\): in the game's control map"
+$controlMap = HostLines "^keys: skyrim-runtime-extender\.(toggle F11|close Escape) \(Overlay\): in the game's control map"
 $setLine = HostLines '^keys: skyrim-rs-example\.open-tab set to Shift\+L$'
 $refusedLine = HostLines '^keys: F11 for skyrim-rs-example\.open-tab refused: F11 is bound to skyrim-runtime-extender\.toggle$'
 $hostWritten = HostLines '^settings written to .*\\skyrim-runtime-extender\.settings\.json$'
@@ -100,13 +100,13 @@ $rows = @(
     @{ name = "page selection"; plugin = "SkyrimRs gui 1 to 4"; devbench = ($shownPages -join ' | ');
        ok = (($shownPages -join '|') -eq 'page 1: Example mod / About|page 2: Plugins|page 3: Legacy plugins|page 4: Settings') }
     @{ name = "legacy plugins"; plugin = "(from SkyrimRs gui)"; devbench = (@($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy' }) -join ' | ');
-       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_runtime_extender\.dll: skyrim-rs [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
+       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_runtime_extender\.dll: skyrim-runtime-extender [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
     @{ name = "captures"; plugin = "(host log) $($framesWritten.Count) frames written"; devbench = "kept as gui-<page>-1.7.104.jpg: $($shots -join ', '); journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";
        ok = ($framesWritten.Count -eq 5 -and @($shots | Where-Object { $_ }).Count -eq 5 -and $vanilla) }
     @{ name = "focus capture"; plugin = "overlay open with nothing focused, capture $(Captured $gui1 'capture (\w+)')"; devbench = "player moved $([math]::Round($moved, 1)) units during the 2 s W hold (x $(Pos 9) -> $(Pos 15), y $(Pos 10) -> $(Pos 16))";
        ok = ($gui1 -match 'capture Focus' -and $moved -gt 50) }
     @{ name = "hook sites"; plugin = "SkyrimRs hooks: $(Lines 37)"; devbench = "(listed through the console)";
-       ok = ((Lines 37) -match '^hook compatibility mode refuse' -and (Lines 37) -match 'site Actor::ModActorValueImpl at 0x[0-9a-f]+' -and (Lines 37) -match '#1 skyrim-rs-example Before rank 0' -and (Lines 37) -match 'skyrim-rs-hooks-b Around' -and (Lines 37) -match 'message: refused: Actor::ModActorValueImpl: ordering cycle') }
+       ok = ((Lines 37) -match '^hook compatibility mode stack' -and (Lines 37) -match 'site Actor::ModActorValueImpl at 0x[0-9a-f]+' -and (Lines 37) -match '#1 skyrim-rs-example Before rank 0' -and (Lines 37) -match 'skyrim-rs-hooks-b Around' -and (Lines 37) -match 'message: refused: Actor::ModActorValueImpl: ordering cycle') }
     @{ name = "native"; plugin = "SetDamageScale(1.5) = $(Returned 38)"; devbench = "health $($health[0]) -> $($health[1]) after a damage of 10";
        ok = ((Near (Returned 38) 1.5 0.001) -and (Near $health[0] 100 0.01) -and (Near $health[1] 84 0.01)) }
     @{ name = "toggle off"; plugin = "$(Lines 43); #1 ran $(EntryCalls 44 1) then $(EntryCalls 48 1) times while the site ran $(SiteCalls 44) then $(SiteCalls 48); plugin a's Before $aBefore"; devbench = "health $($health[1]) -> $($health[2]) after a damage of 10";
