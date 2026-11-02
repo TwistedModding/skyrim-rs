@@ -1,6 +1,6 @@
-# skyrim-rs
+# Skyrim Runtime Extender
 
-A Rust library and plugin loader for Skyrim Special Edition 1.7.104 mods. `skyrim_rs.dll` is an SKSE plugin that loads Rust plugins from `Data\SKSE\Plugins\skyrim-rs\`, with an in-game menu (F11), settings, hotkeys, hook dispatch, hot reload and a crash logger. Plugins talk to the loader through a stable C ABI, so a plugin runs on any loader version that has the functions it uses.
+A Rust library and plugin loader for Skyrim Special Edition 1.7.104 mods. Its crates, DLL, folders and console command are named `skyrim-rs`, `skyrim_rs` and `SkyrimRs`. `skyrim_rs.dll` is an SKSE plugin that loads Rust plugins from `Data\SKSE\Plugins\skyrim-rs\`, with an in-game menu (F11), settings, hotkeys, hook dispatch, hot reload and a crash logger. Plugins talk to the loader through a stable C ABI, so a plugin runs on any loader version that has the functions it uses.
 
 ## Build and package
 
@@ -9,7 +9,7 @@ cargo build --release
 powershell -File scripts\package.ps1
 ```
 
-The package script writes `dist\skyrim-rs-<version>.zip` (the loader) and `dist\skyrim-rs-example-<version>.zip` (the example mod). The version is `<major.minor>.<commit count>`, with `-dirty` when the tree has uncommitted changes; the loader reports it in its log and on its Plugins tab. Major.minor is set at the top of the script.
+The package script writes the loader to `dist\skyrim-runtime-extender-<version>.zip`. The example mod is not packaged. The version is `<major.minor>.<commit count>`, with `-dirty` when the tree has uncommitted changes; the loader reports it in its log and on its Plugins tab. Major.minor is set at the top of the script.
 
 To package every commit and merge on `master` in the background, with the output in `dist\package.log`, enable the hooks once per clone:
 

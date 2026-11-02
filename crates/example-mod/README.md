@@ -4,11 +4,11 @@ A small skyrim-rs plugin that scales the health damage the player takes. The fac
 
 ## Requirements
 
-The skyrim-rs loader (`Data\SKSE\Plugins\skyrim_rs.dll`), from its own package, with its requirements: Skyrim Special Edition 1.7.104 from Steam, SKSE 2.3.1 and Address Library for SKSE Plugins.
+The Skyrim Runtime Extender loader (`Data\SKSE\Plugins\skyrim_rs.dll`), from its own package, with its requirements: Skyrim Special Edition 1.7.104 from Steam, SKSE 2.3.1 and Address Library for SKSE Plugins.
 
 ## Install
 
-Install this package as a mod with your mod manager, or copy its `SKSE` and `Scripts` folders into the game's `Data` folder. You end up with `Data\SKSE\Plugins\skyrim-rs\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-rs.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
+This mod is a template and is not packaged for release. Build it from this repository and install its DLL and compiled script by hand, so you end up with `Data\SKSE\Plugins\skyrim-rs\skyrim_rs_example_mod.dll` and `Data\Scripts\SkyrimRsExample.pex`. `skyrim-rs.log` then says `loaded skyrim_rs_example_mod.dll: skyrim-rs-example`.
 
 ## What to try
 
