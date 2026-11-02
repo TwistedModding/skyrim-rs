@@ -31,6 +31,9 @@ fn site_state(site: &SiteReport) -> String {
 
 fn gui_lines() -> Vec<String> {
     let mut lines = vec![format!("SkyrimRs: overlay open, font {}, capture {:?}", overlay::font_source(), overlay::capture())];
+    if let Some(failure) = overlay::failure() {
+        lines.push(format!("overlay drawing failed: {failure}"));
+    }
     lines.extend(gui::pages().iter().enumerate().map(|(i, (page, shown))| format!("page {i}: {page}{}", if *shown { ", shown" } else { "" })));
     for (rank, r) in gui::plugin_rows().iter().enumerate() {
         let reason = if r.reason.is_empty() { String::new() } else { format!(": {}", r.reason) };

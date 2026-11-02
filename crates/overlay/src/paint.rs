@@ -1,5 +1,4 @@
-//! Paints tessellated `egui` meshes into the back buffer on the game's immediate context. The frame
-//! starts with `ClearState` (frame pass), so the state set here is not restored.
+//! Paints tessellated `egui` meshes into the frame target without changing the immediate context's state.
 
 use core::ffi::c_void;
 use std::collections::HashMap;
@@ -18,6 +17,7 @@ use windows::Win32::Graphics::Direct3D11::{
 };
 use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT, DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_R32_UINT, DXGI_FORMAT_R32G32_FLOAT, DXGI_SAMPLE_DESC};
 use windows::core::{Interface, PCSTR, Result, s};
+use windows::Win32::Graphics::Direct3D11::ID3D11DeviceContext1;
 
 const SHADER: &str = r"
 cbuffer Screen : register(b0) { float2 screen; };
@@ -30,6 +30,7 @@ PsIn vs(VsIn v) {
     o.color = v.color;
     return o;
 }
+
 Texture2D tex : register(t0);
 SamplerState smp : register(s0);
 float4 ps(PsIn p) : SV_TARGET { return p.color * tex.Sample(smp, p.uv); }
@@ -78,7 +79,8 @@ impl Dynamic {
 
 pub(crate) struct Painter {
     device: ID3D11Device,
-    context: ID3D11DeviceContext,
+    context: ID3D11DeviceContext1,
+    immediate: ID3D11DeviceContext,
     vertex_shader: ID3D11VertexShader,
     pixel_shader: ID3D11PixelShader,
     layout: ID3D11InputLayout,
@@ -119,12 +121,34 @@ fn create<T>(f: impl FnOnce(&mut Option<T>) -> Result<()>) -> Result<T> {
 }
 
 impl Painter {
+    /// The active full-size frame target, or the window's view when no matching target is bound.
+    ///
+    /// # Safety
+    /// `fallback` must be the window's live `ID3D11RenderTargetView`.
+    pub(crate) unsafe fn frame_target(fallback: *mut c_void) -> Result<ID3D11RenderTargetView> {
+        let missing = || windows::core::Error::from(windows::Win32::Foundation::E_POINTER);
+        let fallback = unsafe { ID3D11RenderTargetView::from_raw_borrowed(&fallback) }.ok_or_else(missing)?;
+        let desc = unsafe { Self::target_desc(fallback.as_raw()) }.ok_or_else(missing)?;
+        let context = unsafe { fallback.GetDevice()?.GetImmediateContext()? };
+        let mut bound = [None];
+        unsafe { context.OMGetRenderTargets(Some(&mut bound), None) };
+        if let Some(target) = bound[0].take() {
+            let active = unsafe { Self::target_desc(target.as_raw()) };
+            if active.is_some_and(|a| a.Width == desc.Width && a.Height == desc.Height && a.SampleDesc.Count == desc.SampleDesc.Count) {
+                return Ok(target);
+            }
+        }
+        Ok(fallback.clone())
+    }
+
     /// # Safety
     /// `device` and `context` must be the game's live `ID3D11Device` and immediate context.
     pub(crate) unsafe fn new(device: *mut c_void, context: *mut c_void) -> Result<Self> {
         let none = || windows::core::Error::from(windows::Win32::Foundation::E_POINTER);
         let device = unsafe { ID3D11Device::from_raw_borrowed(&device) }.ok_or_else(none)?.clone();
-        let context = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or_else(none)?.clone();
+        let immediate = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or_else(none)?.clone();
+        let context: ID3D11DeviceContext = create(|out| unsafe { device.CreateDeferredContext(0, Some(out)) })?;
+        let context = context.cast::<ID3D11DeviceContext1>()?;
         let vs = compile(s!("vs"), s!("vs_4_0"))?;
         let ps = compile(s!("ps"), s!("ps_4_0"))?;
         let elements = [element(s!("POSITION"), DXGI_FORMAT_R32G32_FLOAT, 0), element(s!("TEXCOORD"), DXGI_FORMAT_R32G32_FLOAT, 8), element(s!("COLOR"), DXGI_FORMAT_R8G8B8A8_UNORM, 16)];
@@ -165,20 +189,21 @@ impl Painter {
                 textures: HashMap::new(),
                 device,
                 context,
+                immediate,
             })
         }
     }
 
-    /// The size in pixels of the texture behind a render target view.
+    /// The texture behind a render target view.
     ///
     /// # Safety
     /// `rtv` must be a live `ID3D11RenderTargetView`.
-    pub(crate) unsafe fn target_size(rtv: *mut c_void) -> Option<[u32; 2]> {
+    pub(crate) unsafe fn target_desc(rtv: *mut c_void) -> Option<D3D11_TEXTURE2D_DESC> {
         let rtv = unsafe { ID3D11RenderTargetView::from_raw_borrowed(&rtv) }?;
         let texture = unsafe { rtv.GetResource() }.ok()?.cast::<ID3D11Texture2D>().ok()?;
         let mut desc = D3D11_TEXTURE2D_DESC::default();
         unsafe { texture.GetDesc(&raw mut desc) };
-        Some([desc.Width, desc.Height])
+        Some(desc)
     }
 
     /// Applies the texture changes and draws `primitives` (in points) into `rtv`.
@@ -212,6 +237,8 @@ impl Painter {
         for id in &delta.free {
             self.textures.remove(id);
         }
+        let commands = create(|out| unsafe { self.context.FinishCommandList(false, Some(out)) })?;
+        unsafe { self.immediate.ExecuteCommandList(&commands, true) };
         Ok(())
     }
 
@@ -266,7 +293,7 @@ impl Painter {
                 return Ok(());
             };
             let area = D3D11_BOX { left: x as u32, top: y as u32, front: 0, right: x as u32 + w, bottom: y as u32 + h, back: 1 };
-            unsafe { self.context.UpdateSubresource(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0) };
+            unsafe { self.context.UpdateSubresource1(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0, 0) };
             return Ok(());
         }
         let desc = D3D11_TEXTURE2D_DESC {
@@ -285,5 +312,100 @@ impl Painter {
         let view = create(|o| unsafe { self.device.CreateShaderResourceView(&texture, None, Some(o)) })?;
         self.textures.insert(id, Texture { texture, view });
         Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use egui::{Color32, ColorImage, Mesh, Rect, TextureOptions, pos2, vec2};
+    use windows::Win32::Graphics::Direct3D::{D3D_DRIVER_TYPE_WARP, D3D11_PRIMITIVE_TOPOLOGY_LINELIST};
+    use windows::Win32::Graphics::Direct3D11::{D3D11_BIND_RENDER_TARGET, D3D11_CPU_ACCESS_READ, D3D11_CREATE_DEVICE_FLAG, D3D11_MAP_READ, D3D11_SDK_VERSION, D3D11_USAGE_STAGING, D3D11CreateDevice};
+
+    fn pixel(device: &ID3D11Device, context: &ID3D11DeviceContext, texture: &ID3D11Texture2D, x: usize, y: usize) -> [u8; 4] {
+        unsafe {
+            let mut desc = D3D11_TEXTURE2D_DESC::default();
+            texture.GetDesc(&raw mut desc);
+            desc.Usage = D3D11_USAGE_STAGING;
+            desc.BindFlags = 0;
+            desc.CPUAccessFlags = D3D11_CPU_ACCESS_READ.0.cast_unsigned();
+            let staging = create(|out| device.CreateTexture2D(&raw const desc, None, Some(out))).unwrap();
+            context.CopyResource(&staging, texture);
+            let mut mapped = D3D11_MAPPED_SUBRESOURCE::default();
+            context.Map(&staging, 0, D3D11_MAP_READ, 0, Some(&raw mut mapped)).unwrap();
+            let bytes = mapped.pData.cast::<u8>().add(y * mapped.RowPitch as usize + x * 4).cast::<[u8; 4]>().read_unaligned();
+            context.Unmap(&staging, 0);
+            bytes
+        }
+    }
+
+    #[test]
+    fn paints_the_active_frame_and_preserves_immediate_state() {
+        unsafe {
+            let (mut device, mut immediate) = (None, None);
+            D3D11CreateDevice(None, D3D_DRIVER_TYPE_WARP, windows::Win32::Foundation::HMODULE::default(), D3D11_CREATE_DEVICE_FLAG(0), None, D3D11_SDK_VERSION, Some(&raw mut device), None, Some(&raw mut immediate)).unwrap();
+            let (device, immediate) = (device.unwrap(), immediate.unwrap());
+            let texture = |width| {
+                create(|out| {
+                    device.CreateTexture2D(
+                        &D3D11_TEXTURE2D_DESC {
+                            Width: width,
+                            Height: 32,
+                            MipLevels: 1,
+                            ArraySize: 1,
+                            Format: DXGI_FORMAT_R8G8B8A8_UNORM,
+                            SampleDesc: DXGI_SAMPLE_DESC { Count: 1, Quality: 0 },
+                            Usage: D3D11_USAGE_DEFAULT,
+                            BindFlags: D3D11_BIND_RENDER_TARGET.0.cast_unsigned(),
+                            ..Default::default()
+                        },
+                        None,
+                        Some(out),
+                    )
+                })
+                .unwrap()
+            };
+            let fallback_texture = texture(64);
+            let active_texture = texture(64);
+            let small_texture = texture(16);
+            let view = |texture: &ID3D11Texture2D| create(|out| device.CreateRenderTargetView(texture, None, Some(out))).unwrap();
+            let (fallback, active, small) = (view(&fallback_texture), view(&active_texture), view(&small_texture));
+            immediate.ClearRenderTargetView(&fallback, &[0.0, 0.0, 0.0, 1.0]);
+            immediate.ClearRenderTargetView(&active, &[0.0, 0.0, 0.0, 1.0]);
+            immediate.OMSetRenderTargets(Some(&[Some(small)]), None);
+            assert_eq!(Painter::frame_target(fallback.as_raw()).unwrap(), fallback, "a smaller pass is not the frame");
+            immediate.OMSetRenderTargets(None, None);
+            assert_eq!(Painter::frame_target(fallback.as_raw()).unwrap(), fallback);
+            immediate.OMSetRenderTargets(Some(&[Some(active.clone())]), None);
+            let selected = Painter::frame_target(fallback.as_raw()).unwrap();
+            assert_eq!(selected, active, "the active frame can differ from the stored window view");
+            immediate.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
+            immediate.RSSetViewports(Some(&[D3D11_VIEWPORT { Width: 7.0, Height: 5.0, MaxDepth: 1.0, ..Default::default() }]));
+
+            let mut painter = Painter::new(device.as_raw(), immediate.as_raw()).unwrap();
+            let id = TextureId::Managed(0);
+            let mut delta = TexturesDelta::default();
+            delta.push(id, ImageDelta::full(ColorImage::filled([2, 2], Color32::BLACK), TextureOptions::LINEAR));
+            delta.push(id, ImageDelta::partial([1, 1], ColorImage::filled([1, 1], Color32::WHITE), TextureOptions::NEAREST));
+            let mut mesh = Mesh::with_texture(id);
+            mesh.add_colored_rect(Rect::from_min_size(pos2(8.0, 8.0), vec2(32.0, 16.0)), Color32::WHITE);
+            for vertex in &mut mesh.vertices {
+                vertex.uv = pos2(0.75, 0.75);
+            }
+            let primitive = ClippedPrimitive { clip_rect: Rect::from_min_size(pos2(0.0, 0.0), vec2(64.0, 32.0)), primitive: Primitive::Mesh(mesh) };
+            painter.paint(selected.as_raw(), [64, 32], 1.0, &[primitive], &delta).unwrap();
+            delta.clear();
+
+            let mut targets = [None];
+            immediate.OMGetRenderTargets(Some(&mut targets), None);
+            assert_eq!(targets[0].as_ref(), Some(&active));
+            assert_eq!(immediate.IAGetPrimitiveTopology(), D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
+            let (mut count, mut viewport) = (1, D3D11_VIEWPORT::default());
+            immediate.RSGetViewports(&raw mut count, Some(&raw mut viewport));
+            assert_eq!((count, viewport.Width, viewport.Height), (1, 7.0, 5.0));
+            immediate.OMSetRenderTargets(None, None);
+            assert_eq!(pixel(&device, &immediate, &active_texture, 16, 16), [255; 4], "the command list paints the selected frame");
+            assert_eq!(pixel(&device, &immediate, &fallback_texture, 16, 16), [0, 0, 0, 255], "the stored output view is untouched");
+        }
     }
 }

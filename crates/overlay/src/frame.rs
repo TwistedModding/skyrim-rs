@@ -100,8 +100,12 @@ impl Frame {
 /// game creates its swap chain as `R8G8B8A8_UNORM` and keeps it on a resize (RE `camera.md` IC8 N),
 /// so any other format means something replaced the swap chain and is refused.
 pub fn read_back() -> Result<Frame, String> {
-    let e = |e: windows::core::Error| e.to_string();
     let rtv = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()).ok_or("no back buffer")?;
+    read_target(rtv)
+}
+
+fn read_target(rtv: *mut core::ffi::c_void) -> Result<Frame, String> {
+    let e = |e: windows::core::Error| e.to_string();
     let reloc = skyrim::reloc();
     let global = |id| reloc.address(id).map(|a| unsafe { *(a as *const *mut core::ffi::c_void) }).map_err(|e| e.to_string());
     let (device, context) = (global(globals::g_D3D11Device)?, global(globals::g_D3D11Context)?);
@@ -152,9 +156,9 @@ pub fn save_next_frame(path: PathBuf, done: Done) {
 }
 
 /// After the overlay drew: writes the frame when one was asked for.
-pub(crate) fn after_draw() {
+pub(crate) fn after_draw(rtv: *mut core::ffi::c_void) {
     let Some((path, done)) = SAVE.lock().unwrap().take() else { return };
-    done(read_back().and_then(|f| f.write_bmp(&path).map_err(|e| e.to_string())).map(|()| path));
+    done(read_target(rtv).and_then(|f| f.write_bmp(&path).map_err(|e| e.to_string())).map(|()| path));
 }
 
 #[cfg(test)]

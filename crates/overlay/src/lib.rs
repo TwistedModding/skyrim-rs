@@ -11,7 +11,7 @@
 //! `egui` events and ends the walk, so neither the game's handlers nor other plugins' sinks see
 //! them. A host binds other keys, and keys of its own actions, through [`set_toggle`],
 //! [`set_close`] and [`set_overlay_keys`]. Every frame the overlay is open, the windows added with [`add`] run
-//! on the main thread and the result is painted into the back buffer with a Direct3D 11 pipeline
+//! on the main thread and the result is painted into the active frame target with a Direct3D 11 pipeline
 //! of this crate's own, in the framework [`theme`]: the look of the game's menus, with the game's
 //! own Futura Condensed converted from `Interface\fonts_en.swf` at startup when it can be read and
 //! Segoe UI and Consolas from the Windows font folder otherwise and for monospace (`egui`'s bundled
@@ -32,6 +32,7 @@ use egui::epaint::{ClippedShape, textures::TexturesDelta};
 use egui::{ClippedPrimitive, Context, Event, Modifiers, Pos2, RawInput, Rect, TextureId, ViewportId, ViewportInfo};
 use sre::raw::{fns, globals};
 use skyrim::render::PresentFn;
+use windows::core::Interface;
 
 mod frame;
 mod hud;
@@ -253,17 +254,21 @@ unsafe extern "C" fn present_detour() {
     if let Some(frame) = FRAME.get() {
         frame();
     }
-    if (is_open() || HUD.get().is_some()) && FAILURE.get().is_none() {
-        draw();
+    if (is_open() || HUD.get().is_some()) && FAILURE.get().is_none()
+        && let Some(fallback) = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null())
+    {
+        match unsafe { paint::Painter::frame_target(fallback) } {
+            Ok(target) => draw(target.as_raw()),
+            Err(error) => {
+                let _ = FAILURE.set(format!("frame target: {error}"));
+            }
+        }
     }
     unsafe { SITE.get().expect("stored before the call site was patched").original()() }
 }
 
 #[allow(clippy::cast_precision_loss)]
-fn draw() {
-    let Some(rtv) = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()) else {
-        return;
-    };
+fn draw(rtv: *mut core::ffi::c_void) {
     let mut state = STATE.lock().unwrap();
     let Some(state) = state.as_mut() else { return };
     if state.painter.is_none() {
@@ -281,9 +286,10 @@ fn draw() {
         }
     }
     let painter = state.painter.as_mut().expect("just created");
-    let Some(size) = (unsafe { paint::Painter::target_size(rtv) }) else {
+    let Some(desc) = (unsafe { paint::Painter::target_desc(rtv) }) else {
         return;
     };
+    let size = [desc.Width, desc.Height];
     let ppp = (size[1] as f32 / 1080.0).max(1.0);
     let screen = Rect::from_min_size(Pos2::ZERO, egui::vec2(size[0] as f32, size[1] as f32) / ppp);
     let open = is_open();
@@ -338,7 +344,7 @@ fn draw() {
         let _ = FAILURE.set(format!("paint: {e}"));
     }
     textures.clear();
-    frame::after_draw();
+    frame::after_draw(rtv);
 }
 
 /// A context with `fonts` and the framework [`theme`]: the overlay's own, and a framework plugin's
