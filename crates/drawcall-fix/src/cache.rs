@@ -46,10 +46,10 @@ fn cascade(accumulator: *mut BSShaderAccumulator) -> Option<u32> {
 }
 
 /// Remembers that `accumulator`'s slot 43 call for `geometry` returned no pass; only the first
-/// cascade's drops are kept.
-pub fn record_drop(accumulator: *mut BSShaderAccumulator, geometry: usize) {
+/// cascade's drops are kept, and only those count as recorded.
+pub fn record_drop(accumulator: *mut BSShaderAccumulator, geometry: usize) -> bool {
     if cascade(accumulator) != Some(0) {
-        return;
+        return false;
     }
     let (tag, start) = (tag(), slot(geometry));
     for i in 0..PROBES {
@@ -58,9 +58,10 @@ pub fn record_drop(accumulator: *mut BSShaderAccumulator, geometry: usize) {
         if key == geometry || entry.frame.load(Ordering::Relaxed) != tag {
             entry.geometry.store(geometry, Ordering::Relaxed);
             entry.frame.store(tag, Ordering::Relaxed);
-            return;
+            return true;
         }
     }
+    false
 }
 
 /// Whether a later cascade's registration of `geometry` can be skipped: the memo is on and the

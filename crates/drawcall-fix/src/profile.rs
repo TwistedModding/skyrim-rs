@@ -66,7 +66,7 @@ const REG_DEPTH_OTHER: usize = 19;
 const GET_PASSES: usize = 20;
 
 /// Call counts without a time: `RegisterGeometry`, passes drawn inside a shadow map draw, passes
-/// drawn elsewhere, the cascade registrations the memo answered and the drops it recorded.
+/// drawn elsewhere, the cascade registrations the memo answered and the first-cascade drops it recorded.
 const COUNTS: &[&str] = &["reg_geom", "passes_shadow", "passes_other", "cache_skip", "cache_drop"];
 const COUNT_REG_GEOM: usize = 0;
 const COUNT_PASSES_SHADOW: usize = 1;
@@ -192,8 +192,7 @@ unsafe extern "C" fn get_passes(this: *mut BSLightingShaderProperty, geometry: *
     let start = now();
     let out = unsafe { GET_PASSES_HOOK.original()(this, geometry, mode, accumulator) };
     REGION[GET_PASSES].add(start);
-    if out.is_null() {
-        cache::record_drop(accumulator, geometry as usize);
+    if out.is_null() && cache::record_drop(accumulator, geometry as usize) {
         count(COUNT_CACHE_DROP);
     }
     out
