@@ -188,6 +188,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "drawcall-fix"
+version = "0.1.0"
+dependencies = [
+ "framework",
+ "hook",
+ "skse",
+ "skyrim",
+ "skyrim-sre",
+ "windows-sys",
+]
+
+[[package]]
 name = "ecolor"
 version = "0.37.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
