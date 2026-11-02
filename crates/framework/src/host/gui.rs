@@ -2,8 +2,8 @@
 //! Plugins (the framework plugins with their version, file and state, buttons that reload, unload
 //! and load each, the files the host did not load and a rescan of the folder), Legacy plugins (the SKSE plugins in `Data\SKSE\Plugins`) and Settings (every hotkey,
 //! set by capturing the next key pressed or unbound, and the capture rule). Mods has a sidebar of every plugin
-//! that added a tab ([`crate::Host::add_tab`], in load order), the selected one's sections under
-//! it when it has two or more, and the selected section beside it. A plugin's sections and HUD
+//! that added a tab ([`crate::Host::add_tab`], in load order), each one's sections under it when
+//! it has two or more, collapsible for the game session, and the selected section beside it. A plugin's sections and HUD
 //! painters draw with the plugin's own `egui` contexts ([`crate::ui`]): the window leaves the
 //! selected section's rect empty and the overlay draws the plugin's meshes over it as its guest,
 //! with the plugin's textures under overlay ids of their own.
@@ -121,15 +121,16 @@ enum Tab {
 const TABS: [(Tab, &str); 4] = [(Tab::Mods, "Mods"), (Tab::Plugins, "Plugins"), (Tab::Legacy, "Legacy plugins"), (Tab::Settings, "Settings")];
 
 /// The selected tab, the selected mod (the first while `None`), each mod's selected section, by
-/// name, so a reloaded generation finds its own again, and the window's size.
+/// name, so a reloaded generation finds its own again, the mods collapsed in the sidebar and the window's size.
 struct Shown {
     tab: Tab,
     plugin: Option<String>,
     sections: Vec<(String, String)>,
+    collapsed: Vec<String>,
     size: egui::Vec2,
 }
 
-static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new(), size: DEFAULT_SIZE });
+static SHOWN: Mutex<Shown> = Mutex::new(Shown { tab: Tab::Mods, plugin: None, sections: Vec::new(), collapsed: Vec::new(), size: DEFAULT_SIZE });
 
 /// A plugin's tab as the sidebar lists it.
 struct Mod {
@@ -247,15 +248,16 @@ fn selection(mods: &[Mod]) -> (Tab, Option<(usize, usize)>) {
     (shown.tab, selected)
 }
 
-/// Selects `tab` and, when given, the mod `plugin` and its `section` (the one selected before when `None`).
+/// Selects `tab` and, when given, the mod `plugin`, shown expanded, and its `section` (the one selected before when `None`).
 fn select(tab: Tab, plugin: Option<String>, section: Option<String>) {
     let mut shown = SHOWN.lock().unwrap_or_else(PoisonError::into_inner);
     if let (Some(owner), Some(section)) = (&plugin, section) {
         shown.sections.retain(|(o, _)| o != owner);
         shown.sections.push((owner.clone(), section));
     }
-    if plugin.is_some() {
-        shown.plugin = plugin;
+    if let Some(owner) = plugin {
+        shown.collapsed.retain(|o| *o != owner);
+        shown.plugin = Some(owner);
     }
     shown.tab = tab;
 }
@@ -398,34 +400,50 @@ fn tab_row(ui: &mut egui::Ui, selected: Tab) -> Option<Tab> {
     clicked
 }
 
-/// One line of the sidebar across its width, white when selected, on the highlight when `marked`. Returns whether it was clicked.
-fn sidebar_row(ui: &mut egui::Ui, text: &str, selected: bool, marked: bool, indent: f32) -> bool {
+/// One line of the sidebar across its width, white when selected, on the highlight when `marked`,
+/// with an arrow that points down or right when `open` is given. Returns whether it was clicked.
+fn sidebar_row(ui: &mut egui::Ui, text: &str, selected: bool, marked: bool, indent: f32, open: Option<bool>) -> bool {
     let pad = vec2(12.0 + indent, 7.0);
     let galley = WidgetText::from(text).into_galley(ui, Some(TextWrapMode::Truncate), ui.available_width() - pad.x - 10.0, TextStyle::Body);
     let (rect, response) = ui.allocate_exact_size(vec2(ui.available_width(), galley.size().y + 2.0 * pad.y), Sense::click());
     if marked {
         ui.painter().rect_filled(rect, 0.0, theme::HIGHLIGHT);
     }
-    ui.painter().galley(rect.min + pad, galley, if selected || response.hovered() { theme::TEXT } else { theme::DIM });
+    let color = if selected || response.hovered() { theme::TEXT } else { theme::DIM };
+    ui.painter().galley(rect.min + pad, galley, color);
+    if let Some(open) = open {
+        let center = egui::pos2(rect.left() + 14.0, rect.center().y);
+        let points = if open { [vec2(-4.5, -3.0), vec2(4.5, -3.0), vec2(0.0, 4.0)] } else { [vec2(-3.0, -4.5), vec2(4.0, 0.0), vec2(-3.0, 4.5)] };
+        ui.painter().add(egui::Shape::convex_polygon(points.map(|p| center + p).to_vec(), color, egui::Stroke::NONE));
+    }
     response.clicked()
 }
 
-/// The Mods page: the sidebar of mods, the selected one's sections under it, and its selected section.
+/// The Mods page: the sidebar of mods with their sections, and the selected section. A click on
+/// the selected mod collapses or expands it, a click on another selects it.
 fn mods_tab(ui: &mut egui::Ui, mods: &[Mod], selected: Option<(usize, usize)>) {
     let Some((index, section)) = selected else {
         ui.label(dim("No mod has added a tab. A framework plugin adds one with Host::add_tab."));
         return;
     };
+    let collapsed = SHOWN.lock().unwrap_or_else(PoisonError::into_inner).collapsed.clone();
     egui::Panel::left("mods").resizable(false).exact_size(260.0).frame(egui::Frame::NONE.inner_margin(egui::Margin { right: 16, ..egui::Margin::ZERO })).show(ui, |ui| {
         egui::ScrollArea::vertical().id_salt("mod list").auto_shrink(false).show(ui, |ui| {
             ui.spacing_mut().item_spacing.y = 2.0;
             for (i, m) in mods.iter().enumerate() {
-                if sidebar_row(ui, &m.title, i == index, i == index && m.sections.len() < 2, 0.0) {
-                    select(Tab::Mods, Some(m.owner.clone()), None);
+                let has_list = m.sections.len() > 1;
+                let open = has_list && !collapsed.contains(&m.owner);
+                if sidebar_row(ui, &m.title, i == index, i == index && !open, 16.0, has_list.then_some(open)) {
+                    if i == index && open {
+                        SHOWN.lock().unwrap_or_else(PoisonError::into_inner).collapsed.push(m.owner.clone());
+                    } else {
+                        select(Tab::Mods, Some(m.owner.clone()), None);
+                    }
                 }
-                if i == index && m.sections.len() > 1 {
+                if open {
                     for (j, name) in m.sections.iter().enumerate() {
-                        if sidebar_row(ui, name, j == section, j == section, 18.0) {
+                        let shown = i == index && j == section;
+                        if sidebar_row(ui, name, shown, shown, 34.0, None) {
                             select(Tab::Mods, Some(m.owner.clone()), Some(name.clone()));
                         }
                     }
