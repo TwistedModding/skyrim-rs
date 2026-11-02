@@ -20,7 +20,7 @@ Extra shadow-casting references spawned along a line inside the loaded cells; mi
 | 6,000 | 21.0 | 19.5 | 4.51 | 4.28 | 3.85 | 3.22 | 7.19 | 43 % |
 | 10,000 | 23.1 | 21.5 | 6.28 | 6.02 | 4.94 | 3.00 | 6.55 | 52 % |
 
-The cascade cull costs about 190 ns per registered geometry per cascade and the cascade draw about 170 ns per pass. At 10,000 extra references the two cascades alone are 10.9 ms of a 21.5 ms `RenderWorld`.
+The cascade cull costs about 190 ns per registered geometry per cascade and the cascade draw about 170 ns per pass. At 10,000 extra references the two cascades alone are 10.9 ms of a 21.5 ms `RenderWorld`. RenderDoc captures of the same scene put 12,606 draws into the shadow targets against the plugin's 12,457 shadow passes at 3,000 references (`graphics.md` DC.4).
 
 ## Phase 1 result
 
