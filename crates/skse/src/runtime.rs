@@ -6,6 +6,14 @@
 //! only store seen). The table lists the runtimes an Address Library file or a game install on
 //! this machine proved; a runtime missing here is unknown, not unsupported.
 
+use std::os::windows::ffi::OsStrExt;
+use std::path::Path;
+
+use windows_sys::Win32::Storage::FileSystem::{GetFileVersionInfoSizeW, GetFileVersionInfoW, VerQueryValueW};
+
+/// The runtime `sre` describes; every other runtime is its difference from this one.
+pub const CANONICAL: u32 = pack(1, 7, 104, 0);
+
 #[must_use]
 pub const fn pack(major: u32, minor: u32, build: u32, store: u32) -> u32 {
     (major & 0xFF) << 24 | (minor & 0xFF) << 16 | (build & 0xFFF) << 4 | (store & 0xF)
@@ -14,6 +22,12 @@ pub const fn pack(major: u32, minor: u32, build: u32, store: u32) -> u32 {
 #[must_use]
 pub const fn unpack(packed: u32) -> [u32; 4] {
     [packed >> 24, (packed >> 16) & 0xFF, (packed >> 4) & 0xFFF, packed & 0xF]
+}
+
+/// Whether a packed version is the canonical runtime, on any store.
+#[must_use]
+pub const fn is_canonical(packed: u32) -> bool {
+    packed >> 4 == CANONICAL >> 4
 }
 
 /// 1.5.x is Special Edition; 1.6 and later are Anniversary Edition.
@@ -40,6 +54,48 @@ pub fn script_extender_loaded(packed: u32) -> bool {
     !unsafe { windows_sys::Win32::System::LibraryLoader::GetModuleHandleW(name.as_ptr()) }.is_null()
 }
 
+/// The running executable's version, packed, with no loader involved. `None` when the executable
+/// has no version resource, as a test binary has none.
+#[must_use]
+pub fn running() -> Option<u32> {
+    let [major, minor, build, store] = file_version(&std::env::current_exe().ok()?)?;
+    Some(pack(major, minor, build, store))
+}
+
+/// The `FileVersion` string of a file's version resource. The fixed block next to it is no use:
+/// 1.5.97's says 1.0.0.0.
+fn file_version(path: &Path) -> Option<[u32; 4]> {
+    let path: Vec<u16> = path.as_os_str().encode_wide().chain([0]).collect();
+    let size = unsafe { GetFileVersionInfoSizeW(path.as_ptr(), core::ptr::null_mut()) };
+    let mut block = vec![0u32; (size as usize).div_ceil(4)];
+    if size == 0 || unsafe { GetFileVersionInfoW(path.as_ptr(), 0, size, block.as_mut_ptr().cast()) } == 0 {
+        return None;
+    }
+    let (translation, len) = version_value(&block, r"\VarFileInfo\Translation")?;
+    if (len as usize) < 2 * size_of::<u16>() {
+        return None;
+    }
+    let (language, code_page) = unsafe { (*translation, *translation.add(1)) };
+    let (text, len) = version_value(&block, &format!(r"\StringFileInfo\{language:04x}{code_page:04x}\FileVersion"))?;
+    parse_file_version(&String::from_utf16_lossy(unsafe { core::slice::from_raw_parts(text, len as usize) }))
+}
+
+/// A value inside a version block: where it starts and the length `VerQueryValueW` gives, which
+/// counts bytes for binary values and characters for strings.
+fn version_value(block: &[u32], name: &str) -> Option<(*const u16, u32)> {
+    let name: Vec<u16> = name.encode_utf16().chain([0]).collect();
+    let (mut value, mut len) = (core::ptr::null_mut(), 0);
+    let found = unsafe { VerQueryValueW(block.as_ptr().cast(), name.as_ptr(), &raw mut value, &raw mut len) };
+    (found != 0 && !value.is_null()).then_some((value.cast_const().cast(), len))
+}
+
+/// `1.5.97.0`, with anything after a space ignored (`10.0.26100.1 (WinBuild.160101.0800)`).
+fn parse_file_version(text: &str) -> Option<[u32; 4]> {
+    let mut parts = text.trim_end_matches('\0').split_whitespace().next()?.split('.').map(|part| part.parse().ok());
+    let version = [parts.next()??, parts.next()??, parts.next()??, parts.next()??];
+    parts.next().is_none().then_some(version)
+}
+
 pub struct Runtime {
     pub file_version: [u16; 4],
     pub packed: u32,
@@ -51,6 +107,7 @@ pub struct Runtime {
 
 pub const RUNTIMES: &[Runtime] = &[
     Runtime { file_version: [1, 5, 97, 0], packed: pack(1, 5, 97, 0), name: "SE 1.5.97", versionlib: "version-1-5-97-0.bin", v5: false },
+    Runtime { file_version: [1, 6, 353, 0], packed: pack(1, 6, 353, 0), name: "AE 1.6.353", versionlib: "versionlib-1-6-353-0.bin", v5: false },
     Runtime { file_version: [1, 6, 1170, 0], packed: pack(1, 6, 1170, 0), name: "AE 1.6.1170", versionlib: "versionlib-1-6-1170-0.bin", v5: false },
     Runtime { file_version: [1, 7, 99, 0], packed: pack(1, 7, 99, 0), name: "AE 1.7.99", versionlib: "versionlib-1-7-99-0.bin", v5: true },
     Runtime { file_version: [1, 7, 104, 0], packed: pack(1, 7, 104, 0), name: "AE 1.7.104", versionlib: "versionlib-1-7-104-0.bin", v5: true },
@@ -81,5 +138,32 @@ mod tests {
             assert_eq!(r.v5, r.packed >= pack(1, 7, 99, 0));
         }
         assert!(is_se(pack(1, 5, 97, 0)) && !is_se(pack(1, 6, 1170, 0)));
+    }
+
+    #[test]
+    fn canonical_ignores_the_store() {
+        assert!(is_canonical(pack(1, 7, 104, 0)) && is_canonical(pack(1, 7, 104, 8)));
+        assert!(!is_canonical(pack(1, 7, 99, 0)) && !is_canonical(pack(1, 6, 1170, 0)));
+    }
+
+    #[test]
+    fn file_version_string_parses() {
+        assert_eq!(parse_file_version("1.5.97.0\0"), Some([1, 5, 97, 0]));
+        assert_eq!(parse_file_version("10.0.26100.1 (WinBuild.160101.0800)"), Some([10, 0, 26100, 1]));
+        assert_eq!(parse_file_version("1.5.97"), None);
+        assert_eq!(parse_file_version("1.5.97.0.1"), None);
+        assert_eq!(parse_file_version(""), None);
+    }
+
+    #[test]
+    fn file_version_reads_a_real_resource() {
+        let system = std::env::var_os("SystemRoot").map(std::path::PathBuf::from).unwrap();
+        let [major, ..] = file_version(&system.join("System32").join("kernel32.dll")).unwrap();
+        assert!(major >= 6);
+    }
+
+    #[test]
+    fn a_binary_without_a_version_resource_has_no_version() {
+        assert_eq!(running(), None);
     }
 }
