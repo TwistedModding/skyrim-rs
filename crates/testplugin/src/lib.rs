@@ -84,8 +84,15 @@ const IRON_SWORD: u32 = 0x12EB7;
 
 type Test = fn() -> Result<String, String>;
 
+/// Marks a test's error as "could not run here": logged as `NOTRUN`, counted neither as passed nor as failed.
+const NOT_RUN: &str = "not run: ";
+
 fn check(ok: bool, what: &str) -> Result<(), String> {
     if ok { Ok(()) } else { Err(what.to_owned()) }
+}
+
+fn not_run(why: &str) -> Result<String, String> {
+    Err(format!("{NOT_RUN}{why}"))
 }
 
 fn form(id: u32) -> Result<&'static TESForm, String> {
@@ -113,6 +120,7 @@ fn describe(form: &TESForm) -> String {
 fn run(suite: &str, phase: &str, tests: &[(&str, Test)]) {
     let mut pass = 0;
     let mut fail = 0;
+    let mut skipped = 0;
     for (name, test) in tests {
         match test() {
             Ok(detail) => {
@@ -120,12 +128,17 @@ fn run(suite: &str, phase: &str, tests: &[(&str, Test)]) {
                 log!("PASS {name}: {detail}");
             }
             Err(detail) => {
-                fail += 1;
-                log!("FAIL {name}: {detail}");
+                if let Some(why) = detail.strip_prefix(NOT_RUN) {
+                    skipped += 1;
+                    log!("NOTRUN {name}: {why}");
+                } else {
+                    fail += 1;
+                    log!("FAIL {name}: {detail}");
+                }
             }
         }
     }
-    log!("summary {suite} {phase}: {pass} pass, {fail} fail");
+    log!("summary {suite} {phase}: {pass} pass, {fail} fail, {skipped} not run");
 }
 
 /// The save name a `SAVE_GAME` message carries.

@@ -520,7 +520,7 @@ fn base_offset(owner: Option<&str>, offset: u64, ctx: &Ctx) -> String {
         let base = c.bases.iter().find(|&&(b, disp, virt)| !virt && u64::try_from(disp) == Ok(offset) && ctx.variance.base(c.name, b))?;
         Some(format!("{}:{}", c.name, base.0))
     });
-    variant.map_or_else(|| format!("{offset:#X}"), |key| format!("base_offset!({key:?}, {offset:#X})"))
+    variant.map_or_else(|| format!("{offset:#X}"), |key| format!("base_at!({key:?}, {offset:#X})"))
 }
 
 /// What an emitted item is to its name.
@@ -630,7 +630,7 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     let deref_target = derefs_of(classes, &embedded, &mut stats);
     for (c, p) in &deref_target {
         let (c, p) = (&classes[c], &classes[p]);
-        let this = if ctx.variance.base(c.name, p.name) { format!("core::ptr::from_ref(self).byte_add(base_offset!({:?}, 0x0))", format!("{}:{}", c.name, p.name)) } else { "core::ptr::from_ref(self)".to_owned() };
+        let this = if ctx.variance.base(c.name, p.name) { format!("core::ptr::from_ref(self).byte_add(base_at!({:?}, 0x0))", format!("{}:{}", c.name, p.name)) } else { "core::ptr::from_ref(self)".to_owned() };
         items.entry((ctx.group(c.name).to_owned(), Kind::Api(Tier::Semantic))).or_default().push(format!(
             "/// `{}` is laid out from its primary base `{}`, so its methods and fields are reachable through it.\nimpl core::ops::Deref for {} {{\n    type Target = {};\n    #[inline]\n    fn deref(&self) -> &Self::Target {{ unsafe {{ &*{this}.cast() }} }}\n}}\n",
             c.name,

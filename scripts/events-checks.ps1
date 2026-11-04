@@ -1,5 +1,7 @@
 # DevBench comparisons for the events suite (step indices of events-steps.json); dot-sourced by verify.ps1.
 # The plugin registers its sinks at DataLoaded and checks what they received at the save that ends the scenario.
+# Spell.Cast fires along the caster's heading whatever target it is given, so step 19 turns the player onto the pine
+# REFR 00034ECE, 667 units ahead on every base save; off its trunk the flames hit it only about half the time.
 $Phases = "dataLoaded", "saveGame"
 
 $stream = (Get-Content "$OutDir\events.json" -Raw | ConvertFrom-Json).events
@@ -23,12 +25,12 @@ $rows = @(
        ok = ($plugin["container_changed"].ok -and (Returned 16) -eq 145) }
     @{ name = "activate";        plugin = (Detail "activate"); devbench = "ObjectReference.Activate(0xECE8D, player) = $(Returned 17)";
        ok = ($plugin["activate"].ok -and (Returned 17) -eq $true) }
-    @{ name = "hit";             plugin = (Detail "hit"); devbench = "Spell.Cast(Flames, player, Alvor) called=$((Step 19).called)";
-       ok = ($plugin["hit"].ok -and (Step 19).called -eq $true) }
+    @{ name = "hit";             plugin = (Detail "hit"); devbench = "Spell.Cast(Flames, player) called=$((Step 21).called)";
+       ok = ($plugin["hit"].ok -and (Step 21).called -eq $true) }
     @{ name = "load game";       plugin = (Detail "load_game"); devbench = "postLoadGame lifecycle events: $dbLoads, cells loaded: $(($dbCells | ForEach-Object { "$($_.data.cell) $(Hex8 $_.data.formID)" }) -join ', ')";
        ok = ($pluginLoads -eq 2 -and $dbLoads -eq 2 -and $dbCells.Count -ge 1) }
     @{ name = "actor cell";      plugin = (Detail "actor_cell"); devbench = "scene.cellLoaded formID $(if ($dbCells.Count) { Hex8 $dbCells[0].data.formID })";
        ok = ($plugin["actor_cell"].ok -and $dbCells.Count -gt 0 -and $dbCells[0].data.formID -eq 0x9732) }
-    @{ name = "save trigger";    plugin = ($summaries -match 'events saveGame') -join ' '; devbench = "console save: $((Step 28) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 29 }).satisfied)";
-       ok = ((($steps | Where-Object { $_.index -eq 29 }).satisfied -eq $true)) }
+    @{ name = "save trigger";    plugin = ($summaries -match 'events saveGame') -join ' '; devbench = "console save: $((Step 30) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 31 }).satisfied)";
+       ok = ((($steps | Where-Object { $_.index -eq 31 }).satisfied -eq $true)) }
 )

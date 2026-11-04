@@ -13,7 +13,7 @@ impl core::ops::Deref for crate::ActivateHandler {
 impl core::ops::Deref for crate::AmiiboEvent {
     type Target = crate::IDEvent;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("AmiiboEvent:IDEvent", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("AmiiboEvent:IDEvent", 0x0)).cast() } }
 }
 /// `AttackBlockHandler` is laid out from its primary base `HeldStateHandler`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::AttackBlockHandler {
@@ -151,7 +151,7 @@ impl core::ops::Deref for crate::LookHandler {
 impl core::ops::Deref for crate::MotionGestureEvent {
     type Target = crate::IDEvent;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MotionGestureEvent:IDEvent", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MotionGestureEvent:IDEvent", 0x0)).cast() } }
 }
 /// `MouseMoveEvent` is laid out from its primary base `IDEvent`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::MouseMoveEvent {
@@ -616,6 +616,16 @@ impl crate::CommandTableEntry {
     pub fn params(&self) -> Option<&crate::ParamInfo> { unsafe { { self.params }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_eval(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CommandTableEntry.eval", 0x40, *mut c_void) } }
+    /// `CommandTableEntry::eval`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn eval(&self) -> *mut c_void { unsafe { Self::__member_eval(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_eval(&mut self, value: *mut c_void) { unsafe { Self::__member_eval(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn eval_ptr(&self) -> *mut *mut c_void { Self::__member_eval(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pad24(this: *const Self) -> *mut u32 { unsafe { member!(this, "CommandTableEntry.pad24", 0x24, u32) } }
     /// `CommandTableEntry::pad24`, at +0x24 on 1.7.104.
     #[inline]
@@ -806,17 +816,6 @@ impl crate::HeldStateHandler {
     pub fn releasePending_ptr(&self) -> *mut u8 { Self::__member_releasePending(core::ptr::from_ref(self)) }
 }
 
-impl crate::InputContext {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_gamepadMappings(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "InputContext.gamepadMappings", 0x30, crate::BSTArray) } }
-    /// `InputContext::gamepadMappings`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn gamepadMappings(&self) -> &crate::BSTArray { unsafe { &*Self::__member_gamepadMappings(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn gamepadMappings_ptr(&self) -> *mut crate::BSTArray { Self::__member_gamepadMappings(core::ptr::from_ref(self)) }
-}
-
 impl crate::InputEventQueue {
     /// `g_InputEventQueue_ptr` at 0x325a7d8, id 407374 (semantic, high); pointer to `InputEventQueue`: the queue (= module+0x3275f70); the queue (= module+0x3275f70) (high, input pass), type `ptr:InputEventQueue`
     ///
@@ -829,7 +828,7 @@ impl crate::InputEventQueue {
     /// `void (InputEventQueue* q, InputDevice device, u32 idCode, float value, float heldDownSecs)`
     /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); stored as ButtonEvent device.
     #[inline]
-    pub fn add_button_event(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (*const Self, crate::InputDevice, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
+    pub fn add_button_event(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68685, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device.to_engine().expect("this value does not exist on this runtime"), idCode, value, heldDownSecs) } }
     /// `InputEventQueue::AddCharEvent`: next of 5 CharEvents, device 0, the UTF-16 code at +0x18; the keyboard poll is its only caller, so character input exists only for keys DirectInput reports (real or SendInput keystrokes, not events injected into the queue)
     ///
     /// Semantic, input pass, high; ledger runtime evidence, name high; id 68686, rva 0xcfb3f0.
@@ -842,7 +841,7 @@ impl crate::InputEventQueue {
     /// `void (InputEventQueue* q, InputDevice device, bool connected)`
     /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); DeviceConnectEvent device.
     #[inline]
-    pub fn add_device_connect_event(&self, device: crate::InputDevice, connected: bool) { unsafe { function!(68689, (*const Self, crate::InputDevice, bool))(core::ptr::from_ref(self), device, connected) } }
+    pub fn add_device_connect_event(&self, device: crate::InputDevice, connected: bool) { unsafe { function!(68689, (*const Self, u32, bool))(core::ptr::from_ref(self), device.to_engine().expect("this value does not exist on this runtime"), connected) } }
     /// `InputEventQueue::AddKinectEvent`: the single KinectEvent
     ///
     /// Semantic, input pass, medium; ledger semantic evidence, name medium; id 68690, rva 0xcfb640.
@@ -1307,19 +1306,6 @@ impl crate::MovementHandler {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn can_process(&self, event: &crate::InputEvent) -> bool { unsafe { virtual_function!(self, 1, (*const Self, *const crate::InputEvent) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(event)) } }
-}
-
-impl crate::ParamInfo {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_optional(this: *const Self) -> *mut u8 { unsafe { member!(this, "ParamInfo.optional", 0xC, u8) } }
-    /// `ParamInfo::optional`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn optional(&self) -> u8 { unsafe { Self::__member_optional(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_optional(&mut self, value: u8) { unsafe { Self::__member_optional(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn optional_ptr(&self) -> *mut u8 { Self::__member_optional(core::ptr::from_ref(self)) }
 }
 
 impl crate::PlayerControls {
@@ -2182,7 +2168,7 @@ pub unsafe fn control_map__allow_text_entry(this: *mut c_void, begin: bool) { un
 /// # Safety
 /// `this`, `outName` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__get_button_name_for_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, outName: *mut crate::BSFixedString) -> bool { unsafe { function!(68553, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, *mut crate::BSFixedString) -> bool)(this, userEvent, device, outName) } }
+pub unsafe fn control_map__get_button_name_for_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, outName: *mut crate::BSFixedString) -> bool { unsafe { function!(68553, (*mut c_void, *const crate::BSFixedString, u32, *mut crate::BSFixedString) -> bool)(this, userEvent, device.to_engine().expect("this value does not exist on this runtime"), outName) } }
 /// `ControlMap::GetControlState`: getter (save game, free camera)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68548, rva 0xcefb80.
@@ -2201,7 +2187,7 @@ pub unsafe fn control_map__get_control_state(this: *mut c_void, enabled: *mut u3
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn control_map__get_mapping(this: *mut c_void, userEvent: *const crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, out: *mut crate::UserEventMapping) -> bool { unsafe { function!(68567, (*mut c_void, *const crate::BSFixedString, u32, crate::InputDevice, *mut crate::UserEventMapping) -> bool)(this, userEvent, context.to_engine().expect("this value does not exist on this runtime"), device, out) } }
+pub unsafe fn control_map__get_mapping(this: *mut c_void, userEvent: *const crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, out: *mut crate::UserEventMapping) -> bool { unsafe { function!(68567, (*mut c_void, *const crate::BSFixedString, u32, u32, *mut crate::UserEventMapping) -> bool)(this, userEvent, context.to_engine().expect("this value does not exist on this runtime"), device.to_engine().expect("this value does not exist on this runtime"), out) } }
 /// `ControlMap::HasMappingInContextStack`: true if any context on the stack maps the user event on any device (used by CursorMenu)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68551, rva 0xcefbe0.
@@ -2239,7 +2225,7 @@ pub unsafe fn control_map__map_input_events(this: *mut c_void, head: *mut crate:
 /// # Safety
 /// `this`, `path` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_definition_file(this: *mut c_void, path: *const c_char, device: crate::InputDevice) { unsafe { function!(524121, (*mut c_void, *const c_char, crate::InputDevice))(this, path, device) } }
+pub unsafe fn control_map__parse_definition_file(this: *mut c_void, path: *const c_char, device: crate::InputDevice) { unsafe { function!(524121, (*mut c_void, *const c_char, u32))(this, path, device.to_engine().expect("this value does not exist on this runtime")) } }
 /// `ControlMap::ParseKeyList`: splits a key column on ',' and 'A+B' (modifier<<16|key); default 0xff
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68556, rva 0xcf0560.
@@ -2249,7 +2235,7 @@ pub unsafe fn control_map__parse_definition_file(this: *mut c_void, path: *const
 /// # Safety
 /// `this`, `text`, `out` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_key_list(this: *mut c_void, text: *const c_char, out: *mut c_void, device: crate::InputDevice) { unsafe { function!(68556, (*mut c_void, *const c_char, *mut c_void, crate::InputDevice))(this, text, out, device) } }
+pub unsafe fn control_map__parse_key_list(this: *mut c_void, text: *const c_char, out: *mut c_void, device: crate::InputDevice) { unsafe { function!(68556, (*mut c_void, *const c_char, *mut c_void, u32))(this, text, out, device.to_engine().expect("this value does not exist on this runtime")) } }
 /// `ControlMap::ParseLinkedMapping`: '!ctx,name' column: appends a LinkedMapping and key 0x7fffffff
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68557, rva 0xcf0a60.
@@ -2259,7 +2245,7 @@ pub unsafe fn control_map__parse_key_list(this: *mut c_void, text: *const c_char
 /// # Safety
 /// `this`, `keys`, `name`, `text` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__parse_linked_mapping(this: *mut c_void, keys: *mut c_void, name: *mut crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, text: *const c_char) { unsafe { function!(68557, (*mut c_void, *mut c_void, *mut crate::BSFixedString, u32, crate::InputDevice, *const c_char))(this, keys, name, context.to_engine().expect("this value does not exist on this runtime"), device, text) } }
+pub unsafe fn control_map__parse_linked_mapping(this: *mut c_void, keys: *mut c_void, name: *mut crate::BSFixedString, context: crate::InputContextEnum, device: crate::InputDevice, text: *const c_char) { unsafe { function!(68557, (*mut c_void, *mut c_void, *mut crate::BSFixedString, u32, u32, *const c_char))(this, keys, name, context.to_engine().expect("this value does not exist on this runtime"), device.to_engine().expect("this value does not exist on this runtime"), text) } }
 /// `ControlMap::PopInputContext`: remove every occurrence of the context; true if one was removed
 ///
 /// Semantic, input pass, high; ledger runtime evidence, name high; id 68544, rva 0xcef980.
@@ -2298,7 +2284,7 @@ pub unsafe fn control_map__reload_definition_file(this: *mut c_void) { unsafe { 
 /// # Safety
 /// `this` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__remap_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32) -> bool { unsafe { function!(68538, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, u32) -> bool)(this, userEvent, device, newKey) } }
+pub unsafe fn control_map__remap_user_event(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32) -> bool { unsafe { function!(68538, (*mut c_void, *const crate::BSFixedString, u32, u32) -> bool)(this, userEvent, device.to_engine().expect("this value does not exist on this runtime"), newKey) } }
 /// `ControlMap::RemapUserEventOnDevice`: finds the first context with the user event, swaps keys with a remappable (or 'Look') record already on newKey, sets the key, re-sorts
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68570, rva 0xcf1470.
@@ -2308,7 +2294,7 @@ pub unsafe fn control_map__remap_user_event(this: *mut c_void, userEvent: *const
 /// # Safety
 /// `this`, `swappedEvent`, `oldKey` must point to what the engine expects.
 #[inline]
-pub unsafe fn control_map__remap_user_event_on_device(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32, swappedEvent: *mut crate::BSFixedString, oldKey: *mut u32) -> bool { unsafe { function!(68570, (*mut c_void, *const crate::BSFixedString, crate::InputDevice, u32, *mut crate::BSFixedString, *mut u32) -> bool)(this, userEvent, device, newKey, swappedEvent, oldKey) } }
+pub unsafe fn control_map__remap_user_event_on_device(this: *mut c_void, userEvent: *const crate::BSFixedString, device: crate::InputDevice, newKey: u32, swappedEvent: *mut crate::BSFixedString, oldKey: *mut u32) -> bool { unsafe { function!(68570, (*mut c_void, *const crate::BSFixedString, u32, u32, *mut crate::BSFixedString, *mut u32) -> bool)(this, userEvent, device.to_engine().expect("this value does not exist on this runtime"), newKey, swappedEvent, oldKey) } }
 /// `ControlMap::ResetControlState`: -1 / 0x80000000 (PlayerCharacter::Revert)
 ///
 /// Semantic, input pass, high; ledger semantic evidence, name high; id 68550, rva 0xcefbc0.

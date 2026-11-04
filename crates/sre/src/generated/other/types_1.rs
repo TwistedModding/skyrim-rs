@@ -30,19 +30,19 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -51,10 +51,10 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_BSFastNavmeshEdgeHandle_3 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -105,19 +105,19 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -126,10 +126,10 @@ pub struct AStarSearch_BSFastNavmeshTriLocation_void____ptr64_3 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -180,19 +180,19 @@ pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoo
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -201,10 +201,10 @@ pub struct AStarSearch_BSNavmeshInfo_const____ptr64_BSTSmartPointer_BSPathingDoo
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 188],
+    unknown_134: [u8; 188],
     /// +0x1F0 `undefined1`, ctor store
     pub field_1F0: u8,
-    pub unknown_1F1: [u8; 7],
+    unknown_1F1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -255,19 +255,19 @@ pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -276,10 +276,10 @@ pub struct AStarSearch_BSPathSmootherPOVNode_BSPathSmootherPOVLink_12 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 108],
+    unknown_134: [u8; 108],
     /// +0x1A0 `undefined1`, ctor store
     pub field_1A0: u8,
-    pub unknown_1A1: [u8; 7],
+    unknown_1A1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -330,19 +330,19 @@ pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -351,10 +351,10 @@ pub struct AStarSearch_ParentSpaceNode_TeleportLink_1 {
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 20],
+    unknown_134: [u8; 20],
     /// +0x148 `undefined1`, ctor store
     pub field_148: u8,
-    pub unknown_149: [u8; 7],
+    unknown_149: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1042,7 +1042,7 @@ pub struct AddCellGrassTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -1050,7 +1050,7 @@ pub struct AddCellGrassTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 28],
+    unknown_34: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1098,17 +1098,17 @@ pub struct AlarmPackage {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
     /// +0x24 `undefined1`, base TESPackage
     pub field_24: u8,
     /// +0x25 `undefined2`, base TESPackage
     pub field_25: u16,
-    pub unknown_27: [u8; 1],
+    unknown_27: [u8; 1],
     /// +0x28 `undefined4`, base TESPackage
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base TESPackage
     pub field_30: u64,
     /// +0x38 `undefined8`, base TESPackage
@@ -1118,12 +1118,12 @@ pub struct AlarmPackage {
     /// +0x48 `undefined8`, base TESPackage
     #[doc(hidden)]
     pub __field_48: [u8; 8],
-    pub unknown_50: [u8; 24],
+    unknown_50: [u8; 24],
     /// +0x68 `undefined8`, base TESPackage
     pub field_68: u64,
     /// +0x70 `undefined8`, base TESPackage
     pub field_70: u64,
-    pub unknown_78: [u8; 96],
+    unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
     pub field_D8: u32,
     /// +0xDC `undefined4`, base TESPackage
@@ -1136,7 +1136,7 @@ pub struct AlarmPackage {
     /// +0xF0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 1],
-    pub unknown_F1: [u8; 7],
+    unknown_F1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1181,16 +1181,16 @@ pub struct AlchemyItem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:AlchemyItem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::AlchemyItem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:AlchemyItem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::AlchemyItem_vtable_40,
@@ -1198,44 +1198,44 @@ pub struct AlchemyItem {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, base MagicItem
     pub field_78: u64,
     /// +0x80 `undefined4`, base MagicItem
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `vtbl:AlchemyItem:90`, rtti
     #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::AlchemyItem_vtable_90,
-    pub unknown_98: [u8; 8],
+    unknown_98: [u8; 8],
     /// +0xA0 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
-    pub unknown_A8: [u8; 16],
+    unknown_A8: [u8; 16],
     /// +0xB8 `undefined8`, base TESModelTextureSwap
     pub field_B8: u64,
     /// +0xC0 `undefined4`, base TESModelTextureSwap
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     /// +0xC8 `vtbl:AlchemyItem:C8`, rtti
     #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::AlchemyItem_vtable_C8,
-    pub unknown_D0: [u8; 8],
+    unknown_D0: [u8; 8],
     /// +0xD8 `vtbl:AlchemyItem:D8`, rtti
     #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::AlchemyItem_vtable_D8,
-    pub unknown_E0: [u8; 16],
+    unknown_E0: [u8; 16],
     /// +0xF0 `vtbl:AlchemyItem:F0`, rtti
     #[doc(hidden)]
     pub __vftable_F0: *const crate::raw::vtables::AlchemyItem_vtable_F0,
     /// +0xF8 `undefined4`, base TESWeightForm
     pub field_F8: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `vtbl:AlchemyItem:100`, rtti
     #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::AlchemyItem_vtable_100,
@@ -1261,10 +1261,10 @@ pub struct AlchemyItem {
     pub field_140: u64,
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
-    pub unknown_158: [u8; 16],
+    unknown_158: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1474,7 +1474,7 @@ pub struct AnimationSystemUtils__QueuedReferenceAnimationTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -1482,31 +1482,31 @@ pub struct AnimationSystemUtils__QueuedReferenceAnimationTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:AnimationSystemUtils::QueuedReferenceAnimationTask:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::AnimationSystemUtils__QueuedReferenceAnimationTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, base BShkbHkxDB::QueuedHandles
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     /// +0x88 `undefined8`, base BShkbHkxDB::QueuedHandles
     pub field_88: u64,
     /// +0x90 `undefined8`, base BShkbHkxDB::QueuedHandles
     pub field_90: u64,
-    pub unknown_98: [u8; 560],
+    unknown_98: [u8; 560],
     /// +0x2C8 `undefined4`, base IAnimationGraphManagerLoadingTask
     pub field_2C8: u32,
-    pub unknown_2CC: [u8; 4],
+    unknown_2CC: [u8; 4],
     /// +0x2D0 `undefined8`, ctor store
     pub field_2D0: u64,
     #[doc(hidden)]
@@ -1547,7 +1547,7 @@ pub struct AnimationSystemUtils__TESModelAndAnimationHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -1555,23 +1555,23 @@ pub struct AnimationSystemUtils__TESModelAndAnimationHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:AnimationSystemUtils::TESModelAndAnimationHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::AnimationSystemUtils__TESModelAndAnimationHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -1946,13 +1946,13 @@ pub struct ArrowProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ArrowProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ArrowProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ArrowProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ArrowProjectile_vtable_30,
@@ -1991,21 +1991,21 @@ pub struct ArrowProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -2042,14 +2042,14 @@ pub struct ArrowProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -2059,7 +2059,7 @@ pub struct ArrowProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -2078,7 +2078,7 @@ pub struct ArrowProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -2130,14 +2130,14 @@ pub struct ArrowProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined4`, base MissileProjectile
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
     /// +0x1E4 `undefined1`, base MissileProjectile
     #[doc(hidden)]
     pub __field_1E4: [u8; 1],
-    pub unknown_1E5: [u8; 3],
+    unknown_1E5: [u8; 3],
     /// +0x1E8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1E8: [u8; 8],
@@ -2253,7 +2253,7 @@ pub struct ArrowScroller {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -2266,14 +2266,14 @@ pub struct ArrowScroller {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -2289,7 +2289,7 @@ pub struct ArrowScroller {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
@@ -2305,7 +2305,7 @@ pub struct ArrowScroller {
     /// +0x8C `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_8C: [u8; 1],
-    pub unknown_8D: [u8; 3],
+    unknown_8D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2452,7 +2452,7 @@ pub struct AudioLoadForPlaybackTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2460,7 +2460,7 @@ pub struct AudioLoadForPlaybackTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 12],
+    unknown_34: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2490,7 +2490,7 @@ pub struct AudioLoadToCacheTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2498,7 +2498,7 @@ pub struct AudioLoadToCacheTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 12],
+    unknown_34: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2775,7 +2775,7 @@ pub struct BShkbHkxDB__QueuedHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2783,23 +2783,23 @@ pub struct BShkbHkxDB__QueuedHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BShkbHkxDB::QueuedHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BShkbHkxDB__QueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -2833,7 +2833,7 @@ pub struct BShkbHkxDB__StreamAdaptor {
     /// +0x0 `vtbl:BShkbHkxDB::StreamAdaptor:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BShkbHkxDB__StreamAdaptor_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2921,7 +2921,7 @@ pub struct BShkbHkxDB__StreamAdaptor {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3027,7 +3027,7 @@ pub struct BSiStateTaggingGenerator {
     pub __vftable: *const crate::raw::vtables::BSiStateTaggingGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3115,7 +3115,7 @@ pub struct BSiStateTaggingGenerator {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3182,7 +3182,7 @@ pub struct BSiStateTaggingUtils__BSiStateTaggingStateListener {
     /// +0x0 `vtbl:BSiStateTaggingUtils::BSiStateTaggingStateListener:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSiStateTaggingUtils__BSiStateTaggingStateListener_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3270,7 +3270,7 @@ pub struct BSiStateTaggingUtils__BSiStateTaggingStateListener {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3473,7 +3473,7 @@ pub struct BarrierPhantomCallbackShape {
     /// +0x0 `vtbl:BarrierPhantomCallbackShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BarrierPhantomCallbackShape_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3561,7 +3561,7 @@ pub struct BarrierPhantomCallbackShape {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3638,13 +3638,13 @@ pub struct BarrierProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BarrierProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BarrierProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BarrierProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BarrierProjectile_vtable_30,
@@ -3683,21 +3683,21 @@ pub struct BarrierProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -3734,14 +3734,14 @@ pub struct BarrierProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -3751,7 +3751,7 @@ pub struct BarrierProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -3770,7 +3770,7 @@ pub struct BarrierProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -3822,11 +3822,11 @@ pub struct BarrierProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `float`, ctor store (widths [4, 4])
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 28],
+    unknown_1E4: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3911,7 +3911,7 @@ pub struct BarterMenu {
     pub __vftable: *const crate::raw::vtables::BarterMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -3928,12 +3928,12 @@ pub struct BarterMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -3942,25 +3942,25 @@ pub struct BarterMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -3969,44 +3969,44 @@ pub struct BarterMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4174,7 +4174,7 @@ pub struct BookMenu {
     pub __vftable: *const crate::raw::vtables::BookMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -4191,12 +4191,12 @@ pub struct BookMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:BookMenu:30`, rtti
@@ -4204,12 +4204,12 @@ pub struct BookMenu {
     pub __vftable_30: *const crate::raw::vtables::BookMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `vtbl:BookMenu:48`, rtti
@@ -4217,7 +4217,7 @@ pub struct BookMenu {
     pub __vftable_48: *const crate::raw::vtables::BookMenu_vtable_48,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -4226,44 +4226,44 @@ pub struct BookMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4752,13 +4752,13 @@ pub struct ChainExplosion {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ChainExplosion:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ChainExplosion_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ChainExplosion:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ChainExplosion_vtable_30,
@@ -4797,7 +4797,7 @@ pub struct ChainExplosion {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Explosion
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -4831,7 +4831,7 @@ pub struct ChainExplosion {
     /// +0xDC `undefined1`, base Explosion
     #[doc(hidden)]
     pub __field_DC: [u8; 1],
-    pub unknown_DD: [u8; 3],
+    unknown_DD: [u8; 3],
     /// +0xE0 `undefined4`, base Explosion
     #[doc(hidden)]
     pub __field_E0: [u8; 4],
@@ -4841,7 +4841,7 @@ pub struct ChainExplosion {
     /// +0xE8 `undefined1`, base Explosion
     #[doc(hidden)]
     pub __field_E8: [u8; 1],
-    pub unknown_E9: [u8; 3],
+    unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, base Explosion
     #[doc(hidden)]
     pub __field_EC: [u8; 4],
@@ -4851,11 +4851,11 @@ pub struct ChainExplosion {
     /// +0xF8 `undefined4`, base Explosion
     #[doc(hidden)]
     pub __field_F8: [u8; 4],
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `undefined4`, base Explosion
     #[doc(hidden)]
     pub __field_100: [u8; 4],
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base Explosion
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4889,7 +4889,7 @@ pub struct ChainExplosion {
     /// +0x140 `undefined4`, base Explosion
     #[doc(hidden)]
     pub __field_140: [u8; 4],
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `vtbl:ChainExplosion:148`, rtti
     #[doc(hidden)]
     pub ____vftable_148: [u8; 8],
@@ -4902,11 +4902,11 @@ pub struct ChainExplosion {
     /// +0x158 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_158: [u8; 4],
-    pub unknown_15C: [u8; 20],
+    unknown_15C: [u8; 20],
     /// +0x170 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 4],
-    pub unknown_174: [u8; 4],
+    unknown_174: [u8; 4],
     /// +0x178 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_178: [u8; 8],
@@ -4919,7 +4919,7 @@ pub struct ChainExplosion {
     /// +0x190 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_190: [u8; 4],
-    pub unknown_194: [u8; 4],
+    unknown_194: [u8; 4],
     /// +0x198 `float`, ctor store (widths [4, 4])
     #[doc(hidden)]
     pub __field_198: [u8; 4],
@@ -4929,7 +4929,7 @@ pub struct ChainExplosion {
     /// +0x1A0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_1A0: [u8; 1],
-    pub unknown_1A1: [u8; 7],
+    unknown_1A1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5237,7 +5237,7 @@ pub struct Clouds {
     pub field_8: u64,
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
-    pub unknown_18: [u8; 760],
+    unknown_18: [u8; 760],
     /// +0x310 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_310: [u8; 8],
@@ -5382,12 +5382,12 @@ pub struct Clouds {
     /// +0x488 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_488: [u8; 8],
-    pub unknown_490: [u8; 128],
+    unknown_490: [u8; 128],
     /// +0x510 `undefined2`, ctor store
     pub field_510: u16,
     /// +0x512 `undefined1`, ctor store
     pub field_512: u8,
-    pub unknown_513: [u8; 5],
+    unknown_513: [u8; 5],
     /// +0x518 `undefined8`, ctor store
     pub field_518: u64,
     #[doc(hidden)]
@@ -5936,13 +5936,13 @@ pub struct ConeProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ConeProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ConeProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:ConeProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ConeProjectile_vtable_30,
@@ -5981,21 +5981,21 @@ pub struct ConeProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -6032,14 +6032,14 @@ pub struct ConeProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -6049,7 +6049,7 @@ pub struct ConeProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -6068,7 +6068,7 @@ pub struct ConeProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -6120,7 +6120,7 @@ pub struct ConeProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1E0: [u8; 8],
@@ -6136,11 +6136,11 @@ pub struct ConeProjectile {
     /// +0x1F8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 4],
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     /// +0x200 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 8],
-    pub unknown_208: [u8; 24],
+    unknown_208: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6243,7 +6243,7 @@ pub struct ConsoleNativeUIMenu {
     pub __vftable: *const crate::raw::vtables::ConsoleNativeUIMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -6260,12 +6260,12 @@ pub struct ConsoleNativeUIMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -6274,25 +6274,25 @@ pub struct ConsoleNativeUIMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -6301,44 +6301,44 @@ pub struct ConsoleNativeUIMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -6347,7 +6347,7 @@ pub struct ConsoleNativeUIMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -6356,7 +6356,7 @@ pub struct ConsoleNativeUIMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -6422,7 +6422,7 @@ pub struct ContentMenu {
     /// +0x0 `vtbl:ContentMenu:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 56],
+    unknown_8: [u8; 56],
     /// +0x40 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 8],
@@ -6435,36 +6435,36 @@ pub struct ContentMenu {
     /// +0x58 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 4],
-    pub unknown_5C: [u8; 12],
+    unknown_5C: [u8; 12],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 4],
-    pub unknown_74: [u8; 12],
+    unknown_74: [u8; 12],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 4],
-    pub unknown_8C: [u8; 12],
+    unknown_8C: [u8; 12],
     /// +0x98 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_98: [u8; 8],
     /// +0xA0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
-    pub unknown_A4: [u8; 52],
+    unknown_A4: [u8; 52],
     /// +0xD8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_D8: [u8; 4],
-    pub unknown_DC: [u8; 28],
+    unknown_DC: [u8; 28],
     /// +0xF8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_F8: [u8; 2],
-    pub unknown_FA: [u8; 1],
+    unknown_FA: [u8; 1],
     /// +0xFB `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_FB: [u8; 4],
@@ -6477,39 +6477,39 @@ pub struct ContentMenu {
     /// +0x108 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 4],
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 8],
     /// +0x118 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 4],
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     /// +0x120 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_120: [u8; 4],
-    pub unknown_124: [u8; 4],
+    unknown_124: [u8; 4],
     /// +0x128 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 4],
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_138: [u8; 8],
     /// +0x140 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_140: [u8; 4],
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_148: [u8; 8],
     /// +0x150 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 4],
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6563,7 +6563,7 @@ pub struct CraftingMenu {
     pub __vftable: *const crate::raw::vtables::CraftingMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -6580,12 +6580,12 @@ pub struct CraftingMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -6594,25 +6594,25 @@ pub struct CraftingMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -6621,44 +6621,44 @@ pub struct CraftingMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -6667,7 +6667,7 @@ pub struct CraftingMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -6676,7 +6676,7 @@ pub struct CraftingMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -6744,7 +6744,7 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::AlchemyMenu:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__AlchemyMenu_vtable_10,
@@ -6754,12 +6754,12 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -6768,25 +6768,25 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -6795,44 +6795,44 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -6841,7 +6841,7 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -6850,40 +6850,40 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_C8: u64,
     /// +0xD0 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_D0: u32,
-    pub unknown_D4: [u8; 12],
+    unknown_D4: [u8; 12],
     /// +0xE0 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_E0: u64,
     /// +0xE8 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_E8: u32,
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `undefined1`, base CraftingSubMenus::CraftingSubMenu
     pub field_F8: u8,
-    pub unknown_F9: [u8; 31],
+    unknown_F9: [u8; 31],
     /// +0x118 `undefined4`, ctor store
     pub field_118: u32,
-    pub unknown_11C: [u8; 20],
+    unknown_11C: [u8; 20],
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 20],
+    unknown_134: [u8; 20],
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
-    pub unknown_164: [u8; 12],
+    unknown_164: [u8; 12],
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
     /// +0x178 `undefined8`, ctor store
@@ -6892,10 +6892,10 @@ pub struct CraftingSubMenus__AlchemyMenu {
     pub field_180: u64,
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
-    pub unknown_18C: [u8; 12],
+    unknown_18C: [u8; 12],
     /// +0x198 `undefined1`, ctor store
     pub field_198: u8,
-    pub unknown_199: [u8; 7],
+    unknown_199: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7013,7 +7013,7 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__ConstructibleObjectMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::ConstructibleObjectMenu:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__ConstructibleObjectMenu_vtable_10,
@@ -7023,12 +7023,12 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -7037,25 +7037,25 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -7064,44 +7064,44 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -7110,7 +7110,7 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -7119,36 +7119,36 @@ pub struct CraftingSubMenus__ConstructibleObjectMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_C8: u64,
     /// +0xD0 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_D0: u32,
-    pub unknown_D4: [u8; 12],
+    unknown_D4: [u8; 12],
     /// +0xE0 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_E0: u64,
     /// +0xE8 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_E8: u32,
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `undefined1`, base CraftingSubMenus::CraftingSubMenu
     pub field_F8: u8,
-    pub unknown_F9: [u8; 43],
+    unknown_F9: [u8; 43],
     /// +0x124 `undefined8`, ctor store
     pub field_124: u64,
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     /// +0x130 `undefined8`, ctor store
     pub field_130: u64,
-    pub unknown_138: [u8; 8],
+    unknown_138: [u8; 8],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
     /// +0x158 `undefined8`, ctor store
@@ -7240,7 +7240,7 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__CraftingSubMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::CraftingSubMenu:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__CraftingSubMenu_vtable_10,
@@ -7250,12 +7250,12 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -7264,25 +7264,25 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -7291,44 +7291,44 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -7337,7 +7337,7 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -7346,24 +7346,24 @@ pub struct CraftingSubMenus__CraftingSubMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
-    pub unknown_D4: [u8; 12],
+    unknown_D4: [u8; 12],
     /// +0xE0 `undefined8`, ctor store
     pub field_E0: u64,
     /// +0xE8 `undefined4`, ctor store
     pub field_E8: u32,
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `undefined1`, ctor store
     pub field_F8: u8,
-    pub unknown_F9: [u8; 7],
+    unknown_F9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7432,7 +7432,7 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::EnchantConstructMenu:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__EnchantConstructMenu_vtable_10,
@@ -7442,12 +7442,12 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -7456,25 +7456,25 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -7483,44 +7483,44 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -7529,7 +7529,7 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -7538,24 +7538,24 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_C8: u64,
     /// +0xD0 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_D0: u32,
-    pub unknown_D4: [u8; 12],
+    unknown_D4: [u8; 12],
     /// +0xE0 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_E0: u64,
     /// +0xE8 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_E8: u32,
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `undefined1`, base CraftingSubMenus::CraftingSubMenu
     pub field_F8: u8,
-    pub unknown_F9: [u8; 7],
+    unknown_F9: [u8; 7],
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
     /// +0x104 `undefined4`, ctor store
@@ -7567,30 +7567,30 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_10C: u32,
     /// +0x110 `undefined4`, ctor store
     pub field_110: u32,
-    pub unknown_114: [u8; 28],
+    unknown_114: [u8; 28],
     /// +0x130 `undefined8`, ctor store
     pub field_130: u64,
     /// +0x138 `undefined4`, ctor store
     pub field_138: u32,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
-    pub unknown_14C: [u8; 12],
+    unknown_14C: [u8; 12],
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
-    pub unknown_164: [u8; 12],
+    unknown_164: [u8; 12],
     /// +0x170 `undefined8`, ctor store
     pub field_170: u64,
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
-    pub unknown_180: [u8; 24],
+    unknown_180: [u8; 24],
     /// +0x198 `undefined4`, ctor store
     pub field_198: u32,
-    pub unknown_19C: [u8; 4],
+    unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, ctor store
     pub field_1A0: u64,
     /// +0x1A8 `undefined8`, member ctor CraftingSubMenus::EnchantConstructMenu::CreateEffectFunctor
@@ -7599,7 +7599,7 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     /// +0x1B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
-    pub unknown_1B8: [u8; 24],
+    unknown_1B8: [u8; 24],
     /// +0x1D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -7612,14 +7612,14 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     /// +0x1E8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1E8: [u8; 4],
-    pub unknown_1EC: [u8; 4],
+    unknown_1EC: [u8; 4],
     /// +0x1F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F0: [u8; 8],
     /// +0x1F8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 4],
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
     /// +0x204 `undefined8`, ctor store
@@ -7634,7 +7634,7 @@ pub struct CraftingSubMenus__EnchantConstructMenu {
     pub field_21C: u16,
     /// +0x21E `undefined1`, ctor store
     pub field_21E: u8,
-    pub unknown_21F: [u8; 1],
+    unknown_21F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7843,7 +7843,7 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub __vftable: *const crate::raw::vtables::CraftingSubMenus__SmithingMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:CraftingSubMenus::SmithingMenu:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::CraftingSubMenus__SmithingMenu_vtable_10,
@@ -7853,12 +7853,12 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -7867,25 +7867,25 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -7894,44 +7894,44 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -7940,7 +7940,7 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -7949,31 +7949,31 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_C8: u64,
     /// +0xD0 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_D0: u32,
-    pub unknown_D4: [u8; 12],
+    unknown_D4: [u8; 12],
     /// +0xE0 `undefined8`, base CraftingSubMenus::CraftingSubMenu
     pub field_E0: u64,
     /// +0xE8 `undefined4`, base CraftingSubMenus::CraftingSubMenu
     pub field_E8: u32,
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `undefined1`, base CraftingSubMenus::CraftingSubMenu
     pub field_F8: u8,
-    pub unknown_F9: [u8; 43],
+    unknown_F9: [u8; 43],
     /// +0x124 `undefined8`, ctor store
     pub field_124: u64,
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     /// +0x130 `undefined8`, ctor store
     pub field_130: u64,
-    pub unknown_138: [u8; 8],
+    unknown_138: [u8; 8],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
@@ -7984,7 +7984,7 @@ pub struct CraftingSubMenus__SmithingMenu {
     pub field_154: u32,
     /// +0x158 `undefined4`, ctor store
     pub field_158: u32,
-    pub unknown_15C: [u8; 4],
+    unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
     #[doc(hidden)]
@@ -8076,7 +8076,7 @@ pub struct CreditsMenu {
     pub __vftable: *const crate::raw::vtables::CreditsMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -8093,12 +8093,12 @@ pub struct CreditsMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:CreditsMenu:30`, rtti
@@ -8106,7 +8106,7 @@ pub struct CreditsMenu {
     pub __vftable_30: *const crate::raw::vtables::CreditsMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_3C: [u8; 4],
@@ -8122,12 +8122,12 @@ pub struct CreditsMenu {
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -8136,24 +8136,24 @@ pub struct CreditsMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
     /// +0x65 `undefined1`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_65: u8,
-    pub unknown_66: [u8; 2],
+    unknown_66: [u8; 2],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_7A: [u8; 2],
@@ -8161,22 +8161,22 @@ pub struct CreditsMenu {
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -8185,7 +8185,7 @@ pub struct CreditsMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 1],
+    unknown_A9: [u8; 1],
     /// +0xAA `undefined2`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_AA: u16,
     /// +0xAC `undefined4`, base GRefCountImplCore
@@ -8196,17 +8196,17 @@ pub struct CreditsMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     pub field_BC: u32,
     /// +0xC0 `undefined2`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_C0: u16,
-    pub unknown_C2: [u8; 2],
+    unknown_C2: [u8; 2],
     /// +0xC4 `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_C4: u32,
     /// +0xC8 `undefined1`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_C8: u8,
-    pub unknown_C9: [u8; 3],
+    unknown_C9: [u8; 3],
     /// +0xCC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_CC: u32,
     /// +0xD0 `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
@@ -8215,7 +8215,7 @@ pub struct CreditsMenu {
     pub field_D4: u32,
     /// +0xD8 `undefined1`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_D8: u8,
-    pub unknown_D9: [u8; 3],
+    unknown_D9: [u8; 3],
     /// +0xDC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_DC: u32,
     /// +0xE0 `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
@@ -8224,7 +8224,7 @@ pub struct CreditsMenu {
     pub field_E4: u32,
     /// +0xE8 `undefined1`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     pub field_E8: u8,
-    pub unknown_E9: [u8; 3],
+    unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, base GRefCountBaseStatImpl<GRefCountImpl,2>
     #[doc(hidden)]
     pub __field_EC: [u8; 4],
@@ -8756,7 +8756,7 @@ pub struct DescriptionBox {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -8769,14 +8769,14 @@ pub struct DescriptionBox {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -8792,7 +8792,7 @@ pub struct DescriptionBox {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
@@ -8811,11 +8811,11 @@ pub struct DescriptionBox {
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
-    pub unknown_88: [u8; 8],
+    unknown_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 8],
-    pub unknown_98: [u8; 8],
+    unknown_98: [u8; 8],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -8837,7 +8837,7 @@ pub struct DescriptionBox {
     /// +0xC4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C4: [u8; 8],
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     /// +0xD0 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_D0: [u8; 4],
@@ -8853,7 +8853,7 @@ pub struct DescriptionBox {
     /// +0xE4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_E4: [u8; 8],
-    pub unknown_EC: [u8; 4],
+    unknown_EC: [u8; 4],
     /// +0xF0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 8],
@@ -9006,7 +9006,7 @@ pub struct DetectionCollector {
     pub __vftable: *const crate::raw::vtables::DetectionCollector_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 28],
+    unknown_C: [u8; 28],
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
@@ -9118,17 +9118,17 @@ pub struct DialoguePackage {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
     /// +0x24 `undefined1`, base TESPackage
     pub field_24: u8,
     /// +0x25 `undefined2`, base TESPackage
     pub field_25: u16,
-    pub unknown_27: [u8; 1],
+    unknown_27: [u8; 1],
     /// +0x28 `undefined4`, base TESPackage
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base TESPackage
     pub field_30: u64,
     /// +0x38 `undefined8`, base TESPackage
@@ -9138,12 +9138,12 @@ pub struct DialoguePackage {
     /// +0x48 `undefined8`, base TESPackage
     #[doc(hidden)]
     pub __field_48: [u8; 8],
-    pub unknown_50: [u8; 24],
+    unknown_50: [u8; 24],
     /// +0x68 `undefined8`, base TESPackage
     pub field_68: u64,
     /// +0x70 `undefined8`, base TESPackage
     pub field_70: u64,
-    pub unknown_78: [u8; 96],
+    unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
     pub field_D8: u32,
     /// +0xDC `undefined4`, base TESPackage
@@ -9159,12 +9159,12 @@ pub struct DialoguePackage {
     pub field_F0: u8,
     /// +0xF1 `undefined1`, ctor store
     pub field_F1: u8,
-    pub unknown_F2: [u8; 2],
+    unknown_F2: [u8; 2],
     /// +0xF4 `undefined8`, ctor store
     pub field_F4: u64,
     /// +0xFC `undefined1`, ctor store
     pub field_FC: u8,
-    pub unknown_FD: [u8; 3],
+    unknown_FD: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9407,7 +9407,7 @@ pub struct DisguiseEffect__DetectionChecker {
     pub __vftable: *const crate::raw::vtables::DisguiseEffect__DetectionChecker_vtable,
     /// +0x8 `undefined4`, base DetectionCollector
     pub field_8: u32,
-    pub unknown_C: [u8; 28],
+    unknown_C: [u8; 28],
     /// +0x28 `undefined4`, base DetectionCollector
     pub field_28: u32,
     /// +0x2C `undefined4`, base DetectionCollector
@@ -9417,7 +9417,7 @@ pub struct DisguiseEffect__DetectionChecker {
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9584,7 +9584,7 @@ pub struct DownloadProgressBar {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -9597,14 +9597,14 @@ pub struct DownloadProgressBar {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -9620,7 +9620,7 @@ pub struct DownloadProgressBar {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
@@ -9636,18 +9636,18 @@ pub struct DownloadProgressBar {
     /// +0x70 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 1],
-    pub unknown_71: [u8; 7],
+    unknown_71: [u8; 7],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 20],
+    unknown_84: [u8; 20],
     /// +0x98 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_98: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9790,7 +9790,7 @@ pub struct EffectSetting {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 21],
+    unknown_1B: [u8; 21],
     /// +0x30 `vtbl:EffectSetting:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::EffectSetting_vtable_30,
@@ -9803,7 +9803,7 @@ pub struct EffectSetting {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
@@ -9817,12 +9817,12 @@ pub struct EffectSetting {
     pub field_78: u64,
     /// +0x80 `undefined2`, ctor store
     pub field_80: u16,
-    pub unknown_82: [u8; 6],
+    unknown_82: [u8; 6],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
@@ -9847,7 +9847,7 @@ pub struct EffectSetting {
     pub field_DC: u32,
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
-    pub unknown_E4: [u8; 4],
+    unknown_E4: [u8; 4],
     /// +0xE8 `undefined8`, ctor store
     pub field_E8: u64,
     /// +0xF0 `undefined8`, ctor store
@@ -9859,14 +9859,14 @@ pub struct EffectSetting {
     /// +0x100 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_100: [u8; 4],
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 4],
-    pub unknown_114: [u8; 4],
+    unknown_114: [u8; 4],
     /// +0x118 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 8],
@@ -9891,18 +9891,18 @@ pub struct EffectSetting {
     /// +0x150 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 4],
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_158: [u8; 8],
     /// +0x160 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_160: [u8; 8],
-    pub unknown_168: [u8; 32],
+    unknown_168: [u8; 32],
     /// +0x188 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_188: [u8; 8],
-    pub unknown_190: [u8; 8],
+    unknown_190: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10401,13 +10401,13 @@ pub struct Explosion {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Explosion:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Explosion_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Explosion:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Explosion_vtable_30,
@@ -10446,7 +10446,7 @@ pub struct Explosion {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -10480,7 +10480,7 @@ pub struct Explosion {
     /// +0xDC `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_DC: [u8; 1],
-    pub unknown_DD: [u8; 3],
+    unknown_DD: [u8; 3],
     /// +0xE0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E0: [u8; 4],
@@ -10490,7 +10490,7 @@ pub struct Explosion {
     /// +0xE8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 1],
-    pub unknown_E9: [u8; 3],
+    unknown_E9: [u8; 3],
     /// +0xEC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_EC: [u8; 4],
@@ -10500,11 +10500,11 @@ pub struct Explosion {
     /// +0xF8 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_F8: [u8; 4],
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_100: [u8; 4],
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10538,7 +10538,7 @@ pub struct Explosion {
     /// +0x140 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_140: [u8; 4],
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10656,7 +10656,7 @@ pub struct FaderMenu {
     pub __vftable: *const crate::raw::vtables::FaderMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -10673,12 +10673,12 @@ pub struct FaderMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -10687,25 +10687,25 @@ pub struct FaderMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -10714,44 +10714,44 @@ pub struct FaderMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -10760,7 +10760,7 @@ pub struct FaderMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -10769,7 +10769,7 @@ pub struct FaderMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -10837,7 +10837,7 @@ pub struct FavoritesMenu {
     pub __vftable: *const crate::raw::vtables::FavoritesMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -10854,12 +10854,12 @@ pub struct FavoritesMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:FavoritesMenu:30`, rtti
@@ -10867,22 +10867,22 @@ pub struct FavoritesMenu {
     pub __vftable_30: *const crate::raw::vtables::FavoritesMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -10891,17 +10891,17 @@ pub struct FavoritesMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 1],
+    unknown_71: [u8; 1],
     /// +0x72 `undefined1`, ctor store
     pub field_72: u8,
     /// +0x73 `undefined1`, ctor store
@@ -10910,29 +10910,29 @@ pub struct FavoritesMenu {
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -10941,7 +10941,7 @@ pub struct FavoritesMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -10950,7 +10950,7 @@ pub struct FavoritesMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -11025,7 +11025,7 @@ pub struct FilterSideBar {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -11038,14 +11038,14 @@ pub struct FilterSideBar {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -11061,7 +11061,7 @@ pub struct FilterSideBar {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 20],
+    unknown_54: [u8; 20],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
@@ -11083,7 +11083,7 @@ pub struct FilterSideBar {
     /// +0x98 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_98: [u8; 4],
-    pub unknown_9C: [u8; 68],
+    unknown_9C: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11275,17 +11275,17 @@ pub struct FleePackage {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, base TESPackage
     pub field_20: u32,
     /// +0x24 `undefined1`, base TESPackage
     pub field_24: u8,
     /// +0x25 `undefined2`, base TESPackage
     pub field_25: u16,
-    pub unknown_27: [u8; 1],
+    unknown_27: [u8; 1],
     /// +0x28 `undefined4`, base TESPackage
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base TESPackage
     pub field_30: u64,
     /// +0x38 `undefined8`, base TESPackage
@@ -11295,21 +11295,21 @@ pub struct FleePackage {
     /// +0x48 `undefined8`, base TESPackage
     #[doc(hidden)]
     pub __field_48: [u8; 8],
-    pub unknown_50: [u8; 24],
+    unknown_50: [u8; 24],
     /// +0x68 `undefined8`, base TESPackage
     pub field_68: u64,
     /// +0x70 `undefined8`, base TESPackage
     pub field_70: u64,
-    pub unknown_78: [u8; 96],
+    unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, base TESPackage
     pub field_D8: u32,
     /// +0xDC `undefined4`, base TESPackage
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 16],
+    unknown_E0: [u8; 16],
     /// +0xF0 `undefined4`, ctor store
     pub field_F0: u32,
-    pub unknown_F4: [u8; 4],
+    unknown_F4: [u8; 4],
     /// +0xF8 `float`, ctor store (widths [4, 8])
     pub field_F8: f32,
     /// +0xFC `float`, ctor store
@@ -11328,7 +11328,7 @@ pub struct FleePackage {
     pub field_112: u16,
     /// +0x114 `undefined1`, ctor store
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11674,7 +11674,7 @@ pub struct FutBinaryFileC {
     /// +0x8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 1],
-    pub unknown_9: [u8; 15],
+    unknown_9: [u8; 15],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
@@ -11683,7 +11683,7 @@ pub struct FutBinaryFileC {
     /// +0x28 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 1],
-    pub unknown_29: [u8; 15],
+    unknown_29: [u8; 15],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
@@ -11715,7 +11715,7 @@ pub struct FxDelegate {
     pub __vftable: *const crate::raw::vtables::FxDelegate_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -11732,12 +11732,12 @@ pub struct FxDelegate {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -11746,25 +11746,25 @@ pub struct FxDelegate {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -11773,44 +11773,44 @@ pub struct FxDelegate {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -11819,7 +11819,7 @@ pub struct FxDelegate {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -11828,7 +11828,7 @@ pub struct FxDelegate {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -11896,7 +11896,7 @@ pub struct FxDelegateHandler {
     pub __vftable: *const crate::raw::vtables::FxDelegateHandler_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -11913,12 +11913,12 @@ pub struct FxDelegateHandler {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -11927,25 +11927,25 @@ pub struct FxDelegateHandler {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -11954,44 +11954,44 @@ pub struct FxDelegateHandler {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -12000,7 +12000,7 @@ pub struct FxDelegateHandler {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -12009,7 +12009,7 @@ pub struct FxDelegateHandler {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -12244,7 +12244,7 @@ pub struct GFile {
     pub __vftable: *const crate::raw::vtables::GFile_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -12261,12 +12261,12 @@ pub struct GFile {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -12275,25 +12275,25 @@ pub struct GFile {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -12302,44 +12302,44 @@ pub struct GFile {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -12348,7 +12348,7 @@ pub struct GFile {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -12357,7 +12357,7 @@ pub struct GFile {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -12425,7 +12425,7 @@ pub struct GMemoryFile {
     pub __vftable: *const crate::raw::vtables::GMemoryFile_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -12442,12 +12442,12 @@ pub struct GMemoryFile {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -12456,25 +12456,25 @@ pub struct GMemoryFile {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -12483,44 +12483,44 @@ pub struct GMemoryFile {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -12529,7 +12529,7 @@ pub struct GMemoryFile {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -12538,7 +12538,7 @@ pub struct GMemoryFile {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -12606,7 +12606,7 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub __vftable: *const crate::raw::vtables::GRefCountBase_FxDelegateHandler_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -12623,12 +12623,12 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -12637,25 +12637,25 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -12664,44 +12664,44 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -12710,7 +12710,7 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -12719,7 +12719,7 @@ pub struct GRefCountBase_FxDelegateHandler_2 {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -12787,7 +12787,7 @@ pub struct GRefCountBase_GFile_2 {
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFile_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -12804,12 +12804,12 @@ pub struct GRefCountBase_GFile_2 {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -12818,25 +12818,25 @@ pub struct GRefCountBase_GFile_2 {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -12845,44 +12845,44 @@ pub struct GRefCountBase_GFile_2 {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -12891,7 +12891,7 @@ pub struct GRefCountBase_GFile_2 {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -12900,7 +12900,7 @@ pub struct GRefCountBase_GFile_2 {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -12968,7 +12968,7 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFxFunctionHandler_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -12985,12 +12985,12 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -12999,25 +12999,25 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -13026,44 +13026,44 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -13072,7 +13072,7 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -13081,7 +13081,7 @@ pub struct GRefCountBase_GFxFunctionHandler_2 {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -13149,7 +13149,7 @@ pub struct GRefCountBase_GFxState_2 {
     pub __vftable: *const crate::raw::vtables::GRefCountBase_GFxState_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -13166,12 +13166,12 @@ pub struct GRefCountBase_GFxState_2 {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -13180,25 +13180,25 @@ pub struct GRefCountBase_GFxState_2 {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -13207,44 +13207,44 @@ pub struct GRefCountBase_GFxState_2 {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -13253,7 +13253,7 @@ pub struct GRefCountBase_GFxState_2 {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -13262,7 +13262,7 @@ pub struct GRefCountBase_GFxState_2 {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -13330,7 +13330,7 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub __vftable: *const crate::raw::vtables::GRefCountBaseStatImpl_GRefCountImpl_2_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -13347,12 +13347,12 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -13361,25 +13361,25 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -13388,44 +13388,44 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -13434,7 +13434,7 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -13443,7 +13443,7 @@ pub struct GRefCountBaseStatImpl_GRefCountImpl_2 {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -13511,7 +13511,7 @@ pub struct GRefCountImpl {
     pub __vftable: *const crate::raw::vtables::GRefCountImpl_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -13528,12 +13528,12 @@ pub struct GRefCountImpl {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -13542,25 +13542,25 @@ pub struct GRefCountImpl {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -13569,44 +13569,44 @@ pub struct GRefCountImpl {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -13615,7 +13615,7 @@ pub struct GRefCountImpl {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -13624,7 +13624,7 @@ pub struct GRefCountImpl {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -13691,7 +13691,7 @@ pub struct GRefCountImplCore {
     pub __vftable: *const crate::raw::vtables::GRefCountImplCore_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, ctor store (widths [1, 4, 8, 16])
     pub field_10: u8,
     /// +0x11 `undefined1`, ctor store
@@ -13708,12 +13708,12 @@ pub struct GRefCountImplCore {
     pub field_1C: u32,
     /// +0x20 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, ctor store (widths [4, 8])
     pub field_24: u32,
     /// +0x28 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, ctor store (widths [4, 8])
     pub field_2C: u32,
     /// +0x30 `undefined4`, ctor store (widths [4, 8])
@@ -13722,25 +13722,25 @@ pub struct GRefCountImplCore {
     pub field_34: u8,
     /// +0x35 `undefined1`, ctor store
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
     /// +0x40 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
     /// +0x48 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, ctor store
     pub field_4C: u32,
     /// +0x50 `undefined2`, ctor store (widths [2, 4, 4, 8])
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, ctor store (widths [4, 8])
     pub field_54: u32,
     /// +0x58 `float`, ctor store (widths [4, 8])
@@ -13749,44 +13749,44 @@ pub struct GRefCountImplCore {
     pub field_5C: f32,
     /// +0x60 `undefined1`, ctor store (widths [1, 4, 4, 8])
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, ctor store (widths [1, 4])
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, ctor store (widths [4, 8])
     pub field_68: u32,
     /// +0x6C `undefined4`, ctor store (widths [4, 8])
     pub field_6C: u32,
     /// +0x70 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, ctor store
     pub field_74: u32,
     /// +0x78 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, ctor store
     pub field_7A: u16,
     /// +0x7C `undefined4`, ctor store (widths [4, 8])
     pub field_7C: u32,
     /// +0x80 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, ctor store
     pub field_84: u32,
     /// +0x88 `undefined1`, ctor store (widths [1, 2, 4, 8])
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, ctor store (widths [4, 8])
     pub field_8C: u32,
     /// +0x90 `undefined2`, ctor store (widths [2, 4, 8])
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, ctor store
     pub field_94: u32,
     /// +0x98 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, ctor store (widths [4, 8])
     pub field_9C: u32,
     /// +0xA0 `undefined4`, ctor store (widths [4, 8])
@@ -13795,7 +13795,7 @@ pub struct GRefCountImplCore {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, ctor store (widths [1, 4, 8])
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, ctor store (widths [4, 8])
     pub field_AC: u32,
     /// +0xB0 `undefined4`, ctor store (widths [4, 8])
@@ -13804,7 +13804,7 @@ pub struct GRefCountImplCore {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, ctor store (widths [1, 2, 8])
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -13998,7 +13998,7 @@ pub struct GiftMenu {
     pub __vftable: *const crate::raw::vtables::GiftMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -14015,12 +14015,12 @@ pub struct GiftMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -14029,25 +14029,25 @@ pub struct GiftMenu {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -14056,22 +14056,22 @@ pub struct GiftMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
@@ -14227,13 +14227,13 @@ pub struct GrenadeProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:GrenadeProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::GrenadeProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:GrenadeProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::GrenadeProjectile_vtable_30,
@@ -14272,21 +14272,21 @@ pub struct GrenadeProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -14323,14 +14323,14 @@ pub struct GrenadeProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -14340,7 +14340,7 @@ pub struct GrenadeProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -14359,7 +14359,7 @@ pub struct GrenadeProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -14411,14 +14411,14 @@ pub struct GrenadeProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1E0: [u8; 8],
     /// +0x1E8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_1E8: [u8; 1],
-    pub unknown_1E9: [u8; 7],
+    unknown_1E9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14818,7 +14818,7 @@ pub struct HavokError {
     pub __vftable: *const crate::raw::vtables::HavokError_vtable,
     /// +0x8 `undefined4`, ctor store (widths [4, 8])
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -14906,7 +14906,7 @@ pub struct HavokError {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -14973,7 +14973,7 @@ pub struct HavokFileStreambufReader {
     /// +0x0 `vtbl:HavokFileStreambufReader:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokFileStreambufReader_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -15061,7 +15061,7 @@ pub struct HavokFileStreambufReader {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -15151,7 +15151,7 @@ pub struct HavokStreambufReader {
     /// +0x0 `vtbl:HavokStreambufReader:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokStreambufReader_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -15239,7 +15239,7 @@ pub struct HavokStreambufReader {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -15305,7 +15305,7 @@ pub struct HavokStreambufWriter {
     /// +0x0 `vtbl:HavokStreambufWriter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HavokStreambufWriter_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -15393,7 +15393,7 @@ pub struct HavokStreambufWriter {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -15469,13 +15469,13 @@ pub struct Hazard {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Hazard:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Hazard_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Hazard:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Hazard_vtable_30,
@@ -15514,18 +15514,18 @@ pub struct Hazard {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_A8: [u8; 4],
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_B0: [u8; 4],
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 8],
@@ -15541,7 +15541,7 @@ pub struct Hazard {
     /// +0xD4 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_D4: [u8; 1],
-    pub unknown_D5: [u8; 3],
+    unknown_D5: [u8; 3],
     /// +0xD8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_D8: [u8; 8],
@@ -15783,7 +15783,7 @@ pub struct IAnimationGraphManagerLoadingTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -15791,31 +15791,31 @@ pub struct IAnimationGraphManagerLoadingTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:IAnimationGraphManagerLoadingTask:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::IAnimationGraphManagerLoadingTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, base BShkbHkxDB::QueuedHandles
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     /// +0x88 `undefined8`, base BShkbHkxDB::QueuedHandles
     pub field_88: u64,
     /// +0x90 `undefined8`, base BShkbHkxDB::QueuedHandles
     pub field_90: u64,
-    pub unknown_98: [u8; 560],
+    unknown_98: [u8; 560],
     /// +0x2C8 `undefined4`, ctor store
     pub field_2C8: u32,
-    pub unknown_2CC: [u8; 4],
+    unknown_2CC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16716,19 +16716,19 @@ pub struct IOManager {
     pub field_8: u64,
     /// +0x10 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_18: u64,
     /// +0x20 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_28: u64,
     /// +0x30 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_30: u32,
     /// +0x34 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_34: u64,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `class:BSTEventSource`, RTTI base BSTEventSource<BSTaskManagerWaitAction>
     #[doc(hidden)]
     pub __source_BSTaskManagerWaitAction: [u8; 88],
@@ -16742,24 +16742,24 @@ pub struct IOManager {
     pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, base BSTaskManager
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, base BSTaskManager
     pub field_B0: u64,
     /// +0xB8 `undefined4`, base BSTaskManager
     #[doc(hidden)]
     pub __field_B8: [u8; 4],
-    pub unknown_BC: [u8; 20],
+    unknown_BC: [u8; 20],
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
-    pub unknown_D4: [u8; 4],
+    unknown_D4: [u8; 4],
     /// +0xD8 `undefined4`, ctor store
     pub field_D8: u32,
-    pub unknown_DC: [u8; 4],
+    unknown_DC: [u8; 4],
     /// +0xE0 `undefined8`, ctor store
     pub field_E0: u64,
     /// +0xE8 `undefined4`, ctor store
     pub field_E8: u32,
-    pub unknown_EC: [u8; 4],
+    unknown_EC: [u8; 4],
     /// +0xF0 `undefined8`, ctor store
     pub field_F0: u64,
     /// +0xF8 `undefined8`, ctor store
@@ -16768,7 +16768,7 @@ pub struct IOManager {
     pub field_100: u64,
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
-    pub unknown_110: [u8; 8],
+    unknown_110: [u8; 8],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -17058,7 +17058,7 @@ pub struct ISEntry {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -17071,14 +17071,14 @@ pub struct ISEntry {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -17094,7 +17094,7 @@ pub struct ISEntry {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
@@ -17119,7 +17119,7 @@ pub struct ISEntry {
     /// +0x84 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_84: [u8; 1],
-    pub unknown_85: [u8; 3],
+    unknown_85: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -17291,7 +17291,7 @@ pub struct ImageCreationThread {
     /// +0x0 `vtbl:ImageCreationThread:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -17304,7 +17304,7 @@ pub struct ImageCreationThread {
     /// +0x48 `undefined1`, base BSThread
     #[doc(hidden)]
     pub __field_48: [u8; 1],
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     /// +0x50 `undefined8`, base BSTaskThread
     #[doc(hidden)]
     pub __field_50: [u8; 8],
@@ -17314,7 +17314,7 @@ pub struct ImageCreationThread {
     /// +0x60 `undefined1`, base BSTaskThread
     #[doc(hidden)]
     pub __field_60: [u8; 1],
-    pub unknown_61: [u8; 7],
+    unknown_61: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -17344,7 +17344,7 @@ pub struct ImageScroller {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -17357,14 +17357,14 @@ pub struct ImageScroller {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -17380,11 +17380,11 @@ pub struct ImageScroller {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 20],
+    unknown_54: [u8; 20],
     /// +0x68 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 4],
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
@@ -17415,21 +17415,21 @@ pub struct ImageScroller {
     /// +0x9E `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_9E: [u8; 1],
-    pub unknown_9F: [u8; 1],
+    unknown_9F: [u8; 1],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_A8: [u8; 1],
-    pub unknown_A9: [u8; 7],
+    unknown_A9: [u8; 7],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
     /// +0xB8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 1],
-    pub unknown_B9: [u8; 7],
+    unknown_B9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -18680,10 +18680,10 @@ pub struct ImageSpaceModifierInstanceRB {
     pub __vftable: *const crate::raw::vtables::ImageSpaceModifierInstanceRB_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base ImageSpaceModifierInstanceTemp
     pub field_10: u8,
-    pub unknown_11: [u8; 3],
+    unknown_11: [u8; 3],
     /// +0x14 `float`, base ImageSpaceModifierInstanceTemp
     pub field_14: f32,
     /// +0x18 `undefined8`, base ImageSpaceModifierInstanceTemp
@@ -18694,7 +18694,7 @@ pub struct ImageSpaceModifierInstanceRB {
     pub field_24: u32,
     /// +0x28 `float`, base ImageSpaceModifierInstanceTemp
     pub field_28: f32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
@@ -18718,7 +18718,7 @@ pub struct ImageSpaceModifierInstanceRB {
     pub field_5C: u32,
     /// +0x60 `undefined4`, ctor store (widths [4, 8])
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined8`, ctor store
@@ -18797,31 +18797,31 @@ pub struct ImageSpaceShaderParam {
     pub field_8: u32,
     /// +0xC `undefined1`, ctor store
     pub field_C: u8,
-    pub unknown_D: [u8; 3],
+    unknown_D: [u8; 3],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 8],
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, member ctor NiTObjectArray<NiPointer<NiTexture>_>
     #[doc(hidden)]
     pub __m_NiTObjectArray_50: [u8; 8],
@@ -18882,7 +18882,7 @@ pub struct InfiniteList {
     /// +0xA `undefined1`, base UI_element
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_C: [u8; 4],
@@ -18895,14 +18895,14 @@ pub struct InfiniteList {
     /// +0x18 `float`, base UI_element
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base UI_element
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -18918,7 +18918,7 @@ pub struct InfiniteList {
     /// +0x50 `undefined4`, base UI_element
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
@@ -18940,7 +18940,7 @@ pub struct InfiniteList {
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 12],
+    unknown_84: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -18987,16 +18987,16 @@ pub struct IngredientItem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:IngredientItem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::IngredientItem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:IngredientItem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::IngredientItem_vtable_40,
@@ -19004,40 +19004,40 @@ pub struct IngredientItem {
     pub keywords: *mut c_void,
     /// +0x50 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_54: [u8; 28],
+    unknown_54: [u8; 28],
     /// +0x70 `undefined4`, base MagicItem
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, base MagicItem
     pub field_78: u64,
     /// +0x80 `undefined4`, base MagicItem
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base MagicItem
     pub field_88: u64,
     /// +0x90 `vtbl:IngredientItem:90`, rtti
     #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::IngredientItem_vtable_90,
-    pub unknown_98: [u8; 8],
+    unknown_98: [u8; 8],
     /// +0xA0 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
-    pub unknown_A8: [u8; 16],
+    unknown_A8: [u8; 16],
     /// +0xB8 `undefined8`, base TESModelTextureSwap
     pub field_B8: u64,
     /// +0xC0 `undefined4`, base TESModelTextureSwap
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     /// +0xC8 `vtbl:IngredientItem:C8`, rtti
     #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::IngredientItem_vtable_C8,
-    pub unknown_D0: [u8; 8],
+    unknown_D0: [u8; 8],
     /// +0xD8 `vtbl:IngredientItem:D8`, rtti
     #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::IngredientItem_vtable_D8,
     /// +0xE0 `undefined4`, base TESWeightForm
     pub field_E0: u32,
-    pub unknown_E4: [u8; 4],
+    unknown_E4: [u8; 4],
     /// +0xE8 `vtbl:IngredientItem:E8`, rtti
     #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::IngredientItem_vtable_E8,
@@ -19060,12 +19060,12 @@ pub struct IngredientItem {
     pub __vftable_120: *const crate::raw::vtables::IngredientItem_vtable_120,
     /// +0x128 `undefined4`, base TESValueForm
     pub field_128: u32,
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     /// +0x134 `undefined8`, ctor store
     pub field_134: u64,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -19140,11 +19140,11 @@ pub struct InstalledContent {
     /// +0x0 `vtbl:InstalledContent:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -19253,7 +19253,7 @@ pub struct Inventory3DManager {
     pub field_8: u32,
     /// +0xC `undefined2`, ctor store
     pub field_C: u16,
-    pub unknown_E: [u8; 6],
+    unknown_E: [u8; 6],
     /// +0x14 `float`, ctor store
     pub field_14: f32,
     /// +0x18 `float`, ctor store
@@ -19274,11 +19274,11 @@ pub struct Inventory3DManager {
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 32],
+    unknown_40: [u8; 32],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 236],
+    unknown_64: [u8; 236],
     /// +0x150 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 8],
@@ -19291,7 +19291,7 @@ pub struct Inventory3DManager {
     /// +0x162 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_162: [u8; 1],
-    pub unknown_163: [u8; 5],
+    unknown_163: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

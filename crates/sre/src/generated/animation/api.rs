@@ -734,27 +734,7 @@ impl crate::BoneNodeEntry {
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn node(&self) -> Option<&crate::NiAVObject> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_flatIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BoneNodeEntry.flatIndex", 0x8, u32) } }
-    /// `BoneNodeEntry::flatIndex`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn flatIndex(&self) -> u32 { unsafe { Self::__member_flatIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_flatIndex(&mut self, value: u32) { unsafe { Self::__member_flatIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn flatIndex_ptr(&self) -> *mut u32 { Self::__member_flatIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiAVObject { unsafe { member!(this, "BoneNodeEntry.node", 0x0, *mut crate::NiAVObject) } }
-    /// `BoneNodeEntry::node`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn node_field(&self) -> *mut crate::NiAVObject { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_node(&mut self, value: *mut crate::NiAVObject) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn node_ptr(&self) -> *mut *mut crate::NiAVObject { Self::__member_node(core::ptr::from_ref(self)) }
+    pub fn node(&self) -> Option<&crate::NiAVObject> { unsafe { { self.node }.as_ref() } }
 }
 
 impl crate::IAnimationGraphManagerHolder {

@@ -460,12 +460,14 @@ fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, inside_pack
         writeln!(out, "#[derive(Default)]").unwrap();
     }
     writeln!(out, "pub struct {} {{", c.ident).unwrap();
+    // Padding a plain read could reach at 1.7.104's offset stays private where the layout varies.
+    let padding = if opaque { "" } else { "pub " };
     let mut pos = 0;
     for fo in &c.fields {
         let f = fo.f;
         assert!(f.off >= pos, "{}: field {} at {:#X} overlaps the previous field", c.name, f.name, f.off);
         if f.off > pos {
-            writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", f.off - pos).unwrap();
+            writeln!(out, "    {padding}unknown_{pos:X}: [u8; {}],", f.off - pos).unwrap();
         }
         let src = if f.src.is_empty() { String::new() } else { format!(", {}", doc(&f.src)) };
         if !fo.meaning.is_empty() {
@@ -484,7 +486,7 @@ fn class_rs(c: &Class, value: bool, classes: &BTreeMap<&str, Class>, inside_pack
     let extent = c.extent();
     assert!(pos <= extent, "{}: fields extend past {extent:#X}", c.name);
     if pos < extent {
-        writeln!(out, "    pub unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
+        writeln!(out, "    {padding}unknown_{pos:X}: [u8; {}],", extent - pos).unwrap();
     }
     writeln!(out, "    #[doc(hidden)]\n    pub __engine: crate::Engine,").unwrap();
     writeln!(out, "}}").unwrap();
@@ -550,7 +552,7 @@ pub struct {vt} {{").unwrap();
                 };
                 let slot = if col.offset == 0 { named.get(&(class.name.as_str(), i as u64)) } else { None };
                 let variant = ctx.variance.slot(&class.name, col.offset, i as u64);
-                let index = format!("slot_index!({:?}, {:#X}, {i})", class.name, col.offset);
+                let index = format!("slot_at!({:?}, {:#X}, {i})", class.name, col.offset);
                 if let Some(slot) = slot {
                     let name = ident(&slot.name);
                     write!(d, "; `{}`{} ({}); semantic signature: `{}`", slot.name, colon(&slot.meaning), slot.confidence, doc(&slot.signature)).unwrap();
@@ -965,7 +967,7 @@ fn root_rs(passes: &[&str], groups: &[&str], typed: &[&str], compared: &[String]
 ") };
         writeln!(out, "{cfg}pub use {g}::*;").unwrap();
     }
-    out.push_str("\n#[doc(hidden)]\npub mod raw;\n\n/// The runtime these definitions describe, as `[major, minor, build]`.\npub const VERSION: [u32; 3] = [1, 7, 104];\n");
+    out.push_str("\n#[doc(hidden)]\npub mod ledger_tables;\n\n#[doc(hidden)]\npub mod raw;\n\n/// The runtime these definitions describe, as `[major, minor, build]`.\npub const VERSION: [u32; 3] = [1, 7, 104];\n");
     out
 }
 

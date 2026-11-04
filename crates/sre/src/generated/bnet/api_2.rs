@@ -3,19 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-impl crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90 {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member___vftable(this: *const Self) -> *mut *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable { unsafe { member!(this, "bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>.__vftable", 0x0, *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable) } }
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>::__vftable`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn __vftable(&self) -> *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable { unsafe { Self::__member___vftable(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set___vftable(&mut self, value: *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable) { unsafe { Self::__member___vftable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn __vftable_ptr(&self) -> *mut *const crate::raw::vtables::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ab4427e7fb90_vtable { Self::__member___vftable(core::ptr::from_ref(self)) }
-}
-
 impl crate::bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a86dc2caf29c {
     #[doc(hidden)]
     #[inline]

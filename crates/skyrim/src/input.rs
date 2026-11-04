@@ -25,9 +25,9 @@ type UnpackFn = unsafe extern "C" fn(params: *const sre::ParamInfo, data: *const
 pub type ExecuteFn = unsafe extern "C" fn(params: *const sre::ParamInfo, data: *const c_void, this_ref: *mut c_void, containing: *mut c_void, script: *mut c_void, locals: *mut c_void, result: *mut f64, offset: *mut u32) -> bool;
 
 /// Console commands, opcodes 0x100 to 0x2c0 and the sentinel.
-const CONSOLE_COMMANDS: usize = 450;
-const KEYWORDS: usize = 16;
-const SCRIPT_FUNCTIONS: usize = 738;
+const FIRST_CONSOLE_COMMAND: u32 = 0x100;
+const FIRST_KEYWORD: u32 = 0x10;
+const FIRST_SCRIPT_FUNCTION: u32 = 0x1000;
 /// `UnpackCommandArguments` writes at most this many out pointers here; a parsed string is at most 0x200 bytes.
 const MAX_ARGS: usize = 8;
 const ARG_SIZE: usize = 0x208;
@@ -139,7 +139,7 @@ impl ControlMapExt for EventSourceHolder_User {
         let name = BSFixedString::new(user_event);
         let mut out = BSFixedString::empty();
         let get: GetButtonNameFn = unsafe { crate::engine_fn(sre::id!(fns::ControlMap__GetButtonNameForUserEvent)) };
-        let found = unsafe { get(core::ptr::from_ref(self).cast_mut(), name.raw(), device as u32, (&raw mut out).cast()) };
+        let found = unsafe { get(core::ptr::from_ref(self).cast_mut(), name.raw(), device.to_engine()?, (&raw mut out).cast()) };
         found.then(|| out.to_string())
     }
 
@@ -164,7 +164,7 @@ fn mappings(map: &EventSourceHolder_User, device: InputDevice) -> impl Iterator<
         let lines = context.and_then(|c| match device {
             InputDevice::Keyboard => Some(&c.keyboardMappings),
             InputDevice::Mouse => Some(&c.mouseMappings),
-            InputDevice::Gamepad => Some(c.gamepadMappings()),
+            InputDevice::Gamepad => Some(&c.gamepadMappings),
             _ => None,
         });
         sre::fixed_size!("UserEventMapping", sre::UserEventMapping);
@@ -206,7 +206,7 @@ unsafe impl Sync for Param {}
 impl Param {
     #[must_use]
     pub const fn new(name: &'static CStr, kind: ScriptParamType, optional: bool) -> Self {
-        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, __optional: [optional as u8], unknown_D: [0; 3], __engine: sre::Engine::new() })
+        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3], __engine: sre::Engine::new() })
     }
 }
 
@@ -319,8 +319,15 @@ fn text<'a>(p: *mut c_void) -> &'a str {
     text_c(p).to_str().unwrap_or("")
 }
 
-fn table(base: *mut c_void, len: usize) -> &'static mut [sre::CommandTableEntry] {
-    unsafe { core::slice::from_raw_parts_mut(base.cast::<sre::CommandTableEntry>(), len) }
+/// A command table, whose length differs per runtime: it ends where the opcodes stop counting up,
+/// the entries' only mark, which the next table or global after it does not continue.
+fn table(base: *mut c_void, first_opcode: u32) -> &'static mut [sre::CommandTableEntry] {
+    let entries = base.cast::<sre::CommandTableEntry>();
+    let mut len = 0;
+    while unsafe { (*entries.add(len)).opcode } as usize == first_opcode as usize + len {
+        len += 1;
+    }
+    unsafe { core::slice::from_raw_parts_mut(entries, len) }
 }
 
 fn answers_to(entry: &sre::CommandTableEntry, name: &CStr) -> bool {
@@ -335,10 +342,10 @@ fn is_stub(entry: &sre::CommandTableEntry) -> bool {
     !execute.is_null() && matches!(unsafe { *execute }, [0xB0, 0x01, 0xC3] | [0x32, 0xC0, 0xC3])
 }
 
-/// The console commands (opcodes 0x100 to 0x2c0).
+/// The console commands, opcodes from 0x100.
 #[must_use]
 pub fn console_commands() -> &'static [sre::CommandTableEntry] {
-    table(sre::g_console_command_table(), CONSOLE_COMMANDS)
+    table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)
 }
 
 /// The console entry a command took over.
@@ -397,7 +404,7 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
     let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
-    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, __optional: p.0.__optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, optional: p.0.optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
     let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
     *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
     let _ = ERASED[index].params.set(params);
@@ -448,7 +455,8 @@ impl ReplacedCommand {
 /// the old function. Shares the [`ERASED_COMMANDS`] slots.
 pub fn replace_erased(name: &CStr, execute: ErasedExecute) -> Result<ReplacedCommand, CommandError> {
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
-    let entry = table(sre::g_console_command_table(), CONSOLE_COMMANDS).iter_mut().find(|e| answers_to(e, name) && !is_stub(e)).ok_or(CommandError::NotFound)?;
+    let entry = table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND).iter_mut().find(|e| answers_to(e, name) && !is_stub(e)).ok_or(CommandError::NotFound)?;
+    sre::fixed_size!("ParamInfo", sre::ParamInfo);
     replace_entry(entry, execute)
 }
 
@@ -457,7 +465,6 @@ fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExec
         return Err(CommandError::TooManyParams);
     }
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
-    sre::fixed_size!("ParamInfo", sre::ParamInfo);
     let params: &'static [Param] = if entry.params.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(entry.params.cast::<Param>(), usize::from(entry.numParams)) } };
     let _ = ERASED[index].params.set(params);
     let execute_field = unsafe { AtomicUsize::from_ptr((&raw mut entry.execute).cast()) };
@@ -467,7 +474,7 @@ fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExec
 }
 
 fn check_param_layout() {
-    assert!(sre::member_offset!("ParamInfo.optional", 0xc) == 0xc, "ParamInfo's optional flag moved");
+    assert!(sre::member_offset!("ParamInfo.optional") == 0xc, "ParamInfo's optional flag moved");
 }
 
 fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param], needs_reference: bool, execute: ExecuteFn) -> Result<CommandSlot, CommandError> {
@@ -475,11 +482,11 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
-    let tables = [table(sre::g_script_keyword_table(), KEYWORDS), table(sre::g_script_command_table(), SCRIPT_FUNCTIONS), table(sre::g_console_command_table(), CONSOLE_COMMANDS)];
+    let tables = [table(sre::g_script_keyword_table(), FIRST_KEYWORD), table(sre::g_script_command_table(), FIRST_SCRIPT_FUNCTION), table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)];
     if tables.iter().any(|t| t.iter().any(|e| answers_to(e, name))) {
         return Err(CommandError::NameTaken);
     }
-    let entry = table(sre::g_console_command_table(), CONSOLE_COMMANDS).iter_mut().find(|e| is_stub(e)).ok_or(CommandError::NoFreeEntry)?;
+    let entry = table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND).iter_mut().find(|e| is_stub(e)).ok_or(CommandError::NoFreeEntry)?;
     let replaced = text(entry.name);
     entry.name = name.as_ptr().cast_mut().cast();
     entry.shortName = c"".as_ptr().cast_mut().cast();
@@ -488,7 +495,7 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     entry.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
     entry.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
     entry.parse = crate::reloc().address(sre::id!(fns::ParseCommandParams)).expect("ParseCommandParams id") as *mut c_void;
-    entry.eval = core::ptr::null_mut();
+    entry.set_eval(core::ptr::null_mut());
     entry.flags = 0;
     entry.execute = execute as *mut c_void;
     Ok(CommandSlot { opcode: entry.opcode, replaced })

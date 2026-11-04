@@ -6,11 +6,12 @@ fn main() -> ExitCode {
     match args.get(1).map(String::as_str) {
         Some("gen") => generate(),
         Some("crash") if args.len() >= 3 => decode(Path::new(&args[2]), args.get(3).map(Path::new)),
-        Some("manifest") if args.len() == 3 => manifest(Path::new(&args[2]), None),
-        Some("manifest") if args.len() == 5 && args[3] == "--check" => manifest(Path::new(&args[2]), Some(Path::new(&args[4]))),
+        Some("manifest") if args.len() == 3 => manifest(Path::new(&args[2]), None, None),
+        Some("manifest") if args.len() == 5 && args[3] == "--check" => manifest(Path::new(&args[2]), Some(Path::new(&args[4])), None),
+        Some("manifest") if args.len() == 7 && args[3] == "--check" && args[5] == "--library" => manifest(Path::new(&args[2]), Some(Path::new(&args[4])), Some(Path::new(&args[6]))),
         _ => {
             eprintln!("usage: cargo xtask gen                      (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
-            eprintln!("       cargo xtask manifest <dll> [--check <profile>]  (what a DLL records it uses of the game; what a profile lacks of it)");
+            eprintln!("       cargo xtask manifest <dll> [--check <profile> [--library <bin>]]  (what a DLL records it uses of the game; what a profile and its Address Library file lack of it)");
             eprintln!("       cargo crash-decode <file.dmp> [out.log]  (the crash log from a minidump; stdout without out.log; the decode feature)");
             ExitCode::FAILURE
         }
@@ -95,7 +96,7 @@ fn generate() -> ExitCode {
     ExitCode::SUCCESS
 }
 
-fn manifest(dll: &Path, profile: Option<&Path>) -> ExitCode {
+fn manifest(dll: &Path, profile: Option<&Path>, library: Option<&Path>) -> ExitCode {
     let run = || -> Result<ExitCode, String> {
         let bytes = std::fs::read(dll).map_err(|e| format!("{}: {e}", dll.display()))?;
         let records = versionlib::manifest::read(&bytes).map_err(|e| format!("{}: {e}", dll.display()))?;
@@ -108,7 +109,8 @@ fn manifest(dll: &Path, profile: Option<&Path>) -> ExitCode {
         };
         let text = std::fs::read_to_string(path).map_err(|e| format!("{}: {e}", path.display()))?;
         let parsed = versionlib::profile::parse(&text).map_err(|e| format!("{}: {e}", path.display()))?;
-        let lacking = versionlib::manifest::lacking(&records, &parsed);
+        let db = library.map(|path| versionlib::VersionDb::open(path).map_err(|e| format!("{}: {e}", path.display()))).transpose()?;
+        let lacking = versionlib::manifest::lacking_in(&records, &parsed, db.as_ref());
         for (record, why) in &lacking {
             println!("{record} {why}");
         }

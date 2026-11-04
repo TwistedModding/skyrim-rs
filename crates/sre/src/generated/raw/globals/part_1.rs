@@ -12191,11 +12191,11 @@ pub const g_FOIslandActivationListener_ptr: u64 = 400944;
 pub const g_FOVTanScale: u64 = 391777;
 /// `g_FaceAnimationSettings_ptr` at 0x219e5e0 (semantic, medium); pointer to an engine object whose byte +0x58 gates blinking and eye tracking (console 'ModifyFaceGen reset' sets it to 1) (medium); type `pointer`
 pub const g_FaceAnimationSettings_ptr: u64 = 400331;
-/// `g_FaceGenExpressionNames` at 0x20b0830 (semantic, high); expression names 0..16: DialogueAnger, DialogueFear, DialogueHappy, DialogueSad, DialogueSurprise, DialoguePuzzled, DialogueDisgusted, MoodNeutral, MoodAnger, MoodFear, MoodHappy, MoodSad, MoodSurprise, MoodPuzzled, MoodDisgusted, CombatAnger, CombatShout (high); type `pointer`
+/// `g_FaceGenExpressionNames` at 0x20b0830 (semantic, high); the 17 expression names, indexed 0..16 (a null follows at index 17): DialogueAnger, DialogueFear, DialogueHappy, DialogueSad, DialogueSurprise, DialoguePuzzled, DialogueDisgusted, MoodNeutral, MoodAnger, MoodFear, MoodHappy, MoodSad, MoodSurprise, MoodPuzzled, MoodDisgusted, CombatAnger, CombatShout (high); type `char*[17]`
 pub const g_FaceGenExpressionNames: u64 = 378660;
 /// `g_FaceGenKeyframeTypeNames` at 0x20b0800 (semantic, high); keyframe type names by type value: 0 Phoneme, 1 Expression, 2 Modifier, 3 Custom ('SkinnyMorph' at 0x20b0828 is the custom channel) (high); type `pointer`
 pub const g_FaceGenKeyframeTypeNames: u64 = 378655;
-/// `g_FaceGenModifierNames` at 0x20b08c0 (semantic, high); modifier names 0..16: BlinkLeft, BlinkRight, BrowDownLeft, BrowDownRight, BrowInLeft, BrowInRight, BrowUpLeft, BrowUpRight, LookDown, LookLeft, LookRight, LookUp, SquintLeft, SquintRight, HeadPitch, HeadRoll, HeadYaw (high); type `pointer`
+/// `g_FaceGenModifierNames` at 0x20b08c0 (semantic, high); the 17 modifier names, indexed 0..16 (a null follows at index 17): BlinkLeft, BlinkRight, BrowDownLeft, BrowDownRight, BrowInLeft, BrowInRight, BrowUpLeft, BrowUpRight, LookDown, LookLeft, LookRight, LookUp, SquintLeft, SquintRight, HeadPitch, HeadRoll, HeadYaw (high); type `char*[17]`
 pub const g_FaceGenModifierNames: u64 = 378677;
 /// `g_FaceGenPhonemeNames` at 0x20b0950 (semantic, high); phoneme names 0..15: Aah, BigAah, BMP, ChJSh, DST, Eee, Eh, FV, I, K, N, Oh, OohQ, R, Th, W (high); type `pointer`
 pub const g_FaceGenPhonemeNames: u64 = 378694;
@@ -13539,5 +13539,3 @@ pub const g_TypeNode_bhkMotorAction: u64 = 411726;
 pub const g_TypeNode_bhkMouseSpringAction: u64 = 411661;
 /// `g_TypeNode_bhkMultiSphereShape` at 0x33388c8 (string, high)
 pub const g_TypeNode_bhkMultiSphereShape: u64 = 411687;
-/// `g_TypeNode_bhkNiCollisionObject` at 0x3337740 (string, high)
-pub const g_TypeNode_bhkNiCollisionObject: u64 = 411565;

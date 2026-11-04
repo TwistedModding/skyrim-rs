@@ -123,7 +123,7 @@ pub fn reloc() -> &'static hook::Reloc {
 /// A point to hand the engine, laid out as `NiPoint3` is, whichever of its members the runtimes have compared.
 #[must_use]
 pub fn point(x: f32, y: f32, z: f32) -> sre::NiPoint3 {
-    assert!(sre::member_offset!("NiPoint3.x", 0x0) == 0 && sre::member_offset!("NiPoint3.y", 0x4) == 4 && sre::member_offset!("NiPoint3.z", 0x8) == 8, "NiPoint3's members moved");
+    assert!(sre::member_offset!("NiPoint3.x") == 0 && sre::member_offset!("NiPoint3.y") == 4 && sre::member_offset!("NiPoint3.z") == 8, "NiPoint3's members moved");
     unsafe { core::mem::transmute([x, y, z]) }
 }
 

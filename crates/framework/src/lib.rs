@@ -50,6 +50,18 @@ macro_rules! location {
     }};
 }
 
+/// [`hooks::ops::Vtable`] for slot `index` of the vtable at an id, with its ledger class and offset
+/// in the class, stated for 1.7.104 and recorded in the DLL's manifest so the loader can refuse the
+/// plugin on a runtime that lacks the vtable or the slot.
+#[macro_export]
+macro_rules! vtable_slot {
+    ($shape:ty, $id:expr, $class:literal, $vtable_offset:literal, $index:literal) => {{
+        const { assert!($crate::__sre::ledger::slot($class, $vtable_offset, $index), concat!("the ledger has no slot ", $index, " of ", $class)) };
+        $crate::__sre::record!(3, $vtable_offset, $index, $class);
+        $crate::hooks::ops::Vtable::<$shape>::slot($crate::hooks::Location::id($crate::__sre::id!($id), 0), $index)
+    }};
+}
+
 pub mod abi;
 pub mod hooks;
 pub mod host;
@@ -337,7 +349,7 @@ impl Host {
     #[must_use]
     pub fn input_filter(&self, name: &str, user_events: &[&str], buttons: &[(InputDevice, u32)]) -> InputFilter {
         let events: Vec<Str> = user_events.iter().map(|e| Str::from(*e)).collect();
-        let buttons: Vec<RawButton> = buttons.iter().map(|&(device, id)| RawButton { device: device as u32, id }).collect();
+        let buttons: Vec<RawButton> = buttons.iter().filter_map(|&(device, id)| Some(RawButton { device: device.to_engine()?, id })).collect();
         let index = call!(self.api, input_filter(Str::from(name), events.as_ptr(), events.len(), buttons.as_ptr(), buttons.len())).unwrap_or(usize::MAX);
         InputFilter { index, api: self.api }
     }

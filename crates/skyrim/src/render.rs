@@ -161,11 +161,11 @@ pub fn set_near_plane(near: f32) {
 /// factor, the repartition function pair `float (float x, float range)` the tables are filled
 /// through, and the two 4096-texel tables.
 fn volumetric_functions() -> [usize; 2] {
-    [sre::member_offset!("VolumetricLightingParams.repartitionFunction", 0x40), sre::member_offset!("VolumetricLightingParams.inverseRepartitionFunction", 0x48)]
+    [sre::member_offset!("VolumetricLightingParams.repartitionFunction"), sre::member_offset!("VolumetricLightingParams.inverseRepartitionFunction")]
 }
 
 fn volumetric_tables() -> [usize; 2] {
-    [sre::member_offset!("VolumetricLightingParams.repartitionTable", 0x78), sre::member_offset!("VolumetricLightingParams.inverseRepartitionTable", 0x80)]
+    [sre::member_offset!("VolumetricLightingParams.repartitionTable"), sre::member_offset!("VolumetricLightingParams.inverseRepartitionTable")]
 }
 
 /// The tables' half texel and last texel centre.
@@ -206,7 +206,7 @@ fn volumetric_tables_exist() -> bool {
 }
 
 fn refill_volumetric_tables() {
-    let range = unsafe { volumetric_field::<f32>(sre::member_offset!("VolumetricLightingParams.rangeFactor", 0x2c)).read_volatile() };
+    let range = unsafe { volumetric_field::<f32>(sre::member_offset!("VolumetricLightingParams.rangeFactor")).read_volatile() };
     unsafe { sre::set_volumetric_range_factor(core::ptr::from_ref(sre::g_volumetric_lighting()).cast_mut(), range) };
 }
 
@@ -379,7 +379,7 @@ pub struct CascadeSettings {
 /// sits at +8 of the object; `T` is the setting's type (`f32` for an `f` setting, `u32` for `i`).
 #[must_use]
 pub fn setting_value<T>(setting: *mut c_void) -> *mut T {
-    setting.wrapping_byte_add(sre::member_offset!("Setting.value", 0x8)).cast()
+    setting.wrapping_byte_add(sre::member_offset!("Setting.value")).cast()
 }
 
 /// Reads the four cascade settings.
@@ -412,7 +412,7 @@ pub fn set_cascade_settings(settings: CascadeSettings) {
 pub fn camera_entries() -> &'static [CameraMatrixEntry] {
     let base = core::ptr::from_ref(sre::g_frame_state());
     sre::fixed_size!("CameraMatrixEntry", CameraMatrixEntry);
-    let entries = unsafe { &*base.byte_add(sre::member_offset!("FrameState.cameraMatrices", 0xb8)).cast::<sre::BSTArray>() };
+    let entries = unsafe { &*base.byte_add(sre::member_offset!("FrameState.cameraMatrices")).cast::<sre::BSTArray>() };
     if entries.data.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(entries.data.cast(), entries.size as usize) } }
 }
 
@@ -739,12 +739,12 @@ impl BSFlattenedBoneTreeExt for BSFlattenedBoneTree {
         for bone in bones {
             let world = bone.node().map_or_else(
                 || {
-                    let parent = usize::try_from(bone.parentIndex().cast_signed()).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| p.world());
-                    Transform::from(parent).compose(&Transform::from(bone.local()))
+                    let parent = usize::try_from(bone.parentIndex.cast_signed()).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| &p.world);
+                    Transform::from(parent).compose(&Transform::from(&bone.local))
                 },
                 |node| node.world_transform(),
             );
-            unsafe { bone.world_ptr().cast::<Transform>().write_volatile(world) }
+            unsafe { (&raw const bone.world).cast::<Transform>().cast_mut().write_volatile(world) }
         }
     }
 }
@@ -828,7 +828,7 @@ pub trait BSShaderPropertyExt {
 impl BSShaderPropertyExt for BSShaderProperty {
     fn receiver_mask(&self) -> Option<u32> {
         let data = self.lightData;
-        (!data.is_null()).then(|| unsafe { data.cast::<u8>().add(sre::member_offset!("ShaderPropertyLightData.receiverMask", 0x1c)).cast::<u32>().read_unaligned() })
+        (!data.is_null()).then(|| unsafe { data.cast::<u8>().add(sre::member_offset!("ShaderPropertyLightData.receiverMask")).cast::<u32>().read_unaligned() })
     }
 }
 
@@ -886,7 +886,7 @@ fn derives_from<T>(object: &T, node: *const u8) -> bool {
         if current == node {
             return true;
         }
-        current = unsafe { current.add(sre::member_offset!("TypeNode.parent", 0x8)).cast::<*const u8>().read_unaligned() };
+        current = unsafe { current.add(sre::member_offset!("TypeNode.parent")).cast::<*const u8>().read_unaligned() };
     }
     false
 }
@@ -900,8 +900,8 @@ pub fn stop_reference_effects(target: u32, form_id: u32, art: bool) {
     if lists.is_null() {
         return;
     }
-    let _guard = crate::spin::SpinGuard::lock(unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffectsLock", 0x120)).cast::<sre::BSSpinLock>() });
-    let effects = unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffects", 0x108)).cast::<sre::BSTArray>() };
+    let _guard = crate::spin::SpinGuard::lock(unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffectsLock")).cast::<sre::BSSpinLock>() });
+    let effects = unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffects")).cast::<sre::BSTArray>() };
     let (data, count) = (effects.data.cast_const(), effects.size);
     let node = if art { sre::g_type_node_model_reference_effect() } else { sre::g_type_node_shader_reference_effect() };
     for effect in unsafe { ptr_slice::<ReferenceEffect>(data, count) }.iter().flatten() {

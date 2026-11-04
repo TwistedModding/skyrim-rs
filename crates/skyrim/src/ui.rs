@@ -179,6 +179,9 @@ impl MenuStack<'_> {
 pub trait MenuManagerExt {
     /// The open menus in draw order, under the stack lock until the result is dropped.
     fn stack(&self) -> MenuStack<'_>;
+    /// [`stack`](Self::stack) for code that can do without it: `None` on a runtime the count has no
+    /// row for, and no refusal there, where `stack` gets the plugin refused.
+    fn try_stack(&self) -> Option<MenuStack<'_>>;
     /// `IsMenuOpen` (id 82074): the menu is registered and its flag 0x40 is set.
     fn is_open(&self, name: &str) -> bool;
     /// Whether an open menu pauses the game: the engine's count of open `PAUSES_GAME` menus
@@ -201,12 +204,21 @@ pub trait MenuManagerExt {
     fn unload(&self, name: &str);
 }
 
+/// The stack with its count at `count_at`, which has no ledger row yet: RE `ui.md` has it after the array's data at +0x110.
+fn menu_stack(ui: &EventSourceHolder_MenuOpenClose, count_at: usize) -> MenuStack<'_> {
+    let lock = SpinGuard::lock(unsafe { &*sre::g_ui_menu_stack_lock().cast::<sre::BSSpinLock>() });
+    let count = unsafe { core::ptr::from_ref(ui).cast::<u8>().add(count_at).cast::<u32>().read_unaligned() } as usize;
+    let menus = if ui.menuStack.is_null() || count == 0 { &[][..] } else { unsafe { core::slice::from_raw_parts(ui.menuStack.cast::<*mut IMenu>(), count) } };
+    MenuStack { menus, _lock: lock }
+}
+
 impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
     fn stack(&self) -> MenuStack<'_> {
-        let lock = SpinGuard::lock(unsafe { &*sre::g_ui_menu_stack_lock().cast::<sre::BSSpinLock>() });
-        let count = u32::from_le_bytes([self.unknown_118[8], self.unknown_118[9], self.unknown_118[10], self.unknown_118[11]]) as usize;
-        let menus = if self.menuStack.is_null() || count == 0 { &[][..] } else { unsafe { core::slice::from_raw_parts(self.menuStack.cast::<*mut IMenu>(), count) } };
-        MenuStack { menus, _lock: lock }
+        menu_stack(self, sre::member_outside_ledger!("EventSourceHolder_MenuOpenClose.menuStackCount", 0x120))
+    }
+
+    fn try_stack(&self) -> Option<MenuStack<'_>> {
+        Some(menu_stack(self, sre::canonical_only(0x120)?))
     }
 
     fn is_open(&self, name: &str) -> bool {
@@ -519,7 +531,7 @@ impl GFxMovieViewExt for GFxMovieView {
 
     fn create_function<H: FunctionHandler>(&self, function: &'static Function<H>) -> Value {
         sre::fixed_slots!("GFxFunctionHandler", 0x0, 0, 1);
-        assert!(sre::member_offset!("GFxFunctionHandler.refCount", 0x8) == 8, "GFxFunctionHandler's reference count moved");
+        assert!(sre::member_offset!("GFxFunctionHandler.refCount") == 8, "GFxFunctionHandler's reference count moved");
         let mut out = Value::undefined();
         unsafe { movie_slot::<MovieCreateFunction>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 15))(movie_ptr(self), out.as_mut_ptr(), function.as_ptr(), core::ptr::null_mut()) };
         out

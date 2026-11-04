@@ -4,6 +4,7 @@ use core::ffi::c_void;
 use std::fmt;
 use std::fs::File;
 use std::io::{Read as _, Seek as _, SeekFrom};
+use std::sync::OnceLock;
 
 use windows_sys::Win32::System::LibraryLoader::{GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, GetModuleFileNameW, GetModuleHandleExW};
 use windows_sys::Win32::System::Memory::{MEM_COMMIT, MEMORY_BASIC_INFORMATION, PAGE_GUARD, PAGE_NOACCESS, VirtualQuery};
@@ -212,19 +213,44 @@ fn read<const N: usize>(address: usize) -> Option<[u8; N]> {
 /// The bytes the executable file holds for `address`, located through the loaded image's section
 /// table (`e_lfanew` at 0x3c; the section count and the optional header size at +6 and +20 of the
 /// NT headers; 40-byte section headers with the virtual address, raw size and raw offset at +12, +16 and +20).
+/// `None` for a section the file does not hold as loaded.
 fn file_bytes(address: usize) -> Option<Bytes> {
+    static SECTIONS: OnceLock<Vec<Section>> = OnceLock::new();
     let base = hook::module_base();
     let rva = address.checked_sub(base)?;
-    let u32_at = |offset: usize| unsafe { ((base + offset) as *const u32).read_unaligned() } as usize;
-    let u16_at = |offset: usize| usize::from(unsafe { ((base + offset) as *const u16).read_unaligned() });
-    let nt = u32_at(0x3c);
-    let sections = nt + 24 + u16_at(nt + 20);
-    let offset = (0..u16_at(nt + 6)).find_map(|i| {
-        let section = sections + 40 * i;
-        let (va, raw_size, raw) = (u32_at(section + 12), u32_at(section + 16), u32_at(section + 20));
-        (rva >= va && rva + LEN <= va + raw_size).then(|| rva - va + raw)
-    })?;
-    read_file(offset)
+    let sections = SECTIONS.get_or_init(|| {
+        let u32_at = |offset: usize| unsafe { ((base + offset) as *const u32).read_unaligned() } as usize;
+        let u16_at = |offset: usize| usize::from(unsafe { ((base + offset) as *const u16).read_unaligned() });
+        let nt = u32_at(0x3c);
+        let headers = nt + 24 + u16_at(nt + 20);
+        (0..u16_at(nt + 6))
+            .map(|i| {
+                let header = headers + 40 * i;
+                let (va, raw_size, raw) = (u32_at(header + 12), u32_at(header + 16), u32_at(header + 20));
+                Section { va, raw_size, raw, as_loaded: holds_as_loaded(base + va, raw_size, raw) }
+            })
+            .collect()
+    });
+    let section = sections.iter().find(|s| rva >= s.va && rva + LEN <= s.va + s.raw_size)?;
+    if section.as_loaded { read_file(rva - section.va + section.raw) } else { None }
+}
+
+struct Section {
+    va: usize,
+    raw_size: usize,
+    raw: usize,
+    as_loaded: bool,
+}
+
+/// Whether a section's file bytes are what was loaded. The Steam stub of some game versions decrypts
+/// the code at start, so the file's bytes there say nothing; samples tell it from a few patched
+/// spots, as encrypted bytes never match and a patch reaches only some of them.
+fn holds_as_loaded(loaded: usize, raw_size: usize, raw: usize) -> bool {
+    const SAMPLES: usize = 16;
+    raw_size < LEN || (0..SAMPLES).any(|i| {
+        let at = (raw_size - LEN) / SAMPLES * i;
+        read::<LEN>(loaded + at).is_some_and(|live| read_file(raw + at) == Some(live))
+    })
 }
 
 /// The image base the executable was linked at (+24 of the PE32+ optional header); the headers sit

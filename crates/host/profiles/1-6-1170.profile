@@ -19220,14 +19220,10 @@ member-unverified BGSSaveFormBuffer.version
 member-unverified BGSSaveGameBuffer.size
 member-unverified BGSSaveLoadManager.characterNames
 member-unverified BGSSaveLoadManager.currentSaveNameCapacity
-member-unverified BGSSaveLoadManager.currentSaveNameLength
-member-unverified BGSSaveLoadManager.currentSaveNamePtr
 member-unverified BGSSaveLoadManager.pendingLoadReady
 member-unverified BGSSaveLoadManager.unknownMap
 member-unverified BGSSaveLoadManager::Thread.paused
 member-unverified BGSSaveLoadManager::Thread.running
-member-unverified BGSSaveLoadManagerEvent.done
-member-unverified BGSSaveLoadManagerEvent.kind
 member-unverified BGSSoundCategory.attenuation
 member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.curve
 member-unverified BGSStaticCollection.field_40
@@ -20597,8 +20593,6 @@ member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectRE
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
-member-unverified BSScript::StackFrame.owningFunction
-member-unverified BSScript::StackFrame.size
 member-unverified BSSegmentedTriShape.field_140
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
 member-unverified BSShaderAccumulator.field_129
@@ -20656,8 +20650,6 @@ member-unverified BleedoutCameraState.soundHandlePad
 member-unverified BleedoutCameraState.soundHandleRequestedState
 member-unverified BleedoutCameraState.useShoulderOffsets
 member-unverified BleedoutCameraState.yawOffset
-member-unverified BoneNodeEntry.flatIndex
-member-unverified BoneNodeEntry.node
 member-unverified CachedRaycastData.useWorldOnly
 member-unverified CameraMatrixEntry.viewProjection
 member-unverified CameraOverrideStartHandler.pad0C
@@ -20705,7 +20697,6 @@ member-unverified ConsoleData.type
 member-unverified CreditsMenu.field_3C
 member-unverified CreditsMenu.field_7A
 member-unverified CubeMapRecord.srv
-member-unverified CubeMapRecord.texture
 member-unverified DepthStencilRecord.srv
 member-unverified DepthStencilRecord.stencilSRV
 member-unverified DescriptionBox.field_D4
@@ -20723,7 +20714,7 @@ member-missing EventSourceHolder_Input.device4
 member EventSourceHolder_Input.gamepadEnableChanged 81
 member EventSourceHolder_Input.gamepadEnablePending 80
 member EventSourceHolder_Input.remoteGamepadPending e0
-member EventSourceHolder_Input.source_BSRemoteGamepadEvent 88
+member-unverified EventSourceHolder_Input.source_BSRemoteGamepadEvent
 member EventSourceHolder_Input.virtualKeyboard 78
 member-missing EventSourceHolder_TES.source_TESAmiiboForcedStopDetectionEvent
 member-missing EventSourceHolder_TES.source_TESAmiiboTouchEvent
@@ -20748,22 +20739,13 @@ member FirstPersonState.togglePOVPressed 88
 member FirstPersonState.useAltEuler 87
 member-unverified FlameProjectile.field_D4
 member-unverified FlameProjectile.field_DC
-member-unverified FlatBone.local
-member-unverified FlatBone.name
-member-unverified FlatBone.node
-member-unverified FlatBone.parentIndex
-member-unverified FlatBone.world
-member-unverified FrameState.cameraMatrices
+member FrameState.cameraMatrices a8
 member FrameState.decreaseRequested 11d
-member FrameState.dynamicHeightRatio 108
 member FrameState.dynamicResolutionLock 118
 member FrameState.dynamicWidthRatio 104
-member-unverified FrameState.frameCounter
-member-unverified FrameState.frameStarted
 member FrameState.increaseRequested 11c
 member FrameState.jitterIndex c0
 member FrameState.manualRatio 11e
-member FrameState.previousHeightRatio 110
 member FrameState.previousWidthRatio 10c
 member FrameState.ratioIncreaseCounter 114
 member-unverified FreeCameraState.forwardInputA
@@ -20778,7 +20760,6 @@ member-unverified FurnitureCameraState.pad0c
 member-unverified FurnitureCameraState.pad1c
 member-unverified FurnitureCameraState.pad3F
 member-unverified FurnitureCameraState.refCount
-member-unverified FurnitureMarker.field_0
 member-missing FxResponseArgs<15>.__vftable
 member-unverified GFxViewport.aspectRatio
 member-unverified GFxViewport.flags
@@ -20805,7 +20786,7 @@ member-unverified InfiniteList.field_7C
 member-unverified IngredientItem.field_A0
 member-unverified InputEventQueue.amiiboCount
 member-unverified InputEventQueue.amiiboEvent
-member InputEventQueue.buttonEvents 20
+member-unverified InputEventQueue.buttonEvents
 member-unverified InputEventQueue.charCount
 member InputEventQueue.charEvents 200
 member InputEventQueue.deviceConnectEvent 330
@@ -20955,8 +20936,6 @@ member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
-member-unverified MiddleHighProcessData.movementDirection
-member-unverified MiddleHighProcessData.rightHandEquipType
 member-unverified MiddleHighProcessData.speed
 member-unverified MissileProjectile.field_D4
 member-unverified MissileProjectile.field_DC
@@ -21281,12 +21260,6 @@ member-unverified PlayerControls.field_4B
 member-unverified PlayerControls.releaseHeldPending
 member-unverified PlayerControls.responseGraphs
 member-unverified PlayerInputHandler.pad_9
-member-unverified ProcessLists.highActorHandles
-member-unverified ProcessLists.lowActorHandles
-member-unverified ProcessLists.middleHighActorHandles
-member-unverified ProcessLists.middleLowActorHandles
-member-unverified ProcessLists.referenceEffects
-member-unverified ProcessLists.referenceEffectsLock
 member-unverified Projectile.field_D4
 member-unverified Projectile.field_DC
 member-unverified RaceSexCamera.initialRotation
@@ -21295,17 +21268,10 @@ member-unverified RaceSexCamera.padding54
 member-unverified RaceSexMenu.field_120
 member-unverified RaceSexMenu.field_128
 member-unverified RaceSexMenu.mouseLookDrag
-member-unverified RenderPass.field_1D
 member-unverified RenderStateCache.cubeMapFace
-member-unverified RenderStateCache.cubeMapMode
 member-unverified RenderStateCache.depthStencil
-member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
 member-unverified RenderTargetManager.depthStencilProperties
-member-unverified RenderTargetRecord.srv
-member-unverified RenderWindow.unknown28
-member-unverified RenderWindow.x
-member-unverified RenderWindow.y
 member-unverified Renderer.hInstance
 member-unverified Renderer.useReadOnlyDepth
 member-unverified Renderer.windowClassName
@@ -21314,11 +21280,6 @@ member-unverified Script.unk2c
 member-unverified Script.unk31
 member-unverified ScrollItem.field_F8
 member-unverified SearchPage.field_E4
-member-unverified Setting.name
-member-unverified Setting.value
-member-unverified ShaderPropertyLightData.receiverMask
-member-unverified ShadowMapData.culler
-member-unverified ShadowMapData.slice
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
 member-unverified ShadowSceneNode.field_2E8
@@ -21510,8 +21471,6 @@ member-unverified TransitionState.refCount
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TypeNode.name
-member-unverified TypeNode.parent
 member-unverified UISaveLoadManager.field_50
 member-unverified UI_bannerEntry.field_100
 member-unverified UI_bannerEntry.field_108
@@ -21632,11 +21591,6 @@ member ViewAllEntry.field_E0 d8
 member ViewAllEntry.field_E8 e0
 member ViewAllEntry.field_F0 e0
 member ViewAllEntry.field_F8 e8
-member-unverified VolumetricLightingParams.inverseRepartitionFunction
-member-unverified VolumetricLightingParams.inverseRepartitionTable
-member-unverified VolumetricLightingParams.rangeFactor
-member-unverified VolumetricLightingParams.repartitionFunction
-member-unverified VolumetricLightingParams.repartitionTable
 member-missing _anon_025735F6::AmiiboTouchArguments.__vftable
 member-unverified _anon_14F04957::Win32FileType.compression
 member-unverified _anon_14F04957::Win32FileType.headerEnd
@@ -21655,7 +21609,6 @@ member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkRagdollController.field_320
 member-unverified bhkRagdollController.field_328
-member-unverified bhkShape.materialId
 member bhkWorld.field_C6E0 c5d8
 member bhkWorld.field_C6E8 c5e0
 member bhkWorld.field_C6F0 c5e8
@@ -21893,13 +21846,6 @@ member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>.__vftable
-member-unverified hkArray.capacityAndFlags
-member-unverified hkArray.data
-member-unverified hkArray.size
-member-unverified hkMemoryRouter.heap
-member-unverified hkStridedVertices.numVertices
-member-unverified hkStridedVertices.striding
-member-unverified hkStridedVertices.vertices
 member-unverified hkbFootIkGains.alignWorldFromModelGain
 member-unverified hkbFootIkGains.footPlantedGain
 member-unverified hkbFootIkGains.footUnlockGain
@@ -21908,23 +21854,7 @@ member-unverified hkbFootIkGains.hipOrientationGain
 member-unverified hkbFootIkGains.maxKneeAngleDifference
 member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkpCharacterProxy.userData
-member-unverified hkpCollidable.broadPhaseType
-member-unverified hkpCollidable.collisionFilterInfo
-member-unverified hkpCollidable.ownerOffset
-member-unverified hkpCollidable.shape
-member-unverified hkpConvexVerticesShape::BuildConfig.buildConnectivity
-member-unverified hkpConvexVerticesShape::BuildConfig.convexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.field_14
-member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkFlag
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam0
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam1
 member-unverified hkpListShape.numDisabledChildren
-member-unverified hkpListShape::ChildInfo.collisionFilterInfo
-member-unverified hkpListShape::ChildInfo.numChildShapes
-member-unverified hkpListShape::ChildInfo.shape
-member-unverified hkpListShape::ChildInfo.shapeSize
 member-unverified hkpShape.referenceCount
 member-missing std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>.__vftable
 member-missing std::_Func_impl_no_alloc<<lambda_02b6bb394f6fb3644a63315e6f3f7efd>,void,bool>.__vftable
@@ -26341,7 +26271,6 @@ size-unverified BSScrapMap<int,TEX_SWAP*___ptr64>
 size-unverified BSScrapMap<unsigned_int,CombatBehaviorThread*___ptr64>
 size-unverified BSScrapMap<unsigned_int,bool>
 size-unverified BSScrapMap<unsigned_int,unsigned_int>
-size-unverified BSScript::Array
 size-unverified BSScript::ByteCode::PackedInstructionStream::InstructionFunctor
 size-unverified BSScript::CompiledScriptLoader
 size-unverified BSScript::ErrorLogger
@@ -26374,7 +26303,6 @@ size-unverified BSScript::Internal::StackMapEntry
 size-unverified BSScript::Internal::SuspendedStack
 size-unverified BSScript::Internal::_anon_16AAB8A9::OneVariableArgument
 size-unverified BSScript::Internal::_anon_16AAB8A9::ZeroArguments
-size-unverified BSScript::NF_util::ParamInfo
 size-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,void>
@@ -26604,7 +26532,6 @@ size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor
-size-unverified BSScript::Variable
 size-unverified BSScript::ZeroFunctionArguments
 size-unverified BSScript::_anon_5199D9EE::VMTypeResolveFunctor
 size-unverified BSScript::_anon_D7688862::LinkerConvertTypeFunctor
@@ -26633,7 +26560,6 @@ size-unverified BSStorage
 size-unverified BSStream
 size-unverified BSStreamParserData
 size-unverified BSStreamSystemUtility
-size-unverified BSStringPool::Entry
 size-unverified BSStringPool::IterationCallback
 size-unverified BSSynchronizedClipGenerator
 size-unverified BSSynchronizedClipGenerator::hkbDefaultSynchronizedScene
@@ -26661,7 +26587,6 @@ size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWardHealthChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWeaponSpeedChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorCopyGraphVariableChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorWantBlockChannel>
-size-unverified BSTArray
 size-unverified BSTArrayAllocatorFunctor<BSScrapArrayAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<1024>_>
@@ -27361,7 +27286,6 @@ size-unverified BasicArrayImplementation<hkDataObjectImpl*___ptr64,8>
 size-unverified BasicArrayImplementation<unsigned_char,1>
 size-unverified BedEnterHandler
 size-unverified BedFurnitureExitHandler
-size-unverified BoneNodeEntry
 size-unverified BookMenu
 size-unverified BowDrawnHandler
 size-unverified BowReleaseHandler
@@ -28307,7 +28231,6 @@ size-unverified GFxLogBase<GFxLog>
 size-unverified GFxMovieView
 size-unverified GFxState
 size-unverified GFxTranslator
-size-unverified GFxValue
 size-unverified GFxValue::DisplayInfo
 size-unverified GFxViewport
 size-unverified GFxZlibSupport
@@ -29054,7 +28977,6 @@ size-unverified PArrayPoint
 size-unverified PackageCreator
 size-unverified PackageList::IPackageVisitor
 size-unverified PairedStopHandler
-size-unverified ParamInfo
 size-unverified PathFollowerStateFollowPathToParameter
 size-unverified PathFollowerStateKeepLastDirection
 size-unverified PathFollowerStatePlayIdle
@@ -29147,7 +29069,6 @@ size-unverified SaveStorageWrapper
 size-unverified ScaleformFile::MemoryFile
 size-unverified ScrapHeap
 size-unverified ScreenshotHandler
-size-unverified ScriptParamTypeInfo
 size-unverified ScriptedRefEffect
 size-unverified SeenData
 size-unverified Setting
@@ -29159,7 +29080,6 @@ size-unverified SettingT<INIPrefSettingCollection>
 size-unverified SettingT<INISettingCollection>
 size-unverified SettingT<RegSettingCollection>
 size-unverified ShaderPropertyLightData
-size-unverified ShadowMapData
 size-unverified ShoutHandler
 size-unverified ShoutMeter
 size-unverified SimpleAnimationGraphManagerHolder
@@ -29471,7 +29391,6 @@ size-unverified UnitTestZeroOverheadHeap
 size-unverified UnitTest_BSStreamParserData
 size-unverified UnitTest_BSStreamParserStream
 size-unverified UserEventEnabledEvent
-size-unverified UserEventMapping
 size-unverified UserEventNames
 size-unverified VATS::ICommandListVisitor
 size-unverified VATSCameraState
@@ -30712,7 +30631,6 @@ size-unverified hkpLimitedHingeConstraintData
 size-unverified hkpLinearParametricCurve
 size-unverified hkpListAgent
 size-unverified hkpListShape
-size-unverified hkpListShape::ChildInfo
 size-unverified hkpMalleableConstraintData
 size-unverified hkpMapPointsToSubShapeContactMgr
 size-unverified hkpMaxSizeMotion
@@ -31676,25 +31594,27 @@ site 36559 30a 2ec e84f78e800
 site 36561 c7a c7a e871d1fcff
 site 36561 178e 177c e83fde0000
 site 36588 1c 1c e87fce0000
+site 37334 4 4 4883 4883
 site 37356 b64 b64 7710
 site 37610 78 78 7710
 site 37611 7f 7f 7710
 site 40450 69 69 e8d2d1e1ff
 site 40476 0 0 4055564883ec58
 site 40476 bc bc 418b8ef4000000
+site 40476 c5 c5 83c901 0f1f00
 site 40522 94 94 e8272a5e00
 site 40522 d7 d7 e8e4295e00
 site 40620 1e7 1d5 e8a6dfcbff
 site 41996 303 2f4 ff9088030000
 site 50784 1a6 1a6 e855e5c6ff
-site 50832 4dd 4dd f30f103563217301
+site 50832 4dd 4dd f30f103563217301 eb58909090909090
 site 50923 11 11 e83abfffff
 site 52118 59 59 e8f274a8ff
 site 53016 5 5 e9361cbdff
 site 53919 cfb cc3 e8c8af0500
 site 55564 0 0 488b0dd1b16e02e9d40aedff
 site 55565 0 0 488b0dc1b16e02e9240cedff
-site 68542 3cc 3c8 8b8020010000
+site 68542 3cc 3c8 8b8020010000 8b802001000080e1df
 site 68617 7b 7b e8400e0000
 site 77226 275 275 e8d6a10000
 site 77246 9 9 e892396e00
@@ -31704,3 +31624,6 @@ site 107139 7fd 7fd e86efa85ff
 site-unverified 400445 0
 site-unverified 403340 0
 site 442580 34f 34f e83c09ffff
+enum InputDevice.None 5
+enum UIMessageType.none d
+enum-missing UIMessageType.type0xd

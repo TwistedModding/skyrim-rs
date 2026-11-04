@@ -14,7 +14,7 @@ pub struct MovementAgent {
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     #[doc(hidden)]
@@ -37,7 +37,7 @@ pub struct MovementAgentActorAvoider {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementAgentActorAvoider:18`, rtti
@@ -51,17 +51,17 @@ pub struct MovementAgentActorAvoider {
     pub __vftable_28: *const crate::raw::vtables::MovementAgentActorAvoider_vtable_28,
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
-    pub unknown_48: [u8; 24],
+    unknown_48: [u8; 24],
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined8`, ctor store
     pub field_64: u64,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -90,7 +90,7 @@ pub struct MovementAgentActorState {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementAgentActorState:18`, rtti
@@ -114,18 +114,18 @@ pub struct MovementAgentActorState {
     pub field_40: u32,
     /// +0x44 `undefined8`, ctor store
     pub field_44: u64,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
-    pub unknown_68: [u8; 8],
+    unknown_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -210,7 +210,7 @@ pub struct MovementAgentPathFollowerFlight {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementAgentPathFollowerFlight:18`, rtti
@@ -235,13 +235,13 @@ pub struct MovementAgentPathFollowerFlight {
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 48],
+    unknown_60: [u8; 48],
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
-    pub unknown_A0: [u8; 8],
+    unknown_A0: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -273,7 +273,7 @@ pub struct MovementAgentPathFollowerStandard {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementAgentPathFollowerStandard:18`, rtti
@@ -296,26 +296,26 @@ pub struct MovementAgentPathFollowerStandard {
     pub __vftable_40: *const crate::raw::vtables::MovementAgentPathFollowerStandard_vtable_40,
     /// +0x48 `undefined8`, member ctor PathFollowerStatePlayIdle
     pub m_PathFollowerStatePlayIdle_48: u64,
-    pub unknown_50: [u8; 16],
+    unknown_50: [u8; 16],
     /// +0x60 `undefined8`, member ctor PathFollowerStateTurnToAngle
     pub m_PathFollowerStateTurnToAngle_60: u64,
-    pub unknown_68: [u8; 24],
+    unknown_68: [u8; 24],
     /// +0x80 `undefined8`, member ctor PathFollowerStateFollowPathToParameter
     pub m_PathFollowerStateFollowPathToParameter_80: u64,
-    pub unknown_88: [u8; 24],
+    unknown_88: [u8; 24],
     /// +0xA0 `undefined8`, member ctor PathFollowerStateKeepLastDirection
     pub m_PathFollowerStateKeepLastDirection_A0: u64,
-    pub unknown_A8: [u8; 24],
+    unknown_A8: [u8; 24],
     /// +0xC0 `undefined8`, member ctor CheckParameterReachedFunctor
     pub m_CheckParameterReachedFunctor_C0: u64,
     /// +0xC8 `undefined4`, ctor store
     pub field_C8: u32,
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     /// +0xD0 `undefined8`, member ctor CheckGoalReachedFunctor
     pub m_CheckGoalReachedFunctor_D0: u64,
     /// +0xD8 `undefined4`, ctor store
     pub field_D8: u32,
-    pub unknown_DC: [u8; 4],
+    unknown_DC: [u8; 4],
     /// +0xE0 `undefined8`, member ctor CheckStoppedMovingFunctor
     pub m_CheckStoppedMovingFunctor_E0: u64,
     /// +0xE8 `float`, ctor store
@@ -334,10 +334,10 @@ pub struct MovementAgentPathFollowerStandard {
     pub field_100: u64,
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
-    pub unknown_110: [u8; 8],
+    unknown_110: [u8; 8],
     /// +0x118 `undefined4`, ctor store
     pub field_118: u32,
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     /// +0x120 `undefined8`, ctor store
     pub field_120: u64,
     /// +0x128 `undefined8`, ctor store
@@ -350,14 +350,14 @@ pub struct MovementAgentPathFollowerStandard {
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
-    pub unknown_150: [u8; 4],
+    unknown_150: [u8; 4],
     /// +0x154 `undefined8`, ctor store
     pub field_154: u64,
     /// +0x15C `undefined4`, ctor store
     pub field_15C: u32,
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
-    pub unknown_164: [u8; 4],
+    unknown_164: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -410,7 +410,7 @@ pub struct MovementAgentPathFollowerVirtual {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementAgentPathFollowerVirtual:18`, rtti
@@ -425,10 +425,10 @@ pub struct MovementAgentPathFollowerVirtual {
     /// +0x30 `vtbl:MovementAgentPathFollowerVirtual:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::MovementAgentPathFollowerVirtual_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined8`, ctor store
@@ -681,16 +681,16 @@ pub struct MovementControllerAI {
     pub __vftable: *const crate::raw::vtables::MovementControllerAI_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 36],
+    unknown_C: [u8; 36],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 20],
+    unknown_34: [u8; 20],
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 196],
+    unknown_4C: [u8; 196],
     /// +0x110 `undefined4`, ctor store
     pub field_110: u32,
-    pub unknown_114: [u8; 4],
+    unknown_114: [u8; 4],
     /// +0x118 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 8],
@@ -729,7 +729,7 @@ pub struct MovementHandlerAgent {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgent:18`, rtti
@@ -755,7 +755,7 @@ pub struct MovementHandlerAgentAngleController {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAngleController:18`, rtti
@@ -781,7 +781,7 @@ pub struct MovementHandlerAgentAngleGain {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAngleGain:18`, rtti
@@ -806,7 +806,7 @@ pub struct MovementHandlerAgentAnglePassThrough {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentAnglePassThrough:18`, rtti
@@ -833,7 +833,7 @@ pub struct MovementHandlerAgentDirectControl {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentDirectControl:18`, rtti
@@ -859,7 +859,7 @@ pub struct MovementHandlerAgentDirectControl {
     pub field_44: u32,
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
-    pub unknown_50: [u8; 8],
+    unknown_50: [u8; 8],
     /// +0x58 `float`, ctor store
     pub field_58: f32,
     /// +0x5C `float`, ctor store
@@ -874,7 +874,7 @@ pub struct MovementHandlerAgentDirectControl {
     pub field_6C: f32,
     /// +0x70 `float`, ctor store
     pub field_70: f32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -912,7 +912,7 @@ pub struct MovementHandlerAgentDirectionPassThrough {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentDirectionPassThrough:18`, rtti
@@ -938,7 +938,7 @@ pub struct MovementHandlerAgentLargeDeltaIdle {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentLargeDeltaIdle:18`, rtti
@@ -948,7 +948,7 @@ pub struct MovementHandlerAgentLargeDeltaIdle {
     pub field_20: u64,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -971,7 +971,7 @@ pub struct MovementHandlerAgentPlayerControls {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentPlayerControls:18`, rtti
@@ -982,17 +982,17 @@ pub struct MovementHandlerAgentPlayerControls {
     pub __vftable_20: *const crate::raw::vtables::MovementHandlerAgentPlayerControls_vtable_20,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
-    pub unknown_4D: [u8; 3],
+    unknown_4D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1019,7 +1019,7 @@ pub struct MovementHandlerAgentPlayerControlsActionTrigger {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentPlayerControlsActionTrigger:18`, rtti
@@ -1027,7 +1027,7 @@ pub struct MovementHandlerAgentPlayerControlsActionTrigger {
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentPlayerControlsActionTrigger_vtable_18,
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1049,7 +1049,7 @@ pub struct MovementHandlerAgentSpeedPassThrough {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentSpeedPassThrough:18`, rtti
@@ -1075,7 +1075,7 @@ pub struct MovementHandlerAgentSprintActionTrigger {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentSprintActionTrigger:18`, rtti
@@ -1092,7 +1092,7 @@ pub struct MovementHandlerAgentSprintActionTrigger {
     pub field_38: u32,
     /// +0x3C `undefined2`, ctor store
     pub field_3C: u16,
-    pub unknown_3E: [u8; 2],
+    unknown_3E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1118,7 +1118,7 @@ pub struct MovementHandlerAgentStairsHelper {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentStairsHelper:18`, rtti
@@ -1126,7 +1126,7 @@ pub struct MovementHandlerAgentStairsHelper {
     pub __vftable_18: *const crate::raw::vtables::MovementHandlerAgentStairsHelper_vtable_18,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1148,7 +1148,7 @@ pub struct MovementHandlerAgentStrafing {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentStrafing:18`, rtti
@@ -1174,7 +1174,7 @@ pub struct MovementHandlerAgentTranslationController {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementHandlerAgentTranslationController:18`, rtti
@@ -1185,12 +1185,12 @@ pub struct MovementHandlerAgentTranslationController {
     pub __vftable_20: *const crate::raw::vtables::MovementHandlerAgentTranslationController_vtable_20,
     /// +0x28 `undefined1`, ctor store
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1215,10 +1215,10 @@ pub struct MovementHandlerArbiter {
     pub __vftable: *const crate::raw::vtables::MovementHandlerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
-    pub unknown_18: [u8; 20],
+    unknown_18: [u8; 20],
     /// +0x2C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2C: [u8; 8],
@@ -1230,10 +1230,10 @@ pub struct MovementHandlerArbiter {
     pub __field_3C: [u8; 8],
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
@@ -1424,7 +1424,7 @@ pub struct MovementMessageMovementTypeChange {
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 132],
+    unknown_C: [u8; 132],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1671,7 +1671,7 @@ pub struct MovementPathManagerAgent {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerAgent:18`, rtti
@@ -1697,7 +1697,7 @@ pub struct MovementPathManagerAgentAvoidBox {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerAgentAvoidBox:18`, rtti
@@ -1705,32 +1705,32 @@ pub struct MovementPathManagerAgentAvoidBox {
     pub __vftable_18: *const crate::raw::vtables::MovementPathManagerAgentAvoidBox_vtable_18,
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined4`, ctor store (widths [4, 8])
     pub field_30: u32,
-    pub unknown_34: [u8; 52],
+    unknown_34: [u8; 52],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
     /// +0x6C `undefined4`, ctor store
     pub field_6C: u32,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
-    pub unknown_8C: [u8; 12],
+    unknown_8C: [u8; 12],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
-    pub unknown_A8: [u8; 8],
+    unknown_A8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1762,7 +1762,7 @@ pub struct MovementPathManagerAgentLoadedAreaMonitor {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerAgentLoadedAreaMonitor:18`, rtti
@@ -1770,7 +1770,7 @@ pub struct MovementPathManagerAgentLoadedAreaMonitor {
     pub __vftable_18: *const crate::raw::vtables::MovementPathManagerAgentLoadedAreaMonitor_vtable_18,
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     #[doc(hidden)]
@@ -1795,7 +1795,7 @@ pub struct MovementPathManagerAgentStaticAvoider {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerAgentStaticAvoider:18`, rtti
@@ -1809,13 +1809,13 @@ pub struct MovementPathManagerAgentStaticAvoider {
     pub __vftable_28: *const crate::raw::vtables::MovementPathManagerAgentStaticAvoider_vtable_28,
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 48],
+    unknown_40: [u8; 48],
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 52],
+    unknown_74: [u8; 52],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -1823,7 +1823,7 @@ pub struct MovementPathManagerAgentStaticAvoider {
     /// +0xB8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 4],
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1851,7 +1851,7 @@ pub struct MovementPathManagerArbiter {
     pub __vftable: *const crate::raw::vtables::MovementPathManagerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPathManagerArbiter:18`, rtti
@@ -1860,23 +1860,23 @@ pub struct MovementPathManagerArbiter {
     /// +0x20 `vtbl:MovementPathManagerArbiter:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::MovementPathManagerArbiter_vtable_20,
-    pub unknown_28: [u8; 24],
+    unknown_28: [u8; 24],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 4],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
-    pub unknown_68: [u8; 8],
+    unknown_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
     #[doc(hidden)]
@@ -1920,7 +1920,7 @@ pub struct MovementPlannerAgent {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgent:18`, rtti
@@ -1946,7 +1946,7 @@ pub struct MovementPlannerAgentDirectControl {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgentDirectControl:18`, rtti
@@ -1954,21 +1954,21 @@ pub struct MovementPlannerAgentDirectControl {
     pub __vftable_18: *const crate::raw::vtables::MovementPlannerAgentDirectControl_vtable_18,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `float`, ctor store (widths [4, 8])
     pub field_30: f32,
     /// +0x34 `float`, ctor store
     pub field_34: f32,
     /// +0x38 `float`, ctor store (widths [4, 8])
     pub field_38: f32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `float`, ctor store
     pub field_40: f32,
     /// +0x44 `float`, ctor store
     pub field_44: f32,
     /// +0x48 `float`, ctor store
     pub field_48: f32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1996,7 +1996,7 @@ pub struct MovementPlannerAgentHorseControls {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgentHorseControls:18`, rtti
@@ -2026,7 +2026,7 @@ pub struct MovementPlannerAgentKeepOffset {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgentKeepOffset:18`, rtti
@@ -2037,7 +2037,7 @@ pub struct MovementPlannerAgentKeepOffset {
     pub __vftable_20: *const crate::raw::vtables::MovementPlannerAgentKeepOffset_vtable_20,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     /// +0x3C `float`, ctor store
@@ -2054,7 +2054,7 @@ pub struct MovementPlannerAgentKeepOffset {
     pub field_50: f32,
     /// +0x54 `undefined8`, ctor store
     pub field_54: u64,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2085,7 +2085,7 @@ pub struct MovementPlannerAgentNavmeshBounds {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgentNavmeshBounds:18`, rtti
@@ -2096,29 +2096,29 @@ pub struct MovementPlannerAgentNavmeshBounds {
     pub __vftable_20: *const crate::raw::vtables::MovementPlannerAgentNavmeshBounds_vtable_20,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store
     pub field_44: u32,
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 4],
-    pub unknown_5C: [u8; 684],
+    unknown_5C: [u8; 684],
     /// +0x308 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_308: [u8; 8],
     /// +0x310 `undefined4`, ctor store
     pub field_310: u32,
-    pub unknown_314: [u8; 4],
+    unknown_314: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2149,7 +2149,7 @@ pub struct MovementPlannerAgentWarp {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementPlannerAgentWarp:18`, rtti
@@ -2158,10 +2158,10 @@ pub struct MovementPlannerAgentWarp {
     /// +0x20 `vtbl:MovementPlannerAgentWarp:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::MovementPlannerAgentWarp_vtable_20,
-    pub unknown_28: [u8; 96],
+    unknown_28: [u8; 96],
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     /// +0x98 `undefined8`, ctor store
@@ -2349,7 +2349,7 @@ pub struct MovementStateFollowPath {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementStateFollowPath:18`, rtti
@@ -2378,7 +2378,7 @@ pub struct MovementStateTweener {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementStateTweener:18`, rtti
@@ -2407,7 +2407,7 @@ pub struct MovementTweenerAgent {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerAgent:18`, rtti
@@ -2433,7 +2433,7 @@ pub struct MovementTweenerAgentAnimationDriven {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerAgentAnimationDriven:18`, rtti
@@ -2445,7 +2445,7 @@ pub struct MovementTweenerAgentAnimationDriven {
     pub field_28: u64,
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2470,7 +2470,7 @@ pub struct MovementTweenerAgentFixedDelta {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerAgentFixedDelta:18`, rtti
@@ -2581,7 +2581,7 @@ pub struct MovementTweenerAgentNodeFollower {
     /// +0x8 `undefined4`, base MovementAgent
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementAgent
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerAgentNodeFollower:18`, rtti
@@ -2598,7 +2598,7 @@ pub struct MovementTweenerAgentNodeFollower {
     pub field_34: u32,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2624,7 +2624,7 @@ pub struct MovementTweenerArbiter {
     pub __vftable: *const crate::raw::vtables::MovementTweenerArbiter_vtable,
     /// +0x8 `undefined4`, base MovementArbiter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base MovementArbiter
     pub field_10: u64,
     /// +0x18 `vtbl:MovementTweenerArbiter:18`, rtti
@@ -2633,24 +2633,24 @@ pub struct MovementTweenerArbiter {
     /// +0x20 `vtbl:MovementTweenerArbiter:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::MovementTweenerArbiter_vtable_20,
-    pub unknown_28: [u8; 36],
+    unknown_28: [u8; 36],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
-    pub unknown_58: [u8; 40],
+    unknown_58: [u8; 40],
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
-    pub unknown_8C: [u8; 40],
+    unknown_8C: [u8; 40],
     /// +0xB4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B4: [u8; 8],
     /// +0xBC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 4],
+    unknown_C0: [u8; 4],
     /// +0xC4 `float`, ctor store
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
@@ -2663,10 +2663,10 @@ pub struct MovementTweenerArbiter {
     /// +0xD0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_D0: [u8; 4],
-    pub unknown_D4: [u8; 136],
+    unknown_D4: [u8; 136],
     /// +0x15C `undefined4`, ctor store
     pub field_15C: u32,
-    pub unknown_160: [u8; 24],
+    unknown_160: [u8; 24],
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
     /// +0x180 `undefined8`, ctor store
@@ -2853,7 +2853,7 @@ pub struct PathSmootherRayCastUseTrianglePath {
     /// +0x8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 8],
-    pub unknown_10: [u8; 12],
+    unknown_10: [u8; 12],
     /// +0x1C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1C: [u8; 4],
@@ -2865,7 +2865,7 @@ pub struct PathSmootherRayCastUseTrianglePath {
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
@@ -2904,11 +2904,11 @@ pub struct Pathing {
     /// +0x20 `vtbl:Pathing:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Pathing_vtable_20,
-    pub unknown_28: [u8; 64],
+    unknown_28: [u8; 64],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
-    pub unknown_70: [u8; 12],
+    unknown_70: [u8; 12],
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
     /// +0x80 `undefined4`, ctor store
@@ -2917,7 +2917,7 @@ pub struct Pathing {
     pub field_84: u32,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     #[doc(hidden)]
@@ -3000,14 +3000,14 @@ pub struct PathingDoor {
     pub __vftable: *const crate::raw::vtables::PathingDoor_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_10: [u8; 4],
     /// +0x14 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_14: [u8; 4],
-    pub unknown_18: [u8; 96],
+    unknown_18: [u8; 96],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3066,13 +3066,13 @@ pub struct PathingRequest {
     pub __vftable: *const crate::raw::vtables::PathingRequest_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3081,15 +3081,15 @@ pub struct PathingRequest {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3100,7 +3100,7 @@ pub struct PathingRequest {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3110,7 +3110,7 @@ pub struct PathingRequest {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     #[doc(hidden)]
@@ -3149,13 +3149,13 @@ pub struct PathingRequestClosePoint {
     pub __vftable: *const crate::raw::vtables::PathingRequestClosePoint_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3164,15 +3164,15 @@ pub struct PathingRequestClosePoint {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3183,7 +3183,7 @@ pub struct PathingRequestClosePoint {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3193,10 +3193,10 @@ pub struct PathingRequestClosePoint {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 48],
+    unknown_100: [u8; 48],
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
     /// +0x134 `undefined4`, ctor store
@@ -3207,7 +3207,7 @@ pub struct PathingRequestClosePoint {
     pub field_139: u8,
     /// +0x13A `undefined1`, ctor store
     pub field_13A: u8,
-    pub unknown_13B: [u8; 5],
+    unknown_13B: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3249,13 +3249,13 @@ pub struct PathingRequestClosestGoal {
     pub __vftable: *const crate::raw::vtables::PathingRequestClosestGoal_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3264,15 +3264,15 @@ pub struct PathingRequestClosestGoal {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3283,7 +3283,7 @@ pub struct PathingRequestClosestGoal {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3293,13 +3293,13 @@ pub struct PathingRequestClosestGoal {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 24],
+    unknown_100: [u8; 24],
     /// +0x118 `undefined4`, ctor store
     pub field_118: u32,
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3337,13 +3337,13 @@ pub struct PathingRequestCover {
     pub __vftable: *const crate::raw::vtables::PathingRequestCover_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3352,15 +3352,15 @@ pub struct PathingRequestCover {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3371,7 +3371,7 @@ pub struct PathingRequestCover {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3381,7 +3381,7 @@ pub struct PathingRequestCover {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
@@ -3400,7 +3400,7 @@ pub struct PathingRequestCover {
     pub field_11C: u32,
     /// +0x120 `undefined2`, ctor store
     pub field_120: u16,
-    pub unknown_122: [u8; 2],
+    unknown_122: [u8; 2],
     /// +0x124 `float`, ctor store (widths [4, 8])
     pub field_124: f32,
     /// +0x128 `float`, ctor store
@@ -3414,7 +3414,7 @@ pub struct PathingRequestCover {
     pub __field_134: [u8; 4],
     /// +0x138 `float`, ctor store
     pub field_138: f32,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3465,13 +3465,13 @@ pub struct PathingRequestFlee {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlee_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3480,15 +3480,15 @@ pub struct PathingRequestFlee {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3499,7 +3499,7 @@ pub struct PathingRequestFlee {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3509,12 +3509,12 @@ pub struct PathingRequestFlee {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3552,13 +3552,13 @@ pub struct PathingRequestFly {
     pub __vftable: *const crate::raw::vtables::PathingRequestFly_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3567,15 +3567,15 @@ pub struct PathingRequestFly {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3586,7 +3586,7 @@ pub struct PathingRequestFly {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3596,26 +3596,26 @@ pub struct PathingRequestFly {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
     /// +0x110 `undefined4`, ctor store
     pub field_110: u32,
     /// +0x114 `undefined1`, ctor store
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, ctor store (widths [4, 8])
     pub field_118: u32,
     /// +0x11C `undefined4`, ctor store
     pub field_11C: u32,
     /// +0x120 `undefined1`, ctor store
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3659,13 +3659,13 @@ pub struct PathingRequestFlyAction {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlyAction_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3674,15 +3674,15 @@ pub struct PathingRequestFlyAction {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3693,7 +3693,7 @@ pub struct PathingRequestFlyAction {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3703,26 +3703,26 @@ pub struct PathingRequestFlyAction {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base PathingRequestFly
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base PathingRequestFly
     pub field_108: u64,
     /// +0x110 `undefined4`, base PathingRequestFly
     pub field_110: u32,
     /// +0x114 `undefined1`, base PathingRequestFly
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base PathingRequestFly
     pub field_118: u32,
     /// +0x11C `undefined4`, base PathingRequestFly
     pub field_11C: u32,
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     /// +0x128 `undefined4`, ctor store (widths [4, 8])
     pub field_128: u32,
     /// +0x12C `undefined4`, ctor store
@@ -3733,7 +3733,7 @@ pub struct PathingRequestFlyAction {
     pub field_134: f32,
     /// +0x138 `float`, ctor store (widths [4, 4])
     pub field_138: f32,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
@@ -3742,7 +3742,7 @@ pub struct PathingRequestFlyAction {
     pub field_150: u64,
     /// +0x158 `undefined1`, ctor store
     pub field_158: u8,
-    pub unknown_159: [u8; 3],
+    unknown_159: [u8; 3],
     /// +0x15C `undefined4`, ctor store
     pub field_15C: u32,
     #[doc(hidden)]
@@ -3798,13 +3798,13 @@ pub struct PathingRequestFlyHover {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlyHover_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3813,15 +3813,15 @@ pub struct PathingRequestFlyHover {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3832,7 +3832,7 @@ pub struct PathingRequestFlyHover {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3842,33 +3842,33 @@ pub struct PathingRequestFlyHover {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base PathingRequestFly
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base PathingRequestFly
     pub field_108: u64,
     /// +0x110 `undefined4`, base PathingRequestFly
     pub field_110: u32,
     /// +0x114 `undefined1`, base PathingRequestFly
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base PathingRequestFly
     pub field_118: u32,
     /// +0x11C `undefined4`, base PathingRequestFly
     pub field_11C: u32,
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     /// +0x128 `float`, ctor store (widths [4, 4])
     pub field_128: f32,
     /// +0x12C `float`, ctor store (widths [4, 4])
     pub field_12C: f32,
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
-    pub unknown_134: [u8; 28],
+    unknown_134: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3915,13 +3915,13 @@ pub struct PathingRequestFlyLand {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlyLand_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -3930,15 +3930,15 @@ pub struct PathingRequestFlyLand {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -3949,7 +3949,7 @@ pub struct PathingRequestFlyLand {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -3959,26 +3959,26 @@ pub struct PathingRequestFlyLand {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base PathingRequestFly
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base PathingRequestFly
     pub field_108: u64,
     /// +0x110 `undefined4`, base PathingRequestFly
     pub field_110: u32,
     /// +0x114 `undefined1`, base PathingRequestFly
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base PathingRequestFly
     pub field_118: u32,
     /// +0x11C `undefined4`, base PathingRequestFly
     pub field_11C: u32,
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     /// +0x128 `undefined4`, ctor store
     pub field_128: u32,
     /// +0x12C `float`, ctor store (widths [4, 4])
@@ -3993,7 +3993,7 @@ pub struct PathingRequestFlyLand {
     pub field_13C: u32,
     /// +0x140 `undefined1`, ctor store
     pub field_140: u8,
-    pub unknown_141: [u8; 7],
+    unknown_141: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4044,13 +4044,13 @@ pub struct PathingRequestFlyOrbit {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlyOrbit_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4059,15 +4059,15 @@ pub struct PathingRequestFlyOrbit {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4078,7 +4078,7 @@ pub struct PathingRequestFlyOrbit {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4088,26 +4088,26 @@ pub struct PathingRequestFlyOrbit {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base PathingRequestFly
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base PathingRequestFly
     pub field_108: u64,
     /// +0x110 `undefined4`, base PathingRequestFly
     pub field_110: u32,
     /// +0x114 `undefined1`, base PathingRequestFly
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base PathingRequestFly
     pub field_118: u32,
     /// +0x11C `undefined4`, base PathingRequestFly
     pub field_11C: u32,
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     /// +0x128 `float`, ctor store (widths [4, 4])
     pub field_128: f32,
     /// +0x12C `undefined4`, ctor store
@@ -4118,7 +4118,7 @@ pub struct PathingRequestFlyOrbit {
     pub field_134: f32,
     /// +0x138 `float`, ctor store (widths [4, 4])
     pub field_138: f32,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4167,13 +4167,13 @@ pub struct PathingRequestFlyTakeOff {
     pub __vftable: *const crate::raw::vtables::PathingRequestFlyTakeOff_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4182,15 +4182,15 @@ pub struct PathingRequestFlyTakeOff {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4201,7 +4201,7 @@ pub struct PathingRequestFlyTakeOff {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4211,26 +4211,26 @@ pub struct PathingRequestFlyTakeOff {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base PathingRequestFly
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base PathingRequestFly
     pub field_108: u64,
     /// +0x110 `undefined4`, base PathingRequestFly
     pub field_110: u32,
     /// +0x114 `undefined1`, base PathingRequestFly
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base PathingRequestFly
     pub field_118: u32,
     /// +0x11C `undefined4`, base PathingRequestFly
     pub field_11C: u32,
     /// +0x120 `undefined1`, base PathingRequestFly
     pub field_120: u8,
-    pub unknown_121: [u8; 7],
+    unknown_121: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4274,13 +4274,13 @@ pub struct PathingRequestHide {
     pub __vftable: *const crate::raw::vtables::PathingRequestHide_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4289,15 +4289,15 @@ pub struct PathingRequestHide {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4308,7 +4308,7 @@ pub struct PathingRequestHide {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4318,13 +4318,13 @@ pub struct PathingRequestHide {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 48],
+    unknown_100: [u8; 48],
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4362,13 +4362,13 @@ pub struct PathingRequestLOS {
     pub __vftable: *const crate::raw::vtables::PathingRequestLOS_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4377,15 +4377,15 @@ pub struct PathingRequestLOS {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4396,7 +4396,7 @@ pub struct PathingRequestLOS {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4406,12 +4406,12 @@ pub struct PathingRequestLOS {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
-    pub unknown_108: [u8; 24],
+    unknown_108: [u8; 24],
     /// +0x120 `undefined4`, ctor store (widths [4, 8])
     pub field_120: u32,
     /// +0x124 `undefined4`, ctor store (widths [4, 8])
@@ -4422,7 +4422,7 @@ pub struct PathingRequestLOS {
     pub field_12C: f32,
     /// +0x130 `float`, ctor store (widths [4, 4])
     pub field_130: f32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4465,13 +4465,13 @@ pub struct PathingRequestOptimalLocation {
     pub __vftable: *const crate::raw::vtables::PathingRequestOptimalLocation_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4480,15 +4480,15 @@ pub struct PathingRequestOptimalLocation {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4499,7 +4499,7 @@ pub struct PathingRequestOptimalLocation {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4509,7 +4509,7 @@ pub struct PathingRequestOptimalLocation {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, ctor store
@@ -4560,13 +4560,13 @@ pub struct PathingRequestRotate {
     pub __vftable: *const crate::raw::vtables::PathingRequestRotate_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4575,15 +4575,15 @@ pub struct PathingRequestRotate {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4594,7 +4594,7 @@ pub struct PathingRequestRotate {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4604,7 +4604,7 @@ pub struct PathingRequestRotate {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     #[doc(hidden)]
@@ -4643,13 +4643,13 @@ pub struct PathingRequestSafeStraightLine {
     pub __vftable: *const crate::raw::vtables::PathingRequestSafeStraightLine_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4658,15 +4658,15 @@ pub struct PathingRequestSafeStraightLine {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4677,7 +4677,7 @@ pub struct PathingRequestSafeStraightLine {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4687,10 +4687,10 @@ pub struct PathingRequestSafeStraightLine {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 48],
+    unknown_100: [u8; 48],
     /// +0x130 `undefined4`, base PathingRequestClosePoint
     pub field_130: u32,
     /// +0x134 `undefined4`, base PathingRequestClosePoint
@@ -4701,7 +4701,7 @@ pub struct PathingRequestSafeStraightLine {
     pub field_139: u8,
     /// +0x13A `undefined1`, base PathingRequestClosePoint
     pub field_13A: u8,
-    pub unknown_13B: [u8; 5],
+    unknown_13B: [u8; 5],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     #[doc(hidden)]
@@ -4746,13 +4746,13 @@ pub struct PathingRequestStopMoving {
     pub __vftable: *const crate::raw::vtables::PathingRequestStopMoving_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -4761,15 +4761,15 @@ pub struct PathingRequestStopMoving {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -4780,7 +4780,7 @@ pub struct PathingRequestStopMoving {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -4790,7 +4790,7 @@ pub struct PathingRequestStopMoving {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     #[doc(hidden)]

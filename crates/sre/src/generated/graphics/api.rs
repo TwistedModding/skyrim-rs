@@ -57,59 +57,6 @@ impl crate::ImageSpaceModifierInstanceForm {
     pub fn imod(&self) -> Option<&crate::TESImageSpaceModifier> { unsafe { { self.imod }.as_ref() } }
 }
 
-impl crate::VolumetricLightingParams {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_inverseRepartitionFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.inverseRepartitionFunction", 0x48, *mut c_void) } }
-    /// `VolumetricLightingParams::inverseRepartitionFunction`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn inverseRepartitionFunction(&self) -> *mut c_void { unsafe { Self::__member_inverseRepartitionFunction(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_inverseRepartitionFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_inverseRepartitionFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn inverseRepartitionFunction_ptr(&self) -> *mut *mut c_void { Self::__member_inverseRepartitionFunction(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_inverseRepartitionTable(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.inverseRepartitionTable", 0x80, *mut c_void) } }
-    /// `VolumetricLightingParams::inverseRepartitionTable`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn inverseRepartitionTable(&self) -> *mut c_void { unsafe { Self::__member_inverseRepartitionTable(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_inverseRepartitionTable(&mut self, value: *mut c_void) { unsafe { Self::__member_inverseRepartitionTable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn inverseRepartitionTable_ptr(&self) -> *mut *mut c_void { Self::__member_inverseRepartitionTable(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_rangeFactor(this: *const Self) -> *mut f32 { unsafe { member!(this, "VolumetricLightingParams.rangeFactor", 0x2C, f32) } }
-    /// `VolumetricLightingParams::rangeFactor`, at +0x2C on 1.7.104.
-    #[inline]
-    pub fn rangeFactor(&self) -> f32 { unsafe { Self::__member_rangeFactor(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_rangeFactor(&mut self, value: f32) { unsafe { Self::__member_rangeFactor(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn rangeFactor_ptr(&self) -> *mut f32 { Self::__member_rangeFactor(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_repartitionFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.repartitionFunction", 0x40, *mut c_void) } }
-    /// `VolumetricLightingParams::repartitionFunction`, at +0x40 on 1.7.104.
-    #[inline]
-    pub fn repartitionFunction(&self) -> *mut c_void { unsafe { Self::__member_repartitionFunction(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_repartitionFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_repartitionFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn repartitionFunction_ptr(&self) -> *mut *mut c_void { Self::__member_repartitionFunction(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_repartitionTable(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.repartitionTable", 0x78, *mut c_void) } }
-    /// `VolumetricLightingParams::repartitionTable`, at +0x78 on 1.7.104.
-    #[inline]
-    pub fn repartitionTable(&self) -> *mut c_void { unsafe { Self::__member_repartitionTable(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_repartitionTable(&mut self, value: *mut c_void) { unsafe { Self::__member_repartitionTable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn repartitionTable_ptr(&self) -> *mut *mut c_void { Self::__member_repartitionTable(core::ptr::from_ref(self)) }
-}
-
 /// `AddFocusShadowNode`: appends {key, node} (refcounted) to g_FocusShadowNodes
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36755, rva 0x6623e0.

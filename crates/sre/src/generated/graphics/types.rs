@@ -10,7 +10,7 @@ use core::ffi::c_void;
 pub struct CameraMatrixEntry {
     /// +0x0 `ptr:NiCamera`, semantic; lookup key (high)
     pub camera: *mut crate::NiCamera,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; camera world rotation rows (medium)
     pub worldRotation: [u8; 48],
     /// +0x40 `undefined1`, semantic; view matrix without translation (rows right, up, forward); rendering is camera-relative, the eye is subtracted through g_CurrentCameraState's eye position (medium)
@@ -24,17 +24,17 @@ pub struct CameraMatrixEntry {
     pub previousViewProjection: [u8; 64],
     /// +0x140 `undefined1`, semantic (medium)
     pub viewProjectionUnjittered: [u8; 64],
-    pub unknown_180: [u8; 64],
+    unknown_180: [u8; 64],
     /// +0x1C0 `undefined1`, semantic (high)
     pub projectionUnjittered: [u8; 64],
-    pub unknown_200: [u8; 96],
+    unknown_200: [u8; 96],
     /// +0x260 `class:NiPoint3`, semantic; camera world translation at the update; +0x26c and +0x278 hold the two previous ones (medium); retyped float -> class:NiPoint3: UpdateCameraMatricesWithJitter 0x101e4e0 copies camera +0xa0..+0xa8
     pub eyePosition: crate::NiPoint3,
-    pub unknown_26C: [u8; 24],
+    unknown_26C: [u8; 24],
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
     #[doc(hidden)]
     pub __jittered: [u8; 1],
-    pub unknown_285: [u8; 11],
+    unknown_285: [u8; 11],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -127,34 +127,29 @@ const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, lastTotal) == 0x1
 /// `VolumetricLightingParams`: size 0x90 (exact).
 /// Meaning: the volumetric lighting state; one static instance, g_VolumetricLighting (high, graphics pass).
 /// Evidence: the volumetric lighting state; one static instance, g_VolumetricLighting; item 9 (request V). The static g_VolumetricLighting 0x20d7230 (0x90 bytes) that GetVolumetricLightingParams 0x1530c50 returns; offsets of the other members are in that global's row; fields here from CopyWeatherVolumetricLighting 0x1532240.; size: the global's 0x90.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct VolumetricLightingParams {
     pub unknown_0: [u8; 44],
     /// +0x2C `float`, semantic; range factor (40 by default); both tables are refilled when it changes (high)
-    #[doc(hidden)]
-    pub __rangeFactor: [u8; 4],
+    pub rangeFactor: f32,
     pub unknown_30: [u8; 16],
     /// +0x40 `pointer`, semantic; function that fills repartitionTable (x^r) (high)
-    #[doc(hidden)]
-    pub __repartitionFunction: [u8; 8],
+    pub repartitionFunction: *mut c_void,
     /// +0x48 `pointer`, semantic; function that fills inverseRepartitionTable (s^(1/r)) (high)
-    #[doc(hidden)]
-    pub __inverseRepartitionFunction: [u8; 8],
+    pub inverseRepartitionFunction: *mut c_void,
     pub unknown_50: [u8; 40],
     /// +0x78 `pointer`, semantic; the repartition 1D texture filled from +0x40 (high)
-    #[doc(hidden)]
-    pub __repartitionTable: [u8; 8],
+    pub repartitionTable: *mut c_void,
     /// +0x80 `pointer`, semantic; the inverse repartition 1D texture filled from +0x48 (high)
-    #[doc(hidden)]
-    pub __inverseRepartitionTable: [u8; 8],
+    pub inverseRepartitionTable: *mut c_void,
     pub unknown_88: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<VolumetricLightingParams>() == 0x90);
-const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __rangeFactor) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __repartitionFunction) == 0x40);
-const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __inverseRepartitionFunction) == 0x48);
-const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __repartitionTable) == 0x78);
-const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __inverseRepartitionTable) == 0x80);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, rangeFactor) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, repartitionFunction) == 0x40);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, inverseRepartitionFunction) == 0x48);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, repartitionTable) == 0x78);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, inverseRepartitionTable) == 0x80);
 

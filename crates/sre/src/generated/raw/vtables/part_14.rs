@@ -1134,29 +1134,29 @@ impl LookHandler_vtable {
     /// The slot's index on the running game; 3 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessMotion() -> usize { slot_index!("LookHandler", 0x0, 3) }
+    pub fn SLOT_ProcessMotion() -> usize { slot_at!("LookHandler", 0x0, 3) }
     /// Slot 3 as `LookHandler_vtable_ProcessMotion`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMotion(&self) -> Option<LookHandler_vtable_ProcessMotion> {
-        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessMotion>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("LookHandler", 0x0, 3))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessMotion>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("LookHandler", 0x0, 3))) }
     }
     /// The slot's index on the running game; 4 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessThumbstick() -> usize { slot_index!("LookHandler", 0x0, 4) }
+    pub fn SLOT_ProcessThumbstick() -> usize { slot_at!("LookHandler", 0x0, 4) }
     /// Slot 4 as `LookHandler_vtable_ProcessThumbstick`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessThumbstick(&self) -> Option<LookHandler_vtable_ProcessThumbstick> {
-        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessThumbstick>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("LookHandler", 0x0, 4))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessThumbstick>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("LookHandler", 0x0, 4))) }
     }
     /// The slot's index on the running game; 5 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessMouseMove() -> usize { slot_index!("LookHandler", 0x0, 5) }
+    pub fn SLOT_ProcessMouseMove() -> usize { slot_at!("LookHandler", 0x0, 5) }
     /// Slot 5 as `LookHandler_vtable_ProcessMouseMove`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMouseMove(&self) -> Option<LookHandler_vtable_ProcessMouseMove> {
-        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessMouseMove>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("LookHandler", 0x0, 5))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<LookHandler_vtable_ProcessMouseMove>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("LookHandler", 0x0, 5))) }
     }
 }
 /// `LookHandler::Destroy`, slot 0: releases the embedded event's string, resets the embedded vtable and its own, frees 0xb8 when flags bit 0 (high).
@@ -2610,23 +2610,23 @@ impl MenuEventHandler_vtable {
     /// The slot's index on the running game; 3 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessSixaxisEvent() -> usize { slot_index!("MenuEventHandler", 0x0, 3) }
+    pub fn SLOT_ProcessSixaxisEvent() -> usize { slot_at!("MenuEventHandler", 0x0, 3) }
     /// The slot's index on the running game; 4 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessKinectEvent() -> usize { slot_index!("MenuEventHandler", 0x0, 4) }
+    pub fn SLOT_ProcessKinectEvent() -> usize { slot_at!("MenuEventHandler", 0x0, 4) }
     /// The slot's index on the running game; 5 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessThumbstickEvent() -> usize { slot_index!("MenuEventHandler", 0x0, 5) }
+    pub fn SLOT_ProcessThumbstickEvent() -> usize { slot_at!("MenuEventHandler", 0x0, 5) }
     /// The slot's index on the running game; 6 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessMouseMoveEvent() -> usize { slot_index!("MenuEventHandler", 0x0, 6) }
+    pub fn SLOT_ProcessMouseMoveEvent() -> usize { slot_at!("MenuEventHandler", 0x0, 6) }
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("MenuEventHandler", 0x0, 7) }
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_at!("MenuEventHandler", 0x0, 7) }
 }
 /// `MenuEventHandler::vdtor`, slot 0: destructor (high).
 pub type MenuEventHandler_vtable_vdtor = unsafe extern "C" fn(this: *mut crate::MenuEventHandler, flags: u32) -> *mut crate::MenuEventHandler;
@@ -2668,15 +2668,15 @@ impl MenuOpenHandler_vtable {
     /// The slot's index on the running game; 4 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessKinectEvent() -> usize { slot_index!("MenuOpenHandler", 0x0, 4) }
+    pub fn SLOT_ProcessKinectEvent() -> usize { slot_at!("MenuOpenHandler", 0x0, 4) }
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("MenuOpenHandler", 0x0, 7) }
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_at!("MenuOpenHandler", 0x0, 7) }
     /// Slot 7 as `MenuOpenHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<MenuOpenHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<MenuOpenHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("MenuOpenHandler", 0x0, 7))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<MenuOpenHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("MenuOpenHandler", 0x0, 7))) }
     }
 }
 /// `MenuOpenHandler::CanProcess`, slot 1 (high).

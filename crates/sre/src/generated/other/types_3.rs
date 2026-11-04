@@ -14,7 +14,7 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x8 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_10: [u8; 1],
@@ -33,14 +33,14 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x20 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_20: [u8; 1],
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_24: [u8; 4],
     /// +0x28 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_28: [u8; 1],
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_2C: [u8; 4],
@@ -53,32 +53,32 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x35 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_35: [u8; 1],
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_38: [u8; 1],
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_3C: [u8; 4],
     /// +0x40 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_40: [u8; 1],
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_44: [u8; 4],
     /// +0x48 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_48: [u8; 1],
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_4C: [u8; 4],
     /// +0x50 `undefined2`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_50: [u8; 2],
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_54: [u8; 4],
@@ -91,11 +91,11 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x60 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_60: [u8; 1],
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_64: [u8; 1],
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_68: [u8; 4],
@@ -105,14 +105,14 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x70 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_70: [u8; 1],
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_74: [u8; 4],
     /// +0x78 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_78: [u8; 1],
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_7A: [u8; 2],
@@ -122,28 +122,28 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0x80 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_80: [u8; 1],
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_84: [u8; 4],
     /// +0x88 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_88: [u8; 1],
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_8C: [u8; 4],
     /// +0x90 `undefined2`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_90: [u8; 2],
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_94: [u8; 4],
     /// +0x98 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_98: [u8; 1],
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_9C: [u8; 4],
@@ -156,7 +156,7 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0xA8 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_A8: [u8; 1],
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_AC: [u8; 4],
@@ -169,7 +169,7 @@ pub struct _anon_3B91968A__DejaGFxLogger {
     /// +0xB8 `undefined1`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_B8: [u8; 1],
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -286,7 +286,7 @@ pub struct _anon_3D37F7D5__NullAssetLoader {
     /// +0x0 `vtbl:_anon_3D37F7D5::NullAssetLoader:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_3D37F7D5__NullAssetLoader_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -374,7 +374,7 @@ pub struct _anon_3D37F7D5__NullAssetLoader {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -492,7 +492,7 @@ pub struct _anon_4076B7E2__ForwardingPackfileListerer {
     /// +0x0 `vtbl:_anon_4076B7E2::ForwardingPackfileListerer:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_4076B7E2__ForwardingPackfileListerer_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -580,7 +580,7 @@ pub struct _anon_4076B7E2__ForwardingPackfileListerer {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -648,7 +648,7 @@ pub struct _anon_422024B4__Clear1nTracksFilter {
     pub __vftable: *const crate::raw::vtables::_anon_422024B4__Clear1nTracksFilter_vtable,
     /// +0x8 `undefined4`, base hkpCollisionFilter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:_anon_422024B4::Clear1nTracksFilter:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::_anon_422024B4__Clear1nTracksFilter_vtable_10,
@@ -740,7 +740,7 @@ pub struct _anon_422024B4__Clear1nTracksFilter {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -809,7 +809,7 @@ pub struct _anon_422024B4__NeverCollideFilter {
     pub __vftable: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable,
     /// +0x8 `undefined4`, base hkpCollisionFilter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:_anon_422024B4::NeverCollideFilter:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::_anon_422024B4__NeverCollideFilter_vtable_10,
@@ -901,7 +901,7 @@ pub struct _anon_422024B4__NeverCollideFilter {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1041,7 +1041,7 @@ pub struct _anon_569CF5D7__QueuedMagicItem {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -1049,28 +1049,28 @@ pub struct _anon_569CF5D7__QueuedMagicItem {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:_anon_569CF5D7::QueuedMagicItem:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::_anon_569CF5D7__QueuedMagicItem_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, base AnimationSystemUtils::TESModelAndAnimationHandles
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     /// +0x88 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
     pub field_88: u64,
     /// +0x90 `undefined8`, base AnimationSystemUtils::TESModelAndAnimationHandles
     pub field_90: u64,
-    pub unknown_98: [u8; 16],
+    unknown_98: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1432,10 +1432,10 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     pub __field_10: [u8; 2],
     /// +0x12 `undefined2`, ctor store
     pub field_12: u16,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
-    pub unknown_20: [u8; 12],
+    unknown_20: [u8; 12],
     /// +0x2C `undefined8`, ctor store
     pub field_2C: u64,
     /// +0x34 `undefined4`, ctor store
@@ -1444,10 +1444,10 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
-    pub unknown_50: [u8; 12],
+    unknown_50: [u8; 12],
     /// +0x5C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5C: [u8; 8],
@@ -1457,7 +1457,7 @@ pub struct _anon_705FD51E__MagicMenuAddActiveEffectVisitor {
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
-    pub unknown_70: [u8; 8],
+    unknown_70: [u8; 8],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
@@ -1547,26 +1547,26 @@ pub struct _anon_71CE6E17__DeepCopyStream {
     pub field_8: u32,
     /// +0xC `undefined1`, base NiStream
     pub field_C: u8,
-    pub unknown_D: [u8; 63],
+    unknown_D: [u8; 63],
     /// +0x4C `undefined1`, base NiStream
     pub field_4C: u8,
-    pub unknown_4D: [u8; 63],
+    unknown_4D: [u8; 63],
     /// +0x8C `undefined1`, base NiStream
     pub field_8C: u8,
-    pub unknown_8D: [u8; 67],
+    unknown_8D: [u8; 67],
     /// +0xD0 `undefined4`, base NiStream
     pub field_D0: u32,
-    pub unknown_D4: [u8; 44],
+    unknown_D4: [u8; 44],
     /// +0x100 `undefined4`, base NiStream
     pub field_100: u32,
     /// +0x104 `undefined4`, base NiStream
     pub field_104: u32,
     /// +0x108 `undefined1`, base NiStream
     pub field_108: u8,
-    pub unknown_109: [u8; 259],
+    unknown_109: [u8; 259],
     /// +0x20C `undefined2`, base NiStream
     pub field_20C: u16,
-    pub unknown_20E: [u8; 2],
+    unknown_20E: [u8; 2],
     /// +0x210 `undefined8`, base NiStream
     pub field_210: u64,
     /// +0x218 `undefined8`, base NiStream
@@ -1620,27 +1620,27 @@ pub struct _anon_71CE6E17__DeepCopyStream {
     pub m_NiTPointerMap_2B0: u64,
     /// +0x2B8 `undefined4`, base NiStream
     pub field_2B8: u32,
-    pub unknown_2BC: [u8; 4],
+    unknown_2BC: [u8; 4],
     /// +0x2C0 `undefined8`, base NiStream
     pub m_NiTMapBase_2C0: u64,
     /// +0x2C8 `undefined4`, base NiStream
     pub field_2C8: u32,
-    pub unknown_2CC: [u8; 4],
+    unknown_2CC: [u8; 4],
     /// +0x2D0 `undefined4`, base NiStream
     pub field_2D0: u32,
     /// +0x2D4 `undefined2`, base NiStream
     pub field_2D4: u16,
-    pub unknown_2D6: [u8; 2],
+    unknown_2D6: [u8; 2],
     /// +0x2D8 `undefined4`, base NiStream
     pub field_2D8: u32,
     /// +0x2DC `undefined1`, base NiStream
     pub field_2DC: u8,
-    pub unknown_2DD: [u8; 3],
+    unknown_2DD: [u8; 3],
     /// +0x2E0 `undefined8`, base NiStream
     pub field_2E0: u64,
     /// +0x2E8 `undefined4`, base NiStream
     pub field_2E8: u32,
-    pub unknown_2EC: [u8; 4],
+    unknown_2EC: [u8; 4],
     /// +0x2F0 `undefined8`, base NiStream
     pub field_2F0: u64,
     /// +0x2F8 `undefined8`, base NiStream
@@ -1649,12 +1649,12 @@ pub struct _anon_71CE6E17__DeepCopyStream {
     pub field_300: u32,
     /// +0x304 `undefined8`, base NiStream
     pub field_304: u64,
-    pub unknown_30C: [u8; 260],
+    unknown_30C: [u8; 260],
     /// +0x410 `undefined4`, base NiStream
     pub field_410: u32,
     /// +0x414 `undefined1`, base NiStream
     pub field_414: u8,
-    pub unknown_415: [u8; 3],
+    unknown_415: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2365,7 +2365,7 @@ pub struct _anon_860CB2AF__InternedStringRefCounted {
     /// +0x0 `vtbl:_anon_860CB2AF::InternedStringRefCounted:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_860CB2AF__InternedStringRefCounted_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2453,7 +2453,7 @@ pub struct _anon_860CB2AF__InternedStringRefCounted {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3149,7 +3149,7 @@ pub struct _anon_D9AF04FF__StatsStarSelector {
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
-    pub unknown_20: [u8; 12],
+    unknown_20: [u8; 12],
     /// +0x2C `float`, ctor store (widths [4, 8])
     pub field_2C: f32,
     /// +0x30 `float`, ctor store
@@ -3199,7 +3199,7 @@ pub struct _anon_D9AF04FF__StatsStarSelector {
     pub field_98: u8,
     /// +0x99 `undefined1`, ctor store
     pub field_99: u8,
-    pub unknown_9A: [u8; 6],
+    unknown_9A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3261,17 +3261,17 @@ pub struct _anon_D9AF04FF__UpdateStarText {
     /// +0x0 `vtbl:_anon_D9AF04FF::UpdateStarText:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_D9AF04FF__UpdateStarText_vtable,
-    pub unknown_8: [u8; 48],
+    unknown_8: [u8; 48],
     /// +0x38 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 4],
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 4],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3797,7 +3797,7 @@ pub struct ahkpCharacterProxy {
     pub __vftable: *const crate::raw::vtables::ahkpCharacterProxy_vtable,
     /// +0x8 `u32`, base hkpCharacterProxy, semantic; hkReferencedObject words (0x1ffff from the ctor) (high)
     pub memSizeAndRefCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:ahkpCharacterProxy:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::ahkpCharacterProxy_vtable_10,
@@ -3885,11 +3885,11 @@ pub struct ahkpCharacterProxy {
     pub field_D0: u32,
     /// +0xD4 `undefined4`, base hkpCharacterProxy
     pub field_D4: u32,
-    pub unknown_D8: [u8; 24],
+    unknown_D8: [u8; 24],
     /// +0xF0 `ptr:bhkCharacterProxy`, base hkpCharacterProxy, semantic; back pointer to the wrapper (bhkCharacterProxy slot 38 writes it) (high)
     #[doc(hidden)]
     pub __userData: [u8; 8],
-    pub unknown_F8: [u8; 8],
+    unknown_F8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3947,7 +3947,7 @@ pub struct ahkpCharacterRigidBody {
     pub __vftable: *const crate::raw::vtables::ahkpCharacterRigidBody_vtable,
     /// +0x8 `undefined4`, base hkpCharacterRigidBody
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:ahkpCharacterRigidBody:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::ahkpCharacterRigidBody_vtable_10,
@@ -4037,7 +4037,7 @@ pub struct ahkpCharacterRigidBody {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4108,7 +4108,7 @@ pub struct ahkpMalleableConstraintData {
     pub field_8: u16,
     /// +0xA `undefined2`, base hkpMalleableConstraintData
     pub field_A: u16,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4196,7 +4196,7 @@ pub struct ahkpMalleableConstraintData {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4267,7 +4267,7 @@ pub struct ahkpWorld {
     pub __vftable: *const crate::raw::vtables::ahkpWorld_vtable,
     /// +0x8 `undefined4`, base hkpWorld
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4371,7 +4371,7 @@ pub struct ahkpWorld {
     pub field_F8: u64,
     /// +0x100 `undefined2`, base hkpWorld
     pub field_100: u16,
-    pub unknown_102: [u8; 6],
+    unknown_102: [u8; 6],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4381,22 +4381,22 @@ pub struct ahkpWorld {
     /// +0x114 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_114: [u8; 4],
-    pub unknown_118: [u8; 4],
+    unknown_118: [u8; 4],
     /// +0x11C `undefined2`, base hkpWorld
     pub field_11C: u16,
-    pub unknown_11E: [u8; 2],
+    unknown_11E: [u8; 2],
     /// +0x120 `undefined1`, base hkpWorld
     pub field_120: u8,
     /// +0x121 `undefined1`, base hkpWorld
     pub field_121: u8,
-    pub unknown_122: [u8; 2],
+    unknown_122: [u8; 2],
     /// +0x124 `undefined4`, base hkpWorld
     pub field_124: u32,
     /// +0x128 `undefined8`, base hkpWorld
     pub field_128: u64,
     /// +0x130 `undefined4`, base hkpWorld
     pub field_130: u32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, base hkpWorld
     pub field_138: u64,
     /// +0x140 `undefined8`, base hkpWorld
@@ -4405,7 +4405,7 @@ pub struct ahkpWorld {
     pub field_148: u8,
     /// +0x149 `undefined1`, base hkpWorld
     pub field_149: u8,
-    pub unknown_14A: [u8; 2],
+    unknown_14A: [u8; 2],
     /// +0x14C `float`, base hkpWorld
     pub field_14C: f32,
     /// +0x150 `float`, base hkpWorld
@@ -4416,7 +4416,7 @@ pub struct ahkpWorld {
     pub field_155: u8,
     /// +0x156 `undefined1`, base hkpWorld
     pub field_156: u8,
-    pub unknown_157: [u8; 1],
+    unknown_157: [u8; 1],
     /// +0x158 `float`, base hkpWorld
     pub field_158: f32,
     /// +0x15C `float`, base hkpWorld
@@ -4427,7 +4427,7 @@ pub struct ahkpWorld {
     pub field_164: u32,
     /// +0x168 `undefined1`, base hkpWorld
     pub field_168: u8,
-    pub unknown_169: [u8; 3],
+    unknown_169: [u8; 3],
     /// +0x16C `undefined4`, base hkpWorld
     pub field_16C: u32,
     /// +0x170 `undefined4`, base hkpWorld
@@ -4446,7 +4446,7 @@ pub struct ahkpWorld {
     pub field_188: f32,
     /// +0x18C `undefined4`, base hkpWorld
     pub field_18C: u32,
-    pub unknown_190: [u8; 4],
+    unknown_190: [u8; 4],
     /// +0x194 `undefined4`, base hkpWorld
     pub field_194: u32,
     /// +0x198 `undefined8`, base hkpWorld
@@ -4547,7 +4547,7 @@ pub struct ahkpWorld {
     pub field_298: u64,
     /// +0x2A0 `undefined8`, base hkpWorld
     pub field_2A0: u64,
-    pub unknown_2A8: [u8; 8],
+    unknown_2A8: [u8; 8],
     /// +0x2B0 `undefined4`, base hkpWorld
     pub field_2B0: u32,
     /// +0x2B4 `undefined4`, base hkpWorld
@@ -4564,7 +4564,7 @@ pub struct ahkpWorld {
     pub field_2C8: f32,
     /// +0x2CC `float`, base hkpWorld
     pub field_2CC: f32,
-    pub unknown_2D0: [u8; 32],
+    unknown_2D0: [u8; 32],
     /// +0x2F0 `undefined1[16]`, base hkpWorld
     pub field_2F0: [u8; 16],
     /// +0x300 `undefined1[16]`, base hkpWorld
@@ -4695,7 +4695,7 @@ pub struct ahkpWorld {
     pub field_3E7: u8,
     /// +0x3E8 `float`, base hkpWorld
     pub field_3E8: f32,
-    pub unknown_3EC: [u8; 4],
+    unknown_3EC: [u8; 4],
     /// +0x3F0 `undefined1[16]`, base hkpWorld
     pub field_3F0: [u8; 16],
     /// +0x400 `undefined1[16]`, base hkpWorld
@@ -4710,7 +4710,7 @@ pub struct ahkpWorld {
     pub field_41C: u32,
     /// +0x420 `undefined1`, base hkpWorld
     pub field_420: u8,
-    pub unknown_421: [u8; 7],
+    unknown_421: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

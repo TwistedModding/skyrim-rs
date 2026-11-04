@@ -8,19 +8,19 @@ use core::ffi::c_void;
 /// Evidence: AI process of an actor; null for actors without AI; allocated with 0x140 at 0x6af862 in Actor::ctor_sub0 (2,558 allocations in run-actors, one per Actor::ctor), constructed by 0x6e66a0 and stored at Actor+0xf8; 0x720660 reads the middle-high data at +8, 0x6eb4a0/0x6eb4b0 the equipped objects at +0xf0/+0xf8, Actor::IsAlerted_Impl bit 3 of the byte at +0x136; live process.bin.
 #[repr(C, align(8))]
 pub struct AIProcess {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `ptr:MiddleHighProcessData`, semantic; middle-high process data (high)
     pub middleHigh: *mut crate::MiddleHighProcessData,
-    pub unknown_10: [u8; 224],
+    unknown_10: [u8; 224],
     /// +0xF0 `ptr:TESForm`, semantic; object in the left hand (high)
     pub equippedLeft: *mut crate::TESForm,
     /// +0xF8 `ptr:TESForm`, semantic; object in the right hand (high)
     pub equippedRight: *mut crate::TESForm,
-    pub unknown_100: [u8; 54],
+    unknown_100: [u8; 54],
     /// +0x136 `undefined1`, semantic; process flags; bit 3 alerted (medium)
     #[doc(hidden)]
     pub __flags: [u8; 1],
-    pub unknown_137: [u8; 9],
+    unknown_137: [u8; 9],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -49,13 +49,13 @@ pub struct Actor {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Actor:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Actor_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Actor:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Actor_vtable_30,
@@ -94,7 +94,7 @@ pub struct Actor {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Actor:A0`, rtti
     #[doc(hidden)]
     pub ____vftable_A0: [u8; 8],
@@ -104,7 +104,7 @@ pub struct Actor {
     /// +0xB0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 1],
-    pub unknown_B1: [u8; 7],
+    unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Actor:B8`, rtti
     #[doc(hidden)]
     pub ____vftable_B8: [u8; 8],
@@ -129,7 +129,7 @@ pub struct Actor {
     /// +0xE8 `undefined4`, semantic, runtime; actor flags; see the flag rows (high)
     #[doc(hidden)]
     pub __boolFlags: [u8; 4],
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, semantic, runtime; the AI process; null for actors without AI (high)
     #[doc(hidden)]
     pub __currentProcess: [u8; 8],
@@ -142,52 +142,52 @@ pub struct Actor {
     /// +0x108 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 4],
-    pub unknown_10C: [u8; 28],
+    unknown_10C: [u8; 28],
     /// +0x128 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 4],
-    pub unknown_134: [u8; 28],
+    unknown_134: [u8; 28],
     /// +0x150 `ptr:MovementControllerNPC`, ctor store, semantic, runtime; movement controller (medium)
     #[doc(hidden)]
     pub __movementController: [u8; 8],
-    pub unknown_158: [u8; 8],
+    unknown_158: [u8; 8],
     /// +0x160 `pointer`, semantic, runtime; combat controller; null out of combat (medium)
     #[doc(hidden)]
     pub __combatController: [u8; 8],
-    pub unknown_168: [u8; 8],
+    unknown_168: [u8; 8],
     /// +0x170 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 4],
-    pub unknown_174: [u8; 28],
+    unknown_174: [u8; 28],
     /// +0x190 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_190: [u8; 4],
-    pub unknown_194: [u8; 20],
+    unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
     #[doc(hidden)]
     pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
     #[doc(hidden)]
     pub __selectedSpells: [u8; 32],
-    pub unknown_1E8: [u8; 8],
+    unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1F0: [u8; 4],
-    pub unknown_1F4: [u8; 4],
+    unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, semantic, runtime; the actor's race (high)
     #[doc(hidden)]
     pub __race: [u8; 8],
-    pub unknown_200: [u8; 4],
+    unknown_200: [u8; 4],
     /// +0x204 `undefined4`, semantic, runtime; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     #[doc(hidden)]
     pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, semantic, runtime; cache and modifiers of the sparse actor values (high)
     #[doc(hidden)]
     pub __avStorage: [u8; 32],
-    pub unknown_228: [u8; 8],
+    unknown_228: [u8; 8],
     /// +0x230 `undefined12`, semantic, runtime; float[3] modifiers of Health: permanent, temporary, damage (high)
     #[doc(hidden)]
     pub __healthModifiers: [u8; 12],
@@ -200,18 +200,18 @@ pub struct Actor {
     /// +0x254 `undefined12`, semantic; float[3] modifiers of VoicePoints (high)
     #[doc(hidden)]
     pub __voicePointsModifiers: [u8; 12],
-    pub unknown_260: [u8; 8],
+    unknown_260: [u8; 8],
     /// +0x268 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_268: [u8; 8],
-    pub unknown_270: [u8; 16],
+    unknown_270: [u8; 16],
     /// +0x280 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_288: [u8; 4],
-    pub unknown_28C: [u8; 4],
+    unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, semantic; CRITICAL_SECTION (high)
     #[doc(hidden)]
     pub __criticalSection: [u8; 40],
@@ -319,27 +319,27 @@ pub struct ActorValueInfo {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:ActorValueInfo:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::ActorValueInfo_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:ActorValueInfo:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::ActorValueInfo_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `vtbl:ActorValueInfo:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::ActorValueInfo_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `pointer`, ctor store, semantic, runtime; const char* editor name of the value (high)
     pub name: *mut c_void,
-    pub unknown_58: [u8; 8],
+    unknown_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store, semantic, runtime; AVIF flags from the builder table (high)
     pub flags: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
@@ -391,7 +391,7 @@ pub struct ActorValueInfo {
     pub __field_AC: [u8; 4],
     /// +0xB0 `undefined4`, ctor store
     pub field_B0: u32,
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
     /// +0xC0 `undefined8`, ctor store
@@ -418,7 +418,7 @@ pub struct ActorValueInfo {
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
-    pub unknown_120: [u8; 8],
+    unknown_120: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -595,13 +595,13 @@ pub struct Character {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:Character:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::Character_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:Character:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::Character_vtable_30,
@@ -640,7 +640,7 @@ pub struct Character {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Character:A0`, rtti
     #[doc(hidden)]
     pub ____vftable_A0: [u8; 8],
@@ -650,7 +650,7 @@ pub struct Character {
     /// +0xB0 `undefined1`, base Actor
     #[doc(hidden)]
     pub __field_B0: [u8; 1],
-    pub unknown_B1: [u8; 7],
+    unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Character:B8`, rtti
     #[doc(hidden)]
     pub ____vftable_B8: [u8; 8],
@@ -675,7 +675,7 @@ pub struct Character {
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
     #[doc(hidden)]
     pub __boolFlags: [u8; 4],
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
     #[doc(hidden)]
     pub __currentProcess: [u8; 8],
@@ -688,56 +688,56 @@ pub struct Character {
     /// +0x108 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_108: [u8; 4],
-    pub unknown_10C: [u8; 12],
+    unknown_10C: [u8; 12],
     /// +0x118 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 4],
-    pub unknown_11C: [u8; 12],
+    unknown_11C: [u8; 12],
     /// +0x128 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_130: [u8; 4],
-    pub unknown_134: [u8; 28],
+    unknown_134: [u8; 28],
     /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
     #[doc(hidden)]
     pub __movementController: [u8; 8],
-    pub unknown_158: [u8; 8],
+    unknown_158: [u8; 8],
     /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
     #[doc(hidden)]
     pub __combatController: [u8; 8],
-    pub unknown_168: [u8; 8],
+    unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_170: [u8; 4],
-    pub unknown_174: [u8; 28],
+    unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_190: [u8; 4],
-    pub unknown_194: [u8; 20],
+    unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
     #[doc(hidden)]
     pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
     #[doc(hidden)]
     pub __selectedSpells: [u8; 32],
-    pub unknown_1E8: [u8; 8],
+    unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_1F0: [u8; 4],
-    pub unknown_1F4: [u8; 4],
+    unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
     #[doc(hidden)]
     pub __race: [u8; 8],
-    pub unknown_200: [u8; 4],
+    unknown_200: [u8; 4],
     /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     #[doc(hidden)]
     pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
     #[doc(hidden)]
     pub __avStorage: [u8; 32],
-    pub unknown_228: [u8; 8],
+    unknown_228: [u8; 8],
     /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
     #[doc(hidden)]
     pub __healthModifiers: [u8; 12],
@@ -750,7 +750,7 @@ pub struct Character {
     /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
     #[doc(hidden)]
     pub __voicePointsModifiers: [u8; 12],
-    pub unknown_260: [u8; 8],
+    unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_268: [u8; 8],
@@ -760,18 +760,18 @@ pub struct Character {
     /// +0x274 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_274: [u8; 4],
-    pub unknown_278: [u8; 1],
+    unknown_278: [u8; 1],
     /// +0x279 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_279: [u8; 2],
-    pub unknown_27B: [u8; 5],
+    unknown_27B: [u8; 5],
     /// +0x280 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_288: [u8; 4],
-    pub unknown_28C: [u8; 4],
+    unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
     #[doc(hidden)]
     pub __criticalSection: [u8; 40],
@@ -913,7 +913,7 @@ pub struct InventoryChanges {
     /// +0x14 `float`, semantic; the value of +0x10 before its last reset (medium)
     #[doc(hidden)]
     pub __previousCachedValue: [u8; 4],
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -962,7 +962,7 @@ const _: () = assert!(core::mem::offset_of!(LoadedReferenceData, node3D) == 0x68
 /// Evidence: middle-high process data: equipped entries and much more; object behind AIProcess+8; 0x720660 reads the left-hand entry at +0x220 and the right-hand entry at +0x260; size unknown, 0x328 is the extent of the named fields (pass 7 named fields up to +0x326); live middlehigh.bin: +0x260 -> the Iron War Axe entry, +0x220 null (run-actors).
 #[repr(C, align(8))]
 pub struct MiddleHighProcessData {
-    pub unknown_0: [u8; 176],
+    unknown_0: [u8; 176],
     /// +0xB0 `float`, semantic; actor pitch, fed to graph variable Pitch (scaled by the constant ID_190186) (high)
     pub pitch: f32,
     /// +0xB4 `float`, semantic; fed to graph variable Roll (same scale) (high)
@@ -972,51 +972,50 @@ pub struct MiddleHighProcessData {
     pub __movementDirection: [u8; 4],
     /// +0xBC `float`, semantic; fed to graph variable PitchDelta (scaled) (high)
     pub pitchDelta: f32,
-    pub unknown_C0: [u8; 224],
+    unknown_C0: [u8; 224],
     /// +0x1A0 `pointer`, semantic; head node of the actor's active-effect list ({item +0, next +8}) (high)
     pub activeEffects: *mut c_void,
     /// +0x1A8 `ptr:BSAnimationGraphManager`, semantic; the actor's graph manager (BSTSmartPointer, ref count at manager+8) (high)
     pub animationGraphManager: *mut crate::BSAnimationGraphManager,
     /// +0x1B0 `pointer`, semantic; manager+0x70 of the current manager, null when none (medium)
     pub animationGraphManagerData: *mut c_void,
-    pub unknown_1B8: [u8; 48],
+    unknown_1B8: [u8; 48],
     /// +0x1E8 `undefined8`, semantic; spin lock (owner thread, count at +0x1ec) (medium)
     #[doc(hidden)]
     pub __lock: [u8; 8],
-    pub unknown_1F0: [u8; 48],
+    unknown_1F0: [u8; 48],
     /// +0x220 `ptr:InventoryEntry`, semantic; inventory entry equipped in the left hand (high)
     pub leftHandEntry: *mut crate::InventoryEntry,
-    pub unknown_228: [u8; 40],
+    unknown_228: [u8; 40],
     /// +0x250 `ptr:bhkCharacterController`, semantic; the actor's character controller (high)
     #[doc(hidden)]
     pub __charController: [u8; 8],
-    pub unknown_258: [u8; 8],
+    unknown_258: [u8; 8],
     /// +0x260 `ptr:InventoryEntry`, semantic; inventory entry equipped in the right hand (high)
     pub rightHandEntry: *mut crate::InventoryEntry,
-    pub unknown_268: [u8; 24],
+    unknown_268: [u8; 24],
     /// +0x280 `ptr:TESIdleForm`, semantic; the idle IsLastIdlePlayed compares; written only by AIProcess load (0x6f9b22, from the save), the process reset 0x6fcb68 (0) and InitDefaults 0x7331d2 (0) (medium)
     #[doc(hidden)]
     pub __lastIdlePlayed: [u8; 8],
-    pub unknown_288: [u8; 32],
+    unknown_288: [u8; 32],
     /// +0x2A8 `float`, semantic; current movement speed, fed to graph variable Speed (divided by the channel's scale) (high)
     #[doc(hidden)]
     pub __speed: [u8; 4],
     /// +0x2AC `float`, semantic; fed to graph variable TargetSpeed (high)
     pub targetSpeed: f32,
-    pub unknown_2B0: [u8; 12],
+    unknown_2B0: [u8; 12],
     /// +0x2BC `float`, semantic; divisor of the ward channel (actor value 0x3f / this) (low)
     pub wardMagnitude: f32,
-    pub unknown_2C0: [u8; 68],
+    unknown_2C0: [u8; 68],
     /// +0x304 `undefined2`, semantic; equipped item type of the left hand (high)
     pub leftHandEquipType: u16,
     /// +0x306 `undefined2`, semantic; equipped item type of the right hand (high)
-    #[doc(hidden)]
-    pub __rightHandEquipType: [u8; 2],
-    pub unknown_308: [u8; 30],
+    pub rightHandEquipType: u16,
+    unknown_308: [u8; 30],
     /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
     #[doc(hidden)]
     pub __headTrackingEnabled: [u8; 1],
-    pub unknown_327: [u8; 1],
+    unknown_327: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1037,7 +1036,7 @@ const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __speed) == 0
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, targetSpeed) == 0x2AC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, wardMagnitude) == 0x2BC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEquipType) == 0x304);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __rightHandEquipType) == 0x306);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEquipType) == 0x306);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __headTrackingEnabled) == 0x326);
 
 /// `PlayerCharacter`: size 0xBF0 (exact, medium); primary base `Character`.
@@ -1060,13 +1059,13 @@ pub struct PlayerCharacter {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:PlayerCharacter:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::PlayerCharacter_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:PlayerCharacter:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::PlayerCharacter_vtable_30,
@@ -1105,7 +1104,7 @@ pub struct PlayerCharacter {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:PlayerCharacter:A0`, rtti
     #[doc(hidden)]
     pub ____vftable_A0: [u8; 8],
@@ -1115,7 +1114,7 @@ pub struct PlayerCharacter {
     /// +0xB0 `undefined1`, base Actor
     #[doc(hidden)]
     pub __field_B0: [u8; 1],
-    pub unknown_B1: [u8; 7],
+    unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:PlayerCharacter:B8`, rtti
     #[doc(hidden)]
     pub ____vftable_B8: [u8; 8],
@@ -1140,7 +1139,7 @@ pub struct PlayerCharacter {
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
     #[doc(hidden)]
     pub __boolFlags: [u8; 4],
-    pub unknown_EC: [u8; 12],
+    unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
     #[doc(hidden)]
     pub __currentProcess: [u8; 8],
@@ -1153,59 +1152,59 @@ pub struct PlayerCharacter {
     /// +0x108 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_108: [u8; 4],
-    pub unknown_10C: [u8; 12],
+    unknown_10C: [u8; 12],
     /// +0x118 `undefined4`, base Character
     #[doc(hidden)]
     pub __field_118: [u8; 4],
-    pub unknown_11C: [u8; 12],
+    unknown_11C: [u8; 12],
     /// +0x128 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_130: [u8; 4],
-    pub unknown_134: [u8; 20],
+    unknown_134: [u8; 20],
     /// +0x148 `ptr:ActorMover`, runtime
     #[doc(hidden)]
     pub __field_148: [u8; 8],
     /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
     #[doc(hidden)]
     pub __movementController: [u8; 8],
-    pub unknown_158: [u8; 8],
+    unknown_158: [u8; 8],
     /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
     #[doc(hidden)]
     pub __combatController: [u8; 8],
-    pub unknown_168: [u8; 8],
+    unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_170: [u8; 4],
-    pub unknown_174: [u8; 28],
+    unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_190: [u8; 4],
-    pub unknown_194: [u8; 20],
+    unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
     #[doc(hidden)]
     pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
     #[doc(hidden)]
     pub __selectedSpells: [u8; 32],
-    pub unknown_1E8: [u8; 8],
+    unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_1F0: [u8; 4],
-    pub unknown_1F4: [u8; 4],
+    unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
     #[doc(hidden)]
     pub __race: [u8; 8],
-    pub unknown_200: [u8; 4],
+    unknown_200: [u8; 4],
     /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
     #[doc(hidden)]
     pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
     #[doc(hidden)]
     pub __avStorage: [u8; 32],
-    pub unknown_228: [u8; 8],
+    unknown_228: [u8; 8],
     /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
     #[doc(hidden)]
     pub __healthModifiers: [u8; 12],
@@ -1218,7 +1217,7 @@ pub struct PlayerCharacter {
     /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
     #[doc(hidden)]
     pub __voicePointsModifiers: [u8; 12],
-    pub unknown_260: [u8; 8],
+    unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_268: [u8; 8],
@@ -1228,18 +1227,18 @@ pub struct PlayerCharacter {
     /// +0x274 `undefined4`, base Character
     #[doc(hidden)]
     pub __field_274: [u8; 4],
-    pub unknown_278: [u8; 1],
+    unknown_278: [u8; 1],
     /// +0x279 `undefined2`, base Character
     #[doc(hidden)]
     pub __field_279: [u8; 2],
-    pub unknown_27B: [u8; 5],
+    unknown_27B: [u8; 5],
     /// +0x280 `undefined8`, base Actor
     #[doc(hidden)]
     pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, base Actor
     #[doc(hidden)]
     pub __field_288: [u8; 4],
-    pub unknown_28C: [u8; 4],
+    unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
     #[doc(hidden)]
     pub __criticalSection: [u8; 40],
@@ -1270,7 +1269,7 @@ pub struct PlayerCharacter {
     /// +0x3E8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3E8: [u8; 8],
-    pub unknown_3F0: [u8; 12],
+    unknown_3F0: [u8; 12],
     /// +0x3FC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3FC: [u8; 8],
@@ -1280,11 +1279,11 @@ pub struct PlayerCharacter {
     /// +0x408 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_408: [u8; 8],
-    pub unknown_410: [u8; 8],
+    unknown_410: [u8; 8],
     /// +0x418 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_418: [u8; 8],
-    pub unknown_420: [u8; 12],
+    unknown_420: [u8; 12],
     /// +0x42C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_42C: [u8; 8],
@@ -1294,14 +1293,14 @@ pub struct PlayerCharacter {
     /// +0x438 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_438: [u8; 8],
-    pub unknown_440: [u8; 8],
+    unknown_440: [u8; 8],
     /// +0x448 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_448: [u8; 8],
     /// +0x450 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_450: [u8; 4],
-    pub unknown_454: [u8; 16],
+    unknown_454: [u8; 16],
     /// +0x464 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_464: [u8; 8],
@@ -1311,7 +1310,7 @@ pub struct PlayerCharacter {
     /// +0x470 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_470: [u8; 8],
-    pub unknown_478: [u8; 8],
+    unknown_478: [u8; 8],
     /// +0x480 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_480: [u8; 8],
@@ -1342,29 +1341,29 @@ pub struct PlayerCharacter {
     /// +0x4A8 `float`, ctor store (widths [4, 4])
     #[doc(hidden)]
     pub __field_4A8: [u8; 4],
-    pub unknown_4AC: [u8; 4],
+    unknown_4AC: [u8; 4],
     /// +0x4B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_4B0: [u8; 8],
     /// +0x4B8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_4B8: [u8; 8],
-    pub unknown_4C0: [u8; 160],
+    unknown_4C0: [u8; 160],
     /// +0x560 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_560: [u8; 4],
-    pub unknown_564: [u8; 20],
+    unknown_564: [u8; 20],
     /// +0x578 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_578: [u8; 4],
-    pub unknown_57C: [u8; 4],
+    unknown_57C: [u8; 4],
     /// +0x580 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_580: [u8; 8],
     /// +0x588 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_588: [u8; 8],
-    pub unknown_590: [u8; 36],
+    unknown_590: [u8; 36],
     /// +0x5B4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5B4: [u8; 8],
@@ -1374,11 +1373,11 @@ pub struct PlayerCharacter {
     /// +0x5C0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5C0: [u8; 8],
-    pub unknown_5C8: [u8; 8],
+    unknown_5C8: [u8; 8],
     /// +0x5D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5D0: [u8; 8],
-    pub unknown_5D8: [u8; 12],
+    unknown_5D8: [u8; 12],
     /// +0x5E4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5E4: [u8; 8],
@@ -1388,14 +1387,14 @@ pub struct PlayerCharacter {
     /// +0x5F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5F0: [u8; 8],
-    pub unknown_5F8: [u8; 8],
+    unknown_5F8: [u8; 8],
     /// +0x600 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_600: [u8; 8],
     /// +0x608 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_608: [u8; 4],
-    pub unknown_60C: [u8; 4],
+    unknown_60C: [u8; 4],
     /// +0x610 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_610: [u8; 8],
@@ -1405,14 +1404,14 @@ pub struct PlayerCharacter {
     /// +0x620 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_620: [u8; 4],
-    pub unknown_624: [u8; 4],
+    unknown_624: [u8; 4],
     /// +0x628 `undefined8`, member ctor NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>
     #[doc(hidden)]
     pub __m_NiTMapBase_628: [u8; 8],
     /// +0x630 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_630: [u8; 4],
-    pub unknown_634: [u8; 4],
+    unknown_634: [u8; 4],
     /// +0x638 `ptr:TESWorldSpace`, semantic, runtime; the player's current worldspace (medium)
     #[doc(hidden)]
     pub __worldSpace: [u8; 8],
@@ -1425,7 +1424,7 @@ pub struct PlayerCharacter {
     /// +0x648 `float`, ctor store
     #[doc(hidden)]
     pub __field_648: [u8; 4],
-    pub unknown_64C: [u8; 4],
+    unknown_64C: [u8; 4],
     /// +0x650 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_650: [u8; 8],
@@ -1468,14 +1467,14 @@ pub struct PlayerCharacter {
     /// +0x692 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_692: [u8; 1],
-    pub unknown_693: [u8; 5],
+    unknown_693: [u8; 5],
     /// +0x698 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_698: [u8; 4],
     /// +0x69C `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_69C: [u8; 1],
-    pub unknown_69D: [u8; 3],
+    unknown_69D: [u8; 3],
     /// +0x6A0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6A0: [u8; 4],
@@ -1485,7 +1484,7 @@ pub struct PlayerCharacter {
     /// +0x6A8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_6A8: [u8; 1],
-    pub unknown_6A9: [u8; 3],
+    unknown_6A9: [u8; 3],
     /// +0x6AC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6AC: [u8; 4],
@@ -1495,15 +1494,15 @@ pub struct PlayerCharacter {
     /// +0x6B4 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_6B4: [u8; 1],
-    pub unknown_6B5: [u8; 3],
+    unknown_6B5: [u8; 3],
     /// +0x6B8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6B8: [u8; 4],
-    pub unknown_6BC: [u8; 4],
+    unknown_6BC: [u8; 4],
     /// +0x6C0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6C0: [u8; 8],
-    pub unknown_6C8: [u8; 8],
+    unknown_6C8: [u8; 8],
     /// +0x6D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6D0: [u8; 8],
@@ -1522,7 +1521,7 @@ pub struct PlayerCharacter {
     /// +0x6E8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6E8: [u8; 4],
-    pub unknown_6EC: [u8; 4],
+    unknown_6EC: [u8; 4],
     /// +0x6F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6F0: [u8; 8],
@@ -1532,7 +1531,7 @@ pub struct PlayerCharacter {
     /// +0x700 `ptr:ImageSpaceModifierInstanceDOF`, ctor store, runtime
     #[doc(hidden)]
     pub __field_700: [u8; 8],
-    pub unknown_708: [u8; 8],
+    unknown_708: [u8; 8],
     /// +0x710 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_710: [u8; 8],
@@ -1548,11 +1547,11 @@ pub struct PlayerCharacter {
     /// +0x730 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_730: [u8; 4],
-    pub unknown_734: [u8; 4],
+    unknown_734: [u8; 4],
     /// +0x738 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_738: [u8; 8],
-    pub unknown_740: [u8; 160],
+    unknown_740: [u8; 160],
     /// +0x7E0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_7E0: [u8; 4],
@@ -1694,14 +1693,14 @@ pub struct PlayerCharacter {
     /// +0x89C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_89C: [u8; 4],
-    pub unknown_8A0: [u8; 4],
+    unknown_8A0: [u8; 4],
     /// +0x8A4 `u32`, semantic; ObjectRefHandle of the actor doing the player a favor (command mode) (medium)
     #[doc(hidden)]
     pub __favorActorHandle: [u8; 4],
     /// +0x8A8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8A8: [u8; 4],
-    pub unknown_8AC: [u8; 44],
+    unknown_8AC: [u8; 44],
     /// +0x8D8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8D8: [u8; 4],
@@ -1714,7 +1713,7 @@ pub struct PlayerCharacter {
     /// +0x8E8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_8E8: [u8; 8],
-    pub unknown_8F0: [u8; 4],
+    unknown_8F0: [u8; 4],
     /// +0x8F4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8F4: [u8; 4],
@@ -1727,7 +1726,7 @@ pub struct PlayerCharacter {
     /// +0x908 `float`, ctor store, semantic, runtime; local translation z of the first-person skeleton's 'Camera1st [Cam1]' node, read once at load (medium)
     #[doc(hidden)]
     pub __firstPersonCameraHeight: [u8; 4],
-    pub unknown_90C: [u8; 4],
+    unknown_90C: [u8; 4],
     /// +0x910 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_910: [u8; 8],
@@ -1740,7 +1739,7 @@ pub struct PlayerCharacter {
     /// +0x928 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_928: [u8; 4],
-    pub unknown_92C: [u8; 4],
+    unknown_92C: [u8; 4],
     /// +0x930 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_930: [u8; 8],
@@ -1750,7 +1749,7 @@ pub struct PlayerCharacter {
     /// +0x940 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_940: [u8; 4],
-    pub unknown_944: [u8; 4],
+    unknown_944: [u8; 4],
     /// +0x948 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_948: [u8; 8],
@@ -1769,7 +1768,7 @@ pub struct PlayerCharacter {
     /// +0x970 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_970: [u8; 4],
-    pub unknown_974: [u8; 4],
+    unknown_974: [u8; 4],
     /// +0x978 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_978: [u8; 8],
@@ -1782,14 +1781,14 @@ pub struct PlayerCharacter {
     /// +0x990 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_990: [u8; 4],
-    pub unknown_994: [u8; 4],
+    unknown_994: [u8; 4],
     /// +0x998 `ptr:TESWorldSpace`, ctor store, runtime
     #[doc(hidden)]
     pub __field_998: [u8; 8],
     /// +0x9A0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_9A0: [u8; 4],
-    pub unknown_9A4: [u8; 4],
+    unknown_9A4: [u8; 4],
     /// +0x9A8 `pointer`, semantic; torch light record used while the third-person root is hidden (+0x48 holds its light) (low)
     #[doc(hidden)]
     pub __firstPersonTorchLight: [u8; 8],
@@ -1817,11 +1816,11 @@ pub struct PlayerCharacter {
     /// +0x9E0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_9E0: [u8; 8],
-    pub unknown_9E8: [u8; 24],
+    unknown_9E8: [u8; 24],
     /// +0xA00 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A00: [u8; 8],
-    pub unknown_A08: [u8; 16],
+    unknown_A08: [u8; 16],
     /// +0xA18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A18: [u8; 8],
@@ -1831,11 +1830,11 @@ pub struct PlayerCharacter {
     /// +0xA28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A28: [u8; 4],
-    pub unknown_A2C: [u8; 164],
+    unknown_A2C: [u8; 164],
     /// +0xAD0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_AD0: [u8; 4],
-    pub unknown_AD4: [u8; 4],
+    unknown_AD4: [u8; 4],
     /// +0xAD8 `ptr:BGSLocation`, semantic, runtime; the player's current location (high)
     #[doc(hidden)]
     pub __currentLocation: [u8; 8],
@@ -1878,11 +1877,11 @@ pub struct PlayerCharacter {
     /// +0xB12 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B12: [u8; 1],
-    pub unknown_B13: [u8; 5],
+    unknown_B13: [u8; 5],
     /// +0xB18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B18: [u8; 8],
-    pub unknown_B20: [u8; 24],
+    unknown_B20: [u8; 24],
     /// +0xB38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B38: [u8; 8],
@@ -1898,7 +1897,7 @@ pub struct PlayerCharacter {
     /// +0xB58 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B58: [u8; 4],
-    pub unknown_B5C: [u8; 28],
+    unknown_B5C: [u8; 28],
     /// +0xB78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B78: [u8; 8],
@@ -1914,7 +1913,7 @@ pub struct PlayerCharacter {
     /// +0xB98 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B98: [u8; 4],
-    pub unknown_B9C: [u8; 4],
+    unknown_B9C: [u8; 4],
     /// +0xBA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_BA0: [u8; 8],
@@ -1924,7 +1923,7 @@ pub struct PlayerCharacter {
     /// +0xBB0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_BB0: [u8; 4],
-    pub unknown_BB4: [u8; 44],
+    unknown_BB4: [u8; 44],
     /// +0xBE0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_BE0: [u8; 8],
@@ -1943,7 +1942,7 @@ pub struct PlayerCharacter {
     /// +0xBEC `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_BEC: [u8; 1],
-    pub unknown_BED: [u8; 3],
+    unknown_BED: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2301,7 +2300,7 @@ pub struct TESContainer {
     /// +0x14 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_14: [u8; 1],
-    pub unknown_15: [u8; 3],
+    unknown_15: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2358,25 +2357,25 @@ pub struct TESNPC {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESNPC:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESNPC_vtable_30,
     /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
     pub flags: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined2`, base TESActorBaseData, semantic; level, or level multiplier x1000 with PCLevelMult (high)
     pub level: u16,
     /// +0x42 `undefined2`, base TESActorBaseData, semantic; minimum level with PCLevelMult (high)
     pub minLevel: u16,
     /// +0x44 `undefined2`, base TESActorBaseData, semantic; maximum level with PCLevelMult (high)
     pub maxLevel: u16,
-    pub unknown_46: [u8; 2],
+    unknown_46: [u8; 2],
     /// +0x48 `undefined2`, base TESActorBaseData
     pub field_48: u16,
     /// +0x4A `undefined2`, base TESActorBaseData
@@ -2393,7 +2392,7 @@ pub struct TESNPC {
     pub field_60: u64,
     /// +0x68 `undefined4`, base TESActorBaseData
     pub field_68: u32,
-    pub unknown_6C: [u8; 28],
+    unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESNPC:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESNPC_vtable_88,
@@ -2404,7 +2403,7 @@ pub struct TESNPC {
     /// +0x9C `undefined1`, base TESContainer
     #[doc(hidden)]
     pub __field_9C: [u8; 1],
-    pub unknown_9D: [u8; 3],
+    unknown_9D: [u8; 3],
     /// +0xA0 `vtbl:TESNPC:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESNPC_vtable_A0,
@@ -2419,7 +2418,7 @@ pub struct TESNPC {
     pub field_BC: u32,
     /// +0xC0 `undefined2`, base TESAIForm
     pub field_C0: u16,
-    pub unknown_C2: [u8; 22],
+    unknown_C2: [u8; 22],
     /// +0xD8 `vtbl:TESNPC:D8`, rtti
     #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::TESNPC_vtable_D8,
@@ -2446,7 +2445,7 @@ pub struct TESNPC {
     pub keywords: *mut c_void,
     /// +0x120 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_124: [u8; 4],
+    unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESNPC:128`, rtti
     #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::TESNPC_vtable_128,
@@ -2459,7 +2458,7 @@ pub struct TESNPC {
     pub field_140: u64,
     /// +0x148 `undefined4`, base BGSPerkRankArray
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     /// +0x150 `vtbl:TESNPC:150`, rtti
     #[doc(hidden)]
     pub __vftable_150: *const crate::raw::vtables::TESNPC_vtable_150,
@@ -2479,18 +2478,18 @@ pub struct TESNPC {
     /// +0x188 `vtbl:TESNPC:188`, rtti
     #[doc(hidden)]
     pub __vftable_188: *const crate::raw::vtables::TESNPC_vtable_188,
-    pub unknown_190: [u8; 48],
+    unknown_190: [u8; 48],
     /// +0x1C0 `ptr:TESClass`, semantic, runtime; the NPC's class (high)
     pub npcClass: *mut crate::TESClass,
-    pub unknown_1C8: [u8; 16],
+    unknown_1C8: [u8; 16],
     /// +0x1D8 `ptr:TESCombatStyle`, runtime
     pub field_1D8: *mut crate::TESCombatStyle,
-    pub unknown_1E0: [u8; 24],
+    unknown_1E0: [u8; 24],
     /// +0x1F8 `float`, semantic, runtime; height multiplier (high)
     pub height: f32,
     /// +0x1FC `float`, semantic, runtime; weight (0-100) (high)
     pub weight: f32,
-    pub unknown_200: [u8; 104],
+    unknown_200: [u8; 104],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2573,13 +2572,13 @@ pub struct TESObjectREFR {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectREFR:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectREFR_vtable_20,
     /// +0x28 `undefined4`, ctor store, semantic, runtime; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectREFR:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectREFR_vtable_30,
@@ -2618,7 +2617,7 @@ pub struct TESObjectREFR {
     /// +0x9B `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

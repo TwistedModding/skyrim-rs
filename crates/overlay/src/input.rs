@@ -328,7 +328,7 @@ impl Reported {
     /// Adds the mouse and gamepad events and the keyboard releases of a frame's list that reached the game.
     fn record(&mut self, list: &InputEventList) {
         for event in list.iter() {
-            match (InputDevice::from_u32(event.device), event.as_button(), event.as_mouse_move()) {
+            match (InputDevice::from_engine(event.device), event.as_button(), event.as_mouse_move()) {
                 (Some(InputDevice::Mouse), _, Some(m)) => self.mouse.moved(m.dx.cast_signed(), m.dy.cast_signed()),
                 (Some(InputDevice::Mouse), Some(b), _) => self.mouse.button(b.idCode, b.value, b.heldDownSecs),
                 (Some(InputDevice::Keyboard), Some(b), _) => self.key(b.idCode, b.value, b.heldDownSecs),
@@ -504,7 +504,7 @@ impl EventSink<InputEventList> for Gate {
         let mut reports = Vec::new();
         let mut presses = Vec::new();
         for event in list.iter() {
-            let device = InputDevice::from_u32(event.device);
+            let device = InputDevice::from_engine(event.device);
             let key = event.as_button().filter(|_| device == Some(InputDevice::Keyboard));
             let mut to_egui = crate::is_open();
             if let Some(b) = key {
@@ -562,7 +562,7 @@ impl EventSink<InputEventList> for Gate {
             stop = false;
         }
         if !stop {
-            for b in list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()) {
+            for b in list.iter().filter(|e| InputDevice::from_engine(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()) {
                 let held = &mut p.game_held[b.idCode as usize & 0xFF];
                 if b.is_pressed() {
                     *held = true;
@@ -613,7 +613,7 @@ impl Pending {
             if !pressed && b.value != 0.0 {
                 return;
             }
-            match InputDevice::from_u32(event.device) {
+            match InputDevice::from_engine(event.device) {
                 Some(InputDevice::Keyboard) => {
                     if let Some(key) = key(b.idCode) {
                         self.events.push(Event::Key { key, physical_key: Some(key), pressed, repeat: false, modifiers });
@@ -648,7 +648,7 @@ fn is_modifier(scan_code: u32) -> bool {
 /// window lost the focus while Alt was down) leaves no modifier stuck.
 fn held_modifiers(list: &InputEventList) -> Modifiers {
     let mut m = Modifiers::NONE;
-    let down = list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()).filter(|b| b.value != 0.0);
+    let down = list.iter().filter(|e| InputDevice::from_engine(e.device) == Some(InputDevice::Keyboard)).filter_map(|e| e.as_button()).filter(|b| b.value != 0.0);
     for b in down {
         match b.idCode {
             0x2A | 0x36 => m.shift = true,

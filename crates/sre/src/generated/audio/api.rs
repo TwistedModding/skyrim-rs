@@ -604,6 +604,16 @@ impl crate::BSAudioManager {
     pub fn cacheCount_ptr(&self) -> *mut u32 { Self::__member_cacheCount(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_cacheList(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "BSAudioManager.cacheList", 0xE8, [u8; 8]) } }
+    /// `BSAudioManager::cacheList`, at +0xE8 on 1.7.104.
+    #[inline]
+    pub fn cacheList(&self) -> [u8; 8] { unsafe { Self::__member_cacheList(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cacheList(&mut self, value: [u8; 8]) { unsafe { Self::__member_cacheList(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cacheList_ptr(&self) -> *mut [u8; 8] { Self::__member_cacheList(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_threadId(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAudioManager.threadId", 0xF4, u32) } }
     /// `BSAudioManager::threadId`, at +0xF4 on 1.7.104.
     #[inline]
@@ -1357,16 +1367,6 @@ impl crate::SoundHandleStatus {
     pub fn set_frequency(&mut self, value: f32) { unsafe { Self::__member_frequency(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn frequency_ptr(&self) -> *mut f32 { Self::__member_frequency(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_nextFree(this: *const Self) -> *mut [u8; 8] { unsafe { member!(this, "SoundHandleStatus.nextFree", 0x20, [u8; 8]) } }
-    /// `SoundHandleStatus::nextFree`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn nextFree(&self) -> [u8; 8] { unsafe { Self::__member_nextFree(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_nextFree(&mut self, value: [u8; 8]) { unsafe { Self::__member_nextFree(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn nextFree_ptr(&self) -> *mut [u8; 8] { Self::__member_nextFree(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESAudio__ScriptedMusicState {

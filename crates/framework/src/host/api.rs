@@ -178,7 +178,7 @@ unsafe extern "C" fn gamepad(_: *const HostApi, out: *mut RawPad, presses: Sink<
 
 unsafe extern "C" fn input_filter(api: *const HostApi, name: Str, user_events: *const Str, events_len: usize, buttons: *const RawButton, buttons_len: usize) -> usize {
     let user_events: Vec<&str> = unsafe { slice(user_events, events_len) }.iter().map(|e| unsafe { e.as_str() }).collect();
-    let buttons: Vec<(InputDevice, u32)> = unsafe { slice(buttons, buttons_len) }.iter().filter_map(|b| Some((InputDevice::from_u32(b.device)?, b.id))).collect();
+    let buttons: Vec<(InputDevice, u32)> = unsafe { slice(buttons, buttons_len) }.iter().filter_map(|b| Some((InputDevice::from_engine(b.device)?, b.id))).collect();
     filters::declare(owner(api), unsafe { name.as_str() }, &user_events, &buttons)
 }
 

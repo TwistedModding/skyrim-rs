@@ -17,7 +17,7 @@ use skyrim::prelude::*;
 use sre::raw::globals;
 use sre::{BSEventNotifyControl, EventSourceHolder_Input as InputManager, EventSourceHolder_User as ControlMap, InputDevice, ScriptParamType};
 
-use crate::{Test, check};
+use crate::{Test, check, not_run};
 
 const KEY_E: u32 = 0x12;
 const KEY_W: u32 = 0x11;
@@ -49,7 +49,7 @@ impl EventSink<InputEventList> for Keys {
     fn process(&self, list: &InputEventList, _: &BSTEventSource<InputEventList>) -> BSEventNotifyControl {
         let keyboard = InputManager::singleton().and_then(InputManager::keyboard);
         let mut keys = KEYS.lock().unwrap();
-        for button in list.iter().filter(|e| InputDevice::from_u32(e.device) == Some(InputDevice::Keyboard)).filter_map(InputEventExt::as_button) {
+        for button in list.iter().filter(|e| InputDevice::from_engine(e.device) == Some(InputDevice::Keyboard)).filter_map(InputEventExt::as_button) {
             let stats = keys.entry(button.idCode).or_default();
             if button.is_pressed() {
                 stats.presses += 1;
@@ -129,15 +129,16 @@ fn rva(p: usize) -> usize {
     p.wrapping_sub(skyrim::reloc().base())
 }
 
-fn vtable_rva(object: *const core::ffi::c_void) -> usize {
-    if object.is_null() { 0 } else { rva(unsafe { *object.cast::<usize>() }) }
+/// The class whose vtable `object` starts with, by the running game's ids.
+fn class_at(object: *const core::ffi::c_void) -> &'static str {
+    unsafe { object.cast::<usize>().as_ref() }.and_then(skyrim::class_of).map_or("?", |c| c.class)
 }
 
 fn devices() -> Result<String, String> {
     let input = InputManager::singleton().ok_or("no input manager")?;
-    let keyboard = vtable_rva(input.keyboard.cast());
-    let mouse = vtable_rva(input.mouse.cast());
-    check(keyboard == 0x1a2_ce50 && mouse == 0x1a2_ceb0, &format!("keyboard vtable {keyboard:#x}, mouse {mouse:#x}"))?;
+    let keyboard = class_at(input.keyboard.cast());
+    let mouse = class_at(input.mouse.cast());
+    check(keyboard == "BSWin32KeyboardDevice" && mouse == "BSWin32MouseDevice", &format!("keyboard's class {keyboard}, mouse's {mouse}"))?;
     check(input.keyboard().is_some(), "keyboard() is None")?;
     let name = input.key_name(InputDevice::Keyboard, KEY_E);
     let code = input.key_code(InputDevice::Keyboard, KEY_E);
@@ -148,10 +149,16 @@ fn devices() -> Result<String, String> {
 fn sinks() -> Result<String, String> {
     let source = InputEventList::source().ok_or("no input source")?;
     let reloc = skyrim::reloc();
-    let expected = [sre::id!(globals::g_ConsoleHotkeyManager), sre::id!(globals::g_MenuControls), sre::id!(globals::g_PlayerControls)].map(|g| reloc.address(g).unwrap_or(0));
+    let expected = [sre::id!(globals::g_MenuControls), sre::id!(globals::g_PlayerControls)].map(|g| reloc.address(g).unwrap_or(0));
     let first: Vec<usize> = source.sinks().iter().take(3).map(|s| *s as usize).collect();
-    check(first == expected, &format!("first sinks {:x?}, expected {expected:x?}", first.iter().map(|p| rva(*p)).collect::<Vec<_>>()))?;
+    let seen = || format!("first sinks {:x?}, expected console hotkeys and then {expected:x?}", first.iter().map(|p| rva(*p)).collect::<Vec<_>>());
+    check(first.get(1..) == Some(&expected[..]), &seen())?;
     check(source.contains(&KEY_SINK), "the key sink is not registered")?;
+    // Unrecorded: a runtime without this global would otherwise refuse the whole plugin.
+    let Ok(hotkeys) = reloc.address(globals::g_ConsoleHotkeyManager) else {
+        return not_run("g_ConsoleHotkeyManager has no usable row on this runtime");
+    };
+    check(first[0] == hotkeys, &seen())?;
     Ok(format!("{} sinks: console hotkeys, MenuControls, PlayerControls first, the key sink among the rest", source.sinks().len()))
 }
 
@@ -167,12 +174,12 @@ fn control_map() -> Result<String, String> {
 }
 
 fn player_controls() -> Result<String, String> {
-    const HANDLERS: [usize; 13] = [0x0193_51c8, 0x0193_5150, 0x0193_5348, 0x0193_53d8, 0x0193_5418, 0x0193_5388, 0x0193_54a8, 0x0193_5528, 0x0193_5208, 0x0193_5258, 0x0193_5458, 0x0193_54e8, 0x0193_5568];
+    const HANDLERS: [&str; 13] = ["MovementHandler", "LookHandler", "ReadyWeaponHandler", "AutoMoveHandler", "ToggleRunHandler", "ActivateHandler", "JumpHandler", "ShoutHandler", "SprintHandler", "AttackBlockHandler", "RunHandler", "SneakHandler", "TogglePOVHandler"];
     let handlers = skyrim::input::player_input_handlers();
     check(!handlers.is_empty(), "no PlayerControls")?;
-    let vtables: Vec<usize> = handlers.iter().map(|h| vtable_rva(h.cast_const())).collect();
-    check(vtables.len() > HANDLERS.len() && vtables[..HANDLERS.len()] == HANDLERS, &format!("handler vtables {vtables:x?}"))?;
-    Ok(format!("{} handlers: the 13 of the pass in order, then the camera state's ({:#x})", vtables.len(), vtables[HANDLERS.len()]))
+    let classes: Vec<&str> = handlers.iter().map(|h| class_at(h.cast_const())).collect();
+    check(classes.len() > HANDLERS.len() && classes[..HANDLERS.len()] == HANDLERS, &format!("handler classes {classes:?}"))?;
+    Ok(format!("{} handlers: the 13 of the pass in order, then the camera state's ({})", classes.len(), classes[HANDLERS.len()]))
 }
 
 fn command_entry() -> Result<String, String> {

@@ -1078,19 +1078,19 @@ impl crate::LoginMenu__errorCallback {
 impl crate::LoginMenu__loginMenu {
     /// The `GFxFunctionHandler` base at +0x30.
     #[inline]
-    pub fn as_g_fx_function_handler(&self) -> &crate::GFxFunctionHandler { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_fx_function_handler(&self) -> &crate::GFxFunctionHandler { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountBase<GFxFunctionHandler,2>` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_base_g_fx_function_handler_2(&self) -> &crate::GRefCountBase_GFxFunctionHandler_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_base_g_fx_function_handler_2(&self) -> &crate::GRefCountBase_GFxFunctionHandler_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountBaseStatImpl<GRefCountImpl,2>` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_base_stat_impl_g_ref_count_impl_2(&self) -> &crate::GRefCountBaseStatImpl_GRefCountImpl_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_base_stat_impl_g_ref_count_impl_2(&self) -> &crate::GRefCountBaseStatImpl_GRefCountImpl_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountImpl` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_impl(&self) -> &crate::GRefCountImpl { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_impl(&self) -> &crate::GRefCountImpl { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountImplCore` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_impl_core(&self) -> &crate::GRefCountImplCore { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_impl_core(&self) -> &crate::GRefCountImplCore { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)).cast() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member___vftable(this: *const Self) -> *mut *const crate::raw::vtables::LoginMenu__loginMenu_vtable { unsafe { member!(this, "LoginMenu::loginMenu.__vftable", 0x0, *const crate::raw::vtables::LoginMenu__loginMenu_vtable) } }
@@ -2682,19 +2682,19 @@ impl crate::MarketplaceDataProducer {
 impl crate::MarketplaceMenu {
     /// The `GFxFunctionHandler` base at +0x30.
     #[inline]
-    pub fn as_g_fx_function_handler(&self) -> &crate::GFxFunctionHandler { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_fx_function_handler(&self) -> &crate::GFxFunctionHandler { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountBase<GFxFunctionHandler,2>` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_base_g_fx_function_handler_2(&self) -> &crate::GRefCountBase_GFxFunctionHandler_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_base_g_fx_function_handler_2(&self) -> &crate::GRefCountBase_GFxFunctionHandler_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountBaseStatImpl<GRefCountImpl,2>` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_base_stat_impl_g_ref_count_impl_2(&self) -> &crate::GRefCountBaseStatImpl_GRefCountImpl_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_base_stat_impl_g_ref_count_impl_2(&self) -> &crate::GRefCountBaseStatImpl_GRefCountImpl_2 { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountImpl` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_impl(&self) -> &crate::GRefCountImpl { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_impl(&self) -> &crate::GRefCountImpl { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
     /// The `GRefCountImplCore` base at +0x30.
     #[inline]
-    pub fn as_g_ref_count_impl_core(&self) -> &crate::GRefCountImplCore { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
+    pub fn as_g_ref_count_impl_core(&self) -> &crate::GRefCountImplCore { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30)).cast() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member___vftable(this: *const Self) -> *mut *const crate::raw::vtables::MarketplaceMenu_vtable { unsafe { member!(this, "MarketplaceMenu.__vftable", 0x0, *const crate::raw::vtables::MarketplaceMenu_vtable) } }

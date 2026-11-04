@@ -20,6 +20,9 @@ pub const CANONICAL: &str = "1.7.104";
 /// layout unverified, so it would turn every field into an accessor, and it gets no profile.
 pub const SUPPORTED: [&str; 4] = ["1.5.97", "1.6.353", "1.6.1170", CANONICAL];
 
+/// Managed patches' bytes on each runtime, which the difference files do not give.
+const SITE_PATCHES: &str = include_str!("../site-patches.txt");
+
 /// `{"columns": [...], "rows": [[...], ...]}`, read by column name so added columns change nothing.
 #[derive(Default, Deserialize)]
 struct Table {
@@ -242,6 +245,31 @@ impl Runtime {
         runtime
     }
 
+    /// Writes the rows of `table` for this runtime over its sites. A row that says otherwise than
+    /// what the difference file compared means one of them is out of date.
+    fn apply_site_patches(&mut self, table: &str) -> Result<(), String> {
+        let hex_bytes = |text: &str| (0..text.len()).step_by(2).map(|i| text.get(i..i + 2).and_then(|byte| u8::from_str_radix(byte, 16).ok())).collect::<Option<Vec<u8>>>();
+        for line in table.lines().filter(|l| !l.is_empty() && !l.starts_with('#')) {
+            let bad = || format!("malformed row: {line}");
+            let fields: Vec<&str> = line.splitn(7, ' ').collect();
+            let &[runtime, ae, canonical, here, expected, replacement, _how] = fields.as_slice() else { return Err(bad()) };
+            if runtime != self.name {
+                continue;
+            }
+            let key = (ae.parse().map_err(|_| bad())?, u32::from_str_radix(canonical, 16).map_err(|_| bad())?);
+            let offset = u32::from_str_radix(here, 16).map_err(|_| bad())?;
+            let bytes = hex_bytes(expected).ok_or_else(bad)?;
+            let replacement = hex_bytes(replacement).ok_or_else(bad)?;
+            match self.sites.get(&key) {
+                Some(Site::Missing) => return Err(format!("{line}: the difference file says the site is absent")),
+                Some(Site::Here { offset: compared, bytes: found, .. }) if *compared != offset || *found != bytes => return Err(format!("{line}: the difference file has +{compared:#x} and {found:02x?}")),
+                _ => {}
+            }
+            self.sites.insert(key, Site::Here { same: false, offset, bytes, replacement: Some(replacement) });
+        }
+        Ok(())
+    }
+
     fn read_ids(&mut self, functions: &Table, globals: &Table, vtables: &Table, id_map: &Table) {
         let mut rows: HashMap<u32, Usable> = HashMap::new();
         let mut read = |table: &Table, id: &str, signature: bool| {
@@ -299,7 +327,9 @@ pub fn read(re_dir: &Path) -> Result<(Vec<Runtime>, Hashes), Box<dyn Error>> {
         let rel = format!("export/versions/{name}.json");
         let Ok(bytes) = fs::read(re_dir.join(&rel)) else { continue };
         hashes.push((rel.clone(), format!("{:x}", Sha256::digest(&bytes))));
-        runtimes.push(parse(&bytes).map_err(|e| format!("{rel}: {e}"))?);
+        let mut runtime = parse(&bytes).map_err(|e| format!("{rel}: {e}"))?;
+        runtime.apply_site_patches(SITE_PATCHES).map_err(|e| format!("xtask/site-patches.txt: {e}"))?;
+        runtimes.push(runtime);
     }
     Ok((runtimes, hashes))
 }
@@ -490,6 +520,44 @@ pub fn profiles(inp: &Inputs, runtimes: &[Runtime]) -> BTreeMap<String, String> 
     let mut made: Vec<Profile> = runtimes.iter().filter(|r| r.name != CANONICAL).map(|r| profile(r, inp, &sites)).collect();
     made.push(Profile::canonical());
     made.iter().map(|p| (format!("{PROFILE_DIR}/{}", p.file_name()), p.text())).collect()
+}
+
+/// Every member, base, size and slot the ledger names, for the name checks of `sre::member_offset!`
+/// and its kin: one `key<tab>value` line per item, sorted by key. A virtual base has no fixed
+/// displacement to offer and is left out.
+#[must_use]
+pub fn ledger_tables(inp: &Inputs, runtimes: &[Runtime]) -> String {
+    let mut members: BTreeMap<String, u64> = BTreeMap::new();
+    let layouts = inp.layouts.iter().flat_map(|(c, l)| l.fields.iter().map(move |f| (c, f)));
+    let structs = inp.structs.structs.iter().flat_map(|(c, s)| s.fields.iter().map(move |f| (c, f)));
+    for (class, field) in layouts.chain(structs) {
+        members.entry(format!("{class}.{}", field.name)).or_insert(field.off);
+    }
+    let mut bases: BTreeMap<String, u64> = BTreeMap::new();
+    for class in &inp.rtti.classes {
+        for base in class.bases.iter().skip(1).filter(|b| b.pdisp == -1) {
+            if let Ok(offset) = u64::try_from(base.mdisp) {
+                bases.entry(format!("{}:{}", class.name, base.name)).or_insert(offset);
+            }
+        }
+    }
+    let sizes: BTreeSet<&str> = ledger_classes(inp).collect();
+    let mut slots: BTreeMap<&str, BTreeMap<u32, u32>> = BTreeMap::new();
+    let compared = runtimes.iter().flat_map(|r| r.slots.keys().map(|(class, offset, index)| (class.as_str(), *offset, *index)));
+    for (class, offset, index) in ledger_slots(inp).chain(compared) {
+        let count = slots.entry(class).or_default().entry(offset).or_default();
+        *count = (*count).max(index + 1);
+    }
+    let table = |name: &str, lines: Vec<String>| format!("pub const {name}: &str = r\"{}\n\";\n", lines.join("\n"));
+    let mut out = String::from("//! What the ledger names, for `sre::ledger`. Generated by `cargo xtask gen`; do not edit.\n\n");
+    out += &table("MEMBERS", members.iter().map(|(key, offset)| format!("{key}\t{offset:x}")).collect());
+    out += &table("BASES", bases.iter().map(|(key, offset)| format!("{key}\t{offset:x}")).collect());
+    out += &table("SIZES", sizes.iter().map(|key| format!("{key}\t")).collect());
+    out += &table(
+        "SLOTS",
+        slots.iter().map(|(class, tables)| format!("{class}\t{}", tables.iter().map(|(offset, count)| format!("{offset:x}:{count:x}")).collect::<Vec<_>>().join(","))).collect(),
+    );
+    out
 }
 
 #[cfg(test)]

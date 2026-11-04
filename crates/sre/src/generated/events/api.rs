@@ -197,7 +197,7 @@ impl crate::ButtonEvent {
     /// `void (ButtonEvent* this, InputDevice device, u32 idCode, float value, float heldDownSecs)`
     /// Retyped: device u32 -> InputDevice: InputDevice (0 keyboard, 1 mouse, 2 gamepad, 7 none/all); ButtonEvent device.
     #[inline]
-    pub fn init(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (*const Self, crate::InputDevice, u32, f32, f32))(core::ptr::from_ref(self), device, idCode, value, heldDownSecs) } }
+    pub fn init(&self, device: crate::InputDevice, idCode: u32, value: f32, heldDownSecs: f32) { unsafe { function!(68680, (*const Self, u32, u32, f32, f32))(core::ptr::from_ref(self), device.to_engine().expect("this value does not exist on this runtime"), idCode, value, heldDownSecs) } }
     /// `ButtonEvent::IsPressed`: value != 0 && heldDownSecs == 0
     ///
     /// Semantic, input pass, high; ledger semantic evidence, name high; id 68601, rva 0xcf2e80.
@@ -1014,29 +1014,6 @@ impl crate::TESPlayerBowShotEvent {
     pub fn set_isSunGazing(&mut self, value: u8) { unsafe { Self::__member_isSunGazing(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn isSunGazing_ptr(&self) -> *mut u8 { Self::__member_isSunGazing(core::ptr::from_ref(self)) }
-}
-
-impl crate::TESQuestStageEvent {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_flags(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESQuestStageEvent.flags", 0xE, u8) } }
-    /// `TESQuestStageEvent::flags`, at +0xE on 1.7.104.
-    #[inline]
-    pub fn flags(&self) -> u8 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_flags(&mut self, value: u8) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn flags_ptr(&self) -> *mut u8 { Self::__member_flags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_stage(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESQuestStageEvent.stage", 0xC, u16) } }
-    /// `TESQuestStageEvent::stage`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn stage(&self) -> u16 { unsafe { Self::__member_stage(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_stage(&mut self, value: u16) { unsafe { Self::__member_stage(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn stage_ptr(&self) -> *mut u16 { Self::__member_stage(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESQuestStartStopEvent {

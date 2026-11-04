@@ -14,7 +14,7 @@ pub struct BGSActorCellEvent {
     /// +0x8 `undefined1`, semantic; 1 entered, 0 left (medium)
     #[doc(hidden)]
     pub __attached: [u8; 1],
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -134,34 +134,34 @@ pub struct BSTEventSource {
     /// +0x8 `undefined4`, semantic; capacity of the sinks array (high)
     #[doc(hidden)]
     pub __sinkCapacity: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, semantic; number of registered sinks (high)
     pub sinkCount: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `pointer`, semantic; BSTArray data of sinks added while a notification runs (high)
     pub pendingRegisters: *mut c_void,
     /// +0x20 `undefined4`, semantic; capacity of pendingRegisters (high)
     #[doc(hidden)]
     pub __pendingRegisterCapacity: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined4`, semantic; number of pending registrations (high)
     #[doc(hidden)]
     pub __pendingRegisterCount: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; BSTArray data of sinks removed while a notification runs (high)
     pub pendingUnregisters: *mut c_void,
     /// +0x38 `undefined4`, semantic; capacity of pendingUnregisters (high)
     #[doc(hidden)]
     pub __pendingUnregisterCapacity: [u8; 4],
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, semantic; number of pending unregistrations (high)
     pub pendingUnregisterCount: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `class:BSSpinLock`, semantic; spin lock held by AddEventSink, RemoveEventSink and the whole Notify walk (high)
     pub lock: crate::BSSpinLock,
     /// +0x50 `undefined1`, semantic; set while Notify walks the sinks; registrations then go to the pending arrays (high)
     pub notifying: u8,
-    pub unknown_51: [u8; 7],
+    unknown_51: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -222,7 +222,7 @@ const _: () = assert!(core::mem::offset_of!(ButtonEvent, heldDownSecs) == 0x2C);
 pub struct EventSourceHolder_Input {
     /// +0x0 `class:BSTEventSource`, semantic; notified once per frame with a pointer to the head of the frame's InputEvent list (high)
     pub source_InputEvent: crate::BSTEventSource,
-    pub unknown_58: [u8; 8],
+    unknown_58: [u8; 8],
     /// +0x60 `ptr:BSWin32KeyboardDevice`, semantic; the first of the six device slots, each polled through vtable slot 2 before the events are dispatched (pass 9 names the others: mouse +0x68, gamepad handler +0x70, two empty slots, virtual keyboard +0x88) (medium)
     pub keyboard: *mut crate::BSWin32KeyboardDevice,
     /// +0x68 `ptr:BSWin32MouseDevice`, semantic; device slot 1 (high)
@@ -244,14 +244,14 @@ pub struct EventSourceHolder_Input {
     /// +0x91 `undefined1`, semantic; +0x90 holds a value to apply (medium)
     #[doc(hidden)]
     pub __gamepadEnableChanged: [u8; 1],
-    pub unknown_92: [u8; 6],
+    unknown_92: [u8; 6],
     /// +0x98 `class:BSTEventSource`, semantic; notified after the input events when the byte at +0xf0 was set (medium)
     #[doc(hidden)]
     pub __source_BSRemoteGamepadEvent: [u8; 88],
     /// +0xF0 `undefined1`, semantic; set when a remote gamepad event is queued; cleared by Update (medium)
     #[doc(hidden)]
     pub __remoteGamepadPending: [u8; 1],
-    pub unknown_F1: [u8; 7],
+    unknown_F1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -273,7 +273,7 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_Input, __remoteGam
 /// Evidence: the UI singleton: menu stack, menu table and the two menu event sources; static object at 0x3204b40 behind the pointer 0x219e5c0, built in place by 0x1169070; the size is bounded by the next static symbol (pass 8: fields up to +0x1c1), not an allocation.
 #[repr(C, align(8))]
 pub struct EventSourceHolder_MenuOpenClose {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `class:BSTEventSource`, semantic; notified with {menuName, opening} by ProcessMessages for every menu shown or hidden (high)
     pub source_MenuOpenCloseEvent: crate::BSTEventSource,
     /// +0x60 `class:BSTEventSource`, semantic; notified with {menuName, 1} when numPausesGame goes from 0 to 1 and {menuName, 0} when it returns to 0 (high)
@@ -282,7 +282,7 @@ pub struct EventSourceHolder_MenuOpenClose {
     pub source_unknown_B8: crate::BSTEventSource,
     /// +0x110 `pointer`, semantic; BSTArray<IMenu*> data of the open menus in show order (medium)
     pub menuStack: *mut c_void,
-    pub unknown_118: [u8; 16],
+    unknown_118: [u8; 16],
     /// +0x128 `undefined1`, semantic; BSTHashMap<BSFixedString, MenuTableEntry>: capacity (power of two) +0x134, free count +0x138, last free index +0x13c, end sentinel +0x140, entry array +0x150 (0x20 per entry); hash = CRC32 of the BSFixedString data pointer (0xce25f0) & (capacity-1) (high)
     pub menuTable: [u8; 48],
     /// +0x158 `class:BSSpinLock`, semantic; lock taken by ProcessMessages around the menu table (medium)
@@ -304,14 +304,14 @@ pub struct EventSourceHolder_MenuOpenClose {
     pub numMenus20000: u32,
     /// +0x17C `undefined1`, semantic; 1 after a menu with flag 0x10 (modal) is shown, 0 after one is hidden (high)
     pub modalMenuOpen: u8,
-    pub unknown_17D: [u8; 3],
+    unknown_17D: [u8; 3],
     /// +0x180 `undefined1`, semantic; UI frame timer; +0x19c (delta) and +0x1a0 (time) are passed to every open menu's slot 5 each frame (medium)
     pub timer: [u8; 64],
     /// +0x1C0 `undefined1`, semantic; RenderMenuStack draws nothing while 0; the console command ToggleMenus flips it ('Menus -> %s'); 1 after construction (high)
     pub menusVisible: u8,
     /// +0x1C1 `undefined1`, semantic; set by CloseAllMenus, cleared when ProcessMessages finds the queue empty (medium)
     pub closingAllMenus: u8,
-    pub unknown_1C2: [u8; 6],
+    unknown_1C2: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -531,7 +531,7 @@ pub struct IDEvent {
     /// +0x0 `vtbl:IDEvent:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::IDEvent_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `class:BSFixedString`, semantic; the user event name (e.g. 'Activate') mapped from the control map (medium)
     #[doc(hidden)]
     pub __userEvent: [u8; 8],
@@ -645,7 +645,7 @@ pub struct TESActiveEffectApplyRemoveEvent {
     /// +0x12 `undefined1`, semantic; 1 applied, 0 removed (low)
     #[doc(hidden)]
     pub __isApplied: [u8; 1],
-    pub unknown_13: [u8; 5],
+    unknown_13: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -686,7 +686,7 @@ pub struct TESBookReadEvent {
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     #[doc(hidden)]
     pub __uniqueID: [u8; 2],
-    pub unknown_E: [u8; 2],
+    unknown_E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -892,7 +892,7 @@ pub struct TESFurnitureEvent {
     /// +0x10 `undefined4`, semantic; 0 sit (OnSit), 1 get up (OnGetUp) (high)
     #[doc(hidden)]
     pub __type_: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1035,7 +1035,7 @@ pub struct TESMoveAttachDetachEvent {
     /// +0x8 `undefined1`, semantic; 1 attached to the cell (OnAttachedToCell), 0 detached (medium)
     #[doc(hidden)]
     pub __isCellAttached: [u8; 1],
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1091,7 +1091,7 @@ pub struct TESOpenCloseEvent {
     /// +0x10 `undefined1`, semantic; 1 opened, 0 closed (low)
     #[doc(hidden)]
     pub __opened: [u8; 1],
-    pub unknown_11: [u8; 7],
+    unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1136,7 +1136,7 @@ pub struct TESPerkEntryRunEvent {
     /// +0x14 `undefined2`, semantic; entry index (low)
     #[doc(hidden)]
     pub __flag: [u8; 2],
-    pub unknown_16: [u8; 2],
+    unknown_16: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1160,7 +1160,7 @@ pub struct TESPlayerBowShotEvent {
     /// +0xC `undefined1`, semantic; non-zero when aimed at the sun (medium)
     #[doc(hidden)]
     pub __isSunGazing: [u8; 1],
-    pub unknown_D: [u8; 3],
+    unknown_D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1173,18 +1173,16 @@ const _: () = assert!(core::mem::offset_of!(TESPlayerBowShotEvent, __isSunGazing
 /// `TESQuestStageEvent`: size 0x10 (exact).
 /// Meaning: a quest stage was set (medium, events pass).
 /// Evidence: a quest stage was set; stack event of 0x3e1f60 (quest stage set).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct TESQuestStageEvent {
     /// +0x0 `pointer`, semantic; ref-counted callback object released by the VM handler through its vtable (medium)
     pub finishedCallback: *mut c_void,
     /// +0x8 `undefined4`, semantic; form id of the quest (medium)
     pub formID: u32,
     /// +0xC `undefined2`, semantic; the stage set (medium)
-    #[doc(hidden)]
-    pub __stage: [u8; 2],
+    pub stage: u16,
     /// +0xE `undefined1`, semantic; stage flags byte (medium)
-    #[doc(hidden)]
-    pub __flags: [u8; 1],
+    pub flags: u8,
     pub unknown_F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1192,8 +1190,8 @@ pub struct TESQuestStageEvent {
 const _: () = assert!(size_of::<TESQuestStageEvent>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, finishedCallback) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, formID) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __stage) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, __flags) == 0xE);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, stage) == 0xC);
+const _: () = assert!(core::mem::offset_of!(TESQuestStageEvent, flags) == 0xE);
 
 /// `TESQuestStageItemDoneEvent`: size 0x8 (exact).
 /// Meaning: a quest stage item finished (low, events pass).
@@ -1219,7 +1217,7 @@ pub struct TESQuestStartStopEvent {
     /// +0x4 `undefined1`, semantic; 1 started, 0 stopped (medium)
     #[doc(hidden)]
     pub __started: [u8; 1],
-    pub unknown_5: [u8; 3],
+    unknown_5: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1284,7 +1282,7 @@ pub struct TESSellEvent {
     /// +0xC `undefined2`, semantic; inventory unique id (medium)
     #[doc(hidden)]
     pub __uniqueID: [u8; 2],
-    pub unknown_E: [u8; 2],
+    unknown_E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

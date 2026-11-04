@@ -174,7 +174,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
             return &[];
         }
         sre::fixed_size!("hkQsTransform", HkQsTransform);
-        assert!(sre::member_offset!("hkQsTransform.rotation", 0x10) == 0x10 && sre::member_offset!("hkQsTransform.scale", 0x20) == 0x20, "hkQsTransform's members moved");
+        assert!(sre::member_offset!("hkQsTransform.rotation") == 0x10 && sre::member_offset!("hkQsTransform.scale") == 0x20, "hkQsTransform's members moved");
         unsafe { core::slice::from_raw_parts(c.poseLocal.cast::<HkQsTransform>(), c.numPoseLocal as usize) }
     }
 
@@ -183,7 +183,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
         if setup.is_null() {
             return None;
         }
-        let skeleton = unsafe { setup.add(sre::member_offset!("hkbCharacterSetup.m_hkpRayShapeCollectionFilter_20", 0x20)).cast::<*const sre::hkaSkeleton>().read_unaligned() };
+        let skeleton = unsafe { setup.add(sre::member_offset!("hkbCharacterSetup.m_hkpRayShapeCollectionFilter_20")).cast::<*const sre::hkaSkeleton>().read_unaligned() };
         unsafe { skeleton.as_ref() }.map(|s| s.boneCount)
     }
 
@@ -194,7 +194,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
     fn foot_ik_disabled(&self) -> Option<bool> {
         let driver = self.character.footIkDriver.cast::<u8>();
         // The disabled byte (`SetDisabled`, id 58428) is the third of the ledger's `field_48`.
-        (!driver.is_null()).then(|| unsafe { driver.add(sre::member_offset!("hkbFootIkDriver.field_48", 0x48) + 2).read() } != 0)
+        (!driver.is_null()).then(|| unsafe { driver.add(sre::member_offset!("hkbFootIkDriver.field_48") + 2).read() } != 0)
     }
 }
 
@@ -215,8 +215,8 @@ pub enum FaceChannel {
 pub fn face_channel_names(channel: FaceChannel) -> Vec<String> {
     let (table, count) = match channel {
         FaceChannel::Phoneme => (sre::g_face_gen_phoneme_names(), 16),
-        FaceChannel::Expression => (sre::g_face_gen_expression_names(), 17),
-        FaceChannel::Modifier => (sre::g_face_gen_modifier_names(), 17),
+        FaceChannel::Expression => (sre::g_face_gen_expression_names().cast(), 17),
+        FaceChannel::Modifier => (sre::g_face_gen_modifier_names().cast(), 17),
     };
     (0..count)
         .map(|i| {

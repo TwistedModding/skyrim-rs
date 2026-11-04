@@ -114,7 +114,7 @@ pub struct SettingT_INIPrefSettingCollection {
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
@@ -124,7 +124,7 @@ pub struct SettingT_INIPrefSettingCollection {
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],

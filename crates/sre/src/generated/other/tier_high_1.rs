@@ -699,7 +699,7 @@ impl crate::ChainExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vdtor(&self) -> u64 { unsafe { function!(36426, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("ChainExplosion:BSTEventSink<BeamProjectileImpactEvent>", 0x148))) } }
+    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vdtor(&self) -> u64 { unsafe { function!(36426, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("ChainExplosion:BSTEventSink<BeamProjectileImpactEvent>", 0x148))) } }
     /// `ChainExplosion::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 36429, rva 0x64c6d0).
     /// `undefined IAnimationGraphManagerHolder_vdtor(ChainExplosion * this)`
     ///
@@ -3249,7 +3249,7 @@ impl crate::LoginMenu__loginMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(441668, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30))) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(441668, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30))) } }
 }
 
 impl crate::MagicItem {
@@ -3589,7 +3589,7 @@ impl crate::MarketplaceMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(418933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("MarketplaceMenu:GFxFunctionHandler", 0x30))) } }
+    pub unsafe fn g_fx_function_handler_vdtor(&self) -> u64 { unsafe { function!(418933, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("MarketplaceMenu:GFxFunctionHandler", 0x30))) } }
 }
 
 impl crate::MemoryHeap {
@@ -5172,7 +5172,7 @@ impl crate::_anon_3B91968A__DejaGFxLogger {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82367, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("_anon_3B91968A::DejaGFxLogger:GFxLogBase<GFxLog>", 0x18))) } }
+    pub unsafe fn g_fx_log_base_g_fx_log_vdtor(&self) -> u64 { unsafe { function!(82367, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("_anon_3B91968A::DejaGFxLogger:GFxLogBase<GFxLog>", 0x18))) } }
 }
 
 impl crate::_anon_422024B4__Clear1nTracksFilter {

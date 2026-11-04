@@ -8,7 +8,9 @@
 # PLUGINS_LOADED_2 and DATA_LOADED and finds no other module's patch.
 $Phases = "aLoad", "bLoad", "aSave1", "bSave1", "aSave2", "bSave2"
 
-$installed = @($hostLog | Where-Object { $_ -match '^hooks: Actor::(ModActorValueImpl|ActorValueOwner_ModActorValue) at 0x[0-9a-f]+: detour installed, entry pristine, equal to the executable file$' })
+# Off canonical the executable file holds its code encrypted, so there is nothing to compare an entry with.
+$entryState = if ($Install.canonical) { 'pristine, equal to the executable file' } else { 'plausible, no file bytes to compare and no jump at the entry' }
+$installed = @($hostLog | Where-Object { $_ -match "^hooks: Actor::(ModActorValueImpl|ActorValueOwner_ModActorValue) at 0x[0-9a-f]+: detour installed, entry $entryState$" })
 $cycle = @($hostLog | Where-Object { $_ -match '^hooks: refused: Actor::ModActorValueImpl: ordering cycle between skyrim-rs-hooks-a, skyrim-rs-hooks-b$' })
 $exclusive = @($hostLog | Where-Object { $_ -match '^hooks: refused: Actor::ActorValueOwner_ModActorValue: skyrim-rs-hooks-b cannot replace it, skyrim-rs-hooks-a already does$' })
 $removed = @($hostLog | Where-Object { $_ -match '^hooks: skyrim-rs-hooks-b: 2 subscriptions removed$' })

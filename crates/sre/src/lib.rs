@@ -117,6 +117,21 @@ pub fn member_offset(member: &'static str, canonical: usize) -> usize {
 #[cold]
 #[inline(never)]
 #[must_use]
+pub fn outside_ledger(member: &'static str, canonical: usize) -> usize {
+    canonical_only(canonical).unwrap_or_else(|| panic!("member {member} has no ledger row, so it is known on 1.7.104 only"))
+}
+
+/// `offset` on 1.7.104, `None` elsewhere: for code that can do without a member the ledger does
+/// not hold yet, which then leaves no manifest record.
+#[must_use]
+pub fn canonical_only(offset: usize) -> Option<usize> {
+    skse::runtime::is_canonical(profile().runtime()).then_some(offset)
+}
+
+#[doc(hidden)]
+#[cold]
+#[inline(never)]
+#[must_use]
 pub fn base_offset(class_and_base: &'static str, canonical: usize) -> usize {
     usable(format_args!("base {class_and_base}"), profile().base(class_and_base), canonical)
 }
@@ -225,15 +240,34 @@ macro_rules! function {
     };
 }
 
+/// A record in the DLL's manifest and the value `$read` answers for it, cached in a static of the call site.
+#[doc(hidden)]
+#[macro_export]
+macro_rules! __row {
+    ($kind:literal, $a:literal, $b:literal, $name:literal, $read:expr) => {{
+        $crate::record!($kind, $a, $b, $name);
+        static VALUE: $crate::Cached = $crate::Cached::new();
+        VALUE.get(|| $read)
+    }};
+}
+
 /// The running game's index of a slot, given the class, the canonical vtable offset and index,
-/// recorded in the DLL's manifest. Hand-written code takes every numbered slot through this.
+/// recorded in the DLL's manifest. Hand-written code takes every numbered slot through this; a slot
+/// the ledger does not name is a compile error.
 #[macro_export]
 macro_rules! slot_index {
     ($class:literal, $vtable_offset:literal, $index:literal) => {{
-        $crate::record!(3, $vtable_offset, $index, $class);
-        static INDEX: $crate::Cached = $crate::Cached::new();
-        INDEX.get(|| $crate::slot_index($class, $vtable_offset, $index))
+        const { assert!($crate::ledger::slot($class, $vtable_offset, $index), concat!("the ledger has no slot ", $index, " of ", $class)) };
+        $crate::__row!(3, $vtable_offset, $index, $class, $crate::slot_index($class, $vtable_offset, $index))
     }};
+}
+
+/// [`slot_index!`] for generated code, whose names come from the ledger.
+#[allow(unused_macros)]
+macro_rules! slot_at {
+    ($class:literal, $vtable_offset:literal, $index:literal) => {
+        $crate::__row!(3, $vtable_offset, $index, $class, $crate::slot_index($class, $vtable_offset, $index))
+    };
 }
 
 /// Asserts that a table built by hand for the engine to read still has these slots where it put
@@ -253,7 +287,7 @@ macro_rules! virtual_function {
         core::mem::transmute::<usize, unsafe extern "C" fn($($param),*) $(-> $ret)?>($crate::vtable_entry($object, $index))
     };
     ($object:expr, $class:literal, $vtable_offset:literal, $index:literal, ($($param:ty),*) $(-> $ret:ty)?) => {
-        core::mem::transmute::<usize, unsafe extern "C" fn($($param),*) $(-> $ret)?>($crate::vtable_entry($object, slot_index!($class, $vtable_offset, $index)))
+        core::mem::transmute::<usize, unsafe extern "C" fn($($param),*) $(-> $ret)?>($crate::vtable_entry($object, slot_at!($class, $vtable_offset, $index)))
     };
 }
 
@@ -261,7 +295,7 @@ macro_rules! virtual_function {
 #[allow(unused_macros)]
 macro_rules! member {
     ($this:expr, $name:literal, $canonical:literal, $ty:ty) => {
-        ($this as *const u8).add(member_offset!($name, $canonical)).cast_mut().cast::<$ty>()
+        ($this as *const u8).add($crate::__row!(2, 0, 0, $name, $crate::member_offset($name, $canonical))).cast_mut().cast::<$ty>()
     };
 }
 
@@ -278,29 +312,58 @@ macro_rules! engine_value {
 }
 
 /// The running game's offset of `Class.member`, recorded in the DLL's manifest. Hand-written code
-/// takes every offset into engine data through this or a generated field or accessor.
+/// takes every offset into engine data through this or a generated field or accessor. The canonical
+/// offset comes from the ledger; a member it does not name is a compile error.
+///
+/// ```compile_fail
+/// let _ = sre::member_offset!("PlayerCharacter.noSuchMember");
+/// ```
 #[macro_export]
 macro_rules! member_offset {
-    ($name:literal, $canonical:literal) => {{
-        $crate::record!(2, 0, 0, $name);
-        static OFFSET: $crate::Cached = $crate::Cached::new();
-        OFFSET.get(|| $crate::member_offset($name, $canonical))
+    ($name:literal) => {{
+        const CANONICAL: usize = match $crate::ledger::member($name) {
+            Some(offset) => offset,
+            None => panic!(concat!("the ledger has no member ", $name)),
+        };
+        $crate::__row!(2, 0, 0, $name, $crate::member_offset($name, CANONICAL))
     }};
 }
 
-/// The running game's displacement of the base `Class:Base`, recorded in the DLL's manifest.
+/// The offset of a member the ledger does not hold yet, known on 1.7.104 only: the plugin that uses
+/// it is refused on any other runtime. It stops compiling once the ledger names the member.
+#[macro_export]
+macro_rules! member_outside_ledger {
+    ($name:literal, $canonical:literal) => {{
+        const { assert!($crate::ledger::member($name).is_none(), concat!("the ledger now has ", $name, ": use member_offset!")) };
+        $crate::__row!(8, 0, 0, $name, $crate::outside_ledger($name, $canonical))
+    }};
+}
+
+/// The running game's displacement of the base `Class:Base`, recorded in the DLL's manifest. The
+/// canonical displacement comes from the ledger; a base it does not name is a compile error.
 #[macro_export]
 macro_rules! base_offset {
-    ($name:literal, $canonical:literal) => {{
-        $crate::record!(6, 0, 0, $name);
-        static OFFSET: $crate::Cached = $crate::Cached::new();
-        OFFSET.get(|| $crate::base_offset($name, $canonical))
+    ($name:literal) => {{
+        const CANONICAL: usize = match $crate::ledger::base($name) {
+            Some(offset) => offset,
+            None => panic!(concat!("the ledger has no base ", $name)),
+        };
+        $crate::__row!(6, 0, 0, $name, $crate::base_offset($name, CANONICAL))
     }};
+}
+
+/// [`base_offset!`] for generated code, whose names come from the ledger.
+#[allow(unused_macros)]
+macro_rules! base_at {
+    ($name:literal, $canonical:literal) => {
+        $crate::__row!(6, 0, 0, $name, $crate::base_offset($name, $canonical))
+    };
 }
 
 /// The size of a class on the running game, for striding an array of them or allocating one:
-/// `sre::class_size!("TESObjectREFR", sre::TESObjectREFR)`, the ledger's name and the struct. A
-/// class with a partial layout answers its known lower bound on 1.7.104.
+/// `sre::class_size!("TESObjectREFR", sre::TESObjectREFR)`, the ledger's name and the struct; a name
+/// the ledger does not have is a compile error. A class with a partial layout answers its known
+/// lower bound on 1.7.104.
 ///
 /// # Panics
 /// When the class has no usable size on this runtime; the manifest check prevents that in a plugin
@@ -308,9 +371,8 @@ macro_rules! base_offset {
 #[macro_export]
 macro_rules! class_size {
     ($name:literal, $class:ty) => {{
-        $crate::record!(5, 0, 0, $name);
-        static SIZE: $crate::Cached = $crate::Cached::new();
-        SIZE.get(|| $crate::class_size($name, size_of::<$class>()))
+        const { assert!($crate::ledger::size($name), concat!("the ledger has no class ", $name)) };
+        $crate::__row!(5, 0, 0, $name, $crate::class_size($name, size_of::<$class>()))
     }};
 }
 
@@ -380,6 +442,8 @@ macro_rules! site {
 #[rustfmt::skip]
 mod generated;
 pub use generated::*;
+
+pub mod ledger;
 
 /// The vtable at a module-relative address of the running game, every vtable placed through its id.
 #[must_use]

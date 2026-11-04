@@ -222,10 +222,10 @@ pub struct NiBSBoneLODController {
     pub __vftable: *const crate::raw::vtables::NiBSBoneLODController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -242,7 +242,7 @@ pub struct NiBSBoneLODController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -1040,10 +1040,10 @@ pub struct NiBlendAccumTransformInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendAccumTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1051,7 +1051,7 @@ pub struct NiBlendAccumTransformInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1066,7 +1066,7 @@ pub struct NiBlendAccumTransformInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     /// +0x4C `float`, ctor store
@@ -1081,7 +1081,7 @@ pub struct NiBlendAccumTransformInterpolator {
     pub field_68: u64,
     /// +0x70 `undefined1`, ctor store
     pub field_70: u8,
-    pub unknown_71: [u8; 7],
+    unknown_71: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1117,10 +1117,10 @@ pub struct NiBlendBoolInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendBoolInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1128,7 +1128,7 @@ pub struct NiBlendBoolInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1143,10 +1143,10 @@ pub struct NiBlendBoolInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined1`, ctor store
     pub field_48: u8,
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1177,10 +1177,10 @@ pub struct NiBlendColorInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendColorInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1188,7 +1188,7 @@ pub struct NiBlendColorInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1203,12 +1203,12 @@ pub struct NiBlendColorInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined1[16]`, ctor store
     pub field_48: [u8; 16],
     /// +0x58 `undefined1`, ctor store
     pub field_58: u8,
-    pub unknown_59: [u8; 7],
+    unknown_59: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1239,10 +1239,10 @@ pub struct NiBlendFloatInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendFloatInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1250,7 +1250,7 @@ pub struct NiBlendFloatInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1265,11 +1265,11 @@ pub struct NiBlendFloatInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 4],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1300,10 +1300,10 @@ pub struct NiBlendInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, ctor store (widths [1, 4])
     pub field_18: u8,
     /// +0x19 `undefined1`, ctor store
@@ -1311,7 +1311,7 @@ pub struct NiBlendInterpolator {
     /// +0x1A `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
@@ -1326,7 +1326,7 @@ pub struct NiBlendInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1356,10 +1356,10 @@ pub struct NiBlendPoint3Interpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendPoint3Interpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1367,7 +1367,7 @@ pub struct NiBlendPoint3Interpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1382,7 +1382,7 @@ pub struct NiBlendPoint3Interpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     /// +0x4C `float`, ctor store
@@ -1391,7 +1391,7 @@ pub struct NiBlendPoint3Interpolator {
     pub field_50: f32,
     /// +0x54 `undefined1`, ctor store
     pub field_54: u8,
-    pub unknown_55: [u8; 3],
+    unknown_55: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1425,10 +1425,10 @@ pub struct NiBlendQuaternionInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendQuaternionInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1436,7 +1436,7 @@ pub struct NiBlendQuaternionInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1451,7 +1451,7 @@ pub struct NiBlendQuaternionInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined1[16]`, ctor store
     pub field_48: [u8; 16],
     #[doc(hidden)]
@@ -1483,10 +1483,10 @@ pub struct NiBlendTransformInterpolator {
     pub __vftable: *const crate::raw::vtables::NiBlendTransformInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, base NiBlendInterpolator
     pub field_18: u8,
     /// +0x19 `undefined1`, base NiBlendInterpolator
@@ -1494,7 +1494,7 @@ pub struct NiBlendTransformInterpolator {
     /// +0x1A `undefined4`, base NiBlendInterpolator
     #[doc(hidden)]
     pub __field_1A: [u8; 4],
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
     /// +0x28 `undefined8`, base NiBlendInterpolator
@@ -1509,7 +1509,7 @@ pub struct NiBlendTransformInterpolator {
     pub field_3C: u32,
     /// +0x40 `undefined4`, base NiBlendInterpolator
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1569,10 +1569,10 @@ pub struct NiBoolInterpController {
     pub __vftable: *const crate::raw::vtables::NiBoolInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -1589,7 +1589,7 @@ pub struct NiBoolInterpController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -1772,7 +1772,7 @@ pub struct NiBoxBV {
     /// +0x40 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1827,7 +1827,7 @@ pub struct NiBoxCapsuleIntersector {
     pub field_34: u32,
     /// +0x38 `undefined4`, base NiIntersector
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
@@ -2160,7 +2160,7 @@ pub struct NiCapsuleTriIntersector {
     pub field_34: u32,
     /// +0x38 `undefined4`, base NiIntersector
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `float`, ctor store (widths [4, 4])
@@ -2230,7 +2230,7 @@ pub struct NiCollisionData {
     pub __vftable: *const crate::raw::vtables::NiCollisionData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiCollisionObject
     pub field_10: u64,
     /// +0x18 `float`, ctor store (widths [4, 8])
@@ -2270,7 +2270,7 @@ pub struct NiCollisionData {
     pub field_72: u32,
     /// +0x76 `undefined1`, ctor store
     pub field_76: u8,
-    pub unknown_77: [u8; 1],
+    unknown_77: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2372,7 +2372,7 @@ pub struct NiColorExtraData {
     pub __vftable: *const crate::raw::vtables::NiColorExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     /// +0x18 `float`, ctor store (widths [4, 8, 16])
@@ -2408,10 +2408,10 @@ pub struct NiColorExtraDataController {
     pub __vftable: *const crate::raw::vtables::NiColorExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -2428,7 +2428,7 @@ pub struct NiColorExtraDataController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -2501,10 +2501,10 @@ pub struct NiControllerManager {
     pub __vftable: *const crate::raw::vtables::NiControllerManager_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -2521,7 +2521,7 @@ pub struct NiControllerManager {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -2538,21 +2538,21 @@ pub struct NiControllerManager {
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    pub unknown_70: [u8; 12],
+    unknown_70: [u8; 12],
     /// +0x7C `undefined8`, ctor store
     pub field_7C: u64,
     /// +0x84 `undefined4`, ctor store
     pub field_84: u32,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined1`, ctor store
     pub field_A8: u8,
-    pub unknown_A9: [u8; 7],
+    unknown_A9: [u8; 7],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
     /// +0xB8 `undefined8`, ctor store
@@ -2875,10 +2875,10 @@ pub struct NiExtraDataController {
     pub __vftable: *const crate::raw::vtables::NiExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -2895,7 +2895,7 @@ pub struct NiExtraDataController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -2984,10 +2984,10 @@ pub struct NiFloatController {
     pub __vftable: *const crate::raw::vtables::NiFloatController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3004,12 +3004,12 @@ pub struct NiFloatController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     #[doc(hidden)]
@@ -3094,10 +3094,10 @@ pub struct NiFloatExtraDataController {
     pub __vftable: *const crate::raw::vtables::NiFloatExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3114,7 +3114,7 @@ pub struct NiFloatExtraDataController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3156,10 +3156,10 @@ pub struct NiFloatInterpController {
     pub __vftable: *const crate::raw::vtables::NiFloatInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3176,7 +3176,7 @@ pub struct NiFloatInterpController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3272,10 +3272,10 @@ pub struct NiFloatsExtraDataController {
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3292,7 +3292,7 @@ pub struct NiFloatsExtraDataController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3305,7 +3305,7 @@ pub struct NiFloatsExtraDataController {
     pub field_58: u64,
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3337,10 +3337,10 @@ pub struct NiFloatsExtraDataPoint3Controller {
     pub __vftable: *const crate::raw::vtables::NiFloatsExtraDataPoint3Controller_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3357,7 +3357,7 @@ pub struct NiFloatsExtraDataPoint3Controller {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3370,7 +3370,7 @@ pub struct NiFloatsExtraDataPoint3Controller {
     pub field_58: u64,
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     #[doc(hidden)]
@@ -3717,10 +3717,10 @@ pub struct NiInterpController {
     pub __vftable: *const crate::raw::vtables::NiInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3737,7 +3737,7 @@ pub struct NiInterpController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3867,10 +3867,10 @@ pub struct NiKeyframeManager {
     pub __vftable: *const crate::raw::vtables::NiKeyframeManager_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3887,7 +3887,7 @@ pub struct NiKeyframeManager {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3896,15 +3896,15 @@ pub struct NiKeyframeManager {
     pub m_NiTStringPointerMap_48: u64,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, member ctor NiTMapBase<NiTPointerAllocator<unsigned___int64>,char_const*___ptr64,NiPointer<NiSequence>_>
     pub m_NiTMapBase_58: u64,
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined1`, ctor store
     pub field_68: u8,
-    pub unknown_69: [u8; 7],
+    unknown_69: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3937,10 +3937,10 @@ pub struct NiLightColorController {
     pub __vftable: *const crate::raw::vtables::NiLightColorController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3957,7 +3957,7 @@ pub struct NiLightColorController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3966,7 +3966,7 @@ pub struct NiLightColorController {
     pub field_48: u64,
     /// +0x50 `undefined2`, ctor store
     pub field_50: u16,
-    pub unknown_52: [u8; 6],
+    unknown_52: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3996,10 +3996,10 @@ pub struct NiLightDimmerController {
     pub __vftable: *const crate::raw::vtables::NiLightDimmerController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -4016,7 +4016,7 @@ pub struct NiLightDimmerController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -4051,10 +4051,10 @@ pub struct NiLookAtController {
     pub __vftable: *const crate::raw::vtables::NiLookAtController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -4071,7 +4071,7 @@ pub struct NiLookAtController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -4197,10 +4197,10 @@ pub struct NiMeshPSysData {
     pub __vftable: *const crate::raw::vtables::NiMeshPSysData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
-    pub unknown_11: [u8; 1],
+    unknown_11: [u8; 1],
     /// +0x12 `undefined2`, base NiParticlesData
     pub field_12: u16,
     /// +0x14 `float`, base NiParticlesData
@@ -4211,7 +4211,7 @@ pub struct NiMeshPSysData {
     pub field_1C: f32,
     /// +0x20 `undefined4`, base NiParticlesData
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base NiParticlesData
     pub field_28: u64,
     /// +0x30 `undefined8`, base NiParticlesData
@@ -4240,12 +4240,12 @@ pub struct NiMeshPSysData {
     pub field_78: u32,
     /// +0x7C `undefined2`, base NiParticlesData
     pub field_7C: u16,
-    pub unknown_7E: [u8; 2],
+    unknown_7E: [u8; 2],
     /// +0x80 `undefined8`, base NiParticlesData
     pub field_80: u64,
     /// +0x88 `undefined2`, base NiParticlesData
     pub field_88: u16,
-    pub unknown_8A: [u8; 6],
+    unknown_8A: [u8; 6],
     /// +0x90 `undefined8`, base NiPSysData
     pub field_90: u64,
     /// +0x98 `undefined8`, base NiPSysData
@@ -4253,12 +4253,12 @@ pub struct NiMeshPSysData {
     /// +0xA0 `undefined4`, base NiPSysData
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
-    pub unknown_B1: [u8; 3],
+    unknown_B1: [u8; 3],
     /// +0xB4 `undefined4`, ctor store
     pub field_B4: u32,
     /// +0xB8 `undefined8`, member ctor NiTPrimitiveArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>
@@ -4497,10 +4497,10 @@ pub struct NiMultiTargetTransformController {
     pub __vftable: *const crate::raw::vtables::NiMultiTargetTransformController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -4517,12 +4517,12 @@ pub struct NiMultiTargetTransformController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
-    pub unknown_48: [u8; 24],
+    unknown_48: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4611,7 +4611,7 @@ pub struct NiOBBLeaf {
     pub field_90: u64,
     /// +0x98 `undefined4`, base NiOBBNode
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -4724,7 +4724,7 @@ pub struct NiOBBNode {
     pub field_90: u64,
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4765,26 +4765,26 @@ pub struct NiOBBRoot {
     pub __vftable: *const crate::raw::vtables::NiOBBRoot_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined1`, ctor store
     pub field_18: u8,
-    pub unknown_19: [u8; 3],
+    unknown_19: [u8; 3],
     /// +0x1C `float`, ctor store (widths [4, 8])
     pub field_1C: f32,
     /// +0x20 `float`, ctor store
     pub field_20: f32,
     /// +0x24 `float`, ctor store (widths [4, 4])
     pub field_24: f32,
-    pub unknown_28: [u8; 36],
+    unknown_28: [u8; 36],
     /// +0x4C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_4C: [u8; 8],
     /// +0x54 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_54: [u8; 4],
-    pub unknown_58: [u8; 4],
+    unknown_58: [u8; 4],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
     #[doc(hidden)]
@@ -4869,10 +4869,10 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldAirFrictionCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -4889,7 +4889,7 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -4930,10 +4930,10 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldInheritVelocityCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -4950,7 +4950,7 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -4990,17 +4990,17 @@ pub struct NiPSysAirFieldModifier {
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined8`, base NiPSysFieldModifier
     pub field_30: u64,
     /// +0x38 `float`, base NiPSysFieldModifier
@@ -5009,12 +5009,12 @@ pub struct NiPSysAirFieldModifier {
     pub field_3C: f32,
     /// +0x40 `undefined1`, base NiPSysFieldModifier
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `float`, base NiPSysFieldModifier
     pub field_44: f32,
     /// +0x48 `float`, base NiPSysFieldModifier
     pub field_48: f32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `float`, ctor store (widths [4, 8])
     pub field_50: f32,
     /// +0x54 `float`, ctor store
@@ -5046,7 +5046,7 @@ pub struct NiPSysAirFieldModifier {
     pub field_81: u8,
     /// +0x82 `undefined1`, ctor store
     pub field_82: u8,
-    pub unknown_83: [u8; 1],
+    unknown_83: [u8; 1],
     /// +0x84 `float`, ctor store (widths [4, 4])
     #[doc(hidden)]
     pub __field_84: [u8; 4],
@@ -5094,10 +5094,10 @@ pub struct NiPSysAirFieldSpreadCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysAirFieldSpreadCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -5114,7 +5114,7 @@ pub struct NiPSysAirFieldSpreadCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -5154,17 +5154,17 @@ pub struct NiPSysBombModifier {
     pub __vftable: *const crate::raw::vtables::NiPSysBombModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `float`, ctor store (widths [4, 4])
@@ -5184,7 +5184,7 @@ pub struct NiPSysBombModifier {
     pub field_4C: u32,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5541,10 +5541,10 @@ pub struct NiPSysData {
     pub __vftable: *const crate::raw::vtables::NiPSysData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
-    pub unknown_11: [u8; 1],
+    unknown_11: [u8; 1],
     /// +0x12 `undefined2`, base NiParticlesData
     pub field_12: u16,
     /// +0x14 `float`, base NiParticlesData
@@ -5555,7 +5555,7 @@ pub struct NiPSysData {
     pub field_1C: f32,
     /// +0x20 `undefined4`, base NiParticlesData
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base NiParticlesData
     pub field_28: u64,
     /// +0x30 `undefined8`, base NiParticlesData
@@ -5584,12 +5584,12 @@ pub struct NiPSysData {
     pub field_78: u32,
     /// +0x7C `undefined2`, base NiParticlesData
     pub field_7C: u16,
-    pub unknown_7E: [u8; 2],
+    unknown_7E: [u8; 2],
     /// +0x80 `undefined8`, base NiParticlesData
     pub field_80: u64,
     /// +0x88 `undefined2`, base NiParticlesData
     pub field_88: u16,
-    pub unknown_8A: [u8; 6],
+    unknown_8A: [u8; 6],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     /// +0x98 `undefined8`, ctor store
@@ -5597,7 +5597,7 @@ pub struct NiPSysData {
     /// +0xA0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5829,10 +5829,10 @@ pub struct NiPSysEmitterCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -5849,7 +5849,7 @@ pub struct NiPSysEmitterCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -5870,7 +5870,7 @@ pub struct NiPSysEmitterCtlr {
     pub field_74: u32,
     /// +0x78 `undefined1`, ctor store
     pub field_78: u8,
-    pub unknown_79: [u8; 7],
+    unknown_79: [u8; 7],
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
@@ -5959,10 +5959,10 @@ pub struct NiPSysEmitterDeclinationCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -5979,7 +5979,7 @@ pub struct NiPSysEmitterDeclinationCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6020,10 +6020,10 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterDeclinationVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6040,7 +6040,7 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6081,10 +6081,10 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterInitialRadiusCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6101,7 +6101,7 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6143,10 +6143,10 @@ pub struct NiPSysEmitterLifeSpanCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterLifeSpanCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6163,7 +6163,7 @@ pub struct NiPSysEmitterLifeSpanCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6205,10 +6205,10 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6225,7 +6225,7 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6266,10 +6266,10 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterPlanarAngleVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6286,7 +6286,7 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6327,10 +6327,10 @@ pub struct NiPSysEmitterSpeedCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysEmitterSpeedCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6347,7 +6347,7 @@ pub struct NiPSysEmitterSpeedCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6389,10 +6389,10 @@ pub struct NiPSysFieldAttenuationCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysFieldAttenuationCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6409,7 +6409,7 @@ pub struct NiPSysFieldAttenuationCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6450,10 +6450,10 @@ pub struct NiPSysFieldMagnitudeCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMagnitudeCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6470,7 +6470,7 @@ pub struct NiPSysFieldMagnitudeCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6511,10 +6511,10 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysFieldMaxDistanceCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6531,7 +6531,7 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6623,17 +6623,17 @@ pub struct NiPSysGravityFieldModifier {
     pub __vftable: *const crate::raw::vtables::NiPSysGravityFieldModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined8`, base NiPSysFieldModifier
     pub field_30: u64,
     /// +0x38 `float`, base NiPSysFieldModifier
@@ -6642,12 +6642,12 @@ pub struct NiPSysGravityFieldModifier {
     pub field_3C: f32,
     /// +0x40 `undefined1`, base NiPSysFieldModifier
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `float`, base NiPSysFieldModifier
     pub field_44: f32,
     /// +0x48 `float`, base NiPSysFieldModifier
     pub field_48: f32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `float`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_50: [u8; 4],
@@ -6761,10 +6761,10 @@ pub struct NiPSysGravityStrengthCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysGravityStrengthCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6781,7 +6781,7 @@ pub struct NiPSysGravityStrengthCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6872,10 +6872,10 @@ pub struct NiPSysInitialRotAngleCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6892,7 +6892,7 @@ pub struct NiPSysInitialRotAngleCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6933,10 +6933,10 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotAngleVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -6953,7 +6953,7 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -6994,10 +6994,10 @@ pub struct NiPSysInitialRotSpeedCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7014,7 +7014,7 @@ pub struct NiPSysInitialRotSpeedCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7055,10 +7055,10 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysInitialRotSpeedVarCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7075,7 +7075,7 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7303,10 +7303,10 @@ pub struct NiPSysModifierActiveCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysModifierActiveCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7323,7 +7323,7 @@ pub struct NiPSysModifierActiveCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7365,10 +7365,10 @@ pub struct NiPSysModifierBoolCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysModifierBoolCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7385,7 +7385,7 @@ pub struct NiPSysModifierBoolCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7427,10 +7427,10 @@ pub struct NiPSysModifierCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysModifierCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7447,7 +7447,7 @@ pub struct NiPSysModifierCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7489,10 +7489,10 @@ pub struct NiPSysModifierFloatCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysModifierFloatCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7509,7 +7509,7 @@ pub struct NiPSysModifierFloatCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7551,14 +7551,14 @@ pub struct NiPSysPlanarCollider {
     pub __vftable: *const crate::raw::vtables::NiPSysPlanarCollider_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base NiPSysCollider
     pub field_10: f32,
     /// +0x14 `undefined1`, base NiPSysCollider
     pub field_14: u8,
     /// +0x15 `undefined1`, base NiPSysCollider
     pub field_15: u8,
-    pub unknown_16: [u8; 2],
+    unknown_16: [u8; 2],
     /// +0x18 `undefined8`, base NiPSysCollider
     pub field_18: u64,
     /// +0x20 `float`, base NiPSysCollider
@@ -7596,7 +7596,7 @@ pub struct NiPSysPlanarCollider {
     pub field_68: u32,
     /// +0x6C `undefined4`, ctor store
     pub field_6C: u32,
-    pub unknown_70: [u8; 16],
+    unknown_70: [u8; 16],
     /// +0x80 `float`, ctor store
     pub field_80: f32,
     /// +0x84 `float`, ctor store
@@ -7611,21 +7611,21 @@ pub struct NiPSysPlanarCollider {
     pub field_9C: [u8; 16],
     /// +0xAC `undefined4`, ctor store
     pub field_AC: u32,
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 40],
+    unknown_E0: [u8; 40],
     /// +0x108 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 4],
-    pub unknown_114: [u8; 4],
+    unknown_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7762,10 +7762,10 @@ pub struct NiPSysResetOnLoopCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysResetOnLoopCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -7782,7 +7782,7 @@ pub struct NiPSysResetOnLoopCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -7790,7 +7790,7 @@ pub struct NiPSysResetOnLoopCtlr {
     /// +0x48 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 4],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8014,14 +8014,14 @@ pub struct NiPSysSphericalCollider {
     pub __vftable: *const crate::raw::vtables::NiPSysSphericalCollider_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base NiPSysCollider
     pub field_10: f32,
     /// +0x14 `undefined1`, base NiPSysCollider
     pub field_14: u8,
     /// +0x15 `undefined1`, base NiPSysCollider
     pub field_15: u8,
-    pub unknown_16: [u8; 2],
+    unknown_16: [u8; 2],
     /// +0x18 `undefined8`, base NiPSysCollider
     pub field_18: u64,
     /// +0x20 `float`, base NiPSysCollider
@@ -8040,7 +8040,7 @@ pub struct NiPSysSphericalCollider {
     pub field_40: u64,
     /// +0x48 `float`, ctor store (widths [4, 8])
     pub field_48: f32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     /// +0x54 `float`, ctor store
@@ -8192,10 +8192,10 @@ pub struct NiPSysUpdateCtlr {
     pub __vftable: *const crate::raw::vtables::NiPSysUpdateCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -8212,7 +8212,7 @@ pub struct NiPSysUpdateCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -8940,10 +8940,10 @@ pub struct NiPathController {
     pub __vftable: *const crate::raw::vtables::NiPathController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -8960,18 +8960,18 @@ pub struct NiPathController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     /// +0x48 `undefined2`, ctor store
     pub field_48: u16,
-    pub unknown_4A: [u8; 2],
+    unknown_4A: [u8; 2],
     /// +0x4C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_4C: [u8; 8],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     /// +0x60 `undefined8`, ctor store
@@ -8984,7 +8984,7 @@ pub struct NiPathController {
     pub field_74: u64,
     /// +0x7C `undefined2`, ctor store
     pub field_7C: u16,
-    pub unknown_7E: [u8; 2],
+    unknown_7E: [u8; 2],
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
@@ -9028,16 +9028,16 @@ pub struct NiPathInterpolator {
     pub __vftable: *const crate::raw::vtables::NiPathInterpolator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base NiInterpolator
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined2`, ctor store
     pub field_18: u16,
-    pub unknown_1A: [u8; 2],
+    unknown_1A: [u8; 2],
     /// +0x1C `undefined8`, ctor store
     pub field_1C: u64,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
@@ -9050,7 +9050,7 @@ pub struct NiPathInterpolator {
     pub field_44: u64,
     /// +0x4C `undefined2`, ctor store
     pub field_4C: u16,
-    pub unknown_4E: [u8; 2],
+    unknown_4E: [u8; 2],
     /// +0x50 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 4],
@@ -9113,10 +9113,10 @@ pub struct NiPoint3InterpController {
     pub __vftable: *const crate::raw::vtables::NiPoint3InterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -9133,7 +9133,7 @@ pub struct NiPoint3InterpController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -9304,10 +9304,10 @@ pub struct NiRollController {
     pub __vftable: *const crate::raw::vtables::NiRollController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -9324,12 +9324,12 @@ pub struct NiRollController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base NiFloatController
     pub field_50: u64,
     #[doc(hidden)]
@@ -9533,10 +9533,10 @@ pub struct NiSingleInterpController {
     pub __vftable: *const crate::raw::vtables::NiSingleInterpController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -9553,7 +9553,7 @@ pub struct NiSingleInterpController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -9588,20 +9588,20 @@ pub struct NiSourceTexture {
     pub __vftable: *const crate::raw::vtables::NiSourceTexture_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -9615,7 +9615,7 @@ pub struct NiSourceTexture {
     pub field_48: u64,
     /// +0x50 `undefined1`, ctor store
     pub field_50: u8,
-    pub unknown_51: [u8; 7],
+    unknown_51: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9692,7 +9692,7 @@ pub struct NiSphereTriIntersector {
     pub field_34: u32,
     /// +0x38 `undefined4`, base NiIntersector
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `float`, ctor store (widths [4, 4])
@@ -9891,26 +9891,26 @@ pub struct NiStream {
     pub field_8: u32,
     /// +0xC `undefined1`, ctor store
     pub field_C: u8,
-    pub unknown_D: [u8; 63],
+    unknown_D: [u8; 63],
     /// +0x4C `undefined1`, ctor store
     pub field_4C: u8,
-    pub unknown_4D: [u8; 63],
+    unknown_4D: [u8; 63],
     /// +0x8C `undefined1`, ctor store
     pub field_8C: u8,
-    pub unknown_8D: [u8; 67],
+    unknown_8D: [u8; 67],
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
-    pub unknown_D4: [u8; 44],
+    unknown_D4: [u8; 44],
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
     /// +0x104 `undefined4`, ctor store
     pub field_104: u32,
     /// +0x108 `undefined1`, ctor store
     pub field_108: u8,
-    pub unknown_109: [u8; 259],
+    unknown_109: [u8; 259],
     /// +0x20C `undefined2`, ctor store
     pub field_20C: u16,
-    pub unknown_20E: [u8; 2],
+    unknown_20E: [u8; 2],
     /// +0x210 `undefined8`, ctor store
     pub field_210: u64,
     /// +0x218 `undefined8`, member ctor NiTLargeObjectArray<NiPointer<NiObject>_>
@@ -9964,27 +9964,27 @@ pub struct NiStream {
     pub m_NiTPointerMap_2B0: u64,
     /// +0x2B8 `undefined4`, ctor store
     pub field_2B8: u32,
-    pub unknown_2BC: [u8; 4],
+    unknown_2BC: [u8; 4],
     /// +0x2C0 `undefined8`, member ctor NiTMapBase<NiTPointerAllocator<unsigned___int64>,NiObject_const*___ptr64,unsigned_int>
     pub m_NiTMapBase_2C0: u64,
     /// +0x2C8 `undefined4`, ctor store
     pub field_2C8: u32,
-    pub unknown_2CC: [u8; 4],
+    unknown_2CC: [u8; 4],
     /// +0x2D0 `undefined4`, ctor store
     pub field_2D0: u32,
     /// +0x2D4 `undefined2`, ctor store
     pub field_2D4: u16,
-    pub unknown_2D6: [u8; 2],
+    unknown_2D6: [u8; 2],
     /// +0x2D8 `undefined4`, ctor store
     pub field_2D8: u32,
     /// +0x2DC `undefined1`, ctor store
     pub field_2DC: u8,
-    pub unknown_2DD: [u8; 3],
+    unknown_2DD: [u8; 3],
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
     /// +0x2E8 `undefined4`, ctor store
     pub field_2E8: u32,
-    pub unknown_2EC: [u8; 4],
+    unknown_2EC: [u8; 4],
     /// +0x2F0 `undefined8`, ctor store
     pub field_2F0: u64,
     /// +0x2F8 `undefined8`, ctor store
@@ -9993,12 +9993,12 @@ pub struct NiStream {
     pub field_300: u32,
     /// +0x304 `undefined8`, ctor store
     pub field_304: u64,
-    pub unknown_30C: [u8; 260],
+    unknown_30C: [u8; 260],
     /// +0x410 `undefined4`, ctor store
     pub field_410: u32,
     /// +0x414 `undefined1`, ctor store
     pub field_414: u8,
-    pub unknown_415: [u8; 3],
+    unknown_415: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10121,7 +10121,7 @@ pub struct NiSwitchNode {
     pub __vftable: *const crate::raw::vtables::NiSwitchNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -10132,12 +10132,12 @@ pub struct NiSwitchNode {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -10160,12 +10160,12 @@ pub struct NiSwitchNode {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `undefined2`, ctor store
     pub field_128: u16,
-    pub unknown_12A: [u8; 2],
+    unknown_12A: [u8; 2],
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     /// +0x130 `undefined4`, ctor store
@@ -10225,18 +10225,18 @@ pub struct NiSwitchStringExtraData {
     pub __vftable: *const crate::raw::vtables::NiSwitchStringExtraData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12117,10 +12117,10 @@ pub struct NiTimeController {
     pub __vftable: *const crate::raw::vtables::NiTimeController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, ctor store
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, ctor store
     pub field_14: u64,
     /// +0x1C `undefined4`, ctor store
@@ -12137,7 +12137,7 @@ pub struct NiTimeController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
@@ -12170,10 +12170,10 @@ pub struct NiTransformController {
     pub __vftable: *const crate::raw::vtables::NiTransformController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -12190,7 +12190,7 @@ pub struct NiTransformController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -12946,10 +12946,10 @@ pub struct NiVisController {
     pub __vftable: *const crate::raw::vtables::NiVisController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -12966,7 +12966,7 @@ pub struct NiVisController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController

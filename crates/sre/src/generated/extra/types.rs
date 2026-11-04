@@ -223,15 +223,15 @@ pub struct ExtraAttachedArrows3D {
     /// +0x8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 8],
-    pub unknown_10: [u8; 16],
+    unknown_10: [u8; 16],
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1812,11 +1812,11 @@ pub struct ExtraPackage {
     pub field_18: u32,
     /// +0x1C `undefined2`, ctor store
     pub field_1C: u16,
-    pub unknown_1E: [u8; 2],
+    unknown_1E: [u8; 2],
     /// +0x20 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 1],
-    pub unknown_21: [u8; 7],
+    unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2438,7 +2438,7 @@ pub struct ExtraScriptedAnimDependence {
     /// +0x8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 8],
-    pub unknown_10: [u8; 24],
+    unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

@@ -326,7 +326,7 @@ fn placement_checks(expected: [f32; 3]) -> Vec<Check> {
     let written = load3(&WRITTEN_POS);
     let root = PlayerCamera::singleton().and_then(|c| c.camera_root()).map(|r| r.world_transform().translation);
     let frame = sre::get_main_camera().map(|c| c.world_transform().translation);
-    let cached = PlayerCamera::singleton().map(|c| floats::<3>(&c.cachedPosition));
+    let cached = PlayerCamera::singleton().map(|c| floats::<3>(c.cachedPosition()));
     vec![
         ("steps", check(STEPS.load(Ordering::Relaxed) > 0, format!("{} state steps", STEPS.load(Ordering::Relaxed)))),
         ("written", check(near3(written, expected, 0.5), format!("written {written:?} expected {expected:?}"))),

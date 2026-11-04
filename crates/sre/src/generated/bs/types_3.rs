@@ -3,45 +3,6 @@
 
 use core::ffi::c_void;
 
-/// `BSPathingStreamSimpleBufferRead`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamRead`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSPathingStreamRead`@0x0.
-#[repr(C)]
-pub struct BSPathingStreamSimpleBufferRead {
-    /// +0x0 `vtbl:BSPathingStreamSimpleBufferRead:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferRead_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferRead, __vftable) == 0x0);
-
-/// `BSPathingStreamSimpleBufferWrite`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamWrite`.
-/// Evidence: vptr at 0x0.
-/// Bases: `BSPathingStreamWrite`@0x0.
-#[repr(C)]
-pub struct BSPathingStreamSimpleBufferWrite {
-    /// +0x0 `vtbl:BSPathingStreamSimpleBufferWrite:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferWrite_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferWrite, __vftable) == 0x0);
-
-/// `BSPathingStreamWrite`: size 0x8 (exact, low).
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of PathingStreamSaveGame at 0x8 (soft).
-#[repr(C)]
-pub struct BSPathingStreamWrite {
-    /// +0x0 `vtbl:BSPathingStreamWrite:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPathingStreamWrite_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSPathingStreamWrite>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPathingStreamWrite, __vftable) == 0x0);
-
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: runtime: 0x88 at 5 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
@@ -50,7 +11,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64___vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -60,7 +21,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -82,7 +43,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -92,7 +53,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 84],
+    unknown_44: [u8; 84],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -110,7 +71,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -120,7 +81,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -138,7 +99,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -148,7 +109,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -170,7 +131,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -180,7 +141,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -202,7 +163,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -212,7 +173,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -230,7 +191,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -240,7 +201,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -262,7 +223,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -272,7 +233,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -294,7 +255,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -304,7 +265,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -322,7 +283,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -332,7 +293,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -350,7 +311,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -360,7 +321,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -378,7 +339,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64___vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -388,7 +349,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -406,7 +367,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -416,7 +377,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -434,7 +395,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int___vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -444,7 +405,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -466,7 +427,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -476,7 +437,7 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 68],
+    unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -493,7 +454,7 @@ pub struct BSPlatform__BSAsyncRequestBase {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequestBase:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequestBase_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -503,7 +464,7 @@ pub struct BSPlatform__BSAsyncRequestBase {
     /// +0x40 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -525,21 +486,21 @@ pub struct BSPlatform__BSBNETFile__download {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 68],
+    unknown_14: [u8; 68],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 12],
+    unknown_64: [u8; 12],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
     /// +0x78 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 4],
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -566,42 +527,42 @@ pub struct BSPlatform__BSBNETFile__marketplaceDownload {
     /// +0x10 `undefined4`, base BSPlatform::BSBNETFile::download
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 68],
+    unknown_14: [u8; 68],
     /// +0x58 `undefined8`, base BSPlatform::BSBNETFile::download
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, base BSPlatform::BSBNETFile::download
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 12],
+    unknown_64: [u8; 12],
     /// +0x70 `undefined8`, base BSPlatform::BSBNETFile::download
     #[doc(hidden)]
     pub __field_70: [u8; 8],
     /// +0x78 `undefined4`, base BSPlatform::BSBNETFile::download
     #[doc(hidden)]
     pub __field_78: [u8; 4],
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 4],
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 8],
     /// +0x98 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_98: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A8: [u8; 4],
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -627,7 +588,7 @@ pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -637,7 +598,7 @@ pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -654,7 +615,7 @@ pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__ma
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -664,7 +625,7 @@ pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__ma
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -680,7 +641,7 @@ pub struct BSPlatform__BSBNETImage {
     /// +0x0 `vtbl:BSPlatform::BSBNETImage:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -703,7 +664,7 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0x0 `vtbl:BSPlatform::BSBethesdaPlatform:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSBethesdaPlatform_vtable,
-    pub unknown_8: [u8; 1],
+    unknown_8: [u8; 1],
     /// +0x9 `undefined2`, ctor store
     pub field_9: u16,
     /// +0xB `undefined1`, ctor store
@@ -715,7 +676,7 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0xD `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_D: [u8; 2],
-    pub unknown_F: [u8; 25],
+    unknown_F: [u8; 25],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
@@ -725,7 +686,7 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0x32 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_32: [u8; 2],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
@@ -738,18 +699,18 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0x50 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 40],
+    unknown_58: [u8; 40],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 4],
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 1],
-    pub unknown_91: [u8; 47],
+    unknown_91: [u8; 47],
     /// +0xC0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C0: [u8; 8],
@@ -771,7 +732,7 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0xF0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 4],
-    pub unknown_F4: [u8; 60],
+    unknown_F4: [u8; 60],
     /// +0x130 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 8],
@@ -810,7 +771,7 @@ pub struct BSPlatform__BSDownloadRequest {
     /// +0x0 `vtbl:BSPlatform::BSDownloadRequest:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSDownloadRequest_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -820,7 +781,7 @@ pub struct BSPlatform__BSDownloadRequest {
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -842,14 +803,14 @@ pub struct BSPlatform__BSDownloadRequest {
     /// +0xB0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 4],
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_C0: [u8; 4],
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -875,7 +836,7 @@ pub struct BSPlatform__BSMarketplaceImage {
     /// +0x0 `vtbl:BSPlatform::BSMarketplaceImage:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     /// +0x20 `undefined8`, base BSPlatform::BSBNETImage
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -914,7 +875,7 @@ pub struct BSPlatform__BSUploadRequest {
     /// +0x0 `vtbl:BSPlatform::BSUploadRequest:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSUploadRequest_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -924,7 +885,7 @@ pub struct BSPlatform__BSUploadRequest {
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, base BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -973,7 +934,7 @@ pub struct BSPlatform__BSUploadWithProgressRequest {
     /// +0x0 `vtbl:BSPlatform::BSUploadWithProgressRequest:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -983,7 +944,7 @@ pub struct BSPlatform__BSUploadWithProgressRequest {
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 60],
+    unknown_44: [u8; 60],
     /// +0x80 `undefined8`, base BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -996,7 +957,7 @@ pub struct BSPlatform__BSUploadWithProgressRequest {
     /// +0x98 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_98: [u8; 1],
-    pub unknown_99: [u8; 7],
+    unknown_99: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1023,77 +984,77 @@ pub struct BSPlatform__BSUserContent {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 4],
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 8],
     /// +0x90 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 4],
-    pub unknown_94: [u8; 28],
+    unknown_94: [u8; 28],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
     /// +0xB8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 4],
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     /// +0xC0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C8: [u8; 8],
-    pub unknown_D0: [u8; 40],
+    unknown_D0: [u8; 40],
     /// +0xF8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_F8: [u8; 8],
@@ -1154,25 +1115,25 @@ pub struct BSPlatform__BSUserContent {
     /// +0x112 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_112: [u8; 1],
-    pub unknown_113: [u8; 1],
+    unknown_113: [u8; 1],
     /// +0x114 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_114: [u8; 4],
     /// +0x118 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 4],
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     /// +0x120 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_120: [u8; 8],
     /// +0x128 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 4],
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_138: [u8; 8],
@@ -1221,29 +1182,29 @@ pub struct BSPlatform__BSUserContent {
     /// +0x1A8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1A8: [u8; 8],
-    pub unknown_1B0: [u8; 168],
+    unknown_1B0: [u8; 168],
     /// +0x258 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_258: [u8; 2],
-    pub unknown_25A: [u8; 6],
+    unknown_25A: [u8; 6],
     /// +0x260 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_260: [u8; 8],
     /// +0x268 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_268: [u8; 4],
-    pub unknown_26C: [u8; 4],
+    unknown_26C: [u8; 4],
     /// +0x270 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_270: [u8; 8],
     /// +0x278 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_278: [u8; 4],
-    pub unknown_27C: [u8; 4],
+    unknown_27C: [u8; 4],
     /// +0x280 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_280: [u8; 1],
-    pub unknown_281: [u8; 7],
+    unknown_281: [u8; 7],
     /// +0x288 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_288: [u8; 8],
@@ -1347,63 +1308,63 @@ pub struct BSPlatform__BSUserContentCollection {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 4],
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 28],
+    unknown_84: [u8; 28],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A8: [u8; 4],
-    pub unknown_AC: [u8; 44],
+    unknown_AC: [u8; 44],
     /// +0xD8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_D8: [u8; 1],
@@ -1446,7 +1407,7 @@ pub struct BSPlatform__BSUserContentCollection {
     /// +0xE5 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_E5: [u8; 1],
-    pub unknown_E6: [u8; 2],
+    unknown_E6: [u8; 2],
     /// +0xE8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 4],
@@ -1561,10 +1522,10 @@ pub struct BSPlayerDistanceCheckController {
     pub __vftable: *const crate::raw::vtables::BSPlayerDistanceCheckController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -1581,7 +1542,7 @@ pub struct BSPlayerDistanceCheckController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -1592,7 +1553,7 @@ pub struct BSPlayerDistanceCheckController {
     pub field_4C: u32,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     #[doc(hidden)]
@@ -1652,7 +1613,7 @@ pub struct BSPortal {
     pub __vftable: *const crate::raw::vtables::BSPortal_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSOcclusionShape
     pub field_10: f32,
     /// +0x14 `float`, base BSOcclusionShape
@@ -1669,18 +1630,18 @@ pub struct BSPortal {
     pub field_40: u32,
     /// +0x44 `undefined1`, base BSOcclusionShape
     pub field_44: u8,
-    pub unknown_45: [u8; 3],
+    unknown_45: [u8; 3],
     /// +0x48 `undefined4`, base BSOcclusionPlane
     pub field_48: u32,
     /// +0x4C `undefined4`, base BSOcclusionPlane
     #[doc(hidden)]
     pub __field_4C: [u8; 4],
-    pub unknown_50: [u8; 96],
+    unknown_50: [u8; 96],
     /// +0xB0 `undefined4`, base BSOcclusionPlane
     pub field_B0: u32,
     /// +0xB4 `undefined4`, base BSOcclusionPlane
     pub field_B4: u32,
-    pub unknown_B8: [u8; 8],
+    unknown_B8: [u8; 8],
     /// +0xC0 `undefined8`, base BSOcclusionPlane
     #[doc(hidden)]
     pub __field_C0: [u8; 8],
@@ -1699,10 +1660,10 @@ pub struct BSPortal {
     /// +0xE8 `undefined8`, base BSOcclusionPlane
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
-    pub unknown_F0: [u8; 4],
+    unknown_F0: [u8; 4],
     /// +0xF4 `undefined1`, base BSOcclusionPlane
     pub field_F4: u8,
-    pub unknown_F5: [u8; 3],
+    unknown_F5: [u8; 3],
     /// +0xF8 `undefined8`, base BSOcclusionPlane
     pub field_F8: u64,
     /// +0x100 `undefined8`, base BSOcclusionPlane
@@ -1711,7 +1672,7 @@ pub struct BSPortal {
     pub field_108: u64,
     /// +0x110 `undefined8`, base BSOcclusionPlane
     pub field_110: u64,
-    pub unknown_118: [u8; 24],
+    unknown_118: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1963,19 +1924,19 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
@@ -1984,17 +1945,17 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_130: u32,
-    pub unknown_134: [u8; 188],
+    unknown_134: [u8; 188],
     /// +0x1F0 `undefined1`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_1F0: u8,
-    pub unknown_1F1: [u8; 7],
+    unknown_1F1: [u8; 7],
     /// +0x1F8 `undefined8`, base BSNavmeshInfoSearch
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, base BSNavmeshInfoSearch
     #[doc(hidden)]
     pub __field_200: [u8; 4],
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, base BSNavmeshInfoSearch
     #[doc(hidden)]
     pub __field_208: [u8; 8],
@@ -2003,16 +1964,16 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     /// +0x218 `undefined4`, base BSNavmeshInfoSearch
     #[doc(hidden)]
     pub __field_218: [u8; 4],
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, base BSNavmeshInfoSearch
     pub field_220: u64,
     /// +0x228 `undefined8`, base BSNavmeshInfoSearch
     pub field_228: u64,
-    pub unknown_230: [u8; 4],
+    unknown_230: [u8; 4],
     /// +0x234 `undefined2`, base BSNavmeshInfoSearch
     #[doc(hidden)]
     pub __field_234: [u8; 2],
-    pub unknown_236: [u8; 2],
+    unknown_236: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2054,10 +2015,10 @@ pub struct BSProceduralLightningController {
     pub __vftable: *const crate::raw::vtables::BSProceduralLightningController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -2074,7 +2035,7 @@ pub struct BSProceduralLightningController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -2084,19 +2045,19 @@ pub struct BSProceduralLightningController {
     pub __source_BSProceduralGeomEvent: [u8; 88],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
-    pub unknown_A8: [u8; 80],
+    unknown_A8: [u8; 80],
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
-    pub unknown_108: [u8; 72],
+    unknown_108: [u8; 72],
     /// +0x150 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 4],
     /// +0x154 `undefined2`, ctor store
     pub field_154: u16,
-    pub unknown_156: [u8; 2],
+    unknown_156: [u8; 2],
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
     /// +0x160 `undefined4`, ctor store
@@ -2107,14 +2068,14 @@ pub struct BSProceduralLightningController {
     pub field_16C: u32,
     /// +0x170 `undefined4`, ctor store
     pub field_170: u32,
-    pub unknown_174: [u8; 4],
+    unknown_174: [u8; 4],
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
     /// +0x180 `undefined8`, ctor store
     pub field_180: u64,
     /// +0x188 `undefined2`, ctor store
     pub field_188: u16,
-    pub unknown_18A: [u8; 6],
+    unknown_18A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2177,7 +2138,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTr
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2185,20 +2146,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTr
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 50],
+    unknown_56: [u8; 50],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2233,7 +2194,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1 
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2241,20 +2202,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1 
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 58],
+    unknown_56: [u8; 58],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2289,7 +2250,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2 
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2297,20 +2258,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2 
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 50],
+    unknown_56: [u8; 50],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2345,7 +2306,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2353,20 +2314,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 1378],
+    unknown_56: [u8; 1378],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2401,7 +2362,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2409,20 +2370,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2457,7 +2418,7 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2465,20 +2426,20 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2513,7 +2474,7 @@ pub struct BSQueuedResourceCollectionBase {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2521,20 +2482,20 @@ pub struct BSQueuedResourceCollectionBase {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSQueuedResourceCollectionBase:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSQueuedResourceCollectionBase_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     /// +0x54 `undefined2`, ctor store
     pub field_54: u16,
-    pub unknown_56: [u8; 50],
+    unknown_56: [u8; 50],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2563,7 +2524,7 @@ pub struct BSRagdollContactListenerModifier {
     pub __vftable: *const crate::raw::vtables::BSRagdollContactListenerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2650,7 +2611,7 @@ pub struct BSRagdollContactListenerModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2873,7 +2834,7 @@ pub struct BSResource__ArchiveStream {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_18: [u8; 8],
@@ -2883,7 +2844,7 @@ pub struct BSResource__ArchiveStream {
     /// +0x24 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_24: [u8; 4],
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3060,7 +3021,7 @@ pub struct BSResource__CacheDrive__Task {
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 28],
+    unknown_C: [u8; 28],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
@@ -3070,7 +3031,7 @@ pub struct BSResource__CacheDrive__Task {
     /// +0x38 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 2],
-    pub unknown_3A: [u8; 6],
+    unknown_3A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3093,7 +3054,7 @@ pub struct BSResource__CompressedArchiveStream {
     /// +0x10 `undefined4`, base BSResource::ArchiveStream
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSResource::ArchiveStream
     #[doc(hidden)]
     pub __field_18: [u8; 8],
@@ -3103,11 +3064,11 @@ pub struct BSResource__CompressedArchiveStream {
     /// +0x24 `undefined4`, base BSResource::ArchiveStream
     #[doc(hidden)]
     pub __field_24: [u8; 4],
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3449,22 +3410,22 @@ pub struct BSResource___anon_30629CF1__AsyncArchiveStream {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_18: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 1840],
+    unknown_38: [u8; 1840],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3513,11 +3474,11 @@ pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// +0x0 `vtbl:BSResource::_anon_5F811FAA::LooseFileAsyncStream:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `vtbl:BSResource::_anon_5F811FAA::LooseFileAsyncStream:30`, rtti
     #[doc(hidden)]
     pub ____vftable_30: [u8; 8],
-    pub unknown_38: [u8; 96],
+    unknown_38: [u8; 96],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3546,11 +3507,11 @@ pub struct BSResource___anon_5F811FAA__LooseFileStream {
     /// +0x0 `vtbl:BSResource::_anon_5F811FAA::LooseFileStream:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileStream_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `vtbl:BSResource::_anon_5F811FAA::LooseFileStream:30`, rtti
     #[doc(hidden)]
     pub ____vftable_30: [u8; 8],
-    pub unknown_38: [u8; 40],
+    unknown_38: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3621,28 +3582,28 @@ pub struct BSResource___anon_AC99F91C__EventSources {
     /// +0x0 `vtbl:BSResource::_anon_AC99F91C::EventSources:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource___anon_AC99F91C__EventSources_vtable,
-    pub unknown_8: [u8; 80],
+    unknown_8: [u8; 80],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 1],
-    pub unknown_61: [u8; 79],
+    unknown_61: [u8; 79],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
     /// +0xB8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 1],
-    pub unknown_B9: [u8; 79],
+    unknown_B9: [u8; 79],
     /// +0x108 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 8],
     /// +0x110 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 1],
-    pub unknown_111: [u8; 7],
+    unknown_111: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3727,7 +3688,7 @@ pub struct BSResourceFaceGenBinaryFile {
     /// +0x8 `undefined1`, base FutBinaryFileC
     #[doc(hidden)]
     pub __field_8: [u8; 1],
-    pub unknown_9: [u8; 15],
+    unknown_9: [u8; 15],
     /// +0x18 `undefined8`, base FutBinaryFileC
     pub field_18: u64,
     /// +0x20 `undefined8`, base FutBinaryFileC
@@ -3736,7 +3697,7 @@ pub struct BSResourceFaceGenBinaryFile {
     /// +0x28 `undefined1`, base FutBinaryFileC
     #[doc(hidden)]
     pub __field_28: [u8; 1],
-    pub unknown_29: [u8; 15],
+    unknown_29: [u8; 15],
     /// +0x38 `undefined8`, base FutBinaryFileC
     #[doc(hidden)]
     pub __field_38: [u8; 8],
@@ -3925,47 +3886,47 @@ pub struct BSSaveDataSystemUtility {
     /// +0x60 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 1],
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
     /// +0x68 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 1],
-    pub unknown_69: [u8; 7],
+    unknown_69: [u8; 7],
     /// +0x70 `undefined8`, member ctor BSSaveDataSystemUtility::Entry
     pub m_Entry_70: u64,
-    pub unknown_78: [u8; 264],
+    unknown_78: [u8; 264],
     /// +0x180 `undefined8`, ctor store
     pub field_180: u64,
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
-    pub unknown_18C: [u8; 4],
+    unknown_18C: [u8; 4],
     /// +0x190 `undefined8`, ctor store
     pub field_190: u64,
     /// +0x198 `undefined4`, ctor store
     pub field_198: u32,
-    pub unknown_19C: [u8; 4],
+    unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, ctor store
     pub field_1A0: u64,
     /// +0x1A8 `undefined4`, ctor store
     pub field_1A8: u32,
-    pub unknown_1AC: [u8; 4],
+    unknown_1AC: [u8; 4],
     /// +0x1B0 `undefined8`, ctor store
     pub field_1B0: u64,
     /// +0x1B8 `undefined4`, ctor store
     pub field_1B8: u32,
-    pub unknown_1BC: [u8; 4],
+    unknown_1BC: [u8; 4],
     /// +0x1C0 `undefined8`, ctor store
     pub field_1C0: u64,
     /// +0x1C8 `undefined4`, ctor store
     pub field_1C8: u32,
-    pub unknown_1CC: [u8; 4],
+    unknown_1CC: [u8; 4],
     /// +0x1D0 `undefined8`, ctor store
     pub field_1D0: u64,
-    pub unknown_1D8: [u8; 8],
+    unknown_1D8: [u8; 8],
     /// +0x1E0 `undefined8`, ctor store
     pub field_1E0: u64,
-    pub unknown_1E8: [u8; 4],
+    unknown_1E8: [u8; 4],
     /// +0x1EC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1EC: [u8; 8],
@@ -3975,15 +3936,15 @@ pub struct BSSaveDataSystemUtility {
     pub field_1F8: u16,
     /// +0x1FA `undefined1`, ctor store
     pub field_1FA: u8,
-    pub unknown_1FB: [u8; 5],
+    unknown_1FB: [u8; 5],
     /// +0x200 `undefined8`, ctor store
     pub field_200: u64,
     /// +0x208 `undefined4`, ctor store
     pub field_208: u32,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     /// +0x210 `undefined4`, ctor store
     pub field_210: u32,
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4177,7 +4138,7 @@ pub struct BSScaleformFileOpener {
     pub __vftable: *const crate::raw::vtables::BSScaleformFileOpener_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -4194,12 +4155,12 @@ pub struct BSScaleformFileOpener {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -4208,25 +4169,25 @@ pub struct BSScaleformFileOpener {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -4235,44 +4196,44 @@ pub struct BSScaleformFileOpener {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4281,7 +4242,7 @@ pub struct BSScaleformFileOpener {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -4290,7 +4251,7 @@ pub struct BSScaleformFileOpener {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -4358,7 +4319,7 @@ pub struct BSScaleformImageLoader {
     pub __vftable: *const crate::raw::vtables::BSScaleformImageLoader_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -4375,12 +4336,12 @@ pub struct BSScaleformImageLoader {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -4389,25 +4350,25 @@ pub struct BSScaleformImageLoader {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -4416,44 +4377,44 @@ pub struct BSScaleformImageLoader {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4462,7 +4423,7 @@ pub struct BSScaleformImageLoader {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -4471,7 +4432,7 @@ pub struct BSScaleformImageLoader {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -4576,7 +4537,7 @@ pub struct BSScaleformTranslator {
     pub __vftable: *const crate::raw::vtables::BSScaleformTranslator_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -4593,12 +4554,12 @@ pub struct BSScaleformTranslator {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined4`, base GRefCountImplCore
@@ -4607,25 +4568,25 @@ pub struct BSScaleformTranslator {
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -4634,44 +4595,44 @@ pub struct BSScaleformTranslator {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4680,7 +4641,7 @@ pub struct BSScaleformTranslator {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -4689,7 +4650,7 @@ pub struct BSScaleformTranslator {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -4987,7 +4948,7 @@ pub struct BSSegmentedTriShape {
     pub __vftable: *const crate::raw::vtables::BSSegmentedTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -4998,12 +4959,12 @@ pub struct BSSegmentedTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -5026,7 +4987,7 @@ pub struct BSSegmentedTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, base NiGeometry
     pub field_110: u64,
     /// +0x118 `undefined8`, base NiGeometry
@@ -5046,7 +5007,7 @@ pub struct BSSegmentedTriShape {
     pub field_144: u32,
     /// +0x148 `undefined2`, ctor store
     pub field_148: u16,
-    pub unknown_14A: [u8; 6],
+    unknown_14A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5129,10 +5090,10 @@ pub struct BSSimpleScaleController {
     pub __vftable: *const crate::raw::vtables::BSSimpleScaleController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -5149,7 +5110,7 @@ pub struct BSSimpleScaleController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -5158,7 +5119,7 @@ pub struct BSSimpleScaleController {
     pub field_48: u64,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5463,266 +5424,266 @@ pub struct BSSmallBlockAllocator {
     /// +0x0 `vtbl:BSSmallBlockAllocator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSmallBlockAllocator_vtable,
-    pub unknown_8: [u8; 28],
+    unknown_8: [u8; 28],
     /// +0x24 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_24: [u8; 4],
-    pub unknown_28: [u8; 68],
+    unknown_28: [u8; 68],
     /// +0x6C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6C: [u8; 4],
-    pub unknown_70: [u8; 68],
+    unknown_70: [u8; 68],
     /// +0xB4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B4: [u8; 4],
-    pub unknown_B8: [u8; 68],
+    unknown_B8: [u8; 68],
     /// +0xFC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_FC: [u8; 4],
-    pub unknown_100: [u8; 68],
+    unknown_100: [u8; 68],
     /// +0x144 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_144: [u8; 4],
-    pub unknown_148: [u8; 68],
+    unknown_148: [u8; 68],
     /// +0x18C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_18C: [u8; 4],
-    pub unknown_190: [u8; 68],
+    unknown_190: [u8; 68],
     /// +0x1D4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1D4: [u8; 4],
-    pub unknown_1D8: [u8; 68],
+    unknown_1D8: [u8; 68],
     /// +0x21C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_21C: [u8; 4],
-    pub unknown_220: [u8; 68],
+    unknown_220: [u8; 68],
     /// +0x264 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_264: [u8; 4],
-    pub unknown_268: [u8; 68],
+    unknown_268: [u8; 68],
     /// +0x2AC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2AC: [u8; 4],
-    pub unknown_2B0: [u8; 68],
+    unknown_2B0: [u8; 68],
     /// +0x2F4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2F4: [u8; 4],
-    pub unknown_2F8: [u8; 68],
+    unknown_2F8: [u8; 68],
     /// +0x33C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_33C: [u8; 4],
-    pub unknown_340: [u8; 68],
+    unknown_340: [u8; 68],
     /// +0x384 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_384: [u8; 4],
-    pub unknown_388: [u8; 68],
+    unknown_388: [u8; 68],
     /// +0x3CC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_3CC: [u8; 4],
-    pub unknown_3D0: [u8; 68],
+    unknown_3D0: [u8; 68],
     /// +0x414 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_414: [u8; 4],
-    pub unknown_418: [u8; 68],
+    unknown_418: [u8; 68],
     /// +0x45C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_45C: [u8; 4],
-    pub unknown_460: [u8; 68],
+    unknown_460: [u8; 68],
     /// +0x4A4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_4A4: [u8; 4],
-    pub unknown_4A8: [u8; 68],
+    unknown_4A8: [u8; 68],
     /// +0x4EC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_4EC: [u8; 4],
-    pub unknown_4F0: [u8; 68],
+    unknown_4F0: [u8; 68],
     /// +0x534 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_534: [u8; 4],
-    pub unknown_538: [u8; 68],
+    unknown_538: [u8; 68],
     /// +0x57C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_57C: [u8; 4],
-    pub unknown_580: [u8; 68],
+    unknown_580: [u8; 68],
     /// +0x5C4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_5C4: [u8; 4],
-    pub unknown_5C8: [u8; 68],
+    unknown_5C8: [u8; 68],
     /// +0x60C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60C: [u8; 4],
-    pub unknown_610: [u8; 68],
+    unknown_610: [u8; 68],
     /// +0x654 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_654: [u8; 4],
-    pub unknown_658: [u8; 68],
+    unknown_658: [u8; 68],
     /// +0x69C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_69C: [u8; 4],
-    pub unknown_6A0: [u8; 68],
+    unknown_6A0: [u8; 68],
     /// +0x6E4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_6E4: [u8; 4],
-    pub unknown_6E8: [u8; 68],
+    unknown_6E8: [u8; 68],
     /// +0x72C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_72C: [u8; 4],
-    pub unknown_730: [u8; 68],
+    unknown_730: [u8; 68],
     /// +0x774 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_774: [u8; 4],
-    pub unknown_778: [u8; 68],
+    unknown_778: [u8; 68],
     /// +0x7BC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_7BC: [u8; 4],
-    pub unknown_7C0: [u8; 68],
+    unknown_7C0: [u8; 68],
     /// +0x804 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_804: [u8; 4],
-    pub unknown_808: [u8; 68],
+    unknown_808: [u8; 68],
     /// +0x84C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_84C: [u8; 4],
-    pub unknown_850: [u8; 68],
+    unknown_850: [u8; 68],
     /// +0x894 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_894: [u8; 4],
-    pub unknown_898: [u8; 68],
+    unknown_898: [u8; 68],
     /// +0x8DC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8DC: [u8; 4],
-    pub unknown_8E0: [u8; 68],
+    unknown_8E0: [u8; 68],
     /// +0x924 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_924: [u8; 4],
-    pub unknown_928: [u8; 68],
+    unknown_928: [u8; 68],
     /// +0x96C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_96C: [u8; 4],
-    pub unknown_970: [u8; 68],
+    unknown_970: [u8; 68],
     /// +0x9B4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_9B4: [u8; 4],
-    pub unknown_9B8: [u8; 68],
+    unknown_9B8: [u8; 68],
     /// +0x9FC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_9FC: [u8; 4],
-    pub unknown_A00: [u8; 68],
+    unknown_A00: [u8; 68],
     /// +0xA44 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A44: [u8; 4],
-    pub unknown_A48: [u8; 68],
+    unknown_A48: [u8; 68],
     /// +0xA8C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A8C: [u8; 4],
-    pub unknown_A90: [u8; 68],
+    unknown_A90: [u8; 68],
     /// +0xAD4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_AD4: [u8; 4],
-    pub unknown_AD8: [u8; 68],
+    unknown_AD8: [u8; 68],
     /// +0xB1C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B1C: [u8; 4],
-    pub unknown_B20: [u8; 68],
+    unknown_B20: [u8; 68],
     /// +0xB64 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B64: [u8; 4],
-    pub unknown_B68: [u8; 68],
+    unknown_B68: [u8; 68],
     /// +0xBAC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_BAC: [u8; 4],
-    pub unknown_BB0: [u8; 68],
+    unknown_BB0: [u8; 68],
     /// +0xBF4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_BF4: [u8; 4],
-    pub unknown_BF8: [u8; 68],
+    unknown_BF8: [u8; 68],
     /// +0xC3C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_C3C: [u8; 4],
-    pub unknown_C40: [u8; 68],
+    unknown_C40: [u8; 68],
     /// +0xC84 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_C84: [u8; 4],
-    pub unknown_C88: [u8; 68],
+    unknown_C88: [u8; 68],
     /// +0xCCC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_CCC: [u8; 4],
-    pub unknown_CD0: [u8; 68],
+    unknown_CD0: [u8; 68],
     /// +0xD14 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_D14: [u8; 4],
-    pub unknown_D18: [u8; 68],
+    unknown_D18: [u8; 68],
     /// +0xD5C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_D5C: [u8; 4],
-    pub unknown_D60: [u8; 68],
+    unknown_D60: [u8; 68],
     /// +0xDA4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_DA4: [u8; 4],
-    pub unknown_DA8: [u8; 68],
+    unknown_DA8: [u8; 68],
     /// +0xDEC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_DEC: [u8; 4],
-    pub unknown_DF0: [u8; 68],
+    unknown_DF0: [u8; 68],
     /// +0xE34 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E34: [u8; 4],
-    pub unknown_E38: [u8; 68],
+    unknown_E38: [u8; 68],
     /// +0xE7C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E7C: [u8; 4],
-    pub unknown_E80: [u8; 68],
+    unknown_E80: [u8; 68],
     /// +0xEC4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_EC4: [u8; 4],
-    pub unknown_EC8: [u8; 68],
+    unknown_EC8: [u8; 68],
     /// +0xF0C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_F0C: [u8; 4],
-    pub unknown_F10: [u8; 68],
+    unknown_F10: [u8; 68],
     /// +0xF54 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_F54: [u8; 4],
-    pub unknown_F58: [u8; 68],
+    unknown_F58: [u8; 68],
     /// +0xF9C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_F9C: [u8; 4],
-    pub unknown_FA0: [u8; 68],
+    unknown_FA0: [u8; 68],
     /// +0xFE4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_FE4: [u8; 4],
-    pub unknown_FE8: [u8; 68],
+    unknown_FE8: [u8; 68],
     /// +0x102C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_102C: [u8; 4],
-    pub unknown_1030: [u8; 68],
+    unknown_1030: [u8; 68],
     /// +0x1074 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1074: [u8; 4],
-    pub unknown_1078: [u8; 68],
+    unknown_1078: [u8; 68],
     /// +0x10BC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10BC: [u8; 4],
-    pub unknown_10C0: [u8; 68],
+    unknown_10C0: [u8; 68],
     /// +0x1104 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1104: [u8; 4],
-    pub unknown_1108: [u8; 68],
+    unknown_1108: [u8; 68],
     /// +0x114C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_114C: [u8; 4],
-    pub unknown_1150: [u8; 68],
+    unknown_1150: [u8; 68],
     /// +0x1194 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1194: [u8; 4],
-    pub unknown_1198: [u8; 68],
+    unknown_1198: [u8; 68],
     /// +0x11DC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_11DC: [u8; 4],
-    pub unknown_11E0: [u8; 80],
+    unknown_11E0: [u8; 80],
     /// +0x1230 `undefined4`, ctor store
     pub field_1230: u32,
-    pub unknown_1234: [u8; 4],
+    unknown_1234: [u8; 4],
     /// +0x1238 `undefined8`, ctor store
     pub field_1238: u64,
     /// +0x1240 `undefined8`, ctor store
@@ -5741,7 +5702,7 @@ pub struct BSSmallBlockAllocator {
     pub __field_1260: [u8; 4],
     /// +0x1264 `undefined1`, ctor store
     pub field_1264: u8,
-    pub unknown_1265: [u8; 3],
+    unknown_1265: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5844,7 +5805,7 @@ pub struct BSSmallBlockAllocatorUtil__UserPoolBase {
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5932,7 +5893,7 @@ pub struct BSSpeedSamplerModifier {
     pub __vftable: *const crate::raw::vtables::BSSpeedSamplerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6020,7 +5981,7 @@ pub struct BSSpeedSamplerModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6166,26 +6127,26 @@ pub struct BSStream {
     pub field_8: u32,
     /// +0xC `undefined1`, base NiStream
     pub field_C: u8,
-    pub unknown_D: [u8; 63],
+    unknown_D: [u8; 63],
     /// +0x4C `undefined1`, base NiStream
     pub field_4C: u8,
-    pub unknown_4D: [u8; 63],
+    unknown_4D: [u8; 63],
     /// +0x8C `undefined1`, base NiStream
     pub field_8C: u8,
-    pub unknown_8D: [u8; 67],
+    unknown_8D: [u8; 67],
     /// +0xD0 `undefined4`, base NiStream
     pub field_D0: u32,
-    pub unknown_D4: [u8; 44],
+    unknown_D4: [u8; 44],
     /// +0x100 `undefined4`, base NiStream
     pub field_100: u32,
     /// +0x104 `undefined4`, base NiStream
     pub field_104: u32,
     /// +0x108 `undefined1`, base NiStream
     pub field_108: u8,
-    pub unknown_109: [u8; 259],
+    unknown_109: [u8; 259],
     /// +0x20C `undefined2`, base NiStream
     pub field_20C: u16,
-    pub unknown_20E: [u8; 2],
+    unknown_20E: [u8; 2],
     /// +0x210 `undefined8`, base NiStream
     pub field_210: u64,
     /// +0x218 `undefined8`, base NiStream
@@ -6239,27 +6200,27 @@ pub struct BSStream {
     pub m_NiTPointerMap_2B0: u64,
     /// +0x2B8 `undefined4`, base NiStream
     pub field_2B8: u32,
-    pub unknown_2BC: [u8; 4],
+    unknown_2BC: [u8; 4],
     /// +0x2C0 `undefined8`, base NiStream
     pub m_NiTMapBase_2C0: u64,
     /// +0x2C8 `undefined4`, base NiStream
     pub field_2C8: u32,
-    pub unknown_2CC: [u8; 4],
+    unknown_2CC: [u8; 4],
     /// +0x2D0 `undefined4`, base NiStream
     pub field_2D0: u32,
     /// +0x2D4 `undefined2`, base NiStream
     pub field_2D4: u16,
-    pub unknown_2D6: [u8; 2],
+    unknown_2D6: [u8; 2],
     /// +0x2D8 `undefined4`, base NiStream
     pub field_2D8: u32,
     /// +0x2DC `undefined1`, base NiStream
     pub field_2DC: u8,
-    pub unknown_2DD: [u8; 3],
+    unknown_2DD: [u8; 3],
     /// +0x2E0 `undefined8`, base NiStream
     pub field_2E0: u64,
     /// +0x2E8 `undefined4`, base NiStream
     pub field_2E8: u32,
-    pub unknown_2EC: [u8; 4],
+    unknown_2EC: [u8; 4],
     /// +0x2F0 `undefined8`, base NiStream
     pub field_2F0: u64,
     /// +0x2F8 `undefined8`, base NiStream
@@ -6268,12 +6229,12 @@ pub struct BSStream {
     pub field_300: u32,
     /// +0x304 `undefined8`, base NiStream
     pub field_304: u64,
-    pub unknown_30C: [u8; 260],
+    unknown_30C: [u8; 260],
     /// +0x410 `undefined4`, base NiStream
     pub field_410: u32,
     /// +0x414 `undefined1`, base NiStream
     pub field_414: u8,
-    pub unknown_415: [u8; 3],
+    unknown_415: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6375,10 +6336,10 @@ pub struct BSStripPSysData {
     pub __vftable: *const crate::raw::vtables::BSStripPSysData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base NiParticlesData
     pub field_10: u8,
-    pub unknown_11: [u8; 1],
+    unknown_11: [u8; 1],
     /// +0x12 `undefined2`, base NiParticlesData
     pub field_12: u16,
     /// +0x14 `float`, base NiParticlesData
@@ -6389,7 +6350,7 @@ pub struct BSStripPSysData {
     pub field_1C: f32,
     /// +0x20 `undefined4`, base NiParticlesData
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base NiParticlesData
     pub field_28: u64,
     /// +0x30 `undefined8`, base NiParticlesData
@@ -6418,12 +6379,12 @@ pub struct BSStripPSysData {
     pub field_78: u32,
     /// +0x7C `undefined2`, base NiParticlesData
     pub field_7C: u16,
-    pub unknown_7E: [u8; 2],
+    unknown_7E: [u8; 2],
     /// +0x80 `undefined8`, base NiParticlesData
     pub field_80: u64,
     /// +0x88 `undefined2`, base NiParticlesData
     pub field_88: u16,
-    pub unknown_8A: [u8; 6],
+    unknown_8A: [u8; 6],
     /// +0x90 `undefined8`, base NiPSysData
     pub field_90: u64,
     /// +0x98 `undefined8`, base NiPSysData
@@ -6431,7 +6392,7 @@ pub struct BSStripPSysData {
     /// +0xA0 `undefined4`, base NiPSysData
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -6442,7 +6403,7 @@ pub struct BSStripPSysData {
     pub field_BC: u16,
     /// +0xBE `undefined1`, ctor store
     pub field_BE: u8,
-    pub unknown_BF: [u8; 1],
+    unknown_BF: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6634,7 +6595,7 @@ pub struct BSSubIndexLandTriShape {
     pub __vftable: *const crate::raw::vtables::BSSubIndexLandTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -6645,12 +6606,12 @@ pub struct BSSubIndexLandTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -6673,7 +6634,7 @@ pub struct BSSubIndexLandTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -6696,21 +6657,21 @@ pub struct BSSubIndexLandTriShape {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined2`, base BSTriShape
     pub field_158: u16,
     /// +0x15A `undefined2`, base BSTriShape
     pub field_15A: u16,
-    pub unknown_15C: [u8; 4],
+    unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, base BSSubIndexTriShape
     pub field_160: u64,
     /// +0x168 `undefined4`, base BSSubIndexTriShape
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, base BSSubIndexTriShape
     pub field_170: u16,
-    pub unknown_172: [u8; 6],
+    unknown_172: [u8; 6],
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
     #[doc(hidden)]
@@ -6765,7 +6726,7 @@ pub struct BSSubIndexTriShape {
     pub __vftable: *const crate::raw::vtables::BSSubIndexTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -6776,12 +6737,12 @@ pub struct BSSubIndexTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -6804,7 +6765,7 @@ pub struct BSSubIndexTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -6827,21 +6788,21 @@ pub struct BSSubIndexTriShape {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    pub unknown_151: [u8; 7],
+    unknown_151: [u8; 7],
     /// +0x158 `undefined2`, base BSTriShape
     pub field_158: u16,
     /// +0x15A `undefined2`, base BSTriShape
     pub field_15A: u16,
-    pub unknown_15C: [u8; 4],
+    unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
     /// +0x168 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, ctor store
     pub field_170: u16,
-    pub unknown_172: [u8; 6],
+    unknown_172: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6893,7 +6854,7 @@ pub struct BSSynchronizedClipGenerator {
     pub __vftable: *const crate::raw::vtables::BSSynchronizedClipGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6981,7 +6942,7 @@ pub struct BSSynchronizedClipGenerator {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 8],
+    unknown_C8: [u8; 8],
     /// +0xD0 `undefined1[16]`, ctor store
     pub field_D0: [u8; 16],
     /// +0xE0 `undefined1[16]`, ctor store
@@ -7008,7 +6969,7 @@ pub struct BSSynchronizedClipGenerator {
     pub field_12B: u8,
     /// +0x12C `undefined1`, ctor store
     pub field_12C: u8,
-    pub unknown_12D: [u8; 3],
+    unknown_12D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7093,7 +7054,7 @@ pub struct BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene {
     /// +0x0 `vtbl:BSSynchronizedClipGenerator::hkbSynchronizedAnimationScene:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7181,7 +7142,7 @@ pub struct BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7394,7 +7355,7 @@ pub struct BSSystemUtility {
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSSystemEvent>
     #[doc(hidden)]
     pub __source_BSSystemEvent: [u8; 88],
-    pub unknown_60: [u8; 128],
+    unknown_60: [u8; 128],
     /// +0xE0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_E0: [u8; 8],
@@ -7419,18 +7380,18 @@ pub struct BSSystemUtility {
     /// +0x114 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_114: [u8; 1],
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 4],
     /// +0x11C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_11C: [u8; 4],
-    pub unknown_120: [u8; 1],
+    unknown_120: [u8; 1],
     /// +0x121 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_121: [u8; 1],
-    pub unknown_122: [u8; 6],
+    unknown_122: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -15945,74 +15906,74 @@ pub struct BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrappe
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
-    pub unknown_18: [u8; 24],
+    unknown_18: [u8; 24],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 24],
+    unknown_38: [u8; 24],
     /// +0x50 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 24],
+    unknown_58: [u8; 24],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
-    pub unknown_78: [u8; 24],
+    unknown_78: [u8; 24],
     /// +0x90 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 8],
-    pub unknown_98: [u8; 24],
+    unknown_98: [u8; 24],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
-    pub unknown_B8: [u8; 24],
+    unknown_B8: [u8; 24],
     /// +0xD0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_D0: [u8; 8],
-    pub unknown_D8: [u8; 24],
+    unknown_D8: [u8; 24],
     /// +0xF0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 8],
-    pub unknown_F8: [u8; 24],
+    unknown_F8: [u8; 24],
     /// +0x110 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 8],
-    pub unknown_118: [u8; 24],
+    unknown_118: [u8; 24],
     /// +0x130 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 8],
-    pub unknown_138: [u8; 24],
+    unknown_138: [u8; 24],
     /// +0x150 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 8],
-    pub unknown_158: [u8; 24],
+    unknown_158: [u8; 24],
     /// +0x170 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 8],
-    pub unknown_178: [u8; 24],
+    unknown_178: [u8; 24],
     /// +0x190 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_190: [u8; 8],
-    pub unknown_198: [u8; 24],
+    unknown_198: [u8; 24],
     /// +0x1B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
-    pub unknown_1B8: [u8; 24],
+    unknown_1B8: [u8; 24],
     /// +0x1D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
-    pub unknown_1D8: [u8; 24],
+    unknown_1D8: [u8; 24],
     /// +0x1F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F0: [u8; 8],
-    pub unknown_1F8: [u8; 24],
+    unknown_1F8: [u8; 24],
     /// +0x210 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 8],
-    pub unknown_218: [u8; 8],
+    unknown_218: [u8; 8],
     /// +0x220 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_220: [u8; 4],
@@ -16025,7 +15986,7 @@ pub struct BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrappe
     /// +0x230 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_230: [u8; 8],
-    pub unknown_238: [u8; 384],
+    unknown_238: [u8; 384],
     /// +0x3B8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3B8: [u8; 8],
@@ -16149,19 +16110,19 @@ pub struct BSTaskManager {
     pub field_8: u64,
     /// +0x10 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_18: u64,
     /// +0x20 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_28: u64,
     /// +0x30 `undefined4`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_30: u32,
     /// +0x34 `undefined8`, base SynchronizedMap<__int64,NiPointer<BSTask>_>
     pub field_34: u64,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `class:BSTEventSource`, RTTI base BSTEventSource<BSTaskManagerWaitAction>
     #[doc(hidden)]
     pub __source_BSTaskManagerWaitAction: [u8; 88],
@@ -16175,13 +16136,13 @@ pub struct BSTaskManager {
     pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
     /// +0xB8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_B8: [u8; 4],
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16434,20 +16395,20 @@ pub struct BSTempEffectGeometryDecal {
     pub __vftable: *const crate::raw::vtables::BSTempEffectGeometryDecal_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSTempEffect
     pub field_10: f32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
     /// +0x20 `undefined4`, base BSTempEffect
     pub field_20: u32,
     /// +0x24 `undefined1`, base BSTempEffect
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
@@ -16509,7 +16470,7 @@ pub struct BSTempEffectGeometryDecal {
     pub field_AC: u32,
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
-    pub unknown_B1: [u8; 7],
+    unknown_B1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16558,20 +16519,20 @@ pub struct BSTempEffectParticle {
     pub __vftable: *const crate::raw::vtables::BSTempEffectParticle_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSTempEffect
     pub field_10: f32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
     /// +0x20 `undefined4`, base BSTempEffect
     pub field_20: u32,
     /// +0x24 `undefined1`, base BSTempEffect
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
@@ -16608,17 +16569,17 @@ pub struct BSTempEffectParticle {
     /// +0x80 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
-    pub unknown_90: [u8; 36],
+    unknown_90: [u8; 36],
     /// +0xB4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B4: [u8; 8],
     /// +0xBC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C8: [u8; 8],
@@ -16628,7 +16589,7 @@ pub struct BSTempEffectParticle {
     /// +0xD4 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_D4: [u8; 1],
-    pub unknown_D5: [u8; 3],
+    unknown_D5: [u8; 3],
     /// +0xD8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_D8: [u8; 4],
@@ -16638,14 +16599,14 @@ pub struct BSTempEffectParticle {
     /// +0xE0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_E0: [u8; 1],
-    pub unknown_E1: [u8; 3],
+    unknown_E1: [u8; 3],
     /// +0xE4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E4: [u8; 4],
     /// +0xE8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 1],
-    pub unknown_E9: [u8; 7],
+    unknown_E9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

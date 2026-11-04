@@ -6982,47 +6982,47 @@ impl PlayerInputHandler_vtable {
     /// The slot's index on the running game; 2 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessMotionGesture() -> usize { slot_index!("PlayerInputHandler", 0x0, 2) }
+    pub fn SLOT_ProcessMotionGesture() -> usize { slot_at!("PlayerInputHandler", 0x0, 2) }
     /// Slot 2 as `PlayerInputHandler_vtable_ProcessMotionGesture`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMotionGesture(&self) -> Option<PlayerInputHandler_vtable_ProcessMotionGesture> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMotionGesture>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 2))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMotionGesture>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("PlayerInputHandler", 0x0, 2))) }
     }
     /// The slot's index on the running game; 3 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessSixaxis() -> usize { slot_index!("PlayerInputHandler", 0x0, 3) }
+    pub fn SLOT_ProcessSixaxis() -> usize { slot_at!("PlayerInputHandler", 0x0, 3) }
     /// Slot 3 as `PlayerInputHandler_vtable_ProcessSixaxis`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessSixaxis(&self) -> Option<PlayerInputHandler_vtable_ProcessSixaxis> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessSixaxis>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 3))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessSixaxis>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("PlayerInputHandler", 0x0, 3))) }
     }
     /// The slot's index on the running game; 4 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessThumbstick() -> usize { slot_index!("PlayerInputHandler", 0x0, 4) }
+    pub fn SLOT_ProcessThumbstick() -> usize { slot_at!("PlayerInputHandler", 0x0, 4) }
     /// Slot 4 as `PlayerInputHandler_vtable_ProcessThumbstick`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessThumbstick(&self) -> Option<PlayerInputHandler_vtable_ProcessThumbstick> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessThumbstick>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 4))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessThumbstick>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("PlayerInputHandler", 0x0, 4))) }
     }
     /// The slot's index on the running game; 5 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessMouseMove() -> usize { slot_index!("PlayerInputHandler", 0x0, 5) }
+    pub fn SLOT_ProcessMouseMove() -> usize { slot_at!("PlayerInputHandler", 0x0, 5) }
     /// Slot 5 as `PlayerInputHandler_vtable_ProcessMouseMove`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMouseMove(&self) -> Option<PlayerInputHandler_vtable_ProcessMouseMove> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMouseMove>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 5))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMouseMove>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("PlayerInputHandler", 0x0, 5))) }
     }
     /// The slot's index on the running game; 6 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButton() -> usize { slot_index!("PlayerInputHandler", 0x0, 6) }
+    pub fn SLOT_ProcessButton() -> usize { slot_at!("PlayerInputHandler", 0x0, 6) }
     /// Slot 6 as `PlayerInputHandler_vtable_ProcessButton`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButton(&self) -> Option<PlayerInputHandler_vtable_ProcessButton> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessButton>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 6))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessButton>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("PlayerInputHandler", 0x0, 6))) }
     }
 }
 /// `PlayerInputHandler::Destroy`, slot 0: destructor (high).
@@ -8589,11 +8589,11 @@ impl QuickSaveLoadHandler_vtable {
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("QuickSaveLoadHandler", 0x0, 7) }
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_at!("QuickSaveLoadHandler", 0x0, 7) }
     /// Slot 7 as `QuickSaveLoadHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("QuickSaveLoadHandler", 0x0, 7))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("QuickSaveLoadHandler", 0x0, 7))) }
     }
 }
 /// `QuickSaveLoadHandler::CanProcess`, slot 1: Quicksave/Quickload/NewSave (high).

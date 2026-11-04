@@ -4977,28 +4977,28 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_script_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524039, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_script_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524039, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_BSScript_StatsEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54006, rva 0x9e0ca0).
     /// `undefined8 BSTEventSink_BSScript_StatsEvent_vfunc_1(SkyrimVM * this, longlong param_1, undefined8 param_2, IFunctionArguments * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_script_stats_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(54006, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_script_stats_event_vfunc_1(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(54006, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_PositionPlayerEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 524038, rva 0x9ef7e4).
     /// `undefined BSTEventSink_PositionPlayerEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524038, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_position_player_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(524038, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_PositionPlayerEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54005, rva 0x9e0c70).
     /// `undefined8 BSTEventSink_PositionPlayerEvent_vfunc_1(SkyrimVM * this, int * param_1, ulonglong * param_2, IFunctionArguments * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32, param_2: *mut u64, param_3: *mut c_void) -> u64 { unsafe { function!(54005, (*const Self, *mut i32, *mut u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_position_player_event_vfunc_1(&self, param_1: *mut i32, param_2: *mut u64, param_3: *mut c_void) -> u64 { unsafe { function!(54005, (*const Self, *mut i32, *mut u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54273, rva 0x9ef7a8).
     /// `undefined BSTEventSink_TESActiveEffectApplyRemoveEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5033,21 +5033,21 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54275, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54275, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboTouchEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54274, rva 0x9ef7b4).
     /// `undefined BSTEventSink_TESAmiiboTouchEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54274, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54274, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESAmiiboTouchEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 524032, rva 0x9e0990).
     /// `undefined8 BSTEventSink_TESAmiiboTouchEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(524032, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)), param_1) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_touch_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(524032, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESBookReadEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54279, rva 0x9ef808).
     /// `undefined BSTEventSink_TESBookReadEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5166,14 +5166,14 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54277, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54277, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESFastTravelEndEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54008, rva 0x9e0ff0).
     /// `undefined8 BSTEventSink_TESFastTravelEndEvent_vfunc_1(SkyrimVM * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(54008, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)), param_1) } }
+    pub unsafe fn bst_event_sink_tes_fast_travel_end_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(54008, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESFormDeleteEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54288, rva 0x9ef874).
     /// `undefined BSTEventSink_TESFormDeleteEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5376,14 +5376,14 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54276, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(54276, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)), param_1, param_2, param_3) } }
     /// `SkyrimVM::BSTEventSink_TESPlayerBowShotEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 54007, rva 0x9e0e80).
     /// `undefined8 BSTEventSink_TESPlayerBowShotEvent_vfunc_1(SkyrimVM * this, undefined8 param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(54007, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)), param_1) } }
+    pub unsafe fn bst_event_sink_tes_player_bow_shot_event_vfunc_1(&self, param_1: u64) -> u64 { unsafe { function!(54007, (*const Self, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)), param_1) } }
     /// `SkyrimVM::BSTEventSink_TESQuestInitEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 54303, rva 0x9ef928).
     /// `undefined BSTEventSink_TESQuestInitEvent_vdtor(SkyrimVM * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     ///

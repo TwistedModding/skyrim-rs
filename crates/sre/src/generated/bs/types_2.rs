@@ -7389,7 +7389,7 @@ pub struct BSInterpValueModifier {
     pub __vftable: *const crate::raw::vtables::BSInterpValueModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7477,7 +7477,7 @@ pub struct BSInterpValueModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7574,7 +7574,7 @@ pub struct BSIsActiveModifier {
     pub __vftable: *const crate::raw::vtables::BSIsActiveModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7662,7 +7662,7 @@ pub struct BSIsActiveModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7730,7 +7730,7 @@ pub struct BSJobs__JobThread {
     /// +0x0 `vtbl:BSJobs::JobThread:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSJobs__JobThread_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
     pub field_30: u64,
     /// +0x38 `undefined8`, base BSThread
@@ -7739,7 +7739,7 @@ pub struct BSJobs__JobThread {
     pub field_40: u64,
     /// +0x48 `undefined1`, base BSThread
     pub field_48: u8,
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     /// +0x50 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 8],
@@ -7755,7 +7755,7 @@ pub struct BSJobs__JobThread {
     /// +0x68 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 2],
-    pub unknown_6A: [u8; 6],
+    unknown_6A: [u8; 6],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
@@ -7771,7 +7771,7 @@ pub struct BSJobs__JobThread {
     /// +0x88 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 2],
-    pub unknown_8A: [u8; 6],
+    unknown_8A: [u8; 6],
     /// +0x90 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 8],
@@ -7787,7 +7787,7 @@ pub struct BSJobs__JobThread {
     /// +0xA8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_A8: [u8; 2],
-    pub unknown_AA: [u8; 6],
+    unknown_AA: [u8; 6],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
@@ -7803,7 +7803,7 @@ pub struct BSJobs__JobThread {
     /// +0xC8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_C8: [u8; 2],
-    pub unknown_CA: [u8; 6],
+    unknown_CA: [u8; 6],
     /// +0xD0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_D0: [u8; 8],
@@ -7819,7 +7819,7 @@ pub struct BSJobs__JobThread {
     /// +0xE8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 2],
-    pub unknown_EA: [u8; 6],
+    unknown_EA: [u8; 6],
     /// +0xF0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_F0: [u8; 8],
@@ -7835,7 +7835,7 @@ pub struct BSJobs__JobThread {
     /// +0x108 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_108: [u8; 2],
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_110: [u8; 8],
@@ -7851,7 +7851,7 @@ pub struct BSJobs__JobThread {
     /// +0x128 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 2],
-    pub unknown_12A: [u8; 6],
+    unknown_12A: [u8; 6],
     /// +0x130 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 8],
@@ -7867,7 +7867,7 @@ pub struct BSJobs__JobThread {
     /// +0x148 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_148: [u8; 2],
-    pub unknown_14A: [u8; 6],
+    unknown_14A: [u8; 6],
     /// +0x150 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_150: [u8; 8],
@@ -7883,7 +7883,7 @@ pub struct BSJobs__JobThread {
     /// +0x168 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_168: [u8; 2],
-    pub unknown_16A: [u8; 6],
+    unknown_16A: [u8; 6],
     /// +0x170 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -7899,7 +7899,7 @@ pub struct BSJobs__JobThread {
     /// +0x188 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_188: [u8; 2],
-    pub unknown_18A: [u8; 6],
+    unknown_18A: [u8; 6],
     /// +0x190 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_190: [u8; 8],
@@ -7915,7 +7915,7 @@ pub struct BSJobs__JobThread {
     /// +0x1A8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_1A8: [u8; 2],
-    pub unknown_1AA: [u8; 6],
+    unknown_1AA: [u8; 6],
     /// +0x1B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -7931,7 +7931,7 @@ pub struct BSJobs__JobThread {
     /// +0x1C8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_1C8: [u8; 2],
-    pub unknown_1CA: [u8; 6],
+    unknown_1CA: [u8; 6],
     /// +0x1D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -7947,7 +7947,7 @@ pub struct BSJobs__JobThread {
     /// +0x1E8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_1E8: [u8; 2],
-    pub unknown_1EA: [u8; 6],
+    unknown_1EA: [u8; 6],
     /// +0x1F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F0: [u8; 8],
@@ -7963,7 +7963,7 @@ pub struct BSJobs__JobThread {
     /// +0x208 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 2],
-    pub unknown_20A: [u8; 6],
+    unknown_20A: [u8; 6],
     /// +0x210 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 8],
@@ -7979,7 +7979,7 @@ pub struct BSJobs__JobThread {
     /// +0x228 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_228: [u8; 2],
-    pub unknown_22A: [u8; 6],
+    unknown_22A: [u8; 6],
     /// +0x230 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_230: [u8; 8],
@@ -7995,7 +7995,7 @@ pub struct BSJobs__JobThread {
     /// +0x248 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_248: [u8; 2],
-    pub unknown_24A: [u8; 6],
+    unknown_24A: [u8; 6],
     /// +0x250 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_250: [u8; 8],
@@ -8011,7 +8011,7 @@ pub struct BSJobs__JobThread {
     /// +0x268 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_268: [u8; 2],
-    pub unknown_26A: [u8; 6],
+    unknown_26A: [u8; 6],
     /// +0x270 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_270: [u8; 8],
@@ -8027,7 +8027,7 @@ pub struct BSJobs__JobThread {
     /// +0x288 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_288: [u8; 2],
-    pub unknown_28A: [u8; 6],
+    unknown_28A: [u8; 6],
     /// +0x290 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_290: [u8; 8],
@@ -8043,7 +8043,7 @@ pub struct BSJobs__JobThread {
     /// +0x2A8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_2A8: [u8; 2],
-    pub unknown_2AA: [u8; 6],
+    unknown_2AA: [u8; 6],
     /// +0x2B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2B0: [u8; 8],
@@ -8059,7 +8059,7 @@ pub struct BSJobs__JobThread {
     /// +0x2C8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_2C8: [u8; 2],
-    pub unknown_2CA: [u8; 6],
+    unknown_2CA: [u8; 6],
     /// +0x2D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2D0: [u8; 8],
@@ -8075,7 +8075,7 @@ pub struct BSJobs__JobThread {
     /// +0x2E8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_2E8: [u8; 2],
-    pub unknown_2EA: [u8; 6],
+    unknown_2EA: [u8; 6],
     /// +0x2F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2F0: [u8; 8],
@@ -8091,7 +8091,7 @@ pub struct BSJobs__JobThread {
     /// +0x308 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_308: [u8; 2],
-    pub unknown_30A: [u8; 6],
+    unknown_30A: [u8; 6],
     /// +0x310 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_310: [u8; 8],
@@ -8107,7 +8107,7 @@ pub struct BSJobs__JobThread {
     /// +0x328 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_328: [u8; 2],
-    pub unknown_32A: [u8; 6],
+    unknown_32A: [u8; 6],
     /// +0x330 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_330: [u8; 8],
@@ -8123,7 +8123,7 @@ pub struct BSJobs__JobThread {
     /// +0x348 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_348: [u8; 2],
-    pub unknown_34A: [u8; 6],
+    unknown_34A: [u8; 6],
     /// +0x350 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_350: [u8; 8],
@@ -8139,7 +8139,7 @@ pub struct BSJobs__JobThread {
     /// +0x368 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_368: [u8; 2],
-    pub unknown_36A: [u8; 6],
+    unknown_36A: [u8; 6],
     /// +0x370 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_370: [u8; 8],
@@ -8155,7 +8155,7 @@ pub struct BSJobs__JobThread {
     /// +0x388 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_388: [u8; 2],
-    pub unknown_38A: [u8; 6],
+    unknown_38A: [u8; 6],
     /// +0x390 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_390: [u8; 8],
@@ -8171,7 +8171,7 @@ pub struct BSJobs__JobThread {
     /// +0x3A8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_3A8: [u8; 2],
-    pub unknown_3AA: [u8; 6],
+    unknown_3AA: [u8; 6],
     /// +0x3B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3B0: [u8; 8],
@@ -8187,7 +8187,7 @@ pub struct BSJobs__JobThread {
     /// +0x3C8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_3C8: [u8; 2],
-    pub unknown_3CA: [u8; 6],
+    unknown_3CA: [u8; 6],
     /// +0x3D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3D0: [u8; 8],
@@ -8203,7 +8203,7 @@ pub struct BSJobs__JobThread {
     /// +0x3E8 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_3E8: [u8; 2],
-    pub unknown_3EA: [u8; 6],
+    unknown_3EA: [u8; 6],
     /// +0x3F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3F0: [u8; 8],
@@ -8219,7 +8219,7 @@ pub struct BSJobs__JobThread {
     /// +0x408 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_408: [u8; 2],
-    pub unknown_40A: [u8; 6],
+    unknown_40A: [u8; 6],
     /// +0x410 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_410: [u8; 8],
@@ -8235,7 +8235,7 @@ pub struct BSJobs__JobThread {
     /// +0x428 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_428: [u8; 2],
-    pub unknown_42A: [u8; 6],
+    unknown_42A: [u8; 6],
     /// +0x430 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_430: [u8; 8],
@@ -8251,7 +8251,7 @@ pub struct BSJobs__JobThread {
     /// +0x448 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_448: [u8; 2],
-    pub unknown_44A: [u8; 1030],
+    unknown_44A: [u8; 1030],
     /// +0x850 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_850: [u8; 4],
@@ -8652,7 +8652,7 @@ pub struct BSJobs__JobThread {
     pub __field_A70: [u8; 4],
     /// +0xA74 `undefined1`, ctor store
     pub field_A74: u8,
-    pub unknown_A75: [u8; 3],
+    unknown_A75: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9220,10 +9220,10 @@ pub struct BSLagBoneController {
     pub __vftable: *const crate::raw::vtables::BSLagBoneController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -9240,7 +9240,7 @@ pub struct BSLagBoneController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -9409,15 +9409,15 @@ pub struct BSLightingShaderMaterial {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9426,7 +9426,7 @@ pub struct BSLightingShaderMaterial {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9444,7 +9444,7 @@ pub struct BSLightingShaderMaterial {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9492,15 +9492,15 @@ pub struct BSLightingShaderMaterialEnvmap {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9509,7 +9509,7 @@ pub struct BSLightingShaderMaterialEnvmap {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9527,14 +9527,14 @@ pub struct BSLightingShaderMaterialEnvmap {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined4`, ctor store
     pub field_B0: u32,
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9585,15 +9585,15 @@ pub struct BSLightingShaderMaterialEye {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9602,7 +9602,7 @@ pub struct BSLightingShaderMaterialEye {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9620,7 +9620,7 @@ pub struct BSLightingShaderMaterialEye {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -9637,7 +9637,7 @@ pub struct BSLightingShaderMaterialEye {
     pub field_C4: f32,
     /// +0xC8 `float`, ctor store (widths [4, 4])
     pub field_C8: f32,
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9693,15 +9693,15 @@ pub struct BSLightingShaderMaterialFacegen {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9710,7 +9710,7 @@ pub struct BSLightingShaderMaterialFacegen {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9728,7 +9728,7 @@ pub struct BSLightingShaderMaterialFacegen {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -9785,15 +9785,15 @@ pub struct BSLightingShaderMaterialFacegenTint {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9802,7 +9802,7 @@ pub struct BSLightingShaderMaterialFacegenTint {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9820,12 +9820,12 @@ pub struct BSLightingShaderMaterialFacegenTint {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9875,15 +9875,15 @@ pub struct BSLightingShaderMaterialGlowmap {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9892,7 +9892,7 @@ pub struct BSLightingShaderMaterialGlowmap {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9910,7 +9910,7 @@ pub struct BSLightingShaderMaterialGlowmap {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     #[doc(hidden)]
@@ -9961,15 +9961,15 @@ pub struct BSLightingShaderMaterialHairTint {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -9978,7 +9978,7 @@ pub struct BSLightingShaderMaterialHairTint {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -9996,12 +9996,12 @@ pub struct BSLightingShaderMaterialHairTint {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `double`, ctor store
     pub field_A0: f64,
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10051,15 +10051,15 @@ pub struct BSLightingShaderMaterialLODLandscape {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10068,7 +10068,7 @@ pub struct BSLightingShaderMaterialLODLandscape {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10086,7 +10086,7 @@ pub struct BSLightingShaderMaterialLODLandscape {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -10097,7 +10097,7 @@ pub struct BSLightingShaderMaterialLODLandscape {
     pub field_B8: u64,
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10150,15 +10150,15 @@ pub struct BSLightingShaderMaterialLandscape {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10167,7 +10167,7 @@ pub struct BSLightingShaderMaterialLandscape {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10185,16 +10185,16 @@ pub struct BSLightingShaderMaterialLandscape {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
-    pub unknown_B0: [u8; 32],
+    unknown_B0: [u8; 32],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
-    pub unknown_D8: [u8; 32],
+    unknown_D8: [u8; 32],
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
@@ -10203,7 +10203,7 @@ pub struct BSLightingShaderMaterialLandscape {
     pub field_108: [u8; 16],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
-    pub unknown_120: [u8; 8],
+    unknown_120: [u8; 8],
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
@@ -10222,7 +10222,7 @@ pub struct BSLightingShaderMaterialLandscape {
     pub field_148: u64,
     /// +0x150 `undefined4`, ctor store
     pub field_150: u32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10286,15 +10286,15 @@ pub struct BSLightingShaderMaterialMultiLayerParallax {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10303,7 +10303,7 @@ pub struct BSLightingShaderMaterialMultiLayerParallax {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10321,7 +10321,7 @@ pub struct BSLightingShaderMaterialMultiLayerParallax {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -10338,7 +10338,7 @@ pub struct BSLightingShaderMaterialMultiLayerParallax {
     pub field_C4: u32,
     /// +0xC8 `undefined4`, ctor store
     pub field_C8: u32,
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10394,15 +10394,15 @@ pub struct BSLightingShaderMaterialParallax {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10411,7 +10411,7 @@ pub struct BSLightingShaderMaterialParallax {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10429,7 +10429,7 @@ pub struct BSLightingShaderMaterialParallax {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     #[doc(hidden)]
@@ -10480,15 +10480,15 @@ pub struct BSLightingShaderMaterialParallaxOcc {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10497,7 +10497,7 @@ pub struct BSLightingShaderMaterialParallaxOcc {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10515,7 +10515,7 @@ pub struct BSLightingShaderMaterialParallaxOcc {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -10569,15 +10569,15 @@ pub struct BSLightingShaderMaterialSnow {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, base BSLightingShaderMaterialBase, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, base BSLightingShaderMaterialBase, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, base BSLightingShaderMaterialBase, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -10586,7 +10586,7 @@ pub struct BSLightingShaderMaterialSnow {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, base BSLightingShaderMaterialBase, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, base BSLightingShaderMaterialBase, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, base BSLightingShaderMaterialBase, semantic; material alpha (1.0) (high)
@@ -10604,7 +10604,7 @@ pub struct BSLightingShaderMaterialSnow {
     /// +0x98 `undefined4`, base BSLightingShaderMaterialBase, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined1[16]`, ctor store
     pub field_A0: [u8; 16],
     #[doc(hidden)]
@@ -10646,10 +10646,10 @@ pub struct BSLightingShaderPropertyColorController {
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyColorController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -10666,14 +10666,14 @@ pub struct BSLightingShaderPropertyColorController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
-    pub unknown_50: [u8; 8],
+    unknown_50: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10703,10 +10703,10 @@ pub struct BSLightingShaderPropertyFloatController {
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyFloatController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -10723,14 +10723,14 @@ pub struct BSLightingShaderPropertyFloatController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     /// +0x48 `undefined8`, base NiSingleInterpController
     pub field_48: u64,
-    pub unknown_50: [u8; 8],
+    unknown_50: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10760,10 +10760,10 @@ pub struct BSLightingShaderPropertyUShortController {
     pub __vftable: *const crate::raw::vtables::BSLightingShaderPropertyUShortController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -10780,7 +10780,7 @@ pub struct BSLightingShaderPropertyUShortController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -10814,7 +10814,7 @@ pub struct BSLimbIKModifier {
     pub __vftable: *const crate::raw::vtables::BSLimbIKModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10902,7 +10902,7 @@ pub struct BSLimbIKModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11190,7 +11190,7 @@ pub struct BSLookAtModifier {
     pub __vftable: *const crate::raw::vtables::BSLookAtModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11280,10 +11280,10 @@ pub struct BSLookAtModifier {
     pub __field_C4: [u8; 4],
     /// +0xC8 `undefined4`, ctor store
     pub field_C8: u32,
-    pub unknown_CC: [u8; 4],
+    unknown_CC: [u8; 4],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
-    pub unknown_D8: [u8; 48],
+    unknown_D8: [u8; 48],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11790,7 +11790,7 @@ pub struct BSModelDB__QueuedHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -11798,20 +11798,20 @@ pub struct BSModelDB__QueuedHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSModelDB::QueuedHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSModelDB__QueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11840,7 +11840,7 @@ pub struct BSModifyOnceModifier {
     pub __vftable: *const crate::raw::vtables::BSModifyOnceModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11928,7 +11928,7 @@ pub struct BSModifyOnceModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -12713,10 +12713,10 @@ pub struct BSMultiTargetTreadTransfController {
     pub __vftable: *const crate::raw::vtables::BSMultiTargetTreadTransfController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -12733,7 +12733,7 @@ pub struct BSMultiTargetTreadTransfController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -12742,12 +12742,12 @@ pub struct BSMultiTargetTreadTransfController {
     pub field_48: u64,
     /// +0x50 `undefined2`, ctor store
     pub field_50: u16,
-    pub unknown_52: [u8; 6],
+    unknown_52: [u8; 6],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     /// +0x60 `undefined2`, ctor store
     pub field_60: u16,
-    pub unknown_62: [u8; 6],
+    unknown_62: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12861,19 +12861,19 @@ pub struct BSNavmeshInfoSearch {
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
@@ -12882,17 +12882,17 @@ pub struct BSNavmeshInfoSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_130: u32,
-    pub unknown_134: [u8; 188],
+    unknown_134: [u8; 188],
     /// +0x1F0 `undefined1`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_1F0: u8,
-    pub unknown_1F1: [u8; 7],
+    unknown_1F1: [u8; 7],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 4],
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 8],
@@ -12901,16 +12901,16 @@ pub struct BSNavmeshInfoSearch {
     /// +0x218 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_218: [u8; 4],
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined8`, ctor store
     pub field_228: u64,
-    pub unknown_230: [u8; 4],
+    unknown_230: [u8; 4],
     /// +0x234 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_234: [u8; 2],
-    pub unknown_236: [u8; 2],
+    unknown_236: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12952,7 +12952,7 @@ pub struct BSNavmeshObstacleData {
     pub __vftable: *const crate::raw::vtables::BSNavmeshObstacleData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
@@ -12964,7 +12964,7 @@ pub struct BSNavmeshObstacleData {
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 56],
+    unknown_2C: [u8; 56],
     /// +0x64 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_64: [u8; 8],
@@ -12987,7 +12987,7 @@ pub struct BSNavmeshObstacleData {
     pub field_94: u32,
     /// +0x98 `undefined2`, ctor store
     pub field_98: u16,
-    pub unknown_9A: [u8; 30],
+    unknown_9A: [u8; 30],
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
     #[doc(hidden)]
@@ -13075,19 +13075,19 @@ pub struct BSNavmeshSearch {
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13096,30 +13096,30 @@ pub struct BSNavmeshSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 23],
+    unknown_159: [u8; 23],
     /// +0x170 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_170: [u8; 8],
     /// +0x178 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_178: [u8; 4],
-    pub unknown_17C: [u8; 20],
+    unknown_17C: [u8; 20],
     /// +0x190 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_190: [u8; 8],
     /// +0x198 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_198: [u8; 4],
-    pub unknown_19C: [u8; 4],
+    unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, ctor store
     pub field_1A0: u64,
     /// +0x1A8 `float`, ctor store
     #[doc(hidden)]
     pub __field_1A8: [u8; 4],
-    pub unknown_1AC: [u8; 4],
+    unknown_1AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13157,26 +13157,26 @@ pub struct BSNavmeshSearchFilters {
     /// +0x0 `vtbl:BSNavmeshSearchFilters:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNavmeshSearchFilters_vtable,
-    pub unknown_8: [u8; 288],
+    unknown_8: [u8; 288],
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
     /// +0x130 `float`, ctor store
     pub field_130: f32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
     /// +0x140 `undefined1`, ctor store
     pub field_140: u8,
-    pub unknown_141: [u8; 7],
+    unknown_141: [u8; 7],
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
     /// +0x150 `float`, ctor store
     pub field_150: f32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_158: [u8; 4],
-    pub unknown_15C: [u8; 76],
+    unknown_15C: [u8; 76],
     /// +0x1A8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1A8: [u8; 8],
@@ -13184,7 +13184,7 @@ pub struct BSNavmeshSearchFilters {
     pub field_1B0: u64,
     /// +0x1B8 `float`, ctor store
     pub field_1B8: f32,
-    pub unknown_1BC: [u8; 4],
+    unknown_1BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13208,26 +13208,26 @@ pub struct BSNavmeshSearchHideFilter {
     /// +0x0 `vtbl:BSNavmeshSearchHideFilter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNavmeshSearchHideFilter_vtable,
-    pub unknown_8: [u8; 288],
+    unknown_8: [u8; 288],
     /// +0x128 `undefined8`, base BSNavmeshSearchFilters
     pub field_128: u64,
     /// +0x130 `float`, base BSNavmeshSearchFilters
     pub field_130: f32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, base BSNavmeshSearchFilters
     pub field_138: u64,
     /// +0x140 `undefined1`, base BSNavmeshSearchFilters
     pub field_140: u8,
-    pub unknown_141: [u8; 7],
+    unknown_141: [u8; 7],
     /// +0x148 `undefined8`, base BSNavmeshSearchFilters
     pub field_148: u64,
     /// +0x150 `float`, base BSNavmeshSearchFilters
     pub field_150: f32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `undefined4`, base BSNavmeshSearchFilters
     #[doc(hidden)]
     pub __field_158: [u8; 4],
-    pub unknown_15C: [u8; 76],
+    unknown_15C: [u8; 76],
     /// +0x1A8 `undefined8`, base BSNavmeshSearchFilters
     #[doc(hidden)]
     pub __field_1A8: [u8; 8],
@@ -13235,7 +13235,7 @@ pub struct BSNavmeshSearchHideFilter {
     pub field_1B0: u64,
     /// +0x1B8 `float`, base BSNavmeshSearchFilters
     pub field_1B8: f32,
-    pub unknown_1BC: [u8; 4],
+    unknown_1BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13259,26 +13259,26 @@ pub struct BSNavmeshSearchMaxCostFilters {
     /// +0x0 `vtbl:BSNavmeshSearchMaxCostFilters:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNavmeshSearchMaxCostFilters_vtable,
-    pub unknown_8: [u8; 288],
+    unknown_8: [u8; 288],
     /// +0x128 `undefined8`, base BSNavmeshSearchFilters
     pub field_128: u64,
     /// +0x130 `float`, base BSNavmeshSearchFilters
     pub field_130: f32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, base BSNavmeshSearchFilters
     pub field_138: u64,
     /// +0x140 `undefined1`, base BSNavmeshSearchFilters
     pub field_140: u8,
-    pub unknown_141: [u8; 7],
+    unknown_141: [u8; 7],
     /// +0x148 `undefined8`, base BSNavmeshSearchFilters
     pub field_148: u64,
     /// +0x150 `float`, base BSNavmeshSearchFilters
     pub field_150: f32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `undefined4`, base BSNavmeshSearchFilters
     #[doc(hidden)]
     pub __field_158: [u8; 4],
-    pub unknown_15C: [u8; 76],
+    unknown_15C: [u8; 76],
     /// +0x1A8 `undefined8`, base BSNavmeshSearchFilters
     #[doc(hidden)]
     pub __field_1A8: [u8; 8],
@@ -13286,7 +13286,7 @@ pub struct BSNavmeshSearchMaxCostFilters {
     pub field_1B0: u64,
     /// +0x1B8 `float`, base BSNavmeshSearchFilters
     pub field_1B8: f32,
-    pub unknown_1BC: [u8; 4],
+    unknown_1BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13326,10 +13326,10 @@ pub struct BSNiAlphaPropertyTestRefController {
     pub __vftable: *const crate::raw::vtables::BSNiAlphaPropertyTestRefController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -13346,7 +13346,7 @@ pub struct BSNiAlphaPropertyTestRefController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -13539,7 +13539,7 @@ pub struct BSNullImplAudioListener {
     pub field_34: f32,
     /// +0x38 `undefined8`, base BSAudioListener
     pub field_38: u64,
-    pub unknown_40: [u8; 48],
+    unknown_40: [u8; 48],
     /// +0x70 `undefined8`, base BSAudioListener
     #[doc(hidden)]
     pub __field_70: [u8; 8],
@@ -13571,17 +13571,17 @@ pub struct BSNullImplGameSound {
     /// +0x0 `vtbl:BSNullImplGameSound:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSNullImplGameSound_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `undefined4`, base BSGameSound
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `float`, base BSGameSound
     pub field_20: f32,
     /// +0x24 `float`, base BSGameSound
     pub field_24: f32,
     /// +0x28 `float`, base BSGameSound
     pub field_28: f32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSGameSound
     pub field_30: u64,
     /// +0x38 `undefined8`, base BSGameSound
@@ -13606,14 +13606,14 @@ pub struct BSNullImplGameSound {
     pub field_64: u64,
     /// +0x6C `undefined2`, base BSGameSound
     pub field_6C: u16,
-    pub unknown_6E: [u8; 2],
+    unknown_6E: [u8; 2],
     /// +0x70 `undefined8`, base BSGameSound
     pub field_70: u64,
     /// +0x78 `undefined8`, base BSGameSound
     pub field_78: u64,
     /// +0x80 `undefined4`, base BSGameSound
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base BSGameSound
     pub field_88: u64,
     /// +0x90 `undefined8`, base BSGameSound
@@ -13630,14 +13630,14 @@ pub struct BSNullImplGameSound {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base BSGameSound
     pub field_C0: u16,
-    pub unknown_C2: [u8; 6],
+    unknown_C2: [u8; 6],
     /// +0xC8 `float`, ctor store
     pub field_C8: f32,
     /// +0xCC `float`, ctor store
     pub field_CC: f32,
     /// +0xD0 `float`, ctor store
     pub field_D0: f32,
-    pub unknown_D4: [u8; 4],
+    unknown_D4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13703,7 +13703,7 @@ pub struct BSOcclusionBox {
     pub __vftable: *const crate::raw::vtables::BSOcclusionBox_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSOcclusionShape
     pub field_10: f32,
     /// +0x14 `float`, base BSOcclusionShape
@@ -13720,19 +13720,19 @@ pub struct BSOcclusionBox {
     pub field_40: u32,
     /// +0x44 `undefined1`, base BSOcclusionShape
     pub field_44: u8,
-    pub unknown_45: [u8; 3],
+    unknown_45: [u8; 3],
     /// +0x48 `undefined4`, ctor store (widths [4, 8])
     pub field_48: u32,
     /// +0x4C `undefined4`, ctor store
     pub field_4C: u32,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 96],
+    unknown_54: [u8; 96],
     /// +0xB4 `undefined4`, ctor store
     pub field_B4: u32,
     /// +0xB8 `undefined4`, ctor store
     pub field_B8: u32,
-    pub unknown_BC: [u8; 120],
+    unknown_BC: [u8; 120],
     /// +0x134 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_134: [u8; 8],
@@ -13769,18 +13769,18 @@ pub struct BSOcclusionBox {
     /// +0x18C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_18C: [u8; 8],
-    pub unknown_194: [u8; 4],
+    unknown_194: [u8; 4],
     /// +0x198 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_198: [u8; 8],
-    pub unknown_1A0: [u8; 12],
+    unknown_1A0: [u8; 12],
     /// +0x1AC `undefined8`, ctor store
     pub field_1AC: u64,
     /// +0x1B4 `undefined8`, ctor store
     pub field_1B4: u64,
     /// +0x1BC `undefined8`, ctor store
     pub field_1BC: u64,
-    pub unknown_1C4: [u8; 32],
+    unknown_1C4: [u8; 32],
     /// +0x1E4 `undefined4`, ctor store
     pub field_1E4: u32,
     #[doc(hidden)]
@@ -13830,7 +13830,7 @@ pub struct BSOcclusionPlane {
     pub __vftable: *const crate::raw::vtables::BSOcclusionPlane_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base BSOcclusionShape
     pub field_10: f32,
     /// +0x14 `float`, base BSOcclusionShape
@@ -13847,18 +13847,18 @@ pub struct BSOcclusionPlane {
     pub field_40: u32,
     /// +0x44 `undefined1`, base BSOcclusionShape
     pub field_44: u8,
-    pub unknown_45: [u8; 3],
+    unknown_45: [u8; 3],
     /// +0x48 `undefined4`, ctor store (widths [4, 8])
     pub field_48: u32,
     /// +0x4C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_4C: [u8; 4],
-    pub unknown_50: [u8; 96],
+    unknown_50: [u8; 96],
     /// +0xB0 `undefined4`, ctor store
     pub field_B0: u32,
     /// +0xB4 `undefined4`, ctor store
     pub field_B4: u32,
-    pub unknown_B8: [u8; 8],
+    unknown_B8: [u8; 8],
     /// +0xC0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C0: [u8; 8],
@@ -13877,10 +13877,10 @@ pub struct BSOcclusionPlane {
     /// +0xE8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
-    pub unknown_F0: [u8; 4],
+    unknown_F0: [u8; 4],
     /// +0xF4 `undefined1`, ctor store
     pub field_F4: u8,
-    pub unknown_F5: [u8; 3],
+    unknown_F5: [u8; 3],
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
@@ -13972,7 +13972,7 @@ pub struct BSOffsetAnimationGenerator {
     pub __vftable: *const crate::raw::vtables::BSOffsetAnimationGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -14060,7 +14060,7 @@ pub struct BSOffsetAnimationGenerator {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -14237,24 +14237,24 @@ pub struct BSPCGamepadDeviceDelegate {
     pub __vftable: *const crate::raw::vtables::BSPCGamepadDeviceDelegate_vtable,
     /// +0x8 `undefined4`, base BSGamepadDevice
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, base BSGamepadDevice
     pub field_1C: u64,
     /// +0x24 `undefined4`, base BSGamepadDevice
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSGamepadDevice
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, base BSGamepadDevice
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, base BSGamepadDevice
     pub field_4C: u64,
     /// +0x54 `undefined4`, base BSGamepadDevice
     pub field_54: u32,
     /// +0x58 `undefined8`, base BSGamepadDevice
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSGamepadDevice
     pub field_68: u64,
     /// +0x70 `class:BSTEventSource`, base BSGamepadDevice, semantic; RTTI base BSTEventSource<BSGamepadEvent> (medium)
@@ -14264,7 +14264,7 @@ pub struct BSPCGamepadDeviceDelegate {
     pub userIndex: u32,
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
     pub connected: u8,
-    pub unknown_CD: [u8; 3],
+    unknown_CD: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14292,17 +14292,17 @@ pub struct BSPSysArrayEmitter {
     pub __vftable: *const crate::raw::vtables::BSPSysArrayEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined4`, base NiPSysEmitter
     pub field_30: u32,
     /// +0x34 `float`, base NiPSysEmitter
@@ -14333,7 +14333,7 @@ pub struct BSPSysArrayEmitter {
     pub field_70: u64,
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, member ctor NiTPrimitiveArray<NiPointer<NiAVObject>_>
     #[doc(hidden)]
     pub __m_NiTPrimitiveArray_80: [u8; 8],
@@ -14553,10 +14553,10 @@ pub struct BSPSysMultiTargetEmitterCtlr {
     pub __vftable: *const crate::raw::vtables::BSPSysMultiTargetEmitterCtlr_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -14573,7 +14573,7 @@ pub struct BSPSysMultiTargetEmitterCtlr {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -14594,7 +14594,7 @@ pub struct BSPSysMultiTargetEmitterCtlr {
     pub field_74: u32,
     /// +0x78 `undefined1`, base NiPSysEmitterCtlr
     pub field_78: u8,
-    pub unknown_79: [u8; 7],
+    unknown_79: [u8; 7],
     /// +0x80 `undefined8`, base NiPSysEmitterCtlr
     pub field_80: u64,
     /// +0x88 `undefined8`, base NiPSysEmitterCtlr
@@ -14604,7 +14604,7 @@ pub struct BSPSysMultiTargetEmitterCtlr {
     pub field_90: u64,
     /// +0x98 `undefined2`, ctor store
     pub field_98: u16,
-    pub unknown_9A: [u8; 6],
+    unknown_9A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14732,17 +14732,17 @@ pub struct BSPSysSimpleColorModifier {
     pub __vftable: *const crate::raw::vtables::BSPSysSimpleColorModifier_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     /// +0x30 `undefined8`, ctor store (widths [8, 16])
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
@@ -14771,7 +14771,7 @@ pub struct BSPSysSimpleColorModifier {
     pub field_74: f32,
     /// +0x78 `undefined1`, ctor store
     pub field_78: u8,
-    pub unknown_79: [u8; 7],
+    unknown_79: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14897,7 +14897,7 @@ pub struct BSParabolicCullingProcess {
     pub __vftable: *const crate::raw::vtables::BSParabolicCullingProcess_vtable,
     /// +0x8 `undefined1`, base NiCullingProcess
     pub field_8: u8,
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     /// +0x10 `pointer`, base BSCullingProcess, semantic; the accumulator visible geometry is handed to (swapped in by Process when given) (high)
     pub accumulator: *mut c_void,
     /// +0x18 `ptr:NiCamera`, base BSCullingProcess, semantic; the camera of the current walk (high)
@@ -14912,11 +14912,11 @@ pub struct BSParabolicCullingProcess {
     pub activePlaneMask: u32,
     /// +0xA0 `undefined4`, base NiCullingProcess
     pub field_A0: u32,
-    pub unknown_A4: [u8; 8],
+    unknown_A4: [u8; 8],
     /// +0xAC `undefined1`, base BSCullingProcess, semantic; an alternative plane set with its mask at +0x10c, copied over +0x3c..+0xab at Process when +0x11f is set (medium)
     #[doc(hidden)]
     pub __customPlanes: [u8; 112],
-    pub unknown_11C: [u8; 1],
+    unknown_11C: [u8; 1],
     /// +0x11D `undefined1`, base BSCullingProcess, semantic; when set the walk keeps NiAVObject flags bit 26: set when accepted, cleared when culled (high)
     #[doc(hidden)]
     pub __maintainVisibleFlag: [u8; 1],
@@ -14931,17 +14931,17 @@ pub struct BSParabolicCullingProcess {
     pub __narrowPlaneMask: [u8; 1],
     /// +0x121 `undefined1`, base NiCullingProcess
     pub field_121: u8,
-    pub unknown_122: [u8; 6],
+    unknown_122: [u8; 6],
     /// +0x128 `class:BSTArray`, base BSCullingProcess, semantic; geometry accepted by the walk (references added) (high)
     pub visibleGeometry: crate::BSTArray,
-    pub unknown_140: [u8; 65536],
+    unknown_140: [u8; 65536],
     /// +0x10140 `undefined1`, base BSCullingProcess, semantic; lock-free ring of 0x10-byte records {object, groupIndex, appendTag} filled by slot 24 for objects of an ordered group (or when +0x301d5 is set) (medium)
     #[doc(hidden)]
     pub __queuedVisible: [u8; 65552],
     /// +0x20150 `undefined1`, base BSCullingProcess, semantic; ring of free 0x10-byte records (0x1000 records stored from +0x140) (medium)
     #[doc(hidden)]
     pub __freeRecords: [u8; 65552],
-    pub unknown_30160: [u8; 12],
+    unknown_30160: [u8; 12],
     /// +0x3016C `undefined8`, base BSCullingProcess
     #[doc(hidden)]
     pub __field_3016C: [u8; 8],
@@ -14951,7 +14951,7 @@ pub struct BSParabolicCullingProcess {
     /// +0x30178 `undefined8`, base BSCullingProcess
     #[doc(hidden)]
     pub __field_30178: [u8; 8],
-    pub unknown_30180: [u8; 8],
+    unknown_30180: [u8; 8],
     /// +0x30188 `undefined8`, base BSCullingProcess
     #[doc(hidden)]
     pub __field_30188: [u8; 8],
@@ -14960,11 +14960,11 @@ pub struct BSParabolicCullingProcess {
     pub __field_30190: [u8; 8],
     /// +0x30198 `undefined4`, base BSCullingProcess, semantic; 1 and 2 accept without testing, 3 and 4 test planes and portals (4 also visits nodes with flag bit 12); the sun's geometry list cullers use 3 + light+0x47 (medium)
     pub cullMode: u32,
-    pub unknown_3019C: [u8; 4],
+    unknown_3019C: [u8; 4],
     /// +0x301A0 `undefined8`, base BSCullingProcess, semantic; portal frusta used by cullMode 4: plane sets of 0x70 bytes with their mask at +0x60, a node tree at +0x18, count at +0xbc (medium)
     #[doc(hidden)]
     pub __portalPlaneTree: [u8; 8],
-    pub unknown_301A8: [u8; 40],
+    unknown_301A8: [u8; 40],
     /// +0x301D0 `undefined4`, base BSCullingProcess
     #[doc(hidden)]
     pub __field_301D0: [u8; 4],
@@ -14974,7 +14974,7 @@ pub struct BSParabolicCullingProcess {
     /// +0x301D5 `undefined1`, base BSCullingProcess, semantic; when set slot 24 queues every object instead of appending it directly (medium)
     #[doc(hidden)]
     pub __deferAllAppends: [u8; 1],
-    pub unknown_301D6: [u8; 2],
+    unknown_301D6: [u8; 2],
     /// +0x301D8 `class:BSTArray`, base BSCullingProcess, semantic; one chunked list (0x38-byte header) per ordered group, filled from queuedVisible by group index (medium)
     pub groupBuckets: crate::BSTArray,
     /// +0x301F0 `undefined4`, base BSCullingProcess, semantic; highest ordered-group index handed out in this walk, -1 = none; BSOrderedNode::OnVisible atomically increments it to open a group (high)
@@ -14982,10 +14982,10 @@ pub struct BSParabolicCullingProcess {
     pub __lastGroupIndex: [u8; 4],
     /// +0x301F4 `undefined4`, base BSCullingProcess, semantic; value passed with each appended object (AppendGeometry's second argument); BSParabolicCullingProcess stores the hemisphere (1 or 2) its bound test returned (medium)
     pub appendTag: u32,
-    pub unknown_301F8: [u8; 8],
+    unknown_301F8: [u8; 8],
     /// +0x30200 `undefined8`, ctor store
     pub field_30200: u64,
-    pub unknown_30208: [u8; 16],
+    unknown_30208: [u8; 16],
     /// +0x30218 `float`, ctor store
     pub field_30218: f32,
     /// +0x3021C `float`, ctor store
@@ -15178,7 +15178,7 @@ pub struct BSParticleShaderCubeEmitter {
     pub __vftable: *const crate::raw::vtables::BSParticleShaderCubeEmitter_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined2`, ctor store
@@ -15193,7 +15193,7 @@ pub struct BSParticleShaderCubeEmitter {
     pub field_24: u32,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
-    pub unknown_30: [u8; 3808],
+    unknown_30: [u8; 3808],
     /// +0xF10 `float`, ctor store
     pub field_F10: f32,
     /// +0xF14 `float`, ctor store
@@ -15537,7 +15537,7 @@ pub struct BSParticleShaderProperty {
     pub __vftable: *const crate::raw::vtables::BSParticleShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -15548,7 +15548,7 @@ pub struct BSParticleShaderProperty {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `float`, base BSShaderProperty, semantic; alpha, 1.0 by default (high)
     pub alpha: f32,
     /// +0x34 `undefined4`, base BSShaderProperty, semantic; key of the state the pass list at +0x40 was built for: (renderMode << 8) | shadowLightMask; 0x7fffffff = invalid (forces a rebuild) (high)
@@ -15573,12 +15573,12 @@ pub struct BSParticleShaderProperty {
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, base BSShaderProperty, semantic; render frame the pass lists were last rebuilt in (high)
     pub passFrame: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined2`, ctor store
     pub field_88: u16,
     /// +0x8A `undefined1`, ctor store
     pub field_8A: u8,
-    pub unknown_8B: [u8; 1],
+    unknown_8B: [u8; 1],
     /// +0x8C `undefined8`, ctor store
     pub field_8C: u64,
     /// +0x94 `undefined8`, ctor store
@@ -15599,7 +15599,7 @@ pub struct BSParticleShaderProperty {
     pub field_CC: u32,
     /// +0xD0 `undefined1`, ctor store
     pub field_D0: u8,
-    pub unknown_D1: [u8; 3],
+    unknown_D1: [u8; 3],
     /// +0xD4 `undefined8`, ctor store
     pub field_D4: u64,
     /// +0xDC `undefined8`, ctor store
@@ -15610,7 +15610,7 @@ pub struct BSParticleShaderProperty {
     pub field_EC: u32,
     /// +0xF0 `undefined4`, ctor store
     pub field_F0: u32,
-    pub unknown_F4: [u8; 12],
+    unknown_F4: [u8; 12],
     /// +0x100 `undefined8`, ctor store (widths [8, 16])
     #[doc(hidden)]
     pub __field_100: [u8; 8],
@@ -15629,12 +15629,12 @@ pub struct BSParticleShaderProperty {
     /// +0x128 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 8],
-    pub unknown_130: [u8; 16],
+    unknown_130: [u8; 16],
     /// +0x140 `undefined8`, ctor store
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
-    pub unknown_150: [u8; 24],
+    unknown_150: [u8; 24],
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
     /// +0x170 `undefined4`, ctor store
@@ -15647,7 +15647,7 @@ pub struct BSParticleShaderProperty {
     pub field_180: u64,
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
-    pub unknown_18C: [u8; 4],
+    unknown_18C: [u8; 4],
     /// +0x190 `undefined8`, ctor store
     pub field_190: u64,
     #[doc(hidden)]
@@ -15716,7 +15716,7 @@ pub struct BSParticleShaderRainEmitter {
     pub __vftable: *const crate::raw::vtables::BSParticleShaderRainEmitter_vtable,
     /// +0x8 `undefined4`, base BSParticleShaderCubeEmitter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSParticleShaderCubeEmitter
     pub field_10: u64,
     /// +0x18 `undefined2`, base BSParticleShaderCubeEmitter
@@ -15731,7 +15731,7 @@ pub struct BSParticleShaderRainEmitter {
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSParticleShaderCubeEmitter
     pub field_28: u64,
-    pub unknown_30: [u8; 3808],
+    unknown_30: [u8; 3808],
     /// +0xF10 `float`, base BSParticleShaderCubeEmitter
     pub field_F10: f32,
     /// +0xF14 `float`, base BSParticleShaderCubeEmitter
@@ -15891,7 +15891,7 @@ pub struct BSParticleShaderSnowEmitter {
     pub __vftable: *const crate::raw::vtables::BSParticleShaderSnowEmitter_vtable,
     /// +0x8 `undefined4`, base BSParticleShaderCubeEmitter
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSParticleShaderCubeEmitter
     pub field_10: u64,
     /// +0x18 `undefined2`, base BSParticleShaderCubeEmitter
@@ -15906,7 +15906,7 @@ pub struct BSParticleShaderSnowEmitter {
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSParticleShaderCubeEmitter
     pub field_28: u64,
-    pub unknown_30: [u8; 3808],
+    unknown_30: [u8; 3808],
     /// +0xF10 `float`, base BSParticleShaderCubeEmitter
     pub field_F10: f32,
     /// +0xF14 `float`, base BSParticleShaderCubeEmitter
@@ -16137,7 +16137,7 @@ pub struct BSPassByTargetTriggerModifier {
     pub __vftable: *const crate::raw::vtables::BSPassByTargetTriggerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -16225,7 +16225,7 @@ pub struct BSPassByTargetTriggerModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -16314,7 +16314,7 @@ pub struct BSPathBuilder {
     pub field_18: u64,
     /// +0x20 `undefined1`, ctor store
     pub field_20: u8,
-    pub unknown_21: [u8; 7],
+    unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16333,23 +16333,23 @@ pub struct BSPathEventManager {
     /// +0x0 `vtbl:BSPathEventManager:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPathEventManager_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<BSPathEvent>
     #[doc(hidden)]
     pub __source_BSPathEvent: [u8; 88],
-    pub unknown_68: [u8; 12],
+    unknown_68: [u8; 12],
     /// +0x74 `undefined8`, ctor store
     pub field_74: u64,
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
-    pub unknown_88: [u8; 8],
+    unknown_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16389,19 +16389,19 @@ pub struct BSPathSmootherPOVSearch {
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
@@ -16410,36 +16410,36 @@ pub struct BSPathSmootherPOVSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_130: u32,
-    pub unknown_134: [u8; 108],
+    unknown_134: [u8; 108],
     /// +0x1A0 `undefined1`, base AStarSearch<BSPathSmootherPOVNode,BSPathSmootherPOVLink,12>
     pub field_1A0: u8,
-    pub unknown_1A1: [u8; 7],
+    unknown_1A1: [u8; 7],
     /// +0x1A8 `undefined8`, ctor store
     pub field_1A8: u64,
     /// +0x1B0 `undefined8`, ctor store
     pub field_1B0: u64,
     /// +0x1B8 `undefined2`, ctor store
     pub field_1B8: u16,
-    pub unknown_1BA: [u8; 6],
+    unknown_1BA: [u8; 6],
     /// +0x1C0 `float`, ctor store
     pub field_1C0: f32,
     /// +0x1C4 `float`, ctor store
     pub field_1C4: f32,
     /// +0x1C8 `float`, ctor store
     pub field_1C8: f32,
-    pub unknown_1CC: [u8; 4],
+    unknown_1CC: [u8; 4],
     /// +0x1D0 `undefined8`, ctor store
     pub field_1D0: u64,
     /// +0x1D8 `undefined2`, ctor store
     pub field_1D8: u16,
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `float`, ctor store
     pub field_1E0: f32,
     /// +0x1E4 `float`, ctor store
     pub field_1E4: f32,
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
-    pub unknown_1EC: [u8; 4],
+    unknown_1EC: [u8; 4],
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined8`, ctor store
@@ -16458,42 +16458,42 @@ pub struct BSPathSmootherPOVSearch {
     pub field_228: u64,
     /// +0x230 `undefined4`, ctor store
     pub field_230: u32,
-    pub unknown_234: [u8; 12],
+    unknown_234: [u8; 12],
     /// +0x240 `undefined8`, ctor store
     pub field_240: u64,
     /// +0x248 `undefined8`, ctor store
     pub field_248: u64,
     /// +0x250 `undefined4`, ctor store
     pub field_250: u32,
-    pub unknown_254: [u8; 12],
+    unknown_254: [u8; 12],
     /// +0x260 `undefined8`, ctor store
     pub field_260: u64,
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
     /// +0x270 `undefined4`, ctor store
     pub field_270: u32,
-    pub unknown_274: [u8; 12],
+    unknown_274: [u8; 12],
     /// +0x280 `undefined8`, ctor store
     pub field_280: u64,
     /// +0x288 `undefined8`, ctor store
     pub field_288: u64,
     /// +0x290 `undefined4`, ctor store
     pub field_290: u32,
-    pub unknown_294: [u8; 12],
+    unknown_294: [u8; 12],
     /// +0x2A0 `undefined8`, ctor store
     pub field_2A0: u64,
     /// +0x2A8 `undefined8`, ctor store
     pub field_2A8: u64,
     /// +0x2B0 `undefined4`, ctor store
     pub field_2B0: u32,
-    pub unknown_2B4: [u8; 12],
+    unknown_2B4: [u8; 12],
     /// +0x2C0 `undefined8`, ctor store
     pub field_2C0: u64,
     /// +0x2C8 `undefined8`, ctor store
     pub field_2C8: u64,
     /// +0x2D0 `undefined4`, ctor store
     pub field_2D0: u32,
-    pub unknown_2D4: [u8; 12],
+    unknown_2D4: [u8; 12],
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
     /// +0x2E8 `undefined8`, ctor store
@@ -16583,7 +16583,7 @@ pub struct BSPathfindingTemporary_PathingDoor {
     pub __vftable: *const crate::raw::vtables::BSPathfindingTemporary_PathingDoor_vtable,
     /// +0x8 `undefined4`, base PathingDoor
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, base PathingDoor
     #[doc(hidden)]
     pub __field_10: [u8; 4],
@@ -16608,13 +16608,13 @@ pub struct BSPathfindingTemporary_PathingRequest {
     pub __vftable: *const crate::raw::vtables::BSPathfindingTemporary_PathingRequest_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -16623,15 +16623,15 @@ pub struct BSPathfindingTemporary_PathingRequest {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -16642,7 +16642,7 @@ pub struct BSPathfindingTemporary_PathingRequest {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -16652,7 +16652,7 @@ pub struct BSPathfindingTemporary_PathingRequest {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     #[doc(hidden)]
@@ -16690,13 +16690,13 @@ pub struct BSPathfindingTemporary_PathingRequestClosePoint {
     pub __vftable: *const crate::raw::vtables::BSPathfindingTemporary_PathingRequestClosePoint_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -16705,15 +16705,15 @@ pub struct BSPathfindingTemporary_PathingRequestClosePoint {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -16724,7 +16724,7 @@ pub struct BSPathfindingTemporary_PathingRequestClosePoint {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -16734,10 +16734,10 @@ pub struct BSPathfindingTemporary_PathingRequestClosePoint {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 48],
+    unknown_100: [u8; 48],
     /// +0x130 `undefined4`, base PathingRequestClosePoint
     pub field_130: u32,
     /// +0x134 `undefined4`, base PathingRequestClosePoint
@@ -16748,7 +16748,7 @@ pub struct BSPathfindingTemporary_PathingRequestClosePoint {
     pub field_139: u8,
     /// +0x13A `undefined1`, base PathingRequestClosePoint
     pub field_13A: u8,
-    pub unknown_13B: [u8; 5],
+    unknown_13B: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16789,13 +16789,13 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub __vftable: *const crate::raw::vtables::BSPathfindingTemporary_PathingRequestCover_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -16804,15 +16804,15 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -16823,7 +16823,7 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -16833,7 +16833,7 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined8`, base PathingRequestCover
@@ -16852,7 +16852,7 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub field_11C: u32,
     /// +0x120 `undefined2`, base PathingRequestCover
     pub field_120: u16,
-    pub unknown_122: [u8; 2],
+    unknown_122: [u8; 2],
     /// +0x124 `float`, base PathingRequestCover
     pub field_124: f32,
     /// +0x128 `float`, base PathingRequestCover
@@ -16866,7 +16866,7 @@ pub struct BSPathfindingTemporary_PathingRequestCover {
     pub __field_134: [u8; 4],
     /// +0x138 `float`, base PathingRequestCover
     pub field_138: f32,
-    pub unknown_13C: [u8; 4],
+    unknown_13C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -16916,13 +16916,13 @@ pub struct BSPathfindingTemporary_PathingRequestSafeStraightLine {
     pub __vftable: *const crate::raw::vtables::BSPathfindingTemporary_PathingRequestSafeStraightLine_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -16931,15 +16931,15 @@ pub struct BSPathfindingTemporary_PathingRequestSafeStraightLine {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -16950,7 +16950,7 @@ pub struct BSPathfindingTemporary_PathingRequestSafeStraightLine {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -16960,10 +16960,10 @@ pub struct BSPathfindingTemporary_PathingRequestSafeStraightLine {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
-    pub unknown_100: [u8; 48],
+    unknown_100: [u8; 48],
     /// +0x130 `undefined4`, base PathingRequestClosePoint
     pub field_130: u32,
     /// +0x134 `undefined4`, base PathingRequestClosePoint
@@ -16974,7 +16974,7 @@ pub struct BSPathfindingTemporary_PathingRequestSafeStraightLine {
     pub field_139: u8,
     /// +0x13A `undefined1`, base PathingRequestClosePoint
     pub field_13A: u8,
-    pub unknown_13B: [u8; 5],
+    unknown_13B: [u8; 5],
     /// +0x140 `undefined8`, base PathingRequestSafeStraightLine
     pub field_140: u64,
     #[doc(hidden)]
@@ -17141,7 +17141,7 @@ pub struct BSPathingLOSGridMap {
     /// +0x0 `vtbl:BSPathingLOSGridMap:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPathingLOSGridMap_vtable,
-    pub unknown_8: [u8; 12],
+    unknown_8: [u8; 12],
     /// +0x14 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_14: [u8; 8],
@@ -17149,20 +17149,20 @@ pub struct BSPathingLOSGridMap {
     pub field_1C: u32,
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 4],
-    pub unknown_3C: [u8; 52],
+    unknown_3C: [u8; 52],
     /// +0x70 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 8],
-    pub unknown_78: [u8; 8],
+    unknown_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -17212,13 +17212,13 @@ pub struct BSPathingRequest {
     pub __vftable: *const crate::raw::vtables::BSPathingRequest_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, ctor store
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, ctor store
     pub field_48: f32,
     /// +0x4C `float`, ctor store
@@ -17227,15 +17227,15 @@ pub struct BSPathingRequest {
     pub field_50: f32,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, ctor store
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     /// +0x8C `undefined4`, ctor store (widths [4, 8])
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `float`, ctor store
@@ -17246,7 +17246,7 @@ pub struct BSPathingRequest {
     pub field_A8: f32,
     /// +0xAC `undefined4`, ctor store
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
     /// +0xC4 `undefined4`, ctor store
@@ -17256,7 +17256,7 @@ pub struct BSPathingRequest {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
     #[doc(hidden)]
@@ -17293,10 +17293,10 @@ pub struct BSPathingSearchRayCast {
     /// +0x0 `vtbl:BSPathingSearchRayCast:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPathingSearchRayCast_vtable,
-    pub unknown_8: [u8; 96],
+    unknown_8: [u8; 96],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    pub unknown_70: [u8; 4],
+    unknown_70: [u8; 4],
     /// +0x74 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_74: [u8; 8],
@@ -17306,12 +17306,12 @@ pub struct BSPathingSearchRayCast {
     /// +0x84 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_84: [u8; 8],
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     pub field_90: u64,
     /// +0x98 `undefined4`, ctor store
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined8`, ctor store
@@ -17324,7 +17324,7 @@ pub struct BSPathingSearchRayCast {
     pub field_BC: u32,
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -17368,4 +17368,43 @@ pub struct BSPathingStreamRead {
 }
 const _: () = assert!(size_of::<BSPathingStreamRead>() == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSPathingStreamRead, __vftable) == 0x0);
+
+/// `BSPathingStreamSimpleBufferRead`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamRead`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSPathingStreamRead`@0x0.
+#[repr(C)]
+pub struct BSPathingStreamSimpleBufferRead {
+    /// +0x0 `vtbl:BSPathingStreamSimpleBufferRead:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferRead_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferRead, __vftable) == 0x0);
+
+/// `BSPathingStreamSimpleBufferWrite`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamWrite`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSPathingStreamWrite`@0x0.
+#[repr(C)]
+pub struct BSPathingStreamSimpleBufferWrite {
+    /// +0x0 `vtbl:BSPathingStreamSimpleBufferWrite:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferWrite_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferWrite, __vftable) == 0x0);
+
+/// `BSPathingStreamWrite`: size 0x8 (exact, low).
+/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of PathingStreamSaveGame at 0x8 (soft).
+#[repr(C)]
+pub struct BSPathingStreamWrite {
+    /// +0x0 `vtbl:BSPathingStreamWrite:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamWrite_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPathingStreamWrite>() == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamWrite, __vftable) == 0x0);
 

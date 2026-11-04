@@ -706,16 +706,13 @@ impl Hookable for Later {
 #[test]
 fn a_patch_takes_its_bytes_from_the_sites_row() {
     let site = |expected: &[u8], replacement: Option<&[u8]>| ProfileSite { offset: 0x20, expected: expected.to_vec(), replacement: replacement.map(<[u8]>::to_vec) };
-    let row = |r: Row<&ProfileSite>, cave| patch_row(r, vec![1, 2], vec![3, 4], cave);
-    assert_eq!(row(Row::Same, false).unwrap(), (vec![1, 2], vec![3, 4]), "no row: the canonical bytes");
-    assert_eq!(row(Row::Here(&site(&[9, 9, 9], Some(&[8, 8, 8]))), false).unwrap(), (vec![9, 9, 9], vec![8, 8, 8]), "the row's bytes");
-    assert_eq!(row(Row::Here(&site(&[1, 2], None)), false).unwrap(), (vec![1, 2], vec![3, 4]), "moved, with the same code");
-    assert!(row(Row::Missing, false).unwrap_err().contains("does not exist"));
-    assert!(row(Row::Unverified, false).unwrap_err().contains("unverified"));
-    assert!(row(Row::Here(&site(&[9, 9], None)), false).unwrap_err().contains("no replacement"), "canonical bytes never go over other code");
-    assert_eq!(row(Row::Here(&site(&[1, 2], None)), true).unwrap().0, vec![1, 2], "a cave moves with the same code");
-    assert!(row(Row::Here(&site(&[9, 9], None)), true).unwrap_err().contains("no replacement"));
-    assert!(row(Row::Here(&site(&[1, 2], Some(&[5, 6]))), true).unwrap_err().contains("cave"));
+    let row = |r: Row<&ProfileSite>| patch_row(r, vec![1, 2], vec![3, 4]);
+    assert_eq!(row(Row::Same).unwrap(), (vec![1, 2], vec![3, 4]), "no row: the canonical bytes");
+    assert_eq!(row(Row::Here(&site(&[9, 9, 9], Some(&[8, 8, 8])))).unwrap(), (vec![9, 9, 9], vec![8, 8, 8]), "the row's bytes");
+    assert_eq!(row(Row::Here(&site(&[1, 2], None))).unwrap(), (vec![1, 2], vec![3, 4]), "moved, with the same code");
+    assert!(row(Row::Missing).unwrap_err().contains("does not exist"));
+    assert!(row(Row::Unverified).unwrap_err().contains("unverified"));
+    assert!(row(Row::Here(&site(&[9, 9], None))).unwrap_err().contains("no replacement"), "canonical bytes never go over other code");
 }
 
 #[test]

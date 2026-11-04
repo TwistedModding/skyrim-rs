@@ -78,23 +78,23 @@ pub struct TES {
     /// +0x128 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 1],
-    pub unknown_129: [u8; 3],
+    unknown_129: [u8; 3],
     /// +0x12C `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_12C: [u8; 4],
-    pub unknown_130: [u8; 4],
+    unknown_130: [u8; 4],
     /// +0x134 `undefined1`, ctor store (widths [1, 8])
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 2],
+    unknown_135: [u8; 2],
     /// +0x137 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_137: [u8; 2],
-    pub unknown_139: [u8; 3],
+    unknown_139: [u8; 3],
     /// +0x13C `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_13C: [u8; 1],
-    pub unknown_13D: [u8; 3],
+    unknown_13D: [u8; 3],
     /// +0x140 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_140: [u8; 8],
@@ -119,14 +119,14 @@ pub struct TES {
     /// +0x178 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_178: [u8; 8],
-    pub unknown_180: [u8; 260],
+    unknown_180: [u8; 260],
     /// +0x284 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_284: [u8; 8],
     /// +0x28C `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_28C: [u8; 2],
-    pub unknown_28E: [u8; 2],
+    unknown_28E: [u8; 2],
     /// +0x290 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_290: [u8; 8],
@@ -136,11 +136,11 @@ pub struct TES {
     /// +0x2A0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_2A0: [u8; 1],
-    pub unknown_2A1: [u8; 7],
+    unknown_2A1: [u8; 7],
     /// +0x2A8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2A8: [u8; 4],
-    pub unknown_2AC: [u8; 4],
+    unknown_2AC: [u8; 4],
     /// +0x2B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2B0: [u8; 8],
@@ -319,25 +319,25 @@ pub struct TESActorBase {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESActorBase:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESActorBase_vtable_30,
     /// +0x38 `undefined4`, base TESActorBaseData, semantic; ACBS flags; see the flag rows (high)
     pub flags: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined2`, base TESActorBaseData, semantic; level, or level multiplier x1000 with PCLevelMult (high)
     pub level: u16,
     /// +0x42 `undefined2`, base TESActorBaseData, semantic; minimum level with PCLevelMult (high)
     pub minLevel: u16,
     /// +0x44 `undefined2`, base TESActorBaseData, semantic; maximum level with PCLevelMult (high)
     pub maxLevel: u16,
-    pub unknown_46: [u8; 2],
+    unknown_46: [u8; 2],
     /// +0x48 `undefined2`, base TESActorBaseData
     pub field_48: u16,
     /// +0x4A `undefined2`, base TESActorBaseData
@@ -354,7 +354,7 @@ pub struct TESActorBase {
     pub field_60: u64,
     /// +0x68 `undefined4`, base TESActorBaseData
     pub field_68: u32,
-    pub unknown_6C: [u8; 28],
+    unknown_6C: [u8; 28],
     /// +0x88 `vtbl:TESActorBase:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESActorBase_vtable_88,
@@ -365,7 +365,7 @@ pub struct TESActorBase {
     /// +0x9C `undefined1`, base TESContainer
     #[doc(hidden)]
     pub __field_9C: [u8; 1],
-    pub unknown_9D: [u8; 3],
+    unknown_9D: [u8; 3],
     /// +0xA0 `vtbl:TESActorBase:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESActorBase_vtable_A0,
@@ -380,11 +380,11 @@ pub struct TESActorBase {
     pub field_BC: u32,
     /// +0xC0 `undefined2`, base TESAIForm
     pub field_C0: u16,
-    pub unknown_C2: [u8; 22],
+    unknown_C2: [u8; 22],
     /// +0xD8 `vtbl:TESActorBase:D8`, rtti
     #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::TESActorBase_vtable_D8,
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `vtbl:TESActorBase:E8`, rtti
     #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESActorBase_vtable_E8,
@@ -405,7 +405,7 @@ pub struct TESActorBase {
     pub keywords: *mut c_void,
     /// +0x120 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_124: [u8; 4],
+    unknown_124: [u8; 4],
     /// +0x128 `vtbl:TESActorBase:128`, rtti
     #[doc(hidden)]
     pub __vftable_128: *const crate::raw::vtables::TESActorBase_vtable_128,
@@ -418,7 +418,7 @@ pub struct TESActorBase {
     pub field_140: u64,
     /// +0x148 `undefined4`, base BGSPerkRankArray
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -504,49 +504,49 @@ pub struct TESAmmo {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESAmmo:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESAmmo_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESAmmo:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESAmmo_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESAmmo:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESAmmo_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESAmmo:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESAmmo_vtable_88,
-    pub unknown_90: [u8; 16],
+    unknown_90: [u8; 16],
     /// +0xA0 `vtbl:TESAmmo:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESAmmo_vtable_A0,
     /// +0xA8 `undefined4`, base TESValueForm
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESAmmo:B0`, rtti
     #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESAmmo_vtable_B0,
     /// +0xB8 `undefined4`, base TESWeightForm
     pub field_B8: u32,
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESAmmo:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESAmmo_vtable_C0,
@@ -564,7 +564,7 @@ pub struct TESAmmo {
     pub __vftable_E8: *const crate::raw::vtables::TESAmmo_vtable_E8,
     /// +0xF0 `undefined4`, base TESDescription
     pub field_F0: u32,
-    pub unknown_F4: [u8; 4],
+    unknown_F4: [u8; 4],
     /// +0xF8 `vtbl:TESAmmo:F8`, rtti
     #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::TESAmmo_vtable_F8,
@@ -572,7 +572,7 @@ pub struct TESAmmo {
     pub keywords: *mut c_void,
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_10C: [u8; 28],
+    unknown_10C: [u8; 28],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -617,7 +617,7 @@ pub struct TESAnimGroup {
     pub __vftable: *const crate::raw::vtables::TESAnimGroup_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 20],
+    unknown_C: [u8; 20],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `float`, ctor store (widths [4, 8])
@@ -627,15 +627,15 @@ pub struct TESAnimGroup {
     pub field_2C: f32,
     /// +0x30 `float`, ctor store (widths [4, 8])
     pub field_30: f32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined1`, ctor store
     pub field_38: u8,
-    pub unknown_39: [u8; 7],
+    unknown_39: [u8; 7],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     #[doc(hidden)]
@@ -883,16 +883,16 @@ pub struct TESClimate {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `class:TESModel`, member ctor TESModel
     #[doc(hidden)]
     pub __m_TESModel_20: [u8; 24],
-    pub unknown_38: [u8; 64],
+    unknown_38: [u8; 64],
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
     /// +0x7C `undefined2`, ctor store
     pub field_7C: u16,
-    pub unknown_7E: [u8; 2],
+    unknown_7E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1156,7 +1156,7 @@ pub struct TESEffectShader {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 153],
+    unknown_1B: [u8; 153],
     /// +0xB4 `undefined8`, ctor store
     pub field_B4: u64,
     /// +0xBC `undefined8`, ctor store
@@ -1164,7 +1164,7 @@ pub struct TESEffectShader {
     /// +0xC4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C4: [u8; 8],
-    pub unknown_CC: [u8; 340],
+    unknown_CC: [u8; 340],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1283,11 +1283,11 @@ pub struct TESFaction {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESFaction:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESFaction_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESFaction:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFaction_vtable_30,
@@ -1297,12 +1297,12 @@ pub struct TESFaction {
     pub field_40: u64,
     /// +0x48 `undefined1`, base TESReactionForm
     pub field_48: u8,
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
@@ -1317,7 +1317,7 @@ pub struct TESFaction {
     pub field_88: u64,
     /// +0x90 `undefined2`, ctor store (widths [2, 8])
     pub field_90: u16,
-    pub unknown_92: [u8; 6],
+    unknown_92: [u8; 6],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
@@ -1336,7 +1336,7 @@ pub struct TESFaction {
     pub field_D0: u64,
     /// +0xD8 `undefined4`, ctor store (widths [4, 8])
     pub field_D8: u32,
-    pub unknown_DC: [u8; 4],
+    unknown_DC: [u8; 4],
     /// +0xE0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_E0: [u8; 8],
@@ -1406,29 +1406,29 @@ pub struct TESFlora {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESFlora:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFlora_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESFlora:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESFlora_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESFlora:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESFlora_vtable_78,
@@ -1444,7 +1444,7 @@ pub struct TESFlora {
     pub keywords: *mut c_void,
     /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
     /// +0xB0 `undefined8`, base TESObjectACTI
@@ -1453,7 +1453,7 @@ pub struct TESFlora {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base TESObjectACTI
     pub field_C0: u16,
-    pub unknown_C2: [u8; 6],
+    unknown_C2: [u8; 6],
     /// +0xC8 `vtbl:TESFlora:C8`, rtti
     #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::TESFlora_vtable_C8,
@@ -1463,7 +1463,7 @@ pub struct TESFlora {
     pub field_D8: u64,
     /// +0xE0 `undefined4`, base TESProduceForm
     pub field_E0: u32,
-    pub unknown_E4: [u8; 4],
+    unknown_E4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1856,45 +1856,45 @@ pub struct TESKey {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESKey:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESKey_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESKey:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESKey_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESKey:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESKey_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESKey:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESKey_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESKey:98`, rtti
     #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESKey_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESKey:A8`, rtti
     #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESKey_vtable_A8,
@@ -1903,7 +1903,7 @@ pub struct TESKey {
     /// +0xB8 `vtbl:TESKey:B8`, rtti
     #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESKey_vtable_B8,
-    pub unknown_C0: [u8; 16],
+    unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESKey:D0`, rtti
     #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESKey_vtable_D0,
@@ -1918,7 +1918,7 @@ pub struct TESKey {
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2022,7 +2022,7 @@ pub struct TESLevCharacter {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -2035,7 +2035,7 @@ pub struct TESLevCharacter {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESLevCharacter:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESLevCharacter_vtable_30,
@@ -2043,7 +2043,7 @@ pub struct TESLevCharacter {
     pub field_38: u64,
     /// +0x40 `undefined4`, base TESLeveledList
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base TESLeveledList
     pub field_48: u64,
     /// +0x50 `undefined8`, base TESLeveledList
@@ -2051,16 +2051,16 @@ pub struct TESLevCharacter {
     /// +0x58 `vtbl:TESLevCharacter:58`, rtti
     #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESLevCharacter_vtable_58,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_68: [u8; 8],
-    pub unknown_70: [u8; 16],
+    unknown_70: [u8; 16],
     /// +0x80 `undefined8`, base TESModelTextureSwap
     pub field_80: u64,
     /// +0x88 `undefined4`, base TESModelTextureSwap
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2296,7 +2296,7 @@ pub struct TESModelDB__TESQueuedHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2304,20 +2304,20 @@ pub struct TESModelDB__TESQueuedHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:TESModelDB::TESQueuedHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::TESModelDB__TESQueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 50],
+    unknown_56: [u8; 50],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2487,29 +2487,29 @@ pub struct TESObjectACTI {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectACTI:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectACTI_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectACTI:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectACTI_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectACTI:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectACTI_vtable_78,
@@ -2525,7 +2525,7 @@ pub struct TESObjectACTI {
     pub keywords: *mut c_void,
     /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -2534,7 +2534,7 @@ pub struct TESObjectACTI {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, ctor store
     pub field_C0: u16,
-    pub unknown_C2: [u8; 6],
+    unknown_C2: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2581,23 +2581,23 @@ pub struct TESObjectANIO {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectANIO:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectANIO_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 16],
+    unknown_38: [u8; 16],
     /// +0x48 `undefined8`, base TESModelTextureSwap
     pub field_48: u64,
     /// +0x50 `undefined4`, base TESModelTextureSwap
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2632,7 +2632,7 @@ pub struct TESObjectARMA {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectARMA:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectARMA_vtable_20,
@@ -2651,11 +2651,11 @@ pub struct TESObjectARMA {
     pub field_44: u16,
     /// +0x46 `undefined1`, ctor store
     pub field_46: u8,
-    pub unknown_47: [u8; 1],
+    unknown_47: [u8; 1],
     /// +0x48 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 4],
-    pub unknown_4C: [u8; 228],
+    unknown_4C: [u8; 228],
     /// +0x130 `undefined8`, ctor store
     pub field_130: u64,
     /// +0x138 `undefined8`, ctor store
@@ -2664,10 +2664,10 @@ pub struct TESObjectARMA {
     pub field_140: u64,
     /// +0x148 `undefined8`, ctor store
     pub field_148: u64,
-    pub unknown_150: [u8; 16],
+    unknown_150: [u8; 16],
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
-    pub unknown_164: [u8; 4],
+    unknown_164: [u8; 4],
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
     /// +0x170 `undefined8`, ctor store
@@ -2865,51 +2865,51 @@ pub struct TESObjectBOOK {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectBOOK:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectBOOK_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectBOOK:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectBOOK_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectBOOK:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectBOOK_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectBOOK:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectBOOK_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESObjectBOOK:98`, rtti
     #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESObjectBOOK_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESObjectBOOK:A8`, rtti
     #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESObjectBOOK_vtable_A8,
     /// +0xB0 `undefined4`, base TESDescription
     pub field_B0: u32,
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     /// +0xB8 `vtbl:TESObjectBOOK:B8`, rtti
     #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESObjectBOOK_vtable_B8,
@@ -2918,7 +2918,7 @@ pub struct TESObjectBOOK {
     /// +0xC8 `vtbl:TESObjectBOOK:C8`, rtti
     #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::TESObjectBOOK_vtable_C8,
-    pub unknown_D0: [u8; 16],
+    unknown_D0: [u8; 16],
     /// +0xE0 `vtbl:TESObjectBOOK:E0`, rtti
     #[doc(hidden)]
     pub __vftable_E0: *const crate::raw::vtables::TESObjectBOOK_vtable_E0,
@@ -2933,7 +2933,7 @@ pub struct TESObjectBOOK {
     pub keywords: *mut c_void,
     /// +0x108 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_10C: [u8; 44],
+    unknown_10C: [u8; 44],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2986,7 +2986,7 @@ pub struct TESObjectCELL {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESObjectCELL:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESObjectCELL_vtable_20,
@@ -2998,7 +2998,7 @@ pub struct TESObjectCELL {
     pub field_31: u8,
     /// +0x32 `undefined2`, base TESFullName
     pub field_32: u16,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
@@ -3010,7 +3010,7 @@ pub struct TESObjectCELL {
     /// +0x46 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_46: [u8; 1],
-    pub unknown_47: [u8; 1],
+    unknown_47: [u8; 1],
     /// +0x48 `class:BaseExtraList`, member ctor BaseExtraList
     pub m_BaseExtraList_48: crate::BaseExtraList,
     /// +0x68 `undefined8`, ctor store
@@ -3022,11 +3022,11 @@ pub struct TESObjectCELL {
     /// +0x78 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 4],
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
-    pub unknown_88: [u8; 12],
+    unknown_88: [u8; 12],
     /// +0x94 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_94: [u8; 4],
@@ -3039,22 +3039,22 @@ pub struct TESObjectCELL {
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
-    pub unknown_A8: [u8; 8],
+    unknown_A8: [u8; 8],
     /// +0xB0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 8],
     /// +0xB8 `ptr:TESObjectREFR`, ctor store, runtime
     #[doc(hidden)]
     pub __field_B8: [u8; 8],
-    pub unknown_C0: [u8; 40],
+    unknown_C0: [u8; 40],
     /// +0xE8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_E8: [u8; 4],
-    pub unknown_EC: [u8; 44],
+    unknown_EC: [u8; 44],
     /// +0x118 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_118: [u8; 4],
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     /// +0x120 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_120: [u8; 8],
@@ -3138,7 +3138,7 @@ pub struct TESObjectCONT {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -3151,7 +3151,7 @@ pub struct TESObjectCONT {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectCONT:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectCONT_vtable_30,
@@ -3162,30 +3162,30 @@ pub struct TESObjectCONT {
     /// +0x44 `undefined1`, base TESContainer
     #[doc(hidden)]
     pub __field_44: [u8; 1],
-    pub unknown_45: [u8; 3],
+    unknown_45: [u8; 3],
     /// +0x48 `vtbl:TESObjectCONT:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::TESObjectCONT_vtable_48,
-    pub unknown_50: [u8; 8],
+    unknown_50: [u8; 8],
     /// +0x58 `vtbl:TESObjectCONT:58`, rtti
     #[doc(hidden)]
     pub __vftable_58: *const crate::raw::vtables::TESObjectCONT_vtable_58,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_68: [u8; 8],
-    pub unknown_70: [u8; 16],
+    unknown_70: [u8; 16],
     /// +0x80 `undefined8`, base TESModelTextureSwap
     pub field_80: u64,
     /// +0x88 `undefined4`, base TESModelTextureSwap
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `vtbl:TESObjectCONT:90`, rtti
     #[doc(hidden)]
     pub __vftable_90: *const crate::raw::vtables::TESObjectCONT_vtable_90,
     /// +0x98 `undefined4`, base TESWeightForm
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:TESObjectCONT:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectCONT_vtable_A0,
@@ -3194,10 +3194,10 @@ pub struct TESObjectCONT {
     /// +0xB0 `vtbl:TESObjectCONT:B0`, rtti
     #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectCONT_vtable_B0,
-    pub unknown_B8: [u8; 1],
+    unknown_B8: [u8; 1],
     /// +0xB9 `undefined1`, ctor store
     pub field_B9: u8,
-    pub unknown_BA: [u8; 6],
+    unknown_BA: [u8; 6],
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
     /// +0xC8 `undefined8`, ctor store
@@ -3254,7 +3254,7 @@ pub struct TESObjectDOOR {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -3267,24 +3267,24 @@ pub struct TESObjectDOOR {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectDOOR:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectDOOR_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectDOOR:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectDOOR_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectDOOR:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectDOOR_vtable_78,
@@ -3293,7 +3293,7 @@ pub struct TESObjectDOOR {
     /// +0x88 `vtbl:TESObjectDOOR:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectDOOR_vtable_88,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined8`, ctor store
@@ -3303,7 +3303,7 @@ pub struct TESObjectDOOR {
     /// +0xB0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B0: [u8; 1],
-    pub unknown_B1: [u8; 31],
+    unknown_B1: [u8; 31],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3398,45 +3398,45 @@ pub struct TESObjectMISC {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectMISC:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectMISC_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectMISC:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectMISC_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectMISC:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectMISC_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectMISC:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectMISC_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESObjectMISC:98`, rtti
     #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESObjectMISC_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESObjectMISC:A8`, rtti
     #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESObjectMISC_vtable_A8,
@@ -3445,7 +3445,7 @@ pub struct TESObjectMISC {
     /// +0xB8 `vtbl:TESObjectMISC:B8`, rtti
     #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESObjectMISC_vtable_B8,
-    pub unknown_C0: [u8; 16],
+    unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESObjectMISC:D0`, rtti
     #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESObjectMISC_vtable_D0,
@@ -3460,7 +3460,7 @@ pub struct TESObjectMISC {
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3528,10 +3528,10 @@ pub struct TESObjectREFRSync__REFRSyncController {
     pub __vftable: *const crate::raw::vtables::TESObjectREFRSync__REFRSyncController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -3548,7 +3548,7 @@ pub struct TESObjectREFRSync__REFRSyncController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -3575,7 +3575,7 @@ pub struct TESObjectREFRSync__REFRSyncController {
     pub field_8C: u32,
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3623,7 +3623,7 @@ pub struct TESObjectSTAT {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -3636,23 +3636,23 @@ pub struct TESObjectSTAT {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectSTAT:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectSTAT_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_40: [u8; 8],
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
     /// +0x78 `undefined1`, ctor store
@@ -3661,7 +3661,7 @@ pub struct TESObjectSTAT {
     pub field_79: u16,
     /// +0x7B `undefined1`, ctor store
     pub field_7B: u8,
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3826,17 +3826,17 @@ pub struct TESPackage {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
     /// +0x24 `undefined1`, ctor store
     pub field_24: u8,
     /// +0x25 `undefined2`, ctor store
     pub field_25: u16,
-    pub unknown_27: [u8; 1],
+    unknown_27: [u8; 1],
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
@@ -3846,12 +3846,12 @@ pub struct TESPackage {
     /// +0x48 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 8],
-    pub unknown_50: [u8; 24],
+    unknown_50: [u8; 24],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
-    pub unknown_78: [u8; 96],
+    unknown_78: [u8; 96],
     /// +0xD8 `undefined4`, ctor store
     pub field_D8: u32,
     /// +0xDC `undefined4`, ctor store
@@ -4206,14 +4206,14 @@ pub struct TESRegionDataSound {
     pub field_9: u8,
     /// +0xA `undefined1`, base TESRegionData
     pub field_A: u8,
-    pub unknown_B: [u8; 5],
+    unknown_B: [u8; 5],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
-    pub unknown_18: [u8; 16],
+    unknown_18: [u8; 16],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4460,11 +4460,11 @@ pub struct TESShout {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESShout:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESShout_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESShout:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESShout_vtable_30,
@@ -4480,14 +4480,14 @@ pub struct TESShout {
     pub __vftable_50: *const crate::raw::vtables::TESShout_vtable_50,
     /// +0x58 `undefined4`, base TESDescription
     pub field_58: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
@@ -4497,7 +4497,7 @@ pub struct TESShout {
     /// +0x88 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 4],
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_90: [u8; 8],
@@ -4507,7 +4507,7 @@ pub struct TESShout {
     /// +0xA0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 4],
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4553,45 +4553,45 @@ pub struct TESSoulGem {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESSoulGem:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESSoulGem_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESSoulGem:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESSoulGem_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESSoulGem:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESSoulGem_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESSoulGem:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESSoulGem_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `vtbl:TESSoulGem:98`, rtti
     #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::TESSoulGem_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:TESSoulGem:A8`, rtti
     #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::TESSoulGem_vtable_A8,
@@ -4600,7 +4600,7 @@ pub struct TESSoulGem {
     /// +0xB8 `vtbl:TESSoulGem:B8`, rtti
     #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::TESSoulGem_vtable_B8,
-    pub unknown_C0: [u8; 16],
+    unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:TESSoulGem:D0`, rtti
     #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESSoulGem_vtable_D0,
@@ -4615,7 +4615,7 @@ pub struct TESSoulGem {
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_FC: [u8; 20],
+    unknown_FC: [u8; 20],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4828,12 +4828,12 @@ pub struct TESTopicInfo {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
     /// +0x3C `undefined8`, ctor store
@@ -4841,7 +4841,7 @@ pub struct TESTopicInfo {
     /// +0x44 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_44: [u8; 8],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5045,20 +5045,20 @@ pub struct TESWaterForm {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWaterForm:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESWaterForm_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESWaterForm:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESWaterForm_vtable_30,
     /// +0x38 `undefined2`, base TESAttackDamageForm
     pub field_38: u16,
-    pub unknown_3A: [u8; 6],
+    unknown_3A: [u8; 6],
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_44: [u8; 8],
@@ -5077,10 +5077,10 @@ pub struct TESWaterForm {
     /// +0x6C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6C: [u8; 8],
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `class:TESTexture`, member ctor TESTexture
     pub m_TESTexture_78: crate::TESTexture,
-    pub unknown_88: [u8; 304],
+    unknown_88: [u8; 304],
     /// +0x1B8 `undefined8`, ctor store
     pub field_1B8: u64,
     /// +0x1C0 `undefined8`, ctor store
@@ -5103,7 +5103,7 @@ pub struct TESWaterForm {
     pub field_1EC: u32,
     /// +0x1F0 `undefined4`, ctor store
     pub field_1F0: u32,
-    pub unknown_1F4: [u8; 4],
+    unknown_1F4: [u8; 4],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
     /// +0x200 `undefined8`, ctor store
@@ -5124,7 +5124,7 @@ pub struct TESWaterForm {
     pub field_238: u32,
     /// +0x23C `undefined1`, ctor store
     pub field_23C: u8,
-    pub unknown_23D: [u8; 3],
+    unknown_23D: [u8; 3],
     /// +0x240 `undefined8`, ctor store
     pub field_240: u64,
     /// +0x248 `undefined4`, ctor store (widths [4, 8])
@@ -5477,17 +5477,17 @@ pub struct TESWorldSpace {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:TESWorldSpace:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::TESWorldSpace_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:TESWorldSpace:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESWorldSpace_vtable_30,
     /// +0x38 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
     pub model: crate::BSFixedString,
-    pub unknown_40: [u8; 36],
+    unknown_40: [u8; 36],
     /// +0x64 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_64: [u8; 8],
@@ -5495,7 +5495,7 @@ pub struct TESWorldSpace {
     pub field_6C: u32,
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
-    pub unknown_78: [u8; 8],
+    unknown_78: [u8; 8],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -5507,34 +5507,34 @@ pub struct TESWorldSpace {
     pub field_98: u64,
     /// +0xA0 `undefined1`, ctor store
     pub field_A0: u8,
-    pub unknown_A1: [u8; 1],
+    unknown_A1: [u8; 1],
     /// +0xA2 `undefined2`, ctor store
     pub field_A2: u16,
     /// +0xA4 `undefined4`, ctor store
     pub field_A4: u32,
-    pub unknown_A8: [u8; 12],
+    unknown_A8: [u8; 12],
     /// +0xB4 `undefined8`, ctor store
     pub field_B4: u64,
     /// +0xBC `undefined4`, ctor store
     pub field_BC: u32,
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
-    pub unknown_C8: [u8; 8],
+    unknown_C8: [u8; 8],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
-    pub unknown_D8: [u8; 24],
+    unknown_D8: [u8; 24],
     /// +0xF0 `undefined8`, ctor store
     pub field_F0: u64,
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
-    pub unknown_100: [u8; 12],
+    unknown_100: [u8; 12],
     /// +0x10C `undefined8`, ctor store
     pub field_10C: u64,
     /// +0x114 `undefined4`, ctor store
     pub field_114: u32,
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
-    pub unknown_120: [u8; 8],
+    unknown_120: [u8; 8],
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
     /// +0x130 `undefined8`, ctor store
@@ -5559,7 +5559,7 @@ pub struct TESWorldSpace {
     pub field_170: u64,
     /// +0x178 `undefined4`, ctor store
     pub field_178: u32,
-    pub unknown_17C: [u8; 4],
+    unknown_17C: [u8; 4],
     /// +0x180 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_180: [u8; 8],
@@ -5575,7 +5575,7 @@ pub struct TESWorldSpace {
     pub field_1A4: u64,
     /// +0x1AC `undefined8`, ctor store
     pub field_1AC: u64,
-    pub unknown_1B4: [u8; 4],
+    unknown_1B4: [u8; 4],
     /// +0x1B8 `undefined8`, ctor store
     pub field_1B8: u64,
     /// +0x1C0 `undefined4`, ctor store
@@ -5586,38 +5586,38 @@ pub struct TESWorldSpace {
     pub field_1C8: u32,
     /// +0x1CC `undefined4`, ctor store
     pub field_1CC: u32,
-    pub unknown_1D0: [u8; 12],
+    unknown_1D0: [u8; 12],
     /// +0x1DC `undefined8`, ctor store
     pub field_1DC: u64,
     /// +0x1E4 `undefined4`, ctor store
     pub field_1E4: u32,
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
-    pub unknown_1F0: [u8; 8],
+    unknown_1F0: [u8; 8],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
     /// +0x200 `undefined8`, ctor store
     pub field_200: u64,
     /// +0x208 `undefined4`, ctor store
     pub field_208: u32,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     /// +0x210 `undefined4`, ctor store
     pub field_210: u32,
     /// +0x214 `undefined4`, ctor store
     pub field_214: u32,
     /// +0x218 `undefined4`, ctor store
     pub field_218: u32,
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined8`, ctor store
     pub field_228: u64,
     /// +0x230 `class:TESTexture`, member ctor TESTexture
     pub m_TESTexture_230: crate::TESTexture,
-    pub unknown_240: [u8; 264],
+    unknown_240: [u8; 264],
     /// +0x348 `undefined4`, ctor store
     pub field_348: u32,
-    pub unknown_34C: [u8; 4],
+    unknown_34C: [u8; 4],
     /// +0x350 `undefined8`, ctor store
     pub field_350: u64,
     #[doc(hidden)]

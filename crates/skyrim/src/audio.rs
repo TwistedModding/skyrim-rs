@@ -71,5 +71,5 @@ pub fn current_music() -> Option<&'static TESForm> {
     if current == 0 || current == core::ptr::from_ref(sre::g_no_music()) as usize {
         return None;
     }
-    unsafe { ((current - sre::base_offset!("BGSMusicType:BSIMusicType", 0x20)) as *const TESForm).as_ref() }
+    unsafe { ((current - sre::base_offset!("BGSMusicType:BSIMusicType")) as *const TESForm).as_ref() }
 }

@@ -13,7 +13,7 @@ pub struct BSAnimationGraphManager {
     pub vftable: [u8; 8],
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSTArray`, semantic; BSTArray<BSTSmartPointer<BSAnimationGraphChannel>> (data +0x10, capacity +0x18, size +0x20) pushed into every graph each update (high)
     pub channels: crate::BSTArray,
     /// +0x28 `class:BSTArray`, semantic; array searched by channel name before each channel update (low)
@@ -34,7 +34,7 @@ pub struct BSAnimationGraphManager {
     /// +0xB0 `undefined4`, ctor store, semantic, runtime; index of the active graph in graphs (high)
     #[doc(hidden)]
     pub __activeGraph: [u8; 4],
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -61,7 +61,7 @@ pub struct BSDismemberSkinInstance {
     pub __vftable: *const crate::raw::vtables::BSDismemberSkinInstance_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:NiSkinData`, base NiSkinInstance, semantic; bind data: bone count at +0x58, per-bone transforms at +0x50 (0x58 each) (high)
     pub skinData: *mut crate::NiSkinData,
     /// +0x18 `ptr:NiSkinPartition`, base NiSkinInstance, semantic; the partitions slot 37 draws (high)
@@ -91,12 +91,12 @@ pub struct BSDismemberSkinInstance {
     pub __paletteLock: [u8; 40],
     /// +0x88 `undefined4`, semantic; entries in partitions (one per NiSkinPartition partition) (high)
     pub partitionCount: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `pointer`, semantic; 4-byte entries {u8 visible, u8 flag2, u16 slot} (high)
     pub partitions: *mut c_void,
     /// +0x98 `undefined1`, semantic; OR of the entries' byte 0 (high)
     pub anyPartitionVisible: u8,
-    pub unknown_99: [u8; 7],
+    unknown_99: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -132,7 +132,7 @@ pub struct BSFaceGenAnimationData {
     pub __vftable: *const crate::raw::vtables::BSFaceGenAnimationData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiExtraData, semantic; the key the owner's sorted array is ordered by (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:BSFaceGenKeyframeMultiple`, semantic; pending expression target (17 weights) that +0x20 steps towards; pooled, null when none (high)
@@ -185,12 +185,12 @@ pub struct BSFaceGenAnimationData {
     pub __eyeHeading: [u8; 4],
     /// +0x1C0 `float`, semantic; current eye pitch (radians), clamped to fTrackEyeZ (high)
     pub eyePitch: f32,
-    pub unknown_1C4: [u8; 4],
+    unknown_1C4: [u8; 4],
     /// +0x1C8 `undefined8`, ctor store
     pub field_1C8: u64,
     /// +0x1D0 `undefined1`, ctor store
     pub field_1D0: u8,
-    pub unknown_1D1: [u8; 3],
+    unknown_1D1: [u8; 3],
     /// +0x1D4 `float`, semantic; base eye heading from the look-at target (high)
     pub eyeHeadingBase: f32,
     /// +0x1D8 `float`, semantic; base eye pitch from the look-at target (high)
@@ -223,21 +223,21 @@ pub struct BSFaceGenAnimationData {
     pub snapEyes: u8,
     /// +0x215 `undefined1`, semantic; set by every face node update; gates the head-tracking update (low)
     pub updated: u8,
-    pub unknown_216: [u8; 1],
+    unknown_216: [u8; 1],
     /// +0x217 `undefined1`, semantic; result of the last keyframe advance (low)
     pub changed: u8,
     /// +0x218 `undefined1`, semantic; update requested without the update-data flag (low)
     #[doc(hidden)]
     pub __forceUpdate: [u8; 1],
-    pub unknown_219: [u8; 1],
+    unknown_219: [u8; 1],
     /// +0x21A `u8`, semantic; eyes-closed state (death/knockout): blocks expression writes and eye tracking, blink stage 4 (medium)
     pub eyesClosed: u8,
     /// +0x21B `undefined2`, ctor store
     pub field_21B: u16,
-    pub unknown_21D: [u8; 1],
+    unknown_21D: [u8; 1],
     /// +0x21E `u8`, semantic; expression override lock: while set SetExpression/SetMood/SetExpressionTarget do nothing (high)
     pub expressionOverride: u8,
-    pub unknown_21F: [u8; 1],
+    unknown_21F: [u8; 1],
     /// +0x220 `class:BSSpinLock`, semantic; guards the keyframes (medium)
     pub lock: crate::BSSpinLock,
     /// +0x228 `pointer`, semantic; sampled lip-sync channel data (17 floats per sample) (low)
@@ -398,7 +398,7 @@ pub struct BShkbAnimationGraph {
     pub vftable: [u8; 8],
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic; root-motion delta event source (high)
     pub transformDeltaSource: [u8; 88],
     /// +0x68 `undefined1`, semantic; per-graph animation event source (sinks +0x68, capacity +0x70, sinkCount +0x78, pending adds +0x80, pending removes +0x98, lock +0xb0, notifying +0xb8) (high)
@@ -443,21 +443,21 @@ pub struct BShkbAnimationGraph {
     pub world: *mut crate::bhkWorld,
     /// +0x240 `undefined2`, ctor store, semantic, runtime; number of bones written to boneNodes (high)
     pub boneCount: u16,
-    pub unknown_242: [u8; 1],
+    unknown_242: [u8; 1],
     /// +0x243 `undefined1`, semantic; when set, the Havok event queue is cleared instead of collected (medium)
     #[doc(hidden)]
     pub __eventsSuppressed: [u8; 1],
     /// +0x244 `undefined1`, semantic; set around the behaviour graph activate call (low)
     pub activating: u8,
-    pub unknown_245: [u8; 1],
+    unknown_245: [u8; 1],
     /// +0x246 `undefined1`, semantic; selects GenerateBehaviorGraphPose instead of the foot-IK + node write path (low)
     pub generatePoseOnWrite: u8,
     /// +0x247 `undefined1`, semantic; ctor flag (Actor: from the race), enables the +0x190 list (low)
     pub buildNameMatch: u8,
-    pub unknown_248: [u8; 1],
+    unknown_248: [u8; 1],
     /// +0x249 `u8`, semantic; foot IK runs in FinalizePose for this graph this frame (high)
     pub doFootIK: u8,
-    pub unknown_24A: [u8; 6],
+    unknown_24A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -494,21 +494,19 @@ const _: () = assert!(core::mem::offset_of!(BShkbAnimationGraph, doFootIK) == 0x
 /// `BoneNodeEntry`: size 0x10 (exact).
 /// Meaning: one entry of BShkbAnimationGraph.boneNodes: the node a skeleton bone is written to (no RTTI; descriptive name) (high, animation pass).
 /// Evidence: one entry of BShkbAnimationGraph.boneNodes: the node a skeleton bone is written to (no RTTI; descriptive name); item 9 (request V). ApplyPoseToBoneNodes 0xbdfa20 steps 0x10 (0xbdfc30 add r8,0x10): 0xbdfa93 mov rax,[rcx+r8] (node), 0xbdfaa0 movsxd rdx,dword [rcx+r8+8] (index); index < 0 writes the node's own local (+0x48), else entry index of the node's BSFlattenedBoneTree bones (+0x130, 0x80 each), through that entry's node when it has one.; size: the stride.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BoneNodeEntry {
     /// +0x0 `ptr:NiAVObject`, semantic; the bone's node (or the flattened tree holding it) (high)
-    #[doc(hidden)]
-    pub __node: [u8; 8],
+    pub node: *mut crate::NiAVObject,
     /// +0x8 `i32`, semantic; index into the node's FlatBone array; < 0 when the node is the bone itself (high)
-    #[doc(hidden)]
-    pub __flatIndex: [u8; 4],
+    pub flatIndex: u32,
     pub unknown_C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BoneNodeEntry>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BoneNodeEntry, __node) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BoneNodeEntry, __flatIndex) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BoneNodeEntry, node) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BoneNodeEntry, flatIndex) == 0x8);
 
 /// `IAnimationGraphManagerHolder`: size 0x8 (exact, medium).
 /// Meaning: interface a reference (or a menu/effect object) implements to own a BSAnimationGraphManager: create/load its graphs, push variables, send events (high, animation pass).
@@ -535,19 +533,19 @@ pub struct NiSkinData {
     pub __vftable: *const crate::raw::vtables::NiSkinData_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:NiObject`, semantic; refcounted object released by the dtor; not set by LoadBinary (slot 25 is a 5-byte thunk) (low)
     #[doc(hidden)]
     pub __field10: [u8; 8],
     /// +0x18 `class:NiTransform`, semantic; overall transform of the skin (rotation, translation, scale) (medium)
     #[doc(hidden)]
     pub __skinTransform: [u8; 52],
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `pointer`, semantic; per-bone records, 0x58 bytes each (high)
     pub boneData: *mut c_void,
     /// +0x58 `undefined4`, semantic; number of bones (high)
     pub boneCount: u32,
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -568,14 +566,14 @@ pub struct NiSkinData__BoneData {
     pub skinToBone: crate::NiTransform,
     /// +0x34 `class:NiBound`, semantic; bound sphere of the bone's vertices (center, radius) in bone space (high)
     pub boundSphere: crate::NiBound,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; optional vertex weights, 8 bytes each {u16 vertex, pad, float weight} (high)
     #[doc(hidden)]
     pub __weights: [u8; 8],
     /// +0x50 `undefined2`, semantic; number of weights (high)
     #[doc(hidden)]
     pub __weightCount: [u8; 2],
-    pub unknown_52: [u8; 6],
+    unknown_52: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -762,7 +760,7 @@ pub struct hkbBehaviorGraph {
     pub __vftable: *const crate::raw::vtables::hkbBehaviorGraph_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -779,7 +777,7 @@ pub struct hkbBehaviorGraph {
     pub id: u16,
     /// +0x42 `undefined1`, semantic; template/clone state of a node; 2 = clone that maps to itself (medium)
     pub cloneState: u8,
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `undefined4`, base hkBaseObject
@@ -859,7 +857,7 @@ pub struct hkbBehaviorGraph {
     pub field_F8: u64,
     /// +0x100 `undefined4`, ctor store
     pub field_100: u32,
-    pub unknown_104: [u8; 4],
+    unknown_104: [u8; 4],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -881,7 +879,7 @@ pub struct hkbBehaviorGraph {
     pub field_12A: u16,
     /// +0x12C `undefined1`, semantic; graph has been activated (medium)
     pub isActive: u8,
-    pub unknown_12D: [u8; 3],
+    unknown_12D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1033,7 +1031,7 @@ pub struct hkbRagdollDriver {
     pub __vftable: *const crate::raw::vtables::hkbRagdollDriver_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1117,7 +1115,7 @@ pub struct hkbRagdollDriver {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 8],
+    unknown_C8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

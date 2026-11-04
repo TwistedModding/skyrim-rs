@@ -87,7 +87,7 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     /// +0x8 `undefined4`, semantic; spin lock word: 0 free, 1 taken (LOCK cmpxchg loop) (high)
     #[doc(hidden)]
     pub __lock: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic; UIMessage*[100] (high)
     #[doc(hidden)]
     pub __buffer: [u8; 800],
@@ -98,7 +98,7 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     pub pushIndex: u32,
     /// +0x338 `undefined4`, semantic; next read index (mod 100) (high)
     pub popIndex: u32,
-    pub unknown_33C: [u8; 4],
+    unknown_33C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -119,7 +119,7 @@ pub struct BSUIMessageData {
     /// +0x0 `vtbl:BSUIMessageData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSUIMessageData_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `pointer`, semantic; heap string (0x10 object) formatted by ID_82091 (medium)
     #[doc(hidden)]
     pub __string: [u8; 8],
@@ -129,7 +129,7 @@ pub struct BSUIMessageData {
     /// +0x20 `undefined4`, semantic; u32 (QueueMessageWithDwordData 0x116ec00) or bool byte (QueueMessageWithFlag 0x116eb60) (high)
     #[doc(hidden)]
     pub __value: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -148,7 +148,7 @@ pub struct BSUIScaleformData {
     /// +0x0 `vtbl:BSUIScaleformData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSUIScaleformData_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; event object handed to the movie (GFxEvent* hypothesis, track B) (medium)
     #[doc(hidden)]
     pub __scaleformEvent: [u8; 8],
@@ -170,7 +170,7 @@ pub struct Console {
     pub __vftable: *const crate::raw::vtables::Console_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -187,12 +187,12 @@ pub struct Console {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:BSTArray`, base GRefCountImplCore, semantic; BSTArray<RefHandle> of pick candidates: data +0x30, capacity +0x38, size +0x40 (medium)
@@ -207,7 +207,7 @@ pub struct Console {
     /// +0x4E `undefined1`, semantic; Ctrl held (enables Ctrl+V paste, Ctrl+C copy selected ref) (high)
     #[doc(hidden)]
     pub __ctrlDown: [u8; 1],
-    pub unknown_4F: [u8; 1],
+    unknown_4F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -239,19 +239,19 @@ pub struct ConsoleData {
     /// +0x0 `vtbl:ConsoleData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ConsoleData_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; owned BSString* (0x10 block) (low)
     pub text: u64,
     /// +0x18 `undefined4`, semantic; reference to select (type 1) (high)
     #[doc(hidden)]
     pub __refHandle: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, semantic; object executed with a ConsoleLogPrinter (type 2); deleted through its vtable (low)
     pub command: u64,
     /// +0x28 `undefined4`, semantic; ConsoleDataType (creator default 4) (high)
     #[doc(hidden)]
     pub __type_: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -273,7 +273,7 @@ pub struct ContainerMenu {
     pub __vftable: *const crate::raw::vtables::ContainerMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -290,12 +290,12 @@ pub struct ContainerMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:GFxValue`, base GRefCountImplCore, semantic; AS object 'Menu_mc' (high)
@@ -304,7 +304,7 @@ pub struct ContainerMenu {
     pub itemList: *mut crate::ItemList,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -313,44 +313,44 @@ pub struct ContainerMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -359,7 +359,7 @@ pub struct ContainerMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -374,7 +374,7 @@ pub struct ContainerMenu {
     /// +0xBA `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_BA: [u8; 1],
-    pub unknown_BB: [u8; 1],
+    unknown_BB: [u8; 1],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -439,7 +439,7 @@ pub struct CursorMenu {
     pub __vftable: *const crate::raw::vtables::CursorMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -456,12 +456,12 @@ pub struct CursorMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:MenuEventHandler`, semantic; vtable 0x19745d8; +0x38 refCount, +0x3c enabled, +0x3d processWhileModal (1) (high)
@@ -495,7 +495,7 @@ pub struct DialogueMenu {
     pub __vftable: *const crate::raw::vtables::DialogueMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -512,12 +512,12 @@ pub struct DialogueMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:BSTEventSink<MenuOpenCloseEvent>`, semantic; sink on the UI's MenuOpenCloseEvent source (high)
@@ -580,7 +580,7 @@ pub struct GFxFunctionHandler__Params {
     pub args: *mut crate::GFxValue,
     /// +0x28 `undefined4`, semantic; number of arguments (high)
     pub argCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; userData given to CreateFunction (high)
     pub userData: *mut c_void,
     #[doc(hidden)]
@@ -600,26 +600,26 @@ const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, userData
 /// Evidence: one instantiated Scaleform movie (the object IMenu+0x10 holds). No RTTI: the concrete vtable is the NoRTTI table 0x1a2ade8 (73 slots, 0..72); the base table 0x1a2a6e0 is mostly _purecall. Named after the request; the body is the movie instance (SetVariable error text, Advance/Display, viewport, input); 0xd3e830 writes vtable 0x1a2ade8; 0x116fda0 creates the view through movieDef->vt[0xc0] and stores it into *outView (IMenu+0x10); 0xd529f0 (slot 16) logs 'Error: NULL pathToVar passed to SetVariable/SetDouble()'; size: allocation: 0xd7eb60 MOV EDX,0x2bf0; heap->vt[0x50]; then the constructor 0xd3e830; run-ui: every open menu's movie (+0x10) has the movie view vtable 0x1a2ade8.
 #[repr(C, align(8))]
 pub struct GFxMovieView {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `undefined4`, semantic; atomic reference count (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 20],
+    unknown_C: [u8; 20],
     /// +0x20 `pointer`, semantic; the ObjectInterface every managed GFxValue of this movie points at (high)
     pub objectInterface: *mut c_void,
     /// +0x28 `pointer`, semantic; the constructor's argument (movie definition instance), AddRef'd (medium)
     pub movieDefImpl: *mut c_void,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `pointer`, semantic; memory heap of the movie (copied from movieDefImpl+0x10); vt[0x50](size) allocates (high)
     pub heap: *mut c_void,
-    pub unknown_40: [u8; 24],
+    unknown_40: [u8; 24],
     /// +0x58 `pointer`, semantic; root (level 0) sprite; every movie API returns false when it is null (high)
     pub level0: *mut c_void,
     /// +0x60 `pointer`, semantic; movie definition; the scale-mode code reads its stage rect through (+0x38)->+0x18->+0x40, rect at +0x58..+0x64 (medium)
     pub movieDef: *mut c_void,
-    pub unknown_68: [u8; 16],
+    unknown_68: [u8; 16],
     /// +0x78 `class:GFxViewport`, semantic; the viewport last set (high)
     pub viewport: crate::GFxViewport,
-    pub unknown_AC: [u8; 20],
+    unknown_AC: [u8; 20],
     /// +0xC0 `undefined4`, semantic; GFxScaleMode (high)
     #[doc(hidden)]
     pub __scaleMode: [u8; 4],
@@ -629,12 +629,13 @@ pub struct GFxMovieView {
     /// +0xC8 `float`, semantic; visible stage rect in twips (left, top, right, bottom) (high)
     pub visibleFrameRect: [u8; 16],
     /// +0xD8 `float`, semantic; safe rect, 4 floats (high)
-    pub safeRect: [u8; 16],
-    pub unknown_E8: [u8; 2232],
+    #[doc(hidden)]
+    pub __safeRect: [u8; 16],
+    unknown_E8: [u8; 2232],
     /// +0x9A0 `undefined4`, semantic; background colour; alpha byte at +0x9a3 (high)
     #[doc(hidden)]
     pub __backgroundColor: [u8; 4],
-    pub unknown_9A4: [u8; 196],
+    unknown_9A4: [u8; 196],
     /// +0xA68 `undefined4`, semantic; number of mouse cursors, clamped to 4 (high)
     pub mouseCursorCount: u32,
     /// +0xA6C `undefined4`, semantic; number of controllers, clamped to 4 (medium)
@@ -643,17 +644,17 @@ pub struct GFxMovieView {
     /// +0xA70 `pointer`, semantic; opaque pointer with getter/setter (low)
     #[doc(hidden)]
     pub __userData: [u8; 8],
-    pub unknown_A78: [u8; 6704],
+    unknown_A78: [u8; 6704],
     /// +0x24A8 `pointer`, semantic; strings returned by the string-returning Invoke variants (medium)
     #[doc(hidden)]
     pub __invokeResultBuffer: [u8; 8],
-    pub unknown_24B0: [u8; 32],
+    unknown_24B0: [u8; 32],
     /// +0x24D0 `pointer`, semantic; table consulted (0xd50f80) before resolving an Invoke path (low)
     pub invokeAliasTable: *mut c_void,
-    pub unknown_24D8: [u8; 264],
+    unknown_24D8: [u8; 264],
     /// +0x25E0 `undefined4`, semantic; movie flags: bit 20 paused, bit 0 viewport dirty, bits 2 and 6 set by slots 71/72, bits 10/18 read by slots 55/54; see the flag rows (high)
     pub flags: u32,
-    pub unknown_25E4: [u8; 1548],
+    unknown_25E4: [u8; 1548],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -668,7 +669,7 @@ const _: () = assert!(core::mem::offset_of!(GFxMovieView, viewport) == 0x78);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __scaleMode) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __alignment) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, visibleFrameRect) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, safeRect) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __safeRect) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __backgroundColor) == 0x9A0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, mouseCursorCount) == 0xA68);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, __controllerCount) == 0xA6C);
@@ -762,20 +763,22 @@ pub struct GFxViewport {
     /// +0x0 `undefined4`, semantic; render target width (medium)
     pub bufferWidth: u32,
     /// +0x4 `undefined4`, semantic; render target height (letterboxed) (medium)
-    pub bufferHeight: u32,
+    #[doc(hidden)]
+    pub __bufferHeight: [u8; 4],
     /// +0x8 `undefined4`, semantic; x (medium)
     #[doc(hidden)]
     pub __left: [u8; 4],
     /// +0xC `undefined4`, semantic; y (letterbox offset) (medium)
-    pub top: u32,
+    #[doc(hidden)]
+    pub __top: [u8; 4],
     /// +0x10 `undefined4`, semantic (medium)
     #[doc(hidden)]
     pub __width: [u8; 4],
     /// +0x14 `undefined4`, semantic (medium)
-    pub height: u32,
-    /// +0x18 `undefined1`, semantic; four ints, zero at the engine's call (low)
     #[doc(hidden)]
-    pub __scissorRect: [u8; 16],
+    pub __height: [u8; 4],
+    /// +0x18 `undefined1`, semantic; four ints, zero at the engine's call (low)
+    pub scissorRect: [u8; 16],
     /// +0x28 `float`, semantic; 1.0 at the engine's call; multiplies the viewport size (movie +0xa0) in 0xd54c00 (medium)
     #[doc(hidden)]
     pub __scale: [u8; 4],
@@ -790,12 +793,12 @@ pub struct GFxViewport {
 }
 const _: () = assert!(size_of::<GFxViewport>() == 0x34);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferWidth) == 0x0);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferHeight) == 0x4);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __bufferHeight) == 0x4);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __left) == 0x8);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, top) == 0xC);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __top) == 0xC);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __width) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, height) == 0x14);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, __scissorRect) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __height) == 0x14);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, scissorRect) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __scale) == 0x28);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __aspectRatio) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, __flags) == 0x30);
@@ -809,26 +812,26 @@ pub struct HUDData {
     /// +0x0 `vtbl:HUDData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDData_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined4`, semantic; HUDDataType (high)
     #[doc(hidden)]
     pub __type_: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, semantic; message text / mode name (high)
     #[doc(hidden)]
     pub __text: [u8; 16],
     /// +0x28 `undefined4`, semantic; reference handle (crosshair target) (medium)
     #[doc(hidden)]
     pub __refHandle: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, semantic; quest/form pointer for notifications (low)
     #[doc(hidden)]
     pub __form: [u8; 8],
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined1`, semantic; boolean argument (show/enable) (high)
     #[doc(hidden)]
     pub __flag: [u8; 1],
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, semantic; integer argument (arrow count, music type) (medium)
     #[doc(hidden)]
     pub __value: [u8; 4],
@@ -855,7 +858,7 @@ pub struct HUDMenu {
     pub __vftable: *const crate::raw::vtables::HUDMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -872,12 +875,12 @@ pub struct HUDMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `ptr:BSTEventSink<UserEventEnabledEvent>`, semantic; vtable 0x1976758 (high)
@@ -898,7 +901,7 @@ pub struct HUDMenu {
     pub root: crate::GFxValue,
     /// +0x90 `undefined1`, base GRefCountImplCore, semantic; last swimming state pushed to the HUD (high)
     pub wasSwimming: u8,
-    pub unknown_91: [u8; 3],
+    unknown_91: [u8; 3],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     #[doc(hidden)]
@@ -973,7 +976,7 @@ pub struct HUDNotifications {
     /// +0x0 `vtbl:HUDNotifications:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDNotifications_vtable,
-    pub unknown_8: [u8; 32],
+    unknown_8: [u8; 32],
     /// +0x28 `class:BSTArray`, semantic; BSTArray<HUDNotificationEntry> (stride 0x60): data +0x28, capacity +0x30, size +0x38 (high)
     #[doc(hidden)]
     pub __queue: [u8; 24],
@@ -1086,7 +1089,7 @@ pub struct IUIMessageData {
     /// +0x9 `undefined1`, semantic; 0 = deleted (vtable[0](data, 1)) after the drain, non-0 = kept in the pool (medium)
     #[doc(hidden)]
     pub __isPooled: [u8; 1],
-    pub unknown_A: [u8; 6],
+    unknown_A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1106,7 +1109,7 @@ pub struct InventoryMenu {
     pub __vftable: *const crate::raw::vtables::InventoryMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1123,12 +1126,12 @@ pub struct InventoryMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:GFxValue`, base GRefCountImplCore, semantic; AS object 'Menu_mc' (high)
@@ -1141,29 +1144,29 @@ pub struct InventoryMenu {
     pub playerInfo: u64,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore, semantic; list sort mode 0..6 (medium)
     pub sortMode: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore, semantic; AS 'bPCControlsReady' found (high)
     pub pcControlsReady: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     #[doc(hidden)]
@@ -1235,7 +1238,7 @@ pub struct LoadingMenu {
     pub __vftable: *const crate::raw::vtables::LoadingMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1252,24 +1255,24 @@ pub struct LoadingMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:GFxValue`, base GRefCountImplCore, semantic; AS object 'Menu_mc' (high)
     pub menuClip: crate::GFxValue,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -1278,22 +1281,22 @@ pub struct LoadingMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
@@ -1342,7 +1345,7 @@ pub struct MagicMenu {
     pub __vftable: *const crate::raw::vtables::MagicMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1359,34 +1362,34 @@ pub struct MagicMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `ptr:ItemList`, base GRefCountImplCore, semantic; the spell list (same 0x58 list object) (high)
     pub itemList: *mut crate::ItemList,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `class:GFxValue`, base GRefCountImplCore, semantic; AS object 'Menu_mc' (high)
     pub menuClip: crate::GFxValue,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1423,7 +1426,7 @@ pub struct MainMenu {
     pub __vftable: *const crate::raw::vtables::MainMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1440,12 +1443,12 @@ pub struct MainMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:BSTEventSink<BSSystemEvent>`, semantic (high)
@@ -1467,10 +1470,10 @@ pub struct MainMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
@@ -1515,7 +1518,7 @@ pub struct MenuControls {
     pub __vftable: *const crate::raw::vtables::MenuControls_vtable,
     /// +0x8 `ptr:BSTEventSink<MenuModeChangeEvent>`, semantic; vtable 0x197c200 of the second base (high)
     pub menuModeChangeSink: *mut crate::BSTEventSink_MenuModeChangeEvent,
-    pub unknown_10: [u8; 8],
+    unknown_10: [u8; 8],
     /// +0x18 `class:BSTArray`, semantic; MenuEventHandler* list in registration order (data +0x18, capacity +0x20, size +0x28); every enabled handler whose CanProcess accepts gets the event (no early stop) (high)
     pub handlers: crate::BSTArray,
     /// +0x30 `class:BSTArray`, semantic; {handler, add} 0x10-byte entries queued while a dispatch is running; applied after it (data +0x30, capacity +0x38, size +0x40) (high)
@@ -1546,7 +1549,7 @@ pub struct MenuControls {
     /// +0x83 `undefined1`, semantic; ProcessEvent does nothing while set (medium)
     #[doc(hidden)]
     pub __ignoreInput: [u8; 1],
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1601,11 +1604,11 @@ pub struct MenuOpenHandler {
     /// +0x0 `vtbl:MenuOpenHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MenuOpenHandler_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; when 0 (or MenuControls+0x81 set) the tween key shows sTweenDisabledMessage instead of opening TweenMenu (medium)
     #[doc(hidden)]
     pub __tweenMenuAllowed: [u8; 1],
-    pub unknown_11: [u8; 7],
+    unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1616,14 +1619,15 @@ const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __tweenMenuAllowed)
 /// `MenuTableEntry`: size 0x20 (exact).
 /// Meaning: one menu table entry: the registered name, the live menu (null until first shown or after unload) and its creator (high, ui pass).
 /// Evidence: one menu table entry: the registered name, the live menu (null until first shown or after unload) and its creator; ProcessMessages show path reads +8/+0x10, calls +0x10 when +8 is null, writes the created menu back through InsertOrAssign; size: entry stride 0x20 in every table walk (ProcessMessages, LookupCrcHashMapValue 0x116cda0, InsertOrAssignFixedStringKey 0x116bfb0, ID_82073 0x11693c0).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MenuTableEntry {
     /// +0x0 `class:BSFixedString`, semantic; key; compared by data pointer (high)
     pub menuName: crate::BSFixedString,
     /// +0x8 `ptr:IMenu`, semantic; reference-holding pointer to the menu object, null when not created or unloaded (high)
     pub menu: *mut crate::IMenu,
     /// +0x10 `undefined8`, semantic; creator function IMenu* (*)() registered by Register 0x116b200 (high)
-    pub create: u64,
+    #[doc(hidden)]
+    pub __create: [u8; 8],
     /// +0x18 `ptr:MenuTableEntry`, semantic; bucket chain; null = empty slot, the chain ends at the table sentinel (high)
     pub next: *mut crate::MenuTableEntry,
     #[doc(hidden)]
@@ -1632,7 +1636,7 @@ pub struct MenuTableEntry {
 const _: () = assert!(size_of::<MenuTableEntry>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(MenuTableEntry, menuName) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MenuTableEntry, menu) == 0x8);
-const _: () = assert!(core::mem::offset_of!(MenuTableEntry, create) == 0x10);
+const _: () = assert!(core::mem::offset_of!(MenuTableEntry, __create) == 0x10);
 const _: () = assert!(core::mem::offset_of!(MenuTableEntry, next) == 0x18);
 
 /// `MessageBoxData`: size 0x50 (exact, high); primary base `IUIMessageData`.
@@ -1646,7 +1650,7 @@ pub struct MessageBoxData {
     pub __vftable: *const crate::raw::vtables::MessageBoxData_vtable,
     /// +0x8 `undefined2`, ctor store
     pub field_8: u16,
-    pub unknown_A: [u8; 6],
+    unknown_A: [u8; 6],
     /// +0x10 `undefined1`, semantic; body text ('\r' replaced by ' ' on queueing) (high)
     pub text: [u8; 16],
     /// +0x20 `class:BSTArray`, semantic; BSTArray<BSString> button labels: data +0x20, capacity +0x28, size +0x30 (high)
@@ -1700,7 +1704,7 @@ pub struct MessageBoxMenu {
     pub __vftable: *const crate::raw::vtables::MessageBoxMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1717,22 +1721,22 @@ pub struct MessageBoxMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `undefined1`, base GRefCountImplCore, semantic; a MessageBoxData is on screen (high)
     pub showing: u8,
-    pub unknown_31: [u8; 3],
+    unknown_31: [u8; 3],
     /// +0x34 `undefined1`, base GRefCountImplCore
     pub field_34: u8,
     /// +0x35 `undefined1`, base GRefCountImplCore
     pub field_35: u8,
-    pub unknown_36: [u8; 2],
+    unknown_36: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1831,7 +1835,7 @@ pub struct TweenMenu {
     pub __vftable: *const crate::raw::vtables::TweenMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -1848,12 +1852,12 @@ pub struct TweenMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `class:BSTArray`, base GRefCountImplCore, semantic; three 0x10-byte {handle, meshPath} entries filled from the table at 0x20bb920 on show and loaded with QueueMeshLoad on the 'Menu Texture Degrade Event' message (data +0x30, capacity +0x38, size +0x40) (medium)
@@ -1911,16 +1915,16 @@ const _: () = assert!(core::mem::offset_of!(UIMessage, isStatic) == 0x18);
 /// Evidence: the UI message queue: a 100-entry ring of UIMessage* behind a spin lock, 64 static UIMessage slots reused every drain, and a pool of reusable message data; UI ctor: g_UIMessageQueue_ptr = 0x14333b0b0, vtable BSTCommonStaticMessageQueue<UIMessage*,100> at +8, array ctor of 0x40 x 0x20 at 0x14333b430 (+0x380); dtor ID_82166 0x116df10 tears down +0x350/+0x380 and resets the vtable; size: static object at 0x14333b0b0 (g_UIMessageQueue_ptr 0x21a05c0 points at it, set in the UI ctor 0x1169070); the next static symbol is at 0x14333bc30 (0xb80 later), which matches +0x380 + 64 * 0x20. Runtime: every QueueMessage hit in edges.json has arg0 = 0x14333b0b0 (5,642 hits). The holder has no RTTI; the name is descriptive..
 #[repr(C, align(4))]
 pub struct UIMessageQueue {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `undefined1`, semantic; ring of 100 UIMessage*: vtable +8, spin lock dword +0x10, buffer +0x18..+0x337, count +0x338, push index +0x33c, pop index +0x340 (high)
     pub queue: [u8; 832],
-    pub unknown_348: [u8; 8],
+    unknown_348: [u8; 8],
     /// +0x350 `undefined1`, semantic; BSFixedString data-type name -> BSTArray<IUIMessageData*>* of reusable payloads (0x18-byte entries: key, array, next); capacity +0x354, sentinel +0x360, entries +0x370 (medium)
     #[doc(hidden)]
     pub __dataPool: [u8; 40],
     /// +0x378 `undefined4`, semantic; number of static UIMessage slots handed out since the last drain (max 0x40); not atomic (high)
     pub staticMessagesUsed: u32,
-    pub unknown_37C: [u8; 4],
+    unknown_37C: [u8; 4],
     /// +0x380 `undefined1`, semantic; UIMessage[64] reused every drain; after the drain each slot's data is deleted (IUIMessageData+9 == 0) or returned to its pool (+8 = 0) (high)
     pub staticMessages: [u8; 2048],
     #[doc(hidden)]

@@ -83,7 +83,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
         Sample {
             state: id,
             stack_count: camera.stateStackCount,
-            cached_position: floats(&camera.cachedPosition),
+            cached_position: floats(camera.cachedPosition()),
             root_world: root.world_transform().translation,
             root_local: root.local_transform().translation,
             frame_camera_world: frame_camera.world_transform().translation,

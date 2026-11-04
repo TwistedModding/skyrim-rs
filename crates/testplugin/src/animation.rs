@@ -63,7 +63,7 @@ static SINK: Sink<BSAnimationGraphEvent, TagCounter> = Sink::new(TagCounter);
 
 fn head_index(graph: &BShkbAnimationGraph) -> Option<usize> {
     let head = HEAD.load(Ordering::Relaxed);
-    graph.bone_nodes().iter().position(|e| core::ptr::eq(e.node_field(), head))
+    graph.bone_nodes().iter().position(|e| core::ptr::eq(e.node, head))
 }
 
 unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::ffi::c_void, count: i32) {

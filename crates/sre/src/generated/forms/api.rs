@@ -105,29 +105,6 @@ impl crate::BSTArray {
     pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
 }
 
-impl crate::Setting {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_name(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "Setting.name", 0x10, *mut c_void) } }
-    /// `Setting::name`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn name(&self) -> *mut c_void { unsafe { Self::__member_name(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_name(&mut self, value: *mut c_void) { unsafe { Self::__member_name(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn name_ptr(&self) -> *mut *mut c_void { Self::__member_name(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_value(this: *const Self) -> *mut u64 { unsafe { member!(this, "Setting.value", 0x8, u64) } }
-    /// `Setting::value`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn value(&self) -> u64 { unsafe { Self::__member_value(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_value(&mut self, value: u64) { unsafe { Self::__member_value(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn value_ptr(&self) -> *mut u64 { Self::__member_value(core::ptr::from_ref(self)) }
-}
-
 impl crate::TESDataHandler {
     /// `g_TESDataHandler_ptr` at 0x219ded8, id 400269 (runtime, high); pointer to `TESDataHandler`: pointer to the data handler singleton; pointer to the data handler singleton (high, forms pass), type `ptr:TESDataHandler`
     ///

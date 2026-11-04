@@ -607,11 +607,11 @@ impl ConsoleOpenHandler_vtable {
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("ConsoleOpenHandler", 0x0, 7) }
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_at!("ConsoleOpenHandler", 0x0, 7) }
     /// Slot 7 as `ConsoleOpenHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<ConsoleOpenHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("ConsoleOpenHandler", 0x0, 7))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("ConsoleOpenHandler", 0x0, 7))) }
     }
 }
 /// `ConsoleOpenHandler::CanProcess`, slot 1: Console (high).
@@ -9966,20 +9966,20 @@ impl HeldStateHandler_vtable {
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_UpdateHeldState() -> usize { slot_index!("HeldStateHandler", 0x0, 7) }
+    pub fn SLOT_UpdateHeldState() -> usize { slot_at!("HeldStateHandler", 0x0, 7) }
     /// Slot 7 as `HeldStateHandler_vtable_UpdateHeldState`, `None` when the slot is null.
     #[must_use]
     pub fn UpdateHeldState(&self) -> Option<HeldStateHandler_vtable_UpdateHeldState> {
-        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_UpdateHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("HeldStateHandler", 0x0, 7))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_UpdateHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("HeldStateHandler", 0x0, 7))) }
     }
     /// The slot's index on the running game; 8 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_SetHeldState() -> usize { slot_index!("HeldStateHandler", 0x0, 8) }
+    pub fn SLOT_SetHeldState() -> usize { slot_at!("HeldStateHandler", 0x0, 8) }
     /// Slot 8 as `HeldStateHandler_vtable_SetHeldState`, `None` when the slot is null.
     #[must_use]
     pub fn SetHeldState(&self) -> Option<HeldStateHandler_vtable_SetHeldState> {
-        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_SetHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("HeldStateHandler", 0x0, 8))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_SetHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("HeldStateHandler", 0x0, 8))) }
     }
 }
 /// `HeldStateHandler::UpdateHeldState`, slot 7: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high).

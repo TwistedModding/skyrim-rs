@@ -7691,7 +7691,7 @@ id-unverified 14032
 id-unverified 14033
 id-unverified 14034
 id-unverified 14035
-id 14039 13938
+id-unverified 14039
 id-unverified 14040
 id-unverified 14041
 id-unverified 14042
@@ -99426,8 +99426,10 @@ id 361069 501774
 id 361071 501775
 id-unverified 361075
 id 361078 501780
+id-unverified 361087
 id 361120 501789
 id 365650 501797
+id 368071 501801
 id-unverified 368092
 id 368873 502033
 id 368876 502035
@@ -101011,6 +101013,7 @@ id 401203 515064
 id 401263 515124
 id 401264 515125
 id 401336 515197
+id-unverified 401342
 id 401344 515205
 id 401345 515206
 id 401377 515239
@@ -101082,11 +101085,11 @@ id-unverified 403352
 id 403437 516935
 id 403449 516943
 id 403450 516923
-id-unverified 403512
+id 403512 517005
 id 403513 517006
 id 403517 517010
 id 403520 517013
-id-unverified 403521
+id 403521 517014
 id 403522 517015
 id-unverified 403530
 id-unverified 403535
@@ -101175,6 +101178,7 @@ id-unverified 405698
 id 405789 519249
 id 405792 519252
 id-unverified 405797
+id-unverified 406126
 id-unverified 406354
 id-unverified 406355
 id 406356 519814
@@ -101646,9 +101650,8 @@ id 414564 527635
 id 414565 527636
 id 414580 527667
 id 414601 527651
-id-unverified 414621
 id-unverified 414623
-id 414625 514112
+id 414625 527703
 id 414627 527717
 id 414660 527731
 id-unverified 414664
@@ -103186,8 +103189,6 @@ member-unverified BGSSaveLoadManager.cachedHeader
 member-unverified BGSSaveLoadManager.characterNames
 member-unverified BGSSaveLoadManager.characters
 member-unverified BGSSaveLoadManager.currentSaveNameCapacity
-member-unverified BGSSaveLoadManager.currentSaveNameLength
-member-unverified BGSSaveLoadManager.currentSaveNamePtr
 member-unverified BGSSaveLoadManager.displayPlayerId
 member-unverified BGSSaveLoadManager.field_2B2
 member-unverified BGSSaveLoadManager.field_2F0
@@ -103202,8 +103203,6 @@ member-unverified BGSSaveLoadManager.unknownMap
 member-unverified BGSSaveLoadManager::Thread.busy
 member-unverified BGSSaveLoadManager::Thread.paused
 member-unverified BGSSaveLoadManager::Thread.running
-member-unverified BGSSaveLoadManagerEvent.done
-member-unverified BGSSaveLoadManagerEvent.kind
 member-unverified BGSScene.field_60
 member BGSScene.field_78 30
 member-unverified BGSShaderParticleGeometryData.m_TESTexture_38
@@ -103263,6 +103262,7 @@ member BSAnimationGraphManager.graphsLock 98
 member-unverified BSAnimationGraphManager.variableCache
 member-unverified BSAudioListener.field_70
 member-unverified BSAudioManager.cacheCount
+member-unverified BSAudioManager.cacheList
 member-unverified BSAudioManager.threadId
 member-unverified BSBatchRenderer.alphaGroup
 member-unverified BSBatchRenderer.firstTechnique
@@ -105890,11 +105890,6 @@ member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,flo
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
 member-unverified BSScript::ObjectTypeInfo.counts
 member-unverified BSScript::ObjectTypeInfo.counts2
-member-unverified BSScript::Stack.pageCount
-member-unverified BSScript::StackFrame.owningFunction
-member-unverified BSScript::StackFrame.owningObjectType
-member-unverified BSScript::StackFrame.previousFrame
-member-unverified BSScript::StackFrame.size
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
 member-unverified BSShaderAccumulator.field_129
 member-unverified BSShaderAccumulator.field_A0
@@ -106474,8 +106469,6 @@ member-unverified BleedoutCameraState.targetOffset
 member-unverified BleedoutCameraState.useShoulderOffsets
 member-unverified BleedoutCameraState.yawOffset
 member-unverified BleedoutCameraState.zoomSinceTogglePress
-member-unverified BoneNodeEntry.flatIndex
-member-unverified BoneNodeEntry.node
 member-unverified BookMenu.field_11
 member-unverified BookMenu.field_12
 member-missing CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>.__vftable
@@ -106938,6 +106931,7 @@ member-unverified CombatThreat.field_1C
 member-unverified CombatThreat.field_24
 member CombatThreat.field_2C 14
 member-unverified CombatThreat.field_60
+member CommandTableEntry.eval 30
 member-unverified CommandTableEntry.pad24
 member-unverified CommandTableEntry.unk21
 member ConeProjectile.field_100 f8
@@ -107061,16 +107055,10 @@ member-unverified CreditsMenu.field_42
 member-unverified CreditsMenu.field_7A
 member-unverified CreditsMenu.field_EC
 member-unverified CubeMapRecord.srv
-member-unverified CubeMapRecord.texture
 member-unverified CursorMenu.field_11
 member-unverified CursorMenu.field_12
 member-missing DLCPurchased::OpenVisitCreationClubCallback.__vftable
 member-missing DLCPurchased::PurchasedDLCDialogCallback.__vftable
-member-unverified DepthStencilProperties.height
-member-unverified DepthStencilProperties.slices
-member-unverified DepthStencilProperties.stencil
-member-unverified DepthStencilProperties.use16BitDepth
-member-unverified DepthStencilProperties.width
 member-unverified DepthStencilRecord.dsv
 member-unverified DepthStencilRecord.readOnlyDsv
 member-unverified DepthStencilRecord.srv
@@ -107174,7 +107162,7 @@ member-missing EventSourceHolder_Input.device4
 member EventSourceHolder_Input.gamepadEnableChanged 81
 member EventSourceHolder_Input.gamepadEnablePending 80
 member EventSourceHolder_Input.remoteGamepadPending e0
-member EventSourceHolder_Input.source_BSRemoteGamepadEvent 88
+member-unverified EventSourceHolder_Input.source_BSRemoteGamepadEvent
 member EventSourceHolder_Input.virtualKeyboard 78
 member-unverified EventSourceHolder_MenuOpenClose.lock
 member-unverified EventSourceHolder_TES.source_BGSEventProcessedEvent
@@ -107270,11 +107258,8 @@ member-missing FilterSideBar.field_98
 member-missing FilterSideBar.field_A
 member-missing FilterSideBar.field_C
 member-unverified FirstPersonRenderContext.firstPersonFOV
-member-unverified FirstPersonRenderContext.firstPersonRoot
 member-unverified FirstPersonRenderContext.killCam
-member-unverified FirstPersonRenderContext.sceneGraph
 member-unverified FirstPersonRenderContext.shadowSceneNode
-member-unverified FirstPersonRenderContext.worldFOV
 member FirstPersonState.cameraOverride 84
 member FirstPersonState.dampingWeight 7c
 member-unverified FirstPersonState.id
@@ -107340,27 +107325,16 @@ member FlameProjectile.field_F0 e8
 member FlameProjectile.field_F8 f0
 member FlameProjectile.field_FC f4
 member FlameProjectile.refScale 90
-member-unverified FlatBone.local
-member-unverified FlatBone.name
-member-unverified FlatBone.node
-member-unverified FlatBone.parentIndex
-member-unverified FlatBone.world
 member-unverified FleePackage.field_48
 member-unverified FleePackage.field_DC
-member-unverified FrameState.backBufferWidth
 member-unverified FrameState.cameraMatrices
 member-unverified FrameState.decreaseRequested
-member FrameState.dynamicHeightRatio 100
+member-unverified FrameState.dynamicHeightRatio
 member FrameState.dynamicResolutionLock 110
-member-unverified FrameState.dynamicWidthRatio
-member-unverified FrameState.frameCounter
-member-unverified FrameState.frameStarted
 member-unverified FrameState.increaseRequested
-member-unverified FrameState.jitter
 member FrameState.jitterIndex b8
 member-unverified FrameState.manualRatio
-member FrameState.previousHeightRatio 108
-member-unverified FrameState.previousWidthRatio
+member-unverified FrameState.previousHeightRatio
 member FrameState.ratioIncreaseCounter 10c
 member-unverified FreeCameraState.forwardInputA
 member FreeCameraState.forwardInputB 3c
@@ -107375,7 +107349,6 @@ member-unverified FurnitureCameraState.pad0c
 member-unverified FurnitureCameraState.pad1c
 member-unverified FurnitureCameraState.pad3F
 member-unverified FurnitureCameraState.refCount
-member-unverified FurnitureMarker.field_0
 member-unverified FutBinaryFileC.field_20
 member-unverified FutBinaryFileC.field_28
 member-unverified FutBinaryFileC.field_38
@@ -107408,6 +107381,7 @@ member-unverified GFxMovieView.alignment
 member-unverified GFxMovieView.backgroundColor
 member-unverified GFxMovieView.controllerCount
 member-unverified GFxMovieView.invokeResultBuffer
+member-unverified GFxMovieView.safeRect
 member-unverified GFxMovieView.scaleMode
 member-unverified GFxMovieView.userData
 member-unverified GFxState.field_11
@@ -107417,10 +107391,12 @@ member-unverified GFxTranslator.field_11
 member-unverified GFxTranslator.field_12
 member-unverified GFxTranslator.field_BC
 member-unverified GFxViewport.aspectRatio
+member-unverified GFxViewport.bufferHeight
 member-unverified GFxViewport.flags
+member-unverified GFxViewport.height
 member-unverified GFxViewport.left
 member-unverified GFxViewport.scale
-member-unverified GFxViewport.scissorRect
+member-unverified GFxViewport.top
 member-unverified GFxViewport.width
 member-unverified GFxZlibSupport.field_11
 member-unverified GFxZlibSupport.field_12
@@ -107683,7 +107659,6 @@ member-missing InfiniteList.field_9
 member-missing InfiniteList.field_A
 member-missing InfiniteList.field_C
 member-unverified IngredientItem.field_A0
-member-unverified InputContext.gamepadMappings
 member-unverified InputEventQueue.amiiboCount
 member-unverified InputEventQueue.amiiboEvent
 member InputEventQueue.buttonEvents 20
@@ -108264,6 +108239,7 @@ member-unverified MenuControls.menuHotkeysDisabled
 member MenuControls.pendingHandlerChanges 50
 member-unverified MenuControls.remapMode
 member-unverified MenuOpenHandler.tweenMenuAllowed
+member-unverified MenuTableEntry.create
 member-unverified MessageBoxData.buttonBase
 member-unverified MessageBoxData.buttons
 member-unverified MessageBoxData.isCancellable
@@ -108275,8 +108251,7 @@ member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
-member-unverified MiddleHighProcessData.movementDirection
-member-unverified MiddleHighProcessData.rightHandEquipType
+member MiddleHighProcessData.movementDirection b0
 member-unverified MiddleHighProcessData.speed
 member MissileProjectile.field_100 f8
 member MissileProjectile.field_104 fc
@@ -108795,7 +108770,6 @@ member-unverified OwnedCameraEffectController.effectShader
 member-unverified OwnedCameraEffectController.pad0C
 member-unverified OwnedCameraEffectController.pad24
 member-unverified OwnedCameraEffectController.pad31
-member-unverified ParamInfo.optional
 member-unverified PathFollowerStateTurnToAngle.field_8
 member-unverified PathSmootherRayCastUseTrianglePath.field_1C
 member-unverified PathSmootherRayCastUseTrianglePath.field_24
@@ -108824,6 +108798,7 @@ member-unverified PathingRequestOptimalLocation.field_C8
 member-unverified PathingRequestRotate.field_C8
 member-unverified PathingRequestSafeStraightLine.field_C8
 member-unverified PathingRequestStopMoving.field_C8
+member-unverified PlayerCamera.cachedPosition
 member-unverified PlayerCamera.pad_166
 member-unverified PlayerCamera.pad_31
 member-unverified PlayerCamera.pad_39
@@ -109104,12 +109079,6 @@ member-unverified PlayerControls.prevLookInput
 member-unverified PlayerControls.responseGraphs
 member-unverified PlayerInputHandler.pad_9
 member-unverified PlayerRegionState.field_40
-member-unverified ProcessLists.highActorHandles
-member-unverified ProcessLists.lowActorHandles
-member-unverified ProcessLists.middleHighActorHandles
-member-unverified ProcessLists.middleLowActorHandles
-member-unverified ProcessLists.referenceEffects
-member-unverified ProcessLists.referenceEffectsLock
 member Projectile.field_100 f8
 member Projectile.field_104 fc
 member Projectile.field_108 100
@@ -109181,45 +109150,26 @@ member-unverified RaceSexMenu.field_120
 member-unverified RaceSexMenu.field_128
 member-unverified RaceSexMenu.field_BC
 member-unverified RaceSexMenu.mouseLookDrag
-member-unverified RenderPass.field_1D
-member-unverified RenderPass.field_20
 member-unverified RenderPass.poolIndex
-member-unverified RenderPass.property
-member-unverified RenderPass.sceneLights
 member-unverified RenderStateCache.cubeMapFace
 member-unverified RenderStateCache.cubeMapMode
 member-unverified RenderStateCache.cubeMapRenderTarget
 member-unverified RenderStateCache.depthStencil
 member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
-member-unverified RenderStateCache.renderTargetModes
 member-unverified RenderStateCache.viewport
 member-unverified RenderTargetManager.cubeMapProperties
 member-unverified RenderTargetManager.depthStencilProperties
-member-unverified RenderTargetProperties.allowMipGeneration
-member-unverified RenderTargetProperties.copyable
-member-unverified RenderTargetProperties.format
-member-unverified RenderTargetProperties.height
-member-unverified RenderTargetProperties.mipLevel
-member-unverified RenderTargetProperties.parentId
-member-unverified RenderTargetProperties.supportUnorderedAccess
-member-unverified RenderTargetProperties.width
 member-unverified RenderTargetRecord.copySRV
-member-unverified RenderTargetRecord.copyTexture
 member-unverified RenderTargetRecord.rtv
-member-unverified RenderTargetRecord.srv
-member-unverified RenderTargetRecord.texture
 member-unverified RenderTargetRecord.uav
-member-unverified RenderWindow.unknown28
-member-unverified RenderWindow.x
-member-unverified RenderWindow.y
 member Renderer.clearColor 2778
 member Renderer.cubeMapTargets 26d8
 member-unverified Renderer.depthStencilTargets
 member-unverified Renderer.hInstance
 member-unverified Renderer.initialized
 member-unverified Renderer.isFullscreenState
-member-unverified Renderer.lock
+member Renderer.lock 2790
 member-unverified Renderer.useReadOnlyDepth
 member-unverified Renderer.windowClassName
 member-unverified RunActionAnimationLoadedCallback.field_38
@@ -109286,16 +109236,11 @@ member-missing SearchResultsPage.field_A
 member-missing SearchResultsPage.field_B8
 member-missing SearchResultsPage.field_C
 member-missing SearchResultsPage.field_C0
-member-unverified Setting.name
-member-unverified Setting.value
 member-unverified SettingT<INIPrefSettingCollection>.field_10
 member-unverified SettingT<INIPrefSettingCollection>.field_18
 member-unverified SettingT<INIPrefSettingCollection>.field_20
 member-unverified SettingT<INIPrefSettingCollection>.field_28
 member-unverified SettingT<INIPrefSettingCollection>.field_8
-member-unverified ShaderPropertyLightData.receiverMask
-member-unverified ShadowMapData.culler
-member-unverified ShadowMapData.slice
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
 member ShadowSceneNode.field_2DC 0
@@ -109538,7 +109483,6 @@ member-unverified SleepWaitMenu.field_12
 member-unverified SleepWaitMenu.field_BC
 member-unverified SoundHandleStatus.flags
 member-unverified SoundHandleStatus.frequency
-member-unverified SoundHandleStatus.nextFree
 member-unverified SpectatorPackage.field_48
 member-unverified SpectatorPackage.field_DC
 member-unverified StatsMenu.field_100
@@ -109771,8 +109715,6 @@ member-unverified TESQuest.field_12C
 member-unverified TESQuest.field_218
 member-unverified TESQuest.field_260
 member-unverified TESQuest.field_88
-member-unverified TESQuestStageEvent.flags
-member-unverified TESQuestStageEvent.stage
 member-unverified TESQuestStartStopEvent.started
 member-unverified TESRace.field_170
 member-unverified TESRace.field_180
@@ -109876,8 +109818,6 @@ member-unverified TweenMenuCameraState.currentAngles
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TypeNode.name
-member-unverified TypeNode.parent
 member-unverified UIMessageQueue.dataPool
 member-unverified UISaveLoadManager.field_50
 member-missing UI_Button3.__vftable
@@ -110677,11 +110617,6 @@ member-missing ViewAllEntry.field_E0
 member-missing ViewAllEntry.field_E8
 member-missing ViewAllEntry.field_F0
 member-missing ViewAllEntry.field_F8
-member-unverified VolumetricLightingParams.inverseRepartitionFunction
-member-unverified VolumetricLightingParams.inverseRepartitionTable
-member-unverified VolumetricLightingParams.rangeFactor
-member-unverified VolumetricLightingParams.repartitionFunction
-member-unverified VolumetricLightingParams.repartitionTable
 member-unverified WaterPathPathingNodeGenerator.field_10
 member-missing _anon_025735F6::AmiiboTouchArguments.__vftable
 member-unverified _anon_14F04957::Win32FileType.compression
@@ -111023,7 +110958,6 @@ member-unverified bhkRagdollController.field_30
 member-unverified bhkRagdollController.field_320
 member-unverified bhkRagdollController.field_328
 member-unverified bhkRagdollController.field_F8
-member-unverified bhkShape.materialId
 member-unverified bhkWorld.field_C560
 member-unverified bhkWorld.field_C568
 member-unverified bhkWorld.field_C56C
@@ -111418,9 +111352,6 @@ member-unverified hkAlignSceneToNodeOptions.field_B4
 member-unverified hkAlignSceneToNodeOptions.field_B8
 member-unverified hkAlignSceneToNodeOptions.field_C0
 member-unverified hkAlignSceneToNodeOptions.field_C4
-member-unverified hkArray.capacityAndFlags
-member-unverified hkArray.data
-member-unverified hkArray.size
 member-unverified hkArrayStreamWriter.field_108
 member-unverified hkArrayStreamWriter.field_110
 member-unverified hkArrayStreamWriter.field_114
@@ -111750,7 +111681,6 @@ member-unverified hkMemoryResourceHandle.field_B4
 member-unverified hkMemoryResourceHandle.field_B8
 member-unverified hkMemoryResourceHandle.field_C0
 member-unverified hkMemoryResourceHandle.field_C4
-member-unverified hkMemoryRouter.heap
 member-unverified hkMemoryStreamReader.field_108
 member-unverified hkMemoryStreamReader.field_110
 member-unverified hkMemoryStreamReader.field_114
@@ -112181,9 +112111,6 @@ member-unverified hkStreamWriter.field_B4
 member-unverified hkStreamWriter.field_B8
 member-unverified hkStreamWriter.field_C0
 member-unverified hkStreamWriter.field_C4
-member-unverified hkStridedVertices.numVertices
-member-unverified hkStridedVertices.striding
-member-unverified hkStridedVertices.vertices
 member-unverified hkSubStreamWriter.field_108
 member-unverified hkSubStreamWriter.field_110
 member-unverified hkSubStreamWriter.field_114
@@ -114262,9 +114189,6 @@ member-unverified hkpCogWheelConstraintData.field_B4
 member-unverified hkpCogWheelConstraintData.field_B8
 member-unverified hkpCogWheelConstraintData.field_C0
 member-unverified hkpCogWheelConstraintData.field_C4
-member-unverified hkpCollidable.broadPhaseType
-member-unverified hkpCollidable.collisionFilterInfo
-member-unverified hkpCollidable.ownerOffset
 member-unverified hkpCollidable.shape
 member-unverified hkpCollidableMediator.field_108
 member-unverified hkpCollidableMediator.field_110
@@ -114536,14 +114460,6 @@ member-unverified hkpConvexTransformShapeBase.field_B4
 member-unverified hkpConvexTransformShapeBase.field_B8
 member-unverified hkpConvexTransformShapeBase.field_C0
 member-unverified hkpConvexTransformShapeBase.field_C4
-member-unverified hkpConvexVerticesShape::BuildConfig.buildConnectivity
-member-unverified hkpConvexVerticesShape::BuildConfig.convexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.field_14
-member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkFlag
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam0
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam1
 member-unverified hkpCylinderShape.field_108
 member-unverified hkpCylinderShape.field_110
 member-unverified hkpCylinderShape.field_114
@@ -114933,10 +114849,6 @@ member-unverified hkpListAgent.field_B8
 member-unverified hkpListAgent.field_C0
 member-unverified hkpListAgent.field_C4
 member-unverified hkpListShape.numDisabledChildren
-member-unverified hkpListShape::ChildInfo.collisionFilterInfo
-member-unverified hkpListShape::ChildInfo.numChildShapes
-member-unverified hkpListShape::ChildInfo.shape
-member-unverified hkpListShape::ChildInfo.shapeSize
 member-unverified hkpMalleableConstraintData.field_108
 member-unverified hkpMalleableConstraintData.field_110
 member-unverified hkpMalleableConstraintData.field_114
@@ -127564,7 +127476,6 @@ size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWardHealthChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWeaponSpeedChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorCopyGraphVariableChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorWantBlockChannel>
-size-unverified BSTArray
 size-unverified BSTArrayAllocatorFunctor<BSScrapArrayAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<1024>_>
@@ -128184,7 +128095,6 @@ size-unverified BSTEventSink<WeaponAttack::Event>
 size-unverified BSTEventSink<WordLearned::Event>
 size-unverified BSTEventSink<WordUnlocked::Event>
 size-unverified BSTEventSink<bhkCharacterMoveFinishEvent>
-size-unverified BSTEventSource
 size-unverified BSTFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType>
 size-unverified BSTFreeList<BSScript::Internal::FunctionMessage>
 size-unverified BSTFreeList<BSTSmartPointer<SkyrimScript::DelayFunctor,BSTSmartPointerIntrusiveRefCount>_>
@@ -128270,7 +128180,6 @@ size-unverified BasicArrayImplementation<unsigned_char,1>
 size BeamProjectile 240
 size-unverified BedEnterHandler
 size-unverified BedFurnitureExitHandler
-size-unverified BoneNodeEntry
 size-unverified BookMenu
 size-unverified BowDrawnHandler
 size-unverified BowReleaseHandler
@@ -129440,7 +129349,7 @@ size-unverified ImageSpaceModifierInstanceTemp
 size-unverified ImageSpaceState
 size-missing InfiniteList
 size-unverified InitTESThread
-size-unverified InputContext
+size InputContext 60
 size-unverified InputEvent
 size-unverified InputEventQueue
 size-missing InstalledContent
@@ -130010,7 +129919,6 @@ size-unverified PArrayPoint
 size-unverified PackageCreator
 size-unverified PackageList::IPackageVisitor
 size-unverified PairedStopHandler
-size-unverified ParamInfo
 size-unverified PathFollowerStateFollowPathToParameter
 size-unverified PathFollowerStateKeepLastDirection
 size-unverified PathFollowerStatePlayIdle
@@ -130103,7 +130011,6 @@ size-unverified SaveStorageWrapper
 size-unverified ScaleformFile::MemoryFile
 size-unverified ScrapHeap
 size-unverified ScreenshotHandler
-size-unverified ScriptParamTypeInfo
 size-unverified ScriptedRefEffect
 size-missing SearchPage
 size-missing SearchResultsPage
@@ -130457,7 +130364,6 @@ size-unverified UnitTestZeroOverheadHeap
 size-unverified UnitTest_BSStreamParserData
 size-unverified UnitTest_BSStreamParserStream
 size-unverified UserEventEnabledEvent
-size-unverified UserEventMapping
 size-unverified UserEventNames
 size-unverified VATS::ICommandListVisitor
 size-unverified VATSCameraState
@@ -131702,7 +131608,6 @@ size-unverified hkpLimitedHingeConstraintData
 size-unverified hkpLinearParametricCurve
 size-unverified hkpListAgent
 size-unverified hkpListShape
-size-unverified hkpListShape::ChildInfo
 size-unverified hkpMalleableConstraintData
 size-unverified hkpMapPointsToSubShapeContactMgr
 size-unverified hkpMaxSizeMotion
@@ -133140,25 +133045,27 @@ site 36559 30a 2ec e80f0fd300
 site 36561 c7a adf e8ec69fdff
 site-unverified 36561 178e
 site 36588 1c 1c e8ffd60000
+site 37334 4 4 4883 4883
 site-unverified 37356 b64
 site-unverified 37610 78
 site-missing 37611 7f
 site 40450 69 69 e8d265e5ff
 site-unverified 40476 0
 site-unverified 40476 bc
+site 40476 c5 123 41838ef400000001 0f1f840000000000
 site 40522 94 94 e8171c5b00
 site 40522 d7 d7 e8d41b5b00
 site 40620 1e7 214 e8b7a0cfff
 site 41996 303 2ea ff9088030000
 site 50784 1a6 1a6 e825aecaff
-site 50832 4dd 431 f30f1035576a5a01
+site 50832 4dd 431 f30f1035576a5a01 eb58909090909090
 site 50923 11 11 e88ac4ffff
 site 52118 59 59 e8d2e7acff
 site 53016 5 5 e99669c1ff
 site 53919 cfb c7f e86cf00500
 site-missing 55564 0
 site-missing 55565 0
-site-unverified 68542 3cc
+site 68542 3cc 3d8 8b8018010000 8b801801000080e1df
 site 68617 7b 7b e8d00c0000
 site-unverified 77226 275
 site 77246 9 9 e8f2045d00
@@ -133172,4 +133079,5 @@ enum InputContext.Favor 10
 enum-missing InputContext.Marketplace
 enum InputContext.count 11
 enum InputContext.none 12
+enum InputDevice.None 5
 enum UIMessageType.none d

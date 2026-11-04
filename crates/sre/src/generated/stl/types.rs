@@ -167,7 +167,7 @@ pub struct std___Func_impl_no_alloc_lambda_1459e3345bd16f8390f2a6d7e256b9ad_void
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_1459e3345bd16f8390f2a6d7e256b9ad>,void,BSPlatform::BNetResult,unsigned___int64>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 72],
+    unknown_8: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1066,7 +1066,7 @@ pub struct std___Func_impl_no_alloc_lambda_e6c73e78bebc5eef6f32d9f780dca163_void
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_e6c73e78bebc5eef6f32d9f780dca163>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 56],
+    unknown_8: [u8; 56],
     /// +0x40 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_40: [u8; 8],
@@ -1166,11 +1166,11 @@ pub struct std___Func_impl_no_alloc_lambda_ff9fd72b76d084838a2f7283e5859cbe_void
     /// +0x0 `vtbl:std::_Func_impl_no_alloc<<lambda_ff9fd72b76d084838a2f7283e5859cbe>,void,BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 68],
+    unknown_34: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1979,7 +1979,7 @@ pub struct std___Ref_count_obj_BNETRequester__BundlePreviewRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::BundlePreviewRequestResponse>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 376],
+    unknown_8: [u8; 376],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2007,7 +2007,7 @@ pub struct std___Ref_count_obj_BNETRequester__CollectionRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CollectionRequestResponse>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 472],
+    unknown_8: [u8; 472],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2035,7 +2035,7 @@ pub struct std___Ref_count_obj_BNETRequester__CreationRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::CreationRequestResponse>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 744],
+    unknown_8: [u8; 744],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2115,7 +2115,7 @@ pub struct std___Ref_count_obj_BNETRequester__ModRequestResponse {
     /// +0x0 `vtbl:std::_Ref_count_obj<BNETRequester::ModRequestResponse>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 744],
+    unknown_8: [u8; 744],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2221,7 +2221,7 @@ pub struct std___Ref_count_obj_BSPlatform__contentFetchHandler {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::contentFetchHandler>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 792],
+    unknown_8: [u8; 792],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2236,7 +2236,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedAuthorContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedAuthorContentSearch>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 2384],
+    unknown_8: [u8; 2384],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2251,7 +2251,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedContentSearch>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1824],
+    unknown_8: [u8; 1824],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2266,7 +2266,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedPlayerContentSearch {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedPlayerContentSearch>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1792],
+    unknown_8: [u8; 1792],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2281,7 +2281,7 @@ pub struct std___Ref_count_obj_BSPlatform__pagedPlayerContentSearchBundles {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::pagedPlayerContentSearchBundles>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1720],
+    unknown_8: [u8; 1720],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2302,32 +2302,32 @@ pub struct std___Ref_count_obj_BSPlatform__searchResultHandler {
     /// +0xC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_C: [u8; 4],
-    pub unknown_10: [u8; 56],
+    unknown_10: [u8; 56],
     /// +0x48 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 4],
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_68: [u8; 8],
-    pub unknown_70: [u8; 48],
+    unknown_70: [u8; 48],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_A8: [u8; 4],
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2351,7 +2351,7 @@ pub struct std___Ref_count_obj_BSPlatform__titleStorageDownload {
     /// +0x0 `vtbl:std::_Ref_count_obj<BSPlatform::titleStorageDownload>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 104],
+    unknown_8: [u8; 104],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2375,7 +2375,7 @@ pub struct std___Ref_count_obj_MarketplaceEvent__make_EventHandlerEnabler {
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 60],
+    unknown_14: [u8; 60],
     /// +0x50 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_50: [u8; 8],
@@ -2396,7 +2396,7 @@ pub struct std___Ref_count_obj_bnet__Account__SteamExternalAuthInfo {
     /// +0x0 `vtbl:std::_Ref_count_obj<bnet::Account::SteamExternalAuthInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1120],
+    unknown_8: [u8; 1120],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2411,7 +2411,7 @@ pub struct std___Ref_count_resource_unsigned_char____ptr64_lambda_407b4391a4cb96
     /// +0x0 `vtbl:std::_Ref_count_resource<unsigned_char*___ptr64,<lambda_407b4391a4cb964ac5cc57d63e7e618f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2475,7 +2475,7 @@ const _: () = assert!(core::mem::offset_of!(std__basic_filebuf_char_std__char_tr
 /// Bases: `std::basic_istream<char,std::char_traits<char>_>`@0x0, `std::basic_ios<char,std::char_traits<char>_>`@0x0 (virtual), `std::ios_base`@0x0 (virtual), `std::_Iosb<int>`@0x8 (virtual).
 #[repr(C, align(8))]
 pub struct std__basic_ifstream_char_std__char_traits_char__ {
-    pub unknown_0: [u8; 176],
+    unknown_0: [u8; 176],
     /// +0xB0 `vtbl:std::basic_ifstream<char,std::char_traits<char>_>:B0`, rtti
     #[doc(hidden)]
     pub ____vftable_B0: [u8; 8],
@@ -2489,7 +2489,7 @@ const _: () = assert!(core::mem::offset_of!(std__basic_ifstream_char_std__char_t
 /// Bases: `std::basic_ostream<char,std::char_traits<char>_>`@0x0, `std::basic_ios<char,std::char_traits<char>_>`@0x0 (virtual), `std::ios_base`@0x0 (virtual), `std::_Iosb<int>`@0x8 (virtual).
 #[repr(C, align(8))]
 pub struct std__basic_ostringstream_char_std__char_traits_char_std__allocator_char__ {
-    pub unknown_0: [u8; 136],
+    unknown_0: [u8; 136],
     /// +0x88 `vtbl:std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char>_>:88`, rtti
     #[doc(hidden)]
     pub ____vftable_88: [u8; 8],
@@ -2506,13 +2506,13 @@ pub struct std__basic_stringbuf_char_std__char_traits_char_std__allocator_char__
     /// +0x0 `vtbl:std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::std__basic_stringbuf_char_std__char_traits_char_std__allocator_char___vtable,
-    pub unknown_8: [u8; 96],
+    unknown_8: [u8; 96],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_70: [u8; 4],
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

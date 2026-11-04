@@ -4,12 +4,13 @@
 //! buffer before the present, on the thread that ran the overlay's windows. The suite's window has a
 //! button `DevBench` clicks through the keyboard (Tab focuses it, Enter and Space click it), a text
 //! field the suite focuses after the third click and types "skyrim" into with `SendInput` scan codes
-//! (real key presses: `DevBench`'s injected keys never become characters, request 9c), and a magenta
+//! (real key presses: `DevBench`'s injected keys never become characters, request 9c; each one is
+//! sent only while the game's window is in the foreground), and a magenta
 //! square at a fixed place; a witness sink on the input source counts the W presses the overlay lets
 //! through. `SAVE_TESTS` check the clicks, the typed text, the witness, the square in the back buffer
 //! while open and its absence once closed; the frame showing the typed text is written as a bitmap.
 
-use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU32, AtomicUsize, Ordering};
 use std::sync::{Mutex, OnceLock};
 
 use overlay::egui;
@@ -19,7 +20,7 @@ use skyrim::render::PresentFn;
 use sre::{BSEventNotifyControl, ButtonEvent, InputDevice, InputEvent};
 use windows_sys::Win32::System::Threading::GetCurrentThreadId;
 
-use crate::{Test, check};
+use crate::{Test, check, not_run};
 
 pub const TESTS: &[(&str, Test)] = &[("installed", installed)];
 pub const SAVE_TESTS: &[(&str, Test)] = &[("clicks", clicks), ("typed", typed), ("capture", capture), ("drawn", drawn), ("closed", closed)];
@@ -42,14 +43,15 @@ static SHOT: Mutex<Option<Result<String, String>>> = Mutex::new(None);
 static TEXT: Mutex<String> = Mutex::new(String::new());
 static TYPING: AtomicBool = AtomicBool::new(false);
 static OPEN_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
-/// What reached the game while typing: presses of the typed keys, characters, and whether the game owned the foreground.
+/// What reached the game while typing: presses of the typed keys and characters.
 static TYPED_KEYS: AtomicU32 = AtomicU32::new(0);
 static TYPED_CHARS: AtomicU32 = AtomicU32::new(0);
-static TYPING_CONTEXT: Mutex<String> = Mutex::new(String::new());
+static TYPING_LAYOUT: AtomicUsize = AtomicUsize::new(0);
+static TYPING_REFUSED: AtomicBool = AtomicBool::new(false);
 static CLOSED_PIXEL: Mutex<Option<[u8; 3]>> = Mutex::new(None);
 
 fn key_press(event: &InputEvent) -> Option<&ButtonEvent> {
-    event.as_button().filter(|b| InputDevice::from_u32(event.device) == Some(InputDevice::Keyboard) && b.is_pressed())
+    event.as_button().filter(|b| InputDevice::from_engine(event.device) == Some(InputDevice::Keyboard) && b.is_pressed())
 }
 
 struct Witness;
@@ -127,19 +129,27 @@ fn window(ctx: &egui::Context) {
     ctx.layer_painter(egui::LayerId::new(egui::Order::Foreground, egui::Id::unique("probe square"))).rect_filled(square, 0.0, egui::Color32::from_rgb(MAGENTA[0], MAGENTA[1], MAGENTA[2]));
 }
 
-/// Presses and releases each key of [`TYPED`] through `SendInput` with scan codes, the way a keyboard
-/// reaches `DirectInput`.
-fn type_keys() {
+fn game_in_front() -> bool {
     use windows_sys::Win32::System::Threading::GetCurrentProcessId;
-    use windows_sys::Win32::UI::Input::KeyboardAndMouse::{GetKeyboardLayout, INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, SendInput};
     use windows_sys::Win32::UI::WindowsAndMessaging::{GetForegroundWindow, GetWindowThreadProcessId};
-    std::thread::sleep(std::time::Duration::from_millis(300));
     let mut owner = 0;
     unsafe { GetWindowThreadProcessId(GetForegroundWindow(), &raw mut owner) };
-    let layout = unsafe { GetKeyboardLayout(DRAW_THREAD.load(Ordering::Relaxed)) } as usize;
-    *TYPING_CONTEXT.lock().unwrap() = format!("game in the foreground when typing: {}, main thread keyboard layout {layout:#x}", owner == unsafe { GetCurrentProcessId() });
+    owner == unsafe { GetCurrentProcessId() }
+}
+
+/// Presses and releases each key of [`TYPED`] through `SendInput` with scan codes, the way a keyboard
+/// reaches `DirectInput`. `SendInput` goes to whichever window has focus, so typing stops for good the
+/// moment that is not the game's.
+fn type_keys() {
+    use windows_sys::Win32::UI::Input::KeyboardAndMouse::{GetKeyboardLayout, INPUT, INPUT_0, INPUT_KEYBOARD, KEYBDINPUT, KEYEVENTF_KEYUP, KEYEVENTF_SCANCODE, SendInput};
+    std::thread::sleep(std::time::Duration::from_millis(300));
+    TYPING_LAYOUT.store(unsafe { GetKeyboardLayout(DRAW_THREAD.load(Ordering::Relaxed)) } as usize, Ordering::Relaxed);
     for code in TYPED.1 {
         for flags in [KEYEVENTF_SCANCODE, KEYEVENTF_SCANCODE | KEYEVENTF_KEYUP] {
+            if !game_in_front() {
+                TYPING_REFUSED.store(true, Ordering::Relaxed);
+                return;
+            }
             let input = INPUT { r#type: INPUT_KEYBOARD, Anonymous: INPUT_0 { ki: KEYBDINPUT { wVk: 0, wScan: code, dwFlags: flags, time: 0, dwExtraInfo: 0 } } };
             unsafe { SendInput(1, &raw const input, i32::try_from(size_of::<INPUT>()).unwrap_or(i32::MAX)) };
             std::thread::sleep(std::time::Duration::from_millis(40));
@@ -195,9 +205,14 @@ fn clicks() -> Result<String, String> {
     Ok(format!("{clicks} clicks through Tab and Enter, Space and the left button, {} frames drawn open", OPEN_FRAMES.load(Ordering::Relaxed)))
 }
 
+const TYPING_NOT_RUN: &str = "the game's window was not in the foreground, so nothing more was typed";
+
 fn typed() -> Result<String, String> {
+    if TYPING_REFUSED.load(Ordering::Relaxed) {
+        return not_run(TYPING_NOT_RUN);
+    }
     let text = TEXT.lock().unwrap().clone();
-    let seen = format!("{}, typed key presses seen: {}, characters seen: {}", TYPING_CONTEXT.lock().unwrap(), TYPED_KEYS.load(Ordering::Relaxed), TYPED_CHARS.load(Ordering::Relaxed));
+    let seen = format!("main thread keyboard layout {:#x}, typed key presses seen: {}, characters seen: {}", TYPING_LAYOUT.load(Ordering::Relaxed), TYPED_KEYS.load(Ordering::Relaxed), TYPED_CHARS.load(Ordering::Relaxed));
     check(text == TYPED.0, &format!("the field holds {text:?} after typing {:?}; {seen}", TYPED.0))?;
     Ok(format!("the focused field received {text:?} from scan-code key presses; {seen}"))
 }
@@ -215,6 +230,9 @@ fn drawn() -> Result<String, String> {
     }
     let pixel = *OPEN_PIXEL.lock().unwrap();
     check(pixel == Some(MAGENTA), &format!("pixel at the square while open: {pixel:?}"))?;
+    if TYPING_REFUSED.load(Ordering::Relaxed) {
+        return not_run(TYPING_NOT_RUN);
+    }
     let shot = SHOT.lock().unwrap().clone().ok_or("the frame with the typed text was not captured")??;
     Ok(format!("square pixel {pixel:?} while open; frame written to {shot}"))
 }

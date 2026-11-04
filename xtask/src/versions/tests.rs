@@ -122,7 +122,7 @@ fn nothing_becomes_an_accessor_without_a_differing_file() {
     assert_eq!(none, canonical, "1.7.104's own file is not compared");
     assert_eq!(none.replace("for 1.5.97, 1.6.353, 1.6.1170", "for 1.5.97, 1.6.353"), unchanged, "an all-same file changes only the provisional line");
     assert!(none.contains("pub health: f32,"));
-    assert!(!none.contains("member!(") && !none.contains("slot_index!(") && !none.contains("base_offset!("));
+    assert!(!none.contains("member!(") && !none.contains("slot_at!(") && !none.contains("base_at!("));
     assert!(none.contains("provisional: no difference file yet for 1.5.97, 1.6.353, 1.6.1170"));
 }
 
@@ -151,10 +151,10 @@ fn a_moved_slot_base_and_size_are_read_from_the_profile() {
     let inp = ledger();
     let text = generated(&inp, &moved());
     assert!(text.contains(r#"virtual_function!(self, "Actor", 0x0, 1, (*const Self))(core::ptr::from_ref(self))"#), "{text}");
-    assert!(text.contains(r#"pub fn SLOT_Update() -> usize { slot_index!("Actor", 0x0, 1) }"#));
+    assert!(text.contains(r#"pub fn SLOT_Update() -> usize { slot_at!("Actor", 0x0, 1) }"#));
     assert!(text.contains("pub __slot_1: *const c_void,"));
     assert!(text.contains("pub slot_0: *const c_void,"));
-    assert!(text.contains(r#"byte_add(base_offset!("Actor:ActorValueOwner", 0x10))"#), "{text}");
+    assert!(text.contains(r#"byte_add(base_at!("Actor:ActorValueOwner", 0x10))"#), "{text}");
 }
 
 #[test]
@@ -296,5 +296,29 @@ pub unsafe extern "C" fn uses(actor: *mut sre::Actor) -> f32 {
     let records: Vec<String> = versionlib::manifest::read(&dll).unwrap().iter().map(ToString::to_string).collect();
     for record in ["id 300", "id 301", "member Actor.health", "member Actor.process", "member Actor.inner", "slot Actor[0].1", "size Actor", "base Actor:ActorValueOwner", "enum Stage.Last", "enum Stage.*"] {
         assert!(records.iter().any(|r| r == record), "{record} not in {records:?}");
+    }
+}
+
+#[test]
+fn a_site_patch_fills_or_answers_the_compared_row_and_refuses_to_contradict_it() {
+    let inp = ledger();
+    let mut other = runtime(&file("1.6.1170", "versionlib-1-6-1170-0.bin", "AE", MOVES));
+    other.apply_site_patches("# a comment\n1.6.1170 300 10 14 e801020304 9090909090 how\n1.6.1170 300 50 60 aa bb read by hand\n1.5.97 300 70 70 aa bb another runtime\n").unwrap();
+    let text = &profiles(&inp, std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-1170.profile")];
+    assert!(text.contains("site 300 10 14 e801020304 9090909090\n"), "{text}");
+    assert!(text.contains("site 300 50 60 aa bb\n"), "{text}");
+    assert!(!text.contains("300 70"), "{text}");
+    assert!(other.apply_site_patches("1.6.1170 300 30 31 e8 90 moved").unwrap_err().contains("difference file"));
+    assert!(other.apply_site_patches("1.6.1170 300 30 30 e9 90 other bytes").unwrap_err().contains("difference file"));
+    assert!(other.apply_site_patches("1.6.1170 300 20 20 e8 90 absent").unwrap_err().contains("absent"));
+    assert!(other.apply_site_patches("1.6.1170 300 10 14 e8").unwrap_err().contains("malformed"));
+}
+
+#[test]
+fn the_site_patch_table_is_well_formed() {
+    for name in ["1.5.97", "1.6.353", "1.6.1170"] {
+        let mut bare = runtime(&file(name, "versionlib-1-6-1170-0.bin", "AE", "{}"));
+        bare.apply_site_patches(SITE_PATCHES).unwrap();
+        assert!(bare.sites.len() >= 3, "{name}");
     }
 }

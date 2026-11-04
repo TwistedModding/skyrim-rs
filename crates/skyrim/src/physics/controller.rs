@@ -47,21 +47,21 @@ pub fn root_shape(controller: &bhkCharacterController) -> Option<&hkpShape> {
     let base = core::ptr::from_ref(controller).cast::<u8>();
     let object = match kind(controller)? {
         Kind::Proxy => {
-            let proxy = unsafe { read_ptr::<hkpCharacterProxy>(base.add(sre::member_offset!("bhkCharProxyController.characterProxy", 0x340) + sre::member_offset!("bhkCharacterProxy.field_10", 0x10) - sre::base_offset!("bhkCharProxyController:bhkCharacterController", 0x10))).as_ref() }?;
+            let proxy = unsafe { read_ptr::<hkpCharacterProxy>(base.add(sre::member_offset!("bhkCharProxyController.characterProxy") + sre::member_offset!("bhkCharacterProxy.field_10") - sre::base_offset!("bhkCharProxyController:bhkCharacterController"))).as_ref() }?;
             core::ptr::from_ref(proxy.shape_phantom()?).cast::<u8>()
         }
         Kind::RigidBody => {
-            let body = read_ptr::<u8>(unsafe { base.add(sre::member_offset!("bhkCharRigidBodyController.characterRigidBody", 0x340) + sre::member_offset!("bhkCharacterRigidBody.field_10", 0x10)) });
+            let body = read_ptr::<u8>(unsafe { base.add(sre::member_offset!("bhkCharRigidBodyController.characterRigidBody") + sre::member_offset!("bhkCharacterRigidBody.field_10")) });
             if body.is_null() {
                 return None;
             }
-            read_ptr::<u8>(unsafe { body.add(sre::member_offset!("hkpCharacterRigidBody.m_hkpRayShapeCollectionFilter_20", 0x20)) })
+            read_ptr::<u8>(unsafe { body.add(sre::member_offset!("hkpCharacterRigidBody.m_hkpRayShapeCollectionFilter_20")) })
         }
     };
     if object.is_null() {
         return None;
     }
-    unsafe { read_ptr::<hkpShape>(object.add(sre::member_offset!("hkpWorldObject.m_hkpRayShapeCollectionFilter_20", 0x20))).as_ref() }
+    unsafe { read_ptr::<hkpShape>(object.add(sre::member_offset!("hkpWorldObject.m_hkpRayShapeCollectionFilter_20"))).as_ref() }
 }
 
 /// The controller's physics world (slot 15).
@@ -73,7 +73,7 @@ fn world(controller: &bhkCharacterController) -> Option<&bhkWorld> {
 }
 
 fn lock_world(controller: &bhkCharacterController) -> Option<RwGuard> {
-    world(controller).map(|w| RwGuard::write(&w.worldLock))
+    world(controller).map(|w| RwGuard::write(w.worldLock()))
 }
 
 pub use sre::hkpListShape__ChildInfo as ListChild;
@@ -125,7 +125,7 @@ impl ShapeExt for hkpShape {
     fn capsule(&self) -> Option<Capsule> {
         (self.shape_type()? == hkpShapeType::Capsule).then(|| {
             let c = unsafe { &*core::ptr::from_ref(self).cast::<sre::hkpCapsuleShape>() };
-            Capsule { a: [c.vertexA.x, c.vertexA.y, c.vertexA.z], b: [c.vertexB.x, c.vertexB.y, c.vertexB.z], radius: c.radius }
+            Capsule { a: [c.vertexA.x, c.vertexA.y(), c.vertexA.z()], b: [c.vertexB.x, c.vertexB.y(), c.vertexB.z()], radius: c.radius }
         })
     }
 
@@ -133,7 +133,7 @@ impl ShapeExt for hkpShape {
         if self.shape_type()? != hkpShapeType::Capsule {
             return None;
         }
-        self.wrapper().map(|w| unsafe { core::ptr::from_ref(w).byte_add(sre::member_offset!("bhkShape.materialId", 0x20)).cast::<u32>().read() })
+        self.wrapper().map(|w| unsafe { core::ptr::from_ref(w).byte_add(sre::member_offset!("bhkShape.materialId")).cast::<u32>().read() })
     }
 
     fn convex_vertices(&self) -> Vec<[f32; 4]> {
@@ -142,9 +142,9 @@ impl ShapeExt for hkpShape {
         }
         let convex = unsafe { &*core::ptr::from_ref(self).cast::<sre::hkpConvexVerticesShape>() };
         let mut out: sre::hkArray = unsafe { core::mem::zeroed() };
-        out.set_capacityAndFlags(HK_ARRAY_DONT_FREE);
+        out.capacityAndFlags = HK_ARRAY_DONT_FREE;
         unsafe { convex.get_vertices((&raw mut out).cast()) };
-        let vertices = if out.data().is_null() { Vec::new() } else { unsafe { core::slice::from_raw_parts(out.data().cast::<[f32; 4]>(), out.size() as usize) }.to_vec() };
+        let vertices = if out.data.is_null() { Vec::new() } else { unsafe { core::slice::from_raw_parts(out.data.cast::<[f32; 4]>(), out.size as usize) }.to_vec() };
         free_array(&out);
         vertices
     }
@@ -160,13 +160,13 @@ const HK_ARRAY_DONT_FREE: u32 = 0x8000_0000;
 /// Gives an array's storage back to the container heap allocator the engine grew it from.
 fn free_array(array: &sre::hkArray) {
     type Free = unsafe extern "C" fn(*const c_void, *mut c_void, i32);
-    if array.data().is_null() || array.capacityAndFlags() & HK_ARRAY_DONT_FREE != 0 {
+    if array.data.is_null() || array.capacityAndFlags & HK_ARRAY_DONT_FREE != 0 {
         return;
     }
     let Ok(allocator) = crate::reloc().address(sre::id!(globals::g_hkContainerHeapAllocator)) else { return };
     let free: Free = unsafe { core::mem::transmute::<usize, Free>(read_ptr::<usize>(allocator as *const u8).add(sre::slot_index!("hkContainerHeapAllocator::Allocator", 0x0, 4)).read()) };
-    let bytes = (array.capacityAndFlags() & 0x3fff_ffff).cast_signed() * 16;
-    unsafe { free(allocator as *const c_void, array.data(), bytes) };
+    let bytes = (array.capacityAndFlags & 0x3fff_ffff).cast_signed() * 16;
+    unsafe { free(allocator as *const c_void, array.data, bytes) };
 }
 
 /// One Havok reference on a shape, removed on drop (`hkReferencedObject::RemoveReference`, which
@@ -222,14 +222,14 @@ pub struct ConvexBuild {
 impl ConvexBuild {
     fn engine(&self) -> sre::hkpConvexVerticesShape__BuildConfig {
         let mut out: sre::hkpConvexVerticesShape__BuildConfig = unsafe { core::mem::zeroed() };
-        out.set_buildConnectivity(u8::from(self.connectivity));
-        out.set_shrinkByConvexRadius(u8::from(self.shrink_by_radius));
-        out.set_shrinkFlag(u8::from(self.optimized_shrinking));
-        out.set_convexRadius(self.convex_radius);
-        out.set_maxVertices(self.max_vertices.cast_unsigned());
-        out.set_shrinkParam0(self.max_relative_shrink);
-        out.set_shrinkParam1(self.max_shrink_displacement);
-        out.set_field_14(self.max_cos_bevel_angle);
+        out.buildConnectivity = u8::from(self.connectivity);
+        out.shrinkByConvexRadius = u8::from(self.shrink_by_radius);
+        out.shrinkFlag = u8::from(self.optimized_shrinking);
+        out.convexRadius = self.convex_radius;
+        out.maxVertices = self.max_vertices.cast_unsigned();
+        out.shrinkParam0 = self.max_relative_shrink;
+        out.shrinkParam1 = self.max_shrink_displacement;
+        out.field_14 = self.max_cos_bevel_angle;
         out
     }
 }
@@ -241,7 +241,7 @@ fn heap() -> Option<*const c_void> {
     if router.is_null() {
         return None;
     }
-    let heap = read_ptr::<c_void>(unsafe { router.add(sre::member_offset!("hkMemoryRouter.heap", 0x58)) });
+    let heap = read_ptr::<c_void>(unsafe { router.add(sre::member_offset!("hkMemoryRouter.heap")) });
     (!heap.is_null()).then_some(heap)
 }
 
@@ -260,7 +260,7 @@ fn alloc(heap: *const c_void, size: u16) -> Option<NonNull<c_void>> {
     type Alloc = unsafe extern "C" fn(*const c_void, i32) -> *mut c_void;
     let alloc: Alloc = unsafe { core::mem::transmute::<usize, Alloc>(read_ptr::<usize>(heap.cast()).add(sre::slot_index!("hkMemoryAllocator", 0x0, 1)).read()) };
     let block = NonNull::new(unsafe { alloc(heap, i32::from(size)) })?;
-    unsafe { block.as_ptr().byte_add(sre::member_offset!("hkReferencedObject.memSizeAndFlags", 0x8)).cast::<u16>().write_unaligned(size) };
+    unsafe { block.as_ptr().byte_add(sre::member_offset!("hkReferencedObject.memSizeAndFlags")).cast::<u16>().write_unaligned(size) };
     Some(block)
 }
 
@@ -279,12 +279,12 @@ pub fn build_convex(points: &[[f32; 4]], config: &ConvexBuild) -> Option<Shape> 
     let count = i32::try_from(points.len()).ok()?;
     let block = alloc(heap, convex_size())?;
     let mut strided: sre::hkStridedVertices = unsafe { core::mem::zeroed() };
-    strided.set_vertices(points.as_ptr().cast_mut().cast());
-    strided.set_numVertices(count.cast_unsigned());
-    strided.set_striding(16);
+    strided.vertices = points.as_ptr().cast_mut().cast();
+    strided.numVertices = count.cast_unsigned();
+    strided.striding = 16;
     let config = config.engine();
     let shape = unsafe { block.cast::<sre::hkpConvexVerticesShape>().as_ref() };
-    unsafe { shape.build_from_points((&raw const strided).cast(), (&raw const config).cast()) };
+    shape.build_from_points(&strided, &config);
     let built = Shape(block.cast());
     if referenced(built.get()).referenceCount.cast_signed() <= 0 {
         core::mem::forget(built);
@@ -306,10 +306,10 @@ fn rebuild_list(like: &hkpListShape, children: &[*const hkpShape], filter_infos:
     unsafe {
         let entries = (*list).childInfoData.cast::<ListChild>();
         for (i, filter_info) in filter_infos.take((*list).childInfoSize as usize).enumerate() {
-            (*entries.add(i)).set_collisionFilterInfo(filter_info);
+            (*entries.add(i)).collisionFilterInfo = filter_info;
         }
         (*list).enabledChildren = like.enabledChildren;
-        (*list).numDisabledChildren = like.numDisabledChildren;
+        (&mut *list).set_numDisabledChildren(like.numDisabledChildren());
     }
     Some(built)
 }
@@ -352,9 +352,9 @@ pub fn replace(controller: &bhkCharacterController, target: &hkpShape, new: Shap
         return swap_root(controller, root, new.get()).then(|| Replacement { controller: NonNull::from(controller), root: held_root, installed: new, child: None });
     }
     let list = as_list(root)?;
-    let index = root.children().iter().position(|c| core::ptr::eq(c.shape(), target))?;
-    let shapes: Vec<_> = root.children().iter().enumerate().map(|(i, c)| if i == index { core::ptr::from_ref(new.get()) } else { c.shape }).collect();
-    let rebuilt = rebuild_list(list, &shapes, root.children().iter().map(ListChild::collisionFilterInfo))?;
+    let index = root.children().iter().position(|c| c.shape().is_some_and(|shape| core::ptr::eq(shape, target)))?;
+    let shapes: Vec<_> = root.children().iter().enumerate().map(|(i, c)| if i == index { core::ptr::from_ref(new.get()) } else { c.shape().map_or(core::ptr::null(), core::ptr::from_ref) }).collect();
+    let rebuilt = rebuild_list(list, &shapes, root.children().iter().map(|c| c.collisionFilterInfo))?;
     let (held_root, held_target) = (Shape::hold(root), Shape::hold(target));
     target_wrapper.set_referenced_object(referenced(new.get()));
     if !swap_root(controller, root, rebuilt.get()) {
@@ -369,7 +369,7 @@ impl Replacement {
     #[must_use]
     pub fn installed(&self) -> &hkpShape {
         match self.child {
-            Some((index, _)) => self.installed.get().children().get(index).and_then(|c| unsafe { c.shape.as_ref() }).unwrap_or(self.installed.get()),
+            Some((index, _)) => self.installed.get().children().get(index).and_then(ListChild::shape).unwrap_or(self.installed.get()),
             None => self.installed.get(),
         }
     }
@@ -396,6 +396,13 @@ impl Replacement {
     }
 }
 
+fn set_vector(vector: &mut sre::hkVector4, x: f32, y: f32, z: f32, w: f32) {
+    vector.x = x;
+    vector.set_y(y);
+    vector.set_z(z);
+    vector.set_w(w);
+}
+
 /// Writes `capsule` into a capsule shape the controller collides with, as the engine's own
 /// bumper builder edits one in place (end points with w = radius, then the radius), and
 /// recomputes the root list's cached bounds. With the world locked.
@@ -408,8 +415,8 @@ pub fn set_capsule(controller: &bhkCharacterController, shape: &hkpShape, capsul
     let [ax, ay, az] = capsule.a;
     let [bx, by, bz] = capsule.b;
     unsafe {
-        ((*c).vertexA.x, (*c).vertexA.y, (*c).vertexA.z, (*c).vertexA.w) = (ax, ay, az, capsule.radius);
-        ((*c).vertexB.x, (*c).vertexB.y, (*c).vertexB.z, (*c).vertexB.w) = (bx, by, bz, capsule.radius);
+        set_vector(&mut (*c).vertexA, ax, ay, az, capsule.radius);
+        set_vector(&mut (*c).vertexB, bx, by, bz, capsule.radius);
         (*c).radius = capsule.radius;
     }
     if let Some(list) = root_shape(controller).and_then(as_list) {

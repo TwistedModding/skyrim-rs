@@ -60,7 +60,7 @@ pub struct BGSAIWorldLocationPointRadius {
     /// +0x10 `float`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
@@ -69,7 +69,7 @@ pub struct BGSAIWorldLocationPointRadius {
     pub field_28: u64,
     /// +0x30 `undefined2`, ctor store
     pub field_30: u16,
-    pub unknown_32: [u8; 6],
+    unknown_32: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -282,7 +282,7 @@ pub struct BGSAddonNode {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -295,23 +295,23 @@ pub struct BGSAddonNode {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSAddonNode:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSAddonNode_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_40: [u8; 8],
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
@@ -402,45 +402,45 @@ pub struct BGSApparatus {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSApparatus:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSApparatus_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSApparatus:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSApparatus_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:BGSApparatus:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::BGSApparatus_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:BGSApparatus:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::BGSApparatus_vtable_88,
     /// +0x90 `undefined4`, base TESValueForm
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `vtbl:BGSApparatus:98`, rtti
     #[doc(hidden)]
     pub __vftable_98: *const crate::raw::vtables::BGSApparatus_vtable_98,
     /// +0xA0 `undefined4`, base TESWeightForm
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `vtbl:BGSApparatus:A8`, rtti
     #[doc(hidden)]
     pub __vftable_A8: *const crate::raw::vtables::BGSApparatus_vtable_A8,
@@ -449,7 +449,7 @@ pub struct BGSApparatus {
     /// +0xB8 `vtbl:BGSApparatus:B8`, rtti
     #[doc(hidden)]
     pub __vftable_B8: *const crate::raw::vtables::BGSApparatus_vtable_B8,
-    pub unknown_C0: [u8; 16],
+    unknown_C0: [u8; 16],
     /// +0xD0 `vtbl:BGSApparatus:D0`, rtti
     #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::BGSApparatus_vtable_D0,
@@ -464,19 +464,19 @@ pub struct BGSApparatus {
     pub keywords: *mut c_void,
     /// +0xF8 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `vtbl:BGSApparatus:100`, rtti
     #[doc(hidden)]
     pub __vftable_100: *const crate::raw::vtables::BGSApparatus_vtable_100,
     /// +0x108 `undefined4`, base TESQualityForm
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `vtbl:BGSApparatus:110`, rtti
     #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::BGSApparatus_vtable_110,
     /// +0x118 `undefined4`, base TESDescription
     pub field_118: u32,
-    pub unknown_11C: [u8; 4],
+    unknown_11C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -531,7 +531,7 @@ pub struct BGSArtObject {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -544,23 +544,23 @@ pub struct BGSArtObject {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSArtObject:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSArtObject_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_40: [u8; 8],
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -599,7 +599,7 @@ pub struct BGSArtObjectCloneTask {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -607,30 +607,30 @@ pub struct BGSArtObjectCloneTask {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BGSArtObjectCloneTask:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BGSArtObjectCloneTask_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 28],
+    unknown_5C: [u8; 28],
     /// +0x78 `undefined8`, ctor store
     pub field_78: u64,
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -892,25 +892,25 @@ pub struct BGSCollisionLayer {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSCollisionLayer:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSCollisionLayer_vtable_20,
     /// +0x28 `undefined4`, base TESDescription
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     /// +0x34 `undefined8`, ctor store
     pub field_34: u64,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 4],
-    pub unknown_5C: [u8; 4],
+    unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1755,7 +1755,7 @@ pub struct BGSGamebryoSequenceGenerator {
     pub __vftable: *const crate::raw::vtables::BGSGamebryoSequenceGenerator_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1843,7 +1843,7 @@ pub struct BGSGamebryoSequenceGenerator {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2081,33 +2081,33 @@ pub struct BGSHeadPart {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSHeadPart:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSHeadPart_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSHeadPart:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSHeadPart_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_40: [u8; 8],
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined1`, ctor store
     pub field_68: u8,
-    pub unknown_69: [u8; 3],
+    unknown_69: [u8; 3],
     /// +0x6C `undefined4`, ctor store
     pub field_6C: u32,
-    pub unknown_70: [u8; 24],
+    unknown_70: [u8; 24],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
-    pub unknown_90: [u8; 120],
+    unknown_90: [u8; 120],
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
     /// +0x110 `undefined8`, ctor store
@@ -2404,16 +2404,16 @@ pub struct BGSLensFlare {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
-    pub unknown_28: [u8; 16],
+    unknown_28: [u8; 16],
     /// +0x38 `undefined4`, ctor store
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2548,7 +2548,7 @@ pub struct BGSLocAlias {
     /// +0x0 `vtbl:BGSLocAlias:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSLocAlias_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
@@ -2557,12 +2557,12 @@ pub struct BGSLocAlias {
     pub field_1C: u32,
     /// +0x20 `undefined2`, ctor store
     pub field_20: u16,
-    pub unknown_22: [u8; 6],
+    unknown_22: [u8; 6],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
@@ -2572,7 +2572,7 @@ pub struct BGSLocAlias {
     pub field_48: u64,
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
     #[doc(hidden)]
@@ -2725,13 +2725,13 @@ pub struct BGSMaterialObject {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMaterialObject:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMaterialObject_vtable_20,
     /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
     pub model: crate::BSFixedString,
-    pub unknown_30: [u8; 24],
+    unknown_30: [u8; 24],
     /// +0x48 `vtbl:BGSMaterialObject:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSMaterialObject_vtable_48,
@@ -2762,7 +2762,7 @@ pub struct BGSMaterialObject {
     /// +0x7C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7C: [u8; 8],
-    pub unknown_84: [u8; 52],
+    unknown_84: [u8; 52],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2906,17 +2906,17 @@ pub struct BGSMessage {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSMessage:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSMessage_vtable_20,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     /// +0x30 `vtbl:BGSMessage:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSMessage_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     /// +0x48 `undefined8`, ctor store
@@ -2972,7 +2972,7 @@ pub struct BGSMovableStatic {
     /// +0x0 `vtbl:BGSMovableStatic:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSMovableStatic_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `vtbl:BGSMovableStatic:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BGSMovableStatic_vtable_10,
@@ -2989,7 +2989,7 @@ pub struct BGSMovableStatic {
     pub field_38: u16,
     /// +0x3A `undefined1`, base TESObjectSTAT
     pub field_3A: u8,
-    pub unknown_3B: [u8; 5],
+    unknown_3B: [u8; 5],
     /// +0x40 `undefined2`, base TESObjectSTAT
     pub field_40: u16,
     /// +0x42 `undefined2`, base TESObjectSTAT
@@ -3002,23 +3002,23 @@ pub struct BGSMovableStatic {
     pub field_48: u16,
     /// +0x4A `undefined2`, base TESObjectSTAT
     pub field_4A: u16,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `vtbl:BGSMovableStatic:50`, rtti
     #[doc(hidden)]
     pub __vftable_50: *const crate::raw::vtables::BGSMovableStatic_vtable_50,
-    pub unknown_58: [u8; 8],
+    unknown_58: [u8; 8],
     /// +0x60 `undefined8`, base TESObjectSTAT
     #[doc(hidden)]
     pub __field_60: [u8; 8],
-    pub unknown_68: [u8; 16],
+    unknown_68: [u8; 16],
     /// +0x78 `undefined8`, base TESObjectSTAT
     pub field_78: u64,
     /// +0x80 `undefined4`, base TESObjectSTAT
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base TESObjectSTAT
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, base TESObjectSTAT
     pub field_90: u64,
     /// +0x98 `undefined1`, base TESObjectSTAT
@@ -3027,12 +3027,12 @@ pub struct BGSMovableStatic {
     pub field_99: u16,
     /// +0x9B `undefined1`, base TESObjectSTAT
     pub field_9B: u8,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     /// +0xA8 `undefined1`, ctor store
     pub field_A8: u8,
-    pub unknown_A9: [u8; 7],
+    unknown_A9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3235,19 +3235,19 @@ pub struct BGSMusicPaletteTrack {
     pub __vftable: *const crate::raw::vtables::BGSMusicPaletteTrack_vtable,
     /// +0x8 `undefined4`, base BGSMusicTrack
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BGSMusicTrack
     pub field_10: u64,
     /// +0x18 `undefined4`, base BGSMusicTrack
     pub field_18: u32,
-    pub unknown_1C: [u8; 76],
+    unknown_1C: [u8; 76],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     /// +0x74 `undefined8`, ctor store
     pub field_74: u64,
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_80: [u8; 8],
@@ -4450,7 +4450,7 @@ pub struct BGSProcedureAcquireExecState {
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
     pub field_10: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
     /// +0x20 `undefined8`, ctor store
@@ -5049,7 +5049,7 @@ pub struct BGSProcedureFollowExecState {
     pub __field_38: [u8; 8],
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
-    pub unknown_41: [u8; 7],
+    unknown_41: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5457,7 +5457,7 @@ pub struct BGSProcedurePatrolExecState {
     pub __field_50: [u8; 2],
     /// +0x52 `undefined1`, ctor store
     pub field_52: u8,
-    pub unknown_53: [u8; 5],
+    unknown_53: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5537,7 +5537,7 @@ pub struct BGSProcedureSandboxExecState {
     pub __vftable: *const crate::raw::vtables::BGSProcedureSandboxExecState_vtable,
     /// +0x8 `undefined8`, base IProcedureTreeExecState
     pub field_8: u64,
-    pub unknown_10: [u8; 24],
+    unknown_10: [u8; 24],
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
     /// +0x30 `undefined8`, ctor store
@@ -5566,12 +5566,12 @@ pub struct BGSProcedureSandboxExecState {
     pub field_74: u32,
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
-    pub unknown_7C: [u8; 4],
+    unknown_7C: [u8; 4],
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
     /// +0x84 `undefined1`, ctor store
     pub field_84: u8,
-    pub unknown_85: [u8; 3],
+    unknown_85: [u8; 3],
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     /// +0x8C `undefined8`, ctor store
@@ -5594,7 +5594,7 @@ pub struct BGSProcedureSandboxExecState {
     /// +0xB1 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B1: [u8; 1],
-    pub unknown_B2: [u8; 6],
+    unknown_B2: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7165,7 +7165,7 @@ pub struct BGSProcedureUseWeaponExecState {
     pub field_30: u64,
     /// +0x38 `undefined2`, ctor store
     pub field_38: u16,
-    pub unknown_3A: [u8; 2],
+    unknown_3A: [u8; 2],
     /// +0x3C `undefined4`, ctor store
     pub field_3C: u32,
     #[doc(hidden)]
@@ -7448,7 +7448,7 @@ pub struct BGSQueuedGrassModelHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -7456,23 +7456,23 @@ pub struct BGSQueuedGrassModelHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BGSQueuedGrassModelHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BGSQueuedGrassModelHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7650,17 +7650,17 @@ pub struct BGSRagdoll {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BGSRagdoll:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BGSRagdoll_vtable_20,
     /// +0x28 `class:BSFixedString`, base TESModel, semantic; model path relative to Data\Meshes\ (the loader prepends "Data\\Meshes\\"); the qword is the pooled C string pointer (high)
     pub model: crate::BSFixedString,
-    pub unknown_30: [u8; 40],
+    unknown_30: [u8; 40],
     /// +0x58 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_58: [u8; 1],
-    pub unknown_59: [u8; 3],
+    unknown_59: [u8; 3],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
     /// +0x60 `undefined4`, ctor store
@@ -7691,10 +7691,10 @@ pub struct BGSRagdoll {
     /// +0x94 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_94: [u8; 4],
-    pub unknown_98: [u8; 24],
+    unknown_98: [u8; 24],
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
-    pub unknown_B1: [u8; 3],
+    unknown_B1: [u8; 3],
     /// +0xB4 `undefined8`, ctor store
     pub field_B4: u64,
     /// +0xBC `undefined8`, ctor store
@@ -7705,35 +7705,35 @@ pub struct BGSRagdoll {
     /// +0xCC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_CC: [u8; 4],
-    pub unknown_D0: [u8; 48],
+    unknown_D0: [u8; 48],
     /// +0x100 `undefined1`, ctor store
     pub field_100: u8,
-    pub unknown_101: [u8; 55],
+    unknown_101: [u8; 55],
     /// +0x138 `undefined1`, ctor store
     pub field_138: u8,
-    pub unknown_139: [u8; 55],
+    unknown_139: [u8; 55],
     /// +0x170 `undefined1`, ctor store
     pub field_170: u8,
-    pub unknown_171: [u8; 7],
+    unknown_171: [u8; 7],
     /// +0x178 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_178: [u8; 8],
     /// +0x180 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_180: [u8; 4],
-    pub unknown_184: [u8; 4],
+    unknown_184: [u8; 4],
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
     /// +0x18C `undefined2`, ctor store
     pub field_18C: u16,
     /// +0x18E `undefined1`, ctor store
     pub field_18E: u8,
-    pub unknown_18F: [u8; 1],
+    unknown_18F: [u8; 1],
     /// +0x190 `undefined8`, ctor store
     pub field_190: u64,
     /// +0x198 `undefined8`, ctor store
     pub field_198: u64,
-    pub unknown_1A0: [u8; 24],
+    unknown_1A0: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7999,39 +7999,39 @@ pub struct BGSScene {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 21],
+    unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 20],
+    unknown_34: [u8; 20],
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 20],
+    unknown_4C: [u8; 20],
     /// +0x60 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_60: [u8; 4],
-    pub unknown_64: [u8; 20],
+    unknown_64: [u8; 20],
     /// +0x78 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 4],
-    pub unknown_7C: [u8; 20],
+    unknown_7C: [u8; 20],
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
-    pub unknown_94: [u8; 4],
+    unknown_94: [u8; 4],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    pub unknown_A4: [u8; 12],
+    unknown_A4: [u8; 12],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
     /// +0xB8 `undefined1`, ctor store
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, ctor store
     pub field_BC: u32,
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8172,10 +8172,10 @@ pub struct BGSShaderParticleGeometryData {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 21],
+    unknown_1B: [u8; 21],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `class:TESTexture`, member ctor TESTexture
     #[doc(hidden)]
     pub __m_TESTexture_38: [u8; 16],
@@ -8268,7 +8268,7 @@ pub struct BGSStaticCollection {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -8281,20 +8281,20 @@ pub struct BGSStaticCollection {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSStaticCollection:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSStaticCollection_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_40: [u8; 8],
-    pub unknown_48: [u8; 16],
+    unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
     /// +0x60 `undefined4`, base TESModelTextureSwap
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8708,29 +8708,29 @@ pub struct BGSTalkingActivator {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSTalkingActivator:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSTalkingActivator_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:BGSTalkingActivator:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::BGSTalkingActivator_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:BGSTalkingActivator:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::BGSTalkingActivator_vtable_78,
@@ -8746,7 +8746,7 @@ pub struct BGSTalkingActivator {
     pub keywords: *mut c_void,
     /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
     /// +0xB0 `undefined8`, base TESObjectACTI
@@ -8755,7 +8755,7 @@ pub struct BGSTalkingActivator {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base TESObjectACTI
     pub field_C0: u16,
-    pub unknown_C2: [u8; 14],
+    unknown_C2: [u8; 14],
     /// +0xD0 `undefined8`, ctor store
     pub field_D0: u64,
     #[doc(hidden)]
@@ -8823,7 +8823,7 @@ pub struct BGSTextureSet {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -8836,18 +8836,18 @@ pub struct BGSTextureSet {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BGSTextureSet:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BGSTextureSet_vtable_30,
     /// +0x38 `undefined4`, base BSTextureSet
     pub field_38: u32,
-    pub unknown_3C: [u8; 132],
+    unknown_3C: [u8; 132],
     /// +0xC0 `undefined8`, ctor store
     pub field_C0: u64,
     /// +0xC8 `undefined2`, ctor store
     pub field_C8: u16,
-    pub unknown_CA: [u8; 2],
+    unknown_CA: [u8; 2],
     /// +0xCC `undefined8`, ctor store
     pub field_CC: u64,
     /// +0xD4 `undefined8`, ctor store
@@ -8883,7 +8883,7 @@ pub struct BGSTextureSet {
     /// +0x124 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_124: [u8; 8],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9744,7 +9744,7 @@ pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 4],
-    pub unknown_C: [u8; 28],
+    unknown_C: [u8; 28],
     /// +0x28 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 8],
@@ -9754,7 +9754,7 @@ pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x38 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_38: [u8; 8],
-    pub unknown_40: [u8; 16],
+    unknown_40: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9775,7 +9775,7 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkAutoWater_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base bhkRefObject
     pub field_10: u64,
     /// +0x18 `undefined8`, base bhkWorldObject
@@ -9785,7 +9785,7 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x28 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 1],
-    pub unknown_29: [u8; 7],
+    unknown_29: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9881,7 +9881,7 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkWaterfall:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bhkWaterfall_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9970,7 +9970,7 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10038,7 +10038,7 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__bshkAutoWater_vtable,
     /// +0x8 `undefined4`, base hkpWorldObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10156,14 +10156,14 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     pub field_11C: u32,
     /// +0x120 `undefined1`, base hkpAabbPhantom
     pub field_120: u8,
-    pub unknown_121: [u8; 15],
+    unknown_121: [u8; 15],
     /// +0x130 `vtbl:BGSWaterCollisionManager::bshkAutoWater:130`, rtti
     #[doc(hidden)]
     pub __vftable_130: *const crate::raw::vtables::BGSWaterCollisionManager__bshkAutoWater_vtable_130,
     /// +0x138 `undefined4`, base BGSWaterCollisionManager::BGSWaterUpdateI
     #[doc(hidden)]
     pub __field_138: [u8; 4],
-    pub unknown_13C: [u8; 28],
+    unknown_13C: [u8; 28],
     /// +0x158 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
     #[doc(hidden)]
     pub __field_158: [u8; 8],

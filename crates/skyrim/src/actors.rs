@@ -166,7 +166,7 @@ impl ActorExt for Actor {
         sre::fixed_size!("BipedObject", BipedObject);
         let biped = self.field_268() as *const BipedAnim;
         match unsafe { biped.as_ref() } {
-            Some(b) => unsafe { core::slice::from_raw_parts((core::ptr::from_ref(b) as usize + sre::member_offset!("BipedAnim.objects", 0x10)) as *const BipedObject, COUNT) },
+            Some(b) => unsafe { core::slice::from_raw_parts((core::ptr::from_ref(b) as usize + sre::member_offset!("BipedAnim.objects")) as *const BipedObject, COUNT) },
             None => &[],
         }
     }
@@ -267,7 +267,7 @@ pub fn high_actor_handles() -> Vec<RefHandle> {
         return Vec::new();
     }
     let _guard = crate::RwGuard::read(unsafe { &*(lock as *const sre::BSReadWriteLock) });
-    unsafe { handles_at(lists.add(sre::member_offset!("ProcessLists.highActorHandles", 0x30)).cast()) }
+    unsafe { handles_at(lists.add(sre::member_offset!("ProcessLists.highActorHandles")).cast()) }
 }
 
 pub trait PlayerCharacterExt {

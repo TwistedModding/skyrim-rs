@@ -13,7 +13,7 @@ pub struct BSBatchRenderer {
     pub __vftable: *const crate::raw::vtables::BSBatchRenderer_vtable,
     /// +0x8 `class:BSTArray`, semantic; 0x30-byte technique buckets: five pass-list heads (+0x0..+0x20) and a non-empty mask u32 (+0x28); list 0 plain, 1 alpha-tested (NiAlphaProperty flags bit 9), 2 property flag bit 36, 3 both, 4 property flag bit 54 (high)
     pub buckets: crate::BSTArray,
-    pub unknown_20: [u8; 8],
+    unknown_20: [u8; 8],
     /// +0x28 `undefined1`, semantic; hash map techniqueId -> bucket index (+0x2c capacity, +0x30 free, +0x38 sentinel, +0x48 entries) (medium)
     #[doc(hidden)]
     pub __techniqueToBucket: [u8; 40],
@@ -29,7 +29,7 @@ pub struct BSBatchRenderer {
     pub depthGroupDepth: u32,
     /// +0x6C `undefined1`, semantic; ctor 1; slot 3 zeroes each drawn bucket and the end-of-draw paths free +0x58's nodes when set (medium)
     pub clearAfterRender: u8,
-    pub unknown_6D: [u8; 3],
+    unknown_6D: [u8; 3],
     /// +0x70 `undefined8`, semantic; 16 pointers to 0x28-byte groups {BSBatchRenderer* batch (lazy, kind 100), passHead +0x8, passTail +0x10, float depth +0x20, u16 count +0x24, u8 flags +0x26 (bit 0 = list mode: plain pass list drawn in order)} (high)
     #[doc(hidden)]
     pub __groups: [u8; 128],
@@ -208,7 +208,7 @@ pub struct BSFadeNode {
     pub __vftable: *const crate::raw::vtables::BSFadeNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -219,12 +219,12 @@ pub struct BSFadeNode {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -247,7 +247,7 @@ pub struct BSFadeNode {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `float`, semantic; distance (times a global scale) where fading starts (medium)
@@ -273,14 +273,14 @@ pub struct BSFadeNode {
     /// +0x14C `float`, semantic; 1.0 at init; not read in these bodies (low)
     #[doc(hidden)]
     pub __unknown14c: [u8; 4],
-    pub unknown_150: [u8; 2],
+    unknown_150: [u8; 2],
     /// +0x152 `undefined1`, semantic; 0xf3 at init (low)
     pub unknown152: u8,
     /// +0x153 `undefined1`, semantic; low nibble indexes a per-type fade distance table (ID_390867); types 6 and 8 take special paths; bit 5 set at init (medium)
     pub fadeType: u8,
     /// +0x154 `u8`, semantic; the depth pre-pass (mode 0xc) may draw this subtree while it is fading (bEnableStippleFade) (medium)
     pub stippleFade: u8,
-    pub unknown_155: [u8; 3],
+    unknown_155: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -443,15 +443,15 @@ pub struct BSLightingShaderMaterialBase {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `class:NiColor`, semantic; 3 floats (1,1,1) (high); retyped undefined1 -> class:NiColor: meaning: 3 floats (1,1,1); 0x1548820 SPECULAR constant = colour * strength, w = specularPower
     pub specularColor: crate::NiColor,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `ptr:NiSourceTexture`, semantic; texture set slot 0, bound to sampler 0 (medium)
     pub diffuseTexture: *mut crate::NiSourceTexture,
     /// +0x50 `undefined4`, semantic; render target id used instead of +0x48 when not -1 (medium)
     pub diffuseRenderTarget: u32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:NiSourceTexture`, semantic; texture set slot 1, sampler 1 (medium)
     pub normalTexture: *mut crate::NiSourceTexture,
     /// +0x60 `ptr:NiSourceTexture`, semantic; texture set slot 2, bound to sampler 12 by the SOFT_LIGHTING / RIM_LIGHTING techniques (medium)
@@ -460,7 +460,7 @@ pub struct BSLightingShaderMaterialBase {
     pub specularBackLightingTexture: *mut crate::NiSourceTexture,
     /// +0x70 `undefined4`, semantic; sampler address mode applied to every bound texture (3 by default) (high)
     pub textureClampMode: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `ptr:BSTextureSet`, semantic; texture paths (a BSShaderTextureSet) (high)
     pub textureSet: *mut crate::BSTextureSet,
     /// +0x80 `float`, semantic; material alpha (1.0) (high)
@@ -478,7 +478,7 @@ pub struct BSLightingShaderMaterialBase {
     /// +0x98 `undefined4`, semantic; spin lock of slot 8 (medium)
     #[doc(hidden)]
     pub __textureLoadLock: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -653,8 +653,7 @@ const _: () = assert!(core::mem::offset_of!(BSXFlags, flags) == 0x18);
 #[repr(C, align(8))]
 pub struct CubeMapRecord {
     /// +0x0 `pointer`, semantic; cube texture (high)
-    #[doc(hidden)]
-    pub __texture: [u8; 8],
+    pub texture: *mut c_void,
     /// +0x8 `pointer`, semantic; 6 face RTVs (high)
     pub faceRTV: [u8; 48],
     /// +0x38 `pointer`, semantic; TextureCube SRV (high)
@@ -664,43 +663,38 @@ pub struct CubeMapRecord {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CubeMapRecord>() == 0x40);
-const _: () = assert!(core::mem::offset_of!(CubeMapRecord, __texture) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CubeMapRecord, texture) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CubeMapRecord, faceRTV) == 0x8);
 const _: () = assert!(core::mem::offset_of!(CubeMapRecord, __srv) == 0x38);
 
 /// `DepthStencilProperties`: size 0x10 (exact).
 /// Meaning: creation parameters of a depth-stencil target (high, frame pass).
 /// Evidence: creation parameters of a depth-stencil target; read by 0x100a980; size: 0x1015470 copies 0x10 bytes per id.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct DepthStencilProperties {
     /// +0x0 `undefined4`, semantic (high)
-    #[doc(hidden)]
-    pub __width: [u8; 4],
+    pub width: u32,
     /// +0x4 `undefined4`, semantic (high)
-    #[doc(hidden)]
-    pub __height: [u8; 4],
+    pub height: u32,
     /// +0x8 `undefined4`, semantic; array size; >1 gives per-slice Texture2DArray views (8 DSV slots) (high)
-    #[doc(hidden)]
-    pub __slices: [u8; 4],
+    pub slices: u32,
     /// +0xC `undefined1`, semantic; 1 for ids 0, 1, 6; not read by the creator (low)
     pub unknownC: u8,
     /// +0xD `undefined1`, semantic; 24-bit depth with 8-bit stencil and the stencil SRV (high)
-    #[doc(hidden)]
-    pub __stencil: [u8; 1],
+    pub stencil: u8,
     /// +0xE `undefined1`, semantic; 16-bit depth (R16/D16) (high)
-    #[doc(hidden)]
-    pub __use16BitDepth: [u8; 1],
+    pub use16BitDepth: u8,
     pub unknown_F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<DepthStencilProperties>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __width) == 0x0);
-const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __height) == 0x4);
-const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __slices) == 0x8);
+const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, width) == 0x0);
+const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, height) == 0x4);
+const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, slices) == 0x8);
 const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, unknownC) == 0xC);
-const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __stencil) == 0xD);
-const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, __use16BitDepth) == 0xE);
+const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, stencil) == 0xD);
+const _: () = assert!(core::mem::offset_of!(DepthStencilProperties, use16BitDepth) == 0xE);
 
 /// `DepthStencilRecord`: size 0x98 (exact).
 /// Meaning: D3D objects of one depth-stencil target id (texture array, up to 8 slices) (high, frame pass).
@@ -737,36 +731,32 @@ const _: () = assert!(core::mem::offset_of!(DepthStencilRecord, __stencilSRV) ==
 /// Evidence: per-frame renderer values: render and back buffer size, TAA jitter, the render frame counter, dynamic resolution; 0x1012480 writes +0x24..+0x30; 0x101e360 jitter; PresentFrame increments +0x54; size: static block at 0x33363a0 passed as this to 0x101e130/0x101e2d0/0x101e300/0x101e360; highest seen access +0x12e.
 #[repr(C, align(8))]
 pub struct FrameState {
-    pub unknown_0: [u8; 36],
+    unknown_0: [u8; 36],
     /// +0x24 `undefined4`, semantic; render width: the back buffer width of windows 0/1, the max over further windows; the size of every full-screen target (high)
     pub screenWidth: u32,
     /// +0x28 `undefined4`, semantic; render height (high)
     pub screenHeight: u32,
     /// +0x2C `undefined4`, semantic; swap chain width (iSize W:Display at init, the buffer desc afterwards) (high)
-    #[doc(hidden)]
-    pub __backBufferWidth: [u8; 4],
+    pub backBufferWidth: u32,
     /// +0x30 `undefined4`, semantic; swap chain height (iSize H:Display) (high)
     pub backBufferHeight: u32,
-    pub unknown_34: [u8; 16],
+    unknown_34: [u8; 16],
     /// +0x44 `float`, semantic; projection jitter (x, y) in clip units, 0 when TAA is off (high)
-    #[doc(hidden)]
-    pub __jitter: [u8; 8],
-    pub unknown_4C: [u8; 8],
+    pub jitter: [u8; 8],
+    unknown_4C: [u8; 8],
     /// +0x54 `undefined4`, semantic; g_RenderFrameCounter, +1 per PresentFrame (high)
-    #[doc(hidden)]
-    pub __frameCounter: [u8; 4],
-    pub unknown_58: [u8; 8],
+    pub frameCounter: u32,
+    unknown_58: [u8; 8],
     /// +0x60 `undefined1`, semantic; set at frame start, cleared by PresentFrame (medium)
-    #[doc(hidden)]
-    pub __frameStarted: [u8; 1],
-    pub unknown_61: [u8; 87],
+    pub frameStarted: u8,
+    unknown_61: [u8; 87],
     /// +0xB8 `class:BSTArray`, semantic; BSTArray of CameraMatrixEntry (0x290 each): data +0xb8, capacity +0xc0, count +0xc8; keyed by camera and jitter flag (high)
     #[doc(hidden)]
     pub __cameraMatrices: [u8; 24],
     /// +0xD0 `undefined4`, semantic; 0..7 into the jitter tables at +0xd4/+0xf4 (high)
     #[doc(hidden)]
     pub __jitterIndex: [u8; 4],
-    pub unknown_D4: [u8; 64],
+    unknown_D4: [u8; 64],
     /// +0x114 `float`, semantic; current dynamic resolution width ratio (0.1..1, quantised to width/4 steps); the world viewport width factor (high)
     #[doc(hidden)]
     pub __dynamicWidthRatio: [u8; 4],
@@ -794,18 +784,18 @@ pub struct FrameState {
     /// +0x12E `u8`, semantic; set by the DynamicResolution console command when a value != 1 was typed: auto adjustment stops (high)
     #[doc(hidden)]
     pub __manualRatio: [u8; 1],
-    pub unknown_12F: [u8; 1],
+    unknown_12F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FrameState>() == 0x130);
 const _: () = assert!(core::mem::offset_of!(FrameState, screenWidth) == 0x24);
 const _: () = assert!(core::mem::offset_of!(FrameState, screenHeight) == 0x28);
-const _: () = assert!(core::mem::offset_of!(FrameState, __backBufferWidth) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(FrameState, backBufferWidth) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(FrameState, backBufferHeight) == 0x30);
-const _: () = assert!(core::mem::offset_of!(FrameState, __jitter) == 0x44);
-const _: () = assert!(core::mem::offset_of!(FrameState, __frameCounter) == 0x54);
-const _: () = assert!(core::mem::offset_of!(FrameState, __frameStarted) == 0x60);
+const _: () = assert!(core::mem::offset_of!(FrameState, jitter) == 0x44);
+const _: () = assert!(core::mem::offset_of!(FrameState, frameCounter) == 0x54);
+const _: () = assert!(core::mem::offset_of!(FrameState, frameStarted) == 0x60);
 const _: () = assert!(core::mem::offset_of!(FrameState, __cameraMatrices) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(FrameState, __jitterIndex) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(FrameState, __dynamicWidthRatio) == 0x114);
@@ -830,7 +820,7 @@ pub struct ImageSpaceEffectDepthOfField {
     pub __vftable: *const crate::raw::vtables::ImageSpaceEffectDepthOfField_vtable,
     /// +0x8 `undefined2`, base ImageSpaceEffect
     pub field_8: u16,
-    pub unknown_A: [u8; 6],
+    unknown_A: [u8; 6],
     /// +0x10 `undefined8`, base ImageSpaceEffect
     pub m_NiTPrimitiveArray_10: u64,
     /// +0x18 `undefined8`, base ImageSpaceEffect
@@ -873,7 +863,7 @@ pub struct ImageSpaceEffectDepthOfField {
     pub field_84: u32,
     /// +0x88 `undefined1`, base ImageSpaceEffect
     pub field_88: u8,
-    pub unknown_89: [u8; 7],
+    unknown_89: [u8; 7],
     /// +0x90 `undefined8`, member ctor NiTPrimitiveArray<bool>
     pub m_NiTPrimitiveArray_90: u64,
     /// +0x98 `undefined8`, ctor store
@@ -903,11 +893,11 @@ pub struct ImageSpaceEffectDepthOfField {
     /// +0xC0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_C0: [u8; 1],
-    pub unknown_C1: [u8; 135],
+    unknown_C1: [u8; 135],
     /// +0x148 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_148: [u8; 1],
-    pub unknown_149: [u8; 15],
+    unknown_149: [u8; 15],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1067,7 +1057,7 @@ pub struct NiAlphaProperty {
     pub __vftable: *const crate::raw::vtables::NiAlphaProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -1078,13 +1068,13 @@ pub struct NiAlphaProperty {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined2`, semantic; bit 0 blend enable; bits 1-4 and 5-8 two 4-bit blend factors (source and destination by order); bit 9 test enable; bits 10-12 test function; bit 13 compared but unnamed; bits 14-15 prevent sharing on clone. Default 0xec; see the flag rows (medium)
     pub flags: u16,
     /// +0x32 `undefined1`, semantic; alpha test threshold (0..255) (high)
     #[doc(hidden)]
     pub __alphaTestRef: [u8; 1],
-    pub unknown_33: [u8; 5],
+    unknown_33: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1374,8 +1364,7 @@ pub struct RenderPass {
     /// +0x0 `ptr:BSShader`, semantic; shader whose slots 2-7 draw the pass (high)
     pub shader: *mut crate::BSShader,
     /// +0x8 `ptr:BSShaderProperty`, semantic; owning shader property (high)
-    #[doc(hidden)]
-    pub __property: [u8; 8],
+    pub property: *mut crate::BSShaderProperty,
     /// +0x10 `ptr:BSGeometry`, semantic; geometry drawn (high)
     pub geometry: *mut crate::BSGeometry,
     /// +0x18 `undefined4`, semantic; global technique id; the batch key (ranges per shader, see enum TechniqueIdRanges); 0 = skipped (high)
@@ -1383,43 +1372,40 @@ pub struct RenderPass {
     /// +0x1C `undefined1`, semantic; selects the accumulator group the pass is filed into (enum AccumulationHint); 0xc also selects the single-stream draw in DrawGeometryByPrimitiveKind (high)
     pub accumulationHint: u8,
     /// +0x1D `undefined1`, semantic; cleared on alloc and release; 0x1539b10 writes 0xff as a u16 with +0x1e (low)
-    #[doc(hidden)]
-    pub __field_1D: [u8; 1],
+    pub field_1D: u8,
     /// +0x1E `undefined1`, semantic; default 3; low 7 bits and bit 7 copied to geometry+0x108 at draw; the lighting builder stores the fade node's LOD bits (+0x152 & 0xf, bit 7 of +0x153) (medium)
     pub lodMode: u8,
     /// +0x1F `undefined1`, semantic; count of BSLight pointers in sceneLights (high)
     pub numLights: u8,
     /// +0x20 `undefined1`, semantic; cleared on alloc (low)
-    #[doc(hidden)]
-    pub __field_20: [u8; 1],
-    pub unknown_21: [u8; 7],
+    pub field_20: u8,
+    unknown_21: [u8; 7],
     /// +0x28 `ptr:RenderPass`, semantic; next pass of the property's pass list (what GetRenderPasses returns) (high)
     pub next: *mut crate::RenderPass,
     /// +0x30 `ptr:RenderPass`, semantic; link inside a BSBatchRenderer bucket or a list-mode group (high)
     pub batchNext: *mut crate::RenderPass,
     /// +0x38 `ptr:BSLight`, semantic; pointer to this pass's 16-slot BSLight* array (first numLights used); preassigned per pool entry (high)
-    #[doc(hidden)]
-    pub __sceneLights: [u8; 8],
+    pub sceneLights: *mut crate::BSLight,
     /// +0x40 `undefined4`, semantic; pool the pass came from (TLS +0x9f4 at alloc); the release drain returns it there (high)
     #[doc(hidden)]
     pub __poolIndex: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderPass>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(RenderPass, shader) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RenderPass, __property) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RenderPass, property) == 0x8);
 const _: () = assert!(core::mem::offset_of!(RenderPass, geometry) == 0x10);
 const _: () = assert!(core::mem::offset_of!(RenderPass, techniqueId) == 0x18);
 const _: () = assert!(core::mem::offset_of!(RenderPass, accumulationHint) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(RenderPass, __field_1D) == 0x1D);
+const _: () = assert!(core::mem::offset_of!(RenderPass, field_1D) == 0x1D);
 const _: () = assert!(core::mem::offset_of!(RenderPass, lodMode) == 0x1E);
 const _: () = assert!(core::mem::offset_of!(RenderPass, numLights) == 0x1F);
-const _: () = assert!(core::mem::offset_of!(RenderPass, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(RenderPass, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(RenderPass, next) == 0x28);
 const _: () = assert!(core::mem::offset_of!(RenderPass, batchNext) == 0x30);
-const _: () = assert!(core::mem::offset_of!(RenderPass, __sceneLights) == 0x38);
+const _: () = assert!(core::mem::offset_of!(RenderPass, sceneLights) == 0x38);
 const _: () = assert!(core::mem::offset_of!(RenderPass, __poolIndex) == 0x40);
 
 /// `RenderStateCache`: size 0x340 (exact).
@@ -1433,7 +1419,7 @@ pub struct RenderStateCache {
     pub dirtyShaderResources: u32,
     /// +0x8 `undefined4`, semantic; 16-bit per-slot dirty mask (medium)
     pub dirtySamplers: u32,
-    pub unknown_C: [u8; 12],
+    unknown_C: [u8; 12],
     /// +0x18 `undefined4`, semantic; colour target id per OM slot (8), -1 none (high)
     pub renderTargets: [u8; 32],
     /// +0x38 `undefined4`, semantic; depth-stencil id, -1 none (high)
@@ -1449,8 +1435,7 @@ pub struct RenderStateCache {
     #[doc(hidden)]
     pub __cubeMapFace: [u8; 4],
     /// +0x48 `undefined4`, semantic; per-slot RenderTargetMode (high)
-    #[doc(hidden)]
-    pub __renderTargetModes: [u8; 32],
+    pub renderTargetModes: [u8; 32],
     /// +0x68 `undefined4`, semantic; DepthStencilMode (high)
     #[doc(hidden)]
     pub __depthStencilMode: [u8; 4],
@@ -1460,7 +1445,7 @@ pub struct RenderStateCache {
     /// +0x70 `float`, semantic; D3D11_VIEWPORT applied with RSSetViewports when dirty bit 2 (high)
     #[doc(hidden)]
     pub __viewport: [u8; 24],
-    pub unknown_88: [u8; 696],
+    unknown_88: [u8; 696],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1473,7 +1458,7 @@ const _: () = assert!(core::mem::offset_of!(RenderStateCache, __depthStencil) ==
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __depthStencilSlice) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __cubeMapRenderTarget) == 0x40);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __cubeMapFace) == 0x44);
-const _: () = assert!(core::mem::offset_of!(RenderStateCache, __renderTargetModes) == 0x48);
+const _: () = assert!(core::mem::offset_of!(RenderStateCache, renderTargetModes) == 0x48);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __depthStencilMode) == 0x68);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __cubeMapMode) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(RenderStateCache, __viewport) == 0x70);
@@ -1491,7 +1476,7 @@ pub struct RenderTargetManager {
     /// +0xD70 `undefined1`, semantic; cube properties of 0xc {width, height, format} (high)
     #[doc(hidden)]
     pub __cubeMapProperties: [u8; 24],
-    pub unknown_D88: [u8; 24],
+    unknown_D88: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1503,33 +1488,25 @@ const _: () = assert!(core::mem::offset_of!(RenderTargetManager, __cubeMapProper
 /// `RenderTargetProperties`: size 0x1C (exact).
 /// Meaning: creation parameters of a colour render target (high, frame pass).
 /// Evidence: creation parameters of a colour render target; read by 0x100a590; size: 0x1015420 copies 0x1c bytes per id.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct RenderTargetProperties {
     /// +0x0 `undefined4`, semantic (high)
-    #[doc(hidden)]
-    pub __width: [u8; 4],
+    pub width: u32,
     /// +0x4 `undefined4`, semantic (high)
-    #[doc(hidden)]
-    pub __height: [u8; 4],
+    pub height: u32,
     /// +0x8 `undefined4`, semantic; DXGI_FORMAT of texture and views (high)
-    #[doc(hidden)]
-    pub __format: [u8; 4],
+    pub format: u32,
     /// +0xC `undefined1`, semantic; also create the copy texture and its SRV (high)
-    #[doc(hidden)]
-    pub __copyable: [u8; 1],
+    pub copyable: u8,
     /// +0xD `undefined1`, semantic; BindFlags 0xa8 and a UAV (high)
-    #[doc(hidden)]
-    pub __supportUnorderedAccess: [u8; 1],
+    pub supportUnorderedAccess: u8,
     /// +0xE `undefined1`, semantic; full mip chain with D3D11_RESOURCE_MISC_GENERATE_MIPS (high)
-    #[doc(hidden)]
-    pub __allowMipGeneration: [u8; 1],
+    pub allowMipGeneration: u8,
     pub unknown_F: [u8; 1],
     /// +0x10 `undefined4`, semantic; -1 for an own texture, else the mip of parentId the views use (high)
-    #[doc(hidden)]
-    pub __mipLevel: [u8; 4],
+    pub mipLevel: u32,
     /// +0x14 `undefined4`, semantic; target whose texture the mip views use (high)
-    #[doc(hidden)]
-    pub __parentId: [u8; 4],
+    pub parentId: u32,
     /// +0x18 `undefined2`, semantic; 1 in every call, 0x101 for id 0x4c; not read by the creator (low)
     pub unknown18: u16,
     pub unknown_1A: [u8; 2],
@@ -1537,14 +1514,14 @@ pub struct RenderTargetProperties {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetProperties>() == 0x1C);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __width) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __height) == 0x4);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __format) == 0x8);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __copyable) == 0xC);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __supportUnorderedAccess) == 0xD);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __allowMipGeneration) == 0xE);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __mipLevel) == 0x10);
-const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, __parentId) == 0x14);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, width) == 0x0);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, height) == 0x4);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, format) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, copyable) == 0xC);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, supportUnorderedAccess) == 0xD);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, allowMipGeneration) == 0xE);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, mipLevel) == 0x10);
+const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, parentId) == 0x14);
 const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, unknown18) == 0x18);
 
 /// `RenderTargetRecord`: size 0x30 (exact).
@@ -1553,17 +1530,14 @@ const _: () = assert!(core::mem::offset_of!(RenderTargetProperties, unknown18) =
 #[repr(C, align(8))]
 pub struct RenderTargetRecord {
     /// +0x0 `pointer`, semantic; the target texture (null for id 0 and mip views) (high)
-    #[doc(hidden)]
-    pub __texture: [u8; 8],
+    pub texture: *mut c_void,
     /// +0x8 `pointer`, semantic; SRV-only copy, filled by CopyResource when the target is bound with mode 5 (high)
-    #[doc(hidden)]
-    pub __copyTexture: [u8; 8],
+    pub copyTexture: *mut c_void,
     /// +0x10 `pointer`, semantic; RTV bound by FlushDirtyRenderState (high)
     #[doc(hidden)]
     pub __rtv: [u8; 8],
     /// +0x18 `pointer`, semantic; SRV (high)
-    #[doc(hidden)]
-    pub __srv: [u8; 8],
+    pub srv: *mut c_void,
     /// +0x20 `pointer`, semantic; SRV of copyTexture (high)
     #[doc(hidden)]
     pub __copySRV: [u8; 8],
@@ -1574,26 +1548,24 @@ pub struct RenderTargetRecord {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<RenderTargetRecord>() == 0x30);
-const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __texture) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __copyTexture) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, texture) == 0x0);
+const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, copyTexture) == 0x8);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __rtv) == 0x10);
-const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __srv) == 0x18);
+const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, srv) == 0x18);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __copySRV) == 0x20);
 const _: () = assert!(core::mem::offset_of!(RenderTargetRecord, __uav) == 0x28);
 
 /// `RenderWindow`: size 0x50 (exact).
 /// Meaning: one output window: HWND, rect, swap chain and back buffer views; g_CurrentRenderWindow (0x3330198) points at the active record (high, frame pass).
 /// Evidence: one output window: HWND, rect, swap chain and back buffer views; g_CurrentRenderWindow (0x3330198) points at the active record; 0x1009b00 (adds a swap chain for another HWND), 0x1012480, 0x1009d30, PresentFrame; size: record stride 0x50 inside Renderer (0x1009b00 loop, 0x1009d30 and 0x1012480 index).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct RenderWindow {
     /// +0x0 `undefined8`, semantic; HWND, the swap chain's OutputWindow (high)
     pub hwnd: u64,
     /// +0x8 `undefined4`, semantic; window x (record 0: iLocation X:Display) (high)
-    #[doc(hidden)]
-    pub __x: [u8; 4],
+    pub x: u32,
     /// +0xC `undefined4`, semantic; window y (iLocation Y:Display) (high)
-    #[doc(hidden)]
-    pub __y: [u8; 4],
+    pub y: u32,
     /// +0x10 `undefined4`, semantic; outer window width (AdjustWindowRect / GetWindowRect) (high)
     pub width: u32,
     /// +0x14 `undefined4`, semantic; outer window height (high)
@@ -1602,8 +1574,7 @@ pub struct RenderWindow {
     pub swapChain: *mut c_void,
     pub unknown_20: [u8; 8],
     /// +0x28 `undefined8`, semantic; zeroed after the back buffer views are created (low)
-    #[doc(hidden)]
-    pub __unknown28: [u8; 8],
+    pub unknown28: u64,
     /// +0x30 `pointer`, semantic; RTV of swap chain buffer 0 (high)
     pub backBufferRTV: *mut c_void,
     /// +0x38 `pointer`, semantic; SRV of swap chain buffer 0 (high)
@@ -1616,12 +1587,12 @@ pub struct RenderWindow {
 }
 const _: () = assert!(size_of::<RenderWindow>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, hwnd) == 0x0);
-const _: () = assert!(core::mem::offset_of!(RenderWindow, __x) == 0x8);
-const _: () = assert!(core::mem::offset_of!(RenderWindow, __y) == 0xC);
+const _: () = assert!(core::mem::offset_of!(RenderWindow, x) == 0x8);
+const _: () = assert!(core::mem::offset_of!(RenderWindow, y) == 0xC);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, width) == 0x10);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, height) == 0x14);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, swapChain) == 0x18);
-const _: () = assert!(core::mem::offset_of!(RenderWindow, __unknown28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(RenderWindow, unknown28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, backBufferRTV) == 0x30);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, backBufferSRV) == 0x38);
 const _: () = assert!(core::mem::offset_of!(RenderWindow, backBufferUAV) == 0x48);
@@ -1632,7 +1603,7 @@ const _: () = assert!(core::mem::offset_of!(RenderWindow, backBufferUAV) == 0x48
 /// Packed: a field lies below its natural alignment.
 #[repr(C, packed)]
 pub struct Renderer {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `undefined8`, semantic; function pointer called with no arguments before the targets are recreated for a pending resize (medium)
     pub onResizeCallback: u64,
     /// +0x10 `undefined4`, semantic; DXGI adapter index for IDXGIFactory::EnumAdapters (high)
@@ -1662,14 +1633,14 @@ pub struct Renderer {
     pub __initialized: [u8; 1],
     /// +0x34 `undefined1`, semantic; a resize is pending; UpdateWindowRenderTargetSize recreates the buffers and every target (high)
     pub resizePending: u8,
-    pub unknown_35: [u8; 3],
+    unknown_35: [u8; 3],
     /// +0x38 `undefined4`, semantic; window width applied after the pending resize (to window record 0 +0x10) (medium)
     pub pendingWidth: u32,
     /// +0x3C `undefined4`, semantic; window height applied after the pending resize (medium)
     pub pendingHeight: u32,
     /// +0x40 `undefined4`, semantic; SyncInterval for IDXGISwapChain::Present; copied once at init from iVSyncPresentInterval:Display (medium)
     pub presentInterval: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; the D3D11 device (also g_D3D11Device 0x3330190) (high)
     pub device: *mut c_void,
     /// +0x50 `pointer`, semantic; the immediate context (also g_D3D11Context 0x3331f30) (high)
@@ -1684,11 +1655,11 @@ pub struct Renderer {
     /// +0x2738 `class:CubeMapRecord`, semantic; cube target records of 0x40 (two fit before +0x27b8) (medium)
     #[doc(hidden)]
     pub __cubeMapTargets: [u8; 128],
-    pub unknown_27B8: [u8; 32],
+    unknown_27B8: [u8; 32],
     /// +0x27D8 `class:NiColorA`, semantic; RGBA used by ClearRenderTargetView for targets bound with mode 0 (high); retyped float -> class:NiColorA: FlushDirtyRenderState 0x100a050 passes &R+0x27d8 as ClearRenderTargetView's FLOAT ColorRGBA[4]
     #[doc(hidden)]
     pub __clearColor: [u8; 16],
-    pub unknown_27E8: [u8; 8],
+    unknown_27E8: [u8; 8],
     /// +0x27F0 `undefined1`, semantic; CRITICAL_SECTION guarding rendering; RenderFrame holds it from frame start through PresentFrame (high)
     #[doc(hidden)]
     pub __lock: [u8; 40],
@@ -1883,7 +1854,7 @@ pub struct Sky {
     /// +0x170 `undefined4`, ctor store (widths [4, 8])
     #[doc(hidden)]
     pub __field_170: [u8; 4],
-    pub unknown_174: [u8; 4],
+    unknown_174: [u8; 4],
     /// +0x178 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_178: [u8; 8],
@@ -1898,10 +1869,10 @@ pub struct Sky {
     /// +0x190 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_190: [u8; 4],
-    pub unknown_194: [u8; 28],
+    unknown_194: [u8; 28],
     /// +0x1B0 `float`, ctor store, semantic, runtime; game hour 0..24 the sun follows, copied from the GameHour global every sky update (high)
     pub currentGameHour: f32,
-    pub unknown_1B4: [u8; 4],
+    unknown_1B4: [u8; 4],
     /// +0x1B8 `float`, semantic; weather transition 0..1 (1 = done) (high)
     pub transition: f32,
     /// +0x1BC `u32`, semantic; sky mode: 0 off (ToggleSky), 1 interior, 2 sky dome only, 3 full (see enum SkyMode) (high)
@@ -1911,7 +1882,7 @@ pub struct Sky {
     /// +0x1C8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1C8: [u8; 4],
-    pub unknown_1CC: [u8; 4],
+    unknown_1CC: [u8; 4],
     /// +0x1D0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1D0: [u8; 4],
@@ -1960,7 +1931,7 @@ pub struct Sky {
     pub field_248: u64,
     /// +0x250 `undefined4`, ctor store
     pub field_250: u32,
-    pub unknown_254: [u8; 4],
+    unknown_254: [u8; 4],
     /// +0x258 `float`, ctor store
     pub field_258: f32,
     /// +0x25C `float`, ctor store
@@ -1977,15 +1948,15 @@ pub struct Sky {
     pub __field_270: [u8; 8],
     /// +0x278 `undefined8`, member ctor SkyEffectController
     pub m_SkyEffectController_278: u64,
-    pub unknown_280: [u8; 40],
+    unknown_280: [u8; 40],
     /// +0x2A8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2A8: [u8; 4],
-    pub unknown_2AC: [u8; 20],
+    unknown_2AC: [u8; 20],
     /// +0x2C0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2C0: [u8; 4],
-    pub unknown_2C4: [u8; 4],
+    unknown_2C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2137,20 +2108,18 @@ const _: () = assert!(core::mem::offset_of!(Sun, accumulator) == 0x50);
 /// `TypeNode`: size 0x10 (exact).
 /// Meaning: a class's type node, what GetRTTI (vtable slot 2) returns: the class name and the parent class's node; IsKindOf tests walk the parent chain (high, frame pass).
 /// Evidence: a class's type node, what GetRTTI (vtable slot 2) returns: the class name and the parent class's node; IsKindOf tests walk the parent chain; item 9 (request V). TypeNode_Init 0xef2640 (tail-called by 410 static initialisers with node, name, parent): 0xef2640 mov [rcx],rdx; 0xef2646 mov [rcx+8],r8.; size: TypeNode_Init writes exactly the two qwords.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct TypeNode {
     /// +0x0 `pointer`, semantic; class name (char*) (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: *mut c_void,
     /// +0x8 `ptr:TypeNode`, semantic; the parent class's type node, null at the root (high)
-    #[doc(hidden)]
-    pub __parent: [u8; 8],
+    pub parent: *mut crate::TypeNode,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TypeNode>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(TypeNode, __name) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TypeNode, __parent) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TypeNode, name) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TypeNode, parent) == 0x8);
 
 /// values in data/shadermaterialtypes.json (frame pass).
 #[repr(u32)]

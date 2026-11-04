@@ -1445,7 +1445,7 @@ impl crate::ChainExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vfunc_1(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36414, (*const Self, i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("ChainExplosion:BSTEventSink<BeamProjectileImpactEvent>", 0x148)), param_1, param_2) } }
+    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vfunc_1(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36414, (*const Self, i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("ChainExplosion:BSTEventSink<BeamProjectileImpactEvent>", 0x148)), param_1, param_2) } }
     /// `ChainExplosion::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 36405, rva 0x64b370).
     /// `ChainExplosion * ctor(ChainExplosion * this, longlong * param_1)`
     ///
@@ -6717,7 +6717,7 @@ impl crate::LoginMenu__loginMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(441666, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)), param_1, param_2, param_3) } }
+    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(441666, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)), param_1, param_2, param_3) } }
     /// `LoginMenu::loginMenu::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 441692, rva 0x57def0).
     /// `undefined dtor(loginMenu * this, char * param_1, longlong * param_2, ulonglong param_3)`
     ///

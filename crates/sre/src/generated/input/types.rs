@@ -12,11 +12,11 @@ pub struct ActivateHandler {
     /// +0x0 `vtbl:ActivateHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActivateHandler_vtable,
-    pub unknown_8: [u8; 19],
+    unknown_8: [u8; 19],
     /// +0x1B `u8`, semantic, runtime; set by Disable/EnablePlayerControls through PlayerControls::SetActivateEnabled (stores !enabled); tested by IsActivateEnabled (high)
     #[doc(hidden)]
     pub __activateDisabled: [u8; 1],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -33,7 +33,7 @@ pub struct AmiiboEvent {
     /// +0x0 `vtbl:AmiiboEvent:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 56],
+    unknown_8: [u8; 56],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -84,24 +84,24 @@ pub struct BSGamepadDevice {
     pub __vftable: *const crate::raw::vtables::BSGamepadDevice_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, ctor store
     pub field_1C: u64,
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
     /// +0x28 `undefined8`, ctor store
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, ctor store
     pub field_4C: u64,
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `class:BSTEventSource`, semantic; RTTI base BSTEventSource<BSGamepadEvent> (medium)
@@ -111,7 +111,7 @@ pub struct BSGamepadDevice {
     pub userIndex: u32,
     /// +0xCC `undefined1`, semantic; set by the detector (high)
     pub connected: u8,
-    pub unknown_CD: [u8; 3],
+    unknown_CD: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -141,7 +141,7 @@ pub struct BSInputDevice {
     pub __vftable: *const crate::raw::vtables::BSInputDevice_vtable,
     /// +0x8 `undefined4`, semantic; INPUT_DEVICE written into InputEvent.device (high)
     pub deviceType: u32,
-    pub unknown_C: [u8; 12],
+    unknown_C: [u8; 12],
     /// +0x18 `undefined1`, semantic; id -> KeyDefinition* from the definition file (+0x1c capacity, +0x28 end sentinel, +0x38 entries of 0x18: u32 key, value, next) (high)
     #[doc(hidden)]
     pub __idToKey: [u8; 48],
@@ -281,24 +281,24 @@ pub struct BSPCOrbisGamepadDevice {
     pub __vftable: *const crate::raw::vtables::BSPCOrbisGamepadDevice_vtable,
     /// +0x8 `undefined4`, base BSGamepadDevice
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, base BSGamepadDevice
     pub field_1C: u64,
     /// +0x24 `undefined4`, base BSGamepadDevice
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSGamepadDevice
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, base BSGamepadDevice
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, base BSGamepadDevice
     pub field_4C: u64,
     /// +0x54 `undefined4`, base BSGamepadDevice
     pub field_54: u32,
     /// +0x58 `undefined8`, base BSGamepadDevice
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSGamepadDevice
     pub field_68: u64,
     /// +0x70 `class:BSTEventSource`, base BSGamepadDevice, semantic; RTTI base BSTEventSource<BSGamepadEvent> (medium)
@@ -308,7 +308,7 @@ pub struct BSPCOrbisGamepadDevice {
     pub userIndex: u32,
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
     pub connected: u8,
-    pub unknown_CD: [u8; 299],
+    unknown_CD: [u8; 299],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -339,24 +339,24 @@ pub struct BSWin32GamepadDevice {
     pub __vftable: *const crate::raw::vtables::BSWin32GamepadDevice_vtable,
     /// +0x8 `undefined4`, base BSGamepadDevice
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, base BSGamepadDevice
     pub field_1C: u64,
     /// +0x24 `undefined4`, base BSGamepadDevice
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSGamepadDevice
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, base BSGamepadDevice
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, base BSGamepadDevice
     pub field_4C: u64,
     /// +0x54 `undefined4`, base BSGamepadDevice
     pub field_54: u32,
     /// +0x58 `undefined8`, base BSGamepadDevice
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSGamepadDevice
     pub field_68: u64,
     /// +0x70 `class:BSTEventSource`, base BSGamepadDevice, semantic; RTTI base BSTEventSource<BSGamepadEvent> (medium)
@@ -366,7 +366,7 @@ pub struct BSWin32GamepadDevice {
     pub userIndex: u32,
     /// +0xCC `undefined1`, base BSGamepadDevice, semantic; set by the detector (high)
     pub connected: u8,
-    pub unknown_CD: [u8; 11],
+    unknown_CD: [u8; 11],
     /// +0xD8 `undefined1`, semantic; copy of +0x100..+0x127 from the previous frame (+0xdc buttons) (high)
     pub prevState: [u8; 40],
     /// +0x100 `undefined1`, semantic; XINPUT_STATE: +0x104 buttons, +0x106/+0x107 triggers, +0x108.. thumbs (high)
@@ -415,24 +415,24 @@ pub struct BSWin32KeyboardDevice {
     pub __vftable: *const crate::raw::vtables::BSWin32KeyboardDevice_vtable,
     /// +0x8 `undefined4`, base BSKeyboardDevice
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, base BSKeyboardDevice
     pub field_1C: u64,
     /// +0x24 `undefined4`, base BSKeyboardDevice
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSKeyboardDevice
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, base BSKeyboardDevice
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, base BSKeyboardDevice
     pub field_4C: u64,
     /// +0x54 `undefined4`, base BSKeyboardDevice
     pub field_54: u32,
     /// +0x58 `undefined8`, base BSKeyboardDevice
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSKeyboardDevice
     pub field_68: u64,
     /// +0x70 `undefined8`, semantic; IDirectInputDevice8* (keyboard) (high)
@@ -446,7 +446,7 @@ pub struct BSWin32KeyboardDevice {
     pub keyState: [u8; 256],
     /// +0x368 `undefined1`, semantic; Caps Lock toggle for character translation (high)
     pub capsLockOn: u8,
-    pub unknown_369: [u8; 7],
+    unknown_369: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -479,29 +479,29 @@ pub struct BSWin32MouseDevice {
     pub __vftable: *const crate::raw::vtables::BSWin32MouseDevice_vtable,
     /// +0x8 `undefined4`, base BSMouseDevice
     pub field_8: u32,
-    pub unknown_C: [u8; 16],
+    unknown_C: [u8; 16],
     /// +0x1C `undefined8`, base BSMouseDevice
     pub field_1C: u64,
     /// +0x24 `undefined4`, base BSMouseDevice
     pub field_24: u32,
     /// +0x28 `undefined8`, base BSMouseDevice
     pub field_28: u64,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, base BSMouseDevice
     pub field_38: u64,
-    pub unknown_40: [u8; 12],
+    unknown_40: [u8; 12],
     /// +0x4C `undefined8`, base BSMouseDevice
     pub field_4C: u64,
     /// +0x54 `undefined4`, base BSMouseDevice
     pub field_54: u32,
     /// +0x58 `undefined8`, base BSMouseDevice
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base BSMouseDevice
     pub field_68: u64,
     /// +0x70 `undefined1`, semantic; bBackgroundMouse:Controls at creation (non-exclusive) (high)
     pub backgroundMouse: u8,
-    pub unknown_71: [u8; 7],
+    unknown_71: [u8; 7],
     /// +0x78 `undefined8`, semantic; IDirectInputDevice8* (mouse) (high)
     pub diDevice: u64,
     /// +0x80 `undefined1`, semantic; previous DIMOUSESTATE2: +0x80 dx, +0x84 dy, +0x88 wheel, +0x8c..+0x93 buttons (high)
@@ -510,11 +510,11 @@ pub struct BSWin32MouseDevice {
     pub state: [u8; 20],
     /// +0xA8 `undefined1`, semantic; Poll does nothing while set (high)
     pub reinitializing: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `class:BSSpinLock`, semantic; owner thread +0xac, count +0xb0 (high)
     #[doc(hidden)]
     pub __lock: [u8; 8],
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -651,7 +651,8 @@ pub struct CommandTableEntry {
     /// +0x38 `pointer`, semantic; bool (uint16 numParams, const ParamInfo*, ScriptLineBuffer*, ScriptCompileBuffer*) (high)
     pub parse: *mut c_void,
     /// +0x40 `pointer`, semantic; condition evaluator; null on every console command (high)
-    pub eval: *mut c_void,
+    #[doc(hidden)]
+    pub __eval: [u8; 8],
     /// +0x48 `undefined4`, semantic; bit 0 on 15 script functions (meaning not established); bit 8 (byte +0x49) makes the run report true; see the flag rows (medium)
     pub flags: u32,
     /// +0x4C `undefined4`, semantic; padding (high)
@@ -672,7 +673,7 @@ const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __pad24) == 0x24)
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, params) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, execute) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, parse) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CommandTableEntry, eval) == 0x40);
+const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __eval) == 0x40);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, flags) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, pad4c) == 0x4C);
 
@@ -720,11 +721,11 @@ pub struct DeviceConnectEvent {
     /// +0x0 `vtbl:DeviceConnectEvent:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::DeviceConnectEvent_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `undefined1`, semantic (high)
     #[doc(hidden)]
     pub __connected: [u8; 1],
-    pub unknown_19: [u8; 7],
+    unknown_19: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -753,7 +754,7 @@ const _: () = assert!(core::mem::offset_of!(DirectionHandler, __vftable) == 0x0)
 /// Evidence: the user-event map: loads Interface/Controls/PC/ControlMap.txt (INI sControlsDefinitionFile) and the remap file (INI sControlsRemapFile, default string 'ControlMap_Custom.txt'), keeps 18 input contexts of per-device mapping tables, the context stack menus push and pop, the enabled-controls bits and the UserEventEnabledEvent source; it writes the user event name into every InputEvent of the frame before the input source notifies. No RTTI; the pointer global 0x31a5690 is currently named g_EventSourceHolder_User_ptr; ctor 0xceeaa0 stores this in 0x31a5690, initialises +8..+0x58 (an event source), memsets +0x60 for 0x90 bytes, reserves 10 dwords at +0x108, stores -1 at +0x120 and 0x80000000 at +0x124, then parses sControlsDefinitionFile with device 7 (0xcf17d0), loads the remap file (0xcef0f0) and resolves links (0xcefed0); EventSourceHolder_Input::Update 0xcf95f0 calls 0xcef3b0 with the queue head before NotifyEventSinks; size: static object at 0x3230b50 (ID_403592) passed as this to the ctor 0xceeaa0 by 0x653625; the next static symbol is the input holder at 0x3230c80 (the arg0 of every runtime AddEventSink<InputEvent*> capture), so 0x130 bytes; the ctor's last store is the dword +0x12c.
 #[repr(C, align(8))]
 pub struct EventSourceHolder_User {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `class:BSTEventSource`, semantic; BSTEventSource<UserEventEnabledEvent>; notified by SetControlsEnabled (high)
     pub source_UserEventEnabledEvent: crate::BSTEventSource,
     /// +0x60 `undefined1`, semantic; InputContext*[18], indexed by input context id (0..0x11); null until the definition file has a block for it (high)
@@ -779,7 +780,7 @@ pub struct EventSourceHolder_User {
     /// +0x12A `undefined1`, semantic; when set, records with group flag 0x4 map to nothing; never written outside the ctor in 1.7.104 (low)
     #[doc(hidden)]
     pub __unk12A: [u8; 1],
-    pub unknown_12B: [u8; 1],
+    unknown_12B: [u8; 1],
     /// +0x12C `undefined4`, semantic; gamepad button layout the gamepad codes are currently expressed in (0 Win32/XInput device, 1 Orbis device) (high)
     #[doc(hidden)]
     pub __gamepadLayout: [u8; 4],
@@ -823,13 +824,13 @@ pub struct HeldStateHandler {
     /// +0x0 `vtbl:HeldStateHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HeldStateHandler_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; button currently held (high)
     pub heldStateActive: u8,
     /// +0x11 `undefined1`, semantic; a synthetic ForceRelease must be sent (high)
     #[doc(hidden)]
     pub __releasePending: [u8; 1],
-    pub unknown_12: [u8; 6],
+    unknown_12: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -841,15 +842,14 @@ const _: () = assert!(core::mem::offset_of!(HeldStateHandler, __releasePending) 
 /// `InputContext`: size 0x90 (exact).
 /// Meaning: one input context's mapping tables: a sorted BSTArray<UserEventMapping> per device (high, input pass).
 /// Evidence: one input context's mapping tables: a sorted BSTArray<UserEventMapping> per device; every reader indexes context + device*0x18 with device < 3 (0xcef3b0, 0xcefbe0, 0xcefd90, 0xcefed0); only arrays 0..2 are read; size: ParseControlMapFile 0xcf17d0 Allocate(0x90) and constructs 6 arrays of 0x18; 0xcf03e0 frees it with OperatorDelete(p, 0x90).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct InputContext {
     /// +0x0 `class:BSTArray`, semantic; BSTArray<UserEventMapping> for device 0, sorted by inputKey (low word, then high word) (high)
     pub keyboardMappings: crate::BSTArray,
     /// +0x18 `class:BSTArray`, semantic; device 1 (high)
     pub mouseMappings: crate::BSTArray,
     /// +0x30 `class:BSTArray`, semantic; device 2 (high)
-    #[doc(hidden)]
-    pub __gamepadMappings: [u8; 24],
+    pub gamepadMappings: crate::BSTArray,
     /// +0x48 `undefined1`, semantic; three more BSTArrays constructed and destroyed but never read (low)
     pub unusedArrays: [u8; 72],
     #[doc(hidden)]
@@ -858,7 +858,7 @@ pub struct InputContext {
 const _: () = assert!(size_of::<InputContext>() == 0x90);
 const _: () = assert!(core::mem::offset_of!(InputContext, keyboardMappings) == 0x0);
 const _: () = assert!(core::mem::offset_of!(InputContext, mouseMappings) == 0x18);
-const _: () = assert!(core::mem::offset_of!(InputContext, __gamepadMappings) == 0x30);
+const _: () = assert!(core::mem::offset_of!(InputContext, gamepadMappings) == 0x30);
 const _: () = assert!(core::mem::offset_of!(InputContext, unusedArrays) == 0x48);
 
 /// `InputEventQueue`: size 0x568 (exact).
@@ -975,11 +975,11 @@ pub struct KinectEvent {
     /// +0x0 `vtbl:KinectEvent:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::KinectEvent_vtable,
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     /// +0x20 `undefined4`, semantic; -1 (medium)
     #[doc(hidden)]
     pub __idCode: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `class:BSFixedString`, semantic; second string of the recognition (medium)
     #[doc(hidden)]
     pub __heard: [u8; 8],
@@ -1004,7 +1004,7 @@ pub struct LinkedMapping {
     pub device: u32,
     /// +0x10 `undefined4`, semantic; context to copy the key from (high)
     pub linkedContext: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `class:BSFixedString`, semantic; user event whose key is copied (high)
     #[doc(hidden)]
     pub __linkedUserEvent: [u8; 8],
@@ -1087,11 +1087,11 @@ pub struct MotionGestureEvent {
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined4`, semantic (low)
     #[doc(hidden)]
     pub __unk28: [u8; 4],
@@ -1101,7 +1101,7 @@ pub struct MotionGestureEvent {
     /// +0x30 `undefined1`, semantic (low)
     #[doc(hidden)]
     pub __unk30: [u8; 1],
-    pub unknown_31: [u8; 3],
+    unknown_31: [u8; 3],
     /// +0x34 `undefined4`, semantic (low)
     #[doc(hidden)]
     pub __unk34: [u8; 4],
@@ -1128,11 +1128,11 @@ pub struct MouseMoveEvent {
     /// +0x0 `vtbl:MouseMoveEvent:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MouseMoveEvent_vtable,
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     /// +0x20 `undefined4`, semantic; 0xa (high)
     #[doc(hidden)]
     pub __idCode: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined4`, semantic; int lX (high)
     pub dx: u32,
     /// +0x2C `undefined4`, semantic; int lY (high)
@@ -1165,15 +1165,14 @@ const _: () = assert!(core::mem::offset_of!(MovementHandler, __vftable) == 0x0);
 /// `ParamInfo`: size 0x10 (exact).
 /// Meaning: one parameter description of a command (high, input pass).
 /// Evidence: one parameter description of a command; 1148 parameter records walked from the three tables; size: stride 0x10: ParseCommandParams 0x347ac0 and UnpackCommandArguments 0x344ca0 read params + i*0x10 (+0, +8, +0xc); not RTTI.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct ParamInfo {
     /// +0x0 `pointer`, semantic; parameter name used in compile errors (high)
     pub name: *mut c_void,
     /// +0x8 `undefined4`, semantic; ScriptParamType (see enums) (high)
     pub typeCode: u32,
     /// +0xC `undefined1`, semantic; 1 = may be omitted; parsing stops at the first missing optional and stores the parsed count (high)
-    #[doc(hidden)]
-    pub __optional: [u8; 1],
+    pub optional: u8,
     pub unknown_D: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1181,7 +1180,7 @@ pub struct ParamInfo {
 const _: () = assert!(size_of::<ParamInfo>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(ParamInfo, name) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ParamInfo, typeCode) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ParamInfo, __optional) == 0xC);
+const _: () = assert!(core::mem::offset_of!(ParamInfo, optional) == 0xC);
 
 /// `PlayerControls`: size 0x1E0 (exact, high); primary base `BSTEventSink<InputEvent*___ptr64>`.
 /// Meaning: gameplay input consumer: sink on the input source, its handler list and the movement/look input of the frame (high, input pass).
@@ -1201,7 +1200,7 @@ pub struct PlayerControls {
     /// +0x18 `vtbl:PlayerControls:18`, rtti
     #[doc(hidden)]
     pub __vftable_18: *const crate::raw::vtables::PlayerControls_vtable_18,
-    pub unknown_20: [u8; 4],
+    unknown_20: [u8; 4],
     /// +0x24 `class:NiPoint2`, semantic; NiPoint2 movement input of the frame (PlayerControlsData starts here; handlers get this+0x24) (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 movement input; ProcessEvent 0x7ad900 resets +0x24/+0x28
     pub moveInput: crate::NiPoint2,
     /// +0x2C `class:NiPoint2`, semantic; NiPoint2 look input of the frame (high); retyped undefined1 -> class:NiPoint2: meaning: NiPoint2 look input; ThirdPersonState Update passes &PlayerControls+0x2c to ProcessLookInput(NiPoint2*)
@@ -1232,7 +1231,7 @@ pub struct PlayerControls {
     pub __markHeldForRelease: [u8; 1],
     /// +0x50 `undefined1`, semantic; ProcessEvent does nothing while set (set during control remapping) (high)
     pub ignoreInput: u8,
-    pub unknown_51: [u8; 7],
+    unknown_51: [u8; 7],
     /// +0x58 `class:BSTArray`, semantic, runtime; BSTArray<PlayerInputHandler*> in dispatch order (high)
     pub handlers: crate::BSTArray,
     /// +0x70 `class:BSTArray`, semantic; subset that tracks a held button (slots 7/8) (high)
@@ -1242,11 +1241,11 @@ pub struct PlayerControls {
     pub __pendingHandlerChanges: [u8; 24],
     /// +0xA0 `undefined1`, semantic; set while 0x7b0130 walks the handlers (high)
     pub dispatching: u8,
-    pub unknown_A1: [u8; 3],
+    unknown_A1: [u8; 3],
     /// +0xA4 `undefined1`, semantic; two {count u32, NiPoint2[10]} input response curves loaded from f%sGraphX%d/f%sGraphY%d:Controls (medium)
     #[doc(hidden)]
     pub __responseGraphs: [u8; 172],
-    pub unknown_150: [u8; 24],
+    unknown_150: [u8; 24],
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
     /// +0x170 `ptr:MovementHandler`, semantic, runtime; Forward/Back/Strafe/Move handler (0x10, vtable 0x19351c8); the other 12 handler pointers follow at +0x178..+0x1d0 (high)
@@ -1277,7 +1276,7 @@ pub struct PlayerControls {
     pub togglePOVHandler: *mut crate::TogglePOVHandler,
     /// +0x1D8 `undefined1`, semantic; in dialogue, the cursor position near the screen edge drives lookInput (keyboard/mouse only) (medium)
     pub dialogueCursorLook: u8,
-    pub unknown_1D9: [u8; 3],
+    unknown_1D9: [u8; 3],
     /// +0x1DC `undefined4`, ctor store
     pub field_1DC: u32,
     #[doc(hidden)]
@@ -1413,7 +1412,7 @@ pub struct Script {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined4`, semantic; bytes of compiled data (high)
@@ -1429,17 +1428,17 @@ pub struct Script {
     /// +0x32 `undefined1`, semantic; cleared at compile start, set on success (medium)
     #[doc(hidden)]
     pub __compiled: [u8; 1],
-    pub unknown_33: [u8; 5],
+    unknown_33: [u8; 5],
     /// +0x38 `pointer`, semantic; source text (high)
     pub text: *mut c_void,
     /// +0x40 `pointer`, semantic; compiled bytecode (high)
     pub data: *mut c_void,
-    pub unknown_48: [u8; 4],
+    unknown_48: [u8; 4],
     /// +0x4C `float`, semantic; quest-script delay countdown (medium)
     pub delayTimer: f32,
     /// +0x50 `float`, semantic; time accumulated while delayed (medium)
     pub delayElapsed: f32,
-    pub unknown_54: [u8; 4],
+    unknown_54: [u8; 4],
     /// +0x58 `ptr:TESQuest`, semantic; quest scope; console lines get g_ConsoleScopeQuest (high)
     pub ownerQuest: *mut crate::TESQuest,
     /// +0x60 `undefined1`, semantic; list head (16 bytes) of the reference variables (0x20 entries: name, form +0x10, variable index +0x18) (medium)
@@ -1598,11 +1597,11 @@ pub struct SixaxisEvent {
     /// +0x20 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
@@ -1909,17 +1908,31 @@ pub enum InputDevice {
 }
 
 impl InputDevice {
+    /// The number the running game has for this value, `None` where it has no such value.
+    #[inline]
     #[must_use]
-    pub const fn from_u32(value: u32) -> Option<Self> {
-        match value {
-            0 => Some(Self::Keyboard),
-            1 => Some(Self::Mouse),
-            2 => Some(Self::Gamepad),
-            3 => Some(Self::MotionGestureEvent),
-            7 => Some(Self::None),
-            8 => Some(Self::KinectEvent),
-            _ => None,
+    pub fn to_engine(self) -> Option<u32> {
+        match self {
+            Self::Keyboard => { record!(7, 0, 0, "InputDevice.Keyboard"); engine_value!("InputDevice.Keyboard", 0, u32) }
+            Self::Mouse => { record!(7, 0, 0, "InputDevice.Mouse"); engine_value!("InputDevice.Mouse", 1, u32) }
+            Self::Gamepad => { record!(7, 0, 0, "InputDevice.Gamepad"); engine_value!("InputDevice.Gamepad", 2, u32) }
+            Self::MotionGestureEvent => { record!(7, 0, 0, "InputDevice.MotionGestureEvent"); engine_value!("InputDevice.MotionGestureEvent", 3, u32) }
+            Self::None => { record!(7, 0, 0, "InputDevice.None"); engine_value!("InputDevice.None", 7, u32) }
+            Self::KinectEvent => { record!(7, 0, 0, "InputDevice.KinectEvent"); engine_value!("InputDevice.KinectEvent", 8, u32) }
         }
+    }
+
+    /// The value a number of the running game means, `None` for a number it does not name.
+    #[must_use]
+    pub fn from_engine(raw: u32) -> Option<Self> {
+        record!(7, 0, 0, "InputDevice.*");
+        if engine_value!("InputDevice.Keyboard", 0, u32) == Some(raw) { return Some(Self::Keyboard); }
+        if engine_value!("InputDevice.Mouse", 1, u32) == Some(raw) { return Some(Self::Mouse); }
+        if engine_value!("InputDevice.Gamepad", 2, u32) == Some(raw) { return Some(Self::Gamepad); }
+        if engine_value!("InputDevice.MotionGestureEvent", 3, u32) == Some(raw) { return Some(Self::MotionGestureEvent); }
+        if engine_value!("InputDevice.None", 7, u32) == Some(raw) { return Some(Self::None); }
+        if engine_value!("InputDevice.KinectEvent", 8, u32) == Some(raw) { return Some(Self::KinectEvent); }
+        None
     }
 }
 

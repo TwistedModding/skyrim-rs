@@ -43,7 +43,7 @@ pub struct BSScript__Internal__AutoPropGetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropGetFunction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropGetFunction_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
@@ -52,7 +52,7 @@ pub struct BSScript__Internal__AutoPropGetFunction {
     pub __name: [u8; 8],
     /// +0x20 `undefined8`, semantic; TypeInfo (high)
     pub returnType: u64,
-    pub unknown_28: [u8; 8],
+    unknown_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -71,14 +71,14 @@ pub struct BSScript__Internal__AutoPropSetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropSetFunction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropSetFunction_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
     #[doc(hidden)]
     pub __objectTypeName: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; function name (high)
     #[doc(hidden)]
     pub __name: [u8; 8],
-    pub unknown_20: [u8; 16],
+    unknown_20: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -98,7 +98,7 @@ pub struct BSScript__Internal__CodeTasklet {
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__CodeTasklet_vtable,
     /// +0x8 `u32`, semantic; BSIntrusiveRefCounted count (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:BSScript::Stack`, ctor store, semantic, runtime; the stack (not reference counted) (high)
     pub stack: *mut crate::BSScript__Stack,
     /// +0x18 `ptr:BSScript::Internal::VirtualMachine`, semantic; the VM (high)
@@ -107,7 +107,7 @@ pub struct BSScript__Internal__CodeTasklet {
     pub errorLogger: *mut c_void,
     /// +0x28 `u32`, semantic; see enum CodeTaskletState; 0 while the interpreter runs it (high)
     pub state: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:BSScript::StackFrame`, semantic, runtime; the frame being interpreted (the stack's top when loaded) (medium)
     pub frame: *mut crate::BSScript__StackFrame,
     /// +0x38 `u32`, semantic; page index of the frame (high)
@@ -120,11 +120,11 @@ pub struct BSScript__Internal__CodeTasklet {
     pub operandBitsA: u8,
     /// +0x3E `u8`, semantic; operand width parameter (medium)
     pub operandBitsB: u8,
-    pub unknown_3F: [u8; 1],
+    unknown_3F: [u8; 1],
     /// +0x40 `u32`, semantic; bytecode length in bits (high)
     #[doc(hidden)]
     pub __codeBits: [u8; 4],
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; u64 words of the bytecode bit stream (high)
     pub code: *mut c_void,
     #[doc(hidden)]
@@ -174,7 +174,7 @@ pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x0 `vtbl:BSScript::Internal::NativeFunctionStub:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__NativeFunctionStub_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; function name (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, semantic; class name (high)
@@ -183,7 +183,7 @@ pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x20 `class:BSFixedString`, semantic; state name (high)
     #[doc(hidden)]
     pub __stateName: [u8; 8],
-    pub unknown_28: [u8; 40],
+    unknown_28: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -204,7 +204,7 @@ pub struct BSScript__Internal__ScriptFunction {
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__ScriptFunction_vtable,
     /// +0x8 `undefined4`, semantic; BSIntrusiveRefCounted count; a StackFrame's owningFunction holds one (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, semantic, runtime; function name (high)
     #[doc(hidden)]
     pub __name: [u8; 8],
@@ -223,10 +223,10 @@ pub struct BSScript__Internal__ScriptFunction {
     pub paramCount: u16,
     /// +0x3A `undefined2`, semantic; parameters plus locals: the frame size (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, semantic; user flags (high)
     pub userFlags: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined4`, semantic, runtime; length of the packed instruction stream in bits (0 = empty function) (high)
     #[doc(hidden)]
     pub __instructionBitCount: [u8; 4],
@@ -246,7 +246,7 @@ pub struct BSScript__Internal__ScriptFunction {
     pub functionType: u16,
     /// +0x5A `undefined1`, semantic; global (static) function (high)
     pub isStatic: u8,
-    pub unknown_5B: [u8; 5],
+    unknown_5B: [u8; 5],
     /// +0x60 `class:BSFixedString`, semantic; documentation string (high)
     #[doc(hidden)]
     pub __docString: [u8; 8],
@@ -255,7 +255,7 @@ pub struct BSScript__Internal__ScriptFunction {
     pub __sourceFileName: [u8; 8],
     /// +0x70 `undefined4`, ctor store, semantic, runtime; number of entries in lineNumbers (0 when the debug section was not kept) (high)
     pub lineCount: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `pointer`, ctor store, semantic, runtime; u16 source line per instruction index (values above 0xffff clamped to 0xffff) (high)
     pub lineNumbers: *mut c_void,
     #[doc(hidden)]
@@ -291,7 +291,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, 
 pub struct BSScript__Internal__StackMapEntry {
     /// +0x0 `u32`, semantic; key (high)
     pub stackID: u32,
-    pub unknown_4: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack> (the map holds a reference) (high)
     #[doc(hidden)]
     pub __stack: [u8; 8],

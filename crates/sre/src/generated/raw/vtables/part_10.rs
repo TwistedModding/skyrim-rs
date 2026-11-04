@@ -12102,11 +12102,11 @@ impl ClickHandler_vtable {
     /// The slot's index on the running game; 7 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("ClickHandler", 0x0, 7) }
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_at!("ClickHandler", 0x0, 7) }
     /// Slot 7 as `ClickHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<ClickHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("ClickHandler", 0x0, 7))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("ClickHandler", 0x0, 7))) }
     }
 }
 /// `ClickHandler::CanProcess`, slot 1: Click (high).

@@ -1818,19 +1818,6 @@ impl crate::NiSkinInstance {
     pub fn skin_partition(&self) -> Option<&crate::NiSkinPartition> { unsafe { { self.skinPartition }.as_ref() } }
 }
 
-impl crate::ShaderPropertyLightData {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_receiverMask(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShaderPropertyLightData.receiverMask", 0x1C, u32) } }
-    /// `ShaderPropertyLightData::receiverMask`, at +0x1C on 1.7.104.
-    #[inline]
-    pub fn receiverMask(&self) -> u32 { unsafe { Self::__member_receiverMask(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_receiverMask(&mut self, value: u32) { unsafe { Self::__member_receiverMask(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn receiverMask_ptr(&self) -> *mut u32 { Self::__member_receiverMask(core::ptr::from_ref(self)) }
-}
-
 impl crate::ShadowMapData {
     /// `ShadowMapData::accumulator` at +0x48: the accumulator the map's casters are gathered into
     ///
@@ -1846,27 +1833,7 @@ impl crate::ShadowMapData {
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_culler(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "ShadowMapData.culler", 0xE0, *mut crate::BSCullingProcess) } }
-    /// `ShadowMapData::culler`, at +0xE0 on 1.7.104.
-    #[inline]
-    pub fn culler_field(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_culler(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_culler(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn culler_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_culler(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_slice(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShadowMapData.slice", 0x58, u32) } }
-    /// `ShadowMapData::slice`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn slice(&self) -> u32 { unsafe { Self::__member_slice(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_slice(&mut self, value: u32) { unsafe { Self::__member_slice(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn slice_ptr(&self) -> *mut u32 { Self::__member_slice(core::ptr::from_ref(self)) }
+    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { { self.culler }.as_ref() } }
 }
 
 impl crate::ShadowSceneNode {

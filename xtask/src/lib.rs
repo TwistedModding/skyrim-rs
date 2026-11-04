@@ -57,6 +57,7 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
     let mut files: BTreeMap<String, String> =
         modules.into_iter().map(|(name, text)| (format!("{CRATE_DIR}/{name}"), text)).collect();
     files.extend(versions::profiles(&inputs, &runtimes));
+    files.insert(format!("{MODULE_DIR}/ledger_tables.rs"), versions::ledger_tables(&inputs, &runtimes));
     stats.self_check_differences = runtimes.iter().find(|r| r.name == versions::CANONICAL).map(versions::Runtime::differences);
     let mut lock = format!("# Inputs of {MODULE_DIR}, recorded by `cargo xtask gen`.\nrepo {RE_REPO}\ncommit {commit}\n");
     for (path, hash) in inputs.hashes.iter().chain(&hashes) {

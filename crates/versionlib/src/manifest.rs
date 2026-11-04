@@ -20,6 +20,8 @@ pub enum Record {
     Base(String),
     /// `Enum.Value`.
     Enum(String),
+    /// `Class.member` the ledger does not hold yet, so no profile can speak for it.
+    OutsideLedger(String),
 }
 
 impl fmt::Display for Record {
@@ -32,6 +34,7 @@ impl fmt::Display for Record {
             Self::Size(class) => write!(f, "size {class}"),
             Self::Base(class_and_base) => write!(f, "base {class_and_base}"),
             Self::Enum(value) => write!(f, "enum {value}"),
+            Self::OutsideLedger(member) => write!(f, "member {member} (not in the ledger)"),
         }
     }
 }
@@ -58,6 +61,7 @@ pub fn records(section: &[u8]) -> Result<BTreeSet<Record>, String> {
             5 => Record::Size(name),
             6 => Record::Base(name),
             7 => Record::Enum(name),
+            8 => Record::OutsideLedger(name),
             _ => return Err(format!("record at {:#x} has unknown kind {kind}", at - 1)),
         });
         at += 8 + len + 1;
@@ -137,6 +141,7 @@ fn profile_lack(record: &Record, profile: &Profile) -> Option<Lack> {
         Record::Size(class) => lack(&profile.size(class)),
         Record::Base(class_and_base) => lack(&profile.base(class_and_base)),
         Record::Enum(value) => lack(&profile.enum_value(value)),
+        Record::OutsideLedger(_) => (!skse::runtime::is_canonical(profile.runtime())).then_some(Lack::Unverified),
     }
 }
 
@@ -352,6 +357,16 @@ mod tests {
         let db = db_holding("broken", &[1]);
         let found = fit(&pe_with(*SECTION, &[1, 0, 0]), &crate::profile::parse(CANONICAL_HEADER).unwrap(), Some(&db));
         assert!(refusal(&found, "1.7.104").unwrap().contains("cannot be read"));
+    }
+
+    #[test]
+    fn a_member_outside_the_ledger_fits_only_the_canonical_runtime() {
+        let wanted = [Record::OutsideLedger("UI.count".into())];
+        assert_eq!(lacking(&wanted, &crate::profile::parse(CANONICAL_HEADER).unwrap()), Vec::new());
+        let other = crate::profile::parse("skyrim-rs-profile 1\nruntime 1.6.1170\naddress-library versionlib-1-6-1170-0.bin\ndatabase ae\n").unwrap();
+        let found: Vec<String> = lacking(&wanted, &other).iter().map(|(r, why)| format!("{r} {why}")).collect();
+        assert_eq!(found, ["member UI.count (not in the ledger) unverified"]);
+        assert_eq!(records(&record(8, 0, 0, "UI.count")).unwrap().into_iter().collect::<Vec<_>>(), wanted);
     }
 
     #[test]

@@ -176,7 +176,8 @@ fn inventory() -> Result<String, String> {
     let changes = player.get_inventory_changes().ok_or("GetInventoryChanges returned null")?;
     check(changes.owner().is_some_and(|o| address(o) == address(player)), "the owner is not the player")?;
     let entries: Vec<String> = changes.items().map(|e| format!("{:?}x{:+}", e.object().map(describe), e.countDelta.cast_signed())).collect();
-    check(changes.items().any(|e| e.object().is_some_and(|o| o.formID == IRON_WAR_AXE)), "no entry for the Iron War Axe")?;
+    let right = player.current_process().and_then(|p| p.equipped_right()).ok_or("no weapon in the right hand")?;
+    check(changes.items().any(|e| e.object().is_some_and(|o| core::ptr::eq(o, right))), &format!("no entry for the weapon in hand, {}", describe(right)))?;
     let gold = changes.get_item_count(form(GOLD)?);
     let sword = changes.get_item_count(form(IRON_SWORD)?);
     let torch = changes.get_item_count(form(TORCH)?);
@@ -202,7 +203,8 @@ fn process() -> Result<String, String> {
     let player = player_ref()?;
     let process = player.current_process().ok_or("currentProcess is null")?;
     let right = process.equipped_right().ok_or("equippedRight is null")?;
-    check(right.formID == IRON_WAR_AXE && right.formType == FormType::WEAP as u8, &format!("equippedRight is {}", describe(right)))?;
+    // Each runtime's base save holds its own weapon; the suite compares it with DevBench's answer.
+    check((right.formID == IRON_WAR_AXE || !crate::is_canonical()) && right.formType == FormType::WEAP as u8, &format!("equippedRight is {}", describe(right)))?;
     check(process.equipped_left().is_none(), "equippedLeft is not null")?;
     let middle = process.middle_high().ok_or("middleHigh is null")?;
     let entry = middle.right_hand_entry().ok_or("rightHandEntry is null")?;

@@ -520,7 +520,7 @@ pub struct BSTextureDB__QueuedHandles {
     pub field_10: u64,
     /// +0x18 `undefined4`, base QueuedFile
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -528,23 +528,23 @@ pub struct BSTextureDB__QueuedHandles {
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `vtbl:BSTextureDB::QueuedHandles:38`, rtti
     #[doc(hidden)]
     pub __vftable_38: *const crate::raw::vtables::BSTextureDB__QueuedHandles_vtable_38,
     /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
     pub field_48: u64,
     /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
     pub field_50: u32,
     /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
     pub field_54: u16,
-    pub unknown_56: [u8; 2],
+    unknown_56: [u8; 2],
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
-    pub unknown_5C: [u8; 44],
+    unknown_5C: [u8; 44],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -650,7 +650,7 @@ pub struct BSTimerModifier {
     pub __vftable: *const crate::raw::vtables::BSTimerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -738,7 +738,7 @@ pub struct BSTimerModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1082,7 +1082,7 @@ pub struct BSTweenerModifier {
     pub __vftable: *const crate::raw::vtables::BSTweenerModifier_vtable,
     /// +0x8 `undefined4`, base hkbBindable
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1170,7 +1170,7 @@ pub struct BSTweenerModifier {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1548,7 +1548,7 @@ pub struct BSWaterShaderMaterial {
     pub texCoordScale1: [u8; 8],
     /// +0x2C `undefined4`, base BSShaderMaterial, semantic; cached hash (0xffffffff = not computed) (low)
     pub hash: u32,
-    pub unknown_30: [u8; 8],
+    unknown_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
@@ -1625,19 +1625,19 @@ pub struct BSWaterShaderMaterial {
     pub field_130: u64,
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
-    pub unknown_140: [u8; 16],
+    unknown_140: [u8; 16],
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
-    pub unknown_158: [u8; 8],
+    unknown_158: [u8; 8],
     /// +0x160 `undefined4`, ctor store
     pub field_160: u32,
-    pub unknown_164: [u8; 16],
+    unknown_164: [u8; 16],
     /// +0x174 `undefined8`, ctor store
     pub field_174: u64,
-    pub unknown_17C: [u8; 1],
+    unknown_17C: [u8; 1],
     /// +0x17D `undefined1`, ctor store
     pub field_17D: u8,
-    pub unknown_17E: [u8; 2],
+    unknown_17E: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1806,7 +1806,7 @@ pub struct BSWin32AwardsSystemUtility {
     /// +0x8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_8: [u8; 1],
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1827,21 +1827,21 @@ pub struct BSWin32GameDataSystemUtility {
     /// +0xA `undefined1`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_A: [u8; 1],
-    pub unknown_B: [u8; 1],
+    unknown_B: [u8; 1],
     /// +0xC `undefined4`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_C: [u8; 4],
     /// +0x10 `undefined1`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_10: [u8; 1],
-    pub unknown_11: [u8; 1055],
+    unknown_11: [u8; 1055],
     /// +0x430 `undefined8`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_430: [u8; 8],
     /// +0x438 `undefined4`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_438: [u8; 4],
-    pub unknown_43C: [u8; 4],
+    unknown_43C: [u8; 4],
     /// +0x440 `undefined8`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_440: [u8; 8],
@@ -1854,19 +1854,19 @@ pub struct BSWin32GameDataSystemUtility {
     /// +0x454 `undefined1`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_454: [u8; 1],
-    pub unknown_455: [u8; 259],
+    unknown_455: [u8; 259],
     /// +0x558 `undefined1`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_558: [u8; 1],
-    pub unknown_559: [u8; 287],
+    unknown_559: [u8; 287],
     /// +0x678 `undefined1`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_678: [u8; 1],
-    pub unknown_679: [u8; 55],
+    unknown_679: [u8; 55],
     /// +0x6B0 `undefined8`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_6B0: [u8; 8],
-    pub unknown_6B8: [u8; 24],
+    unknown_6B8: [u8; 24],
     /// +0x6D0 `undefined8`, base BSGameDataSystemUtility
     #[doc(hidden)]
     pub __field_6D0: [u8; 8],
@@ -1904,7 +1904,7 @@ pub struct BSWin32GamerProfile {
     pub field_60: u64,
     /// +0x68 `undefined4`, base BSGamerProfile
     pub field_68: u32,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, base BSGamerProfile
     pub field_70: u64,
     /// +0x78 `undefined8`, base BSGamerProfile
@@ -1913,7 +1913,7 @@ pub struct BSWin32GamerProfile {
     /// +0x80 `undefined4`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_80: [u8; 4],
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_88: [u8; 8],
@@ -1923,7 +1923,7 @@ pub struct BSWin32GamerProfile {
     /// +0x98 `undefined4`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_98: [u8; 4],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -1933,7 +1933,7 @@ pub struct BSWin32GamerProfile {
     /// +0xB0 `undefined4`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_B0: [u8; 4],
-    pub unknown_B4: [u8; 4],
+    unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, base BSGamerProfile
     #[doc(hidden)]
     pub __field_B8: [u8; 8],
@@ -1970,47 +1970,47 @@ pub struct BSWin32SaveDataSystemUtility {
     /// +0x60 `undefined1`, base BSSaveDataSystemUtility
     #[doc(hidden)]
     pub __field_60: [u8; 1],
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined4`, base BSSaveDataSystemUtility
     pub field_64: u32,
     /// +0x68 `undefined1`, base BSSaveDataSystemUtility
     #[doc(hidden)]
     pub __field_68: [u8; 1],
-    pub unknown_69: [u8; 7],
+    unknown_69: [u8; 7],
     /// +0x70 `undefined8`, base BSSaveDataSystemUtility
     pub m_Entry_70: u64,
-    pub unknown_78: [u8; 264],
+    unknown_78: [u8; 264],
     /// +0x180 `undefined8`, base BSSaveDataSystemUtility
     pub field_180: u64,
     /// +0x188 `undefined4`, base BSSaveDataSystemUtility
     pub field_188: u32,
-    pub unknown_18C: [u8; 4],
+    unknown_18C: [u8; 4],
     /// +0x190 `undefined8`, base BSSaveDataSystemUtility
     pub field_190: u64,
     /// +0x198 `undefined4`, base BSSaveDataSystemUtility
     pub field_198: u32,
-    pub unknown_19C: [u8; 4],
+    unknown_19C: [u8; 4],
     /// +0x1A0 `undefined8`, base BSSaveDataSystemUtility
     pub field_1A0: u64,
     /// +0x1A8 `undefined4`, base BSSaveDataSystemUtility
     pub field_1A8: u32,
-    pub unknown_1AC: [u8; 4],
+    unknown_1AC: [u8; 4],
     /// +0x1B0 `undefined8`, base BSSaveDataSystemUtility
     pub field_1B0: u64,
     /// +0x1B8 `undefined4`, base BSSaveDataSystemUtility
     pub field_1B8: u32,
-    pub unknown_1BC: [u8; 4],
+    unknown_1BC: [u8; 4],
     /// +0x1C0 `undefined8`, base BSSaveDataSystemUtility
     pub field_1C0: u64,
     /// +0x1C8 `undefined4`, base BSSaveDataSystemUtility
     pub field_1C8: u32,
-    pub unknown_1CC: [u8; 4],
+    unknown_1CC: [u8; 4],
     /// +0x1D0 `undefined8`, base BSSaveDataSystemUtility
     pub field_1D0: u64,
-    pub unknown_1D8: [u8; 8],
+    unknown_1D8: [u8; 8],
     /// +0x1E0 `undefined8`, base BSSaveDataSystemUtility
     pub field_1E0: u64,
-    pub unknown_1E8: [u8; 4],
+    unknown_1E8: [u8; 4],
     /// +0x1EC `undefined8`, base BSSaveDataSystemUtility
     #[doc(hidden)]
     pub __field_1EC: [u8; 8],
@@ -2020,15 +2020,15 @@ pub struct BSWin32SaveDataSystemUtility {
     pub field_1F8: u16,
     /// +0x1FA `undefined1`, base BSSaveDataSystemUtility
     pub field_1FA: u8,
-    pub unknown_1FB: [u8; 5],
+    unknown_1FB: [u8; 5],
     /// +0x200 `undefined8`, base BSSaveDataSystemUtility
     pub field_200: u64,
     /// +0x208 `undefined4`, base BSSaveDataSystemUtility
     pub field_208: u32,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     /// +0x210 `undefined4`, base BSSaveDataSystemUtility
     pub field_210: u32,
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2069,7 +2069,7 @@ pub struct BSWin32SystemUtility {
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSSystemEvent>
     #[doc(hidden)]
     pub __source_BSSystemEvent: [u8; 88],
-    pub unknown_60: [u8; 128],
+    unknown_60: [u8; 128],
     /// +0xE0 `undefined8`, base BSSystemUtility
     #[doc(hidden)]
     pub __field_E0: [u8; 8],
@@ -2094,25 +2094,25 @@ pub struct BSWin32SystemUtility {
     /// +0x114 `undefined1`, base BSSystemUtility
     #[doc(hidden)]
     pub __field_114: [u8; 1],
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `undefined4`, base BSSystemUtility
     #[doc(hidden)]
     pub __field_118: [u8; 4],
     /// +0x11C `undefined4`, base BSSystemUtility
     #[doc(hidden)]
     pub __field_11C: [u8; 4],
-    pub unknown_120: [u8; 1],
+    unknown_120: [u8; 1],
     /// +0x121 `undefined1`, base BSSystemUtility
     #[doc(hidden)]
     pub __field_121: [u8; 1],
-    pub unknown_122: [u8; 6],
+    unknown_122: [u8; 6],
     /// +0x128 `undefined8`, member ctor CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>
     #[doc(hidden)]
     pub __m_CCallback_128: [u8; 8],
     /// +0x130 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_130: [u8; 1],
-    pub unknown_131: [u8; 3],
+    unknown_131: [u8; 3],
     /// +0x134 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_134: [u8; 4],
@@ -2128,7 +2128,7 @@ pub struct BSWin32SystemUtility {
     /// +0x158 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_158: [u8; 1],
-    pub unknown_159: [u8; 3],
+    unknown_159: [u8; 3],
     /// +0x15C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_15C: [u8; 4],
@@ -2144,7 +2144,7 @@ pub struct BSWin32SystemUtility {
     /// +0x180 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_180: [u8; 1],
-    pub unknown_181: [u8; 3],
+    unknown_181: [u8; 3],
     /// +0x184 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_184: [u8; 4],
@@ -2160,7 +2160,7 @@ pub struct BSWin32SystemUtility {
     /// +0x1A8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_1A8: [u8; 1],
-    pub unknown_1A9: [u8; 3],
+    unknown_1A9: [u8; 3],
     /// +0x1AC `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1AC: [u8; 4],
@@ -2173,25 +2173,25 @@ pub struct BSWin32SystemUtility {
     /// +0x1C0 `undefined1[16]`, ctor store
     #[doc(hidden)]
     pub __field_1C0: [u8; 16],
-    pub unknown_1D0: [u8; 24],
+    unknown_1D0: [u8; 24],
     /// +0x1E8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_1E8: [u8; 1],
-    pub unknown_1E9: [u8; 7],
+    unknown_1E9: [u8; 7],
     /// +0x1F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F0: [u8; 8],
     /// +0x1F8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 4],
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     /// +0x200 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 8],
     /// +0x208 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 1],
-    pub unknown_209: [u8; 7],
+    unknown_209: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2296,7 +2296,7 @@ pub struct BSWin32TaskletManager {
     /// +0x8 `undefined1`, ctor store (widths [1, 2])
     #[doc(hidden)]
     pub __field_8: [u8; 1],
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
@@ -2342,7 +2342,7 @@ pub struct BSWin32TaskletManager {
     pub __field_70: [u8; 8],
     /// +0x78 `undefined1`, ctor store
     pub field_78: u8,
-    pub unknown_79: [u8; 47],
+    unknown_79: [u8; 47],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -2534,7 +2534,7 @@ pub struct BSWin32TaskletManager {
     /// +0x2A0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2A0: [u8; 8],
-    pub unknown_2A8: [u8; 512],
+    unknown_2A8: [u8; 512],
     /// +0x4A8 `undefined8`, ctor store
     pub field_4A8: u64,
     #[doc(hidden)]
@@ -2669,7 +2669,7 @@ pub struct BSXAudio2Audio {
     pub __vftable: *const crate::raw::vtables::BSXAudio2Audio_vtable,
     /// +0x8 `undefined1`, base BSAudio
     pub field_8: u8,
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     /// +0x10 `undefined8`, base BSAudio
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
@@ -2684,12 +2684,12 @@ pub struct BSXAudio2Audio {
     pub field_38: u64,
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
-    pub unknown_41: [u8; 15],
+    unknown_41: [u8; 15],
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
-    pub unknown_60: [u8; 20],
+    unknown_60: [u8; 20],
     /// +0x74 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_74: [u8; 4],
@@ -2744,7 +2744,7 @@ pub struct BSXAudio2AudioListener {
     pub field_34: f32,
     /// +0x38 `undefined8`, base BSAudioListener
     pub field_38: u64,
-    pub unknown_40: [u8; 48],
+    unknown_40: [u8; 48],
     /// +0x70 `undefined8`, base BSAudioListener
     #[doc(hidden)]
     pub __field_70: [u8; 8],
@@ -2870,7 +2870,7 @@ pub struct _anon_3D37F7D5__BSResourceAssetLoader {
     pub __vftable: *const crate::raw::vtables::_anon_3D37F7D5__BSResourceAssetLoader_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2958,7 +2958,7 @@ pub struct _anon_3D37F7D5__BSResourceAssetLoader {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],

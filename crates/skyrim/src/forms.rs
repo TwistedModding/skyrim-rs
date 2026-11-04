@@ -153,7 +153,7 @@ pub trait TESDataHandlerExt {
 
 impl TESDataHandlerExt for TESDataHandler {
     fn forms_of_type(&self, ty: FormType) -> &[Option<&TESForm>] {
-        let arrays = core::ptr::from_ref(self).cast::<sre::BSTArray>().wrapping_byte_add(sre::member_offset!("TESDataHandler.formArrays", 0x10));
+        let arrays = core::ptr::from_ref(self).cast::<sre::BSTArray>().wrapping_byte_add(sre::member_offset!("TESDataHandler.formArrays"));
         sre::fixed_size!("BSTArray", sre::BSTArray);
         let array = unsafe { &*arrays.add(ty as usize) };
         unsafe { ptr_slice(array.data, array.size) }

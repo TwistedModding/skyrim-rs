@@ -13,7 +13,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_cons
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_const____ptr64_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -30,7 +30,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_cons
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -38,7 +38,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_bool_BSFixedString_cons
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -76,7 +76,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____p
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____ptr64_BSFixedString_const____ptr64_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -93,7 +93,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____p
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -101,7 +101,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_TESObjectREFR____p
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -139,7 +139,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool 
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -156,7 +156,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool 
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -164,7 +164,7 @@ pub struct BSScript__NativeLatentFunction2_TESObjectREFR_void_unsigned_int_bool 
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -202,7 +202,7 @@ pub struct BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64_Actor____ptr64_TESObjectREFR____ptr64_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -219,7 +219,7 @@ pub struct BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -227,7 +227,7 @@ pub struct BSScript__NativeLatentFunction3_SpellItem_void_TESObjectREFR____ptr64
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -265,7 +265,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_u
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -282,7 +282,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_u
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -290,7 +290,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_TESForm____ptr64_u
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -328,7 +328,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float 
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -345,7 +345,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float 
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -353,7 +353,7 @@ pub struct BSScript__NativeLatentFunction3_TESObjectREFR_void_float_float_float 
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -391,7 +391,7 @@ pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_b
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_bool_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -408,7 +408,7 @@ pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_b
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -416,7 +416,7 @@ pub struct BSScript__NativeLatentFunction4_Actor_int_bool_BGSListForm____ptr64_b
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -454,7 +454,7 @@ pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESO
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESObjectREFR____ptr64_BSFixedS_d8b5dbe1c137_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -471,7 +471,7 @@ pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESO
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -479,7 +479,7 @@ pub struct BSScript__NativeLatentFunction4_BSScript__StaticFunctionTag_bool_TESO
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -517,7 +517,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_u
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_unsigned_int_bool_TESObjectREFR____ptr64_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -534,7 +534,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_u
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -542,7 +542,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_TESForm____ptr64_u
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -580,7 +580,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -597,7 +597,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -605,7 +605,7 @@ pub struct BSScript__NativeLatentFunction4_TESObjectREFR_void_float_float_float_
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -643,7 +643,7 @@ pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_TESObjectREFR____ptr64_TESO_34fa37a7470b_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -660,7 +660,7 @@ pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -668,7 +668,7 @@ pub struct BSScript__NativeLatentFunction5_BGSKeyword_bool_BGSLocation____ptr64_
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -706,7 +706,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_cons
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_const____ptr64_BSFixedString_co_3dc1935df090_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -723,7 +723,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_cons
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -731,7 +731,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_bool_BSFixedString_cons
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -769,7 +769,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____p
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____ptr64_float_float_float_bool_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -786,7 +786,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____p
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -794,7 +794,7 @@ pub struct BSScript__NativeLatentFunction5_TESObjectREFR_void_TESObjectREFR____p
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -832,7 +832,7 @@ pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_floa
     pub __vftable: *const crate::raw::vtables::BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_float_float_float_float_float_float_vtable,
     /// +0x8 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; BSIntrusiveRefCounted count; BindNativeMethod increments it and the ObjectTypeInfo keeps a reference (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the function name as the script declares it (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; the script class name (Actor, Game, ...) (high)
@@ -849,7 +849,7 @@ pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_floa
     pub paramCount: u16,
     /// +0x3A `undefined2`, base BSScript::NF_util::NativeFunctionBase, semantic; parameters plus locals: what GetParamCount and GetStackFrameSize return (equal to paramCount for natives) (high)
     pub variableCount: u16,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for global functions (BSScript::StaticFunctionTag self): the VM passes a null self (high)
     pub isStatic: u8,
     /// +0x41 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; read by slot 19; stays 0 for natives (SetCallableFromTasklets flags the type's table instead) (high)
@@ -857,7 +857,7 @@ pub struct BSScript__NativeLatentFunction9_BGSMessage_int_float_float_float_floa
     /// +0x42 `undefined1`, base BSScript::NF_util::NativeFunctionBase, semantic; 1 for NativeLatentFunction<N>: Call returns 2 and the callback's bool result means 'started' (high)
     #[doc(hidden)]
     pub __isLatent: [u8; 1],
-    pub unknown_43: [u8; 1],
+    unknown_43: [u8; 1],
     /// +0x44 `undefined4`, base BSScript::NF_util::NativeFunctionBase, semantic; 0 for natives (high)
     pub userFlags: u32,
     /// +0x48 `class:BSFixedString`, base BSScript::NF_util::NativeFunctionBase, semantic; empty for natives (high)
@@ -1540,7 +1540,7 @@ pub struct SkyrimScript__Logger {
     /// +0x60 `undefined8`, base BSScript::ErrorLogger
     #[doc(hidden)]
     pub __field_60: [u8; 8],
-    pub unknown_68: [u8; 12],
+    unknown_68: [u8; 12],
     /// +0x74 `undefined8`, base BSScript::ErrorLogger
     #[doc(hidden)]
     pub __field_74: [u8; 8],
@@ -1550,11 +1550,11 @@ pub struct SkyrimScript__Logger {
     /// +0x80 `undefined8`, base BSScript::ErrorLogger
     #[doc(hidden)]
     pub __field_80: [u8; 8],
-    pub unknown_88: [u8; 8],
+    unknown_88: [u8; 8],
     /// +0x90 `undefined8`, base BSScript::ErrorLogger
     #[doc(hidden)]
     pub __field_90: [u8; 8],
-    pub unknown_98: [u8; 24],
+    unknown_98: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2126,7 +2126,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2136,7 +2136,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2178,7 +2178,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
-    pub unknown_18: [u8; 8],
+    unknown_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 8],
@@ -2188,7 +2188,7 @@ pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2754,22 +2754,22 @@ pub struct SkyrimVM {
     /// +0x1A8 `vtbl:SkyrimVM:1A8`, rtti
     #[doc(hidden)]
     pub ____vftable_1A8: [u8; 8],
-    pub unknown_1B0: [u8; 8],
+    unknown_1B0: [u8; 8],
     /// +0x1B8 `class:BSTEventSource`, RTTI base BSTEventSource<SkyrimScript::StatsEvent>
     #[doc(hidden)]
     pub __source_SkyrimScript_StatsEvent: [u8; 88],
     /// +0x210 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 8],
-    pub unknown_218: [u8; 16],
+    unknown_218: [u8; 16],
     /// +0x228 `undefined8`, member ctor BSScript::SimpleAllocMemoryPagePolicy
     #[doc(hidden)]
     pub __m_SimpleAllocMemoryPagePolicy_228: [u8; 8],
-    pub unknown_230: [u8; 32],
+    unknown_230: [u8; 32],
     /// +0x250 `undefined8`, member ctor BSScript::CompiledScriptLoader
     #[doc(hidden)]
     pub __m_CompiledScriptLoader_250: [u8; 8],
-    pub unknown_258: [u8; 48],
+    unknown_258: [u8; 48],
     /// +0x288 `class:SkyrimScript::Logger`, member ctor SkyrimScript::Logger
     #[doc(hidden)]
     pub __m_Logger_288: [u8; 176],
@@ -2779,7 +2779,7 @@ pub struct SkyrimVM {
     /// +0x340 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_340: [u8; 8],
-    pub unknown_348: [u8; 12],
+    unknown_348: [u8; 12],
     /// +0x354 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_354: [u8; 8],
@@ -2789,11 +2789,11 @@ pub struct SkyrimVM {
     /// +0x360 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_360: [u8; 8],
-    pub unknown_368: [u8; 8],
+    unknown_368: [u8; 8],
     /// +0x370 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_370: [u8; 8],
-    pub unknown_378: [u8; 12],
+    unknown_378: [u8; 12],
     /// +0x384 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_384: [u8; 8],
@@ -2803,18 +2803,18 @@ pub struct SkyrimVM {
     /// +0x390 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_390: [u8; 8],
-    pub unknown_398: [u8; 8],
+    unknown_398: [u8; 8],
     /// +0x3A0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3A0: [u8; 8],
     /// +0x3A8 `undefined8`, member ctor SkyrimScript::ObjectBindPolicy
     #[doc(hidden)]
     pub __m_ObjectBindPolicy_3A8: [u8; 8],
-    pub unknown_3B0: [u8; 16],
+    unknown_3B0: [u8; 16],
     /// +0x3C0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3C0: [u8; 8],
-    pub unknown_3C8: [u8; 12],
+    unknown_3C8: [u8; 12],
     /// +0x3D4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3D4: [u8; 8],
@@ -2824,7 +2824,7 @@ pub struct SkyrimVM {
     /// +0x3E0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3E0: [u8; 8],
-    pub unknown_3E8: [u8; 8],
+    unknown_3E8: [u8; 8],
     /// +0x3F0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3F0: [u8; 8],
@@ -2837,7 +2837,7 @@ pub struct SkyrimVM {
     /// +0x402 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_402: [u8; 1],
-    pub unknown_403: [u8; 17],
+    unknown_403: [u8; 17],
     /// +0x414 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_414: [u8; 8],
@@ -2847,11 +2847,11 @@ pub struct SkyrimVM {
     /// +0x420 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_420: [u8; 8],
-    pub unknown_428: [u8; 8],
+    unknown_428: [u8; 8],
     /// +0x430 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_430: [u8; 8],
-    pub unknown_438: [u8; 36],
+    unknown_438: [u8; 36],
     /// +0x45C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_45C: [u8; 8],
@@ -2861,21 +2861,21 @@ pub struct SkyrimVM {
     /// +0x468 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_468: [u8; 8],
-    pub unknown_470: [u8; 8],
+    unknown_470: [u8; 8],
     /// +0x478 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_478: [u8; 8],
     /// +0x480 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_480: [u8; 8],
-    pub unknown_488: [u8; 280],
+    unknown_488: [u8; 280],
     /// +0x5A0 `undefined8`, member ctor SkyrimScript::Profiler
     #[doc(hidden)]
     pub __m_Profiler_5A0: [u8; 8],
     /// +0x5A8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5A8: [u8; 8],
-    pub unknown_5B0: [u8; 12],
+    unknown_5B0: [u8; 12],
     /// +0x5BC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5BC: [u8; 8],
@@ -2885,11 +2885,11 @@ pub struct SkyrimVM {
     /// +0x5C8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5C8: [u8; 8],
-    pub unknown_5D0: [u8; 8],
+    unknown_5D0: [u8; 8],
     /// +0x5D8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5D8: [u8; 8],
-    pub unknown_5E0: [u8; 12],
+    unknown_5E0: [u8; 12],
     /// +0x5EC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5EC: [u8; 8],
@@ -2899,11 +2899,11 @@ pub struct SkyrimVM {
     /// +0x5F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_5F8: [u8; 8],
-    pub unknown_600: [u8; 8],
+    unknown_600: [u8; 8],
     /// +0x608 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_608: [u8; 8],
-    pub unknown_610: [u8; 12],
+    unknown_610: [u8; 12],
     /// +0x61C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_61C: [u8; 8],
@@ -2913,22 +2913,22 @@ pub struct SkyrimVM {
     /// +0x628 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_628: [u8; 8],
-    pub unknown_630: [u8; 8],
+    unknown_630: [u8; 8],
     /// +0x638 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_638: [u8; 8],
     /// +0x640 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_640: [u8; 8],
-    pub unknown_648: [u8; 28],
+    unknown_648: [u8; 28],
     /// +0x664 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_664: [u8; 4],
-    pub unknown_668: [u8; 16],
+    unknown_668: [u8; 16],
     /// +0x678 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_678: [u8; 2],
-    pub unknown_67A: [u8; 6],
+    unknown_67A: [u8; 6],
     /// +0x680 `undefined8`, member ctor SkyrimScript::SavePatcher
     #[doc(hidden)]
     pub __m_SavePatcher_680: [u8; 8],
@@ -2938,31 +2938,31 @@ pub struct SkyrimVM {
     /// +0x690 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_690: [u8; 1],
-    pub unknown_691: [u8; 3],
+    unknown_691: [u8; 3],
     /// +0x694 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_694: [u8; 8],
-    pub unknown_69C: [u8; 16],
+    unknown_69C: [u8; 16],
     /// +0x6AC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6AC: [u8; 8],
-    pub unknown_6B4: [u8; 76],
+    unknown_6B4: [u8; 76],
     /// +0x700 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_700: [u8; 8],
-    pub unknown_708: [u8; 28],
+    unknown_708: [u8; 28],
     /// +0x724 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_724: [u8; 8],
-    pub unknown_72C: [u8; 52],
+    unknown_72C: [u8; 52],
     /// +0x760 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_760: [u8; 1],
-    pub unknown_761: [u8; 3],
+    unknown_761: [u8; 3],
     /// +0x764 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_764: [u8; 8],
-    pub unknown_76C: [u8; 16],
+    unknown_76C: [u8; 16],
     /// +0x77C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_77C: [u8; 8],
@@ -2972,14 +2972,14 @@ pub struct SkyrimVM {
     /// +0x788 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_788: [u8; 8],
-    pub unknown_790: [u8; 8],
+    unknown_790: [u8; 8],
     /// +0x798 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_798: [u8; 8],
     /// +0x7A0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7A0: [u8; 8],
-    pub unknown_7A8: [u8; 12],
+    unknown_7A8: [u8; 12],
     /// +0x7B4 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7B4: [u8; 8],
@@ -2989,7 +2989,7 @@ pub struct SkyrimVM {
     /// +0x7C0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7C0: [u8; 8],
-    pub unknown_7C8: [u8; 8],
+    unknown_7C8: [u8; 8],
     /// +0x7D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7D0: [u8; 8],

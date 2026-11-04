@@ -72,7 +72,7 @@ pub struct bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo 
     /// +0x10 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_10: [u8; 8],
-    pub unknown_18: [u8; 96],
+    unknown_18: [u8; 96],
     /// +0x78 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_78: [u8; 8],
@@ -91,7 +91,7 @@ pub struct bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo 
     /// +0xA0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 1],
-    pub unknown_A1: [u8; 503],
+    unknown_A1: [u8; 503],
     /// +0x298 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_298: [u8; 8],
@@ -101,28 +101,28 @@ pub struct bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo 
     /// +0x2A4 `undefined4`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_2A4: [u8; 4],
-    pub unknown_2A8: [u8; 8],
+    unknown_2A8: [u8; 8],
     /// +0x2B0 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_2B0: [u8; 8],
     /// +0x2B8 `undefined1`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_2B8: [u8; 1],
-    pub unknown_2B9: [u8; 519],
+    unknown_2B9: [u8; 519],
     /// +0x4C0 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_4C0: [u8; 8],
     /// +0x4C8 `undefined1`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_4C8: [u8; 1],
-    pub unknown_4C9: [u8; 511],
+    unknown_4C9: [u8; 511],
     /// +0x6C8 `undefined8`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_6C8: [u8; 8],
     /// +0x6D0 `undefined1`, base bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>
     #[doc(hidden)]
     pub __field_6D0: [u8; 1],
-    pub unknown_6D1: [u8; 7],
+    unknown_6D1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -167,7 +167,7 @@ pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResu
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -429,7 +429,7 @@ pub struct bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__D
     /// +0x0 `vtbl:bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -588,7 +588,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1216],
+    unknown_8: [u8; 1216],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -609,11 +609,11 @@ pub struct bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__Htt
     /// +0x10 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 8],
-    pub unknown_18: [u8; 96],
+    unknown_18: [u8; 96],
     /// +0x78 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_78: [u8; 8],
-    pub unknown_80: [u8; 536],
+    unknown_80: [u8; 536],
     /// +0x298 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_298: [u8; 8],
@@ -623,28 +623,28 @@ pub struct bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__Htt
     /// +0x2A4 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2A4: [u8; 4],
-    pub unknown_2A8: [u8; 8],
+    unknown_2A8: [u8; 8],
     /// +0x2B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2B0: [u8; 8],
     /// +0x2B8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_2B8: [u8; 1],
-    pub unknown_2B9: [u8; 519],
+    unknown_2B9: [u8; 519],
     /// +0x4C0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_4C0: [u8; 8],
     /// +0x4C8 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_4C8: [u8; 1],
-    pub unknown_4C9: [u8; 511],
+    unknown_4C9: [u8; 511],
     /// +0x6C8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_6C8: [u8; 8],
     /// +0x6D0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_6D0: [u8; 1],
-    pub unknown_6D1: [u8; 7],
+    unknown_6D1: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -671,7 +671,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResul
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 6640],
+    unknown_8: [u8; 6640],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -686,7 +686,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalA
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -701,7 +701,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingRe
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -716,7 +716,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -731,7 +731,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bne
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -746,7 +746,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -761,7 +761,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_b
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -776,7 +776,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -791,7 +791,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentId
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -806,7 +806,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedLi
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -821,7 +821,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesR
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -836,7 +836,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategori
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -851,7 +851,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollecti
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -866,7 +866,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentR
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -881,7 +881,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUpl
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -896,7 +896,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -911,7 +911,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCurate
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -926,7 +926,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__Down
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -941,7 +941,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bn
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -956,7 +956,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePr
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -971,7 +971,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseRe
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -986,7 +986,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1001,7 +1001,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 7704],
+    unknown_8: [u8; 7704],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1016,7 +1016,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitl
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1031,7 +1031,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__i
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 3288],
+    unknown_8: [u8; 3288],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1046,7 +1046,7 @@ pub struct bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo 
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1216],
+    unknown_8: [u8; 1216],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1061,7 +1061,7 @@ pub struct bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo {
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1216],
+    unknown_8: [u8; 1216],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1076,7 +1076,7 @@ pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResul
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1091,7 +1091,7 @@ pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__Ht
     /// +0x0 `vtbl:bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 1224],
+    unknown_8: [u8; 1224],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1123,7 +1123,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 64],
+    unknown_8: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1150,7 +1150,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 64],
+    unknown_8: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1165,7 +1165,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 64],
+    unknown_8: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1180,7 +1180,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1195,7 +1195,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1209,7 +1209,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1224,7 +1224,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1239,7 +1239,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1254,7 +1254,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1269,7 +1269,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1284,7 +1284,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1299,7 +1299,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1314,7 +1314,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1329,7 +1329,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1344,7 +1344,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1358,7 +1358,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1373,7 +1373,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1388,7 +1388,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1403,7 +1403,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1417,7 +1417,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1432,7 +1432,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1447,7 +1447,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1462,7 +1462,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1476,7 +1476,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1491,7 +1491,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1506,7 +1506,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1521,7 +1521,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1535,7 +1535,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1550,7 +1550,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1565,7 +1565,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1580,7 +1580,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1594,7 +1594,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1609,7 +1609,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1624,7 +1624,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1639,7 +1639,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1653,7 +1653,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1668,7 +1668,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1683,7 +1683,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1698,7 +1698,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1713,7 +1713,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1728,7 +1728,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1743,7 +1743,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1758,7 +1758,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1772,7 +1772,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1787,7 +1787,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1802,7 +1802,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1817,7 +1817,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1832,7 +1832,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1847,7 +1847,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1862,7 +1862,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1877,7 +1877,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1891,7 +1891,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1906,7 +1906,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1921,7 +1921,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1936,7 +1936,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1950,7 +1950,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1965,7 +1965,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1980,7 +1980,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1995,7 +1995,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2010,7 +2010,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2025,7 +2025,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2039,7 +2039,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2054,7 +2054,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2069,7 +2069,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2084,7 +2084,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2099,7 +2099,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2114,7 +2114,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2142,7 +2142,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2157,7 +2157,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2172,7 +2172,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2186,7 +2186,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2201,7 +2201,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2216,7 +2216,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2231,7 +2231,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2245,7 +2245,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2260,7 +2260,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2275,7 +2275,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2290,7 +2290,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2304,7 +2304,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2319,7 +2319,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2334,7 +2334,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2349,7 +2349,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2364,7 +2364,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2379,7 +2379,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2394,7 +2394,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2409,7 +2409,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_72ad632ec4450f84072973c713edcddd>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2424,7 +2424,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_83c0c6d7897936d7f5f63d2879161653>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2439,7 +2439,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_99647caeb1d555456edf28d2fb97c094>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2454,7 +2454,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a3c4541099af4325677440eef8bea468>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2469,7 +2469,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a766cc75c53d15f496b075c8a961ea69>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2484,7 +2484,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_a911d0f86e7b47fcd96773506be69108>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2499,7 +2499,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2514,7 +2514,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e622e65e01ede8fdaf05876c07743ad3>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2529,7 +2529,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2544,7 +2544,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fe4b23abdcf156897a3e954dac9de83c>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2559,7 +2559,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0334f3ea506f392b6646d961847017d0>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2574,7 +2574,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2602,7 +2602,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_37d93f6d237fec52d272d7677b362e70>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2617,7 +2617,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3fbfdc5799edac0af451d6bbf3745028>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2632,7 +2632,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_72ad632ec4450f84072973c713edcddd>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2647,7 +2647,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_83c0c6d7897936d7f5f63d2879161653>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2662,7 +2662,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_99647caeb1d555456edf28d2fb97c094>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2690,7 +2690,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a766cc75c53d15f496b075c8a961ea69>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2705,7 +2705,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_a911d0f86e7b47fcd96773506be69108>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2720,7 +2720,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4e9d9e553e1b829e89cb70047d78ef7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2735,7 +2735,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e622e65e01ede8fdaf05876c07743ad3>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2750,7 +2750,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0d94ef49b94a4742fe839cdc1bea6f6>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2765,7 +2765,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fe4b23abdcf156897a3e954dac9de83c>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2779,7 +2779,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2794,7 +2794,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2809,7 +2809,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2824,7 +2824,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7a31e167553e9afbc526f28bcd4a3dd6>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2838,7 +2838,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2853,7 +2853,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2868,7 +2868,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_011b78ece2e776a201ecd4d2f293fd79>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2883,7 +2883,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_87f3477ec2164b75511a3457e032a12e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2898,7 +2898,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_011b78ece2e776a201ecd4d2f293fd79>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2913,7 +2913,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_87f3477ec2164b75511a3457e032a12e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2927,7 +2927,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2942,7 +2942,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2957,7 +2957,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1c40bff9a621879fd4d4be31e4dffd0a>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2972,7 +2972,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1c40bff9a621879fd4d4be31e4dffd0a>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2986,7 +2986,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3001,7 +3001,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3016,7 +3016,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_caae1aea9061e3c0fb576427985b4372>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 80],
+    unknown_8: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3043,7 +3043,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 80],
+    unknown_8: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3058,7 +3058,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 80],
+    unknown_8: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3073,7 +3073,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bf29759697eaf8d5eeed6d87f32bf029>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3088,7 +3088,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bf29759697eaf8d5eeed6d87f32bf029>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3102,7 +3102,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3117,7 +3117,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3132,7 +3132,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_80759a00069d6d049cb09c78beb9f55e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 72],
+    unknown_8: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3159,7 +3159,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 72],
+    unknown_8: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3174,7 +3174,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 72],
+    unknown_8: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3189,7 +3189,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1a6b1f879a3937e0aa4f278b4f9cce50>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 72],
+    unknown_8: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3204,7 +3204,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_fce559dc0e0d343f4b4e66666cd3217e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3232,7 +3232,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_fce559dc0e0d343f4b4e66666cd3217e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3246,7 +3246,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3261,7 +3261,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3276,7 +3276,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_207ceef7ce8d7d2573a247f40580b845>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3291,7 +3291,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ea79fcca329a4abbf6ff605b0628b773>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3306,7 +3306,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_207ceef7ce8d7d2573a247f40580b845>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3321,7 +3321,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ea79fcca329a4abbf6ff605b0628b773>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3335,7 +3335,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3350,7 +3350,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3365,7 +3365,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICopyableCallable,<lambda_c2b88a5c628f447867b8975b66b7c504>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3380,7 +3380,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::CopyableCallable<<lambda_c2b88a5c628f447867b8975b66b7c504>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3394,7 +3394,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3409,7 +3409,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3424,7 +3424,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_34c2de899831ef32a3ce3adf126c34d5>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3439,7 +3439,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_34c2de899831ef32a3ce3adf126c34d5>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3453,7 +3453,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3468,7 +3468,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3483,7 +3483,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_850352f01067750e1a63258a75e3e52a>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3498,7 +3498,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_850352f01067750e1a63258a75e3e52a>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3512,7 +3512,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3527,7 +3527,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3542,7 +3542,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_04364feec46ca23c904cf67120bbb977>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3557,7 +3557,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_084b388a05d378e142dad9a3c2e195ed>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3572,7 +3572,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_11d18c60610d650d2f78796d0d278e87>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3587,7 +3587,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_133c1da527c611c9dcda295aefdf806d>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3602,7 +3602,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1656df761702a34a262b091507cce5f7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3617,7 +3617,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3632,7 +3632,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3be0cd93eee1a525d5980446f7145a43>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3647,7 +3647,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_41fd7ee57d994a684c6bd214f348446e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3662,7 +3662,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4d412f9360f2e770764471adcb40583d>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3677,7 +3677,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_60f66320e7ff53969a066e9bb5390d87>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3692,7 +3692,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_6923c7db47795dd1ace1b80563a447ad>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3707,7 +3707,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3722,7 +3722,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_81362fefa0bafdc97634a2e2e71c0582>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3737,7 +3737,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_84ba32da379f1a5a62094d61327152df>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3752,7 +3752,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_996cdf0862a56af86372b0f56da3e7fc>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3767,7 +3767,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3782,7 +3782,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_adea97f238d027e01a467b281ee4d039>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3797,7 +3797,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_af1c5628e4452240cdaa04843329f091>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3812,7 +3812,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c52bf3fa64981bb2fac1cf8941423930>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3827,7 +3827,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4e662662591968f723ad2e6b67bd457>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3842,7 +3842,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_dc47955391806d5d301a84fffe1e352f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3857,7 +3857,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3872,7 +3872,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_04364feec46ca23c904cf67120bbb977>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3887,7 +3887,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_084b388a05d378e142dad9a3c2e195ed>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3902,7 +3902,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_11d18c60610d650d2f78796d0d278e87>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3917,7 +3917,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_133c1da527c611c9dcda295aefdf806d>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3932,7 +3932,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1656df761702a34a262b091507cce5f7>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3947,7 +3947,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_339b5ce6d6104c0c8fb09c9881f11023>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3962,7 +3962,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3be0cd93eee1a525d5980446f7145a43>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3977,7 +3977,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_41fd7ee57d994a684c6bd214f348446e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3992,7 +3992,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4d412f9360f2e770764471adcb40583d>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4007,7 +4007,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_60f66320e7ff53969a066e9bb5390d87>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4022,7 +4022,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_6923c7db47795dd1ace1b80563a447ad>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4037,7 +4037,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7c6a748cf7ef983a0d58de9288ce9768>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4052,7 +4052,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_81362fefa0bafdc97634a2e2e71c0582>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4067,7 +4067,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_84ba32da379f1a5a62094d61327152df>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4082,7 +4082,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4097,7 +4097,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4112,7 +4112,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4127,7 +4127,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_af1c5628e4452240cdaa04843329f091>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4142,7 +4142,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c52bf3fa64981bb2fac1cf8941423930>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4157,7 +4157,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4e662662591968f723ad2e6b67bd457>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4172,7 +4172,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_dc47955391806d5d301a84fffe1e352f>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4187,7 +4187,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ec7833b5bfb3ef55e5ada91b58a80c43>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4201,7 +4201,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4216,7 +4216,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4231,7 +4231,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_463900ed92a2f8fa13b2115620e21f94>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4246,7 +4246,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b74693073e62dfe3900e7755047d3b0e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4261,7 +4261,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_463900ed92a2f8fa13b2115620e21f94>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4276,7 +4276,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b74693073e62dfe3900e7755047d3b0e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4290,7 +4290,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4305,7 +4305,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bool,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4320,7 +4320,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4335,7 +4335,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d7df5299aa0dfb1534894b6ffcff0625>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4349,7 +4349,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4364,7 +4364,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4379,7 +4379,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_1e115a34fa92652d7d9402011643d019>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4394,7 +4394,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_4f36912b353e5ec1a478a3777faaddcb>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4409,7 +4409,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7dec0c800e37e37d404130c032617714>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4424,7 +4424,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a178d4ccf12849133a395e69fad8f52>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4439,7 +4439,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4454,7 +4454,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_1e115a34fa92652d7d9402011643d019>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4469,7 +4469,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_4f36912b353e5ec1a478a3777faaddcb>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4484,7 +4484,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7dec0c800e37e37d404130c032617714>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4499,7 +4499,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a178d4ccf12849133a395e69fad8f52>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4514,7 +4514,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f6cd55725bab799c0df422d8ec2e2b8b>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4528,7 +4528,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4543,7 +4543,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4558,7 +4558,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable,<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4573,7 +4573,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::CopyableCallable<<lambda_6ee167bc8cb900b3de3c5edee0afddf9>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4587,7 +4587,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4602,7 +4602,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::ErrorParams_const&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4617,7 +4617,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable,void_(__cdecl*)(bnet::LogParams_const&___ptr64)>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4632,7 +4632,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::CopyableCallable<void_(__cdecl*)(bnet::LogParams_const&___ptr64)>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4646,7 +4646,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4661,7 +4661,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::LogParams_const&___ptr64)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4676,7 +4676,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable,<lambda_e35940508eec14f4e3ce2fa64956727e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4691,7 +4691,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::CopyableCallable<<lambda_e35940508eec14f4e3ce2fa64956727e>_>:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4705,7 +4705,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICallableBase:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4720,7 +4720,7 @@ pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_voi
     /// +0x0 `vtbl:bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable:0`, rtti
     #[doc(hidden)]
     pub ____vftable: [u8; 8],
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

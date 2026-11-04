@@ -52,7 +52,7 @@ impl BGSSaveLoadManagerExt for BGSSaveLoadManager {
     }
 
     fn current_save_name(&self) -> Option<&str> {
-        let name = unsafe { core::ptr::from_ref(self).byte_add(sre::member_offset!("BGSSaveLoadManager.currentSaveNamePtr", 0x240)).cast::<*const c_char>().read_unaligned() };
+        let name = unsafe { core::ptr::from_ref(self).byte_add(sre::member_offset!("BGSSaveLoadManager.currentSaveNamePtr")).cast::<*const c_char>().read_unaligned() };
         if name.is_null() {
             return None;
         }
@@ -71,23 +71,23 @@ pub struct SaveLoadEvent(sre::BGSSaveLoadManagerEvent);
 impl SaveLoadEvent {
     #[must_use]
     pub fn kind(&self) -> Option<SaveLoadEventKind> {
-        SaveLoadEventKind::from_u32(u32::from(self.0.kind()))
+        SaveLoadEventKind::from_u32(u32::from(self.0.kind))
     }
 
     #[must_use]
     pub fn kind_raw(&self) -> u8 {
-        self.0.kind()
+        self.0.kind
     }
 
     #[must_use]
     pub fn done(&self) -> bool {
-        self.0.done() != 0
+        self.0.done != 0
     }
 }
 
 impl core::fmt::Debug for SaveLoadEvent {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "SaveLoadEvent {{ kind: {}, done: {} }}", self.0.kind(), self.0.done())
+        write!(f, "SaveLoadEvent {{ kind: {}, done: {} }}", self.0.kind, self.0.done)
     }
 }
 

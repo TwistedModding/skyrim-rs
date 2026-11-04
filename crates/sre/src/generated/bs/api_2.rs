@@ -2444,10 +2444,10 @@ impl crate::BSResource___anon_30629CF1__AsyncArchiveStream {
 impl crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// The `BSResource::AsyncStream` base at +0x30.
     #[inline]
-    pub fn as_bs_resource__async_stream(&self) -> &crate::BSResource__AsyncStream { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30)).cast() } }
+    pub fn as_bs_resource__async_stream(&self) -> &crate::BSResource__AsyncStream { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30)).cast() } }
     /// The `BSResource::StreamBase` base at +0x30.
     #[inline]
-    pub fn as_bs_resource__stream_base(&self) -> &crate::BSResource__StreamBase { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30)).cast() } }
+    pub fn as_bs_resource__stream_base(&self) -> &crate::BSResource__StreamBase { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30)).cast() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member___vftable_30(this: *const Self) -> *mut *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30 { unsafe { member!(this, "BSResource::_anon_5F811FAA::LooseFileAsyncStream.__vftable_30", 0x30, *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30) } }
@@ -2463,10 +2463,10 @@ impl crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
 impl crate::BSResource___anon_5F811FAA__LooseFileStream {
     /// The `BSResource::Stream` base at +0x30.
     #[inline]
-    pub fn as_bs_resource__stream(&self) -> &crate::BSResource__Stream { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30)).cast() } }
+    pub fn as_bs_resource__stream(&self) -> &crate::BSResource__Stream { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30)).cast() } }
     /// The `BSResource::StreamBase` base at +0x30.
     #[inline]
-    pub fn as_bs_resource__stream_base(&self) -> &crate::BSResource__StreamBase { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30)).cast() } }
+    pub fn as_bs_resource__stream_base(&self) -> &crate::BSResource__StreamBase { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30)).cast() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member___vftable_30(this: *const Self) -> *mut *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileStream_vtable_30 { unsafe { member!(this, "BSResource::_anon_5F811FAA::LooseFileStream.__vftable_30", 0x30, *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileStream_vtable_30) } }

@@ -15,7 +15,7 @@ pub struct BSCullingProcess {
     pub __vftable: *const crate::raw::vtables::BSCullingProcess_vtable,
     /// +0x8 `undefined1`, base NiCullingProcess
     pub field_8: u8,
-    pub unknown_9: [u8; 7],
+    unknown_9: [u8; 7],
     /// +0x10 `pointer`, base NiCullingProcess, semantic; the accumulator visible geometry is handed to (swapped in by Process when given) (high)
     pub accumulator: *mut c_void,
     /// +0x18 `ptr:NiCamera`, base NiCullingProcess, semantic, runtime; the camera of the current walk (high)
@@ -30,11 +30,11 @@ pub struct BSCullingProcess {
     pub activePlaneMask: u32,
     /// +0xA0 `undefined4`, base NiCullingProcess
     pub field_A0: u32,
-    pub unknown_A4: [u8; 8],
+    unknown_A4: [u8; 8],
     /// +0xAC `undefined1`, semantic; an alternative plane set with its mask at +0x10c, copied over +0x3c..+0xab at Process when +0x11f is set (medium)
     #[doc(hidden)]
     pub __customPlanes: [u8; 112],
-    pub unknown_11C: [u8; 1],
+    unknown_11C: [u8; 1],
     /// +0x11D `undefined1`, semantic; when set the walk keeps NiAVObject flags bit 26: set when accepted, cleared when culled (high)
     #[doc(hidden)]
     pub __maintainVisibleFlag: [u8; 1],
@@ -49,17 +49,17 @@ pub struct BSCullingProcess {
     pub __narrowPlaneMask: [u8; 1],
     /// +0x121 `undefined1`, base NiCullingProcess
     pub field_121: u8,
-    pub unknown_122: [u8; 6],
+    unknown_122: [u8; 6],
     /// +0x128 `class:BSTArray`, semantic; geometry accepted by the walk (references added) (high)
     pub visibleGeometry: crate::BSTArray,
-    pub unknown_140: [u8; 65536],
+    unknown_140: [u8; 65536],
     /// +0x10140 `undefined1`, semantic; lock-free ring of 0x10-byte records {object, groupIndex, appendTag} filled by slot 24 for objects of an ordered group (or when +0x301d5 is set) (medium)
     #[doc(hidden)]
     pub __queuedVisible: [u8; 65552],
     /// +0x20150 `undefined1`, semantic; ring of free 0x10-byte records (0x1000 records stored from +0x140) (medium)
     #[doc(hidden)]
     pub __freeRecords: [u8; 65552],
-    pub unknown_30160: [u8; 12],
+    unknown_30160: [u8; 12],
     /// +0x3016C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_3016C: [u8; 8],
@@ -69,7 +69,7 @@ pub struct BSCullingProcess {
     /// +0x30178 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30178: [u8; 8],
-    pub unknown_30180: [u8; 8],
+    unknown_30180: [u8; 8],
     /// +0x30188 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30188: [u8; 8],
@@ -78,11 +78,11 @@ pub struct BSCullingProcess {
     pub __field_30190: [u8; 8],
     /// +0x30198 `undefined4`, semantic; 1 and 2 accept without testing, 3 and 4 test planes and portals (4 also visits nodes with flag bit 12); the sun's geometry list cullers use 3 + light+0x47 (medium)
     pub cullMode: u32,
-    pub unknown_3019C: [u8; 4],
+    unknown_3019C: [u8; 4],
     /// +0x301A0 `undefined8`, semantic; portal frusta used by cullMode 4: plane sets of 0x70 bytes with their mask at +0x60, a node tree at +0x18, count at +0xbc (medium)
     #[doc(hidden)]
     pub __portalPlaneTree: [u8; 8],
-    pub unknown_301A8: [u8; 40],
+    unknown_301A8: [u8; 40],
     /// +0x301D0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_301D0: [u8; 4],
@@ -92,7 +92,7 @@ pub struct BSCullingProcess {
     /// +0x301D5 `undefined1`, semantic; when set slot 24 queues every object instead of appending it directly (medium)
     #[doc(hidden)]
     pub __deferAllAppends: [u8; 1],
-    pub unknown_301D6: [u8; 2],
+    unknown_301D6: [u8; 2],
     /// +0x301D8 `class:BSTArray`, semantic; one chunked list (0x38-byte header) per ordered group, filled from queuedVisible by group index (medium)
     pub groupBuckets: crate::BSTArray,
     /// +0x301F0 `undefined4`, semantic; highest ordered-group index handed out in this walk, -1 = none; BSOrderedNode::OnVisible atomically increments it to open a group (high)
@@ -256,7 +256,7 @@ pub struct BSLight {
     pub __vftable: *const crate::raw::vtables::BSLight_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
@@ -267,11 +267,11 @@ pub struct BSLight {
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 15],
+    unknown_38: [u8; 15],
     /// +0x47 `u8`, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
     #[doc(hidden)]
     pub __portalStrictCull: [u8; 1],
@@ -281,19 +281,19 @@ pub struct BSLight {
     pub position: crate::NiPoint3,
     /// +0x5C `u8`, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined2`, ctor store
     pub field_60: u16,
-    pub unknown_62: [u8; 1],
+    unknown_62: [u8; 1],
     /// +0x63 `u8`, semantic; the light's shadow is dropped beyond g_ShadowDistance (medium)
     pub distanceCulled: u8,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    pub unknown_70: [u8; 96],
+    unknown_70: [u8; 96],
     /// +0xD0 `undefined1`, ctor store
     pub field_D0: u8,
-    pub unknown_D1: [u8; 79],
+    unknown_D1: [u8; 79],
     /// +0x120 `ptr:BSPortalGraph`, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
@@ -339,7 +339,7 @@ pub struct BSLightingShaderProperty {
     pub __vftable: *const crate::raw::vtables::BSLightingShaderProperty_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -350,7 +350,7 @@ pub struct BSLightingShaderProperty {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `float`, base BSShaderProperty, semantic; alpha, 1.0 by default (high)
     pub alpha: f32,
     /// +0x34 `undefined4`, base BSShaderProperty, semantic; key of the state the pass list at +0x40 was built for: (renderMode << 8) | shadowLightMask; 0x7fffffff = invalid (forces a rebuild) (high)
@@ -375,7 +375,7 @@ pub struct BSLightingShaderProperty {
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, base BSShaderProperty, semantic; render frame the pass lists were last rebuilt in (high)
     pub passFrame: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined1`, semantic; three pass lists of 0x10 (+0x88/+0x98/+0xa8) for the depth/shadow modes, rotated each frame through the indices at +0x132/+0x133 (medium)
     #[doc(hidden)]
     pub __depthPassLists: [u8; 48],
@@ -392,7 +392,7 @@ pub struct BSLightingShaderProperty {
     pub emitColor: *mut crate::NiColor,
     /// +0xF8 `float`, semantic; emissive multiplier (1.0) (high)
     pub emitColorScale: f32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     /// +0x100 `float`, semantic; distance fade of the specular term (1.0) (medium)
     pub specularLODFade: f32,
     /// +0x104 `float`, semantic; distance fade of the environment map and refraction (1.0) (medium)
@@ -406,16 +406,16 @@ pub struct BSLightingShaderProperty {
     pub projectedUVColor: crate::NiColorA,
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
-    pub unknown_130: [u8; 2],
+    unknown_130: [u8; 2],
     /// +0x132 `undefined1`, semantic; index (0..2) of the depth pass list in use (medium)
     pub currentDepthList: u8,
     /// +0x133 `undefined1`, semantic; index of the depth pass list being built (medium)
     pub nextDepthList: u8,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined1`, semantic; the record lightData (+0x70) points at; shadow light mask at +0x154, dirty byte at +0x158 (medium)
     #[doc(hidden)]
     pub __lightDataStorage: [u8; 36],
-    pub unknown_15C: [u8; 4],
+    unknown_15C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -467,7 +467,7 @@ pub struct BSShaderAccumulator {
     pub __vftable: *const crate::raw::vtables::BSShaderAccumulator_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:NiCamera`, base NiAccumulator, semantic; camera of the current draw (high)
     pub camera: *mut crate::NiCamera,
     /// +0x18 `undefined8`, base NiBackToFrontAccumulator, semantic; head of the geometry list collected in mode 0x14 (0x18-byte nodes {next, prev, geometry}) (medium)
@@ -476,7 +476,7 @@ pub struct BSShaderAccumulator {
     pub geometryListTail: u64,
     /// +0x28 `undefined4`, base NiBackToFrontAccumulator, semantic; count of that list (medium)
     pub geometryListCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base NiBackToFrontAccumulator
     pub field_30: u64,
     /// +0x38 `undefined8`, base NiBackToFrontAccumulator
@@ -485,23 +485,23 @@ pub struct BSShaderAccumulator {
     pub field_40: u64,
     /// +0x48 `undefined4`, base NiBackToFrontAccumulator
     pub field_48: u32,
-    pub unknown_4C: [u8; 5],
+    unknown_4C: [u8; 5],
     /// +0x51 `undefined1`, semantic; flag handed to the depth-group key (subtracts the bound radius) and to the alpha sort (low)
     pub field_51: u8,
     /// +0x52 `undefined1`, base NiAlphaAccumulator
     pub field_52: u8,
-    pub unknown_53: [u8; 9],
+    unknown_53: [u8; 9],
     /// +0x5C `undefined1`, semantic; set to 1 around the main colour draw (sub17) and in RenderShadowMaps; selects depth mode 4 for the first opaque range in ID_106583 (low)
     pub field_5C: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined1`, ctor store
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `undefined8`, ctor store
     pub field_70: u64,
     /// +0x78 `undefined8`, ctor store
@@ -510,7 +510,7 @@ pub struct BSShaderAccumulator {
     pub field_80: u32,
     /// +0x84 `undefined1`, ctor store
     pub field_84: u8,
-    pub unknown_85: [u8; 3],
+    unknown_85: [u8; 3],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -519,7 +519,7 @@ pub struct BSShaderAccumulator {
     pub field_98: u32,
     /// +0x9C `undefined1`, ctor store
     pub field_9C: u8,
-    pub unknown_9D: [u8; 3],
+    unknown_9D: [u8; 3],
     /// +0xA0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
@@ -532,22 +532,22 @@ pub struct BSShaderAccumulator {
     /// +0xB4 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_B4: [u8; 1],
-    pub unknown_B5: [u8; 3],
+    unknown_B5: [u8; 3],
     /// +0xB8 `undefined2`, ctor store
     pub field_B8: u16,
     /// +0xBA `undefined1`, ctor store
     pub field_BA: u8,
-    pub unknown_BB: [u8; 21],
+    unknown_BB: [u8; 21],
     /// +0xD0 `undefined1`, semantic; BSMap<BSFadeNode const*, unsigned int> (the vtables written by the ctor name the type) (high)
     pub fadeNodeMap: [u8; 48],
-    pub unknown_100: [u8; 8],
+    unknown_100: [u8; 8],
     /// +0x108 `undefined8`, ctor store
     pub field_108: u64,
     /// +0x110 `undefined4`, ctor store
     pub field_110: u32,
     /// +0x114 `undefined1`, ctor store
     pub field_114: u8,
-    pub unknown_115: [u8; 3],
+    unknown_115: [u8; 3],
     /// +0x118 `class:NiColorA`, semantic; four floats, ctor 0.3,0.3,0.3,1.0; BSCubeMapCamera copies its own +0x1b8 here (low); retyped undefined1 -> class:NiColorA: ctor 0x151dea0 0.3, 0.3, 0.3, 1.0 (RGBA); BSCubeMapCamera copies its +0x1b8 (MOVUPS 16 bytes at 0x1559ffa)
     pub clearColor: crate::NiColorA,
     /// +0x128 `undefined1`, semantic; with +0x129 enables the techniques 0x5c000058..0x5c00005b and excludes water properties from registration (low)
@@ -557,7 +557,7 @@ pub struct BSShaderAccumulator {
     pub __field_129: [u8; 1],
     /// +0x12A `undefined1`, ctor store
     pub field_12A: u8,
-    pub unknown_12B: [u8; 1],
+    unknown_12B: [u8; 1],
     /// +0x12C `u8`, semantic; RegisterDepthGeometry lets decal-flagged geometry (0xc000000) through (high)
     pub acceptDecalsInDepth: u8,
     /// +0x12D `u8`, semantic; with +0x12c clear: decals pass only with property bits 32 and 18 and a blended NiAlphaProperty (high)
@@ -565,7 +565,7 @@ pub struct BSShaderAccumulator {
     pub __acceptAlphaDecalsInDepth: [u8; 1],
     /// +0x12E `undefined1`, semantic; set on the accumulators of the sun's maps; BSLightingShaderProperty slot 43 adds the pre-pass in mode 0xe only for them (medium)
     pub isCascadeAccumulator: u8,
-    pub unknown_12F: [u8; 1],
+    unknown_12F: [u8; 1],
     /// +0x130 `ptr:BSBatchRenderer`, semantic; batch renderer the passes are sorted into (high)
     pub batchRenderer: *mut crate::BSBatchRenderer,
     /// +0x138 `undefined4`, semantic; iteration state of RenderBatches: technique being drawn (medium)
@@ -574,13 +574,13 @@ pub struct BSShaderAccumulator {
     pub currentBucket: u32,
     /// +0x140 `undefined1`, semantic; iteration state: more techniques to draw (medium)
     pub hasMoreBatches: u8,
-    pub unknown_141: [u8; 7],
+    unknown_141: [u8; 7],
     /// +0x148 `ptr:ShadowSceneNode`, semantic; scene node whose lights the draw uses (medium)
     #[doc(hidden)]
     pub __shadowSceneNode: [u8; 8],
     /// +0x150 `undefined4`, semantic; mode handed to the property's pass builders (0xc-0xf for depth and shadow maps; values in pass 6's AccumulatorRenderMode) (high)
     pub renderMode: u32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `undefined8`, ctor store
     pub field_158: u64,
     /// +0x160 `undefined4`, semantic; map index + 1 of the shadow map this accumulator draws (high)
@@ -593,7 +593,7 @@ pub struct BSShaderAccumulator {
     pub eyePosition: crate::NiPoint3,
     /// +0x178 `undefined1`, semantic; set to 1 on the main colour and first-person accumulators (low)
     pub field_178: u8,
-    pub unknown_179: [u8; 7],
+    unknown_179: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -735,7 +735,7 @@ pub struct BSShadowDirectionalLight {
     pub __vftable: *const crate::raw::vtables::BSShadowDirectionalLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
@@ -746,11 +746,11 @@ pub struct BSShadowDirectionalLight {
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 15],
+    unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
     #[doc(hidden)]
     pub __portalStrictCull: [u8; 1],
@@ -760,19 +760,19 @@ pub struct BSShadowDirectionalLight {
     pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined2`, base BSLight
     pub field_60: u16,
-    pub unknown_62: [u8; 1],
+    unknown_62: [u8; 1],
     /// +0x63 `u8`, base BSLight, semantic; the light's shadow is dropped beyond g_ShadowDistance (medium)
     pub distanceCulled: u8,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, base BSLight
     pub field_68: u64,
-    pub unknown_70: [u8; 96],
+    unknown_70: [u8; 96],
     /// +0xD0 `u8`, semantic; set by slot 15 after it ran, cleared by slot 16 at the end of every UpdateForCamera (medium)
     pub cascadeFrustaDone: u8,
-    pub unknown_D1: [u8; 79],
+    unknown_D1: [u8; 79],
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
@@ -785,7 +785,7 @@ pub struct BSShadowDirectionalLight {
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
     pub shadowMapCount: u32,
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
@@ -793,12 +793,12 @@ pub struct BSShadowDirectionalLight {
     pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
-    pub unknown_524: [u8; 4],
+    unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
     pub casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
     pub casterCandidateCount: u32,
-    pub unknown_53C: [u8; 4],
+    unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
@@ -807,7 +807,7 @@ pub struct BSShadowDirectionalLight {
     pub sceneIndex: u32,
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
-    pub unknown_559: [u8; 7],
+    unknown_559: [u8; 7],
     /// +0x560 `class:NiPoint3`, ctor store (widths [4, 8]), semantic, runtime; unit direction of the sunlight used for the cascades this frame (high); retyped undefined1 -> class:NiPoint3: BlendDirection 0x1581730 reads/writes +0x560/+0x564/+0x568 as a direction (dot with the new one, copy)
     pub lightDirection: crate::NiPoint3,
     /// +0x56C `class:NiPoint3`, semantic; direction the blend starts from (high); retyped float -> class:NiPoint3: BlendDirection 0x1581730 copies +0x560..+0x568 to +0x56c..+0x574
@@ -879,7 +879,7 @@ pub struct BSShadowFrustumLight {
     pub __vftable: *const crate::raw::vtables::BSShadowFrustumLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
@@ -890,11 +890,11 @@ pub struct BSShadowFrustumLight {
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 15],
+    unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
     #[doc(hidden)]
     pub __portalStrictCull: [u8; 1],
@@ -904,19 +904,19 @@ pub struct BSShadowFrustumLight {
     pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined2`, base BSLight
     pub field_60: u16,
-    pub unknown_62: [u8; 1],
+    unknown_62: [u8; 1],
     /// +0x63 `u8`, base BSLight, semantic; the light's shadow is dropped beyond g_ShadowDistance (medium)
     pub distanceCulled: u8,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, base BSLight
     pub field_68: u64,
-    pub unknown_70: [u8; 96],
+    unknown_70: [u8; 96],
     /// +0xD0 `undefined1`, base BSLight
     pub field_D0: u8,
-    pub unknown_D1: [u8; 79],
+    unknown_D1: [u8; 79],
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
@@ -929,7 +929,7 @@ pub struct BSShadowFrustumLight {
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
     pub shadowMapCount: u32,
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
@@ -937,12 +937,12 @@ pub struct BSShadowFrustumLight {
     pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
-    pub unknown_524: [u8; 4],
+    unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
     pub casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
     pub casterCandidateCount: u32,
-    pub unknown_53C: [u8; 4],
+    unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
@@ -951,7 +951,7 @@ pub struct BSShadowFrustumLight {
     pub sceneIndex: u32,
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
-    pub unknown_559: [u8; 7],
+    unknown_559: [u8; 7],
     /// +0x560 `float`, semantic; tan(clamp(fov/2, 1 deg, 160 deg)); the map frustum's right and -left (high)
     #[doc(hidden)]
     pub __tanHalfFovX: [u8; 4],
@@ -964,7 +964,7 @@ pub struct BSShadowFrustumLight {
     pub nearDistance: f32,
     /// +0x570 `float`, semantic; far plane override; <= 0 uses the NiLight radius (+0x128) (high)
     pub farDistance: f32,
-    pub unknown_574: [u8; 4],
+    unknown_574: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1015,7 +1015,7 @@ pub struct BSShadowLight {
     pub __vftable: *const crate::raw::vtables::BSShadowLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
@@ -1026,11 +1026,11 @@ pub struct BSShadowLight {
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 15],
+    unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
     #[doc(hidden)]
     pub __portalStrictCull: [u8; 1],
@@ -1040,19 +1040,19 @@ pub struct BSShadowLight {
     pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined2`, base BSLight
     pub field_60: u16,
-    pub unknown_62: [u8; 1],
+    unknown_62: [u8; 1],
     /// +0x63 `u8`, base BSLight, semantic; the light's shadow is dropped beyond g_ShadowDistance (medium)
     pub distanceCulled: u8,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, base BSLight
     pub field_68: u64,
-    pub unknown_70: [u8; 96],
+    unknown_70: [u8; 96],
     /// +0xD0 `undefined1`, base BSLight
     pub field_D0: u8,
-    pub unknown_D1: [u8; 79],
+    unknown_D1: [u8; 79],
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
@@ -1065,19 +1065,19 @@ pub struct BSShadowLight {
     pub field_138: u64,
     /// +0x140 `undefined4`, ctor store, semantic, runtime; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
     pub shadowMapCount: u32,
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `class:BSTArray`, semantic, runtime; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
     pub focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
-    pub unknown_524: [u8; 4],
+    unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
     pub casterCandidates: [u8; 16],
     /// +0x538 `u32`, semantic; size of +0x528 (high)
     pub casterCandidateCount: u32,
-    pub unknown_53C: [u8; 4],
+    unknown_53C: [u8; 4],
     /// +0x540 `float`, ctor store, semantic, runtime; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
@@ -1086,7 +1086,7 @@ pub struct BSShadowLight {
     pub sceneIndex: u32,
     /// +0x558 `undefined1`, ctor store, semantic, runtime; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
-    pub unknown_559: [u8; 7],
+    unknown_559: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1132,7 +1132,7 @@ pub struct BSShadowParabolicLight {
     pub __vftable: *const crate::raw::vtables::BSShadowParabolicLight_vtable,
     /// +0x8 `undefined4`, base BSLight
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
@@ -1143,11 +1143,11 @@ pub struct BSShadowParabolicLight {
     /// +0x28 `undefined4`, base BSLight
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
     #[doc(hidden)]
     pub __field_30: [u8; 8],
-    pub unknown_38: [u8; 15],
+    unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
     #[doc(hidden)]
     pub __portalStrictCull: [u8; 1],
@@ -1157,19 +1157,19 @@ pub struct BSShadowParabolicLight {
     pub position: crate::NiPoint3,
     /// +0x5C `u8`, base BSLight, semantic; 0xff when the light is not visible this frame (medium)
     pub visibleSlot: u8,
-    pub unknown_5D: [u8; 3],
+    unknown_5D: [u8; 3],
     /// +0x60 `undefined2`, base BSLight
     pub field_60: u16,
-    pub unknown_62: [u8; 1],
+    unknown_62: [u8; 1],
     /// +0x63 `u8`, base BSLight, semantic; the light's shadow is dropped beyond g_ShadowDistance (medium)
     pub distanceCulled: u8,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     /// +0x68 `undefined8`, base BSLight
     pub field_68: u64,
-    pub unknown_70: [u8; 96],
+    unknown_70: [u8; 96],
     /// +0xD0 `undefined1`, base BSLight
     pub field_D0: u8,
-    pub unknown_D1: [u8; 79],
+    unknown_D1: [u8; 79],
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
@@ -1182,7 +1182,7 @@ pub struct BSShadowParabolicLight {
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
     pub shadowMapCount: u32,
-    pub unknown_144: [u8; 4],
+    unknown_144: [u8; 4],
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
@@ -1190,12 +1190,12 @@ pub struct BSShadowParabolicLight {
     pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
-    pub unknown_524: [u8; 4],
+    unknown_524: [u8; 4],
     /// +0x528 `class:BSTArray`, base BSShadowLight, semantic; objects inside the light's sphere/portal set, collected by UpdateLight, culled as casters by the map cull and released after the draw (medium)
     pub casterCandidates: [u8; 16],
     /// +0x538 `u32`, base BSShadowLight, semantic; size of +0x528 (high)
     pub casterCandidateCount: u32,
-    pub unknown_53C: [u8; 4],
+    unknown_53C: [u8; 4],
     /// +0x540 `float`, base BSShadowLight, semantic; shadow depth bias scale (fShadowBiasScale; the sun uses 60) (high)
     pub biasScale: f32,
     /// +0x544 `u32`, base BSShadowLight, semantic; pixel rect of the light sphere on screen: left +0x544, right +0x548, top +0x54c, bottom +0x550 (medium)
@@ -1204,7 +1204,7 @@ pub struct BSShadowParabolicLight {
     pub sceneIndex: u32,
     /// +0x558 `undefined1`, base BSShadowLight, semantic; whether this frame renders the focus shadow maps (high)
     pub focusShadowsActive: u8,
-    pub unknown_559: [u8; 7],
+    unknown_559: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1455,23 +1455,22 @@ const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteLock) == 0x60
 /// `ShaderPropertyLightData`: size 0x28 (exact).
 /// Meaning: the light record BSShaderProperty+0x70 points at (medium, render pass).
 /// Evidence: the light record BSShaderProperty+0x70 points at; item 9 (request V). BSEffectShaderProperty slot 39 0x1529b40 allocates it when the effectLighting flag is set (0x1529bdc lea edx,[r9+0x28] -> AllocateMemory; 0x1529bff mov [rsi+0x70],rax); BSLightingShaderProperty points +0x70 at its own +0x138.; size: the 0x28 allocation.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct ShaderPropertyLightData {
     pub unknown_0: [u8; 28],
     /// +0x1C `u32`, semantic; bit n-1 set while the geometry is registered for shadow map n; the main view's registration clears it (graphics.md 4.3) (high)
-    #[doc(hidden)]
-    pub __receiverMask: [u8; 4],
+    pub receiverMask: u32,
     pub unknown_20: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ShaderPropertyLightData>() == 0x28);
-const _: () = assert!(core::mem::offset_of!(ShaderPropertyLightData, __receiverMask) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(ShaderPropertyLightData, receiverMask) == 0x1C);
 
 /// `ShadowMapData`: size 0xF0 (exact).
 /// Meaning: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler (high, render pass).
 /// Evidence: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler; record of BSShadowLight.shadowMaps and focusShadowMaps; run-render2 sunmaps-tp/fp.bin: the sun's two cascade records.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct ShadowMapData {
     /// +0x0 `float`, semantic; world to shadow-map texture matrix written after the draw (medium)
     pub worldToShadow: [u8; 64],
@@ -1483,8 +1482,7 @@ pub struct ShadowMapData {
     /// +0x54 `undefined4`, semantic; depth-stencil target id while the map renders (2 cascades, 3 the low-resolution pre-pass, 4 focus and local maps), -1 when unassigned (high)
     pub depthTarget: u32,
     /// +0x58 `undefined4`, semantic; array slice of the depth target (the cascade index for target 2, a slot from the free mask for target 4) (high)
-    #[doc(hidden)]
-    pub __slice: [u8; 4],
+    pub slice: u32,
     /// +0x5C `class:NiPlane`, semantic; view-space plane through eye + forward*cascadeNear[i], normal = camera forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(camera forward, eye + fwd*near_i) into it
     pub splitNearPlane: crate::NiPlane,
     /// +0x6C `class:NiPlane`, semantic; plane through eye + forward*cascadeFar[i], normal = -forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(-forward, eye + fwd*far_i)
@@ -1495,8 +1493,7 @@ pub struct ShadowMapData {
     /// +0xD0 `undefined1`, semantic; u32 left, right, top, bottom of the map in pixels (high)
     pub viewport: [u8; 16],
     /// +0xE0 `ptr:BSCullingProcess`, semantic; per-map culling process (0x301f8) (high)
-    #[doc(hidden)]
-    pub __culler: [u8; 8],
+    pub culler: *mut crate::BSCullingProcess,
     /// +0xE8 `undefined1`, semantic; set when the target slice must be bound and cleared before the casters are drawn (medium)
     pub clearBeforeRender: u8,
     pub unknown_E9: [u8; 7],
@@ -1508,12 +1505,12 @@ const _: () = assert!(core::mem::offset_of!(ShadowMapData, worldToShadow) == 0x0
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, camera) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, accumulator) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, depthTarget) == 0x54);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, __slice) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, slice) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitNearPlane) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitFarPlane) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, texelScale) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, viewport) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, __culler) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, culler) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, clearBeforeRender) == 0xE8);
 
 /// `ShadowSceneNode`: size 0x308 (exact, high); primary base `NiNode`.
@@ -1528,7 +1525,7 @@ pub struct ShadowSceneNode {
     pub __vftable: *const crate::raw::vtables::ShadowSceneNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -1539,12 +1536,12 @@ pub struct ShadowSceneNode {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -1567,10 +1564,10 @@ pub struct ShadowSceneNode {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
-    pub unknown_128: [u8; 8],
+    unknown_128: [u8; 8],
     /// +0x130 `class:BSTArray`, semantic, runtime; BSTArray<NiPointer<BSLight>> of the active lights that cast no shadow (high)
     pub lights: crate::BSTArray,
     /// +0x148 `class:BSTArray`, semantic, runtime; BSTArray<NiPointer<BSShadowLight>> of the active shadow-casting lights other than the sun (high)
@@ -1606,7 +1603,7 @@ pub struct ShadowSceneNode {
     pub field_219: u8,
     /// +0x21A `undefined2`, ctor store
     pub field_21A: u16,
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `ptr:BSFogProperty`, semantic; fog property shared by the scene (high)
     pub fogProperty: *mut crate::BSFogProperty,
     /// +0x228 `ptr:BSPortalGraph`, ctor store, semantic, runtime; portal graph of the loaded interior, null outdoors before a cell attaches it; UpdateLight copies it into the BSLight at +0x120 (medium)
@@ -1616,7 +1613,7 @@ pub struct ShadowSceneNode {
     pub __frameShadowLights: [u8; 24],
     /// +0x248 `undefined4`, semantic; bit per frameShadowLights slot whose light sphere contains the camera (low)
     pub cameraInsideLightMask: u32,
-    pub unknown_24C: [u8; 128],
+    unknown_24C: [u8; 128],
     /// +0x2CC `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_2CC: [u8; 8],
@@ -1640,7 +1637,7 @@ pub struct ShadowSceneNode {
     pub eyePosition: crate::NiPoint3,
     /// +0x300 `undefined1`, semantic; set by the first ProcessQueues; removal requests are ignored before it (medium)
     pub queuesProcessed: u8,
-    pub unknown_301: [u8; 3],
+    unknown_301: [u8; 3],
     /// +0x304 `undefined4`, ctor store
     pub field_304: u32,
     #[doc(hidden)]

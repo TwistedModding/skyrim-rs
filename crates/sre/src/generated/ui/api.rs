@@ -714,6 +714,16 @@ impl crate::GFxMovieView {
     pub fn invokeResultBuffer_ptr(&self) -> *mut *mut c_void { Self::__member_invokeResultBuffer(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_safeRect(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "GFxMovieView.safeRect", 0xD8, [u8; 16]) } }
+    /// `GFxMovieView::safeRect`, at +0xD8 on 1.7.104.
+    #[inline]
+    pub fn safeRect(&self) -> [u8; 16] { unsafe { Self::__member_safeRect(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_safeRect(&mut self, value: [u8; 16]) { unsafe { Self::__member_safeRect(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn safeRect_ptr(&self) -> *mut [u8; 16] { Self::__member_safeRect(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_scaleMode(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxMovieView.scaleMode", 0xC0, u32) } }
     /// `GFxMovieView::scaleMode`, at +0xC0 on 1.7.104.
     #[inline]
@@ -768,6 +778,16 @@ impl crate::GFxViewport {
     pub fn aspectRatio_ptr(&self) -> *mut f32 { Self::__member_aspectRatio(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_bufferHeight(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.bufferHeight", 0x4, u32) } }
+    /// `GFxViewport::bufferHeight`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn bufferHeight(&self) -> u32 { unsafe { Self::__member_bufferHeight(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_bufferHeight(&mut self, value: u32) { unsafe { Self::__member_bufferHeight(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn bufferHeight_ptr(&self) -> *mut u32 { Self::__member_bufferHeight(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.flags", 0x30, u32) } }
     /// `GFxViewport::flags`, at +0x30 on 1.7.104.
     #[inline]
@@ -776,6 +796,16 @@ impl crate::GFxViewport {
     pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_height(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.height", 0x14, u32) } }
+    /// `GFxViewport::height`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn height(&self) -> u32 { unsafe { Self::__member_height(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_height(&mut self, value: u32) { unsafe { Self::__member_height(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn height_ptr(&self) -> *mut u32 { Self::__member_height(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_left(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.left", 0x8, u32) } }
@@ -798,14 +828,14 @@ impl crate::GFxViewport {
     pub fn scale_ptr(&self) -> *mut f32 { Self::__member_scale(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_scissorRect(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "GFxViewport.scissorRect", 0x18, [u8; 16]) } }
-    /// `GFxViewport::scissorRect`, at +0x18 on 1.7.104.
+    pub fn __member_top(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.top", 0xC, u32) } }
+    /// `GFxViewport::top`, at +0xC on 1.7.104.
     #[inline]
-    pub fn scissorRect(&self) -> [u8; 16] { unsafe { Self::__member_scissorRect(core::ptr::from_ref(self)).read_unaligned() } }
+    pub fn top(&self) -> u32 { unsafe { Self::__member_top(core::ptr::from_ref(self)).read_unaligned() } }
     #[inline]
-    pub fn set_scissorRect(&mut self, value: [u8; 16]) { unsafe { Self::__member_scissorRect(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    pub fn set_top(&mut self, value: u32) { unsafe { Self::__member_top(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
-    pub fn scissorRect_ptr(&self) -> *mut [u8; 16] { Self::__member_scissorRect(core::ptr::from_ref(self)) }
+    pub fn top_ptr(&self) -> *mut u32 { Self::__member_top(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_width(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.width", 0x10, u32) } }
@@ -1635,6 +1665,16 @@ impl crate::MenuTableEntry {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn next(&self) -> Option<&crate::MenuTableEntry> { unsafe { { self.next }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_create(this: *const Self) -> *mut u64 { unsafe { member!(this, "MenuTableEntry.create", 0x10, u64) } }
+    /// `MenuTableEntry::create`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn create(&self) -> u64 { unsafe { Self::__member_create(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_create(&mut self, value: u64) { unsafe { Self::__member_create(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn create_ptr(&self) -> *mut u64 { Self::__member_create(core::ptr::from_ref(self)) }
 }
 
 impl crate::MessageBoxData {

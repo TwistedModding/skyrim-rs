@@ -2747,10 +2747,10 @@ impl crate::SkyrimVM {
     pub fn as_bs_script__i_stack_callback_save_interface(&self) -> &crate::BSScript__IStackCallbackSaveInterface { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
     /// The `BSTEventSink<BSScript::StatsEvent>` base at +0x1A8.
     #[inline]
-    pub fn as_bst_event_sink_bs_script__stats_event(&self) -> &crate::BSTEventSink_BSScript__StatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)).cast() } }
+    pub fn as_bst_event_sink_bs_script__stats_event(&self) -> &crate::BSTEventSink_BSScript__StatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<BSScript::StatsEvent>", 0x1A8)).cast() } }
     /// The `BSTEventSink<PositionPlayerEvent>` base at +0x1A0.
     #[inline]
-    pub fn as_bst_event_sink_position_player_event(&self) -> &crate::BSTEventSink_PositionPlayerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)).cast() } }
+    pub fn as_bst_event_sink_position_player_event(&self) -> &crate::BSTEventSink_PositionPlayerEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<PositionPlayerEvent>", 0x1A0)).cast() } }
     /// The `BSTEventSink<TESActivateEvent>` base at +0x10.
     #[inline]
     pub fn as_bst_event_sink_tes_activate_event(&self) -> &crate::BSTEventSink_TESActivateEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x10).cast() } }
@@ -2762,10 +2762,10 @@ impl crate::SkyrimVM {
     pub fn as_bst_event_sink_tes_actor_location_change_event(&self) -> &crate::BSTEventSink_TESActorLocationChangeEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
     /// The `BSTEventSink<TESAmiiboForcedStopDetectionEvent>` base at +0x188.
     #[inline]
-    pub fn as_bst_event_sink_tes_amiibo_forced_stop_detection_event(&self) -> &crate::BSTEventSink_TESAmiiboForcedStopDetectionEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188)).cast() } }
+    pub fn as_bst_event_sink_tes_amiibo_forced_stop_detection_event(&self) -> &crate::BSTEventSink_TESAmiiboForcedStopDetectionEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188)).cast() } }
     /// The `BSTEventSink<TESAmiiboTouchEvent>` base at +0x180.
     #[inline]
-    pub fn as_bst_event_sink_tes_amiibo_touch_event(&self) -> &crate::BSTEventSink_TESAmiiboTouchEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)).cast() } }
+    pub fn as_bst_event_sink_tes_amiibo_touch_event(&self) -> &crate::BSTEventSink_TESAmiiboTouchEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESAmiiboTouchEvent>", 0x180)).cast() } }
     /// The `BSTEventSink<TESBookReadEvent>` base at +0x28.
     #[inline]
     pub fn as_bst_event_sink_tes_book_read_event(&self) -> &crate::BSTEventSink_TESBookReadEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x28).cast() } }
@@ -2795,7 +2795,7 @@ impl crate::SkyrimVM {
     pub fn as_bst_event_sink_tes_equip_event(&self) -> &crate::BSTEventSink_TESEquipEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x68).cast() } }
     /// The `BSTEventSink<TESFastTravelEndEvent>` base at +0x198.
     #[inline]
-    pub fn as_bst_event_sink_tes_fast_travel_end_event(&self) -> &crate::BSTEventSink_TESFastTravelEndEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)).cast() } }
+    pub fn as_bst_event_sink_tes_fast_travel_end_event(&self) -> &crate::BSTEventSink_TESFastTravelEndEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESFastTravelEndEvent>", 0x198)).cast() } }
     /// The `BSTEventSink<TESFormDeleteEvent>` base at +0x70.
     #[inline]
     pub fn as_bst_event_sink_tes_form_delete_event(&self) -> &crate::BSTEventSink_TESFormDeleteEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x70).cast() } }
@@ -2843,7 +2843,7 @@ impl crate::SkyrimVM {
     pub fn as_bst_event_sink_tes_perk_entry_run_event(&self) -> &crate::BSTEventSink_TESPerkEntryRunEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE0).cast() } }
     /// The `BSTEventSink<TESPlayerBowShotEvent>` base at +0x190.
     #[inline]
-    pub fn as_bst_event_sink_tes_player_bow_shot_event(&self) -> &crate::BSTEventSink_TESPlayerBowShotEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)).cast() } }
+    pub fn as_bst_event_sink_tes_player_bow_shot_event(&self) -> &crate::BSTEventSink_TESPlayerBowShotEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("SkyrimVM:BSTEventSink<TESPlayerBowShotEvent>", 0x190)).cast() } }
     /// The `BSTEventSink<TESQuestInitEvent>` base at +0xE8.
     #[inline]
     pub fn as_bst_event_sink_tes_quest_init_event(&self) -> &crate::BSTEventSink_TESQuestInitEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0xE8).cast() } }

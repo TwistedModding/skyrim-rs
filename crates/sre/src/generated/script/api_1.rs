@@ -883,7 +883,7 @@ impl core::ops::Deref for crate::BSScript__NativeFunction1_BGSSoundCategory_void
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_BSFixedString_const____ptr64_unsigned_int {
     type Target = crate::BSScript__NF_util__NativeFunctionBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,BSFixedString_const&___ptr64,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
 }
 /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,TESForm*___ptr64,unsigned_int>` is laid out from its primary base `BSScript::NF_util::NativeFunctionBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_TESForm____ptr64_unsigned_int {
@@ -919,7 +919,7 @@ impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunct
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_bool_unsigned_int {
     type Target = crate::BSScript__NF_util__NativeFunctionBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,bool,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
 }
 /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,float,BSFixedString_const&___ptr64>` is laid out from its primary base `BSScript::NF_util::NativeFunctionBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_float_BSFixedString_const____ptr64 {
@@ -949,7 +949,7 @@ impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunct
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_int_unsigned_int {
     type Target = crate::BSScript__NF_util__NativeFunctionBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>:BSScript::NF_util::NativeFunctionBase", 0x0)).cast() } }
 }
 /// `BSScript::NativeFunction1<BSScript::StaticFunctionTag,unsigned_int,unsigned_int>` is laid out from its primary base `BSScript::NF_util::NativeFunctionBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSScript__NativeFunction1_BSScript__StaticFunctionTag_unsigned_int_unsigned_int {

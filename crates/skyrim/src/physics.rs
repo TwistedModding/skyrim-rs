@@ -71,7 +71,7 @@ pub fn fresh_group() -> Option<u16> {
     if filter.is_null() {
         return None;
     }
-    let counter = unsafe { &*filter.byte_add(sre::member_offset!("bhkCollisionFilter.field_4C", 0x4c)) };
+    let counter = unsafe { &*filter.byte_add(sre::member_offset!("bhkCollisionFilter.field_4C")) };
     let group = next_group(*counter);
     crate::store(counter, u32::from(group));
     Some(group)
@@ -103,37 +103,21 @@ fn pick_data(from: [f32; 3], to: [f32; 3], filter_info: u32) -> Aligned {
     let mut shape_keys = [0; 32];
     shape_keys[..4].copy_from_slice(&u32::MAX.to_le_bytes());
     shape_keys[8..12].copy_from_slice(&u32::MAX.to_le_bytes());
-    Aligned(bhkPickData {
-        from: havok_vector(from),
-        to: havok_vector(to),
-        enableShapeCollectionFilter: 0,
-        unknown_21: [0; 3],
-        filterInfo: filter_info,
-        field_28: 0,
-        normal: [0; 16],
-        hitFraction: 1.0,
-        extraInfo: u32::MAX,
-        shapeKeys: shape_keys,
-        unknown_68: [0; 8],
-        shapeKeyIndex: 0,
-        unknown_74: [0; 12],
-        rootCollidable: core::ptr::null_mut(),
-        unknown_88: [0; 8],
-        ray: [0; 16],
-        rayCache: core::ptr::null_mut(),
-        closestCollector: core::ptr::null_mut(),
-        allHitsCollector: core::ptr::null_mut(),
-        allHitsCollector2: core::ptr::null_mut(),
-        skipped: 0,
-        unknown_C1: [0; 15],
-        __engine: sre::Engine::new(),
-    })
+    let mut data: bhkPickData = unsafe { core::mem::zeroed() };
+    data.from = havok_vector(from);
+    data.to = havok_vector(to);
+    data.filterInfo = filter_info;
+    data.hitFraction = 1.0;
+    data.extraInfo = u32::MAX;
+    data.shapeKeys = shape_keys;
+    Aligned(data)
 }
 
 /// Casts a ray from `from` to `to` (game units) through `cell`'s physics world with
 /// `filter_info` ([`filter_info`]); the closest hit, if any.
 #[must_use]
 pub fn pick_in(cell: &TESObjectCELL, from: [f32; 3], to: [f32; 3], filter_info: u32) -> Option<Hit> {
+    sre::fixed_size!("bhkPickData", bhkPickData);
     let mut data = pick_data(from, to, filter_info);
     let cast: fns::TESObjectCELL__Pick_fn = unsafe { crate::engine_fn(sre::id!(fns::TESObjectCELL__Pick)) };
     let node = unsafe { cast(core::ptr::from_ref(cell).cast_mut(), &raw mut data.0) };
@@ -141,7 +125,7 @@ pub fn pick_in(cell: &TESObjectCELL, from: [f32; 3], to: [f32; 3], filter_info: 
     if pick.rootCollidable.is_null() {
         return None;
     }
-    let layer = layer_of(unsafe { pick.rootCollidable.cast::<u8>().add(sre::member_offset!("hkpCollidable.collisionFilterInfo", 0x2c)).cast::<u32>().read_unaligned() });
+    let layer = layer_of(unsafe { pick.rootCollidable.cast::<u8>().add(sre::member_offset!("hkpCollidable.collisionFilterInfo")).cast::<u32>().read_unaligned() });
     // On a ground hit the cell's pick returns an object that is not a scene node.
     let reference = if node.is_null() || layer == Some(CollisionLayer::GROUND) {
         None
@@ -193,11 +177,14 @@ pub fn set_collision_disabled(reference: &TESObjectREFR, disabled: bool) {
 /// [`sync_3d`]. Main thread.
 pub fn move_reference(reference: &TESObjectREFR, position: [f32; 3]) {
     let [x, y, z] = position;
-    reference.set_position(&sre::NiPoint3 { x, y, z, __engine: sre::Engine::new() });
+    reference.set_position(&crate::point(x, y, z));
     if let Some(controller) = reference.cast::<sre::Actor>().and_then(sre::Actor::get_char_controller) {
         type SetPositionFn = unsafe extern "C" fn(*const sre::bhkCharacterController, *const sre::hkVector4, bool, bool);
         let set: SetPositionFn = unsafe { core::mem::transmute(sre::vtable_entry(controller, sre::slot_index!("bhkCharacterController", 0x0, 3))) };
-        let havok = sre::hkVector4 { x: x * HAVOK_SCALE, y: y * HAVOK_SCALE, z: z * HAVOK_SCALE, w: 0.0, __engine: sre::Engine::new() };
+        let mut havok = sre::hkVector4 { x: x * HAVOK_SCALE, ..Default::default() };
+        havok.set_y(y * HAVOK_SCALE);
+        havok.set_z(z * HAVOK_SCALE);
+        havok.set_w(0.0);
         unsafe { set(controller, &raw const havok, true, false) };
     }
     sync_3d(reference);

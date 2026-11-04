@@ -10,7 +10,7 @@ impl crate::Actor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_14(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(38032, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1, param_2, param_3) } }
+    pub unsafe fn actor_state_vfunc_14(&self, param_1: *mut i64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(38032, (*const Self, *mut i64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1, param_2, param_3) } }
     /// `Actor::ActorState_vfunc_15` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38033, rva 0x6b5af0).
     /// `MovementParameters * ActorState_vfunc_15(void)`
     ///
@@ -24,63 +24,63 @@ impl crate::Actor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_16(&self, param_1: *mut u64) -> u8 { unsafe { function!(38037, (*const Self, *mut u64) -> u8)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_16(&self, param_1: *mut u64) -> u8 { unsafe { function!(38037, (*const Self, *mut u64) -> u8)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1) } }
     /// `Actor::ActorState_vfunc_2` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38024, rva 0x6b5780).
     /// `undefined ActorState_vfunc_2(Actor * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_2(&self, param_1: *mut u32) -> u64 { unsafe { function!(38024, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_2(&self, param_1: *mut u32) -> u64 { unsafe { function!(38024, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1) } }
     /// `Actor::ActorState_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38025, rva 0x6b57d0).
     /// `undefined ActorState_vfunc_3(Actor * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_3(&self, param_1: *mut u32) -> u64 { unsafe { function!(38025, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_3(&self, param_1: *mut u32) -> u64 { unsafe { function!(38025, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1) } }
     /// `Actor::ActorState_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38026, rva 0x6b57f0).
     /// `undefined ActorState_vfunc_4(Actor * this, float * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_4(&self, param_1: *mut f32) -> u64 { unsafe { function!(38026, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_4(&self, param_1: *mut f32) -> u64 { unsafe { function!(38026, (*const Self, *mut f32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1) } }
     /// `Actor::ActorState_vfunc_6` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38021, rva 0x6b5500).
     /// `undefined4 ActorState_vfunc_6(Actor * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_6(&self) -> u32 { unsafe { function!(38021, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0))) } }
+    pub unsafe fn actor_state_vfunc_6(&self) -> u32 { unsafe { function!(38021, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0))) } }
     /// `Actor::ActorState_vfunc_7` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38027, rva 0x6b5820).
     /// `undefined ActorState_vfunc_7(Actor * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_7(&self, param_1: *mut u32) -> u64 { unsafe { function!(38027, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_7(&self, param_1: *mut u32) -> u64 { unsafe { function!(38027, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1) } }
     /// `Actor::ActorState_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38029, rva 0x6b5880).
     /// `char ActorState_vfunc_8(Actor * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_8(&self, param_1: i64, param_2: u64, param_3: u64) -> c_char { unsafe { function!(38029, (*const Self, i64, u64, u64) -> c_char)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), param_1, param_2, param_3) } }
+    pub unsafe fn actor_state_vfunc_8(&self, param_1: i64, param_2: u64, param_3: u64) -> c_char { unsafe { function!(38029, (*const Self, i64, u64, u64) -> c_char)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), param_1, param_2, param_3) } }
     /// `Actor::BSTEventSink_BSTransformDeltaEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 37996, rva 0x6b1ab0).
     /// `undefined8 BSTEventSink_BSTransformDeltaEvent_vfunc_1(Actor * this, uint * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_transform_delta_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(37996, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1) } }
+    pub unsafe fn bst_event_sink_bs_transform_delta_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(37996, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1) } }
     /// `Actor::BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name medium; id 37998, rva 0x6b21b0).
     /// `undefined8 BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1(Actor * this, float * param_1, char * param_2, undefined8 param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vfunc_1(&self, param_1: *mut f32, param_2: *mut c_char, param_3: u64) -> u64 { unsafe { function!(37998, (*const Self, *mut f32, *mut c_char, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vfunc_1(&self, param_1: *mut f32, param_2: *mut c_char, param_3: u64) -> u64 { unsafe { function!(37998, (*const Self, *mut f32, *mut c_char, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
     /// `Actor::IAnimationGraphManagerHolder_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name medium; id 37980, rva 0x6b0180).
     /// `undefined IAnimationGraphManagerHolder_vfunc_11(Actor * this, longlong * param_1)`
     ///
@@ -157,21 +157,21 @@ impl crate::Actor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_1(&self, param_1: *mut i64) -> c_char { unsafe { function!(38786, (*const Self, *mut i64) -> c_char)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1) } }
+    pub unsafe fn magic_target_vfunc_1(&self, param_1: *mut i64) -> c_char { unsafe { function!(38786, (*const Self, *mut i64) -> c_char)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1) } }
     /// `Actor::MagicTarget_vfunc_10` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38737, rva 0x6d4e30).
     /// `float MagicTarget_vfunc_10(Actor * this, longlong * param_1, longlong param_2, longlong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_10(&self, param_1: *mut i64, param_2: i64, param_3: i64) -> f32 { unsafe { function!(38737, (*const Self, *mut i64, i64, i64) -> f32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    pub unsafe fn magic_target_vfunc_10(&self, param_1: *mut i64, param_2: i64, param_3: i64) -> f32 { unsafe { function!(38737, (*const Self, *mut i64, i64, i64) -> f32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
     /// `Actor::MagicTarget_vfunc_11` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38741, rva 0x6d5210).
     /// `undefined8 MagicTarget_vfunc_11(Actor * this, longlong param_1, undefined8 param_2, longlong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_11(&self, param_1: i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(38741, (*const Self, i64, u64, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    pub unsafe fn magic_target_vfunc_11(&self, param_1: i64, param_2: u64, param_3: i64) -> u64 { unsafe { function!(38741, (*const Self, i64, u64, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
     /// `Actor::MagicTarget_vfunc_3` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38307, rva 0x6be2e0).
     /// `undefined1 MagicTarget_vfunc_3(void)`
     ///
@@ -185,21 +185,21 @@ impl crate::Actor {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_5(&self, param_1: i64) -> u32 { unsafe { function!(38803, (*const Self, i64) -> u32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1) } }
+    pub unsafe fn magic_target_vfunc_5(&self, param_1: i64) -> u32 { unsafe { function!(38803, (*const Self, i64) -> u32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1) } }
     /// `Actor::MagicTarget_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38739, rva 0x6d50c0).
     /// `undefined MagicTarget_vfunc_8(Actor * this, longlong param_1, ulonglong param_2, TypeDescriptor * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(38739, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(38739, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
     /// `Actor::MagicTarget_vfunc_9` (decompiler signature, tier low; ledger rtti evidence, name medium; id 38740, rva 0x6d51c0).
     /// `undefined MagicTarget_vfunc_9(Actor * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(38740, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)), param_1) } }
+    pub unsafe fn magic_target_vfunc_9(&self, param_1: i64) -> u64 { unsafe { function!(38740, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)), param_1) } }
     /// `Actor::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 37174, rva 0x670c60).
     /// `Actor * ctor(Actor * this, ulonglong param_1, uint * param_2, longlong * param_3)`
     ///
@@ -304,21 +304,21 @@ impl crate::Character {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_transform_delta_event_vdtor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40283, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Character:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_transform_delta_event_vdtor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40283, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Character:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1, param_2, param_3) } }
     /// `Character::BSTEventSink_bhkCharacterMoveFinishEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40284, rva 0x73aaf0).
     /// `undefined BSTEventSink_bhkCharacterMoveFinishEvent_vdtor(Character * this, undefined4 * param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vdtor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40284, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Character:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vdtor(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40284, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Character:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
     /// `Character::IPostAnimationChannelUpdateFunctor_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 40285, rva 0x73aafc).
     /// `undefined IPostAnimationChannelUpdateFunctor_vfunc_0(Character * this, undefined4 * param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_post_animation_channel_update_functor_vfunc_0(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40285, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("Character:IPostAnimationChannelUpdateFunctor", 0xE0)), param_1, param_2, param_3) } }
+    pub unsafe fn i_post_animation_channel_update_functor_vfunc_0(&self, param_1: *mut u32, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40285, (*const Self, *mut u32, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("Character:IPostAnimationChannelUpdateFunctor", 0xE0)), param_1, param_2, param_3) } }
     /// `Character::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 40245, rva 0x739180).
     /// `Character * ctor(Character * this, undefined8 param_1, byte * param_2, byte * param_3)`
     ///
@@ -373,21 +373,21 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40936, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:ActorState", 0xC0)), param_1, param_2, param_3) } }
+    pub unsafe fn actor_state_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40936, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:ActorState", 0xC0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::ActorState_vfunc_4` (decompiler signature, tier low; ledger rtti evidence, name high; id 40743, rva 0x75ed30).
     /// `undefined ActorState_vfunc_4(PlayerCharacter * this, undefined4 * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_state_vfunc_4(&self, param_1: *mut u32) -> u64 { unsafe { function!(40743, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:ActorState", 0xC0)), param_1) } }
+    pub unsafe fn actor_state_vfunc_4(&self, param_1: *mut u32) -> u64 { unsafe { function!(40743, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:ActorState", 0xC0)), param_1) } }
     /// `PlayerCharacter::ActorValueOwner_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40935, rva 0x769320).
     /// `undefined ActorValueOwner_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn actor_value_owner_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40935, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:ActorValueOwner", 0xB8)), param_1, param_2, param_3) } }
+    pub unsafe fn actor_value_owner_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40935, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:ActorValueOwner", 0xB8)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_BSAnimationGraphEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40932, rva 0x7692fc).
     /// `undefined BSTEventSink_BSAnimationGraphEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
@@ -401,7 +401,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(523946, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<BSSystemEvent>", 0x2D8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_system_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(523946, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<BSSystemEvent>", 0x2D8)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_BSSystemEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 523941, rva 0x75ed20).
     /// `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(void)`
     ///
@@ -415,28 +415,28 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_transform_delta_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40937, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bs_transform_delta_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40937, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<BSTransformDeltaEvent>", 0xD0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_MenuModeChangeEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40929, rva 0x7692cc).
     /// `undefined BSTEventSink_MenuModeChangeEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40929, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40929, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_MenuModeChangeEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 40741, rva 0x75ecd0).
     /// `undefined8 BSTEventSink_MenuModeChangeEvent_vfunc_1(PlayerCharacter * this, longlong param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(40741, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)), param_1) } }
+    pub unsafe fn bst_event_sink_menu_mode_change_event_vfunc_1(&self, param_1: i64) -> u64 { unsafe { function!(40741, (*const Self, i64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)), param_1) } }
     /// `PlayerCharacter::BSTEventSink_TESTrackedStatsEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40931, rva 0x7692e4).
     /// `undefined BSTEventSink_TESTrackedStatsEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40931, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<TESTrackedStatsEvent>", 0x2D0)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_tes_tracked_stats_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40931, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<TESTrackedStatsEvent>", 0x2D0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_TESTrackedStatsEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 40742, rva 0x75ed10).
     /// `undefined8 BSTEventSink_TESTrackedStatsEvent_vfunc_1(void)`
     ///
@@ -450,21 +450,21 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40930, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_user_event_enabled_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40930, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::BSTEventSink_UserEventEnabledEvent_vfunc_1` (decompiler signature, tier low; ledger rtti evidence, name high; id 40739, rva 0x75ea90).
     /// `undefined8 BSTEventSink_UserEventEnabledEvent_vfunc_1(PlayerCharacter * this, uint * param_1)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_user_event_enabled_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(40739, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)), param_1) } }
+    pub unsafe fn bst_event_sink_user_event_enabled_event_vfunc_1(&self, param_1: *mut u32) -> u64 { unsafe { function!(40739, (*const Self, *mut u32) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)), param_1) } }
     /// `PlayerCharacter::BSTEventSink_bhkCharacterMoveFinishEvent_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40938, rva 0x769344).
     /// `undefined BSTEventSink_bhkCharacterMoveFinishEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40938, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
+    pub unsafe fn bst_event_sink_bhk_character_move_finish_event_vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40938, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40933, rva 0x769308).
     /// `undefined IAnimationGraphManagerHolder_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
@@ -499,21 +499,21 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn i_post_animation_channel_update_functor_vfunc_0(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40939, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:IPostAnimationChannelUpdateFunctor", 0xE0)), param_1, param_2, param_3) } }
+    pub unsafe fn i_post_animation_channel_update_functor_vfunc_0(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40939, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:IPostAnimationChannelUpdateFunctor", 0xE0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::MagicTarget_vfunc_0` (decompiler signature, tier low; ledger rtti evidence, name high; id 40934, rva 0x769314).
     /// `undefined MagicTarget_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_0(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40934, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    pub unsafe fn magic_target_vfunc_0(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(40934, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::MagicTarget_vfunc_8` (decompiler signature, tier low; ledger rtti evidence, name high; id 40762, rva 0x761690).
     /// `undefined MagicTarget_vfunc_8(PlayerCharacter * this, longlong param_1, undefined8 param_2, TypeDescriptor * param_3)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(40762, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
+    pub unsafe fn magic_target_vfunc_8(&self, param_1: i64, param_2: u64, param_3: *mut c_void) -> u64 { unsafe { function!(40762, (*const Self, i64, u64, *mut c_void) -> u64)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:MagicTarget", 0xA0)), param_1, param_2, param_3) } }
     /// `PlayerCharacter::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 40946, rva 0x769500).
     /// `PlayerCharacter * vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
     ///

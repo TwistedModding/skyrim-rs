@@ -88,7 +88,7 @@ pub struct hkpStorageSampledHeightFieldShape {
     pub __vftable: *const crate::raw::vtables::hkpStorageSampledHeightFieldShape_vtable,
     /// +0x8 `undefined4`, base hkpSampledHeightFieldShape
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -176,7 +176,7 @@ pub struct hkpStorageSampledHeightFieldShape {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -245,7 +245,7 @@ pub struct hkpSuspendInactiveAgentsUtil {
     pub __vftable: *const crate::raw::vtables::hkpSuspendInactiveAgentsUtil_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:hkpSuspendInactiveAgentsUtil:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::hkpSuspendInactiveAgentsUtil_vtable_10,
@@ -335,7 +335,7 @@ pub struct hkpSuspendInactiveAgentsUtil {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -404,7 +404,7 @@ pub struct hkpSymmetricAgent_hkpBvAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpBvAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -492,7 +492,7 @@ pub struct hkpSymmetricAgent_hkpBvAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -561,7 +561,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpBvTreeAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -649,7 +649,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -718,7 +718,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeStreamAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpBvTreeStreamAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeStreamAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -806,7 +806,7 @@ pub struct hkpSymmetricAgent_hkpBvTreeStreamAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -875,7 +875,7 @@ pub struct hkpSymmetricAgent_hkpConvexListAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpConvexListAgent_vtable,
     /// +0x8 `undefined4`, base hkpGskBaseAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -963,7 +963,7 @@ pub struct hkpSymmetricAgent_hkpConvexListAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1032,7 +1032,7 @@ pub struct hkpSymmetricAgent_hkpHeightFieldAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpHeightFieldAgent_vtable,
     /// +0x8 `undefined4`, base hkpHeightFieldAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1120,7 +1120,7 @@ pub struct hkpSymmetricAgent_hkpHeightFieldAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1189,7 +1189,7 @@ pub struct hkpSymmetricAgent_hkpListAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpListAgent_vtable,
     /// +0x8 `undefined4`, base hkpListAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1277,7 +1277,7 @@ pub struct hkpSymmetricAgent_hkpListAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1346,7 +1346,7 @@ pub struct hkpSymmetricAgent_hkpMoppAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpMoppAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1434,7 +1434,7 @@ pub struct hkpSymmetricAgent_hkpMoppAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1503,7 +1503,7 @@ pub struct hkpSymmetricAgent_hkpMultiSphereAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpMultiSphereAgent_vtable,
     /// +0x8 `undefined4`, base hkpMultiSphereAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1591,7 +1591,7 @@ pub struct hkpSymmetricAgent_hkpMultiSphereAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1660,7 +1660,7 @@ pub struct hkpSymmetricAgent_hkpShapeCollectionAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgent_hkpShapeCollectionAgent_vtable,
     /// +0x8 `undefined4`, base hkpShapeCollectionAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1748,7 +1748,7 @@ pub struct hkpSymmetricAgent_hkpShapeCollectionAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -1877,7 +1877,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpBvAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -1965,7 +1965,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2034,7 +2034,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvTreeAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpBvTreeAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2122,7 +2122,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvTreeAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2191,7 +2191,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvTreeStreamAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpBvTreeStreamAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeStreamAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2279,7 +2279,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpBvTreeStreamAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2381,7 +2381,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpConvexListAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpConvexListAgent_vtable,
     /// +0x8 `undefined4`, base hkpGskBaseAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2469,7 +2469,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpConvexListAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2538,7 +2538,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpHeightFieldAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpHeightFieldAgent_vtable,
     /// +0x8 `undefined4`, base hkpHeightFieldAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2626,7 +2626,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpHeightFieldAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2695,7 +2695,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpListAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpListAgent_vtable,
     /// +0x8 `undefined4`, base hkpListAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2783,7 +2783,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpListAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -2852,7 +2852,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMoppAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpMoppAgent_vtable,
     /// +0x8 `undefined4`, base hkpBvTreeAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -2940,7 +2940,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMoppAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3009,7 +3009,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMultiRayConvexAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpMultiRayConvexAgent_vtable,
     /// +0x8 `undefined4`, base hkpMultiRayConvexAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3097,7 +3097,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMultiRayConvexAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3166,7 +3166,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMultiSphereAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpMultiSphereAgent_vtable,
     /// +0x8 `undefined4`, base hkpMultiSphereAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3254,7 +3254,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpMultiSphereAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3356,7 +3356,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpShapeCollectionAgent {
     pub __vftable: *const crate::raw::vtables::hkpSymmetricAgentLinearCast_hkpShapeCollectionAgent_vtable,
     /// +0x8 `undefined4`, base hkpShapeCollectionAgent
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3444,7 +3444,7 @@ pub struct hkpSymmetricAgentLinearCast_hkpShapeCollectionAgent {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -3603,7 +3603,7 @@ pub struct hkpThinBoxMotion {
     pub __vftable: *const crate::raw::vtables::hkpThinBoxMotion_vtable,
     /// +0x8 `undefined4`, base hkpMotion
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3691,7 +3691,7 @@ pub struct hkpThinBoxMotion {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 8],
+    unknown_C8: [u8; 8],
     /// +0xD0 `undefined1[16]`, base hkpBoxMotion
     pub field_D0: [u8; 16],
     /// +0xE0 `undefined1[16]`, base hkpMotion
@@ -3706,13 +3706,13 @@ pub struct hkpThinBoxMotion {
     /// +0x114 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_114: [u8; 4],
-    pub unknown_118: [u8; 8],
+    unknown_118: [u8; 8],
     /// +0x120 `undefined8`, base hkpMotion
     pub field_120: u64,
-    pub unknown_128: [u8; 10],
+    unknown_128: [u8; 10],
     /// +0x132 `undefined2`, base hkpMotion
     pub field_132: u16,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3775,7 +3775,7 @@ pub struct hkpToiResourceMgr {
     /// +0x0 `vtbl:hkpToiResourceMgr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpToiResourceMgr_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -3863,7 +3863,7 @@ pub struct hkpToiResourceMgr {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4054,7 +4054,7 @@ pub struct hkpTriSampledHeightFieldBvTreeShape {
     pub __vftable: *const crate::raw::vtables::hkpTriSampledHeightFieldBvTreeShape_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4142,7 +4142,7 @@ pub struct hkpTriSampledHeightFieldBvTreeShape {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4211,7 +4211,7 @@ pub struct hkpTriSampledHeightFieldCollection {
     pub __vftable: *const crate::raw::vtables::hkpTriSampledHeightFieldCollection_vtable,
     /// +0x8 `undefined4`, base hkpShapeCollection
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4300,7 +4300,7 @@ pub struct hkpTriSampledHeightFieldCollection {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4367,7 +4367,7 @@ pub struct hkpTriangleShape {
     /// +0x0 `vtbl:hkpTriangleShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpTriangleShape_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4455,7 +4455,7 @@ pub struct hkpTriangleShape {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4523,7 +4523,7 @@ pub struct hkpTriggerVolume {
     pub __vftable: *const crate::raw::vtables::hkpTriggerVolume_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:hkpTriggerVolume:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::hkpTriggerVolume_vtable_10,
@@ -4614,7 +4614,7 @@ pub struct hkpTriggerVolume {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4683,7 +4683,7 @@ pub struct hkpUnaryAction {
     pub __vftable: *const crate::raw::vtables::hkpUnaryAction_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4771,7 +4771,7 @@ pub struct hkpUnaryAction {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -4867,7 +4867,7 @@ pub struct hkpWheelConstraintData {
     pub __vftable: *const crate::raw::vtables::hkpWheelConstraintData_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -4959,18 +4959,18 @@ pub struct hkpWheelConstraintData {
     pub field_C8: u16,
     /// +0xCA `undefined1`, ctor store
     pub field_CA: u8,
-    pub unknown_CB: [u8; 1],
+    unknown_CB: [u8; 1],
     /// +0xCC `undefined2`, ctor store
     pub field_CC: u16,
     /// +0xCE `undefined1`, ctor store
     pub field_CE: u8,
-    pub unknown_CF: [u8; 1],
+    unknown_CF: [u8; 1],
     /// +0xD0 `undefined2`, ctor store
     pub field_D0: u16,
-    pub unknown_D2: [u8; 14],
+    unknown_D2: [u8; 14],
     /// +0xE0 `undefined4`, ctor store (widths [4, 16])
     pub field_E0: u32,
-    pub unknown_E4: [u8; 12],
+    unknown_E4: [u8; 12],
     /// +0xF0 `undefined1[16]`, ctor store
     pub field_F0: [u8; 16],
     /// +0x100 `undefined1[16]`, ctor store
@@ -4981,7 +4981,7 @@ pub struct hkpWheelConstraintData {
     /// +0x114 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_114: [u8; 4],
-    pub unknown_118: [u8; 8],
+    unknown_118: [u8; 8],
     /// +0x120 `undefined1[16]`, ctor store
     pub field_120: [u8; 16],
     /// +0x130 `undefined1[16]`, ctor store
@@ -4990,7 +4990,7 @@ pub struct hkpWheelConstraintData {
     pub field_140: u16,
     /// +0x142 `undefined1`, ctor store
     pub field_142: u8,
-    pub unknown_143: [u8; 5],
+    unknown_143: [u8; 5],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5062,7 +5062,7 @@ pub struct hkpWorld {
     pub __vftable: *const crate::raw::vtables::hkpWorld_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -5166,7 +5166,7 @@ pub struct hkpWorld {
     pub field_F8: u64,
     /// +0x100 `undefined2`, ctor store
     pub field_100: u16,
-    pub unknown_102: [u8; 6],
+    unknown_102: [u8; 6],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -5176,22 +5176,22 @@ pub struct hkpWorld {
     /// +0x114 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_114: [u8; 4],
-    pub unknown_118: [u8; 4],
+    unknown_118: [u8; 4],
     /// +0x11C `undefined2`, ctor store
     pub field_11C: u16,
-    pub unknown_11E: [u8; 2],
+    unknown_11E: [u8; 2],
     /// +0x120 `undefined1`, ctor store
     pub field_120: u8,
     /// +0x121 `undefined1`, ctor store
     pub field_121: u8,
-    pub unknown_122: [u8; 2],
+    unknown_122: [u8; 2],
     /// +0x124 `undefined4`, ctor store
     pub field_124: u32,
     /// +0x128 `undefined8`, ctor store
     pub field_128: u64,
     /// +0x130 `undefined4`, ctor store
     pub field_130: u32,
-    pub unknown_134: [u8; 4],
+    unknown_134: [u8; 4],
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
     /// +0x140 `undefined8`, ctor store
@@ -5200,7 +5200,7 @@ pub struct hkpWorld {
     pub field_148: u8,
     /// +0x149 `undefined1`, ctor store
     pub field_149: u8,
-    pub unknown_14A: [u8; 2],
+    unknown_14A: [u8; 2],
     /// +0x14C `float`, ctor store
     pub field_14C: f32,
     /// +0x150 `float`, ctor store
@@ -5211,7 +5211,7 @@ pub struct hkpWorld {
     pub field_155: u8,
     /// +0x156 `undefined1`, ctor store
     pub field_156: u8,
-    pub unknown_157: [u8; 1],
+    unknown_157: [u8; 1],
     /// +0x158 `float`, ctor store
     pub field_158: f32,
     /// +0x15C `float`, ctor store
@@ -5222,7 +5222,7 @@ pub struct hkpWorld {
     pub field_164: u32,
     /// +0x168 `undefined1`, ctor store
     pub field_168: u8,
-    pub unknown_169: [u8; 3],
+    unknown_169: [u8; 3],
     /// +0x16C `undefined4`, ctor store
     pub field_16C: u32,
     /// +0x170 `undefined4`, ctor store
@@ -5241,7 +5241,7 @@ pub struct hkpWorld {
     pub field_188: f32,
     /// +0x18C `undefined4`, ctor store
     pub field_18C: u32,
-    pub unknown_190: [u8; 4],
+    unknown_190: [u8; 4],
     /// +0x194 `undefined4`, ctor store
     pub field_194: u32,
     /// +0x198 `undefined8`, ctor store
@@ -5342,7 +5342,7 @@ pub struct hkpWorld {
     pub field_298: u64,
     /// +0x2A0 `undefined8`, ctor store
     pub field_2A0: u64,
-    pub unknown_2A8: [u8; 8],
+    unknown_2A8: [u8; 8],
     /// +0x2B0 `undefined4`, ctor store
     pub field_2B0: u32,
     /// +0x2B4 `undefined4`, ctor store
@@ -5359,7 +5359,7 @@ pub struct hkpWorld {
     pub field_2C8: f32,
     /// +0x2CC `float`, ctor store
     pub field_2CC: f32,
-    pub unknown_2D0: [u8; 32],
+    unknown_2D0: [u8; 32],
     /// +0x2F0 `undefined1[16]`, ctor store
     pub field_2F0: [u8; 16],
     /// +0x300 `undefined1[16]`, ctor store
@@ -5490,7 +5490,7 @@ pub struct hkpWorld {
     pub field_3E7: u8,
     /// +0x3E8 `float`, ctor store
     pub field_3E8: f32,
-    pub unknown_3EC: [u8; 4],
+    unknown_3EC: [u8; 4],
     /// +0x3F0 `undefined1[16]`, ctor store
     pub field_3F0: [u8; 16],
     /// +0x400 `undefined1[16]`, ctor store
@@ -5505,7 +5505,7 @@ pub struct hkpWorld {
     pub field_41C: u32,
     /// +0x420 `undefined1`, ctor store
     pub field_420: u8,
-    pub unknown_421: [u8; 7],
+    unknown_421: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5732,7 +5732,7 @@ pub struct hkpWorldCinfo {
     pub __vftable: *const crate::raw::vtables::hkpWorldCinfo_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -5822,7 +5822,7 @@ pub struct hkpWorldCinfo {
     pub __field_C4: [u8; 4],
     /// +0xC8 `undefined1`, ctor store
     pub field_C8: u8,
-    pub unknown_C9: [u8; 3],
+    unknown_C9: [u8; 3],
     /// +0xCC `undefined4`, ctor store
     pub field_CC: u32,
     /// +0xD0 `undefined4`, ctor store (widths [4, 8])
@@ -5843,19 +5843,19 @@ pub struct hkpWorldCinfo {
     pub field_E9: u8,
     /// +0xEA `undefined1`, ctor store
     pub field_EA: u8,
-    pub unknown_EB: [u8; 1],
+    unknown_EB: [u8; 1],
     /// +0xEC `undefined4`, ctor store
     pub field_EC: u32,
     /// +0xF0 `undefined1`, ctor store (widths [1, 2])
     pub field_F0: u8,
     /// +0xF1 `undefined1`, ctor store
     pub field_F1: u8,
-    pub unknown_F2: [u8; 2],
+    unknown_F2: [u8; 2],
     /// +0xF4 `undefined4`, ctor store
     pub field_F4: u32,
     /// +0xF8 `undefined1`, ctor store
     pub field_F8: u8,
-    pub unknown_F9: [u8; 15],
+    unknown_F9: [u8; 15],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -5953,7 +5953,7 @@ pub struct hkpWorldExtension {
     pub __vftable: *const crate::raw::vtables::hkpWorldExtension_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6041,7 +6041,7 @@ pub struct hkpWorldExtension {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6121,7 +6121,7 @@ pub struct hkpWorldMaintenanceMgr {
     /// +0x0 `vtbl:hkpWorldMaintenanceMgr:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpWorldMaintenanceMgr_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6209,7 +6209,7 @@ pub struct hkpWorldMaintenanceMgr {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6277,7 +6277,7 @@ pub struct hkpWorldObject {
     pub __vftable: *const crate::raw::vtables::hkpWorldObject_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6367,7 +6367,7 @@ pub struct hkpWorldObject {
     pub __field_C4: [u8; 4],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
-    pub unknown_D0: [u8; 56],
+    unknown_D0: [u8; 56],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6462,7 +6462,7 @@ pub struct hkxAnimatedFloat {
     /// +0x0 `vtbl:hkxAnimatedFloat:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxAnimatedFloat_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6550,7 +6550,7 @@ pub struct hkxAnimatedFloat {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6616,7 +6616,7 @@ pub struct hkxAnimatedMatrix {
     /// +0x0 `vtbl:hkxAnimatedMatrix:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxAnimatedMatrix_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6704,7 +6704,7 @@ pub struct hkxAnimatedMatrix {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6770,7 +6770,7 @@ pub struct hkxAnimatedQuaternion {
     /// +0x0 `vtbl:hkxAnimatedQuaternion:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxAnimatedQuaternion_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -6858,7 +6858,7 @@ pub struct hkxAnimatedQuaternion {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -6924,7 +6924,7 @@ pub struct hkxAnimatedVector {
     /// +0x0 `vtbl:hkxAnimatedVector:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxAnimatedVector_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7012,7 +7012,7 @@ pub struct hkxAnimatedVector {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7080,7 +7080,7 @@ pub struct hkxAttributeHolder {
     pub __vftable: *const crate::raw::vtables::hkxAttributeHolder_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7168,7 +7168,7 @@ pub struct hkxAttributeHolder {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7235,7 +7235,7 @@ pub struct hkxCamera {
     /// +0x0 `vtbl:hkxCamera:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxCamera_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7323,7 +7323,7 @@ pub struct hkxCamera {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7389,7 +7389,7 @@ pub struct hkxEdgeSelectionChannel {
     /// +0x0 `vtbl:hkxEdgeSelectionChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxEdgeSelectionChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7477,7 +7477,7 @@ pub struct hkxEdgeSelectionChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7543,7 +7543,7 @@ pub struct hkxEnum {
     /// +0x0 `vtbl:hkxEnum:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxEnum_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7631,7 +7631,7 @@ pub struct hkxEnum {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7697,7 +7697,7 @@ pub struct hkxEnvironment {
     /// +0x0 `vtbl:hkxEnvironment:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxEnvironment_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7785,7 +7785,7 @@ pub struct hkxEnvironment {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -7851,7 +7851,7 @@ pub struct hkxIndexBuffer {
     /// +0x0 `vtbl:hkxIndexBuffer:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxIndexBuffer_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7939,7 +7939,7 @@ pub struct hkxIndexBuffer {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8005,7 +8005,7 @@ pub struct hkxLight {
     /// +0x0 `vtbl:hkxLight:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxLight_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8093,7 +8093,7 @@ pub struct hkxLight {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8161,7 +8161,7 @@ pub struct hkxMaterial {
     pub __vftable: *const crate::raw::vtables::hkxMaterial_vtable,
     /// +0x8 `undefined4`, base hkxAttributeHolder
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8249,7 +8249,7 @@ pub struct hkxMaterial {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8316,7 +8316,7 @@ pub struct hkxMaterialEffect {
     /// +0x0 `vtbl:hkxMaterialEffect:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxMaterialEffect_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8404,7 +8404,7 @@ pub struct hkxMaterialEffect {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8470,7 +8470,7 @@ pub struct hkxMaterialShader {
     /// +0x0 `vtbl:hkxMaterialShader:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxMaterialShader_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8558,7 +8558,7 @@ pub struct hkxMaterialShader {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8624,7 +8624,7 @@ pub struct hkxMaterialShaderSet {
     /// +0x0 `vtbl:hkxMaterialShaderSet:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxMaterialShaderSet_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8712,7 +8712,7 @@ pub struct hkxMaterialShaderSet {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8778,7 +8778,7 @@ pub struct hkxMesh {
     /// +0x0 `vtbl:hkxMesh:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxMesh_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -8866,7 +8866,7 @@ pub struct hkxMesh {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -8934,7 +8934,7 @@ pub struct hkxMesh__UserChannelInfo {
     pub __vftable: *const crate::raw::vtables::hkxMesh__UserChannelInfo_vtable,
     /// +0x8 `undefined4`, base hkxAttributeHolder
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9022,7 +9022,7 @@ pub struct hkxMesh__UserChannelInfo {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9091,7 +9091,7 @@ pub struct hkxMeshSection {
     pub __vftable: *const crate::raw::vtables::hkxMeshSection_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9179,7 +9179,7 @@ pub struct hkxMeshSection {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9248,7 +9248,7 @@ pub struct hkxNode {
     pub __vftable: *const crate::raw::vtables::hkxNode_vtable,
     /// +0x8 `undefined4`, base hkxAttributeHolder
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9336,7 +9336,7 @@ pub struct hkxNode {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9405,7 +9405,7 @@ pub struct hkxNodeSelectionSet {
     pub __vftable: *const crate::raw::vtables::hkxNodeSelectionSet_vtable,
     /// +0x8 `undefined4`, base hkxAttributeHolder
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9493,7 +9493,7 @@ pub struct hkxNodeSelectionSet {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9562,7 +9562,7 @@ pub struct hkxScene {
     pub __vftable: *const crate::raw::vtables::hkxScene_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9650,10 +9650,10 @@ pub struct hkxScene {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 8],
+    unknown_C8: [u8; 8],
     /// +0xD0 `undefined1[16]`, ctor store
     pub field_D0: [u8; 16],
-    pub unknown_E0: [u8; 40],
+    unknown_E0: [u8; 40],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9721,7 +9721,7 @@ pub struct hkxSkinBinding {
     /// +0x0 `vtbl:hkxSkinBinding:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxSkinBinding_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9809,7 +9809,7 @@ pub struct hkxSkinBinding {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -9875,7 +9875,7 @@ pub struct hkxSparselyAnimatedBool {
     /// +0x0 `vtbl:hkxSparselyAnimatedBool:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxSparselyAnimatedBool_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -9963,7 +9963,7 @@ pub struct hkxSparselyAnimatedBool {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10029,7 +10029,7 @@ pub struct hkxSparselyAnimatedEnum {
     /// +0x0 `vtbl:hkxSparselyAnimatedEnum:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxSparselyAnimatedEnum_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10117,7 +10117,7 @@ pub struct hkxSparselyAnimatedEnum {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10183,7 +10183,7 @@ pub struct hkxSparselyAnimatedInt {
     /// +0x0 `vtbl:hkxSparselyAnimatedInt:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxSparselyAnimatedInt_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10271,7 +10271,7 @@ pub struct hkxSparselyAnimatedInt {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10337,7 +10337,7 @@ pub struct hkxSparselyAnimatedString {
     /// +0x0 `vtbl:hkxSparselyAnimatedString:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxSparselyAnimatedString_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10425,7 +10425,7 @@ pub struct hkxSparselyAnimatedString {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10491,7 +10491,7 @@ pub struct hkxTextureFile {
     /// +0x0 `vtbl:hkxTextureFile:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxTextureFile_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10579,7 +10579,7 @@ pub struct hkxTextureFile {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10645,7 +10645,7 @@ pub struct hkxTextureInplace {
     /// +0x0 `vtbl:hkxTextureInplace:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxTextureInplace_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10733,7 +10733,7 @@ pub struct hkxTextureInplace {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10799,7 +10799,7 @@ pub struct hkxTriangleSelectionChannel {
     /// +0x0 `vtbl:hkxTriangleSelectionChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxTriangleSelectionChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -10887,7 +10887,7 @@ pub struct hkxTriangleSelectionChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -10953,7 +10953,7 @@ pub struct hkxVertexBuffer {
     /// +0x0 `vtbl:hkxVertexBuffer:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxVertexBuffer_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11041,7 +11041,7 @@ pub struct hkxVertexBuffer {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11107,7 +11107,7 @@ pub struct hkxVertexFloatDataChannel {
     /// +0x0 `vtbl:hkxVertexFloatDataChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxVertexFloatDataChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11195,7 +11195,7 @@ pub struct hkxVertexFloatDataChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11261,7 +11261,7 @@ pub struct hkxVertexIntDataChannel {
     /// +0x0 `vtbl:hkxVertexIntDataChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxVertexIntDataChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11349,7 +11349,7 @@ pub struct hkxVertexIntDataChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11415,7 +11415,7 @@ pub struct hkxVertexSelectionChannel {
     /// +0x0 `vtbl:hkxVertexSelectionChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxVertexSelectionChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11503,7 +11503,7 @@ pub struct hkxVertexSelectionChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],
@@ -11569,7 +11569,7 @@ pub struct hkxVertexVectorDataChannel {
     /// +0x0 `vtbl:hkxVertexVectorDataChannel:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkxVertexVectorDataChannel_vtable,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -11657,7 +11657,7 @@ pub struct hkxVertexVectorDataChannel {
     /// +0xC4 `undefined4`, base hkBaseObject
     #[doc(hidden)]
     pub __field_C4: [u8; 4],
-    pub unknown_C8: [u8; 64],
+    unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
     #[doc(hidden)]
     pub __field_108: [u8; 8],

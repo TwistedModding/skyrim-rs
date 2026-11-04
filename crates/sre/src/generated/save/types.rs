@@ -18,7 +18,7 @@ pub struct BGSLoadFormBuffer {
     pub field_10: u64,
     /// +0x18 `undefined4`, base BGSLoadGameBuffer
     pub field_18: u32,
-    pub unknown_1C: [u8; 8],
+    unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, base BGSLoadGameBuffer, semantic; read offset (high)
     #[doc(hidden)]
     pub __position: [u8; 4],
@@ -50,7 +50,7 @@ pub struct BGSLoadGameBuffer {
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
     pub field_18: u32,
-    pub unknown_1C: [u8; 8],
+    unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, semantic; read offset (high)
     #[doc(hidden)]
     pub __position: [u8; 4],
@@ -90,7 +90,7 @@ pub struct BGSSaveFormBuffer {
     /// +0x20 `undefined1`, semantic; save version byte (medium)
     #[doc(hidden)]
     pub __version: [u8; 1],
-    pub unknown_21: [u8; 7],
+    unknown_21: [u8; 7],
     /// +0x28 `ptr:TESForm`, semantic; form being written (high)
     pub form: *mut crate::TESForm,
     #[doc(hidden)]
@@ -142,13 +142,13 @@ pub struct BGSSaveLoadGame {
     pub savedLightFiles: crate::BSTArray,
     /// +0x30 `undefined1`, semantic; second form-id index map, saved after the main one (u16 indices) (medium)
     pub worldspaceIdMap: [u8; 104],
-    pub unknown_98: [u8; 48],
+    unknown_98: [u8; 48],
     /// +0xC8 `undefined1`, semantic; nested hash maps cleared at load start (low)
     pub loadScratchMaps: [u8; 72],
-    pub unknown_110: [u8; 120],
+    unknown_110: [u8; 120],
     /// +0x188 `undefined1`, semantic; file-bucket map of forms needing post-load work (low)
     pub formsToRefresh: [u8; 128],
-    pub unknown_208: [u8; 144],
+    unknown_208: [u8; 144],
     /// +0x298 `undefined1`, semantic; index <-> form id table for the 3-byte ref ids (+0x8 map id->index, +0x38 map index->id, +0x60 next index) (high)
     pub formIdIndexMap: [u8; 104],
     /// +0x300 `class:BSTArray`, semantic; text log lines ('***Saving game: %s (%s)', '---Finished loading game: %s') written to the save (high)
@@ -166,7 +166,7 @@ pub struct BGSSaveLoadGame {
     /// +0x345 `undefined1`, semantic; set when the saved plugin list does not match the loaded one (high)
     #[doc(hidden)]
     pub __pluginListMismatch: [u8; 1],
-    pub unknown_346: [u8; 2],
+    unknown_346: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -212,7 +212,7 @@ pub struct BGSSaveLoadManager {
     /// +0xD8 `undefined8`, semantic; id pair of the character whose saves are listed; -1 until set (medium)
     #[doc(hidden)]
     pub __displayPlayerId: [u8; 8],
-    pub unknown_E0: [u8; 4],
+    unknown_E0: [u8; 4],
     /// +0xE4 `undefined4`, ctor store
     pub field_E4: u32,
     /// +0xE8 `class:BSTArray`, semantic; per-character records of 0x48 bytes keyed by the id pair: +8 save count, +0xc next autosave index, +0x18 map autosave index -> name, +0x40 BSFixedString quicksave name (medium)
@@ -223,81 +223,79 @@ pub struct BGSSaveLoadManager {
     pub __saveFiles: [u8; 24],
     /// +0x118 `undefined1`, semantic; save list is valid (entries are added/removed only when set) (medium)
     pub saveListBuilt: u8,
-    pub unknown_119: [u8; 3],
+    unknown_119: [u8; 3],
     /// +0x11C `undefined4`, ctor store
     pub field_11C: u32,
     /// +0x120 `undefined1`, semantic; size-measuring pass: buffer writes advance positions without copying (medium)
     pub measureOnly: u8,
     /// +0x121 `undefined1`, semantic; cleared before an autosave/kind-5 save (low)
     pub unk121: u8,
-    pub unknown_122: [u8; 6],
+    unknown_122: [u8; 6],
     /// +0x128 `undefined8`, semantic; GetTickCount at construction and at each completed save (high)
     pub lastSaveLoadTick: u64,
     /// +0x130 `undefined1`, semantic; saves refused when 0 (medium)
     pub savingAllowed: u8,
-    pub unknown_131: [u8; 7],
+    unknown_131: [u8; 7],
     /// +0x138 `undefined1`, semantic; inline name buffer (0x104 chars) of the current save name string (pointer +0x240, length +0x248, capacity +0x24a): name of the last loaded or completed save, used by 'continue' (request 0xd0000100) (high)
     pub currentSaveName: [u8; 260],
-    pub unknown_23C: [u8; 4],
+    unknown_23C: [u8; 4],
     /// +0x240 `pointer`, semantic; char* of the current save name string; points at currentSaveName (+0x138) (high)
-    #[doc(hidden)]
-    pub __currentSaveNamePtr: [u8; 8],
+    pub currentSaveNamePtr: *mut c_void,
     /// +0x248 `u16`, semantic; length of the current save name (high)
-    #[doc(hidden)]
-    pub __currentSaveNameLength: [u8; 2],
+    pub currentSaveNameLength: u16,
     /// +0x24A `u16`, semantic; capacity of the inline buffer (0x104) (high)
     #[doc(hidden)]
     pub __currentSaveNameCapacity: [u8; 2],
-    pub unknown_24C: [u8; 4],
+    unknown_24C: [u8; 4],
     /// +0x250 `undefined4`, semantic; second argument of SetCurrentSaveName (-1 from both callers) (low)
     pub currentSaveIndex: u32,
     /// +0x254 `undefined1`, semantic; BSSaveDataSystemUtility found files under 'Saves/' (medium)
     pub hasSaveFolder: u8,
-    pub unknown_255: [u8; 3],
+    unknown_255: [u8; 3],
     /// +0x258 `pointer`, semantic; stream held for request 0xd0002000 (medium)
     pub pendingLoadStream: *mut c_void,
-    pub unknown_260: [u8; 1],
+    unknown_260: [u8; 1],
     /// +0x261 `undefined1`, semantic; set when +0x258 is ready to load (low)
     #[doc(hidden)]
     pub __pendingLoadReady: [u8; 1],
-    pub unknown_262: [u8; 6],
+    unknown_262: [u8; 6],
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
     /// +0x270 `undefined4`, ctor store
     pub field_270: u32,
-    pub unknown_274: [u8; 4],
+    unknown_274: [u8; 4],
     /// +0x278 `undefined8`, ctor store
     pub field_278: u64,
     /// +0x280 `undefined8`, ctor store
     pub field_280: u64,
     /// +0x288 `undefined4`, ctor store
     pub field_288: u32,
-    pub unknown_28C: [u8; 4],
+    unknown_28C: [u8; 4],
     /// +0x290 `undefined8`, ctor store
     pub field_290: u64,
     /// +0x298 `undefined8`, ctor store
     pub field_298: u64,
     /// +0x2A0 `undefined4`, ctor store
     pub field_2A0: u32,
-    pub unknown_2A4: [u8; 4],
+    unknown_2A4: [u8; 4],
     /// +0x2A8 `undefined8`, ctor store
     pub field_2A8: u64,
     /// +0x2B0 `undefined1`, semantic; skip the 'different load order' message box (medium)
     #[doc(hidden)]
     pub __suppressLoadOrderMessage: [u8; 1],
-    pub unknown_2B1: [u8; 1],
+    unknown_2B1: [u8; 1],
     /// +0x2B2 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_2B2: [u8; 1],
-    pub unknown_2B3: [u8; 5],
+    unknown_2B3: [u8; 5],
     /// +0x2B8 `ptr`, semantic; 0x78-byte header record of the entry being loaded (low)
     #[doc(hidden)]
     pub __cachedHeader: [u8; 8],
-    pub unknown_2C0: [u8; 48],
+    unknown_2C0: [u8; 48],
     /// +0x2F0 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_2F0: [u8; 1],
-    pub unknown_2F1: [u8; 7],
+    unknown_2F1: [u8; 7],
     /// +0x2F8 `class:BGSSaveLoadManager::Thread`, semantic; worker thread (vtable 0x190ad08, slot 1 Run 0x62a030) with its request queue: mgr+0x338 thread id, +0x348 running, +0x349 busy, +0x34c paused (1 until started), +0x350 event HANDLE, +0x358 worker queue (kind bit 31 clear) (high)
     #[doc(hidden)]
     pub __thread: [u8; 192],
@@ -310,7 +308,7 @@ pub struct BGSSaveLoadManager {
     /// +0x410 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_410: [u8; 4],
-    pub unknown_414: [u8; 4],
+    unknown_414: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -334,8 +332,8 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, unk121) == 0x121
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, lastSaveLoadTick) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, savingAllowed) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveName) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNamePtr) == 0x240);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNameLength) == 0x248);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveNamePtr) == 0x240);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveNameLength) == 0x248);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNameCapacity) == 0x24A);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveIndex) == 0x250);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, hasSaveFolder) == 0x254);
@@ -368,24 +366,24 @@ pub struct BGSSaveLoadManager__Thread {
     /// +0x0 `vtbl:BGSSaveLoadManager::Thread:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSSaveLoadManager__Thread_vtable,
-    pub unknown_8: [u8; 40],
+    unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSThread
     pub field_30: u64,
     /// +0x38 `undefined8`, base BSThread
     pub field_38: u64,
     /// +0x40 `undefined4`, base BSThread, semantic; id of the worker thread (BSThread part) (medium)
     pub threadId: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `undefined1`, base BSThread
     pub field_48: u8,
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     /// +0x50 `undefined1`, semantic; loop runs while set (high)
     #[doc(hidden)]
     pub __running: [u8; 1],
     /// +0x51 `undefined1`, semantic; set while draining (high)
     #[doc(hidden)]
     pub __busy: [u8; 1],
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, semantic; requests are not processed (and Enqueue does nothing) while 1 (medium)
     #[doc(hidden)]
     pub __paused: [u8; 4],
@@ -414,17 +412,15 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, queue) =
 #[repr(C)]
 pub struct BGSSaveLoadManagerEvent {
     /// +0x0 `u8`, semantic; SaveLoadEventKind (high)
-    #[doc(hidden)]
-    pub __kind: [u8; 1],
+    pub kind: u8,
     /// +0x1 `u8`, semantic; 0 at the start, 1 when finished (high)
-    #[doc(hidden)]
-    pub __done: [u8; 1],
+    pub done: u8,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSSaveLoadManagerEvent>() == 0x2);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, __kind) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, __done) == 0x1);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, kind) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, done) == 0x1);
 
 /// `ChangeFormMap`: size 0x38 (exact).
 /// Meaning: lock-protected BSTHashMap<u32 formID, ChangeEntry> holding every changed form of the session (high, save pass).
@@ -494,7 +490,7 @@ pub struct _anon_14F04957__Win32FileType {
     pub __vftable: *const crate::raw::vtables::_anon_14F04957__Win32FileType_vtable,
     /// +0x8 `undefined4`, base NiBinaryStream, semantic; running count added after every read/write callback (high)
     pub bytesTransferred: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr`, base NiBinaryStream, semantic; read callback (stream, dst, len, &count, 1) (high)
     pub readFn: [u8; 8],
     /// +0x18 `ptr`, base NiBinaryStream, semantic; write callback (stream, src, len, &count, 1) (high)
@@ -513,10 +509,10 @@ pub struct _anon_14F04957__Win32FileType {
     pub field_40: u32,
     /// +0x44 `undefined1`, base NiFile
     pub field_44: u8,
-    pub unknown_45: [u8; 3],
+    unknown_45: [u8; 3],
     /// +0x48 `undefined1`, base BSFile
     pub field_48: u8,
-    pub unknown_49: [u8; 7],
+    unknown_49: [u8; 7],
     /// +0x50 `undefined8`, base BSFile
     pub field_50: u64,
     /// +0x58 `undefined4`, base BSFile, semantic; current offset (-1 -> use +0x170) (high)
@@ -527,21 +523,21 @@ pub struct _anon_14F04957__Win32FileType {
     pub path: [u8; 260],
     /// +0x168 `undefined4`, base BSFile
     pub field_168: u32,
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined4`, semantic; fallback position (medium)
     pub position2: u32,
     /// +0x174 `undefined4`, base BSFile
     pub field_174: u32,
     /// +0x178 `undefined1`, base BSFile
     pub field_178: u8,
-    pub unknown_179: [u8; 2359],
+    unknown_179: [u8; 2359],
     /// +0xAB0 `undefined1`, semantic; inline buffer of the save name (no path, no extension); char* at +0xbb0 (high)
     #[doc(hidden)]
     pub __saveNameBuffer: [u8; 256],
     /// +0xBB0 `ptr`, semantic; char* to the save name (high)
     #[doc(hidden)]
     pub __saveName: [u8; 8],
-    pub unknown_BB8: [u8; 8],
+    unknown_BB8: [u8; 8],
     /// +0xBC0 `undefined4`, semantic; uncompressed size after the header (high)
     #[doc(hidden)]
     pub __payloadSize: [u8; 4],
@@ -551,7 +547,7 @@ pub struct _anon_14F04957__Win32FileType {
     /// +0xBC8 `undefined2`, semantic; 0 none, 1 zlib, 2 LZ4 (INI uiCompression:SaveGame) (high)
     #[doc(hidden)]
     pub __compression: [u8; 2],
-    pub unknown_BCA: [u8; 30],
+    unknown_BCA: [u8; 30],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -597,7 +593,7 @@ pub struct bgs__saveload__LoadEntryRequest {
     pub kind: u32,
     /// +0x10 `undefined4`, base bgs::saveload::Request, semantic; decremented by ProcessSaveLoadRequests; the request runs when it reaches 0 (all callers pass 1) (medium)
     pub deferFrames: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `ptr`, semantic; save-list entry (+0 char* name, +0x60 u32) (high)
     #[doc(hidden)]
     pub __entry: [u8; 8],
@@ -626,7 +622,7 @@ pub struct bgs__saveload__LoadRequest {
     pub kind: u32,
     /// +0x10 `undefined4`, base bgs::saveload::Request, semantic; decremented by ProcessSaveLoadRequests; the request runs when it reaches 0 (all callers pass 1) (medium)
     pub deferFrames: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `ptr:_anon_14F04957::Win32FileType`, semantic; save read into memory (high)
     pub stream: *mut crate::_anon_14F04957__Win32FileType,
     /// +0x20 `undefined4`, semantic; value from the save-data info (+8) (low)
@@ -637,7 +633,7 @@ pub struct bgs__saveload__LoadRequest {
     /// +0x25 `undefined1`, semantic; passed through as LoadGame param_6 (skip the plugin-list match) (low)
     #[doc(hidden)]
     pub __flag25: [u8; 1],
-    pub unknown_26: [u8; 2],
+    unknown_26: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -691,11 +687,11 @@ pub struct bgs__saveload__SaveOperationRequest {
     pub kind: u32,
     /// +0x10 `undefined4`, base bgs::saveload::Request, semantic; decremented by ProcessSaveLoadRequests; the request runs when it reaches 0 (all callers pass 1) (medium)
     pub deferFrames: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined1`, semantic; inline name buffer (char* at +0x120) for 0x40000004 (high)
     #[doc(hidden)]
     pub __name: [u8; 272],
-    pub unknown_128: [u8; 8],
+    unknown_128: [u8; 8],
     /// +0x130 `undefined1`, semantic; BSSaveDataSystemUtility operation info passed to slot 13/15: +0x0 BSFixedString* replaced name, +0x8 u32, +0xc u16 op (0 read,1 write,2 delete), +0xe u16 save type (0 manual,1 auto,2 quick,4 kind 5) (medium)
     #[doc(hidden)]
     pub __info: [u8; 24],

@@ -60,7 +60,7 @@ unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::
     if !graph.owner().is_some_and(|o| core::ptr::eq(o, PLAYER.load(Ordering::Relaxed))) {
         return;
     }
-    let Some(entry) = graph.bone_nodes().iter().find(|e| core::ptr::eq(e.node_field(), head)) else { return };
+    let Some(entry) = graph.bone_nodes().iter().find(|e| core::ptr::eq(e.node, head)) else { return };
     let Some(node) = entry.node() else { return };
     let before = node.local_transform();
     let after = Transform { rotation: multiply(before.rotation, turn(TURN_DEGREES)), ..before };

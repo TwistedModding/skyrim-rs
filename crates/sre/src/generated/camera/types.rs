@@ -13,13 +13,13 @@ pub struct ActorMagicCaster {
     /// +0x0 `vtbl:ActorMagicCaster:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ActorMagicCaster_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `undefined4`, base MagicCaster
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined4`, base MagicCaster
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base MagicCaster
     pub field_28: u64,
     /// +0x30 `undefined4`, base MagicCaster
@@ -52,7 +52,7 @@ pub struct ActorMagicCaster {
     pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -62,7 +62,7 @@ pub struct ActorMagicCaster {
     pub __field_98: [u8; 8],
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -88,7 +88,7 @@ pub struct ActorMagicCaster {
     pub castingSource: u32,
     /// +0xF8 `undefined4`, ctor store
     pub field_F8: u32,
-    pub unknown_FC: [u8; 4],
+    unknown_FC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -600,7 +600,7 @@ pub struct BSFlattenedBoneTree {
     pub __vftable: *const crate::raw::vtables::BSFlattenedBoneTree_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -611,12 +611,12 @@ pub struct BSFlattenedBoneTree {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -639,12 +639,12 @@ pub struct BSFlattenedBoneTree {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    pub unknown_10A: [u8; 6],
+    unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `i32`, semantic; number of entries (high)
     pub boneCount: u32,
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `ptr:FlatBone`, semantic; array of 0x80-byte entries: +0x00 local NiTransform, +0x34 world NiTransform, +0x68 i16 parent index (<0: the tree node), +0x70 NiNode* materialised for the bone or null, +0x78 BSFixedString name (high)
     pub bones: *mut crate::FlatBone,
     /// +0x138 `undefined1`, semantic; hash map name -> entry index (count +0x144, entries +0x160) (medium)
@@ -691,10 +691,10 @@ pub struct BSFrustumFOVController {
     pub __vftable: *const crate::raw::vtables::BSFrustumFOVController_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined2`, base NiTimeController
     pub field_10: u16,
-    pub unknown_12: [u8; 2],
+    unknown_12: [u8; 2],
     /// +0x14 `undefined8`, base NiTimeController
     pub field_14: u64,
     /// +0x1C `undefined4`, base NiTimeController
@@ -711,7 +711,7 @@ pub struct BSFrustumFOVController {
     pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
-    pub unknown_34: [u8; 4],
+    unknown_34: [u8; 4],
     /// +0x38 `undefined8`, base NiTimeController
     pub field_38: u64,
     /// +0x40 `undefined8`, base NiTimeController
@@ -786,13 +786,13 @@ pub struct BeamProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:BeamProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::BeamProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:BeamProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::BeamProjectile_vtable_30,
@@ -831,21 +831,21 @@ pub struct BeamProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -882,14 +882,14 @@ pub struct BeamProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -899,7 +899,7 @@ pub struct BeamProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -918,7 +918,7 @@ pub struct BeamProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -970,7 +970,7 @@ pub struct BeamProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `vtbl:BeamProjectile:1E0`, rtti
     #[doc(hidden)]
     pub ____vftable_1E0: [u8; 8],
@@ -980,7 +980,7 @@ pub struct BeamProjectile {
     /// +0x240 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_240: [u8; 1],
-    pub unknown_241: [u8; 7],
+    unknown_241: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1303,7 +1303,7 @@ pub struct CachedRaycastData {
     pub __vftable: *const crate::raw::vtables::CachedRaycastData_vtable,
     /// +0x8 `undefined4`, semantic; the actor's reference handle (high)
     pub handle: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `pointer`, semantic; char controller's caching shape phantom (when its type slot 6 returns 2) (medium)
     pub cachingPhantom: *mut c_void,
     /// +0x18 `pointer`, semantic; char controller's collected bodies (mode 1) (medium)
@@ -1315,10 +1315,10 @@ pub struct CachedRaycastData {
     /// +0x2C `undefined1`, semantic; when set the cast skips the phantom and bodies paths and uses the world (medium)
     #[doc(hidden)]
     pub __useWorldOnly: [u8; 1],
-    pub unknown_2D: [u8; 3],
+    unknown_2D: [u8; 3],
     /// +0x30 `undefined1`, semantic; sticky: any cast hit (medium)
     pub everHit: u8,
-    pub unknown_31: [u8; 7],
+    unknown_31: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1337,7 +1337,7 @@ const _: () = assert!(core::mem::offset_of!(CachedRaycastData, everHit) == 0x30)
 /// Evidence: the game calendar (no RTTI): six TESGlobal pointers; IC8 G (static-Y). Name descriptive (ledger: AdvanceGameCalendarTime, UpdateSceneGraphAndCalendarTime).; size: Init 0x645c80 writes up to +0x38; AdvanceGameCalendarTime reads +0x3c (lower bound 0x40); static instance 0x21a3710.
 #[repr(C, align(8))]
 pub struct Calendar {
-    pub unknown_0: [u8; 8],
+    unknown_0: [u8; 8],
     /// +0x8 `ptr:TESGlobal`, semantic; global 0x35 (medium)
     pub gameYear: *mut crate::TESGlobal,
     /// +0x10 `ptr:TESGlobal`, semantic; global 0x36 (medium)
@@ -1678,37 +1678,34 @@ pub struct FirstPersonRenderContext {
     #[doc(hidden)]
     pub __firstPersonFOV: [u8; 4],
     /// +0x10 `float`, semantic; PlayerCamera.worldFOV (high)
-    #[doc(hidden)]
-    pub __worldFOV: [u8; 4],
-    pub unknown_14: [u8; 4],
+    pub worldFOV: f32,
+    unknown_14: [u8; 4],
     /// +0x18 `ptr:NiNode`, semantic; player Get3D(true) (ID_415031) (high)
-    #[doc(hidden)]
-    pub __firstPersonRoot: [u8; 8],
+    pub firstPersonRoot: *mut crate::NiNode,
     /// +0x20 `ptr:NiNode`, semantic; player Get3D(false) (high)
     pub thirdPersonRoot: *mut crate::NiNode,
     /// +0x28 `ptr:SceneGraph`, semantic; g_SceneGraph (also stored by main +0x898); ID_415032 is this field (high)
-    #[doc(hidden)]
-    pub __sceneGraph: [u8; 8],
+    pub sceneGraph: *mut crate::SceneGraph,
     /// +0x30 `ptr:ShadowSceneNode`, semantic; g_ShadowSceneNode (high)
     #[doc(hidden)]
     pub __shadowSceneNode: [u8; 8],
-    pub unknown_38: [u8; 24],
+    unknown_38: [u8; 24],
     /// +0x50 `undefined1`, semantic; VATS object (0x31a5720) mode +0x20 == 4 (medium)
     #[doc(hidden)]
     pub __killCam: [u8; 1],
     /// +0x51 `undefined1`, semantic; set from the current worldspace/cell flags; selects the volumetric lighting pass in RenderWorldScene (low)
     pub unk51: u8,
-    pub unknown_52: [u8; 6],
+    unknown_52: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FirstPersonRenderContext>() == 0x58);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, eyePosition) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __firstPersonFOV) == 0xC);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __worldFOV) == 0x10);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __firstPersonRoot) == 0x18);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, worldFOV) == 0x10);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, firstPersonRoot) == 0x18);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, thirdPersonRoot) == 0x20);
-const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __sceneGraph) == 0x28);
+const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, sceneGraph) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __shadowSceneNode) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, __killCam) == 0x50);
 const _: () = assert!(core::mem::offset_of!(FirstPersonRenderContext, unk51) == 0x51);
@@ -1843,13 +1840,13 @@ pub struct FlameProjectile {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `vtbl:FlameProjectile:20`, rtti
     #[doc(hidden)]
     pub __vftable_20: *const crate::raw::vtables::FlameProjectile_vtable_20,
     /// +0x28 `undefined4`, base TESObjectREFR, semantic; bits 0-9 reference count, bit 10 handle assigned, bits 11-30 handle index (high)
     pub refCount: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:FlameProjectile:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::FlameProjectile_vtable_30,
@@ -1888,21 +1885,21 @@ pub struct FlameProjectile {
     /// +0x9B `undefined1`, base TESObjectREFR
     #[doc(hidden)]
     pub __field_9B: [u8; 1],
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_A8: [u8; 8],
-    pub unknown_B0: [u8; 36],
+    unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_DC: [u8; 4],
-    pub unknown_E0: [u8; 8],
+    unknown_E0: [u8; 8],
     /// +0xE8 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_E8: [u8; 8],
@@ -1939,14 +1936,14 @@ pub struct FlameProjectile {
     /// +0x128 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 4],
+    unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_130: [u8; 4],
     /// +0x134 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_134: [u8; 1],
-    pub unknown_135: [u8; 3],
+    unknown_135: [u8; 3],
     /// +0x138 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_138: [u8; 4],
@@ -1956,7 +1953,7 @@ pub struct FlameProjectile {
     /// +0x140 `undefined1`, base Projectile
     #[doc(hidden)]
     pub __field_140: [u8; 1],
-    pub unknown_141: [u8; 3],
+    unknown_141: [u8; 3],
     /// +0x144 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_144: [u8; 4],
@@ -1975,7 +1972,7 @@ pub struct FlameProjectile {
     /// +0x168 `undefined4`, base Projectile
     #[doc(hidden)]
     pub __field_168: [u8; 4],
-    pub unknown_16C: [u8; 4],
+    unknown_16C: [u8; 4],
     /// +0x170 `undefined8`, base Projectile
     #[doc(hidden)]
     pub __field_170: [u8; 8],
@@ -2027,7 +2024,7 @@ pub struct FlameProjectile {
     /// +0x1D8 `undefined2`, base Projectile
     #[doc(hidden)]
     pub __field_1D8: [u8; 2],
-    pub unknown_1DA: [u8; 6],
+    unknown_1DA: [u8; 6],
     /// +0x1E0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1E0: [u8; 8],
@@ -2108,33 +2105,28 @@ const _: () = assert!(core::mem::offset_of!(FlameProjectile, __field_1E0) == 0x1
 /// `FlatBone`: size 0x80 (exact).
 /// Meaning: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name) (high, camera pass).
 /// Evidence: one bone of a BSFlattenedBoneTree (no RTTI; descriptive name); item 9 (request V). UpdateBoneWorldTransforms 0xef4f50 steps 0x80 over BSFlattenedBoneTree+0x130 (count +0x128): 0xef4f87 mov rcx,[rdi+rdx+0x70] (node), 0xef4f95 movzx eax,word [rbx+0x68] (parent), 0xef4fa2 lea rcx,[rdx+0x34] (the parent's world); world = node world, else parent world * local. GetOrCreateNodeForIndex 0xef4af0 names the new node from +0x78 and copies local +0..+0x33 and world +0x34..+0x67 into it.; size: the 0x80 stride.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct FlatBone {
     /// +0x0 `class:NiTransform`, semantic; local transform (high)
-    #[doc(hidden)]
-    pub __local: [u8; 52],
+    pub local: crate::NiTransform,
     /// +0x34 `class:NiTransform`, semantic; world transform (high)
-    #[doc(hidden)]
-    pub __world: [u8; 52],
+    pub world: crate::NiTransform,
     /// +0x68 `i16`, semantic; parent entry index; < 0: the tree node itself (high)
-    #[doc(hidden)]
-    pub __parentIndex: [u8; 2],
+    pub parentIndex: u16,
     pub unknown_6A: [u8; 6],
     /// +0x70 `ptr:NiNode`, semantic; NiNode materialised for the bone, or null (high)
-    #[doc(hidden)]
-    pub __node: [u8; 8],
+    pub node: *mut crate::NiNode,
     /// +0x78 `class:BSFixedString`, semantic; bone name (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: crate::BSFixedString,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FlatBone>() == 0x80);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __local) == 0x0);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __world) == 0x34);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __parentIndex) == 0x68);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __node) == 0x70);
-const _: () = assert!(core::mem::offset_of!(FlatBone, __name) == 0x78);
+const _: () = assert!(core::mem::offset_of!(FlatBone, local) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FlatBone, world) == 0x34);
+const _: () = assert!(core::mem::offset_of!(FlatBone, parentIndex) == 0x68);
+const _: () = assert!(core::mem::offset_of!(FlatBone, node) == 0x70);
+const _: () = assert!(core::mem::offset_of!(FlatBone, name) == 0x78);
 
 /// `FreeCameraState`: size 0x50 (exact, medium); primary base `TESCameraState`.
 /// Meaning: free fly camera (tfc) (high, frame pass).
@@ -2266,18 +2258,17 @@ const _: () = assert!(core::mem::offset_of!(FurnitureCameraState, __pad3F) == 0x
 /// `FurnitureMarker`: size 0x14 (exact).
 /// Meaning: one furniture marker of the model (medium, camera pass).
 /// Evidence: one furniture marker of the model; IC2 E (static-N): only +0x10 was read; +0x0..+0xf not read in this track.; size: GetMarker 0xff13a0 stride 0x14.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct FurnitureMarker {
     /// +0x0 `undefined1`, semantic; not read in this track (low)
-    #[doc(hidden)]
-    pub __field_0: [u8; 16],
+    pub field_0: [u8; 16],
     /// +0x10 `u32`, semantic; bit 0 sit, bit 1 sleep (lay), bit 2 lean; see the flag rows (high)
     pub animTypeFlags: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<FurnitureMarker>() == 0x14);
-const _: () = assert!(core::mem::offset_of!(FurnitureMarker, __field_0) == 0x0);
+const _: () = assert!(core::mem::offset_of!(FurnitureMarker, field_0) == 0x0);
 const _: () = assert!(core::mem::offset_of!(FurnitureMarker, animTypeFlags) == 0x10);
 
 /// `HorseCameraState`: size 0xF8 (exact, medium); primary base `ThirdPersonState`.
@@ -2889,20 +2880,20 @@ pub struct ModelReferenceEffect {
     pub __vftable: *const crate::raw::vtables::ModelReferenceEffect_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `float`, base ReferenceEffect, semantic; duration passed to the create functions (high)
     pub lifetime: f32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSTempEffect
     pub field_18: u64,
     /// +0x20 `undefined4`, base BSTempEffect
     pub field_20: u32,
     /// +0x24 `undefined1`, base BSTempEffect
     pub field_24: u8,
-    pub unknown_25: [u8; 3],
+    unknown_25: [u8; 3],
     /// +0x28 `undefined4`, base BSTempEffect
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `ptr:ReferenceEffectController`, base ReferenceEffect, semantic; OwnedController / OwnedCameraEffectController (high)
     pub controller: *mut crate::ReferenceEffectController,
     /// +0x38 `u32`, base ReferenceEffect, semantic; target reference handle (high)
@@ -2913,7 +2904,7 @@ pub struct ModelReferenceEffect {
     pub finished: u8,
     /// +0x41 `u8`, base ReferenceEffect, semantic; set to 1 by InitAndRegisterOrDestroy (low)
     pub field_41: u8,
-    pub unknown_42: [u8; 6],
+    unknown_42: [u8; 6],
     /// +0x48 `vtbl:ModelReferenceEffect:48`, rtti
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::ModelReferenceEffect_vtable_48,
@@ -2933,7 +2924,7 @@ pub struct ModelReferenceEffect {
     pub field_78: u64,
     /// +0x80 `undefined4`, ctor store
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -2942,7 +2933,7 @@ pub struct ModelReferenceEffect {
     pub field_98: u64,
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined8`, ctor store
@@ -2955,7 +2946,7 @@ pub struct ModelReferenceEffect {
     pub field_C8: u64,
     /// +0xD0 `undefined4`, ctor store
     pub field_D0: u32,
-    pub unknown_D4: [u8; 4],
+    unknown_D4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3031,16 +3022,16 @@ pub struct MovementControllerNPC {
     pub __vftable: *const crate::raw::vtables::MovementControllerNPC_vtable,
     /// +0x8 `u32`, base MovementControllerAI, semantic; BSIntrusiveRefCounted count (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 36],
+    unknown_C: [u8; 36],
     /// +0x30 `undefined4`, base MovementControllerAI
     pub field_30: u32,
-    pub unknown_34: [u8; 20],
+    unknown_34: [u8; 20],
     /// +0x48 `undefined4`, base MovementControllerAI
     pub field_48: u32,
-    pub unknown_4C: [u8; 196],
+    unknown_4C: [u8; 196],
     /// +0x110 `undefined4`, base MovementControllerAI
     pub field_110: u32,
-    pub unknown_114: [u8; 4],
+    unknown_114: [u8; 4],
     /// +0x118 `undefined8`, base MovementControllerAI
     #[doc(hidden)]
     pub __field_118: [u8; 8],
@@ -3063,7 +3054,7 @@ pub struct MovementControllerNPC {
     pub __vftable_148: *const crate::raw::vtables::MovementControllerNPC_vtable_148,
     /// +0x150 `undefined8`, ctor store
     pub field_150: u64,
-    pub unknown_158: [u8; 72],
+    unknown_158: [u8; 72],
     /// +0x1A0 `undefined8`, ctor store
     pub field_1A0: u64,
     /// +0x1A8 `undefined8`, ctor store
@@ -3075,13 +3066,13 @@ pub struct MovementControllerNPC {
     pub field_1B8: u64,
     /// +0x1C0 `u32`, semantic, runtime; current movement type list (MotionDriveMode enum): 0 animation-driven; 1, 2, 3, 7, 8, 10..14 motion-driven variants; 4, 5, 9 allow-rotation variants (high)
     pub motionMode: u32,
-    pub unknown_1C4: [u8; 1],
+    unknown_1C4: [u8; 1],
     /// +0x1C5 `u8`, semantic, runtime; 1 = movement driven by the player's controls, 0 = AI-driven (high)
     pub controlsDriven: u8,
-    pub unknown_1C6: [u8; 2],
+    unknown_1C6: [u8; 2],
     /// +0x1C8 `undefined4`, ctor store
     pub field_1C8: u32,
-    pub unknown_1CC: [u8; 4],
+    unknown_1CC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -3416,7 +3407,8 @@ pub struct PlayerCamera {
     /// +0x140 `float`, ctor store, semantic, runtime; first-person (hands) FOV, copied every frame into 0x34362cc by SetupWorldRenderContext (high)
     pub firstPersonFOV: f32,
     /// +0x144 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 camera position cached once per frame (cameraRoot world translation, or the first-person camera node / reference position) (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3; GetPosition 0x8f89b0 fills it
-    pub cachedPosition: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __cachedPosition: [u8; 12],
     /// +0x150 `float`, semantic; seconds without input, compared with fAutoVanityModeDelay (high)
     pub idleTimer: f32,
     /// +0x154 `float`, ctor store, semantic, runtime; camera yaw: target heading (actor slot 164) plus FirstPersonState+0x68 or ThirdPersonState+0xd4 (high)
@@ -3466,7 +3458,7 @@ const _: () = assert!(core::mem::offset_of!(PlayerCamera, fadedActorHandle) == 0
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, __positionLock) == 0x134);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, worldFOV) == 0x13C);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, firstPersonFOV) == 0x140);
-const _: () = assert!(core::mem::offset_of!(PlayerCamera, cachedPosition) == 0x144);
+const _: () = assert!(core::mem::offset_of!(PlayerCamera, __cachedPosition) == 0x144);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, idleTimer) == 0x150);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, __yaw) == 0x154);
 const _: () = assert!(core::mem::offset_of!(PlayerCamera, pitchZeroTimer) == 0x158);
@@ -3540,39 +3532,33 @@ const _: () = assert!(core::mem::offset_of!(PlayerCameraTransitionState, __pad3E
 /// `ProcessLists`: size 0x1E8 (exact).
 /// Meaning: the actor process lists and the temporary effect arrays (no RTTI; named after the functions that take it) (medium, camera pass).
 /// Evidence: the actor process lists and the temporary effect arrays (no RTTI; named after the functions that take it); item 9 (request V). Static instance 0x3241730 behind g_ProcessLists_ptr 0x219e570; ctor 0x77a130 initialises +0x0..+0x1e7.; size unknown: 0x1e8 is the extent of the ctor's stores (last 0x77a334 mov dword [r15+0x1e4],0x10101); no symbol follows the static within 0x300.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct ProcessLists {
     pub unknown_0: [u8; 48],
     /// +0x30 `class:BSTArray`, semantic; BSTArray<u32> of the actor handles at process level 0 (high); guarded by g_ProcessListsHandleLock; the player is never in it (high)
-    #[doc(hidden)]
-    pub __highActorHandles: [u8; 24],
+    pub highActorHandles: crate::BSTArray,
     /// +0x48 `class:BSTArray`, semantic; BSTArray<u32> of the actor handles at process level 3 (low); guarded by g_ProcessListsHandleLock; the player is never in it (high)
-    #[doc(hidden)]
-    pub __lowActorHandles: [u8; 24],
+    pub lowActorHandles: crate::BSTArray,
     /// +0x60 `class:BSTArray`, semantic; BSTArray<u32> of the actor handles at process level 1 (middle-high); guarded by g_ProcessListsHandleLock; the player is never in it (high)
-    #[doc(hidden)]
-    pub __middleHighActorHandles: [u8; 24],
+    pub middleHighActorHandles: crate::BSTArray,
     /// +0x78 `class:BSTArray`, semantic; BSTArray<u32> of the actor handles at process level 2 (middle-low); guarded by g_ProcessListsHandleLock; the player is never in it (high)
-    #[doc(hidden)]
-    pub __middleLowActorHandles: [u8; 24],
+    pub middleLowActorHandles: crate::BSTArray,
     pub unknown_90: [u8; 120],
     /// +0x108 `class:BSTArray`, semantic; BSTArray of the temporary reference effects (ModelReferenceEffect, ShaderReferenceEffect pointers): data +0x108, capacity +0x110, count +0x118 (high)
-    #[doc(hidden)]
-    pub __referenceEffects: [u8; 24],
+    pub referenceEffects: crate::BSTArray,
     /// +0x120 `class:BSSpinLock`, semantic; guards referenceEffects: owner thread id +0x120, count +0x124 (high)
-    #[doc(hidden)]
-    pub __referenceEffectsLock: [u8; 8],
+    pub referenceEffectsLock: crate::BSSpinLock,
     pub unknown_128: [u8; 192],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ProcessLists>() == 0x1E8);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __highActorHandles) == 0x30);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __lowActorHandles) == 0x48);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __middleHighActorHandles) == 0x60);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __middleLowActorHandles) == 0x78);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __referenceEffects) == 0x108);
-const _: () = assert!(core::mem::offset_of!(ProcessLists, __referenceEffectsLock) == 0x120);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, highActorHandles) == 0x30);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, lowActorHandles) == 0x48);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, middleHighActorHandles) == 0x60);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, middleLowActorHandles) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, referenceEffects) == 0x108);
+const _: () = assert!(core::mem::offset_of!(ProcessLists, referenceEffectsLock) == 0x120);
 
 /// `RaceSexCamera`: size 0x58 (exact, medium); primary base `TESCamera`.
 /// Meaning: race menu camera embedded at RaceSexMenu+0xe8: records the scene root's pose and eases it between the body and face targets (high, camera pass).
@@ -3633,7 +3619,7 @@ pub struct RaceSexMenu {
     pub __vftable: *const crate::raw::vtables::RaceSexMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -3650,12 +3636,12 @@ pub struct RaceSexMenu {
     pub field_1C: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:RaceSexMenu:30`, rtti
@@ -3663,22 +3649,22 @@ pub struct RaceSexMenu {
     pub __vftable_30: *const crate::raw::vtables::RaceSexMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `undefined1`, base GRefCountImplCore
     pub field_40: u8,
-    pub unknown_41: [u8; 3],
+    unknown_41: [u8; 3],
     /// +0x44 `undefined4`, base GRefCountImplCore
     pub field_44: u32,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -3687,44 +3673,44 @@ pub struct RaceSexMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -3733,7 +3719,7 @@ pub struct RaceSexMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -3742,24 +3728,24 @@ pub struct RaceSexMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
-    pub unknown_C0: [u8; 40],
+    unknown_C0: [u8; 40],
     /// +0xE8 `undefined8`, member ctor RaceSexCamera
     pub m_RaceSexCamera_E8: u64,
-    pub unknown_F0: [u8; 48],
+    unknown_F0: [u8; 48],
     /// +0x120 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_120: [u8; 8],
     /// +0x128 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_128: [u8; 4],
-    pub unknown_12C: [u8; 84],
+    unknown_12C: [u8; 84],
     /// +0x180 `undefined4`, ctor store
     pub field_180: u32,
-    pub unknown_184: [u8; 4],
+    unknown_184: [u8; 4],
     /// +0x188 `undefined8`, ctor store
     pub field_188: u64,
     /// +0x190 `float`, semantic; the graph's LookAtOnGain before the menu (restored by the vdtor 0x972f8f) (medium)
@@ -3772,18 +3758,18 @@ pub struct RaceSexMenu {
     pub field_19C: u16,
     /// +0x19E `undefined1`, ctor store
     pub field_19E: u8,
-    pub unknown_19F: [u8; 1],
+    unknown_19F: [u8; 1],
     /// +0x1A0 `undefined1`, ctor store
     pub field_1A0: u8,
     /// +0x1A1 `undefined1`, ctor store
     pub field_1A1: u8,
     /// +0x1A2 `u8`, semantic; the head look is being driven by the stick or the mouse (medium)
     pub lookInputActive: u8,
-    pub unknown_1A3: [u8; 2],
+    unknown_1A3: [u8; 2],
     /// +0x1A5 `u8`, semantic; left button pressed with the cursor right of 45 % of the screen width; mouse moves then steer the head (high)
     #[doc(hidden)]
     pub __mouseLookDrag: [u8; 1],
-    pub unknown_1A6: [u8; 2],
+    unknown_1A6: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4025,7 +4011,7 @@ pub struct StatsMenu {
     pub __vftable: *const crate::raw::vtables::StatsMenu_vtable,
     /// +0x8 `undefined4`, base GRefCountImplCore
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
@@ -4042,12 +4028,12 @@ pub struct StatsMenu {
     pub flags: u32,
     /// +0x20 `undefined1`, base GRefCountImplCore
     pub field_20: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, base GRefCountImplCore
     pub field_24: u32,
     /// +0x28 `undefined1`, base GRefCountImplCore
     pub field_28: u8,
-    pub unknown_29: [u8; 3],
+    unknown_29: [u8; 3],
     /// +0x2C `undefined4`, base GRefCountImplCore
     pub field_2C: u32,
     /// +0x30 `vtbl:StatsMenu:30`, rtti
@@ -4055,19 +4041,19 @@ pub struct StatsMenu {
     pub __vftable_30: *const crate::raw::vtables::StatsMenu_vtable_30,
     /// +0x38 `undefined1`, base GRefCountImplCore
     pub field_38: u8,
-    pub unknown_39: [u8; 3],
+    unknown_39: [u8; 3],
     /// +0x3C `undefined4`, base GRefCountImplCore
     pub field_3C: u32,
     /// +0x40 `ptr:NiCamera`, base GRefCountImplCore, semantic; the menu's own NiCamera (StatsMenu::CreateCamera 0x97bd30); its local translation is refreshed from +0x288 during the intro and outro (high)
     pub camera: *mut crate::NiCamera,
     /// +0x48 `undefined1`, base GRefCountImplCore
     pub field_48: u8,
-    pub unknown_49: [u8; 3],
+    unknown_49: [u8; 3],
     /// +0x4C `undefined4`, base GRefCountImplCore
     pub field_4C: u32,
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
-    pub unknown_52: [u8; 2],
+    unknown_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -4076,44 +4062,44 @@ pub struct StatsMenu {
     pub field_5C: f32,
     /// +0x60 `undefined1`, base GRefCountImplCore
     pub field_60: u8,
-    pub unknown_61: [u8; 3],
+    unknown_61: [u8; 3],
     /// +0x64 `undefined1`, base GRefCountImplCore
     pub field_64: u8,
-    pub unknown_65: [u8; 3],
+    unknown_65: [u8; 3],
     /// +0x68 `undefined4`, base GRefCountImplCore
     pub field_68: u32,
     /// +0x6C `undefined4`, base GRefCountImplCore
     pub field_6C: u32,
     /// +0x70 `undefined1`, base GRefCountImplCore
     pub field_70: u8,
-    pub unknown_71: [u8; 3],
+    unknown_71: [u8; 3],
     /// +0x74 `undefined4`, base GRefCountImplCore
     pub field_74: u32,
     /// +0x78 `undefined1`, base GRefCountImplCore
     pub field_78: u8,
-    pub unknown_79: [u8; 1],
+    unknown_79: [u8; 1],
     /// +0x7A `undefined2`, base GRefCountImplCore
     pub field_7A: u16,
     /// +0x7C `undefined4`, base GRefCountImplCore
     pub field_7C: u32,
     /// +0x80 `undefined1`, base GRefCountImplCore
     pub field_80: u8,
-    pub unknown_81: [u8; 3],
+    unknown_81: [u8; 3],
     /// +0x84 `undefined4`, base GRefCountImplCore
     pub field_84: u32,
     /// +0x88 `undefined1`, base GRefCountImplCore
     pub field_88: u8,
-    pub unknown_89: [u8; 3],
+    unknown_89: [u8; 3],
     /// +0x8C `undefined4`, base GRefCountImplCore
     pub field_8C: u32,
     /// +0x90 `undefined2`, base GRefCountImplCore
     pub field_90: u16,
-    pub unknown_92: [u8; 2],
+    unknown_92: [u8; 2],
     /// +0x94 `undefined4`, base GRefCountImplCore
     pub field_94: u32,
     /// +0x98 `undefined1`, base GRefCountImplCore
     pub field_98: u8,
-    pub unknown_99: [u8; 3],
+    unknown_99: [u8; 3],
     /// +0x9C `undefined4`, base GRefCountImplCore
     pub field_9C: u32,
     /// +0xA0 `undefined4`, base GRefCountImplCore
@@ -4122,7 +4108,7 @@ pub struct StatsMenu {
     pub field_A4: u32,
     /// +0xA8 `undefined1`, base GRefCountImplCore
     pub field_A8: u8,
-    pub unknown_A9: [u8; 3],
+    unknown_A9: [u8; 3],
     /// +0xAC `undefined4`, base GRefCountImplCore
     pub field_AC: u32,
     /// +0xB0 `undefined4`, base GRefCountImplCore
@@ -4131,7 +4117,7 @@ pub struct StatsMenu {
     pub field_B4: u32,
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
-    pub unknown_B9: [u8; 3],
+    unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
     #[doc(hidden)]
     pub __field_BC: [u8; 4],
@@ -4232,10 +4218,10 @@ pub struct StatsMenu {
     pub sequenceState: u32,
     /// +0x1BC `undefined1`, ctor store
     pub field_1BC: u8,
-    pub unknown_1BD: [u8; 3],
+    unknown_1BD: [u8; 3],
     /// +0x1C0 `undefined4`, ctor store
     pub field_1C0: u32,
-    pub unknown_1C4: [u8; 4],
+    unknown_1C4: [u8; 4],
     /// +0x1C8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1C8: [u8; 8],
@@ -4291,14 +4277,14 @@ pub struct StatsMenu {
     /// +0x238 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_238: [u8; 8],
-    pub unknown_240: [u8; 16],
+    unknown_240: [u8; 16],
     /// +0x250 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_250: [u8; 8],
     /// +0x258 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_258: [u8; 4],
-    pub unknown_25C: [u8; 16],
+    unknown_25C: [u8; 16],
     /// +0x26C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_26C: [u8; 8],
@@ -4308,7 +4294,7 @@ pub struct StatsMenu {
     /// +0x27C `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_27C: [u8; 8],
-    pub unknown_284: [u8; 4],
+    unknown_284: [u8; 4],
     /// +0x288 `undefined8`, ctor store
     pub field_288: u64,
     /// +0x290 `undefined8`, ctor store
@@ -4323,17 +4309,17 @@ pub struct StatsMenu {
     pub field_2B0: u64,
     /// +0x2B8 `undefined8`, ctor store
     pub field_2B8: u64,
-    pub unknown_2C0: [u8; 16],
+    unknown_2C0: [u8; 16],
     /// +0x2D0 `undefined4`, ctor store
     pub field_2D0: u32,
-    pub unknown_2D4: [u8; 28],
+    unknown_2D4: [u8; 28],
     /// +0x2F0 `undefined8`, ctor store
     pub field_2F0: u64,
     /// +0x2F8 `undefined8`, ctor store
     pub field_2F8: u64,
     /// +0x300 `undefined4`, ctor store
     pub field_300: u32,
-    pub unknown_304: [u8; 12],
+    unknown_304: [u8; 12],
     /// +0x310 `undefined4`, ctor store
     pub field_310: u32,
     /// +0x314 `float`, ctor store
@@ -4344,7 +4330,7 @@ pub struct StatsMenu {
     pub field_31C: u64,
     /// +0x324 `undefined2`, ctor store
     pub field_324: u16,
-    pub unknown_326: [u8; 2],
+    unknown_326: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4483,7 +4469,7 @@ pub struct StealthMeter {
     /// +0x0 `vtbl:StealthMeter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::StealthMeter_vtable,
-    pub unknown_8: [u8; 32],
+    unknown_8: [u8; 32],
     /// +0x28 `class:GFxValue`, semantic; args[4] of RegisterHUDComponents; FadeIn / FadeOut target (high)
     #[doc(hidden)]
     pub __fadeClip: [u8; 24],
@@ -4630,29 +4616,29 @@ pub struct TESFurniture {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESFurniture:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESFurniture_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESFurniture:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESFurniture_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESFurniture:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESFurniture_vtable_78,
@@ -4668,7 +4654,7 @@ pub struct TESFurniture {
     pub keywords: *mut c_void,
     /// +0xA0 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, base TESObjectACTI
     pub field_A8: u64,
     /// +0xB0 `undefined8`, base TESObjectACTI
@@ -4677,7 +4663,7 @@ pub struct TESFurniture {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base TESObjectACTI
     pub field_C0: u16,
-    pub unknown_C2: [u8; 6],
+    unknown_C2: [u8; 6],
     /// +0xC8 `class:BSTArray`, semantic; per-marker entries (0x10 each: u32 marker index, u32 NAM0 value, BGSKeyword* FNMK); data +0xc8, size +0xd8 (medium)
     pub markerEntries: crate::BSTArray,
     /// +0xE0 `u8`, semantic; WBDT byte 0: bench type (0 = not a workbench; nonzero takes the state-9 path in EnterFurnitureCamera) (high)
@@ -4685,7 +4671,7 @@ pub struct TESFurniture {
     /// +0xE1 `u8`, semantic; WBDT byte 1: the workbench's skill as an ActorValue id, 0xff = none (medium)
     #[doc(hidden)]
     pub __workbenchSkill: [u8; 1],
-    pub unknown_E2: [u8; 2],
+    unknown_E2: [u8; 2],
     /// +0xE4 `u32`, semantic; MNAM: bits 0-24 enabled markers (bit i = marker i of the model's BSFurnitureMarkerNode); 25-27 further flags; 28 Lean, 29 special-furniture keyword, 30 Sit, 31 Lay (sleep); see the flag rows (high)
     pub activeMarkerFlags: u32,
     /// +0xE8 `ptr:SpellItem`, semantic; NAM1: form id at load, a SpellItem* (or null) after slot 19 (high)
@@ -4742,7 +4728,7 @@ pub struct TESIdleForm {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `pointer`, semantic; CTDA condition list head (checked by AIProcess::PlayIdle when checkConditions and by the idle-tree selection) (high)
     #[doc(hidden)]
     pub __conditions: [u8; 8],
@@ -4753,10 +4739,10 @@ pub struct TESIdleForm {
     pub __loopMax: [u8; 1],
     /// +0x2A `undefined1`, semantic; DATA byte 2 (flags; not read here) (low)
     pub field_2A: u8,
-    pub unknown_2B: [u8; 1],
+    unknown_2B: [u8; 1],
     /// +0x2C `undefined2`, semantic; DATA u16: when > 0 the performed idle is recorded with this value (float) in an actor-side recent-idle array (medium)
     pub replayDelay: u16,
-    pub unknown_2E: [u8; 2],
+    unknown_2E: [u8; 2],
     /// +0x30 `pointer`, semantic; array object of child idles (medium)
     pub children: *mut c_void,
     /// +0x38 `ptr:TESIdleForm`, semantic; ANAM first id: the parent idle (form id after load, pointer after InitItem) (high)
@@ -4772,7 +4758,7 @@ pub struct TESIdleForm {
     pub editorID: *mut c_void,
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
-    pub unknown_64: [u8; 4],
+    unknown_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4846,7 +4832,7 @@ pub struct TESObjectLIGH {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined2`, base TESBoundObject
     pub field_20: u16,
     /// +0x22 `undefined2`, base TESBoundObject
@@ -4859,11 +4845,11 @@ pub struct TESObjectLIGH {
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectLIGH:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectLIGH_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectLIGH:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectLIGH_vtable_40,
@@ -4873,32 +4859,32 @@ pub struct TESObjectLIGH {
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectLIGH:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectLIGH_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectLIGH:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectLIGH_vtable_88,
-    pub unknown_90: [u8; 16],
+    unknown_90: [u8; 16],
     /// +0xA0 `vtbl:TESObjectLIGH:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectLIGH_vtable_A0,
     /// +0xA8 `undefined4`, base TESWeightForm
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESObjectLIGH:B0`, rtti
     #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectLIGH_vtable_B0,
     /// +0xB8 `undefined4`, base TESValueForm
     pub field_B8: u32,
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESObjectLIGH:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESObjectLIGH_vtable_C0,
@@ -4939,10 +4925,10 @@ pub struct TESObjectLIGH {
     /// +0x108 `float`, semantic; base fade (FNAM, 1.0 default) -> NiLight+0x134 (high)
     #[doc(hidden)]
     pub __fade: [u8; 4],
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `ptr:BGSSoundDescriptorForm`, semantic; SNAM sound (medium)
     pub sound: *mut crate::BGSSoundDescriptorForm,
-    pub unknown_118: [u8; 16],
+    unknown_118: [u8; 16],
     /// +0x128 `ptr:BGSLensFlare`, semantic; LNAM lens flare (high)
     pub lensFlare: *mut crate::BGSLensFlare,
     #[doc(hidden)]
@@ -5010,33 +4996,33 @@ pub struct TESObjectWEAP {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 13],
+    unknown_1B: [u8; 13],
     /// +0x28 `undefined2`, base TESBoundObject
     pub field_28: u16,
     /// +0x2A `undefined2`, base TESBoundObject
     pub field_2A: u16,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `vtbl:TESObjectWEAP:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESObjectWEAP_vtable_30,
-    pub unknown_38: [u8; 8],
+    unknown_38: [u8; 8],
     /// +0x40 `vtbl:TESObjectWEAP:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESObjectWEAP_vtable_40,
-    pub unknown_48: [u8; 8],
+    unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
     #[doc(hidden)]
     pub __field_50: [u8; 8],
-    pub unknown_58: [u8; 16],
+    unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
     /// +0x70 `undefined4`, base TESModelTextureSwap
     pub field_70: u32,
-    pub unknown_74: [u8; 4],
+    unknown_74: [u8; 4],
     /// +0x78 `vtbl:TESObjectWEAP:78`, rtti
     #[doc(hidden)]
     pub __vftable_78: *const crate::raw::vtables::TESObjectWEAP_vtable_78,
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `vtbl:TESObjectWEAP:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESObjectWEAP_vtable_88,
@@ -5044,25 +5030,25 @@ pub struct TESObjectWEAP {
     pub field_90: u64,
     /// +0x98 `undefined4`, base TESEnchantableForm
     pub field_98: u32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:TESObjectWEAP:A0`, rtti
     #[doc(hidden)]
     pub __vftable_A0: *const crate::raw::vtables::TESObjectWEAP_vtable_A0,
     /// +0xA8 `undefined4`, base TESValueForm
     pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
+    unknown_AC: [u8; 4],
     /// +0xB0 `vtbl:TESObjectWEAP:B0`, rtti
     #[doc(hidden)]
     pub __vftable_B0: *const crate::raw::vtables::TESObjectWEAP_vtable_B0,
     /// +0xB8 `undefined4`, base TESWeightForm
     pub field_B8: u32,
-    pub unknown_BC: [u8; 4],
+    unknown_BC: [u8; 4],
     /// +0xC0 `vtbl:TESObjectWEAP:C0`, rtti
     #[doc(hidden)]
     pub __vftable_C0: *const crate::raw::vtables::TESObjectWEAP_vtable_C0,
     /// +0xC8 `undefined2`, base TESAttackDamageForm
     pub field_C8: u16,
-    pub unknown_CA: [u8; 6],
+    unknown_CA: [u8; 6],
     /// +0xD0 `vtbl:TESObjectWEAP:D0`, rtti
     #[doc(hidden)]
     pub __vftable_D0: *const crate::raw::vtables::TESObjectWEAP_vtable_D0,
@@ -5079,7 +5065,7 @@ pub struct TESObjectWEAP {
     /// +0xF8 `vtbl:TESObjectWEAP:F8`, rtti
     #[doc(hidden)]
     pub __vftable_F8: *const crate::raw::vtables::TESObjectWEAP_vtable_F8,
-    pub unknown_100: [u8; 16],
+    unknown_100: [u8; 16],
     /// +0x110 `vtbl:TESObjectWEAP:110`, rtti
     #[doc(hidden)]
     pub __vftable_110: *const crate::raw::vtables::TESObjectWEAP_vtable_110,
@@ -5101,16 +5087,16 @@ pub struct TESObjectWEAP {
     pub keywords: *mut c_void,
     /// +0x150 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_154: [u8; 4],
+    unknown_154: [u8; 4],
     /// +0x158 `vtbl:TESObjectWEAP:158`, rtti
     #[doc(hidden)]
     pub __vftable_158: *const crate::raw::vtables::TESObjectWEAP_vtable_158,
     /// +0x160 `undefined4`, base TESDescription
     pub field_160: u32,
-    pub unknown_164: [u8; 57],
+    unknown_164: [u8; 57],
     /// +0x19D `i8`, semantic, runtime; WeaponType: 0 HandToHandMelee .. 9 Crossbow (high)
     pub weaponType: u8,
-    pub unknown_19E: [u8; 130],
+    unknown_19E: [u8; 130],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5177,10 +5163,10 @@ pub struct TESQuest {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
     pub field_20: u32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `vtbl:TESQuest:28`, rtti
     #[doc(hidden)]
     pub __vftable_28: *const crate::raw::vtables::TESQuest_vtable_28,
@@ -5192,16 +5178,16 @@ pub struct TESQuest {
     pub field_39: u8,
     /// +0x3A `undefined2`, base TESFullName
     pub field_3A: u16,
-    pub unknown_3C: [u8; 12],
+    unknown_3C: [u8; 12],
     /// +0x48 `undefined4`, ctor store
     pub field_48: u32,
-    pub unknown_4C: [u8; 4],
+    unknown_4C: [u8; 4],
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
-    pub unknown_54: [u8; 20],
+    unknown_54: [u8; 20],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
-    pub unknown_6C: [u8; 16],
+    unknown_6C: [u8; 16],
     /// +0x7C `undefined8`, ctor store
     pub field_7C: u64,
     /// +0x84 `undefined4`, ctor store
@@ -5209,33 +5195,33 @@ pub struct TESQuest {
     /// +0x88 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_88: [u8; 8],
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
-    pub unknown_A0: [u8; 12],
+    unknown_A0: [u8; 12],
     /// +0xAC `undefined8`, ctor store
     pub field_AC: u64,
     /// +0xB4 `undefined4`, ctor store
     pub field_B4: u32,
     /// +0xB8 `undefined8`, ctor store
     pub field_B8: u64,
-    pub unknown_C0: [u8; 8],
+    unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
-    pub unknown_D0: [u8; 12],
+    unknown_D0: [u8; 12],
     /// +0xDC `u8`, semantic; bit 0 running (SetStage requires it), bit 7 tested by IsRunning (medium)
     pub questFlags: u8,
-    pub unknown_DD: [u8; 3],
+    unknown_DD: [u8; 3],
     /// +0xE0 `undefined4`, ctor store
     pub field_E0: u32,
-    pub unknown_E4: [u8; 4],
+    unknown_E4: [u8; 4],
     /// +0xE8 `class:BSSimpleListNode`, semantic; embedded list head of the quest's stages: entry {u16 stage +0, u8 flags +2 (bit 0 done; bit 1 is the one the start-up runner 0x3d0b20 runs)} (high)
     pub stages: crate::BSSimpleListNode,
     /// +0xF8 `undefined8`, ctor store
     pub field_F8: u64,
     /// +0x100 `undefined8`, ctor store
     pub field_100: u64,
-    pub unknown_108: [u8; 28],
+    unknown_108: [u8; 28],
     /// +0x124 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_124: [u8; 4],
@@ -5245,32 +5231,32 @@ pub struct TESQuest {
     /// +0x12C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_12C: [u8; 4],
-    pub unknown_130: [u8; 232],
+    unknown_130: [u8; 232],
     /// +0x218 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_218: [u8; 4],
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `u16`, semantic; the current stage (the highest stage set since the quest started); 0 when reset (high)
     pub currentStage: u16,
     /// +0x22A `undefined1`, ctor store
     pub field_22A: u8,
-    pub unknown_22B: [u8; 5],
+    unknown_22B: [u8; 5],
     /// +0x230 `undefined8`, ctor store
     pub field_230: u64,
     /// +0x238 `undefined4`, ctor store
     pub field_238: u32,
-    pub unknown_23C: [u8; 4],
+    unknown_23C: [u8; 4],
     /// +0x240 `undefined8`, ctor store
     pub field_240: u64,
     /// +0x248 `undefined8`, ctor store
     pub field_248: u64,
-    pub unknown_250: [u8; 16],
+    unknown_250: [u8; 16],
     /// +0x260 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_260: [u8; 4],
-    pub unknown_264: [u8; 4],
+    unknown_264: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5335,13 +5321,13 @@ pub struct TESRace {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 21],
+    unknown_1B: [u8; 21],
     /// +0x30 `vtbl:TESRace:30`, rtti
     #[doc(hidden)]
     pub __vftable_30: *const crate::raw::vtables::TESRace_vtable_30,
     /// +0x38 `undefined4`, base TESDescription
     pub field_38: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `vtbl:TESRace:40`, rtti
     #[doc(hidden)]
     pub __vftable_40: *const crate::raw::vtables::TESRace_vtable_40,
@@ -5366,16 +5352,16 @@ pub struct TESRace {
     pub keywords: *mut c_void,
     /// +0x80 `undefined4`, base BGSKeywordForm, semantic; number of keywords (high)
     pub numKeywords: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `vtbl:TESRace:88`, rtti
     #[doc(hidden)]
     pub __vftable_88: *const crate::raw::vtables::TESRace_vtable_88,
     /// +0x90 `undefined8`, base BGSAttackDataForm
     pub field_90: u64,
-    pub unknown_98: [u8; 160],
+    unknown_98: [u8; 160],
     /// +0x138 `i32`, semantic, runtime; the BipedAnim index used for the shield, the left-hand weapon and the left-hand light (race DATA +0x50; -1 before loading) (high)
     pub leftHandBipedIndex: u32,
-    pub unknown_13C: [u8; 44],
+    unknown_13C: [u8; 44],
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
     /// +0x170 `undefined8`, ctor store
@@ -5388,10 +5374,10 @@ pub struct TESRace {
     pub __field_180: [u8; 8],
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
-    pub unknown_18C: [u8; 340],
+    unknown_18C: [u8; 340],
     /// +0x2E0 `undefined8`, ctor store
     pub field_2E0: u64,
-    pub unknown_2E8: [u8; 464],
+    unknown_2E8: [u8; 464],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5444,7 +5430,7 @@ pub struct TESWeather {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 517],
+    unknown_1B: [u8; 517],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined8`, ctor store
@@ -5461,7 +5447,7 @@ pub struct TESWeather {
     pub field_250: u64,
     /// +0x258 `undefined8`, ctor store
     pub field_258: u64,
-    pub unknown_260: [u8; 512],
+    unknown_260: [u8; 512],
     /// +0x460 `undefined4`, ctor store
     pub field_460: u32,
     /// +0x464 `undefined4`, ctor store
@@ -5470,21 +5456,21 @@ pub struct TESWeather {
     pub field_468: u32,
     /// +0x46C `undefined4`, ctor store
     pub field_46C: u32,
-    pub unknown_470: [u8; 496],
+    unknown_470: [u8; 496],
     /// +0x660 `undefined4`, ctor store
     pub field_660: u32,
     /// +0x664 `undefined8`, ctor store
     pub field_664: u64,
-    pub unknown_66C: [u8; 3],
+    unknown_66C: [u8; 3],
     /// +0x66F `u8`, semantic; weather classification bits: 0 pleasant, 1 cloudy, 2 rainy, 3 snow; see the flag rows (high)
     #[doc(hidden)]
     pub __dataFlags: [u8; 1],
-    pub unknown_670: [u8; 4],
+    unknown_670: [u8; 4],
     /// +0x674 `undefined2`, ctor store
     pub field_674: u16,
     /// +0x676 `undefined1`, ctor store
     pub field_676: u8,
-    pub unknown_677: [u8; 1],
+    unknown_677: [u8; 1],
     /// +0x678 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_678: [u8; 8],
@@ -5499,7 +5485,7 @@ pub struct TESWeather {
     pub field_690: u32,
     /// +0x694 `undefined4`, ctor store
     pub field_694: u32,
-    pub unknown_698: [u8; 224],
+    unknown_698: [u8; 224],
     /// +0x778 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_778: [u8; 4],
@@ -5540,10 +5526,10 @@ pub struct TESWeather {
     /// +0x7B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_7B0: [u8; 8],
-    pub unknown_7B8: [u8; 24],
+    unknown_7B8: [u8; 24],
     /// +0x7D0 `undefined4`, ctor store
     pub field_7D0: u32,
-    pub unknown_7D4: [u8; 4],
+    unknown_7D4: [u8; 4],
     /// +0x7D8 `undefined8`, ctor store
     pub field_7D8: u64,
     /// +0x7E0 `undefined8`, ctor store
@@ -5552,11 +5538,11 @@ pub struct TESWeather {
     pub field_7E8: u64,
     /// +0x7F0 `undefined8`, ctor store
     pub field_7F0: u64,
-    pub unknown_7F8: [u8; 128],
+    unknown_7F8: [u8; 128],
     /// +0x878 `class:TESModel`, member ctor TESModel
     #[doc(hidden)]
     pub __m_TESModel_878: [u8; 24],
-    pub unknown_890: [u8; 16],
+    unknown_890: [u8; 16],
     /// +0x8A0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_8A0: [u8; 8],
@@ -5981,7 +5967,7 @@ const _: () = assert!(core::mem::offset_of!(bhkBvTreeShape, field_10) == 0x10);
 pub struct bhkCharProxyController {
     /// +0x0 `pointer`, semantic; 0x1a89540 (high)
     pub vtbl_hkpCharacterProxyListener: *mut c_void,
-    pub unknown_8: [u8; 8],
+    unknown_8: [u8; 8],
     /// +0x10 `class:bhkCharacterController`, semantic; the bhkCharacterController base (vtable 0x1a89578); the pointer the process data stores (high)
     pub controller: crate::bhkCharacterController,
     /// +0x340 `class:bhkCharacterProxy`, semantic; embedded bhkCharacterProxy wrapper (vtable 0x1a89370, bhkRefObject: count +8, Havok object +0x10) (high)
@@ -5993,7 +5979,7 @@ pub struct bhkCharProxyController {
     pub phantom: *mut crate::bhkCachingShapePhantom,
     /// +0x5A8 `undefined1`, semantic; cleared by the ctor (medium)
     pub field_5A8: u8,
-    pub unknown_5A9: [u8; 7],
+    unknown_5A9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6049,16 +6035,16 @@ pub struct bhkCharacterController {
     pub __vftable: *const crate::raw::vtables::bhkCharacterController_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<bhkCharacterMoveFinishEvent>
     pub source_bhkCharacterMoveFinishEvent: crate::BSTEventSource,
-    pub unknown_68: [u8; 8],
+    unknown_68: [u8; 8],
     /// +0x70 `undefined1[16]`, ctor store
     pub field_70: [u8; 16],
-    pub unknown_80: [u8; 8],
+    unknown_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
-    pub unknown_8C: [u8; 4],
+    unknown_8C: [u8; 4],
     /// +0x90 `undefined1[16]`, ctor store
     pub field_90: [u8; 16],
     /// +0xA0 `undefined1[16]`, ctor store
@@ -6067,7 +6053,7 @@ pub struct bhkCharacterController {
     pub field_B0: [u8; 16],
     /// +0xC0 `undefined1[16]`, ctor store
     pub field_C0: [u8; 16],
-    pub unknown_D0: [u8; 16],
+    unknown_D0: [u8; 16],
     /// +0xE0 `undefined1[16]`, ctor store
     pub field_E0: [u8; 16],
     /// +0xF0 `undefined1[16]`, ctor store
@@ -6079,24 +6065,24 @@ pub struct bhkCharacterController {
     /// +0x120 `undefined8`, member ctor BSBound
     #[doc(hidden)]
     pub __m_BSBound_120: [u8; 8],
-    pub unknown_128: [u8; 40],
+    unknown_128: [u8; 40],
     /// +0x150 `undefined8`, member ctor BSBound
     #[doc(hidden)]
     pub __m_BSBound_150: [u8; 8],
-    pub unknown_158: [u8; 40],
+    unknown_158: [u8; 40],
     /// +0x180 `float`, ctor store
     pub field_180: f32,
     /// +0x184 `float`, ctor store
     pub field_184: f32,
     /// +0x188 `float`, ctor store
     pub field_188: f32,
-    pub unknown_18C: [u8; 4],
+    unknown_18C: [u8; 4],
     /// +0x190 `undefined8`, ctor store
     pub field_190: u64,
-    pub unknown_198: [u8; 8],
+    unknown_198: [u8; 8],
     /// +0x1A0 `undefined4`, ctor store
     pub field_1A0: u32,
-    pub unknown_1A4: [u8; 12],
+    unknown_1A4: [u8; 12],
     /// +0x1B0 `undefined1[16]`, ctor store
     pub field_1B0: [u8; 16],
     /// +0x1C0 `undefined1[16]`, ctor store
@@ -6105,14 +6091,14 @@ pub struct bhkCharacterController {
     pub field_1D0: u32,
     /// +0x1D4 `undefined1`, ctor store
     pub field_1D4: u8,
-    pub unknown_1D5: [u8; 11],
+    unknown_1D5: [u8; 11],
     /// +0x1E0 `undefined8`, member ctor hkpCharacterContext
     pub m_hkpCharacterContext_1E0: u64,
-    pub unknown_1E8: [u8; 24],
+    unknown_1E8: [u8; 24],
     /// +0x200 `u32`, semantic; CharacterState of the current Havok character state: 0 on ground, 1 jumping, 2 in air, 3 climbing, 4 flying, 5 swimming (medium)
     #[doc(hidden)]
     pub __characterState: [u8; 4],
-    pub unknown_204: [u8; 20],
+    unknown_204: [u8; 20],
     /// +0x218 `undefined8`, ctor store
     pub field_218: u64,
     /// +0x220 `undefined8`, ctor store
@@ -6139,7 +6125,7 @@ pub struct bhkCharacterController {
     pub field_260: f32,
     /// +0x264 `undefined8`, ctor store
     pub field_264: u64,
-    pub unknown_26C: [u8; 4],
+    unknown_26C: [u8; 4],
     /// +0x270 `undefined8`, ctor store
     pub field_270: u64,
     /// +0x278 `i32`, semantic; index into shapes; 2 (ctor) = none (high)
@@ -6160,24 +6146,24 @@ pub struct bhkCharacterController {
     pub field_2A0: u64,
     /// +0x2A8 `undefined4`, ctor store
     pub field_2A8: u32,
-    pub unknown_2AC: [u8; 4],
+    unknown_2AC: [u8; 4],
     /// +0x2B0 `undefined8`, ctor store
     pub field_2B0: u64,
     /// +0x2B8 `undefined4`, ctor store
     pub field_2B8: u32,
-    pub unknown_2BC: [u8; 4],
+    unknown_2BC: [u8; 4],
     /// +0x2C0 `undefined8`, ctor store
     pub field_2C0: u64,
     /// +0x2C8 `undefined8`, ctor store
     pub field_2C8: u64,
-    pub unknown_2D0: [u8; 12],
+    unknown_2D0: [u8; 12],
     /// +0x2DC `undefined8`, ctor store
     pub field_2DC: u64,
     /// +0x2E4 `undefined4`, ctor store
     pub field_2E4: u32,
     /// +0x2E8 `undefined8`, ctor store
     pub field_2E8: u64,
-    pub unknown_2F0: [u8; 8],
+    unknown_2F0: [u8; 8],
     /// +0x2F8 `undefined8`, ctor store
     pub field_2F8: u64,
     /// +0x300 `float`, ctor store
@@ -6197,7 +6183,7 @@ pub struct bhkCharacterController {
     /// +0x321 `u8`, semantic; the active list carries CharacterBumper children (from cinfo+0xa3) (high)
     #[doc(hidden)]
     pub __hasBumper: [u8; 1],
-    pub unknown_322: [u8; 14],
+    unknown_322: [u8; 14],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6302,7 +6288,7 @@ pub struct bhkPickData {
     pub to: [u8; 16],
     /// +0x20 `undefined1`, semantic; 0 in every engine initialiser; when set, CastRayAgainstCollectedBodies and the phantom cast pass the world's shape collection filter (hkpWorld+0xd0, +0x20) (medium)
     pub enableShapeCollectionFilter: u8,
-    pub unknown_21: [u8; 3],
+    unknown_21: [u8; 3],
     /// +0x24 `undefined4`, semantic; collision filter info of the ray: layer (bits 0..6) | group << 16; see the flags rows (high)
     pub filterInfo: u32,
     /// +0x28 `undefined8`, semantic; not written by the engine initialisers read here (hkpWorldRayCastInput's user data slot by position) (low)
@@ -6315,13 +6301,13 @@ pub struct bhkPickData {
     pub extraInfo: u32,
     /// +0x48 `undefined4`, semantic; out: hit shape key path; +0x48 and +0x50 reset to -1 (medium)
     pub shapeKeys: [u8; 32],
-    pub unknown_68: [u8; 8],
+    unknown_68: [u8; 8],
     /// +0x70 `undefined4`, semantic; out: reset to 0 (low)
     pub shapeKeyIndex: u32,
-    pub unknown_74: [u8; 12],
+    unknown_74: [u8; 12],
     /// +0x80 `ptr:hkpCollidable`, semantic; out: the hit body's root collidable; null = no hit. owner = collidable + (int8)collidable[+0x20], type collidable[+0x28] (1 = entity), filterInfo collidable[+0x2c] (high)
     pub rootCollidable: *mut crate::hkpCollidable,
-    pub unknown_88: [u8; 8],
+    unknown_88: [u8; 8],
     /// +0x90 `hkVector4`, semantic; in: optional direction*length; when non-zero, to = from + ray (high)
     #[doc(hidden)]
     pub __ray: [u8; 16],
@@ -6335,7 +6321,7 @@ pub struct bhkPickData {
     pub allHitsCollector2: *mut c_void,
     /// +0xC0 `undefined1`, semantic; out: 1 when PickObject refused the pick for the time budget (no cast, result false) (high)
     pub skipped: u8,
-    pub unknown_C1: [u8; 15],
+    unknown_C1: [u8; 15],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6362,7 +6348,7 @@ const _: () = assert!(core::mem::offset_of!(bhkPickData, skipped) == 0xC0);
 /// Meaning: the engine's wrapper around an hkpShape (bhkRefObject: NiRefObject count +8, Havok object +0x10) (high, camera pass).
 /// Evidence: camera pass (semantic): IC7 A5/A6 (static-V). Vtable id 190233. bhkListShape wrappers are 0x30 (0x10629a0 AllocateMemory(0x30) before bhkListShape::ctor).; size: item 9 (request V): bhkShape::LoadBinary (slot 24, 0x1082cf0, shared by bhkSphereRepShape) stores the material at +0x20 (0x1082d33 mov [rdi+0x20],ecx), so the object reaches 0x24 and with 8-byte alignment 0x28; bhkTransformShape, derived directly, is 0x28 (runtime sizes), so bhkShape is exactly 0x28. The old 0x18 was a soft bound.
 /// Bases: `bhkSerializable`@0x0, `bhkRefObject`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct bhkShape {
     /// +0x0 `vtbl:bhkShape:0`, rtti
     #[doc(hidden)]
@@ -6374,8 +6360,7 @@ pub struct bhkShape {
     pub havokShape: *mut crate::hkpShape,
     pub unknown_18: [u8; 8],
     /// +0x20 `u32`, semantic; material id: the CRC32 of the material name; the engine compares only CharacterBumper (g_CharacterBumperMaterialId) (high)
-    #[doc(hidden)]
-    pub __materialId: [u8; 4],
+    pub materialId: u32,
     pub unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -6384,7 +6369,7 @@ const _: () = assert!(size_of::<bhkShape>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(bhkShape, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(bhkShape, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bhkShape, havokShape) == 0x10);
-const _: () = assert!(core::mem::offset_of!(bhkShape, __materialId) == 0x20);
+const _: () = assert!(core::mem::offset_of!(bhkShape, materialId) == 0x20);
 
 /// `bhkShapeCollection`: size 0x28 (exact, high); primary base `bhkShape`.
 /// Meaning: bhkShape subclass; adds no data to bhkShape's 0x28 (high, camera pass).
@@ -6443,15 +6428,15 @@ pub struct bhkWorld {
     pub __vftable: *const crate::raw::vtables::bhkWorld_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:hkpWorld`, base bhkRefObject, semantic; the Havok world; slots 39 and 40 return it (high)
     pub world: *mut crate::hkpWorld,
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
-    pub unknown_20: [u8; 50488],
+    unknown_20: [u8; 50488],
     /// +0xC558 `undefined4`, ctor store
     pub field_C558: u32,
-    pub unknown_C55C: [u8; 4],
+    unknown_C55C: [u8; 4],
     /// +0xC560 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_C560: [u8; 8],
@@ -6476,7 +6461,7 @@ pub struct bhkWorld {
     /// +0xC598 `class:BSReadWriteLock`, semantic; the world lock: read for picks and casts, write for the step and phantom moves; used only when bUseWorldLock:HAVOK (high)
     #[doc(hidden)]
     pub __worldLock: [u8; 8],
-    pub unknown_C5A0: [u8; 16],
+    unknown_C5A0: [u8; 16],
     /// +0xC5B0 `undefined1[16]`, ctor store
     pub field_C5B0: [u8; 16],
     /// +0xC5C0 `undefined8`, ctor store
@@ -6485,7 +6470,7 @@ pub struct bhkWorld {
     pub field_C5C8: u64,
     /// +0xC5D0 `undefined8`, ctor store
     pub field_C5D0: u64,
-    pub unknown_C5D8: [u8; 8],
+    unknown_C5D8: [u8; 8],
     /// +0xC5E0 `class:bhkWorldCinfo`, member ctor bhkWorldCinfo
     #[doc(hidden)]
     pub __m_bhkWorldCinfo_C5E0: [u8; 256],
@@ -6510,7 +6495,7 @@ pub struct bhkWorld {
     /// +0xC702 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_C702: [u8; 1],
-    pub unknown_C703: [u8; 13],
+    unknown_C703: [u8; 13],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6546,24 +6531,21 @@ const _: () = assert!(core::mem::offset_of!(bhkWorld, __field_C702) == 0xC702);
 /// `hkArray`: size 0x10 (exact).
 /// Meaning: Havok growable array: data, size, capacity and flags; the element type is given per field (high, camera pass).
 /// Evidence: Havok growable array: data, size, capacity and flags; the element type is given per field; item 9 (request V). GetVertices 0xc3abd0 output and hkpShapeShrinker 0x10c4840's locals: {data +0, i32 size +8, u32 capacityAndFlags +0xc = 0x80000000 when empty}; storage is freed with hkContainerHeapAllocator slot 4 (data, (capacityAndFlags & 0x3fffffff) * element size) when capacityAndFlags >= 0; the same triple sits inline at hkpListShape+0x30 and hkpConvexVerticesShape+0x50/+0x78.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkArray {
     /// +0x0 `pointer`, semantic; element array (high)
-    #[doc(hidden)]
-    pub __data: [u8; 8],
+    pub data: *mut c_void,
     /// +0x8 `i32`, semantic; used elements (high)
-    #[doc(hidden)]
-    pub __size: [u8; 4],
+    pub size: u32,
     /// +0xC `u32`, semantic; capacity in bits 0-29; bit 31 set = storage not owned (not freed) (high)
-    #[doc(hidden)]
-    pub __capacityAndFlags: [u8; 4],
+    pub capacityAndFlags: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkArray>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkArray, __data) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkArray, __size) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkArray, __capacityAndFlags) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkArray, data) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkArray, size) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkArray, capacityAndFlags) == 0xC);
 
 /// `hkContainerHeapAllocator::Allocator`: size 0x8 (exact, high); primary base `hkMemoryAllocator`.
 /// Meaning: the allocator of hkArray storage: a vtable only, forwarding to the thread router's heap (high, camera pass).
@@ -6583,17 +6565,16 @@ const _: () = assert!(core::mem::offset_of!(hkContainerHeapAllocator__Allocator,
 /// `hkMemoryRouter`: size 0x60 (exact).
 /// Meaning: the thread's Havok memory router (TlsGetValue(g_hkMemoryRouterTlsIndex)) (medium, camera pass).
 /// Evidence: the thread's Havok memory router (TlsGetValue(g_hkMemoryRouterTlsIndex)); item 9 (request V). No RTTI; Havok start-up installs one per thread (bhkSystem::Init 0x104b780 through the memory system); every reader takes its heap at +0x58.; size unknown: 0x60 is the extent of the named field.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkMemoryRouter {
     pub unknown_0: [u8; 88],
     /// +0x58 `ptr:hkMemoryAllocator`, semantic; the thread's Havok heap: vtable +8 allocate(heap, size), +0x10 free(heap, ptr, size), +0x18 allocate a buffer (heap, int* size), +0x20 free a buffer (heap, ptr, size) (high)
-    #[doc(hidden)]
-    pub __heap: [u8; 8],
+    pub heap: *mut crate::hkMemoryAllocator,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkMemoryRouter>() == 0x60);
-const _: () = assert!(core::mem::offset_of!(hkMemoryRouter, __heap) == 0x58);
+const _: () = assert!(core::mem::offset_of!(hkMemoryRouter, heap) == 0x58);
 
 /// `hkReferencedObject`: size 0x10 (exact, high); primary base `hkBaseObject`.
 /// Meaning: Havok reference-counted base (high, camera pass).
@@ -6620,24 +6601,21 @@ const _: () = assert!(core::mem::offset_of!(hkReferencedObject, referenceCount) 
 /// `hkStridedVertices`: size 0x10 (exact).
 /// Meaning: a vertex array with a stride, the input of the convex shape constructors (high, camera pass).
 /// Evidence: a vertex array with a stride, the input of the convex shape constructors; item 9 (request V). hkpConvexVerticesShape ctor 0xc3a870 reads {+0 vertices, +8 count, +0xc striding} (PackStridedVerticesAndComputeAabb(this, *p, *(int*)(p+0xc), *(int*)(p+8))); hkpShapeShrinker 0x10c4840 builds one on the stack from an hkArray<hkVector4> {data, size, 0x10} for BuildFromPoints 0x10ee650.; size: the three members end at 0x10.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkStridedVertices {
     /// +0x0 `pointer`, semantic; first vertex (const float*) (high)
-    #[doc(hidden)]
-    pub __vertices: [u8; 8],
+    pub vertices: *mut c_void,
     /// +0x8 `i32`, semantic; vertex count (high)
-    #[doc(hidden)]
-    pub __numVertices: [u8; 4],
+    pub numVertices: u32,
     /// +0xC `i32`, semantic; bytes between vertices (0x10 for hkVector4) (high)
-    #[doc(hidden)]
-    pub __striding: [u8; 4],
+    pub striding: u32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkStridedVertices>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __vertices) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __numVertices) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkStridedVertices, __striding) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, vertices) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, numVertices) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkStridedVertices, striding) == 0xC);
 
 /// `hkbFootIkDriver::InternalLeg`: size 0x30 (exact).
 /// Meaning: per-leg runtime state of the driver (medium, camera pass).
@@ -6821,7 +6799,7 @@ pub struct hkpCharacterProxy {
     pub __vftable: *const crate::raw::vtables::hkpCharacterProxy_vtable,
     /// +0x8 `u32`, semantic; hkReferencedObject words (0x1ffff from the ctor) (high)
     pub memSizeAndRefCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:hkpCharacterProxy:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::hkpCharacterProxy_vtable_10,
@@ -6909,11 +6887,11 @@ pub struct hkpCharacterProxy {
     pub field_D0: u32,
     /// +0xD4 `undefined4`, ctor store
     pub field_D4: u32,
-    pub unknown_D8: [u8; 24],
+    unknown_D8: [u8; 24],
     /// +0xF0 `ptr:bhkCharacterProxy`, semantic; back pointer to the wrapper (bhkCharacterProxy slot 38 writes it) (high)
     #[doc(hidden)]
     pub __userData: [u8; 8],
-    pub unknown_F8: [u8; 8],
+    unknown_F8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6969,27 +6947,24 @@ pub struct hkpCollidable {
     /// +0x0 `ptr:hkpShape`, semantic; the collision shape (high)
     #[doc(hidden)]
     pub __shape: [u8; 8],
-    pub unknown_8: [u8; 24],
+    unknown_8: [u8; 24],
     /// +0x20 `i8`, semantic; signed offset from the collidable to its owning world object (high)
-    #[doc(hidden)]
-    pub __ownerOffset: [u8; 1],
-    pub unknown_21: [u8; 7],
+    pub ownerOffset: u8,
+    unknown_21: [u8; 7],
     /// +0x28 `u8`, semantic; broad-phase handle type: 1 = entity (rigid body) (high)
-    #[doc(hidden)]
-    pub __broadPhaseType: [u8; 1],
-    pub unknown_29: [u8; 3],
+    pub broadPhaseType: u8,
+    unknown_29: [u8; 3],
     /// +0x2C `u32`, semantic; collision filter info: layer bits 0-6, group << 16 (see bhkPickData.filterInfo) (high)
-    #[doc(hidden)]
-    pub __collisionFilterInfo: [u8; 4],
-    pub unknown_30: [u8; 80],
+    pub collisionFilterInfo: u32,
+    unknown_30: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpCollidable>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(hkpCollidable, __shape) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpCollidable, __ownerOffset) == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkpCollidable, __broadPhaseType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(hkpCollidable, __collisionFilterInfo) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(hkpCollidable, ownerOffset) == 0x20);
+const _: () = assert!(core::mem::offset_of!(hkpCollidable, broadPhaseType) == 0x28);
+const _: () = assert!(core::mem::offset_of!(hkpCollidable, collisionFilterInfo) == 0x2C);
 
 /// `hkpConvexVerticesShape`: size 0x90 (exact, high); primary base `hkpConvexShape`.
 /// Meaning: convex hull of vertices (high, camera pass).
@@ -7065,45 +7040,37 @@ const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape, connectivity
 /// `hkpConvexVerticesShape::BuildConfig`: size 0x18 (exact).
 /// Meaning: options of hkpConvexVerticesShape::BuildFromPoints (medium, camera pass).
 /// Evidence: options of hkpConvexVerticesShape::BuildFromPoints; item 9 (request V). InitDefaultParams 0x10ee610 fills +0..+0x17: 0x10ee610 mov word [rcx],0x100; 0x10ee618 mov byte [rcx+2],1; 0x10ee624 movss [rcx+4] = *0x20c288c; 0x10ee629 mov dword [rcx+8],0; +0xc 0.05, +0x10 0.07, +0x14 -0.1; read by BuildFromPoints 0x10ee650; hkpShapeShrinker 0x10c4840 sets word +0 = 1 and +4 = the old radius.; size: the initialiser's extent.
-#[repr(C, align(4))]
+#[repr(C)]
 pub struct hkpConvexVerticesShape__BuildConfig {
     /// +0x0 `u8`, semantic; keep an hkpConvexVerticesConnectivity on the shape (+0x88); default 0 (high)
-    #[doc(hidden)]
-    pub __buildConnectivity: [u8; 1],
+    pub buildConnectivity: u8,
     /// +0x1 `u8`, semantic; shrink the hull by the convex radius when the radius > 0; default 1 (high)
-    #[doc(hidden)]
-    pub __shrinkByConvexRadius: [u8; 1],
+    pub shrinkByConvexRadius: u8,
     /// +0x2 `u8`, semantic; last argument of the shrink 0x10c3e20; default 1; role not read (low)
-    #[doc(hidden)]
-    pub __shrinkFlag: [u8; 1],
+    pub shrinkFlag: u8,
     pub unknown_3: [u8; 1],
     /// +0x4 `float`, semantic; convex radius of the new shape (high)
-    #[doc(hidden)]
-    pub __convexRadius: [u8; 4],
+    pub convexRadius: f32,
     /// +0x8 `i32`, semantic; above 3: the most vertices the hull keeps; default 0 (no limit) (high)
-    #[doc(hidden)]
-    pub __maxVertices: [u8; 4],
+    pub maxVertices: u32,
     /// +0xC `float`, semantic; second float argument of the shrink 0x10c3e20; default 0.05 (low)
-    #[doc(hidden)]
-    pub __shrinkParam0: [u8; 4],
+    pub shrinkParam0: f32,
     /// +0x10 `float`, semantic; third float argument of the shrink 0x10c3e20; default 0.07 (low)
-    #[doc(hidden)]
-    pub __shrinkParam1: [u8; 4],
+    pub shrinkParam1: f32,
     /// +0x14 `float`, semantic; default -0.1; BuildFromPoints does not read it (low)
-    #[doc(hidden)]
-    pub __field_14: [u8; 4],
+    pub field_14: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpConvexVerticesShape__BuildConfig>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __buildConnectivity) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __shrinkByConvexRadius) == 0x1);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __shrinkFlag) == 0x2);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __convexRadius) == 0x4);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __maxVertices) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __shrinkParam0) == 0xC);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __shrinkParam1) == 0x10);
-const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, __field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, buildConnectivity) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkByConvexRadius) == 0x1);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkFlag) == 0x2);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, convexRadius) == 0x4);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, maxVertices) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkParam0) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, shrinkParam1) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig, field_14) == 0x14);
 
 /// `hkpListShape`: size 0x90 (exact, high); primary base `hkpShapeCollection`.
 /// Meaning: list of child shapes (hkpShapeCollection with an hkpShapeContainer at +0x20, vtable 0x19eb0e8) (high, camera pass).
@@ -7116,7 +7083,7 @@ pub struct hkpListShape {
     pub __vftable: *const crate::raw::vtables::hkpListShape_vtable,
     /// +0x8 `undefined4`, base hkpShapeCollection
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7173,29 +7140,25 @@ const _: () = assert!(core::mem::offset_of!(hkpListShape, enabledChildren) == 0x
 /// `hkpListShape::ChildInfo`: size 0x20 (exact).
 /// Meaning: one child of an hkpListShape (high, camera pass).
 /// Evidence: one child of an hkpListShape; item 9 (request V). Havok reflection names the class "hkpListShape::ChildInfo" (.rdata 0x19e9b81); its member table 0x19e7e90..: shape +0, collisionFilterInfo +8, shapeSize +0xc, numChildShapes +0x10.; size: stride 0x20 (FillChildShapes 0xb40a75 mov r9d,0x20 as the reserve element size and 0x20 steps; SetBumperEnabled rbx += 0x20).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkpListShape__ChildInfo {
     /// +0x0 `ptr:hkpShape`, semantic; the child shape (referenced) (high)
-    #[doc(hidden)]
-    pub __shape: [u8; 8],
+    pub shape: *mut crate::hkpShape,
     /// +0x8 `u32`, semantic; the child's collision filter info (0 when the caller passes none) (high)
-    #[doc(hidden)]
-    pub __collisionFilterInfo: [u8; 4],
+    pub collisionFilterInfo: u32,
     /// +0xC `i32`, semantic; 0 from FillChildShapes (medium)
-    #[doc(hidden)]
-    pub __shapeSize: [u8; 4],
+    pub shapeSize: u32,
     /// +0x10 `i32`, semantic; FillChildShapes writes the list's child count (medium)
-    #[doc(hidden)]
-    pub __numChildShapes: [u8; 4],
+    pub numChildShapes: u32,
     pub unknown_14: [u8; 12],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<hkpListShape__ChildInfo>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, __shape) == 0x0);
-const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, __collisionFilterInfo) == 0x8);
-const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, __shapeSize) == 0xC);
-const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, __numChildShapes) == 0x10);
+const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, shape) == 0x0);
+const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, collisionFilterInfo) == 0x8);
+const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, shapeSize) == 0xC);
+const _: () = assert!(core::mem::offset_of!(hkpListShape__ChildInfo, numChildShapes) == 0x10);
 
 /// `hkpShape`: size 0x20 (exact, high); primary base `hkReferencedObject`.
 /// Meaning: Havok shape base (high, camera pass).
@@ -7211,12 +7174,12 @@ pub struct hkpShape {
     /// +0xA `i16`, semantic; reference count (high)
     #[doc(hidden)]
     pub __referenceCount: [u8; 2],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `ptr:bhkShape`, base hkBaseObject, semantic, runtime; the bhkShape wrapper, written by bhkShape slot 38 (0 when unlinked); ctors write 0 (high)
     pub userData: *mut crate::bhkShape,
     /// +0x18 `u32`, base hkBaseObject, semantic, runtime; ShapeType (enum below) (high)
     pub type_: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

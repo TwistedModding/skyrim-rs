@@ -667,7 +667,7 @@ pub struct RawPress {
     pub pressed: bool,
 }
 
-/// A button of an input filter: an `InputDevice` and the button's id on it.
+/// A button of an input filter: an `InputDevice`'s number in the running game and the button's id on it.
 #[repr(C)]
 #[derive(Clone, Copy)]
 pub struct RawButton {

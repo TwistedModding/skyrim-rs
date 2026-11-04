@@ -142,10 +142,10 @@ pub struct BSTArray {
     /// +0x8 `undefined4`, semantic; allocated elements (high)
     #[doc(hidden)]
     pub __capacity: [u8; 4],
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, semantic; used elements (high)
     pub size: u32,
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -157,31 +157,29 @@ const _: () = assert!(core::mem::offset_of!(BSTArray, size) == 0x10);
 /// `Setting`: size 0x18 (exact, high).
 /// Meaning: one INI or game setting: vtable, value, name (high, forms pass).
 /// Evidence: forms pass (semantic): item 9 (request V). Every SettingT<...> static in .data is 0x18 long, {vftable +0, value +8, char* name +0x10} (03d_settings; e.g. INISetting_fNearDistance_Display 0x20cf9a8 = {SettingT<INISettingCollection>::vftable 0x17ee3f8, 15.0f, "fNearDistance:Display"}, 0x2077748 = {0x17ee3f8, 3, "uInterior Cell Buffer:General"}); the *_value globals of the ledger are object+8.; size: the statics are 0x18 apart; the old layout size 8 was a soft bound from SettingT's first field at +8, which is this value.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct Setting {
     /// +0x0 `vtbl:Setting:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::Setting_vtable,
     /// +0x8 `undefined8`, semantic; the value, typed by the name's first letter: f float, i i32, u u32, b bool, r colour, s char* (high)
-    #[doc(hidden)]
-    pub __value: [u8; 8],
+    pub value: u64,
     /// +0x10 `pointer`, semantic; "name:Section" (char*) (high)
-    #[doc(hidden)]
-    pub __name: [u8; 8],
+    pub name: *mut c_void,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<Setting>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(Setting, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(Setting, __value) == 0x8);
-const _: () = assert!(core::mem::offset_of!(Setting, __name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(Setting, value) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Setting, name) == 0x10);
 
 /// `TESDataHandler`: size 0xDD8 (exact).
 /// Meaning: the loaded files and the per-type form arrays; one static instance (high, forms pass).
 /// Evidence: the loaded files and the per-type form arrays; one static instance; static object at rva 0x21a2890 (placeholder ID_400457), constructed by 0x1b6290 with this=0x21a2890 (hit dump 01-menu: 1 hit, caller TES::ctor 0x19f45f, arg 21a2890); the ctor initialises fields up to 0xdd0 and the next static symbol lies at 0x21a3668 = +0xdd8; run-forms peek dh-menu read 0xdd8 bytes consistent with every field below.
 #[repr(C, align(8))]
 pub struct TESDataHandler {
-    pub unknown_0: [u8; 16],
+    unknown_0: [u8; 16],
     /// +0x10 `undefined1`, semantic; BSTArray<TESForm*>[138] indexed by FormType, stride 0x18 (high)
     pub formArrays: [u8; 3312],
     /// +0xD00 `ptr:TESRegionList`, semantic; region list (high)
@@ -190,10 +188,10 @@ pub struct TESDataHandler {
     pub cells: [u8; 24],
     /// +0xD20 `undefined1`, semantic; NiTPrimitiveArray<BGSAddonNode*> (medium)
     pub addonNodes: [u8; 24],
-    pub unknown_D38: [u8; 24],
+    unknown_D38: [u8; 24],
     /// +0xD50 `undefined4`, semantic; next form id for runtime-created forms, in the 0xFF load index (high)
     pub nextFormID: u32,
-    pub unknown_D54: [u8; 4],
+    unknown_D54: [u8; 4],
     /// +0xD58 `ptr:TESFile`, semantic; file currently being loaded, null outside loading (medium)
     pub activeFile: *mut crate::TESFile,
     /// +0xD60 `class:BSSimpleListNode`, semantic; head node of the list of every TESFile found in Data, masters first (high)
@@ -202,15 +200,15 @@ pub struct TESDataHandler {
     pub compiledFiles: crate::BSTArray,
     /// +0xD88 `class:BSTArray`, semantic; BSTArray<TESFile*> of light files; the index is the file's light index (high)
     pub lightFiles: crate::BSTArray,
-    pub unknown_DA0: [u8; 8],
+    unknown_DA0: [u8; 8],
     /// +0xDA8 `undefined1`, semantic; when set, new forms get no id and are not registered (medium)
     pub skipFormRegistration: u8,
     /// +0xDA9 `undefined1`, semantic; when set, freed form ids are not reused (medium)
     pub lockNextFormID: u8,
-    pub unknown_DAA: [u8; 6],
+    unknown_DAA: [u8; 6],
     /// +0xDB0 `ptr:TESRegionDataManager`, semantic; region data manager (high)
     pub regionDataManager: *mut crate::TESRegionDataManager,
-    pub unknown_DB8: [u8; 8],
+    unknown_DB8: [u8; 8],
     /// +0xDC0 `class:BSTArray`, semantic; BSTArray<TESFile*> of the files named by the plugin list (medium)
     #[doc(hidden)]
     pub __selectedFiles: [u8; 24],
@@ -237,7 +235,7 @@ const _: () = assert!(core::mem::offset_of!(TESDataHandler, __selectedFiles) == 
 /// Evidence: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it; same box layout as TESFormIDMap, allocated by 0x1e6eb0 with capacity 0x1000 and grown since (run-forms peek edidmap: cap=32768 free=10969 sentinel=rva 0x2078f38); keys are BSFixedString (interned char*, compared by pointer in 0x1e7bf0).
 #[repr(C, align(8))]
 pub struct TESEditorIDMap {
-    pub unknown_0: [u8; 12],
+    unknown_0: [u8; 12],
     /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
     /// +0x10 `undefined4`, semantic; unused buckets (high)
@@ -248,7 +246,7 @@ pub struct TESEditorIDMap {
     pub __freeScan: [u8; 4],
     /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
-    pub unknown_20: [u8; 8],
+    unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     #[doc(hidden)]
     pub __entries: [u8; 8],
@@ -289,36 +287,36 @@ const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, __next) == 0x10
 /// Evidence: one loaded plugin file; 0x4c8 bytes: allocated with 0x4c8 in 0x1cf680 and freed with 0x4c8 in 0x1ce6f0 and 0x1bdd00; the ctor 0x1c9b20 was hit 10 times in run-forms, once per plugin in the Data folder; name and index fields read live (file-skyrim, file-update, file-curios, file-fish, cfile-*, lfile-*).
 #[repr(C, align(8))]
 pub struct TESFile {
-    pub unknown_0: [u8; 88],
+    unknown_0: [u8; 88],
     /// +0x58 `undefined1`, semantic; file name, NUL-terminated (high)
     pub fileName: [u8; 260],
     /// +0x15C `undefined1`, semantic; directory of the file (high)
     pub path: [u8; 260],
-    pub unknown_260: [u8; 460],
+    unknown_260: [u8; 460],
     /// +0x42C `float`, semantic; header version (medium)
     #[doc(hidden)]
     pub __version: [u8; 4],
-    pub unknown_430: [u8; 4],
+    unknown_430: [u8; 4],
     /// +0x434 `undefined4`, semantic; form id counter of the file; the top byte is the compile index (high)
     pub currentFormID: u32,
     /// +0x438 `undefined4`, semantic; file flags; see the flag rows (high)
     pub fileFlags: u32,
-    pub unknown_43C: [u8; 4],
+    unknown_43C: [u8; 4],
     /// +0x440 `class:BSSimpleListNode`, semantic; head node of the list of master file names (char*) (high)
     pub masterNames: crate::BSSimpleListNode,
-    pub unknown_450: [u8; 16],
+    unknown_450: [u8; 16],
     /// +0x460 `undefined4`, semantic; number of masters (high)
     pub masterCount: u32,
-    pub unknown_464: [u8; 4],
+    unknown_464: [u8; 4],
     /// +0x468 `pointer`, semantic; TESFile*[masterCount] (high)
     pub masters: *mut c_void,
-    pub unknown_470: [u8; 8],
+    unknown_470: [u8; 8],
     /// +0x478 `undefined1`, semantic; load index; 0xff not loaded, 0xfe light (high)
     pub compileIndex: u8,
-    pub unknown_479: [u8; 1],
+    unknown_479: [u8; 1],
     /// +0x47A `undefined2`, semantic; index among light files, valid when compileIndex is 0xfe (high)
     pub lightFileIndex: u16,
-    pub unknown_47C: [u8; 76],
+    unknown_47C: [u8; 76],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -387,7 +385,7 @@ const _: () = assert!(core::mem::offset_of!(TESForm, formType) == 0x1A);
 /// Evidence: hash map form id to TESForm*, the global form table; 0x30-byte box allocated by 0x1e6eb0 (capacity 0x40000 entries of 0x18); the lookup 0x1e5860 reads capacity at +0xc, the end-of-chain sentinel at +0x18 and the entry array at +0x28; insert/remove take the map at +8; run-forms peek formmap: cap=262144 free=72601 good=154813 sentinel=rva 0x2078f3c entries=0x24340e00020.
 #[repr(C, align(8))]
 pub struct TESFormIDMap {
-    pub unknown_0: [u8; 12],
+    unknown_0: [u8; 12],
     /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
     /// +0x10 `undefined4`, semantic; unused buckets (high)
@@ -398,7 +396,7 @@ pub struct TESFormIDMap {
     pub __freeScan: [u8; 4],
     /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
-    pub unknown_20: [u8; 8],
+    unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
     #[doc(hidden)]
     pub __entries: [u8; 8],
@@ -420,7 +418,7 @@ pub struct TESFormIDMapEntry {
     /// +0x0 `undefined4`, semantic; key (high)
     #[doc(hidden)]
     pub __formID: [u8; 4],
-    pub unknown_4: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `ptr:TESForm`, semantic; value (high)
     #[doc(hidden)]
     pub __form: [u8; 8],
@@ -1051,6 +1049,522 @@ impl FormType {
             Self::LENS => "LENS",
             Self::LSPR => "LSPR",
             Self::VOLI => "VOLI",
+        }
+    }
+}
+
+/// values in data/extradatatypes.json (the BSExtraData type code each Extra* class returns from vtable slot 1) (forms pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum ExtraDataType {
+    /// `Havok`
+    Havok = 1,
+    /// `Cell3D`
+    Cell3D = 2,
+    /// `CellWaterType`
+    CellWaterType = 3,
+    /// `RegionList`
+    RegionList = 4,
+    /// `SeenData`
+    SeenData = 5,
+    /// `EditorID`
+    EditorID = 6,
+    /// `CellMusicType`
+    CellMusicType = 7,
+    /// `CellSkyRegion`
+    CellSkyRegion = 8,
+    /// `ProcessMiddleLow`
+    ProcessMiddleLow = 9,
+    /// `DetachTime`
+    DetachTime = 10,
+    /// `PersistentCell`
+    PersistentCell = 11,
+    /// `Action`
+    Action = 13,
+    /// `StartingPosition`
+    StartingPosition = 14,
+    /// `AnimGraphManager`
+    AnimGraphManager = 16,
+    /// `Biped`
+    Biped = 17,
+    /// `UsedMarkers`
+    UsedMarkers = 18,
+    /// `DistantData`
+    DistantData = 19,
+    /// `RagDollData`
+    RagDollData = 20,
+    /// `ContainerChanges`
+    ContainerChanges = 21,
+    /// `Worn`
+    Worn = 22,
+    /// `WornLeft`
+    WornLeft = 23,
+    /// `PackageStartLocation`
+    PackageStartLocation = 24,
+    /// `Package`
+    Package = 25,
+    /// `TresPassPackage`
+    TresPassPackage = 26,
+    /// `RunOncePacks`
+    RunOncePacks = 27,
+    /// `ReferenceHandle`
+    ReferenceHandle = 28,
+    /// `Follower`
+    Follower = 29,
+    /// `LevCreaModifier`
+    LevCreaModifier = 30,
+    /// `Ghost`
+    Ghost = 31,
+    /// `OriginalReference`
+    OriginalReference = 32,
+    /// `Ownership`
+    Ownership = 33,
+    /// `Global`
+    Global = 34,
+    /// `Rank`
+    Rank = 35,
+    /// `Count`
+    Count = 36,
+    /// `Health`
+    Health = 37,
+    /// `TimeLeft`
+    TimeLeft = 39,
+    /// `Charge`
+    Charge = 40,
+    /// `Light`
+    Light = 41,
+    /// `Lock`
+    Lock = 42,
+    /// `Teleport`
+    Teleport = 43,
+    /// `MapMarker`
+    MapMarker = 44,
+    /// `LeveledCreature`
+    LeveledCreature = 45,
+    /// `LeveledItem`
+    LeveledItem = 46,
+    /// `Scale`
+    Scale = 47,
+    /// `MissingLinkedRefIDs`
+    MissingLinkedRefIDs = 48,
+    /// `MagicCaster`
+    MagicCaster = 49,
+    /// `NonActorMagicTarget`
+    NonActorMagicTarget = 50,
+    /// `PlayerCrimeList`
+    PlayerCrimeList = 52,
+    /// `EnableStateParent`
+    EnableStateParent = 54,
+    /// `EnableStateChildren`
+    EnableStateChildren = 55,
+    /// `ItemDropper`
+    ItemDropper = 56,
+    /// `DroppedItemList`
+    DroppedItemList = 57,
+    /// `RandomTeleportMarker`
+    RandomTeleportMarker = 58,
+    /// `SavedHavokData`
+    SavedHavokData = 60,
+    /// `CannotWear`
+    CannotWear = 61,
+    /// `Poison`
+    Poison = 62,
+    /// `MagicLight`
+    MagicLight = 63,
+    /// `LastFinishedSequence`
+    LastFinishedSequence = 64,
+    /// `SavedAnimation`
+    SavedAnimation = 65,
+    /// `NorthRotation`
+    NorthRotation = 66,
+    /// `SpawnContainer`
+    SpawnContainer = 67,
+    /// `FriendHits`
+    FriendHits = 68,
+    /// `HeadingTarget`
+    HeadingTarget = 69,
+    /// `RefractionProperty`
+    RefractionProperty = 71,
+    /// `StartingWorldOrCell`
+    StartingWorldOrCell = 72,
+    /// `Hotkey`
+    Hotkey = 73,
+    /// `EditorRef3DData`
+    EditorRef3DData = 74,
+    /// `EditorRefMoveData`
+    EditorRefMoveData = 75,
+    /// `InfoGeneralTopic`
+    InfoGeneralTopic = 76,
+    /// `HasNoRumors`
+    HasNoRumors = 77,
+    /// `Sound`
+    Sound = 78,
+    /// `TerminalState`
+    TerminalState = 79,
+    /// `LinkedRef`
+    LinkedRef = 80,
+    /// `LinkedRefChildren`
+    LinkedRefChildren = 81,
+    /// `ActivateRef`
+    ActivateRef = 82,
+    /// `ActivateRefChildren`
+    ActivateRefChildren = 83,
+    /// `CanTalkToPlayer`
+    CanTalkToPlayer = 84,
+    /// `ObjectHealth`
+    ObjectHealth = 85,
+    /// `CellImageSpace`
+    CellImageSpace = 86,
+    /// `NavMeshPortal`
+    NavMeshPortal = 87,
+    /// `ModelSwap`
+    ModelSwap = 88,
+    /// `Radius`
+    Radius = 89,
+    /// `FactionChanges`
+    FactionChanges = 91,
+    /// `DismemberedLimbs`
+    DismemberedLimbs = 92,
+    /// `ActorCause`
+    ActorCause = 93,
+    /// `MultiBound`
+    MultiBound = 94,
+    /// `MultiBoundMarkerData`
+    MultiBoundMarkerData = 95,
+    /// `MultiBoundRef`
+    MultiBoundRef = 96,
+    /// `ReflectedRefs`
+    ReflectedRefs = 97,
+    /// `ReflectorRefs`
+    ReflectorRefs = 98,
+    /// `EmittanceSource`
+    EmittanceSource = 99,
+    /// `CombatStyle`
+    CombatStyle = 101,
+    /// `Primitive`
+    Primitive = 103,
+    /// `OpenCloseActivateRef`
+    OpenCloseActivateRef = 104,
+    /// `AnimNoteReceiver`
+    AnimNoteReceiver = 105,
+    /// `Ammo`
+    Ammo = 106,
+    /// `PatrolRefData`
+    PatrolRefData = 107,
+    /// `PackageData`
+    PackageData = 108,
+    /// `OcclusionShape`
+    OcclusionShape = 109,
+    /// `CollisionData`
+    CollisionData = 110,
+    /// `SayTopicInfoOnceADay`
+    SayTopicInfoOnceADay = 111,
+    /// `EncounterZone`
+    EncounterZone = 112,
+    /// `SayToTopicInfo`
+    SayToTopicInfo = 113,
+    /// `OcclusionPlaneRefData`
+    OcclusionPlaneRefData = 114,
+    /// `PortalRefData`
+    PortalRefData = 115,
+    /// `Portal`
+    Portal = 116,
+    /// `Room`
+    Room = 117,
+    /// `HealthPerc`
+    HealthPerc = 118,
+    /// `RoomRefData`
+    RoomRefData = 119,
+    /// `GuardedRefData`
+    GuardedRefData = 120,
+    /// `CreatureAwakeSound`
+    CreatureAwakeSound = 121,
+    /// `Horse`
+    Horse = 123,
+    /// `IgnoredBySandbox`
+    IgnoredBySandbox = 124,
+    /// `CellAcousticSpace`
+    CellAcousticSpace = 125,
+    /// `ReservedMarkers`
+    ReservedMarkers = 126,
+    /// `WeaponIdleSound`
+    WeaponIdleSound = 127,
+    /// `WaterLightRefs`
+    WaterLightRefs = 128,
+    /// `LitWaterRefs`
+    LitWaterRefs = 129,
+    /// `WeaponAttackSound`
+    WeaponAttackSound = 130,
+    /// `ActivateLoopSound`
+    ActivateLoopSound = 131,
+    /// `PatrolRefInUseData`
+    PatrolRefInUseData = 132,
+    /// `AshPileRef`
+    AshPileRef = 133,
+    /// `CreatureMovementSound`
+    CreatureMovementSound = 134,
+    /// `FollowerSwimBreadcrumbs`
+    FollowerSwimBreadcrumbs = 135,
+    /// `AliasInstanceArray`
+    AliasInstanceArray = 136,
+    /// `Location`
+    Location = 137,
+    /// `LocationRefType`
+    LocationRefType = 139,
+    /// `PromotedRef`
+    PromotedRef = 140,
+    /// `AnimationSequencer`
+    AnimationSequencer = 141,
+    /// `OutfitItem`
+    OutfitItem = 142,
+    /// `LeveledItemBase`
+    LeveledItemBase = 144,
+    /// `LightData`
+    LightData = 145,
+    /// `SceneData`
+    SceneData = 146,
+    /// `BadPosition`
+    BadPosition = 147,
+    /// `HeadTrackingWeight`
+    HeadTrackingWeight = 148,
+    /// `FromAlias`
+    FromAlias = 149,
+    /// `ShouldWear`
+    ShouldWear = 150,
+    /// `FavorCost`
+    FavorCost = 151,
+    /// `AttachedArrows3D`
+    AttachedArrows3D = 152,
+    /// `TextDisplayData`
+    TextDisplayData = 153,
+    /// `AlphaCutoff`
+    AlphaCutoff = 154,
+    /// `Enchantment`
+    Enchantment = 155,
+    /// `Soul`
+    Soul = 156,
+    /// `ForcedTarget`
+    ForcedTarget = 157,
+    /// `UniqueID`
+    UniqueID = 159,
+    /// `Flags`
+    Flags = 160,
+    /// `RefrPath`
+    RefrPath = 161,
+    /// `DecalGroup`
+    DecalGroup = 162,
+    /// `LockList`
+    LockList = 163,
+    /// `ForcedLandingMarker`
+    ForcedLandingMarker = 164,
+    /// `LargeRefOwnerCells`
+    LargeRefOwnerCells = 165,
+    /// `CellWaterEnvMap`
+    CellWaterEnvMap = 166,
+    /// `CellGrassData`
+    CellGrassData = 167,
+    /// `TeleportName`
+    TeleportName = 168,
+    /// `Interaction`
+    Interaction = 169,
+    /// `WaterData`
+    WaterData = 170,
+    /// `WaterCurrentZoneData`
+    WaterCurrentZoneData = 171,
+    /// `AttachRef`
+    AttachRef = 172,
+    /// `AttachRefChildren`
+    AttachRefChildren = 173,
+    /// `GroupConstraint`
+    GroupConstraint = 174,
+    /// `ScriptedAnimDependence`
+    ScriptedAnimDependence = 175,
+    /// `CachedScale`
+    CachedScale = 176,
+    /// `RaceData`
+    RaceData = 177,
+    /// `GIDBuffer`
+    GIDBuffer = 178,
+    /// `MissingRefIDs`
+    MissingRefIDs = 179,
+    /// `HavokLink`
+    HavokLink = 180,
+    /// `ResourcesPreload`
+    ResourcesPreload = 181,
+}
+
+impl ExtraDataType {
+    #[must_use]
+    pub const fn from_u32(value: u32) -> Option<Self> {
+        match value {
+            1 => Some(Self::Havok),
+            2 => Some(Self::Cell3D),
+            3 => Some(Self::CellWaterType),
+            4 => Some(Self::RegionList),
+            5 => Some(Self::SeenData),
+            6 => Some(Self::EditorID),
+            7 => Some(Self::CellMusicType),
+            8 => Some(Self::CellSkyRegion),
+            9 => Some(Self::ProcessMiddleLow),
+            10 => Some(Self::DetachTime),
+            11 => Some(Self::PersistentCell),
+            13 => Some(Self::Action),
+            14 => Some(Self::StartingPosition),
+            16 => Some(Self::AnimGraphManager),
+            17 => Some(Self::Biped),
+            18 => Some(Self::UsedMarkers),
+            19 => Some(Self::DistantData),
+            20 => Some(Self::RagDollData),
+            21 => Some(Self::ContainerChanges),
+            22 => Some(Self::Worn),
+            23 => Some(Self::WornLeft),
+            24 => Some(Self::PackageStartLocation),
+            25 => Some(Self::Package),
+            26 => Some(Self::TresPassPackage),
+            27 => Some(Self::RunOncePacks),
+            28 => Some(Self::ReferenceHandle),
+            29 => Some(Self::Follower),
+            30 => Some(Self::LevCreaModifier),
+            31 => Some(Self::Ghost),
+            32 => Some(Self::OriginalReference),
+            33 => Some(Self::Ownership),
+            34 => Some(Self::Global),
+            35 => Some(Self::Rank),
+            36 => Some(Self::Count),
+            37 => Some(Self::Health),
+            39 => Some(Self::TimeLeft),
+            40 => Some(Self::Charge),
+            41 => Some(Self::Light),
+            42 => Some(Self::Lock),
+            43 => Some(Self::Teleport),
+            44 => Some(Self::MapMarker),
+            45 => Some(Self::LeveledCreature),
+            46 => Some(Self::LeveledItem),
+            47 => Some(Self::Scale),
+            48 => Some(Self::MissingLinkedRefIDs),
+            49 => Some(Self::MagicCaster),
+            50 => Some(Self::NonActorMagicTarget),
+            52 => Some(Self::PlayerCrimeList),
+            54 => Some(Self::EnableStateParent),
+            55 => Some(Self::EnableStateChildren),
+            56 => Some(Self::ItemDropper),
+            57 => Some(Self::DroppedItemList),
+            58 => Some(Self::RandomTeleportMarker),
+            60 => Some(Self::SavedHavokData),
+            61 => Some(Self::CannotWear),
+            62 => Some(Self::Poison),
+            63 => Some(Self::MagicLight),
+            64 => Some(Self::LastFinishedSequence),
+            65 => Some(Self::SavedAnimation),
+            66 => Some(Self::NorthRotation),
+            67 => Some(Self::SpawnContainer),
+            68 => Some(Self::FriendHits),
+            69 => Some(Self::HeadingTarget),
+            71 => Some(Self::RefractionProperty),
+            72 => Some(Self::StartingWorldOrCell),
+            73 => Some(Self::Hotkey),
+            74 => Some(Self::EditorRef3DData),
+            75 => Some(Self::EditorRefMoveData),
+            76 => Some(Self::InfoGeneralTopic),
+            77 => Some(Self::HasNoRumors),
+            78 => Some(Self::Sound),
+            79 => Some(Self::TerminalState),
+            80 => Some(Self::LinkedRef),
+            81 => Some(Self::LinkedRefChildren),
+            82 => Some(Self::ActivateRef),
+            83 => Some(Self::ActivateRefChildren),
+            84 => Some(Self::CanTalkToPlayer),
+            85 => Some(Self::ObjectHealth),
+            86 => Some(Self::CellImageSpace),
+            87 => Some(Self::NavMeshPortal),
+            88 => Some(Self::ModelSwap),
+            89 => Some(Self::Radius),
+            91 => Some(Self::FactionChanges),
+            92 => Some(Self::DismemberedLimbs),
+            93 => Some(Self::ActorCause),
+            94 => Some(Self::MultiBound),
+            95 => Some(Self::MultiBoundMarkerData),
+            96 => Some(Self::MultiBoundRef),
+            97 => Some(Self::ReflectedRefs),
+            98 => Some(Self::ReflectorRefs),
+            99 => Some(Self::EmittanceSource),
+            101 => Some(Self::CombatStyle),
+            103 => Some(Self::Primitive),
+            104 => Some(Self::OpenCloseActivateRef),
+            105 => Some(Self::AnimNoteReceiver),
+            106 => Some(Self::Ammo),
+            107 => Some(Self::PatrolRefData),
+            108 => Some(Self::PackageData),
+            109 => Some(Self::OcclusionShape),
+            110 => Some(Self::CollisionData),
+            111 => Some(Self::SayTopicInfoOnceADay),
+            112 => Some(Self::EncounterZone),
+            113 => Some(Self::SayToTopicInfo),
+            114 => Some(Self::OcclusionPlaneRefData),
+            115 => Some(Self::PortalRefData),
+            116 => Some(Self::Portal),
+            117 => Some(Self::Room),
+            118 => Some(Self::HealthPerc),
+            119 => Some(Self::RoomRefData),
+            120 => Some(Self::GuardedRefData),
+            121 => Some(Self::CreatureAwakeSound),
+            123 => Some(Self::Horse),
+            124 => Some(Self::IgnoredBySandbox),
+            125 => Some(Self::CellAcousticSpace),
+            126 => Some(Self::ReservedMarkers),
+            127 => Some(Self::WeaponIdleSound),
+            128 => Some(Self::WaterLightRefs),
+            129 => Some(Self::LitWaterRefs),
+            130 => Some(Self::WeaponAttackSound),
+            131 => Some(Self::ActivateLoopSound),
+            132 => Some(Self::PatrolRefInUseData),
+            133 => Some(Self::AshPileRef),
+            134 => Some(Self::CreatureMovementSound),
+            135 => Some(Self::FollowerSwimBreadcrumbs),
+            136 => Some(Self::AliasInstanceArray),
+            137 => Some(Self::Location),
+            139 => Some(Self::LocationRefType),
+            140 => Some(Self::PromotedRef),
+            141 => Some(Self::AnimationSequencer),
+            142 => Some(Self::OutfitItem),
+            144 => Some(Self::LeveledItemBase),
+            145 => Some(Self::LightData),
+            146 => Some(Self::SceneData),
+            147 => Some(Self::BadPosition),
+            148 => Some(Self::HeadTrackingWeight),
+            149 => Some(Self::FromAlias),
+            150 => Some(Self::ShouldWear),
+            151 => Some(Self::FavorCost),
+            152 => Some(Self::AttachedArrows3D),
+            153 => Some(Self::TextDisplayData),
+            154 => Some(Self::AlphaCutoff),
+            155 => Some(Self::Enchantment),
+            156 => Some(Self::Soul),
+            157 => Some(Self::ForcedTarget),
+            159 => Some(Self::UniqueID),
+            160 => Some(Self::Flags),
+            161 => Some(Self::RefrPath),
+            162 => Some(Self::DecalGroup),
+            163 => Some(Self::LockList),
+            164 => Some(Self::ForcedLandingMarker),
+            165 => Some(Self::LargeRefOwnerCells),
+            166 => Some(Self::CellWaterEnvMap),
+            167 => Some(Self::CellGrassData),
+            168 => Some(Self::TeleportName),
+            169 => Some(Self::Interaction),
+            170 => Some(Self::WaterData),
+            171 => Some(Self::WaterCurrentZoneData),
+            172 => Some(Self::AttachRef),
+            173 => Some(Self::AttachRefChildren),
+            174 => Some(Self::GroupConstraint),
+            175 => Some(Self::ScriptedAnimDependence),
+            176 => Some(Self::CachedScale),
+            177 => Some(Self::RaceData),
+            178 => Some(Self::GIDBuffer),
+            179 => Some(Self::MissingRefIDs),
+            180 => Some(Self::HavokLink),
+            181 => Some(Self::ResourcesPreload),
+            _ => None,
         }
     }
 }

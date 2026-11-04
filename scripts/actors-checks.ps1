@@ -11,6 +11,8 @@ $queries = Detail "actor_queries"
 $stateBefore = RunDetail "actors postLoadGame" "state"
 $stateAfter = RunDetail "actors saveGame" "state"
 $inspect = Step 45
+# The weapon of retrace-base; another runtime's base save holds its own, which DevBench names.
+$weapon = if ($Install.canonical) { "0x00013790" } else { "$((Returned 25).formId)" }
 
 $rows = @(
     @{ name = "actor_values";    plugin = $av; devbench = "GetActorValue Health/Magicka/Stamina/CarryWeight/SpeedMult = $(Returned 4)/$(Returned 5)/$(Returned 6)/$(Returned 7)/$(Returned 8), GetBaseActorValue(Health) = $(Returned 9)";
@@ -36,7 +38,7 @@ $rows = @(
     @{ name = "race";            plugin = (Detail "race"); devbench = "Actor.GetRace = $((Returned 24).formId) $((Returned 24).editorId), ActorBase.GetRace = $((Returned 33).formId)";
        ok = ((Detail "race") -match 'race=RACE 00013746' -and (Returned 24).formId -eq "0x00013746" -and (Returned 33).formId -eq "0x00013746") }
     @{ name = "process";         plugin = (Detail "process"); devbench = "GetEquippedWeapon(false) = $((Returned 25).formId) $((Returned 25).name), (true) = $((Step 26).returnedType)";
-       ok = ((Detail "process") -match 'right=WEAP 00013790' -and (Returned 25).formId -eq "0x00013790" -and (Step 26).returnedType -eq "none") }
+       ok = ((Detail "process") -match "right=WEAP $($weapon -replace '^0x', '')" -and (Returned 25).formId -eq $weapon -and (Step 26).returnedType -eq "none") }
     @{ name = "state before";    plugin = $stateBefore; devbench = "IsSneaking = $(Returned 30), IsWeaponDrawn = $(Returned 31)";
        ok = ($stateBefore -match 'sneaking=false .*drawn=false' -and (Returned 30) -eq $false -and (Returned 31) -eq $false) }
     @{ name = "state after";     plugin = $stateAfter; devbench = "after StartSneaking + DrawWeapon: IsSneaking = $(Returned 43), IsWeaponDrawn = $(Returned 44)";
@@ -48,7 +50,7 @@ $rows = @(
     @{ name = "is_disabled";     plugin = (Detail "is_disabled"); devbench = "IsDisabled = $(Returned 39)";
        ok = ((Detail "is_disabled") -match 'is_disabled=false' -and (Returned 39) -eq $false) }
     @{ name = "inspect player";  plugin = "$av; $(Detail 'process'); $npc"; devbench = "health $($inspect.actorValues.health.current)/$($inspect.actorValues.health.max), carryWeight $($inspect.actorValues.carryWeight.current), right $($inspect.equipped.right.formId), left $($inspect.equipped.left), name $($inspect.name), level $($inspect.level)";
-       ok = ($inspect -and $inspect.actorValues.health.current -eq 100 -and $inspect.actorValues.carryWeight.current -eq 300 -and $inspect.equipped.right.formId -eq "0x00013790" -and $inspect.equipped.left -eq $null -and $inspect.name -eq "Prisoner" -and $inspect.level -eq 1) }
+       ok = ($inspect -and $inspect.actorValues.health.current -eq 100 -and $inspect.actorValues.carryWeight.current -eq 300 -and $inspect.equipped.right.formId -eq $weapon -and $inspect.equipped.left -eq $null -and $inspect.name -eq "Prisoner" -and $inspect.level -eq 1) }
     @{ name = "save trigger";    plugin = ($summaries -match 'actors saveGame') -join ' '; devbench = "console save: $((Step 46) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 47 }).satisfied)";
        ok = ((($steps | Where-Object { $_.index -eq 47 }).satisfied -eq $true)) }
 )

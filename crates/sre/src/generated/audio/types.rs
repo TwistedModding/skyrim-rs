@@ -63,14 +63,14 @@ pub struct BGSMusicType {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `class:BSIMusicType`, semantic; what the music manager stores (type+0x20 in every BSMusicEvent) (high)
     pub musicTypeInterface: crate::BSIMusicType,
     /// +0x28 `undefined4`, semantic; FNAM flags plus runtime bit 4; see the flag rows (high)
     pub flags: u32,
     /// +0x2C `undefined1`, semantic; PNAM low byte, default 50; the manager's heap keeps the smallest value on top (high)
     pub priority: u8,
-    pub unknown_2D: [u8; 1],
+    unknown_2D: [u8; 1],
     /// +0x2E `undefined2`, semantic; PNAM high word; when this type takes the top with flag bit 5, the previous type is ducked by this value (medium)
     pub duckingAttenuation: u16,
     /// +0x30 `float`, semantic; WNAM seconds; the finish fade is max(value, 4.0) (medium)
@@ -86,7 +86,7 @@ pub struct BGSMusicType {
     /// +0x68 `undefined4`, semantic; 0 ready, 1 playing, 2 paused, 3 finishing, 4 finished (mirrors the track's state) (medium)
     #[doc(hidden)]
     pub __state: [u8; 4],
-    pub unknown_6C: [u8; 4],
+    unknown_6C: [u8; 4],
     /// +0x70 `class:BSFixedString`, semantic; editor id kept by the form (high)
     pub editorID: crate::BSFixedString,
     #[doc(hidden)]
@@ -129,7 +129,7 @@ pub struct BGSSoundCategory {
     pub inGameFlags: u16,
     /// +0x1A `undefined1`, base TESForm, semantic; FormType of the record (high)
     pub formType: u8,
-    pub unknown_1B: [u8; 5],
+    unknown_1B: [u8; 5],
     /// +0x20 `class:TESFullName`, semantic; display name (FULL), the audio menu's label (high)
     #[doc(hidden)]
     pub __fullName: [u8; 16],
@@ -137,7 +137,7 @@ pub struct BGSSoundCategory {
     pub categoryInterface: crate::BSISoundCategory,
     /// +0x38 `undefined4`, semantic; FNAM flags; see the flag rows (high)
     pub flags: u32,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `ptr:BGSSoundCategory`, semantic, runtime; PNAM parent category; volume, frequency, attenuation, mute and pause inherit through it (medium)
     pub parent: *mut crate::BGSSoundCategory,
     /// +0x48 `undefined2`, semantic; bit 0 muted, bit 1 paused (not saved in the record); see the flag rows (high)
@@ -295,7 +295,7 @@ pub struct BGSSoundOutput__DynamicAttenuationCharacteristics {
     /// +0x10 `undefined1`, semantic; 5 attenuation points in percent (default 100,50,20,5,0) (medium)
     #[doc(hidden)]
     pub __curve: [u8; 5],
-    pub unknown_15: [u8; 3],
+    unknown_15: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -385,7 +385,8 @@ pub struct BSAudioManager {
     /// +0xB8 `undefined1`, semantic; map keyed by node pointer -> output model applied to a sound that starts following that node (low)
     pub nodeOutputModels: [u8; 48],
     /// +0xE8 `ptr`, semantic; list of cached sound objects (audio cache), guarded by the spin lock 0x3273960 (medium)
-    pub cacheList: [u8; 8],
+    #[doc(hidden)]
+    pub __cacheList: [u8; 8],
     /// +0xF0 `undefined4`, semantic; cache count, zeroed with the flush (low)
     #[doc(hidden)]
     pub __cacheCount: [u8; 4],
@@ -394,12 +395,12 @@ pub struct BSAudioManager {
     pub __threadId: [u8; 4],
     /// +0xF8 `ptr:BSAudioManagerThread`, semantic; the audio thread object (high)
     pub thread: *mut crate::BSAudioManagerThread,
-    pub unknown_100: [u8; 4],
+    unknown_100: [u8; 4],
     /// +0x104 `undefined4`, semantic; settings uiAudioHWThread (medium)
     pub hwThread: u32,
     /// +0x108 `undefined1`, semantic; copy of the init settings: +0x108 sAudioAPI, +0x110 device argument, +0x118 audio disabled, +0x119 cache enabled, +0x11c initial cache size, +0x120 max cache size, +0x124 max cached sound size, +0x128 HW thread, +0x12c streaming threshold, +0x130 default master volume, +0x138 lip-sync audio interface, +0x140 missing-asset sound file (medium)
     pub settings: [u8; 88],
-    pub unknown_160: [u8; 12],
+    unknown_160: [u8; 12],
     /// +0x16C `undefined4`, semantic; manager state: bit0 running, bit1 backend ready, bit2 backend failed, bit3 cache enabled, bit5 audio disabled; see the flag rows (high)
     pub flags: u32,
     /// +0x170 `float`, semantic; master volume (linear): fDefaultMasterVolume:Audio, then fAudioMasterVolume:AudioMenu (medium)
@@ -425,7 +426,7 @@ const _: () = assert!(core::mem::offset_of!(BSAudioManager, sounds) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, statuses) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, followedNodes) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, nodeOutputModels) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSAudioManager, cacheList) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSAudioManager, __cacheList) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, __cacheCount) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, __threadId) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, thread) == 0xF8);
@@ -590,17 +591,17 @@ pub struct BSXAudio2GameSound {
     /// +0x0 `vtbl:BSXAudio2GameSound:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSXAudio2GameSound_vtable,
-    pub unknown_8: [u8; 16],
+    unknown_8: [u8; 16],
     /// +0x18 `undefined4`, base BSGameSound
     pub field_18: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `float`, base BSGameSound
     pub field_20: f32,
     /// +0x24 `float`, base BSGameSound
     pub field_24: f32,
     /// +0x28 `float`, base BSGameSound
     pub field_28: f32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSGameSound
     pub field_30: u64,
     /// +0x38 `undefined8`, base BSGameSound
@@ -625,14 +626,14 @@ pub struct BSXAudio2GameSound {
     pub field_64: u64,
     /// +0x6C `undefined2`, base BSGameSound
     pub field_6C: u16,
-    pub unknown_6E: [u8; 2],
+    unknown_6E: [u8; 2],
     /// +0x70 `undefined8`, base BSGameSound
     pub field_70: u64,
     /// +0x78 `undefined8`, base BSGameSound
     pub field_78: u64,
     /// +0x80 `undefined4`, base BSGameSound
     pub field_80: u32,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined8`, base BSGameSound
     pub field_88: u64,
     /// +0x90 `undefined8`, base BSGameSound
@@ -649,7 +650,7 @@ pub struct BSXAudio2GameSound {
     pub field_B8: u64,
     /// +0xC0 `undefined2`, base BSGameSound
     pub field_C0: u16,
-    pub unknown_C2: [u8; 6],
+    unknown_C2: [u8; 6],
     /// +0xC8 `vtbl:BSXAudio2GameSound:C8`, rtti
     #[doc(hidden)]
     pub __vftable_C8: *const crate::raw::vtables::BSXAudio2GameSound_vtable_C8,
@@ -659,14 +660,14 @@ pub struct BSXAudio2GameSound {
     pub field_D8: u32,
     /// +0xDC `undefined2`, ctor store
     pub field_DC: u16,
-    pub unknown_DE: [u8; 2],
+    unknown_DE: [u8; 2],
     /// +0xE0 `undefined8`, ctor store
     pub field_E0: u64,
     /// +0xE8 `undefined4`, ctor store
     pub field_E8: u32,
     /// +0xEC `undefined4`, ctor store
     pub field_EC: u32,
-    pub unknown_F0: [u8; 44],
+    unknown_F0: [u8; 44],
     /// +0x11C `undefined4`, ctor store
     pub field_11C: u32,
     /// +0x120 `undefined8`, ctor store
@@ -727,14 +728,14 @@ pub struct BSXAudio2GameSound {
     pub field_1E8: u64,
     /// +0x1F0 `undefined4`, ctor store (widths [4, 8])
     pub field_1F0: u32,
-    pub unknown_1F4: [u8; 4],
+    unknown_1F4: [u8; 4],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
     /// +0x200 `undefined8`, ctor store
     pub field_200: u64,
     /// +0x208 `undefined4`, ctor store
     pub field_208: u32,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     /// +0x210 `undefined8`, ctor store
     pub field_210: u64,
     /// +0x218 `undefined8`, ctor store
@@ -851,13 +852,12 @@ pub struct SoundHandleStatus {
     pub unk10: u32,
     /// +0x14 `undefined1`, semantic; 1 while the voice is started and not paused (sound state bit5) (high)
     pub playing: u8,
-    pub unknown_15: [u8; 3],
+    unknown_15: [u8; 3],
     /// +0x18 `undefined4`, semantic; playback position in ms (sound slot 4) (high)
     pub positionMs: u32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `ptr`, semantic; free-list link (high)
-    #[doc(hidden)]
-    pub __nextFree: [u8; 8],
+    pub nextFree: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -869,7 +869,7 @@ const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, __flags) == 0xC);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, unk10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, playing) == 0x14);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, positionMs) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, __nextFree) == 0x20);
+const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, nextFree) == 0x20);
 
 /// `TESAudio::ScriptedMusicState`: size 0x30 (exact, high).
 /// Meaning: music types added by scripts and the console, saved in the audio global data (high, audio pass).
@@ -901,11 +901,11 @@ pub struct _anon_67C8711B__NoMusic {
     /// +0x0 `vtbl:_anon_67C8711B::NoMusic:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::_anon_67C8711B__NoMusic_vtable,
-    pub unknown_8: [u8; 4],
+    unknown_8: [u8; 4],
     /// +0xC `undefined1`, semantic; 100: lower precedence than the default music priority 50 (high)
     #[doc(hidden)]
     pub __priority: [u8; 1],
-    pub unknown_D: [u8; 59],
+    unknown_D: [u8; 59],
     /// +0x48 `undefined4`, semantic; same state enum as BGSMusicType+0x68 (high)
     pub state: u32,
     #[doc(hidden)]

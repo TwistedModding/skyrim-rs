@@ -434,26 +434,6 @@ impl crate::BGSSaveLoadManager {
     pub fn currentSaveNameCapacity_ptr(&self) -> *mut u16 { Self::__member_currentSaveNameCapacity(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_currentSaveNameLength(this: *const Self) -> *mut u16 { unsafe { member!(this, "BGSSaveLoadManager.currentSaveNameLength", 0x248, u16) } }
-    /// `BGSSaveLoadManager::currentSaveNameLength`, at +0x248 on 1.7.104.
-    #[inline]
-    pub fn currentSaveNameLength(&self) -> u16 { unsafe { Self::__member_currentSaveNameLength(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_currentSaveNameLength(&mut self, value: u16) { unsafe { Self::__member_currentSaveNameLength(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn currentSaveNameLength_ptr(&self) -> *mut u16 { Self::__member_currentSaveNameLength(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_currentSaveNamePtr(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BGSSaveLoadManager.currentSaveNamePtr", 0x240, *mut c_void) } }
-    /// `BGSSaveLoadManager::currentSaveNamePtr`, at +0x240 on 1.7.104.
-    #[inline]
-    pub fn currentSaveNamePtr(&self) -> *mut c_void { unsafe { Self::__member_currentSaveNamePtr(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_currentSaveNamePtr(&mut self, value: *mut c_void) { unsafe { Self::__member_currentSaveNamePtr(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn currentSaveNamePtr_ptr(&self) -> *mut *mut c_void { Self::__member_currentSaveNamePtr(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_displayPlayerId(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSSaveLoadManager.displayPlayerId", 0xD8, u64) } }
     /// `BGSSaveLoadManager::displayPlayerId`, at +0xD8 on 1.7.104.
     #[inline]
@@ -591,29 +571,6 @@ impl crate::BGSSaveLoadManager__Thread {
     pub fn set_running(&mut self, value: u8) { unsafe { Self::__member_running(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn running_ptr(&self) -> *mut u8 { Self::__member_running(core::ptr::from_ref(self)) }
-}
-
-impl crate::BGSSaveLoadManagerEvent {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_done(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadManagerEvent.done", 0x1, u8) } }
-    /// `BGSSaveLoadManagerEvent::done`, at +0x1 on 1.7.104.
-    #[inline]
-    pub fn done(&self) -> u8 { unsafe { Self::__member_done(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_done(&mut self, value: u8) { unsafe { Self::__member_done(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn done_ptr(&self) -> *mut u8 { Self::__member_done(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_kind(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSSaveLoadManagerEvent.kind", 0x0, u8) } }
-    /// `BGSSaveLoadManagerEvent::kind`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn kind(&self) -> u8 { unsafe { Self::__member_kind(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_kind(&mut self, value: u8) { unsafe { Self::__member_kind(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn kind_ptr(&self) -> *mut u8 { Self::__member_kind(core::ptr::from_ref(self)) }
 }
 
 impl crate::ChangeFormMap {

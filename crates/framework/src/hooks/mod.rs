@@ -238,10 +238,18 @@ impl Location {
     }
 
     /// What a patch stated for 1.7.104 expects and writes at this location on the running game.
-    fn patch_bytes(self, expected: Vec<u8>, replacement: Vec<u8>, cave: bool) -> Result<(Vec<u8>, Vec<u8>), String> {
+    fn patch_bytes(self, expected: Vec<u8>, replacement: Vec<u8>) -> Result<(Vec<u8>, Vec<u8>), String> {
         let Self::Id { id, offset } = self else { return Ok((expected, replacement)) };
         let row = u32::try_from(id).ok().zip(u32::try_from(offset).ok()).map_or(Row::Missing, |(id, offset)| skyrim::reloc().running().profile().site(id, offset));
-        patch_row(row, expected, replacement, cave)
+        patch_row(row, expected, replacement)
+    }
+
+    /// The vtable at this location. A vtable is no site and has no row: its id gives its address.
+    fn table(self) -> Result<usize, String> {
+        match self {
+            Self::Id { id, offset } => skyrim::reloc().address(id).map(|table| table + offset).map_err(|e| e.to_string()),
+            Self::Address(address) => Ok(address),
+        }
     }
 
     /// Slot `slot` of the vtable at this location, on the running game.
@@ -253,15 +261,14 @@ impl Location {
     }
 }
 
-/// A patch's bytes from its site's profile row. Canonical replacement bytes never go over code
-/// that differs from the canonical expected bytes.
-fn patch_row(row: Row<&ProfileSite>, expected: Vec<u8>, replacement: Vec<u8>, cave: bool) -> Result<(Vec<u8>, Vec<u8>), String> {
+/// A patch's bytes from its site's profile row; `replacement` is a cave's code for a cave.
+/// Canonical bytes never go over code that differs from the canonical expected bytes.
+fn patch_row(row: Row<&ProfileSite>, expected: Vec<u8>, replacement: Vec<u8>) -> Result<(Vec<u8>, Vec<u8>), String> {
     match row {
         Row::Same => Ok((expected, replacement)),
         Row::Missing => Err("the site does not exist on this runtime".to_owned()),
         Row::Unverified => Err("the site is unverified on this runtime".to_owned()),
         Row::Here(site) => match &site.replacement {
-            Some(_) if cave => Err("the profile gives this site replacement bytes, which do not apply to a cave".to_owned()),
             Some(here) => Ok((site.expected.clone(), here.clone())),
             None if site.expected == expected => Ok((expected, replacement)),
             None => Err(format!("this runtime has {} where 1.7.104 has {} and its profile gives no replacement", validate::hex(&site.expected), validate::hex(&expected))),
@@ -597,7 +604,8 @@ impl Hooks {
     /// A patch whose replacement is a `jmp rel32` (padded with `nop`s) to `code`, which the host
     /// copies near `at` and follows with a jump back to the instruction after the `expected`
     /// bytes (5 to 64): for a change that does not fit in place. Checked, reserved, toggled,
-    /// reported and restored as [`patch`](Self::patch) does; the report shows the cave's code.
+    /// reported and restored as [`patch`](Self::patch) does; the report shows the cave's code, and
+    /// on another runtime a replacement in the site's profile row is the cave's code there.
     ///
     /// # Safety
     /// As [`patch`](Self::patch); `expected` must end on an instruction boundary that nothing

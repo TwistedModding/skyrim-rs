@@ -376,28 +376,28 @@ impl crate::AIProcess {
 impl crate::Actor {
     /// The `ActorState` base at +0xC0.
     #[inline]
-    pub fn as_actor_state(&self) -> &crate::ActorState { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)).cast() } }
+    pub fn as_actor_state(&self) -> &crate::ActorState { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)).cast() } }
     /// The `ActorValueOwner` base at +0xB8.
     #[inline]
-    pub fn as_actor_value_owner(&self) -> &crate::ActorValueOwner { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)).cast() } }
+    pub fn as_actor_value_owner(&self) -> &crate::ActorValueOwner { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)).cast() } }
     /// The `BSTEventSink<BSTransformDeltaEvent>` base at +0xD0.
     #[inline]
-    pub fn as_bst_event_sink_bs_transform_delta_event(&self) -> &crate::BSTEventSink_BSTransformDeltaEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:BSTEventSink<BSTransformDeltaEvent>", 0xD0)).cast() } }
+    pub fn as_bst_event_sink_bs_transform_delta_event(&self) -> &crate::BSTEventSink_BSTransformDeltaEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:BSTEventSink<BSTransformDeltaEvent>", 0xD0)).cast() } }
     /// The `BSTEventSink<bhkCharacterMoveFinishEvent>` base at +0xD8.
     #[inline]
-    pub fn as_bst_event_sink_bhk_character_move_finish_event(&self) -> &crate::BSTEventSink_bhkCharacterMoveFinishEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)).cast() } }
+    pub fn as_bst_event_sink_bhk_character_move_finish_event(&self) -> &crate::BSTEventSink_bhkCharacterMoveFinishEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:BSTEventSink<bhkCharacterMoveFinishEvent>", 0xD8)).cast() } }
     /// The `IMovementInterface` base at +0xC0.
     #[inline]
-    pub fn as_i_movement_interface(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)).cast() } }
+    pub fn as_i_movement_interface(&self) -> &crate::IMovementInterface { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)).cast() } }
     /// The `IMovementState` base at +0xC0.
     #[inline]
-    pub fn as_i_movement_state(&self) -> &crate::IMovementState { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)).cast() } }
+    pub fn as_i_movement_state(&self) -> &crate::IMovementState { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)).cast() } }
     /// The `IPostAnimationChannelUpdateFunctor` base at +0xE0.
     #[inline]
-    pub fn as_i_post_animation_channel_update_functor(&self) -> &crate::IPostAnimationChannelUpdateFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:IPostAnimationChannelUpdateFunctor", 0xE0)).cast() } }
+    pub fn as_i_post_animation_channel_update_functor(&self) -> &crate::IPostAnimationChannelUpdateFunctor { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:IPostAnimationChannelUpdateFunctor", 0xE0)).cast() } }
     /// The `MagicTarget` base at +0xA0.
     #[inline]
-    pub fn as_magic_target(&self) -> &crate::MagicTarget { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0)).cast() } }
+    pub fn as_magic_target(&self) -> &crate::MagicTarget { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0)).cast() } }
     /// `Actor::EnsureMovementController`, vtable slot 265: when +0x150 is null: create the MovementControllerNPC (formID), call its slot 6 (+0x30), then its motion-driven sub-object's slot 2 (no process, or process+0x137 set) or slot 1, then slot 4
     ///
     /// Semantic, actors pass, high; called through the object's vtable.
@@ -497,55 +497,55 @@ impl crate::Actor {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38038, rva 0x6b5bf0.
     /// `u32 (ActorState* this)`
     #[inline]
-    pub fn actor_state_get_character_state(&self) -> u32 { unsafe { function!(38038, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0))) } }
+    pub fn actor_state_get_character_state(&self) -> u32 { unsafe { function!(38038, (*const Self) -> u32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0))) } }
     /// `Actor::ActorState_GetMovementSpeed`: Actor's ActorState slot 5 (this = Actor+0xc0): the process's movement speed, 0 without a process
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38028, rva 0x6b5860.
     /// `float (const ActorState* this)`
     #[inline]
-    pub fn actor_state_get_movement_speed(&self) -> f32 { unsafe { function!(38028, (*const Self) -> f32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0))) } }
+    pub fn actor_state_get_movement_speed(&self) -> f32 { unsafe { function!(38028, (*const Self) -> f32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0))) } }
     /// `Actor::ActorValueOwner_AddBaseActorValue`: adds to the base value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38466, rva 0x6c5100.
     /// `void Actor::ActorValueOwner_AddBaseActorValue(ActorValueOwner* this, ActorValue value, float delta)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_add_base_actor_value(&self, value: crate::ActorValue, delta: f32) { unsafe { function!(38466, (*const Self, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), value, delta) } }
+    pub fn actor_value_owner_add_base_actor_value(&self, value: crate::ActorValue, delta: f32) { unsafe { function!(38466, (*const Self, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), value, delta) } }
     /// `Actor::ActorValueOwner_GetActorValue`: current actor value
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38462, rva 0x6c4cb0.
     /// `float Actor::ActorValueOwner_GetActorValue(ActorValueOwner* this, ActorValue value)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_get_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38462, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), value) } }
+    pub fn actor_value_owner_get_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38462, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), value) } }
     /// `Actor::ActorValueOwner_GetBaseActorValue`: base actor value
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38464, rva 0x6c4ef0.
     /// `float Actor::ActorValueOwner_GetBaseActorValue(ActorValueOwner* this, ActorValue value)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_get_base_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38464, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), value) } }
+    pub fn actor_value_owner_get_base_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38464, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), value) } }
     /// `Actor::ActorValueOwner_GetPermanentActorValue`: base plus permanent modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38463, rva 0x6c4e20.
     /// `float Actor::ActorValueOwner_GetPermanentActorValue(ActorValueOwner* this, ActorValue value)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_get_permanent_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38463, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), value) } }
+    pub fn actor_value_owner_get_permanent_actor_value(&self, value: crate::ActorValue) -> f32 { unsafe { function!(38463, (*const Self, crate::ActorValue) -> f32)(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), value) } }
     /// `Actor::ActorValueOwner_ModActorValue`: adds to a modifier
     ///
     /// Semantic, actors pass, high; ledger runtime evidence, name high; id 38467, rva 0x6c51f0.
     /// `void Actor::ActorValueOwner_ModActorValue(ActorValueOwner* this, int modifier, ActorValue value, float delta)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: crate::ActorValue, delta: f32) { unsafe { function!(38467, (*const Self, i32, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), modifier, value, delta) } }
+    pub fn actor_value_owner_mod_actor_value(&self, modifier: i32, value: crate::ActorValue, delta: f32) { unsafe { function!(38467, (*const Self, i32, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), modifier, value, delta) } }
     /// `Actor::ActorValueOwner_StoreBaseActorValue`: sets the base value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38465, rva 0x6c5030.
     /// `void Actor::ActorValueOwner_StoreBaseActorValue(ActorValueOwner* this, ActorValue value, float amount)`
     /// Retyped: value int -> ActorValue: Actor's implementation of an ActorValueOwner slot / its helper; the value id selects the modifier arrays Actor+0x230.. (enum row: 0x18/0x19/0x1a).
     #[inline]
-    pub fn actor_value_owner_store_base_actor_value(&self, value: crate::ActorValue, amount: f32) { unsafe { function!(38465, (*const Self, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorValueOwner", 0xB8)), value, amount) } }
+    pub fn actor_value_owner_store_base_actor_value(&self, value: crate::ActorValue, amount: f32) { unsafe { function!(38465, (*const Self, crate::ActorValue, f32))(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorValueOwner", 0xB8)), value, amount) } }
     /// `Actor::AdvanceDeferredKillState`: when the process (+0xf8) has middle-high data and its deferred-kill state (+0x2f8) is non-zero, increments it
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38617, rva 0x6cc930.
@@ -599,7 +599,7 @@ impl crate::Actor {
     /// # Safety
     /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (*const Self) -> *mut c_void)(core::ptr::from_ref(self).byte_add(base_offset!("Actor:MagicTarget", 0xA0))) } }
+    pub unsafe fn get_active_effect_list(&self) -> *mut c_void { unsafe { function!(38795, (*const Self) -> *mut c_void)(core::ptr::from_ref(self).byte_add(base_at!("Actor:MagicTarget", 0xA0))) } }
     /// `Actor::GetActorValueModifier`: one modifier of a value
     ///
     /// Semantic, actors pass, high; ledger semantic evidence, name high; id 38469, rva 0x6c5440.
@@ -941,7 +941,7 @@ impl crate::Actor {
     /// Semantic, animation pass, high; ledger semantic evidence, name high; id 38821, rva 0x6d9a20.
     /// `void (ActorState* this, bool drawn)`
     #[inline]
-    pub fn set_weapon_drawn(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self).byte_add(base_offset!("Actor:ActorState", 0xC0)), drawn) } }
+    pub fn set_weapon_drawn(&self, drawn: bool) { unsafe { function!(38821, (*const Self, bool))(core::ptr::from_ref(self).byte_add(base_at!("Actor:ActorState", 0xC0)), drawn) } }
     /// `Actor::SetupCharacterControllerCinfo`: fills the controller cinfo before construction: cinfo+0x10 = the actor's loaded 3D (or the loaded data's first root when it differs), position * Havok scale (cinfo slot 1), +0x28 from actor slot (vtable[1] 37), +0x5c = (actor != player), +0x54 = the reference scale (1.0 for some actors), +0xa4 flag, cinfo+0x74 bit 25 = race+0x108 bit 3, bit 26 = race+0x108 bit 4; then the shape builder 0x10629a0
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 38281, rva 0x6bdb10.
@@ -2442,16 +2442,6 @@ impl crate::MiddleHighProcessData {
     pub fn movementDirection_ptr(&self) -> *mut f32 { Self::__member_movementDirection(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_rightHandEquipType(this: *const Self) -> *mut u16 { unsafe { member!(this, "MiddleHighProcessData.rightHandEquipType", 0x306, u16) } }
-    /// `MiddleHighProcessData::rightHandEquipType`, at +0x306 on 1.7.104.
-    #[inline]
-    pub fn rightHandEquipType(&self) -> u16 { unsafe { Self::__member_rightHandEquipType(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_rightHandEquipType(&mut self, value: u16) { unsafe { Self::__member_rightHandEquipType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn rightHandEquipType_ptr(&self) -> *mut u16 { Self::__member_rightHandEquipType(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_speed(this: *const Self) -> *mut f32 { unsafe { member!(this, "MiddleHighProcessData.speed", 0x2A8, f32) } }
     /// `MiddleHighProcessData::speed`, at +0x2A8 on 1.7.104.
     #[inline]
@@ -2470,19 +2460,19 @@ impl crate::PlayerCharacter {
     pub fn singleton() -> Option<&'static Self> { unsafe { *(address!(403521) as *const Option<&'static Self>) } }
     /// The `BSTEventSink<BSSystemEvent>` base at +0x2D8.
     #[inline]
-    pub fn as_bst_event_sink_bs_system_event(&self) -> &crate::BSTEventSink_BSSystemEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<BSSystemEvent>", 0x2D8)).cast() } }
+    pub fn as_bst_event_sink_bs_system_event(&self) -> &crate::BSTEventSink_BSSystemEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<BSSystemEvent>", 0x2D8)).cast() } }
     /// The `BSTEventSink<MenuModeChangeEvent>` base at +0x2C0.
     #[inline]
-    pub fn as_bst_event_sink_menu_mode_change_event(&self) -> &crate::BSTEventSink_MenuModeChangeEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)).cast() } }
+    pub fn as_bst_event_sink_menu_mode_change_event(&self) -> &crate::BSTEventSink_MenuModeChangeEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<MenuModeChangeEvent>", 0x2C0)).cast() } }
     /// The `BSTEventSink<MenuOpenCloseEvent>` base at +0x2B8.
     #[inline]
-    pub fn as_bst_event_sink_menu_open_close_event(&self) -> &crate::BSTEventSink_MenuOpenCloseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<MenuOpenCloseEvent>", 0x2B8)).cast() } }
+    pub fn as_bst_event_sink_menu_open_close_event(&self) -> &crate::BSTEventSink_MenuOpenCloseEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<MenuOpenCloseEvent>", 0x2B8)).cast() } }
     /// The `BSTEventSink<TESTrackedStatsEvent>` base at +0x2D0.
     #[inline]
-    pub fn as_bst_event_sink_tes_tracked_stats_event(&self) -> &crate::BSTEventSink_TESTrackedStatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<TESTrackedStatsEvent>", 0x2D0)).cast() } }
+    pub fn as_bst_event_sink_tes_tracked_stats_event(&self) -> &crate::BSTEventSink_TESTrackedStatsEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<TESTrackedStatsEvent>", 0x2D0)).cast() } }
     /// The `BSTEventSink<UserEventEnabledEvent>` base at +0x2C8.
     #[inline]
-    pub fn as_bst_event_sink_user_event_enabled_event(&self) -> &crate::BSTEventSink_UserEventEnabledEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)).cast() } }
+    pub fn as_bst_event_sink_user_event_enabled_event(&self) -> &crate::BSTEventSink_UserEventEnabledEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<UserEventEnabledEvent>", 0x2C8)).cast() } }
     /// `PlayerCharacter::CheckWaterContact`, vtable slot 156: water contact test of one collidable: for the camera layer (filter byte +0x2c & 0x7f == 0x24) it compares the camera body's bound top (and the camera target's position) with the water height and records 'camera under water' and the height in the water system (SetFieldB8AndSyncGlobal on ID_400450); other layers go to Actor slot 156
     ///
     /// Semantic, actors pass, medium; called through the object's vtable.
@@ -2696,7 +2686,7 @@ impl crate::PlayerCharacter {
     /// # Safety
     /// `source` must point to what the engine expects.
     #[inline]
-    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:BSTEventSink<MenuOpenCloseEvent>", 0x2B8)), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
+    pub unsafe fn process_menu_open_close_event(&self, event: *const crate::MenuOpenCloseEvent, source: *mut c_void) -> Result<crate::BSEventNotifyControl, u32> { unsafe { let raw = function!(40740, (*const Self, *const crate::MenuOpenCloseEvent, *mut c_void) -> u32)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:BSTEventSink<MenuOpenCloseEvent>", 0x2B8)), event, source); crate::BSEventNotifyControl::from_u32(raw).ok_or(raw) } }
     /// `PlayerCharacter::RequestWeaponDrawn`: player slot 166. Sheathe (0): returns at once in state 0 or 5; performs 'Action Sheath' and only when accepted AND the chosen event (ActionInput+0x28) is the interned 'Unequip' (*0x32454f0) sets state 5 (flags2 & ~0x40 | 0xa0), +0xa28 = fPlayerCharacterDrawSheatheTimeout:Animation and calls 0x7568c0(this, 1); a refusal changes nothing. Draw (1): refused by the engine while swimming (0x6e1ca0) unless the race passes 0x673b60
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 41235, rva 0x7766b0.
@@ -2744,13 +2734,13 @@ impl crate::PlayerCharacter {
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40735, rva 0x75e4a0.
     /// `bool (ActorState* this, u32 state)`
     #[inline]
-    pub fn set_sit_sleep_state(&self, state: u32) -> bool { unsafe { function!(40735, (*const Self, u32) -> bool)(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:ActorState", 0xC0)), state) } }
+    pub fn set_sit_sleep_state(&self, state: u32) -> bool { unsafe { function!(40735, (*const Self, u32) -> bool)(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:ActorState", 0xC0)), state) } }
     /// `PlayerCharacter::SetWeaponDrawnState`: PlayerCamera+0x162 = !drawn when the player is the camera target or mounted; Actor::SetWeaponDrawn
     ///
     /// Semantic, camera pass, high; ledger runtime evidence, name high; id 40752, rva 0x760e00.
     /// `void (ActorState* this, bool drawn)`
     #[inline]
-    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (*const Self, bool))(core::ptr::from_ref(self).byte_add(base_offset!("PlayerCharacter:ActorState", 0xC0)), drawn) } }
+    pub fn set_weapon_drawn_state(&self, drawn: bool) { unsafe { function!(40752, (*const Self, bool))(core::ptr::from_ref(self).byte_add(base_at!("PlayerCharacter:ActorState", 0xC0)), drawn) } }
     /// `PlayerCharacter::StartDialogueTurnTowardSpeaker`: in first person, when the topic manager's speaker is an actor other than the player: computes the yaw (atan2, unwrapped to within pi of PlayerCamera.yaw) and pitch (-asin(dz/|d|) + fDialogueRotationPitchOffset:Dialogue) toward its look position (slot 91 on both), and arms the blend globals: start (PlayerCamera.yaw, player pitch) 0x20b7624/28, target 0x20b762c/30, duration fDialogueRotationSecs * 1000 (0x20b7634), start time g_FrameTimeMs (0x20b7638), done flag 0x20b763c = 0; non-finite results fall back to zero
     ///
     /// Semantic, camera pass, high; ledger semantic evidence, name high; id 40496, rva 0x749ed0.

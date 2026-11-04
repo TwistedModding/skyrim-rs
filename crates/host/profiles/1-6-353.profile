@@ -997,9 +997,7 @@ id-unverified 11380
 id-unverified 11394
 id-unverified 11396
 id-unverified 11423
-id-unverified 11436
 id-unverified 11494
-id-unverified 11566
 id-unverified 11572
 id-unverified 11573
 id-unverified 11574
@@ -1024,21 +1022,14 @@ id-unverified 11601
 id-unverified 11602
 id-unverified 11603
 id-unverified 11604
-id-unverified 11605
 id-unverified 11606
 id-unverified 11607
 id-unverified 11608
 id-unverified 11610
-id-unverified 11611
-id-unverified 11612
 id-unverified 11613
-id-unverified 11614
-id-unverified 11615
-id-unverified 11617
 id-unverified 11618
 id-unverified 11619
 id-unverified 11620
-id-unverified 11621
 id-unverified 11623
 id-unverified 11624
 id-unverified 11625
@@ -1047,34 +1038,25 @@ id-unverified 11627
 id-unverified 11628
 id-unverified 11629
 id-unverified 11630
-id-unverified 11631
 id-unverified 11632
 id-unverified 11635
 id-unverified 11636
-id-unverified 11637
-id-unverified 11638
 id-unverified 11639
 id-unverified 11640
 id-unverified 11641
 id-unverified 11644
 id-unverified 11645
-id-unverified 11646
 id-unverified 11647
 id-unverified 11648
 id-unverified 11649
-id-unverified 11652
 id-unverified 11653
 id-unverified 11657
 id-unverified 11658
-id-unverified 11660
-id-unverified 11662
 id-unverified 11663
 id-unverified 11664
 id-unverified 11669
-id-unverified 11670
 id-unverified 11673
 id-unverified 11676
-id-unverified 11678
 id-unverified 11681
 id-unverified 11701
 id-unverified 11734
@@ -1091,7 +1073,6 @@ id-unverified 11752
 id-unverified 11754
 id-unverified 11755
 id-unverified 11757
-id-unverified 11759
 id-unverified 11760
 id-unverified 11761
 id-unverified 11765
@@ -1101,7 +1082,6 @@ id-unverified 11771
 id-unverified 11773
 id-unverified 11774
 id-unverified 11775
-id-unverified 11777
 id-unverified 11778
 id-unverified 11779
 id-unverified 11781
@@ -1111,16 +1091,13 @@ id-unverified 11789
 id-unverified 11790
 id-unverified 11791
 id-unverified 11793
-id-unverified 11795
 id-unverified 11797
 id-unverified 11798
 id-unverified 11802
 id-unverified 11803
-id-unverified 11806
 id-unverified 11807
 id-unverified 11812
 id-unverified 11814
-id-unverified 11815
 id-unverified 11817
 id-unverified 11818
 id-unverified 11822
@@ -1130,55 +1107,32 @@ id-unverified 11829
 id-unverified 11831
 id-unverified 11833
 id-unverified 11835
-id-unverified 11837
 id-unverified 11839
 id-unverified 11841
 id-unverified 11843
 id-unverified 11845
 id-unverified 11847
-id-unverified 11851
 id-unverified 11866
 id-unverified 11867
-id-unverified 11869
-id-unverified 11871
-id-unverified 11873
-id-unverified 11876
 id-unverified 11884
-id-unverified 11889
-id-unverified 11893
-id-unverified 11894
-id-unverified 11896
 id-unverified 11897
-id-unverified 11899
 id-unverified 11901
-id-unverified 11902
-id-unverified 11904
 id-unverified 11905
 id-unverified 11907
 id-unverified 11908
-id-unverified 11909
 id-unverified 11910
-id-unverified 11914
 id-unverified 11915
 id-unverified 11916
-id-unverified 11918
 id-unverified 11922
 id-unverified 11924
-id-unverified 11936
 id-unverified 11940
-id-unverified 11941
 id-unverified 11942
 id-unverified 11943
-id-unverified 11944
 id-unverified 11945
 id-unverified 11948
 id-unverified 11950
 id-unverified 11953
 id-unverified 11955
-id-unverified 11957
-id-unverified 11959
-id-unverified 11961
-id-unverified 11963
 id-unverified 11965
 id-unverified 11967
 id-unverified 11971
@@ -1193,45 +1147,29 @@ id-unverified 11990
 id-unverified 11991
 id-unverified 11992
 id-unverified 11997
-id-unverified 11999
 id-unverified 12000
 id-unverified 12005
 id-unverified 12007
 id-unverified 12008
 id-unverified 12010
 id-unverified 12011
-id-unverified 12012
 id-unverified 12014
 id-unverified 12016
 id-unverified 12018
-id-unverified 12020
 id-unverified 12021
 id-unverified 12022
 id-unverified 12023
-id-unverified 12024
 id-unverified 12025
-id-unverified 12031
 id-unverified 12032
 id-unverified 12034
-id-unverified 12036
-id-unverified 12040
-id-unverified 12042
-id-unverified 12043
 id-unverified 12047
-id-unverified 12048
-id-unverified 12058
 id-unverified 12059
-id-unverified 12060
-id-unverified 12065
 id-unverified 12070
-id-unverified 12071
 id-unverified 12073
 id-unverified 12074
 id-unverified 12077
 id-unverified 12079
 id-unverified 12081
-id-unverified 12089
-id-unverified 12090
 id-unverified 12091
 id-unverified 12092
 id-unverified 12093
@@ -1314,7 +1252,6 @@ id-unverified 13394
 id-unverified 13396
 id-unverified 13399
 id-unverified 13400
-id-unverified 13401
 id-unverified 13402
 id-unverified 13408
 id-unverified 13413
@@ -1336,7 +1273,6 @@ id-unverified 13454
 id-unverified 13455
 id-unverified 13456
 id-unverified 13458
-id-unverified 13459
 id-unverified 13598
 id-unverified 13604
 id-unverified 13627
@@ -1432,7 +1368,6 @@ id-unverified 15678
 id-unverified 15679
 id-unverified 15683
 id-unverified 15691
-id-unverified 15706
 id-unverified 15746
 id-unverified 15840
 id-unverified 15841
@@ -1445,9 +1380,7 @@ id-unverified 15983
 id-unverified 15985
 id-unverified 15986
 id-unverified 15987
-id-unverified 15988
 id-unverified 16006
-id-unverified 16013
 id-unverified 16021
 id-unverified 16022
 id-unverified 16023
@@ -1490,7 +1423,6 @@ id-unverified 16145
 id-unverified 16146
 id-unverified 16150
 id-unverified 16155
-id-unverified 16216
 id-unverified 16229
 id-unverified 16290
 id-unverified 16304
@@ -1583,7 +1515,6 @@ id-unverified 18078
 id-unverified 18099
 id-unverified 18102
 id-unverified 18165
-id-unverified 18224
 id-unverified 18236
 id-unverified 18269
 id-unverified 18324
@@ -1667,7 +1598,6 @@ id-unverified 18962
 id-unverified 18965
 id-unverified 18966
 id-unverified 18967
-id-unverified 18970
 id-unverified 18973
 id-unverified 18974
 id-unverified 18975
@@ -1726,7 +1656,6 @@ id-unverified 19071
 id-unverified 19072
 id-unverified 19073
 id-unverified 19074
-id-unverified 19075
 id-unverified 19076
 id-unverified 19079
 id-unverified 19080
@@ -1743,7 +1672,6 @@ id-unverified 19106
 id-unverified 19107
 id-unverified 19108
 id-unverified 19110
-id-unverified 19111
 id-unverified 19112
 id-unverified 19113
 id-unverified 19117
@@ -1859,10 +1787,8 @@ id-unverified 19530
 id-unverified 19535
 id-unverified 19538
 id-unverified 19543
-id-unverified 19544
 id-unverified 19562
 id-unverified 19565
-id-unverified 19566
 id-unverified 19575
 id-unverified 19597
 id-unverified 19598
@@ -2640,7 +2566,6 @@ id-unverified 26386
 id-unverified 26394
 id-unverified 26397
 id-unverified 26400
-id-unverified 26401
 id-unverified 26410
 id-unverified 26416
 id-unverified 26421
@@ -2880,7 +2805,6 @@ id-unverified 30073
 id-unverified 30106
 id-unverified 30112
 id-unverified 30169
-id-unverified 30174
 id-unverified 30175
 id-unverified 30221
 id-unverified 30226
@@ -3130,7 +3054,6 @@ id-unverified 33996
 id-unverified 33997
 id-unverified 34029
 id-unverified 34030
-id-unverified 34035
 id-unverified 34048
 id-unverified 34058
 id-unverified 34087
@@ -3151,7 +3074,6 @@ id-unverified 34171
 id-unverified 34172
 id-unverified 34175
 id-unverified 34185
-id-unverified 34225
 id-unverified 34233
 id-unverified 34234
 id-unverified 34243
@@ -3159,7 +3081,6 @@ id-unverified 34253
 id-unverified 34256
 id-unverified 34295
 id-unverified 34299
-id-unverified 34333
 id-unverified 34334
 id-unverified 34335
 id-unverified 34340
@@ -3193,7 +3114,6 @@ id-unverified 34573
 id-unverified 34615
 id-unverified 34616
 id-unverified 34617
-id-unverified 34620
 id-unverified 34658
 id-unverified 34666
 id-unverified 34707
@@ -3319,12 +3239,10 @@ id-unverified 36378
 id-unverified 36403
 id-unverified 36405
 id-unverified 36406
-id-unverified 36408
 id-unverified 36409
 id-unverified 36410
 id-unverified 36413
 id-unverified 36414
-id-unverified 36416
 id-unverified 36418
 id-unverified 36419
 id-unverified 36432
@@ -3354,7 +3272,6 @@ id-unverified 36598
 id-unverified 36601
 id-unverified 36606
 id-unverified 36624
-id-unverified 36629
 id-unverified 36630
 id-unverified 36631
 id-unverified 36632
@@ -3458,7 +3375,6 @@ id-unverified 37302
 id-unverified 37303
 id-unverified 37304
 id-unverified 37305
-id-unverified 37306
 id-unverified 37308
 id-unverified 37309
 id-unverified 37310
@@ -3547,7 +3463,6 @@ id-unverified 37427
 id-unverified 37428
 id-unverified 37429
 id-unverified 37430
-id-unverified 37431
 id-unverified 37434
 id-unverified 37435
 id-unverified 37437
@@ -3557,7 +3472,6 @@ id-unverified 37446
 id-unverified 37450
 id-unverified 37451
 id-unverified 37452
-id-unverified 37453
 id-unverified 37457
 id-unverified 37460
 id-unverified 37461
@@ -3766,7 +3680,6 @@ id-unverified 37766
 id-unverified 37768
 id-unverified 37769
 id-unverified 37770
-id-unverified 37771
 id-unverified 37774
 id-unverified 37775
 id-unverified 37776
@@ -3843,7 +3756,6 @@ id-unverified 37903
 id-unverified 37905
 id-unverified 37906
 id-unverified 37907
-id-unverified 37911
 id-unverified 37912
 id-unverified 37913
 id-unverified 37915
@@ -3921,7 +3833,6 @@ id-unverified 38024
 id-unverified 38025
 id-unverified 38026
 id-unverified 38029
-id-unverified 38039
 id-unverified 38041
 id-unverified 38043
 id-unverified 38044
@@ -3952,7 +3863,6 @@ id-unverified 38229
 id-unverified 38279
 id-unverified 38281
 id-unverified 38286
-id-unverified 38296
 id-unverified 38303
 id-unverified 38308
 id-unverified 38389
@@ -3963,7 +3873,6 @@ id-unverified 38450
 id-unverified 38451
 id-unverified 38452
 id-unverified 38453
-id-unverified 38460
 id-unverified 38470
 id-unverified 38471
 id-unverified 38476
@@ -3993,7 +3902,6 @@ id-unverified 38543
 id-unverified 38546
 id-unverified 38550
 id-unverified 38551
-id-unverified 38552
 id-unverified 38555
 id-unverified 38558
 id-unverified 38559
@@ -4039,7 +3947,6 @@ id-unverified 38626
 id-unverified 38628
 id-unverified 38630
 id-unverified 38631
-id-unverified 38632
 id-unverified 38633
 id-unverified 38635
 id-unverified 38636
@@ -4053,7 +3960,6 @@ id-unverified 38700
 id-unverified 38701
 id-unverified 38702
 id-unverified 38703
-id-unverified 38706
 id-unverified 38707
 id-unverified 38708
 id-unverified 38709
@@ -4083,7 +3989,6 @@ id-unverified 38753
 id-unverified 38754
 id-unverified 38755
 id-unverified 38756
-id-unverified 38757
 id-unverified 38758
 id-unverified 38759
 id-unverified 38760
@@ -4130,8 +4035,6 @@ id-unverified 38820
 id-unverified 38821
 id-unverified 38822
 id-unverified 38823
-id-unverified 38824
-id-unverified 38825
 id-unverified 38848
 id-unverified 38849
 id-unverified 38898
@@ -4278,7 +4181,6 @@ id-unverified 39696
 id-unverified 39736
 id-unverified 39746
 id-unverified 39747
-id-unverified 39748
 id-unverified 39749
 id-unverified 39750
 id-unverified 39752
@@ -4466,7 +4368,6 @@ id-unverified 40546
 id-unverified 40547
 id-unverified 40548
 id-unverified 40549
-id-unverified 40551
 id-unverified 40552
 id-unverified 40553
 id-unverified 40554
@@ -4597,7 +4498,6 @@ id-unverified 40771
 id-unverified 40772
 id-unverified 40798
 id-unverified 40799
-id-unverified 40803
 id-unverified 40808
 id-unverified 40810
 id-unverified 40811
@@ -4664,7 +4564,6 @@ id-unverified 41306
 id-unverified 41308
 id-unverified 41309
 id-unverified 41311
-id-unverified 41312
 id-unverified 41313
 id-unverified 41323
 id-unverified 41324
@@ -4873,11 +4772,9 @@ id-unverified 43675
 id-unverified 43690
 id-unverified 43692
 id-unverified 43695
-id-unverified 43696
 id-unverified 43703
 id-unverified 43707
 id-unverified 43708
-id-unverified 43709
 id-unverified 43710
 id-unverified 43714
 id-unverified 43716
@@ -4898,7 +4795,6 @@ id-unverified 43750
 id-unverified 43751
 id-unverified 43754
 id-unverified 43757
-id-unverified 43759
 id-unverified 43760
 id-unverified 43763
 id-unverified 43776
@@ -4952,7 +4848,6 @@ id-unverified 43898
 id-unverified 43899
 id-unverified 43902
 id-unverified 43903
-id-unverified 43905
 id-unverified 43909
 id-unverified 43910
 id-unverified 43911
@@ -5068,7 +4963,6 @@ id-unverified 44184
 id-unverified 44185
 id-unverified 44186
 id-unverified 44190
-id-unverified 44195
 id-unverified 44197
 id-unverified 44198
 id-unverified 44199
@@ -5086,7 +4980,6 @@ id-unverified 44213
 id-unverified 44214
 id-unverified 44216
 id-unverified 44217
-id-unverified 44218
 id-unverified 44222
 id-unverified 44223
 id-unverified 44225
@@ -5108,7 +5001,6 @@ id-unverified 44358
 id-unverified 44359
 id-unverified 44360
 id-unverified 44370
-id-unverified 44376
 id-unverified 44377
 id-unverified 44378
 id-unverified 44383
@@ -5179,7 +5071,6 @@ id-unverified 44902
 id-unverified 44903
 id-unverified 44908
 id-unverified 45015
-id-unverified 45016
 id-unverified 45018
 id-unverified 45032
 id-unverified 45033
@@ -5194,7 +5085,6 @@ id-unverified 45083
 id-unverified 45087
 id-unverified 45093
 id-unverified 45094
-id-unverified 45320
 id-unverified 45323
 id-unverified 45328
 id-unverified 45336
@@ -5327,7 +5217,6 @@ id-unverified 47881
 id-unverified 47883
 id-unverified 47891
 id-unverified 47892
-id-unverified 47893
 id-unverified 47898
 id-unverified 47903
 id-unverified 47904
@@ -5425,7 +5314,6 @@ id-unverified 49081
 id-unverified 49083
 id-unverified 49085
 id-unverified 49090
-id-unverified 49096
 id-unverified 49097
 id-unverified 49099
 id-unverified 49110
@@ -5451,7 +5339,6 @@ id-unverified 49240
 id-unverified 49252
 id-unverified 49258
 id-unverified 49262
-id-unverified 49263
 id-unverified 49276
 id-unverified 49278
 id-unverified 49286
@@ -5489,7 +5376,6 @@ id-unverified 49708
 id-unverified 49757
 id-unverified 49758
 id-unverified 49759
-id-unverified 49760
 id-unverified 49761
 id-unverified 49764
 id-unverified 49765
@@ -5647,7 +5533,6 @@ id-unverified 51611
 id-unverified 51612
 id-unverified 51613
 id-unverified 51622
-id-unverified 51630
 id-unverified 51641
 id-unverified 51647
 id-unverified 51651
@@ -5700,7 +5585,6 @@ id-unverified 51926
 id-unverified 51929
 id-unverified 51943
 id-unverified 51950
-id-unverified 51952
 id-unverified 51954
 id-unverified 51955
 id-unverified 51960
@@ -5782,11 +5666,9 @@ id-unverified 52404
 id-unverified 52405
 id-unverified 52406
 id-unverified 52409
-id-unverified 52410
 id-unverified 52412
 id-unverified 52413
 id-unverified 52414
-id-unverified 52423
 id-unverified 52443
 id-unverified 52450
 id-unverified 52465
@@ -5865,7 +5747,6 @@ id-unverified 53160
 id-unverified 53161
 id-unverified 53170
 id-unverified 53171
-id-unverified 53259
 id-unverified 53260
 id-unverified 53261
 id-unverified 53268
@@ -5908,7 +5789,6 @@ id-unverified 53764
 id-unverified 53791
 id-unverified 53803
 id-unverified 53804
-id-unverified 53805
 id-unverified 53806
 id-unverified 53811
 id-unverified 53820
@@ -6053,7 +5933,6 @@ id-unverified 54641
 id-unverified 54642
 id-unverified 54645
 id-unverified 54654
-id-unverified 54656
 id-unverified 54658
 id-unverified 54662
 id-unverified 54664
@@ -6061,12 +5940,9 @@ id-unverified 54666
 id-unverified 54669
 id-unverified 54672
 id-unverified 54679
-id-unverified 54680
-id-unverified 54689
 id-unverified 54691
 id-unverified 54695
 id-unverified 54701
-id-unverified 54702
 id-unverified 54703
 id-unverified 54705
 id-unverified 54711
@@ -6075,18 +5951,12 @@ id-unverified 54722
 id-unverified 54724
 id-unverified 54726
 id-unverified 54728
-id-unverified 54738
 id-unverified 54739
 id-unverified 54740
 id-unverified 54742
-id-unverified 54744
-id-unverified 54745
 id-unverified 54750
 id-unverified 54752
-id-unverified 54758
-id-unverified 54763
 id-unverified 54765
-id-unverified 54770
 id-unverified 54772
 id-unverified 54773
 id-unverified 54779
@@ -6113,7 +5983,6 @@ id-unverified 54930
 id-unverified 54931
 id-unverified 54932
 id-unverified 54933
-id-unverified 54934
 id-unverified 54935
 id-unverified 54936
 id-unverified 54937
@@ -6131,7 +6000,6 @@ id-unverified 54949
 id-unverified 54950
 id-unverified 54951
 id-unverified 54952
-id-unverified 54953
 id-unverified 54954
 id-unverified 54955
 id-unverified 54956
@@ -6183,11 +6051,8 @@ id-unverified 55427
 id-unverified 55441
 id-unverified 55446
 id-unverified 55451
-id-unverified 55453
 id-unverified 55456
 id-unverified 55469
-id-unverified 55470
-id-unverified 55475
 id-unverified 55476
 id-unverified 55477
 id-unverified 55479
@@ -6327,7 +6192,6 @@ id-unverified 56179
 id-unverified 56180
 id-unverified 56189
 id-unverified 56191
-id-unverified 56192
 id-unverified 56231
 id-unverified 56236
 id-unverified 56239
@@ -6703,7 +6567,6 @@ id-unverified 70018
 id-unverified 70021
 id-unverified 70022
 id-unverified 70023
-id-unverified 70024
 id-unverified 70026
 id-unverified 70031
 id-unverified 70032
@@ -6897,7 +6760,6 @@ id-unverified 76042
 id-unverified 76060
 id-unverified 76064
 id-unverified 76067
-id-unverified 76157
 id-unverified 76169
 id-unverified 76214
 id-unverified 76220
@@ -7104,7 +6966,6 @@ id-unverified 79218
 id-unverified 80063
 id-unverified 80084
 id-unverified 80085
-id-unverified 80187
 id-unverified 80482
 id-unverified 80540
 id-unverified 80561
@@ -7391,7 +7252,6 @@ id-unverified 93443
 id-unverified 93444
 id-unverified 93473
 id-unverified 93475
-id-unverified 93499
 id-unverified 93512
 id-unverified 93519
 id-unverified 93574
@@ -7596,7 +7456,6 @@ id-unverified 100306
 id-unverified 100316
 id-unverified 100324
 id-unverified 100327
-id-unverified 100328
 id-unverified 100329
 id-unverified 100330
 id-unverified 100331
@@ -7607,7 +7466,6 @@ id-unverified 100461
 id-unverified 100462
 id-unverified 100463
 id-unverified 100464
-id-unverified 100480
 id-unverified 100560
 id-unverified 100561
 id-unverified 100572
@@ -7619,7 +7477,6 @@ id-unverified 100589
 id-unverified 100618
 id-unverified 100625
 id-unverified 100846
-id-unverified 100867
 id-unverified 100896
 id-unverified 100908
 id-unverified 100910
@@ -7843,7 +7700,6 @@ id-unverified 104145
 id-unverified 104198
 id-unverified 104295
 id-unverified 104496
-id-unverified 104519
 id-unverified 104532
 id-unverified 104533
 id-unverified 104534
@@ -9762,7 +9618,6 @@ id-unverified 170766
 id-unverified 170767
 id-unverified 170768
 id-unverified 170769
-id-unverified 170770
 id-unverified 170777
 id-unverified 170778
 id-unverified 170779
@@ -36873,8 +36728,6 @@ member-unverified BGSSaveLoadGame.pluginListMismatch
 member-missing BGSSaveLoadManager.cachedHeader
 member-unverified BGSSaveLoadManager.characterNames
 member-unverified BGSSaveLoadManager.currentSaveNameCapacity
-member-unverified BGSSaveLoadManager.currentSaveNameLength
-member-unverified BGSSaveLoadManager.currentSaveNamePtr
 member-missing BGSSaveLoadManager.field_2B2
 member-missing BGSSaveLoadManager.field_2F0
 member BGSSaveLoadManager.field_408 3c0
@@ -36886,8 +36739,6 @@ member BGSSaveLoadManager.thread 2b0
 member-unverified BGSSaveLoadManager.unknownMap
 member-unverified BGSSaveLoadManager::Thread.paused
 member-unverified BGSSaveLoadManager::Thread.running
-member-unverified BGSSaveLoadManagerEvent.done
-member-unverified BGSSaveLoadManagerEvent.kind
 member-unverified BGSSoundCategory.attenuation
 member-unverified BGSSoundOutput::DynamicAttenuationCharacteristics.curve
 member-unverified BGSStaticCollection.field_40
@@ -38444,7 +38295,6 @@ member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectRE
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
-member-unverified BSScript::StackFrame.owningFunction
 member-unverified BSSegmentedTriShape.field_140
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
 member-unverified BSShaderAccumulator.field_129
@@ -38630,8 +38480,6 @@ member-unverified BleedoutCameraState.soundHandlePad
 member-unverified BleedoutCameraState.soundHandleRequestedState
 member-unverified BleedoutCameraState.useShoulderOffsets
 member-unverified BleedoutCameraState.yawOffset
-member-unverified BoneNodeEntry.flatIndex
-member-unverified BoneNodeEntry.node
 member-missing CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>.__vftable
 member-missing CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>.__vftable
 member-missing CCallbackImpl<1>.__vftable
@@ -38852,7 +38700,6 @@ member-missing ContentMenu::errorCallback.__vftable
 member-unverified CreditsMenu.field_3C
 member-unverified CreditsMenu.field_7A
 member-unverified CubeMapRecord.srv
-member-unverified CubeMapRecord.texture
 member-unverified DepthStencilRecord.srv
 member-unverified DepthStencilRecord.stencilSRV
 member-missing DescriptionBox.__vftable
@@ -38927,7 +38774,7 @@ member-missing EventSourceHolder_Input.device4
 member EventSourceHolder_Input.gamepadEnableChanged 81
 member EventSourceHolder_Input.gamepadEnablePending 80
 member EventSourceHolder_Input.remoteGamepadPending e0
-member EventSourceHolder_Input.source_BSRemoteGamepadEvent 88
+member-unverified EventSourceHolder_Input.source_BSRemoteGamepadEvent
 member EventSourceHolder_Input.virtualKeyboard 78
 member-missing EventSourceHolder_TES.source_TESAmiiboForcedStopDetectionEvent
 member-missing EventSourceHolder_TES.source_TESAmiiboTouchEvent
@@ -39063,22 +38910,13 @@ member FlameProjectile.field_F0 e8
 member FlameProjectile.field_F8 f0
 member FlameProjectile.field_FC f4
 member FlameProjectile.refScale 90
-member-unverified FlatBone.local
-member-unverified FlatBone.name
-member-unverified FlatBone.node
-member-unverified FlatBone.parentIndex
-member-unverified FlatBone.world
-member-unverified FrameState.cameraMatrices
+member FrameState.cameraMatrices a8
 member FrameState.decreaseRequested 11d
-member FrameState.dynamicHeightRatio 108
 member FrameState.dynamicResolutionLock 118
 member FrameState.dynamicWidthRatio 104
-member-unverified FrameState.frameCounter
-member-unverified FrameState.frameStarted
 member FrameState.increaseRequested 11c
 member FrameState.jitterIndex c0
 member FrameState.manualRatio 11e
-member FrameState.previousHeightRatio 110
 member FrameState.previousWidthRatio 10c
 member FrameState.ratioIncreaseCounter 114
 member-unverified FreeCameraState.forwardInputA
@@ -39093,11 +38931,10 @@ member-unverified FurnitureCameraState.pad0c
 member-unverified FurnitureCameraState.pad1c
 member-unverified FurnitureCameraState.pad3F
 member-unverified FurnitureCameraState.refCount
-member-unverified FurnitureMarker.field_0
 member-missing FxResponseArgs<15>.__vftable
-member-unverified GFxViewport.aspectRatio
 member-unverified GFxViewport.flags
-member-unverified GFxViewport.scale
+member-unverified GFxViewport.height
+member-unverified GFxViewport.width
 member GrenadeProjectile.field_100 f8
 member GrenadeProjectile.field_104 fc
 member GrenadeProjectile.field_108 100
@@ -39262,7 +39099,7 @@ member-missing InfiniteList.field_C
 member-unverified IngredientItem.field_A0
 member-unverified InputEventQueue.amiiboCount
 member-unverified InputEventQueue.amiiboEvent
-member InputEventQueue.buttonEvents 20
+member-unverified InputEventQueue.buttonEvents
 member-unverified InputEventQueue.charCount
 member InputEventQueue.charEvents 200
 member InputEventQueue.deviceConnectEvent 330
@@ -39781,8 +39618,7 @@ member-unverified MiddleHighProcessData.charController
 member-unverified MiddleHighProcessData.headTrackingEnabled
 member-unverified MiddleHighProcessData.lastIdlePlayed
 member-unverified MiddleHighProcessData.lock
-member-unverified MiddleHighProcessData.movementDirection
-member-unverified MiddleHighProcessData.rightHandEquipType
+member MiddleHighProcessData.movementDirection b0
 member-unverified MiddleHighProcessData.speed
 member MissileProjectile.field_100 f8
 member MissileProjectile.field_104 fc
@@ -40285,12 +40121,6 @@ member PlayerCharacter.worldSpace 628
 member-unverified PlayerControls.field_4B
 member-unverified PlayerControls.responseGraphs
 member-unverified PlayerInputHandler.pad_9
-member-unverified ProcessLists.highActorHandles
-member-unverified ProcessLists.lowActorHandles
-member-unverified ProcessLists.middleHighActorHandles
-member-unverified ProcessLists.middleLowActorHandles
-member-unverified ProcessLists.referenceEffects
-member-unverified ProcessLists.referenceEffectsLock
 member Projectile.field_100 f8
 member Projectile.field_104 fc
 member Projectile.field_108 100
@@ -40345,18 +40175,11 @@ member-unverified RaceSexCamera.padding54
 member-unverified RaceSexMenu.field_120
 member-unverified RaceSexMenu.field_128
 member-unverified RaceSexMenu.mouseLookDrag
-member-unverified RenderPass.field_1D
 member-unverified RenderStateCache.cubeMapFace
-member-unverified RenderStateCache.cubeMapMode
 member-unverified RenderStateCache.depthStencil
-member-unverified RenderStateCache.depthStencilMode
 member-unverified RenderStateCache.depthStencilSlice
 member-unverified RenderTargetManager.cubeMapProperties
 member-unverified RenderTargetManager.depthStencilProperties
-member-unverified RenderTargetRecord.srv
-member-unverified RenderWindow.unknown28
-member-unverified RenderWindow.x
-member-unverified RenderWindow.y
 member Renderer.clearColor 2778
 member Renderer.cubeMapTargets 26d8
 member Renderer.depthStencilTargets 1fb8
@@ -40415,11 +40238,6 @@ member-missing SearchResultsPage.field_A
 member-missing SearchResultsPage.field_B8
 member-missing SearchResultsPage.field_C
 member-missing SearchResultsPage.field_C0
-member-unverified Setting.name
-member-unverified Setting.value
-member-unverified ShaderPropertyLightData.receiverMask
-member-unverified ShadowMapData.culler
-member-unverified ShadowMapData.slice
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
 member ShadowSceneNode.field_2DC 0
@@ -40780,8 +40598,6 @@ member-unverified TransitionState.refCount
 member-unverified TweenMenuCameraState.pad0c
 member-unverified TweenMenuCameraState.pad1c
 member-unverified TweenMenuCameraState.pad4D
-member-unverified TypeNode.name
-member-unverified TypeNode.parent
 member-unverified UISaveLoadManager.field_50
 member-missing UI_Button3.__vftable
 member-missing UI_Button3.field_10
@@ -41579,11 +41395,6 @@ member-missing ViewAllEntry.field_E0
 member-missing ViewAllEntry.field_E8
 member-missing ViewAllEntry.field_F0
 member-missing ViewAllEntry.field_F8
-member-unverified VolumetricLightingParams.inverseRepartitionFunction
-member-unverified VolumetricLightingParams.inverseRepartitionTable
-member-unverified VolumetricLightingParams.rangeFactor
-member-unverified VolumetricLightingParams.repartitionFunction
-member-unverified VolumetricLightingParams.repartitionTable
 member-missing _anon_025735F6::AmiiboTouchArguments.__vftable
 member-unverified _anon_14F04957::Win32FileType.compression
 member-unverified _anon_14F04957::Win32FileType.headerEnd
@@ -41607,7 +41418,6 @@ member-unverified bhkCharacterController.characterState
 member-unverified bhkCharacterController.hasBumper
 member-unverified bhkRagdollController.field_320
 member-unverified bhkRagdollController.field_328
-member-unverified bhkShape.materialId
 member bhkWorld.field_C6E0 c5d8
 member bhkWorld.field_C6E8 c5e0
 member bhkWorld.field_C6F0 c5e8
@@ -41979,13 +41789,6 @@ member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable
 member-missing bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(void)>::ICopyableCallable.__vftable
 member-missing doDownloads::waitingCallback.__vftable
 member-missing downloadConfirmResetCallback.__vftable
-member-unverified hkArray.capacityAndFlags
-member-unverified hkArray.data
-member-unverified hkArray.size
-member-unverified hkMemoryRouter.heap
-member-unverified hkStridedVertices.numVertices
-member-unverified hkStridedVertices.striding
-member-unverified hkStridedVertices.vertices
 member-unverified hkbFootIkGains.alignWorldFromModelGain
 member-unverified hkbFootIkGains.footPlantedGain
 member-unverified hkbFootIkGains.footUnlockGain
@@ -41994,23 +41797,7 @@ member-unverified hkbFootIkGains.hipOrientationGain
 member-unverified hkbFootIkGains.maxKneeAngleDifference
 member-unverified hkbFootIkGains.worldFromModelFeedbackGain
 member-unverified hkpCharacterProxy.userData
-member-unverified hkpCollidable.broadPhaseType
-member-unverified hkpCollidable.collisionFilterInfo
-member-unverified hkpCollidable.ownerOffset
-member-unverified hkpCollidable.shape
-member-unverified hkpConvexVerticesShape::BuildConfig.buildConnectivity
-member-unverified hkpConvexVerticesShape::BuildConfig.convexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.field_14
-member-unverified hkpConvexVerticesShape::BuildConfig.maxVertices
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkFlag
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam0
-member-unverified hkpConvexVerticesShape::BuildConfig.shrinkParam1
 member-unverified hkpListShape.numDisabledChildren
-member-unverified hkpListShape::ChildInfo.collisionFilterInfo
-member-unverified hkpListShape::ChildInfo.numChildShapes
-member-unverified hkpListShape::ChildInfo.shape
-member-unverified hkpListShape::ChildInfo.shapeSize
 member-unverified hkpShape.referenceCount
 member-missing noCreationsDownloadedCallback.__vftable
 member-missing std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>.__vftable
@@ -50482,7 +50269,6 @@ size-unverified BSScrapMap<int,TEX_SWAP*___ptr64>
 size-unverified BSScrapMap<unsigned_int,CombatBehaviorThread*___ptr64>
 size-unverified BSScrapMap<unsigned_int,bool>
 size-unverified BSScrapMap<unsigned_int,unsigned_int>
-size-unverified BSScript::Array
 size-unverified BSScript::ByteCode::PackedInstructionStream::InstructionFunctor
 size-unverified BSScript::CompiledScriptLoader
 size-unverified BSScript::ErrorLogger
@@ -50515,7 +50301,6 @@ size-unverified BSScript::Internal::StackMapEntry
 size-unverified BSScript::Internal::SuspendedStack
 size-unverified BSScript::Internal::_anon_16AAB8A9::OneVariableArgument
 size-unverified BSScript::Internal::_anon_16AAB8A9::ZeroArguments
-size-unverified BSScript::NF_util::ParamInfo
 size-unverified BSScript::NativeFunction0<ActiveEffect,Actor*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,EffectSetting*___ptr64>
 size-unverified BSScript::NativeFunction0<ActiveEffect,void>
@@ -50745,7 +50530,6 @@ size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CollectStringsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::CountInstructionInfo
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::UnpackInstructionsFunctor
 size-unverified BSScript::UnlinkedTypes::_anon_E61FEF15::WriteInstructionsFunctor
-size-unverified BSScript::Variable
 size-unverified BSScript::ZeroFunctionArguments
 size-unverified BSScript::_anon_5199D9EE::VMTypeResolveFunctor
 size-unverified BSScript::_anon_D7688862::LinkerConvertTypeFunctor
@@ -50757,7 +50541,6 @@ size-unverified BSShaderResourceManager
 size-unverified BSShaderTextureSet
 size-unverified BSShadowLight
 size-unverified BSShapeConstructor
-size-unverified BSSimpleListNode
 size-unverified BSSimpleScaleController
 size-unverified BSSkinnedDecalTriShape
 size-unverified BSSmallBlockAllocator
@@ -50774,7 +50557,6 @@ size-unverified BSStorage
 size-unverified BSStream
 size-unverified BSStreamParserData
 size-unverified BSStreamSystemUtility
-size-unverified BSStringPool::Entry
 size-unverified BSStringPool::IterationCallback
 size-unverified BSSynchronizedClipGenerator
 size-unverified BSSynchronizedClipGenerator::hkbDefaultSynchronizedScene
@@ -50802,7 +50584,6 @@ size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWardHealthChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,float,ActorWeaponSpeedChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorCopyGraphVariableChannel>
 size-unverified BSTAnimationGraphDataChannel<Actor,int,ActorWantBlockChannel>
-size-unverified BSTArray
 size-unverified BSTArrayAllocatorFunctor<BSScrapArrayAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>
 size-unverified BSTArrayAllocatorFunctor<BSTSmallArrayHeapAllocator<1024>_>
@@ -51505,7 +51286,6 @@ size-unverified BasicArrayImplementation<unsigned_char,1>
 size BeamProjectile 240
 size-unverified BedEnterHandler
 size-unverified BedFurnitureExitHandler
-size-unverified BoneNodeEntry
 size-unverified BookMenu
 size-unverified BowDrawnHandler
 size-unverified BowReleaseHandler
@@ -52458,7 +52238,6 @@ size-unverified GFxLogBase<GFxLog>
 size-unverified GFxMovieView
 size-unverified GFxState
 size-unverified GFxTranslator
-size-unverified GFxValue
 size-unverified GFxValue::DisplayInfo
 size-unverified GFxViewport
 size-unverified GFxZlibSupport
@@ -53223,7 +53002,6 @@ size-unverified PArrayPoint
 size-unverified PackageCreator
 size-unverified PackageList::IPackageVisitor
 size-unverified PairedStopHandler
-size-unverified ParamInfo
 size-unverified PathFollowerStateFollowPathToParameter
 size-unverified PathFollowerStateKeepLastDirection
 size-unverified PathFollowerStatePlayIdle
@@ -53316,7 +53094,6 @@ size-unverified SaveStorageWrapper
 size-unverified ScaleformFile::MemoryFile
 size-unverified ScrapHeap
 size-unverified ScreenshotHandler
-size-unverified ScriptParamTypeInfo
 size-unverified ScriptedRefEffect
 size-missing SearchPage
 size-missing SearchResultsPage
@@ -53662,7 +53439,6 @@ size-unverified UnitTestZeroOverheadHeap
 size-unverified UnitTest_BSStreamParserData
 size-unverified UnitTest_BSStreamParserStream
 size-unverified UserEventEnabledEvent
-size-unverified UserEventMapping
 size-unverified UserEventNames
 size-unverified VATS::ICommandListVisitor
 size-unverified VATSCameraState
@@ -54903,7 +54679,6 @@ size-unverified hkpLimitedHingeConstraintData
 size-unverified hkpLinearParametricCurve
 size-unverified hkpListAgent
 size-unverified hkpListShape
-size-unverified hkpListShape::ChildInfo
 size-unverified hkpMalleableConstraintData
 size-unverified hkpMapPointsToSubShapeContactMgr
 size-unverified hkpMaxSizeMotion
@@ -56302,25 +56077,27 @@ site 36559 30a 2ec e8fff0e200
 site 36561 c7a c7a e8f10cfdff
 site 36561 178e 1777 e8b4dc0000
 site 36588 1c 1c e8ffcc0000
+site 37334 4 4 4883 4883
 site 37356 b64 b64 7710
 site 37610 78 78 7710
 site 37611 7f 7f 7710
 site 40450 69 69 e8e264e4ff
 site 40476 0 0 4055564883ec58
 site 40476 bc bc 418b8ef4000000
+site 40476 c5 c5 83c901 0f1f00
 site 40522 94 94 e8d70c5b00
 site 40522 d7 d7 e8940c5b00
 site 40620 1e7 1d5 e89677ceff
 site 41996 303 2f4 ff9088030000
 site 50784 1a6 1a6 e8e578c9ff
-site 50832 4dd 4dd f30f103503f26001
+site 50832 4dd 4dd f30f103503f26001 eb58909090909090
 site 50923 11 11 e83abfffff
 site 52118 59 59 e8824babff
 site 53016 5 5 e936fabfff
 site 53919 cfb cc3 e848b30500
 site 55564 0 0 488b0d81ee5b02e9f457edff
 site 55565 0 0 488b0d71ee5b02e94459edff
-site 68542 3cc 3c8 8b8018010000
+site 68542 3cc 3c8 8b8018010000 8b801801000080e1df
 site 68617 7b 7b e8000e0000
 site 77226 275 275 e8069c0000
 site 77246 9 9 e892dd6b00
@@ -56334,3 +56111,6 @@ enum InputContext.Favor 10
 enum-missing InputContext.Marketplace
 enum InputContext.count 11
 enum InputContext.none 12
+enum InputDevice.None 5
+enum UIMessageType.none d
+enum-missing UIMessageType.type0xd

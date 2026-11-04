@@ -1,7 +1,7 @@
 # Runs the skyrim-rs test plugin in the game of -Runtime through DevBench (scripts/<suite>-steps.json), then compares the
 # plugin's PASS lines with DevBench's own answers from the same session as scripts/<suite>-checks.ps1 lists them, and
 # writes <OutDir>\results.json: the runtime, suite, plugin build commit and the pass, fail and not-run counts. Exit code
-# 0 passed, 1 failed, 2 the loader refused a plugin of the suite (nothing to check, all not run), 3 the suite cannot run
+# 0 passed (verdict partial when a check could not run), 1 failed, 2 the loader refused a plugin of the suite (nothing to check, all not run), 3 the suite cannot run
 # on this runtime, 4 the install differs from before the run or a cleanup step failed, whatever the suite did. The
 # runtime comes from scripts/runtimes.ps1; the SKSE in the install is the one used. Under the game lock the owner's
 # permanent install moves aside for the run (scripts/owner-install.ps1), which stops if a dead run left one aside.
@@ -46,12 +46,16 @@ param(
     [switch]$CheckOnly,
     # Runs only these scenarios of a scenario suite (the crash suite), to retry one.
     [string[]]$Scenarios = @(),
-    # Cargo profile for the build: verify (release code, no LTO) for iteration, release for a shipping check.
-    [ValidateSet("verify", "release")][string]$Profile = "verify"
+    # Cargo profile for the build: verify (release code, no LTO) for iteration, release for a shipping check. The default
+    # is verify on the canonical runtime and release elsewhere, where a verify build's manifest over-reports and is refused.
+    [ValidateSet("", "verify", "release")][string]$Profile = ""
 )
 $ErrorActionPreference = "Stop"
 $Install = & "$PSScriptRoot\runtimes.ps1" -Runtime $Runtime -GameDir $GameDir
 $GameDir = $Install.dir
+$ProfileNote = if ($Profile) { "as asked" } elseif ($Install.canonical) { "the default on the canonical runtime" } else { "the default off canonical: a verify build's manifest over-reports and is refused" }
+if (-not $Profile) { $Profile = if ($Install.canonical) { "verify" } else { "release" } }
+"profile: $Profile ($ProfileNote)"
 if (-not $OutDir) { $OutDir = "verify-$Suite-$Runtime-out" }
 $MyGames = "$env:USERPROFILE\Documents\My Games\Skyrim Special Edition"
 $SkseLogs = "$MyGames\SKSE"
@@ -138,7 +142,7 @@ function Write-Results($verdict, $reason = "", $checks = @()) {
     if ($null -ne $InstallDiff) { $clean = -not ($InstallDiff -or $CleanupFailures) }
     $counts = { param($r) @($checks | Where-Object { $_.result -eq $r }).Count }
     @{
-        runtime = $Runtime; skse = $Install.skse; gameDir = $GameDir; suite = $Suite; mode = $Mode; launch = $Launch; profile = $Profile; finished = (Get-Date -Format s)
+        runtime = $Runtime; skse = $Install.skse; gameDir = $GameDir; suite = $Suite; mode = $Mode; launch = $Launch; profile = $Profile; profileNote = $ProfileNote; finished = (Get-Date -Format s)
         commit = (git -C $Root rev-parse HEAD); dirty = [bool](git -C $Root status --porcelain)
         verdict = $verdict; reason = $reason; refusedBy = @($RefusedBy)
         pass = (& $counts "pass"); fail = (& $counts "fail"); notRun = $(if ($verdict -in "refused", "not-run") { "all" } else { & $counts "not-run" }); scenarioOk = $scenarioOk; pluginSummaries = @($summaries)
@@ -347,7 +351,7 @@ try {
 }
 }
 
-# The plugin's PASS/FAIL lines per "<suite> <phase>" run (the summary line closes a run) and, for the chosen suite, the last one per test.
+# The plugin's PASS/FAIL/NOTRUN lines per "<suite> <phase>" run (the summary line closes a run) and, for the chosen suite, the last one per test.
 # Their keys are read through PSBase: the input suite's test named "keys" would shadow the .Keys property.
 $plugin = @{}
 $runs = @{}
@@ -356,7 +360,7 @@ $summaries = @()
 $ReportLog = if ($Mod.report) { $Mod.log } else { $PluginLog }
 $ReportLines = @(if (Test-Path "$OutDir\$ReportLog") { Get-Content "$OutDir\$ReportLog" })
 foreach ($line in $ReportLines) {
-    if ($line -match '^(PASS|FAIL) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); detail = $Matches[3] } }
+    if ($line -match '^(PASS|FAIL|NOTRUN) (\w+): (.*)$') { $pending[$Matches[2]] = @{ ok = ($Matches[1] -eq "PASS"); notRun = ($Matches[1] -eq "NOTRUN"); detail = $Matches[3] } }
     elseif ($line -match '^summary (\w+ \w+): ') {
         $runs[$Matches[1]] = $pending
         if ($Matches[1] -like "$Suite *") { foreach ($k in $pending.PSBase.Keys) { $plugin[$k] = $pending[$k] } }
@@ -370,6 +374,8 @@ function Step($i) { $s = $steps | Where-Object { $_.index -eq $i }; if ($s -and 
 function Returned($i) { $r = Step $i; if ($r) { $r.returned } else { $null } }
 function Lines($i) { $r = Step $i; if ($r) { $r.lines -join " | " } else { "" } }
 function Detail($name) { if ($plugin[$name]) { $plugin[$name].detail } else { "" } }
+# Why the plugin did not run a test, for a row's notRun; nothing when it ran.
+function PluginNotRun($name) { if ($plugin[$name] -and $plugin[$name].notRun) { $plugin[$name].detail } }
 function RunDetail($run, $name) { if ($runs[$run] -and $runs[$run][$name]) { $runs[$run][$name].detail } else { "" } }
 function Captured($text, $pattern) { if ($text -match $pattern) { $Matches[1] } else { $null } }
 # The SKSE plugin loader of this launch, its log and the handle it gave a DLL; the host names the same loader in its log.
@@ -446,8 +452,11 @@ foreach ($r in $rows) {
     "     devbench: $($r.devbench)"
     $checks += @{ name = $r.name; result = $(if ($r.ok) { "pass" } else { "fail" }) }
 }
-foreach ($name in ($plugin.PSBase.Keys | Sort-Object)) { if (-not $plugin[$name].ok) { "FAIL $name`: $($plugin[$name].detail)"; $allOk = $false; $checks += @{ name = "plugin $name"; result = "fail"; reason = $plugin[$name].detail } } }
+foreach ($name in ($plugin.PSBase.Keys | Sort-Object)) {
+    if ($plugin[$name].notRun) { "NOT RUN $name`: $($plugin[$name].detail)"; $checks += @{ name = "plugin $name"; result = "not-run"; reason = $plugin[$name].detail } }
+    elseif (-not $plugin[$name].ok) { "FAIL $name`: $($plugin[$name].detail)"; $allOk = $false; $checks += @{ name = "plugin $name"; result = "fail"; reason = $plugin[$name].detail } }
+}
 ""
 "logs in $OutDir"
-Write-Results $(if ($allOk) { "pass" } else { "fail" }) "" $checks
+Write-Results $(if (-not $allOk) { "fail" } elseif ($checks | Where-Object { $_.result -eq "not-run" }) { "partial" } else { "pass" }) "" $checks
 Finish $(if ($allOk) { 0 } else { 1 })

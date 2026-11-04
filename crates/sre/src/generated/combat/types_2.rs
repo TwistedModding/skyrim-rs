@@ -3,34 +3,6 @@
 
 use core::ffi::c_void;
 
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, medium); primary base `CombatPathBuilderOpen`.
-/// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
 /// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
 /// Evidence: allocation sites (high): {'216': 2}.
 /// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
@@ -1379,13 +1351,13 @@ pub struct CombatPathingRequest {
     pub __vftable: *const crate::raw::vtables::CombatPathingRequest_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1394,15 +1366,15 @@ pub struct CombatPathingRequest {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1413,7 +1385,7 @@ pub struct CombatPathingRequest {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1423,7 +1395,7 @@ pub struct CombatPathingRequest {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, ctor store (widths [4, 8])
@@ -1432,7 +1404,7 @@ pub struct CombatPathingRequest {
     pub field_104: u32,
     /// +0x108 `undefined4`, ctor store
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, ctor store
     pub field_110: u64,
     #[doc(hidden)]
@@ -1475,13 +1447,13 @@ pub struct CombatPathingRequestAdapter {
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestAdapter_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1490,15 +1462,15 @@ pub struct CombatPathingRequestAdapter {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1509,7 +1481,7 @@ pub struct CombatPathingRequestAdapter {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1519,7 +1491,7 @@ pub struct CombatPathingRequestAdapter {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -1528,7 +1500,7 @@ pub struct CombatPathingRequestAdapter {
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     /// +0x118 `undefined8`, ctor store
@@ -1574,13 +1546,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1589,15 +1561,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1608,7 +1580,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1618,7 +1590,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -1627,10 +1599,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPa
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 40],
+    unknown_118: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1671,13 +1643,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1686,15 +1658,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1705,7 +1677,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1715,7 +1687,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -1724,10 +1696,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 88],
+    unknown_118: [u8; 88],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1768,13 +1740,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1783,15 +1755,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1802,7 +1774,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1812,7 +1784,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -1821,10 +1793,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPa
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 24],
+    unknown_118: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1865,13 +1837,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1880,15 +1852,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1899,7 +1871,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -1909,7 +1881,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -1918,10 +1890,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_Comb
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 24],
+    unknown_118: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1962,13 +1934,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -1977,15 +1949,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -1996,7 +1968,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2006,7 +1978,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2015,10 +1987,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 64],
+    unknown_118: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2059,13 +2031,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2074,15 +2046,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2093,7 +2065,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2103,7 +2075,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2112,10 +2084,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathin
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 144],
+    unknown_118: [u8; 144],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2156,13 +2128,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2171,15 +2143,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2190,7 +2162,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2200,7 +2172,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2209,10 +2181,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_Comba
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 48],
+    unknown_118: [u8; 48],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2253,13 +2225,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2268,15 +2240,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2287,7 +2259,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2297,7 +2269,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2306,10 +2278,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathing
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 40],
+    unknown_118: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2350,13 +2322,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2365,15 +2337,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2384,7 +2356,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2394,7 +2366,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2403,10 +2375,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPath
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 32],
+    unknown_118: [u8; 32],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2447,13 +2419,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2462,15 +2434,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2481,7 +2453,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2491,7 +2463,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2500,10 +2472,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 72],
+    unknown_118: [u8; 72],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2544,13 +2516,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2559,15 +2531,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2578,7 +2550,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2588,7 +2560,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2597,10 +2569,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathi
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 80],
+    unknown_118: [u8; 80],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2641,13 +2613,13 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2656,15 +2628,15 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2675,7 +2647,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2685,7 +2657,7 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2694,10 +2666,10 @@ pub struct CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Comba
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 64],
+    unknown_118: [u8; 64],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2738,13 +2710,13 @@ pub struct CombatPathingRequestMultiGoal {
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestMultiGoal_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2753,15 +2725,15 @@ pub struct CombatPathingRequestMultiGoal {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2772,7 +2744,7 @@ pub struct CombatPathingRequestMultiGoal {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2782,7 +2754,7 @@ pub struct CombatPathingRequestMultiGoal {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2791,13 +2763,13 @@ pub struct CombatPathingRequestMultiGoal {
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
-    pub unknown_118: [u8; 48],
+    unknown_118: [u8; 48],
     /// +0x148 `undefined4`, ctor store
     pub field_148: u32,
-    pub unknown_14C: [u8; 4],
+    unknown_14C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2839,13 +2811,13 @@ pub struct CombatPathingRequestStandard {
     pub __vftable: *const crate::raw::vtables::CombatPathingRequestStandard_vtable,
     /// +0x8 `undefined4`, base BSPathingRequest
     pub field_8: u32,
-    pub unknown_C: [u8; 47],
+    unknown_C: [u8; 47],
     /// +0x3B `undefined1`, base BSPathingRequest
     pub field_3B: u8,
-    pub unknown_3C: [u8; 4],
+    unknown_3C: [u8; 4],
     /// +0x40 `undefined4`, base BSPathingRequest
     pub field_40: u32,
-    pub unknown_44: [u8; 4],
+    unknown_44: [u8; 4],
     /// +0x48 `float`, base BSPathingRequest
     pub field_48: f32,
     /// +0x4C `float`, base BSPathingRequest
@@ -2854,15 +2826,15 @@ pub struct CombatPathingRequestStandard {
     pub field_50: f32,
     /// +0x54 `undefined4`, base BSPathingRequest
     pub field_54: u32,
-    pub unknown_58: [u8; 43],
+    unknown_58: [u8; 43],
     /// +0x83 `undefined1`, base BSPathingRequest
     pub field_83: u8,
-    pub unknown_84: [u8; 4],
+    unknown_84: [u8; 4],
     /// +0x88 `undefined4`, base BSPathingRequest
     pub field_88: u32,
     /// +0x8C `undefined4`, base BSPathingRequest
     pub field_8C: u32,
-    pub unknown_90: [u8; 8],
+    unknown_90: [u8; 8],
     /// +0x98 `undefined8`, base BSPathingRequest
     pub field_98: u64,
     /// +0xA0 `float`, base BSPathingRequest
@@ -2873,7 +2845,7 @@ pub struct CombatPathingRequestStandard {
     pub field_A8: f32,
     /// +0xAC `undefined4`, base BSPathingRequest
     pub field_AC: u32,
-    pub unknown_B0: [u8; 16],
+    unknown_B0: [u8; 16],
     /// +0xC0 `undefined4`, base BSPathingRequest
     pub field_C0: u32,
     /// +0xC4 `undefined4`, base BSPathingRequest
@@ -2883,7 +2855,7 @@ pub struct CombatPathingRequestStandard {
     pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, base BSPathingRequest
     pub field_D0: u32,
-    pub unknown_D4: [u8; 36],
+    unknown_D4: [u8; 36],
     /// +0xF8 `undefined8`, base BSPathingRequest
     pub field_F8: u64,
     /// +0x100 `undefined4`, base CombatPathingRequest
@@ -2892,7 +2864,7 @@ pub struct CombatPathingRequestStandard {
     pub field_104: u32,
     /// +0x108 `undefined4`, base CombatPathingRequest
     pub field_108: u32,
-    pub unknown_10C: [u8; 4],
+    unknown_10C: [u8; 4],
     /// +0x110 `undefined8`, base CombatPathingRequest
     pub field_110: u64,
     #[doc(hidden)]
@@ -2936,7 +2908,7 @@ pub struct CombatProjectileAimController {
     pub __vftable: *const crate::raw::vtables::CombatProjectileAimController_vtable,
     /// +0x8 `undefined4`, base CombatAimController
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatAimController
     pub field_10: u64,
     /// +0x18 `float`, base CombatAimController
@@ -2945,7 +2917,7 @@ pub struct CombatProjectileAimController {
     pub field_1C: f32,
     /// +0x20 `float`, base CombatAimController
     pub field_20: f32,
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `undefined8`, base CombatAimController
     pub field_28: u64,
     /// +0x30 `undefined4`, base CombatAimController
@@ -2964,7 +2936,7 @@ pub struct CombatProjectileAimController {
     pub field_50: f32,
     /// +0x54 `float`, ctor store
     pub field_54: f32,
-    pub unknown_58: [u8; 4],
+    unknown_58: [u8; 4],
     /// +0x5C `float`, ctor store
     pub field_5C: f32,
     /// +0x60 `float`, ctor store
@@ -3001,7 +2973,7 @@ pub struct CombatProjectileAimController {
     pub field_9C: f32,
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
-    pub unknown_A4: [u8; 4],
+    unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined4`, ctor store
@@ -3015,7 +2987,7 @@ pub struct CombatProjectileAimController {
     pub field_BC: f32,
     /// +0xC0 `undefined4`, ctor store
     pub field_C0: u32,
-    pub unknown_C4: [u8; 4],
+    unknown_C4: [u8; 4],
     /// +0xC8 `undefined8`, ctor store
     pub field_C8: u64,
     #[doc(hidden)]
@@ -3289,7 +3261,7 @@ pub struct CombatThreat {
     pub __vftable: *const crate::raw::vtables::CombatThreat_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 8],
+    unknown_C: [u8; 8],
     /// +0x14 `undefined8`, ctor store
     pub field_14: u64,
     /// +0x1C `undefined8`, ctor store
@@ -3301,7 +3273,7 @@ pub struct CombatThreat {
     /// +0x2C `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_2C: [u8; 4],
-    pub unknown_30: [u8; 16],
+    unknown_30: [u8; 16],
     /// +0x40 `undefined4`, ctor store
     pub field_40: u32,
     /// +0x44 `undefined4`, ctor store

@@ -199,7 +199,7 @@ pub struct BSScript__Internal__VirtualMachine {
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable,
     /// +0x8 `undefined4`, ctor store, semantic, runtime; BSIntrusiveRefCounted count (1 on the live VM) (high)
     pub refCount: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `vtbl:BSScript::Internal::VirtualMachine:10`, rtti
     #[doc(hidden)]
     pub __vftable_10: *const crate::raw::vtables::BSScript__Internal__VirtualMachine_vtable_10,
@@ -232,7 +232,7 @@ pub struct BSScript__Internal__VirtualMachine {
     pub typesLock: u64,
     /// +0xC8 `undefined8`, semantic; the LinkerProcessor that loads and links scripts (vtable at +0xc8; its slot 3 takes a class name) (medium)
     pub linkerProcessor: u64,
-    pub unknown_D0: [u8; 144],
+    unknown_D0: [u8; 144],
     /// +0x160 `undefined48`, semantic, runtime; BSTHashMap<BSFixedString, BSTSmartPointer<ObjectTypeInfo>>: capacity +4, free +8, sentinel +0x10, entries +0x20 (0x18 each: key, value, next) (high)
     #[doc(hidden)]
     pub __objectTypeMap: [u8; 48],
@@ -242,7 +242,7 @@ pub struct BSScript__Internal__VirtualMachine {
     /// +0x1C0 `undefined48`, semantic; BSTHashMap<BSFixedString, u32> filled by RegisterObjectType and read by GetTypeIDForScriptObject (high)
     #[doc(hidden)]
     pub __nameToTypeID: [u8; 48],
-    pub unknown_1F0: [u8; 16],
+    unknown_1F0: [u8; 16],
     /// +0x200 `undefined8`, semantic; BSSpinLock {u32 owner thread id, u32 count} of the function-message queue and the tasklet list (high)
     pub queueLock: u64,
     /// +0x208 `undefined8`, member ctor BSTStaticFreeList<BSScript::Internal::FunctionMessage,1024>
@@ -251,19 +251,19 @@ pub struct BSScript__Internal__VirtualMachine {
     /// +0x210 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 4],
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     /// +0x218 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_218: [u8; 8],
-    pub unknown_220: [u8; 24],
+    unknown_220: [u8; 24],
     /// +0x238 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_238: [u8; 8],
-    pub unknown_240: [u8; 24],
+    unknown_240: [u8; 24],
     /// +0x258 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_258: [u8; 8],
-    pub unknown_260: [u8; 32704],
+    unknown_260: [u8; 32704],
     /// +0x8220 `undefined40`, semantic; the function-message queue object (its vtable here; slot 1 push, slot 4 pop) (medium)
     pub functionMessageQueue: [u8; 40],
     /// +0x8248 `undefined24`, semantic; BSTArray<FunctionMessage> used when the queue is full: data +0, capacity +8, size +0x10; 0x18 per message (high)
@@ -276,27 +276,27 @@ pub struct BSScript__Internal__VirtualMachine {
     pub __queuedMessageCount: [u8; 4],
     /// +0x827C `undefined2`, ctor store
     pub field_827C: u16,
-    pub unknown_827E: [u8; 2],
+    unknown_827E: [u8; 2],
     /// +0x8280 `undefined8`, member ctor BSTCommonStaticMessageQueue<BSScript::Internal::SuspendedStack,128>
     pub m_SuspendedStack_128__8280: u64,
     /// +0x8288 `undefined4`, ctor store
     pub field_8288: u32,
-    pub unknown_828C: [u8; 2052],
+    unknown_828C: [u8; 2052],
     /// +0x8A90 `undefined8`, ctor store
     pub field_8A90: u64,
     /// +0x8A98 `undefined4`, ctor store
     pub field_8A98: u32,
-    pub unknown_8A9C: [u8; 4],
+    unknown_8A9C: [u8; 4],
     /// +0x8AA0 `undefined8`, member ctor BSTCommonStaticMessageQueue<BSScript::Internal::SuspendedStack,128>
     pub m_SuspendedStack_128__8AA0: u64,
     /// +0x8AA8 `undefined4`, ctor store
     pub field_8AA8: u32,
-    pub unknown_8AAC: [u8; 2052],
+    unknown_8AAC: [u8; 2052],
     /// +0x92B0 `undefined8`, ctor store
     pub field_92B0: u64,
     /// +0x92B8 `undefined4`, ctor store
     pub field_92B8: u32,
-    pub unknown_92BC: [u8; 52],
+    unknown_92BC: [u8; 52],
     /// +0x92F0 `undefined8`, semantic; BSSpinLock of the suspended-stack queues (high)
     pub suspendLock: u64,
     /// +0x92F8 `pointer`, semantic; BSTCommonStaticMessageQueue<SuspendedStack,128>* drained this update (count at queue+0x810) (high)
@@ -309,11 +309,11 @@ pub struct BSScript__Internal__VirtualMachine {
     pub suspendedOverflowWrite: *mut c_void,
     /// +0x9318 `undefined8`, semantic; BSSpinLock of the running-stacks map at +0x9320 (medium)
     pub stacksLock: u64,
-    pub unknown_9320: [u8; 8],
+    unknown_9320: [u8; 8],
     /// +0x9328 `undefined40`, semantic, runtime; BSTHashMap<u32 stackID, BSTSmartPointer<Stack>>: capacity +4 (0x932c, power of two), free +8 (0x9330), free-slot cursor +0xc, sentinel +0x10 (0x9338), entries +0x20 (0x9348); 0x18 per entry (high)
     #[doc(hidden)]
     pub __runningStacks: [u8; 40],
-    pub unknown_9350: [u8; 8],
+    unknown_9350: [u8; 8],
     /// +0x9358 `undefined40`, semantic, runtime; same map type: stacks waiting on a latent native; capacity 0x935c, free 0x9360, sentinel 0x9368, entries 0x9378 (high)
     #[doc(hidden)]
     pub __latentWaits: [u8; 40],
@@ -321,7 +321,7 @@ pub struct BSScript__Internal__VirtualMachine {
     pub nextStackID: u32,
     /// +0x9384 `undefined8`, semantic; BSSpinLock {owner +0x9384, count +0x9388} of the freeze words and the frozen list (high)
     pub freezeLock: u64,
-    pub unknown_938C: [u8; 4],
+    unknown_938C: [u8; 4],
     /// +0x9390 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack>: head of the frozen list, linked through Stack+0x98 (high)
     pub frozenStacks: *mut crate::BSScript__Stack,
     /// +0x9398 `u32`, semantic; stacks on the frozen list (high)
@@ -331,41 +331,41 @@ pub struct BSScript__Internal__VirtualMachine {
     pub __freezeState: [u8; 4],
     /// +0x93A0 `undefined8`, ctor store
     pub field_93A0: u64,
-    pub unknown_93A8: [u8; 12],
+    unknown_93A8: [u8; 12],
     /// +0x93B4 `undefined8`, ctor store
     pub field_93B4: u64,
     /// +0x93BC `undefined4`, ctor store
     pub field_93BC: u32,
     /// +0x93C0 `undefined8`, ctor store
     pub field_93C0: u64,
-    pub unknown_93C8: [u8; 8],
+    unknown_93C8: [u8; 8],
     /// +0x93D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_93D0: [u8; 8],
     /// +0x93D8 `undefined4`, ctor store
     pub field_93D8: u32,
-    pub unknown_93DC: [u8; 28],
+    unknown_93DC: [u8; 28],
     /// +0x93F8 `undefined8`, ctor store
     pub field_93F8: u64,
     /// +0x9400 `undefined4`, ctor store
     pub field_9400: u32,
-    pub unknown_9404: [u8; 28],
+    unknown_9404: [u8; 28],
     /// +0x9420 `undefined8`, ctor store
     pub field_9420: u64,
-    pub unknown_9428: [u8; 24],
+    unknown_9428: [u8; 24],
     /// +0x9440 `undefined8`, ctor store
     pub field_9440: u64,
-    pub unknown_9448: [u8; 12],
+    unknown_9448: [u8; 12],
     /// +0x9454 `undefined8`, ctor store
     pub field_9454: u64,
     /// +0x945C `undefined4`, ctor store
     pub field_945C: u32,
     /// +0x9460 `undefined8`, ctor store
     pub field_9460: u64,
-    pub unknown_9468: [u8; 8],
+    unknown_9468: [u8; 8],
     /// +0x9470 `undefined8`, ctor store
     pub field_9470: u64,
-    pub unknown_9478: [u8; 12],
+    unknown_9478: [u8; 12],
     /// +0x9484 `undefined8`, ctor store
     pub field_9484: u64,
     /// +0x948C `undefined4`, ctor store
@@ -373,15 +373,15 @@ pub struct BSScript__Internal__VirtualMachine {
     /// +0x9490 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_9490: [u8; 8],
-    pub unknown_9498: [u8; 8],
+    unknown_9498: [u8; 8],
     /// +0x94A0 `undefined8`, ctor store
     pub field_94A0: u64,
     /// +0x94A8 `undefined8`, ctor store
     pub field_94A8: u64,
-    pub unknown_94B0: [u8; 28],
+    unknown_94B0: [u8; 28],
     /// +0x94CC `undefined8`, ctor store
     pub field_94CC: u64,
-    pub unknown_94D4: [u8; 68],
+    unknown_94D4: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -569,7 +569,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Object, refCountAndLock) =
 pub struct BSScript__ObjectTypeInfo {
     /// +0x0 `undefined4`, semantic; BSTSmartPointer count (high)
     pub refCount: u32,
-    pub unknown_4: [u8; 4],
+    unknown_4: [u8; 4],
     /// +0x8 `class:BSFixedString`, semantic; the class name (high)
     pub name: crate::BSFixedString,
     /// +0x10 `ptr:BSScript::ObjectTypeInfo`, semantic; the parent class (Actor -> ObjectReference -> Form), null for roots (high)
@@ -584,7 +584,7 @@ pub struct BSScript__ObjectTypeInfo {
     /// +0x28 `undefined4`, semantic; bits 0-10 the number of empty-state functions (medium)
     #[doc(hidden)]
     pub __counts2: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `pointer`, semantic; linked: the tables of variables, properties and per-state functions; unlinked: head of the singly linked list {next, IFunction*} of natives bound before the script loaded (high)
     pub data: *mut c_void,
     #[doc(hidden)]
@@ -603,7 +603,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__ObjectTypeInfo, data) == 0
 /// `BSScript::Stack`: size 0xA0 (exact).
 /// Meaning: a running script stack: pages of Variables, the frame chain, the return value, the id the VM hands to natives and the completion callback (medium, papyrus pass).
 /// Evidence: a running script stack: pages of Variables, the frame chain, the return value, the id the VM hands to natives and the completion callback; allocated with 0xa0 and constructed by 0x149e2a0 (page policy, profile policy, id, a flag, the callback smart pointer); Call reads the top frame at +0x60, the return Variable at +0x70 and the id at +0x80; GetPageForFrame/GetStackFrameVariable walk the page array at +0x20 (+0x18 negative while the pages are not inline) with the count at +0x50; run-papyrus stack heads behind the frames read +8 = g_SkyrimVM+0x228 (the page policy).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSScript__Stack {
     /// +0x0 `undefined4`, semantic; BSTSmartPointer count (high)
     pub refCount: u32,
@@ -619,8 +619,7 @@ pub struct BSScript__Stack {
     pub pages: *mut c_void,
     pub unknown_28: [u8; 40],
     /// +0x50 `undefined4`, semantic; number of pages (medium)
-    #[doc(hidden)]
-    pub __pageCount: [u8; 4],
+    pub pageCount: u32,
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined4`, semantic; number of frames; the completion runs when it reaches 0 (high)
     pub frameCount: u32,
@@ -652,7 +651,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Stack, memoryPagePolicy) =
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, profilePolicy) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pagesInline) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pages) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSScript__Stack, __pageCount) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__Stack, pageCount) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, frameCount) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, top) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSScript__Stack, state) == 0x68);
@@ -667,27 +666,23 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Stack, frozenNext) == 0x98
 /// `BSScript::StackFrame`: size 0x40 (exact).
 /// Meaning: one activation record: the arguments live in the stack's pages, located through Stack::GetPageForFrame and Stack::GetStackFrameVariable (medium, papyrus pass).
 /// Evidence: one activation record: the arguments live in the stack's pages, located through Stack::GetPageForFrame and Stack::GetStackFrameVariable; the sixth argument of NativeFunction<N>::CallBinding; run-papyrus dump-2/3/4-events.csv captured 0x80 bytes of it per call: +0 the Stack, +0x10 the IFunction being run (equal to CallBinding's this), +0x18 the ObjectTypeInfo, +0x28 the self Variable (equal to CallBinding's second argument), +0x38 the parameter count; the Stack helpers read +0 (0x149e7f0).
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSScript__StackFrame {
     /// +0x0 `ptr:BSScript::Stack`, semantic; the stack the frame belongs to (high)
     pub owningStack: *mut crate::BSScript__Stack,
     /// +0x8 `pointer`, semantic; the calling frame or null (medium)
-    #[doc(hidden)]
-    pub __previousFrame: [u8; 8],
+    pub previousFrame: *mut c_void,
     /// +0x10 `pointer`, semantic; BSTSmartPointer<IFunction>: the function being run (high)
-    #[doc(hidden)]
-    pub __owningFunction: [u8; 8],
+    pub owningFunction: *mut c_void,
     /// +0x18 `ptr:BSScript::ObjectTypeInfo`, semantic; the class the function belongs to (high)
-    #[doc(hidden)]
-    pub __owningObjectType: [u8; 8],
+    pub owningObjectType: *mut crate::BSScript__ObjectTypeInfo,
     /// +0x20 `u32`, semantic; saved bytecode position: bit offset into the function's code stream (high)
     pub ip: u32,
     pub unknown_24: [u8; 4],
     /// +0x28 `class:BSScript::Variable`, semantic; the object the method runs on (None for a global) (high)
     pub self_: crate::BSScript__Variable,
     /// +0x38 `undefined4`, semantic; the number of Variables in the frame (parameters plus locals; the executors read parameter i below it) (high)
-    #[doc(hidden)]
-    pub __size: [u8; 4],
+    pub size: u32,
     /// +0x3C `u8`, semantic; 1 when the frame's function code may be loaded (medium)
     pub codeValid: u8,
     pub unknown_3D: [u8; 3],
@@ -696,12 +691,12 @@ pub struct BSScript__StackFrame {
 }
 const _: () = assert!(size_of::<BSScript__StackFrame>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningStack) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __previousFrame) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __owningFunction) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __owningObjectType) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, previousFrame) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningFunction) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, owningObjectType) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, ip) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, self_) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, __size) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, size) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__StackFrame, codeValid) == 0x3C);
 
 /// `BSScript::TypeInfo`: size 0x8 (exact).
@@ -749,11 +744,11 @@ pub struct ExtraAliasInstanceArray {
     /// +0x18 `undefined4`, semantic, runtime; allocated entry count (high)
     #[doc(hidden)]
     pub __capacity: [u8; 4],
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined4`, semantic, runtime; entry count (high)
     #[doc(hidden)]
     pub __count: [u8; 4],
-    pub unknown_24: [u8; 4],
+    unknown_24: [u8; 4],
     /// +0x28 `class:BSReadWriteLock`, semantic; taken for read while visiting, for write while adding (high)
     pub lock: crate::BSReadWriteLock,
     #[doc(hidden)]
@@ -798,7 +793,7 @@ pub struct SkyrimScript__HandlePolicy {
     /// +0x8 `undefined8`, semantic; BSSpinLock guarding the persisted-handle maps (high)
     #[doc(hidden)]
     pub __lock: [u8; 8],
-    pub unknown_10: [u8; 96],
+    unknown_10: [u8; 96],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }

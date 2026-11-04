@@ -47,6 +47,11 @@ pub fn load(host: &'static Host) -> bool {
     true
 }
 
+/// What an unhooked entry reads as: 1.7.104's file holds its code as loaded, the other runtimes' encrypt it.
+fn unhooked() -> Validation {
+    if crate::RUNTIME.get() == Some(&skse::runtime::pack(1, 7, 104, 0)) { Validation::Pristine } else { Validation::Plausible }
+}
+
 /// The live entry bytes of the functions about to be hooked, and one that is not, against the file on disk.
 fn pristine() -> Result<String, String> {
     let reloc = skyrim::reloc();
@@ -56,7 +61,7 @@ fn pristine() -> Result<String, String> {
         results.push((format!("{name} at {address:#x}"), validate(address, None)));
     }
     let detail = results.iter().map(|(name, v)| format!("{name}: {v}")).collect::<Vec<_>>().join("; ");
-    check(results.iter().all(|(_, v)| *v == Validation::Pristine), &detail)?;
+    check(results.iter().all(|(_, v)| *v == unhooked()), &detail)?;
     Ok(detail)
 }
 
@@ -156,7 +161,7 @@ fn report(expected: &[(&str, Phase)]) -> Result<String, String> {
     let site = reports.iter().find(|r| r.name == "Actor::ModActorValueImpl").ok_or("no report for Actor::ModActorValueImpl")?;
     let entries: Vec<(&str, Phase)> = site.entries.iter().map(|e| (e.owner.as_str(), e.phase)).collect();
     check(entries == expected, format!("entries {entries:?}, expected {expected:?}"))?;
-    check(site.validation == Validation::Pristine && matches!(site.current, Validation::Managed { .. }), format!("validation {}, now {}", site.validation, site.current))?;
+    check(site.validation == unhooked() && matches!(site.current, Validation::Managed { .. }), format!("validation {}, now {}", site.validation, site.current))?;
     check(site.timing.calls >= 2 && site.entries.iter().all(|e| e.timing.calls >= 2), "fewer than two calls counted")?;
     check(site.last_outcome.is_some(), "no outcome recorded")?;
     Ok(format!("{} entries {entries:?}, {} calls, last outcome {:?}, entry {}", site.name, site.timing.calls, site.last_outcome, site.current))

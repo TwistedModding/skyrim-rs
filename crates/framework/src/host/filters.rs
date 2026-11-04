@@ -70,7 +70,7 @@ fn swallow(user_event: &[u8], device: Option<InputDevice>, id: u32) -> bool {
 
 /// Whether an active filter takes the event; for the overlay's sink.
 pub(super) fn swallows(event: &ButtonEvent) -> bool {
-    swallow(event.user_event().as_bytes(), InputDevice::from_u32(event.device), event.idCode)
+    swallow(event.user_event().as_bytes(), InputDevice::from_engine(event.device), event.idCode)
 }
 
 /// One line per filter, for `SkyrimRs keys`.

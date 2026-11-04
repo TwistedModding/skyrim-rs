@@ -330,7 +330,8 @@ fn ui() -> Result<String, String> {
     let footstep = source::<BGSFootstepEvent>("BGSFootstepEvent")?;
     let player = sre::PlayerCharacter::singleton().ok_or("no player")?;
     let actor_cell = source::<BGSActorCellEvent>("BGSActorCellEvent")?;
-    check(core::ptr::from_ref(actor_cell.raw()) as usize == core::ptr::from_ref(player) as usize + 0x2E0, "the BGSActorCellEvent source is not player + 0x2e0")?;
+    let at = sre::base_offset!("PlayerCharacter:BSTEventSource<BGSActorCellEvent>");
+    check(core::ptr::from_ref(actor_cell.raw()) as usize == core::ptr::from_ref(player) as usize + at, &format!("the BGSActorCellEvent source is not player + {at:#x}"))?;
     Ok(format!(
         "UI at {base:#x}: sinks +8={} +0x60={} +0xb8={} numPausesGame={}; input source sinks={}, footstep source sinks={}, player BGSActorCellEvent source sinks={}",
         counts[0],

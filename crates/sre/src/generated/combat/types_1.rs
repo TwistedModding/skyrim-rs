@@ -8032,22 +8032,22 @@ pub struct CombatCoverLocation {
     pub __vftable: *const crate::raw::vtables::CombatCoverLocation_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_10: [u8; 4],
-    pub unknown_14: [u8; 4],
+    unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_18: [u8; 8],
     /// +0x20 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_20: [u8; 2],
-    pub unknown_22: [u8; 6],
+    unknown_22: [u8; 6],
     /// +0x28 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_28: [u8; 4],
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_30: [u8; 4],
@@ -8116,7 +8116,7 @@ pub struct CombatCoverLocation {
     pub __field_94: [u8; 4],
     /// +0x98 `float`, ctor store
     pub field_98: f32,
-    pub unknown_9C: [u8; 4],
+    unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8166,10 +8166,10 @@ pub struct CombatCoverSearch {
     pub __vftable: *const crate::raw::vtables::CombatCoverSearch_vtable,
     /// +0x8 `undefined4`, ctor store
     pub field_8: u32,
-    pub unknown_C: [u8; 92],
+    unknown_C: [u8; 92],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
-    pub unknown_70: [u8; 4],
+    unknown_70: [u8; 4],
     /// +0x74 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_74: [u8; 8],
@@ -8396,22 +8396,22 @@ pub struct CombatInventoryItemMagic {
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagic_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8438,22 +8438,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterA
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8480,22 +8480,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterB
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8522,22 +8522,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterC
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8564,22 +8564,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterD
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8606,22 +8606,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterI
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8648,22 +8648,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterL
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8690,22 +8690,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterO
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8732,22 +8732,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterP
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8774,22 +8774,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8816,22 +8816,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8858,22 +8858,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8900,22 +8900,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8942,22 +8942,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -8984,22 +8984,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterT
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9026,22 +9026,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterW
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9068,22 +9068,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9110,22 +9110,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9152,22 +9152,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9194,22 +9194,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9236,22 +9236,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9278,22 +9278,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9320,22 +9320,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9362,22 +9362,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9404,22 +9404,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9446,22 +9446,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9488,22 +9488,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9530,22 +9530,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9572,22 +9572,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9614,22 +9614,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9656,22 +9656,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9698,22 +9698,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9740,22 +9740,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9782,22 +9782,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9824,22 +9824,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9866,22 +9866,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9908,22 +9908,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9950,22 +9950,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -9992,22 +9992,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10034,22 +10034,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10076,22 +10076,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10118,22 +10118,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10160,22 +10160,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10202,22 +10202,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10244,22 +10244,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10286,22 +10286,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10328,22 +10328,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterA
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10370,22 +10370,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterB
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10412,22 +10412,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterC
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10454,22 +10454,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterD
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10496,22 +10496,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterI
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10538,22 +10538,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterL
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10580,22 +10580,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterO
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10622,22 +10622,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterP
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10664,22 +10664,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10706,22 +10706,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10748,22 +10748,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10790,22 +10790,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10832,22 +10832,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10874,22 +10874,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterT
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10916,22 +10916,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterW
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -10958,22 +10958,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterA
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11000,22 +11000,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterB
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11042,22 +11042,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterC
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11084,22 +11084,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterD
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11126,22 +11126,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterI
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11168,22 +11168,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterL
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11210,22 +11210,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterO
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11252,22 +11252,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterP
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11294,22 +11294,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11336,22 +11336,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11378,22 +11378,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11420,22 +11420,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11462,22 +11462,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11504,22 +11504,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterT
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11546,22 +11546,22 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterW
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11659,22 +11659,22 @@ pub struct CombatInventoryItemPotion {
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemPotion_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11741,22 +11741,22 @@ pub struct CombatInventoryItemScroll {
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemScroll_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11818,22 +11818,22 @@ pub struct CombatInventoryItemShout {
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemShout_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -11860,22 +11860,22 @@ pub struct CombatInventoryItemStaff {
     pub __vftable: *const crate::raw::vtables::CombatInventoryItemStaff_vtable,
     /// +0x8 `undefined4`, base CombatInventoryItem
     pub field_8: u32,
-    pub unknown_C: [u8; 4],
+    unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base CombatInventoryItem
     pub field_10: u64,
     /// +0x18 `float`, base CombatInventoryItem
     pub field_18: f32,
-    pub unknown_1C: [u8; 4],
+    unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base CombatInventoryItem
     pub field_20: u64,
     /// +0x28 `undefined4`, base CombatInventoryItem
     pub field_28: u32,
-    pub unknown_2C: [u8; 4],
+    unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base CombatInventoryItemMagic
     pub field_30: u64,
     /// +0x38 `undefined8`, base CombatInventoryItemMagic
     pub field_38: u64,
-    pub unknown_40: [u8; 8],
+    unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
     #[doc(hidden)]
     pub __field_48: [u8; 8],
@@ -12485,19 +12485,19 @@ pub struct CombatNavmeshSearch {
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12506,15 +12506,15 @@ pub struct CombatNavmeshSearch {
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
     /// +0x168 `undefined8`, ctor store
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -12524,7 +12524,7 @@ pub struct CombatNavmeshSearch {
     /// +0x1C0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -12534,7 +12534,7 @@ pub struct CombatNavmeshSearch {
     /// +0x1E0 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 92],
+    unknown_1E4: [u8; 92],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12594,19 +12594,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12615,15 +12615,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -12633,7 +12633,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -12643,7 +12643,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
     /// +0x1F0 `float`, ctor store
@@ -12652,15 +12652,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     pub field_1F4: f32,
     /// +0x1F8 `float`, ctor store
     pub field_1F8: f32,
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     /// +0x200 `undefined8`, ctor store
     pub field_200: u64,
     /// +0x208 `undefined2`, ctor store
     pub field_208: u16,
-    pub unknown_20A: [u8; 1],
+    unknown_20A: [u8; 1],
     /// +0x20B `undefined1`, ctor store
     pub field_20B: u8,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12727,19 +12727,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12748,15 +12748,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -12766,7 +12766,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -12776,7 +12776,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
     /// +0x1F0 `undefined8`, ctor store
@@ -12785,25 +12785,25 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     /// +0x1F8 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 4],
-    pub unknown_1FC: [u8; 16],
+    unknown_1FC: [u8; 16],
     /// +0x20C `undefined8`, ctor store
     pub field_20C: u64,
     /// +0x214 `undefined4`, ctor store
     pub field_214: u32,
     /// +0x218 `undefined8`, ctor store
     pub field_218: u64,
-    pub unknown_220: [u8; 8],
+    unknown_220: [u8; 8],
     /// +0x228 `undefined8`, ctor store
     pub field_228: u64,
-    pub unknown_230: [u8; 8],
+    unknown_230: [u8; 8],
     /// +0x238 `undefined8`, ctor store
     pub field_238: u64,
     /// +0x240 `undefined2`, ctor store
     pub field_240: u16,
-    pub unknown_242: [u8; 1],
+    unknown_242: [u8; 1],
     /// +0x243 `undefined1`, ctor store
     pub field_243: u8,
-    pub unknown_244: [u8; 4],
+    unknown_244: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12873,19 +12873,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12894,15 +12894,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -12912,7 +12912,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -12922,17 +12922,17 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined2`, ctor store
     pub field_1F8: u16,
-    pub unknown_1FA: [u8; 1],
+    unknown_1FA: [u8; 1],
     /// +0x1FB `undefined1`, ctor store
     pub field_1FB: u8,
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -12996,19 +12996,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13017,15 +13017,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13035,7 +13035,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13045,17 +13045,17 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined2`, ctor store
     pub field_1F8: u16,
-    pub unknown_1FA: [u8; 1],
+    unknown_1FA: [u8; 1],
     /// +0x1FB `undefined1`, ctor store
     pub field_1FB: u8,
-    pub unknown_1FC: [u8; 4],
+    unknown_1FC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13119,19 +13119,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13140,15 +13140,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13158,7 +13158,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13168,12 +13168,12 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 20],
+    unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
     /// +0x210 `undefined8`, ctor store
@@ -13184,11 +13184,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     /// +0x220 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_220: [u8; 2],
-    pub unknown_222: [u8; 1],
+    unknown_222: [u8; 1],
     /// +0x223 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_223: [u8; 1],
-    pub unknown_224: [u8; 4],
+    unknown_224: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13255,19 +13255,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13276,15 +13276,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13294,7 +13294,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13304,14 +13304,14 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 20],
+    unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 4],
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
     /// +0x210 `undefined8`, ctor store
@@ -13322,25 +13322,25 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     pub field_220: u64,
     /// +0x228 `undefined2`, ctor store
     pub field_228: u16,
-    pub unknown_22A: [u8; 1],
+    unknown_22A: [u8; 1],
     /// +0x22B `undefined1`, ctor store
     pub field_22B: u8,
-    pub unknown_22C: [u8; 4],
+    unknown_22C: [u8; 4],
     /// +0x230 `undefined8`, ctor store
     pub field_230: u64,
     /// +0x238 `undefined8`, ctor store
     pub field_238: u64,
-    pub unknown_240: [u8; 12],
+    unknown_240: [u8; 12],
     /// +0x24C `undefined8`, ctor store
     pub field_24C: u64,
     /// +0x254 `undefined4`, ctor store
     pub field_254: u32,
     /// +0x258 `undefined8`, ctor store
     pub field_258: u64,
-    pub unknown_260: [u8; 8],
+    unknown_260: [u8; 8],
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
-    pub unknown_270: [u8; 8],
+    unknown_270: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13414,19 +13414,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13435,15 +13435,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13453,7 +13453,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13463,7 +13463,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store (widths [4, 8])
     pub field_1E8: u32,
     /// +0x1EC `undefined4`, ctor store
@@ -13476,18 +13476,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_1F8: u32,
     /// +0x1FC `undefined4`, ctor store
     pub field_1FC: u32,
-    pub unknown_200: [u8; 8],
+    unknown_200: [u8; 8],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 2],
-    pub unknown_212: [u8; 1],
+    unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_213: [u8; 1],
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13556,19 +13556,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13577,15 +13577,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13595,7 +13595,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13605,7 +13605,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
     /// +0x1EC `float`, ctor store
@@ -13620,10 +13620,10 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     pub field_200: u64,
     /// +0x208 `undefined2`, ctor store
     pub field_208: u16,
-    pub unknown_20A: [u8; 1],
+    unknown_20A: [u8; 1],
     /// +0x20B `undefined1`, ctor store
     pub field_20B: u8,
-    pub unknown_20C: [u8; 4],
+    unknown_20C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13691,19 +13691,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13712,15 +13712,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13730,7 +13730,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13740,23 +13740,23 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 20],
+    unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 2],
-    pub unknown_212: [u8; 1],
+    unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_213: [u8; 1],
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13821,19 +13821,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13842,15 +13842,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13860,7 +13860,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -13870,7 +13870,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
     /// +0x1EC `float`, ctor store
@@ -13883,10 +13883,10 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     pub field_1F8: u64,
     /// +0x200 `undefined2`, ctor store
     pub field_200: u16,
-    pub unknown_202: [u8; 1],
+    unknown_202: [u8; 1],
     /// +0x203 `undefined1`, ctor store
     pub field_203: u8,
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -13953,19 +13953,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13974,15 +13974,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -13992,7 +13992,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -14002,29 +14002,29 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 20],
+    unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 4],
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
     /// +0x210 `undefined8`, ctor store
     pub field_210: u64,
     /// +0x218 `undefined4`, ctor store
     pub field_218: u32,
-    pub unknown_21C: [u8; 4],
+    unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined2`, ctor store
     pub field_228: u16,
-    pub unknown_22A: [u8; 1],
+    unknown_22A: [u8; 1],
     /// +0x22B `undefined1`, ctor store
     pub field_22B: u8,
-    pub unknown_22C: [u8; 4],
+    unknown_22C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14092,19 +14092,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -14113,15 +14113,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -14131,7 +14131,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -14141,18 +14141,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 76],
+    unknown_1E4: [u8; 76],
     /// +0x230 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_230: [u8; 8],
     /// +0x238 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_238: [u8; 2],
-    pub unknown_23A: [u8; 1],
+    unknown_23A: [u8; 1],
     /// +0x23B `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_23B: [u8; 1],
-    pub unknown_23C: [u8; 4],
+    unknown_23C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14215,19 +14215,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -14236,15 +14236,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -14254,7 +14254,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -14264,10 +14264,10 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 4],
+    unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store
     pub field_1E8: u32,
-    pub unknown_1EC: [u8; 4],
+    unknown_1EC: [u8; 4],
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined8`, ctor store
@@ -14276,18 +14276,18 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     /// +0x200 `undefined4`, ctor store
     #[doc(hidden)]
     pub __field_200: [u8; 4],
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
-    pub unknown_210: [u8; 16],
+    unknown_210: [u8; 16],
     /// +0x220 `undefined8`, ctor store
     pub field_220: u64,
     /// +0x228 `undefined2`, ctor store
     pub field_228: u16,
-    pub unknown_22A: [u8; 1],
+    unknown_22A: [u8; 1],
     /// +0x22B `undefined1`, ctor store
     pub field_22B: u8,
-    pub unknown_22C: [u8; 4],
+    unknown_22C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14355,19 +14355,19 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_38: u32,
-    pub unknown_3C: [u8; 16],
+    unknown_3C: [u8; 16],
     /// +0x4C `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_4C: u64,
     /// +0x54 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_54: u32,
     /// +0x58 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_58: u64,
-    pub unknown_60: [u8; 8],
+    unknown_60: [u8; 8],
     /// +0x68 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_68: u64,
     /// +0x70 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_70: u32,
-    pub unknown_74: [u8; 164],
+    unknown_74: [u8; 164],
     /// +0x118 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_118: u64,
     /// +0x120 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -14376,15 +14376,15 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     pub field_128: u64,
     /// +0x130 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_130: u32,
-    pub unknown_134: [u8; 36],
+    unknown_134: [u8; 36],
     /// +0x158 `undefined1`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_158: u8,
-    pub unknown_159: [u8; 7],
+    unknown_159: [u8; 7],
     /// +0x160 `undefined8`, base CombatNavmeshSearch
     pub field_160: u64,
     /// +0x168 `undefined8`, base CombatNavmeshSearch
     pub field_168: u64,
-    pub unknown_170: [u8; 64],
+    unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1B0: [u8; 8],
@@ -14394,7 +14394,7 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1C0: [u8; 4],
-    pub unknown_1C4: [u8; 12],
+    unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1D0: [u8; 8],
@@ -14404,24 +14404,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
     #[doc(hidden)]
     pub __field_1E0: [u8; 4],
-    pub unknown_1E4: [u8; 20],
+    unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
-    pub unknown_204: [u8; 4],
+    unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     #[doc(hidden)]
     pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
     #[doc(hidden)]
     pub __field_210: [u8; 2],
-    pub unknown_212: [u8; 1],
+    unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
     #[doc(hidden)]
     pub __field_213: [u8; 1],
-    pub unknown_214: [u8; 4],
+    unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -14719,4 +14719,32 @@ const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilder
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_50) == 0x50);
+
+/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, medium); primary base `CombatPathBuilderOpen`.
+/// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
+#[repr(C)]
+pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
+    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
+    /// +0x8 `undefined8`, base CombatPathBuilder
+    pub field_8: u64,
+    /// +0x10 `undefined8`, base CombatPathBuilder
+    pub field_10: u64,
+    pub unknown_18: [u8; 48],
+    /// +0x48 `undefined8`, base CombatPathBuilder
+    pub field_48: u64,
+    /// +0x50 `undefined8`, base CombatPathBuilderOpen
+    pub field_50: u64,
+    pub unknown_58: [u8; 128],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0xD8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_50) == 0x50);
 

@@ -3974,11 +3974,11 @@ impl TogglePOVHandler_vtable {
     /// The slot's index on the running game; 6 on 1.7.104.
     #[inline]
     #[must_use]
-    pub fn SLOT_ProcessButton() -> usize { slot_index!("TogglePOVHandler", 0x0, 6) }
+    pub fn SLOT_ProcessButton() -> usize { slot_at!("TogglePOVHandler", 0x0, 6) }
     /// Slot 6 as `TogglePOVHandler_vtable_ProcessButton`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButton(&self) -> Option<TogglePOVHandler_vtable_ProcessButton> {
-        unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_ProcessButton>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("TogglePOVHandler", 0x0, 6))) }
+        unsafe { core::mem::transmute::<*const c_void, Option<TogglePOVHandler_vtable_ProcessButton>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_at!("TogglePOVHandler", 0x0, 6))) }
     }
 }
 /// `TogglePOVHandler::Destroy`, slot 0 (high).

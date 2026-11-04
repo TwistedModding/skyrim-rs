@@ -1314,7 +1314,7 @@ impl crate::BSFurnitureMarkerNode {
 impl crate::BeamProjectile {
     /// The `BSTEventSink<BSProceduralGeomEvent>` base at +0x1E0.
     #[inline]
-    pub fn as_bst_event_sink_bs_procedural_geom_event(&self) -> &crate::BSTEventSink_BSProceduralGeomEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BeamProjectile:BSTEventSink<BSProceduralGeomEvent>", 0x1E0)).cast() } }
+    pub fn as_bst_event_sink_bs_procedural_geom_event(&self) -> &crate::BSTEventSink_BSProceduralGeomEvent { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BeamProjectile:BSTEventSink<BSProceduralGeomEvent>", 0x1E0)).cast() } }
     /// `BeamProjectile::UpdateImpl`, vtable slot 171: beam projectile per-frame update: follows the shooter's aim, reading cameraStates[0]+0x48 (first-person state) for the player
     ///
     /// Semantic, camera pass, high; called through the object's vtable.
@@ -2451,12 +2451,12 @@ impl crate::FirstPersonRenderContext {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn first_person_root(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_firstPersonRoot(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn first_person_root(&self) -> Option<&crate::NiNode> { unsafe { { self.firstPersonRoot }.as_ref() } }
     /// `FirstPersonRenderContext::sceneGraph` at +0x28: g_SceneGraph (also stored by main +0x898); ID_415032 is this field
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn scene_graph(&self) -> Option<&crate::SceneGraph> { unsafe { Self::__member_sceneGraph(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    pub fn scene_graph(&self) -> Option<&crate::SceneGraph> { unsafe { { self.sceneGraph }.as_ref() } }
     /// `FirstPersonRenderContext::shadowSceneNode` at +0x30: g_ShadowSceneNode
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
@@ -2479,16 +2479,6 @@ impl crate::FirstPersonRenderContext {
     pub fn firstPersonFOV_ptr(&self) -> *mut f32 { Self::__member_firstPersonFOV(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_firstPersonRoot(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FirstPersonRenderContext.firstPersonRoot", 0x18, *mut crate::NiNode) } }
-    /// `FirstPersonRenderContext::firstPersonRoot`, at +0x18 on 1.7.104.
-    #[inline]
-    pub fn firstPersonRoot(&self) -> *mut crate::NiNode { unsafe { Self::__member_firstPersonRoot(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_firstPersonRoot(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_firstPersonRoot(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn firstPersonRoot_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_firstPersonRoot(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_killCam(this: *const Self) -> *mut u8 { unsafe { member!(this, "FirstPersonRenderContext.killCam", 0x50, u8) } }
     /// `FirstPersonRenderContext::killCam`, at +0x50 on 1.7.104.
     #[inline]
@@ -2499,16 +2489,6 @@ impl crate::FirstPersonRenderContext {
     pub fn killCam_ptr(&self) -> *mut u8 { Self::__member_killCam(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_sceneGraph(this: *const Self) -> *mut *mut crate::SceneGraph { unsafe { member!(this, "FirstPersonRenderContext.sceneGraph", 0x28, *mut crate::SceneGraph) } }
-    /// `FirstPersonRenderContext::sceneGraph`, at +0x28 on 1.7.104.
-    #[inline]
-    pub fn sceneGraph(&self) -> *mut crate::SceneGraph { unsafe { Self::__member_sceneGraph(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_sceneGraph(&mut self, value: *mut crate::SceneGraph) { unsafe { Self::__member_sceneGraph(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn sceneGraph_ptr(&self) -> *mut *mut crate::SceneGraph { Self::__member_sceneGraph(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_shadowSceneNode(this: *const Self) -> *mut *mut crate::ShadowSceneNode { unsafe { member!(this, "FirstPersonRenderContext.shadowSceneNode", 0x30, *mut crate::ShadowSceneNode) } }
     /// `FirstPersonRenderContext::shadowSceneNode`, at +0x30 on 1.7.104.
     #[inline]
@@ -2517,16 +2497,6 @@ impl crate::FirstPersonRenderContext {
     pub fn set_shadowSceneNode(&mut self, value: *mut crate::ShadowSceneNode) { unsafe { Self::__member_shadowSceneNode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn shadowSceneNode_ptr(&self) -> *mut *mut crate::ShadowSceneNode { Self::__member_shadowSceneNode(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_worldFOV(this: *const Self) -> *mut f32 { unsafe { member!(this, "FirstPersonRenderContext.worldFOV", 0x10, f32) } }
-    /// `FirstPersonRenderContext::worldFOV`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn worldFOV(&self) -> f32 { unsafe { Self::__member_worldFOV(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_worldFOV(&mut self, value: f32) { unsafe { Self::__member_worldFOV(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn worldFOV_ptr(&self) -> *mut f32 { Self::__member_worldFOV(core::ptr::from_ref(self)) }
 }
 
 impl crate::FirstPersonState {
@@ -3261,51 +3231,7 @@ impl crate::FlatBone {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_local(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.local", 0x0, crate::NiTransform) } }
-    /// `FlatBone::local`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn local(&self) -> &crate::NiTransform { unsafe { &*Self::__member_local(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn local_ptr(&self) -> *mut crate::NiTransform { Self::__member_local(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_name(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "FlatBone.name", 0x78, crate::BSFixedString) } }
-    /// `FlatBone::name`, at +0x78 on 1.7.104.
-    #[inline]
-    pub fn name(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_name(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn name_ptr(&self) -> *mut crate::BSFixedString { Self::__member_name(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiNode { unsafe { member!(this, "FlatBone.node", 0x70, *mut crate::NiNode) } }
-    /// `FlatBone::node`, at +0x70 on 1.7.104.
-    #[inline]
-    pub fn node_field(&self) -> *mut crate::NiNode { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_node(&mut self, value: *mut crate::NiNode) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn node_ptr(&self) -> *mut *mut crate::NiNode { Self::__member_node(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_parentIndex(this: *const Self) -> *mut u16 { unsafe { member!(this, "FlatBone.parentIndex", 0x68, u16) } }
-    /// `FlatBone::parentIndex`, at +0x68 on 1.7.104.
-    #[inline]
-    pub fn parentIndex(&self) -> u16 { unsafe { Self::__member_parentIndex(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_parentIndex(&mut self, value: u16) { unsafe { Self::__member_parentIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn parentIndex_ptr(&self) -> *mut u16 { Self::__member_parentIndex(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_world(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "FlatBone.world", 0x34, crate::NiTransform) } }
-    /// `FlatBone::world`, at +0x34 on 1.7.104.
-    #[inline]
-    pub fn world(&self) -> &crate::NiTransform { unsafe { &*Self::__member_world(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn world_ptr(&self) -> *mut crate::NiTransform { Self::__member_world(core::ptr::from_ref(self)) }
+    pub fn node(&self) -> Option<&crate::NiNode> { unsafe { { self.node }.as_ref() } }
 }
 
 impl crate::FreeCameraState {
@@ -3492,19 +3418,6 @@ impl crate::FurnitureCameraState {
     pub fn set_refCount(&mut self, value: u32) { unsafe { Self::__member_refCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn refCount_ptr(&self) -> *mut u32 { Self::__member_refCount(core::ptr::from_ref(self)) }
-}
-
-impl crate::FurnitureMarker {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_0(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "FurnitureMarker.field_0", 0x0, [u8; 16]) } }
-    /// `FurnitureMarker::field_0`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn field_0(&self) -> [u8; 16] { unsafe { Self::__member_field_0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_0(&mut self, value: [u8; 16]) { unsafe { Self::__member_field_0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_0_ptr(&self) -> *mut [u8; 16] { Self::__member_field_0(core::ptr::from_ref(self)) }
 }
 
 impl crate::HorseCameraState {
@@ -5089,6 +5002,14 @@ impl crate::PlayerCamera {
     pub fn camera_root(&self) -> Option<&crate::NiNode> { unsafe { { self.cameraRoot }.as_ref() } }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_cachedPosition(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "PlayerCamera.cachedPosition", 0x144, crate::NiPoint3) } }
+    /// `PlayerCamera::cachedPosition`, at +0x144 on 1.7.104.
+    #[inline]
+    pub fn cachedPosition(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_cachedPosition(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn cachedPosition_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_cachedPosition(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_pad_166(this: *const Self) -> *mut [u8; 2] { unsafe { member!(this, "PlayerCamera.pad_166", 0x166, [u8; 2]) } }
     /// `PlayerCamera::pad_166`, at +0x166 on 1.7.104.
     #[inline]
@@ -5311,54 +5232,6 @@ impl crate::ProcessLists {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(41287, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_highActorHandles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ProcessLists.highActorHandles", 0x30, crate::BSTArray) } }
-    /// `ProcessLists::highActorHandles`, at +0x30 on 1.7.104.
-    #[inline]
-    pub fn highActorHandles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_highActorHandles(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn highActorHandles_ptr(&self) -> *mut crate::BSTArray { Self::__member_highActorHandles(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_lowActorHandles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ProcessLists.lowActorHandles", 0x48, crate::BSTArray) } }
-    /// `ProcessLists::lowActorHandles`, at +0x48 on 1.7.104.
-    #[inline]
-    pub fn lowActorHandles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_lowActorHandles(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn lowActorHandles_ptr(&self) -> *mut crate::BSTArray { Self::__member_lowActorHandles(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_middleHighActorHandles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ProcessLists.middleHighActorHandles", 0x60, crate::BSTArray) } }
-    /// `ProcessLists::middleHighActorHandles`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn middleHighActorHandles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_middleHighActorHandles(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn middleHighActorHandles_ptr(&self) -> *mut crate::BSTArray { Self::__member_middleHighActorHandles(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_middleLowActorHandles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ProcessLists.middleLowActorHandles", 0x78, crate::BSTArray) } }
-    /// `ProcessLists::middleLowActorHandles`, at +0x78 on 1.7.104.
-    #[inline]
-    pub fn middleLowActorHandles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_middleLowActorHandles(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn middleLowActorHandles_ptr(&self) -> *mut crate::BSTArray { Self::__member_middleLowActorHandles(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_referenceEffects(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ProcessLists.referenceEffects", 0x108, crate::BSTArray) } }
-    /// `ProcessLists::referenceEffects`, at +0x108 on 1.7.104.
-    #[inline]
-    pub fn referenceEffects(&self) -> &crate::BSTArray { unsafe { &*Self::__member_referenceEffects(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn referenceEffects_ptr(&self) -> *mut crate::BSTArray { Self::__member_referenceEffects(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_referenceEffectsLock(this: *const Self) -> *mut crate::BSSpinLock { unsafe { member!(this, "ProcessLists.referenceEffectsLock", 0x120, crate::BSSpinLock) } }
-    /// `ProcessLists::referenceEffectsLock`, at +0x120 on 1.7.104.
-    #[inline]
-    pub fn referenceEffectsLock(&self) -> &crate::BSSpinLock { unsafe { &*Self::__member_referenceEffectsLock(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn referenceEffectsLock_ptr(&self) -> *mut crate::BSSpinLock { Self::__member_referenceEffectsLock(core::ptr::from_ref(self)) }
 }
 
 impl crate::RaceSexCamera {
@@ -7727,16 +7600,6 @@ impl crate::bhkShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn havok_shape(&self) -> Option<&crate::hkpShape> { unsafe { { self.havokShape }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_materialId(this: *const Self) -> *mut u32 { unsafe { member!(this, "bhkShape.materialId", 0x20, u32) } }
-    /// `bhkShape::materialId`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn materialId(&self) -> u32 { unsafe { Self::__member_materialId(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_materialId(&mut self, value: u32) { unsafe { Self::__member_materialId(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn materialId_ptr(&self) -> *mut u32 { Self::__member_materialId(core::ptr::from_ref(self)) }
 }
 
 impl crate::bhkWorld {
@@ -7869,39 +7732,6 @@ impl crate::bhkWorld {
     pub fn worldLock_ptr(&self) -> *mut crate::BSReadWriteLock { Self::__member_worldLock(core::ptr::from_ref(self)) }
 }
 
-impl crate::hkArray {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_capacityAndFlags(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.capacityAndFlags", 0xC, u32) } }
-    /// `hkArray::capacityAndFlags`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn capacityAndFlags(&self) -> u32 { unsafe { Self::__member_capacityAndFlags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_capacityAndFlags(&mut self, value: u32) { unsafe { Self::__member_capacityAndFlags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn capacityAndFlags_ptr(&self) -> *mut u32 { Self::__member_capacityAndFlags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_data(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkArray.data", 0x0, *mut c_void) } }
-    /// `hkArray::data`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn data(&self) -> *mut c_void { unsafe { Self::__member_data(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_data(&mut self, value: *mut c_void) { unsafe { Self::__member_data(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn data_ptr(&self) -> *mut *mut c_void { Self::__member_data(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkArray.size", 0x8, u32) } }
-    /// `hkArray::size`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
-}
-
 impl crate::hkContainerHeapAllocator__Allocator {
     /// `hkContainerHeapAllocator::Allocator::AllocateBuffer`, vtable slot 3: allocates a buffer from the thread's Havok heap (heap slot 3 with the same arguments)
     ///
@@ -7928,17 +7758,7 @@ impl crate::hkMemoryRouter {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_heap(this: *const Self) -> *mut *mut crate::hkMemoryAllocator { unsafe { member!(this, "hkMemoryRouter.heap", 0x58, *mut crate::hkMemoryAllocator) } }
-    /// `hkMemoryRouter::heap`, at +0x58 on 1.7.104.
-    #[inline]
-    pub fn heap_field(&self) -> *mut crate::hkMemoryAllocator { unsafe { Self::__member_heap(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_heap(&mut self, value: *mut crate::hkMemoryAllocator) { unsafe { Self::__member_heap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn heap_ptr(&self) -> *mut *mut crate::hkMemoryAllocator { Self::__member_heap(core::ptr::from_ref(self)) }
+    pub fn heap(&self) -> Option<&crate::hkMemoryAllocator> { unsafe { { self.heap }.as_ref() } }
 }
 
 impl crate::hkReferencedObject {
@@ -7954,39 +7774,6 @@ impl crate::hkReferencedObject {
     /// `void (const hkReferencedObject* this)`
     #[inline]
     pub fn remove_reference(&self) { unsafe { function!(57011, (*const Self))(core::ptr::from_ref(self)) } }
-}
-
-impl crate::hkStridedVertices {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_numVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.numVertices", 0x8, u32) } }
-    /// `hkStridedVertices::numVertices`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn numVertices(&self) -> u32 { unsafe { Self::__member_numVertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_numVertices(&mut self, value: u32) { unsafe { Self::__member_numVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn numVertices_ptr(&self) -> *mut u32 { Self::__member_numVertices(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_striding(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkStridedVertices.striding", 0xC, u32) } }
-    /// `hkStridedVertices::striding`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn striding(&self) -> u32 { unsafe { Self::__member_striding(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_striding(&mut self, value: u32) { unsafe { Self::__member_striding(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn striding_ptr(&self) -> *mut u32 { Self::__member_striding(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_vertices(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "hkStridedVertices.vertices", 0x0, *mut c_void) } }
-    /// `hkStridedVertices::vertices`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn vertices(&self) -> *mut c_void { unsafe { Self::__member_vertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_vertices(&mut self, value: *mut c_void) { unsafe { Self::__member_vertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn vertices_ptr(&self) -> *mut *mut c_void { Self::__member_vertices(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbFootIkGains {
@@ -8197,36 +7984,6 @@ impl crate::hkpCollidable {
     pub fn shape(&self) -> Option<&crate::hkpShape> { unsafe { Self::__member_shape(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_broadPhaseType(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpCollidable.broadPhaseType", 0x28, u8) } }
-    /// `hkpCollidable::broadPhaseType`, at +0x28 on 1.7.104.
-    #[inline]
-    pub fn broadPhaseType(&self) -> u8 { unsafe { Self::__member_broadPhaseType(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_broadPhaseType(&mut self, value: u8) { unsafe { Self::__member_broadPhaseType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn broadPhaseType_ptr(&self) -> *mut u8 { Self::__member_broadPhaseType(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_collisionFilterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpCollidable.collisionFilterInfo", 0x2C, u32) } }
-    /// `hkpCollidable::collisionFilterInfo`, at +0x2C on 1.7.104.
-    #[inline]
-    pub fn collisionFilterInfo(&self) -> u32 { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_collisionFilterInfo(&mut self, value: u32) { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn collisionFilterInfo_ptr(&self) -> *mut u32 { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_ownerOffset(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpCollidable.ownerOffset", 0x20, u8) } }
-    /// `hkpCollidable::ownerOffset`, at +0x20 on 1.7.104.
-    #[inline]
-    pub fn ownerOffset(&self) -> u8 { unsafe { Self::__member_ownerOffset(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_ownerOffset(&mut self, value: u8) { unsafe { Self::__member_ownerOffset(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn ownerOffset_ptr(&self) -> *mut u8 { Self::__member_ownerOffset(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_shape(this: *const Self) -> *mut *mut crate::hkpShape { unsafe { member!(this, "hkpCollidable.shape", 0x0, *mut crate::hkpShape) } }
     /// `hkpCollidable::shape`, at +0x0 on 1.7.104.
     #[inline]
@@ -8267,89 +8024,6 @@ impl crate::hkpConvexVerticesShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn connectivity(&self) -> Option<&crate::hkpConvexVerticesConnectivity> { unsafe { { self.connectivity }.as_ref() } }
-}
-
-impl crate::hkpConvexVerticesShape__BuildConfig {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_buildConnectivity(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.buildConnectivity", 0x0, u8) } }
-    /// `hkpConvexVerticesShape::BuildConfig::buildConnectivity`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn buildConnectivity(&self) -> u8 { unsafe { Self::__member_buildConnectivity(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_buildConnectivity(&mut self, value: u8) { unsafe { Self::__member_buildConnectivity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn buildConnectivity_ptr(&self) -> *mut u8 { Self::__member_buildConnectivity(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_convexRadius(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.convexRadius", 0x4, f32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::convexRadius`, at +0x4 on 1.7.104.
-    #[inline]
-    pub fn convexRadius(&self) -> f32 { unsafe { Self::__member_convexRadius(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_convexRadius(&mut self, value: f32) { unsafe { Self::__member_convexRadius(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn convexRadius_ptr(&self) -> *mut f32 { Self::__member_convexRadius(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_14(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.field_14", 0x14, f32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::field_14`, at +0x14 on 1.7.104.
-    #[inline]
-    pub fn field_14(&self) -> f32 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_14(&mut self, value: f32) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_14_ptr(&self) -> *mut f32 { Self::__member_field_14(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_maxVertices(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.maxVertices", 0x8, u32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::maxVertices`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn maxVertices(&self) -> u32 { unsafe { Self::__member_maxVertices(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_maxVertices(&mut self, value: u32) { unsafe { Self::__member_maxVertices(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn maxVertices_ptr(&self) -> *mut u32 { Self::__member_maxVertices(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shrinkByConvexRadius(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkByConvexRadius", 0x1, u8) } }
-    /// `hkpConvexVerticesShape::BuildConfig::shrinkByConvexRadius`, at +0x1 on 1.7.104.
-    #[inline]
-    pub fn shrinkByConvexRadius(&self) -> u8 { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shrinkByConvexRadius(&mut self, value: u8) { unsafe { Self::__member_shrinkByConvexRadius(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shrinkByConvexRadius_ptr(&self) -> *mut u8 { Self::__member_shrinkByConvexRadius(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shrinkFlag(this: *const Self) -> *mut u8 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkFlag", 0x2, u8) } }
-    /// `hkpConvexVerticesShape::BuildConfig::shrinkFlag`, at +0x2 on 1.7.104.
-    #[inline]
-    pub fn shrinkFlag(&self) -> u8 { unsafe { Self::__member_shrinkFlag(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shrinkFlag(&mut self, value: u8) { unsafe { Self::__member_shrinkFlag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shrinkFlag_ptr(&self) -> *mut u8 { Self::__member_shrinkFlag(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shrinkParam0(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkParam0", 0xC, f32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::shrinkParam0`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn shrinkParam0(&self) -> f32 { unsafe { Self::__member_shrinkParam0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shrinkParam0(&mut self, value: f32) { unsafe { Self::__member_shrinkParam0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shrinkParam0_ptr(&self) -> *mut f32 { Self::__member_shrinkParam0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shrinkParam1(this: *const Self) -> *mut f32 { unsafe { member!(this, "hkpConvexVerticesShape::BuildConfig.shrinkParam1", 0x10, f32) } }
-    /// `hkpConvexVerticesShape::BuildConfig::shrinkParam1`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn shrinkParam1(&self) -> f32 { unsafe { Self::__member_shrinkParam1(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shrinkParam1(&mut self, value: f32) { unsafe { Self::__member_shrinkParam1(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shrinkParam1_ptr(&self) -> *mut f32 { Self::__member_shrinkParam1(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkpListShape {
@@ -8399,47 +8073,7 @@ impl crate::hkpListShape__ChildInfo {
     ///
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn shape(&self) -> Option<&crate::hkpShape> { unsafe { Self::__member_shape(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_collisionFilterInfo(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpListShape::ChildInfo.collisionFilterInfo", 0x8, u32) } }
-    /// `hkpListShape::ChildInfo::collisionFilterInfo`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn collisionFilterInfo(&self) -> u32 { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_collisionFilterInfo(&mut self, value: u32) { unsafe { Self::__member_collisionFilterInfo(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn collisionFilterInfo_ptr(&self) -> *mut u32 { Self::__member_collisionFilterInfo(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_numChildShapes(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpListShape::ChildInfo.numChildShapes", 0x10, u32) } }
-    /// `hkpListShape::ChildInfo::numChildShapes`, at +0x10 on 1.7.104.
-    #[inline]
-    pub fn numChildShapes(&self) -> u32 { unsafe { Self::__member_numChildShapes(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_numChildShapes(&mut self, value: u32) { unsafe { Self::__member_numChildShapes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn numChildShapes_ptr(&self) -> *mut u32 { Self::__member_numChildShapes(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shape(this: *const Self) -> *mut *mut crate::hkpShape { unsafe { member!(this, "hkpListShape::ChildInfo.shape", 0x0, *mut crate::hkpShape) } }
-    /// `hkpListShape::ChildInfo::shape`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn shape_field(&self) -> *mut crate::hkpShape { unsafe { Self::__member_shape(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shape(&mut self, value: *mut crate::hkpShape) { unsafe { Self::__member_shape(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shape_ptr(&self) -> *mut *mut crate::hkpShape { Self::__member_shape(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_shapeSize(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkpListShape::ChildInfo.shapeSize", 0xC, u32) } }
-    /// `hkpListShape::ChildInfo::shapeSize`, at +0xC on 1.7.104.
-    #[inline]
-    pub fn shapeSize(&self) -> u32 { unsafe { Self::__member_shapeSize(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_shapeSize(&mut self, value: u32) { unsafe { Self::__member_shapeSize(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn shapeSize_ptr(&self) -> *mut u32 { Self::__member_shapeSize(core::ptr::from_ref(self)) }
+    pub fn shape(&self) -> Option<&crate::hkpShape> { unsafe { { self.shape }.as_ref() } }
 }
 
 impl crate::hkpShape {
@@ -10480,15 +10114,15 @@ pub fn g_fov_tan_scale() -> *mut f32 { address!(391777) as *mut f32 }
 /// `g_FaceAnimationSettings_ptr` at 0x219e5e0, id 400331 (semantic, medium); pointer to an engine object whose byte +0x58 gates blinking and eye tracking (console 'ModifyFaceGen reset' sets it to 1) (medium, camera pass), type `pointer`
 #[inline]
 pub fn g_face_animation_settings_ptr() -> *mut *mut c_void { address!(400331) as *mut *mut c_void }
-/// `g_FaceGenExpressionNames` at 0x20b0830, id 378660 (semantic, high); expression names 0..16: DialogueAnger, DialogueFear, DialogueHappy, DialogueSad, DialogueSurprise, DialoguePuzzled, DialogueDisgusted, MoodNeutral, MoodAnger, MoodFear, MoodHappy, MoodSad, MoodSurprise, MoodPuzzled, MoodDisgusted, CombatAnger, CombatShout (high, camera pass), type `pointer`
+/// `g_FaceGenExpressionNames` at 0x20b0830, id 378660 (semantic, high); the 17 expression names, indexed 0..16 (a null follows at index 17): DialogueAnger, DialogueFear, DialogueHappy, DialogueSad, DialogueSurprise, DialoguePuzzled, DialogueDisgusted, MoodNeutral, MoodAnger, MoodFear, MoodHappy, MoodSad, MoodSurprise, MoodPuzzled, MoodDisgusted, CombatAnger, CombatShout (high, camera pass), type `char*[17]`
 #[inline]
-pub fn g_face_gen_expression_names() -> *mut *mut c_void { address!(378660) as *mut *mut c_void }
+pub fn g_face_gen_expression_names() -> *mut c_void { address!(378660) as *mut c_void }
 /// `g_FaceGenKeyframeTypeNames` at 0x20b0800, id 378655 (semantic, high); keyframe type names by type value: 0 Phoneme, 1 Expression, 2 Modifier, 3 Custom ('SkinnyMorph' at 0x20b0828 is the custom channel) (high, camera pass), type `pointer`
 #[inline]
 pub fn g_face_gen_keyframe_type_names() -> *mut *mut c_void { address!(378655) as *mut *mut c_void }
-/// `g_FaceGenModifierNames` at 0x20b08c0, id 378677 (semantic, high); modifier names 0..16: BlinkLeft, BlinkRight, BrowDownLeft, BrowDownRight, BrowInLeft, BrowInRight, BrowUpLeft, BrowUpRight, LookDown, LookLeft, LookRight, LookUp, SquintLeft, SquintRight, HeadPitch, HeadRoll, HeadYaw (high, camera pass), type `pointer`
+/// `g_FaceGenModifierNames` at 0x20b08c0, id 378677 (semantic, high); the 17 modifier names, indexed 0..16 (a null follows at index 17): BlinkLeft, BlinkRight, BrowDownLeft, BrowDownRight, BrowInLeft, BrowInRight, BrowUpLeft, BrowUpRight, LookDown, LookLeft, LookRight, LookUp, SquintLeft, SquintRight, HeadPitch, HeadRoll, HeadYaw (high, camera pass), type `char*[17]`
 #[inline]
-pub fn g_face_gen_modifier_names() -> *mut *mut c_void { address!(378677) as *mut *mut c_void }
+pub fn g_face_gen_modifier_names() -> *mut c_void { address!(378677) as *mut c_void }
 /// `g_FaceGenPhonemeNames` at 0x20b0950, id 378694 (semantic, high); phoneme names 0..15: Aah, BigAah, BMP, ChJSh, DST, Eee, Eh, FV, I, K, N, Oh, OohQ, R, Th, W (high, camera pass), type `pointer`
 #[inline]
 pub fn g_face_gen_phoneme_names() -> *mut *mut c_void { address!(378694) as *mut *mut c_void }

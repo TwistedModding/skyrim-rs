@@ -1837,19 +1837,19 @@ impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void__
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48 {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__ {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b {
@@ -1879,19 +1879,19 @@ impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void__
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44 {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714 {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__ {
@@ -1903,7 +1903,7 @@ impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void__
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317 {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>` is laid out from its primary base `BSPlatform::BSAsyncRequestBase`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__ {
@@ -1915,25 +1915,25 @@ impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void__
 impl core::ops::Deref for crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f {
     type Target = crate::BSPlatform__BSAsyncRequestBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>:BSPlatform::BSAsyncRequestBase", 0x0)).cast() } }
 }
 /// `BSPlatform::BSBNETFile::marketplaceDownload` is laid out from its primary base `BSPlatform::BSBNETFile::download`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload {
     type Target = crate::BSPlatform__BSBNETFile__download;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSBNETFile::marketplaceDownload:BSPlatform::BSBNETFile::download", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSBNETFile::marketplaceDownload:BSPlatform::BSBNETFile::download", 0x0)).cast() } }
 }
 /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest {
     type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>", 0x0)).cast() } }
 }
 /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest {
     type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>", 0x0)).cast() } }
 }
 /// `BSPlatform::BSDownloadRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSDownloadRequest {
@@ -1945,7 +1945,7 @@ impl core::ops::Deref for crate::BSPlatform__BSDownloadRequest {
 impl core::ops::Deref for crate::BSPlatform__BSMarketplaceImage {
     type Target = crate::BSPlatform__BSBNETImage;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSMarketplaceImage:BSPlatform::BSBNETImage", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSMarketplaceImage:BSPlatform::BSBNETImage", 0x0)).cast() } }
 }
 /// `BSPlatform::BSUploadRequest` is laid out from its primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlatform__BSUploadRequest {
@@ -1957,7 +1957,7 @@ impl core::ops::Deref for crate::BSPlatform__BSUploadRequest {
 impl core::ops::Deref for crate::BSPlatform__BSUploadWithProgressRequest {
     type Target = crate::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSPlatform::BSUploadWithProgressRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSPlatform::BSUploadWithProgressRequest:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>", 0x0)).cast() } }
 }
 /// `BSPlayerDistanceCheckController` is laid out from its primary base `NiTimeController`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSPlayerDistanceCheckController {
@@ -2209,7 +2209,7 @@ impl core::ops::Deref for crate::BSResource___anon_5F811FAA__LooseFileAsyncChild
 impl core::ops::Deref for crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
     type Target = crate::BSResource___anon_5F811FAA__LooseFileStreamBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::_anon_5F811FAA::LooseFileStreamBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::_anon_5F811FAA::LooseFileStreamBase", 0x0)).cast() } }
 }
 /// `BSResource::_anon_5F811FAA::LooseFileSBTraits::AsyncFunctor` is laid out from its primary base `BSSystemFileAsyncFunctor`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSResource___anon_5F811FAA__LooseFileSBTraits__AsyncFunctor {
@@ -2221,7 +2221,7 @@ impl core::ops::Deref for crate::BSResource___anon_5F811FAA__LooseFileSBTraits__
 impl core::ops::Deref for crate::BSResource___anon_5F811FAA__LooseFileStream {
     type Target = crate::BSResource___anon_5F811FAA__LooseFileStreamBase;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::_anon_5F811FAA::LooseFileStreamBase", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::_anon_5F811FAA::LooseFileStreamBase", 0x0)).cast() } }
 }
 /// `BSResource::_anon_AC99F91C::ArchiveRegistrationTaskData` is laid out from its primary base `BSWin32TaskletData`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSResource___anon_AC99F91C__ArchiveRegistrationTaskData {
@@ -5713,7 +5713,7 @@ impl core::ops::Deref for crate::BSWin32AwardsSystemUtility {
 impl core::ops::Deref for crate::BSWin32GameDataSystemUtility {
     type Target = crate::BSGameDataSystemUtility;
     #[inline]
-    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_offset!("BSWin32GameDataSystemUtility:BSGameDataSystemUtility", 0x0)).cast() } }
+    fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).byte_add(base_at!("BSWin32GameDataSystemUtility:BSGameDataSystemUtility", 0x0)).cast() } }
 }
 /// `BSWin32GamerProfile` is laid out from its primary base `BSGamerProfile`, so its methods and fields are reachable through it.
 impl core::ops::Deref for crate::BSWin32GamerProfile {
