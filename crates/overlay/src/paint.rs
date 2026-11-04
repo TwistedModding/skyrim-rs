@@ -7,13 +7,14 @@ use egui::epaint::{ImageDelta, Primitive, Vertex, textures::TexturesDelta};
 use egui::{ClippedPrimitive, ImageData, TextureId};
 use windows::Win32::Foundation::RECT;
 use windows::Win32::Graphics::Direct3D::Fxc::D3DCompile;
-use windows::Win32::Graphics::Direct3D::{D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, ID3DBlob};
+use windows::Win32::Graphics::Direct3D::{D3D_PRIMITIVE_TOPOLOGY, D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST, ID3DBlob};
 use windows::Win32::Graphics::Direct3D11::{
     D3D11_BIND_CONSTANT_BUFFER, D3D11_BIND_FLAG, D3D11_BIND_INDEX_BUFFER, D3D11_BIND_SHADER_RESOURCE, D3D11_BIND_VERTEX_BUFFER, D3D11_BLEND_DESC, D3D11_BLEND_INV_SRC_ALPHA, D3D11_BLEND_ONE, D3D11_BLEND_OP_ADD,
     D3D11_BOX, D3D11_BUFFER_DESC, D3D11_COLOR_WRITE_ENABLE_ALL, D3D11_COMPARISON_ALWAYS, D3D11_CPU_ACCESS_WRITE, D3D11_CULL_NONE, D3D11_DEPTH_STENCIL_DESC, D3D11_FILL_SOLID, D3D11_FILTER_MIN_MAG_MIP_LINEAR,
     D3D11_INPUT_ELEMENT_DESC, D3D11_INPUT_PER_VERTEX_DATA, D3D11_MAP_WRITE_DISCARD, D3D11_MAPPED_SUBRESOURCE, D3D11_RASTERIZER_DESC, D3D11_RENDER_TARGET_BLEND_DESC, D3D11_SAMPLER_DESC, D3D11_SUBRESOURCE_DATA,
     D3D11_TEXTURE_ADDRESS_CLAMP, D3D11_TEXTURE2D_DESC, D3D11_USAGE_DEFAULT, D3D11_USAGE_DYNAMIC, D3D11_VIEWPORT, ID3D11BlendState, ID3D11Buffer, ID3D11DepthStencilState, ID3D11Device, ID3D11DeviceContext,
-    ID3D11InputLayout, ID3D11PixelShader, ID3D11RasterizerState, ID3D11RenderTargetView, ID3D11SamplerState, ID3D11ShaderResourceView, ID3D11Texture2D, ID3D11VertexShader,
+    ID3D11DepthStencilView, ID3D11DomainShader, ID3D11GeometryShader, ID3D11HullShader, ID3D11InputLayout, ID3D11PixelShader, ID3D11RasterizerState, ID3D11RenderTargetView, ID3D11SamplerState,
+    ID3D11ShaderResourceView, ID3D11Texture2D, ID3D11VertexShader,
 };
 use windows::Win32::Graphics::Dxgi::Common::{DXGI_FORMAT, DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_FORMAT_R32_UINT, DXGI_FORMAT_R32G32_FLOAT, DXGI_SAMPLE_DESC};
 use windows::core::{Interface, PCSTR, Result, s};
@@ -76,10 +77,93 @@ impl Dynamic {
     }
 }
 
+/// The state [`Painter::draw`] changes on the immediate context.
+#[derive(Default)]
+struct SavedState {
+    layout: Option<ID3D11InputLayout>,
+    topology: D3D_PRIMITIVE_TOPOLOGY,
+    vertex_buffer: Option<ID3D11Buffer>,
+    stride: u32,
+    vertex_offset: u32,
+    index_buffer: Option<ID3D11Buffer>,
+    index_format: DXGI_FORMAT,
+    index_offset: u32,
+    vertex_shader: Option<ID3D11VertexShader>,
+    vertex_constants: [Option<ID3D11Buffer>; 1],
+    hull_shader: Option<ID3D11HullShader>,
+    domain_shader: Option<ID3D11DomainShader>,
+    geometry_shader: Option<ID3D11GeometryShader>,
+    pixel_shader: Option<ID3D11PixelShader>,
+    sampler: [Option<ID3D11SamplerState>; 1],
+    view: [Option<ID3D11ShaderResourceView>; 1],
+    raster: Option<ID3D11RasterizerState>,
+    viewports: [D3D11_VIEWPORT; 16],
+    viewport_count: u32,
+    scissors: [RECT; 16],
+    scissor_count: u32,
+    blend: Option<ID3D11BlendState>,
+    blend_factor: [f32; 4],
+    sample_mask: u32,
+    depth: Option<ID3D11DepthStencilState>,
+    stencil_ref: u32,
+    targets: [Option<ID3D11RenderTargetView>; 8],
+    depth_target: Option<ID3D11DepthStencilView>,
+}
+
+impl SavedState {
+    fn capture(context: &ID3D11DeviceContext) -> Self {
+        let mut s = Self { viewport_count: 16, scissor_count: 16, ..Self::default() };
+        unsafe {
+            s.layout = context.IAGetInputLayout().ok();
+            s.topology = context.IAGetPrimitiveTopology();
+            context.IAGetVertexBuffers(0, 1, Some(&raw mut s.vertex_buffer), Some(&raw mut s.stride), Some(&raw mut s.vertex_offset));
+            context.IAGetIndexBuffer(Some(&raw mut s.index_buffer), Some(&raw mut s.index_format), Some(&raw mut s.index_offset));
+            context.VSGetShader(&raw mut s.vertex_shader, None, None);
+            context.VSGetConstantBuffers(0, Some(&mut s.vertex_constants));
+            context.HSGetShader(&raw mut s.hull_shader, None, None);
+            context.DSGetShader(&raw mut s.domain_shader, None, None);
+            context.GSGetShader(&raw mut s.geometry_shader, None, None);
+            context.PSGetShader(&raw mut s.pixel_shader, None, None);
+            context.PSGetSamplers(0, Some(&mut s.sampler));
+            context.PSGetShaderResources(0, Some(&mut s.view));
+            s.raster = context.RSGetState().ok();
+            context.RSGetViewports(&raw mut s.viewport_count, Some(s.viewports.as_mut_ptr()));
+            context.RSGetScissorRects(&raw mut s.scissor_count, Some(s.scissors.as_mut_ptr()));
+            context.OMGetBlendState(Some(&raw mut s.blend), Some(&mut s.blend_factor), Some(&raw mut s.sample_mask));
+            context.OMGetDepthStencilState(Some(&raw mut s.depth), Some(&raw mut s.stencil_ref));
+            context.OMGetRenderTargets(Some(&mut s.targets), Some(&raw mut s.depth_target));
+        }
+        s
+    }
+
+    fn restore(&self, context: &ID3D11DeviceContext) {
+        unsafe {
+            // Targets before views: binding a target unbinds any view of the same resource.
+            context.OMSetRenderTargets(Some(&self.targets), self.depth_target.as_ref());
+            context.OMSetDepthStencilState(self.depth.as_ref(), self.stencil_ref);
+            context.OMSetBlendState(self.blend.as_ref(), Some(&self.blend_factor), self.sample_mask);
+            context.RSSetScissorRects(Some(&self.scissors[..self.scissor_count as usize]));
+            context.RSSetViewports(Some(&self.viewports[..self.viewport_count as usize]));
+            context.RSSetState(self.raster.as_ref());
+            context.PSSetShaderResources(0, Some(&self.view));
+            context.PSSetSamplers(0, Some(&self.sampler));
+            context.PSSetShader(self.pixel_shader.as_ref(), None);
+            context.GSSetShader(self.geometry_shader.as_ref(), None);
+            context.DSSetShader(self.domain_shader.as_ref(), None);
+            context.HSSetShader(self.hull_shader.as_ref(), None);
+            context.VSSetConstantBuffers(0, Some(&self.vertex_constants));
+            context.VSSetShader(self.vertex_shader.as_ref(), None);
+            context.IASetIndexBuffer(self.index_buffer.as_ref(), self.index_format, self.index_offset);
+            context.IASetVertexBuffers(0, 1, Some(&raw const self.vertex_buffer), Some(&raw const self.stride), Some(&raw const self.vertex_offset));
+            context.IASetPrimitiveTopology(self.topology);
+            context.IASetInputLayout(self.layout.as_ref());
+        }
+    }
+}
+
 pub(crate) struct Painter {
     device: ID3D11Device,
     context: ID3D11DeviceContext,
-    immediate: ID3D11DeviceContext,
     vertex_shader: ID3D11VertexShader,
     pixel_shader: ID3D11PixelShader,
     layout: ID3D11InputLayout,
@@ -145,8 +229,7 @@ impl Painter {
     pub(crate) unsafe fn new(device: *mut c_void, context: *mut c_void) -> Result<Self> {
         let none = || windows::core::Error::from(windows::Win32::Foundation::E_POINTER);
         let device = unsafe { ID3D11Device::from_raw_borrowed(&device) }.ok_or_else(none)?.clone();
-        let immediate = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or_else(none)?.clone();
-        let context = create(|out| unsafe { device.CreateDeferredContext(0, Some(out)) })?;
+        let context = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or_else(none)?.clone();
         let vs = compile(s!("vs"), s!("vs_4_0"))?;
         let ps = compile(s!("ps"), s!("ps_4_0"))?;
         let elements = [element(s!("POSITION"), DXGI_FORMAT_R32G32_FLOAT, 0), element(s!("TEXCOORD"), DXGI_FORMAT_R32G32_FLOAT, 8), element(s!("COLOR"), DXGI_FORMAT_R8G8B8A8_UNORM, 16)];
@@ -187,7 +270,6 @@ impl Painter {
                 textures: HashMap::new(),
                 device,
                 context,
-                immediate,
             })
         }
     }
@@ -235,8 +317,6 @@ impl Painter {
         for id in &delta.free {
             self.textures.remove(id);
         }
-        let commands = create(|out| unsafe { self.context.FinishCommandList(false, Some(out)) })?;
-        unsafe { self.immediate.ExecuteCommandList(&commands, true) };
         Ok(())
     }
 
@@ -247,6 +327,7 @@ impl Painter {
         let ib = self.indices.write(device, context, indices)?.clone();
         let screen = [size[0] as f32 / pixels_per_point, size[1] as f32 / pixels_per_point, 0.0, 0.0];
         let stride = size_of::<Vertex>() as u32;
+        let saved = SavedState::capture(context);
         unsafe {
             context.UpdateSubresource(&self.screen, 0, None, screen.as_ptr().cast(), 0, 0);
             context.IASetInputLayout(&self.layout);
@@ -278,6 +359,7 @@ impl Painter {
                 context.DrawIndexed(count as u32, first as u32, base as i32);
             }
         }
+        saved.restore(context);
         Ok(())
     }
 
@@ -291,8 +373,7 @@ impl Painter {
                 return Ok(());
             };
             let area = D3D11_BOX { left: x as u32, top: y as u32, front: 0, right: x as u32 + w, bottom: y as u32 + h, back: 1 };
-            // A deferred context loses rows of a large update when the driver has no command lists (AMD, WARP).
-            unsafe { self.immediate.UpdateSubresource(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0) };
+            unsafe { self.context.UpdateSubresource(&existing.texture, 0, Some(&raw const area), pixels, w * 4, 0) };
             return Ok(());
         }
         let desc = D3D11_TEXTURE2D_DESC {
@@ -405,6 +486,11 @@ mod tests {
             assert_eq!(selected, active, "the active frame can differ from the stored window view");
             immediate.IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
             immediate.RSSetViewports(Some(&[D3D11_VIEWPORT { Width: 7.0, Height: 5.0, MaxDepth: 1.0, ..Default::default() }]));
+            let second_target = view(&texture(64));
+            immediate.OMSetRenderTargets(Some(&[Some(active.clone()), Some(second_target.clone())]), None);
+            let scissor = RECT { left: 1, top: 2, right: 3, bottom: 4 };
+            immediate.RSSetScissorRects(Some(&[scissor]));
+            immediate.OMSetBlendState(None, Some(&[0.25; 4]), 0xF0);
 
             let mut painter = Painter::new(device.as_raw(), immediate.as_raw()).unwrap();
             let id = TextureId::Managed(0);
@@ -420,15 +506,25 @@ mod tests {
             painter.paint(selected.as_raw(), [64, 32], 1.0, &[primitive], &delta).unwrap();
             delta.clear();
 
-            let mut targets = [None];
+            let mut targets = [None, None];
             immediate.OMGetRenderTargets(Some(&mut targets), None);
-            assert_eq!(targets[0].as_ref(), Some(&active));
+            assert_eq!(targets, [Some(active.clone()), Some(second_target)]);
+            let (mut count, mut rect) = (1, RECT::default());
+            immediate.RSGetScissorRects(&raw mut count, Some(&raw mut rect));
+            assert_eq!((count, rect), (1, scissor));
+            let (mut factor, mut mask) = ([0.0; 4], 0);
+            immediate.OMGetBlendState(None, Some(&mut factor), Some(&raw mut mask));
+            assert_eq!((factor, mask), ([0.25; 4], 0xF0));
+            let mut shader = None;
+            immediate.VSGetShader(&raw mut shader, None, None);
+            assert!(shader.is_none(), "the overlay's shader does not stay bound");
+            assert!(immediate.IAGetInputLayout().is_err(), "nor its input layout");
             assert_eq!(immediate.IAGetPrimitiveTopology(), D3D11_PRIMITIVE_TOPOLOGY_LINELIST);
             let (mut count, mut viewport) = (1, D3D11_VIEWPORT::default());
             immediate.RSGetViewports(&raw mut count, Some(&raw mut viewport));
             assert_eq!((count, viewport.Width, viewport.Height), (1, 7.0, 5.0));
             immediate.OMSetRenderTargets(None, None);
-            assert_eq!(pixel(&device, &immediate, &active_texture, 16, 16), [255; 4], "the command list paints the selected frame");
+            assert_eq!(pixel(&device, &immediate, &active_texture, 16, 16), [255; 4], "paints the selected frame");
             assert_eq!(pixel(&device, &immediate, &fallback_texture, 16, 16), [0, 0, 0, 255], "the stored output view is untouched");
         }
     }
