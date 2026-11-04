@@ -282,7 +282,10 @@ pub struct EventSourceHolder_MenuOpenClose {
     pub source_unknown_B8: crate::BSTEventSource,
     /// +0x110 `pointer`, semantic; BSTArray<IMenu*> data of the open menus in show order (medium)
     pub menuStack: *mut c_void,
-    unknown_118: [u8; 16],
+    unknown_118: [u8; 8],
+    /// +0x120 `u32`, semantic; number of menus on the stack: the size of the BSTArray<IMenu*> whose data is menuStack (+0x110), capacity +0x118 (high)
+    pub menuStackCount: u32,
+    unknown_124: [u8; 4],
     /// +0x128 `undefined1`, semantic; BSTHashMap<BSFixedString, MenuTableEntry>: capacity (power of two) +0x134, free count +0x138, last free index +0x13c, end sentinel +0x140, entry array +0x150 (0x20 per entry); hash = CRC32 of the BSFixedString data pointer (0xce25f0) & (capacity-1) (high)
     pub menuTable: [u8; 48],
     /// +0x158 `class:BSSpinLock`, semantic; lock taken by ProcessMessages around the menu table (medium)
@@ -320,6 +323,7 @@ const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, sou
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, source_MenuModeChangeEvent) == 0x60);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, source_unknown_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, menuStack) == 0x110);
+const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, menuStackCount) == 0x120);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, menuTable) == 0x128);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, __lock) == 0x158);
 const _: () = assert!(core::mem::offset_of!(EventSourceHolder_MenuOpenClose, numPausesGame) == 0x160);

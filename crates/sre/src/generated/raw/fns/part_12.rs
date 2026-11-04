@@ -5153,18 +5153,18 @@ pub const Hazard__vfunc_18: u64 = 43964;
 pub const Hazard__vfunc_19: u64 = 43960;
 /// `Hazard::vfunc_80` at 0x7ee740 (rtti, high); signature (low): `undefined vfunc_80(Hazard * this, undefined4 * param_1)`
 pub const Hazard__vfunc_80: u64 = 43966;
-/// `HeadTrackData::ClearSlot` at 0x71dcf0 (runtime, high); signature (untiered): `undefined ClearSlot(longlong param_1, int param_2, char param_3, undefined8 param_4)`; semantic: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack (high); signature `void (AIProcessData10* data, i32 slot, bool keepAsDefault)`
+/// `HeadTrackData::ClearSlot` at 0x71dcf0 (runtime, high); signature (untiered): `undefined ClearSlot(longlong param_1, int param_2, char param_3, undefined8 param_4)`; semantic: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack (high); signature `void (HighProcessData* data, i32 slot, bool keepAsDefault)`
 pub const HeadTrackData__ClearSlot: u64 = 39756;
 /// `HeadTrackData::ClearSlot` as a function pointer type (high).
-pub type HeadTrackData__ClearSlot_fn = unsafe extern "C" fn(data: *mut c_void, slot: i32, keepAsDefault: bool);
-/// `HeadTrackData::Retarget` at 0x71ea00 (semantic, high); signature (untiered): `undefined Retarget(longlong param_1)`; semantic: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin (high); signature `void (AIProcessData10* data)`
+pub type HeadTrackData__ClearSlot_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData, slot: i32, keepAsDefault: bool);
+/// `HeadTrackData::Retarget` at 0x71ea00 (semantic, high); signature (untiered): `undefined Retarget(longlong param_1)`; semantic: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin (high); signature `void (HighProcessData* data)`
 pub const HeadTrackData__Retarget: u64 = 39770;
 /// `HeadTrackData::Retarget` as a function pointer type (high).
-pub type HeadTrackData__Retarget_fn = unsafe extern "C" fn(data: *mut c_void);
-/// `HeadTrackData::SetSlot` at 0x71fa50 (runtime, high); signature (untiered): `undefined SetSlot(longlong param_1, int param_2, longlong param_3)`; semantic: data+0x140 + slot*4 = handle(ref) (or invalid), data+0x158 + slot = (ref != null); when ref is set, RetargetHeadTrack 0x71ea00 (high); signature `void (AIProcessData10* data, i32 slot, TESObjectREFR* ref)`
+pub type HeadTrackData__Retarget_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData);
+/// `HeadTrackData::SetSlot` at 0x71fa50 (runtime, high); signature (untiered): `undefined SetSlot(longlong param_1, int param_2, longlong param_3)`; semantic: data+0x140 + slot*4 = handle(ref) (or invalid), data+0x158 + slot = (ref != null); when ref is set, RetargetHeadTrack 0x71ea00 (high); signature `void (HighProcessData* data, i32 slot, TESObjectREFR* ref)`
 pub const HeadTrackData__SetSlot: u64 = 39783;
 /// `HeadTrackData::SetSlot` as a function pointer type (high).
-pub type HeadTrackData__SetSlot_fn = unsafe extern "C" fn(data: *mut c_void, slot: i32, ref_: *mut crate::TESObjectREFR);
+pub type HeadTrackData__SetSlot_fn = unsafe extern "C" fn(data: *mut crate::HighProcessData, slot: i32, ref_: *mut crate::TESObjectREFR);
 /// `HeadTrackingOffHandler::vdtor` at 0x7d40f0 (layout_inference, medium); signature (low): `HeadTrackingOffHandler * vdtor(HeadTrackingOffHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const HeadTrackingOffHandler__vdtor: u64 = 43335;
 /// `HeadTrackingOffHandler::vfunc_1` at 0x7cd5b0 (rtti, high); signature (low): `undefined1 vfunc_1(HeadTrackingOffHandler * this, longlong param_1)`

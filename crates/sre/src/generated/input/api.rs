@@ -616,16 +616,6 @@ impl crate::CommandTableEntry {
     pub fn params(&self) -> Option<&crate::ParamInfo> { unsafe { { self.params }.as_ref() } }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_eval(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "CommandTableEntry.eval", 0x40, *mut c_void) } }
-    /// `CommandTableEntry::eval`, at +0x40 on 1.7.104.
-    #[inline]
-    pub fn eval(&self) -> *mut c_void { unsafe { Self::__member_eval(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_eval(&mut self, value: *mut c_void) { unsafe { Self::__member_eval(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn eval_ptr(&self) -> *mut *mut c_void { Self::__member_eval(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_pad24(this: *const Self) -> *mut u32 { unsafe { member!(this, "CommandTableEntry.pad24", 0x24, u32) } }
     /// `CommandTableEntry::pad24`, at +0x24 on 1.7.104.
     #[inline]

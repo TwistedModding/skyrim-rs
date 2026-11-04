@@ -222,7 +222,7 @@ fn process() -> Result<String, String> {
 fn actor_values() -> Result<String, String> {
     let player = player_ref()?;
     let owner = player.as_actor_value_owner();
-    check(address(owner).wrapping_sub(address(player)) == 0xB8, "ActorValueOwner is not at +0xB8")?;
+    check(address(owner).wrapping_sub(address(player)) == sre::base_offset!("Actor:ActorValueOwner"), "ActorValueOwner is not where the profile has it")?;
     let values: Vec<(ActorValue, f32)> = [ActorValue::Health, ActorValue::Magicka, ActorValue::Stamina, ActorValue::CarryWeight, ActorValue::SpeedMult]
         .into_iter()
         .map(|v| (v, owner.get_actor_value(v)))
@@ -262,7 +262,7 @@ fn actor_value_write() -> Result<String, String> {
 fn state() -> Result<String, String> {
     let player = player_ref()?;
     let state = player.as_actor_state();
-    check(address(state).wrapping_sub(address(player)) == 0xC0, "ActorState is not at +0xC0")?;
+    check(address(state).wrapping_sub(address(player)) == sre::base_offset!("Actor:ActorState"), "ActorState is not where the profile has it")?;
     let changed = STATE_CHANGED.load(Ordering::Relaxed);
     let flags1 = ActorState_flags1(state.flags1);
     let sneaking = flags1.contains(ActorState_flags1::SNEAKING);

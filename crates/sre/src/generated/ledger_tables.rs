@@ -3,6 +3,7 @@
 pub const MEMBERS: &str = r"AIProcess.equippedLeft	f0
 AIProcess.equippedRight	f8
 AIProcess.flags	136
+AIProcess.high	10
 AIProcess.middleHigh	8
 AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>.__vftable	0
 AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>.field_10	10
@@ -29036,6 +29037,7 @@ EventSourceHolder_Input.virtualKeyboard	88
 EventSourceHolder_MenuOpenClose.closingAllMenus	1c1
 EventSourceHolder_MenuOpenClose.lock	158
 EventSourceHolder_MenuOpenClose.menuStack	110
+EventSourceHolder_MenuOpenClose.menuStackCount	120
 EventSourceHolder_MenuOpenClose.menuTable	128
 EventSourceHolder_MenuOpenClose.menusVisible	1c0
 EventSourceHolder_MenuOpenClose.modalMenuOpen	17c
@@ -31379,6 +31381,13 @@ HighActorCuller.field_140	140
 HighActorCuller.field_148	148
 HighActorCuller.field_8	8
 HighActorCuller.m_BSFadeNodeCuller_10	10
+HighProcessData.headTrackActive	158
+HighProcessData.headTrackCurrentHandle	178
+HighProcessData.headTrackHandles	140
+HighProcessData.headTrackHoldTimer	160
+HighProcessData.headTrackTargetPosition	164
+HighProcessData.inDialogueWithPlayer	458
+HighProcessData.pathingLookAtHandle	17c
 HitFrameHandler.__vftable	0
 HoldWardSpellsActiveEffectVisitor.__vftable	0
 HorseCameraState.__vftable	0
@@ -93988,6 +93997,7 @@ HealthDamageFunctor
 HeldStateHandler	
 HelpMessageManager	
 HighActorCuller	
+HighProcessData	
 HitFrameHandler	
 HoldWardSpellsActiveEffectVisitor	
 HorseCameraState	

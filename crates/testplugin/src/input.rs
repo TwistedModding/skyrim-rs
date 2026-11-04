@@ -17,7 +17,7 @@ use skyrim::prelude::*;
 use sre::raw::globals;
 use sre::{BSEventNotifyControl, EventSourceHolder_Input as InputManager, EventSourceHolder_User as ControlMap, InputDevice, ScriptParamType};
 
-use crate::{Test, check, not_run};
+use crate::{Test, check};
 
 const KEY_E: u32 = 0x12;
 const KEY_W: u32 = 0x11;
@@ -150,16 +150,13 @@ fn sinks() -> Result<String, String> {
     let source = InputEventList::source().ok_or("no input source")?;
     let reloc = skyrim::reloc();
     let expected = [sre::id!(globals::g_MenuControls), sre::id!(globals::g_PlayerControls)].map(|g| reloc.address(g).unwrap_or(0));
-    let first: Vec<usize> = source.sinks().iter().take(3).map(|s| *s as usize).collect();
-    let seen = || format!("first sinks {:x?}, expected console hotkeys and then {expected:x?}", first.iter().map(|p| rva(*p)).collect::<Vec<_>>());
-    check(first.get(1..) == Some(&expected[..]), &seen())?;
-    check(source.contains(&KEY_SINK), "the key sink is not registered")?;
     // Unrecorded: a runtime without this global would otherwise refuse the whole plugin.
-    let Ok(hotkeys) = reloc.address(globals::g_ConsoleHotkeyManager) else {
-        return not_run("g_ConsoleHotkeyManager has no usable row on this runtime");
-    };
-    check(first[0] == hotkeys, &seen())?;
-    Ok(format!("{} sinks: console hotkeys, MenuControls, PlayerControls first, the key sink among the rest", source.sinks().len()))
+    let hotkeys = reloc.address(globals::g_ConsoleHotkeyManager).ok();
+    let head: Vec<usize> = hotkeys.into_iter().chain(expected).collect();
+    let first: Vec<usize> = source.sinks().iter().take(head.len()).map(|s| *s as usize).collect();
+    check(first == head, &format!("first sinks {:x?}, expected {head:x?}", first.iter().map(|p| rva(*p)).collect::<Vec<_>>()))?;
+    check(source.contains(&KEY_SINK), "the key sink is not registered")?;
+    Ok(format!("{} sinks: {}MenuControls, PlayerControls first, the key sink among the rest", source.sinks().len(), if hotkeys.is_some() { "console hotkeys, " } else { "" }))
 }
 
 fn control_map() -> Result<String, String> {

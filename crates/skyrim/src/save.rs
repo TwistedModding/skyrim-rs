@@ -5,9 +5,9 @@
 //! Where a mod keeps its own state across saves: write it when [`SaveLoadEvent`] reports a
 //! finished save (`{save, done}`, the file renamed into place, the name in
 //! [`BGSSaveLoadManagerExt::current_save_name`]); drop it when a load starts (`{load, not done}`); read it
-//! back at `TESLoadGameEvent`, mapping the form ids it recorded through [`remap_form_id`]. The
-//! manager updates the name only at the end of a load, after the script extender's post-load
-//! message, so read it there, not earlier.
+//! back at `TESLoadGameEvent`, mapping the form ids it recorded through [`remap_form_id`]. Take the
+//! name of the save being loaded from the loader's `PRE_LOAD_GAME` message: the manager updates
+//! its name only at the very end of a load, on some runtimes after `TESLoadGameEvent`.
 
 use core::ffi::{CStr, c_char};
 use std::ffi::CString;
@@ -35,7 +35,7 @@ pub trait BGSSaveLoadManagerExt {
     fn load_save(&self, name: &str) -> bool;
     /// The save last written or loaded, without the `.ess` a loaded name carries. While a save is
     /// being written it is still the previous name until the save's done event, and while a save
-    /// is being loaded until `TESLoadGameEvent`.
+    /// is being loaded until the load has finished, which can be after `TESLoadGameEvent`.
     fn current_save_name(&self) -> Option<&str>;
 }
 

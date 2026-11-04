@@ -273,7 +273,7 @@ fn generated_api() -> Result<String, String> {
     check(address(pc) == address(player), "PlayerCharacter::singleton is not the player")?;
     check(pc.get_form_type().map(|t| t as u8) == Ok(player.formType), "PlayerCharacter -> TESForm slot 21 differs from formType")?;
     let owner = pc.as_actor_value_owner();
-    check(address(owner) == address(pc) + 0xB8, "Actor::as_actor_value_owner is not at +0xB8")?;
+    check(address(owner) == address(pc) + sre::base_offset!("Actor:ActorValueOwner"), "Actor::as_actor_value_owner is not where the profile has it")?;
     let health = owner.get_actor_value(ActorValue::Health);
     let direct = pc.actor_value_owner_get_actor_value(ActorValue::Health);
     check(health > 0.0 && health.to_bits() == direct.to_bits(), "ActorValueOwner slot 1 differs from Actor::ActorValueOwner_GetActorValue")?;

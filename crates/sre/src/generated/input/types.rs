@@ -651,8 +651,7 @@ pub struct CommandTableEntry {
     /// +0x38 `pointer`, semantic; bool (uint16 numParams, const ParamInfo*, ScriptLineBuffer*, ScriptCompileBuffer*) (high)
     pub parse: *mut c_void,
     /// +0x40 `pointer`, semantic; condition evaluator; null on every console command (high)
-    #[doc(hidden)]
-    pub __eval: [u8; 8],
+    pub eval: *mut c_void,
     /// +0x48 `undefined4`, semantic; bit 0 on 15 script functions (meaning not established); bit 8 (byte +0x49) makes the run report true; see the flag rows (medium)
     pub flags: u32,
     /// +0x4C `undefined4`, semantic; padding (high)
@@ -673,7 +672,7 @@ const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __pad24) == 0x24)
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, params) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, execute) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, parse) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CommandTableEntry, __eval) == 0x40);
+const _: () = assert!(core::mem::offset_of!(CommandTableEntry, eval) == 0x40);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, flags) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CommandTableEntry, pad4c) == 0x4C);
 

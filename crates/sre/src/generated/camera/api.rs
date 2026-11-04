@@ -8806,30 +8806,30 @@ pub unsafe fn has_line_of_sight_to_ref(looker: *mut crate::Actor, target: *mut c
 /// `HeadTrackData::ClearSlot`: clears slot (handle invalid, active byte 0); with keepAsDefault and a target that resolved, moves that target into slot 0; else RetargetHeadTrack
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39756, rva 0x71dcf0.
-/// `void (AIProcessData10* data, i32 slot, bool keepAsDefault)`
+/// `void (HighProcessData* data, i32 slot, bool keepAsDefault)`
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
 #[inline]
-pub unsafe fn head_track_data__clear_slot(data: *mut c_void, slot: i32, keepAsDefault: bool) { unsafe { function!(39756, (*mut c_void, i32, bool))(data, slot, keepAsDefault) } }
+pub unsafe fn head_track_data__clear_slot(data: *mut crate::HighProcessData, slot: i32, keepAsDefault: bool) { unsafe { function!(39756, (*mut crate::HighProcessData, i32, bool))(data, slot, keepAsDefault) } }
 /// `HeadTrackData::Retarget`: takes the highest active slot's handle (5 down to 0); when it differs from +0x178: +0x46a = 0, +0x178 = handle, +0x164..+0x16c = the target's look position (slot 91), +0x174 = 0, +0x170 = fAIHeadTrackDialogueStayInOffsetMin
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 39770, rva 0x71ea00.
-/// `void (AIProcessData10* data)`
+/// `void (HighProcessData* data)`
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
 #[inline]
-pub unsafe fn head_track_data__retarget(data: *mut c_void) { unsafe { function!(39770, (*mut c_void))(data) } }
+pub unsafe fn head_track_data__retarget(data: *mut crate::HighProcessData) { unsafe { function!(39770, (*mut crate::HighProcessData))(data) } }
 /// `HeadTrackData::SetSlot`: data+0x140 + slot*4 = handle(ref) (or invalid), data+0x158 + slot = (ref != null); when ref is set, RetargetHeadTrack 0x71ea00
 ///
 /// Semantic, camera pass, high; ledger runtime evidence, name high; id 39783, rva 0x71fa50.
-/// `void (AIProcessData10* data, i32 slot, TESObjectREFR* ref)`
+/// `void (HighProcessData* data, i32 slot, TESObjectREFR* ref)`
 ///
 /// # Safety
 /// `data` must point to what the engine expects.
 #[inline]
-pub unsafe fn head_track_data__set_slot(data: *mut c_void, slot: i32, ref_: *mut crate::TESObjectREFR) { unsafe { function!(39783, (*mut c_void, i32, *mut crate::TESObjectREFR))(data, slot, ref_) } }
+pub unsafe fn head_track_data__set_slot(data: *mut crate::HighProcessData, slot: i32, ref_: *mut crate::TESObjectREFR) { unsafe { function!(39783, (*mut crate::HighProcessData, i32, *mut crate::TESObjectREFR))(data, slot, ref_) } }
 /// `InitAndRegisterOrDestroy`: effect+0x10 = duration, +0x41 = 1, slot 49 (vtable +0x188) Init(param); when slot 54 (+0x1b0) returns true, RunOrQueueIfOtherThread(g_ProcessLists_ptr, effect) adds it to the temp-effect list, else the effect is destroyed (slot 0)
 ///
 /// Semantic, camera pass, high; ledger semantic evidence, name high; id 34762, rva 0x5db480.

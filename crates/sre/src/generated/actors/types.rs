@@ -11,7 +11,9 @@ pub struct AIProcess {
     unknown_0: [u8; 8],
     /// +0x8 `ptr:MiddleHighProcessData`, semantic; middle-high process data (high)
     pub middleHigh: *mut crate::MiddleHighProcessData,
-    unknown_10: [u8; 224],
+    /// +0x10 `ptr:HighProcessData`, semantic; the high-level process data, the head-track data; null unless the process level (+0x137) is 0 (high)
+    pub high: *mut crate::HighProcessData,
+    unknown_18: [u8; 216],
     /// +0xF0 `ptr:TESForm`, semantic; object in the left hand (high)
     pub equippedLeft: *mut crate::TESForm,
     /// +0xF8 `ptr:TESForm`, semantic; object in the right hand (high)
@@ -26,6 +28,7 @@ pub struct AIProcess {
 }
 const _: () = assert!(size_of::<AIProcess>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(AIProcess, middleHigh) == 0x8);
+const _: () = assert!(core::mem::offset_of!(AIProcess, high) == 0x10);
 const _: () = assert!(core::mem::offset_of!(AIProcess, equippedLeft) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(AIProcess, equippedRight) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(AIProcess, __flags) == 0x136);
@@ -898,6 +901,42 @@ pub struct HandleEntry {
 const _: () = assert!(size_of::<HandleEntry>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(HandleEntry, ageAndNext) == 0x0);
 const _: () = assert!(core::mem::offset_of!(HandleEntry, ref_) == 0x8);
+
+/// `HighProcessData`: size 0x478 (exact).
+/// Meaning: the part of an AI process that exists only at the high process level: the head-track slots and target, the in-dialogue byte, AI timers seeded from game settings by its ctor 0x71b5f0; null at lower levels, every reader tests it (high, actors pass).
+/// Evidence: the part of an AI process that exists only at the high process level: the head-track slots and target, the in-dialogue byte, AI timers seeded from game settings by its ctor 0x71b5f0; null at lower levels, every reader tests it; item 10 (request V). No RTTI; the name is behavioural, after the process level that owns it. EnsureSubobjectsAllocated 0x6f0370: 0x6f0387 mov byte [rcx+0x137],0; 0x6f0458 mov edx,0x478; 0x6f0464 call allocator; 0x6f0476 call InitField10Subobject 0x71b5f0; 0x6f0480 mov [rbx+0x10],rax. Actor::vfunc_244_sub0 0x6f04f0 (0x6f0507 level 1, 0x6f0611 mov rdi,[rcx+0x10], 0x6f0622 mov edx,0x478, 0x6f0631 mov [rbx+0x10],rdi), Actor::vfunc_243_sub0 0x6f0650 (0x6f0665 level 2) and Actor::vfunc_242_sub0 0x6f0750 (0x6f0765 level 3) free it and null the field, so the object exists only at process level 0 (ProcessLists.highActorHandles' level). Size exact: the allocation and the three frees all pass 0x478. The earlier 'mostly empty 0x80-byte object' of actors.md was the 128-byte dump run-actors high.bin of its start (+0x10 = -1 from 0x71b61a, +0x70 the pointer stored at 0x71b65d); track T of IC5 called it AIProcessData10, and the functions HeadTrackData::SetSlot, ClearSlot and Retarget take it as `this`.
+#[repr(C)]
+pub struct HighProcessData {
+    pub unknown_0: [u8; 320],
+    /// +0x140 `undefined24`, semantic; u32[6], the ObjectRefHandle of each HeadTrackSlot (high)
+    pub headTrackHandles: [u8; 24],
+    /// +0x158 `undefined6`, semantic; u8[6], slot i is active; the highest active slot wins (high)
+    pub headTrackActive: [u8; 6],
+    pub unknown_15E: [u8; 2],
+    /// +0x160 `float`, semantic; seconds the default target is held after a script look ends (medium)
+    pub headTrackHoldTimer: f32,
+    /// +0x164 `class:NiPoint3`, semantic; the current target's look position, cached on a retarget (high)
+    pub headTrackTargetPosition: crate::NiPoint3,
+    pub unknown_170: [u8; 8],
+    /// +0x178 `u32`, semantic; ObjectRefHandle of the highest active slot, updated by Retarget (high)
+    pub headTrackCurrentHandle: u32,
+    /// +0x17C `u32`, semantic; ObjectRefHandle of SetLookAt's pathing look-at target; cleared by ClearLookAt and StopLook (high)
+    pub pathingLookAtHandle: u32,
+    pub unknown_180: [u8; 728],
+    /// +0x458 `u8`, semantic; the actor is in dialogue with the player (high)
+    pub inDialogueWithPlayer: u8,
+    pub unknown_459: [u8; 31],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<HighProcessData>() == 0x478);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackHandles) == 0x140);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackActive) == 0x158);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackHoldTimer) == 0x160);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackTargetPosition) == 0x164);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, headTrackCurrentHandle) == 0x178);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, pathingLookAtHandle) == 0x17C);
+const _: () = assert!(core::mem::offset_of!(HighProcessData, inDialogueWithPlayer) == 0x458);
 
 /// `InventoryChanges`: size 0x20 (exact).
 /// Meaning: the items a reference gained or lost relative to its base container (medium, actors pass).

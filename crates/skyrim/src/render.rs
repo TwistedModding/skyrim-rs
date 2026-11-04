@@ -770,6 +770,7 @@ impl BSShadowLightExt for BSShadowLight {
 
     #[allow(clippy::cast_ptr_alignment)]
     fn focus_shadow_maps(&self) -> &[ShadowMapData; 4] {
+        sre::fixed_size!("ShadowMapData", ShadowMapData);
         unsafe { &*(&raw const self.focusShadowMaps).cast::<[ShadowMapData; 4]>() }
     }
 

@@ -495,7 +495,7 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     entry.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
     entry.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
     entry.parse = crate::reloc().address(sre::id!(fns::ParseCommandParams)).expect("ParseCommandParams id") as *mut c_void;
-    entry.set_eval(core::ptr::null_mut());
+    entry.eval = core::ptr::null_mut();
     entry.flags = 0;
     entry.execute = execute as *mut c_void;
     Ok(CommandSlot { opcode: entry.opcode, replaced })

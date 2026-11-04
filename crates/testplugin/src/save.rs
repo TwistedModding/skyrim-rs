@@ -51,6 +51,7 @@ static EVENTS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static WRITTEN: Mutex<Vec<String>> = Mutex::new(Vec::new());
 static LOADED: Mutex<Option<Record>> = Mutex::new(None);
 static LOADS: Mutex<Vec<String>> = Mutex::new(Vec::new());
+static LOADING: Mutex<String> = Mutex::new(String::new());
 static REMAPS: Mutex<Vec<String>> = Mutex::new(Vec::new());
 
 fn saves_dir() -> Option<PathBuf> {
@@ -138,9 +139,14 @@ fn current_save_name() -> String {
     BGSSaveLoadManager::singleton().and_then(BGSSaveLoadManager::current_save_name).unwrap_or("").to_owned()
 }
 
+/// The name the loader's pre-load message carries, for the `TESLoadGameEvent` that ends the load.
+pub fn loading(name: &str) {
+    name.strip_suffix(".ess").unwrap_or(name).clone_into(&mut LOADING.lock().unwrap());
+}
+
 /// Reads the loaded save's record and maps its ids back.
 fn on_load() {
-    let name = current_save_name();
+    let name = LOADING.lock().unwrap().clone();
     let dropped = LOADED.lock().unwrap().is_none();
     let Some(record) = read_record(&name) else {
         LOADS.lock().unwrap().push(format!("{name}: no record (state dropped {dropped})"));

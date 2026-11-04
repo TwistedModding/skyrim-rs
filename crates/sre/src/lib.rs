@@ -117,21 +117,6 @@ pub fn member_offset(member: &'static str, canonical: usize) -> usize {
 #[cold]
 #[inline(never)]
 #[must_use]
-pub fn outside_ledger(member: &'static str, canonical: usize) -> usize {
-    canonical_only(canonical).unwrap_or_else(|| panic!("member {member} has no ledger row, so it is known on 1.7.104 only"))
-}
-
-/// `offset` on 1.7.104, `None` elsewhere: for code that can do without a member the ledger does
-/// not hold yet, which then leaves no manifest record.
-#[must_use]
-pub fn canonical_only(offset: usize) -> Option<usize> {
-    skse::runtime::is_canonical(profile().runtime()).then_some(offset)
-}
-
-#[doc(hidden)]
-#[cold]
-#[inline(never)]
-#[must_use]
 pub fn base_offset(class_and_base: &'static str, canonical: usize) -> usize {
     usable(format_args!("base {class_and_base}"), profile().base(class_and_base), canonical)
 }
@@ -326,16 +311,6 @@ macro_rules! member_offset {
             None => panic!(concat!("the ledger has no member ", $name)),
         };
         $crate::__row!(2, 0, 0, $name, $crate::member_offset($name, CANONICAL))
-    }};
-}
-
-/// The offset of a member the ledger does not hold yet, known on 1.7.104 only: the plugin that uses
-/// it is refused on any other runtime. It stops compiling once the ledger names the member.
-#[macro_export]
-macro_rules! member_outside_ledger {
-    ($name:literal, $canonical:literal) => {{
-        const { assert!($crate::ledger::member($name).is_none(), concat!("the ledger now has ", $name, ": use member_offset!")) };
-        $crate::__row!(8, 0, 0, $name, $crate::outside_ledger($name, $canonical))
     }};
 }
 

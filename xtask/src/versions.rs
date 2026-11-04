@@ -102,8 +102,10 @@ impl Diff {
 /// An AE id on one runtime.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum IdState {
-    /// The SE id it maps to.
+    /// The id the runtime's Address Library holds it under.
     Mapped(u32),
+    /// The function is known here, but that library holds no id at its address.
+    Missing,
     Unverified,
 }
 
@@ -285,26 +287,31 @@ impl Runtime {
         read(globals, "id", false);
         read(vtables, "id_canonical", false);
         self.seen = rows.keys().copied().collect();
-        if self.database != "se" {
+        let se_database = self.database == "se";
+        if !se_database {
             self.ids = rows.iter().filter(|&(_, &u)| u != Usable::Yes).map(|(&id, _)| (id, IdState::Unverified)).collect();
-            return;
         }
         vtables.for_each(|r| {
-            if let (Some(ae), Some(se)) = (r.u32("id_canonical"), r.u32("id"))
+            if let (Some(ae), Some(here)) = (r.u32("id_canonical"), r.u32("id"))
                 && rows.get(&ae) == Some(&Usable::Yes)
+                && (se_database || ae != here)
             {
-                self.ids.insert(ae, IdState::Mapped(se));
+                self.ids.insert(ae, IdState::Mapped(here));
             }
         });
         id_map.for_each(|r| {
-            let (Some(ae), Some(se)) = (r.u32("ae"), r.u32("se")) else { return };
+            let Some(ae) = r.u32("ae") else { return };
             let row = rows.get(&ae).copied().unwrap_or(Usable::Yes);
             let review = r.text("review");
             if row == Usable::Rejected || review == Some("rejected") {
                 return;
             }
-            let mapped = row == Usable::Yes && (review == Some("accepted") || r.text("confidence") == Some("high"));
-            self.ids.insert(ae, if mapped { IdState::Mapped(se) } else { IdState::Unverified });
+            let state = match r.u32("se") {
+                None => IdState::Missing,
+                Some(here) if row == Usable::Yes && (review == Some("accepted") || r.text("confidence") == Some("high")) => IdState::Mapped(here),
+                Some(_) => IdState::Unverified,
+            };
+            self.ids.insert(ae, state);
         });
     }
 
@@ -472,11 +479,12 @@ fn profile(runtime: &Runtime, inp: &Inputs, sites: &BTreeSet<(u32, u32)>) -> Pro
         for (&ae, state) in &runtime.ids {
             rows.push(match state {
                 IdState::Mapped(se) => Written::Id { ae, se: *se },
+                IdState::Missing => Written::IdMissing(ae),
                 IdState::Unverified => Written::IdUnverified(ae),
             });
         }
         if runtime.database != "se" {
-            let ids: BTreeSet<u32> = inp.symbols.iter().filter(|s| matches!(s.kind.as_str(), "function" | "global" | "vtable")).filter_map(|s| u32::try_from(s.id?).ok()).filter(|id| !runtime.seen.contains(id)).collect();
+            let ids: BTreeSet<u32> = inp.symbols.iter().filter(|s| matches!(s.kind.as_str(), "function" | "global" | "vtable")).filter_map(|s| u32::try_from(s.id?).ok()).filter(|id| !runtime.seen.contains(id) && !runtime.ids.contains_key(id)).collect();
             rows.extend(ids.into_iter().map(Written::IdUnverified));
         }
         let members: BTreeSet<(&str, &str)> = ledger_members(inp).collect();

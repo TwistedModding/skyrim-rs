@@ -356,6 +356,11 @@ impl crate::AIProcess {
     /// Semantic field, actors pass, high; `None` while the pointer is null.
     #[inline]
     pub fn equipped_right(&self) -> Option<&crate::TESForm> { unsafe { { self.equippedRight }.as_ref() } }
+    /// `AIProcess::high` at +0x10: the high-level process data, the head-track data; null unless the process level (+0x137) is 0
+    ///
+    /// Semantic field, actors pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn high(&self) -> Option<&crate::HighProcessData> { unsafe { { self.high }.as_ref() } }
     /// `AIProcess::middleHigh` at +0x8: middle-high process data
     ///
     /// Semantic field, actors pass, high; `None` while the pointer is null.

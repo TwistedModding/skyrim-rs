@@ -17,7 +17,7 @@ use skyrim::prelude::*;
 use skyrim::ui::{AddMessageFn, Function, FunctionHandler, Menu, MenuBase, MessageType, Params, RenderMenuStackFn, ShowHudMessageFn, Value, ValueType};
 use sre::{BSEventNotifyControl, EventSourceHolder_MenuOpenClose as Ui, IMenu, IMenu_flags, MenuOpenCloseEvent, UIMessage, UIMessageQueue, UIMessageResult};
 
-use crate::{Test, check, not_run};
+use crate::{Test, check};
 
 /// The menu's class without its `::vftable` suffix, `?` when the ledger has no vtable for it.
 fn class_name(menu: &IMenu) -> &'static str {
@@ -145,19 +145,15 @@ fn name_of(menu: &IMenu) -> String {
 unsafe extern "C" fn render_detour(ui: *mut sre::EventSourceHolder_MenuOpenClose) {
     unsafe { RENDER.get().expect("stored before enabling").original()(ui) }
     let Some(ui) = Ui::singleton() else { return };
-    let hud_only = if let Some(stack) = ui.try_stack() {
-        let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth, m.flags)).collect();
-        drop(stack);
-        let mut names: Vec<&str> = menus.iter().map(|m| m.0.as_str()).filter(|n| *n != "?").collect();
-        names.sort_unstable();
-        let key = names.join("+");
-        let sample = Sample { menus, pauses: ui.numPausesGame, modal: ui.modalMenuOpen != 0, allowing_save: ui.numMenusAllowingSave, thread: format!("{:?}", std::thread::current().id()) };
-        let hud_only = key == "HUDMenu";
-        SAMPLES.lock().unwrap().insert(key, sample);
-        hud_only
-    } else {
-        ui.is_open("HUD Menu") && !["Fader Menu", "Mist Menu", "Loading Menu", "Main Menu", "Cursor Menu"].iter().any(|menu| ui.is_open(menu))
-    };
+    let stack = ui.stack();
+    let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth, m.flags)).collect();
+    drop(stack);
+    let mut names: Vec<&str> = menus.iter().map(|m| m.0.as_str()).filter(|n| *n != "?").collect();
+    names.sort_unstable();
+    let key = names.join("+");
+    let sample = Sample { menus, pauses: ui.numPausesGame, modal: ui.modalMenuOpen != 0, allowing_save: ui.numMenusAllowingSave, thread: format!("{:?}", std::thread::current().id()) };
+    let hud_only = key == "HUDMenu";
+    SAMPLES.lock().unwrap().insert(key, sample);
     if hud_only && PROBE_PENDING.swap(false, Ordering::Relaxed) {
         *PROBE.lock().unwrap() = Some(probe(ui));
         skyrim::ui::show_hud_message(NOTE, None, false);
@@ -249,7 +245,7 @@ fn describe(menus: &[(String, u8, u32)]) -> String {
 
 fn singleton() -> Result<String, String> {
     let ui = ui()?;
-    let Some(stack) = ui.try_stack() else { return not_run(STACK_NOT_RUN) };
+    let stack = ui.stack();
     let menus: Vec<(String, u8, u32)> = stack.iter().map(|m| (name_of(m), m.depth, m.flags)).collect();
     drop(stack);
     check(menus.iter().any(|(name, depth, flags)| name == "HUDMenu" && *depth == 2 && flags & 0x40 != 0), &format!("no open HUDMenu at depth 2 in [{}]", describe(&menus)))?;
@@ -320,12 +316,7 @@ fn probe(ui: &Ui) -> Result<String, String> {
     Ok(format!("_root managed object; created string and object managed; x = 42 round trip; _root.skyrimRsProbe = 7 round trip; callback called once with 3, returned 42; HUD root has ShowMessage; on {:?}", std::thread::current().id()))
 }
 
-const STACK_NOT_RUN: &str = "the menu stack's count has no ledger row on this runtime";
-
 fn sample(key: &str) -> Result<Sample, String> {
-    if ui()?.try_stack().is_none() {
-        return Err(format!("{}{STACK_NOT_RUN}", crate::NOT_RUN));
-    }
     let samples = SAMPLES.lock().unwrap();
     samples.get(key).cloned().ok_or_else(|| format!("no sample {key}; have [{}]", samples.keys().cloned().collect::<Vec<_>>().join("; ")))
 }

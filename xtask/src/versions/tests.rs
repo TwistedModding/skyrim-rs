@@ -315,6 +315,19 @@ fn a_site_patch_fills_or_answers_the_compared_row_and_refuses_to_contradict_it()
 }
 
 #[test]
+fn an_ae_profile_maps_the_ids_its_library_holds_under_another_number() {
+    let functions = r#""functions": {"columns": ["id","status","signature_status","review"], "rows": [[1,"same",null,null],[2,"same",null,null],[3,"same",null,null],[4,"same",null,null],[5,"same",null,null],[6,"changed","unverified",null]]}"#;
+    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review"], "rows": [[1,11,"high",null],[2,12,"low","accepted"],[3,13,"medium",null],[4,14,"high","rejected"],[5,null,"high",null],[6,16,"high",null]]}"#;
+    let vtables = r#""vtables": {"columns": ["id_canonical","id","status"], "rows": [[7,7,"same"],[8,18,"same"]]}"#;
+    let other = runtime(&format!(r#"{{"schema": 1, "runtime": "1.6.353", "address_library": {{"file": "versionlib-1-6-353-0.bin", "database": "AE"}}, {functions}, {id_map}, {vtables}}}"#));
+    let text = &profiles(&ledger(), std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-353.profile")];
+    for row in ["id 1 11\n", "id 2 12\n", "id-unverified 3\n", "id-missing 5\n", "id-unverified 6\n", "id 8 18\n"] {
+        assert!(text.contains(row), "{row} in {text}");
+    }
+    assert!(!text.contains("id 4 ") && !text.contains("id-unverified 4\n") && !text.contains("id 7 "), "{text}");
+}
+
+#[test]
 fn the_site_patch_table_is_well_formed() {
     for name in ["1.5.97", "1.6.353", "1.6.1170"] {
         let mut bare = runtime(&file(name, "versionlib-1-6-1170-0.bin", "AE", "{}"));

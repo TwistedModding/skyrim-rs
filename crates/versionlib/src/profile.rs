@@ -73,7 +73,8 @@ impl Profile {
     }
 
     /// An AE id here. With no row it is missing on an SE database; on an AE database it keeps its
-    /// value and the Address Library file decides whether it exists.
+    /// value and the Address Library file decides whether it exists, while a row gives the number
+    /// that file holds it under.
     #[must_use]
     pub fn id(&self, ae_id: u32) -> Row<u32> {
         match self.ids.get(&ae_id) {
@@ -317,7 +318,8 @@ mod tests {
 
     #[test]
     fn ids_on_an_ae_database() {
-        let p = with(AE_HEADER, "id-missing 101\nid-unverified 102\n").unwrap();
+        let p = with(AE_HEADER, "id 100 7\nid-missing 101\nid-unverified 102\n").unwrap();
+        assert_eq!(p.id(100), Row::Here(7));
         assert_eq!(p.id(101), Row::Missing);
         assert_eq!(p.id(102), Row::Unverified);
         assert_eq!(p.id(103), Row::Same);

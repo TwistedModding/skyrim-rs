@@ -141,7 +141,7 @@ fn run(suite: &str, phase: &str, tests: &[(&str, Test)]) {
     log!("summary {suite} {phase}: {pass} pass, {fail} fail, {skipped} not run");
 }
 
-/// The save name a `SAVE_GAME` message carries.
+/// The save name a `SAVE_GAME` or `PRE_LOAD_GAME` message carries.
 fn save_name(msg: &skse::Message) -> String {
     if msg.data.is_null() {
         return String::new();
@@ -199,6 +199,9 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             render::SAVES.store(0, Ordering::Relaxed);
         }
         skse::MessagingInterface::PRE_LOAD_GAME | skse::MessagingInterface::NEW_GAME => {
+            if msg.kind == skse::MessagingInterface::PRE_LOAD_GAME {
+                save::loading(&save_name(msg));
+            }
             render::suspend();
             animation::suspend();
         }
