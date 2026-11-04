@@ -202,8 +202,7 @@ fn file(handler: &'static TESDataHandler, name: &str) -> Result<&'static TESFile
     handler.file(name).ok_or_else(|| format!("{name} not found"))
 }
 
-fn get_file() -> Result<String, String> {
-    let handler = handler()?;
+fn creation_files(handler: &'static TESDataHandler) -> Result<String, String> {
     let curios = file(handler, "ccBGSSSE037-Curios.esl")?;
     check(curios.is_light() && curios.compileIndex == 0xFE, &format!("Curios has compile index {:#x}", { curios.compileIndex }))?;
     let curios_id = curios.runtime_form_id(0x800).ok_or("Curios is not loaded")?;
@@ -213,12 +212,19 @@ fn get_file() -> Result<String, String> {
     let fish_id = fish.runtime_form_id(0x800).ok_or("Fish is not loaded")?;
     let fish_expected = u32::from(fish.compileIndex) << 24 | 0x800;
     check(!fish.is_light() && fish_id == fish_expected, &format!("Fish 0x800 resolved to {fish_id:08X}, compile index {}", { fish.compileIndex }))?;
+    check(sre::find_form_by_id(curios_id).is_some_and(|f| f.formID == curios_id), "0xFE001800 does not resolve to a form")?;
+    Ok(format!("Curios 0x800 -> {curios_id:08X}, Fish 0x800 -> {fish_id:08X}"))
+}
+
+fn get_file() -> Result<String, String> {
+    let handler = handler()?;
+    // 1.5.97's install has no Creations.
+    let creations = if skse::runtime::is_se(crate::runtime()) { "no Creations".to_owned() } else { creation_files(handler)? };
     check(handler.file("NoSuchFile.esp").is_none(), "NoSuchFile.esp was found")?;
     check(handler.file("skyrim.esm").is_some_and(|f| file_name(f) == "Skyrim.esm"), "GetFile is not case-insensitive")?;
-    check(sre::find_form_by_id(curios_id).is_some_and(|f| f.formID == curios_id), "0xFE001800 does not resolve to a form")?;
     let sword_id = handler.file("Skyrim.esm").and_then(|f| f.runtime_form_id(IRON_SWORD & 0x00FF_FFFF)).ok_or("Skyrim.esm is not loaded")?;
     check(sword_id == IRON_SWORD, &format!("Skyrim.esm 0x12eb7 resolved to {sword_id:08X}"))?;
-    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id:08X}, Curios 0x800 -> {curios_id:08X}, Fish 0x800 -> {fish_id:08X}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
+    Ok(format!("Skyrim.esm 0x12eb7 -> {sword_id:08X}, {creations}, NoSuchFile.esp -> none, skyrim.esm -> Skyrim.esm"))
 }
 
 fn form_list() -> Result<String, String> {

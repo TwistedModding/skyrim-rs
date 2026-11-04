@@ -26,7 +26,7 @@
 
 use std::fs::File;
 use std::sync::{Mutex, OnceLock};
-use std::sync::atomic::Ordering;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 use sre::{FormType, TESForm};
 
@@ -40,6 +40,17 @@ skse::plugin! {
 static LOG: Mutex<Option<File>> = Mutex::new(None);
 static MODE: OnceLock<String> = OnceLock::new();
 static LOG_DIR: OnceLock<std::path::PathBuf> = OnceLock::new();
+static RUNTIME: AtomicU32 = AtomicU32::new(0);
+
+/// The packed runtime version the loader reported.
+fn runtime() -> u32 {
+    RUNTIME.load(Ordering::Relaxed)
+}
+
+/// Whether this is 1.7.104, the only runtime some of the tests' exact numbers were read on.
+fn is_canonical() -> bool {
+    runtime() == skse::runtime::pack(1, 7, 104, 0)
+}
 
 /// The run mode from the mode file, empty when there is none.
 fn mode() -> &'static str {
@@ -193,7 +204,7 @@ unsafe extern "C" fn on_message(msg: *mut skse::Message) {
             if mode() == "overlay" {
                 run("overlay", "saveGame", overlay::SAVE_TESTS);
             }
-            if save_name(msg) == save::FINAL {
+            if save::is_final(&save_name(msg)) {
                 run("save", "saveGame", save::SAVE_TESTS);
             }
         }
@@ -218,16 +229,13 @@ unsafe extern "C" fn on_register(registry: *mut core::ffi::c_void) {
 }
 
 fn load(skse: &skse::Interface) -> bool {
+    RUNTIME.store(skse.runtime_version, Ordering::Relaxed);
     let Ok(file) = skse::log::open(skse.runtime_version, "skyrim-rs-test") else {
         return false;
     };
     *LOG.lock().unwrap() = Some(file);
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
         let _ = LOG_DIR.set(dir);
-    }
-    match crash::install(&crash::Options { name: "skyrim-rs-test", runtime_version: skse.runtime_version, build: env!("CARGO_PKG_VERSION"), facts: None, symbol_path: None }) {
-        Ok(installed) => log!("crash handler: {installed:?}"),
-        Err(e) => log!("crash handler not installed: {e}"),
     }
     let mode_file = std::env::current_exe().map(|exe| exe.with_file_name("Data").join("SKSE").join("Plugins").join("skyrim-rs-test.mode"));
     let _ = MODE.set(mode_file.and_then(std::fs::read_to_string).map(|m| m.trim().to_owned()).unwrap_or_default());
@@ -240,6 +248,11 @@ fn load(skse: &skse::Interface) -> bool {
     if let Err(e) = skyrim::init(skse) {
         log!("FAIL init: {e}");
         return false;
+    }
+    // After the last refusal: the loader unloads a plugin that returns false, and this leaves a thread running in it.
+    match crash::install(&crash::Options { name: "skyrim-rs-test", runtime_version: skse.runtime_version, build: env!("CARGO_PKG_VERSION"), facts: None, symbol_path: None }) {
+        Ok(installed) => log!("crash handler: {installed:?}"),
+        Err(e) => log!("crash handler not installed: {e}"),
     }
     if mode() == "overlay" {
         run("overlay", "load", &[("install", overlay::install)]);

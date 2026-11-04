@@ -17,9 +17,26 @@ use crate::{Test, check, file_name, form};
 
 const GOLD: u32 = 0xF;
 const CREATED: u32 = 0xFF00_0800;
-const SAVE: &str = "skyrim-rs-save";
-/// The save that ends the scenario; `SAVE_TESTS` run only at it.
-pub const FINAL: &str = "skyrim-rs-save-2";
+
+/// The runtime as a save's name carries it: 1-7-104.
+fn runtime_tag() -> String {
+    let [major, minor, build, _] = skse::runtime::unpack(crate::runtime());
+    format!("{major}-{minor}-{build}")
+}
+
+fn suite_save() -> String {
+    format!("skyrim-rs-save-{}", runtime_tag())
+}
+
+/// The save the scenario starts from.
+fn base_save() -> String {
+    if crate::is_canonical() { "retrace-base".to_owned() } else { format!("retrace-base-{}", runtime_tag()) }
+}
+
+/// Whether this save ends the scenario; `SAVE_TESTS` run only at it.
+pub fn is_final(name: &str) -> bool {
+    name == format!("skyrim-rs-save-2-{}", runtime_tag())
+}
 
 pub const SAVE_TESTS: &[(&str, Test)] = &[("events", events), ("records", records), ("remap", remap), ("saved_files", saved_files)];
 
@@ -48,7 +65,9 @@ fn record_path(name: &str) -> Option<PathBuf> {
 fn sample_ids() -> Option<[u32; 3]> {
     let keywords = TESDataHandler::singleton()?.forms_of_type(FormType::KYWD);
     let id_where = |f: fn(u32) -> bool| keywords.iter().flatten().map(|k| k.formID).find(|id| f(*id));
-    Some([id_where(|id| (1..0xFE).contains(&(id >> 24)))?, id_where(|id| id >> 24 == 0xFE)?, CREATED])
+    // 1.5.97's install has no light plugin; the created id stands in for its keyword.
+    let light = id_where(|id| id >> 24 == 0xFE).or(skse::runtime::is_se(crate::runtime()).then_some(CREATED));
+    Some([id_where(|id| (1..0xFE).contains(&(id >> 24)))?, light?, CREATED])
 }
 
 fn player_gold() -> Result<i32, String> {
@@ -139,17 +158,20 @@ fn events() -> Result<String, String> {
     let kinds: Vec<&str> = seen.iter().map(|e| e.split(' ').next().unwrap_or("")).collect();
     let expected = ["2:0", "2:1", "0:0", "0:1", "1:0", "1:1", "2:0", "2:1", "2:0", "2:1", "1:0"];
     check(kinds == expected, &format!("events {seen:?}"))?;
-    check(seen[5] == format!("1:1 {SAVE}") && seen[10] == format!("1:0 {SAVE}"), &format!("save names {seen:?}"))?;
+    let save = suite_save();
+    check(seen[5] == format!("1:1 {save}") && seen[10] == format!("1:0 {save}"), &format!("save names {seen:?}"))?;
     Ok(format!("{seen:?}"))
 }
 
 fn records() -> Result<String, String> {
     let written = WRITTEN.lock().unwrap().clone();
     let loads = LOADS.lock().unwrap().clone();
-    check(written.len() == 1 && written[0].starts_with(&format!("{SAVE}: gold 145")), &format!("written {written:?}"))?;
+    let (save, base) = (suite_save(), base_save());
+    check(written.len() == 1 && written[0].starts_with(&format!("{save}: gold 145")), &format!("written {written:?}"))?;
     check(loads.len() == 3, &format!("loads {loads:?}"))?;
-    check(loads[0] == "retrace-base: no record (state dropped true)" && loads[1] == "retrace-base: no record (state dropped true)", &format!("loads {loads:?}"))?;
-    check(loads[2] == format!("{SAVE}: record gold 145 (state dropped true)"), &format!("loads {loads:?}"))?;
+    let unrecorded = format!("{base}: no record (state dropped true)");
+    check(loads[0] == unrecorded && loads[1] == unrecorded, &format!("loads {loads:?}"))?;
+    check(loads[2] == format!("{save}: record gold 145 (state dropped true)"), &format!("loads {loads:?}"))?;
     let gold = player_gold()?;
     check(gold == 145, &format!("the player holds {gold} gold"))?;
     Ok(format!("written {written:?}; loads {loads:?}; the player holds {gold} gold"))
