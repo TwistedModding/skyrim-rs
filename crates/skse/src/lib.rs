@@ -2,6 +2,7 @@
 
 use core::ffi::{c_char, c_void};
 
+pub mod loader;
 pub mod log;
 pub mod runtime;
 
@@ -9,8 +10,8 @@ pub type PluginHandle = u32;
 pub const INVALID_HANDLE: PluginHandle = u32::MAX;
 
 /// A plugin's name and version as the loader keeps them (0x18 bytes). 2.0.19 has the plugin fill it
-/// in `SKSEPlugin_Query` and reads only the name and version; 2.3.1 fills it from the version data
-/// after every plugin's `SKSEPlugin_Load` has run.
+/// in `SKSEPlugin_Query` and reads only the name and version; the later loaders fill it from the
+/// version data after every plugin's `SKSEPlugin_Load` has run.
 #[repr(C)]
 pub struct PluginInfo {
     pub info_version: u32,
@@ -21,12 +22,13 @@ pub struct PluginInfo {
 impl PluginInfo {
     pub const VERSION: u32 = 1;
 
-    /// The handle SKSE 2.3.1 stored for the plugin, the dword after the info in the loader's
-    /// record (+0x18). It is the plugin's messaging index only while no plugin scanned before it
-    /// failed to load, since the loader then shifts later records down one slot.
+    /// The handle SKSE 2.1.5 and later stored for the plugin, the dword after the info in the
+    /// loader's record (+0x18). It is the plugin's messaging index only while no plugin scanned
+    /// before it failed to load, since the loader then shifts later records down one slot. 2.0.19's
+    /// record holds a pointer there and keeps no handle.
     ///
     /// # Safety
-    /// `self` must be what SKSE 2.3.1's `GetPluginInfo` returned.
+    /// `self` must be what the `GetPluginInfo` of SKSE 2.1.5 or later returned.
     #[must_use]
     pub unsafe fn loader_handle(&self) -> PluginHandle {
         unsafe { core::ptr::from_ref(self).byte_add(0x18).cast::<PluginHandle>().read() }
@@ -49,9 +51,9 @@ pub enum InterfaceId {
 /// one constant object in the loader's read-only data, the same for every plugin and call.
 #[repr(C)]
 pub struct Interface {
-    /// Packed loader version (0x02030010 for 2.3.1).
+    /// Packed loader version, [`loader::Loader::version`].
     pub skse_version: u32,
-    /// Packed runtime version (0x01070680 for 1.7.104).
+    /// Packed runtime version, [`loader::Loader::runtime`].
     pub runtime_version: u32,
     /// Always 0; the loader never reads them.
     pub reserved: [u32; 2],
@@ -60,7 +62,7 @@ pub struct Interface {
     /// The calling plugin's handle. Only valid inside `Query`, `Preload` and `Load`: outside them
     /// the loader logs the misuse and crashes on purpose.
     pub get_plugin_handle: unsafe extern "C" fn() -> PluginHandle,
-    /// The loader's release index (75 for 2.3.1).
+    /// The loader's release index, [`loader::Loader::release_index`].
     pub get_release_index: unsafe extern "C" fn() -> u32,
     /// A loaded plugin's info by name, case-insensitive; null for an unknown name and, on 2.3.1,
     /// for every name until all `Load` calls have returned.
@@ -254,31 +256,36 @@ impl TrampolineInterface {
     pub const VERSION: u32 = 1;
 }
 
-/// The two bit words of the version data as SKSE 2.3.1 reads them: the flags at +0x304 and the
-/// "version independence method" at +0x308 (the loader's own words). A method bit above 2 is
-/// "disabled, unsupported version independence method".
+/// The two bit words of the version data: the flags at +0x304 and the "version independence
+/// method" at +0x308 (the loaders' own words). [`loader::Loader::accepts`] applies them. 2.0.19
+/// reads neither.
 pub mod compat {
-    /// +0x304 bit 0: passes the 1.6.629 test, as [`METHOD_STRUCTS_1_6_629`] does.
+    /// +0x304 bit 0: passes the 1.6.629 test of 2.2.6 and 2.3.1, as [`METHOD_STRUCTS_1_6_629`] does.
     pub const FLAG_STRUCTS_1_6_629: u32 = 1 << 0;
-    /// +0x304 bit 1: skips the link-timestamp gate ("must be recompiled for new address library").
+    /// +0x304 bit 1: skips the link-timestamp gate of 2.3.1 ("must be recompiled for new address
+    /// library").
     pub const FLAG_NO_TIMESTAMP_GATE: u32 = 1 << 1;
     /// +0x308 bit 0: the plugin reads Address Library ids. The runtime's `versionlib` file must
-    /// open ("address library needs to be updated" otherwise), then the timestamp gate applies
-    /// unless [`FLAG_NO_TIMESTAMP_GATE`] is set or the runtime is in the compatible list.
+    /// open ("address library needs to be updated" otherwise), then on 2.3.1 the timestamp gate
+    /// applies unless [`FLAG_NO_TIMESTAMP_GATE`] is set or the runtime is in the compatible list.
     pub const METHOD_ADDRESS_LIBRARY: u32 = 1 << 0;
     /// +0x308 bit 1: version independent with no file check.
     pub const METHOD_NO_FILE_CHECK: u32 = 1 << 1;
-    /// +0x308 bit 2: built for the structure layouts of 1.6.629 and later. A plugin with method
-    /// bit 0 or 1 needs it or [`FLAG_STRUCTS_1_6_629`] ("only compatible with versions earlier
-    /// than 1.6.629"), whatever its compatible list says.
+    /// +0x308 bit 2: built for the structure layouts of 1.6.629 and later. On 2.2.6 and 2.3.1 a
+    /// plugin with method bit 0 or 1 needs it or [`FLAG_STRUCTS_1_6_629`] ("only compatible with
+    /// versions earlier than 1.6.629"), whatever its compatible list says. 2.1.5 refuses this bit
+    /// ("unsupported version independence method"), so a plugin for every loader sets the flag.
     pub const METHOD_STRUCTS_1_6_629: u32 = 1 << 2;
+    /// The flags and method every loader accepts, Address Library file required.
+    pub const FLAGS_EVERY_LOADER: u32 = FLAG_STRUCTS_1_6_629 | FLAG_NO_TIMESTAMP_GATE;
+    pub const METHOD_EVERY_LOADER: u32 = METHOD_ADDRESS_LIBRARY;
 }
 
-/// The data behind the exported `SKSEPlugin_Version` symbol, 0x350 bytes, which SKSE 2.3.1 copies
-/// before any plugin code runs (2.0.19 never reads it).
+/// The data behind the exported `SKSEPlugin_Version` symbol, 0x350 bytes, which SKSE 2.1.5 and
+/// later copy before any plugin code runs (2.0.19 never reads it).
 #[repr(C)]
 pub struct PluginVersionData {
-    /// Only zero ("disabled, bad version data") or non-zero is tested.
+    /// 2.1.5 requires exactly 1; later loaders only refuse 0 ("disabled, bad version data").
     pub data_version: u32,
     pub plugin_version: u32,
     /// Empty is "disabled, no name specified".
@@ -318,7 +325,7 @@ impl PluginVersionData {
             support_email: [0; 252],
             flags,
             method,
-            compatible_versions: [0; 16],
+            compatible_versions: loader::compatible_runtimes(),
             minimum_skse: 0,
         }
     }
@@ -336,10 +343,10 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
     out
 }
 
-/// Declares a plugin: exports `SKSEPlugin_Version`, which SKSE 2.3.1 reads before any code runs
-/// and then calls `SKSEPlugin_Load` on, and `SKSEPlugin_Query`, which SKSE 2.0.19 calls before
-/// `SKSEPlugin_Load`. 2.3.1 also calls an optional `SKSEPlugin_Preload` before any `Load`; the
-/// macro does not export one.
+/// Declares a plugin every loader accepts: exports `SKSEPlugin_Version`, which SKSE 2.1.5 and later
+/// read before any code runs and then call `SKSEPlugin_Load` on, and `SKSEPlugin_Query`, which SKSE
+/// 2.0.19 calls before `SKSEPlugin_Load`. 2.3.1 also calls an optional `SKSEPlugin_Preload` before
+/// any `Load`; the macro does not export one.
 ///
 /// ```ignore
 /// skse::plugin! {
@@ -351,10 +358,10 @@ const fn fill<const N: usize>(s: &str) -> [u8; N] {
 /// fn load(skse: &skse::Interface) -> bool { true }
 /// ```
 ///
-/// The defaults (`flags` = `FLAG_NO_TIMESTAMP_GATE`, `method` = `METHOD_ADDRESS_LIBRARY |
-/// METHOD_STRUCTS_1_6_629`) are what a mod on `sre` needs on every runtime SKSE 2.3.1 accepts:
-/// the Address Library file must exist, the 1.6.629 test passes, and the link-timestamp gate is
-/// skipped. Pass `flags:` and `method:` to override both.
+/// The defaults ([`compat::FLAGS_EVERY_LOADER`], [`compat::METHOD_EVERY_LOADER`]) are what a mod on
+/// `sre` needs on every loader: the Address Library file must exist, the 1.6.629 test passes through
+/// the flag since 2.1.5 refuses the method bit, and the link-timestamp gate is skipped. Pass `flags:`
+/// and `method:` to override both.
 #[macro_export]
 macro_rules! plugin {
     (
@@ -391,13 +398,13 @@ macro_rules! plugin {
         }
     };
     (@flags) => {
-        $crate::compat::FLAG_NO_TIMESTAMP_GATE
+        $crate::compat::FLAGS_EVERY_LOADER
     };
     (@flags $e:expr) => {
         $e
     };
     (@method) => {
-        $crate::compat::METHOD_ADDRESS_LIBRARY | $crate::compat::METHOD_STRUCTS_1_6_629
+        $crate::compat::METHOD_EVERY_LOADER
     };
     (@method $e:expr) => {
         $e
@@ -408,10 +415,16 @@ macro_rules! plugin {
 /// stub from a real plugin of the same name.
 pub const ALIAS_STUB_SYMBOL: &core::ffi::CStr = c"SkyrimRs_AliasStub";
 
-/// Declares a stub plugin: `SKSEPlugin_Version` naming `$name` and no entry point, so SKSE 2.3.1
-/// gives it a record and a messaging index under that name and never runs its code; a framework
-/// plugin then serves the name through the host (`framework::Host::serve_alias`). Version
-/// independent with no file check, so the loader tests nothing else.
+/// The `SKSEPlugin_Load` of a stub from [`alias_stub!`].
+#[must_use]
+pub fn stub_load(_: &Interface) -> bool {
+    true
+}
+
+/// Declares a stub plugin: version data naming `$name` and entry points that do nothing, so each
+/// loader gives it a record and a messaging index under that name; a framework plugin then serves the
+/// name through the host (`framework::Host::serve_alias`). 2.0.19 needs `Query` and `Load`, 2.1.5 and
+/// 2.2.6 need `Load`. Version independent with no file check, so the loaders test nothing else.
 ///
 /// ```ignore
 /// skse::alias_stub!("ImprovedCameraSE");
@@ -419,9 +432,14 @@ pub const ALIAS_STUB_SYMBOL: &core::ffi::CStr = c"SkyrimRs_AliasStub";
 #[macro_export]
 macro_rules! alias_stub {
     ($name:literal) => {
-        #[unsafe(no_mangle)]
-        #[allow(non_upper_case_globals)]
-        pub static SKSEPlugin_Version: $crate::PluginVersionData = $crate::PluginVersionData::new($name, "skyrim-rs", 1, 0, $crate::compat::METHOD_NO_FILE_CHECK | $crate::compat::METHOD_STRUCTS_1_6_629);
+        $crate::plugin! {
+            name: $name,
+            author: "skyrim-rs",
+            version: 1,
+            load: $crate::stub_load,
+            flags: $crate::compat::FLAG_STRUCTS_1_6_629,
+            method: $crate::compat::METHOD_NO_FILE_CHECK,
+        }
 
         #[unsafe(no_mangle)]
         #[allow(non_upper_case_globals)]
