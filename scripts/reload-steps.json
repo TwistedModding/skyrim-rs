@@ -1,6 +1,6 @@
 [
   [
-    {"tool": "console", "args": {"command": "load retrace-base"}},
+    {"tool": "console", "args": {"command": "load {base}"}},
     {"waitFor": "postLoadGame"},
     {"waitUntil": "playerLoaded"},
     {"wait": 5000},
@@ -19,7 +19,7 @@
     {"wait": 1500},
     {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
     {"wait": 1000},
-    {"tool": "console", "args": {"command": "save skyrim-rs-reload-1"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-reload-1-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ],
@@ -38,7 +38,7 @@
     {"wait": 1500},
     {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
     {"wait": 1000},
-    {"tool": "console", "args": {"command": "save skyrim-rs-reload-2"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-reload-2-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ],
@@ -57,7 +57,7 @@
     {"wait": 1500},
     {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
     {"wait": 1000},
-    {"tool": "console", "args": {"command": "save skyrim-rs-reload-3"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-reload-3-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ],
@@ -76,7 +76,7 @@
     {"wait": 1500},
     {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
     {"wait": 1000},
-    {"tool": "console", "args": {"command": "save skyrim-rs-reload-4"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-reload-4-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ]

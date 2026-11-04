@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 5000},
@@ -14,7 +14,7 @@
   {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 68, "owner": "verify"}},
   {"wait": 1000},
   {"tool": "console", "args": {"command": "SkyrimRs keys", "capture": true}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-gui-4"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-gui-4-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

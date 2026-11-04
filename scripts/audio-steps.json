@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 15000},
@@ -9,7 +9,7 @@
   {"wait": 2000},
   {"tool": "papyrus", "args": {"action": "call", "script": "SoundCategory", "function": "SetVolume", "self": {"form": "0x64451"}, "args": [1.0]}},
   {"wait": 1000},
-  {"tool": "console", "args": {"command": "save skyrim-rs-audio"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-audio-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 3000},
@@ -45,7 +45,7 @@
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "IsSneaking", "self": {"form": "0x14"}}},
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "IsWeaponDrawn", "self": {"form": "0x14"}}},
   {"tool": "inspect", "args": {"kind": "player"}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-actors"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-actors-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

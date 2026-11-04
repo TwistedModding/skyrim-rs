@@ -1,0 +1,16 @@
+[
+  {"tool": "console", "args": {"command": "coc Riverwood"}},
+  {"waitUntil": "playerLoaded"},
+  {"wait": 15000},
+  {"tool": "menu", "args": {"action": "describe"}},
+  {"tool": "menu", "args": {"action": "accept", "index": 1}},
+  {"wait": 3000},
+  {"tool": "menu", "args": {"action": "list"}},
+  {"tool": "inspect", "args": {"kind": "player"}},
+  {"tool": "inspect", "args": {"kind": "scene"}},
+  {"tool": "inspect", "args": {"kind": "inventory"}},
+  {"tool": "console", "args": {"command": "save {base}"}},
+  {"waitFor": "saveGame"},
+  {"wait": 5000},
+  {"tool": "game", "args": {"action": "list", "filter": "{base}", "detail": true}}
+]

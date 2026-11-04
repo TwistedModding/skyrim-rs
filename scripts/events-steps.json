@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 3000},
@@ -20,14 +20,14 @@
   {"wait": 2000},
   {"tool": "papyrus", "args": {"action": "call", "script": "Spell", "function": "Cast", "self": {"form": "0x12fcd"}, "args": [{"form": "0x14"}, {"form": "0x13480"}]}},
   {"wait": 4000},
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 5000},
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "StartSneaking", "self": {"form": "0x14"}}},
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "DrawWeapon", "self": {"form": "0x14"}}},
   {"wait": 2500},
-  {"tool": "console", "args": {"command": "save skyrim-rs-events"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-events-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

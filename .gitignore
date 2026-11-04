@@ -1,6 +1,7 @@
 /target
 crates/versionlib/tests/data/
 /devbench-out/
+/devbench-probe-*/
 /verify-*-out/
 /verify-all-*/
 /dist/

@@ -1,0 +1,6 @@
+[
+  {"wait": 10000},
+  {"tool": "ping", "args": {"hello": 1}},
+  {"tool": "inspect", "args": {"kind": "state"}},
+  {"tool": "menu", "args": {"action": "list"}}
+]

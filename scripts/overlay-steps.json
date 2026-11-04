@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 5000},
@@ -19,7 +19,7 @@
   {"wait": 1000},
   {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": "w", "owner": "verify"}},
   {"wait": 1000},
-  {"tool": "console", "args": {"command": "save skyrim-runtime-extender-overlay"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-overlay-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

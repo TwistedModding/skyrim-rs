@@ -1,6 +1,6 @@
 [
   [
-    {"tool": "console", "args": {"command": "load retrace-base"}},
+    {"tool": "console", "args": {"command": "load {base}"}},
     {"waitFor": "postLoadGame"},
     {"waitUntil": "playerLoaded"},
     {"wait": 5000},
@@ -53,7 +53,7 @@
     {"tool": "console", "args": {"command": "player.damageactorvalue health 10", "capture": true}},
     {"wait": 500},
     {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "args": ["Health"], "self": {"form": "0x14"}}},
-    {"tool": "console", "args": {"command": "save skyrim-rs-gui-1"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-gui-1-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ],
@@ -73,7 +73,7 @@
     {"wait": 1500},
     {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsExample", "function": "SetDamageScale", "args": [0.5]}},
     {"wait": 1500},
-    {"tool": "console", "args": {"command": "save skyrim-rs-gui-2"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-gui-2-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000},
     {"tool": "menu", "args": {"action": "list"}},
@@ -125,7 +125,7 @@
     {"tool": "input", "args": {"device": "keyboard", "action": "tap", "key": 87, "owner": "verify"}},
     {"wait": 1000},
     {"tool": "console", "args": {"command": "SkyrimRs keys", "capture": true}},
-    {"tool": "console", "args": {"command": "save skyrim-rs-gui-3"}},
+    {"tool": "console", "args": {"command": "save skyrim-rs-gui-3-{rt}"}},
     {"waitFor": "saveGame"},
     {"wait": 2000}
   ]

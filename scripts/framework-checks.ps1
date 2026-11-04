@@ -14,7 +14,7 @@ $orderLine = @($hostLog | Where-Object { $_ -match '^load order: ' })
 $missing = @($hostLog | Where-Object { $_ -match '^no plugin named skyrim-rs-nowhere \(asked by skyrim-rs-order-head\)$' })
 $cycle = @($hostLog | Where-Object { $_ -match '^skipped skyrim_rs_order_cycle_[ab]\.dll: skyrim-rs-order-cycle-[ab] is in a load order cycle with skyrim-rs-order-cycle-[ab]$' })
 $hostHandle = Loaded "skyrim_runtime_extender.dll"
-$hudShot = HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-9.bmp" "$OutDir\framework-hud-1.7.104.jpg"
+$hudShot = HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-9.bmp" "$OutDir\framework-hud-$Runtime.jpg"
 $subLoader = @($LoaderLog | Where-Object { $_ -match 'skyrim_rs_framework_test|skyrim_rs_order|decoy' })
 
 $rows = @(
@@ -26,13 +26,13 @@ $rows = @(
        ok = ($plugin["order"].ok -and $orderLine -eq "load order: skyrim-rs-order-head (after [skyrim-rs-nowhere], priority 1), skyrim-rs-framework-test, skyrim-rs-order-tail (after [*], priority 9)" -and (Compare-Object $orderLog $ExpectedOrder -SyncWindow 0).Count -eq 0) }
     @{ name = "order reports"; plugin = "cycle plugins in skyrim-rs-order.log: $(@($orderLog -match 'cycle').Count)"; devbench = "(host log) $($missing -join ' | ') | $($cycle -join ' | ')";
        ok = ($missing.Count -eq 1 -and $cycle.Count -eq 2 -and @($orderLog -match 'cycle').Count -eq 0) }
-    @{ name = "messages";     plugin = "$(Detail 'startup_messages') | $(Detail 'load_messages')"; devbench = "load retrace-base, postLoadGame seen: $(($steps | Where-Object { $_.index -eq 1 }).satisfied)";
+    @{ name = "messages";     plugin = "$(Detail 'startup_messages') | $(Detail 'load_messages')"; devbench = "load $($Install.baseSave), postLoadGame seen: $(($steps | Where-Object { $_.index -eq 1 }).satisfied)";
        ok = ($plugin["startup_messages"].ok -and $plugin["load_messages"].ok) }
     @{ name = "native";       plugin = "$(Detail 'papyrus') | $(Detail 'native')"; devbench = "SkyrimRsFrameworkTest.Twice(21) = $(Returned 4) ($((Step 4).returnedType))";
        ok = ($plugin["native"].ok -and (Returned 4) -eq 42) }
     @{ name = "tab";          plugin = (Detail "tab"); devbench = "F11 taps ok = $((Step 5) -ne $null), $((Step 7) -ne $null)";
        ok = ($plugin["tab"].ok -and (Step 5) -ne $null -and (Step 7) -ne $null) }
-    @{ name = "hud";          plugin = (Detail "hud"); devbench = "SkyrimRs capture 9 with the overlay closed: $(Lines 12); framework-hud-1.7.104.jpg written: $hudShot";
+    @{ name = "hud";          plugin = (Detail "hud"); devbench = "SkyrimRs capture 9 with the overlay closed: $(Lines 12); framework-hud-$Runtime.jpg written: $hudShot";
        ok = ($plugin["hud"].ok -and $hudShot) }
     @{ name = "save trigger"; plugin = ($summaries -match 'framework saveGame') -join ' '; devbench = "waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 10 }).satisfied)";
        ok = (($steps | Where-Object { $_.index -eq 10 }).satisfied -eq $true) }

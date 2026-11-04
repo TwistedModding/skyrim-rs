@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"wait": 3000},
@@ -11,13 +11,13 @@
   {"tool": "console", "args": {"command": "player.damageactorvalue health 5", "capture": true}},
   {"wait": 500},
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-1"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-1-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000},
   {"tool": "console", "args": {"command": "player.damageactorvalue health 10", "capture": true}},
   {"wait": 500},
   {"tool": "papyrus", "args": {"action": "call", "script": "Actor", "function": "GetActorValue", "self": {"form": "0x14"}, "args": ["Health"]}},
-  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-2"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-hooks-2-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

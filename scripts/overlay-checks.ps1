@@ -13,7 +13,7 @@ if (Test-Path $bmp) {
     Add-Type -AssemblyName System.Drawing
     $img = [System.Drawing.Image]::FromFile($bmp)
     $half = New-Object System.Drawing.Bitmap $img, ([int]($img.Width / 2)), ([int]($img.Height / 2))
-    $half.Save("$OutDir\overlay-1.7.104.jpg", [System.Drawing.Imaging.ImageFormat]::Jpeg)
+    $half.Save("$OutDir\overlay-$Runtime.jpg", [System.Drawing.Imaging.ImageFormat]::Jpeg)
     $half.Dispose(); $img.Dispose()
     Remove-Item $bmp
 }
@@ -25,8 +25,8 @@ $rows = @(
        ok = ($plugin["clicks"].ok -and (Step 14) -ne $null) }
     @{ name = "typed";        plugin = (Detail "typed"); devbench = "(no DevBench counterpart: its keys never become characters)";
        ok = $plugin["typed"].ok }
-    @{ name = "drawn";        plugin = (Detail "drawn"); devbench = "frame kept as overlay-1.7.104.jpg: $(Test-Path "$OutDir\overlay-1.7.104.jpg")";
-       ok = ($plugin["drawn"].ok -and (Test-Path "$OutDir\overlay-1.7.104.jpg")) }
+    @{ name = "drawn";        plugin = (Detail "drawn"); devbench = "frame kept as overlay-$Runtime.jpg: $(Test-Path "$OutDir\overlay-$Runtime.jpg")";
+       ok = ($plugin["drawn"].ok -and (Test-Path "$OutDir\overlay-$Runtime.jpg")) }
     @{ name = "closed";       plugin = (Detail "closed"); devbench = "input tap F11 ok = $((Step 16) -ne $null)";
        ok = ($plugin["closed"].ok -and (Step 16) -ne $null) }
     @{ name = "save trigger"; plugin = ($summaries -match 'overlay saveGame') -join ' '; devbench = "waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 21 }).satisfied)";

@@ -1,5 +1,5 @@
 [
-  {"tool": "console", "args": {"command": "load retrace-base"}},
+  {"tool": "console", "args": {"command": "load {base}"}},
   {"waitFor": "postLoadGame"},
   {"waitUntil": "playerLoaded"},
   {"tool": "console", "args": {"command": "player.addspell 000FB981"}},
@@ -29,7 +29,7 @@
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "DoubleLater", "args": [5], "timeoutMs": 5000}},
   {"tool": "papyrus", "args": {"action": "call", "script": "SkyrimRsTest", "function": "EventCount"}},
   {"wait": 1500},
-  {"tool": "console", "args": {"command": "save skyrim-rs-papyrus"}},
+  {"tool": "console", "args": {"command": "save skyrim-rs-papyrus-{rt}"}},
   {"waitFor": "saveGame"},
   {"wait": 2000}
 ]

@@ -16,6 +16,8 @@ if ($filesDetail -match 'compiled=\[([^\]]*)\] light=\[([^\]]*)\]') {
 }
 $hour = Captured (Lines 14) 'GameHour = ([0-9.]+)'
 $pluginHour = Captured (Detail "editor_id_global") 'GameHour=([0-9.]+)'
+# 1.5.97's install has no Creations: nothing to look up, and the form counts below were read with two of them loaded.
+$NoCreations = if (-not (Test-Path "$GameDir\Data\ccBGSSSE037-Curios.esl")) { "no Creations in this install" }
 
 $rows = @(
     @{ name = "files";             plugin = ($pluginFiles -join ", "); devbench = ($dbFiles -join ", ");
@@ -24,9 +26,9 @@ $rows = @(
        ok = ((Detail "lookup_weapon") -match 'formID=00012EB7 type=41' -and (Returned 5).formId -eq "0x00012EB7" -and (Returned 5).formType -eq "41") }
     @{ name = "get_file Skyrim";   plugin = (Detail "get_file"); devbench = "GetFormFromFile(77495, Skyrim.esm) = $((Returned 6).formId)";
        ok = ((Detail "get_file") -match 'Skyrim\.esm 0x12eb7 -> 00012EB7' -and (Returned 6).formId -eq "0x00012EB7") }
-    @{ name = "get_file Curios";   plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Curios) = $((Returned 7).formId)";
+    @{ name = "get_file Curios";   notRun = $NoCreations; plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Curios) = $((Returned 7).formId)";
        ok = ((Captured (Detail "get_file") 'Curios 0x800 -> ([0-9A-F]{8})') -eq (((Returned 7).formId) -replace '^0x', '')) }
-    @{ name = "get_file Fish";     plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Fish) = $((Returned 8).formId)";
+    @{ name = "get_file Fish";     notRun = $NoCreations; plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, Fish) = $((Returned 8).formId)";
        ok = ((Captured (Detail "get_file") 'Fish 0x800 -> ([0-9A-F]{8})') -eq (((Returned 8).formId) -replace '^0x', '')) }
     @{ name = "get_file missing";  plugin = (Detail "get_file"); devbench = "GetFormFromFile(2048, NoSuchFile.esp) = $((Step 9).returnedType)";
        ok = ((Detail "get_file") -match 'NoSuchFile\.esp -> none' -and (Step 9).returnedType -eq "none") }
@@ -38,7 +40,7 @@ $rows = @(
        ok = ($plugin["editor_id_missing"].ok -and (Lines 13) -notmatch 'WEAP:' -and (Lines 13) -match 'ANIO: AnimObjectIronSword') }
     @{ name = "editor_id_global";  plugin = (Detail "editor_id_global"); devbench = "help GameHour 3: $(Lines 14)";
        ok = (Near $hour $pluginHour 0.1) }
-    @{ name = "form_arrays";       plugin = (Detail "form_arrays"); devbench = "forms-verify.md recorded KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219 on the base game with two Creations; a larger load order adds forms";
+    @{ name = "form_arrays";       notRun = $NoCreations; plugin = (Detail "form_arrays"); devbench = "forms-verify.md recorded KYWD=1290 GLOB=1261 WEAP=3328 NPC_=6462 FLST=1219 on the base game with two Creations; a larger load order adds forms";
        ok = ($plugin["form_arrays"].ok -and @(@("KYWD", 1290), @("GLOB", 1261), @("WEAP", 3328), @("NPC_", 6462), @("FLST", 1219) | ForEach-Object { [int](Captured (Detail "form_arrays") "$($_[0])=(\d+)") -ge $_[1] }) -notcontains $false) }
     @{ name = "generated_api";     plugin = (Detail "generated_api"); devbench = "the hand-written skyrim wrappers' results in the same run";
        ok = ($plugin["generated_api"].ok -and (Detail "generated_api") -match '12 comparisons equal') }

@@ -50,11 +50,9 @@ $scaleOnDisk = if (Test-Path $settingsFile) { Captured (Get-Content $settingsFil
 
 # One capture per page, as "SkyrimRs gui <n>" numbers them.
 $pageNames = @("example-damage", "example-about", "plugins", "legacy", "settings")
-$shots = @(0..4 | ForEach-Object { HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-$_.bmp" "$OutDir\gui-$($pageNames[$_])-1.7.104.jpg" })
-$vanillaPath = (Step 66).path
-$vanilla = $vanillaPath -and (HalfJpeg $vanillaPath "$OutDir\gui-vanilla-1.7.104.jpg")
-# DevBench writes its capture's metadata beside the picture, inside the game install.
-if ($vanillaPath) { Remove-Item ([IO.Path]::ChangeExtension($vanillaPath, "json")) -ErrorAction SilentlyContinue }
+$shots = @(0..4 | ForEach-Object { HalfJpeg "$SkseLogs\skyrim-runtime-extender-overlay-$_.bmp" "$OutDir\gui-$($pageNames[$_])-$Runtime.jpg" })
+$vanillaPath = KeptCapture (Step 66).path
+$vanilla = $vanillaPath -and (HalfJpeg $vanillaPath "$OutDir\gui-vanilla-$Runtime.jpg")
 
 # The keys: a session's steps, logs and files are in <OutDir>\<session>, the first session's in <OutDir>.
 function SessionSteps($name) { $f = "$OutDir\$name\result.json"; @(if (Test-Path $f) { (Get-Content $f -Raw | ConvertFrom-Json).result.results }) }
@@ -100,8 +98,8 @@ $rows = @(
     @{ name = "page selection"; plugin = "SkyrimRs gui 1 to 4"; devbench = ($shownPages -join ' | ');
        ok = (($shownPages -join '|') -eq 'page 1: Example mod / About|page 2: Plugins|page 3: Legacy plugins|page 4: Settings') }
     @{ name = "legacy plugins"; plugin = "(from SkyrimRs gui)"; devbench = (@($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy' }) -join ' | ');
-       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench 1\.28\.0 by alandtse, loaded' -and $gui1 -match 'legacy skyrim_runtime_extender\.dll: skyrim-runtime-extender [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
-    @{ name = "captures"; plugin = "(host log) $($framesWritten.Count) frames written"; devbench = "kept as gui-<page>-1.7.104.jpg: $($shots -join ', '); journal captured by DevBench, kept as gui-vanilla-1.7.104.jpg: $vanilla";
+       ok = ($gui1 -match 'legacy plugins, loaded by the script extender:' -and $gui1 -match 'legacy devbench\.dll: devbench \d+\.\d+\.\d+ by alandtse, loaded' -and $gui1 -match 'legacy skyrim_runtime_extender\.dll: skyrim-runtime-extender [\d.]+ by \w+, loaded' -and $gui1 -match 'legacy skyrim_rs_test\.dll: skyrim-rs-test [\d.]+ by \w+, loaded' -and @($gui1 -split ' \| ' | Where-Object { $_ -match '^legacy .*, not loaded$' }).Count -eq 0) }
+    @{ name = "captures"; plugin = "(host log) $($framesWritten.Count) frames written"; devbench = "kept as gui-<page>-$Runtime.jpg: $($shots -join ', '); journal captured by DevBench, kept as gui-vanilla-$Runtime.jpg: $vanilla";
        ok = ($framesWritten.Count -eq 5 -and @($shots | Where-Object { $_ }).Count -eq 5 -and $vanilla) }
     @{ name = "focus capture"; plugin = "overlay open with nothing focused, capture $(Captured $gui1 'capture (\w+)')"; devbench = "player moved $([math]::Round($moved, 1)) units during the 2 s W hold (x $(Pos 9) -> $(Pos 15), y $(Pos 10) -> $(Pos 16))";
        ok = ($gui1 -match 'capture Focus' -and $moved -gt 50) }

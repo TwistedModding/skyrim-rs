@@ -4,7 +4,7 @@
 param(
     [string[]]$Source = @("$(Split-Path $PSScriptRoot -Parent)\crates\testplugin\papyrus"),
     [string]$OutDir = "$(Split-Path $PSScriptRoot -Parent)\target\papyrus",
-    [string]$GameDir = "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition",
+    [string]$GameDir = (& "$PSScriptRoot\runtimes.ps1").dir,
     [string]$Compiler = "$GameDir\Papyrus Compiler\PapyrusCompiler.exe",
     [string]$ScriptsZip = "$GameDir\Data\Scripts.zip"
 )
