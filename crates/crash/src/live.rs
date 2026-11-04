@@ -249,7 +249,8 @@ pub(crate) fn fill_threads(rec: &mut Record, crashing: (u32, &CONTEXT), watchdog
 }
 
 /// Reads every module's file version from its version resource (heap-using, so after the dump).
-pub(crate) fn fill_versions(rec: &mut Record, buffer: &mut [u8]) {
+/// `game` is the game's own, 0 when unknown: the fixed block of its resource says 1.0.0.0 on 1.5.97.
+pub(crate) fn fill_versions(rec: &mut Record, buffer: &mut [u8], game: u32) {
     let count = (rec.module_count as usize).min(MAX_MODULES);
     for module in &mut rec.modules[..count] {
         let mut path = [0u16; 520];
@@ -269,6 +270,11 @@ pub(crate) fn fill_versions(rec: &mut Record, buffer: &mut [u8]) {
         }
         let info = unsafe { &*fixed.cast::<VS_FIXEDFILEINFO>() };
         module.version = [(info.dwFileVersionMS >> 16) as u16, (info.dwFileVersionMS & 0xFFFF) as u16, (info.dwFileVersionLS >> 16) as u16, (info.dwFileVersionLS & 0xFFFF) as u16];
+        module.version_known = 1;
+    }
+    let exe_base = rec.exe_base;
+    if let Some(module) = rec.modules[..count].iter_mut().find(|m| m.base == exe_base).filter(|_| game != 0) {
+        module.version = skse::runtime::unpack(game).map(|part| u16::try_from(part).unwrap_or(0));
         module.version_known = 1;
     }
 }

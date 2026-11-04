@@ -189,7 +189,7 @@ impl crate::NiCamera {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn get_rtti() -> *mut c_void { unsafe { function!(70647, () -> *mut c_void)() } }
+    pub unsafe fn get_rtti() -> *mut crate::TypeNode { unsafe { function!(70647, () -> *mut crate::TypeNode)() } }
     /// `NiCamera::IsEqual` (decompiler signature, tier untiered; ledger semantic evidence, name high; id 70622, rva 0xeef7f0).
     /// `undefined8 IsEqual(NiCamera * this, longlong param_1)`
     ///

@@ -648,6 +648,244 @@ impl crate::TES {
     /// `void (TES* this, TESObjectCELL* cell)`
     #[inline]
     pub fn update_sky_mode_for_cell(&self, cell: &crate::TESObjectCELL) { unsafe { function!(13326, (*const Self, *const crate::TESObjectCELL))(core::ptr::from_ref(self), core::ptr::from_ref(cell)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_108", 0x108, u64) } }
+    /// `TES::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_110", 0x110, u64) } }
+    /// `TES::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u64 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u64) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u64 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_128(this: *const Self) -> *mut u8 { unsafe { member!(this, "TES.field_128", 0x128, u8) } }
+    /// `TES::field_128`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn field_128(&self) -> u8 { unsafe { Self::__member_field_128(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_128(&mut self, value: u8) { unsafe { Self::__member_field_128(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_128_ptr(&self) -> *mut u8 { Self::__member_field_128(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TES.field_12C", 0x12C, u32) } }
+    /// `TES::field_12C`, at +0x12C on 1.7.104.
+    #[inline]
+    pub fn field_12C(&self) -> u32 { unsafe { Self::__member_field_12C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12C(&mut self, value: u32) { unsafe { Self::__member_field_12C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12C_ptr(&self) -> *mut u32 { Self::__member_field_12C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_134(this: *const Self) -> *mut u8 { unsafe { member!(this, "TES.field_134", 0x134, u8) } }
+    /// `TES::field_134`, at +0x134 on 1.7.104.
+    #[inline]
+    pub fn field_134(&self) -> u8 { unsafe { Self::__member_field_134(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_134(&mut self, value: u8) { unsafe { Self::__member_field_134(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_134_ptr(&self) -> *mut u8 { Self::__member_field_134(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_137(this: *const Self) -> *mut u16 { unsafe { member!(this, "TES.field_137", 0x137, u16) } }
+    /// `TES::field_137`, at +0x137 on 1.7.104.
+    #[inline]
+    pub fn field_137(&self) -> u16 { unsafe { Self::__member_field_137(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_137(&mut self, value: u16) { unsafe { Self::__member_field_137(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_137_ptr(&self) -> *mut u16 { Self::__member_field_137(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_13C(this: *const Self) -> *mut u8 { unsafe { member!(this, "TES.field_13C", 0x13C, u8) } }
+    /// `TES::field_13C`, at +0x13C on 1.7.104.
+    #[inline]
+    pub fn field_13C(&self) -> u8 { unsafe { Self::__member_field_13C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_13C(&mut self, value: u8) { unsafe { Self::__member_field_13C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_13C_ptr(&self) -> *mut u8 { Self::__member_field_13C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_140(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_140", 0x140, u64) } }
+    /// `TES::field_140`, at +0x140 on 1.7.104.
+    #[inline]
+    pub fn field_140(&self) -> u64 { unsafe { Self::__member_field_140(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_140(&mut self, value: u64) { unsafe { Self::__member_field_140(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_140_ptr(&self) -> *mut u64 { Self::__member_field_140(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_148(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_148", 0x148, u64) } }
+    /// `TES::field_148`, at +0x148 on 1.7.104.
+    #[inline]
+    pub fn field_148(&self) -> u64 { unsafe { Self::__member_field_148(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_148(&mut self, value: u64) { unsafe { Self::__member_field_148(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_148_ptr(&self) -> *mut u64 { Self::__member_field_148(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_150(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_150", 0x150, u64) } }
+    /// `TES::field_150`, at +0x150 on 1.7.104.
+    #[inline]
+    pub fn field_150(&self) -> u64 { unsafe { Self::__member_field_150(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_150(&mut self, value: u64) { unsafe { Self::__member_field_150(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_150_ptr(&self) -> *mut u64 { Self::__member_field_150(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_158(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_158", 0x158, u64) } }
+    /// `TES::field_158`, at +0x158 on 1.7.104.
+    #[inline]
+    pub fn field_158(&self) -> u64 { unsafe { Self::__member_field_158(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_158(&mut self, value: u64) { unsafe { Self::__member_field_158(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_158_ptr(&self) -> *mut u64 { Self::__member_field_158(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_160(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_160", 0x160, u64) } }
+    /// `TES::field_160`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn field_160(&self) -> u64 { unsafe { Self::__member_field_160(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_160(&mut self, value: u64) { unsafe { Self::__member_field_160(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_160_ptr(&self) -> *mut u64 { Self::__member_field_160(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_168(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_168", 0x168, u64) } }
+    /// `TES::field_168`, at +0x168 on 1.7.104.
+    #[inline]
+    pub fn field_168(&self) -> u64 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_168(&mut self, value: u64) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_168_ptr(&self) -> *mut u64 { Self::__member_field_168(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_170(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_170", 0x170, u64) } }
+    /// `TES::field_170`, at +0x170 on 1.7.104.
+    #[inline]
+    pub fn field_170(&self) -> u64 { unsafe { Self::__member_field_170(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_170(&mut self, value: u64) { unsafe { Self::__member_field_170(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_170_ptr(&self) -> *mut u64 { Self::__member_field_170(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_178(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_178", 0x178, u64) } }
+    /// `TES::field_178`, at +0x178 on 1.7.104.
+    #[inline]
+    pub fn field_178(&self) -> u64 { unsafe { Self::__member_field_178(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_178(&mut self, value: u64) { unsafe { Self::__member_field_178(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_178_ptr(&self) -> *mut u64 { Self::__member_field_178(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_284(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_284", 0x284, u64) } }
+    /// `TES::field_284`, at +0x284 on 1.7.104.
+    #[inline]
+    pub fn field_284(&self) -> u64 { unsafe { Self::__member_field_284(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_284(&mut self, value: u64) { unsafe { Self::__member_field_284(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_284_ptr(&self) -> *mut u64 { Self::__member_field_284(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28C(this: *const Self) -> *mut u16 { unsafe { member!(this, "TES.field_28C", 0x28C, u16) } }
+    /// `TES::field_28C`, at +0x28C on 1.7.104.
+    #[inline]
+    pub fn field_28C(&self) -> u16 { unsafe { Self::__member_field_28C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28C(&mut self, value: u16) { unsafe { Self::__member_field_28C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28C_ptr(&self) -> *mut u16 { Self::__member_field_28C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_290(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_290", 0x290, u64) } }
+    /// `TES::field_290`, at +0x290 on 1.7.104.
+    #[inline]
+    pub fn field_290(&self) -> u64 { unsafe { Self::__member_field_290(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_290(&mut self, value: u64) { unsafe { Self::__member_field_290(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_290_ptr(&self) -> *mut u64 { Self::__member_field_290(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A0(this: *const Self) -> *mut u8 { unsafe { member!(this, "TES.field_2A0", 0x2A0, u8) } }
+    /// `TES::field_2A0`, at +0x2A0 on 1.7.104.
+    #[inline]
+    pub fn field_2A0(&self) -> u8 { unsafe { Self::__member_field_2A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A0(&mut self, value: u8) { unsafe { Self::__member_field_2A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A0_ptr(&self) -> *mut u8 { Self::__member_field_2A0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2A8(this: *const Self) -> *mut u32 { unsafe { member!(this, "TES.field_2A8", 0x2A8, u32) } }
+    /// `TES::field_2A8`, at +0x2A8 on 1.7.104.
+    #[inline]
+    pub fn field_2A8(&self) -> u32 { unsafe { Self::__member_field_2A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2A8(&mut self, value: u32) { unsafe { Self::__member_field_2A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2A8_ptr(&self) -> *mut u32 { Self::__member_field_2A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_2B0", 0x2B0, u64) } }
+    /// `TES::field_2B0`, at +0x2B0 on 1.7.104.
+    #[inline]
+    pub fn field_2B0(&self) -> u64 { unsafe { Self::__member_field_2B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2B0(&mut self, value: u64) { unsafe { Self::__member_field_2B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2B0_ptr(&self) -> *mut u64 { Self::__member_field_2B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.field_2B8", 0x2B8, u64) } }
+    /// `TES::field_2B8`, at +0x2B8 on 1.7.104.
+    #[inline]
+    pub fn field_2B8(&self) -> u64 { unsafe { Self::__member_field_2B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2B8(&mut self, value: u64) { unsafe { Self::__member_field_2B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2B8_ptr(&self) -> *mut u64 { Self::__member_field_2B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_SystemEventAdapter_298(this: *const Self) -> *mut u64 { unsafe { member!(this, "TES.m_SystemEventAdapter_298", 0x298, u64) } }
+    /// `TES::m_SystemEventAdapter_298`, at +0x298 on 1.7.104.
+    #[inline]
+    pub fn m_SystemEventAdapter_298(&self) -> u64 { unsafe { Self::__member_m_SystemEventAdapter_298(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_SystemEventAdapter_298(&mut self, value: u64) { unsafe { Self::__member_m_SystemEventAdapter_298(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_SystemEventAdapter_298_ptr(&self) -> *mut u64 { Self::__member_m_SystemEventAdapter_298(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_CellAttachDetachEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "TES.source_CellAttachDetachEvent", 0x8, crate::BSTEventSource) } }
+    /// `TES::source_CellAttachDetachEvent`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn source_CellAttachDetachEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_CellAttachDetachEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_CellAttachDetachEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_CellAttachDetachEvent(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESActorBase {
@@ -714,6 +952,16 @@ impl crate::TESActorBase {
     /// The `TESSpellList` base at +0xA0.
     #[inline]
     pub fn as_tes_spell_list(&self) -> &crate::TESSpellList { unsafe { &*core::ptr::from_ref(self).byte_add(0xA0).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_9C(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESActorBase.field_9C", 0x9C, u8) } }
+    /// `TESActorBase::field_9C`, at +0x9C on 1.7.104.
+    #[inline]
+    pub fn field_9C(&self) -> u8 { unsafe { Self::__member_field_9C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_9C(&mut self, value: u8) { unsafe { Self::__member_field_9C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_9C_ptr(&self) -> *mut u8 { Self::__member_field_9C(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESAmmo {
@@ -783,6 +1031,29 @@ impl crate::TESAmmo {
     /// The `TESWeightForm` base at +0xB0.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xB0).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESAmmo.field_50", 0x50, u64) } }
+    /// `TESAmmo::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESAnimGroup {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESAnimGroup.field_28", 0x28, f32) } }
+    /// `TESAnimGroup::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> f32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: f32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut f32 { Self::__member_field_28(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESClass {
@@ -804,6 +1075,32 @@ impl crate::TESClass {
     /// The `TESTexture` base at +0x40.
     #[inline]
     pub fn as_tes_texture(&self) -> &crate::TESTexture { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+}
+
+impl crate::TESClimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_TESModel_20(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "TESClimate.m_TESModel_20", 0x20, [u8; 24]) } }
+    /// `TESClimate::m_TESModel_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn m_TESModel_20(&self) -> [u8; 24] { unsafe { Self::__member_m_TESModel_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_TESModel_20(&mut self, value: [u8; 24]) { unsafe { Self::__member_m_TESModel_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_TESModel_20_ptr(&self) -> *mut [u8; 24] { Self::__member_m_TESModel_20(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESEffectShader {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESEffectShader.field_C4", 0xC4, u64) } }
+    /// `TESEffectShader::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u64 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u64) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u64 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESEyes {
@@ -834,6 +1131,26 @@ impl crate::TESFaction {
     /// The `TESReactionForm` base at +0x30.
     #[inline]
     pub fn as_tes_reaction_form(&self) -> &crate::TESReactionForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_E0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESFaction.field_E0", 0xE0, u64) } }
+    /// `TESFaction::field_E0`, at +0xE0 on 1.7.104.
+    #[inline]
+    pub fn field_E0(&self) -> u64 { unsafe { Self::__member_field_E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_E0(&mut self, value: u64) { unsafe { Self::__member_field_E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_E0_ptr(&self) -> *mut u64 { Self::__member_field_E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_E8(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESFaction.field_E8", 0xE8, u64) } }
+    /// `TESFaction::field_E8`, at +0xE8 on 1.7.104.
+    #[inline]
+    pub fn field_E8(&self) -> u64 { unsafe { Self::__member_field_E8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_E8(&mut self, value: u64) { unsafe { Self::__member_field_E8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_E8_ptr(&self) -> *mut u64 { Self::__member_field_E8(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESFlora {
@@ -843,6 +1160,16 @@ impl crate::TESFlora {
     /// The `TESProduceForm` base at +0xC8.
     #[inline]
     pub fn as_tes_produce_form(&self) -> &crate::TESProduceForm { unsafe { &*core::ptr::from_ref(self).byte_add(0xC8).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESFlora.field_50", 0x50, u64) } }
+    /// `TESFlora::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESGrass {
@@ -867,6 +1194,19 @@ impl crate::TESImageSpaceModifier {
     pub unsafe fn apply_cross_fade(&self, seconds: f32) { unsafe { function!(18575, (*const Self, f32))(core::ptr::from_ref(self), seconds) } }
 }
 
+impl crate::TESKey {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESKey.field_50", 0x50, u64) } }
+    /// `TESKey::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESLevCharacter {
     /// The `BaseFormComponent` base at +0x30.
     #[inline]
@@ -883,6 +1223,16 @@ impl crate::TESLevCharacter {
     /// The `TESModelTextureSwap` base at +0x58.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x58).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESLevCharacter.field_68", 0x68, u64) } }
+    /// `TESLevCharacter::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESLevItem {
@@ -901,6 +1251,19 @@ impl crate::TESLevSpell {
     /// The `TESLeveledList` base at +0x30.
     #[inline]
     pub fn as_tes_leveled_list(&self) -> &crate::TESLeveledList { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+}
+
+impl crate::TESModelDB__TESQueuedHandles {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESModelDB::TESQueuedHandles.field_20", 0x20, u64) } }
+    /// `TESModelDB::TESQueuedHandles::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectACTI {
@@ -934,6 +1297,16 @@ impl crate::TESObjectACTI {
     /// The `TESModelTextureSwap` base at +0x40.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectACTI.field_50", 0x50, u64) } }
+    /// `TESObjectACTI::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectANIO {
@@ -946,6 +1319,16 @@ impl crate::TESObjectANIO {
     /// The `TESModelTextureSwap` base at +0x20.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectANIO.field_30", 0x30, u64) } }
+    /// `TESObjectANIO::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectARMA {
@@ -961,6 +1344,16 @@ impl crate::TESObjectARMA {
     /// The `TESRaceForm` base at +0x20.
     #[inline]
     pub fn as_tes_race_form(&self) -> &crate::TESRaceForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectARMA.field_48", 0x48, u32) } }
+    /// `TESObjectARMA::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u32 { Self::__member_field_48(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectARMO {
@@ -1111,6 +1504,16 @@ impl crate::TESObjectBOOK {
     /// The `TESWeightForm` base at +0x98.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x98).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectBOOK.field_50", 0x50, u64) } }
+    /// `TESObjectBOOK::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectCELL {
@@ -1151,6 +1554,206 @@ impl crate::TESObjectCELL {
     /// `pick` must point to what the engine expects.
     #[inline]
     pub unsafe fn pick(&self, pick: *mut crate::bhkPickData) -> *mut crate::NiAVObject { unsafe { function!(18997, (*const Self, *mut crate::bhkPickData) -> *mut crate::NiAVObject)(core::ptr::from_ref(self), pick) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_118(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_118", 0x118, u32) } }
+    /// `TESObjectCELL::field_118`, at +0x118 on 1.7.104.
+    #[inline]
+    pub fn field_118(&self) -> u32 { unsafe { Self::__member_field_118(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_118(&mut self, value: u32) { unsafe { Self::__member_field_118(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_118_ptr(&self) -> *mut u32 { Self::__member_field_118(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_120(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_120", 0x120, u64) } }
+    /// `TESObjectCELL::field_120`, at +0x120 on 1.7.104.
+    #[inline]
+    pub fn field_120(&self) -> u64 { unsafe { Self::__member_field_120(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_120(&mut self, value: u64) { unsafe { Self::__member_field_120(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_120_ptr(&self) -> *mut u64 { Self::__member_field_120(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_128(this: *const Self) -> *mut *mut crate::TESWorldSpace { unsafe { member!(this, "TESObjectCELL.field_128", 0x128, *mut crate::TESWorldSpace) } }
+    /// `TESObjectCELL::field_128`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn field_128(&self) -> *mut crate::TESWorldSpace { unsafe { Self::__member_field_128(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_128(&mut self, value: *mut crate::TESWorldSpace) { unsafe { Self::__member_field_128(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_128_ptr(&self) -> *mut *mut crate::TESWorldSpace { Self::__member_field_128(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_130", 0x130, u64) } }
+    /// `TESObjectCELL::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_138(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_138", 0x138, u64) } }
+    /// `TESObjectCELL::field_138`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn field_138(&self) -> u64 { unsafe { Self::__member_field_138(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_138(&mut self, value: u64) { unsafe { Self::__member_field_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_138_ptr(&self) -> *mut u64 { Self::__member_field_138(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_140(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_140", 0x140, u64) } }
+    /// `TESObjectCELL::field_140`, at +0x140 on 1.7.104.
+    #[inline]
+    pub fn field_140(&self) -> u64 { unsafe { Self::__member_field_140(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_140(&mut self, value: u64) { unsafe { Self::__member_field_140(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_140_ptr(&self) -> *mut u64 { Self::__member_field_140(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_38", 0x38, u64) } }
+    /// `TESObjectCELL::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESObjectCELL.field_44", 0x44, u16) } }
+    /// `TESObjectCELL::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u16 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u16) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u16 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_46(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESObjectCELL.field_46", 0x46, u8) } }
+    /// `TESObjectCELL::field_46`, at +0x46 on 1.7.104.
+    #[inline]
+    pub fn field_46(&self) -> u8 { unsafe { Self::__member_field_46(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_46(&mut self, value: u8) { unsafe { Self::__member_field_46(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_46_ptr(&self) -> *mut u8 { Self::__member_field_46(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_68", 0x68, u64) } }
+    /// `TESObjectCELL::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_70(this: *const Self) -> *mut *mut crate::TESObjectLAND { unsafe { member!(this, "TESObjectCELL.field_70", 0x70, *mut crate::TESObjectLAND) } }
+    /// `TESObjectCELL::field_70`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn field_70(&self) -> *mut crate::TESObjectLAND { unsafe { Self::__member_field_70(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_70(&mut self, value: *mut crate::TESObjectLAND) { unsafe { Self::__member_field_70(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_70_ptr(&self) -> *mut *mut crate::TESObjectLAND { Self::__member_field_70(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_78(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_78", 0x78, u32) } }
+    /// `TESObjectCELL::field_78`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn field_78(&self) -> u32 { unsafe { Self::__member_field_78(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_78(&mut self, value: u32) { unsafe { Self::__member_field_78(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_78_ptr(&self) -> *mut u32 { Self::__member_field_78(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_80", 0x80, u64) } }
+    /// `TESObjectCELL::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_94(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_94", 0x94, u32) } }
+    /// `TESObjectCELL::field_94`, at +0x94 on 1.7.104.
+    #[inline]
+    pub fn field_94(&self) -> u32 { unsafe { Self::__member_field_94(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_94(&mut self, value: u32) { unsafe { Self::__member_field_94(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_94_ptr(&self) -> *mut u32 { Self::__member_field_94(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_98(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_98", 0x98, u32) } }
+    /// `TESObjectCELL::field_98`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn field_98(&self) -> u32 { unsafe { Self::__member_field_98(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_98(&mut self, value: u32) { unsafe { Self::__member_field_98(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_98_ptr(&self) -> *mut u32 { Self::__member_field_98(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_9C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_9C", 0x9C, u32) } }
+    /// `TESObjectCELL::field_9C`, at +0x9C on 1.7.104.
+    #[inline]
+    pub fn field_9C(&self) -> u32 { unsafe { Self::__member_field_9C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_9C(&mut self, value: u32) { unsafe { Self::__member_field_9C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_9C_ptr(&self) -> *mut u32 { Self::__member_field_9C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_A0", 0xA0, u64) } }
+    /// `TESObjectCELL::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u64 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u64) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u64 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCELL.field_B0", 0xB0, u64) } }
+    /// `TESObjectCELL::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u64 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u64) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u64 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESObjectCELL.field_B8", 0xB8, *mut crate::TESObjectREFR) } }
+    /// `TESObjectCELL::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_E8(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectCELL.field_E8", 0xE8, u32) } }
+    /// `TESObjectCELL::field_E8`, at +0xE8 on 1.7.104.
+    #[inline]
+    pub fn field_E8(&self) -> u32 { unsafe { Self::__member_field_E8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_E8(&mut self, value: u32) { unsafe { Self::__member_field_E8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_E8_ptr(&self) -> *mut u32 { Self::__member_field_E8(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectCONT {
@@ -1190,6 +1793,26 @@ impl crate::TESObjectCONT {
     /// The `TESWeightForm` base at +0x90.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x90).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESObjectCONT.field_44", 0x44, u8) } }
+    /// `TESObjectCONT::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u8 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u8) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u8 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectCONT.field_68", 0x68, u64) } }
+    /// `TESObjectCONT::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectDOOR {
@@ -1217,6 +1840,26 @@ impl crate::TESObjectDOOR {
     /// The `TESModelTextureSwap` base at +0x40.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectDOOR.field_50", 0x50, u64) } }
+    /// `TESObjectDOOR::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESObjectDOOR.field_B0", 0xB0, u8) } }
+    /// `TESObjectDOOR::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u8 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u8) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u8 { Self::__member_field_B0(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectLAND {
@@ -1286,6 +1929,39 @@ impl crate::TESObjectMISC {
     /// The `TESWeightForm` base at +0x98.
     #[inline]
     pub fn as_tes_weight_form(&self) -> &crate::TESWeightForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x98).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectMISC.field_50", 0x50, u64) } }
+    /// `TESObjectMISC::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESObjectREFRSync__REFRSyncController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectREFRSync::REFRSyncController.field_20", 0x20, u32) } }
+    /// `TESObjectREFRSync::REFRSyncController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectREFRSync::REFRSyncController.field_2C", 0x2C, u32) } }
+    /// `TESObjectREFRSync::REFRSyncController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectSTAT {
@@ -1298,6 +1974,16 @@ impl crate::TESObjectSTAT {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESObjectSTAT.field_40", 0x40, u64) } }
+    /// `TESObjectSTAT::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectTREE {
@@ -1319,6 +2005,42 @@ impl crate::TESObjectTREE {
     /// The `TESProduceForm` base at +0x68.
     #[inline]
     pub fn as_tes_produce_form(&self) -> &crate::TESProduceForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x68).cast() } }
+}
+
+impl crate::TESPackage {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESPackage.field_48", 0x48, u64) } }
+    /// `TESPackage::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESPackage.field_DC", 0xDC, u32) } }
+    /// `TESPackage::field_DC`, at +0xDC on 1.7.104.
+    #[inline]
+    pub fn field_DC(&self) -> u32 { unsafe { Self::__member_field_DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_DC(&mut self, value: u32) { unsafe { Self::__member_field_DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_DC_ptr(&self) -> *mut u32 { Self::__member_field_DC(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESRegionDataSound {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESRegionDataSound.field_28", 0x28, u32) } }
+    /// `TESRegionDataSound::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESShout {
@@ -1346,6 +2068,79 @@ impl crate::TESShout {
     /// The `TESFullName` base at +0x20.
     #[inline]
     pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_78(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESShout.field_78", 0x78, u64) } }
+    /// `TESShout::field_78`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn field_78(&self) -> u64 { unsafe { Self::__member_field_78(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_78(&mut self, value: u64) { unsafe { Self::__member_field_78(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_78_ptr(&self) -> *mut u64 { Self::__member_field_78(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESShout.field_80", 0x80, u64) } }
+    /// `TESShout::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_88(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESShout.field_88", 0x88, u32) } }
+    /// `TESShout::field_88`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn field_88(&self) -> u32 { unsafe { Self::__member_field_88(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_88(&mut self, value: u32) { unsafe { Self::__member_field_88(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_88_ptr(&self) -> *mut u32 { Self::__member_field_88(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_90(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESShout.field_90", 0x90, u64) } }
+    /// `TESShout::field_90`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn field_90(&self) -> u64 { unsafe { Self::__member_field_90(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_90(&mut self, value: u64) { unsafe { Self::__member_field_90(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_90_ptr(&self) -> *mut u64 { Self::__member_field_90(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_98(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESShout.field_98", 0x98, u64) } }
+    /// `TESShout::field_98`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn field_98(&self) -> u64 { unsafe { Self::__member_field_98(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_98(&mut self, value: u64) { unsafe { Self::__member_field_98(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_98_ptr(&self) -> *mut u64 { Self::__member_field_98(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESShout.field_A0", 0xA0, u32) } }
+    /// `TESShout::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u32 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u32) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u32 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESSoulGem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESSoulGem.field_50", 0x50, u64) } }
+    /// `TESSoulGem::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESTopic {
@@ -1355,6 +2150,19 @@ impl crate::TESTopic {
     /// The `TESFullName` base at +0x20.
     #[inline]
     pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+}
+
+impl crate::TESTopicInfo {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESTopicInfo.field_44", 0x44, u64) } }
+    /// `TESTopicInfo::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u64 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u64) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u64 { Self::__member_field_44(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESTrapListener {
@@ -1385,6 +2193,86 @@ impl crate::TESWaterForm {
     /// The `TESFullName` base at +0x20.
     #[inline]
     pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_248(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWaterForm.field_248", 0x248, u32) } }
+    /// `TESWaterForm::field_248`, at +0x248 on 1.7.104.
+    #[inline]
+    pub fn field_248(&self) -> u32 { unsafe { Self::__member_field_248(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_248(&mut self, value: u32) { unsafe { Self::__member_field_248(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_248_ptr(&self) -> *mut u32 { Self::__member_field_248(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_250(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESWaterForm.field_250", 0x250, u32) } }
+    /// `TESWaterForm::field_250`, at +0x250 on 1.7.104.
+    #[inline]
+    pub fn field_250(&self) -> u32 { unsafe { Self::__member_field_250(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_250(&mut self, value: u32) { unsafe { Self::__member_field_250(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_250_ptr(&self) -> *mut u32 { Self::__member_field_250(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_44", 0x44, u64) } }
+    /// `TESWaterForm::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u64 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u64) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u64 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_4C", 0x4C, u64) } }
+    /// `TESWaterForm::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> u64 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: u64) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut u64 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_54", 0x54, u64) } }
+    /// `TESWaterForm::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u64 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u64) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u64 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_5C(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_5C", 0x5C, u64) } }
+    /// `TESWaterForm::field_5C`, at +0x5C on 1.7.104.
+    #[inline]
+    pub fn field_5C(&self) -> u64 { unsafe { Self::__member_field_5C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_5C(&mut self, value: u64) { unsafe { Self::__member_field_5C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_5C_ptr(&self) -> *mut u64 { Self::__member_field_5C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_64", 0x64, u64) } }
+    /// `TESWaterForm::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u64 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u64) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u64 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_6C(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWaterForm.field_6C", 0x6C, u64) } }
+    /// `TESWaterForm::field_6C`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn field_6C(&self) -> u64 { unsafe { Self::__member_field_6C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_6C(&mut self, value: u64) { unsafe { Self::__member_field_6C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_6C_ptr(&self) -> *mut u64 { Self::__member_field_6C(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESWordOfPower {
@@ -1430,6 +2318,56 @@ impl crate::TESWorldSpace {
     /// `bool (TESWorldSpace* this)`
     #[inline]
     pub fn is_no_grass(&self) -> bool { unsafe { function!(20482, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_138(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_138", 0x138, u64) } }
+    /// `TESWorldSpace::field_138`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn field_138(&self) -> u64 { unsafe { Self::__member_field_138(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_138(&mut self, value: u64) { unsafe { Self::__member_field_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_138_ptr(&self) -> *mut u64 { Self::__member_field_138(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_168(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_168", 0x168, u64) } }
+    /// `TESWorldSpace::field_168`, at +0x168 on 1.7.104.
+    #[inline]
+    pub fn field_168(&self) -> u64 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_168(&mut self, value: u64) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_168_ptr(&self) -> *mut u64 { Self::__member_field_168(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_180(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_180", 0x180, u64) } }
+    /// `TESWorldSpace::field_180`, at +0x180 on 1.7.104.
+    #[inline]
+    pub fn field_180(&self) -> u64 { unsafe { Self::__member_field_180(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_180(&mut self, value: u64) { unsafe { Self::__member_field_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_180_ptr(&self) -> *mut u64 { Self::__member_field_180(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_64", 0x64, u64) } }
+    /// `TESWorldSpace::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u64 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u64) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u64 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "TESWorldSpace.field_80", 0x80, u64) } }
+    /// `TESWorldSpace::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
 }
 
 /// `g_TESAudio_ScriptedMusicState` at 0x3211aa0, id 403008 (layout_inference, medium)

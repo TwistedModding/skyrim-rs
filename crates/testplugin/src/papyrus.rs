@@ -264,14 +264,15 @@ fn vm_identity() -> Result<String, String> {
     let registry = registry()?;
     let global = vm()?;
     check(core::ptr::eq(registry, global), "the registry pointer is not g_SkyrimVM + 0x210")?;
-    let skyrim_vm = skyrim::reloc().address(globals::g_SkyrimVM).map_err(|e| e.to_string())?;
+    let skyrim_vm = skyrim::reloc().address(sre::id!(globals::g_SkyrimVM)).map_err(|e| e.to_string())?;
     let policy = registry.handlePolicy as usize;
     let bind = registry.objectBindPolicy as usize;
-    check(policy == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_HandlePolicy_338), "VM+0x90 is not g_SkyrimVM + 0x338")?;
-    check(bind == skyrim_vm + core::mem::offset_of!(sre::SkyrimVM, m_ObjectBindPolicy_3A8), "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
+    let vm = unsafe { &*(skyrim_vm as *const sre::SkyrimVM) };
+    check(policy == vm.m_HandlePolicy_338_ptr() as usize, "VM+0x90 is not g_SkyrimVM + 0x338")?;
+    check(bind == vm.m_ObjectBindPolicy_3A8_ptr() as usize, "VM+0x98 is not g_SkyrimVM + 0x3a8")?;
     let via_slot = registry.get_object_handle_policy().map_or(0, |p| core::ptr::from_ref(p) as usize);
     check(via_slot == policy && registry.handle_policy().is_some_and(|p| core::ptr::from_ref(p) as usize == policy), "GetObjectHandlePolicy is not VM+0x90")?;
-    let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
+    let global = unsafe { *(skyrim::reloc().address(sre::id!(globals::g_IObjectHandlePolicy_ptr)).map_err(|e| e.to_string())? as *const usize) };
     let refs = registry.refCount;
     Ok(format!("registry {registry:p} = g_SkyrimVM+0x210, refCount {refs}, handle policy {policy:#x} = g_SkyrimVM+0x338 = GetObjectHandlePolicy(), bind policy {bind:#x} = g_SkyrimVM+0x3a8; g_IObjectHandlePolicy_ptr holds {global:#x} during registration"))
 }
@@ -347,7 +348,7 @@ fn tasklets() -> Result<String, String> {
 fn handles() -> Result<String, String> {
     let vm = vm()?;
     let policy = vm.handle_policy().ok_or("the VM has no handle policy")?;
-    let global = unsafe { *(skyrim::reloc().address(globals::g_IObjectHandlePolicy_ptr).map_err(|e| e.to_string())? as *const usize) };
+    let global = unsafe { *(skyrim::reloc().address(sre::id!(globals::g_IObjectHandlePolicy_ptr)).map_err(|e| e.to_string())? as *const usize) };
     check(global == core::ptr::from_ref(policy) as usize, &format!("g_IObjectHandlePolicy_ptr holds {global:#x}, not the VM's policy"))?;
     let is_type = |ty: VMTypeID, h: Handle| policy.handle_is_type(ty, h.0);
     let is_available = |h: Handle| policy.is_handle_object_available(h.0);

@@ -4,9 +4,10 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::fmt::Write;
 
-use crate::emit::{Class, KEYWORDS, colon, doc, ident, is_funclet, is_placeholder, screaming, unique};
+use crate::emit::{Class, KEYWORDS, Ty as EmitTy, colon, doc, ident, is_funclet, is_placeholder, screaming, ty_str, unique};
 use crate::groups::{Items, Kind, family, hierarchy};
 use crate::inputs::{Inputs, SemFunction, SemGlobal, SemSlot, Symbol};
+use crate::versions::Variance;
 
 /// Where a callable's signature comes from, most proven first.
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Debug)]
@@ -143,10 +144,14 @@ pub(crate) struct Ctx<'a> {
     /// Semantic enum name to its integer type and its Rust name.
     pub(crate) enums: HashMap<String, (&'static str, String)>,
     /// Class name to its group module.
-    groups: HashMap<&'a str, &'a str>,
+    pub(crate) groups: HashMap<&'a str, &'a str>,
     /// The math value types (the `nimath` pass): plain data the engine reads or writes by pointer
     /// as one value, so a non-const pointer to one is `&mut X`.
     pub(crate) values: HashSet<&'a str>,
+    /// What is not identical on every runtime, so is read from the profile.
+    pub(crate) variance: &'a Variance,
+    /// The Rust paths of the enums whose numbers differ between runtimes.
+    variant_enums: HashSet<String>,
 }
 
 impl Ctx<'_> {
@@ -460,11 +465,19 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
     if let Some(offset) = method {
         decl.push("&self".into());
         types.push("*const Self".into());
-        args.push(if offset == 0 { "core::ptr::from_ref(self)".into() } else { format!("core::ptr::from_ref(self).byte_add({offset:#X})") });
+        args.push(if offset == 0 { "core::ptr::from_ref(self)".into() } else { format!("core::ptr::from_ref(self).byte_add({})", base_offset(owner, offset, ctx)) });
     }
     // References cross as raw pointers: the engine writes through `this` and other objects it is
     // handed, which a reference argument would tell the compiler it cannot.
     for (p, name) in rest.iter().zip(&names) {
+        if let Ty::Enum(path, repr) = &p.ty
+            && ctx.variant_enums.contains(path)
+        {
+            decl.push(format!("{name}: {path}"));
+            types.push((*repr).to_owned());
+            args.push(format!("{name}.to_engine().expect(\"this value does not exist on this runtime\")"));
+            continue;
+        }
         let ty = p.ty.render(safe, false, owner, ctx);
         let Some(target) = ty.strip_prefix('&') else {
             decl.push(format!("{name}: {ty}"));
@@ -492,6 +505,7 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
     let call = format!("{callee}({}){ffi})({})", types.join(", "), args.join(", "));
     // An enum result crosses as its integer; a value the enum does not name comes back as `Err`.
     let (result, body) = match &sig.ret {
+        Ty::Enum(path, repr) if ctx.variant_enums.contains(path) => (format!(" -> Result<{path}, {repr}>"), format!("let raw = {call}; {path}::from_engine(raw).ok_or(raw)")),
         Ty::Enum(path, repr) => (format!(" -> Result<{path}, {repr}>"), format!("let raw = {call}; {path}::from_{repr}(raw).ok_or(raw)")),
         _ => (ffi, call),
     };
@@ -499,11 +513,30 @@ fn render_call(doc_lines: &str, shape: Shape, safe: bool, sig: &Sig, callee: &st
     format!("{doc_lines}{indent}#[inline]\n{indent}pub {}fn @NAME@({}){result} {{ unsafe {{ {body} }} }}\n", if safe { "" } else { "unsafe " }, decl.join(", "))
 }
 
+/// The displacement of the subobject of `owner` at `offset` on 1.7.104: the literal, or a read of
+/// the profile when a base there is not identical on every runtime.
+fn base_offset(owner: Option<&str>, offset: u64, ctx: &Ctx) -> String {
+    let variant = owner.and_then(|o| ctx.classes.get(o)).and_then(|c| {
+        let base = c.bases.iter().find(|&&(b, disp, virt)| !virt && u64::try_from(disp) == Ok(offset) && ctx.variance.base(c.name, b))?;
+        Some(format!("{}:{}", c.name, base.0))
+    });
+    variant.map_or_else(|| format!("{offset:#X}"), |key| format!("base_offset!({key:?}, {offset:#X})"))
+}
+
+/// What an emitted item is to its name.
+#[derive(Clone, Copy, PartialEq, Eq)]
+enum Role {
+    Callable,
+    /// Left out when a callable of the same class has the name.
+    Reader,
+    /// Renamed when a callable or reader of the class or a class it derefs to has the name.
+    Accessor,
+}
+
 /// One emitted item before naming: `text` holds `@NAME@` where its unique name goes.
 struct Entry {
     tier: Tier,
-    /// Left out when a callable of the same class has the name.
-    yields: bool,
+    role: Role,
     group: String,
     owner: Option<String>,
     order: (u8, String, u64),
@@ -535,7 +568,7 @@ const DECOMPILER_SAFETY: &str = "The decompiler's prototype: nothing checks the 
 const VALUE_PASS: &str = "nimath";
 
 /// What signatures are typed against: the laid-out classes, which of them have RTTI, the semantic enums.
-pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<'a>>) -> Ctx<'a> {
+pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<'a>>, variance: &'a Variance) -> Ctx<'a> {
     let taken: HashSet<&str> = classes.values().map(|c| c.ident.as_str()).collect();
     let name = |e: &str| if taken.contains(e) { format!("{e}Enum") } else { e.to_owned() };
     let mut enums: HashMap<String, (&'static str, String)> = HashMap::from([("FormType".to_owned(), ("u8", name("FormType")))]);
@@ -563,7 +596,8 @@ pub(crate) fn context<'a>(inp: &'a Inputs, classes: &'a BTreeMap<&'a str, Class<
         }
     }
     let values = inp.semantic.iter().filter(|p| p.subsystem == VALUE_PASS).flat_map(|p| &p.classes).map(|c| c.name.as_str()).filter(|c| classes.contains_key(c)).collect();
-    Ctx { classes, rtti: inp.layouts.keys().map(String::as_str).collect(), enums, groups, values }
+    let variant_enums = enums.iter().filter(|(e, _)| variance.enum_(e)).map(|(_, (_, name))| format!("crate::{name}")).collect();
+    Ctx { classes, rtti: inp.layouts.keys().map(String::as_str).collect(), enums, groups, values, variance, variant_enums }
 }
 
 /// A semantic C signature as an `unsafe extern "C" fn` type over raw pointers, `None` when a type
@@ -591,13 +625,14 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     let embedded: HashSet<&str> = classes
         .values()
         .flat_map(|c| &c.fields)
-        .filter_map(|f| if let crate::emit::Ty::Embed(e) = &f.ty { Some(e.as_str()) } else { None })
+        .filter_map(|f| if let EmitTy::Embed(e) = &f.ty { Some(e.as_str()) } else { None })
         .collect();
     let deref_target = derefs_of(classes, &embedded, &mut stats);
     for (c, p) in &deref_target {
         let (c, p) = (&classes[c], &classes[p]);
+        let this = if ctx.variance.base(c.name, p.name) { format!("core::ptr::from_ref(self).byte_add(base_offset!({:?}, 0x0))", format!("{}:{}", c.name, p.name)) } else { "core::ptr::from_ref(self)".to_owned() };
         items.entry((ctx.group(c.name).to_owned(), Kind::Api(Tier::Semantic))).or_default().push(format!(
-            "/// `{}` is laid out from its primary base `{}`, so its methods and fields are reachable through it.\nimpl core::ops::Deref for {} {{\n    type Target = {};\n    #[inline]\n    fn deref(&self) -> &Self::Target {{ unsafe {{ &*core::ptr::from_ref(self).cast() }} }}\n}}\n",
+            "/// `{}` is laid out from its primary base `{}`, so its methods and fields are reachable through it.\nimpl core::ops::Deref for {} {{\n    type Target = {};\n    #[inline]\n    fn deref(&self) -> &Self::Target {{ unsafe {{ &*{this}.cast() }} }}\n}}\n",
             c.name,
             p.name,
             c.path(),
@@ -616,10 +651,11 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
                 continue;
             }
             let text = format!(
-                "    /// The `{b}` base at +{off:#X}.\n    #[inline]\n    pub fn @NAME@(&self) -> &{} {{ unsafe {{ &*core::ptr::from_ref(self).byte_add({off:#X}).cast() }} }}\n",
-                base.path()
+                "    /// The `{b}` base at +{off:#X}.\n    #[inline]\n    pub fn @NAME@(&self) -> &{} {{ unsafe {{ &*core::ptr::from_ref(self).byte_add({}).cast() }} }}\n",
+                base.path(),
+                base_offset(Some(c.name), off, ctx)
             );
-            entries.push(Entry { tier: Tier::Semantic, yields: false, group: ctx.group(c.name).to_owned(), owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
+            entries.push(Entry { tier: Tier::Semantic, role: Role::Callable, group: ctx.group(c.name).to_owned(), owner: Some(c.name.to_owned()), order: (0, b.to_owned(), off), base: format!("as_{}", snake(b)), text });
             stats.base_accessors += 1;
         }
     }
@@ -628,16 +664,29 @@ pub(crate) fn emit(inp: &Inputs, ctx: &Ctx, items: &mut Items) -> ApiStats {
     functions(inp, ctx, &by_id, &virtual_targets, &mut entries, &mut stats);
     let statics = globals(inp, ctx, &mut entries, &mut stats);
     fields(inp, ctx, &mut entries);
+    accessors(ctx, &mut entries);
 
     let mut by_owner: BTreeMap<Option<String>, Vec<Entry>> = BTreeMap::new();
     for e in entries {
         by_owner.entry(e.owner.clone()).or_default().push(e);
     }
+    for list in by_owner.values_mut() {
+        let taken: HashSet<String> = list.iter().filter(|e| e.role == Role::Callable).map(|e| e.base.clone()).collect();
+        list.retain(|e| e.role != Role::Reader || !taken.contains(&e.base));
+        stats.field_accessors += list.iter().filter(|e| e.role == Role::Reader).count();
+    }
+    let names: HashMap<String, HashSet<String>> =
+        by_owner.iter().filter_map(|(owner, list)| Some((owner.clone()?, list.iter().filter(|e| e.role != Role::Accessor).map(|e| e.base.clone()).collect()))).collect();
     let mut free: BTreeMap<(String, Tier), Vec<String>> = BTreeMap::new();
     for (owner, mut list) in by_owner {
-        let taken: HashSet<String> = list.iter().filter(|e| !e.yields).map(|e| e.base.clone()).collect();
-        list.retain(|e| !e.yields || !taken.contains(&e.base));
-        stats.field_accessors += list.iter().filter(|e| e.yields).count();
+        if let Some(class) = &owner {
+            let chain: Vec<&str> = std::iter::once(class.as_str()).chain(ancestors(class, &deref_target)).collect();
+            for e in list.iter_mut().filter(|e| e.role == Role::Accessor) {
+                if chain.iter().any(|c| names.get(*c).is_some_and(|n| n.contains(&e.base))) {
+                    e.base.push_str("_field");
+                }
+            }
+        }
         list.sort_by(|a, b| (a.tier, &a.order).cmp(&(b.tier, &b.order)));
         let mut names: Vec<String> = list.iter().map(|e| e.base.clone()).collect();
         unique(&mut names);
@@ -762,10 +811,11 @@ fn slots(
             if let Some(r) = &reason {
                 lines.extend([String::new(), "# Safety".into(), r.clone()]);
             }
-            let text = render_call(&doc_block("    ", &lines), Shape::Method(0), reason.is_none(), &sig, &format!("virtual_function!(self, {i}, "), Some(class), ctx);
+            let callee = if ctx.variance.slot(class, 0, i as u64) { format!("virtual_function!(self, {class:?}, 0x0, {i}, ") } else { format!("virtual_function!(self, {i}, ") };
+            let text = render_call(&doc_block("    ", &lines), Shape::Method(0), reason.is_none(), &sig, &callee, Some(class), ctx);
             let t = stats.tiers.entry(tier).or_default();
             if reason.is_none() { t.safe_slots += 1 } else { t.unsafe_slots += 1 }
-            entries.push(Entry { tier, yields: false, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
+            entries.push(Entry { tier, role: Role::Callable, group: ctx.group(class).to_owned(), owner: Some(class.to_owned()), order: (1, engine, i as u64), base, text });
         }
     }
     targets
@@ -905,7 +955,7 @@ fn functions(
             (None, Some((_, pass))) => pass,
             (None, None) => family(name),
         };
-        entries.push(Entry { tier, yields: false, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
+        entries.push(Entry { tier, role: Role::Callable, group: group.to_owned(), owner: owner.map(str::to_owned), order: (2, name.to_owned(), id), base, text });
     }
 }
 
@@ -958,22 +1008,50 @@ fn fields(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>) {
             let Some(class) = ctx.classes.get(sc.name.as_str()) else { continue };
             for sf in sc.fields.iter().filter(|f| f.confidence == "high") {
                 let Some(fo) = class.fields.iter().find(|fo| fo.f.off == sf.offset && fo.f.name == sf.name) else { continue };
-                let crate::emit::Ty::Ptr(target) = &fo.ty else { continue };
+                let EmitTy::Ptr(target) = &fo.ty else { continue };
                 let lines = [
                     format!("`{}::{}` at +{:#X}{}", sc.name, sf.name, sf.offset, colon(&sf.meaning)),
                     String::new(),
                     format!("Semantic field, {} pass, high; `None` while the pointer is null.", pass.subsystem),
                 ];
+                let value = if ctx.variance.member(class.name, &fo.f.name) { format!("Self::__member_{}(core::ptr::from_ref(self)).read_unaligned()", fo.ident) } else { format!("{{ self.{} }}", fo.ident) };
                 let text = format!(
                     "{}    #[inline]
-    pub fn @NAME@(&self) -> Option<&{}> {{ unsafe {{ {{ self.{} }}.as_ref() }} }}
+    pub fn @NAME@(&self) -> Option<&{}> {{ unsafe {{ {value}.as_ref() }} }}
 ",
                     doc_block("    ", &lines),
-                    ctx.classes[target.as_str()].path(),
-                    fo.ident
+                    ctx.classes[target.as_str()].path()
                 );
-                entries.push(Entry { tier: Tier::Semantic, yields: true, group: ctx.group(class.name).to_owned(), owner: Some(class.name.to_owned()), order: (3, sf.name.clone(), sf.offset), base: snake(&sf.name), text });
+                entries.push(Entry { tier: Tier::Semantic, role: Role::Reader, group: ctx.group(class.name).to_owned(), owner: Some(class.name.to_owned()), order: (3, sf.name.clone(), sf.offset), base: snake(&sf.name), text });
             }
+        }
+    }
+}
+
+/// What takes the place of a member that is not identical on every runtime: a hidden pointer function
+/// holding the one read of the profile, and over it the value or a reference to it, a setter, a pointer.
+fn accessors(ctx: &Ctx, entries: &mut Vec<Entry>) {
+    for class in ctx.classes.values() {
+        let group = ctx.group(class.name);
+        let mut push = |order: String, base: String, text: String| {
+            entries.push(Entry { tier: Tier::Semantic, role: Role::Accessor, group: group.to_owned(), owner: Some(class.name.to_owned()), order: (4, order, 0), base, text });
+        };
+        for field in class.fields.iter().filter(|f| ctx.variance.member(class.name, &f.f.name)) {
+            let name = &field.ident;
+            let ty = ty_str(&field.ty, ctx.classes);
+            let at = format!("Self::__member_{name}");
+            let key = format!("{}.{}", class.name, field.f.name);
+            push(name.clone(), format!("__member_{name}"), format!("    #[doc(hidden)]\n    #[inline]\n    pub fn @NAME@(this: *const Self) -> *mut {ty} {{ unsafe {{ member!(this, {key:?}, {:#X}, {ty}) }} }}\n", field.f.off));
+            let head = format!("    /// `{}::{}`, at +{:#X} on 1.7.104.\n    #[inline]\n", class.name, field.f.name, field.f.off);
+            if let EmitTy::Embed(target) = &field.ty {
+                if field.f.off.is_multiple_of(ctx.classes[target.as_str()].align) {
+                    push(name.clone(), name.clone(), format!("{head}    pub fn @NAME@(&self) -> &{ty} {{ unsafe {{ &*{at}(core::ptr::from_ref(self)) }} }}\n"));
+                }
+            } else {
+                push(name.clone(), name.clone(), format!("{head}    pub fn @NAME@(&self) -> {ty} {{ unsafe {{ {at}(core::ptr::from_ref(self)).read_unaligned() }} }}\n"));
+                push(name.clone(), format!("set_{name}"), format!("    #[inline]\n    pub fn @NAME@(&mut self, value: {ty}) {{ unsafe {{ {at}(core::ptr::from_mut(self).cast_const()).write_unaligned(value) }} }}\n"));
+            }
+            push(name.clone(), format!("{name}_ptr"), format!("    #[inline]\n    pub fn @NAME@(&self) -> *mut {ty} {{ {at}(core::ptr::from_ref(self)) }}\n"));
         }
     }
 }
@@ -1048,7 +1126,7 @@ fn globals(inp: &Inputs, ctx: &Ctx, entries: &mut Vec<Entry>, stats: &mut ApiSta
             lines.push(String::new());
             lines.push("`None` until the engine creates it.".into());
             let text = format!("{}    #[inline]\n    pub fn @NAME@() -> Option<&'static Self> {{ unsafe {{ *(address!({id}) as *const Option<&'static Self>) }} }}\n", doc_block("    ", &lines));
-            entries.push(Entry { tier: Tier::Semantic, yields: false, group: ctx.group(c).to_owned(), owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
+            entries.push(Entry { tier: Tier::Semantic, role: Role::Callable, group: ctx.group(c).to_owned(), owner: Some(c.clone()), order: (0, String::new(), id), base: "singleton".into(), text });
             stats.singletons += 1;
             continue;
         }
@@ -1070,7 +1148,7 @@ mod tests {
     use crate::emit::test_classes;
 
     fn ctx<'a>(classes: &'a BTreeMap<&'a str, Class<'a>>) -> Ctx<'a> {
-        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), ("u32", "ActorValue".to_owned()))]), groups: HashMap::new(), values: HashSet::new() }
+        Ctx { classes, rtti: ["TESForm"].into_iter().collect(), enums: HashMap::from([("ActorValue".to_owned(), ("u32", "ActorValue".to_owned()))]), groups: HashMap::new(), values: HashSet::new(), variance: Box::leak(Box::default()), variant_enums: HashSet::new() }
     }
 
     #[test]

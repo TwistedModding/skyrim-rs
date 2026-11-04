@@ -2,8 +2,8 @@
 //! is polled once a second from the frame, and a changed file that can be opened exclusively (the
 //! copy has finished) is swapped in at that frame boundary on the main thread.
 //!
-//! The swap: copy the file as the next generation and read its descriptor (a refusal keeps the
-//! running generation); ask the running generation for its state and call its `unload`; detach
+//! The swap: copy the file as the next generation, check its manifest and read its descriptor (a
+//! refusal keeps the running generation); ask the running generation for its state and call its `unload`; detach
 //! every registration of the plugin, which drains the calls inside them; unload the DLL; call the
 //! new generation's `load` with the plugin's own `HostApi`, so it registers again and the host
 //! re-points what the engine keeps; hand it the state. A `load` that returns false is detached and
@@ -23,7 +23,7 @@ use std::time::{Duration, Instant, SystemTime};
 
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
 
-use super::{detach, flush_settings, plugin_name, read_descriptor, rescan};
+use super::{detach, flush_settings, plugin_name, read_checked, read_descriptor, rescan};
 use crate::abi::{HostApi, Sink, Str};
 use crate::{Descriptor, Plugin};
 
@@ -197,7 +197,7 @@ pub(super) fn tick() {
 fn next(entry: &Loaded, generation: u32) -> Result<(HMODULE, &'static Descriptor, PathBuf), String> {
     let shadow = entry.copy.parent().map(Path::to_path_buf).unwrap_or_default();
     let copy = copy(&entry.source, &shadow, generation).map_err(|e| format!("not copied: {e}"))?;
-    let read = read_descriptor(&copy).and_then(|(module, descriptor)| {
+    let read = read_checked(&copy, &entry.plugin.file).and_then(|(module, descriptor)| {
         let declared = plugin_name(descriptor);
         if declared == entry.plugin.name {
             Ok((module, descriptor, copy.clone()))

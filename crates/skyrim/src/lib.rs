@@ -66,12 +66,15 @@ pub mod prelude {
 pub enum Error {
     /// The profile or Address Library could not be read; a runtime with no profile file names itself and the path here.
     Hook(hook::Error),
+    /// This DLL uses something the running game lacks; the text names the DLL and all of it.
+    Refused(String),
 }
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Hook(e) => e.fmt(f),
+            Self::Refused(why) => f.write_str(why),
         }
     }
 }
@@ -86,15 +89,26 @@ impl From<hook::Error> for Error {
 
 static RELOC: OnceLock<hook::Reloc> = OnceLock::new();
 
-/// Reads the running game's profile and opens its Address Library, an error when either is
-/// unusable. Call it once from `SKSEPlugin_Load` before any other function of this crate; a second
-/// call is a no-op.
-pub fn init(skse: &skse::Interface) -> Result<(), Error> {
+/// Reads the running game's profile, opens its Address Library and checks this DLL's manifest
+/// against both, an error naming everything this runtime lacks of what the DLL uses. Call it once
+/// from `SKSEPlugin_Load` before any other function of this crate; a second call is a no-op.
+pub fn init(_: &skse::Interface) -> Result<(), Error> {
     if RELOC.get().is_some() {
         return Ok(());
     }
-    let _ = RELOC.set(hook::Reloc::open()?);
+    let reloc = hook::Reloc::open()?;
+    check_manifest(reloc.running())?;
+    let _ = RELOC.set(reloc);
     Ok(())
+}
+
+/// Refuses this DLL on a game that lacks something its manifest records.
+fn check_manifest(running: &versionlib::Running) -> Result<(), Error> {
+    sre::declare_manifest!();
+    let refuse = |why: String| Error::Refused(why);
+    let dll = versionlib::module_file(check_manifest as *const core::ffi::c_void).map_err(|e| refuse(format!("this DLL's file is not known: {e}")))?;
+    let pe = std::fs::read(&dll).map_err(|e| refuse(format!("{}: {e}", dll.display())))?;
+    running.refusal(&pe).map_or(Ok(()), |why| Err(refuse(format!("{}: {why}", dll.display()))))
 }
 
 /// The relocation table [`init`] opened, for the mod's own hooks.
@@ -104,6 +118,13 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
 #[must_use]
 pub fn reloc() -> &'static hook::Reloc {
     RELOC.get().expect("skyrim::init has not run")
+}
+
+/// A point to hand the engine, laid out as `NiPoint3` is, whichever of its members the runtimes have compared.
+#[must_use]
+pub fn point(x: f32, y: f32, z: f32) -> sre::NiPoint3 {
+    assert!(sre::member_offset!("NiPoint3.x", 0x0) == 0 && sre::member_offset!("NiPoint3.y", 0x4) == 4 && sre::member_offset!("NiPoint3.z", 0x8) == 8, "NiPoint3's members moved");
+    unsafe { core::mem::transmute([x, y, z]) }
 }
 
 /// The engine function at an Address Library id as a function pointer of type `F`, for a call the
@@ -118,13 +139,13 @@ pub(crate) unsafe fn engine_fn<F: Copy>(id: u64) -> F {
 }
 
 /// The ledger's vtable for a live object from the vtable pointer in its first 8 bytes: the
-/// object's dynamic class, `None` when the pointer is not a vtable the ledger knows.
+/// object's dynamic class, `None` when the pointer is not a vtable the ledger knows or the running
+/// game has no usable id for it.
 #[must_use]
 pub fn class_of<T>(object: &T) -> Option<&'static sre::raw::Vtable> {
     const { assert!(size_of::<T>() >= size_of::<usize>(), "an object with a vtable starts with its pointer") };
     let vtable = unsafe { core::ptr::from_ref(object).cast::<usize>().read_unaligned() };
-    let rva = u32::try_from(vtable.checked_sub(reloc().base())?).ok()?;
-    sre::raw::vtables::find(rva)
+    sre::vtable_at(u32::try_from(vtable.checked_sub(reloc().base())?).ok()?)
 }
 
 /// Writes a field of an engine object, which the engine reads on its own threads. A mod writes
@@ -166,7 +187,7 @@ impl RwGuard {
     }
 
     fn take(lock: &sre::BSReadWriteLock, write: bool) -> Self {
-        let id = if write { sre::raw::fns::BSReadWriteLock__LockForWrite } else { sre::raw::fns::BSReadWriteLock__LockForRead };
+        let id = if write { sre::id!(sre::raw::fns::BSReadWriteLock__LockForWrite) } else { sre::id!(sre::raw::fns::BSReadWriteLock__LockForRead) };
         let f: unsafe extern "C" fn(*const sre::BSReadWriteLock) = unsafe { engine_fn(id) };
         unsafe { f(lock) };
         Self { lock, write }
@@ -176,7 +197,7 @@ impl RwGuard {
 #[cfg(feature = "actors")]
 impl Drop for RwGuard {
     fn drop(&mut self) {
-        let id = if self.write { sre::raw::fns::BSReadWriteLock__UnlockForWrite } else { sre::raw::fns::BSReadWriteLock__UnlockForRead };
+        let id = if self.write { sre::id!(sre::raw::fns::BSReadWriteLock__UnlockForWrite) } else { sre::id!(sre::raw::fns::BSReadWriteLock__UnlockForRead) };
         let f: unsafe extern "C" fn(*const sre::BSReadWriteLock) = unsafe { engine_fn(id) };
         unsafe { f(self.lock) };
     }

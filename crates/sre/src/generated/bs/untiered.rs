@@ -1548,6 +1548,13 @@ impl crate::BSShapeConstructor {
 }
 
 impl crate::BSSkyShader {
+    /// `BSSkyShader::SetupTechnique`, vtable slot 2, through the object's vtable (decompiler signature, tier untiered; ledger semantic evidence, name high; id 107402, rva 0x1552280).
+    /// `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn setup_technique(&self, param_1: u32) -> u64 { unsafe { virtual_function!(self, 2, (*const Self, u32) -> u64)(core::ptr::from_ref(self), param_1) } }
     /// `BSSkyShader::vfunc_2_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 108900, rva 0x158d440).
     /// `undefined4 vfunc_2_sub0(undefined4 param_1)`
     ///

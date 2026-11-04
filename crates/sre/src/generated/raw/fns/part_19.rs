@@ -3,6 +3,38 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `TESAmmo::TESWeightForm_vdtor` at 0x269430 (slot_propagation, medium); signature (high): `undefined TESWeightForm_vdtor(TESAmmo * this)`
+pub const TESAmmo__TESWeightForm_vdtor: u64 = 17247;
+/// `TESAmmo::ctor` at 0x268780 (decompiler, high); signature (high): `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
+pub const TESAmmo__ctor: u64 = 17231;
+/// `TESAmmo::dtor` at 0x268940 (layout_inference, high); signature (low): `undefined dtor(TESAmmo * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAmmo__dtor: u64 = 17232;
+/// `TESAmmo::vdtor` at 0x269470 (slot_propagation, medium); signature (low): `TESAmmo * vdtor(TESAmmo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAmmo__vdtor: u64 = 17252;
+/// `TESAmmo::vfunc_19` at 0x268f30 (rtti, high); signature (low): `undefined vfunc_19(TESAmmo * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
+pub const TESAmmo__vfunc_19: u64 = 17235;
+/// `TESAmmo::vfunc_25` at 0x2695f0 (rtti, high); signature (high): `byte vfunc_25(TESAmmo * this)`
+pub const TESAmmo__vfunc_25: u64 = 17253;
+/// `TESAmmo::vfunc_4` at 0x268ac0 (rtti, high); signature (low): `undefined vfunc_4(TESAmmo * this, undefined8 param_1, undefined8 param_2, char * param_3)`
+pub const TESAmmo__vfunc_4: u64 = 17233;
+/// `TESAmmo::vfunc_6` at 0x268b00 (rtti, high); signature (low): `undefined8 vfunc_6(TESAmmo * this, uint * param_1, TESAmmo * param_2, char * param_3)`
+pub const TESAmmo__vfunc_6: u64 = 17234;
+/// `TESAmmo::vfunc_64` at 0x269010 (rtti, high); signature (low): `longlong * vfunc_64(TESAmmo * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAmmo__vfunc_64: u64 = 17236;
+/// `TESAmmo::vfunc_64_sub0` at 0x105a4c0 (callgraph, medium); signature (untiered): `undefined vfunc_64_sub0(undefined8 param_1)`
+pub const TESAmmo__vfunc_64_sub0: u64 = 78106;
+/// `TESAmmo::vfunc_78` at 0x269340 (rtti, high); signature (low): `undefined vfunc_78(TESAmmo * this, longlong param_1)`
+pub const TESAmmo__vfunc_78: u64 = 17240;
+/// `TESAnimGroup::ctor` at 0x3b07c0 (layout_inference, high); signature (high): `TESAnimGroup * ctor(TESAnimGroup * this)`
+pub const TESAnimGroup__ctor: u64 = 24394;
+/// `TESAnimGroup::ctor_sub0` at 0x3b1da0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, undefined2 param_2)`
+pub const TESAnimGroup__ctor_sub0: u64 = 24419;
+/// `TESAnimGroup::dtor` at 0x3b0860 (layout_inference, high); signature (low): `undefined dtor(TESAnimGroup * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAnimGroup__dtor: u64 = 24395;
+/// `TESAnimGroup::vdtor` at 0x3b2430 (layout_inference, medium); signature (low): `TESAnimGroup * vdtor(TESAnimGroup * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const TESAnimGroup__vdtor: u64 = 24435;
+/// `TESAttackDamageForm::ctor` at 0x1df080 (layout_inference, medium); signature (high): `TESAttackDamageForm * ctor(TESAttackDamageForm * this)`
+pub const TESAttackDamageForm__ctor: u64 = 14477;
 /// `TESAttackDamageForm::vdtor` at 0x1df1a0 (layout_inference, medium); signature (low): `TESAttackDamageForm * vdtor(TESAttackDamageForm * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const TESAttackDamageForm__vdtor: u64 = 14485;
 /// `TESAttackDamageForm::vfunc_1` at 0x1df0c0 (rtti, medium); signature (high): `undefined vfunc_1(TESAttackDamageForm * this)`
@@ -5856,7 +5888,7 @@ pub const UpdateVendorRespawnIfDue: u64 = 24495;
 /// `UpdateVolumetricLightingConstants` at 0x1531b30 (semantic, high); signature (untiered): `undefined UpdateVolumetricLightingConstants(longlong param_1, longlong param_2)`; semantic: (correction of UpdateSunShadowConstants) fills the generate shader's constant buffer 0x3435db0 (0x180 bytes): c0-c3 the camera's cached view-projection (FindEntryByKeyAndFlag on the frame state, entry +0xb0), c4-c7 its inverse, c8-c13 the sun's two cascade matrices shifted by the eye, c17 the cascade split distances turned into depth with the camera's near/far ((s f - f n) / ((f - n) s)), the last split and the cascade count, c18 the shadow-casting flag, c19 the sun direction, c20 the volume size, c21 the drifting noise offset plus the eye and 1/density size, c22.w the jitter index (frame counter +0x88 & 7), c23 density contribution, phase scattering and phase contribution (high); signature `void (VolumetricLightingParams* params, NiCamera* camera)`
 pub const UpdateVolumetricLightingConstants: u64 = 107027;
 /// `UpdateVolumetricLightingConstants` as a function pointer type (high).
-pub type UpdateVolumetricLightingConstants_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut crate::NiCamera);
+pub type UpdateVolumetricLightingConstants_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, camera: *mut crate::NiCamera);
 /// `UpdateWaterAudio` at 0x523470 (decompiler, medium); signature (untiered): `undefined UpdateWaterAudio(void)`
 pub const UpdateWaterAudio: u64 = 32057;
 /// `UpdateWeaponIdleSound` at 0x721c50 (semantic, medium); signature (untiered): `undefined UpdateWeaponIdleSound(longlong param_1, char param_2, longlong * param_3, longlong * param_4, undefined4 param_5)`; semantic: weapon draw/sheathe visuals and the weapon idle sound: shows/hides the weapon's named nodes, stores the drawn byte in the middle-high data (+0x316), refreshes the equip slot (UpdateForIndexOrAll) (medium); signature `void (AIProcess* process, bool drawn, void** weaponModel, Actor* actor, i32 slot)`
@@ -9019,35 +9051,3 @@ pub const ZeroQwords0And8AndSetByte10: u64 = 16495;
 pub const ZeroQwordsAndDword10: u64 = 104660;
 /// `ZeroRange16ByteEntries` at 0x17e420 (decompiler, high); signature (high): `undefined ZeroRange16ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
 pub const ZeroRange16ByteEntries: u64 = 12323;
-/// `ZeroRange24ByteEntries` at 0x17e460 (decompiler, high); signature (high): `undefined ZeroRange24ByteEntries(longlong * param_1, ulonglong param_2, uint param_3)`
-pub const ZeroRange24ByteEntries: u64 = 12324;
-/// `ZeroSmallArray12Range` at 0x124ac80 (decompiler, medium); signature (medium): `undefined ZeroSmallArray12Range(int * param_1, ulonglong param_2, uint param_3)`
-pub const ZeroSmallArray12Range: u64 = 524298;
-/// `ZeroStruct0x310` at 0x134f9d0 (decompiler, high); signature (high): `undefined8 * ZeroStruct0x310(undefined8 * param_1)`
-pub const ZeroStruct0x310: u64 = 526471;
-/// `ZeroTable60ValuesLocked` at 0xde85f0 (decompiler, medium); signature (untiered): `undefined ZeroTable60ValuesLocked(longlong param_1)`
-pub const ZeroTable60ValuesLocked: u64 = 87172;
-/// `ZeroTwelveBytes` at 0xea4bc0 (decompiler, high); signature (high): `undefined ZeroTwelveBytes(undefined8 * param_1)`
-pub const ZeroTwelveBytes: u64 = 68891;
-/// `ZeroTwoQwords` at 0x547760 (decompiler, medium); signature (medium): `undefined ZeroTwoQwords(undefined8 * param_1)`
-pub const ZeroTwoQwords: u64 = 32692;
-/// `ZeroTwoQwords_2` at 0xce4800 (decompiler, high); signature (high): `undefined8 * ZeroTwoQwords_2(undefined8 * param_1)`
-pub const ZeroTwoQwords_2: u64 = 68283;
-/// `ZoneEntry::ctor` at 0x3f6cd0 (layout_inference, medium); signature (low): `ZoneEntry * ctor(ZoneEntry * this, undefined4 * param_1, undefined8 param_2)`
-pub const ZoneEntry__ctor: u64 = 25693;
-/// `ZoneEntry::dtor` at 0x3f6d00 (layout_inference, high); signature (high): `undefined dtor(ZoneEntry * this)`
-pub const ZoneEntry__dtor: u64 = 25694;
-/// `ZoneEntry::vdtor` at 0x3f7a10 (layout_inference, medium); signature (low): `ZoneEntry * vdtor(ZoneEntry * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const ZoneEntry__vdtor: u64 = 25727;
-/// `ZoneEntry::vfunc_1` at 0x3f6d60 (rtti, medium); signature (low): `undefined8 * vfunc_1(ZoneEntry * this, int * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const ZoneEntry__vfunc_1: u64 = 25695;
-/// `ZoneEntry::vfunc_2` at 0x3f7be0 (rtti, high); signature (low): `undefined vfunc_2(void)`
-pub const ZoneEntry__vfunc_2: u64 = 25732;
-/// `_anon_01A9FA1F::SceneResultsCallBack::vdtor` at 0x3a5e00 (slot_propagation, medium); signature (low): `SceneResultsCallBack * vdtor(SceneResultsCallBack * this, uint param_1)`
-pub const _anon_01A9FA1F__SceneResultsCallBack__vdtor: u64 = 24101;
-/// `_anon_01A9FA1F::SceneResultsCallBack::vfunc_1` at 0x3a5ce0 (rtti, high); signature (low): `undefined vfunc_1(SceneResultsCallBack * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_1: u64 = 24097;
-/// `_anon_01A9FA1F::SceneResultsCallBack::vfunc_2` at 0x3a5d10 (rtti, high); signature (low): `undefined8 vfunc_2(SceneResultsCallBack * this, longlong * param_1)`
-pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_2: u64 = 24098;
-/// `_anon_01A9FA1F::SceneResultsCallBack::vfunc_3` at 0x3a5d90 (rtti, high); signature (low): `undefined8 * vfunc_3(void)`
-pub const _anon_01A9FA1F__SceneResultsCallBack__vfunc_3: u64 = 24099;

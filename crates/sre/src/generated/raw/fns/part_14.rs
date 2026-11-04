@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `InterpolateQuaternionKeysClamped` at 0xf6fa90 (decompiler, medium); signature (untiered): `undefined8 * InterpolateQuaternionKeysClamped(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, byte param_6)`
+pub const InterpolateQuaternionKeysClamped: u64 = 73104;
+/// `InterpolateQuaternionKeysSquad` at 0xf8f8c0 (decompiler, high); signature (high): `undefined InterpolateQuaternionKeysSquad(float param_1, longlong param_2, longlong param_3, float * param_4)`
+pub const InterpolateQuaternionKeysSquad: u64 = 74181;
+/// `InterpolateQuaternionKeysSquad_2` at 0xf96400 (decompiler, high); signature (high): `undefined InterpolateQuaternionKeysSquad_2(float param_1, longlong param_2, longlong param_3, float * param_4)`
+pub const InterpolateQuaternionKeysSquad_2: u64 = 74385;
+/// `InterpolateQuaternionNormalized` at 0xef8b30 (decompiler, medium); signature (medium): `undefined InterpolateQuaternionNormalized(float * param_1, float param_2, float * param_3, float * param_4)`
+pub const InterpolateQuaternionNormalized: u64 = 70836;
+/// `InterpolateRgbByWeightTable` at 0x1044ae0 (decompiler, medium); signature (medium): `undefined InterpolateRgbByWeightTable(byte * param_1, byte * param_2, longlong param_3, longlong param_4, undefined2 * param_5)`
+pub const InterpolateRgbByWeightTable: u64 = 77779;
 /// `InterpolateSweptTransformToTime` at 0xc02dc0 (decompiler, medium); signature (medium): `undefined InterpolateSweptTransformToTime(float param_1, float * param_2)`
 pub const InterpolateSweptTransformToTime: u64 = 64500;
 /// `InterpolateTable359115` at 0x1dea40 (decompiler, medium); signature (medium): `float InterpolateTable359115(float param_1)`
@@ -8405,17 +8415,3 @@ pub type NiAVObject__UpdateWorldTransformFromParent_fn = unsafe extern "C" fn(th
 pub const NiAVObject__ctor: u64 = 524204;
 /// `NiAVObject::ctor_sub0` at 0xee1220 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong * param_1)`
 pub const NiAVObject__ctor_sub0: u64 = 70274;
-/// `NiAVObject::dtor` at 0xee0890 (layout_inference, high); signature (low): `undefined dtor(NiAVObject * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAVObject__dtor: u64 = 70250;
-/// `NiAVObject::vdtor` at 0xee1250 (layout_inference, medium); signature (low): `NiAVObject * vdtor(NiAVObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const NiAVObject__vdtor: u64 = 70275;
-/// `NiAVObject::vfunc_2` at 0xee1310 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
-pub const NiAVObject__vfunc_2: u64 = 70277;
-/// `NiAVObject::vfunc_24` at 0xee05a0 (rtti, high); signature (low): `undefined vfunc_24(NiAVObject * this, longlong param_1)`
-pub const NiAVObject__vfunc_24: u64 = 70245;
-/// `NiAVObject::vfunc_25` at 0xee0680 (rtti, high); signature (low): `undefined vfunc_25(NiAVObject * this, longlong param_1)`
-pub const NiAVObject__vfunc_25: u64 = 70246;
-/// `NiAVObject::vfunc_26` at 0xee0700 (rtti, high); signature (low): `undefined1 vfunc_26(NiAVObject * this, undefined8 param_1)`
-pub const NiAVObject__vfunc_26: u64 = 70247;
-/// `NiAVObject::vfunc_27` at 0xee0750 (rtti, high); signature (low): `undefined vfunc_27(NiAVObject * this, longlong * param_1)`
-pub const NiAVObject__vfunc_27: u64 = 70248;

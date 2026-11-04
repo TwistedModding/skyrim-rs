@@ -48,7 +48,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicTrackFormWrapper, track) == 
 /// Meaning: MUSC form (type 0x6d = 109; note: MUST is the track wrapper, type 116): a music type with priority, tracks and playback state, implementing BSIMusicType at +0x20 (high, audio pass).
 /// Evidence: runtime: 0x78 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `BSIMusicType`@0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSMusicType {
     /// +0x0 `vtbl:BGSMusicType:0`, rtti
     #[doc(hidden)]
@@ -76,13 +76,16 @@ pub struct BGSMusicType {
     /// +0x30 `float`, semantic; WNAM seconds; the finish fade is max(value, 4.0) (medium)
     pub fadeDuration: f32,
     /// +0x34 `undefined4`, semantic; index into tracks of the track playing (high)
-    pub currentTrackIndex: u32,
+    #[doc(hidden)]
+    pub __currentTrackIndex: [u8; 4],
     /// +0x38 `class:BSTArray`, semantic; u32 track indices for sequential play (flag bit 2), shuffled unless bit 3 (medium)
-    pub trackSequence: crate::BSTArray,
+    #[doc(hidden)]
+    pub __trackSequence: [u8; 24],
     /// +0x50 `class:BSTArray`, semantic; BSIMusicTrack* (BGSMusicTrackFormWrapper+0x20); TNAM form ids until InitItem (high)
     pub tracks: crate::BSTArray,
     /// +0x68 `undefined4`, semantic; 0 ready, 1 playing, 2 paused, 3 finishing, 4 finished (mirrors the track's state) (medium)
-    pub state: u32,
+    #[doc(hidden)]
+    pub __state: [u8; 4],
     pub unknown_6C: [u8; 4],
     /// +0x70 `class:BSFixedString`, semantic; editor id kept by the form (high)
     pub editorID: crate::BSFixedString,
@@ -101,17 +104,17 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicType, flags) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, priority) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, duckingAttenuation) == 0x2E);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, fadeDuration) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, currentTrackIndex) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, trackSequence) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, __currentTrackIndex) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, __trackSequence) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, tracks) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSMusicType, state) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BGSMusicType, __state) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSMusicType, editorID) == 0x70);
 
 /// `BGSSoundCategory`: size 0x58 (exact, medium); primary base `TESForm`.
 /// Meaning: SNCT form (type 0x82): a node in the category tree with static and runtime volume, frequency, attenuation, mute and pause (high, audio pass).
 /// Evidence: runtime: 0x58 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x20, `BaseFormComponent`@0x20, `BSISoundCategory`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSoundCategory {
     /// +0x0 `vtbl:BGSSoundCategory:0`, rtti
     #[doc(hidden)]
@@ -128,7 +131,8 @@ pub struct BGSSoundCategory {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `class:TESFullName`, semantic; display name (FULL), the audio menu's label (high)
-    pub fullName: [u8; 16],
+    #[doc(hidden)]
+    pub __fullName: [u8; 16],
     /// +0x30 `class:BSISoundCategory`, semantic, runtime; BSISoundCategory sub-object; what play data, the Papyrus natives and the menu hand to the audio code (high)
     pub categoryInterface: crate::BSISoundCategory,
     /// +0x38 `undefined4`, semantic; FNAM flags; see the flag rows (high)
@@ -139,7 +143,8 @@ pub struct BGSSoundCategory {
     /// +0x48 `undefined2`, semantic; bit 0 muted, bit 1 paused (not saved in the record); see the flag rows (high)
     pub runtimeState: u16,
     /// +0x4A `undefined2`, semantic; runtime attenuation in hundredths of dB (ducking), summed through the parents (medium)
-    pub attenuation: u16,
+    #[doc(hidden)]
+    pub __attenuation: [u8; 2],
     /// +0x4C `undefined2`, semantic, runtime; record volume as u16 (65535 = 1.0); VNAM, or legacy SNAM float*65535 (high)
     pub staticVolume: u16,
     /// +0x4E `undefined2`, semantic; UNAM: default volume of a menu category (65535 = 1.0) when no saved slot exists (high)
@@ -158,12 +163,12 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formFlags) == 0x10
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, fullName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __fullName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, categoryInterface) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, flags) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, parent) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, runtimeState) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, attenuation) == 0x4A);
+const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, __attenuation) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, staticVolume) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, defaultMenuVolume) == 0x4E);
 const _: () = assert!(core::mem::offset_of!(BGSSoundCategory, volume) == 0x50);
@@ -278,7 +283,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSoundOutput, speakerLevels) == 0x
 /// Meaning: distance attenuation of an output model (high, audio pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `BSISoundOutputModel::BSIAttenuationCharacteristics`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSoundOutput__DynamicAttenuationCharacteristics {
     /// +0x0 `vtbl:BGSSoundOutput::DynamicAttenuationCharacteristics:0`, rtti
     #[doc(hidden)]
@@ -288,7 +293,8 @@ pub struct BGSSoundOutput__DynamicAttenuationCharacteristics {
     /// +0xC `float`, semantic; audible range (default 4000.0); sounds beyond it are not started (high)
     pub maxDistance: f32,
     /// +0x10 `undefined1`, semantic; 5 attenuation points in percent (default 100,50,20,5,0) (medium)
-    pub curve: [u8; 5],
+    #[doc(hidden)]
+    pub __curve: [u8; 5],
     pub unknown_15: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -297,7 +303,7 @@ const _: () = assert!(size_of::<BGSSoundOutput__DynamicAttenuationCharacteristic
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, minDistance) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, maxDistance) == 0xC);
-const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, curve) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSSoundOutput__DynamicAttenuationCharacteristics, __curve) == 0x10);
 
 /// `BGSStandardSoundDef`: size 0x58 (exact, medium); primary base `BGSSoundDescriptor`.
 /// Meaning: the only concrete descriptor in 1.7.104: file list, playback characteristics, conditions, output model, flags (high, audio pass).
@@ -358,7 +364,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStandardSoundDef__SoundPlaybackCh
 /// `BSAudioManager`: size 0x190 (exact).
 /// Meaning: the audio manager singleton (no RTTI: non-virtual). Owns the double-buffered command lists every handle call posts to, the audio thread, the id->sound map the thread works on (the active sounds), the id->status map the game threads read, the follow-node map, the cache list, the init settings and the master volume. Named after its thread's RTTI class BSAudioManagerThread (owned at +0xf8, whose run loop drains this object); the request's name is supported only through that. (medium, audio pass).
 /// Evidence: the audio manager singleton (no RTTI: non-virtual). Owns the double-buffered command lists every handle call posts to, the audio thread, the id->sound map the thread works on (the active sounds), the id->status map the game threads read, the follow-node map, the cache list, the init settings and the master volume. Named after its thread's RTTI class BSAudioManagerThread (owned at +0xf8, whose run loop drains this object); the request's name is supported only through that.; global 0x3273930 (written only by 0xcca650/0xcca730); every handle function reads it through GetAudioManager 0xcca610; size: CreateAudioManagerAndBackend 0xcca650 allocates 400 bytes and runs the constructor 0xccd660 on it; DestroyAudioManager 0xcca730 frees it with size 400; run-audio: the manager's master volume at +0x170 stayed 1.0 while the category changed; the category change did not go through ReapplyAllVolumes 0xcd0db0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSAudioManager {
     /// +0x0 `undefined4`, semantic; index (0/1) of the command list producers append to (high)
     pub writeListIndex: u32,
@@ -381,9 +387,11 @@ pub struct BSAudioManager {
     /// +0xE8 `ptr`, semantic; list of cached sound objects (audio cache), guarded by the spin lock 0x3273960 (medium)
     pub cacheList: [u8; 8],
     /// +0xF0 `undefined4`, semantic; cache count, zeroed with the flush (low)
-    pub cacheCount: u32,
+    #[doc(hidden)]
+    pub __cacheCount: [u8; 4],
     /// +0xF4 `undefined4`, semantic; OS thread id of the audio thread (high)
-    pub threadId: u32,
+    #[doc(hidden)]
+    pub __threadId: [u8; 4],
     /// +0xF8 `ptr:BSAudioManagerThread`, semantic; the audio thread object (high)
     pub thread: *mut crate::BSAudioManagerThread,
     pub unknown_100: [u8; 4],
@@ -418,8 +426,8 @@ const _: () = assert!(core::mem::offset_of!(BSAudioManager, statuses) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, followedNodes) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, nodeOutputModels) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, cacheList) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSAudioManager, cacheCount) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSAudioManager, threadId) == 0xF4);
+const _: () = assert!(core::mem::offset_of!(BSAudioManager, __cacheCount) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSAudioManager, __threadId) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, thread) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, hwThread) == 0x104);
 const _: () = assert!(core::mem::offset_of!(BSAudioManager, settings) == 0x108);
@@ -598,15 +606,19 @@ pub struct BSXAudio2GameSound {
     /// +0x38 `undefined8`, base BSGameSound
     pub field_38: u64,
     /// +0x40 `undefined4`, base BSGameSound
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `undefined4`, base BSGameSound
-    pub field_44: u32,
+    #[doc(hidden)]
+    pub __field_44: [u8; 4],
     /// +0x48 `undefined4`, base BSGameSound
-    pub field_48: u32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     /// +0x4C `undefined8`, base BSGameSound
     pub field_4C: u64,
     /// +0x54 `undefined8`, base BSGameSound
-    pub field_54: u64,
+    #[doc(hidden)]
+    pub __field_54: [u8; 8],
     /// +0x5C `undefined8`, base BSGameSound
     pub field_5C: u64,
     /// +0x64 `undefined8`, base BSGameSound
@@ -738,11 +750,11 @@ const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_24) == 0x2
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, __field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, __field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(BSXAudio2GameSound, field_6C) == 0x6C);
@@ -823,16 +835,18 @@ const _: () = assert!(core::mem::offset_of!(SoundHandle, requestedState) == 0x8)
 /// `SoundHandleStatus`: size 0x28 (exact).
 /// Meaning: the per-id status game threads read (no RTTI; descriptive name). Inserted synchronously when the handle is built, refreshed by the audio thread every update, removed when the sound is released. (high, audio pass).
 /// Evidence: the per-id status game threads read (no RTTI; descriptive name). Inserted synchronously when the handle is built, refreshed by the audio thread every update, removed when the sound is released.; writer: RefreshStatuses 0xcd1850 (audio thread, under the read lock); readers 0xccbb70, 0xccc5c0, 0xccbc20, 0xccbe60, 0xccbfd0, 0xccc950; size: CreateEntryAndInsertUnderWriteLock 0xcd4400 and the ctor 0xccd660 allocate 0x28 per entry (256 preallocated into the free list 0x3273928, link at +0x20).
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct SoundHandleStatus {
     /// +0x0 `undefined4`, semantic; sound id; IsValid also checks entry.id == id (high)
     pub id: u32,
     /// +0x4 `float`, semantic; frequency ratio = byte sound+0xc0 * 0.01 (high)
-    pub frequency: f32,
+    #[doc(hidden)]
+    pub __frequency: [u8; 4],
     /// +0x8 `float`, semantic; per-handle volume (sound+0x70) (high)
     pub volume: f32,
     /// +0xC `undefined4`, semantic; the sound's creation flags (sound+0x50) (high)
-    pub flags: u32,
+    #[doc(hidden)]
+    pub __flags: [u8; 4],
     /// +0x10 `undefined4`, semantic; copy of sound+0x60 (low)
     pub unk10: u32,
     /// +0x14 `undefined1`, semantic; 1 while the voice is started and not paused (sound state bit5) (high)
@@ -842,19 +856,20 @@ pub struct SoundHandleStatus {
     pub positionMs: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `ptr`, semantic; free-list link (high)
-    pub nextFree: [u8; 8],
+    #[doc(hidden)]
+    pub __nextFree: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<SoundHandleStatus>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, id) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, frequency) == 0x4);
+const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, __frequency) == 0x4);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, volume) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, flags) == 0xC);
+const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, __flags) == 0xC);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, unk10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, playing) == 0x14);
 const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, positionMs) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, nextFree) == 0x20);
+const _: () = assert!(core::mem::offset_of!(SoundHandleStatus, __nextFree) == 0x20);
 
 /// `TESAudio::ScriptedMusicState`: size 0x30 (exact, high).
 /// Meaning: music types added by scripts and the console, saved in the audio global data (high, audio pass).
@@ -888,7 +903,8 @@ pub struct _anon_67C8711B__NoMusic {
     pub __vftable: *const crate::raw::vtables::_anon_67C8711B__NoMusic_vtable,
     pub unknown_8: [u8; 4],
     /// +0xC `undefined1`, semantic; 100: lower precedence than the default music priority 50 (high)
-    pub priority: u8,
+    #[doc(hidden)]
+    pub __priority: [u8; 1],
     pub unknown_D: [u8; 59],
     /// +0x48 `undefined4`, semantic; same state enum as BGSMusicType+0x68 (high)
     pub state: u32,
@@ -897,7 +913,7 @@ pub struct _anon_67C8711B__NoMusic {
 }
 const _: () = assert!(size_of::<_anon_67C8711B__NoMusic>() == 0x4C);
 const _: () = assert!(core::mem::offset_of!(_anon_67C8711B__NoMusic, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(_anon_67C8711B__NoMusic, priority) == 0xC);
+const _: () = assert!(core::mem::offset_of!(_anon_67C8711B__NoMusic, __priority) == 0xC);
 const _: () = assert!(core::mem::offset_of!(_anon_67C8711B__NoMusic, state) == 0x48);
 
 /// values in data/audiocommandtypes.json (audio pass).

@@ -8025,7 +8025,7 @@ const _: () = assert!(core::mem::offset_of!(CombatBlackboardKeyBase, __vftable) 
 /// `CombatCoverLocation`: size 0xA0 (exact, high); primary base `CombatObject`.
 /// Evidence: allocation sites (high): {'160': 3}.
 /// Bases: `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatCoverLocation {
     /// +0x0 `vtbl:CombatCoverLocation:0`, rtti
     #[doc(hidden)]
@@ -8034,46 +8034,62 @@ pub struct CombatCoverLocation {
     pub field_8: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined2`, ctor store
-    pub field_20: u16,
+    #[doc(hidden)]
+    pub __field_20: [u8; 2],
     pub unknown_22: [u8; 6],
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
+    #[doc(hidden)]
+    pub __field_30: [u8; 4],
     /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
+    #[doc(hidden)]
+    pub __field_34: [u8; 4],
     /// +0x38 `undefined4`, ctor store
-    pub field_38: u32,
+    #[doc(hidden)]
+    pub __field_38: [u8; 4],
     /// +0x3C `undefined4`, ctor store
-    pub field_3C: u32,
+    #[doc(hidden)]
+    pub __field_3C: [u8; 4],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `undefined4`, ctor store
-    pub field_44: u32,
+    #[doc(hidden)]
+    pub __field_44: [u8; 4],
     /// +0x48 `undefined4`, ctor store
-    pub field_48: u32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     /// +0x4C `undefined4`, ctor store
-    pub field_4C: u32,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 4],
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined4`, ctor store
     pub field_58: u32,
     /// +0x5C `undefined4`, ctor store
-    pub field_5C: u32,
+    #[doc(hidden)]
+    pub __field_5C: [u8; 4],
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
-    pub field_64: u32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
-    pub field_68: u32,
+    #[doc(hidden)]
+    pub __field_68: [u8; 4],
     /// +0x6C `float`, ctor store
     pub field_6C: f32,
     /// +0x70 `float`, ctor store
@@ -8087,7 +8103,8 @@ pub struct CombatCoverLocation {
     /// +0x80 `float`, ctor store
     pub field_80: f32,
     /// +0x84 `undefined4`, ctor store (widths [4, 8])
-    pub field_84: u32,
+    #[doc(hidden)]
+    pub __field_84: [u8; 4],
     /// +0x88 `undefined4`, ctor store
     pub field_88: u32,
     /// +0x8C `undefined4`, ctor store (widths [4, 8])
@@ -8095,7 +8112,8 @@ pub struct CombatCoverLocation {
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
     /// +0x94 `undefined4`, ctor store
-    pub field_94: u32,
+    #[doc(hidden)]
+    pub __field_94: [u8; 4],
     /// +0x98 `float`, ctor store
     pub field_98: f32,
     pub unknown_9C: [u8; 4],
@@ -8105,36 +8123,36 @@ pub struct CombatCoverLocation {
 const _: () = assert!(size_of::<CombatCoverLocation>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_44) == 0x44);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_44) == 0x44);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_7C) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_84) == 0x84);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, __field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(CombatCoverLocation, field_98) == 0x98);
 
 /// `CombatCoverSearch`: size 0x88 (exact, medium); primary base `CombatObject`.
@@ -8153,11 +8171,14 @@ pub struct CombatCoverSearch {
     pub field_68: u64,
     pub unknown_70: [u8; 4],
     /// +0x74 `undefined8`, ctor store
-    pub field_74: u64,
+    #[doc(hidden)]
+    pub __field_74: [u8; 8],
     /// +0x7C `undefined8`, ctor store
-    pub field_7C: u64,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 8],
     /// +0x84 `undefined4`, ctor store
-    pub field_84: u32,
+    #[doc(hidden)]
+    pub __field_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8165,9 +8186,9 @@ const _: () = assert!(size_of::<CombatCoverSearch>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, __field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, __field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(CombatCoverSearch, __field_84) == 0x84);
 
 /// `CombatCoverSearchDebugData`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `CombatObject`.
 /// Evidence: vptr at 0x0.
@@ -8368,7 +8389,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemComposite, field_
 /// `CombatInventoryItemMagic`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItem`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagic {
     /// +0x0 `vtbl:CombatInventoryItemMagic:0`, rtti
     #[doc(hidden)]
@@ -8392,7 +8413,8 @@ pub struct CombatInventoryItemMagic {
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8404,12 +8426,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_20) 
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagic, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterArmor>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterArmor>:0`, rtti
     #[doc(hidden)]
@@ -8433,7 +8455,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterA
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8445,12 +8468,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterBoundItem>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterBoundItem>:0`, rtti
     #[doc(hidden)]
@@ -8474,7 +8497,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterB
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8486,12 +8510,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterCloak>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterCloak>:0`, rtti
     #[doc(hidden)]
@@ -8515,7 +8539,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterC
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8527,12 +8552,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterDisarm>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterDisarm>:0`, rtti
     #[doc(hidden)]
@@ -8556,7 +8581,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterD
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8568,12 +8594,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterInvisibility>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterInvisibility>:0`, rtti
     #[doc(hidden)]
@@ -8597,7 +8623,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterI
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8609,12 +8636,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterLight>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterLight>:0`, rtti
     #[doc(hidden)]
@@ -8638,7 +8665,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterL
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8650,12 +8678,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterOffensive>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterOffensive>:0`, rtti
     #[doc(hidden)]
@@ -8679,7 +8707,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterO
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8691,12 +8720,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterParalyze>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterParalyze>:0`, rtti
     #[doc(hidden)]
@@ -8720,7 +8749,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterP
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8732,12 +8762,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterReanimate>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterReanimate>:0`, rtti
     #[doc(hidden)]
@@ -8761,7 +8791,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8773,12 +8804,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterRestore>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterRestore>:0`, rtti
     #[doc(hidden)]
@@ -8802,7 +8833,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8814,12 +8846,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterScript>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterScript>:0`, rtti
     #[doc(hidden)]
@@ -8843,7 +8875,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8855,12 +8888,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterStagger>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterStagger>:0`, rtti
     #[doc(hidden)]
@@ -8884,7 +8917,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8896,12 +8930,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterSummon>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterSummon>:0`, rtti
     #[doc(hidden)]
@@ -8925,7 +8959,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8937,12 +8972,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterTargetEffect>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterTargetEffect>:0`, rtti
     #[doc(hidden)]
@@ -8966,7 +9001,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterT
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8978,12 +9014,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterWard>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterWard>:0`, rtti
     #[doc(hidden)]
@@ -9007,7 +9043,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterW
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9019,12 +9056,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterArmor>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterArmor>:0`, rtti
     #[doc(hidden)]
@@ -9048,7 +9085,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9060,12 +9098,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterBoundItem>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterBoundItem>:0`, rtti
     #[doc(hidden)]
@@ -9089,7 +9127,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9101,12 +9140,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterCloak>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterCloak>:0`, rtti
     #[doc(hidden)]
@@ -9130,7 +9169,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9142,12 +9182,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterDisarm>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterDisarm>:0`, rtti
     #[doc(hidden)]
@@ -9171,7 +9211,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9183,12 +9224,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterInvisibility>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterInvisibility>:0`, rtti
     #[doc(hidden)]
@@ -9212,7 +9253,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9224,12 +9266,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterLight>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterLight>:0`, rtti
     #[doc(hidden)]
@@ -9253,7 +9295,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9265,12 +9308,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterOffensive>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterOffensive>:0`, rtti
     #[doc(hidden)]
@@ -9294,7 +9337,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9306,12 +9350,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterParalyze>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterParalyze>:0`, rtti
     #[doc(hidden)]
@@ -9335,7 +9379,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9347,12 +9392,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterReanimate>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterReanimate>:0`, rtti
     #[doc(hidden)]
@@ -9376,7 +9421,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9388,12 +9434,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterRestore>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterRestore>:0`, rtti
     #[doc(hidden)]
@@ -9417,7 +9463,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9429,12 +9476,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterScript>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterScript>:0`, rtti
     #[doc(hidden)]
@@ -9458,7 +9505,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9470,12 +9518,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterStagger>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterStagger>:0`, rtti
     #[doc(hidden)]
@@ -9499,7 +9547,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9511,12 +9560,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterSummon>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterSummon>:0`, rtti
     #[doc(hidden)]
@@ -9540,7 +9589,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9552,12 +9602,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterTargetEffect>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterTargetEffect>:0`, rtti
     #[doc(hidden)]
@@ -9581,7 +9631,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9593,12 +9644,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterWard>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemPotion`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemPotion`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterWard>:0`, rtti
     #[doc(hidden)]
@@ -9622,7 +9673,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9634,12 +9686,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterArmor>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterArmor>:0`, rtti
     #[doc(hidden)]
@@ -9663,7 +9715,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9675,12 +9728,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterBoundItem>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterBoundItem>:0`, rtti
     #[doc(hidden)]
@@ -9704,7 +9757,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9716,12 +9770,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterCloak>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterCloak>:0`, rtti
     #[doc(hidden)]
@@ -9745,7 +9799,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9757,12 +9812,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterDisarm>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterDisarm>:0`, rtti
     #[doc(hidden)]
@@ -9786,7 +9841,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9798,12 +9854,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterInvisibility>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterInvisibility>:0`, rtti
     #[doc(hidden)]
@@ -9827,7 +9883,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9839,12 +9896,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterLight>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterLight>:0`, rtti
     #[doc(hidden)]
@@ -9868,7 +9925,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9880,12 +9938,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterOffensive>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterOffensive>:0`, rtti
     #[doc(hidden)]
@@ -9909,7 +9967,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9921,12 +9980,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>:0`, rtti
     #[doc(hidden)]
@@ -9950,7 +10009,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9962,12 +10022,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterReanimate>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterReanimate>:0`, rtti
     #[doc(hidden)]
@@ -9991,7 +10051,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10003,12 +10064,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>:0`, rtti
     #[doc(hidden)]
@@ -10032,7 +10093,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10044,12 +10106,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>:0`, rtti
     #[doc(hidden)]
@@ -10073,7 +10135,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10085,12 +10148,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>:0`, rtti
     #[doc(hidden)]
@@ -10114,7 +10177,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10126,12 +10190,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>:0`, rtti
     #[doc(hidden)]
@@ -10155,7 +10219,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10167,12 +10232,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterTargetEffect>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterTargetEffect>:0`, rtti
     #[doc(hidden)]
@@ -10196,7 +10261,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10208,12 +10274,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterWard>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemScroll`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemScroll`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterWard>:0`, rtti
     #[doc(hidden)]
@@ -10237,7 +10303,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCaster
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10249,12 +10316,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterArmor>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterArmor>:0`, rtti
     #[doc(hidden)]
@@ -10278,7 +10345,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterA
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10290,12 +10358,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterBoundItem>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterBoundItem>:0`, rtti
     #[doc(hidden)]
@@ -10319,7 +10387,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterB
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10331,12 +10400,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterCloak>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterCloak>:0`, rtti
     #[doc(hidden)]
@@ -10360,7 +10429,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterC
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10372,12 +10442,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterDisarm>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterDisarm>:0`, rtti
     #[doc(hidden)]
@@ -10401,7 +10471,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterD
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10413,12 +10484,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterInvisibility>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterInvisibility>:0`, rtti
     #[doc(hidden)]
@@ -10442,7 +10513,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterI
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10454,12 +10526,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterLight>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterLight>:0`, rtti
     #[doc(hidden)]
@@ -10483,7 +10555,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterL
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10495,12 +10568,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterOffensive>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterOffensive>:0`, rtti
     #[doc(hidden)]
@@ -10524,7 +10597,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterO
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10536,12 +10610,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterParalyze>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterParalyze>:0`, rtti
     #[doc(hidden)]
@@ -10565,7 +10639,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterP
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10577,12 +10652,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterReanimate>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterReanimate>:0`, rtti
     #[doc(hidden)]
@@ -10606,7 +10681,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10618,12 +10694,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterRestore>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterRestore>:0`, rtti
     #[doc(hidden)]
@@ -10647,7 +10723,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10659,12 +10736,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterScript>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterScript>:0`, rtti
     #[doc(hidden)]
@@ -10688,7 +10765,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10700,12 +10778,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterStagger>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterStagger>:0`, rtti
     #[doc(hidden)]
@@ -10729,7 +10807,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10741,12 +10820,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterSummon>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterSummon>:0`, rtti
     #[doc(hidden)]
@@ -10770,7 +10849,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10782,12 +10862,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>:0`, rtti
     #[doc(hidden)]
@@ -10811,7 +10891,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterT
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10823,12 +10904,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterWard>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemShout`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemShout`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterWard>:0`, rtti
     #[doc(hidden)]
@@ -10852,7 +10933,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterW
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10864,12 +10946,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterArmor>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterArmor>:0`, rtti
     #[doc(hidden)]
@@ -10893,7 +10975,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterA
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10905,12 +10988,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterBoundItem>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterBoundItem>:0`, rtti
     #[doc(hidden)]
@@ -10934,7 +11017,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterB
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10946,12 +11030,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterCloak>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterCloak>:0`, rtti
     #[doc(hidden)]
@@ -10975,7 +11059,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterC
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10987,12 +11072,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterDisarm>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterDisarm>:0`, rtti
     #[doc(hidden)]
@@ -11016,7 +11101,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterD
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11028,12 +11114,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterInvisibility>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterInvisibility>:0`, rtti
     #[doc(hidden)]
@@ -11057,7 +11143,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterI
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11069,12 +11156,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterLight>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterLight>:0`, rtti
     #[doc(hidden)]
@@ -11098,7 +11185,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterL
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11110,12 +11198,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterOffensive>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterOffensive>:0`, rtti
     #[doc(hidden)]
@@ -11139,7 +11227,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterO
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11151,12 +11240,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterParalyze>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterParalyze>:0`, rtti
     #[doc(hidden)]
@@ -11180,7 +11269,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterP
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11192,12 +11282,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterReanimate>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterReanimate>:0`, rtti
     #[doc(hidden)]
@@ -11221,7 +11311,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11233,12 +11324,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>:0`, rtti
     #[doc(hidden)]
@@ -11262,7 +11353,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterR
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11274,12 +11366,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>:0`, rtti
     #[doc(hidden)]
@@ -11303,7 +11395,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11315,12 +11408,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>:0`, rtti
     #[doc(hidden)]
@@ -11344,7 +11437,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11356,12 +11450,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>:0`, rtti
     #[doc(hidden)]
@@ -11385,7 +11479,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterS
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11397,12 +11492,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>:0`, rtti
     #[doc(hidden)]
@@ -11426,7 +11521,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterT
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11438,12 +11534,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect, __field_48) == 0x48);
 
 /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemStaff`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemStaff`@0x0, `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard {
     /// +0x0 `vtbl:CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>:0`, rtti
     #[doc(hidden)]
@@ -11467,7 +11563,8 @@ pub struct CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterW
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11479,7 +11576,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInve
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard, __field_48) == 0x48);
 
 /// `CombatInventoryItemMelee`: size 0x38 (exact, medium); primary base `CombatInventoryItem`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.
@@ -11555,7 +11652,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemOneHandedBlock, f
 /// `CombatInventoryItemPotion`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemPotion {
     /// +0x0 `vtbl:CombatInventoryItemPotion:0`, rtti
     #[doc(hidden)]
@@ -11579,7 +11676,8 @@ pub struct CombatInventoryItemPotion {
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11591,7 +11689,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_20)
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemPotion, __field_48) == 0x48);
 
 /// `CombatInventoryItemRanged`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemComposite`.
 /// Evidence: field field_3C.
@@ -11636,7 +11734,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemRanged, field_3C)
 /// `CombatInventoryItemScroll`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemScroll {
     /// +0x0 `vtbl:CombatInventoryItemScroll:0`, rtti
     #[doc(hidden)]
@@ -11660,7 +11758,8 @@ pub struct CombatInventoryItemScroll {
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11672,7 +11771,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_20)
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemScroll, __field_48) == 0x48);
 
 /// `CombatInventoryItemShield`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItem`.
 /// Evidence: field field_30.
@@ -11712,7 +11811,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShield, field_30)
 /// `CombatInventoryItemShout`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemShout {
     /// +0x0 `vtbl:CombatInventoryItemShout:0`, rtti
     #[doc(hidden)]
@@ -11736,7 +11835,8 @@ pub struct CombatInventoryItemShout {
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11748,12 +11848,12 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_20) 
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemShout, __field_48) == 0x48);
 
 /// `CombatInventoryItemStaff`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItemMagic`.
 /// Evidence: field field_48.
 /// Bases: `CombatInventoryItemMagic`@0x0, `CombatInventoryItem`@0x0, `CombatObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CombatInventoryItemStaff {
     /// +0x0 `vtbl:CombatInventoryItemStaff:0`, rtti
     #[doc(hidden)]
@@ -11777,7 +11877,8 @@ pub struct CombatInventoryItemStaff {
     pub field_38: u64,
     pub unknown_40: [u8; 8],
     /// +0x48 `undefined8`, base CombatInventoryItemMagic
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -11789,7 +11890,7 @@ const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_20) 
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(CombatInventoryItemStaff, __field_48) == 0x48);
 
 /// `CombatInventoryItemTorch`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `CombatInventoryItem`.
 /// Evidence: field field_30.
@@ -12366,15 +12467,20 @@ pub struct CombatNavmeshSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12410,29 +12516,35 @@ pub struct CombatNavmeshSearch {
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, ctor store
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, ctor store
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, ctor store
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, ctor store
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, ctor store
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, ctor store
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 92],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearch>() == 0x240);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_4C) == 0x4C);
@@ -12447,12 +12559,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_130) == 0
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearch, __field_1E0) == 0x1E0);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>`: size 0x210 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: allocation sites (medium): {'528': 1}.
@@ -12464,15 +12576,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12508,18 +12625,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12543,11 +12666,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSe
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard>() == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -12562,12 +12685,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard, field_1F4) == 0x1F4);
@@ -12586,15 +12709,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12630,25 +12758,33 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
     /// +0x1F0 `undefined8`, ctor store
-    pub field_1F0: u64,
+    #[doc(hidden)]
+    pub __field_1F0: [u8; 8],
     /// +0x1F8 `undefined4`, ctor store
-    pub field_1F8: u32,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 4],
     pub unknown_1FC: [u8; 16],
     /// +0x20C `undefined8`, ctor store
     pub field_20C: u64,
@@ -12673,11 +12809,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_Combat
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard>() == 0x248);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -12692,15 +12828,15 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_20C) == 0x20C);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_214) == 0x214);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard, field_218) == 0x218);
@@ -12719,15 +12855,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12763,18 +12904,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12791,11 +12938,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSe
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard>() == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -12810,12 +12957,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
@@ -12831,15 +12978,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12875,18 +13027,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined8`, ctor store
     pub field_1E8: u64,
@@ -12903,11 +13061,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathi
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard>() == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -12922,12 +13080,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
@@ -12943,15 +13101,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -12987,18 +13150,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
@@ -13010,23 +13179,26 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_Combat
     /// +0x210 `undefined8`, ctor store
     pub field_210: u64,
     /// +0x218 `undefined8`, ctor store
-    pub field_218: u64,
+    #[doc(hidden)]
+    pub __field_218: [u8; 8],
     /// +0x220 `undefined2`, ctor store
-    pub field_220: u16,
+    #[doc(hidden)]
+    pub __field_220: [u8; 2],
     pub unknown_222: [u8; 1],
     /// +0x223 `undefined1`, ctor store
-    pub field_223: u8,
+    #[doc(hidden)]
+    pub __field_223: [u8; 1],
     pub unknown_224: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard>() == 0x228);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13041,19 +13213,19 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_218) == 0x218);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, field_223) == 0x223);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard, __field_223) == 0x223);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>`: size 0x278 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: allocation sites (medium): {'632': 1}.
@@ -13065,15 +13237,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13109,23 +13286,31 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
@@ -13161,11 +13346,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearch
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank>() == 0x278);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_4C) == 0x4C);
@@ -13180,14 +13365,14 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_210) == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank, field_218) == 0x218);
@@ -13211,15 +13396,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13255,18 +13445,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store (widths [4, 8])
     pub field_1E8: u32,
@@ -13282,23 +13478,26 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathin
     pub field_1FC: u32,
     pub unknown_200: [u8; 8],
     /// +0x208 `undefined8`, ctor store
-    pub field_208: u64,
+    #[doc(hidden)]
+    pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
-    pub field_210: u16,
+    #[doc(hidden)]
+    pub __field_210: [u8; 2],
     pub unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
-    pub field_213: u8,
+    #[doc(hidden)]
+    pub __field_213: [u8; 1],
     pub unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13313,21 +13512,21 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1F4) == 0x1F4);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_1FC) == 0x1FC);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_213) == 0x213);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __field_213) == 0x213);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>`: size 0x210 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: allocation sites (medium): {'528': 1}.
@@ -13339,15 +13538,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13383,18 +13587,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
@@ -13419,11 +13629,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchP
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13438,12 +13648,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
@@ -13463,15 +13673,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13507,18 +13722,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
     pub field_1F8: u64,
@@ -13526,23 +13747,26 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSea
     pub field_200: u32,
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
-    pub field_208: u64,
+    #[doc(hidden)]
+    pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
-    pub field_210: u16,
+    #[doc(hidden)]
+    pub __field_210: [u8; 2],
     pub unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
-    pub field_213: u8,
+    #[doc(hidden)]
+    pub __field_213: [u8; 1],
     pub unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13557,17 +13781,17 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_213) == 0x213);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __field_213) == 0x213);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>`: size 0x208 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: allocation sites (medium): {'520': 1}.
@@ -13579,15 +13803,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13623,18 +13852,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `float`, ctor store
     pub field_1E8: f32,
@@ -13657,11 +13892,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSear
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard>() == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13676,12 +13911,12 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
@@ -13700,15 +13935,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13744,23 +13984,31 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
@@ -13782,11 +14030,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_Combat
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13801,14 +14049,14 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_210) == 0x210);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard, field_218) == 0x218);
@@ -13826,15 +14074,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13870,37 +14123,46 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearc
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 76],
     /// +0x230 `undefined8`, ctor store
-    pub field_230: u64,
+    #[doc(hidden)]
+    pub __field_230: [u8; 8],
     /// +0x238 `undefined2`, ctor store
-    pub field_238: u16,
+    #[doc(hidden)]
+    pub __field_238: [u8; 2],
     pub unknown_23A: [u8; 1],
     /// +0x23B `undefined1`, ctor store
-    pub field_23B: u8,
+    #[doc(hidden)]
+    pub __field_23B: [u8; 1],
     pub unknown_23C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard>() == 0x240);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -13915,15 +14177,15 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_238) == 0x238);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, field_23B) == 0x23B);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_238) == 0x238);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard, __field_23B) == 0x23B);
 
 /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>`: size 0x230 (exact, medium); primary base `CombatNavmeshSearch`.
 /// Evidence: runtime: 0x230 at 1 allocation sites; agrees with the static allocation sites.
@@ -13935,15 +14197,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -13979,18 +14246,24 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 4],
     /// +0x1E8 `undefined4`, ctor store
     pub field_1E8: u32,
@@ -13998,9 +14271,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
     /// +0x1F0 `undefined8`, ctor store
     pub field_1F0: u64,
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
     pub field_208: u64,
@@ -14018,11 +14293,11 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathin
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard>() == 0x230);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -14037,16 +14312,16 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1E8) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, __field_200) == 0x200);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard, field_228) == 0x228);
@@ -14062,15 +14337,20 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSFastNavmeshTriLocation,BSFastNavmeshEdgeHandle,3>
@@ -14106,42 +14386,52 @@ pub struct CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSea
     pub field_168: u64,
     pub unknown_170: [u8; 64],
     /// +0x1B0 `undefined8`, base CombatNavmeshSearch
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     /// +0x1B8 `undefined8`, base CombatNavmeshSearch
-    pub field_1B8: u64,
+    #[doc(hidden)]
+    pub __field_1B8: [u8; 8],
     /// +0x1C0 `undefined4`, base CombatNavmeshSearch
-    pub field_1C0: u32,
+    #[doc(hidden)]
+    pub __field_1C0: [u8; 4],
     pub unknown_1C4: [u8; 12],
     /// +0x1D0 `undefined8`, base CombatNavmeshSearch
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     /// +0x1D8 `undefined8`, base CombatNavmeshSearch
-    pub field_1D8: u64,
+    #[doc(hidden)]
+    pub __field_1D8: [u8; 8],
     /// +0x1E0 `undefined4`, base CombatNavmeshSearch
-    pub field_1E0: u32,
+    #[doc(hidden)]
+    pub __field_1E0: [u8; 4],
     pub unknown_1E4: [u8; 20],
     /// +0x1F8 `undefined8`, ctor store
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, ctor store
     pub field_200: u32,
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, ctor store
-    pub field_208: u64,
+    #[doc(hidden)]
+    pub __field_208: [u8; 8],
     /// +0x210 `undefined2`, ctor store
-    pub field_210: u16,
+    #[doc(hidden)]
+    pub __field_210: [u8; 2],
     pub unknown_212: [u8; 1],
     /// +0x213 `undefined1`, ctor store
-    pub field_213: u8,
+    #[doc(hidden)]
+    pub __field_213: [u8; 1],
     pub unknown_214: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard>() == 0x218);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_4C) == 0x4C);
@@ -14156,17 +14446,17 @@ const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGo
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_160) == 0x160);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1D8) == 0x1D8);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1B8) == 0x1B8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1C0) == 0x1C0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1D8) == 0x1D8);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1E0) == 0x1E0);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_208) == 0x208);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, field_213) == 0x213);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard, __field_213) == 0x213);
 
 /// `CombatObject`: size 0x8 (exact, low); primary base `NiRefObject`.
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of CombatAimController at 0x8 (soft).
@@ -14429,116 +14719,4 @@ const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilder
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, medium); primary base `CombatPathBuilderOpen`.
-/// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
-/// Evidence: allocation sites (high): {'216': 2}.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
-/// Evidence: allocation sites (high): {'216': 2}.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard, field_50) == 0x50);
-
-/// `CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>`: size 0xD8 (exact, high); primary base `CombatPathBuilderOpen`.
-/// Evidence: allocation sites (high): {'216': 2}.
-/// Bases: `CombatPathBuilderOpen`@0x0, `CombatPathBuilder`@0x0, `IPathBuilder`@0x0.
-#[repr(C)]
-pub struct CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard {
-    /// +0x0 `vtbl:CombatPathBuilderT<CombatPathBuilderOpen,CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard_vtable,
-    /// +0x8 `undefined8`, base CombatPathBuilder
-    pub field_8: u64,
-    /// +0x10 `undefined8`, base CombatPathBuilder
-    pub field_10: u64,
-    pub unknown_18: [u8; 48],
-    /// +0x48 `undefined8`, base CombatPathBuilder
-    pub field_48: u64,
-    /// +0x50 `undefined8`, base CombatPathBuilderOpen
-    pub field_50: u64,
-    pub unknown_58: [u8; 128],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard>() == 0xD8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(CombatPathBuilderT_CombatPathBuilderOpen_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard, field_50) == 0x50);
 

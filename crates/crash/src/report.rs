@@ -47,6 +47,13 @@ pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&
     let _ = crate::papyrus::write(w, &ctx);
 }
 
+fn first_chance(w: &mut dyn Write, rec: &Record) -> fmt::Result {
+    if rec.first_chance > 0 {
+        writeln!(w, "first-chance error exceptions seen earlier in this session: {}", rec.first_chance)?;
+    }
+    Ok(())
+}
+
 fn wide(w: &mut dyn Write, units: &[u16]) -> fmt::Result {
     let end = units.iter().position(|&u| u == 0).unwrap_or(units.len());
     for c in char::decode_utf16(units[..end].iter().copied()) {
@@ -81,6 +88,10 @@ fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>)
         wide(w, log)?;
         writeln!(w)?;
     }
+    if !skse::runtime::is_canonical(rec.runtime) {
+        writeln!(w, "game state, object details and the Papyrus stack: off on this runtime, they read 1.7.104's layouts; functions, vtables and globals are named through their ids")?;
+        return first_chance(w, rec);
+    }
     let game = &rec.game;
     w.write_str("game state: ")?;
     if game.frame_known != 0 {
@@ -106,10 +117,7 @@ fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>)
         w.write_str(", player not in a cell")?;
     }
     writeln!(w)?;
-    if rec.first_chance > 0 {
-        writeln!(w, "first-chance error exceptions seen earlier in this session: {}", rec.first_chance)?;
-    }
-    Ok(())
+    first_chance(w, rec)
 }
 
 fn loader(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
@@ -636,5 +644,28 @@ fn culprit(w: &mut dyn Write, ctx: &Context<'_>, culprit: rules::Culprit, seen: 
             }
         }
         rules::Culprit::FreedImage => write!(w, "whoever kept a pointer into the unloaded generation of {}, or that plugin for handing it out", seen.freed_plugin()),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    fn report(runtime: u32) -> String {
+        let mut rec = Box::new(Record::ZERO);
+        rec.runtime = runtime;
+        rec.exe_base = 0x1000;
+        let mut out = String::new();
+        write(&mut out, &rec, &crate::mem::Live, None, None);
+        out
+    }
+
+    #[test]
+    fn a_runtime_other_than_canonical_says_what_is_off() {
+        let log = report(skse::runtime::pack(1, 5, 97, 0));
+        assert!(log.contains("game 1.5.97.0, SkyrimSE.exe at 0x1000"), "{log}");
+        assert!(log.contains("game state, object details and the Papyrus stack: off on this runtime"), "{log}");
+        assert!(log.contains("not read on this runtime: its anchors and layouts are 1.7.104's"), "{log}");
+        assert!(!log.contains("no save loaded"), "{log}");
     }
 }

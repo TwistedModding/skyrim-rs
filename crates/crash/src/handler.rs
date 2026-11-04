@@ -62,6 +62,7 @@ static NEXT_FILTER: AtomicUsize = AtomicUsize::new(0);
 static FIRST_CHANCE: AtomicU32 = AtomicU32::new(0);
 static START: AtomicUsize = AtomicUsize::new(0);
 static RUNTIME: AtomicU32 = AtomicU32::new(0);
+static GAME_VERSION: AtomicU32 = AtomicU32::new(0);
 static SYMBOLS: AtomicU32 = AtomicU32::new(0);
 static SYMBOL_MISMATCHES: AtomicU32 = AtomicU32::new(0);
 
@@ -127,6 +128,7 @@ pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> 
     SYMBOLS.store(mode as u32, Ordering::Release);
     SYMBOL_MISMATCHES.store(mismatches, Ordering::Release);
     RUNTIME.store(options.runtime_version, Ordering::Release);
+    GAME_VERSION.store(skse::runtime::running().unwrap_or(0), Ordering::Release);
     START.store(usize::try_from(unsafe { GetTickCount64() }).unwrap_or(0), Ordering::Release);
     MAIN_THREAD.store(unsafe { GetCurrentThreadId() }, Ordering::Release);
     let mut tid = 0u32;
@@ -301,7 +303,7 @@ fn report() {
     }
 
     live::fill_threads(rec, (snapshot.thread, &snapshot.context), WATCHDOG.load(Ordering::Acquire));
-    live::fill_versions(rec, unsafe { VERSION_INFO.get() });
+    live::fill_versions(rec, unsafe { VERSION_INFO.get() }, GAME_VERSION.load(Ordering::Acquire));
     let log = create(log_path);
     if log == INVALID_HANDLE_VALUE {
         return;

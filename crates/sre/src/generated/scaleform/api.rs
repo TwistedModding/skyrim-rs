@@ -57,9 +57,303 @@ impl core::ops::Deref for crate::ScaleformFile__MemoryFile {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::GFxExternalInterface {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxExternalInterface.field_11", 0x11, u8) } }
+    /// `GFxExternalInterface::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxExternalInterface.field_12", 0x12, u16) } }
+    /// `GFxExternalInterface::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxExternalInterface.field_BC", 0xBC, u32) } }
+    /// `GFxExternalInterface::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxFileOpenerBase {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxFileOpenerBase.field_11", 0x11, u8) } }
+    /// `GFxFileOpenerBase::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxFileOpenerBase.field_12", 0x12, u16) } }
+    /// `GFxFileOpenerBase::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxFileOpenerBase.field_BC", 0xBC, u32) } }
+    /// `GFxFileOpenerBase::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxImageLoader {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxImageLoader.field_11", 0x11, u8) } }
+    /// `GFxImageLoader::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxImageLoader.field_12", 0x12, u16) } }
+    /// `GFxImageLoader::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxImageLoader.field_BC", 0xBC, u32) } }
+    /// `GFxImageLoader::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
 impl crate::GFxLog {
     /// The `GFxLogBase<GFxLog>` base at +0x18.
     #[inline]
     pub fn as_g_fx_log_base_g_fx_log(&self) -> &crate::GFxLogBase_GFxLog { unsafe { &*core::ptr::from_ref(self).byte_add(0x18).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxLog.field_11", 0x11, u8) } }
+    /// `GFxLog::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxLog.field_12", 0x12, u16) } }
+    /// `GFxLog::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxLog.field_BC", 0xBC, u32) } }
+    /// `GFxLog::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxState.field_11", 0x11, u8) } }
+    /// `GFxState::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxState.field_12", 0x12, u16) } }
+    /// `GFxState::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxState.field_BC", 0xBC, u32) } }
+    /// `GFxState::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxTranslator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxTranslator.field_11", 0x11, u8) } }
+    /// `GFxTranslator::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxTranslator.field_12", 0x12, u16) } }
+    /// `GFxTranslator::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxTranslator.field_BC", 0xBC, u32) } }
+    /// `GFxTranslator::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxZlibSupport {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxZlibSupport.field_11", 0x11, u8) } }
+    /// `GFxZlibSupport::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxZlibSupport.field_12", 0x12, u16) } }
+    /// `GFxZlibSupport::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxZlibSupport.field_BC", 0xBC, u32) } }
+    /// `GFxZlibSupport::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::GFxZlibSupportBase {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "GFxZlibSupportBase.field_11", 0x11, u8) } }
+    /// `GFxZlibSupportBase::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "GFxZlibSupportBase.field_12", 0x12, u16) } }
+    /// `GFxZlibSupportBase::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxZlibSupportBase.field_BC", 0xBC, u32) } }
+    /// `GFxZlibSupportBase::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+}
+
+impl crate::ScaleformFile__MemoryFile {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "ScaleformFile::MemoryFile.field_11", 0x11, u8) } }
+    /// `ScaleformFile::MemoryFile::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "ScaleformFile::MemoryFile.field_12", 0x12, u16) } }
+    /// `ScaleformFile::MemoryFile::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "ScaleformFile::MemoryFile.field_BC", 0xBC, u32) } }
+    /// `ScaleformFile::MemoryFile::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
 }
 

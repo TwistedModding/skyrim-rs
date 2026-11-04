@@ -37,19 +37,8 @@ pub struct HkQsTransform {
 
 const _: () = assert!(size_of::<HkQsTransform>() == 0x30);
 
-/// One entry of a graph's bone node array: the node and its index in the flattened tree.
-#[repr(C)]
-#[derive(Clone, Copy, Debug)]
-pub struct BoneNodeEntry {
-    pub node: *mut NiAVObject,
-    pub index: u32,
-    pub padding: u32,
-}
+pub use sre::BoneNodeEntry;
 
-const _: () = assert!(size_of::<BoneNodeEntry>() == 0x10);
-
-/// `hkbFootIkDriver`'s disabled byte (`SetDisabled`, id 58428).
-const FOOT_IK_DISABLED: usize = 0x4a;
 
 /// Creates, disabled, a post-hook target on `ApplyPoseToBoneNodes`; store it, then
 /// [`hook::Hook::enable`]. The detour runs on a job worker thread while the main thread draws:
@@ -58,7 +47,7 @@ const FOOT_IK_DISABLED: usize = 0x4a;
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_apply_pose(detour: ApplyPoseFn) -> Result<hook::Hook<ApplyPoseFn>, hook::Error> {
-    unsafe { hook::Hook::create(crate::reloc().address(fns::ApplyPoseToBoneNodes)?, detour) }
+    unsafe { hook::Hook::create(crate::reloc().address(sre::id!(fns::ApplyPoseToBoneNodes))?, detour) }
 }
 
 /// Creates, disabled, a detour on `PlayerCharacter::UpdateNodesAfterRender` (id 40522): the world
@@ -67,7 +56,7 @@ pub unsafe fn hook_apply_pose(detour: ApplyPoseFn) -> Result<hook::Hook<ApplyPos
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_update_nodes_after_render(detour: UpdateNodesAfterRenderFn) -> Result<hook::Hook<UpdateNodesAfterRenderFn>, hook::Error> {
-    unsafe { hook::Hook::create(crate::reloc().address(fns::PlayerCharacter__UpdateNodesAfterRender)?, detour) }
+    unsafe { hook::Hook::create(crate::reloc().address(sre::id!(fns::PlayerCharacter__UpdateNodesAfterRender))?, detour) }
 }
 
 /// The event source of a reference's graph through `TESObjectREFR::GetAnimationGraphEventSource`:
@@ -128,7 +117,7 @@ impl BSAnimationGraphManagerExt for BSAnimationGraphManager {
     }
 
     fn active_graph(&self) -> Option<&BShkbAnimationGraph> {
-        self.graphs().get(self.activeGraph as usize).copied().flatten()
+        self.graphs().get(self.activeGraph() as usize).copied().flatten()
     }
 
     fn set_foot_ik_disabled(&self, disabled: bool) {
@@ -171,11 +160,12 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
         if nodes.data.is_null() || nodes.size == 0 {
             return &[];
         }
+        sre::fixed_size!("BoneNodeEntry", BoneNodeEntry);
         unsafe { core::slice::from_raw_parts(nodes.data.cast::<BoneNodeEntry>(), nodes.size as usize) }
     }
 
     fn bone_node(&self, i: usize) -> Option<&NiAVObject> {
-        unsafe { self.bone_nodes().get(i)?.node.as_ref() }
+        self.bone_nodes().get(i)?.node()
     }
 
     fn pose_local(&self) -> &[HkQsTransform] {
@@ -183,6 +173,8 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
         if c.poseLocal.is_null() || c.numPoseLocal == 0 {
             return &[];
         }
+        sre::fixed_size!("hkQsTransform", HkQsTransform);
+        assert!(sre::member_offset!("hkQsTransform.rotation", 0x10) == 0x10 && sre::member_offset!("hkQsTransform.scale", 0x20) == 0x20, "hkQsTransform's members moved");
         unsafe { core::slice::from_raw_parts(c.poseLocal.cast::<HkQsTransform>(), c.numPoseLocal as usize) }
     }
 
@@ -191,7 +183,7 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
         if setup.is_null() {
             return None;
         }
-        let skeleton = unsafe { setup.add(0x20).cast::<*const sre::hkaSkeleton>().read_unaligned() };
+        let skeleton = unsafe { setup.add(sre::member_offset!("hkbCharacterSetup.m_hkpRayShapeCollectionFilter_20", 0x20)).cast::<*const sre::hkaSkeleton>().read_unaligned() };
         unsafe { skeleton.as_ref() }.map(|s| s.boneCount)
     }
 
@@ -201,7 +193,8 @@ impl BShkbAnimationGraphExt for BShkbAnimationGraph {
 
     fn foot_ik_disabled(&self) -> Option<bool> {
         let driver = self.character.footIkDriver.cast::<u8>();
-        (!driver.is_null()).then(|| unsafe { driver.add(FOOT_IK_DISABLED).read() } != 0)
+        // The disabled byte (`SetDisabled`, id 58428) is the third of the ledger's `field_48`.
+        (!driver.is_null()).then(|| unsafe { driver.add(sre::member_offset!("hkbFootIkDriver.field_48", 0x48) + 2).read() } != 0)
     }
 }
 
@@ -238,7 +231,7 @@ pub fn face_channel_names(channel: FaceChannel) -> Vec<String> {
 #[must_use]
 pub fn face_data(actor: &Actor) -> Option<&BSFaceGenAnimationData> {
     type GetFn = unsafe extern "C" fn(*const Actor) -> *const BSFaceGenAnimationData;
-    let get: GetFn = unsafe { core::mem::transmute(sre::vtable_entry(actor, 99)) };
+    let get: GetFn = unsafe { core::mem::transmute(sre::vtable_entry(actor, sre::slot_index!("Actor", 0x0, 99))) };
     unsafe { get(actor).as_ref() }
 }
 
@@ -280,8 +273,8 @@ impl BSFaceGenAnimationDataExt for BSFaceGenAnimationData {
     fn set_inputs(&self, phonemes: &[f32], modifiers: &[f32]) {
         let lock = &raw const self.lock;
         let _guard = crate::spin::SpinGuard::lock(unsafe { &*lock });
-        write_values(&raw const self.phonemeInput, phonemes);
-        write_values(&raw const self.modifierInput, modifiers);
+        write_values(self.phonemeInput_ptr().cast_const(), phonemes);
+        write_values(self.modifierInput_ptr().cast_const(), modifiers);
     }
 
     fn set_expression_override(&self, expression: i32, weight: f32) {

@@ -82,9 +82,9 @@ impl Menu for TestMenu {
     }
 
     fn process_message(&mut self, base: &mut MenuBase, message: &UIMessage) -> UIMessageResult {
-        match MessageType::from_raw(message.type_) {
-            Some(MessageType::Show) => SHOWN.fetch_add(1, Ordering::Relaxed),
-            Some(MessageType::Hide) => HIDDEN.fetch_add(1, Ordering::Relaxed),
+        match MessageType::from_engine(message.type_) {
+            Some(MessageType::show) => SHOWN.fetch_add(1, Ordering::Relaxed),
+            Some(MessageType::hide) => HIDDEN.fetch_add(1, Ordering::Relaxed),
             _ => 0,
         };
         base.default_process_message(message)

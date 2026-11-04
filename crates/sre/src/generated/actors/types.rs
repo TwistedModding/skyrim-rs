@@ -6,7 +6,7 @@ use core::ffi::c_void;
 /// `AIProcess`: size 0x140 (exact).
 /// Meaning: AI process of an actor; null for actors without AI (high, actors pass).
 /// Evidence: AI process of an actor; null for actors without AI; allocated with 0x140 at 0x6af862 in Actor::ctor_sub0 (2,558 allocations in run-actors, one per Actor::ctor), constructed by 0x6e66a0 and stored at Actor+0xf8; 0x720660 reads the middle-high data at +8, 0x6eb4a0/0x6eb4b0 the equipped objects at +0xf0/+0xf8, Actor::IsAlerted_Impl bit 3 of the byte at +0x136; live process.bin.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct AIProcess {
     pub unknown_0: [u8; 8],
     /// +0x8 `ptr:MiddleHighProcessData`, semantic; middle-high process data (high)
@@ -18,7 +18,8 @@ pub struct AIProcess {
     pub equippedRight: *mut crate::TESForm,
     pub unknown_100: [u8; 54],
     /// +0x136 `undefined1`, semantic; process flags; bit 3 alerted (medium)
-    pub flags: u8,
+    #[doc(hidden)]
+    pub __flags: [u8; 1],
     pub unknown_137: [u8; 9],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -27,13 +28,13 @@ const _: () = assert!(size_of::<AIProcess>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(AIProcess, middleHigh) == 0x8);
 const _: () = assert!(core::mem::offset_of!(AIProcess, equippedLeft) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(AIProcess, equippedRight) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(AIProcess, flags) == 0x136);
+const _: () = assert!(core::mem::offset_of!(AIProcess, __flags) == 0x136);
 
 /// `Actor`: size 0x2B8 (exact, medium); primary base `TESObjectREFR`.
 /// Meaning: reference with AI, actor values, inventory and state; Character and PlayerCharacter derive from it (high, actors pass).
 /// Evidence: lower bound Character (size 0x2B8 at 0x0) adds no fields or bases meets upper bound derived Character size 0x2B8 at 0x0.
 /// Bases: `TESObjectREFR`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38, `MagicTarget`@0xA0, `ActorValueOwner`@0xB8, `ActorState`@0xC0, `IMovementState`@0xC0, `IMovementInterface`@0xC0, `BSTEventSink<BSTransformDeltaEvent>`@0xD0, `BSTEventSink<bhkCharacterMoveFinishEvent>`@0xD8, `IPostAnimationChannelUpdateFunctor`@0xE0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct Actor {
     /// +0x0 `vtbl:Actor:0`, rtti
     #[doc(hidden)]
@@ -82,105 +83,138 @@ pub struct Actor {
     /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
     pub extraList: crate::BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
-    pub refScale: u16,
+    #[doc(hidden)]
+    pub __refScale: [u8; 2],
     /// +0x9A `undefined1`, base TESObjectREFR
-    pub field_9A: u8,
+    #[doc(hidden)]
+    pub __field_9A: [u8; 1],
     /// +0x9B `undefined1`, base TESObjectREFR
-    pub field_9B: u8,
+    #[doc(hidden)]
+    pub __field_9B: [u8; 1],
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Actor:A0`, rtti
     #[doc(hidden)]
-    pub __vftable_A0: *const crate::raw::vtables::Actor_vtable_A0,
+    pub ____vftable_A0: [u8; 8],
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined1`, ctor store
-    pub field_B0: u8,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 1],
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Actor:B8`, rtti
     #[doc(hidden)]
-    pub __vftable_B8: *const crate::raw::vtables::Actor_vtable_B8,
+    pub ____vftable_B8: [u8; 8],
     /// +0xC0 `vtbl:Actor:C0`, rtti
     #[doc(hidden)]
-    pub __vftable_C0: *const crate::raw::vtables::Actor_vtable_C0,
+    pub ____vftable_C0: [u8; 8],
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
-    pub flags1: u32,
+    #[doc(hidden)]
+    pub __flags1: [u8; 4],
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
-    pub flags2: u32,
+    #[doc(hidden)]
+    pub __flags2: [u8; 4],
     /// +0xD0 `vtbl:Actor:D0`, rtti
     #[doc(hidden)]
-    pub __vftable_D0: *const crate::raw::vtables::Actor_vtable_D0,
+    pub ____vftable_D0: [u8; 8],
     /// +0xD8 `vtbl:Actor:D8`, rtti
     #[doc(hidden)]
-    pub __vftable_D8: *const crate::raw::vtables::Actor_vtable_D8,
+    pub ____vftable_D8: [u8; 8],
     /// +0xE0 `vtbl:Actor:E0`, rtti
     #[doc(hidden)]
-    pub __vftable_E0: *const crate::raw::vtables::Actor_vtable_E0,
+    pub ____vftable_E0: [u8; 8],
     /// +0xE8 `undefined4`, semantic, runtime; actor flags; see the flag rows (high)
-    pub boolFlags: u32,
+    #[doc(hidden)]
+    pub __boolFlags: [u8; 4],
     pub unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, semantic, runtime; the AI process; null for actors without AI (high)
-    pub currentProcess: *mut crate::AIProcess,
+    #[doc(hidden)]
+    pub __currentProcess: [u8; 8],
     /// +0x100 `undefined4`, semantic; handle of the dialogue target (medium)
-    pub dialogueTargetHandle: u32,
+    #[doc(hidden)]
+    pub __dialogueTargetHandle: [u8; 4],
     /// +0x104 `undefined4`, semantic; handle of the combat target (medium)
-    pub combatTargetHandle: u32,
+    #[doc(hidden)]
+    pub __combatTargetHandle: [u8; 4],
     /// +0x108 `undefined4`, ctor store
-    pub field_108: u32,
+    #[doc(hidden)]
+    pub __field_108: [u8; 4],
     pub unknown_10C: [u8; 28],
     /// +0x128 `undefined8`, ctor store
-    pub field_128: u64,
+    #[doc(hidden)]
+    pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, ctor store
-    pub field_130: u32,
+    #[doc(hidden)]
+    pub __field_130: [u8; 4],
     pub unknown_134: [u8; 28],
     /// +0x150 `ptr:MovementControllerNPC`, ctor store, semantic, runtime; movement controller (medium)
-    pub movementController: *mut crate::MovementControllerNPC,
+    #[doc(hidden)]
+    pub __movementController: [u8; 8],
     pub unknown_158: [u8; 8],
     /// +0x160 `pointer`, semantic, runtime; combat controller; null out of combat (medium)
-    pub combatController: *mut c_void,
+    #[doc(hidden)]
+    pub __combatController: [u8; 8],
     pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, ctor store
-    pub field_170: u32,
+    #[doc(hidden)]
+    pub __field_170: [u8; 4],
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, ctor store
-    pub field_190: u32,
+    #[doc(hidden)]
+    pub __field_190: [u8; 4],
     pub unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
-    pub magicCasters: [u8; 32],
+    #[doc(hidden)]
+    pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
-    pub selectedSpells: [u8; 32],
+    #[doc(hidden)]
+    pub __selectedSpells: [u8; 32],
     pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, ctor store
-    pub field_1F0: u32,
+    #[doc(hidden)]
+    pub __field_1F0: [u8; 4],
     pub unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, semantic, runtime; the actor's race (high)
-    pub race: *mut crate::TESRace,
+    #[doc(hidden)]
+    pub __race: [u8; 8],
     pub unknown_200: [u8; 4],
     /// +0x204 `undefined4`, semantic, runtime; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
-    pub boolFlags2: u32,
+    #[doc(hidden)]
+    pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, semantic, runtime; cache and modifiers of the sparse actor values (high)
-    pub avStorage: crate::ActorValueStorage,
+    #[doc(hidden)]
+    pub __avStorage: [u8; 32],
     pub unknown_228: [u8; 8],
     /// +0x230 `undefined12`, semantic, runtime; float[3] modifiers of Health: permanent, temporary, damage (high)
-    pub healthModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __healthModifiers: [u8; 12],
     /// +0x23C `undefined12`, semantic, runtime; float[3] modifiers of Magicka (high)
-    pub magickaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __magickaModifiers: [u8; 12],
     /// +0x248 `undefined12`, semantic, runtime; float[3] modifiers of Stamina (high)
-    pub staminaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __staminaModifiers: [u8; 12],
     /// +0x254 `undefined12`, semantic; float[3] modifiers of VoicePoints (high)
-    pub voicePointsModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __voicePointsModifiers: [u8; 12],
     pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, ctor store
-    pub field_268: u64,
+    #[doc(hidden)]
+    pub __field_268: [u8; 8],
     pub unknown_270: [u8; 16],
     /// +0x280 `undefined8`, ctor store
-    pub field_280: u64,
+    #[doc(hidden)]
+    pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, ctor store
-    pub field_288: u32,
+    #[doc(hidden)]
+    pub __field_288: [u8; 4],
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, semantic; CRITICAL_SECTION (high)
-    pub criticalSection: [u8; 40],
+    #[doc(hidden)]
+    pub __criticalSection: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -205,45 +239,45 @@ const _: () = assert!(core::mem::offset_of!(Actor, posZ) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(Actor, parentCell) == 0x60);
 const _: () = assert!(core::mem::offset_of!(Actor, loadedData) == 0x68);
 const _: () = assert!(core::mem::offset_of!(Actor, extraList) == 0x70);
-const _: () = assert!(core::mem::offset_of!(Actor, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Actor, refScale) == 0x98);
-const _: () = assert!(core::mem::offset_of!(Actor, field_9A) == 0x9A);
-const _: () = assert!(core::mem::offset_of!(Actor, field_9B) == 0x9B);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(Actor, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(Actor, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(Actor, flags1) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(Actor, flags2) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(Actor, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Actor, boolFlags) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(Actor, currentProcess) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(Actor, dialogueTargetHandle) == 0x100);
-const _: () = assert!(core::mem::offset_of!(Actor, combatTargetHandle) == 0x104);
-const _: () = assert!(core::mem::offset_of!(Actor, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(Actor, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(Actor, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(Actor, movementController) == 0x150);
-const _: () = assert!(core::mem::offset_of!(Actor, combatController) == 0x160);
-const _: () = assert!(core::mem::offset_of!(Actor, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(Actor, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(Actor, magicCasters) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(Actor, selectedSpells) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(Actor, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(Actor, race) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(Actor, boolFlags2) == 0x204);
-const _: () = assert!(core::mem::offset_of!(Actor, avStorage) == 0x208);
-const _: () = assert!(core::mem::offset_of!(Actor, healthModifiers) == 0x230);
-const _: () = assert!(core::mem::offset_of!(Actor, magickaModifiers) == 0x23C);
-const _: () = assert!(core::mem::offset_of!(Actor, staminaModifiers) == 0x248);
-const _: () = assert!(core::mem::offset_of!(Actor, voicePointsModifiers) == 0x254);
-const _: () = assert!(core::mem::offset_of!(Actor, field_268) == 0x268);
-const _: () = assert!(core::mem::offset_of!(Actor, field_280) == 0x280);
-const _: () = assert!(core::mem::offset_of!(Actor, field_288) == 0x288);
-const _: () = assert!(core::mem::offset_of!(Actor, criticalSection) == 0x290);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(Actor, __refScale) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_9A) == 0x9A);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_9B) == 0x9B);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(Actor, __flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(Actor, __flags2) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(Actor, ____vftable_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(Actor, __boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(Actor, __currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(Actor, __dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Actor, __combatTargetHandle) == 0x104);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(Actor, __movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Actor, __combatController) == 0x160);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(Actor, __magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(Actor, __selectedSpells) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(Actor, __race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(Actor, __boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(Actor, __avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(Actor, __healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(Actor, __magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(Actor, __staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(Actor, __voicePointsModifiers) == 0x254);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_268) == 0x268);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_280) == 0x280);
+const _: () = assert!(core::mem::offset_of!(Actor, __field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(Actor, __criticalSection) == 0x290);
 
 /// `ActorState`: size 0x10 (exact, medium); primary base `IMovementState`.
 /// Meaning: movement and weapon state bits of an actor (high, actors pass).
@@ -270,7 +304,7 @@ const _: () = assert!(core::mem::offset_of!(ActorState, flags2) == 0xC);
 /// Meaning: AVIF form describing one actor value (high, actors pass).
 /// Evidence: runtime: 0x128 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x20, `BaseFormComponent`@0x20, `TESDescription`@0x30, `BaseFormComponent`@0x30, `TESIcon`@0x40, `TESTexture`@0x40, `BaseFormComponent`@0x40.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ActorValueInfo {
     /// +0x0 `vtbl:ActorValueInfo:0`, rtti
     #[doc(hidden)]
@@ -311,35 +345,50 @@ pub struct ActorValueInfo {
     /// +0x70 `undefined4`, ctor store
     pub field_70: u32,
     /// +0x74 `undefined4`, ctor store
-    pub field_74: u32,
+    #[doc(hidden)]
+    pub __field_74: [u8; 4],
     /// +0x78 `undefined4`, ctor store
-    pub field_78: u32,
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
     /// +0x7C `undefined4`, ctor store
-    pub field_7C: u32,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 4],
     /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    #[doc(hidden)]
+    pub __field_80: [u8; 4],
     /// +0x84 `undefined4`, ctor store
-    pub field_84: u32,
+    #[doc(hidden)]
+    pub __field_84: [u8; 4],
     /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     /// +0x8C `undefined4`, ctor store
-    pub field_8C: u32,
+    #[doc(hidden)]
+    pub __field_8C: [u8; 4],
     /// +0x90 `undefined4`, ctor store
-    pub field_90: u32,
+    #[doc(hidden)]
+    pub __field_90: [u8; 4],
     /// +0x94 `undefined4`, ctor store
-    pub field_94: u32,
+    #[doc(hidden)]
+    pub __field_94: [u8; 4],
     /// +0x98 `undefined4`, ctor store
-    pub field_98: u32,
+    #[doc(hidden)]
+    pub __field_98: [u8; 4],
     /// +0x9C `undefined4`, ctor store
-    pub field_9C: u32,
+    #[doc(hidden)]
+    pub __field_9C: [u8; 4],
     /// +0xA0 `undefined4`, ctor store
-    pub field_A0: u32,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 4],
     /// +0xA4 `undefined4`, ctor store
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, ctor store
-    pub field_A8: u32,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 4],
     /// +0xAC `undefined4`, ctor store
-    pub field_AC: u32,
+    #[doc(hidden)]
+    pub __field_AC: [u8; 4],
     /// +0xB0 `undefined4`, ctor store
     pub field_B0: u32,
     pub unknown_B4: [u8; 4],
@@ -388,21 +437,21 @@ const _: () = assert!(core::mem::offset_of!(ActorValueInfo, name) == 0x50);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, flags) == 0x60);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_AC) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(ActorValueInfo, __field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(ActorValueInfo, field_C0) == 0xC0);
@@ -507,21 +556,24 @@ const _: () = assert!(core::mem::offset_of!(BSHandleRefObject, refCount) == 0x8)
 pub struct BaseExtraList {
     /// +0x0 `vtbl:BaseExtraList:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BaseExtraList_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `ptr:BSExtraData`, ctor store, semantic, runtime; first extra data node (high)
-    pub head: *mut crate::BSExtraData,
+    #[doc(hidden)]
+    pub __head: [u8; 8],
     /// +0x10 `pointer`, ctor store, semantic, runtime; 0x17-byte bitfield of present types; null when empty (high)
-    pub presence: *mut c_void,
+    #[doc(hidden)]
+    pub __presence: [u8; 8],
     /// +0x18 `class:BSReadWriteLock`, semantic, runtime; lock of the list (high)
-    pub lock: crate::BSReadWriteLock,
+    #[doc(hidden)]
+    pub __lock: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BaseExtraList>() == 0x20);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, head) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, presence) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BaseExtraList, lock) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, __head) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, __presence) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BaseExtraList, __lock) == 0x18);
 
 /// `Character`: size 0x2B8 (exact, high); primary base `Actor`.
 /// Meaning: NPC actor (ACHR); adds nothing to Actor (high, actors pass).
@@ -577,115 +629,152 @@ pub struct Character {
     /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
     pub extraList: crate::BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
-    pub refScale: u16,
+    #[doc(hidden)]
+    pub __refScale: [u8; 2],
     /// +0x9A `undefined1`, base TESObjectREFR
-    pub field_9A: u8,
+    #[doc(hidden)]
+    pub __field_9A: [u8; 1],
     /// +0x9B `undefined1`, base TESObjectREFR
-    pub field_9B: u8,
+    #[doc(hidden)]
+    pub __field_9B: [u8; 1],
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:Character:A0`, rtti
     #[doc(hidden)]
-    pub __vftable_A0: *const crate::raw::vtables::Character_vtable_A0,
+    pub ____vftable_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Actor
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined1`, base Actor
-    pub field_B0: u8,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 1],
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:Character:B8`, rtti
     #[doc(hidden)]
-    pub __vftable_B8: *const crate::raw::vtables::Character_vtable_B8,
+    pub ____vftable_B8: [u8; 8],
     /// +0xC0 `vtbl:Character:C0`, rtti
     #[doc(hidden)]
-    pub __vftable_C0: *const crate::raw::vtables::Character_vtable_C0,
+    pub ____vftable_C0: [u8; 8],
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
-    pub flags1: u32,
+    #[doc(hidden)]
+    pub __flags1: [u8; 4],
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
-    pub flags2: u32,
+    #[doc(hidden)]
+    pub __flags2: [u8; 4],
     /// +0xD0 `vtbl:Character:D0`, rtti
     #[doc(hidden)]
-    pub __vftable_D0: *const crate::raw::vtables::Character_vtable_D0,
+    pub ____vftable_D0: [u8; 8],
     /// +0xD8 `vtbl:Character:D8`, rtti
     #[doc(hidden)]
-    pub __vftable_D8: *const crate::raw::vtables::Character_vtable_D8,
+    pub ____vftable_D8: [u8; 8],
     /// +0xE0 `vtbl:Character:E0`, rtti
     #[doc(hidden)]
-    pub __vftable_E0: *const crate::raw::vtables::Character_vtable_E0,
+    pub ____vftable_E0: [u8; 8],
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
-    pub boolFlags: u32,
+    #[doc(hidden)]
+    pub __boolFlags: [u8; 4],
     pub unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
-    pub currentProcess: *mut crate::AIProcess,
+    #[doc(hidden)]
+    pub __currentProcess: [u8; 8],
     /// +0x100 `undefined4`, base Actor, semantic; handle of the dialogue target (medium)
-    pub dialogueTargetHandle: u32,
+    #[doc(hidden)]
+    pub __dialogueTargetHandle: [u8; 4],
     /// +0x104 `undefined4`, base Actor, semantic; handle of the combat target (medium)
-    pub combatTargetHandle: u32,
+    #[doc(hidden)]
+    pub __combatTargetHandle: [u8; 4],
     /// +0x108 `undefined4`, base Actor
-    pub field_108: u32,
+    #[doc(hidden)]
+    pub __field_108: [u8; 4],
     pub unknown_10C: [u8; 12],
     /// +0x118 `undefined4`, ctor store
-    pub field_118: u32,
+    #[doc(hidden)]
+    pub __field_118: [u8; 4],
     pub unknown_11C: [u8; 12],
     /// +0x128 `undefined8`, base Actor
-    pub field_128: u64,
+    #[doc(hidden)]
+    pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, base Actor
-    pub field_130: u32,
+    #[doc(hidden)]
+    pub __field_130: [u8; 4],
     pub unknown_134: [u8; 28],
     /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
-    pub movementController: *mut crate::MovementControllerNPC,
+    #[doc(hidden)]
+    pub __movementController: [u8; 8],
     pub unknown_158: [u8; 8],
     /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
-    pub combatController: *mut c_void,
+    #[doc(hidden)]
+    pub __combatController: [u8; 8],
     pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
-    pub field_170: u32,
+    #[doc(hidden)]
+    pub __field_170: [u8; 4],
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
-    pub field_190: u32,
+    #[doc(hidden)]
+    pub __field_190: [u8; 4],
     pub unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
-    pub magicCasters: [u8; 32],
+    #[doc(hidden)]
+    pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
-    pub selectedSpells: [u8; 32],
+    #[doc(hidden)]
+    pub __selectedSpells: [u8; 32],
     pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
-    pub field_1F0: u32,
+    #[doc(hidden)]
+    pub __field_1F0: [u8; 4],
     pub unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
-    pub race: *mut crate::TESRace,
+    #[doc(hidden)]
+    pub __race: [u8; 8],
     pub unknown_200: [u8; 4],
     /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
-    pub boolFlags2: u32,
+    #[doc(hidden)]
+    pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
-    pub avStorage: crate::ActorValueStorage,
+    #[doc(hidden)]
+    pub __avStorage: [u8; 32],
     pub unknown_228: [u8; 8],
     /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
-    pub healthModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __healthModifiers: [u8; 12],
     /// +0x23C `undefined12`, base Actor, semantic; float[3] modifiers of Magicka (high)
-    pub magickaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __magickaModifiers: [u8; 12],
     /// +0x248 `undefined12`, base Actor, semantic; float[3] modifiers of Stamina (high)
-    pub staminaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __staminaModifiers: [u8; 12],
     /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
-    pub voicePointsModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __voicePointsModifiers: [u8; 12],
     pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
-    pub field_268: u64,
+    #[doc(hidden)]
+    pub __field_268: [u8; 8],
     /// +0x270 `undefined4`, ctor store
-    pub field_270: u32,
+    #[doc(hidden)]
+    pub __field_270: [u8; 4],
     /// +0x274 `undefined4`, ctor store
-    pub field_274: u32,
+    #[doc(hidden)]
+    pub __field_274: [u8; 4],
     pub unknown_278: [u8; 1],
     /// +0x279 `undefined2`, ctor store
-    pub field_279: u16,
+    #[doc(hidden)]
+    pub __field_279: [u8; 2],
     pub unknown_27B: [u8; 5],
     /// +0x280 `undefined8`, base Actor
-    pub field_280: u64,
+    #[doc(hidden)]
+    pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, base Actor
-    pub field_288: u32,
+    #[doc(hidden)]
+    pub __field_288: [u8; 4],
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
-    pub criticalSection: [u8; 40],
+    #[doc(hidden)]
+    pub __criticalSection: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -710,49 +799,49 @@ const _: () = assert!(core::mem::offset_of!(Character, posZ) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(Character, parentCell) == 0x60);
 const _: () = assert!(core::mem::offset_of!(Character, loadedData) == 0x68);
 const _: () = assert!(core::mem::offset_of!(Character, extraList) == 0x70);
-const _: () = assert!(core::mem::offset_of!(Character, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(Character, refScale) == 0x98);
-const _: () = assert!(core::mem::offset_of!(Character, field_9A) == 0x9A);
-const _: () = assert!(core::mem::offset_of!(Character, field_9B) == 0x9B);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(Character, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(Character, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(Character, flags1) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(Character, flags2) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(Character, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(Character, boolFlags) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(Character, currentProcess) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(Character, dialogueTargetHandle) == 0x100);
-const _: () = assert!(core::mem::offset_of!(Character, combatTargetHandle) == 0x104);
-const _: () = assert!(core::mem::offset_of!(Character, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(Character, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(Character, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(Character, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(Character, movementController) == 0x150);
-const _: () = assert!(core::mem::offset_of!(Character, combatController) == 0x160);
-const _: () = assert!(core::mem::offset_of!(Character, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(Character, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(Character, magicCasters) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(Character, selectedSpells) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(Character, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(Character, race) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(Character, boolFlags2) == 0x204);
-const _: () = assert!(core::mem::offset_of!(Character, avStorage) == 0x208);
-const _: () = assert!(core::mem::offset_of!(Character, healthModifiers) == 0x230);
-const _: () = assert!(core::mem::offset_of!(Character, magickaModifiers) == 0x23C);
-const _: () = assert!(core::mem::offset_of!(Character, staminaModifiers) == 0x248);
-const _: () = assert!(core::mem::offset_of!(Character, voicePointsModifiers) == 0x254);
-const _: () = assert!(core::mem::offset_of!(Character, field_268) == 0x268);
-const _: () = assert!(core::mem::offset_of!(Character, field_270) == 0x270);
-const _: () = assert!(core::mem::offset_of!(Character, field_274) == 0x274);
-const _: () = assert!(core::mem::offset_of!(Character, field_279) == 0x279);
-const _: () = assert!(core::mem::offset_of!(Character, field_280) == 0x280);
-const _: () = assert!(core::mem::offset_of!(Character, field_288) == 0x288);
-const _: () = assert!(core::mem::offset_of!(Character, criticalSection) == 0x290);
+const _: () = assert!(core::mem::offset_of!(Character, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(Character, __refScale) == 0x98);
+const _: () = assert!(core::mem::offset_of!(Character, __field_9A) == 0x9A);
+const _: () = assert!(core::mem::offset_of!(Character, __field_9B) == 0x9B);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(Character, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(Character, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(Character, __flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(Character, __flags2) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(Character, ____vftable_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(Character, __boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(Character, __currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(Character, __dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(Character, __combatTargetHandle) == 0x104);
+const _: () = assert!(core::mem::offset_of!(Character, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(Character, __field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(Character, __field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(Character, __field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(Character, __movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(Character, __combatController) == 0x160);
+const _: () = assert!(core::mem::offset_of!(Character, __field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(Character, __field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(Character, __magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(Character, __selectedSpells) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(Character, __field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(Character, __race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(Character, __boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(Character, __avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(Character, __healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(Character, __magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(Character, __staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(Character, __voicePointsModifiers) == 0x254);
+const _: () = assert!(core::mem::offset_of!(Character, __field_268) == 0x268);
+const _: () = assert!(core::mem::offset_of!(Character, __field_270) == 0x270);
+const _: () = assert!(core::mem::offset_of!(Character, __field_274) == 0x274);
+const _: () = assert!(core::mem::offset_of!(Character, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(Character, __field_280) == 0x280);
+const _: () = assert!(core::mem::offset_of!(Character, __field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(Character, __criticalSection) == 0x290);
 
 /// `ContainerEntry`: size 0x18 (exact).
 /// Meaning: one base container entry: count and object (medium, actors pass).
@@ -813,7 +902,7 @@ const _: () = assert!(core::mem::offset_of!(HandleEntry, ref_) == 0x8);
 /// `InventoryChanges`: size 0x20 (exact).
 /// Meaning: the items a reference gained or lost relative to its base container (medium, actors pass).
 /// Evidence: the items a reference gained or lost relative to its base container; 0x240fe0 reads the entry list head at +0 and the owner reference at +8; +0x10 and +0x14 are floats (live -1.0 and 96.5 on the player; every inventory change copies +0x10 to +0x14 and resets +0x10 to -1.0); size 0x20 from those fields only (run-actors changes.bin).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct InventoryChanges {
     /// +0x0 `ptr:BSSimpleListNode`, semantic; list of InventoryEntry* (high)
     pub entries: *mut crate::BSSimpleListNode,
@@ -822,7 +911,8 @@ pub struct InventoryChanges {
     /// +0x10 `float`, semantic; a cached value, -1.0 when stale (medium)
     pub cachedValue: f32,
     /// +0x14 `float`, semantic; the value of +0x10 before its last reset (medium)
-    pub previousCachedValue: f32,
+    #[doc(hidden)]
+    pub __previousCachedValue: [u8; 4],
     pub unknown_18: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -831,7 +921,7 @@ const _: () = assert!(size_of::<InventoryChanges>() == 0x20);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, entries) == 0x0);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, owner) == 0x8);
 const _: () = assert!(core::mem::offset_of!(InventoryChanges, cachedValue) == 0x10);
-const _: () = assert!(core::mem::offset_of!(InventoryChanges, previousCachedValue) == 0x14);
+const _: () = assert!(core::mem::offset_of!(InventoryChanges, __previousCachedValue) == 0x14);
 
 /// `InventoryEntry`: size 0x18 (exact).
 /// Meaning: one inventory entry: object, per-stack extra lists, count delta (high, actors pass).
@@ -870,7 +960,7 @@ const _: () = assert!(core::mem::offset_of!(LoadedReferenceData, node3D) == 0x68
 /// `MiddleHighProcessData`: size 0x328 (exact).
 /// Meaning: middle-high process data: equipped entries and much more (medium, actors pass).
 /// Evidence: middle-high process data: equipped entries and much more; object behind AIProcess+8; 0x720660 reads the left-hand entry at +0x220 and the right-hand entry at +0x260; size unknown, 0x328 is the extent of the named fields (pass 7 named fields up to +0x326); live middlehigh.bin: +0x260 -> the Iron War Axe entry, +0x220 null (run-actors).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MiddleHighProcessData {
     pub unknown_0: [u8; 176],
     /// +0xB0 `float`, semantic; actor pitch, fed to graph variable Pitch (scaled by the constant ID_190186) (high)
@@ -878,7 +968,8 @@ pub struct MiddleHighProcessData {
     /// +0xB4 `float`, semantic; fed to graph variable Roll (same scale) (high)
     pub roll: f32,
     /// +0xB8 `float`, semantic; movement direction (radians; wrapped and scaled for graph variable Direction) (high)
-    pub movementDirection: f32,
+    #[doc(hidden)]
+    pub __movementDirection: [u8; 4],
     /// +0xBC `float`, semantic; fed to graph variable PitchDelta (scaled) (high)
     pub pitchDelta: f32,
     pub unknown_C0: [u8; 224],
@@ -890,22 +981,26 @@ pub struct MiddleHighProcessData {
     pub animationGraphManagerData: *mut c_void,
     pub unknown_1B8: [u8; 48],
     /// +0x1E8 `undefined8`, semantic; spin lock (owner thread, count at +0x1ec) (medium)
-    pub lock: u64,
+    #[doc(hidden)]
+    pub __lock: [u8; 8],
     pub unknown_1F0: [u8; 48],
     /// +0x220 `ptr:InventoryEntry`, semantic; inventory entry equipped in the left hand (high)
     pub leftHandEntry: *mut crate::InventoryEntry,
     pub unknown_228: [u8; 40],
     /// +0x250 `ptr:bhkCharacterController`, semantic; the actor's character controller (high)
-    pub charController: *mut crate::bhkCharacterController,
+    #[doc(hidden)]
+    pub __charController: [u8; 8],
     pub unknown_258: [u8; 8],
     /// +0x260 `ptr:InventoryEntry`, semantic; inventory entry equipped in the right hand (high)
     pub rightHandEntry: *mut crate::InventoryEntry,
     pub unknown_268: [u8; 24],
     /// +0x280 `ptr:TESIdleForm`, semantic; the idle IsLastIdlePlayed compares; written only by AIProcess load (0x6f9b22, from the save), the process reset 0x6fcb68 (0) and InitDefaults 0x7331d2 (0) (medium)
-    pub lastIdlePlayed: *mut crate::TESIdleForm,
+    #[doc(hidden)]
+    pub __lastIdlePlayed: [u8; 8],
     pub unknown_288: [u8; 32],
     /// +0x2A8 `float`, semantic; current movement speed, fed to graph variable Speed (divided by the channel's scale) (high)
-    pub speed: f32,
+    #[doc(hidden)]
+    pub __speed: [u8; 4],
     /// +0x2AC `float`, semantic; fed to graph variable TargetSpeed (high)
     pub targetSpeed: f32,
     pub unknown_2B0: [u8; 12],
@@ -915,10 +1010,12 @@ pub struct MiddleHighProcessData {
     /// +0x304 `undefined2`, semantic; equipped item type of the left hand (high)
     pub leftHandEquipType: u16,
     /// +0x306 `undefined2`, semantic; equipped item type of the right hand (high)
-    pub rightHandEquipType: u16,
+    #[doc(hidden)]
+    pub __rightHandEquipType: [u8; 2],
     pub unknown_308: [u8; 30],
     /// +0x326 `undefined1`, semantic; head tracking on; graph bool bHeadTracking (high)
-    pub headTrackingEnabled: u8,
+    #[doc(hidden)]
+    pub __headTrackingEnabled: [u8; 1],
     pub unknown_327: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -926,22 +1023,22 @@ pub struct MiddleHighProcessData {
 const _: () = assert!(size_of::<MiddleHighProcessData>() == 0x328);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitch) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, roll) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, movementDirection) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __movementDirection) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, pitchDelta) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, activeEffects) == 0x1A0);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManager) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, animationGraphManagerData) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, lock) == 0x1E8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lock) == 0x1E8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEntry) == 0x220);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, charController) == 0x250);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __charController) == 0x250);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEntry) == 0x260);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, lastIdlePlayed) == 0x280);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, speed) == 0x2A8);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __lastIdlePlayed) == 0x280);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __speed) == 0x2A8);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, targetSpeed) == 0x2AC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, wardMagnitude) == 0x2BC);
 const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, leftHandEquipType) == 0x304);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, rightHandEquipType) == 0x306);
-const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, headTrackingEnabled) == 0x326);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __rightHandEquipType) == 0x306);
+const _: () = assert!(core::mem::offset_of!(MiddleHighProcessData, __headTrackingEnabled) == 0x326);
 
 /// `PlayerCharacter`: size 0xBF0 (exact, medium); primary base `Character`.
 /// Meaning: the player; one instance behind g_PlayerCharacter_ptr (high, actors pass).
@@ -997,604 +1094,855 @@ pub struct PlayerCharacter {
     /// +0x70 `class:BaseExtraList`, base TESObjectREFR, semantic; the reference's extra data list (high)
     pub extraList: crate::BaseExtraList,
     /// +0x90 `undefined8`, base TESObjectREFR
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined2`, base TESObjectREFR, semantic; scale in percent (high)
-    pub refScale: u16,
+    #[doc(hidden)]
+    pub __refScale: [u8; 2],
     /// +0x9A `undefined1`, base TESObjectREFR
-    pub field_9A: u8,
+    #[doc(hidden)]
+    pub __field_9A: [u8; 1],
     /// +0x9B `undefined1`, base TESObjectREFR
-    pub field_9B: u8,
+    #[doc(hidden)]
+    pub __field_9B: [u8; 1],
     pub unknown_9C: [u8; 4],
     /// +0xA0 `vtbl:PlayerCharacter:A0`, rtti
     #[doc(hidden)]
-    pub __vftable_A0: *const crate::raw::vtables::PlayerCharacter_vtable_A0,
+    pub ____vftable_A0: [u8; 8],
     /// +0xA8 `undefined8`, base Actor
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined1`, base Actor
-    pub field_B0: u8,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 1],
     pub unknown_B1: [u8; 7],
     /// +0xB8 `vtbl:PlayerCharacter:B8`, rtti
     #[doc(hidden)]
-    pub __vftable_B8: *const crate::raw::vtables::PlayerCharacter_vtable_B8,
+    pub ____vftable_B8: [u8; 8],
     /// +0xC0 `vtbl:PlayerCharacter:C0`, rtti
     #[doc(hidden)]
-    pub __vftable_C0: *const crate::raw::vtables::PlayerCharacter_vtable_C0,
+    pub ____vftable_C0: [u8; 8],
     /// +0xC8 `undefined4`, base ActorState, semantic; movement flags: bits 8-10 sprint/sneak/swim, 14-17 sit/sleep state (ActorSitSleepState), 18-20 flying state (ActorFlyingState), 21-24 life state (1 dying, 2 dead, 5 essential down, 7-8 bleedout), 25-27 knock state (ActorKnockState), 28-31 attack state (ActorAttackState); see the flag rows (high)
-    pub flags1: u32,
+    #[doc(hidden)]
+    pub __flags1: [u8; 4],
     /// +0xCC `undefined4`, base ActorState, semantic; state flags: bit 3 head tracking enabled, bits 5-7 weapon state (ActorWeaponState; drawn when >= 3), bit 8 wants to block (blockStart / blockStop), bits 10-11 recoil and large recoil (IsRecoiling tests 0xc00), bit 13 staggered (IsStaggered 0x33f700) (high)
-    pub flags2: u32,
+    #[doc(hidden)]
+    pub __flags2: [u8; 4],
     /// +0xD0 `vtbl:PlayerCharacter:D0`, rtti
     #[doc(hidden)]
-    pub __vftable_D0: *const crate::raw::vtables::PlayerCharacter_vtable_D0,
+    pub ____vftable_D0: [u8; 8],
     /// +0xD8 `vtbl:PlayerCharacter:D8`, rtti
     #[doc(hidden)]
-    pub __vftable_D8: *const crate::raw::vtables::PlayerCharacter_vtable_D8,
+    pub ____vftable_D8: [u8; 8],
     /// +0xE0 `vtbl:PlayerCharacter:E0`, rtti
     #[doc(hidden)]
-    pub __vftable_E0: *const crate::raw::vtables::PlayerCharacter_vtable_E0,
+    pub ____vftable_E0: [u8; 8],
     /// +0xE8 `undefined4`, base Actor, semantic; actor flags; see the flag rows (high)
-    pub boolFlags: u32,
+    #[doc(hidden)]
+    pub __boolFlags: [u8; 4],
     pub unknown_EC: [u8; 12],
     /// +0xF8 `ptr:AIProcess`, base Actor, semantic; the AI process; null for actors without AI (high)
-    pub currentProcess: *mut crate::AIProcess,
+    #[doc(hidden)]
+    pub __currentProcess: [u8; 8],
     /// +0x100 `undefined4`, base Actor, semantic; handle of the dialogue target (medium)
-    pub dialogueTargetHandle: u32,
+    #[doc(hidden)]
+    pub __dialogueTargetHandle: [u8; 4],
     /// +0x104 `undefined4`, base Actor, semantic; handle of the combat target (medium)
-    pub combatTargetHandle: u32,
+    #[doc(hidden)]
+    pub __combatTargetHandle: [u8; 4],
     /// +0x108 `undefined4`, base Actor
-    pub field_108: u32,
+    #[doc(hidden)]
+    pub __field_108: [u8; 4],
     pub unknown_10C: [u8; 12],
     /// +0x118 `undefined4`, base Character
-    pub field_118: u32,
+    #[doc(hidden)]
+    pub __field_118: [u8; 4],
     pub unknown_11C: [u8; 12],
     /// +0x128 `undefined8`, base Actor
-    pub field_128: u64,
+    #[doc(hidden)]
+    pub __field_128: [u8; 8],
     /// +0x130 `undefined4`, base Actor
-    pub field_130: u32,
+    #[doc(hidden)]
+    pub __field_130: [u8; 4],
     pub unknown_134: [u8; 20],
     /// +0x148 `ptr:ActorMover`, runtime
-    pub field_148: *mut crate::ActorMover,
+    #[doc(hidden)]
+    pub __field_148: [u8; 8],
     /// +0x150 `ptr:MovementControllerNPC`, base Actor, semantic; movement controller (medium)
-    pub movementController: *mut crate::MovementControllerNPC,
+    #[doc(hidden)]
+    pub __movementController: [u8; 8],
     pub unknown_158: [u8; 8],
     /// +0x160 `pointer`, base Actor, semantic; combat controller; null out of combat (medium)
-    pub combatController: *mut c_void,
+    #[doc(hidden)]
+    pub __combatController: [u8; 8],
     pub unknown_168: [u8; 8],
     /// +0x170 `undefined4`, base Actor
-    pub field_170: u32,
+    #[doc(hidden)]
+    pub __field_170: [u8; 4],
     pub unknown_174: [u8; 28],
     /// +0x190 `undefined4`, base Actor
-    pub field_190: u32,
+    #[doc(hidden)]
+    pub __field_190: [u8; 4],
     pub unknown_194: [u8; 20],
     /// +0x1A8 `pointer`, base Actor, semantic; per-source casters created on demand by slot 92: [0] left hand, [1] right hand, [2] other (voice), [3] fourth source (medium)
-    pub magicCasters: [u8; 32],
+    #[doc(hidden)]
+    pub __magicCasters: [u8; 32],
     /// +0x1C8 `pointer`, base Actor, semantic; the spell selected for each casting source ([0] left, [1] right) (medium)
-    pub selectedSpells: [u8; 32],
+    #[doc(hidden)]
+    pub __selectedSpells: [u8; 32],
     pub unknown_1E8: [u8; 8],
     /// +0x1F0 `undefined4`, base Actor
-    pub field_1F0: u32,
+    #[doc(hidden)]
+    pub __field_1F0: [u8; 4],
     pub unknown_1F4: [u8; 4],
     /// +0x1F8 `ptr:TESRace`, base Actor, semantic; the actor's race (high)
-    pub race: *mut crate::TESRace,
+    #[doc(hidden)]
+    pub __race: [u8; 8],
     pub unknown_200: [u8; 4],
     /// +0x204 `undefined4`, base Actor, semantic; second flag word: bit 1 mount side (IsOnMount, IsBeingRidden), bit 8 animation graph updates enabled (holder slot 14 0x6b1160), bit 17 force one graph update (cleared by PrepareAnimationUpdate 0x6b6300), bit 18 essential, bit 23 reduced bone update, bit 25 skip the next pose init (holder slot 12 0x6b1180 clears it), bit 28 force pose init, bit 29 always force the update (medium)
-    pub boolFlags2: u32,
+    #[doc(hidden)]
+    pub __boolFlags2: [u8; 4],
     /// +0x208 `class:ActorValueStorage`, base Actor, semantic; cache and modifiers of the sparse actor values (high)
-    pub avStorage: crate::ActorValueStorage,
+    #[doc(hidden)]
+    pub __avStorage: [u8; 32],
     pub unknown_228: [u8; 8],
     /// +0x230 `undefined12`, base Actor, semantic; float[3] modifiers of Health: permanent, temporary, damage (high)
-    pub healthModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __healthModifiers: [u8; 12],
     /// +0x23C `undefined12`, base Actor, semantic; float[3] modifiers of Magicka (high)
-    pub magickaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __magickaModifiers: [u8; 12],
     /// +0x248 `undefined12`, base Actor, semantic; float[3] modifiers of Stamina (high)
-    pub staminaModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __staminaModifiers: [u8; 12],
     /// +0x254 `undefined12`, base Actor, semantic; float[3] modifiers of VoicePoints (high)
-    pub voicePointsModifiers: [u8; 12],
+    #[doc(hidden)]
+    pub __voicePointsModifiers: [u8; 12],
     pub unknown_260: [u8; 8],
     /// +0x268 `undefined8`, base Actor
-    pub field_268: u64,
+    #[doc(hidden)]
+    pub __field_268: [u8; 8],
     /// +0x270 `undefined4`, base Character
-    pub field_270: u32,
+    #[doc(hidden)]
+    pub __field_270: [u8; 4],
     /// +0x274 `undefined4`, base Character
-    pub field_274: u32,
+    #[doc(hidden)]
+    pub __field_274: [u8; 4],
     pub unknown_278: [u8; 1],
     /// +0x279 `undefined2`, base Character
-    pub field_279: u16,
+    #[doc(hidden)]
+    pub __field_279: [u8; 2],
     pub unknown_27B: [u8; 5],
     /// +0x280 `undefined8`, base Actor
-    pub field_280: u64,
+    #[doc(hidden)]
+    pub __field_280: [u8; 8],
     /// +0x288 `undefined4`, base Actor
-    pub field_288: u32,
+    #[doc(hidden)]
+    pub __field_288: [u8; 4],
     pub unknown_28C: [u8; 4],
     /// +0x290 `undefined40`, base Actor, semantic; CRITICAL_SECTION (high)
-    pub criticalSection: [u8; 40],
+    #[doc(hidden)]
+    pub __criticalSection: [u8; 40],
     /// +0x2B8 `vtbl:PlayerCharacter:2B8`, rtti
     #[doc(hidden)]
-    pub __vftable_2B8: *const crate::raw::vtables::PlayerCharacter_vtable_2B8,
+    pub ____vftable_2B8: [u8; 8],
     /// +0x2C0 `vtbl:PlayerCharacter:2C0`, rtti
     #[doc(hidden)]
-    pub __vftable_2C0: *const crate::raw::vtables::PlayerCharacter_vtable_2C0,
+    pub ____vftable_2C0: [u8; 8],
     /// +0x2C8 `vtbl:PlayerCharacter:2C8`, rtti
     #[doc(hidden)]
-    pub __vftable_2C8: *const crate::raw::vtables::PlayerCharacter_vtable_2C8,
+    pub ____vftable_2C8: [u8; 8],
     /// +0x2D0 `vtbl:PlayerCharacter:2D0`, rtti
     #[doc(hidden)]
-    pub __vftable_2D0: *const crate::raw::vtables::PlayerCharacter_vtable_2D0,
+    pub ____vftable_2D0: [u8; 8],
     /// +0x2D8 `vtbl:PlayerCharacter:2D8`, rtti
     #[doc(hidden)]
-    pub __vftable_2D8: *const crate::raw::vtables::PlayerCharacter_vtable_2D8,
+    pub ____vftable_2D8: [u8; 8],
     /// +0x2E0 `class:BSTEventSource`, RTTI base BSTEventSource<BGSActorCellEvent>
-    pub source_BGSActorCellEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BGSActorCellEvent: [u8; 88],
     /// +0x338 `class:BSTEventSource`, RTTI base BSTEventSource<BGSActorDeathEvent>
-    pub source_BGSActorDeathEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BGSActorDeathEvent: [u8; 88],
     /// +0x390 `class:BSTEventSource`, RTTI base BSTEventSource<PositionPlayerEvent>
-    pub source_PositionPlayerEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_PositionPlayerEvent: [u8; 88],
     /// +0x3E8 `undefined8`, ctor store
-    pub field_3E8: u64,
+    #[doc(hidden)]
+    pub __field_3E8: [u8; 8],
     pub unknown_3F0: [u8; 12],
     /// +0x3FC `undefined8`, ctor store
-    pub field_3FC: u64,
+    #[doc(hidden)]
+    pub __field_3FC: [u8; 8],
     /// +0x404 `undefined4`, ctor store
-    pub field_404: u32,
+    #[doc(hidden)]
+    pub __field_404: [u8; 4],
     /// +0x408 `undefined8`, ctor store
-    pub field_408: u64,
+    #[doc(hidden)]
+    pub __field_408: [u8; 8],
     pub unknown_410: [u8; 8],
     /// +0x418 `undefined8`, ctor store
-    pub field_418: u64,
+    #[doc(hidden)]
+    pub __field_418: [u8; 8],
     pub unknown_420: [u8; 12],
     /// +0x42C `undefined8`, ctor store
-    pub field_42C: u64,
+    #[doc(hidden)]
+    pub __field_42C: [u8; 8],
     /// +0x434 `undefined4`, ctor store
-    pub field_434: u32,
+    #[doc(hidden)]
+    pub __field_434: [u8; 4],
     /// +0x438 `undefined8`, ctor store
-    pub field_438: u64,
+    #[doc(hidden)]
+    pub __field_438: [u8; 8],
     pub unknown_440: [u8; 8],
     /// +0x448 `undefined8`, ctor store
-    pub field_448: u64,
+    #[doc(hidden)]
+    pub __field_448: [u8; 8],
     /// +0x450 `undefined4`, ctor store
-    pub field_450: u32,
+    #[doc(hidden)]
+    pub __field_450: [u8; 4],
     pub unknown_454: [u8; 16],
     /// +0x464 `undefined8`, ctor store
-    pub field_464: u64,
+    #[doc(hidden)]
+    pub __field_464: [u8; 8],
     /// +0x46C `undefined4`, ctor store
-    pub field_46C: u32,
+    #[doc(hidden)]
+    pub __field_46C: [u8; 4],
     /// +0x470 `undefined8`, ctor store
-    pub field_470: u64,
+    #[doc(hidden)]
+    pub __field_470: [u8; 8],
     pub unknown_478: [u8; 8],
     /// +0x480 `undefined8`, ctor store
-    pub field_480: u64,
+    #[doc(hidden)]
+    pub __field_480: [u8; 8],
     /// +0x488 `float`, ctor store
-    pub field_488: f32,
+    #[doc(hidden)]
+    pub __field_488: [u8; 4],
     /// +0x48C `float`, ctor store
-    pub field_48C: f32,
+    #[doc(hidden)]
+    pub __field_48C: [u8; 4],
     /// +0x490 `float`, ctor store
-    pub field_490: f32,
+    #[doc(hidden)]
+    pub __field_490: [u8; 4],
     /// +0x494 `float`, ctor store
-    pub field_494: f32,
+    #[doc(hidden)]
+    pub __field_494: [u8; 4],
     /// +0x498 `float`, ctor store
-    pub field_498: f32,
+    #[doc(hidden)]
+    pub __field_498: [u8; 4],
     /// +0x49C `float`, ctor store
-    pub field_49C: f32,
+    #[doc(hidden)]
+    pub __field_49C: [u8; 4],
     /// +0x4A0 `float`, ctor store (widths [4, 8])
-    pub field_4A0: f32,
+    #[doc(hidden)]
+    pub __field_4A0: [u8; 4],
     /// +0x4A4 `float`, ctor store
-    pub field_4A4: f32,
+    #[doc(hidden)]
+    pub __field_4A4: [u8; 4],
     /// +0x4A8 `float`, ctor store (widths [4, 4])
-    pub field_4A8: f32,
+    #[doc(hidden)]
+    pub __field_4A8: [u8; 4],
     pub unknown_4AC: [u8; 4],
     /// +0x4B0 `undefined8`, ctor store
-    pub field_4B0: u64,
+    #[doc(hidden)]
+    pub __field_4B0: [u8; 8],
     /// +0x4B8 `undefined8`, ctor store
-    pub field_4B8: u64,
+    #[doc(hidden)]
+    pub __field_4B8: [u8; 8],
     pub unknown_4C0: [u8; 160],
     /// +0x560 `undefined4`, ctor store
-    pub field_560: u32,
+    #[doc(hidden)]
+    pub __field_560: [u8; 4],
     pub unknown_564: [u8; 20],
     /// +0x578 `undefined4`, ctor store
-    pub field_578: u32,
+    #[doc(hidden)]
+    pub __field_578: [u8; 4],
     pub unknown_57C: [u8; 4],
     /// +0x580 `undefined8`, ctor store
-    pub field_580: u64,
+    #[doc(hidden)]
+    pub __field_580: [u8; 8],
     /// +0x588 `undefined8`, ctor store
-    pub field_588: u64,
+    #[doc(hidden)]
+    pub __field_588: [u8; 8],
     pub unknown_590: [u8; 36],
     /// +0x5B4 `undefined8`, ctor store
-    pub field_5B4: u64,
+    #[doc(hidden)]
+    pub __field_5B4: [u8; 8],
     /// +0x5BC `undefined4`, ctor store
-    pub field_5BC: u32,
+    #[doc(hidden)]
+    pub __field_5BC: [u8; 4],
     /// +0x5C0 `undefined8`, ctor store
-    pub field_5C0: u64,
+    #[doc(hidden)]
+    pub __field_5C0: [u8; 8],
     pub unknown_5C8: [u8; 8],
     /// +0x5D0 `undefined8`, ctor store
-    pub field_5D0: u64,
+    #[doc(hidden)]
+    pub __field_5D0: [u8; 8],
     pub unknown_5D8: [u8; 12],
     /// +0x5E4 `undefined8`, ctor store
-    pub field_5E4: u64,
+    #[doc(hidden)]
+    pub __field_5E4: [u8; 8],
     /// +0x5EC `undefined4`, ctor store
-    pub field_5EC: u32,
+    #[doc(hidden)]
+    pub __field_5EC: [u8; 4],
     /// +0x5F0 `undefined8`, ctor store
-    pub field_5F0: u64,
+    #[doc(hidden)]
+    pub __field_5F0: [u8; 8],
     pub unknown_5F8: [u8; 8],
     /// +0x600 `undefined8`, ctor store
-    pub field_600: u64,
+    #[doc(hidden)]
+    pub __field_600: [u8; 8],
     /// +0x608 `undefined4`, ctor store
-    pub field_608: u32,
+    #[doc(hidden)]
+    pub __field_608: [u8; 4],
     pub unknown_60C: [u8; 4],
     /// +0x610 `undefined8`, ctor store
-    pub field_610: u64,
+    #[doc(hidden)]
+    pub __field_610: [u8; 8],
     /// +0x618 `undefined8`, member ctor NiTMap<unsigned_int,unsigned_char>
-    pub m_NiTMap_618: u64,
+    #[doc(hidden)]
+    pub __m_NiTMap_618: [u8; 8],
     /// +0x620 `undefined4`, ctor store
-    pub field_620: u32,
+    #[doc(hidden)]
+    pub __field_620: [u8; 4],
     pub unknown_624: [u8; 4],
     /// +0x628 `undefined8`, member ctor NiTMapBase<DFALL<NiTMapItem<unsigned_int,unsigned_char>_>,unsigned_int,unsigned_char>
-    pub m_NiTMapBase_628: u64,
+    #[doc(hidden)]
+    pub __m_NiTMapBase_628: [u8; 8],
     /// +0x630 `undefined4`, ctor store
-    pub field_630: u32,
+    #[doc(hidden)]
+    pub __field_630: [u8; 4],
     pub unknown_634: [u8; 4],
     /// +0x638 `ptr:TESWorldSpace`, semantic, runtime; the player's current worldspace (medium)
-    pub worldSpace: *mut crate::TESWorldSpace,
+    #[doc(hidden)]
+    pub __worldSpace: [u8; 8],
     /// +0x640 `float`, ctor store
-    pub field_640: f32,
+    #[doc(hidden)]
+    pub __field_640: [u8; 4],
     /// +0x644 `float`, ctor store
-    pub field_644: f32,
+    #[doc(hidden)]
+    pub __field_644: [u8; 4],
     /// +0x648 `float`, ctor store
-    pub field_648: f32,
+    #[doc(hidden)]
+    pub __field_648: [u8; 4],
     pub unknown_64C: [u8; 4],
     /// +0x650 `undefined8`, ctor store
-    pub field_650: u64,
+    #[doc(hidden)]
+    pub __field_650: [u8; 8],
     /// +0x658 `undefined8`, ctor store
-    pub field_658: u64,
+    #[doc(hidden)]
+    pub __field_658: [u8; 8],
     /// +0x660 `float`, ctor store
-    pub field_660: f32,
+    #[doc(hidden)]
+    pub __field_660: [u8; 4],
     /// +0x664 `float`, ctor store
-    pub field_664: f32,
+    #[doc(hidden)]
+    pub __field_664: [u8; 4],
     /// +0x668 `float`, ctor store
-    pub field_668: f32,
+    #[doc(hidden)]
+    pub __field_668: [u8; 4],
     /// +0x66C `float`, ctor store
-    pub field_66C: f32,
+    #[doc(hidden)]
+    pub __field_66C: [u8; 4],
     /// +0x670 `float`, ctor store
-    pub field_670: f32,
+    #[doc(hidden)]
+    pub __field_670: [u8; 4],
     /// +0x674 `float`, ctor store
-    pub field_674: f32,
+    #[doc(hidden)]
+    pub __field_674: [u8; 4],
     /// +0x678 `undefined8`, ctor store
-    pub field_678: u64,
+    #[doc(hidden)]
+    pub __field_678: [u8; 8],
     /// +0x680 `undefined8`, ctor store
-    pub field_680: u64,
+    #[doc(hidden)]
+    pub __field_680: [u8; 8],
     /// +0x688 `undefined4`, ctor store
-    pub field_688: u32,
+    #[doc(hidden)]
+    pub __field_688: [u8; 4],
     /// +0x68C `undefined4`, ctor store
-    pub field_68C: u32,
+    #[doc(hidden)]
+    pub __field_68C: [u8; 4],
     /// +0x690 `undefined2`, ctor store
-    pub field_690: u16,
+    #[doc(hidden)]
+    pub __field_690: [u8; 2],
     /// +0x692 `undefined1`, ctor store
-    pub field_692: u8,
+    #[doc(hidden)]
+    pub __field_692: [u8; 1],
     pub unknown_693: [u8; 5],
     /// +0x698 `undefined4`, ctor store
-    pub field_698: u32,
+    #[doc(hidden)]
+    pub __field_698: [u8; 4],
     /// +0x69C `undefined1`, ctor store
-    pub field_69C: u8,
+    #[doc(hidden)]
+    pub __field_69C: [u8; 1],
     pub unknown_69D: [u8; 3],
     /// +0x6A0 `undefined4`, ctor store
-    pub field_6A0: u32,
+    #[doc(hidden)]
+    pub __field_6A0: [u8; 4],
     /// +0x6A4 `undefined4`, ctor store
-    pub field_6A4: u32,
+    #[doc(hidden)]
+    pub __field_6A4: [u8; 4],
     /// +0x6A8 `undefined1`, ctor store
-    pub field_6A8: u8,
+    #[doc(hidden)]
+    pub __field_6A8: [u8; 1],
     pub unknown_6A9: [u8; 3],
     /// +0x6AC `undefined4`, ctor store
-    pub field_6AC: u32,
+    #[doc(hidden)]
+    pub __field_6AC: [u8; 4],
     /// +0x6B0 `undefined4`, ctor store
-    pub field_6B0: u32,
+    #[doc(hidden)]
+    pub __field_6B0: [u8; 4],
     /// +0x6B4 `undefined1`, ctor store
-    pub field_6B4: u8,
+    #[doc(hidden)]
+    pub __field_6B4: [u8; 1],
     pub unknown_6B5: [u8; 3],
     /// +0x6B8 `undefined4`, ctor store
-    pub field_6B8: u32,
+    #[doc(hidden)]
+    pub __field_6B8: [u8; 4],
     pub unknown_6BC: [u8; 4],
     /// +0x6C0 `undefined8`, ctor store
-    pub field_6C0: u64,
+    #[doc(hidden)]
+    pub __field_6C0: [u8; 8],
     pub unknown_6C8: [u8; 8],
     /// +0x6D0 `undefined8`, ctor store
-    pub field_6D0: u64,
+    #[doc(hidden)]
+    pub __field_6D0: [u8; 8],
     /// +0x6D8 `undefined4`, ctor store
-    pub field_6D8: u32,
+    #[doc(hidden)]
+    pub __field_6D8: [u8; 4],
     /// +0x6DC `undefined4`, ctor store
-    pub field_6DC: u32,
+    #[doc(hidden)]
+    pub __field_6DC: [u8; 4],
     /// +0x6E0 `undefined4`, ctor store
-    pub field_6E0: u32,
+    #[doc(hidden)]
+    pub __field_6E0: [u8; 4],
     /// +0x6E4 `undefined4`, ctor store
-    pub field_6E4: u32,
+    #[doc(hidden)]
+    pub __field_6E4: [u8; 4],
     /// +0x6E8 `undefined4`, ctor store
-    pub field_6E8: u32,
+    #[doc(hidden)]
+    pub __field_6E8: [u8; 4],
     pub unknown_6EC: [u8; 4],
     /// +0x6F0 `undefined8`, ctor store
-    pub field_6F0: u64,
+    #[doc(hidden)]
+    pub __field_6F0: [u8; 8],
     /// +0x6F8 `undefined8`, ctor store
-    pub field_6F8: u64,
+    #[doc(hidden)]
+    pub __field_6F8: [u8; 8],
     /// +0x700 `ptr:ImageSpaceModifierInstanceDOF`, ctor store, runtime
-    pub field_700: *mut crate::ImageSpaceModifierInstanceDOF,
+    #[doc(hidden)]
+    pub __field_700: [u8; 8],
     pub unknown_708: [u8; 8],
     /// +0x710 `undefined8`, ctor store
-    pub field_710: u64,
+    #[doc(hidden)]
+    pub __field_710: [u8; 8],
     /// +0x718 `undefined8`, ctor store
-    pub field_718: u64,
+    #[doc(hidden)]
+    pub __field_718: [u8; 8],
     /// +0x720 `undefined8`, ctor store
-    pub field_720: u64,
+    #[doc(hidden)]
+    pub __field_720: [u8; 8],
     /// +0x728 `undefined8`, ctor store
-    pub field_728: u64,
+    #[doc(hidden)]
+    pub __field_728: [u8; 8],
     /// +0x730 `undefined4`, ctor store
-    pub field_730: u32,
+    #[doc(hidden)]
+    pub __field_730: [u8; 4],
     pub unknown_734: [u8; 4],
     /// +0x738 `undefined8`, ctor store
-    pub field_738: u64,
+    #[doc(hidden)]
+    pub __field_738: [u8; 8],
     pub unknown_740: [u8; 160],
     /// +0x7E0 `undefined4`, ctor store
-    pub field_7E0: u32,
+    #[doc(hidden)]
+    pub __field_7E0: [u8; 4],
     /// +0x7E4 `undefined8`, ctor store
-    pub field_7E4: u64,
+    #[doc(hidden)]
+    pub __field_7E4: [u8; 8],
     /// +0x7EC `undefined4`, ctor store
-    pub field_7EC: u32,
+    #[doc(hidden)]
+    pub __field_7EC: [u8; 4],
     /// +0x7F0 `undefined4`, ctor store
-    pub field_7F0: u32,
+    #[doc(hidden)]
+    pub __field_7F0: [u8; 4],
     /// +0x7F4 `undefined4`, ctor store
-    pub field_7F4: u32,
+    #[doc(hidden)]
+    pub __field_7F4: [u8; 4],
     /// +0x7F8 `undefined4`, ctor store
-    pub field_7F8: u32,
+    #[doc(hidden)]
+    pub __field_7F8: [u8; 4],
     /// +0x7FC `undefined4`, ctor store
-    pub field_7FC: u32,
+    #[doc(hidden)]
+    pub __field_7FC: [u8; 4],
     /// +0x800 `undefined4`, ctor store
-    pub field_800: u32,
+    #[doc(hidden)]
+    pub __field_800: [u8; 4],
     /// +0x804 `undefined4`, ctor store
-    pub field_804: u32,
+    #[doc(hidden)]
+    pub __field_804: [u8; 4],
     /// +0x808 `undefined4`, ctor store
-    pub field_808: u32,
+    #[doc(hidden)]
+    pub __field_808: [u8; 4],
     /// +0x80C `undefined4`, ctor store
-    pub field_80C: u32,
+    #[doc(hidden)]
+    pub __field_80C: [u8; 4],
     /// +0x810 `undefined4`, ctor store
-    pub field_810: u32,
+    #[doc(hidden)]
+    pub __field_810: [u8; 4],
     /// +0x814 `undefined4`, ctor store
-    pub field_814: u32,
+    #[doc(hidden)]
+    pub __field_814: [u8; 4],
     /// +0x818 `undefined4`, ctor store
-    pub field_818: u32,
+    #[doc(hidden)]
+    pub __field_818: [u8; 4],
     /// +0x81C `undefined4`, ctor store
-    pub field_81C: u32,
+    #[doc(hidden)]
+    pub __field_81C: [u8; 4],
     /// +0x820 `undefined4`, ctor store
-    pub field_820: u32,
+    #[doc(hidden)]
+    pub __field_820: [u8; 4],
     /// +0x824 `undefined4`, ctor store
-    pub field_824: u32,
+    #[doc(hidden)]
+    pub __field_824: [u8; 4],
     /// +0x828 `undefined4`, ctor store
-    pub field_828: u32,
+    #[doc(hidden)]
+    pub __field_828: [u8; 4],
     /// +0x82C `undefined4`, ctor store
-    pub field_82C: u32,
+    #[doc(hidden)]
+    pub __field_82C: [u8; 4],
     /// +0x830 `undefined4`, ctor store
-    pub field_830: u32,
+    #[doc(hidden)]
+    pub __field_830: [u8; 4],
     /// +0x834 `undefined4`, ctor store
-    pub field_834: u32,
+    #[doc(hidden)]
+    pub __field_834: [u8; 4],
     /// +0x838 `undefined4`, ctor store
-    pub field_838: u32,
+    #[doc(hidden)]
+    pub __field_838: [u8; 4],
     /// +0x83C `undefined4`, ctor store
-    pub field_83C: u32,
+    #[doc(hidden)]
+    pub __field_83C: [u8; 4],
     /// +0x840 `undefined4`, ctor store
-    pub field_840: u32,
+    #[doc(hidden)]
+    pub __field_840: [u8; 4],
     /// +0x844 `undefined4`, ctor store
-    pub field_844: u32,
+    #[doc(hidden)]
+    pub __field_844: [u8; 4],
     /// +0x848 `undefined4`, ctor store
-    pub field_848: u32,
+    #[doc(hidden)]
+    pub __field_848: [u8; 4],
     /// +0x84C `undefined4`, ctor store
-    pub field_84C: u32,
+    #[doc(hidden)]
+    pub __field_84C: [u8; 4],
     /// +0x850 `undefined4`, ctor store
-    pub field_850: u32,
+    #[doc(hidden)]
+    pub __field_850: [u8; 4],
     /// +0x854 `undefined4`, ctor store
-    pub field_854: u32,
+    #[doc(hidden)]
+    pub __field_854: [u8; 4],
     /// +0x858 `undefined4`, ctor store
-    pub field_858: u32,
+    #[doc(hidden)]
+    pub __field_858: [u8; 4],
     /// +0x85C `undefined4`, ctor store
-    pub field_85C: u32,
+    #[doc(hidden)]
+    pub __field_85C: [u8; 4],
     /// +0x860 `undefined4`, ctor store
-    pub field_860: u32,
+    #[doc(hidden)]
+    pub __field_860: [u8; 4],
     /// +0x864 `undefined4`, ctor store
-    pub field_864: u32,
+    #[doc(hidden)]
+    pub __field_864: [u8; 4],
     /// +0x868 `undefined4`, ctor store
-    pub field_868: u32,
+    #[doc(hidden)]
+    pub __field_868: [u8; 4],
     /// +0x86C `undefined4`, ctor store
-    pub field_86C: u32,
+    #[doc(hidden)]
+    pub __field_86C: [u8; 4],
     /// +0x870 `undefined4`, ctor store
-    pub field_870: u32,
+    #[doc(hidden)]
+    pub __field_870: [u8; 4],
     /// +0x874 `undefined4`, ctor store
-    pub field_874: u32,
+    #[doc(hidden)]
+    pub __field_874: [u8; 4],
     /// +0x878 `undefined4`, ctor store
-    pub field_878: u32,
+    #[doc(hidden)]
+    pub __field_878: [u8; 4],
     /// +0x87C `undefined4`, ctor store
-    pub field_87C: u32,
+    #[doc(hidden)]
+    pub __field_87C: [u8; 4],
     /// +0x880 `undefined4`, ctor store
-    pub field_880: u32,
+    #[doc(hidden)]
+    pub __field_880: [u8; 4],
     /// +0x884 `undefined4`, ctor store
-    pub field_884: u32,
+    #[doc(hidden)]
+    pub __field_884: [u8; 4],
     /// +0x888 `undefined4`, ctor store
-    pub field_888: u32,
+    #[doc(hidden)]
+    pub __field_888: [u8; 4],
     /// +0x88C `undefined4`, ctor store
-    pub field_88C: u32,
+    #[doc(hidden)]
+    pub __field_88C: [u8; 4],
     /// +0x890 `undefined4`, ctor store
-    pub field_890: u32,
+    #[doc(hidden)]
+    pub __field_890: [u8; 4],
     /// +0x894 `undefined4`, ctor store
-    pub field_894: u32,
+    #[doc(hidden)]
+    pub __field_894: [u8; 4],
     /// +0x898 `undefined4`, ctor store
-    pub field_898: u32,
+    #[doc(hidden)]
+    pub __field_898: [u8; 4],
     /// +0x89C `undefined4`, ctor store
-    pub field_89C: u32,
+    #[doc(hidden)]
+    pub __field_89C: [u8; 4],
     pub unknown_8A0: [u8; 4],
     /// +0x8A4 `u32`, semantic; ObjectRefHandle of the actor doing the player a favor (command mode) (medium)
-    pub favorActorHandle: u32,
+    #[doc(hidden)]
+    pub __favorActorHandle: [u8; 4],
     /// +0x8A8 `undefined4`, ctor store
-    pub field_8A8: u32,
+    #[doc(hidden)]
+    pub __field_8A8: [u8; 4],
     pub unknown_8AC: [u8; 44],
     /// +0x8D8 `undefined4`, ctor store
-    pub field_8D8: u32,
+    #[doc(hidden)]
+    pub __field_8D8: [u8; 4],
     /// +0x8DC `undefined8`, ctor store
-    pub field_8DC: u64,
+    #[doc(hidden)]
+    pub __field_8DC: [u8; 8],
     /// +0x8E4 `undefined4`, ctor store
-    pub field_8E4: u32,
+    #[doc(hidden)]
+    pub __field_8E4: [u8; 4],
     /// +0x8E8 `undefined8`, ctor store
-    pub field_8E8: u64,
+    #[doc(hidden)]
+    pub __field_8E8: [u8; 8],
     pub unknown_8F0: [u8; 4],
     /// +0x8F4 `undefined4`, ctor store
-    pub field_8F4: u32,
+    #[doc(hidden)]
+    pub __field_8F4: [u8; 4],
     /// +0x8F8 `pointer`, ctor store, semantic, runtime; refcounted biped (0x2778-byte object) built over the first-person root; slot 126 GetBiped(true) returns &this->firstPersonBiped (high)
-    pub firstPersonBiped: *mut c_void,
+    #[doc(hidden)]
+    pub __firstPersonBiped: [u8; 8],
     /// +0x900 `ptr:BSFadeNode`, semantic, runtime; the first-person skeleton root (arms and weapon); Get3DFor(true) returns it (high)
-    pub firstPersonRoot: *mut crate::BSFadeNode,
+    #[doc(hidden)]
+    pub __firstPersonRoot: [u8; 8],
     /// +0x908 `float`, ctor store, semantic, runtime; local translation z of the first-person skeleton's 'Camera1st [Cam1]' node, read once at load (medium)
-    pub firstPersonCameraHeight: f32,
+    #[doc(hidden)]
+    pub __firstPersonCameraHeight: [u8; 4],
     pub unknown_90C: [u8; 4],
     /// +0x910 `undefined8`, ctor store
-    pub field_910: u64,
+    #[doc(hidden)]
+    pub __field_910: [u8; 8],
     /// +0x918 `undefined8`, ctor store
-    pub field_918: u64,
+    #[doc(hidden)]
+    pub __field_918: [u8; 8],
     /// +0x920 `undefined8`, ctor store
-    pub field_920: u64,
+    #[doc(hidden)]
+    pub __field_920: [u8; 8],
     /// +0x928 `undefined4`, ctor store (widths [4, 8])
-    pub field_928: u32,
+    #[doc(hidden)]
+    pub __field_928: [u8; 4],
     pub unknown_92C: [u8; 4],
     /// +0x930 `undefined8`, ctor store
-    pub field_930: u64,
+    #[doc(hidden)]
+    pub __field_930: [u8; 8],
     /// +0x938 `undefined8`, ctor store
-    pub field_938: u64,
+    #[doc(hidden)]
+    pub __field_938: [u8; 8],
     /// +0x940 `undefined4`, ctor store
-    pub field_940: u32,
+    #[doc(hidden)]
+    pub __field_940: [u8; 4],
     pub unknown_944: [u8; 4],
     /// +0x948 `undefined8`, ctor store
-    pub field_948: u64,
+    #[doc(hidden)]
+    pub __field_948: [u8; 8],
     /// +0x950 `undefined8`, ctor store
-    pub field_950: u64,
+    #[doc(hidden)]
+    pub __field_950: [u8; 8],
     /// +0x958 `undefined8`, ctor store
-    pub field_958: u64,
+    #[doc(hidden)]
+    pub __field_958: [u8; 8],
     /// +0x960 `undefined8`, ctor store
-    pub field_960: u64,
+    #[doc(hidden)]
+    pub __field_960: [u8; 8],
     /// +0x968 `undefined8`, ctor store
-    pub field_968: u64,
+    #[doc(hidden)]
+    pub __field_968: [u8; 8],
     /// +0x970 `undefined4`, ctor store
-    pub field_970: u32,
+    #[doc(hidden)]
+    pub __field_970: [u8; 4],
     pub unknown_974: [u8; 4],
     /// +0x978 `undefined8`, ctor store
-    pub field_978: u64,
+    #[doc(hidden)]
+    pub __field_978: [u8; 8],
     /// +0x980 `undefined8`, ctor store
-    pub field_980: u64,
+    #[doc(hidden)]
+    pub __field_980: [u8; 8],
     /// +0x988 `undefined8`, ctor store
-    pub field_988: u64,
+    #[doc(hidden)]
+    pub __field_988: [u8; 8],
     /// +0x990 `undefined4`, ctor store
-    pub field_990: u32,
+    #[doc(hidden)]
+    pub __field_990: [u8; 4],
     pub unknown_994: [u8; 4],
     /// +0x998 `ptr:TESWorldSpace`, ctor store, runtime
-    pub field_998: *mut crate::TESWorldSpace,
+    #[doc(hidden)]
+    pub __field_998: [u8; 8],
     /// +0x9A0 `undefined4`, ctor store
-    pub field_9A0: u32,
+    #[doc(hidden)]
+    pub __field_9A0: [u8; 4],
     pub unknown_9A4: [u8; 4],
     /// +0x9A8 `pointer`, semantic; torch light record used while the third-person root is hidden (+0x48 holds its light) (low)
-    pub firstPersonTorchLight: *mut c_void,
+    #[doc(hidden)]
+    pub __firstPersonTorchLight: [u8; 8],
     /// +0x9B0 `pointer`, semantic; torch light record used while the third-person root is visible (low)
-    pub thirdPersonTorchLight: *mut c_void,
+    #[doc(hidden)]
+    pub __thirdPersonTorchLight: [u8; 8],
     /// +0x9B8 `undefined8`, ctor store
-    pub field_9B8: u64,
+    #[doc(hidden)]
+    pub __field_9B8: [u8; 8],
     /// +0x9C0 `undefined8`, ctor store
-    pub field_9C0: u64,
+    #[doc(hidden)]
+    pub __field_9C0: [u8; 8],
     /// +0x9C8 `undefined4`, ctor store
-    pub field_9C8: u32,
+    #[doc(hidden)]
+    pub __field_9C8: [u8; 4],
     /// +0x9CC `undefined4`, ctor store
-    pub field_9CC: u32,
+    #[doc(hidden)]
+    pub __field_9CC: [u8; 4],
     /// +0x9D0 `undefined8`, ctor store
-    pub field_9D0: u64,
+    #[doc(hidden)]
+    pub __field_9D0: [u8; 8],
     /// +0x9D8 `undefined8`, ctor store
-    pub field_9D8: u64,
+    #[doc(hidden)]
+    pub __field_9D8: [u8; 8],
     /// +0x9E0 `undefined8`, ctor store
-    pub field_9E0: u64,
+    #[doc(hidden)]
+    pub __field_9E0: [u8; 8],
     pub unknown_9E8: [u8; 24],
     /// +0xA00 `undefined8`, ctor store
-    pub field_A00: u64,
+    #[doc(hidden)]
+    pub __field_A00: [u8; 8],
     pub unknown_A08: [u8; 16],
     /// +0xA18 `undefined8`, ctor store
-    pub field_A18: u64,
+    #[doc(hidden)]
+    pub __field_A18: [u8; 8],
     /// +0xA20 `undefined8`, ctor store
-    pub field_A20: u64,
+    #[doc(hidden)]
+    pub __field_A20: [u8; 8],
     /// +0xA28 `undefined4`, ctor store
-    pub field_A28: u32,
+    #[doc(hidden)]
+    pub __field_A28: [u8; 4],
     pub unknown_A2C: [u8; 164],
     /// +0xAD0 `undefined4`, ctor store
-    pub field_AD0: u32,
+    #[doc(hidden)]
+    pub __field_AD0: [u8; 4],
     pub unknown_AD4: [u8; 4],
     /// +0xAD8 `ptr:BGSLocation`, semantic, runtime; the player's current location (high)
-    pub currentLocation: *mut crate::BGSLocation,
+    #[doc(hidden)]
+    pub __currentLocation: [u8; 8],
     /// +0xAE0 `undefined4`, ctor store
-    pub field_AE0: u32,
+    #[doc(hidden)]
+    pub __field_AE0: [u8; 4],
     /// +0xAE4 `undefined4`, ctor store
-    pub field_AE4: u32,
+    #[doc(hidden)]
+    pub __field_AE4: [u8; 4],
     /// +0xAE8 `undefined4`, ctor store
-    pub field_AE8: u32,
+    #[doc(hidden)]
+    pub __field_AE8: [u8; 4],
     /// +0xAEC `undefined4`, ctor store
-    pub field_AEC: u32,
+    #[doc(hidden)]
+    pub __field_AEC: [u8; 4],
     /// +0xAF0 `undefined8`, ctor store
-    pub field_AF0: u64,
+    #[doc(hidden)]
+    pub __field_AF0: [u8; 8],
     /// +0xAF8 `undefined4`, ctor store
-    pub field_AF8: u32,
+    #[doc(hidden)]
+    pub __field_AF8: [u8; 4],
     /// +0xAFC `undefined4`, ctor store
-    pub field_AFC: u32,
+    #[doc(hidden)]
+    pub __field_AFC: [u8; 4],
     /// +0xB00 `undefined4`, ctor store
-    pub field_B00: u32,
+    #[doc(hidden)]
+    pub __field_B00: [u8; 4],
     /// +0xB04 `undefined4`, ctor store
-    pub field_B04: u32,
+    #[doc(hidden)]
+    pub __field_B04: [u8; 4],
     /// +0xB08 `undefined4`, ctor store
-    pub field_B08: u32,
+    #[doc(hidden)]
+    pub __field_B08: [u8; 4],
     /// +0xB0C `undefined4`, ctor store
-    pub field_B0C: u32,
+    #[doc(hidden)]
+    pub __field_B0C: [u8; 4],
     /// +0xB10 `undefined2`, ctor store
-    pub field_B10: u16,
+    #[doc(hidden)]
+    pub __field_B10: [u8; 2],
     /// +0xB12 `undefined1`, ctor store
-    pub field_B12: u8,
+    #[doc(hidden)]
+    pub __field_B12: [u8; 1],
     pub unknown_B13: [u8; 5],
     /// +0xB18 `undefined8`, ctor store
-    pub field_B18: u64,
+    #[doc(hidden)]
+    pub __field_B18: [u8; 8],
     pub unknown_B20: [u8; 24],
     /// +0xB38 `undefined8`, ctor store
-    pub field_B38: u64,
+    #[doc(hidden)]
+    pub __field_B38: [u8; 8],
     /// +0xB40 `undefined8`, ctor store
-    pub field_B40: u64,
+    #[doc(hidden)]
+    pub __field_B40: [u8; 8],
     /// +0xB48 `ptr:TESRace`, ctor store, runtime
-    pub field_B48: *mut crate::TESRace,
+    #[doc(hidden)]
+    pub __field_B48: [u8; 8],
     /// +0xB50 `ptr:TESRace`, ctor store, runtime
-    pub field_B50: *mut crate::TESRace,
+    #[doc(hidden)]
+    pub __field_B50: [u8; 8],
     /// +0xB58 `undefined4`, ctor store
-    pub field_B58: u32,
+    #[doc(hidden)]
+    pub __field_B58: [u8; 4],
     pub unknown_B5C: [u8; 28],
     /// +0xB78 `undefined8`, ctor store
-    pub field_B78: u64,
+    #[doc(hidden)]
+    pub __field_B78: [u8; 8],
     /// +0xB80 `undefined8`, ctor store
-    pub field_B80: u64,
+    #[doc(hidden)]
+    pub __field_B80: [u8; 8],
     /// +0xB88 `undefined8`, ctor store
-    pub field_B88: u64,
+    #[doc(hidden)]
+    pub __field_B88: [u8; 8],
     /// +0xB90 `undefined8`, ctor store
-    pub field_B90: u64,
+    #[doc(hidden)]
+    pub __field_B90: [u8; 8],
     /// +0xB98 `undefined4`, ctor store
-    pub field_B98: u32,
+    #[doc(hidden)]
+    pub __field_B98: [u8; 4],
     pub unknown_B9C: [u8; 4],
     /// +0xBA0 `undefined8`, ctor store
-    pub field_BA0: u64,
+    #[doc(hidden)]
+    pub __field_BA0: [u8; 8],
     /// +0xBA8 `undefined8`, ctor store
-    pub field_BA8: u64,
+    #[doc(hidden)]
+    pub __field_BA8: [u8; 8],
     /// +0xBB0 `undefined4`, ctor store
-    pub field_BB0: u32,
+    #[doc(hidden)]
+    pub __field_BB0: [u8; 4],
     pub unknown_BB4: [u8; 44],
     /// +0xBE0 `undefined8`, ctor store
-    pub field_BE0: u64,
+    #[doc(hidden)]
+    pub __field_BE0: [u8; 8],
     /// +0xBE8 `undefined1`, ctor store
-    pub field_BE8: u8,
+    #[doc(hidden)]
+    pub __field_BE8: [u8; 1],
     /// +0xBE9 `undefined1`, ctor store
-    pub field_BE9: u8,
+    #[doc(hidden)]
+    pub __field_BE9: [u8; 1],
     /// +0xBEA `u8`, ctor store, semantic, runtime; bit 3 (0x8): the player is AI-driven (SetPlayerAIDriven 0x7559f0, the vampire feed); bits 1-3 (0xe) are tested together by HasFlagsEInByteBEA 0x7517d0. Bits 1 and 2 not identified; see the flag rows (high)
-    pub aiDriveFlags: u8,
+    #[doc(hidden)]
+    pub __aiDriveFlags: [u8; 1],
     /// +0xBEB `undefined1`, semantic, runtime; bit 0 set while the player is in third person (SetFirstPerson stores !firstPerson) (high)
-    pub viewFlags: u8,
+    #[doc(hidden)]
+    pub __viewFlags: [u8; 1],
     /// +0xBEC `undefined1`, ctor store
-    pub field_BEC: u8,
+    #[doc(hidden)]
+    pub __field_BEC: [u8; 1],
     pub unknown_BED: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1620,268 +1968,268 @@ const _: () = assert!(core::mem::offset_of!(PlayerCharacter, posZ) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, parentCell) == 0x60);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, loadedData) == 0x68);
 const _: () = assert!(core::mem::offset_of!(PlayerCharacter, extraList) == 0x70);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, refScale) == 0x98);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9A) == 0x9A);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9B) == 0x9B);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, flags1) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, flags2) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, boolFlags) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, currentProcess) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, dialogueTargetHandle) == 0x100);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, combatTargetHandle) == 0x104);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, movementController) == 0x150);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, combatController) == 0x160);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, magicCasters) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, selectedSpells) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, race) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, boolFlags2) == 0x204);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, avStorage) == 0x208);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, healthModifiers) == 0x230);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, magickaModifiers) == 0x23C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, staminaModifiers) == 0x248);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, voicePointsModifiers) == 0x254);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_268) == 0x268);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_270) == 0x270);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_274) == 0x274);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_279) == 0x279);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_280) == 0x280);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_288) == 0x288);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, criticalSection) == 0x290);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2B8) == 0x2B8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2C0) == 0x2C0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2C8) == 0x2C8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2D0) == 0x2D0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __vftable_2D8) == 0x2D8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, source_BGSActorCellEvent) == 0x2E0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, source_BGSActorDeathEvent) == 0x338);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, source_PositionPlayerEvent) == 0x390);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_3E8) == 0x3E8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_3FC) == 0x3FC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_404) == 0x404);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_408) == 0x408);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_418) == 0x418);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_42C) == 0x42C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_434) == 0x434);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_438) == 0x438);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_448) == 0x448);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_450) == 0x450);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_464) == 0x464);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_46C) == 0x46C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_470) == 0x470);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_480) == 0x480);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_488) == 0x488);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_48C) == 0x48C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_490) == 0x490);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_494) == 0x494);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_498) == 0x498);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_49C) == 0x49C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_4A0) == 0x4A0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_4A4) == 0x4A4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_4A8) == 0x4A8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_4B0) == 0x4B0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_4B8) == 0x4B8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_560) == 0x560);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_578) == 0x578);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_580) == 0x580);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_588) == 0x588);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5B4) == 0x5B4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5BC) == 0x5BC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5C0) == 0x5C0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5D0) == 0x5D0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5E4) == 0x5E4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5EC) == 0x5EC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_5F0) == 0x5F0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_600) == 0x600);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_608) == 0x608);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_610) == 0x610);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, m_NiTMap_618) == 0x618);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_620) == 0x620);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, m_NiTMapBase_628) == 0x628);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_630) == 0x630);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, worldSpace) == 0x638);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_640) == 0x640);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_644) == 0x644);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_648) == 0x648);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_650) == 0x650);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_658) == 0x658);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_660) == 0x660);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_664) == 0x664);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_668) == 0x668);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_66C) == 0x66C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_670) == 0x670);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_674) == 0x674);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_678) == 0x678);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_680) == 0x680);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_688) == 0x688);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_68C) == 0x68C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_690) == 0x690);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_692) == 0x692);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_698) == 0x698);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_69C) == 0x69C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6A0) == 0x6A0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6A4) == 0x6A4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6A8) == 0x6A8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6AC) == 0x6AC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6B0) == 0x6B0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6B4) == 0x6B4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6B8) == 0x6B8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6C0) == 0x6C0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6D0) == 0x6D0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6D8) == 0x6D8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6DC) == 0x6DC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6E0) == 0x6E0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6E4) == 0x6E4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6E8) == 0x6E8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6F0) == 0x6F0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_6F8) == 0x6F8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_700) == 0x700);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_710) == 0x710);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_718) == 0x718);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_720) == 0x720);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_728) == 0x728);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_730) == 0x730);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_738) == 0x738);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7E0) == 0x7E0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7E4) == 0x7E4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7EC) == 0x7EC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7F0) == 0x7F0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7F4) == 0x7F4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7F8) == 0x7F8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_7FC) == 0x7FC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_800) == 0x800);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_804) == 0x804);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_808) == 0x808);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_80C) == 0x80C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_810) == 0x810);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_814) == 0x814);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_818) == 0x818);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_81C) == 0x81C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_820) == 0x820);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_824) == 0x824);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_828) == 0x828);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_82C) == 0x82C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_830) == 0x830);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_834) == 0x834);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_838) == 0x838);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_83C) == 0x83C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_840) == 0x840);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_844) == 0x844);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_848) == 0x848);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_84C) == 0x84C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_850) == 0x850);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_854) == 0x854);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_858) == 0x858);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_85C) == 0x85C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_860) == 0x860);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_864) == 0x864);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_868) == 0x868);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_86C) == 0x86C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_870) == 0x870);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_874) == 0x874);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_878) == 0x878);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_87C) == 0x87C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_880) == 0x880);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_884) == 0x884);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_888) == 0x888);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_88C) == 0x88C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_890) == 0x890);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_894) == 0x894);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_898) == 0x898);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_89C) == 0x89C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, favorActorHandle) == 0x8A4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8A8) == 0x8A8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8D8) == 0x8D8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8DC) == 0x8DC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8E4) == 0x8E4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8E8) == 0x8E8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_8F4) == 0x8F4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, firstPersonBiped) == 0x8F8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, firstPersonRoot) == 0x900);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, firstPersonCameraHeight) == 0x908);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_910) == 0x910);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_918) == 0x918);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_920) == 0x920);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_928) == 0x928);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_930) == 0x930);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_938) == 0x938);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_940) == 0x940);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_948) == 0x948);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_950) == 0x950);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_958) == 0x958);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_960) == 0x960);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_968) == 0x968);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_970) == 0x970);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_978) == 0x978);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_980) == 0x980);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_988) == 0x988);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_990) == 0x990);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_998) == 0x998);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9A0) == 0x9A0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, firstPersonTorchLight) == 0x9A8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, thirdPersonTorchLight) == 0x9B0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9B8) == 0x9B8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9C0) == 0x9C0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9C8) == 0x9C8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9CC) == 0x9CC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9D0) == 0x9D0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9D8) == 0x9D8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_9E0) == 0x9E0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A00) == 0xA00);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A18) == 0xA18);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A20) == 0xA20);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_A28) == 0xA28);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AD0) == 0xAD0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, currentLocation) == 0xAD8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE0) == 0xAE0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE4) == 0xAE4);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AE8) == 0xAE8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AEC) == 0xAEC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AF0) == 0xAF0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AF8) == 0xAF8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_AFC) == 0xAFC);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B00) == 0xB00);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B04) == 0xB04);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B08) == 0xB08);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B0C) == 0xB0C);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B10) == 0xB10);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B12) == 0xB12);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B18) == 0xB18);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B38) == 0xB38);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B40) == 0xB40);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B48) == 0xB48);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B50) == 0xB50);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B58) == 0xB58);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B78) == 0xB78);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B80) == 0xB80);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B88) == 0xB88);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B90) == 0xB90);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_B98) == 0xB98);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BA0) == 0xBA0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BA8) == 0xBA8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BB0) == 0xBB0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE0) == 0xBE0);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE8) == 0xBE8);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BE9) == 0xBE9);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, aiDriveFlags) == 0xBEA);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, viewFlags) == 0xBEB);
-const _: () = assert!(core::mem::offset_of!(PlayerCharacter, field_BEC) == 0xBEC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __refScale) == 0x98);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9A) == 0x9A);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9B) == 0x9B);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __flags1) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __flags2) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __boolFlags) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __currentProcess) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __dialogueTargetHandle) == 0x100);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __combatTargetHandle) == 0x104);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __movementController) == 0x150);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __combatController) == 0x160);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __magicCasters) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __selectedSpells) == 0x1C8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __race) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __boolFlags2) == 0x204);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __avStorage) == 0x208);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __healthModifiers) == 0x230);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __magickaModifiers) == 0x23C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __staminaModifiers) == 0x248);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __voicePointsModifiers) == 0x254);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_268) == 0x268);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_270) == 0x270);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_274) == 0x274);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_279) == 0x279);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_280) == 0x280);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __criticalSection) == 0x290);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_2B8) == 0x2B8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_2C0) == 0x2C0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_2C8) == 0x2C8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_2D0) == 0x2D0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, ____vftable_2D8) == 0x2D8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __source_BGSActorCellEvent) == 0x2E0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __source_BGSActorDeathEvent) == 0x338);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __source_PositionPlayerEvent) == 0x390);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_3E8) == 0x3E8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_3FC) == 0x3FC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_404) == 0x404);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_408) == 0x408);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_418) == 0x418);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_42C) == 0x42C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_434) == 0x434);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_438) == 0x438);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_448) == 0x448);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_450) == 0x450);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_464) == 0x464);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_46C) == 0x46C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_470) == 0x470);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_480) == 0x480);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_488) == 0x488);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_48C) == 0x48C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_490) == 0x490);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_494) == 0x494);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_498) == 0x498);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_49C) == 0x49C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_4A0) == 0x4A0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_4A4) == 0x4A4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_4A8) == 0x4A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_4B0) == 0x4B0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_4B8) == 0x4B8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_560) == 0x560);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_578) == 0x578);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_580) == 0x580);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_588) == 0x588);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5B4) == 0x5B4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5BC) == 0x5BC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5C0) == 0x5C0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5D0) == 0x5D0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5E4) == 0x5E4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5EC) == 0x5EC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_5F0) == 0x5F0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_600) == 0x600);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_608) == 0x608);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_610) == 0x610);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __m_NiTMap_618) == 0x618);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_620) == 0x620);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __m_NiTMapBase_628) == 0x628);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_630) == 0x630);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __worldSpace) == 0x638);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_640) == 0x640);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_644) == 0x644);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_648) == 0x648);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_650) == 0x650);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_658) == 0x658);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_660) == 0x660);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_664) == 0x664);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_668) == 0x668);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_66C) == 0x66C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_670) == 0x670);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_674) == 0x674);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_678) == 0x678);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_680) == 0x680);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_688) == 0x688);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_68C) == 0x68C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_690) == 0x690);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_692) == 0x692);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_698) == 0x698);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_69C) == 0x69C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6A0) == 0x6A0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6A4) == 0x6A4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6A8) == 0x6A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6AC) == 0x6AC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6B0) == 0x6B0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6B4) == 0x6B4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6B8) == 0x6B8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6C0) == 0x6C0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6D0) == 0x6D0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6D8) == 0x6D8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6DC) == 0x6DC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6E0) == 0x6E0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6E4) == 0x6E4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6E8) == 0x6E8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6F0) == 0x6F0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_6F8) == 0x6F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_700) == 0x700);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_710) == 0x710);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_718) == 0x718);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_720) == 0x720);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_728) == 0x728);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_730) == 0x730);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_738) == 0x738);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7E0) == 0x7E0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7E4) == 0x7E4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7EC) == 0x7EC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7F0) == 0x7F0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7F4) == 0x7F4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7F8) == 0x7F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_7FC) == 0x7FC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_800) == 0x800);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_804) == 0x804);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_808) == 0x808);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_80C) == 0x80C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_810) == 0x810);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_814) == 0x814);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_818) == 0x818);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_81C) == 0x81C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_820) == 0x820);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_824) == 0x824);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_828) == 0x828);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_82C) == 0x82C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_830) == 0x830);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_834) == 0x834);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_838) == 0x838);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_83C) == 0x83C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_840) == 0x840);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_844) == 0x844);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_848) == 0x848);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_84C) == 0x84C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_850) == 0x850);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_854) == 0x854);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_858) == 0x858);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_85C) == 0x85C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_860) == 0x860);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_864) == 0x864);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_868) == 0x868);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_86C) == 0x86C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_870) == 0x870);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_874) == 0x874);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_878) == 0x878);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_87C) == 0x87C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_880) == 0x880);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_884) == 0x884);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_888) == 0x888);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_88C) == 0x88C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_890) == 0x890);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_894) == 0x894);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_898) == 0x898);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_89C) == 0x89C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __favorActorHandle) == 0x8A4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8A8) == 0x8A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8D8) == 0x8D8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8DC) == 0x8DC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8E4) == 0x8E4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8E8) == 0x8E8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_8F4) == 0x8F4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __firstPersonBiped) == 0x8F8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __firstPersonRoot) == 0x900);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __firstPersonCameraHeight) == 0x908);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_910) == 0x910);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_918) == 0x918);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_920) == 0x920);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_928) == 0x928);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_930) == 0x930);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_938) == 0x938);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_940) == 0x940);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_948) == 0x948);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_950) == 0x950);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_958) == 0x958);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_960) == 0x960);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_968) == 0x968);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_970) == 0x970);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_978) == 0x978);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_980) == 0x980);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_988) == 0x988);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_990) == 0x990);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_998) == 0x998);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9A0) == 0x9A0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __firstPersonTorchLight) == 0x9A8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __thirdPersonTorchLight) == 0x9B0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9B8) == 0x9B8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9C0) == 0x9C0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9C8) == 0x9C8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9CC) == 0x9CC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9D0) == 0x9D0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9D8) == 0x9D8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_9E0) == 0x9E0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_A00) == 0xA00);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_A18) == 0xA18);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_A20) == 0xA20);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_A28) == 0xA28);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AD0) == 0xAD0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __currentLocation) == 0xAD8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AE0) == 0xAE0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AE4) == 0xAE4);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AE8) == 0xAE8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AEC) == 0xAEC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AF0) == 0xAF0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AF8) == 0xAF8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_AFC) == 0xAFC);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B00) == 0xB00);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B04) == 0xB04);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B08) == 0xB08);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B0C) == 0xB0C);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B10) == 0xB10);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B12) == 0xB12);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B18) == 0xB18);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B38) == 0xB38);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B40) == 0xB40);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B48) == 0xB48);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B50) == 0xB50);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B58) == 0xB58);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B78) == 0xB78);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B80) == 0xB80);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B88) == 0xB88);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B90) == 0xB90);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_B98) == 0xB98);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BA0) == 0xBA0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BA8) == 0xBA8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BB0) == 0xBB0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BE0) == 0xBE0);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BE8) == 0xBE8);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BE9) == 0xBE9);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __aiDriveFlags) == 0xBEA);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __viewFlags) == 0xBEB);
+const _: () = assert!(core::mem::offset_of!(PlayerCharacter, __field_BEC) == 0xBEC);
 
 /// `TESActorBaseData`: size 0x58 (exact, high); primary base `BaseFormComponent`.
 /// Meaning: actor base data component: flags, level, voice type (high, actors pass).
@@ -1941,7 +2289,7 @@ const _: () = assert!(core::mem::offset_of!(TESActorBaseData, field_38) == 0x38)
 /// Meaning: base container component: the items an NPC_ or CONT record starts with (high, actors pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `BaseFormComponent`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESContainer {
     /// +0x0 `vtbl:TESContainer:0`, rtti
     #[doc(hidden)]
@@ -1951,7 +2299,8 @@ pub struct TESContainer {
     /// +0x10 `undefined4`, ctor store, semantic, runtime; number of entries (high)
     pub numEntries: u32,
     /// +0x14 `undefined1`, ctor store
-    pub field_14: u8,
+    #[doc(hidden)]
+    pub __field_14: [u8; 1],
     pub unknown_15: [u8; 3],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1960,7 +2309,7 @@ const _: () = assert!(size_of::<TESContainer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(TESContainer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TESContainer, entries) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TESContainer, numEntries) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESContainer, field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESContainer, __field_14) == 0x14);
 
 /// `TESFullName`: size 0x18 (exact, high); primary base `BaseFormComponent`.
 /// Meaning: full name component (high, actors pass).
@@ -1994,7 +2343,7 @@ const _: () = assert!(core::mem::offset_of!(TESFullName, field_12) == 0x12);
 /// Meaning: NPC_ record, the base object of every Character (high, actors pass).
 /// Evidence: runtime: 0x268 at 3 allocation sites.
 /// Bases: `TESActorBase`@0x0, `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESActorBaseData`@0x30, `BaseFormComponent`@0x30, `TESContainer`@0x88, `BaseFormComponent`@0x88, `TESSpellList`@0xA0, `BaseFormComponent`@0xA0, `TESAIForm`@0xB0, `BaseFormComponent`@0xB0, `TESFullName`@0xD8, `BaseFormComponent`@0xD8, `ActorValueOwner`@0xE8, `BGSDestructibleObjectForm`@0xF0, `BaseFormComponent`@0xF0, `BGSSkinForm`@0x100, `BaseFormComponent`@0x100, `BGSKeywordForm`@0x110, `BaseFormComponent`@0x110, `BGSAttackDataForm`@0x128, `BaseFormComponent`@0x128, `BGSPerkRankArray`@0x138, `BaseFormComponent`@0x138, `TESRaceForm`@0x150, `BaseFormComponent`@0x150, `BGSOverridePackCollection`@0x160, `BaseFormComponent`@0x160, `BSTEventSink<MenuOpenCloseEvent>`@0x188.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESNPC {
     /// +0x0 `vtbl:TESNPC:0`, rtti
     #[doc(hidden)]
@@ -2053,7 +2402,8 @@ pub struct TESNPC {
     /// +0x98 `undefined4`, base TESContainer, semantic; number of entries (high)
     pub numEntries: u32,
     /// +0x9C `undefined1`, base TESContainer
-    pub field_9C: u8,
+    #[doc(hidden)]
+    pub __field_9C: [u8; 1],
     pub unknown_9D: [u8; 3],
     /// +0xA0 `vtbl:TESNPC:A0`, rtti
     #[doc(hidden)]
@@ -2074,7 +2424,8 @@ pub struct TESNPC {
     #[doc(hidden)]
     pub __vftable_D8: *const crate::raw::vtables::TESNPC_vtable_D8,
     /// +0xE0 `pointer`, semantic, runtime; the NPC's full name (BSFixedString) (high)
-    pub fullName: *mut c_void,
+    #[doc(hidden)]
+    pub __fullName: [u8; 8],
     /// +0xE8 `vtbl:TESNPC:E8`, rtti
     #[doc(hidden)]
     pub __vftable_E8: *const crate::raw::vtables::TESNPC_vtable_E8,
@@ -2168,7 +2519,7 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(TESNPC, entries) == 0x90);
 const _: () = assert!(core::mem::offset_of!(TESNPC, numEntries) == 0x98);
-const _: () = assert!(core::mem::offset_of!(TESNPC, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(TESNPC, __field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_B0) == 0xB0);
@@ -2176,7 +2527,7 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_BC) == 0xBC);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(TESNPC, fullName) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(TESNPC, __fullName) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(TESNPC, __vftable_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESNPC, field_F8) == 0xF8);
@@ -2207,7 +2558,7 @@ const _: () = assert!(core::mem::offset_of!(TESNPC, weight) == 0x1FC);
 /// Meaning: placed reference: a form with a base object, a cell, a transform, a handle and an extra data list (high, actors pass).
 /// Evidence: runtime: 0xA0 at 11 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `BSHandleRefObject`@0x20, `NiRefObject`@0x20, `BSTEventSink<BSAnimationGraphEvent>`@0x30, `IAnimationGraphManagerHolder`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESObjectREFR {
     /// +0x0 `vtbl:TESObjectREFR:0`, rtti
     #[doc(hidden)]
@@ -2256,13 +2607,17 @@ pub struct TESObjectREFR {
     /// +0x70 `class:BaseExtraList`, member ctor BaseExtraList, semantic, runtime; the reference's extra data list (high)
     pub extraList: crate::BaseExtraList,
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined2`, ctor store, semantic, runtime; scale in percent (high)
-    pub refScale: u16,
+    #[doc(hidden)]
+    pub __refScale: [u8; 2],
     /// +0x9A `undefined1`, ctor store
-    pub field_9A: u8,
+    #[doc(hidden)]
+    pub __field_9A: [u8; 1],
     /// +0x9B `undefined1`, ctor store
-    pub field_9B: u8,
+    #[doc(hidden)]
+    pub __field_9B: [u8; 1],
     pub unknown_9C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -2288,10 +2643,10 @@ const _: () = assert!(core::mem::offset_of!(TESObjectREFR, posZ) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, parentCell) == 0x60);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, loadedData) == 0x68);
 const _: () = assert!(core::mem::offset_of!(TESObjectREFR, extraList) == 0x70);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, refScale) == 0x98);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_9A) == 0x9A);
-const _: () = assert!(core::mem::offset_of!(TESObjectREFR, field_9B) == 0x9B);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __refScale) == 0x98);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __field_9A) == 0x9A);
+const _: () = assert!(core::mem::offset_of!(TESObjectREFR, __field_9B) == 0x9B);
 
 /// actor value ids; 0xa4 (164) means none (actors pass).
 #[repr(u32)]

@@ -3,6 +3,36 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `hkpConstraintOwner::vdtor` at 0xb66eb0 (layout_inference, medium); signature (low): `hkpConstraintOwner * vdtor(hkpConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintOwner__vdtor: u64 = 61674;
+/// `hkpConstraintOwner::vfunc_3` at 0xb66f50 (rtti, high); signature (low): `undefined vfunc_3(void)`
+pub const hkpConstraintOwner__vfunc_3: u64 = 61676;
+/// `hkpConstraintOwner::vfunc_4` at 0xb66f70 (rtti, high); signature (low): `undefined vfunc_4(void)`
+pub const hkpConstraintOwner__vfunc_4: u64 = 61678;
+/// `hkpConstraintOwner::vfunc_5` at 0xb66f40 (rtti, high); signature (low): `undefined vfunc_5(void)`
+pub const hkpConstraintOwner__vfunc_5: u64 = 61675;
+/// `hkpConstraintOwner::vfunc_6` at 0xb66f60 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpConstraintOwner__vfunc_6: u64 = 61677;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vdtor` at 0xc414f0 (layout_inference, medium); signature (low): `CollectConstraintsFilter * vdtor(CollectConstraintsFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vdtor: u64 = 65192;
+/// `hkpConstraintUtils::CollectConstraintsFilter::vfunc_1` at 0xc41600 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectConstraintsFilter * this, undefined1 * param_1)`
+pub const hkpConstraintUtils__CollectConstraintsFilter__vfunc_1: u64 = 65195;
+/// `hkpContactListener::dtor` at 0x3fc740 (layout_inference, high); signature (high): `undefined dtor(hkpContactListener * this)`
+pub const hkpContactListener__dtor: u64 = 25828;
+/// `hkpContactListener::vdtor` at 0x3fc8d0 (layout_inference, medium); signature (low): `hkpContactListener * vdtor(hkpContactListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const hkpContactListener__vdtor: u64 = 25832;
+/// `hkpContactListener::vfunc_0` at 0x3fcb50 (rtti, medium); signature (low): `undefined vfunc_0(void)`
+pub const hkpContactListener__vfunc_0: u64 = 25841;
+/// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
+pub const hkpContactListener__vfunc_1: u64 = 25838;
+/// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`
+pub const hkpContactListener__vfunc_2: u64 = 25839;
+/// `hkpContactListener::vfunc_4` at 0x3fcb40 (rtti, medium); signature (low): `undefined vfunc_4(void)`
+pub const hkpContactListener__vfunc_4: u64 = 25840;
+/// `hkpContactListener::vfunc_5` at 0x3fcb60 (rtti, medium); signature (low): `undefined vfunc_5(void)`
+pub const hkpContactListener__vfunc_5: u64 = 25842;
+/// `hkpContactListener::vfunc_6` at 0x3fcb70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
+pub const hkpContactListener__vfunc_6: u64 = 25843;
 /// `hkpContactMgr::vdtor` at 0xb5c9a0 (layout_inference, medium); signature (low): `hkpContactMgr * vdtor(hkpContactMgr * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpContactMgr__vdtor: u64 = 61450;
 /// `hkpContactMgr::vfunc_9` at 0xb5cf00 (rtti, medium); signature (low): `undefined vfunc_9(void)`
@@ -200,7 +230,7 @@ pub const hkpConvexVerticesConnectivity__vfunc_3: u64 = 60718;
 /// `hkpConvexVerticesShape::BuildFromPoints` at 0x10ee650 (semantic, high); signature (untiered): `hkpConvexVerticesShape * BuildFromPoints(hkpConvexVerticesShape * this, ulonglong * param_1, char * param_2)`; semantic: builds the convex hull of the points (hkgpConvexHull) and constructs from it: radius = config+4, planes into +0x78, vertices +0x50/+0x60; config byte 0 keeps an hkpConvexVerticesConnectivity (+0x88); config byte 1 with radius > 0 shrinks by the convex radius (floats +0xc/+0x10, byte +2); int +8 > 3 limits the vertex count (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* points, const hkpConvexVerticesShape::BuildConfig* config)`
 pub const hkpConvexVerticesShape__BuildFromPoints: u64 = 80831;
 /// `hkpConvexVerticesShape::BuildFromPoints` as a function pointer type (high).
-pub type hkpConvexVerticesShape__BuildFromPoints_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, points: *const c_void, config: *const c_void) -> *mut crate::hkpConvexVerticesShape;
+pub type hkpConvexVerticesShape__BuildFromPoints_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, points: *const crate::hkStridedVertices, config: *const crate::hkpConvexVerticesShape__BuildConfig) -> *mut crate::hkpConvexVerticesShape;
 /// `hkpConvexVerticesShape::GetVertices` at 0xc3abd0 (semantic, high); signature (untiered): `undefined GetVertices(longlong param_1, longlong * param_2)`; semantic: unpacks the SoA vertex blocks (+0x50, 0x30 bytes per 4 vertices: x[4] +0, y[4] +0x10, z[4] +0x20) into out (count +0x60, w = 0), growing out with hkContainerHeapAllocator (high); signature `void (const hkpConvexVerticesShape* this, hkArray<hkVector4>* out)`
 pub const hkpConvexVerticesShape__GetVertices: u64 = 65093;
 /// `hkpConvexVerticesShape::GetVertices` as a function pointer type (high).
@@ -208,7 +238,7 @@ pub type hkpConvexVerticesShape__GetVertices_fn = unsafe extern "C" fn(this: *co
 /// `hkpConvexVerticesShape::ctor` at 0xc3a870 (semantic, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined8 * param_2, longlong * param_3, undefined4 param_4)`; semantic: direct constructor: +8 = 0x1ffff, radius +0x20, type +0x18 = 6, copies the planes into +0x78 (hkContainerHeapAllocator), packs the vertices into the SoA array +0x50 and computes the AABB (PackStridedVerticesAndComputeAabb 0xc3b990) (high); signature `hkpConvexVerticesShape* (hkpConvexVerticesShape* this, const hkStridedVertices* vertices, const hkArray<hkVector4>* planeEquations, float radius)`
 pub const hkpConvexVerticesShape__ctor: u64 = 65089;
 /// `hkpConvexVerticesShape::ctor` as a function pointer type (high).
-pub type hkpConvexVerticesShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const c_void, planeEquations: *const c_void, radius: f32) -> *mut crate::hkpConvexVerticesShape;
+pub type hkpConvexVerticesShape__ctor_fn = unsafe extern "C" fn(this: *mut crate::hkpConvexVerticesShape, vertices: *const crate::hkStridedVertices, planeEquations: *const c_void, radius: f32) -> *mut crate::hkpConvexVerticesShape;
 /// `hkpConvexVerticesShape::ctor` at 0xc3a9a0 (layout_inference, medium); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, undefined4 param_2)`
 pub const hkpConvexVerticesShape__ctor_2: u64 = 65090;
 /// `hkpConvexVerticesShape::ctor` at 0xc3aac0 (layout_inference, high); signature (low): `hkpConvexVerticesShape * ctor(hkpConvexVerticesShape * this, int param_1)`

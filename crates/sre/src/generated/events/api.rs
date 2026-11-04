@@ -15,12 +15,53 @@ impl core::ops::Deref for crate::IDEvent {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::BGSActorCellEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_actorHandleAndCell(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSActorCellEvent.actorHandleAndCell", 0x0, u64) } }
+    /// `BGSActorCellEvent::actorHandleAndCell`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn actorHandleAndCell(&self) -> u64 { unsafe { Self::__member_actorHandleAndCell(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_actorHandleAndCell(&mut self, value: u64) { unsafe { Self::__member_actorHandleAndCell(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn actorHandleAndCell_ptr(&self) -> *mut u64 { Self::__member_actorHandleAndCell(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_attached(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSActorCellEvent.attached", 0x8, u8) } }
+    /// `BGSActorCellEvent::attached`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn attached(&self) -> u8 { unsafe { Self::__member_attached(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_attached(&mut self, value: u8) { unsafe { Self::__member_attached(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn attached_ptr(&self) -> *mut u8 { Self::__member_attached(core::ptr::from_ref(self)) }
+}
+
 impl crate::BSAnimationGraphEvent {
     /// `BSAnimationGraphEvent::owner` at +0x8: the reference whose graph raised the event (its IAnimationGraphManagerHolder is at +0x38)
     ///
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
+    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { Self::__member_owner(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_owner(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "BSAnimationGraphEvent.owner", 0x8, *mut crate::TESObjectREFR) } }
+    /// `BSAnimationGraphEvent::owner`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn owner_field(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_owner(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_owner(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_owner(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn owner_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_owner(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_payload(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSAnimationGraphEvent.payload", 0x10, crate::BSFixedString) } }
+    /// `BSAnimationGraphEvent::payload`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn payload(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_payload(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn payload_ptr(&self) -> *mut crate::BSFixedString { Self::__member_payload(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSFixedString {
@@ -85,6 +126,62 @@ impl crate::BSStringPool__Entry {
     /// `str` must point to what the engine expects.
     #[inline]
     pub unsafe fn release(str: *mut crate::BSFixedString) { unsafe { function!(69192, (*mut crate::BSFixedString))(str) } }
+}
+
+impl crate::BSTEventSink {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member___vftable(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSTEventSink.__vftable", 0x0, *mut c_void) } }
+    /// `BSTEventSink::__vftable`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn __vftable(&self) -> *mut c_void { unsafe { Self::__member___vftable(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set___vftable(&mut self, value: *mut c_void) { unsafe { Self::__member___vftable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn __vftable_ptr(&self) -> *mut *mut c_void { Self::__member___vftable(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSTEventSource {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingRegisterCapacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTEventSource.pendingRegisterCapacity", 0x20, u32) } }
+    /// `BSTEventSource::pendingRegisterCapacity`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn pendingRegisterCapacity(&self) -> u32 { unsafe { Self::__member_pendingRegisterCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pendingRegisterCapacity(&mut self, value: u32) { unsafe { Self::__member_pendingRegisterCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pendingRegisterCapacity_ptr(&self) -> *mut u32 { Self::__member_pendingRegisterCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingRegisterCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTEventSource.pendingRegisterCount", 0x28, u32) } }
+    /// `BSTEventSource::pendingRegisterCount`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn pendingRegisterCount(&self) -> u32 { unsafe { Self::__member_pendingRegisterCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pendingRegisterCount(&mut self, value: u32) { unsafe { Self::__member_pendingRegisterCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pendingRegisterCount_ptr(&self) -> *mut u32 { Self::__member_pendingRegisterCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingUnregisterCapacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTEventSource.pendingUnregisterCapacity", 0x38, u32) } }
+    /// `BSTEventSource::pendingUnregisterCapacity`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn pendingUnregisterCapacity(&self) -> u32 { unsafe { Self::__member_pendingUnregisterCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pendingUnregisterCapacity(&mut self, value: u32) { unsafe { Self::__member_pendingUnregisterCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pendingUnregisterCapacity_ptr(&self) -> *mut u32 { Self::__member_pendingUnregisterCapacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sinkCapacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTEventSource.sinkCapacity", 0x8, u32) } }
+    /// `BSTEventSource::sinkCapacity`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn sinkCapacity(&self) -> u32 { unsafe { Self::__member_sinkCapacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sinkCapacity(&mut self, value: u32) { unsafe { Self::__member_sinkCapacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sinkCapacity_ptr(&self) -> *mut u32 { Self::__member_sinkCapacity(core::ptr::from_ref(self)) }
 }
 
 impl crate::ButtonEvent {
@@ -237,7 +334,75 @@ impl crate::EventSourceHolder_Input {
     ///
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn virtual_keyboard(&self) -> Option<&crate::BSWin32VirtualKeyboardDevice> { unsafe { { self.virtualKeyboard }.as_ref() } }
+    pub fn virtual_keyboard(&self) -> Option<&crate::BSWin32VirtualKeyboardDevice> { unsafe { Self::__member_virtualKeyboard(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_device3(this: *const Self) -> *mut u64 { unsafe { member!(this, "EventSourceHolder_Input.device3", 0x78, u64) } }
+    /// `EventSourceHolder_Input::device3`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn device3(&self) -> u64 { unsafe { Self::__member_device3(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_device3(&mut self, value: u64) { unsafe { Self::__member_device3(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn device3_ptr(&self) -> *mut u64 { Self::__member_device3(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_device4(this: *const Self) -> *mut u64 { unsafe { member!(this, "EventSourceHolder_Input.device4", 0x80, u64) } }
+    /// `EventSourceHolder_Input::device4`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn device4(&self) -> u64 { unsafe { Self::__member_device4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_device4(&mut self, value: u64) { unsafe { Self::__member_device4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn device4_ptr(&self) -> *mut u64 { Self::__member_device4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_gamepadEnableChanged(this: *const Self) -> *mut u8 { unsafe { member!(this, "EventSourceHolder_Input.gamepadEnableChanged", 0x91, u8) } }
+    /// `EventSourceHolder_Input::gamepadEnableChanged`, at +0x91 on 1.7.104.
+    #[inline]
+    pub fn gamepadEnableChanged(&self) -> u8 { unsafe { Self::__member_gamepadEnableChanged(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_gamepadEnableChanged(&mut self, value: u8) { unsafe { Self::__member_gamepadEnableChanged(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn gamepadEnableChanged_ptr(&self) -> *mut u8 { Self::__member_gamepadEnableChanged(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_gamepadEnablePending(this: *const Self) -> *mut u8 { unsafe { member!(this, "EventSourceHolder_Input.gamepadEnablePending", 0x90, u8) } }
+    /// `EventSourceHolder_Input::gamepadEnablePending`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn gamepadEnablePending(&self) -> u8 { unsafe { Self::__member_gamepadEnablePending(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_gamepadEnablePending(&mut self, value: u8) { unsafe { Self::__member_gamepadEnablePending(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn gamepadEnablePending_ptr(&self) -> *mut u8 { Self::__member_gamepadEnablePending(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_remoteGamepadPending(this: *const Self) -> *mut u8 { unsafe { member!(this, "EventSourceHolder_Input.remoteGamepadPending", 0xF0, u8) } }
+    /// `EventSourceHolder_Input::remoteGamepadPending`, at +0xF0 on 1.7.104.
+    #[inline]
+    pub fn remoteGamepadPending(&self) -> u8 { unsafe { Self::__member_remoteGamepadPending(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_remoteGamepadPending(&mut self, value: u8) { unsafe { Self::__member_remoteGamepadPending(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn remoteGamepadPending_ptr(&self) -> *mut u8 { Self::__member_remoteGamepadPending(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_BSRemoteGamepadEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_Input.source_BSRemoteGamepadEvent", 0x98, crate::BSTEventSource) } }
+    /// `EventSourceHolder_Input::source_BSRemoteGamepadEvent`, at +0x98 on 1.7.104.
+    #[inline]
+    pub fn source_BSRemoteGamepadEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_BSRemoteGamepadEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_BSRemoteGamepadEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_BSRemoteGamepadEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_virtualKeyboard(this: *const Self) -> *mut *mut crate::BSWin32VirtualKeyboardDevice { unsafe { member!(this, "EventSourceHolder_Input.virtualKeyboard", 0x88, *mut crate::BSWin32VirtualKeyboardDevice) } }
+    /// `EventSourceHolder_Input::virtualKeyboard`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn virtualKeyboard(&self) -> *mut crate::BSWin32VirtualKeyboardDevice { unsafe { Self::__member_virtualKeyboard(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_virtualKeyboard(&mut self, value: *mut crate::BSWin32VirtualKeyboardDevice) { unsafe { Self::__member_virtualKeyboard(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn virtualKeyboard_ptr(&self) -> *mut *mut crate::BSWin32VirtualKeyboardDevice { Self::__member_virtualKeyboard(core::ptr::from_ref(self)) }
 }
 
 impl crate::EventSourceHolder_MenuOpenClose {
@@ -382,6 +547,14 @@ impl crate::EventSourceHolder_MenuOpenClose {
     /// `void (EventSourceHolder_MenuOpenClose* this)`
     #[inline]
     pub fn render_menu_stack(&self) { unsafe { function!(82084, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lock(this: *const Self) -> *mut crate::BSSpinLock { unsafe { member!(this, "EventSourceHolder_MenuOpenClose.lock", 0x158, crate::BSSpinLock) } }
+    /// `EventSourceHolder_MenuOpenClose::lock`, at +0x158 on 1.7.104.
+    #[inline]
+    pub fn lock(&self) -> &crate::BSSpinLock { unsafe { &*Self::__member_lock(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn lock_ptr(&self) -> *mut crate::BSSpinLock { Self::__member_lock(core::ptr::from_ref(self)) }
 }
 
 impl crate::EventSourceHolder_TES {
@@ -400,6 +573,97 @@ impl crate::EventSourceHolder_TES {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(13458, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_BGSEventProcessedEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_BGSEventProcessedEvent", 0x0, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_BGSEventProcessedEvent`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn source_BGSEventProcessedEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_BGSEventProcessedEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_BGSEventProcessedEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_BGSEventProcessedEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESAmiiboForcedStopDetectionEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESAmiiboForcedStopDetectionEvent", 0x12E8, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESAmiiboForcedStopDetectionEvent`, at +0x12E8 on 1.7.104.
+    #[inline]
+    pub fn source_TESAmiiboForcedStopDetectionEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESAmiiboForcedStopDetectionEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESAmiiboForcedStopDetectionEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESAmiiboForcedStopDetectionEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESAmiiboTouchEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESAmiiboTouchEvent", 0x1290, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESAmiiboTouchEvent`, at +0x1290 on 1.7.104.
+    #[inline]
+    pub fn source_TESAmiiboTouchEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESAmiiboTouchEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESAmiiboTouchEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESAmiiboTouchEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESCellReadyToApplyDecalsEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESCellReadyToApplyDecalsEvent", 0x268, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESCellReadyToApplyDecalsEvent`, at +0x268 on 1.7.104.
+    #[inline]
+    pub fn source_TESCellReadyToApplyDecalsEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESCellReadyToApplyDecalsEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESCellReadyToApplyDecalsEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESCellReadyToApplyDecalsEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESFastTravelEndEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESFastTravelEndEvent", 0x1238, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESFastTravelEndEvent`, at +0x1238 on 1.7.104.
+    #[inline]
+    pub fn source_TESFastTravelEndEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESFastTravelEndEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESFastTravelEndEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESFastTravelEndEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESPlayerBowShotEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESPlayerBowShotEvent", 0xE70, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESPlayerBowShotEvent`, at +0xE70 on 1.7.104.
+    #[inline]
+    pub fn source_TESPlayerBowShotEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESPlayerBowShotEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESPlayerBowShotEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESPlayerBowShotEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESQuestStageItemDoneEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESQuestStageItemDoneEvent", 0xAA8, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESQuestStageItemDoneEvent`, at +0xAA8 on 1.7.104.
+    #[inline]
+    pub fn source_TESQuestStageItemDoneEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESQuestStageItemDoneEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESQuestStageItemDoneEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESQuestStageItemDoneEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESQuestStartStopEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESQuestStartStopEvent", 0xB00, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESQuestStartStopEvent`, at +0xB00 on 1.7.104.
+    #[inline]
+    pub fn source_TESQuestStartStopEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESQuestStartStopEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESQuestStartStopEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESQuestStartStopEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESWaitStartEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESWaitStartEvent", 0x1130, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESWaitStartEvent`, at +0x1130 on 1.7.104.
+    #[inline]
+    pub fn source_TESWaitStartEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESWaitStartEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESWaitStartEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESWaitStartEvent(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_TESWaitStopEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "EventSourceHolder_TES.source_TESWaitStopEvent", 0x1188, crate::BSTEventSource) } }
+    /// `EventSourceHolder_TES::source_TESWaitStopEvent`, at +0x1188 on 1.7.104.
+    #[inline]
+    pub fn source_TESWaitStopEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_TESWaitStopEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_TESWaitStopEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_TESWaitStopEvent(core::ptr::from_ref(self)) }
+}
+
+impl crate::IDEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_userEvent(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "IDEvent.userEvent", 0x18, crate::BSFixedString) } }
+    /// `IDEvent::userEvent`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn userEvent(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_userEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn userEvent_ptr(&self) -> *mut crate::BSFixedString { Self::__member_userEvent(core::ptr::from_ref(self)) }
 }
 
 impl crate::InputEvent {
@@ -430,6 +694,49 @@ impl crate::TESActivateEvent {
     pub fn object_activated(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.objectActivated }.as_ref() } }
 }
 
+impl crate::TESActiveEffectApplyRemoveEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_activeEffectUniqueID(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESActiveEffectApplyRemoveEvent.activeEffectUniqueID", 0x10, u16) } }
+    /// `TESActiveEffectApplyRemoveEvent::activeEffectUniqueID`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn activeEffectUniqueID(&self) -> u16 { unsafe { Self::__member_activeEffectUniqueID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_activeEffectUniqueID(&mut self, value: u16) { unsafe { Self::__member_activeEffectUniqueID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn activeEffectUniqueID_ptr(&self) -> *mut u16 { Self::__member_activeEffectUniqueID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_caster(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESActiveEffectApplyRemoveEvent.caster", 0x8, *mut crate::TESObjectREFR) } }
+    /// `TESActiveEffectApplyRemoveEvent::caster`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn caster(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_caster(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_caster(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_caster(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn caster_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_caster(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isApplied(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESActiveEffectApplyRemoveEvent.isApplied", 0x12, u8) } }
+    /// `TESActiveEffectApplyRemoveEvent::isApplied`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn isApplied(&self) -> u8 { unsafe { Self::__member_isApplied(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isApplied(&mut self, value: u8) { unsafe { Self::__member_isApplied(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isApplied_ptr(&self) -> *mut u8 { Self::__member_isApplied(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_target(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESActiveEffectApplyRemoveEvent.target", 0x0, *mut crate::TESObjectREFR) } }
+    /// `TESActiveEffectApplyRemoveEvent::target`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn target(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_target(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_target(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_target(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn target_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_target(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESActorLocationChangeEvent {
     /// `TESActorLocationChangeEvent::actor` at +0x0: the actor (NiPointer)
     ///
@@ -446,6 +753,19 @@ impl crate::TESActorLocationChangeEvent {
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
     pub fn old_loc(&self) -> Option<&crate::BGSLocation> { unsafe { { self.oldLoc }.as_ref() } }
+}
+
+impl crate::TESBookReadEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_uniqueID(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESBookReadEvent.uniqueID", 0xC, u16) } }
+    /// `TESBookReadEvent::uniqueID`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn uniqueID(&self) -> u16 { unsafe { Self::__member_uniqueID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_uniqueID(&mut self, value: u16) { unsafe { Self::__member_uniqueID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn uniqueID_ptr(&self) -> *mut u16 { Self::__member_uniqueID(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESCellAttachDetachEvent {
@@ -469,6 +789,32 @@ impl crate::TESCombatEvent {
     pub fn target_actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.targetActor }.as_ref() } }
 }
 
+impl crate::TESDestructionStageChangedEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_newStage(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESDestructionStageChangedEvent.newStage", 0xC, u32) } }
+    /// `TESDestructionStageChangedEvent::newStage`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn newStage(&self) -> u32 { unsafe { Self::__member_newStage(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_newStage(&mut self, value: u32) { unsafe { Self::__member_newStage(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn newStage_ptr(&self) -> *mut u32 { Self::__member_newStage(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESEnterBleedoutEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_actor(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESEnterBleedoutEvent.actor", 0x0, *mut crate::TESObjectREFR) } }
+    /// `TESEnterBleedoutEvent::actor`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn actor(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_actor(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_actor(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_actor(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn actor_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_actor(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESEquipEvent {
     /// `TESEquipEvent::actor` at +0x0: the actor equipping or unequipping (NiPointer)
     ///
@@ -488,6 +834,16 @@ impl crate::TESFurnitureEvent {
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
     pub fn target_furniture(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.targetFurniture }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_type_(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESFurnitureEvent.type", 0x10, u32) } }
+    /// `TESFurnitureEvent::type`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn type_(&self) -> u32 { unsafe { Self::__member_type_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_type_(&mut self, value: u32) { unsafe { Self::__member_type_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn type__ptr(&self) -> *mut u32 { Self::__member_type_(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESHitEvent {
@@ -519,6 +875,42 @@ impl crate::TESLockChangedEvent {
     pub fn locked_object(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.lockedObject }.as_ref() } }
 }
 
+impl crate::TESMagicWardHitEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_spell(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESMagicWardHitEvent.spell", 0x10, u32) } }
+    /// `TESMagicWardHitEvent::spell`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn spell(&self) -> u32 { unsafe { Self::__member_spell(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_spell(&mut self, value: u32) { unsafe { Self::__member_spell(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn spell_ptr(&self) -> *mut u32 { Self::__member_spell(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESMoveAttachDetachEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isCellAttached(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESMoveAttachDetachEvent.isCellAttached", 0x8, u8) } }
+    /// `TESMoveAttachDetachEvent::isCellAttached`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn isCellAttached(&self) -> u8 { unsafe { Self::__member_isCellAttached(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isCellAttached(&mut self, value: u8) { unsafe { Self::__member_isCellAttached(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isCellAttached_ptr(&self) -> *mut u8 { Self::__member_isCellAttached(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_reference(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESMoveAttachDetachEvent.reference", 0x0, *mut crate::TESObjectREFR) } }
+    /// `TESMoveAttachDetachEvent::reference`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn reference(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_reference(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_reference(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_reference(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn reference_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_reference(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESObjectREFRTranslationEvent {
     /// `TESObjectREFRTranslationEvent::ref` at +0x0: the translating reference (NiPointer)
     ///
@@ -527,12 +919,173 @@ impl crate::TESObjectREFRTranslationEvent {
     pub fn ref_(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.ref_ }.as_ref() } }
 }
 
+impl crate::TESOpenCloseEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_activeRef(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESOpenCloseEvent.activeRef", 0x0, *mut crate::TESObjectREFR) } }
+    /// `TESOpenCloseEvent::activeRef`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn activeRef(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_activeRef(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_activeRef(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_activeRef(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn activeRef_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_activeRef(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_opened(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESOpenCloseEvent.opened", 0x10, u8) } }
+    /// `TESOpenCloseEvent::opened`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn opened(&self) -> u8 { unsafe { Self::__member_opened(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_opened(&mut self, value: u8) { unsafe { Self::__member_opened(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn opened_ptr(&self) -> *mut u8 { Self::__member_opened(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ref_(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESOpenCloseEvent.ref", 0x8, *mut crate::TESObjectREFR) } }
+    /// `TESOpenCloseEvent::ref`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn ref_(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_ref_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ref_(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_ref_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ref__ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_ref_(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESPackageEvent {
     /// `TESPackageEvent::actor` at +0x0: the actor (NiPointer)
     ///
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
     pub fn actor(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.actor }.as_ref() } }
+}
+
+impl crate::TESPerkEntryRunEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_cause(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESPerkEntryRunEvent.cause", 0x0, *mut crate::TESObjectREFR) } }
+    /// `TESPerkEntryRunEvent::cause`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn cause(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_cause(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_cause(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_cause(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn cause_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_cause(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flag(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESPerkEntryRunEvent.flag", 0x14, u16) } }
+    /// `TESPerkEntryRunEvent::flag`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn flag(&self) -> u16 { unsafe { Self::__member_flag(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flag(&mut self, value: u16) { unsafe { Self::__member_flag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flag_ptr(&self) -> *mut u16 { Self::__member_flag(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_perkID(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESPerkEntryRunEvent.perkID", 0x10, u32) } }
+    /// `TESPerkEntryRunEvent::perkID`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn perkID(&self) -> u32 { unsafe { Self::__member_perkID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_perkID(&mut self, value: u32) { unsafe { Self::__member_perkID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn perkID_ptr(&self) -> *mut u32 { Self::__member_perkID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_target(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "TESPerkEntryRunEvent.target", 0x8, *mut crate::TESObjectREFR) } }
+    /// `TESPerkEntryRunEvent::target`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn target(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_target(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_target(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_target(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn target_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_target(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESPlayerBowShotEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isSunGazing(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESPlayerBowShotEvent.isSunGazing", 0xC, u8) } }
+    /// `TESPlayerBowShotEvent::isSunGazing`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn isSunGazing(&self) -> u8 { unsafe { Self::__member_isSunGazing(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isSunGazing(&mut self, value: u8) { unsafe { Self::__member_isSunGazing(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isSunGazing_ptr(&self) -> *mut u8 { Self::__member_isSunGazing(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESQuestStageEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESQuestStageEvent.flags", 0xE, u8) } }
+    /// `TESQuestStageEvent::flags`, at +0xE on 1.7.104.
+    #[inline]
+    pub fn flags(&self) -> u8 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags(&mut self, value: u8) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags_ptr(&self) -> *mut u8 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_stage(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESQuestStageEvent.stage", 0xC, u16) } }
+    /// `TESQuestStageEvent::stage`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn stage(&self) -> u16 { unsafe { Self::__member_stage(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_stage(&mut self, value: u16) { unsafe { Self::__member_stage(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn stage_ptr(&self) -> *mut u16 { Self::__member_stage(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESQuestStartStopEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_started(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESQuestStartStopEvent.started", 0x4, u8) } }
+    /// `TESQuestStartStopEvent::started`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn started(&self) -> u8 { unsafe { Self::__member_started(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_started(&mut self, value: u8) { unsafe { Self::__member_started(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn started_ptr(&self) -> *mut u8 { Self::__member_started(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESSellEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_uniqueID(this: *const Self) -> *mut u16 { unsafe { member!(this, "TESSellEvent.uniqueID", 0xC, u16) } }
+    /// `TESSellEvent::uniqueID`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn uniqueID(&self) -> u16 { unsafe { Self::__member_uniqueID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_uniqueID(&mut self, value: u16) { unsafe { Self::__member_uniqueID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn uniqueID_ptr(&self) -> *mut u16 { Self::__member_uniqueID(core::ptr::from_ref(self)) }
+}
+
+impl crate::TESSleepStartEvent {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_desiredSleepEndTime(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESSleepStartEvent.desiredSleepEndTime", 0x4, f32) } }
+    /// `TESSleepStartEvent::desiredSleepEndTime`, at +0x4 on 1.7.104.
+    #[inline]
+    pub fn desiredSleepEndTime(&self) -> f32 { unsafe { Self::__member_desiredSleepEndTime(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_desiredSleepEndTime(&mut self, value: f32) { unsafe { Self::__member_desiredSleepEndTime(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn desiredSleepEndTime_ptr(&self) -> *mut f32 { Self::__member_desiredSleepEndTime(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sleepStartTime(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESSleepStartEvent.sleepStartTime", 0x0, f32) } }
+    /// `TESSleepStartEvent::sleepStartTime`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn sleepStartTime(&self) -> f32 { unsafe { Self::__member_sleepStartTime(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sleepStartTime(&mut self, value: f32) { unsafe { Self::__member_sleepStartTime(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sleepStartTime_ptr(&self) -> *mut f32 { Self::__member_sleepStartTime(core::ptr::from_ref(self)) }
 }
 
 /// `ActorItemEquipped::GetEventSource`: the one source of ActorItemEquipped::Event events
@@ -826,7 +1379,7 @@ pub unsafe fn bst_event_source_bgs_save_load_manager_event__add_event_sink(this:
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn bst_event_source_bgs_save_load_manager_event__notify(this: *mut c_void, event: *const c_void) { unsafe { function!(35869, (*mut c_void, *const c_void))(this, event) } }
+pub unsafe fn bst_event_source_bgs_save_load_manager_event__notify(this: *mut c_void, event: *const crate::BGSSaveLoadManagerEvent) { unsafe { function!(35869, (*mut c_void, *const crate::BGSSaveLoadManagerEvent))(this, event) } }
 /// `BSTEventSource<BGSSaveLoadManagerEvent>::RemoveEventSink`: removes the sink from sinks (or queues it in pendingUnregisters while a notification is running) and drops it from pendingRegisters
 ///
 /// Semantic, events pass, medium; ledger xref_inference evidence, name medium; id 34015, rva 0x5b9a40.

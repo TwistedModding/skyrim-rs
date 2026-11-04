@@ -3,6 +3,44 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSImagespaceShaderISSAOCompositeFog::vftable` at 0x1b3bb48, id 254415 (rtti, high); 15 slots.
+#[repr(C)]
+pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
+    /// `BSImagespaceShaderISSAOCompositeFog::vdtor` at 0x1508e90 (slot_propagation, medium); signature (low): `BSImagespaceShaderISSAOCompositeFog * vdtor(BSImagespaceShaderISSAOCompositeFog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `BSImagespaceShader::vfunc_2` at 0x1564960 (rtti, medium); signature (high): `undefined vfunc_2(BSImagespaceShader * this)`
+    pub slot_2: *const c_void,
+    /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
+    pub slot_4: *const c_void,
+    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
+    pub slot_5: *const c_void,
+    /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
+    pub slot_6: *const c_void,
+    /// `BSImagespaceShader::vfunc_7` at 0x1564d90 (rtti, medium); signature (high): `undefined vfunc_7(BSImagespaceShader * this)`
+    pub slot_7: *const c_void,
+    /// `BSShader::vfunc_8` at 0x1578ac0 (semantic, high); signature (low): `undefined vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `BSImagespaceShader::vfunc_9` at 0x1564df0 (rtti, medium); signature (low): `undefined vfunc_9(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_9: *const c_void,
+    /// `BSImagespaceShader::vfunc_10` at 0x150b510 (rtti, medium); signature (low): `undefined vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `BSImagespaceShader::vfunc_11` at 0x150b490 (rtti, medium); signature (low): `undefined vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `BSImagespaceShader::vfunc_12` at 0x1565170 (rtti, medium); signature (low): `undefined vfunc_12(BSImagespaceShader * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
+    pub slot_12: *const c_void,
+    /// `BSImagespaceShaderISSAOCompositeFog::vfunc_13` at 0x150aac0 (rtti, high); signature (low): `undefined8 * vfunc_13(BSImagespaceShaderISSAOCompositeFog * this, undefined8 * param_1)`
+    pub slot_13: *const c_void,
+    /// `BSImagespaceShader::vfunc_14` at 0x1565200 (rtti, medium); signature (low): `undefined vfunc_14(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
+    pub slot_14: *const c_void,
+}
+impl BSImagespaceShaderISSAOCompositeFog_vtable {
+    pub const ID: u64 = 254415;
+}
+
 /// `BSImagespaceShaderISSAOCompositeFog::vftable_10` at 0x1b3bbc8, id 254417 (rtti, high); 2 slots.
 #[repr(C)]
 pub struct BSImagespaceShaderISSAOCompositeFog_vtable_10 {
@@ -8563,7 +8601,8 @@ impl BSMultiBoundRoom_vtable {
 #[repr(C)]
 pub struct BSMultiBoundShape_vtable {
     /// `BSMultiBoundShape::vdtor` at 0xfe5140 (layout_inference, medium); signature (low): `BSMultiBoundShape * vdtor(BSMultiBoundShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSMultiBoundShape::vfunc_2` at 0xfe5180 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -9903,7 +9942,8 @@ impl BSOStream_vtable {
 #[repr(C)]
 pub struct BSOcclusionBox_vtable {
     /// `BSOcclusionBox::vdtor` at 0xfe82b0 (layout_inference, medium); signature (low): `BSOcclusionBox * vdtor(BSOcclusionBox * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSOcclusionBox::vfunc_2` at 0xfe8320 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -10498,7 +10538,8 @@ impl BSPCOrbisGamepadDevice_vtable {
 #[repr(C)]
 pub struct BSPSysArrayEmitter_vtable {
     /// `BSPSysArrayEmitter::vdtor` at 0xfe1be0 (slot_propagation, medium); signature (low): `BSPSysArrayEmitter * vdtor(BSPSysArrayEmitter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSPSysArrayEmitter::vfunc_2` at 0xfe1dd0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -11626,7 +11667,8 @@ pub struct BSParentVelocityModifier_vtable {
     /// `BSParentVelocityModifier::vfunc_38` at 0x1001e10 (rtti, high); signature (low): `undefined vfunc_38(BSParentVelocityModifier * this, longlong param_1, ushort param_2, longlong param_3)`
     pub slot_38: *const c_void,
     /// `BSParentVelocityModifier::vfunc_39` at 0x1001eb0 (rtti, high); signature (high): `undefined vfunc_39(BSParentVelocityModifier * this)`
-    pub slot_39: *const c_void,
+    #[doc(hidden)]
+    pub __slot_39: *const c_void,
     /// `NiPSysModifier::vfunc_40` at 0xf9d7b0 (rtti, medium); signature (low): `undefined vfunc_40(NiPSysModifier * this, undefined1 param_1)`
     pub slot_40: *const c_void,
     /// `NiPSysModifier::vfunc_41` at 0xfa11c0 (rtti, medium); signature (low): `undefined vfunc_41(NiPSysModifier * this, undefined8 param_1)`
@@ -12142,7 +12184,8 @@ pub struct BSParticleSystemManager_vtable {
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
     /// `BSParticleSystemManager::vfunc_23` at 0xfef310 (rtti, high); signature (low): `NiNode * vfunc_23(BSParticleSystemManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_23: *const c_void,
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
     /// `NiNode::vfunc_24` at 0xee1560 (rtti, medium); signature (low): `undefined vfunc_24(NiNode * this, longlong param_1)`
     pub slot_24: *const c_void,
     /// `NiNode::vfunc_25` at 0xee15a0 (rtti, medium); signature (low): `undefined vfunc_25(NiNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -12938,9 +12981,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::vdtor` at 0x129a140 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::vfunc_2` at 0x129a820 (rtti, medium); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64___vtable {
     pub const ID: u64 = 246983;
@@ -12950,11 +12995,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>::vdtor` at 0x1294350 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>::vfunc_2` at 0x12947c0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48_vtable {
     pub const ID: u64 = 536906;
@@ -12964,11 +13012,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId___vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>::vdtor` at 0x1282990 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>::vfunc_2` at 0x1283650 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId___vtable {
     pub const ID: u64 = 466855;
@@ -12978,11 +13029,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::vdtor` at 0x12c90c0 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>::vfunc_2` at 0x12c9ac0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb_vtable {
     pub const ID: u64 = 466870;
@@ -12994,9 +13048,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>::vdtor` at 0x1337ce0 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>::vfunc_2` at 0x1338f20 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b_vtable {
     pub const ID: u64 = 247001;
@@ -13008,9 +13064,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x12acea0 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x12ae420 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a_vtable {
     pub const ID: u64 = 248129;
@@ -13022,9 +13080,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x12acf10 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x12ae460 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413_vtable {
     pub const ID: u64 = 248119;
@@ -13036,9 +13096,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x12828b0 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x12835d0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1_vtable {
     pub const ID: u64 = 247025;
@@ -13048,11 +13110,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x1337c00 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x1338ea0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44_vtable {
     pub const ID: u64 = 467975;
@@ -13062,11 +13127,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x1282840 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x1283590 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f_vtable {
     pub const ID: u64 = 466008;
@@ -13076,11 +13144,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>::vdtor` at 0x1337c70 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>::vfunc_2` at 0x1338ee0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714_vtable {
     pub const ID: u64 = 467959;
@@ -13092,9 +13163,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>::vdtor` at 0x1282920 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>::vfunc_2` at 0x1283610 (rtti, medium); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64___vtable {
     pub const ID: u64 = 246985;
@@ -13104,11 +13177,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>::vdtor` at 0x12acff0 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>::vfunc_2` at 0x12ae4e0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317_vtable {
     pub const ID: u64 = 466517;
@@ -13120,9 +13196,11 @@ pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNe
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>::vdtor` at 0x12acf80 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>::vfunc_2` at 0x12ae4a0 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int___vtable {
     pub const ID: u64 = 248190;
@@ -13132,11 +13210,14 @@ impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResul
 #[repr(C)]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f_vtable {
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>::vdtor` at 0x12ebd80 (slot_propagation, medium); signature (low): `BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_> * vdtor(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>::vfunc_2` at 0x12ec050 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f_vtable {
     pub const ID: u64 = 466159;
@@ -13148,9 +13229,11 @@ pub struct BSPlatform__BSAsyncRequestBase_vtable {
     /// `BSPlatform::BSAsyncRequestBase::vdtor` at 0x12b3860 (layout_inference, medium); signature (low): `BSAsyncRequestBase * vdtor(BSAsyncRequestBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_2` at 0x1283690 (rtti, high); signature (low): `undefined vfunc_2(BSAsyncRequestBase * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSAsyncRequestBase_vtable {
     pub const ID: u64 = 246981;
@@ -13160,21 +13243,29 @@ impl BSPlatform__BSAsyncRequestBase_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSBNETFile__download_vtable {
     /// `BSPlatform::BSBNETFile::download::vdtor` at 0x1294530 (layout_inference, medium); signature (low): `download * vdtor(download * this, undefined1 * param_1, undefined1 * param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSPlatform::BSBNETFile::download::vfunc_5` at 0x1292e50 (rtti, high); signature (low): `undefined vfunc_5(download * this, undefined1 * param_1, undefined1 * param_2, ulonglong param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl BSPlatform__BSBNETFile__download_vtable {
     pub const ID: u64 = 466174;
@@ -13184,21 +13275,29 @@ impl BSPlatform__BSBNETFile__download_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload_vtable {
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vdtor` at 0x12945b0 (slot_propagation, medium); signature (low): `marketplaceDownload * vdtor(marketplaceDownload * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_1` at 0x1295360 (rtti, high); signature (low): `longlong vfunc_1(marketplaceDownload * this, undefined8 param_1, longlong * param_2)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_2` at 0x1296270 (rtti, high); signature (low): `longlong vfunc_2(marketplaceDownload * this, longlong param_1, longlong param_2, longlong * param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_3` at 0x1296550 (rtti, high); signature (low): `undefined vfunc_3(marketplaceDownload * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_4` at 0x1295180 (rtti, high); signature (low): `undefined vfunc_4(marketplaceDownload * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_5` at 0x12948f0 (rtti, high); signature (low): `undefined vfunc_5(marketplaceDownload * this, undefined8 param_1, undefined1 * param_2, ulonglong param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_6` at 0x1296500 (rtti, high); signature (low): `undefined vfunc_6(marketplaceDownload * this, undefined8 * param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::vfunc_7` at 0x1295f80 (rtti, high); signature (high): `bool vfunc_7(marketplaceDownload * this)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl BSPlatform__BSBNETFile__marketplaceDownload_vtable {
     pub const ID: u64 = 466176;
@@ -13208,11 +13307,14 @@ impl BSPlatform__BSBNETFile__marketplaceDownload_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest_vtable {
     /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest::vdtor` at 0x12945f0 (layout_inference, medium); signature (low): `marketplaceDownloadRequest * vdtor(marketplaceDownloadRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>::vfunc_2` at 0x1283610 (rtti, medium); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest_vtable {
     pub const ID: u64 = 536904;
@@ -13222,11 +13324,14 @@ impl BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__market
 #[repr(C)]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest_vtable {
     /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest::vdtor` at 0x1294730 (layout_inference, medium); signature (low): `marketplaceStreamRequest * vdtor(marketplaceStreamRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest::vfunc_2` at 0x1294800 (rtti, high); signature (low): `undefined vfunc_2(marketplaceStreamRequest * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest_vtable {
     pub const ID: u64 = 536908;
@@ -13236,19 +13341,26 @@ impl BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketpl
 #[repr(C)]
 pub struct BSPlatform__BSBNETImage_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSPlatform::BSBNETImage::vdtor` at 0x12ebf10 (layout_inference, medium); signature (low): `BSBNETImage * vdtor(BSBNETImage * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSPlatform::BSBNETImage::vfunc_6` at 0x12ea8a0 (rtti, high); signature (high): `undefined vfunc_6(BSBNETImage * this)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl BSPlatform__BSBNETImage_vtable {
     pub const ID: u64 = 422303;
@@ -13270,9 +13382,11 @@ pub struct BSPlatform__BSDownloadRequest_vtable {
     /// `BSPlatform::BSDownloadRequest::vdtor` at 0x12b38c0 (slot_propagation, medium); signature (low): `BSDownloadRequest * vdtor(BSDownloadRequest * this, void * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>::vfunc_2` at 0x1283610 (rtti, medium); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSDownloadRequest_vtable {
     pub const ID: u64 = 248340;
@@ -13282,19 +13396,26 @@ impl BSPlatform__BSDownloadRequest_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSMarketplaceImage_vtable {
     /// `BSPlatform::BSMarketplaceImage::vfunc_0` at 0x12ec2d0 (rtti, high); signature (high): `ulonglong vfunc_0(BSMarketplaceImage * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vfunc_1` at 0x12eacb0 (rtti, high); signature (low): `longlong vfunc_1(BSMarketplaceImage * this, int param_1, uint param_2, longlong * param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vfunc_2` at 0x12eac20 (rtti, high); signature (low): `undefined8 vfunc_2(BSMarketplaceImage * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vfunc_3` at 0x12ea910 (rtti, high); signature (low): `longlong vfunc_3(BSMarketplaceImage * this, BSAsyncRequestBase_vtbl * param_1, longlong param_2, longlong * param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vfunc_4` at 0x12ebc50 (rtti, high); signature (low): `ulonglong vfunc_4(BSMarketplaceImage * this, undefined8 param_1)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vdtor` at 0x12ebfa0 (layout_inference, medium); signature (low): `BSMarketplaceImage * vdtor(BSMarketplaceImage * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSPlatform::BSMarketplaceImage::vfunc_6` at 0x12ec090 (rtti, high); signature (low): `undefined vfunc_6(BSMarketplaceImage * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl BSPlatform__BSMarketplaceImage_vtable {
     pub const ID: u64 = 422307;
@@ -13304,7 +13425,8 @@ impl BSPlatform__BSMarketplaceImage_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSMarketplaceUploader_vtable {
     /// `BSPlatform::BSMarketplaceUploader::vdtor` at 0x12d22b0 (layout_inference, medium); signature (low): `BSMarketplaceUploader * vdtor(BSMarketplaceUploader * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BSPlatform__BSMarketplaceUploader_vtable {
     pub const ID: u64 = 467101;
@@ -13316,9 +13438,11 @@ pub struct BSPlatform__BSUploadRequest_vtable {
     /// `BSPlatform::BSUploadRequest::vdtor` at 0x12b39b0 (slot_propagation, medium); signature (low): `BSUploadRequest * vdtor(BSUploadRequest * this, void * param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSPlatform::BSAsyncRequestBase::vfunc_1` at 0x1284250 (rtti, medium); signature (high): `undefined vfunc_1(BSAsyncRequestBase * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>::vfunc_2` at 0x129a820 (rtti, medium); signature (low): `undefined vfunc_2(BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSUploadRequest_vtable {
     pub const ID: u64 = 248338;
@@ -13328,11 +13452,14 @@ impl BSPlatform__BSUploadRequest_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSUploadWithProgressRequest_vtable {
     /// `BSPlatform::BSUploadWithProgressRequest::vdtor` at 0x12b3a80 (layout_inference, medium); signature (low): `BSUploadWithProgressRequest * vdtor(BSUploadWithProgressRequest * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSUploadWithProgressRequest::vfunc_1` at 0x12b3ae0 (rtti, high); signature (high): `float vfunc_1(BSUploadWithProgressRequest * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSUploadWithProgressRequest::vfunc_2` at 0x12b3ac0 (rtti, high); signature (low): `undefined vfunc_2(BSUploadWithProgressRequest * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl BSPlatform__BSUploadWithProgressRequest_vtable {
     pub const ID: u64 = 466719;
@@ -13342,9 +13469,11 @@ impl BSPlatform__BSUploadWithProgressRequest_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSUserContent_vtable {
     /// `BSPlatform::BSUserContent::vfunc_0` at 0x585a10 (rtti, high); signature (low): `BSUserContent * vfunc_0(BSUserContent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSUserContent::vfunc_1` at 0x125e550 (rtti, high); signature (low): `undefined vfunc_1(BSUserContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BSPlatform__BSUserContent_vtable {
     pub const ID: u64 = 422142;
@@ -13354,7 +13483,8 @@ impl BSPlatform__BSUserContent_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSUserContentCollection_vtable {
     /// `BSPlatform::BSUserContentCollection::vfunc_0` at 0x5ad950 (rtti, high); signature (low): `BSUserContentCollection * vfunc_0(BSUserContentCollection * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BSPlatform__BSUserContentCollection_vtable {
     pub const ID: u64 = 465027;
@@ -13364,7 +13494,8 @@ impl BSPlatform__BSUserContentCollection_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSUserContentOperations_vtable {
     /// `BSPlatform::BSUserContentOperations::vdtor` at 0x12c9930 (layout_inference, medium); signature (low): `BSUserContentOperations * vdtor(BSUserContentOperations * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BSPlatform__BSUserContentOperations_vtable {
     pub const ID: u64 = 466851;
@@ -13374,37 +13505,53 @@ impl BSPlatform__BSUserContentOperations_vtable {
 #[repr(C)]
 pub struct BSPlatform__BSUserContentSearcherAgent_vtable {
     /// `BSPlatform::BSUserContentSearcherAgent::vdtor` at 0x1338c70 (layout_inference, medium); signature (low): `BSUserContentSearcherAgent * vdtor(BSUserContentSearcherAgent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_1` at 0x132b310 (rtti, high); signature (low): `longlong vfunc_1(BSUserContentSearcherAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_2` at 0x132b5d0 (rtti, high); signature (low): `longlong vfunc_2(BSUserContentSearcherAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_3` at 0x132b910 (rtti, high); signature (low): `longlong vfunc_3(BSUserContentSearcherAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_4` at 0x132bcb0 (rtti, high); signature (low): `undefined8 vfunc_4(BSUserContentSearcherAgent * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_5` at 0x132be60 (rtti, high); signature (low): `longlong vfunc_5(BSUserContentSearcherAgent * this, longlong * param_1, longlong * param_2, ulonglong param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_6` at 0x132c360 (rtti, high); signature (low): `longlong vfunc_6(BSUserContentSearcherAgent * this, undefined8 * param_1, longlong * param_2, ulonglong param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_7` at 0x132c840 (rtti, high); signature (low): `longlong vfunc_7(BSUserContentSearcherAgent * this, char * param_1, char * param_2, longlong * param_3)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_8` at 0x132d250 (rtti, high); signature (low): `longlong vfunc_8(BSUserContentSearcherAgent * this, undefined8 param_1, Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>_vtbl * param_2, undefined8 param_3)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_9` at 0x132d640 (rtti, high); signature (low): `longlong vfunc_9(BSUserContentSearcherAgent * this, char * param_1, undefined1 * * param_2, Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>_vtbl * * param_3)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_10` at 0x132d840 (rtti, high); signature (low): `longlong vfunc_10(BSUserContentSearcherAgent * this, char * param_1, undefined1 * * param_2, Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>_vtbl * * param_3)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_11` at 0x132da40 (rtti, high); signature (low): `undefined8 vfunc_11(BSUserContentSearcherAgent * this, undefined8 param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_12` at 0x132dae0 (rtti, high); signature (low): `longlong vfunc_12(BSUserContentSearcherAgent * this, longlong * param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_13` at 0x132e070 (rtti, high); signature (low): `longlong vfunc_13(BSUserContentSearcherAgent * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_14` at 0x132e340 (rtti, high); signature (low): `longlong vfunc_14(BSUserContentSearcherAgent * this, char * param_1, undefined1 * * param_2, Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>_vtbl * * param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `BSPlatform::BSUserContentSearcherAgent::vfunc_15` at 0x132e580 (rtti, high); signature (low): `longlong vfunc_15(BSUserContentSearcherAgent * this, longlong * param_1, BSAsyncRequestBase * * param_2, undefined8 param_3)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
 }
 impl BSPlatform__BSUserContentSearcherAgent_vtable {
     pub const ID: u64 = 467953;
@@ -13642,7 +13789,8 @@ impl BSPortalGraph_vtable {
 #[repr(C)]
 pub struct BSPortalGraphEntry_vtable {
     /// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
 }

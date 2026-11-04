@@ -6,7 +6,7 @@ use core::ffi::c_void;
 /// `GFxExternalInterface`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxExternalInterface {
     /// +0x0 `vtbl:GFxExternalInterface:0`, rtti
     #[doc(hidden)]
@@ -17,9 +17,11 @@ pub struct GFxExternalInterface {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -126,15 +128,16 @@ pub struct GFxExternalInterface {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_1C) == 0x1C);
@@ -179,12 +182,12 @@ const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_AC) == 0
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxExternalInterface, __field_BC) == 0xBC);
 
 /// `GFxFileOpenerBase`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxFileOpenerBase {
     /// +0x0 `vtbl:GFxFileOpenerBase:0`, rtti
     #[doc(hidden)]
@@ -195,9 +198,11 @@ pub struct GFxFileOpenerBase {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -304,15 +309,16 @@ pub struct GFxFileOpenerBase {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_1C) == 0x1C);
@@ -357,12 +363,12 @@ const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_AC) == 0xAC
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxFileOpenerBase, __field_BC) == 0xBC);
 
 /// `GFxImageLoader`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxImageLoader {
     /// +0x0 `vtbl:GFxImageLoader:0`, rtti
     #[doc(hidden)]
@@ -373,9 +379,11 @@ pub struct GFxImageLoader {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -482,15 +490,16 @@ pub struct GFxImageLoader {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxImageLoader, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxImageLoader, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_1C) == 0x1C);
@@ -535,12 +544,12 @@ const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxImageLoader, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxImageLoader, __field_BC) == 0xBC);
 
 /// `GFxLog`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `GFxLogBase<GFxLog>`@0x18, `GFxLogConstants`@0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxLog {
     /// +0x0 `vtbl:GFxLog:0`, rtti
     #[doc(hidden)]
@@ -551,9 +560,11 @@ pub struct GFxLog {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `vtbl:GFxLog:18`, rtti
@@ -659,15 +670,16 @@ pub struct GFxLog {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxLog, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxLog, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxLog, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxLog, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxLog, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxLog, __vftable_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_20) == 0x20);
@@ -711,7 +723,7 @@ const _: () = assert!(core::mem::offset_of!(GFxLog, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxLog, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxLog, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxLog, __field_BC) == 0xBC);
 
 /// `GFxLogBase<GFxLog>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
@@ -729,7 +741,7 @@ const _: () = assert!(core::mem::offset_of!(GFxLogBase_GFxLog, __vftable) == 0x0
 /// `GFxState`: size >= 0xC0 (lower bound, upper bound 0x18); partial, the struct stops at the lower bound; primary base `GRefCountBase<GFxState,2>`.
 /// Evidence: lower field field_BC; upper next base of GFxLog at 0x18.
 /// Bases: `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxState {
     /// +0x0 `vtbl:GFxState:0`, rtti
     #[doc(hidden)]
@@ -740,9 +752,11 @@ pub struct GFxState {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -849,15 +863,16 @@ pub struct GFxState {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxState, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxState, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxState, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxState, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxState, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_1C) == 0x1C);
@@ -902,12 +917,12 @@ const _: () = assert!(core::mem::offset_of!(GFxState, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxState, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxState, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxState, __field_BC) == 0xBC);
 
 /// `GFxTranslator`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxTranslator {
     /// +0x0 `vtbl:GFxTranslator:0`, rtti
     #[doc(hidden)]
@@ -918,9 +933,11 @@ pub struct GFxTranslator {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1027,15 +1044,16 @@ pub struct GFxTranslator {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxTranslator, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxTranslator, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_1C) == 0x1C);
@@ -1080,12 +1098,12 @@ const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxTranslator, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxTranslator, __field_BC) == 0xBC);
 
 /// `GFxZlibSupport`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxZlibSupportBase`.
 /// Evidence: field field_BC.
 /// Bases: `GFxZlibSupportBase`@0x0, `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxZlibSupport {
     /// +0x0 `vtbl:GFxZlibSupport:0`, rtti
     #[doc(hidden)]
@@ -1096,9 +1114,11 @@ pub struct GFxZlibSupport {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1205,15 +1225,16 @@ pub struct GFxZlibSupport {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_1C) == 0x1C);
@@ -1258,12 +1279,12 @@ const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupport, __field_BC) == 0xBC);
 
 /// `GFxZlibSupportBase`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxState`.
 /// Evidence: field field_BC.
 /// Bases: `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxZlibSupportBase {
     /// +0x0 `vtbl:GFxZlibSupportBase:0`, rtti
     #[doc(hidden)]
@@ -1274,9 +1295,11 @@ pub struct GFxZlibSupportBase {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1383,15 +1406,16 @@ pub struct GFxZlibSupportBase {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_1C) == 0x1C);
@@ -1436,12 +1460,12 @@ const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_AC) == 0xA
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(GFxZlibSupportBase, __field_BC) == 0xBC);
 
 /// `ScaleformFile::MemoryFile`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GMemoryFile`.
 /// Evidence: field field_BC.
 /// Bases: `GMemoryFile`@0x0, `GFile`@0x0, `GRefCountBase<GFile,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `GFileConstants`@0x10.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ScaleformFile__MemoryFile {
     /// +0x0 `vtbl:ScaleformFile::MemoryFile:0`, rtti
     #[doc(hidden)]
@@ -1452,9 +1476,11 @@ pub struct ScaleformFile__MemoryFile {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1561,15 +1587,16 @@ pub struct ScaleformFile__MemoryFile {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_1C) == 0x1C);
@@ -1614,5 +1641,5 @@ const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_AC)
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(ScaleformFile__MemoryFile, __field_BC) == 0xBC);
 

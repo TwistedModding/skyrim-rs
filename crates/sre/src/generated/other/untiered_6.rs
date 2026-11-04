@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `InitHitData` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44005, rva 0x7f0330).
-/// `undefined InitHitData(float * param_1, undefined8 param_2, longlong * param_3, float param_4, longlong * param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn init_hit_data(param_1: *mut f32, param_2: u64, param_3: *mut i64, param_4: f32, param_5: *mut i64) -> u64 { unsafe { function!(44005, (*mut f32, u64, *mut i64, f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
 /// `InitHitData_2` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44002, rva 0x7f0030).
 /// `undefined InitHitData_2(float * param_1, longlong * param_2, float * param_3, longlong param_4)`
 ///
@@ -12820,3 +12813,17 @@ pub unsafe fn papyrus__actor__set_sub_graph_float_variable_sub0(param_1: i64, pa
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn papyrus__actor__show_gift_menu_sub0(param_1: i64, param_2: i64, param_3: *mut i64, param_4: u64, param_5: u8) -> u64 { unsafe { function!(51576, (i64, i64, *mut i64, u64, u8) -> u64)(param_1, param_2, param_3, param_4, param_5) } }
+/// `Papyrus::Actor::ShowGiftMenu_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54840, rva 0xa0c210).
+/// `undefined ShowGiftMenu_sub1(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__actor__show_gift_menu_sub1(param_1: *mut i64) -> u64 { unsafe { function!(54840, (*mut i64) -> u64)(param_1) } }
+/// `Papyrus::Actor::StartCombat_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 36959, rva 0x668eb0).
+/// `undefined StartCombat_sub0(longlong param_1, longlong param_2, longlong param_3)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn papyrus__actor__start_combat_sub0(param_1: i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(36959, (i64, i64, i64) -> u64)(param_1, param_2, param_3) } }

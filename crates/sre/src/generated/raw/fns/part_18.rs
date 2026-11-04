@@ -3,6 +3,30 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `SetBit0OfExtraActivateRefField20` at 0x1689e0 (decompiler, medium); signature (medium): `undefined SetBit0OfExtraActivateRefField20(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
+pub const SetBit0OfExtraActivateRefField20: u64 = 11795;
+/// `SetBit0OfExtraType36Field10` at 0x1657c0 (decompiler, high); signature (high): `undefined SetBit0OfExtraType36Field10(longlong param_1, char param_2)`
+pub const SetBit0OfExtraType36Field10: u64 = 11742;
+/// `SetBit0OfF4OnField8And10` at 0x5117b0 (decompiler, high); signature (high): `undefined SetBit0OfF4OnField8And10(longlong param_1)`
+pub const SetBit0OfF4OnField8And10: u64 = 31745;
+/// `SetBit0OfField0xDC` at 0x3d0390 (decompiler, medium); signature (medium): `undefined SetBit0OfField0xDC(longlong * param_1, char param_2)`
+pub const SetBit0OfField0xDC: u64 = 24987;
+/// `SetBit0OfField10` at 0x1e6050 (decompiler, high); signature (high): `undefined SetBit0OfField10(longlong param_1, char param_2)`
+pub const SetBit0OfField10: u64 = 14635;
+/// `SetBit0OfField10Field138` at 0x5266e0 (decompiler, medium); signature (untiered): `undefined SetBit0OfField10Field138(longlong param_1, char param_2)`
+pub const SetBit0OfField10Field138: u64 = 32112;
+/// `SetBit0OfField136` at 0x6ea920 (decompiler, high); signature (high): `undefined SetBit0OfField136(longlong param_1, char param_2)`
+pub const SetBit0OfField136: u64 = 39176;
+/// `SetBit0OfField154` at 0x11a7690 (decompiler, high); signature (high): `undefined SetBit0OfField154(longlong param_1)`
+pub const SetBit0OfField154: u64 = 90130;
+/// `SetBit0OfField1C6AndBit1OfField1C8` at 0xe4fab0 (decompiler, high); signature (high): `undefined SetBit0OfField1C6AndBit1OfField1C8(longlong param_1)`
+pub const SetBit0OfField1C6AndBit1OfField1C8: u64 = 88640;
+/// `SetBit0OfField20OfExtraType19` at 0x162410 (decompiler, high); signature (untiered): `undefined SetBit0OfField20OfExtraType19(longlong param_1, byte param_2)`
+pub const SetBit0OfField20OfExtraType19: u64 = 11643;
+/// `SetBit0OfField40` at 0x2bf550 (decompiler, high); signature (high): `undefined SetBit0OfField40(longlong param_1, char param_2)`
+pub const SetBit0OfField40: u64 = 19013;
+/// `SetBit0OfField8` at 0x525010 (decompiler, medium); signature (medium): `undefined SetBit0OfField8(longlong * param_1, char param_2)`
+pub const SetBit0OfField8: u64 = 32086;
 /// `SetBit0OfFieldF4OnArrayEntries` at 0x50bf50 (decompiler, high); signature (high): `undefined SetBit0OfFieldF4OnArrayEntries(longlong * param_1, char param_2)`
 pub const SetBit0OfFieldF4OnArrayEntries: u64 = 31661;
 /// `SetBit0OfFieldF4OnCellNodes` at 0x9a1370 (decompiler, medium); signature (medium): `undefined4 SetBit0OfFieldF4OnCellNodes(char * param_1, longlong param_2)`
@@ -341,8 +365,10 @@ pub const SetCurrentShaderTechnique: u64 = 453510;
 pub const SetCurrentThreadBitInMask: u64 = 39034;
 /// `SetCurrentThreadBitInMaskFromFlag` at 0x6e4c00 (decompiler, high); signature (high): `undefined SetCurrentThreadBitInMaskFromFlag(char * param_1)`
 pub const SetCurrentThreadBitInMaskFromFlag: u64 = 39037;
-/// `SetCurrentVertexShader` at 0x100fee0 (decompiler, medium); signature (untiered): `undefined SetCurrentVertexShader(undefined8 param_1, longlong param_2)`
+/// `SetCurrentVertexShader` at 0x100fee0 (runtime, high); signature (untiered): `undefined SetCurrentVertexShader(undefined8 param_1, longlong param_2)`; semantic: binds an engine vertex shader record: marks render state dirty bit 0x400, stores the record in g_CurrentVertexShaderRecord 0x20cff48 and calls ID3D11DeviceContext::VSSetShader (vtable +0x58) with the record's ID3D11VertexShader (+0x8) and no class instances. The only place the D3D shader and its bytecode meet at bind time: a D3D-level hook finds the bound shader's bytecode as record +0x68 (size +0x10) when record +0x8 is the shader (high); signature `void (Renderer* this, void* record)`
 pub const SetCurrentVertexShader: u64 = 77351;
+/// `SetCurrentVertexShader` as a function pointer type (high).
+pub type SetCurrentVertexShader_fn = unsafe extern "C" fn(this: *mut crate::Renderer, record: *mut c_void);
 /// `SetCursorPosAndUpdateSelection` at 0xe536d0 (decompiler, medium); signature (untiered): `undefined SetCursorPosAndUpdateSelection(longlong param_1, ulonglong param_2, char param_3)`
 pub const SetCursorPosAndUpdateSelection: u64 = 89000;
 /// `SetCursorPositionClamped` at 0x117a640 (decompiler, medium); signature (medium): `undefined SetCursorPositionClamped(longlong param_1, float param_2, float param_3)`
@@ -3230,15 +3256,15 @@ pub const SetVirtualRefPtrForKeyInPairArray: u64 = 42332;
 /// `SetVolumetricRangeFactor` at 0x1530ed0 (runtime, high); signature (untiered): `undefined SetVolumetricRangeFactor(longlong param_1, undefined4 param_2)`; semantic: svlp range: writes +0x2c and refills both repartition tables; the console clamps its value (run-ic10: 300 became 80) (high); signature `void (VolumetricLightingParams* params, float range)`
 pub const SetVolumetricRangeFactor: u64 = 107020;
 /// `SetVolumetricRangeFactor` as a function pointer type (high).
-pub type SetVolumetricRangeFactor_fn = unsafe extern "C" fn(params: *mut c_void, range: f32);
+pub type SetVolumetricRangeFactor_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, range: f32);
 /// `SetVolumetricRepartitionMode` at 0x1530e60 (runtime, high); signature (untiered): `undefined SetVolumetricRepartitionMode(longlong param_1, int param_2)`; semantic: svlp function: mode 0 sets +0x40/+0x48 to VolumetricRepartitionPow/VolumetricInverseRepartitionPow, mode 1 to the base-3 exponential pair; any other mode keeps the pointers; then refills both tables from +0x2c (high); signature `void (VolumetricLightingParams* params, int mode)`
 pub const SetVolumetricRepartitionMode: u64 = 107019;
 /// `SetVolumetricRepartitionMode` as a function pointer type (high).
-pub type SetVolumetricRepartitionMode_fn = unsafe extern "C" fn(params: *mut c_void, mode: i32);
+pub type SetVolumetricRepartitionMode_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, mode: i32);
 /// `SetVolumetricTextureQuality` at 0x1530d90 (semantic, high); signature (untiered): `undefined SetVolumetricTextureQuality(longlong param_1, int param_2)`; semantic: svlp quality: copies the quality's width/height/depth into +0x30..+0x38, releases and recreates the volumes (high); signature `void (VolumetricLightingParams* params, int quality)`
 pub const SetVolumetricTextureQuality: u64 = 107016;
 /// `SetVolumetricTextureQuality` as a function pointer type (high).
-pub type SetVolumetricTextureQuality_fn = unsafe extern "C" fn(params: *mut c_void, quality: i32);
+pub type SetVolumetricTextureQuality_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, quality: i32);
 /// `SetWeatherVolumetricLighting` at 0x14ebf80 (semantic, high); signature (untiered): `undefined SetWeatherVolumetricLighting(undefined4 * param_1)`; semantic: copies 12 floats into g_WeatherVolumetricLighting 0x33d3ea8 (high); signature `void (float* params)`
 pub const SetWeatherVolumetricLighting: u64 = 105632;
 /// `SetWeatherVolumetricLighting` as a function pointer type (high).
@@ -5425,7 +5451,7 @@ pub type SoundHandle__SetCategory_fn = unsafe extern "C" fn(this: *mut crate::So
 pub const SoundHandle__SetFinishCallback: u64 = 67641;
 /// `SoundHandle::SetFinishCallback` as a function pointer type (high).
 pub type SoundHandle__SetFinishCallback_fn = unsafe extern "C" fn(this: *mut crate::SoundHandle, cb: *const c_void, ctx: *mut c_void);
-/// `SoundHandle::SetFrequency` at 0xcc98a0 (semantic, high); signature (untiered): `undefined8 SetFrequency(int * param_1, float param_2)`; semantic: posts 0xe with ratio*1000; stored clamp(0.1,2.0100 (high); signature `bool (SoundHandle* this, float ratio)`
+/// `SoundHandle::SetFrequency` at 0xcc98a0 (semantic, high); signature (untiered): `undefined8 SetFrequency(int * param_1, float param_2)`; semantic: posts 0xe with ratio*1000; stored clamp(0.1,2.0)*100 (high); signature `bool (SoundHandle* this, float ratio)`
 pub const SoundHandle__SetFrequency: u64 = 67627;
 /// `SoundHandle::SetFrequency` as a function pointer type (high).
 pub type SoundHandle__SetFrequency_fn = unsafe extern "C" fn(this: *mut crate::SoundHandle, ratio: f32) -> bool;
@@ -8079,35 +8105,3 @@ pub const TESAmmo__TESIcon_vdtor: u64 = 17244;
 pub const TESAmmo__TESModelTextureSwap_vdtor: u64 = 17243;
 /// `TESAmmo::TESValueForm_vdtor` at 0x269424 (slot_propagation, medium); signature (high): `undefined TESValueForm_vdtor(TESAmmo * this)`
 pub const TESAmmo__TESValueForm_vdtor: u64 = 17246;
-/// `TESAmmo::TESWeightForm_vdtor` at 0x269430 (slot_propagation, medium); signature (high): `undefined TESWeightForm_vdtor(TESAmmo * this)`
-pub const TESAmmo__TESWeightForm_vdtor: u64 = 17247;
-/// `TESAmmo::ctor` at 0x268780 (decompiler, high); signature (high): `TESBoundObject * ctor(TESBoundObject * param_1, undefined8 param_2, undefined8 param_3, char * param_4)`
-pub const TESAmmo__ctor: u64 = 17231;
-/// `TESAmmo::dtor` at 0x268940 (layout_inference, high); signature (low): `undefined dtor(TESAmmo * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAmmo__dtor: u64 = 17232;
-/// `TESAmmo::vdtor` at 0x269470 (slot_propagation, medium); signature (low): `TESAmmo * vdtor(TESAmmo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAmmo__vdtor: u64 = 17252;
-/// `TESAmmo::vfunc_19` at 0x268f30 (rtti, high); signature (low): `undefined vfunc_19(TESAmmo * this, undefined8 param_1, longlong param_2, TypeDescriptor * param_3)`
-pub const TESAmmo__vfunc_19: u64 = 17235;
-/// `TESAmmo::vfunc_25` at 0x2695f0 (rtti, high); signature (high): `byte vfunc_25(TESAmmo * this)`
-pub const TESAmmo__vfunc_25: u64 = 17253;
-/// `TESAmmo::vfunc_4` at 0x268ac0 (rtti, high); signature (low): `undefined vfunc_4(TESAmmo * this, undefined8 param_1, undefined8 param_2, char * param_3)`
-pub const TESAmmo__vfunc_4: u64 = 17233;
-/// `TESAmmo::vfunc_6` at 0x268b00 (rtti, high); signature (low): `undefined8 vfunc_6(TESAmmo * this, uint * param_1, TESAmmo * param_2, char * param_3)`
-pub const TESAmmo__vfunc_6: u64 = 17234;
-/// `TESAmmo::vfunc_64` at 0x269010 (rtti, high); signature (low): `longlong * vfunc_64(TESAmmo * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAmmo__vfunc_64: u64 = 17236;
-/// `TESAmmo::vfunc_64_sub0` at 0x105a4c0 (callgraph, medium); signature (untiered): `undefined vfunc_64_sub0(undefined8 param_1)`
-pub const TESAmmo__vfunc_64_sub0: u64 = 78106;
-/// `TESAmmo::vfunc_78` at 0x269340 (rtti, high); signature (low): `undefined vfunc_78(TESAmmo * this, longlong param_1)`
-pub const TESAmmo__vfunc_78: u64 = 17240;
-/// `TESAnimGroup::ctor` at 0x3b07c0 (layout_inference, high); signature (high): `TESAnimGroup * ctor(TESAnimGroup * this)`
-pub const TESAnimGroup__ctor: u64 = 24394;
-/// `TESAnimGroup::ctor_sub0` at 0x3b1da0 (callgraph, medium); signature (untiered): `undefined ctor_sub0(longlong param_1, undefined2 param_2)`
-pub const TESAnimGroup__ctor_sub0: u64 = 24419;
-/// `TESAnimGroup::dtor` at 0x3b0860 (layout_inference, high); signature (low): `undefined dtor(TESAnimGroup * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAnimGroup__dtor: u64 = 24395;
-/// `TESAnimGroup::vdtor` at 0x3b2430 (layout_inference, medium); signature (low): `TESAnimGroup * vdtor(TESAnimGroup * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-pub const TESAnimGroup__vdtor: u64 = 24435;
-/// `TESAttackDamageForm::ctor` at 0x1df080 (layout_inference, medium); signature (high): `TESAttackDamageForm * ctor(TESAttackDamageForm * this)`
-pub const TESAttackDamageForm__ctor: u64 = 14477;

@@ -2,7 +2,7 @@
 //! their own the way plugins built without the framework do. `a` (`skyrim_legacy_patch_a.dll`,
 //! loaded before `skyrim_runtime_extender.dll` by file name) hooks `Actor::ModActorValueImpl` in its
 //! `SKSEPlugin_Load` and logs the player's health damage it receives; `z`
-//! (`skyrim_rs_legacy_patch_z.dll`, loaded after it) hooks `TESObjectREFR::GetScale` at
+//! (`skyrim_z_legacy_patch.dll`, loaded after it) hooks `TESObjectREFR::GetScale` at
 //! `PLUGINS_LOADED_2`, once the host has checked its sites, and counts the calls.
 
 use core::ffi::c_void;
@@ -74,7 +74,7 @@ unsafe extern "C" fn get_scale(this: *mut sre::TESObjectREFR) -> f32 {
 
 #[must_use]
 pub fn load_a(skse: &skse::Interface) -> bool {
-    start(skse, A) && install(A, &MOD_ACTOR_VALUE, "Actor::ModActorValueImpl", fns::Actor__ModActorValueImpl, mod_actor_value as fns::Actor__ModActorValueImpl_fn)
+    start(skse, A) && install(A, &MOD_ACTOR_VALUE, "Actor::ModActorValueImpl", sre::id!(fns::Actor__ModActorValueImpl), mod_actor_value as fns::Actor__ModActorValueImpl_fn)
 }
 
 #[must_use]
@@ -86,7 +86,7 @@ unsafe extern "C" fn on_message_z(msg: *mut skse::Message) {
     let Some(msg) = (unsafe { msg.as_ref() }) else { return };
     match msg.kind {
         skse::MessagingInterface::PLUGINS_LOADED_2 => {
-            install(Z, &GET_SCALE, "TESObjectREFR::GetScale", fns::TESObjectREFR__GetScale, get_scale as fns::TESObjectREFR__GetScale_fn);
+            install(Z, &GET_SCALE, "TESObjectREFR::GetScale", sre::id!(fns::TESObjectREFR__GetScale), get_scale as fns::TESObjectREFR__GetScale_fn);
         }
         skse::MessagingInterface::SAVE_GAME => log(Z, format_args!("GetScale ran {} times", SCALE_CALLS.load(Ordering::Relaxed))),
         _ => {}

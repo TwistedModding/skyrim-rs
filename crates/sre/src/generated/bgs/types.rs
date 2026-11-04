@@ -46,17 +46,20 @@ const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationInteriorCell, fiel
 /// `BGSAIWorldLocationPointRadius`: size 0x38 (exact, medium); primary base `BGSTypedItem<BGSAIWorldLocationPointRadius,BGSAIWorldLocation>`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.
 /// Bases: `BGSTypedItem<BGSAIWorldLocationPointRadius,BGSAIWorldLocation>`@0x0, `BGSAIWorldLocation`@0x0, `IAIWorldLocation`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSAIWorldLocationPointRadius {
     /// +0x0 `vtbl:BGSAIWorldLocationPointRadius:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSAIWorldLocationPointRadius_vtable,
     /// +0x8 `float`, ctor store
-    pub field_8: f32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     /// +0xC `float`, ctor store
-    pub field_C: f32,
+    #[doc(hidden)]
+    pub __field_C: [u8; 4],
     /// +0x10 `float`, ctor store
-    pub field_10: f32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
     pub field_18: u64,
@@ -72,9 +75,9 @@ pub struct BGSAIWorldLocationPointRadius {
 }
 const _: () = assert!(size_of::<BGSAIWorldLocationPointRadius>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, __field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, __field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSAIWorldLocationPointRadius, field_28) == 0x28);
@@ -264,7 +267,7 @@ const _: () = assert!(core::mem::offset_of!(BGSActionData, field_58) == 0x58);
 /// `BGSAddonNode`: size 0x80 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: runtime: 0x80 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSAddonNode {
     /// +0x0 `vtbl:BGSAddonNode:0`, rtti
     #[doc(hidden)]
@@ -298,7 +301,8 @@ pub struct BGSAddonNode {
     pub __vftable_30: *const crate::raw::vtables::BGSAddonNode_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     pub unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
@@ -329,7 +333,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSAddonNode, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSAddonNode, field_68) == 0x68);
@@ -383,7 +387,7 @@ const _: () = assert!(core::mem::offset_of!(BGSAnimSoundStateManager, __vftable)
 /// `BGSApparatus`: size 0x120 (exact, medium); primary base `TESObjectMISC`.
 /// Evidence: runtime: 0x120 at 1 allocation sites.
 /// Bases: `TESObjectMISC`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESIcon`@0x78, `TESTexture`@0x78, `BaseFormComponent`@0x78, `TESValueForm`@0x88, `BaseFormComponent`@0x88, `TESWeightForm`@0x98, `BaseFormComponent`@0x98, `BGSDestructibleObjectForm`@0xA8, `BaseFormComponent`@0xA8, `BGSMessageIcon`@0xB8, `BaseFormComponent`@0xB8, `BGSPickupPutdownSounds`@0xD0, `BaseFormComponent`@0xD0, `BGSKeywordForm`@0xE8, `BaseFormComponent`@0xE8, `TESQualityForm`@0x100, `BaseFormComponent`@0x100, `TESDescription`@0x110, `BaseFormComponent`@0x110.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSApparatus {
     /// +0x0 `vtbl:BGSApparatus:0`, rtti
     #[doc(hidden)]
@@ -413,7 +417,8 @@ pub struct BGSApparatus {
     pub __vftable_40: *const crate::raw::vtables::BGSApparatus_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     pub unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
@@ -486,7 +491,7 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSApparatus, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSApparatus, __vftable_78) == 0x78);
@@ -511,7 +516,7 @@ const _: () = assert!(core::mem::offset_of!(BGSApparatus, field_118) == 0x118);
 /// `BGSArtObject`: size 0x70 (exact, medium); primary base `TESBoundObject`.
 /// Evidence: runtime: 0x70 at 1 allocation sites.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSArtObject {
     /// +0x0 `vtbl:BGSArtObject:0`, rtti
     #[doc(hidden)]
@@ -545,7 +550,8 @@ pub struct BGSArtObject {
     pub __vftable_30: *const crate::raw::vtables::BGSArtObject_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     pub unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
@@ -572,7 +578,7 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_26) == 0x26);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSArtObject, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_68) == 0x68);
@@ -580,7 +586,7 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObject, field_68) == 0x68);
 /// `BGSArtObjectCloneTask`: size 0x90 (exact, medium); primary base `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>`.
 /// Evidence: runtime: 0x90 at 1 allocation sites.
 /// Bases: `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSArtObjectCloneTask {
     /// +0x0 `vtbl:BGSArtObjectCloneTask:0`, rtti
     #[doc(hidden)]
@@ -595,7 +601,8 @@ pub struct BGSArtObjectCloneTask {
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -633,7 +640,7 @@ const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_8) == 0
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSArtObjectCloneTask, __vftable_38) == 0x38);
@@ -901,7 +908,8 @@ pub struct BGSCollisionLayer {
     pub field_40: u64,
     pub unknown_48: [u8; 16],
     /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
     pub unknown_5C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -918,7 +926,7 @@ const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_28) == 0x28
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_34) == 0x34);
 const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BGSCollisionLayer, __field_58) == 0x58);
 
 /// `BGSColorForm`: size 0x38 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.
@@ -1740,7 +1748,7 @@ const _: () = assert!(core::mem::offset_of!(BGSFootstepSet, formType) == 0x1A);
 /// `BGSGamebryoSequenceGenerator`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbGenerator`.
 /// Evidence: field field_114.
 /// Bases: `hkbGenerator`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSGamebryoSequenceGenerator {
     /// +0x0 `vtbl:BGSGamebryoSequenceGenerator:0`, rtti
     #[doc(hidden)]
@@ -1815,26 +1823,36 @@ pub struct BGSGamebryoSequenceGenerator {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1873,16 +1891,16 @@ const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BGSGamebryoSequenceGenerator, __field_114) == 0x114);
 
 /// `BGSGamebryoSequenceGeneratorHolderSingleton`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `IGamebryoSequenceGeneratorHolderSingleton`.
 /// Evidence: vptr at 0x0.
@@ -2048,7 +2066,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHazard, field_B0) == 0xB0);
 /// `BGSHeadPart`: size 0x120 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x120 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x20, `BaseFormComponent`@0x20, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSHeadPart {
     /// +0x0 `vtbl:BGSHeadPart:0`, rtti
     #[doc(hidden)]
@@ -2073,7 +2091,8 @@ pub struct BGSHeadPart {
     pub __vftable_30: *const crate::raw::vtables::BGSHeadPart_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     pub unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
@@ -2107,7 +2126,7 @@ const _: () = assert!(core::mem::offset_of!(BGSHeadPart, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSHeadPart, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSHeadPart, field_68) == 0x68);
@@ -2370,7 +2389,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLOSData, __vftable) == 0x0);
 /// `BGSLensFlare`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `TESForm`.
 /// Evidence: field field_38.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `BSLensFlareRenderData`@0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSLensFlare {
     /// +0x0 `vtbl:BGSLensFlare:0`, rtti
     #[doc(hidden)]
@@ -2387,7 +2406,8 @@ pub struct BGSLensFlare {
     pub formType: u8,
     pub unknown_1B: [u8; 5],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
     pub unknown_28: [u8; 16],
@@ -2403,7 +2423,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formFlags) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formID) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, formType) == 0x1A);
-const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSLensFlare, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(BGSLensFlare, field_38) == 0x38);
 
@@ -2523,7 +2543,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLightingTemplate, field_78) == 0x
 /// `BGSLocAlias`: size 0x60 (exact, medium); primary base `BGSBaseAlias`.
 /// Evidence: runtime: 0x60 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BGSBaseAlias`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSLocAlias {
     /// +0x0 `vtbl:BGSLocAlias:0`, rtti
     #[doc(hidden)]
@@ -2546,7 +2566,8 @@ pub struct BGSLocAlias {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined4`, ctor store
@@ -2566,7 +2587,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSLocAlias, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSLocAlias, field_58) == 0x58);
@@ -2715,23 +2736,32 @@ pub struct BGSMaterialObject {
     #[doc(hidden)]
     pub __vftable_48: *const crate::raw::vtables::BGSMaterialObject_vtable_48,
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
     /// +0x5C `undefined8`, ctor store
-    pub field_5C: u64,
+    #[doc(hidden)]
+    pub __field_5C: [u8; 8],
     /// +0x64 `undefined4`, ctor store
-    pub field_64: u32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
-    pub field_68: u32,
+    #[doc(hidden)]
+    pub __field_68: [u8; 4],
     /// +0x6C `undefined8`, ctor store
-    pub field_6C: u64,
+    #[doc(hidden)]
+    pub __field_6C: [u8; 8],
     /// +0x74 `undefined8`, ctor store
-    pub field_74: u64,
+    #[doc(hidden)]
+    pub __field_74: [u8; 8],
     /// +0x7C `undefined8`, ctor store
-    pub field_7C: u64,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 8],
     pub unknown_84: [u8; 52],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -2746,15 +2776,15 @@ const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, formType) == 0x1A
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, model) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __vftable_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(BGSMaterialObject, __field_7C) == 0x7C);
 
 /// `BGSMaterialType`: size 0x50 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x50 at 1 allocation sites.
@@ -2861,7 +2891,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMenuIcon, __vftable_20) == 0x20);
 /// `BGSMessage`: size 0x68 (exact, high); primary base `TESForm`.
 /// Evidence: runtime: 0x68 at 2 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x20, `BaseFormComponent`@0x20, `TESDescription`@0x30, `BaseFormComponent`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSMessage {
     /// +0x0 `vtbl:BGSMessage:0`, rtti
     #[doc(hidden)]
@@ -2894,7 +2924,8 @@ pub struct BGSMessage {
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
@@ -2915,7 +2946,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMessage, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSMessage, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BGSMessage, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSMessage, field_64) == 0x64);
 
@@ -2977,7 +3008,8 @@ pub struct BGSMovableStatic {
     pub __vftable_50: *const crate::raw::vtables::BGSMovableStatic_vtable_50,
     pub unknown_58: [u8; 8],
     /// +0x60 `undefined8`, base TESObjectSTAT
-    pub field_60: u64,
+    #[doc(hidden)]
+    pub __field_60: [u8; 8],
     pub unknown_68: [u8; 16],
     /// +0x78 `undefined8`, base TESObjectSTAT
     pub field_78: u64,
@@ -3020,7 +3052,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_46) == 0x46)
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_4A) == 0x4A);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, __vftable_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSMovableStatic, field_88) == 0x88);
@@ -3217,7 +3249,8 @@ pub struct BGSMusicPaletteTrack {
     pub field_74: u64,
     pub unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     #[doc(hidden)]
@@ -3231,7 +3264,7 @@ const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_18) == 0
 const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSMusicPaletteTrack, field_88) == 0x88);
 
 /// `BGSMusicSilenceTrack`: size 0x38 (exact, medium); primary base `BGSMusicTrack`.
@@ -4273,7 +4306,7 @@ const _: () = assert!(core::mem::offset_of!(BGSPickupPutdownSounds, field_10) ==
 /// `BGSPlayerMusicChanger`: size >= 0x68 (lower bound); partial, the struct stops at the lower bound; primary base `BSTEventSink<BGSActorCellEvent>`.
 /// Evidence: field source_BSMusicEvent.
 /// Bases: `BSTEventSource<BSMusicEvent>`@0x10, `BSTEventSink<BGSActorCellEvent>`@0x0, `BSTEventSink<BGSActorDeathEvent>`@0x8, `BSTSingletonImplicit<BGSPlayerMusicChanger>`@0x68.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSPlayerMusicChanger {
     /// +0x0 `vtbl:BGSPlayerMusicChanger:0`, rtti
     #[doc(hidden)]
@@ -4282,13 +4315,14 @@ pub struct BGSPlayerMusicChanger {
     #[doc(hidden)]
     pub __vftable_8: *const crate::raw::vtables::BGSPlayerMusicChanger_vtable_8,
     /// +0x10 `class:BSTEventSource`, RTTI base BSTEventSource<BSMusicEvent>
-    pub source_BSMusicEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BSMusicEvent: [u8; 88],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __vftable_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, source_BSMusicEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BGSPlayerMusicChanger, __source_BSMusicEvent) == 0x10);
 
 /// `BGSPreloadable`: size 0x8 (exact, medium); primary base `BaseFormComponent`.
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of BGSExplosion at 0x88.
@@ -4407,7 +4441,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquire, field_30) == 0x
 /// `BGSProcedureAcquireExecState`: size >= 0x48 (lower bound); partial, the struct stops at the lower bound; primary base `BGSTypedItem<BGSProcedureAcquireExecState,IProcedureTreeExecState>`.
 /// Evidence: field field_40.
 /// Bases: `BGSTypedItem<BGSProcedureAcquireExecState,IProcedureTreeExecState>`@0x0, `IProcedureTreeExecState`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSProcedureAcquireExecState {
     /// +0x0 `vtbl:BGSProcedureAcquireExecState:0`, rtti
     #[doc(hidden)]
@@ -4422,11 +4456,14 @@ pub struct BGSProcedureAcquireExecState {
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined8`, member ctor BGSPackageDataRef
-    pub m_BGSPackageDataRef_28: u64,
+    #[doc(hidden)]
+    pub __m_BGSPackageDataRef_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
     pub field_40: u64,
     #[doc(hidden)]
@@ -4437,9 +4474,9 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, m_BGSPackageDataRef_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, __m_BGSPackageDataRef_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, __field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureAcquireExecState, field_40) == 0x40);
 
 /// `BGSProcedureActivate`: size 0x38 (exact, medium); primary base `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureActivateParamTypes>`.
@@ -4987,7 +5024,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFollow, field_30) == 0x3
 /// `BGSProcedureFollowExecState`: size 0x48 (exact, medium); primary base `BGSTypedItem<BGSProcedureFollowExecState,IProcedureTreeExecState>`.
 /// Evidence: runtime: 0x48 at 1 allocation sites.
 /// Bases: `BGSTypedItem<BGSProcedureFollowExecState,IProcedureTreeExecState>`@0x0, `IProcedureTreeExecState`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSProcedureFollowExecState {
     /// +0x0 `vtbl:BGSProcedureFollowExecState:0`, rtti
     #[doc(hidden)]
@@ -5005,9 +5042,11 @@ pub struct BGSProcedureFollowExecState {
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
+    #[doc(hidden)]
+    pub __field_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined1`, ctor store
     pub field_40: u8,
     pub unknown_41: [u8; 7],
@@ -5022,8 +5061,8 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_1
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, __field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, __field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureFollowExecState, field_40) == 0x40);
 
 /// `BGSProcedureFollowTo`: size 0x40 (exact, medium); primary base `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureFollowToParamTypes>`.
@@ -5386,7 +5425,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrol, field_30) == 0x3
 /// `BGSProcedurePatrolExecState`: size 0x58 (exact, medium); primary base `BGSTypedItem<BGSProcedurePatrolExecState,IProcedureTreeExecState>`.
 /// Evidence: runtime: 0x58 at 1 allocation sites.
 /// Bases: `BGSTypedItem<BGSProcedurePatrolExecState,IProcedureTreeExecState>`@0x0, `IProcedureTreeExecState`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSProcedurePatrolExecState {
     /// +0x0 `vtbl:BGSProcedurePatrolExecState:0`, rtti
     #[doc(hidden)]
@@ -5400,17 +5439,22 @@ pub struct BGSProcedurePatrolExecState {
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined8`, member ctor BGSPackageDataRef
-    pub m_BGSPackageDataRef_28: u64,
+    #[doc(hidden)]
+    pub __m_BGSPackageDataRef_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined2`, ctor store
-    pub field_50: u16,
+    #[doc(hidden)]
+    pub __field_50: [u8; 2],
     /// +0x52 `undefined1`, ctor store
     pub field_52: u8,
     pub unknown_53: [u8; 5],
@@ -5423,12 +5467,12 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_8
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, m_BGSPackageDataRef_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __m_BGSPackageDataRef_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSProcedurePatrolExecState, field_52) == 0x52);
 
 /// `BGSProcedurePursue`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedurePursueParamTypes>`.
@@ -5509,9 +5553,11 @@ pub struct BGSProcedureSandboxExecState {
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
+    #[doc(hidden)]
+    pub __field_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
     pub field_68: u64,
     /// +0x70 `undefined4`, ctor store
@@ -5537,7 +5583,8 @@ pub struct BGSProcedureSandboxExecState {
     /// +0xA0 `undefined4`, ctor store
     pub field_A0: u32,
     /// +0xA4 `undefined4`, ctor store
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     /// +0xAC `undefined4`, ctor store
@@ -5545,7 +5592,8 @@ pub struct BGSProcedureSandboxExecState {
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
     /// +0xB1 `undefined1`, ctor store
-    pub field_B1: u8,
+    #[doc(hidden)]
+    pub __field_B1: [u8; 1],
     pub unknown_B2: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -5560,8 +5608,8 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, m_BGSPackageDataRef_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_74) == 0x74);
@@ -5573,11 +5621,11 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, __field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, field_B1) == 0xB1);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureSandboxExecState, __field_B1) == 0xB1);
 
 /// `BGSProcedureSay`: size 0x38 (exact, medium); primary base `BGSProcedureTyped<BGSProcedureBase,&struct_BGSProcedureParamInfo_const*_const_kProcedureSayParamTypes>`.
 /// Evidence: runtime: 0x38 at 1 allocation sites.
@@ -7095,7 +7143,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeapon, field_30) == 
 /// `BGSProcedureUseWeaponExecState`: size 0x40 (exact, medium); primary base `BGSTypedItem<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>`.
 /// Evidence: runtime: 0x40 at 1 allocation sites.
 /// Bases: `BGSTypedItem<BGSProcedureUseWeaponExecState,IProcedureTreeExecState>`@0x0, `IProcedureTreeExecState`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSProcedureUseWeaponExecState {
     /// +0x0 `vtbl:BGSProcedureUseWeaponExecState:0`, rtti
     #[doc(hidden)]
@@ -7111,7 +7159,8 @@ pub struct BGSProcedureUseWeaponExecState {
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `undefined2`, ctor store
@@ -7129,7 +7178,7 @@ const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, fiel
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSProcedureUseWeaponExecState, field_3C) == 0x3C);
@@ -7386,7 +7435,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQuestPerkEntry, __vftable) == 0x0
 /// `BGSQueuedGrassModelHandles`: size 0x88 (exact, medium); primary base `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`.
 /// Evidence: runtime: 0x88 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSQueuedGrassModelHandles {
     /// +0x0 `vtbl:BGSQueuedGrassModelHandles:0`, rtti
     #[doc(hidden)]
@@ -7401,7 +7450,8 @@ pub struct BGSQueuedGrassModelHandles {
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -7432,7 +7482,7 @@ const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_8)
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSQueuedGrassModelHandles, __vftable_38) == 0x38);
@@ -7608,7 +7658,8 @@ pub struct BGSRagdoll {
     pub model: crate::BSFixedString,
     pub unknown_30: [u8; 40],
     /// +0x58 `undefined1`, ctor store
-    pub field_58: u8,
+    #[doc(hidden)]
+    pub __field_58: [u8; 1],
     pub unknown_59: [u8; 3],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
@@ -7635,9 +7686,11 @@ pub struct BGSRagdoll {
     /// +0x8C `undefined4`, ctor store
     pub field_8C: u32,
     /// +0x90 `undefined4`, ctor store
-    pub field_90: u32,
+    #[doc(hidden)]
+    pub __field_90: [u8; 4],
     /// +0x94 `undefined4`, ctor store
-    pub field_94: u32,
+    #[doc(hidden)]
+    pub __field_94: [u8; 4],
     pub unknown_98: [u8; 24],
     /// +0xB0 `undefined1`, ctor store
     pub field_B0: u8,
@@ -7647,9 +7700,11 @@ pub struct BGSRagdoll {
     /// +0xBC `undefined8`, ctor store
     pub field_BC: u64,
     /// +0xC4 `undefined8`, ctor store
-    pub field_C4: u64,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 8],
     /// +0xCC `undefined4`, ctor store
-    pub field_CC: u32,
+    #[doc(hidden)]
+    pub __field_CC: [u8; 4],
     pub unknown_D0: [u8; 48],
     /// +0x100 `undefined1`, ctor store
     pub field_100: u8,
@@ -7661,9 +7716,11 @@ pub struct BGSRagdoll {
     pub field_170: u8,
     pub unknown_171: [u8; 7],
     /// +0x178 `undefined8`, ctor store
-    pub field_178: u64,
+    #[doc(hidden)]
+    pub __field_178: [u8; 8],
     /// +0x180 `undefined4`, ctor store
-    pub field_180: u32,
+    #[doc(hidden)]
+    pub __field_180: [u8; 4],
     pub unknown_184: [u8; 4],
     /// +0x188 `undefined4`, ctor store
     pub field_188: u32,
@@ -7689,7 +7746,7 @@ const _: () = assert!(core::mem::offset_of!(BGSRagdoll, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __vftable_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, model) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_64) == 0x64);
@@ -7702,18 +7759,18 @@ const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_84) == 0x84);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_BC) == 0xBC);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_CC) == 0xCC);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_CC) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_100) == 0x100);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_178) == 0x178);
-const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_178) == 0x178);
+const _: () = assert!(core::mem::offset_of!(BGSRagdoll, __field_180) == 0x180);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_188) == 0x188);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_18C) == 0x18C);
 const _: () = assert!(core::mem::offset_of!(BGSRagdoll, field_18E) == 0x18E);
@@ -7927,7 +7984,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadStatsMap, field_38) == 0x
 /// `BGSScene`: size 0xC8 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0xC8 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSScene {
     /// +0x0 `vtbl:BGSScene:0`, rtti
     #[doc(hidden)]
@@ -7950,10 +8007,12 @@ pub struct BGSScene {
     pub field_48: u32,
     pub unknown_4C: [u8; 20],
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     pub unknown_64: [u8; 20],
     /// +0x78 `undefined4`, ctor store
-    pub field_78: u32,
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
     pub unknown_7C: [u8; 20],
     /// +0x90 `undefined4`, ctor store
     pub field_90: u32,
@@ -7985,8 +8044,8 @@ const _: () = assert!(core::mem::offset_of!(BGSScene, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSScene, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BGSScene, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BGSScene, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BGSScene, __field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSScene, field_A0) == 0xA0);
@@ -8098,7 +8157,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSceneInfo__TextureUse, __vftable)
 /// `BGSShaderParticleGeometryData`: size 0x48 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x48 at 1 allocation sites.
 /// Bases: `TESForm`@0x0, `BaseFormComponent`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSShaderParticleGeometryData {
     /// +0x0 `vtbl:BGSShaderParticleGeometryData:0`, rtti
     #[doc(hidden)]
@@ -8118,7 +8177,8 @@ pub struct BGSShaderParticleGeometryData {
     pub field_30: u32,
     pub unknown_34: [u8; 4],
     /// +0x38 `class:TESTexture`, member ctor TESTexture
-    pub m_TESTexture_38: crate::TESTexture,
+    #[doc(hidden)]
+    pub __m_TESTexture_38: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -8130,7 +8190,7 @@ const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, formI
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, inGameFlags) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, formType) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, m_TESTexture_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSShaderParticleGeometryData, __m_TESTexture_38) == 0x38);
 
 /// `BGSSkillPerkTreeNode`: size 0x68 (exact, medium).
 /// Evidence: runtime: 0x68 at 1 allocation sites.
@@ -8193,7 +8253,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSkinForm, field_8) == 0x8);
 /// `BGSStaticCollection`: size >= 0x68 (lower bound); partial, the struct stops at the lower bound; primary base `TESBoundObject`.
 /// Evidence: base TESModelTextureSwap at 0x30.
 /// Bases: `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESModelTextureSwap`@0x30, `TESModel`@0x30, `BaseFormComponent`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSStaticCollection {
     /// +0x0 `vtbl:BGSStaticCollection:0`, rtti
     #[doc(hidden)]
@@ -8227,7 +8287,8 @@ pub struct BGSStaticCollection {
     pub __vftable_30: *const crate::raw::vtables::BGSStaticCollection_vtable_30,
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined8`, base TESModelTextureSwap
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     pub unknown_48: [u8; 16],
     /// +0x58 `undefined8`, base TESModelTextureSwap
     pub field_58: u64,
@@ -8250,7 +8311,7 @@ const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_26) == 0x
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSStaticCollection, field_60) == 0x60);
 
@@ -8632,7 +8693,7 @@ const _: () = assert!(core::mem::offset_of!(BGSSynchronizedAnimationInstance, fi
 /// `BGSTalkingActivator`: size 0xD8 (exact, medium); primary base `TESObjectACTI`.
 /// Evidence: runtime: 0xD8 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `TESObjectACTI`@0x0, `TESBoundAnimObject`@0x0, `TESBoundObject`@0x0, `TESObject`@0x0, `TESForm`@0x0, `BaseFormComponent`@0x0, `TESFullName`@0x30, `BaseFormComponent`@0x30, `TESModelTextureSwap`@0x40, `TESModel`@0x40, `BaseFormComponent`@0x40, `TESMagicTargetForm`@0xA8, `BGSDestructibleObjectForm`@0x78, `BaseFormComponent`@0x78, `BGSOpenCloseForm`@0x88, `BGSKeywordForm`@0x90, `BaseFormComponent`@0x90.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSTalkingActivator {
     /// +0x0 `vtbl:BGSTalkingActivator:0`, rtti
     #[doc(hidden)]
@@ -8662,7 +8723,8 @@ pub struct BGSTalkingActivator {
     pub __vftable_40: *const crate::raw::vtables::BGSTalkingActivator_vtable_40,
     pub unknown_48: [u8; 8],
     /// +0x50 `undefined8`, base TESModelTextureSwap
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     pub unknown_58: [u8; 16],
     /// +0x68 `undefined8`, base TESModelTextureSwap
     pub field_68: u64,
@@ -8710,7 +8772,7 @@ const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_28) == 0x
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_2A) == 0x2A);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BGSTalkingActivator, __vftable_78) == 0x78);
@@ -8789,27 +8851,38 @@ pub struct BGSTextureSet {
     /// +0xCC `undefined8`, ctor store
     pub field_CC: u64,
     /// +0xD4 `undefined8`, ctor store
-    pub field_D4: u64,
+    #[doc(hidden)]
+    pub __field_D4: [u8; 8],
     /// +0xDC `undefined8`, ctor store
-    pub field_DC: u64,
+    #[doc(hidden)]
+    pub __field_DC: [u8; 8],
     /// +0xE4 `undefined8`, ctor store
-    pub field_E4: u64,
+    #[doc(hidden)]
+    pub __field_E4: [u8; 8],
     /// +0xEC `undefined8`, ctor store
-    pub field_EC: u64,
+    #[doc(hidden)]
+    pub __field_EC: [u8; 8],
     /// +0xF4 `undefined8`, ctor store
-    pub field_F4: u64,
+    #[doc(hidden)]
+    pub __field_F4: [u8; 8],
     /// +0xFC `undefined8`, ctor store
-    pub field_FC: u64,
+    #[doc(hidden)]
+    pub __field_FC: [u8; 8],
     /// +0x104 `undefined8`, ctor store
-    pub field_104: u64,
+    #[doc(hidden)]
+    pub __field_104: [u8; 8],
     /// +0x10C `undefined8`, ctor store
-    pub field_10C: u64,
+    #[doc(hidden)]
+    pub __field_10C: [u8; 8],
     /// +0x114 `undefined8`, ctor store
-    pub field_114: u64,
+    #[doc(hidden)]
+    pub __field_114: [u8; 8],
     /// +0x11C `undefined8`, ctor store
-    pub field_11C: u64,
+    #[doc(hidden)]
+    pub __field_11C: [u8; 8],
     /// +0x124 `undefined8`, ctor store
-    pub field_124: u64,
+    #[doc(hidden)]
+    pub __field_124: [u8; 8],
     pub unknown_12C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -8832,17 +8905,17 @@ const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_C0) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_CC) == 0xCC);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_D4) == 0xD4);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_DC) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_EC) == 0xEC);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_F4) == 0xF4);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_FC) == 0xFC);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_104) == 0x104);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_10C) == 0x10C);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_11C) == 0x11C);
-const _: () = assert!(core::mem::offset_of!(BGSTextureSet, field_124) == 0x124);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_D4) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_DC) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_E4) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_EC) == 0xEC);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_F4) == 0xF4);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_FC) == 0xFC);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_104) == 0x104);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_10C) == 0x10C);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_11C) == 0x11C);
+const _: () = assert!(core::mem::offset_of!(BGSTextureSet, __field_124) == 0x124);
 
 /// `BGSTextureUseMap::TextureUse`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSShaderProperty::ForEachVisitor`.
 /// Evidence: vptr at 0x0.
@@ -9663,35 +9736,39 @@ const _: () = assert!(core::mem::offset_of!(BGSVolumetricLighting, formType) == 
 
 /// `BGSWaterCollisionManager::BGSWaterUpdateI`: size 0x50 (exact, medium).
 /// Evidence: lower bound BGSWaterCollisionManager::bhkPlaceableWater (size 0x70 at 0x20) adds no fields or bases meets upper bound derived BGSWaterCollisionManager::bhkPlaceableWater size 0x70 at 0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSWaterCollisionManager__BGSWaterUpdateI {
     /// +0x0 `vtbl:BGSWaterCollisionManager::BGSWaterUpdateI:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BGSWaterCollisionManager__BGSWaterUpdateI_vtable,
     /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     pub unknown_C: [u8; 28],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     pub unknown_40: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BGSWaterCollisionManager__BGSWaterUpdateI>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__BGSWaterUpdateI, __field_38) == 0x38);
 
 /// `BGSWaterCollisionManager::bhkAutoWater`: size 0x30 (exact, medium); primary base `bhkAabbPhantom`.
 /// Evidence: runtime: 0x30 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `bhkAabbPhantom`@0x0, `bhkPhantom`@0x0, `bhkWorldObject`@0x0, `bhkSerializable`@0x0, `bhkRefObject`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkAutoWater:0`, rtti
     #[doc(hidden)]
@@ -9706,7 +9783,8 @@ pub struct BGSWaterCollisionManager__bhkAutoWater {
     /// +0x20 `undefined8`, base bhkWorldObject
     pub field_20: u64,
     /// +0x28 `undefined1`, ctor store
-    pub field_28: u8,
+    #[doc(hidden)]
+    pub __field_28: [u8; 1],
     pub unknown_29: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -9717,7 +9795,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWat
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkAutoWater, __field_28) == 0x28);
 
 /// `BGSWaterCollisionManager::bhkPlaceableWater`: size 0x70 (exact, medium); primary base `hkpPhantomCallbackShape`.
 /// Evidence: conflict, allocation size kept: allocation size 0x70 below lower bound 0x118 (base hkpShape at 0x0).
@@ -9798,7 +9876,7 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkPlaceab
 /// `BGSWaterCollisionManager::bhkWaterfall`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkpPhantomCallbackShape`.
 /// Evidence: field field_114.
 /// Bases: `hkpPhantomCallbackShape`@0x0, `hkpShape`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `BGSWaterCollisionManager::BGSWaterUpdateI`@0x20.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bhkWaterfall:0`, rtti
     #[doc(hidden)]
@@ -9872,26 +9950,36 @@ pub struct BGSWaterCollisionManager__bhkWaterfall {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9929,21 +10017,21 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfa
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bhkWaterfall, __field_114) == 0x114);
 
 /// `BGSWaterCollisionManager::bshkAutoWater`: size >= 0x170 (lower bound); partial, the struct stops at the lower bound; primary base `hkpAabbPhantom`.
 /// Evidence: field field_168.
 /// Bases: `hkpAabbPhantom`@0x0, `hkpPhantom`@0x0, `hkpWorldObject`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `BGSWaterCollisionManager::BGSWaterUpdateI`@0x130.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSWaterCollisionManager__bshkAutoWater {
     /// +0x0 `vtbl:BGSWaterCollisionManager::bshkAutoWater:0`, rtti
     #[doc(hidden)]
@@ -10018,19 +10106,26 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     /// +0xC8 `undefined8`, base hkpWorldObject
     pub field_C8: u64,
     /// +0xD0 `undefined8`, base hkpPhantom
@@ -10050,9 +10145,11 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     /// +0x100 `undefined1[16]`, base hkpAabbPhantom
     pub field_100: [u8; 16],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     /// +0x118 `undefined4`, base hkpAabbPhantom
     pub field_118: u32,
     /// +0x11C `undefined4`, base hkpAabbPhantom
@@ -10064,14 +10161,18 @@ pub struct BGSWaterCollisionManager__bshkAutoWater {
     #[doc(hidden)]
     pub __vftable_130: *const crate::raw::vtables::BGSWaterCollisionManager__bshkAutoWater_vtable_130,
     /// +0x138 `undefined4`, base BGSWaterCollisionManager::BGSWaterUpdateI
-    pub field_138: u32,
+    #[doc(hidden)]
+    pub __field_138: [u8; 4],
     pub unknown_13C: [u8; 28],
     /// +0x158 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
-    pub field_158: u64,
+    #[doc(hidden)]
+    pub __field_158: [u8; 8],
     /// +0x160 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
-    pub field_160: u64,
+    #[doc(hidden)]
+    pub __field_160: [u8; 8],
     /// +0x168 `undefined8`, base BGSWaterCollisionManager::BGSWaterUpdateI
-    pub field_168: u64,
+    #[doc(hidden)]
+    pub __field_168: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -10110,13 +10211,13 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWa
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_C8) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_D8) == 0xD8);
@@ -10126,16 +10227,16 @@ const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWa
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_EC) == 0xEC);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_11C) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_120) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __vftable_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_158) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_160) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BGSWaterCollisionManager__bshkAutoWater, __field_168) == 0x168);
 
 /// `BGSZoneTargetListener`: size 0x10 (exact, medium).
 /// Evidence: lower bound field field_8 meets upper bound next base of TESTrapListener at 0x10.

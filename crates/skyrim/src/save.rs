@@ -23,8 +23,6 @@ type SaveFn = unsafe extern "C" fn(manager: *mut BGSSaveLoadManager, kind: i32, 
 /// `BGSSaveLoadManager::Save`'s kind for a manual save.
 const MANUAL_SAVE: i32 = 2;
 
-/// The `char*` to the current save name sits at manager +0x240, inside the name's inline storage.
-const SAVE_NAME_PTR: usize = 0x240 - 0x138;
 
 pub trait BGSSaveLoadManagerExt {
     /// A manual save named `name` through `BGSSaveLoadManager::Save` (id 35727), written whole on
@@ -44,7 +42,7 @@ pub trait BGSSaveLoadManagerExt {
 impl BGSSaveLoadManagerExt for BGSSaveLoadManager {
     fn save_as(&self, name: &str) -> bool {
         let Ok(name) = CString::new(name) else { return false };
-        let save: SaveFn = unsafe { crate::engine_fn(fns::BGSSaveLoadManager__Save) };
+        let save: SaveFn = unsafe { crate::engine_fn(sre::id!(fns::BGSSaveLoadManager__Save)) };
         unsafe { save(core::ptr::from_ref(self).cast_mut(), MANUAL_SAVE, 0, name.as_ptr()) }
     }
 
@@ -54,8 +52,7 @@ impl BGSSaveLoadManagerExt for BGSSaveLoadManager {
     }
 
     fn current_save_name(&self) -> Option<&str> {
-        let bytes: [u8; 8] = self.currentSaveName[SAVE_NAME_PTR..SAVE_NAME_PTR + 8].try_into().expect("8 bytes");
-        let name = usize::from_le_bytes(bytes) as *const c_char;
+        let name = unsafe { core::ptr::from_ref(self).byte_add(sre::member_offset!("BGSSaveLoadManager.currentSaveNamePtr", 0x240)).cast::<*const c_char>().read_unaligned() };
         if name.is_null() {
             return None;
         }
@@ -68,38 +65,39 @@ impl BGSSaveLoadManagerExt for BGSSaveLoadManager {
 /// finishing (`done` true). A save's done comes after the file is renamed into place; a load's
 /// after the file is read, before the game applies it on the main thread. A load from the main
 /// menu also sends a kind 0 pair after its own.
-#[repr(C)]
-pub struct SaveLoadEvent {
-    kind: u8,
-    done: u8,
-}
+#[repr(transparent)]
+pub struct SaveLoadEvent(sre::BGSSaveLoadManagerEvent);
 
 impl SaveLoadEvent {
     #[must_use]
     pub fn kind(&self) -> Option<SaveLoadEventKind> {
-        SaveLoadEventKind::from_u32(u32::from(self.kind))
+        SaveLoadEventKind::from_u32(u32::from(self.0.kind()))
     }
 
     #[must_use]
     pub fn kind_raw(&self) -> u8 {
-        self.kind
+        self.0.kind()
     }
 
     #[must_use]
     pub fn done(&self) -> bool {
-        self.done != 0
+        self.0.done() != 0
     }
 }
 
 impl core::fmt::Debug for SaveLoadEvent {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        write!(f, "SaveLoadEvent {{ kind: {}, done: {} }}", self.kind, self.done)
+        write!(f, "SaveLoadEvent {{ kind: {}, done: {} }}", self.0.kind(), self.0.done())
     }
 }
 
 impl Event for SaveLoadEvent {
-    const ADD_SINK: u64 = fns::BSTEventSource_BGSSaveLoadManagerEvent__AddEventSink;
-    const REMOVE_SINK: u64 = fns::BSTEventSource_BGSSaveLoadManagerEvent__RemoveEventSink;
+    fn add_sink() -> u64 {
+        sre::id!(fns::BSTEventSource_BGSSaveLoadManagerEvent__AddEventSink)
+    }
+    fn remove_sink() -> u64 {
+        sre::id!(fns::BSTEventSource_BGSSaveLoadManagerEvent__RemoveEventSink)
+    }
 
     fn source() -> Option<&'static BSTEventSource<Self>> {
         let manager = BGSSaveLoadManager::singleton()?;

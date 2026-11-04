@@ -122,8 +122,10 @@ impl Registry {
         true
     }
 
-    fn add_patch(&mut self, req: PatchRequest, site: &str) -> Result<usize, Error> {
-        let refuse = |detail: String| Error::Install { site: site.to_owned(), owner: req.owner.clone(), detail };
+    fn add_patch(&mut self, mut req: PatchRequest, site: &str) -> Result<usize, Error> {
+        let owner = req.owner.clone();
+        let refuse = |detail: String| Error::Install { site: site.to_owned(), owner: owner.clone(), detail };
+        (req.expected, req.replacement) = req.at.patch_bytes(req.expected, req.replacement, req.cave.is_some()).map_err(refuse)?;
         let len = req.expected.len();
         match &req.cave {
             None if !(1..=PATCH_MAX).contains(&len) || req.replacement.len() != len => {
@@ -253,7 +255,7 @@ pub(crate) fn subscribe(req: Request) -> Result<SubscriptionId, Error> {
         }
         Target::Vtable { table, slot, shape } => {
             let name = format!("vtable {table}[{slot}]/{}", label(shape, None));
-            table.resolve().map(|t| (Kind::Slot, t + slot * size_of::<usize>(), Some(shape), name.clone())).map_err(|e| unresolved(name, e))
+            table.resolve().and_then(|t| Ok((Kind::Slot, t + table.slot_here(slot)? * size_of::<usize>(), Some(shape), name.clone()))).map_err(|e| unresolved(name, e))
         }
     };
     let register = match req.target {

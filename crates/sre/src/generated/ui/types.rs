@@ -79,18 +79,21 @@ const _: () = assert!(core::mem::offset_of!(BSScaleformManager, translator) == 0
 /// Meaning: fixed ring queue of 100 UIMessage* with a spin lock (high, ui pass).
 /// Evidence: ui pass (semantic): RTTI; slots below from the bodies; size: vdtor 0x116cb30 OperatorDelete(this, 0x340).
 /// Bases: `BSTCommonMessageQueue<UIMessage*___ptr64>`@0x0, `BSTMessageQueue<UIMessage*___ptr64>`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     /// +0x0 `vtbl:BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSTCommonStaticMessageQueue_UIMessage____ptr64_100_vtable,
     /// +0x8 `undefined4`, semantic; spin lock word: 0 free, 1 taken (LOCK cmpxchg loop) (high)
-    pub lock: u32,
+    #[doc(hidden)]
+    pub __lock: [u8; 4],
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined1`, semantic; UIMessage*[100] (high)
-    pub buffer: [u8; 800],
+    #[doc(hidden)]
+    pub __buffer: [u8; 800],
     /// +0x330 `undefined4`, semantic; queued messages (high)
-    pub count: u32,
+    #[doc(hidden)]
+    pub __count: [u8; 4],
     /// +0x334 `undefined4`, semantic; next write index (mod 100) (high)
     pub pushIndex: u32,
     /// +0x338 `undefined4`, semantic; next read index (mod 100) (high)
@@ -101,9 +104,9 @@ pub struct BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
 }
 const _: () = assert!(size_of::<BSTCommonStaticMessageQueue_UIMessage____ptr64_100>() == 0x340);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, lock) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, buffer) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, count) == 0x330);
+const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __lock) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __buffer) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, __count) == 0x330);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, pushIndex) == 0x334);
 const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessage____ptr64_100, popIndex) == 0x338);
 
@@ -111,52 +114,56 @@ const _: () = assert!(core::mem::offset_of!(BSTCommonStaticMessageQueue_UIMessag
 /// Meaning: generic payload: a formatted string, a fixed string and a 32-bit value / bool (high, ui pass).
 /// Evidence: runtime: 0x28 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `IUIMessageData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSUIMessageData {
     /// +0x0 `vtbl:BSUIMessageData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSUIMessageData_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `pointer`, semantic; heap string (0x10 object) formatted by ID_82091 (medium)
-    pub string: *mut c_void,
+    #[doc(hidden)]
+    pub __string: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; user event name for type 7 (from MenuControls), command strings such as 'Show Journal', 'RefreshMenu', 'Closing All Menus' (high)
-    pub fixedString: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __fixedString: [u8; 8],
     /// +0x20 `undefined4`, semantic; u32 (QueueMessageWithDwordData 0x116ec00) or bool byte (QueueMessageWithFlag 0x116eb60) (high)
-    pub value: u32,
+    #[doc(hidden)]
+    pub __value: [u8; 4],
     pub unknown_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSUIMessageData>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSUIMessageData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSUIMessageData, string) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSUIMessageData, fixedString) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSUIMessageData, value) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSUIMessageData, __string) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSUIMessageData, __fixedString) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSUIMessageData, __value) == 0x20);
 
 /// `BSUIScaleformData`: size 0x18 (exact, medium); primary base `IUIMessageData`.
 /// Meaning: payload of type-6 messages: a Scaleform event for the menu's movie (high, ui pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `IUIMessageData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSUIScaleformData {
     /// +0x0 `vtbl:BSUIScaleformData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSUIScaleformData_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined8`, semantic; event object handed to the movie (GFxEvent* hypothesis, track B) (medium)
-    pub scaleformEvent: u64,
+    #[doc(hidden)]
+    pub __scaleformEvent: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSUIScaleformData>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSUIScaleformData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSUIScaleformData, scaleformEvent) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSUIScaleformData, __scaleformEvent) == 0x10);
 
 /// `Console`: size 0x50 (exact, high); primary base `IMenu`.
 /// Meaning: the console menu; registered as 'Console', movie 'Console' (high, ui pass).
 /// Evidence: ui pass (semantic): ctor 0x9091d0: LoadMenuMovie(.., "Console", 0), depth 0xc, flags 0x807, context 2; IMenu base fields as written by the ctor (layout is track A's): +0x10 movie view (LoadMenuMovie's out param), +0x18 depth byte, +0x1c flags u32, +0x20 input context u32; size: creator Str_Console_cb0 0x90d400 allocates 0x50 then calls ctor 0x9091d0.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct Console {
     /// +0x0 `vtbl:Console:0`, rtti
     #[doc(hidden)]
@@ -167,9 +174,11 @@ pub struct Console {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -193,9 +202,11 @@ pub struct Console {
     /// +0x4C `undefined1`, base GRefCountImplCore, semantic; console opened minimized: most messages return 2 and show invokes 'Console.Minimize' (medium)
     pub minimized: u8,
     /// +0x4D `undefined1`, semantic; print the achievements warning once (high)
-    pub showAchievementWarning: u8,
+    #[doc(hidden)]
+    pub __showAchievementWarning: [u8; 1],
     /// +0x4E `undefined1`, semantic; Ctrl held (enables Ctrl+V paste, Ctrl+C copy selected ref) (high)
-    pub ctrlDown: u8,
+    #[doc(hidden)]
+    pub __ctrlDown: [u8; 1],
     pub unknown_4F: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -204,8 +215,8 @@ const _: () = assert!(size_of::<Console>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(Console, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(Console, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(Console, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(Console, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(Console, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(Console, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(Console, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(Console, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(Console, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(Console, field_1C) == 0x1C);
@@ -216,14 +227,14 @@ const _: () = assert!(core::mem::offset_of!(Console, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(Console, pickedRefs) == 0x30);
 const _: () = assert!(core::mem::offset_of!(Console, pickIndex) == 0x48);
 const _: () = assert!(core::mem::offset_of!(Console, minimized) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(Console, showAchievementWarning) == 0x4D);
-const _: () = assert!(core::mem::offset_of!(Console, ctrlDown) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(Console, __showAchievementWarning) == 0x4D);
+const _: () = assert!(core::mem::offset_of!(Console, __ctrlDown) == 0x4E);
 
 /// `ConsoleData`: size 0x30 (exact, medium); primary base `IUIMessageData`.
 /// Meaning: IUIMessageData sent to the 'Console' menu (high, ui pass).
 /// Evidence: runtime: 0x30 at 1 allocation sites.
 /// Bases: `IUIMessageData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ConsoleData {
     /// +0x0 `vtbl:ConsoleData:0`, rtti
     #[doc(hidden)]
@@ -232,12 +243,14 @@ pub struct ConsoleData {
     /// +0x10 `undefined8`, semantic; owned BSString* (0x10 block) (low)
     pub text: u64,
     /// +0x18 `undefined4`, semantic; reference to select (type 1) (high)
-    pub refHandle: u32,
+    #[doc(hidden)]
+    pub __refHandle: [u8; 4],
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, semantic; object executed with a ConsoleLogPrinter (type 2); deleted through its vtable (low)
     pub command: u64,
     /// +0x28 `undefined4`, semantic; ConsoleDataType (creator default 4) (high)
-    pub type_: u32,
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
     pub unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -245,15 +258,15 @@ pub struct ConsoleData {
 const _: () = assert!(size_of::<ConsoleData>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, text) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ConsoleData, refHandle) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ConsoleData, __refHandle) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ConsoleData, command) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ConsoleData, type_) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ConsoleData, __type_) == 0x28);
 
 /// `ContainerMenu`: size 0xC0 (exact, medium); primary base `IMenu`.
 /// Meaning: container/loot menu; registered as 'ContainerMenu', movie 'ContainerMenu' (high, ui pass).
 /// Evidence: allocation sites (medium): {'192': 1}.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ContainerMenu {
     /// +0x0 `vtbl:ContainerMenu:0`, rtti
     #[doc(hidden)]
@@ -264,9 +277,11 @@ pub struct ContainerMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -354,12 +369,15 @@ pub struct ContainerMenu {
     /// +0xB8 `undefined1`, base GRefCountImplCore
     pub field_B8: u8,
     /// +0xB9 `undefined1`, ctor store
-    pub field_B9: u8,
+    #[doc(hidden)]
+    pub __field_B9: [u8; 1],
     /// +0xBA `undefined1`, ctor store
-    pub field_BA: u8,
+    #[doc(hidden)]
+    pub __field_BA: [u8; 1],
     pub unknown_BB: [u8; 1],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -367,8 +385,8 @@ const _: () = assert!(size_of::<ContainerMenu>() == 0xC0);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(ContainerMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(ContainerMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_1C) == 0x1C);
@@ -406,15 +424,15 @@ const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_AC) == 0xAC);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_B9) == 0xB9);
-const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_BA) == 0xBA);
-const _: () = assert!(core::mem::offset_of!(ContainerMenu, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(ContainerMenu, __field_B9) == 0xB9);
+const _: () = assert!(core::mem::offset_of!(ContainerMenu, __field_BA) == 0xBA);
+const _: () = assert!(core::mem::offset_of!(ContainerMenu, __field_BC) == 0xBC);
 
 /// `CursorMenu`: size 0x40 (exact, high); primary base `IMenu`.
 /// Meaning: the mouse cursor menu ('Cursor Menu', movie CursorMenu, depth 0xd, flags 0x8800); also a MenuEventHandler at +0x30 that moves the cursor (high, ui pass).
 /// Evidence: ui pass (semantic): creator 0x92a300: IMenu::ctor, vtables at +0 and +0x30, LoadMenuMovie("CursorMenu",1), movie slot 0x1c0(1), depth 0xd, flags 0x8800, pops every context 9 and pushes 9 unless already present, +0x3d = 1. Opened/closed by UpdateCursorMenu 0x116bbf0, never by its own flags; size: creator 0x92a300 allocates 0x40 from the Scaleform heap.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `MenuEventHandler`@0x30, `BSIntrusiveRefCounted`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CursorMenu {
     /// +0x0 `vtbl:CursorMenu:0`, rtti
     #[doc(hidden)]
@@ -425,9 +443,11 @@ pub struct CursorMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -453,8 +473,8 @@ const _: () = assert!(size_of::<CursorMenu>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(CursorMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(CursorMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(CursorMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(CursorMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(CursorMenu, field_1C) == 0x1C);
@@ -468,7 +488,7 @@ const _: () = assert!(core::mem::offset_of!(CursorMenu, inputHandler) == 0x30);
 /// Meaning: dialogue menu; registered as 'Dialogue Menu', movie 'DialogueMenu' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 3, flags 0x4400, context 1; queues HUD mode 'DialogueMode'; size: creator StaticInit_6908_cb0 0x92bbe0 allocates 0x50.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<MenuOpenCloseEvent>`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct DialogueMenu {
     /// +0x0 `vtbl:DialogueMenu:0`, rtti
     #[doc(hidden)]
@@ -479,9 +499,11 @@ pub struct DialogueMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -509,8 +531,8 @@ const _: () = assert!(size_of::<DialogueMenu>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(DialogueMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(DialogueMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(DialogueMenu, field_1C) == 0x1C);
@@ -543,7 +565,7 @@ const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler, refCount) == 0x8
 /// `GFxFunctionHandler::Params`: size 0x38 (exact).
 /// Meaning: arguments of GFxFunctionHandler::Call (high, ui pass).
 /// Evidence: arguments of GFxFunctionHandler::Call; 0xcf63c0 fills it before handler->vt[1]; the handlers read +0x0, +0x20, +0x28, +0x30; size: stack block built at 0xcf63c0 (local_78..local_48) and passed by address.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxFunctionHandler__Params {
     /// +0x0 `ptr:GFxValue`, semantic; return value; converted back when its type is not undefined (high)
     pub retVal: *mut crate::GFxValue,
@@ -552,7 +574,8 @@ pub struct GFxFunctionHandler__Params {
     /// +0x10 `ptr:GFxValue`, semantic; 'this' of the call (medium)
     pub thisValue: *mut crate::GFxValue,
     /// +0x18 `ptr:GFxValue`, semantic; array [this, arg0, ...] (medium)
-    pub argsWithThis: *mut crate::GFxValue,
+    #[doc(hidden)]
+    pub __argsWithThis: [u8; 8],
     /// +0x20 `ptr:GFxValue`, semantic; first argument (argsWithThis + 1), null when none (high)
     pub args: *mut crate::GFxValue,
     /// +0x28 `undefined4`, semantic; number of arguments (high)
@@ -567,7 +590,7 @@ const _: () = assert!(size_of::<GFxFunctionHandler__Params>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, retVal) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, movie) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, thisValue) == 0x10);
-const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, argsWithThis) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, __argsWithThis) == 0x18);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, args) == 0x20);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, argCount) == 0x28);
 const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, userData) == 0x30);
@@ -575,7 +598,7 @@ const _: () = assert!(core::mem::offset_of!(GFxFunctionHandler__Params, userData
 /// `GFxMovieView`: size 0x2BF0 (exact).
 /// Meaning: one instantiated Scaleform movie (the object IMenu+0x10 holds). No RTTI: the concrete vtable is the NoRTTI table 0x1a2ade8 (73 slots, 0..72); the base table 0x1a2a6e0 is mostly _purecall. Named after the request; the body is the movie instance (SetVariable error text, Advance/Display, viewport, input) (high, ui pass).
 /// Evidence: one instantiated Scaleform movie (the object IMenu+0x10 holds). No RTTI: the concrete vtable is the NoRTTI table 0x1a2ade8 (73 slots, 0..72); the base table 0x1a2a6e0 is mostly _purecall. Named after the request; the body is the movie instance (SetVariable error text, Advance/Display, viewport, input); 0xd3e830 writes vtable 0x1a2ade8; 0x116fda0 creates the view through movieDef->vt[0xc0] and stores it into *outView (IMenu+0x10); 0xd529f0 (slot 16) logs 'Error: NULL pathToVar passed to SetVariable/SetDouble()'; size: allocation: 0xd7eb60 MOV EDX,0x2bf0; heap->vt[0x50]; then the constructor 0xd3e830; run-ui: every open menu's movie (+0x10) has the movie view vtable 0x1a2ade8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct GFxMovieView {
     pub unknown_0: [u8; 8],
     /// +0x8 `undefined4`, semantic; atomic reference count (high)
@@ -598,26 +621,32 @@ pub struct GFxMovieView {
     pub viewport: crate::GFxViewport,
     pub unknown_AC: [u8; 20],
     /// +0xC0 `undefined4`, semantic; GFxScaleMode (high)
-    pub scaleMode: u32,
+    #[doc(hidden)]
+    pub __scaleMode: [u8; 4],
     /// +0xC4 `undefined4`, semantic; GFxAlignment, used when scaleMode is 0 (high)
-    pub alignment: u32,
+    #[doc(hidden)]
+    pub __alignment: [u8; 4],
     /// +0xC8 `float`, semantic; visible stage rect in twips (left, top, right, bottom) (high)
     pub visibleFrameRect: [u8; 16],
     /// +0xD8 `float`, semantic; safe rect, 4 floats (high)
     pub safeRect: [u8; 16],
     pub unknown_E8: [u8; 2232],
     /// +0x9A0 `undefined4`, semantic; background colour; alpha byte at +0x9a3 (high)
-    pub backgroundColor: u32,
+    #[doc(hidden)]
+    pub __backgroundColor: [u8; 4],
     pub unknown_9A4: [u8; 196],
     /// +0xA68 `undefined4`, semantic; number of mouse cursors, clamped to 4 (high)
     pub mouseCursorCount: u32,
     /// +0xA6C `undefined4`, semantic; number of controllers, clamped to 4 (medium)
-    pub controllerCount: u32,
+    #[doc(hidden)]
+    pub __controllerCount: [u8; 4],
     /// +0xA70 `pointer`, semantic; opaque pointer with getter/setter (low)
-    pub userData: *mut c_void,
+    #[doc(hidden)]
+    pub __userData: [u8; 8],
     pub unknown_A78: [u8; 6704],
     /// +0x24A8 `pointer`, semantic; strings returned by the string-returning Invoke variants (medium)
-    pub invokeResultBuffer: *mut c_void,
+    #[doc(hidden)]
+    pub __invokeResultBuffer: [u8; 8],
     pub unknown_24B0: [u8; 32],
     /// +0x24D0 `pointer`, semantic; table consulted (0xd50f80) before resolving an Invoke path (low)
     pub invokeAliasTable: *mut c_void,
@@ -636,15 +665,15 @@ const _: () = assert!(core::mem::offset_of!(GFxMovieView, heap) == 0x38);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, level0) == 0x58);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, movieDef) == 0x60);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, viewport) == 0x78);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, scaleMode) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, alignment) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __scaleMode) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __alignment) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, visibleFrameRect) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, safeRect) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, backgroundColor) == 0x9A0);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __backgroundColor) == 0x9A0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, mouseCursorCount) == 0xA68);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, controllerCount) == 0xA6C);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, userData) == 0xA70);
-const _: () = assert!(core::mem::offset_of!(GFxMovieView, invokeResultBuffer) == 0x24A8);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __controllerCount) == 0xA6C);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __userData) == 0xA70);
+const _: () = assert!(core::mem::offset_of!(GFxMovieView, __invokeResultBuffer) == 0x24A8);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, invokeAliasTable) == 0x24D0);
 const _: () = assert!(core::mem::offset_of!(GFxMovieView, flags) == 0x25E0);
 
@@ -728,86 +757,98 @@ const _: () = assert!(core::mem::offset_of!(GFxValue__DisplayInfo, varsSet) == 0
 /// `GFxViewport`: size 0x34 (exact).
 /// Meaning: viewport passed to SetViewport (medium, ui pass).
 /// Evidence: viewport passed to SetViewport; 0x116fda0 fills it from the back-buffer size (0x33363cc/0x33363d0) and a letterbox offset; size: SetViewport 0xd53280 copies exactly 0x34 bytes; 0x116fda0 builds it on the stack.
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct GFxViewport {
     /// +0x0 `undefined4`, semantic; render target width (medium)
     pub bufferWidth: u32,
     /// +0x4 `undefined4`, semantic; render target height (letterboxed) (medium)
     pub bufferHeight: u32,
     /// +0x8 `undefined4`, semantic; x (medium)
-    pub left: u32,
+    #[doc(hidden)]
+    pub __left: [u8; 4],
     /// +0xC `undefined4`, semantic; y (letterbox offset) (medium)
     pub top: u32,
     /// +0x10 `undefined4`, semantic (medium)
-    pub width: u32,
+    #[doc(hidden)]
+    pub __width: [u8; 4],
     /// +0x14 `undefined4`, semantic (medium)
     pub height: u32,
     /// +0x18 `undefined1`, semantic; four ints, zero at the engine's call (low)
-    pub scissorRect: [u8; 16],
+    #[doc(hidden)]
+    pub __scissorRect: [u8; 16],
     /// +0x28 `float`, semantic; 1.0 at the engine's call; multiplies the viewport size (movie +0xa0) in 0xd54c00 (medium)
-    pub scale: f32,
+    #[doc(hidden)]
+    pub __scale: [u8; 4],
     /// +0x2C `float`, semantic; 1.0 at the engine's call; multiplies the width (movie +0xa4) in 0xd54c00 (medium)
-    pub aspectRatio: f32,
+    #[doc(hidden)]
+    pub __aspectRatio: [u8; 4],
     /// +0x30 `undefined4`, semantic; 0 at the engine's call (low)
-    pub flags: u32,
+    #[doc(hidden)]
+    pub __flags: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<GFxViewport>() == 0x34);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferWidth) == 0x0);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, bufferHeight) == 0x4);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, left) == 0x8);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __left) == 0x8);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, top) == 0xC);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, width) == 0x10);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __width) == 0x10);
 const _: () = assert!(core::mem::offset_of!(GFxViewport, height) == 0x14);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, scissorRect) == 0x18);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, scale) == 0x28);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, aspectRatio) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(GFxViewport, flags) == 0x30);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __scissorRect) == 0x18);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __scale) == 0x28);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __aspectRatio) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(GFxViewport, __flags) == 0x30);
 
 /// `HUDData`: size 0x48 (exact, medium); primary base `IUIMessageData`.
 /// Meaning: the IUIMessageData every HUD message carries (created from the pool key strings+0x10 'HUDData') (high, ui pass).
 /// Evidence: runtime: 0x48 at 1 allocation sites.
 /// Bases: `IUIMessageData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HUDData {
     /// +0x0 `vtbl:HUDData:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDData_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined4`, semantic; HUDDataType (high)
-    pub type_: u32,
+    #[doc(hidden)]
+    pub __type_: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined1`, semantic; message text / mode name (high)
-    pub text: [u8; 16],
+    #[doc(hidden)]
+    pub __text: [u8; 16],
     /// +0x28 `undefined4`, semantic; reference handle (crosshair target) (medium)
-    pub refHandle: u32,
+    #[doc(hidden)]
+    pub __refHandle: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, semantic; quest/form pointer for notifications (low)
-    pub form: u64,
+    #[doc(hidden)]
+    pub __form: [u8; 8],
     pub unknown_38: [u8; 8],
     /// +0x40 `undefined1`, semantic; boolean argument (show/enable) (high)
-    pub flag: u8,
+    #[doc(hidden)]
+    pub __flag: [u8; 1],
     pub unknown_41: [u8; 3],
     /// +0x44 `undefined4`, semantic; integer argument (arrow count, music type) (medium)
-    pub value: u32,
+    #[doc(hidden)]
+    pub __value: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<HUDData>() == 0x48);
 const _: () = assert!(core::mem::offset_of!(HUDData, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HUDData, type_) == 0x10);
-const _: () = assert!(core::mem::offset_of!(HUDData, text) == 0x18);
-const _: () = assert!(core::mem::offset_of!(HUDData, refHandle) == 0x28);
-const _: () = assert!(core::mem::offset_of!(HUDData, form) == 0x30);
-const _: () = assert!(core::mem::offset_of!(HUDData, flag) == 0x40);
-const _: () = assert!(core::mem::offset_of!(HUDData, value) == 0x44);
+const _: () = assert!(core::mem::offset_of!(HUDData, __type_) == 0x10);
+const _: () = assert!(core::mem::offset_of!(HUDData, __text) == 0x18);
+const _: () = assert!(core::mem::offset_of!(HUDData, __refHandle) == 0x28);
+const _: () = assert!(core::mem::offset_of!(HUDData, __form) == 0x30);
+const _: () = assert!(core::mem::offset_of!(HUDData, __flag) == 0x40);
+const _: () = assert!(core::mem::offset_of!(HUDData, __value) == 0x44);
 
 /// `HUDMenu`: size 0x98 (exact, high); primary base `IMenu`.
 /// Meaning: the HUD: depth 2, flags 0x18902, input context none (0x13) (high, ui pass).
 /// Evidence: ui pass (semantic): ctor 0x932540: flags 0x18902 and depth 2 after LoadMenuMovie("HUDMenu",2), sinks registered with g_EventSourceHolder_User_ptr (UserEventEnabledEvent) and g_EventSourceHolder_Input_ptr (BSRemoteGamepadEvent). Overrides slots 1 0x934cc0, 4 0x933180, 5 0x934a50, 8 0x934ca0; draws with IMenu's slot 6; size: creator 0x93c8a0 allocates 0x98 and calls HUDMenu::ctor 0x932540.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<UserEventEnabledEvent>`@0x30, `BSTEventSink<BSRemoteGamepadEvent>`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HUDMenu {
     /// +0x0 `vtbl:HUDMenu:0`, rtti
     #[doc(hidden)]
@@ -818,9 +859,11 @@ pub struct HUDMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -865,8 +908,8 @@ const _: () = assert!(size_of::<HUDMenu>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(HUDMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(HUDMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(HUDMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(HUDMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(HUDMenu, field_1C) == 0x1C);
@@ -925,14 +968,15 @@ const _: () = assert!(core::mem::offset_of!(HUDNotificationEntry, readyTime) == 
 /// Meaning: the HUD's quest/objective/level-up/shout notification queue (not the Debug.Notification path) (high, ui pass).
 /// Evidence: runtime: 0x78 at 1 allocation sites.
 /// Bases: `HUDObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct HUDNotifications {
     /// +0x0 `vtbl:HUDNotifications:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::HUDNotifications_vtable,
     pub unknown_8: [u8; 32],
     /// +0x28 `class:BSTArray`, semantic; BSTArray<HUDNotificationEntry> (stride 0x60): data +0x28, capacity +0x30, size +0x38 (high)
-    pub queue: crate::BSTArray,
+    #[doc(hidden)]
+    pub __queue: [u8; 24],
     /// +0x40 `class:GFxValue`, semantic; second AS object from RegisterHUDComponent (args[1]) (medium)
     pub panel: crate::GFxValue,
     /// +0x58 `class:GFxValue`, semantic; the AS array member 'ObjectivesA' of +0x40 (high)
@@ -946,7 +990,7 @@ pub struct HUDNotifications {
 }
 const _: () = assert!(size_of::<HUDNotifications>() == 0x78);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(HUDNotifications, queue) == 0x28);
+const _: () = assert!(core::mem::offset_of!(HUDNotifications, __queue) == 0x28);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, panel) == 0x40);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, objectives) == 0x58);
 const _: () = assert!(core::mem::offset_of!(HUDNotifications, lastReminderTime) == 0x70);
@@ -1032,7 +1076,7 @@ const _: () = assert!(core::mem::offset_of!(IMessageBoxCallback, refCount) == 0x
 /// `IUIMessageData`: size 0x10 (exact, medium).
 /// Meaning: base of UI message payloads (medium, ui pass).
 /// Evidence: ui pass (semantic): creators 0x1168e00/0x1168f20 write word 0 at +8; AcquireFreeEntryForKey sets byte +8; ClearSlotArray390 reads byte +9; size: derived BSUIScaleformData (0x18) and BSUIMessageData (0x28) start their own fields at +0x10; creators write the word at +8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct IUIMessageData {
     /// +0x0 `vtbl:IUIMessageData:0`, rtti
     #[doc(hidden)]
@@ -1040,7 +1084,8 @@ pub struct IUIMessageData {
     /// +0x8 `undefined1`, semantic; pooled payload is handed out (medium)
     pub inUse: u8,
     /// +0x9 `undefined1`, semantic; 0 = deleted (vtable[0](data, 1)) after the drain, non-0 = kept in the pool (medium)
-    pub isPooled: u8,
+    #[doc(hidden)]
+    pub __isPooled: [u8; 1],
     pub unknown_A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1048,13 +1093,13 @@ pub struct IUIMessageData {
 const _: () = assert!(size_of::<IUIMessageData>() == 0x10);
 const _: () = assert!(core::mem::offset_of!(IUIMessageData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(IUIMessageData, inUse) == 0x8);
-const _: () = assert!(core::mem::offset_of!(IUIMessageData, isPooled) == 0x9);
+const _: () = assert!(core::mem::offset_of!(IUIMessageData, __isPooled) == 0x9);
 
 /// `InventoryMenu`: size 0x88 (exact, high); primary base `IMenu`.
 /// Meaning: inventory menu; registered as 'InventoryMenu', movie 'InventoryMenu' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 0, flags 0xa481; size: creator StaticInit_7090_cb0 0x946710 allocates 0x88; deleting dtor 0x946460 frees 0x88.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct InventoryMenu {
     /// +0x0 `vtbl:InventoryMenu:0`, rtti
     #[doc(hidden)]
@@ -1065,9 +1110,11 @@ pub struct InventoryMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1126,8 +1173,8 @@ const _: () = assert!(size_of::<InventoryMenu>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(InventoryMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(InventoryMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(InventoryMenu, field_1C) == 0x1C);
@@ -1181,7 +1228,7 @@ const _: () = assert!(core::mem::offset_of!(ItemList, stale) == 0x50);
 /// Meaning: loading screen; registered as 'Loading Menu', movie 'LoadingMenu' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 9, flags 0x20803, context 0x13; size: creator StaticInit_7123_cb0 0x94cc20 allocates 0x80.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct LoadingMenu {
     /// +0x0 `vtbl:LoadingMenu:0`, rtti
     #[doc(hidden)]
@@ -1192,9 +1239,11 @@ pub struct LoadingMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1256,8 +1305,8 @@ const _: () = assert!(size_of::<LoadingMenu>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(LoadingMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(LoadingMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_1C) == 0x1C);
@@ -1286,7 +1335,7 @@ const _: () = assert!(core::mem::offset_of!(LoadingMenu, field_7C) == 0x7C);
 /// Meaning: magic menu; registered as 'MagicMenu', movie 'MagicMenu' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 0, flags 0xa489, context 3; size: creator StaticInit_7179_cb0 0x956a60 allocates 0x68.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MagicMenu {
     /// +0x0 `vtbl:MagicMenu:0`, rtti
     #[doc(hidden)]
@@ -1297,9 +1346,11 @@ pub struct MagicMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1343,8 +1394,8 @@ const _: () = assert!(size_of::<MagicMenu>() == 0x68);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MagicMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(MagicMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(MagicMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(MagicMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MagicMenu, field_1C) == 0x1C);
@@ -1365,7 +1416,7 @@ const _: () = assert!(core::mem::offset_of!(MagicMenu, field_64) == 0x64);
 /// Meaning: start menu; registered as 'Main Menu', movie 'StartMenu' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 9, flags 0x20581, context 1; size: creator StaticInit_7203_cb0 0x95e790 allocates 0x70 (LEA EDX,[R8+0x70] at 0x95e7e4).
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0, `BSTEventSink<BSSystemEvent>`@0x30, `BSTEventSink<BSSaveDataEvent>`@0x38, `GFxFunctionHandler`@0x40, `GRefCountBase<GFxFunctionHandler,2>`@0x40, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x40, `GRefCountImpl`@0x40, `GRefCountImplCore`@0x40.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MainMenu {
     /// +0x0 `vtbl:MainMenu:0`, rtti
     #[doc(hidden)]
@@ -1376,9 +1427,11 @@ pub struct MainMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1404,7 +1457,8 @@ pub struct MainMenu {
     /// +0x50 `undefined2`, base GRefCountImplCore
     pub field_50: u16,
     /// +0x52 `undefined2`, base GRefCountBaseStatImpl<GRefCountImpl,2>
-    pub field_52: u16,
+    #[doc(hidden)]
+    pub __field_52: [u8; 2],
     /// +0x54 `undefined4`, base GRefCountImplCore
     pub field_54: u32,
     /// +0x58 `float`, base GRefCountImplCore
@@ -1428,8 +1482,8 @@ const _: () = assert!(size_of::<MainMenu>() == 0x70);
 const _: () = assert!(core::mem::offset_of!(MainMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MainMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(MainMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_1C) == 0x1C);
@@ -1441,7 +1495,7 @@ const _: () = assert!(core::mem::offset_of!(MainMenu, systemEventSink) == 0x30);
 const _: () = assert!(core::mem::offset_of!(MainMenu, saveDataEventSink) == 0x38);
 const _: () = assert!(core::mem::offset_of!(MainMenu, functionHandler) == 0x40);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(MainMenu, field_52) == 0x52);
+const _: () = assert!(core::mem::offset_of!(MainMenu, __field_52) == 0x52);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(MainMenu, field_5C) == 0x5C);
@@ -1454,7 +1508,7 @@ const _: () = assert!(core::mem::offset_of!(MainMenu, field_6C) == 0x6C);
 /// Meaning: the menu input layer: an InputEvent* sink that offers each event to its MenuEventHandler list and turns unhandled events into UI messages for the 'Top Menu' (high, ui pass).
 /// Evidence: ui pass (semantic): ctor 0x95ed10 (called by Main::ctor) registers +0 with the input source (g_EventSourceHolder_Input_ptr) and +8 with the UI's MenuModeChangeEvent source, then CreateHandlers 0x960440; size: MenuControls::vdtor 0x960be0 OperatorDelete(this, 0x88); singleton in a static buffer (BSTSingletonSDMOpStaticBuffer), pointer g_MenuControls_ptr 0x31dfd78 written by MenuControls::ctor 0x95ed10.
 /// Bases: `BSTEventSink<InputEvent*___ptr64>`@0x0, `BSTSingletonSDM<MenuControls,BSTSingletonSDMOpStaticBuffer>`@0x10, `BSTSingletonSDMBase<BSTSDMTraits<MenuControls,BSTSingletonSDMOpStaticBuffer<MenuControls>_>_>`@0x10, `BSTSDMTraits<MenuControls,BSTSingletonSDMOpStaticBuffer<MenuControls>_>`@0x10, `BSTSingletonSDMOpStaticBuffer<MenuControls>`@0x11, `BSTEventSink<MenuModeChangeEvent>`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MenuControls {
     /// +0x0 `vtbl:MenuControls:0`, rtti
     #[doc(hidden)]
@@ -1465,7 +1519,8 @@ pub struct MenuControls {
     /// +0x18 `class:BSTArray`, semantic; MenuEventHandler* list in registration order (data +0x18, capacity +0x20, size +0x28); every enabled handler whose CanProcess accepts gets the event (no early stop) (high)
     pub handlers: crate::BSTArray,
     /// +0x30 `class:BSTArray`, semantic; {handler, add} 0x10-byte entries queued while a dispatch is running; applied after it (data +0x30, capacity +0x38, size +0x40) (high)
-    pub pendingHandlerChanges: crate::BSTArray,
+    #[doc(hidden)]
+    pub __pendingHandlerChanges: [u8; 24],
     /// +0x48 `ptr:ClickHandler`, semantic (high)
     pub clickHandler: *mut crate::ClickHandler,
     /// +0x50 `ptr:DirectionHandler`, semantic; key-repeat handler (fMenuKeyRepeatLong/Short); TweenMenu saves and restores its rates (high)
@@ -1483,11 +1538,14 @@ pub struct MenuControls {
     /// +0x80 `undefined1`, semantic; set while the handler list is iterated; Add/RemoveHandler defer while set (high)
     pub dispatching: u8,
     /// +0x81 `undefined1`, semantic; when set MenuOpenHandler refuses the tween menu (shows sTweenDisabledMessage); also read by FavoritesHandler, TryStartVATS and the speech-recognition sink (low)
-    pub menuHotkeysDisabled: u8,
+    #[doc(hidden)]
+    pub __menuHotkeysDisabled: [u8; 1],
     /// +0x82 `undefined1`, semantic; skips handler dispatch and the user-event messages (only the Scaleform translation runs) (medium)
-    pub remapMode: u8,
+    #[doc(hidden)]
+    pub __remapMode: [u8; 1],
     /// +0x83 `undefined1`, semantic; ProcessEvent does nothing while set (medium)
-    pub ignoreInput: u8,
+    #[doc(hidden)]
+    pub __ignoreInput: [u8; 1],
     pub unknown_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1496,7 +1554,7 @@ const _: () = assert!(size_of::<MenuControls>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(MenuControls, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MenuControls, menuModeChangeSink) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MenuControls, handlers) == 0x18);
-const _: () = assert!(core::mem::offset_of!(MenuControls, pendingHandlerChanges) == 0x30);
+const _: () = assert!(core::mem::offset_of!(MenuControls, __pendingHandlerChanges) == 0x30);
 const _: () = assert!(core::mem::offset_of!(MenuControls, clickHandler) == 0x48);
 const _: () = assert!(core::mem::offset_of!(MenuControls, directionHandler) == 0x50);
 const _: () = assert!(core::mem::offset_of!(MenuControls, consoleOpenHandler) == 0x58);
@@ -1505,9 +1563,9 @@ const _: () = assert!(core::mem::offset_of!(MenuControls, menuOpenHandler) == 0x
 const _: () = assert!(core::mem::offset_of!(MenuControls, favoritesHandler) == 0x70);
 const _: () = assert!(core::mem::offset_of!(MenuControls, screenshotHandler) == 0x78);
 const _: () = assert!(core::mem::offset_of!(MenuControls, dispatching) == 0x80);
-const _: () = assert!(core::mem::offset_of!(MenuControls, menuHotkeysDisabled) == 0x81);
-const _: () = assert!(core::mem::offset_of!(MenuControls, remapMode) == 0x82);
-const _: () = assert!(core::mem::offset_of!(MenuControls, ignoreInput) == 0x83);
+const _: () = assert!(core::mem::offset_of!(MenuControls, __menuHotkeysDisabled) == 0x81);
+const _: () = assert!(core::mem::offset_of!(MenuControls, __remapMode) == 0x82);
+const _: () = assert!(core::mem::offset_of!(MenuControls, __ignoreInput) == 0x83);
 
 /// `MenuEventHandler`: size 0x10 (exact, high).
 /// Meaning: an input handler of MenuControls (also embedded in menus: CursorMenu +0x30, FavoritesMenu +0x30, StatsMenu +0x30, RaceSexMenu +0x30, ...); derives BSIntrusiveRefCounted (high, ui pass).
@@ -1538,21 +1596,22 @@ const _: () = assert!(core::mem::offset_of!(MenuEventHandler, processWhileModal)
 /// Meaning: MenuEventHandler that opens the game menus (TweenMenu, Journal, Inventory, Magic, Map, Stats, Sleep/Wait, Favorites ...) from their user events (high, ui pass).
 /// Evidence: runtime: 0x18 at 1 allocation sites.
 /// Bases: `MenuEventHandler`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MenuOpenHandler {
     /// +0x0 `vtbl:MenuOpenHandler:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::MenuOpenHandler_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `undefined1`, semantic; when 0 (or MenuControls+0x81 set) the tween key shows sTweenDisabledMessage instead of opening TweenMenu (medium)
-    pub tweenMenuAllowed: u8,
+    #[doc(hidden)]
+    pub __tweenMenuAllowed: [u8; 1],
     pub unknown_11: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<MenuOpenHandler>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, tweenMenuAllowed) == 0x10);
+const _: () = assert!(core::mem::offset_of!(MenuOpenHandler, __tweenMenuAllowed) == 0x10);
 
 /// `MenuTableEntry`: size 0x20 (exact).
 /// Meaning: one menu table entry: the registered name, the live menu (null until first shown or after unload) and its creator (high, ui pass).
@@ -1580,7 +1639,7 @@ const _: () = assert!(core::mem::offset_of!(MenuTableEntry, next) == 0x18);
 /// Meaning: one queued message box (IUIMessageData) (high, ui pass).
 /// Evidence: allocation sites (high): {'80': 6}.
 /// Bases: `IUIMessageData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MessageBoxData {
     /// +0x0 `vtbl:MessageBoxData:0`, rtti
     #[doc(hidden)]
@@ -1591,7 +1650,8 @@ pub struct MessageBoxData {
     /// +0x10 `undefined1`, semantic; body text ('\r' replaced by ' ' on queueing) (high)
     pub text: [u8; 16],
     /// +0x20 `class:BSTArray`, semantic; BSTArray<BSString> button labels: data +0x20, capacity +0x28, size +0x30 (high)
-    pub buttons: crate::BSTArray,
+    #[doc(hidden)]
+    pub __buttons: [u8; 24],
     /// +0x38 `undefined4`, semantic; message box type (< 0x1f; indexes g_MessageBoxTypeDisabled; 0x19 bypasses the 20-box limit) (high)
     pub type_: u32,
     /// +0x3C `undefined4`, semantic; second argument of 'setIsCancellable' (init -1) (low)
@@ -1601,13 +1661,17 @@ pub struct MessageBoxData {
     /// +0x48 `undefined4`, semantic; sort key and the menu depth used while shown (high)
     pub depth: u32,
     /// +0x4C `undefined1`, semantic; added to the pressed index before the callback (high)
-    pub buttonBase: u8,
+    #[doc(hidden)]
+    pub __buttonBase: [u8; 1],
     /// +0x4D `undefined1`, semantic; second argument of 'setMessageText' (low)
-    pub textFlag: u8,
+    #[doc(hidden)]
+    pub __textFlag: [u8; 1],
     /// +0x4E `undefined1`, semantic; argument of 'setIsVertical' (medium)
-    pub isVertical: u8,
+    #[doc(hidden)]
+    pub __isVertical: [u8; 1],
     /// +0x4F `undefined1`, semantic; first argument of 'setIsCancellable' (medium)
-    pub isCancellable: u8,
+    #[doc(hidden)]
+    pub __isCancellable: [u8; 1],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -1615,21 +1679,21 @@ const _: () = assert!(size_of::<MessageBoxData>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, text) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MessageBoxData, buttons) == 0x20);
+const _: () = assert!(core::mem::offset_of!(MessageBoxData, __buttons) == 0x20);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, type_) == 0x38);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, cancelArg) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, callback) == 0x40);
 const _: () = assert!(core::mem::offset_of!(MessageBoxData, depth) == 0x48);
-const _: () = assert!(core::mem::offset_of!(MessageBoxData, buttonBase) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(MessageBoxData, textFlag) == 0x4D);
-const _: () = assert!(core::mem::offset_of!(MessageBoxData, isVertical) == 0x4E);
-const _: () = assert!(core::mem::offset_of!(MessageBoxData, isCancellable) == 0x4F);
+const _: () = assert!(core::mem::offset_of!(MessageBoxData, __buttonBase) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(MessageBoxData, __textFlag) == 0x4D);
+const _: () = assert!(core::mem::offset_of!(MessageBoxData, __isVertical) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(MessageBoxData, __isCancellable) == 0x4F);
 
 /// `MessageBoxMenu`: size 0x38 (exact, high); primary base `IMenu`.
 /// Meaning: the message box menu; registered as 'MessageBoxMenu', movie 'MessageBox' (high, ui pass).
 /// Evidence: ui pass (semantic): creator: depth 10, flags 0x11 (| 0x404 when BSSystemUtility check is false), context 1; stores itself in g_MessageBoxMenu 0x32583f8; IMenu base fields as written by the ctor (layout is track A's): +0x10 movie view (LoadMenuMovie's out param), +0x18 depth byte, +0x1c flags u32, +0x20 input context u32; size: creator Str_MessageBoxMenu_cb0 0x964260 allocates 0x38; deleting dtor 0x964150 frees 0x38.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct MessageBoxMenu {
     /// +0x0 `vtbl:MessageBoxMenu:0`, rtti
     #[doc(hidden)]
@@ -1640,9 +1704,11 @@ pub struct MessageBoxMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1674,8 +1740,8 @@ const _: () = assert!(size_of::<MessageBoxMenu>() == 0x38);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(MessageBoxMenu, field_1C) == 0x1C);
@@ -1758,7 +1824,7 @@ const _: () = assert!(core::mem::offset_of!(TaskQueueHolder, current) == 0x10);
 /// Meaning: the tween (character) menu: depth 0, flags 0xcc01, context 1 (high, ui pass).
 /// Evidence: ui pass (semantic): ctor 0x987ac0: flags 0xcc01 before LoadMenuMovie("TweenMenu",2) (so the load-time RefreshMenuPlatform sees 0x400 and adds 4 without a gamepad), then context 1 and depth 0. Overrides slots 1 0x988290, 4 0x987c00, 6 0x988250; size: creator 0x989000 allocates 0x50 from the Scaleform heap (*0x3275ae0 slot 0x50) and inlines the ctor.
 /// Bases: `IMenu`@0x0, `FxDelegateHandler`@0x0, `GRefCountBase<FxDelegateHandler,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TweenMenu {
     /// +0x0 `vtbl:TweenMenu:0`, rtti
     #[doc(hidden)]
@@ -1769,9 +1835,11 @@ pub struct TweenMenu {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -1801,8 +1869,8 @@ const _: () = assert!(size_of::<TweenMenu>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TweenMenu, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(TweenMenu, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(TweenMenu, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(TweenMenu, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(TweenMenu, field_1C) == 0x1C);
@@ -1821,7 +1889,7 @@ const _: () = assert!(core::mem::offset_of!(TweenMenu, savedRepeatRateLong) == 0
 pub struct UIMessage {
     /// +0x0 `class:BSFixedString`, semantic; target menu; the name 'Top Menu' (UI string +0xd0) targets the topmost open menu with depth < 0xe (high)
     pub menuName: crate::BSFixedString,
-    /// +0x8 `undefined4`, semantic; UI_MESSAGE_TYPE (enum below); 0xe until assigned (high)
+    /// +0x8 `undefined4`, semantic; UIMessageType; 0xe until assigned (high)
     pub type_: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `ptr:IUIMessageData`, semantic; optional payload, created by the data factory 0x62e6a0 or acquired from the queue's pool (high)
@@ -1841,14 +1909,15 @@ const _: () = assert!(core::mem::offset_of!(UIMessage, isStatic) == 0x18);
 /// `UIMessageQueue`: size 0xB80 (exact).
 /// Meaning: the UI message queue: a 100-entry ring of UIMessage* behind a spin lock, 64 static UIMessage slots reused every drain, and a pool of reusable message data (high, ui pass).
 /// Evidence: the UI message queue: a 100-entry ring of UIMessage* behind a spin lock, 64 static UIMessage slots reused every drain, and a pool of reusable message data; UI ctor: g_UIMessageQueue_ptr = 0x14333b0b0, vtable BSTCommonStaticMessageQueue<UIMessage*,100> at +8, array ctor of 0x40 x 0x20 at 0x14333b430 (+0x380); dtor ID_82166 0x116df10 tears down +0x350/+0x380 and resets the vtable; size: static object at 0x14333b0b0 (g_UIMessageQueue_ptr 0x21a05c0 points at it, set in the UI ctor 0x1169070); the next static symbol is at 0x14333bc30 (0xb80 later), which matches +0x380 + 64 * 0x20. Runtime: every QueueMessage hit in edges.json has arg0 = 0x14333b0b0 (5,642 hits). The holder has no RTTI; the name is descriptive..
-#[repr(C)]
+#[repr(C, align(4))]
 pub struct UIMessageQueue {
     pub unknown_0: [u8; 8],
     /// +0x8 `undefined1`, semantic; ring of 100 UIMessage*: vtable +8, spin lock dword +0x10, buffer +0x18..+0x337, count +0x338, push index +0x33c, pop index +0x340 (high)
     pub queue: [u8; 832],
     pub unknown_348: [u8; 8],
     /// +0x350 `undefined1`, semantic; BSFixedString data-type name -> BSTArray<IUIMessageData*>* of reusable payloads (0x18-byte entries: key, array, next); capacity +0x354, sentinel +0x360, entries +0x370 (medium)
-    pub dataPool: [u8; 40],
+    #[doc(hidden)]
+    pub __dataPool: [u8; 40],
     /// +0x378 `undefined4`, semantic; number of static UIMessage slots handed out since the last drain (max 0x40); not atomic (high)
     pub staticMessagesUsed: u32,
     pub unknown_37C: [u8; 4],
@@ -1859,7 +1928,7 @@ pub struct UIMessageQueue {
 }
 const _: () = assert!(size_of::<UIMessageQueue>() == 0xB80);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, queue) == 0x8);
-const _: () = assert!(core::mem::offset_of!(UIMessageQueue, dataPool) == 0x350);
+const _: () = assert!(core::mem::offset_of!(UIMessageQueue, __dataPool) == 0x350);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, staticMessagesUsed) == 0x378);
 const _: () = assert!(core::mem::offset_of!(UIMessageQueue, staticMessages) == 0x380);
 
@@ -1881,6 +1950,77 @@ pub struct _anon_7C6875DF__OldMessageBoxCallback {
 const _: () = assert!(size_of::<_anon_7C6875DF__OldMessageBoxCallback>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(_anon_7C6875DF__OldMessageBoxCallback, fn_) == 0x10);
+
+/// values in data/uimessagetypes.json (ui pass).
+#[repr(u32)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum UIMessageType {
+    /// `update`
+    update = 0,
+    /// `show`
+    show = 1,
+    /// `showOpen`
+    showOpen = 2,
+    /// `hide`
+    hide = 3,
+    /// `forceHide`
+    forceHide = 4,
+    /// `scaleformEvent`
+    scaleformEvent = 6,
+    /// `userEvent`
+    userEvent = 7,
+    /// `inventoryUpdate`
+    inventoryUpdate = 8,
+    /// `type0xb`
+    type0xb = 11,
+    /// `kinect`
+    kinect = 12,
+    /// `type0xd`
+    type0xd = 13,
+    /// `none`
+    none = 14,
+}
+
+impl UIMessageType {
+    /// The number the running game has for this value, `None` where it has no such value.
+    #[inline]
+    #[must_use]
+    pub fn to_engine(self) -> Option<u32> {
+        match self {
+            Self::update => { record!(7, 0, 0, "UIMessageType.update"); engine_value!("UIMessageType.update", 0, u32) }
+            Self::show => { record!(7, 0, 0, "UIMessageType.show"); engine_value!("UIMessageType.show", 1, u32) }
+            Self::showOpen => { record!(7, 0, 0, "UIMessageType.showOpen"); engine_value!("UIMessageType.showOpen", 2, u32) }
+            Self::hide => { record!(7, 0, 0, "UIMessageType.hide"); engine_value!("UIMessageType.hide", 3, u32) }
+            Self::forceHide => { record!(7, 0, 0, "UIMessageType.forceHide"); engine_value!("UIMessageType.forceHide", 4, u32) }
+            Self::scaleformEvent => { record!(7, 0, 0, "UIMessageType.scaleformEvent"); engine_value!("UIMessageType.scaleformEvent", 6, u32) }
+            Self::userEvent => { record!(7, 0, 0, "UIMessageType.userEvent"); engine_value!("UIMessageType.userEvent", 7, u32) }
+            Self::inventoryUpdate => { record!(7, 0, 0, "UIMessageType.inventoryUpdate"); engine_value!("UIMessageType.inventoryUpdate", 8, u32) }
+            Self::type0xb => { record!(7, 0, 0, "UIMessageType.type0xb"); engine_value!("UIMessageType.type0xb", 11, u32) }
+            Self::kinect => { record!(7, 0, 0, "UIMessageType.kinect"); engine_value!("UIMessageType.kinect", 12, u32) }
+            Self::type0xd => { record!(7, 0, 0, "UIMessageType.type0xd"); engine_value!("UIMessageType.type0xd", 13, u32) }
+            Self::none => { record!(7, 0, 0, "UIMessageType.none"); engine_value!("UIMessageType.none", 14, u32) }
+        }
+    }
+
+    /// The value a number of the running game means, `None` for a number it does not name.
+    #[must_use]
+    pub fn from_engine(raw: u32) -> Option<Self> {
+        record!(7, 0, 0, "UIMessageType.*");
+        if engine_value!("UIMessageType.update", 0, u32) == Some(raw) { return Some(Self::update); }
+        if engine_value!("UIMessageType.show", 1, u32) == Some(raw) { return Some(Self::show); }
+        if engine_value!("UIMessageType.showOpen", 2, u32) == Some(raw) { return Some(Self::showOpen); }
+        if engine_value!("UIMessageType.hide", 3, u32) == Some(raw) { return Some(Self::hide); }
+        if engine_value!("UIMessageType.forceHide", 4, u32) == Some(raw) { return Some(Self::forceHide); }
+        if engine_value!("UIMessageType.scaleformEvent", 6, u32) == Some(raw) { return Some(Self::scaleformEvent); }
+        if engine_value!("UIMessageType.userEvent", 7, u32) == Some(raw) { return Some(Self::userEvent); }
+        if engine_value!("UIMessageType.inventoryUpdate", 8, u32) == Some(raw) { return Some(Self::inventoryUpdate); }
+        if engine_value!("UIMessageType.type0xb", 11, u32) == Some(raw) { return Some(Self::type0xb); }
+        if engine_value!("UIMessageType.kinect", 12, u32) == Some(raw) { return Some(Self::kinect); }
+        if engine_value!("UIMessageType.type0xd", 13, u32) == Some(raw) { return Some(Self::type0xd); }
+        if engine_value!("UIMessageType.none", 14, u32) == Some(raw) { return Some(Self::none); }
+        None
+    }
+}
 
 /// Named bits of `GFxMovieView.flags` (ui pass); unnamed bits pass through `bits`.
 #[repr(transparent)]

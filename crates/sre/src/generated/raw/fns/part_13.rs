@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_fAimDownDegrees_Combat__atexit` at 0x179a740 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__atexit(void)`
+pub const INISetting_fAimDownDegrees_Combat__atexit: u64 = 171361;
+/// `INISetting_fAimDownDegrees_Combat__init` at 0xa3f20 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__init(void)`
+pub const INISetting_fAimDownDegrees_Combat__init: u64 = 6165;
+/// `INISetting_fAimUpDegrees_Combat__atexit` at 0x179a790 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__atexit(void)`
+pub const INISetting_fAimUpDegrees_Combat__atexit: u64 = 171362;
+/// `INISetting_fAimUpDegrees_Combat__init` at 0xa3fa0 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__init(void)`
+pub const INISetting_fAimUpDegrees_Combat__init: u64 = 6166;
 /// `INISetting_fAlphaReduce_Weather__atexit` at 0x173ee20 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__atexit(void)`
 pub const INISetting_fAlphaReduce_Weather__atexit: u64 = 165459;
 /// `INISetting_fAlphaReduce_Weather__init` at 0xba70 (crt_init, medium); signature (high): `void INISetting_fAlphaReduce_Weather__init(void)`
@@ -6043,6 +6051,10 @@ pub const InitDefaultsAndEmptyArrays: u64 = 80758;
 pub const InitDefaultsWithIdentityColorTransform: u64 = 83658;
 /// `InitDefaults_2` at 0x152ac80 (decompiler, medium); signature (untiered): `undefined8 * InitDefaults_2(undefined8 * param_1)`
 pub const InitDefaults_2: u64 = 106891;
+/// `InitDepthBiasViewportPulls` at 0x102b680 (semantic, high); signature (untiered): `undefined InitDepthBiasViewportPulls(void)`; semantic: fills g_DepthBiasViewportPulls 0x3330200 with the twelve viewport depth pulls per rasterizer depth-bias mode, copied from .rdata 0x1a76790: 0, 1.5e-5, 0, 0, 0, 0, 2.6e-5, 1.5e-5, 2.8e-5, 1.7e-5, 3e-5, 1.9e-5 (decals use modes 6-9); called at renderer init and reset (0x1007e36, 0x1012e7a) (high); signature `void ()`
+pub const InitDepthBiasViewportPulls: u64 = 77651;
+/// `InitDepthBiasViewportPulls` as a function pointer type (high).
+pub type InitDepthBiasViewportPulls_fn = unsafe extern "C" fn();
 /// `InitDirectoryWildcardPattern` at 0xec0db0 (decompiler, medium); signature (untiered): `undefined4 InitDirectoryWildcardPattern(undefined8 * param_1, char * param_2)`
 pub const InitDirectoryWildcardPattern: u64 = 69485;
 /// `InitDragonMaxTurnAngle` at 0x90f30 (semantic, high); signature (untiered): `void InitDragonMaxTurnAngle(void)`; semantic: g_DragonMaxTurnAngle = fDragonMaxAngleBeforeTurn:Camera (90 in the image) * pi/180 (high); signature `void (void)`
@@ -7024,7 +7036,7 @@ pub const InitVelocityConstraintMotor: u64 = 80215;
 /// `InitVolumetricLighting` at 0x1530f10 (semantic, high); signature (untiered): `undefined InitVolumetricLighting(longlong param_1, longlong param_2)`; semantic: renderer init (InitShaders) and RefreshShaders: the console defaults table, the texture sizes per quality (low/medium/high from the iVolumetricLightingTexture* settings), the enable and weather-update copies, the volumes (0x1532330), the two 4096-entry R32_FLOAT 1D textures 'Volumetric Lighting Repartition' (+0x78) and 'Volumetric Lighting Inverse Repartition' (+0x80), the compute shaders ISVolumetricLightingGenerateCS (+0x50) and ISVolumetricLightingRaymarchCS (+0x58), then fills both tables with +0x40 and +0x48 (high); signature `void (VolumetricLightingParams* params, void* shaderStream)`
 pub const InitVolumetricLighting: u64 = 107021;
 /// `InitVolumetricLighting` as a function pointer type (high).
-pub type InitVolumetricLighting_fn = unsafe extern "C" fn(params: *mut c_void, shaderStream: *mut c_void);
+pub type InitVolumetricLighting_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, shaderStream: *mut c_void);
 /// `InitVolumetricLightingParamsFromINI` at 0x15308a0 (decompiler, high); signature (high): `undefined4 * InitVolumetricLightingParamsFromINI(undefined4 * param_1)`
 pub const InitVolumetricLightingParamsFromINI: u64 = 107010;
 /// `InitWalletGetBalanceRequest` at 0x139d100 (decompiler, medium); signature (untiered): `undefined InitWalletGetBalanceRequest(longlong * param_1, undefined8 * param_2, longlong param_3, undefined1 * param_4, undefined8 param_5)`
@@ -8383,13 +8395,3 @@ pub const InterpolatePoints: u64 = 86007;
 pub const InterpolateQuatKeysAtTime: u64 = 32583;
 /// `InterpolateQuaternionKeys` at 0xf6f860 (decompiler, medium); signature (untiered): `undefined8 * InterpolateQuaternionKeys(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, int * param_6, byte param_7)`
 pub const InterpolateQuaternionKeys: u64 = 73102;
-/// `InterpolateQuaternionKeysClamped` at 0xf6fa90 (decompiler, medium); signature (untiered): `undefined8 * InterpolateQuaternionKeysClamped(undefined8 * param_1, float param_2, float * param_3, int param_4, uint param_5, byte param_6)`
-pub const InterpolateQuaternionKeysClamped: u64 = 73104;
-/// `InterpolateQuaternionKeysSquad` at 0xf8f8c0 (decompiler, high); signature (high): `undefined InterpolateQuaternionKeysSquad(float param_1, longlong param_2, longlong param_3, float * param_4)`
-pub const InterpolateQuaternionKeysSquad: u64 = 74181;
-/// `InterpolateQuaternionKeysSquad_2` at 0xf96400 (decompiler, high); signature (high): `undefined InterpolateQuaternionKeysSquad_2(float param_1, longlong param_2, longlong param_3, float * param_4)`
-pub const InterpolateQuaternionKeysSquad_2: u64 = 74385;
-/// `InterpolateQuaternionNormalized` at 0xef8b30 (decompiler, medium); signature (medium): `undefined InterpolateQuaternionNormalized(float * param_1, float param_2, float * param_3, float * param_4)`
-pub const InterpolateQuaternionNormalized: u64 = 70836;
-/// `InterpolateRgbByWeightTable` at 0x1044ae0 (decompiler, medium); signature (medium): `undefined InterpolateRgbByWeightTable(byte * param_1, byte * param_2, longlong param_3, longlong param_4, undefined2 * param_5)`
-pub const InterpolateRgbByWeightTable: u64 = 77779;

@@ -21,25 +21,32 @@ pub struct BSCullingProcess {
     /// +0x18 `ptr:NiCamera`, base NiCullingProcess, semantic, runtime; the camera of the current walk (high)
     pub camera: *mut crate::NiCamera,
     /// +0x20 `class:NiFrustum`, semantic; copy of the camera's NiFrustum: left, right, top, bottom, near, far (floats) and the orthographic byte at +0x38 (high); retyped undefined1 -> class:NiFrustum: pass 6: 0xf04850 copies 0x1c bytes from NiCamera+0x150; ComputeFrustumPlanes 0xef7710 reads l, r, t, b, n, f and the ortho byte
-    pub frustum: crate::NiFrustum,
+    #[doc(hidden)]
+    pub __frustum: [u8; 28],
     /// +0x3C `class:NiPlane`, semantic; six world planes {nx, ny, nz, d}, 0x10 each, inside where dot(n, c) - d > 0: 0 near, 1 far, 2 left, 3 right, 4 top, 5 bottom (high); retyped undefined1 -> class:NiPlane: array of 6 (width 0x60): ComputeFrustumPlanes 0xef7710 writes six {n, d}; TestBoundAgainstPlanes 0xfee940 steps 0x10
-    pub planes: [u8; 96],
+    #[doc(hidden)]
+    pub __planes: [u8; 96],
     /// +0x9C `undefined4`, base NiCullingProcess, semantic, runtime; bit i set = plane i must still be tested in this subtree; 0x3f after a camera is set; bit i is cleared when the bound sphere lies entirely inside plane i; 0 = fully inside, no test; see the flag rows (high)
     pub activePlaneMask: u32,
     /// +0xA0 `undefined4`, base NiCullingProcess
     pub field_A0: u32,
     pub unknown_A4: [u8; 8],
     /// +0xAC `undefined1`, semantic; an alternative plane set with its mask at +0x10c, copied over +0x3c..+0xab at Process when +0x11f is set (medium)
-    pub customPlanes: [u8; 112],
+    #[doc(hidden)]
+    pub __customPlanes: [u8; 112],
     pub unknown_11C: [u8; 1],
     /// +0x11D `undefined1`, semantic; when set the walk keeps NiAVObject flags bit 26: set when accepted, cleared when culled (high)
-    pub maintainVisibleFlag: u8,
+    #[doc(hidden)]
+    pub __maintainVisibleFlag: [u8; 1],
     /// +0x11E `undefined1`, semantic; lets nodes with flags bit 12 be tested instead of skipped (medium)
-    pub acceptFlag12Nodes: u8,
+    #[doc(hidden)]
+    pub __acceptFlag12Nodes: [u8; 1],
     /// +0x11F `undefined1`, semantic; Process replaces the camera planes with customPlanes (medium)
-    pub useCustomPlanes: u8,
+    #[doc(hidden)]
+    pub __useCustomPlanes: [u8; 1],
     /// +0x120 `undefined1`, semantic; allows clearing activePlaneMask bits for planes a parent is fully inside (high)
-    pub narrowPlaneMask: u8,
+    #[doc(hidden)]
+    pub __narrowPlaneMask: [u8; 1],
     /// +0x121 `undefined1`, base NiCullingProcess
     pub field_121: u8,
     pub unknown_122: [u8; 6],
@@ -47,38 +54,50 @@ pub struct BSCullingProcess {
     pub visibleGeometry: crate::BSTArray,
     pub unknown_140: [u8; 65536],
     /// +0x10140 `undefined1`, semantic; lock-free ring of 0x10-byte records {object, groupIndex, appendTag} filled by slot 24 for objects of an ordered group (or when +0x301d5 is set) (medium)
-    pub queuedVisible: [u8; 65552],
+    #[doc(hidden)]
+    pub __queuedVisible: [u8; 65552],
     /// +0x20150 `undefined1`, semantic; ring of free 0x10-byte records (0x1000 records stored from +0x140) (medium)
-    pub freeRecords: [u8; 65552],
+    #[doc(hidden)]
+    pub __freeRecords: [u8; 65552],
     pub unknown_30160: [u8; 12],
     /// +0x3016C `undefined8`, ctor store
-    pub field_3016C: u64,
+    #[doc(hidden)]
+    pub __field_3016C: [u8; 8],
     /// +0x30174 `undefined4`, ctor store
-    pub field_30174: u32,
+    #[doc(hidden)]
+    pub __field_30174: [u8; 4],
     /// +0x30178 `undefined8`, ctor store
-    pub field_30178: u64,
+    #[doc(hidden)]
+    pub __field_30178: [u8; 8],
     pub unknown_30180: [u8; 8],
     /// +0x30188 `undefined8`, ctor store
-    pub field_30188: u64,
+    #[doc(hidden)]
+    pub __field_30188: [u8; 8],
     /// +0x30190 `undefined8`, ctor store
-    pub field_30190: u64,
+    #[doc(hidden)]
+    pub __field_30190: [u8; 8],
     /// +0x30198 `undefined4`, semantic; 1 and 2 accept without testing, 3 and 4 test planes and portals (4 also visits nodes with flag bit 12); the sun's geometry list cullers use 3 + light+0x47 (medium)
     pub cullMode: u32,
     pub unknown_3019C: [u8; 4],
     /// +0x301A0 `undefined8`, semantic; portal frusta used by cullMode 4: plane sets of 0x70 bytes with their mask at +0x60, a node tree at +0x18, count at +0xbc (medium)
-    pub portalPlaneTree: u64,
+    #[doc(hidden)]
+    pub __portalPlaneTree: [u8; 8],
     pub unknown_301A8: [u8; 40],
     /// +0x301D0 `undefined4`, ctor store
-    pub field_301D0: u32,
+    #[doc(hidden)]
+    pub __field_301D0: [u8; 4],
     /// +0x301D4 `undefined1`, semantic; 1: Process walks through NiAVObject::Cull and accepted nodes are descended through their slot 52; 0: accepted objects are appended whole through slot 24 (the sun's geometry-list cullers) (medium)
-    pub descendIntoNodes: u8,
+    #[doc(hidden)]
+    pub __descendIntoNodes: [u8; 1],
     /// +0x301D5 `undefined1`, semantic; when set slot 24 queues every object instead of appending it directly (medium)
-    pub deferAllAppends: u8,
+    #[doc(hidden)]
+    pub __deferAllAppends: [u8; 1],
     pub unknown_301D6: [u8; 2],
     /// +0x301D8 `class:BSTArray`, semantic; one chunked list (0x38-byte header) per ordered group, filled from queuedVisible by group index (medium)
     pub groupBuckets: crate::BSTArray,
     /// +0x301F0 `undefined4`, semantic; highest ordered-group index handed out in this walk, -1 = none; BSOrderedNode::OnVisible atomically increments it to open a group (high)
-    pub lastGroupIndex: u32,
+    #[doc(hidden)]
+    pub __lastGroupIndex: [u8; 4],
     /// +0x301F4 `undefined4`, semantic; value passed with each appended object (AppendGeometry's second argument); BSParabolicCullingProcess stores the hemisphere (1 or 2) its bound test returned (medium)
     pub appendTag: u32,
     #[doc(hidden)]
@@ -89,31 +108,31 @@ const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __vftable) == 0x0)
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, accumulator) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, camera) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, frustum) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, planes) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __frustum) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __planes) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, activePlaneMask) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, customPlanes) == 0xAC);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, maintainVisibleFlag) == 0x11D);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, acceptFlag12Nodes) == 0x11E);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, useCustomPlanes) == 0x11F);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, narrowPlaneMask) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __customPlanes) == 0xAC);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __maintainVisibleFlag) == 0x11D);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __acceptFlag12Nodes) == 0x11E);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __useCustomPlanes) == 0x11F);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __narrowPlaneMask) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_121) == 0x121);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, visibleGeometry) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, queuedVisible) == 0x10140);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, freeRecords) == 0x20150);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_3016C) == 0x3016C);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_30174) == 0x30174);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_30178) == 0x30178);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_30188) == 0x30188);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_30190) == 0x30190);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __queuedVisible) == 0x10140);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __freeRecords) == 0x20150);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_3016C) == 0x3016C);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30174) == 0x30174);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30178) == 0x30178);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30188) == 0x30188);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_30190) == 0x30190);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, cullMode) == 0x30198);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, portalPlaneTree) == 0x301A0);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, field_301D0) == 0x301D0);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, descendIntoNodes) == 0x301D4);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, deferAllAppends) == 0x301D5);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __portalPlaneTree) == 0x301A0);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __field_301D0) == 0x301D0);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __descendIntoNodes) == 0x301D4);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __deferAllAppends) == 0x301D5);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, groupBuckets) == 0x301D8);
-const _: () = assert!(core::mem::offset_of!(BSCullingProcess, lastGroupIndex) == 0x301F0);
+const _: () = assert!(core::mem::offset_of!(BSCullingProcess, __lastGroupIndex) == 0x301F0);
 const _: () = assert!(core::mem::offset_of!(BSCullingProcess, appendTag) == 0x301F4);
 
 /// `BSGeometry`: size 0x158 (exact, low); primary base `NiAVObject`.
@@ -230,7 +249,7 @@ const _: () = assert!(core::mem::offset_of!(BSGeometry, type_) == 0x150);
 /// Meaning: the renderer's wrapper around a NiLight: position, portal graph and per-light lists; base of the shadow lights (high, render pass).
 /// Evidence: runtime: 0x140 at 4 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSLight {
     /// +0x0 `vtbl:BSLight:0`, rtti
     #[doc(hidden)]
@@ -241,17 +260,21 @@ pub struct BSLight {
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 15],
     /// +0x47 `u8`, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
-    pub portalStrictCull: u8,
+    #[doc(hidden)]
+    pub __portalStrictCull: [u8; 1],
     /// +0x48 `ptr:NiLight`, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
     /// +0x50 `class:NiPoint3`, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
@@ -274,9 +297,11 @@ pub struct BSLight {
     /// +0x120 `ptr:BSPortalGraph`, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
-    pub sphereCuller: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __sphereCuller: [u8; 8],
     /// +0x130 `undefined8`, ctor store
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
     #[doc(hidden)]
@@ -286,11 +311,11 @@ const _: () = assert!(size_of::<BSLight>() == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSLight, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSLight, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSLight, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSLight, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSLight, portalStrictCull) == 0x47);
+const _: () = assert!(core::mem::offset_of!(BSLight, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSLight, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSLight, __portalStrictCull) == 0x47);
 const _: () = assert!(core::mem::offset_of!(BSLight, light) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSLight, position) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSLight, visibleSlot) == 0x5C);
@@ -299,15 +324,15 @@ const _: () = assert!(core::mem::offset_of!(BSLight, distanceCulled) == 0x63);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSLight, portalGraph) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSLight, sphereCuller) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSLight, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSLight, __sphereCuller) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSLight, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSLight, field_138) == 0x138);
 
 /// `BSLightingShaderProperty`: size 0x160 (exact, high); primary base `BSShaderProperty`.
 /// Meaning: the standard lit material (high, render pass).
 /// Evidence: runtime: 0x160 at 4 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSShaderProperty`@0x0, `NiShadeProperty`@0x0, `NiProperty`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSLightingShaderProperty {
     /// +0x0 `vtbl:BSLightingShaderProperty:0`, rtti
     #[doc(hidden)]
@@ -344,17 +369,19 @@ pub struct BSLightingShaderProperty {
     pub fadeNode: *mut crate::BSFadeNode,
     /// +0x68 `pointer`, base BSShaderProperty, semantic; refcounted 0x88-byte record (NiPointers at +0x10/+0x18/+0x20, bytes +0x7d..+0x82, int +0x74); when set, slot 42 adds a pass on the effect shader (ID_415166) whose technique bits come from those bytes (low)
     pub effectOverlay: *mut c_void,
-    /// +0x70 `pointer`, base BSShaderProperty, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
-    pub lightData: *mut c_void,
+    /// +0x70 `ptr:ShaderPropertyLightData`, base BSShaderProperty, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
+    pub lightData: *mut crate::ShaderPropertyLightData,
     /// +0x78 `ptr:BSShaderMaterial`, base BSShaderProperty, semantic; material entry from the shared material cache (0x32309d8) (high)
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, base BSShaderProperty, semantic; render frame the pass lists were last rebuilt in (high)
     pub passFrame: u32,
     pub unknown_84: [u8; 4],
     /// +0x88 `undefined1`, semantic; three pass lists of 0x10 (+0x88/+0x98/+0xa8) for the depth/shadow modes, rotated each frame through the indices at +0x132/+0x133 (medium)
-    pub depthPassLists: [u8; 48],
+    #[doc(hidden)]
+    pub __depthPassLists: [u8; 48],
     /// +0xB8 `undefined1`, semantic; shadow-mask passes, one per shadow light hitting the geometry (utility bits 0x200000/0x400000/0x800000/0x1000000 = RENDER_SHADOWMASK/SPOT/PB/DPB by light type) (medium)
-    pub shadowMaskPasses: [u8; 16],
+    #[doc(hidden)]
+    pub __shadowMaskPasses: [u8; 16],
     /// +0xC8 `undefined1`, semantic; RENDER_DEPTH pass list of slot 45 (low)
     pub depthOnlyPasses: [u8; 16],
     /// +0xD8 `undefined1`, semantic; special pass for mode 0xe when iEnableShadowCastingFlag == 2 on a cascade accumulator and flag bit 9 is clear (low)
@@ -373,7 +400,8 @@ pub struct BSLightingShaderProperty {
     /// +0x108 `float`, semantic; fade used by the landscape depth pass (stippled when < 1 in mode 0xc for flag bits 14/46) (low)
     pub landscapeFade: f32,
     /// +0x10C `undefined1`, semantic; 4 floats written together with flag bit 23 (PROJECTED_UV) (medium)
-    pub projectedUVParams: [u8; 16],
+    #[doc(hidden)]
+    pub __projectedUVParams: [u8; 16],
     /// +0x11C `class:NiColorA`, semantic; 4 floats (defaults 0.6, 0.7, 0.8, 1.0) (low); retyped undefined1 -> class:NiColorA: meaning: 4 colour floats (0.6, 0.7, 0.8, 1.0); read by 0x1549550 (medium: the alpha lane's use is not shown)
     pub projectedUVColor: crate::NiColorA,
     /// +0x12C `undefined4`, ctor store
@@ -385,7 +413,8 @@ pub struct BSLightingShaderProperty {
     pub nextDepthList: u8,
     pub unknown_134: [u8; 4],
     /// +0x138 `undefined1`, semantic; the record lightData (+0x70) points at; shadow light mask at +0x154, dirty byte at +0x158 (medium)
-    pub lightDataStorage: [u8; 36],
+    #[doc(hidden)]
+    pub __lightDataStorage: [u8; 36],
     pub unknown_15C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -410,8 +439,8 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, effectOver
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, lightData) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, material) == 0x78);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, passFrame) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, depthPassLists) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, shadowMaskPasses) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, __depthPassLists) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, __shadowMaskPasses) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, depthOnlyPasses) == 0xC8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, cascadePrepassList) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, occlusionPass) == 0xE8);
@@ -420,18 +449,18 @@ const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, emitColorS
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, specularLODFade) == 0x100);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, envmapLODFade) == 0x104);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, landscapeFade) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, projectedUVParams) == 0x10C);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, __projectedUVParams) == 0x10C);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, projectedUVColor) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, field_12C) == 0x12C);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, currentDepthList) == 0x132);
 const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, nextDepthList) == 0x133);
-const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, lightDataStorage) == 0x138);
+const _: () = assert!(core::mem::offset_of!(BSLightingShaderProperty, __lightDataStorage) == 0x138);
 
 /// `BSShaderAccumulator`: size 0x180 (exact, high); primary base `NiAlphaAccumulator`.
 /// Meaning: collects render passes of visible geometry by mode and draws them (medium, render pass).
 /// Evidence: runtime: 0x180 at 20 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiAlphaAccumulator`@0x0, `NiBackToFrontAccumulator`@0x0, `NiAccumulator`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShaderAccumulator {
     /// +0x0 `vtbl:BSShaderAccumulator:0`, rtti
     #[doc(hidden)]
@@ -492,13 +521,17 @@ pub struct BSShaderAccumulator {
     pub field_9C: u8,
     pub unknown_9D: [u8; 3],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, ctor store
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined1`, ctor store
-    pub field_B4: u8,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 1],
     pub unknown_B5: [u8; 3],
     /// +0xB8 `undefined2`, ctor store
     pub field_B8: u16,
@@ -520,14 +553,16 @@ pub struct BSShaderAccumulator {
     /// +0x128 `undefined1`, semantic; with +0x129 enables the techniques 0x5c000058..0x5c00005b and excludes water properties from registration (low)
     pub field_128: u8,
     /// +0x129 `undefined1`, semantic; see +0x128; mode 0x18 registers only when set (low)
-    pub field_129: u8,
+    #[doc(hidden)]
+    pub __field_129: [u8; 1],
     /// +0x12A `undefined1`, ctor store
     pub field_12A: u8,
     pub unknown_12B: [u8; 1],
     /// +0x12C `u8`, semantic; RegisterDepthGeometry lets decal-flagged geometry (0xc000000) through (high)
     pub acceptDecalsInDepth: u8,
     /// +0x12D `u8`, semantic; with +0x12c clear: decals pass only with property bits 32 and 18 and a blended NiAlphaProperty (high)
-    pub acceptAlphaDecalsInDepth: u8,
+    #[doc(hidden)]
+    pub __acceptAlphaDecalsInDepth: [u8; 1],
     /// +0x12E `undefined1`, semantic; set on the accumulators of the sun's maps; BSLightingShaderProperty slot 43 adds the pre-pass in mode 0xe only for them (medium)
     pub isCascadeAccumulator: u8,
     pub unknown_12F: [u8; 1],
@@ -541,7 +576,8 @@ pub struct BSShaderAccumulator {
     pub hasMoreBatches: u8,
     pub unknown_141: [u8; 7],
     /// +0x148 `ptr:ShadowSceneNode`, semantic; scene node whose lights the draw uses (medium)
-    pub shadowSceneNode: *mut crate::ShadowSceneNode,
+    #[doc(hidden)]
+    pub __shadowSceneNode: [u8; 8],
     /// +0x150 `undefined4`, semantic; mode handed to the property's pass builders (0xc-0xf for depth and shadow maps; values in pass 6's AccumulatorRenderMode) (high)
     pub renderMode: u32,
     pub unknown_154: [u8; 4],
@@ -586,10 +622,10 @@ const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_88) == 0x
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_9C) == 0x9C);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_B8) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_BA) == 0xBA);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, fadeNodeMap) == 0xD0);
@@ -598,16 +634,16 @@ const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_110) == 0
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, clearColor) == 0x118);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_129) == 0x129);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __field_129) == 0x129);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_12A) == 0x12A);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, acceptDecalsInDepth) == 0x12C);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, acceptAlphaDecalsInDepth) == 0x12D);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __acceptAlphaDecalsInDepth) == 0x12D);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, isCascadeAccumulator) == 0x12E);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, batchRenderer) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, currentTechnique) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, currentBucket) == 0x13C);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, hasMoreBatches) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, shadowSceneNode) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, __shadowSceneNode) == 0x148);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, renderMode) == 0x150);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSShaderAccumulator, shadowMapIndex) == 0x160);
@@ -657,8 +693,8 @@ pub struct BSShaderProperty {
     pub fadeNode: *mut crate::BSFadeNode,
     /// +0x68 `pointer`, semantic; refcounted 0x88-byte record (NiPointers at +0x10/+0x18/+0x20, bytes +0x7d..+0x82, int +0x74); when set, slot 42 adds a pass on the effect shader (ID_415166) whose technique bits come from those bytes (low)
     pub effectOverlay: *mut c_void,
-    /// +0x70 `pointer`, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
-    pub lightData: *mut c_void,
+    /// +0x70 `ptr:ShaderPropertyLightData`, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
+    pub lightData: *mut crate::ShaderPropertyLightData,
     /// +0x78 `ptr:BSShaderMaterial`, ctor store, semantic, runtime; material entry from the shared material cache (0x32309d8) (high)
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, semantic; render frame the pass lists were last rebuilt in (high)
@@ -692,7 +728,7 @@ const _: () = assert!(core::mem::offset_of!(BSShaderProperty, passFrame) == 0x80
 /// Meaning: the sun's cascaded shadow light (high, render pass).
 /// Evidence: runtime: 0x5B8 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSShadowLight`@0x0, `BSLight`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShadowDirectionalLight {
     /// +0x0 `vtbl:BSShadowDirectionalLight:0`, rtti
     #[doc(hidden)]
@@ -703,17 +739,21 @@ pub struct BSShadowDirectionalLight {
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
     pub field_20: u64,
     /// +0x28 `undefined4`, base BSLight
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
-    pub portalStrictCull: u8,
+    #[doc(hidden)]
+    pub __portalStrictCull: [u8; 1],
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
     /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
@@ -736,9 +776,11 @@ pub struct BSShadowDirectionalLight {
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
-    pub sphereCuller: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __sphereCuller: [u8; 8],
     /// +0x130 `undefined8`, base BSLight
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined8`, base BSLight
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
@@ -747,7 +789,8 @@ pub struct BSShadowDirectionalLight {
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
-    pub focusShadowMaps: [u8; 960],
+    #[doc(hidden)]
+    pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
     pub unknown_524: [u8; 4],
@@ -768,7 +811,8 @@ pub struct BSShadowDirectionalLight {
     /// +0x560 `class:NiPoint3`, ctor store (widths [4, 8]), semantic, runtime; unit direction of the sunlight used for the cascades this frame (high); retyped undefined1 -> class:NiPoint3: BlendDirection 0x1581730 reads/writes +0x560/+0x564/+0x568 as a direction (dot with the new one, copy)
     pub lightDirection: crate::NiPoint3,
     /// +0x56C `class:NiPoint3`, semantic; direction the blend starts from (high); retyped float -> class:NiPoint3: BlendDirection 0x1581730 copies +0x560..+0x568 to +0x56c..+0x574
-    pub previousLightDirection: crate::NiPoint3,
+    #[doc(hidden)]
+    pub __previousLightDirection: [u8; 12],
     /// +0x578 `ptr:NiCamera`, ctor store, semantic, runtime; camera looking along the sun used by the geometry list cull (0x157ed80) (high)
     pub lightCamera: *mut crate::NiCamera,
     /// +0x580 `class:BSTArray`, semantic, runtime; one BSGeometryListCullingProcess per culling job (6 on the test machine) (high)
@@ -778,7 +822,8 @@ pub struct BSShadowDirectionalLight {
     /// +0x5A4 `float`, semantic, runtime; end distance of cascade i (high)
     pub cascadeFar: [u8; 12],
     /// +0x5B0 `float`, semantic; 0..1 progress of the direction change (high)
-    pub directionBlend: f32,
+    #[doc(hidden)]
+    pub __directionBlend: [u8; 4],
     /// +0x5B4 `u32`, semantic; 1 when the frame camera moved more than 0.01 since its previous world position (+0xd4) (high)
     pub cameraJumped: u32,
     #[doc(hidden)]
@@ -788,11 +833,11 @@ const _: () = assert!(size_of::<BSShadowDirectionalLight>() == 0x5B8);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, portalStrictCull) == 0x47);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __portalStrictCull) == 0x47);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, light) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, position) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, visibleSlot) == 0x5C);
@@ -801,12 +846,12 @@ const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, distanceCu
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, cascadeFrustaDone) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, portalGraph) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, sphereCuller) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __sphereCuller) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, shadowMapCount) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, shadowMaps) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, focusShadowMaps) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, frameIndex) == 0x520);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, casterCandidates) == 0x528);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, casterCandidateCount) == 0x538);
@@ -815,19 +860,19 @@ const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, screenRect
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, focusShadowsActive) == 0x558);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, lightDirection) == 0x560);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, previousLightDirection) == 0x56C);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __previousLightDirection) == 0x56C);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, lightCamera) == 0x578);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, geometryListCullers) == 0x580);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, cascadeNear) == 0x598);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, cascadeFar) == 0x5A4);
-const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, directionBlend) == 0x5B0);
+const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, __directionBlend) == 0x5B0);
 const _: () = assert!(core::mem::offset_of!(BSShadowDirectionalLight, cameraJumped) == 0x5B4);
 
 /// `BSShadowFrustumLight`: size 0x578 (exact, medium); primary base `BSShadowLight`.
 /// Meaning: a spot shadow light: one perspective shadow map (medium, render pass).
 /// Evidence: allocation sites (medium): {'1400': 1}.
 /// Bases: `BSShadowLight`@0x0, `BSLight`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShadowFrustumLight {
     /// +0x0 `vtbl:BSShadowFrustumLight:0`, rtti
     #[doc(hidden)]
@@ -838,17 +883,21 @@ pub struct BSShadowFrustumLight {
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
     pub field_20: u64,
     /// +0x28 `undefined4`, base BSLight
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
-    pub portalStrictCull: u8,
+    #[doc(hidden)]
+    pub __portalStrictCull: [u8; 1],
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
     /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
@@ -871,9 +920,11 @@ pub struct BSShadowFrustumLight {
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
-    pub sphereCuller: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __sphereCuller: [u8; 8],
     /// +0x130 `undefined8`, base BSLight
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined8`, base BSLight
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
@@ -882,7 +933,8 @@ pub struct BSShadowFrustumLight {
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
-    pub focusShadowMaps: [u8; 960],
+    #[doc(hidden)]
+    pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
     pub unknown_524: [u8; 4],
@@ -901,9 +953,11 @@ pub struct BSShadowFrustumLight {
     pub focusShadowsActive: u8,
     pub unknown_559: [u8; 7],
     /// +0x560 `float`, semantic; tan(clamp(fov/2, 1 deg, 160 deg)); the map frustum's right and -left (high)
-    pub tanHalfFovX: f32,
+    #[doc(hidden)]
+    pub __tanHalfFovX: [u8; 4],
     /// +0x564 `float`, semantic; frustum top and -bottom; equal to tanHalfFovX from CreateLightForNiLight (the second ctor 0x1587620 takes them separately) (medium)
-    pub tanHalfFovY: f32,
+    #[doc(hidden)]
+    pub __tanHalfFovY: [u8; 4],
     /// +0x568 `float`, semantic; per-light float from the light parameters (+0xc), at least 1.0; the shadow-mask technique of BSUtilityShader (technique bit 0x400000) uploads it where omni lights upload the NiLight radius (low)
     pub maskParam: f32,
     /// +0x56C `float`, semantic; near plane of the map camera (light parameters +0x10) (high)
@@ -918,11 +972,11 @@ const _: () = assert!(size_of::<BSShadowFrustumLight>() == 0x578);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, portalStrictCull) == 0x47);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __portalStrictCull) == 0x47);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, light) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, position) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, visibleSlot) == 0x5C);
@@ -931,12 +985,12 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, distanceCulled
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, portalGraph) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, sphereCuller) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __sphereCuller) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, shadowMapCount) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, shadowMaps) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, focusShadowMaps) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, frameIndex) == 0x520);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, casterCandidates) == 0x528);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, casterCandidateCount) == 0x538);
@@ -944,8 +998,8 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, biasScale) == 
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, screenRect) == 0x544);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, sceneIndex) == 0x554);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, focusShadowsActive) == 0x558);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, tanHalfFovX) == 0x560);
-const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, tanHalfFovY) == 0x564);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __tanHalfFovX) == 0x560);
+const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, __tanHalfFovY) == 0x564);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, maskParam) == 0x568);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, nearDistance) == 0x56C);
 const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, farDistance) == 0x570);
@@ -954,7 +1008,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowFrustumLight, farDistance) =
 /// Meaning: a light that renders shadow maps: an array of shadow map records (one per cascade or hemisphere) plus four focus-shadow records (high, render pass).
 /// Evidence: lower bound BSShadowParabolicLight (size 0x560 at 0x0) adds no fields or bases meets upper bound derived BSShadowParabolicLight size 0x560 at 0x0.
 /// Bases: `BSLight`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShadowLight {
     /// +0x0 `vtbl:BSShadowLight:0`, rtti
     #[doc(hidden)]
@@ -965,17 +1019,21 @@ pub struct BSShadowLight {
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
     pub field_20: u64,
     /// +0x28 `undefined4`, base BSLight
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
-    pub portalStrictCull: u8,
+    #[doc(hidden)]
+    pub __portalStrictCull: [u8; 1],
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
     /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
@@ -998,9 +1056,11 @@ pub struct BSShadowLight {
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
-    pub sphereCuller: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __sphereCuller: [u8; 8],
     /// +0x130 `undefined8`, base BSLight
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined8`, base BSLight
     pub field_138: u64,
     /// +0x140 `undefined4`, ctor store, semantic, runtime; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
@@ -1034,11 +1094,11 @@ const _: () = assert!(size_of::<BSShadowLight>() == 0x560);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, portalStrictCull) == 0x47);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __portalStrictCull) == 0x47);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, light) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, position) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, visibleSlot) == 0x5C);
@@ -1047,8 +1107,8 @@ const _: () = assert!(core::mem::offset_of!(BSShadowLight, distanceCulled) == 0x
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, portalGraph) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, sphereCuller) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __sphereCuller) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSShadowLight, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, shadowMapCount) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSShadowLight, shadowMaps) == 0x148);
@@ -1065,7 +1125,7 @@ const _: () = assert!(core::mem::offset_of!(BSShadowLight, focusShadowsActive) =
 /// Meaning: a point shadow light: one or two parabolic hemisphere maps (medium, render pass).
 /// Evidence: runtime: 0x560 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSShadowLight`@0x0, `BSLight`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSShadowParabolicLight {
     /// +0x0 `vtbl:BSShadowParabolicLight:0`, rtti
     #[doc(hidden)]
@@ -1076,17 +1136,21 @@ pub struct BSShadowParabolicLight {
     /// +0x10 `undefined8`, base BSLight
     pub field_10: u64,
     /// +0x18 `undefined8`, base BSLight
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base BSLight
     pub field_20: u64,
     /// +0x28 `undefined4`, base BSLight
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, base BSLight
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 15],
     /// +0x47 `u8`, base BSLight, semantic; cull mode of every cull for this light = 3 + this byte (4 = through the portal plane tree) (medium)
-    pub portalStrictCull: u8,
+    #[doc(hidden)]
+    pub __portalStrictCull: [u8; 1],
     /// +0x48 `ptr:NiLight`, base BSLight, semantic; the scene graph light (high)
     pub light: *mut crate::NiLight,
     /// +0x50 `class:NiPoint3`, base BSLight, semantic; world position copied from the light's world translation each update (high); retyped undefined1 -> class:NiPoint3: 0x15121a0 copies light +0xa0..+0xa8 (world translate)
@@ -1109,9 +1173,11 @@ pub struct BSShadowParabolicLight {
     /// +0x120 `ptr:BSPortalGraph`, base BSLight, semantic; the scene's portal graph at the last update (high)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x128 `ptr:BSCullingProcess`, base BSLight, semantic; the light's own culler (BSParabolicCullingProcess around the light) used by UpdateLight (medium)
-    pub sphereCuller: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __sphereCuller: [u8; 8],
     /// +0x130 `undefined8`, base BSLight
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     /// +0x138 `undefined8`, base BSLight
     pub field_138: u64,
     /// +0x140 `undefined4`, base BSShadowLight, semantic; number of shadow maps (cascades for the sun, 1 or 2 hemispheres for parabolic lights) (high)
@@ -1120,7 +1186,8 @@ pub struct BSShadowParabolicLight {
     /// +0x148 `class:BSTArray`, base BSShadowLight, semantic; BSTArray<ShadowMapData> of shadowMapCount records (0xf0 each) (high)
     pub shadowMaps: crate::BSTArray,
     /// +0x160 `undefined1`, base BSShadowLight, semantic; ShadowMapData[4]: the actor-focused shadow maps (iNumFocusShadow), cameras aimed at the actors the frame selected (high)
-    pub focusShadowMaps: [u8; 960],
+    #[doc(hidden)]
+    pub __focusShadowMaps: [u8; 960],
     /// +0x520 `undefined4`, base BSShadowLight, semantic; index of the light among the shadow lights processed this frame (0xff when unused) (medium)
     pub frameIndex: u32,
     pub unknown_524: [u8; 4],
@@ -1145,11 +1212,11 @@ const _: () = assert!(size_of::<BSShadowParabolicLight>() == 0x560);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, portalStrictCull) == 0x47);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __portalStrictCull) == 0x47);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, light) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, position) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, visibleSlot) == 0x5C);
@@ -1158,12 +1225,12 @@ const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, distanceCull
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, portalGraph) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, sphereCuller) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __sphereCuller) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, field_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, shadowMapCount) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, shadowMaps) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, focusShadowMaps) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, __focusShadowMaps) == 0x160);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, frameIndex) == 0x520);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, casterCandidates) == 0x528);
 const _: () = assert!(core::mem::offset_of!(BSShadowParabolicLight, casterCandidateCount) == 0x538);
@@ -1385,10 +1452,26 @@ const _: () = assert!(core::mem::offset_of!(NiSkinInstance, previousPalette) == 
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, field58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiSkinInstance, paletteLock) == 0x60);
 
+/// `ShaderPropertyLightData`: size 0x28 (exact).
+/// Meaning: the light record BSShaderProperty+0x70 points at (medium, render pass).
+/// Evidence: the light record BSShaderProperty+0x70 points at; item 9 (request V). BSEffectShaderProperty slot 39 0x1529b40 allocates it when the effectLighting flag is set (0x1529bdc lea edx,[r9+0x28] -> AllocateMemory; 0x1529bff mov [rsi+0x70],rax); BSLightingShaderProperty points +0x70 at its own +0x138.; size: the 0x28 allocation.
+#[repr(C, align(4))]
+pub struct ShaderPropertyLightData {
+    pub unknown_0: [u8; 28],
+    /// +0x1C `u32`, semantic; bit n-1 set while the geometry is registered for shadow map n; the main view's registration clears it (graphics.md 4.3) (high)
+    #[doc(hidden)]
+    pub __receiverMask: [u8; 4],
+    pub unknown_20: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<ShaderPropertyLightData>() == 0x28);
+const _: () = assert!(core::mem::offset_of!(ShaderPropertyLightData, __receiverMask) == 0x1C);
+
 /// `ShadowMapData`: size 0xF0 (exact).
 /// Meaning: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler (high, render pass).
 /// Evidence: one shadow map of a light: camera, accumulator, depth target slice, viewport and culler; record of BSShadowLight.shadowMaps and focusShadowMaps; run-render2 sunmaps-tp/fp.bin: the sun's two cascade records.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ShadowMapData {
     /// +0x0 `float`, semantic; world to shadow-map texture matrix written after the draw (medium)
     pub worldToShadow: [u8; 64],
@@ -1400,7 +1483,8 @@ pub struct ShadowMapData {
     /// +0x54 `undefined4`, semantic; depth-stencil target id while the map renders (2 cascades, 3 the low-resolution pre-pass, 4 focus and local maps), -1 when unassigned (high)
     pub depthTarget: u32,
     /// +0x58 `undefined4`, semantic; array slice of the depth target (the cascade index for target 2, a slot from the free mask for target 4) (high)
-    pub slice: u32,
+    #[doc(hidden)]
+    pub __slice: [u8; 4],
     /// +0x5C `class:NiPlane`, semantic; view-space plane through eye + forward*cascadeNear[i], normal = camera forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(camera forward, eye + fwd*near_i) into it
     pub splitNearPlane: crate::NiPlane,
     /// +0x6C `class:NiPlane`, semantic; plane through eye + forward*cascadeFar[i], normal = -forward (high); retyped float -> class:NiPlane: pass 12g: 0x157f080 MakePlaneFromNormalAndPoint(-forward, eye + fwd*far_i)
@@ -1411,7 +1495,8 @@ pub struct ShadowMapData {
     /// +0xD0 `undefined1`, semantic; u32 left, right, top, bottom of the map in pixels (high)
     pub viewport: [u8; 16],
     /// +0xE0 `ptr:BSCullingProcess`, semantic; per-map culling process (0x301f8) (high)
-    pub culler: *mut crate::BSCullingProcess,
+    #[doc(hidden)]
+    pub __culler: [u8; 8],
     /// +0xE8 `undefined1`, semantic; set when the target slice must be bound and cleared before the casters are drawn (medium)
     pub clearBeforeRender: u8,
     pub unknown_E9: [u8; 7],
@@ -1423,12 +1508,12 @@ const _: () = assert!(core::mem::offset_of!(ShadowMapData, worldToShadow) == 0x0
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, camera) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, accumulator) == 0x48);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, depthTarget) == 0x54);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, slice) == 0x58);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __slice) == 0x58);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitNearPlane) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, splitFarPlane) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, texelScale) == 0xCC);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, viewport) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(ShadowMapData, culler) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(ShadowMapData, __culler) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(ShadowMapData, clearBeforeRender) == 0xE8);
 
 /// `ShadowSceneNode`: size 0x308 (exact, high); primary base `NiNode`.
@@ -1491,13 +1576,15 @@ pub struct ShadowSceneNode {
     /// +0x148 `class:BSTArray`, semantic, runtime; BSTArray<NiPointer<BSShadowLight>> of the active shadow-casting lights other than the sun (high)
     pub shadowLights: crate::BSTArray,
     /// +0x160 `class:BSTArray`, semantic; BSLights to add: ProcessQueues files each into lights or shadowLights by slot 3 (merging with an entry for the same NiLight) and runs UpdateLight (high)
-    pub pendingLightAdds: crate::BSTArray,
+    #[doc(hidden)]
+    pub __pendingLightAdds: [u8; 24],
     /// +0x178 `class:BSTArray`, semantic; BSLights to take out of lights/shadowLights (high)
     pub pendingLightRemovals: crate::BSTArray,
     /// +0x190 `class:BSTArray`, semantic; lights queued for UpdateLight; ProcessQueues empties it (medium)
     pub pendingLightUpdates: crate::BSTArray,
     /// +0x1A8 `undefined8`, semantic; BSSpinLock guarding the three light queues at +0x160/+0x178/+0x190 (high)
-    pub lightQueueLock: u64,
+    #[doc(hidden)]
+    pub __lightQueueLock: [u8; 8],
     /// +0x1B0 `class:BSTArray`, semantic; objects leaving the scene: a geometry is unlinked from its shader property's light list (+0x128 -> +0x70), a node has its subtree's lists cleared (medium)
     pub pendingGeometryDetach: crate::BSTArray,
     /// +0x1C8 `class:BSTArray`, semantic; objects whose light lists are rebuilt against every scene light (flag 0) (medium)
@@ -1505,7 +1592,8 @@ pub struct ShadowSceneNode {
     /// +0x1E0 `class:BSTArray`, semantic; the same with flag 1: on the small-node path only lights with +0x5c != 0xff (active this frame) are considered (low)
     pub pendingGeometryRelightActive: crate::BSTArray,
     /// +0x1F8 `undefined8`, semantic; BSSpinLock for +0x1b0/+0x1c8/+0x1e0 (high)
-    pub geometryQueueLock: u64,
+    #[doc(hidden)]
+    pub __geometryQueueLock: [u8; 8],
     /// +0x200 `ptr:BSLight`, ctor store, semantic, runtime; the sun as a plain BSLight over the scene's NiDirectionalLight (high)
     pub sunLight: *mut crate::BSLight,
     /// +0x208 `undefined8`, ctor store
@@ -1524,24 +1612,30 @@ pub struct ShadowSceneNode {
     /// +0x228 `ptr:BSPortalGraph`, ctor store, semantic, runtime; portal graph of the loaded interior, null outdoors before a cell attaches it; UpdateLight copies it into the BSLight at +0x120 (medium)
     pub portalGraph: *mut crate::BSPortalGraph,
     /// +0x230 `class:BSTArray`, semantic; shadow lights to render this frame, one entry per map slot (iNumSplits + 8 entries) (medium)
-    pub frameShadowLights: crate::BSTArray,
+    #[doc(hidden)]
+    pub __frameShadowLights: [u8; 24],
     /// +0x248 `undefined4`, semantic; bit per frameShadowLights slot whose light sphere contains the camera (low)
     pub cameraInsideLightMask: u32,
     pub unknown_24C: [u8; 128],
     /// +0x2CC `undefined8`, ctor store
-    pub field_2CC: u64,
+    #[doc(hidden)]
+    pub __field_2CC: [u8; 8],
     /// +0x2D4 `undefined8`, ctor store
-    pub field_2D4: u64,
+    #[doc(hidden)]
+    pub __field_2D4: [u8; 8],
     /// +0x2DC `undefined8`, ctor store
-    pub field_2DC: u64,
+    #[doc(hidden)]
+    pub __field_2DC: [u8; 8],
     /// +0x2E4 `undefined4`, ctor store
     pub field_2E4: u32,
     /// +0x2E8 `float`, ctor store (widths [4, 8])
-    pub field_2E8: f32,
+    #[doc(hidden)]
+    pub __field_2E8: [u8; 4],
     /// +0x2EC `float`, ctor store
     pub field_2EC: f32,
     /// +0x2F0 `float`, ctor store (widths [4, 8])
-    pub field_2F0: f32,
+    #[doc(hidden)]
+    pub __field_2F0: [u8; 4],
     /// +0x2F4 `class:NiPoint3`, ctor store, semantic, runtime; the camera position of the frame, written by the world draw prelude from the camera node's world translation (high); retyped undefined1 -> class:NiPoint3: 0x656d10 copies camera +0xa0..+0xa8 (world translate)
     pub eyePosition: crate::NiPoint3,
     /// +0x300 `undefined1`, semantic; set by the first ProcessQueues; removal requests are ignored before it (medium)
@@ -1576,14 +1670,14 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, flags2) == 0x109);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, children) == 0x110);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, lights) == 0x130);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, shadowLights) == 0x148);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingLightAdds) == 0x160);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __pendingLightAdds) == 0x160);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingLightRemovals) == 0x178);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingLightUpdates) == 0x190);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, lightQueueLock) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __lightQueueLock) == 0x1A8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryDetach) == 0x1B0);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryRelight) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, pendingGeometryRelightActive) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, geometryQueueLock) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __geometryQueueLock) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, sunLight) == 0x200);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, sunShadowLight) == 0x210);
@@ -1592,15 +1686,15 @@ const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_219) == 0x219
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_21A) == 0x21A);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, fogProperty) == 0x220);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, portalGraph) == 0x228);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, frameShadowLights) == 0x230);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __frameShadowLights) == 0x230);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, cameraInsideLightMask) == 0x248);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2CC) == 0x2CC);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2D4) == 0x2D4);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2DC) == 0x2DC);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __field_2CC) == 0x2CC);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __field_2D4) == 0x2D4);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __field_2DC) == 0x2DC);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2E4) == 0x2E4);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2E8) == 0x2E8);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __field_2E8) == 0x2E8);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2EC) == 0x2EC);
-const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_2F0) == 0x2F0);
+const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, __field_2F0) == 0x2F0);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, eyePosition) == 0x2F4);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, queuesProcessed) == 0x300);
 const _: () = assert!(core::mem::offset_of!(ShadowSceneNode, field_304) == 0x304);

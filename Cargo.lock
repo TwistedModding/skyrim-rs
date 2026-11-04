@@ -338,6 +338,7 @@ dependencies = [
  "skse",
  "skyrim",
  "skyrim-sre",
+ "versionlib",
  "windows-sys",
 ]
 
@@ -843,6 +844,7 @@ dependencies = [
  "hook",
  "skse",
  "skyrim-sre",
+ "versionlib",
  "windows-sys",
 ]
 

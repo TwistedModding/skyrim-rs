@@ -3,7 +3,7 @@
 
 use egui::{Pos2, Rect, pos2};
 use skyrim::render::NiAVObjectExt;
-use sre::{NiAVObject, NiCamera, NiPoint3};
+use sre::{NiAVObject, NiCamera};
 
 /// Points closer to the eye plane than this are not projected (`WorldPtToScreenPt`'s tolerance on `w`).
 const ZERO_TOLERANCE: f32 = 1e-5;
@@ -49,7 +49,7 @@ impl View {
     /// than the near plane or past the far plane.
     #[must_use]
     pub fn project(&self, p: [f32; 3]) -> Option<Pos2> {
-        let point = NiPoint3 { x: p[0], y: p[1], z: p[2], ..NiPoint3::default() };
+        let point = skyrim::point(p[0], p[1], p[2]);
         let (mut x, mut y, mut depth) = (0.0, 0.0, 0.0);
         let ok = unsafe { self.camera.world_pt_to_screen_pt(&raw const point, &raw mut x, &raw mut y, &raw mut depth, ZERO_TOLERANCE) };
         (ok && (0.0..=1.0).contains(&depth)).then(|| pos2(self.screen.min.x + x * self.screen.width(), self.screen.min.y + (1.0 - y) * self.screen.height()))
@@ -73,6 +73,6 @@ impl View {
         if bound.radius <= 0.0 {
             return None;
         }
-        self.project_sphere([bound.center.x, bound.center.y, bound.center.z], bound.radius)
+        self.project_sphere([bound.center.x(), bound.center.y, bound.center.z()], bound.radius)
     }
 }

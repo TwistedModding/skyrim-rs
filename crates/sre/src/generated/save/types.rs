@@ -7,7 +7,7 @@ use core::ffi::c_void;
 /// Meaning: per-form load buffer: BGSLoadGameBuffer read cursor plus a copy of the SavedChangeFormRecord at +0x28 (medium, save pass).
 /// Evidence: save pass (semantic): 0x618970 copies the 0x28 record into +0x28 before calling TESForm slots 18/15; TESForm::LoadGame 0x1e5770 tests +0x40 (= record savedFlags); size: stack object in 0x618970 (local_3d8, record copy at local_3b0 = +0x28, 0x28 bytes) and 0x615af0; BGSLoadGameBuffer base is 0x28 (slot 1 indexes this[1]).
 /// Bases: `BGSLoadGameBuffer`@0x0, `BGSLoadFormData`@0x28.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSLoadFormBuffer {
     /// +0x0 `vtbl:BGSLoadFormBuffer:0`, rtti
     #[doc(hidden)]
@@ -20,9 +20,11 @@ pub struct BGSLoadFormBuffer {
     pub field_18: u32,
     pub unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, base BGSLoadGameBuffer, semantic; read offset (high)
-    pub position: u32,
+    #[doc(hidden)]
+    pub __position: [u8; 4],
     /// +0x28 `class:SavedChangeFormRecord`, semantic; copy of the record being applied (high)
-    pub record: crate::SavedChangeFormRecord,
+    #[doc(hidden)]
+    pub __record: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -31,13 +33,13 @@ const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, __vftable) == 0x0
 const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, data) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, position) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, record) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, __position) == 0x24);
+const _: () = assert!(core::mem::offset_of!(BGSLoadFormBuffer, __record) == 0x28);
 
 /// `BGSLoadGameBuffer`: size 0x28 (exact, medium).
 /// Meaning: read buffer for one section (high, save pass).
 /// Evidence: lower bound field field_20 meets upper bound next base of BGSLoadFormBuffer at 0x28.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSLoadGameBuffer {
     /// +0x0 `vtbl:BGSLoadGameBuffer:0`, rtti
     #[doc(hidden)]
@@ -50,7 +52,8 @@ pub struct BGSLoadGameBuffer {
     pub field_18: u32,
     pub unknown_1C: [u8; 8],
     /// +0x24 `undefined4`, semantic; read offset (high)
-    pub position: u32,
+    #[doc(hidden)]
+    pub __position: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -59,7 +62,7 @@ const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, __vftable) == 0x0
 const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, data) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, position) == 0x24);
+const _: () = assert!(core::mem::offset_of!(BGSLoadGameBuffer, __position) == 0x24);
 
 /// `BGSSaveFormBuffer`: size 0x30 (exact, high); primary base `BGSSaveGameBuffer`.
 /// Meaning: per-change-form write buffer: record header fields plus the body written by the form's SaveGame slot (high, save pass).
@@ -76,7 +79,8 @@ pub struct BGSSaveFormBuffer {
     /// +0x10 `undefined4`, base BGSSaveGameBuffer, semantic (medium)
     pub capacity: u32,
     /// +0x14 `undefined4`, semantic; bytes written (high)
-    pub size: u32,
+    #[doc(hidden)]
+    pub __size: [u8; 4],
     /// +0x18 `undefined1`, semantic; 3-byte ref id of the form (high)
     pub refId: [u8; 3],
     /// +0x1B `undefined4`, semantic; change flags written (high)
@@ -84,7 +88,8 @@ pub struct BGSSaveFormBuffer {
     /// +0x1F `undefined1`, semantic; low 6 bits form type, top 2 bits length-field size code (high)
     pub typeAndSizeCode: u8,
     /// +0x20 `undefined1`, semantic; save version byte (medium)
-    pub version: u8,
+    #[doc(hidden)]
+    pub __version: [u8; 1],
     pub unknown_21: [u8; 7],
     /// +0x28 `ptr:TESForm`, semantic; form being written (high)
     pub form: *mut crate::TESForm,
@@ -95,17 +100,17 @@ const _: () = assert!(size_of::<BGSSaveFormBuffer>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, data) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, capacity) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, size) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, __size) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, refId) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, changeFlags) == 0x1B);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, typeAndSizeCode) == 0x1F);
-const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, version) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, __version) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BGSSaveFormBuffer, form) == 0x28);
 
 /// `BGSSaveGameBuffer`: size 0x18 (exact, low).
 /// Meaning: growable write buffer for one section (plugin list, header, one global data entry); flushed with WriteBufferToStream (u32 length + bytes) (high, save pass).
 /// Evidence: lower bound field field_10 meets upper bound first own field of BGSSaveFormBuffer at 0x18 (soft).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSaveGameBuffer {
     /// +0x0 `vtbl:BGSSaveGameBuffer:0`, rtti
     #[doc(hidden)]
@@ -115,7 +120,8 @@ pub struct BGSSaveGameBuffer {
     /// +0x10 `undefined4`, semantic (medium)
     pub capacity: u32,
     /// +0x14 `undefined4`, semantic; bytes written (high)
-    pub size: u32,
+    #[doc(hidden)]
+    pub __size: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -123,12 +129,12 @@ const _: () = assert!(size_of::<BGSSaveGameBuffer>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, data) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, capacity) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, size) == 0x14);
+const _: () = assert!(core::mem::offset_of!(BGSSaveGameBuffer, __size) == 0x14);
 
 /// `BGSSaveLoadGame`: size 0x348 (exact).
 /// Meaning: the save format writer/reader and the change-flag tracker (no vtable; class name from the strings 'during BGSSaveLoadGame::Save...' and 'by BGSSaveLoadGame::Cl...') (high, save pass).
 /// Evidence: the save format writer/reader and the change-flag tracker (no vtable; class name from the strings 'during BGSSaveLoadGame::Save...' and 'by BGSSaveLoadGame::Cl...'); SaveGame 0x618260 and LoadGame 0x618970 take it as this; 0x615570 tears down the members listed below; size: TES::ctor_sub7 0x615500 allocates 0x348 into ID_403330 (0x3223e18); TES::ctor_sub5 0x615570 frees 0x348.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSaveLoadGame {
     /// +0x0 `class:BSTArray`, semantic; TESFile* (null when missing) per saved regular plugin index, filled from the save's plugin list: the load-order remap (high)
     pub savedFiles: crate::BSTArray,
@@ -158,7 +164,8 @@ pub struct BGSSaveLoadGame {
     /// +0x344 `undefined1`, semantic; version byte of the save being loaded; 0xff otherwise (medium)
     pub loadingFormVersion: u8,
     /// +0x345 `undefined1`, semantic; set when the saved plugin list does not match the loaded one (high)
-    pub pluginListMismatch: u8,
+    #[doc(hidden)]
+    pub __pluginListMismatch: [u8; 1],
     pub unknown_346: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -176,13 +183,13 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, changeFlags) == 0x3
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, previousChangeFlags) == 0x338);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, stateFlags) == 0x340);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, loadingFormVersion) == 0x344);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, pluginListMismatch) == 0x345);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadGame, __pluginListMismatch) == 0x345);
 
 /// `BGSSaveLoadManager`: size 0x418 (exact, medium); primary base `BSTEventSink<BSSaveDataEvent>`.
 /// Meaning: save/load request manager: owns the request queues (worker thread and main thread), the save-file list, the per-character save counters, the current save name and the BGSSaveLoadManagerEvent source; wraps BGSSaveLoadGame (the format writer/reader) and BSSaveDataSystemUtility (the file I/O) (high, save pass).
 /// Evidence: runtime: 0x418 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSTEventSink<BSSaveDataEvent>`@0x0, `BSTEventSink<RaceSexMenuEvent::NameChangedEvent>`@0x8, `BSTEventSource<BGSSaveLoadManagerEvent>`@0x18, `BSTEventSink<BSSystemEvent>`@0x10.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSaveLoadManager {
     /// +0x0 `ptr`, semantic; BSTEventSink<BSSaveDataEvent> vtable 0x190ad28 (slot 1 = ProcessEvent 0x626380) (high)
     pub vtbl: [u8; 8],
@@ -193,22 +200,27 @@ pub struct BGSSaveLoadManager {
     /// +0x18 `undefined1`, semantic; event source; payload is 2 bytes {u8 kind, u8 done} (high)
     pub saveLoadEventSource: [u8; 88],
     /// +0x70 `undefined1`, semantic; player id pair (u32 id, u32 flags) -> BSFixedString character name; +0x7c capacity, +0x80 free, +0x88 sentinel, +0x98 entries (0x18 each) (medium)
-    pub characterNames: [u8; 48],
+    #[doc(hidden)]
+    pub __characterNames: [u8; 48],
     /// +0xA0 `undefined1`, semantic; second hash map (ctor: +0xac, +0xb4, +0xb8 sentinel, +0xc8 entries) (low)
-    pub unknownMap: [u8; 48],
+    #[doc(hidden)]
+    pub __unknownMap: [u8; 48],
     /// +0xD0 `undefined4`, semantic; current character's unique id (random u32) (high)
     pub playerId: u32,
     /// +0xD4 `undefined4`, semantic; bit 0: game was modded when the id was generated (adds the modded suffix to the name) (medium)
     pub playerIdFlags: u32,
     /// +0xD8 `undefined8`, semantic; id pair of the character whose saves are listed; -1 until set (medium)
-    pub displayPlayerId: u64,
+    #[doc(hidden)]
+    pub __displayPlayerId: [u8; 8],
     pub unknown_E0: [u8; 4],
     /// +0xE4 `undefined4`, ctor store
     pub field_E4: u32,
     /// +0xE8 `class:BSTArray`, semantic; per-character records of 0x48 bytes keyed by the id pair: +8 save count, +0xc next autosave index, +0x18 map autosave index -> name, +0x40 BSFixedString quicksave name (medium)
-    pub characters: crate::BSTArray,
+    #[doc(hidden)]
+    pub __characters: [u8; 24],
     /// +0x100 `class:BSTArray`, semantic; save list (Entry*), sorted by time; +0x110 count. UI indexes it newest first: entry = data[count-1-i] (high)
-    pub saveFiles: crate::BSTArray,
+    #[doc(hidden)]
+    pub __saveFiles: [u8; 24],
     /// +0x118 `undefined1`, semantic; save list is valid (entries are added/removed only when set) (medium)
     pub saveListBuilt: u8,
     pub unknown_119: [u8; 3],
@@ -224,10 +236,18 @@ pub struct BGSSaveLoadManager {
     /// +0x130 `undefined1`, semantic; saves refused when 0 (medium)
     pub savingAllowed: u8,
     pub unknown_131: [u8; 7],
-    /// +0x138 `undefined1`, semantic; inline string (0x104 chars at +0x138, char* at +0x240, u16 length at +0x248, u16 capacity 0x104 at +0x24a): name of the last loaded or completed save, used by 'continue' (request 0xd0000100) (high)
-    pub currentSaveName: [u8; 272],
-    /// +0x248 `undefined4`, ctor store
-    pub field_248: u32,
+    /// +0x138 `undefined1`, semantic; inline name buffer (0x104 chars) of the current save name string (pointer +0x240, length +0x248, capacity +0x24a): name of the last loaded or completed save, used by 'continue' (request 0xd0000100) (high)
+    pub currentSaveName: [u8; 260],
+    pub unknown_23C: [u8; 4],
+    /// +0x240 `pointer`, semantic; char* of the current save name string; points at currentSaveName (+0x138) (high)
+    #[doc(hidden)]
+    pub __currentSaveNamePtr: [u8; 8],
+    /// +0x248 `u16`, semantic; length of the current save name (high)
+    #[doc(hidden)]
+    pub __currentSaveNameLength: [u8; 2],
+    /// +0x24A `u16`, semantic; capacity of the inline buffer (0x104) (high)
+    #[doc(hidden)]
+    pub __currentSaveNameCapacity: [u8; 2],
     pub unknown_24C: [u8; 4],
     /// +0x250 `undefined4`, semantic; second argument of SetCurrentSaveName (-1 from both callers) (low)
     pub currentSaveIndex: u32,
@@ -238,7 +258,8 @@ pub struct BGSSaveLoadManager {
     pub pendingLoadStream: *mut c_void,
     pub unknown_260: [u8; 1],
     /// +0x261 `undefined1`, semantic; set when +0x258 is ready to load (low)
-    pub pendingLoadReady: u8,
+    #[doc(hidden)]
+    pub __pendingLoadReady: [u8; 1],
     pub unknown_262: [u8; 6],
     /// +0x268 `undefined8`, ctor store
     pub field_268: u64,
@@ -262,25 +283,33 @@ pub struct BGSSaveLoadManager {
     /// +0x2A8 `undefined8`, ctor store
     pub field_2A8: u64,
     /// +0x2B0 `undefined1`, semantic; skip the 'different load order' message box (medium)
-    pub suppressLoadOrderMessage: u8,
+    #[doc(hidden)]
+    pub __suppressLoadOrderMessage: [u8; 1],
     pub unknown_2B1: [u8; 1],
     /// +0x2B2 `undefined1`, ctor store
-    pub field_2B2: u8,
+    #[doc(hidden)]
+    pub __field_2B2: [u8; 1],
     pub unknown_2B3: [u8; 5],
     /// +0x2B8 `ptr`, semantic; 0x78-byte header record of the entry being loaded (low)
-    pub cachedHeader: [u8; 8],
+    #[doc(hidden)]
+    pub __cachedHeader: [u8; 8],
     pub unknown_2C0: [u8; 48],
     /// +0x2F0 `undefined1`, ctor store
-    pub field_2F0: u8,
+    #[doc(hidden)]
+    pub __field_2F0: [u8; 1],
     pub unknown_2F1: [u8; 7],
     /// +0x2F8 `class:BGSSaveLoadManager::Thread`, semantic; worker thread (vtable 0x190ad08, slot 1 Run 0x62a030) with its request queue: mgr+0x338 thread id, +0x348 running, +0x349 busy, +0x34c paused (1 until started), +0x350 event HANDLE, +0x358 worker queue (kind bit 31 clear) (high)
-    pub thread: crate::BGSSaveLoadManager__Thread,
+    #[doc(hidden)]
+    pub __thread: [u8; 192],
     /// +0x3B8 `undefined1`, semantic; requests with kind bit 31 set, drained on the main thread by ProcessSaveLoadRequests 0x625b90 (high)
-    pub mainQueue: [u8; 80],
+    #[doc(hidden)]
+    pub __mainQueue: [u8; 80],
     /// +0x408 `undefined8`, ctor store
-    pub field_408: u64,
+    #[doc(hidden)]
+    pub __field_408: [u8; 8],
     /// +0x410 `undefined4`, ctor store
-    pub field_410: u32,
+    #[doc(hidden)]
+    pub __field_410: [u8; 4],
     pub unknown_414: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -290,14 +319,14 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, vtbl) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, vtblNameChanged) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, vtblSystemEvent) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, saveLoadEventSource) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, characterNames) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, unknownMap) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __characterNames) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __unknownMap) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, playerId) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, playerIdFlags) == 0xD4);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, displayPlayerId) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __displayPlayerId) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, characters) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, saveFiles) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __characters) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __saveFiles) == 0x100);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, saveListBuilt) == 0x118);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_11C) == 0x11C);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, measureOnly) == 0x120);
@@ -305,11 +334,13 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, unk121) == 0x121
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, lastSaveLoadTick) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, savingAllowed) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveName) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_248) == 0x248);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNamePtr) == 0x240);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNameLength) == 0x248);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __currentSaveNameCapacity) == 0x24A);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, currentSaveIndex) == 0x250);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, hasSaveFolder) == 0x254);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, pendingLoadStream) == 0x258);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, pendingLoadReady) == 0x261);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __pendingLoadReady) == 0x261);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_268) == 0x268);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_270) == 0x270);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_278) == 0x278);
@@ -319,20 +350,20 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_290) == 0x
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_298) == 0x298);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_2A0) == 0x2A0);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_2A8) == 0x2A8);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, suppressLoadOrderMessage) == 0x2B0);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_2B2) == 0x2B2);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, cachedHeader) == 0x2B8);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_2F0) == 0x2F0);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, thread) == 0x2F8);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, mainQueue) == 0x3B8);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_408) == 0x408);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, field_410) == 0x410);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __suppressLoadOrderMessage) == 0x2B0);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __field_2B2) == 0x2B2);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __cachedHeader) == 0x2B8);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __field_2F0) == 0x2F0);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __thread) == 0x2F8);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __mainQueue) == 0x3B8);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __field_408) == 0x408);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager, __field_410) == 0x410);
 
 /// `BGSSaveLoadManager::Thread`: size 0xC0 (exact, high); primary base `BSThread`.
 /// Meaning: BSThread subclass that drains the worker queue (high, save pass).
 /// Evidence: save pass (semantic): Run 0x62a030 names its scrap heap 'ScrapHeap SaveLoadManager', waits on the event (+0x58), pops requests and calls ProcessSaveLoadThreadRequest 0x62a300 unless paused (+0x54==1); size: embedded at manager+0x2f8; it owns the queue at its +0x60 (Run and EnqueueRequestAndSignal address it through the thread pointer) and the manager's next member, the main queue, starts at +0x3b8.
 /// Bases: `BSThread`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BGSSaveLoadManager__Thread {
     /// +0x0 `vtbl:BGSSaveLoadManager::Thread:0`, rtti
     #[doc(hidden)]
@@ -349,12 +380,15 @@ pub struct BGSSaveLoadManager__Thread {
     pub field_48: u8,
     pub unknown_49: [u8; 7],
     /// +0x50 `undefined1`, semantic; loop runs while set (high)
-    pub running: u8,
+    #[doc(hidden)]
+    pub __running: [u8; 1],
     /// +0x51 `undefined1`, semantic; set while draining (high)
-    pub busy: u8,
+    #[doc(hidden)]
+    pub __busy: [u8; 1],
     pub unknown_52: [u8; 2],
     /// +0x54 `undefined4`, semantic; requests are not processed (and Enqueue does nothing) while 1 (medium)
-    pub paused: u32,
+    #[doc(hidden)]
+    pub __paused: [u8; 4],
     /// +0x58 `ptr`, semantic; auto-reset event signalled by Enqueue (high)
     pub event: [u8; 8],
     /// +0x60 `undefined1`, semantic; worker request queue (8 slots); Enqueue spins with Sleep while full (high)
@@ -368,11 +402,29 @@ const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, field_30
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, threadId) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, running) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, busy) == 0x51);
-const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, paused) == 0x54);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, __running) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, __busy) == 0x51);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, __paused) == 0x54);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, event) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManager__Thread, queue) == 0x60);
+
+/// `BGSSaveLoadManagerEvent`: size 0x2 (exact).
+/// Meaning: the BGSSaveLoadManager event: what happened and whether it is finished (high, save pass).
+/// Evidence: the BGSSaveLoadManager event: what happened and whether it is finished; item 9 (request V). Payload of BSTEventSource<BGSSaveLoadManagerEvent> (BGSSaveLoadManager+0x18). Save 0x6227f0 builds it as one word on the stack: 0x6229e7 mov word [rsp+0x30],0x1 ({1, 0}) and 0x622b9c mov word [rsp+0x32],0x103 ({3, 1}), each passed to Notify 0x62f290.; size: every sender writes exactly one word.
+#[repr(C)]
+pub struct BGSSaveLoadManagerEvent {
+    /// +0x0 `u8`, semantic; SaveLoadEventKind (high)
+    #[doc(hidden)]
+    pub __kind: [u8; 1],
+    /// +0x1 `u8`, semantic; 0 at the start, 1 when finished (high)
+    #[doc(hidden)]
+    pub __done: [u8; 1],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BGSSaveLoadManagerEvent>() == 0x2);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, __kind) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BGSSaveLoadManagerEvent, __done) == 0x1);
 
 /// `ChangeFormMap`: size 0x38 (exact).
 /// Meaning: lock-protected BSTHashMap<u32 formID, ChangeEntry> holding every changed form of the session (high, save pass).
@@ -484,16 +536,21 @@ pub struct _anon_14F04957__Win32FileType {
     pub field_178: u8,
     pub unknown_179: [u8; 2359],
     /// +0xAB0 `undefined1`, semantic; inline buffer of the save name (no path, no extension); char* at +0xbb0 (high)
-    pub saveNameBuffer: [u8; 256],
+    #[doc(hidden)]
+    pub __saveNameBuffer: [u8; 256],
     /// +0xBB0 `ptr`, semantic; char* to the save name (high)
-    pub saveName: [u8; 8],
+    #[doc(hidden)]
+    pub __saveName: [u8; 8],
     pub unknown_BB8: [u8; 8],
     /// +0xBC0 `undefined4`, semantic; uncompressed size after the header (high)
-    pub payloadSize: u32,
+    #[doc(hidden)]
+    pub __payloadSize: [u8; 4],
     /// +0xBC4 `undefined4`, semantic; offset where compression starts (end of header + screenshot) (high)
-    pub headerEnd: u32,
+    #[doc(hidden)]
+    pub __headerEnd: [u8; 4],
     /// +0xBC8 `undefined2`, semantic; 0 none, 1 zlib, 2 LZ4 (INI uiCompression:SaveGame) (high)
-    pub compression: u16,
+    #[doc(hidden)]
+    pub __compression: [u8; 2],
     pub unknown_BCA: [u8; 30],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -519,17 +576,17 @@ const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, field
 const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, position2) == 0x170);
 const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, field_174) == 0x174);
 const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, field_178) == 0x178);
-const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, saveNameBuffer) == 0xAB0);
-const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, saveName) == 0xBB0);
-const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, payloadSize) == 0xBC0);
-const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, headerEnd) == 0xBC4);
-const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, compression) == 0xBC8);
+const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __saveNameBuffer) == 0xAB0);
+const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __saveName) == 0xBB0);
+const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __payloadSize) == 0xBC0);
+const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __headerEnd) == 0xBC4);
+const _: () = assert!(core::mem::offset_of!(_anon_14F04957__Win32FileType, __compression) == 0xBC8);
 
 /// `bgs::saveload::LoadEntryRequest`: size 0x20 (exact, high); primary base `bgs::saveload::Request`.
 /// Meaning: kind 0x50001000: load a save-list entry (worker thread calls RequestLoadGame with the entry's name) (high, save pass).
 /// Evidence: save pass (semantic): 0x625a10 stores the Entry* at +0x18; 0x62a300 -> LoadSaveEntry 0x614660; size: QueueLoadEntry 0x625a10 allocates 0x20.
 /// Bases: `bgs::saveload::Request`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct bgs__saveload__LoadEntryRequest {
     /// +0x0 `vtbl:bgs::saveload::LoadEntryRequest:0`, rtti
     #[doc(hidden)]
@@ -542,7 +599,8 @@ pub struct bgs__saveload__LoadEntryRequest {
     pub deferFrames: u32,
     pub unknown_14: [u8; 4],
     /// +0x18 `ptr`, semantic; save-list entry (+0 char* name, +0x60 u32) (high)
-    pub entry: [u8; 8],
+    #[doc(hidden)]
+    pub __entry: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -551,13 +609,13 @@ const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, __v
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, kind) == 0xC);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, deferFrames) == 0x10);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, entry) == 0x18);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadEntryRequest, __entry) == 0x18);
 
 /// `bgs::saveload::LoadRequest`: size 0x28 (exact, medium); primary base `bgs::saveload::Request`.
 /// Meaning: kind 0xd0000010: apply a save stream already read into memory, on the main thread (high, save pass).
 /// Evidence: runtime: 0x28 at 1 allocation sites.
 /// Bases: `bgs::saveload::Request`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct bgs__saveload__LoadRequest {
     /// +0x0 `vtbl:bgs::saveload::LoadRequest:0`, rtti
     #[doc(hidden)]
@@ -574,9 +632,11 @@ pub struct bgs__saveload__LoadRequest {
     /// +0x20 `undefined4`, semantic; value from the save-data info (+8) (low)
     pub entryValue: u32,
     /// +0x24 `undefined1`, semantic; skip the missing-content checks (medium)
-    pub ignoreMissingContent: u8,
+    #[doc(hidden)]
+    pub __ignoreMissingContent: [u8; 1],
     /// +0x25 `undefined1`, semantic; passed through as LoadGame param_6 (skip the plugin-list match) (low)
-    pub flag25: u8,
+    #[doc(hidden)]
+    pub __flag25: [u8; 1],
     pub unknown_26: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -588,8 +648,8 @@ const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, kind) ==
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, deferFrames) == 0x10);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, stream) == 0x18);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, entryValue) == 0x20);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, ignoreMissingContent) == 0x24);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, flag25) == 0x25);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, __ignoreMissingContent) == 0x24);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__LoadRequest, __flag25) == 0x25);
 
 /// `bgs::saveload::Request`: size 0x18 (exact, medium).
 /// Meaning: refcounted request; the kind selects the queue and the handler (high, save pass).
@@ -620,7 +680,7 @@ const _: () = assert!(core::mem::offset_of!(bgs__saveload__Request, deferFrames)
 /// Meaning: kind 0x40000001: compress and write a built save stream on the worker thread; kind 0x40000004: delete a file by name on the worker thread (high, save pass).
 /// Evidence: runtime: 0x150 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `bgs::saveload::Request`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct bgs__saveload__SaveOperationRequest {
     /// +0x0 `vtbl:bgs::saveload::SaveOperationRequest:0`, rtti
     #[doc(hidden)]
@@ -633,12 +693,15 @@ pub struct bgs__saveload__SaveOperationRequest {
     pub deferFrames: u32,
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined1`, semantic; inline name buffer (char* at +0x120) for 0x40000004 (high)
-    pub name: [u8; 272],
+    #[doc(hidden)]
+    pub __name: [u8; 272],
     pub unknown_128: [u8; 8],
     /// +0x130 `undefined1`, semantic; BSSaveDataSystemUtility operation info passed to slot 13/15: +0x0 BSFixedString* replaced name, +0x8 u32, +0xc u16 op (0 read,1 write,2 delete), +0xe u16 save type (0 manual,1 auto,2 quick,4 kind 5) (medium)
-    pub info: [u8; 24],
+    #[doc(hidden)]
+    pub __info: [u8; 24],
     /// +0x148 `ptr:_anon_14F04957::Win32FileType`, semantic; the built save (0x40000001) (high)
-    pub stream: *mut crate::_anon_14F04957__Win32FileType,
+    #[doc(hidden)]
+    pub __stream: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -647,9 +710,9 @@ const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest,
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, refCount) == 0x8);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, kind) == 0xC);
 const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, deferFrames) == 0x10);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, name) == 0x18);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, info) == 0x130);
-const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, stream) == 0x148);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, __name) == 0x18);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, __info) == 0x130);
+const _: () = assert!(core::mem::offset_of!(bgs__saveload__SaveOperationRequest, __stream) == 0x148);
 
 /// values in data/saveloadrequestkinds.json (save pass).
 #[repr(u32)]

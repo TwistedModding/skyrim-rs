@@ -1421,7 +1421,8 @@ impl BSTDerivedCreator_MovementMessageBlocked_MovementMessage_vtable {
 #[repr(C)]
 pub struct BSTDerivedCreator_MovementMessageFreezeDirection_MovementMessage_vtable {
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vdtor` at 0x121ac60 (layout_inference, medium); signature (low): `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * vdtor(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_1` at 0x121abd0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_2` at 0x121ac40 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 * param_1)`
@@ -3423,9 +3424,11 @@ impl BSTEventSink_TESActorLocationChangeEvent_vtable {
 #[repr(C)]
 pub struct BSTEventSink_TESAmiiboForcedStopDetectionEvent_vtable {
     /// `BSTEventSink<TESAmiiboForcedStopDetectionEvent>::vdtor` at 0x9efb10 (layout_inference, medium); signature (low): `BSTEventSink<TESAmiiboForcedStopDetectionEvent> * vdtor(BSTEventSink<TESAmiiboForcedStopDetectionEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BSTEventSink_TESAmiiboForcedStopDetectionEvent_vtable {
     pub const ID: u64 = 536672;
@@ -3435,9 +3438,11 @@ impl BSTEventSink_TESAmiiboForcedStopDetectionEvent_vtable {
 #[repr(C)]
 pub struct BSTEventSink_TESAmiiboTouchEvent_vtable {
     /// `BSTEventSink<TESAmiiboTouchEvent>::vdtor` at 0x9efb40 (layout_inference, medium); signature (low): `BSTEventSink<TESAmiiboTouchEvent> * vdtor(BSTEventSink<TESAmiiboTouchEvent> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BSTEventSink_TESAmiiboTouchEvent_vtable {
     pub const ID: u64 = 536670;
@@ -5835,7 +5840,8 @@ impl BSTerrainEffect_vtable_30 {
 #[repr(C)]
 pub struct BSTextureDB__QueuedHandles_vtable {
     /// `BSTextureDB::QueuedHandles::vdtor` at 0xfd78e0 (layout_inference, medium); signature (low): `QueuedHandles * vdtor(QueuedHandles * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>::vfunc_1` at 0xfd8980 (rtti, medium); signature (high): `undefined vfunc_1(BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2> * this)`
     pub slot_1: *const c_void,
     /// `QueuedFile::vfunc_2` at 0xfc7c00 (rtti, medium); signature (untiered): `ulonglong vfunc_2(longlong * param_1)`
@@ -5881,7 +5887,8 @@ impl BSTextureDB__QueuedHandles_vtable {
 #[repr(C)]
 pub struct BSTextureDB__QueuedHandles_vtable_38 {
     /// `BSTextureDB::QueuedHandles::BSResource_IEntryDB_PostFlushNotify_vdtor` at 0xfd75ec (slot_propagation, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vdtor(QueuedHandles * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_1` at 0xfc8540 (rtti, medium); signature (high): `undefined1 BSResource_IEntryDB_PostFlushNotify_vfunc_1(BSQueuedResourceCollectionBase * this)`
     pub slot_1: *const c_void,
     /// `BSQueuedResourceCollectionBase::BSResource_IEntryDB_PostFlushNotify_vfunc_2` at 0xfc8610 (rtti, medium); signature (high): `undefined BSResource_IEntryDB_PostFlushNotify_vfunc_2(BSQueuedResourceCollectionBase * this)`
@@ -7111,7 +7118,8 @@ pub struct BSWin32AwardsSystemUtility_vtable {
     /// `BSWin32AwardsSystemUtility::vfunc_3` at 0x159f280 (rtti, high); signature (low): `undefined vfunc_3(void)`
     pub slot_3: *const c_void,
     /// `BSWin32AwardsSystemUtility::vfunc_4` at 0x159f290 (rtti, high); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSWin32AwardsSystemUtility::vfunc_5` at 0x159f2a0 (rtti, high); signature (low): `undefined vfunc_5(BSWin32AwardsSystemUtility * this, ulonglong param_1)`
     pub slot_5: *const c_void,
     /// `BSWin32AwardsSystemUtility::vfunc_6` at 0x159f320 (rtti, high); signature (low): `undefined1 vfunc_6(void)`
@@ -7125,17 +7133,23 @@ impl BSWin32AwardsSystemUtility_vtable {
 #[repr(C)]
 pub struct BSWin32GameDataSystemUtility_vtable {
     /// `BSWin32GameDataSystemUtility::vdtor` at 0x159f0a0 (layout_inference, medium); signature (low): `BSWin32GameDataSystemUtility * vdtor(BSWin32GameDataSystemUtility * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSGameDataSystemUtility::vfunc_1` at 0x159a6b0 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSWin32GameDataSystemUtility::vfunc_2` at 0x159f090 (rtti, high); signature (low): `undefined vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSGameDataSystemUtility::vfunc_3` at 0x159a690 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `BSGameDataSystemUtility::vfunc_4` at 0x159a670 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSGameDataSystemUtility::vfunc_5` at 0x159a680 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
 }
 impl BSWin32GameDataSystemUtility_vtable {
     pub const ID: u64 = 255998;
@@ -7212,9 +7226,11 @@ pub struct BSWin32GamerProfile_vtable {
     /// `BSGamerProfile::vfunc_5` at 0xcfad90 (rtti, medium); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
     /// `BSGamerProfile::vfunc_6` at 0xcfad70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSGamerProfile::vfunc_7` at 0xcfad80 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl BSWin32GamerProfile_vtable {
     pub const ID: u64 = 236711;
@@ -7302,7 +7318,8 @@ pub type BSWin32KeyboardDevice_vtable_Unk10 = unsafe extern "C" fn(this: *mut cr
 #[repr(C)]
 pub struct BSWin32MouseDevice_vtable {
     /// `BSWin32MouseDevice::vdtor` at 0xd6edb0 (layout_inference, medium); signature (low): `BSWin32MouseDevice * vdtor(BSWin32MouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSWin32MouseDevice::Initialize` at 0xe13080 (semantic, high); signature (untiered): `undefined Initialize(BSWin32MouseDevice * this)`; `Initialize`: create and configure the DirectInput mouse (high); semantic signature: `void (BSWin32MouseDevice* this)`
     pub slot_1: *const c_void,
     /// `BSWin32MouseDevice::Poll` at 0xe13130 (semantic, high); signature (untiered): `undefined Poll(BSWin32MouseDevice * this, float param_1)`; `Poll`: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame (high); semantic signature: `void (BSWin32MouseDevice* this, float realDelta)`
@@ -7380,43 +7397,62 @@ pub struct BSWin32SaveDataSystemUtility_vtable {
     /// `BSSaveDataSystemUtility::vfunc_4` at 0x159ab10 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_5` at 0x159aa00 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_6` at 0x159aa20 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_7` at 0x159a9f0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_8` at 0x159a9e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_9` at 0x159aa10 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_10` at 0x159ab30 (rtti, medium); signature (low): `undefined4 vfunc_10(BSSaveDataSystemUtility * this, LPCSTR param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_11` at 0x159c730 (rtti, high); signature (low): `BSFile * vfunc_11(BSWin32SaveDataSystemUtility * this, BSFile * param_1, char * param_2, ulonglong param_3)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_12` at 0x159c2a0 (rtti, high); signature (low): `uint vfunc_12(BSWin32SaveDataSystemUtility * this, LPCSTR param_1, longlong param_2, uint param_3)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_13` at 0x159c580 (rtti, high); signature (low): `undefined vfunc_13(BSWin32SaveDataSystemUtility * this, longlong * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_14` at 0x159c380 (rtti, high); signature (low): `undefined vfunc_14(BSWin32SaveDataSystemUtility * this, longlong * param_1)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_15` at 0x159c6a0 (rtti, high); signature (low): `undefined vfunc_15(BSWin32SaveDataSystemUtility * this, LPCSTR param_1, undefined8 * param_2)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_16` at 0x159b040 (rtti, medium); signature (low): `undefined vfunc_16(BSSaveDataSystemUtility * this, longlong * param_1)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_17` at 0x159b070 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_18` at 0x159c460 (rtti, high); signature (low): `undefined vfunc_18(BSWin32SaveDataSystemUtility * this, longlong * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_19` at 0x159b0b0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_20` at 0x159a9b0 (rtti, medium); signature (low): `undefined1 vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_21` at 0x159a9d0 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
+    #[doc(hidden)]
+    pub __slot_21: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_22` at 0x159a9c0 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
+    #[doc(hidden)]
+    pub __slot_22: *const c_void,
     /// `BSWin32SaveDataSystemUtility::vfunc_23` at 0x159cb90 (rtti, high); signature (low): `undefined vfunc_23(BSWin32SaveDataSystemUtility * this, undefined8 param_1, undefined8 * param_2)`
-    pub slot_23: *const c_void,
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
 }
 impl BSWin32SaveDataSystemUtility_vtable {
     pub const ID: u64 = 255912;
@@ -7430,41 +7466,59 @@ pub struct BSWin32SystemUtility_vtable {
     /// `BSSystemUtility::vfunc_1` at 0x1599510 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
     pub slot_1: *const c_void,
     /// `BSSystemUtility::vfunc_2` at 0x15999b0 (rtti, medium); signature (low): `undefined vfunc_2(BSSystemUtility * this, undefined1 * param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `BSWin32SystemUtility::vfunc_3` at 0x159e7e0 (rtti, high); signature (low): `undefined vfunc_3(BSWin32SystemUtility * this, undefined8 * param_1, ulonglong * param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `BSSystemUtility::vfunc_4` at 0x15999c0 (rtti, medium); signature (low): `undefined1 vfunc_4(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `BSWin32SystemUtility::vfunc_5` at 0x159e800 (rtti, high); signature (low): `undefined vfunc_5(BSWin32SystemUtility * this, undefined8 param_1, char * param_2, longlong param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSWin32SystemUtility::vfunc_6` at 0x159e920 (rtti, high); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSWin32SystemUtility::vfunc_7` at 0x159e930 (rtti, high); signature (high): `undefined vfunc_7(BSWin32SystemUtility * this)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `BSSystemUtility::vfunc_8` at 0x1599930 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `BSWin32SystemUtility::vfunc_9` at 0x159f510 (rtti, high); signature (low): `undefined vfunc_9(BSWin32SystemUtility * this, LPSTR param_1, DWORD param_2)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `BSSystemUtility::vfunc_10` at 0x1599910 (rtti, medium); signature (low): `undefined1 vfunc_10(void)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `BSSystemUtility::vfunc_11` at 0x15998e0 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `BSSystemUtility::vfunc_12` at 0x15998b0 (rtti, medium); signature (low): `undefined vfunc_12(void)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `BSSystemUtility::vfunc_13` at 0x1599960 (rtti, medium); signature (low): `undefined vfunc_13(void)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `BSWin32SystemUtility::vfunc_14` at 0x159f4e0 (rtti, high); signature (low): `undefined vfunc_14(BSWin32SystemUtility * this, LPSTR param_1, DWORD param_2)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `BSSystemUtility::vfunc_15` at 0x1599980 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `BSSystemUtility::vfunc_16` at 0x1599970 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `BSWin32SystemUtility::vfunc_17` at 0x159e950 (rtti, high); signature (high): `undefined vfunc_17(BSWin32SystemUtility * this)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `BSSystemUtility::vfunc_18` at 0x1599900 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `BSWin32SystemUtility::vfunc_19` at 0x159ea40 (rtti, high); signature (low): `undefined8 vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
 }
 impl BSWin32SystemUtility_vtable {
     pub const ID: u64 = 255953;
@@ -7873,7 +7927,8 @@ impl BSXAudio2GameSound_vtable_C8 {
 #[repr(C)]
 pub struct BSXFlags_vtable {
     /// `BSXFlags::vdtor` at 0xfd30c0 (layout_inference, medium); signature (low): `BSXFlags * vdtor(BSXFlags * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSXFlags::vfunc_2` at 0xfd3100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -9001,7 +9056,8 @@ impl BarterMenu_vtable {
 #[repr(C)]
 pub struct BaseExtraList_vtable {
     /// `BaseExtraList::vfunc_0` at 0x17c090 (rtti, high); signature (low): `BaseExtraList * vfunc_0(BaseExtraList * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BaseExtraList_vtable {
     pub const ID: u64 = 422045;
@@ -9941,15 +9997,20 @@ pub struct BleedoutCameraState_vtable_20 {
     /// `ThirdPersonState::InputHandler::CanProcess` at 0x8fdca0 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `ThirdPersonState::InputHandler::ProcessButton` at 0x8fdd20 (runtime, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl BleedoutCameraState_vtable_20 {
     pub const ID: u64 = 214875;
@@ -9975,7 +10036,8 @@ pub struct BookMenu_vtable {
     /// `BookMenu::vfunc_7` at 0x907130 (rtti, high); signature (high): `undefined vfunc_7(BookMenu * this)`
     pub slot_7: *const c_void,
     /// `BookMenu::vfunc_8` at 0x907280 (rtti, high); signature (untiered): `undefined vfunc_8(BookMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
 }
 impl BookMenu_vtable {
     pub const ID: u64 = 214975;
@@ -10273,13 +10335,17 @@ impl CCallResult_BSWin32SystemUtility_EncryptedAppTicketResponse_t_vtable {
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0_vtable {
     /// `CCallbackImpl<1>::vfunc_0` at 0x15990d0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<1> * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>::vfunc_1` at 0x159ed10 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallbackImpl<1>::vfunc_2` at 0x1599070 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0>::vdtor` at 0x159eb50 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * vdtor(CCallback<BSWin32SystemUtility,FloatingGamepadTextInputDismissed_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl CCallback_BSWin32SystemUtility_FloatingGamepadTextInputDismissed_t_0_vtable {
     pub const ID: u64 = 469463;
@@ -10295,7 +10361,8 @@ pub struct CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable {
     /// `CCallbackImpl<1>::vfunc_2` at 0x1599070 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
     pub slot_2: *const c_void,
     /// `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0>::vdtor` at 0x159eba0 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * vdtor(CCallback<BSWin32SystemUtility,GameOverlayActivated_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable {
     pub const ID: u64 = 255896;
@@ -10305,13 +10372,17 @@ impl CCallback_BSWin32SystemUtility_GameOverlayActivated_t_0_vtable {
 #[repr(C)]
 pub struct CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0_vtable {
     /// `CCallbackImpl<8>::vfunc_0` at 0x15990e0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<8> * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>::vfunc_1` at 0x159ed30 (rtti, high); signature (high): `undefined vfunc_1(CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallbackImpl<8>::vfunc_2` at 0x1599080 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0>::vdtor` at 0x159ebf0 (layout_inference, medium); signature (low): `CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * vdtor(CCallback<BSWin32SystemUtility,GamepadTextInputDismissed_t,0> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl CCallback_BSWin32SystemUtility_GamepadTextInputDismissed_t_0_vtable {
     pub const ID: u64 = 469465;
@@ -10335,13 +10406,17 @@ impl CCallbackBase_vtable {
 #[repr(C)]
 pub struct CCallbackImpl_1_vtable {
     /// `CCallbackImpl<1>::vfunc_0` at 0x15990d0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<1> * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallbackImpl<1>::vfunc_2` at 0x1599070 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `CCallbackImpl<1>::vdtor` at 0x1598fc0 (layout_inference, medium); signature (low): `CCallbackImpl<1> * vdtor(CCallbackImpl<1> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl CCallbackImpl_1_vtable {
     pub const ID: u64 = 469452;
@@ -10351,13 +10426,17 @@ impl CCallbackImpl_1_vtable {
 #[repr(C)]
 pub struct CCallbackImpl_8_vtable {
     /// `CCallbackImpl<8>::vfunc_0` at 0x15990e0 (rtti, medium); signature (high): `undefined vfunc_0(CCallbackImpl<8> * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `CCallbackImpl<8>::vfunc_2` at 0x1599080 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `CCallbackImpl<8>::vdtor` at 0x1599010 (layout_inference, medium); signature (low): `CCallbackImpl<8> * vdtor(CCallbackImpl<8> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl CCallbackImpl_8_vtable {
     pub const ID: u64 = 469454;
@@ -11997,15 +12076,20 @@ pub struct ClickHandler_vtable {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `ClickHandler::ProcessButtonEvent` at 0x960d30 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(ClickHandler * this, longlong param_1)`; `ProcessButtonEvent`: mouse button to Scaleform (high); semantic signature: `bool (ClickHandler* this, ButtonEvent* event)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl ClickHandler_vtable {
     pub const ID: u64 = 215777;
@@ -12015,11 +12099,14 @@ impl ClickHandler_vtable {
     pub fn CanProcess(&self) -> Option<ClickHandler_vtable_CanProcess> {
         unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_CanProcess>>(self.slot_1) }
     }
-    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// The slot's index on the running game; 7 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("ClickHandler", 0x0, 7) }
     /// Slot 7 as `ClickHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<ClickHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+        unsafe { core::mem::transmute::<*const c_void, Option<ClickHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("ClickHandler", 0x0, 7))) }
     }
 }
 /// `ClickHandler::CanProcess`, slot 1: Click (high).
@@ -12783,33 +12870,5 @@ pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBeha
 }
 impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_604a93390606_vtable {
     pub const ID: u64 = 213407;
-}
-
-/// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vftable` at 0x1959120, id 212509 (rtti, high); 10 slots.
-#[repr(C)]
-pub struct CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054_vtable {
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x87bfb0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_1` at 0x875380 (rtti, medium); signature (high): `undefined8 vfunc_1(CombatBehaviorTreeNode * this)`
-    pub slot_1: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x87c7e0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_2: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_3` at 0x875550 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_4` at 0x875560 (rtti, medium); signature (low): `undefined vfunc_4(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_5` at 0x875570 (rtti, medium); signature (low): `undefined vfunc_5(CombatBehaviorTreeNode * this, longlong param_1)`
-    pub slot_5: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_6` at 0x875580 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
-    /// `CombatBehaviorTreeNode::vfunc_7` at 0x875590 (rtti, medium); signature (low): `undefined vfunc_7(void)`
-    pub slot_7: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_8` at 0x87daa0 (rtti, high); signature (low): `bool vfunc_8(CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong param_1)`
-    pub slot_8: *const c_void,
-    /// `CombatBehaviorTreeConditionalNode<CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,bool_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_9` at 0x87cd80 (rtti, high); signature (low): `undefined * vfunc_9(void)`
-    pub slot_9: *const c_void,
-}
-impl CombatBehaviorTreeConditionalNode_CombatBehaviorExpression_CombatBehaviorMemberFunc_CombatBehavi_fbbe5889e054_vtable {
-    pub const ID: u64 = 212509;
 }
 

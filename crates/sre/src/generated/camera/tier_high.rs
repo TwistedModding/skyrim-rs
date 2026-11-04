@@ -85,14 +85,14 @@ impl crate::BeamProjectile {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_procedural_geom_event_vdtor(&self) -> u64 { unsafe { function!(43771, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1E0)) } }
+    pub unsafe fn bst_event_sink_bs_procedural_geom_event_vdtor(&self) -> u64 { unsafe { function!(43771, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BeamProjectile:BSTEventSink<BSProceduralGeomEvent>", 0x1E0))) } }
     /// `BeamProjectile::BSTEventSink_BSProceduralGeomEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 43756, rva 0x7e0420).
     /// `undefined8 BSTEventSink_BSProceduralGeomEvent_vfunc_1(BeamProjectile * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_bs_procedural_geom_event_vfunc_1(&self) -> u64 { unsafe { function!(43756, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x1E0)) } }
+    pub unsafe fn bst_event_sink_bs_procedural_geom_event_vfunc_1(&self) -> u64 { unsafe { function!(43756, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BeamProjectile:BSTEventSink<BSProceduralGeomEvent>", 0x1E0))) } }
     /// `BeamProjectile::IAnimationGraphManagerHolder_vdtor` (decompiler signature, tier high; ledger slot_propagation evidence, name medium; id 43774, rva 0x7e1070).
     /// `undefined IAnimationGraphManagerHolder_vdtor(BeamProjectile * this)`
     ///
@@ -523,6 +523,26 @@ impl crate::bhkCharacterController {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78258, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::bhkConvexShape {
+    /// `bhkConvexShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78700, rva 0x1083bd0).
+    /// `undefined dtor(bhkConvexShape * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78700, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
+}
+
+impl crate::bhkSphereRepShape {
+    /// `bhkSphereRepShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78699, rva 0x1083b90).
+    /// `undefined dtor(bhkSphereRepShape * this)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::hkpCharacterProxy {

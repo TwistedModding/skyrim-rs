@@ -73,7 +73,7 @@ $Mods = @{
     reload = @{ crate = "reload-test"; dll = "skyrim_rs_reload_test.dll"; log = "skyrim-rs-reload-test.log"; dir = "skyrim-runtime-extender"; report = $true; tags = @(2, 3, 4) }
     compat = @{ crate = "hooks-test-a"; dll = "skyrim_rs_hooks_a.dll"; log = "skyrim-rs-hooks.log"; dir = "skyrim-runtime-extender"; report = $true; steps = "hooks";
                 crates = @("hooks-test-b", "legacy-patch-a", "legacy-patch-z"); dlls = @("skyrim_rs_hooks_b.dll");
-                plugins = @("skyrim_legacy_patch_a.dll", "skyrim_rs_legacy_patch_z.dll"); logs = @("skyrim-rs-legacy-patch-a.log", "skyrim-rs-legacy-patch-z.log") }
+                plugins = @("skyrim_legacy_patch_a.dll", "skyrim_z_legacy_patch.dll"); logs = @("skyrim-rs-legacy-patch-a.log", "skyrim-rs-legacy-patch-z.log") }
     # Third-party plugins built for 1.7.x on the Address Library, each <name>.dll in $LegacyDir\<name>\SKSE\Plugins
     # (DevBench is the other one; it is installed for every suite).
     legacy = @{ dir = "skyrim-runtime-extender"; legacy = @("CrashLogger") }
@@ -87,7 +87,8 @@ $Mods = @{
                      ($text -replace '"key\.skyrim-runtime-extender\.toggle": "F11"', '"key.skyrim-runtime-extender.toggle": 68') -replace '^\{', "{`n  `"by.hand`": `"kept`"," | Set-Content $file -Encoding ascii -NoNewline }
                  malformed = { param($file) Set-Content $file "{`n  `"key.skyrim-runtime-extender.toggle`": `"F10`"`n  `"overlay.capture`": `"focus`"`n}`n" -Encoding ascii -NoNewline }
              } }
-    crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-runtime-extender"; report = $true;
+    # The first copy of the crash logger to load reports, and the test plugin sorts before the host, whose logger is under test here.
+    crash = @{ crate = "crash-test"; dll = "skyrim_rs_crash_test.dll"; log = "skyrim-rs-crash-test.log"; dir = "skyrim-runtime-extender"; report = $true; noTestPlugin = $true;
                scenarios = @("null", "hook", "overflow", "write", "form", "deleted", "script")
                # The step that triggers each armed crash, as the scenario's JSON.
                triggers = @{ null = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; overflow = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'; write = '{"tool": "console", "args": {"command": "save skyrim-rs-crash-{rt}"}}'
@@ -234,7 +235,7 @@ try {
     if ($Launch -ne "skse") { Copy-Item "$Root\target\$Profile\dinput8.dll" $Proxy }
     # Started directly, the game asks Steam to relaunch it through its launcher unless it finds its app id next to it.
     if ($Launch -eq "standalone") { Set-Content $AppId "489830" -Encoding ascii -NoNewline }
-    Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force
+    if (-not $Mod.noTestPlugin) { Copy-Item $Dll "$Plugins\skyrim_rs_test.dll" -Force }
     if ($Mode) { Set-Content "$Plugins\skyrim-rs-test.mode" $Mode -Encoding ascii }
     # Every plugin built on the library reads this runtime's profile, with or without the host.
     if (Test-Path $ProfileFile) {
@@ -403,7 +404,7 @@ function HalfJpeg($from, $to) {
 }
 
 # A plugin the loader did not load has nothing to compare: each of its lines in the log is the evidence, and no check ran.
-$Wanted = @("skyrim_rs_test.dll") + @(if ($Mod.dir) { $HostDll } elseif ($Mod.dll) { $Mod.dll }) + @($Mod.plugins | Where-Object { $_ })
+$Wanted = @(if (-not $Mod.noTestPlugin) { "skyrim_rs_test.dll" }) + @(if ($Mod.dir) { $HostDll } elseif ($Mod.dll) { $Mod.dll }) + @($Mod.plugins | Where-Object { $_ })
 foreach ($f in $Wanted) {
     if ($LoaderLog -and $null -eq (Loaded $f)) { $RefusedBy += @{ plugin = $f; lines = @($LoaderLog | Where-Object { $_ -match [regex]::Escape($f) } | ForEach-Object { "$_" }) } }
 }

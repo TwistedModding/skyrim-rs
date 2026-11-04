@@ -225,7 +225,7 @@ fn on_key(used: KeyUse) {
 }
 
 fn context_name(context: u32) -> String {
-    InputContextEnum::from_u32(context).map_or_else(|| format!("context {context}"), |c| format!("{c:?}"))
+    InputContextEnum::from_engine(context).map_or_else(|| format!("context {context}"), |c| format!("{c:?}"))
 }
 
 /// What the game's control map does with a key in every context that maps it, empty before it is loaded.

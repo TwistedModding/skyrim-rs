@@ -4,6 +4,8 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x17700b0, id: 168525, confidence: Confidence::Medium, name: "GameSetting_fGameplayImpulseScale__atexit" },
+    Function { rva: 0x1770100, id: 168526, confidence: Confidence::Medium, name: "GameSetting_fGameplaySpeakingEmotionMaxChangeValue__atexit" },
     Function { rva: 0x1770150, id: 168527, confidence: Confidence::Medium, name: "GameSetting_fGameplaySpeakingEmotionMinChangeValue__atexit" },
     Function { rva: 0x17701a0, id: 168528, confidence: Confidence::Medium, name: "GameSetting_fGameplayVoiceFilePadding__atexit" },
     Function { rva: 0x17701f0, id: 168529, confidence: Confidence::Medium, name: "GameSetting_fGameplayiSpeakingEmotionMaxDeltaChange__atexit" },

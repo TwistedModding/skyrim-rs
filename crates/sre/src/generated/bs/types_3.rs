@@ -3,312 +3,696 @@
 
 use core::ffi::c_void;
 
+/// `BSPathingStreamSimpleBufferRead`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamRead`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSPathingStreamRead`@0x0.
+#[repr(C)]
+pub struct BSPathingStreamSimpleBufferRead {
+    /// +0x0 `vtbl:BSPathingStreamSimpleBufferRead:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferRead_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferRead, __vftable) == 0x0);
+
+/// `BSPathingStreamSimpleBufferWrite`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPathingStreamWrite`.
+/// Evidence: vptr at 0x0.
+/// Bases: `BSPathingStreamWrite`@0x0.
+#[repr(C)]
+pub struct BSPathingStreamSimpleBufferWrite {
+    /// +0x0 `vtbl:BSPathingStreamSimpleBufferWrite:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamSimpleBufferWrite_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamSimpleBufferWrite, __vftable) == 0x0);
+
+/// `BSPathingStreamWrite`: size 0x8 (exact, low).
+/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of PathingStreamSaveGame at 0x8 (soft).
+#[repr(C)]
+pub struct BSPathingStreamWrite {
+    /// +0x0 `vtbl:BSPathingStreamWrite:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPathingStreamWrite_vtable,
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPathingStreamWrite>() == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPathingStreamWrite, __vftable) == 0x0);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: runtime: 0x88 at 5 allocation sites; agrees with the static allocation sites.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__ {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64___vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 60],
+    /// +0x80 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64__, __field_80) == 0x80);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>`: size 0x98 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (medium): {'152': 1}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48 {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 84],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48>() == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_b5a137c44e48, __field_40) == 0x40);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: runtime: 0x88 at 1 allocation sites; agrees with the static allocation sites.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__ {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSContentId)>_>:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 68],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BSPlatform__BSContentId__, __field_40) == 0x40);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (high): {'136': 3}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContentCollection_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 60],
+    /// +0x80 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_007cb5704cdb, __field_80) == 0x80);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (high): {'136': 2}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BSUserContent_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b_vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 60],
+    /// +0x80 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_28fe9bf17e8b, __field_80) == 0x80);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (medium): {'136': 1}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSEntitlement,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a_vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 68],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_7c3452aea62a, __field_40) == 0x40);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (high): {'136': 2}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413 {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413_vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 60],
+    /// +0x80 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_aef73f16a413, __field_80) == 0x80);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (high): {'136': 14}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1 {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1_vtable,
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 60],
+    /// +0x80 `undefined8`, ctor store
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_ae35938ec1b1, __field_80) == 0x80);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (medium): {'136': 1}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44 {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 68],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_4f793fc2df44, __field_40) == 0x40);
+
+/// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
+/// Evidence: allocation sites (medium): {'136': 1}.
+/// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
+#[repr(C, align(8))]
+pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f {
+    /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::ContentIdResolution,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
+    #[doc(hidden)]
+    pub ____vftable: [u8; 8],
+    pub unknown_8: [u8; 40],
+    /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
+    /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
+    /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
+    pub unknown_44: [u8; 68],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f>() == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_eeee8782981f, __field_40) == 0x40);
+
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: allocation sites (medium): {'136': 1}.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714 {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<unsigned___int64,BSTArrayHeapAllocator>_const&___ptr64)>_>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_BS_e85068c8b714, __field_40) == 0x40);
 
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: runtime: 0x88 at 1 allocation sites; agrees with the static allocation sites; upper bound 0x80 (first own field of BSPlatform::BSDownloadRequest at 0x80 (soft)) was wrong.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__ {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64___vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_char_const____ptr64__, __field_40) == 0x40);
 
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: allocation sites (medium): {'136': 1}.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317 {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64,char_const*___ptr64)>_>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_ch_685016c9a317, __field_40) == 0x40);
 
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>`: size 0x88 (exact, high); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: allocation sites (high): {'136': 2}.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__ {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,int)>_>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int___vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__>() == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_int__, __field_80) == 0x80);
 
 /// `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>`: size 0x88 (exact, medium); primary base `BSPlatform::BSAsyncRequestBase`.
 /// Evidence: allocation sites (medium): {'136': 1}.
 /// Bases: `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,std::shared_ptr<void>,unsigned___int64)>_>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 68],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequest_std__function_void___cdecl_BSPlatform__BNetResult_unsigned___int64_st_38c16f79a11f, __field_40) == 0x40);
 
 /// `BSPlatform::BSAsyncRequestBase`: size >= 0x48 (lower bound, upper bound 0x80); partial, the struct stops at the lower bound.
 /// Evidence: lower field field_40; upper first own field of BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_> at 0x80 (soft).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSAsyncRequestBase {
     /// +0x0 `vtbl:BSPlatform::BSAsyncRequestBase:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSAsyncRequestBase_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSAsyncRequestBase, __field_40) == 0x40);
 
 /// `BSPlatform::BSBNETFile::download`: size 0x80 (exact, low).
 /// Evidence: lower bound field field_78 meets upper bound first own field of BSPlatform::BSBNETFile::marketplaceDownload at 0x80 (soft).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSBNETFile__download {
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::download:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSBNETFile__download_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 68],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     pub unknown_64: [u8; 12],
     /// +0x70 `undefined8`, ctor store
-    pub field_70: u64,
+    #[doc(hidden)]
+    pub __field_70: [u8; 8],
     /// +0x78 `undefined4`, ctor store
-    pub field_78: u32,
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
     pub unknown_7C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSBNETFile__download>() == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__download, __field_78) == 0x78);
 
 /// `BSPlatform::BSBNETFile::marketplaceDownload`: size >= 0xB0 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSBNETFile::download`.
 /// Evidence: field field_A8.
 /// Bases: `BSPlatform::BSBNETFile::download`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload {
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::marketplaceDownload:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSBNETFile__marketplaceDownload_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, base BSPlatform::BSBNETFile::download
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, base BSPlatform::BSBNETFile::download
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 68],
     /// +0x58 `undefined8`, base BSPlatform::BSBNETFile::download
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, base BSPlatform::BSBNETFile::download
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     pub unknown_64: [u8; 12],
     /// +0x70 `undefined8`, base BSPlatform::BSBNETFile::download
-    pub field_70: u64,
+    #[doc(hidden)]
+    pub __field_70: [u8; 8],
     /// +0x78 `undefined4`, base BSPlatform::BSBNETFile::download
-    pub field_78: u32,
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
     pub unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     pub unknown_8C: [u8; 4],
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined4`, ctor store
-    pub field_98: u32,
+    #[doc(hidden)]
+    pub __field_98: [u8; 4],
     pub unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store
-    pub field_A8: u32,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 4],
     pub unknown_AC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload, __field_A8) == 0xA8);
 
 /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest`: size >= 0x48 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`.
 /// Evidence: base BSPlatform::BSAsyncRequestBase at 0x0.
 /// Bases: `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`@0x0, `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest {
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModDownload::marketplaceDownloadRequest:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModDownload__marketplaceDownloadRequest, __field_40) == 0x40);
 
 /// `BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest`: size >= 0x48 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>`.
 /// Evidence: base BSPlatform::BSAsyncRequestBase at 0x0.
 /// Bases: `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>`@0x0, `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest {
     /// +0x0 `vtbl:BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream::marketplaceStreamRequest:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETFile__marketplaceDownload__marketplaceModStream__marketplaceStreamRequest, __field_40) == 0x40);
 
 /// `BSPlatform::BSBNETImage`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_28.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSBNETImage {
     /// +0x0 `vtbl:BSPlatform::BSBNETImage:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSBNETImage_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBNETImage, __field_28) == 0x28);
 
 /// `BSPlatform::BSBethesdaPlatform`: size >= 0x138 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_130.
@@ -323,679 +707,848 @@ pub struct BSPlatform__BSBethesdaPlatform {
     /// +0x9 `undefined2`, ctor store
     pub field_9: u16,
     /// +0xB `undefined1`, ctor store
-    pub field_B: u8,
+    #[doc(hidden)]
+    pub __field_B: [u8; 1],
     /// +0xC `undefined1`, ctor store
-    pub field_C: u8,
+    #[doc(hidden)]
+    pub __field_C: [u8; 1],
     /// +0xD `undefined2`, ctor store
-    pub field_D: u16,
+    #[doc(hidden)]
+    pub __field_D: [u8; 2],
     pub unknown_F: [u8; 25],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined2`, ctor store (widths [2, 4])
-    pub field_30: u16,
+    #[doc(hidden)]
+    pub __field_30: [u8; 2],
     /// +0x32 `undefined2`, ctor store
-    pub field_32: u16,
+    #[doc(hidden)]
+    pub __field_32: [u8; 2],
     pub unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     pub unknown_58: [u8; 40],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined4`, ctor store
-    pub field_88: u32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     pub unknown_8C: [u8; 4],
     /// +0x90 `undefined1`, ctor store
-    pub field_90: u8,
+    #[doc(hidden)]
+    pub __field_90: [u8; 1],
     pub unknown_91: [u8; 47],
     /// +0xC0 `undefined8`, ctor store
-    pub field_C0: u64,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
-    pub field_C8: u64,
+    #[doc(hidden)]
+    pub __field_C8: [u8; 8],
     /// +0xD0 `undefined8`, ctor store
-    pub field_D0: u64,
+    #[doc(hidden)]
+    pub __field_D0: [u8; 8],
     /// +0xD8 `undefined8`, ctor store
-    pub field_D8: u64,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 8],
     /// +0xE0 `undefined8`, ctor store
-    pub field_E0: u64,
+    #[doc(hidden)]
+    pub __field_E0: [u8; 8],
     /// +0xE8 `undefined8`, ctor store
-    pub field_E8: u64,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 8],
     /// +0xF0 `undefined4`, ctor store
-    pub field_F0: u32,
+    #[doc(hidden)]
+    pub __field_F0: [u8; 4],
     pub unknown_F4: [u8; 60],
     /// +0x130 `undefined8`, ctor store
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_9) == 0x9);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_B) == 0xB);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_D) == 0xD);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_32) == 0x32);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_B) == 0xB);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_C) == 0xC);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_D) == 0xD);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_32) == 0x32);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSBethesdaPlatform, __field_130) == 0x130);
 
 /// `BSPlatform::BSDownloadRequest`: size >= 0xC8 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`.
 /// Evidence: field field_C0.
 /// Bases: `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,char_const*___ptr64)>_>`@0x0, `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSDownloadRequest {
     /// +0x0 `vtbl:BSPlatform::BSDownloadRequest:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSDownloadRequest_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 60],
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
+    #[doc(hidden)]
+    pub __field_98: [u8; 8],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, ctor store
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     pub unknown_B4: [u8; 4],
     /// +0xB8 `undefined8`, ctor store
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, ctor store
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     pub unknown_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSDownloadRequest, __field_C0) == 0xC0);
 
 /// `BSPlatform::BSMarketplaceImage`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSBNETImage`.
 /// Evidence: field field_28.
 /// Bases: `BSPlatform::BSBNETImage`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSMarketplaceImage {
     /// +0x0 `vtbl:BSPlatform::BSMarketplaceImage:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSMarketplaceImage_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 24],
     /// +0x20 `undefined8`, base BSPlatform::BSBNETImage
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base BSPlatform::BSBNETImage
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceImage, __field_28) == 0x28);
 
 /// `BSPlatform::BSMarketplaceUploader`: size 0x10 (exact, medium).
 /// Evidence: runtime: 0x10 at 1 allocation sites; agrees with the static allocation sites.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSMarketplaceUploader {
     /// +0x0 `vtbl:BSPlatform::BSMarketplaceUploader:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSMarketplaceUploader_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSMarketplaceUploader>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceUploader, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceUploader, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceUploader, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSMarketplaceUploader, __field_8) == 0x8);
 
 /// `BSPlatform::BSUploadRequest`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`.
 /// Evidence: field field_B8.
 /// Bases: `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`@0x0, `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUploadRequest {
     /// +0x0 `vtbl:BSPlatform::BSUploadRequest:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPlatform__BSUploadRequest_vtable,
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 60],
     /// +0x80 `undefined8`, base BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
+    #[doc(hidden)]
+    pub __field_98: [u8; 8],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     /// +0xB8 `undefined8`, ctor store
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadRequest, __field_B8) == 0xB8);
 
 /// `BSPlatform::BSUploadWithProgressRequest`: size 0xA0 (exact, medium); primary base `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`.
 /// Evidence: allocation sites (medium): {'160': 1}.
 /// Bases: `BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>`@0x0, `BSPlatform::BSAsyncRequestBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUploadWithProgressRequest {
     /// +0x0 `vtbl:BSPlatform::BSUploadWithProgressRequest:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSUploadWithProgressRequest_vtable,
+    pub ____vftable: [u8; 8],
     pub unknown_8: [u8; 40],
     /// +0x30 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, base BSPlatform::BSAsyncRequestBase
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base BSPlatform::BSAsyncRequestBase
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 60],
     /// +0x80 `undefined8`, base BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     /// +0x98 `undefined1`, ctor store
-    pub field_98: u8,
+    #[doc(hidden)]
+    pub __field_98: [u8; 1],
     pub unknown_99: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSUploadWithProgressRequest>() == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, field_98) == 0x98);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUploadWithProgressRequest, __field_98) == 0x98);
 
 /// `BSPlatform::BSUserContent`: size >= 0x2A8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_2A0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUserContent {
     /// +0x0 `vtbl:BSPlatform::BSUserContent:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSUserContent_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
+    #[doc(hidden)]
+    pub __field_30: [u8; 4],
     pub unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     pub unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     pub unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
-    pub field_78: u64,
+    #[doc(hidden)]
+    pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    #[doc(hidden)]
+    pub __field_80: [u8; 4],
     pub unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     /// +0x90 `undefined4`, ctor store
-    pub field_90: u32,
+    #[doc(hidden)]
+    pub __field_90: [u8; 4],
     pub unknown_94: [u8; 28],
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     /// +0xB8 `undefined4`, ctor store
-    pub field_B8: u32,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 4],
     pub unknown_BC: [u8; 4],
     /// +0xC0 `undefined8`, ctor store
-    pub field_C0: u64,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
-    pub field_C8: u64,
+    #[doc(hidden)]
+    pub __field_C8: [u8; 8],
     pub unknown_D0: [u8; 40],
     /// +0xF8 `undefined8`, ctor store
-    pub field_F8: u64,
+    #[doc(hidden)]
+    pub __field_F8: [u8; 8],
     /// +0x100 `undefined1`, ctor store
-    pub field_100: u8,
+    #[doc(hidden)]
+    pub __field_100: [u8; 1],
     /// +0x101 `undefined1`, ctor store
-    pub field_101: u8,
+    #[doc(hidden)]
+    pub __field_101: [u8; 1],
     /// +0x102 `undefined1`, ctor store
-    pub field_102: u8,
+    #[doc(hidden)]
+    pub __field_102: [u8; 1],
     /// +0x103 `undefined1`, ctor store
-    pub field_103: u8,
+    #[doc(hidden)]
+    pub __field_103: [u8; 1],
     /// +0x104 `undefined1`, ctor store
-    pub field_104: u8,
+    #[doc(hidden)]
+    pub __field_104: [u8; 1],
     /// +0x105 `undefined1`, ctor store
-    pub field_105: u8,
+    #[doc(hidden)]
+    pub __field_105: [u8; 1],
     /// +0x106 `undefined1`, ctor store
-    pub field_106: u8,
+    #[doc(hidden)]
+    pub __field_106: [u8; 1],
     /// +0x107 `undefined1`, ctor store
-    pub field_107: u8,
+    #[doc(hidden)]
+    pub __field_107: [u8; 1],
     /// +0x108 `undefined1`, ctor store
-    pub field_108: u8,
+    #[doc(hidden)]
+    pub __field_108: [u8; 1],
     /// +0x109 `undefined1`, ctor store
-    pub field_109: u8,
+    #[doc(hidden)]
+    pub __field_109: [u8; 1],
     /// +0x10A `undefined1`, ctor store
-    pub field_10A: u8,
+    #[doc(hidden)]
+    pub __field_10A: [u8; 1],
     /// +0x10B `undefined1`, ctor store
-    pub field_10B: u8,
+    #[doc(hidden)]
+    pub __field_10B: [u8; 1],
     /// +0x10C `undefined1`, ctor store
-    pub field_10C: u8,
+    #[doc(hidden)]
+    pub __field_10C: [u8; 1],
     /// +0x10D `undefined1`, ctor store
-    pub field_10D: u8,
+    #[doc(hidden)]
+    pub __field_10D: [u8; 1],
     /// +0x10E `undefined1`, ctor store
-    pub field_10E: u8,
+    #[doc(hidden)]
+    pub __field_10E: [u8; 1],
     /// +0x10F `undefined1`, ctor store
-    pub field_10F: u8,
+    #[doc(hidden)]
+    pub __field_10F: [u8; 1],
     /// +0x110 `undefined1`, ctor store
-    pub field_110: u8,
+    #[doc(hidden)]
+    pub __field_110: [u8; 1],
     /// +0x111 `undefined1`, ctor store
-    pub field_111: u8,
+    #[doc(hidden)]
+    pub __field_111: [u8; 1],
     /// +0x112 `undefined1`, ctor store
-    pub field_112: u8,
+    #[doc(hidden)]
+    pub __field_112: [u8; 1],
     pub unknown_113: [u8; 1],
     /// +0x114 `undefined4`, ctor store
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     /// +0x118 `undefined4`, ctor store
-    pub field_118: u32,
+    #[doc(hidden)]
+    pub __field_118: [u8; 4],
     pub unknown_11C: [u8; 4],
     /// +0x120 `undefined8`, ctor store
-    pub field_120: u64,
+    #[doc(hidden)]
+    pub __field_120: [u8; 8],
     /// +0x128 `undefined4`, ctor store
-    pub field_128: u32,
+    #[doc(hidden)]
+    pub __field_128: [u8; 4],
     pub unknown_12C: [u8; 4],
     /// +0x130 `undefined4`, ctor store
-    pub field_130: u32,
+    #[doc(hidden)]
+    pub __field_130: [u8; 4],
     pub unknown_134: [u8; 4],
     /// +0x138 `undefined8`, ctor store
-    pub field_138: u64,
+    #[doc(hidden)]
+    pub __field_138: [u8; 8],
     /// +0x140 `undefined8`, ctor store
-    pub field_140: u64,
+    #[doc(hidden)]
+    pub __field_140: [u8; 8],
     /// +0x148 `undefined8`, ctor store
-    pub field_148: u64,
+    #[doc(hidden)]
+    pub __field_148: [u8; 8],
     /// +0x150 `undefined4`, ctor store
-    pub field_150: u32,
+    #[doc(hidden)]
+    pub __field_150: [u8; 4],
     /// +0x154 `undefined4`, ctor store
-    pub field_154: u32,
+    #[doc(hidden)]
+    pub __field_154: [u8; 4],
     /// +0x158 `undefined8`, ctor store
-    pub field_158: u64,
+    #[doc(hidden)]
+    pub __field_158: [u8; 8],
     /// +0x160 `undefined8`, ctor store
-    pub field_160: u64,
+    #[doc(hidden)]
+    pub __field_160: [u8; 8],
     /// +0x168 `undefined8`, ctor store
-    pub field_168: u64,
+    #[doc(hidden)]
+    pub __field_168: [u8; 8],
     /// +0x170 `undefined8`, ctor store
-    pub field_170: u64,
+    #[doc(hidden)]
+    pub __field_170: [u8; 8],
     /// +0x178 `undefined8`, ctor store
-    pub field_178: u64,
+    #[doc(hidden)]
+    pub __field_178: [u8; 8],
     /// +0x180 `undefined8`, ctor store
-    pub field_180: u64,
+    #[doc(hidden)]
+    pub __field_180: [u8; 8],
     /// +0x188 `undefined8`, ctor store
-    pub field_188: u64,
+    #[doc(hidden)]
+    pub __field_188: [u8; 8],
     /// +0x190 `undefined8`, ctor store
-    pub field_190: u64,
+    #[doc(hidden)]
+    pub __field_190: [u8; 8],
     /// +0x198 `undefined8`, ctor store
-    pub field_198: u64,
+    #[doc(hidden)]
+    pub __field_198: [u8; 8],
     /// +0x1A0 `undefined8`, ctor store
-    pub field_1A0: u64,
+    #[doc(hidden)]
+    pub __field_1A0: [u8; 8],
     /// +0x1A8 `undefined8`, ctor store
-    pub field_1A8: u64,
+    #[doc(hidden)]
+    pub __field_1A8: [u8; 8],
     pub unknown_1B0: [u8; 168],
     /// +0x258 `undefined2`, ctor store
-    pub field_258: u16,
+    #[doc(hidden)]
+    pub __field_258: [u8; 2],
     pub unknown_25A: [u8; 6],
     /// +0x260 `undefined8`, ctor store
-    pub field_260: u64,
+    #[doc(hidden)]
+    pub __field_260: [u8; 8],
     /// +0x268 `undefined4`, ctor store
-    pub field_268: u32,
+    #[doc(hidden)]
+    pub __field_268: [u8; 4],
     pub unknown_26C: [u8; 4],
     /// +0x270 `undefined8`, ctor store
-    pub field_270: u64,
+    #[doc(hidden)]
+    pub __field_270: [u8; 8],
     /// +0x278 `undefined4`, ctor store
-    pub field_278: u32,
+    #[doc(hidden)]
+    pub __field_278: [u8; 4],
     pub unknown_27C: [u8; 4],
     /// +0x280 `undefined1`, ctor store
-    pub field_280: u8,
+    #[doc(hidden)]
+    pub __field_280: [u8; 1],
     pub unknown_281: [u8; 7],
     /// +0x288 `undefined8`, ctor store
-    pub field_288: u64,
+    #[doc(hidden)]
+    pub __field_288: [u8; 8],
     /// +0x290 `undefined8`, ctor store
-    pub field_290: u64,
+    #[doc(hidden)]
+    pub __field_290: [u8; 8],
     /// +0x298 `undefined8`, ctor store
-    pub field_298: u64,
+    #[doc(hidden)]
+    pub __field_298: [u8; 8],
     /// +0x2A0 `undefined8`, ctor store
-    pub field_2A0: u64,
+    #[doc(hidden)]
+    pub __field_2A0: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_101) == 0x101);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_102) == 0x102);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_103) == 0x103);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_104) == 0x104);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_105) == 0x105);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_106) == 0x106);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_107) == 0x107);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_109) == 0x109);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10A) == 0x10A);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10B) == 0x10B);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10C) == 0x10C);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10D) == 0x10D);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10E) == 0x10E);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_10F) == 0x10F);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_111) == 0x111);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_112) == 0x112);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_150) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_154) == 0x154);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_158) == 0x158);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_178) == 0x178);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_180) == 0x180);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_188) == 0x188);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_198) == 0x198);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_1A0) == 0x1A0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_1A8) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_258) == 0x258);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_260) == 0x260);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_268) == 0x268);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_270) == 0x270);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_278) == 0x278);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_280) == 0x280);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_288) == 0x288);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_290) == 0x290);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_298) == 0x298);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, field_2A0) == 0x2A0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_101) == 0x101);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_102) == 0x102);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_103) == 0x103);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_104) == 0x104);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_105) == 0x105);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_106) == 0x106);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_107) == 0x107);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_109) == 0x109);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10A) == 0x10A);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10B) == 0x10B);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10C) == 0x10C);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10D) == 0x10D);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10E) == 0x10E);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_10F) == 0x10F);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_111) == 0x111);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_112) == 0x112);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_120) == 0x120);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_128) == 0x128);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_148) == 0x148);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_154) == 0x154);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_158) == 0x158);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_160) == 0x160);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_178) == 0x178);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_180) == 0x180);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_188) == 0x188);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_198) == 0x198);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_1A0) == 0x1A0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_1A8) == 0x1A8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_258) == 0x258);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_260) == 0x260);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_268) == 0x268);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_270) == 0x270);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_278) == 0x278);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_280) == 0x280);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_288) == 0x288);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_290) == 0x290);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_298) == 0x298);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContent, __field_2A0) == 0x2A0);
 
 /// `BSPlatform::BSUserContentCollection`: size >= 0x120 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_118.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUserContentCollection {
     /// +0x0 `vtbl:BSPlatform::BSUserContentCollection:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSUserContentCollection_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
+    #[doc(hidden)]
+    pub __field_30: [u8; 4],
     pub unknown_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
+    #[doc(hidden)]
+    pub __field_48: [u8; 8],
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined4`, ctor store
-    pub field_60: u32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     pub unknown_64: [u8; 4],
     /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     pub unknown_74: [u8; 4],
     /// +0x78 `undefined8`, ctor store
-    pub field_78: u64,
+    #[doc(hidden)]
+    pub __field_78: [u8; 8],
     /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    #[doc(hidden)]
+    pub __field_80: [u8; 4],
     pub unknown_84: [u8; 28],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined4`, ctor store
-    pub field_A8: u32,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 4],
     pub unknown_AC: [u8; 44],
     /// +0xD8 `undefined1`, ctor store
-    pub field_D8: u8,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 1],
     /// +0xD9 `undefined1`, ctor store
-    pub field_D9: u8,
+    #[doc(hidden)]
+    pub __field_D9: [u8; 1],
     /// +0xDA `undefined1`, ctor store
-    pub field_DA: u8,
+    #[doc(hidden)]
+    pub __field_DA: [u8; 1],
     /// +0xDB `undefined1`, ctor store
-    pub field_DB: u8,
+    #[doc(hidden)]
+    pub __field_DB: [u8; 1],
     /// +0xDC `undefined1`, ctor store
-    pub field_DC: u8,
+    #[doc(hidden)]
+    pub __field_DC: [u8; 1],
     /// +0xDD `undefined1`, ctor store
-    pub field_DD: u8,
+    #[doc(hidden)]
+    pub __field_DD: [u8; 1],
     /// +0xDE `undefined1`, ctor store
-    pub field_DE: u8,
+    #[doc(hidden)]
+    pub __field_DE: [u8; 1],
     /// +0xDF `undefined1`, ctor store
-    pub field_DF: u8,
+    #[doc(hidden)]
+    pub __field_DF: [u8; 1],
     /// +0xE0 `undefined1`, ctor store
-    pub field_E0: u8,
+    #[doc(hidden)]
+    pub __field_E0: [u8; 1],
     /// +0xE1 `undefined1`, ctor store
-    pub field_E1: u8,
+    #[doc(hidden)]
+    pub __field_E1: [u8; 1],
     /// +0xE2 `undefined1`, ctor store
-    pub field_E2: u8,
+    #[doc(hidden)]
+    pub __field_E2: [u8; 1],
     /// +0xE3 `undefined1`, ctor store
-    pub field_E3: u8,
+    #[doc(hidden)]
+    pub __field_E3: [u8; 1],
     /// +0xE4 `undefined1`, ctor store
-    pub field_E4: u8,
+    #[doc(hidden)]
+    pub __field_E4: [u8; 1],
     /// +0xE5 `undefined1`, ctor store
-    pub field_E5: u8,
+    #[doc(hidden)]
+    pub __field_E5: [u8; 1],
     pub unknown_E6: [u8; 2],
     /// +0xE8 `undefined4`, ctor store
-    pub field_E8: u32,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 4],
     /// +0xEC `undefined4`, ctor store
-    pub field_EC: u32,
+    #[doc(hidden)]
+    pub __field_EC: [u8; 4],
     /// +0xF0 `undefined8`, ctor store
-    pub field_F0: u64,
+    #[doc(hidden)]
+    pub __field_F0: [u8; 8],
     /// +0xF8 `undefined8`, ctor store
-    pub field_F8: u64,
+    #[doc(hidden)]
+    pub __field_F8: [u8; 8],
     /// +0x100 `undefined8`, ctor store
-    pub field_100: u64,
+    #[doc(hidden)]
+    pub __field_100: [u8; 8],
     /// +0x108 `undefined8`, ctor store
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined8`, ctor store
-    pub field_110: u64,
+    #[doc(hidden)]
+    pub __field_110: [u8; 8],
     /// +0x118 `undefined8`, ctor store
-    pub field_118: u64,
+    #[doc(hidden)]
+    pub __field_118: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_D9) == 0xD9);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DA) == 0xDA);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DB) == 0xDB);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DC) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DD) == 0xDD);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DE) == 0xDE);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_DF) == 0xDF);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E1) == 0xE1);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E2) == 0xE2);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E3) == 0xE3);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E5) == 0xE5);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_EC) == 0xEC);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_D9) == 0xD9);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DA) == 0xDA);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DB) == 0xDB);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DC) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DD) == 0xDD);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DE) == 0xDE);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_DF) == 0xDF);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E1) == 0xE1);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E2) == 0xE2);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E3) == 0xE3);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E4) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E5) == 0xE5);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_EC) == 0xEC);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentCollection, __field_118) == 0x118);
 
 /// `BSPlatform::BSUserContentOperations`: size 0x10 (exact, medium).
 /// Evidence: runtime: 0x10 at 1 allocation sites; agrees with the static allocation sites.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUserContentOperations {
     /// +0x0 `vtbl:BSPlatform::BSUserContentOperations:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSUserContentOperations_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSUserContentOperations>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentOperations, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentOperations, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentOperations, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentOperations, __field_8) == 0x8);
 
 /// `BSPlatform::BSUserContentSearcherAgent`: size 0x10 (exact, medium).
 /// Evidence: runtime: 0x10 at 1 allocation sites.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPlatform__BSUserContentSearcherAgent {
     /// +0x0 `vtbl:BSPlatform::BSUserContentSearcherAgent:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSPlatform__BSUserContentSearcherAgent_vtable,
+    pub ____vftable: [u8; 8],
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSPlatform__BSUserContentSearcherAgent>() == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentSearcherAgent, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentSearcherAgent, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentSearcherAgent, ____vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSPlatform__BSUserContentSearcherAgent, __field_8) == 0x8);
 
 /// `BSPlayerDistanceCheckController`: size 0x60 (exact, medium); primary base `NiTimeController`.
 /// Evidence: runtime: 0x60 at 1 allocation sites.
@@ -1017,13 +1570,15 @@ pub struct BSPlayerDistanceCheckController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -1049,10 +1604,10 @@ const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, fie
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPlayerDistanceCheckController, field_40) == 0x40);
@@ -1090,7 +1645,7 @@ const _: () = assert!(core::mem::offset_of!(BSPointerListBase_TriggerEntry__Trig
 /// `BSPortal`: size 0x130 (exact, high); primary base `BSOcclusionPlane`.
 /// Evidence: allocation sites (high): {'304': 2}.
 /// Bases: `BSOcclusionPlane`@0x0, `BSOcclusionShape`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSPortal {
     /// +0x0 `vtbl:BSPortal:0`, rtti
     #[doc(hidden)]
@@ -1118,7 +1673,8 @@ pub struct BSPortal {
     /// +0x48 `undefined4`, base BSOcclusionPlane
     pub field_48: u32,
     /// +0x4C `undefined4`, base BSOcclusionPlane
-    pub field_4C: u32,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 4],
     pub unknown_50: [u8; 96],
     /// +0xB0 `undefined4`, base BSOcclusionPlane
     pub field_B0: u32,
@@ -1126,17 +1682,23 @@ pub struct BSPortal {
     pub field_B4: u32,
     pub unknown_B8: [u8; 8],
     /// +0xC0 `undefined8`, base BSOcclusionPlane
-    pub field_C0: u64,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 8],
     /// +0xC8 `undefined8`, base BSOcclusionPlane
-    pub field_C8: u64,
+    #[doc(hidden)]
+    pub __field_C8: [u8; 8],
     /// +0xD0 `undefined8`, base BSOcclusionPlane
-    pub field_D0: u64,
+    #[doc(hidden)]
+    pub __field_D0: [u8; 8],
     /// +0xD8 `undefined8`, base BSOcclusionPlane
-    pub field_D8: u64,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 8],
     /// +0xE0 `undefined8`, base BSOcclusionPlane
-    pub field_E0: u64,
+    #[doc(hidden)]
+    pub __field_E0: [u8; 8],
     /// +0xE8 `undefined8`, base BSOcclusionPlane
-    pub field_E8: u64,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 8],
     pub unknown_F0: [u8; 4],
     /// +0xF4 `undefined1`, base BSOcclusionPlane
     pub field_F4: u8,
@@ -1165,15 +1727,15 @@ const _: () = assert!(core::mem::offset_of!(BSPortal, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSPortal, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSPortal, __field_E8) == 0xE8);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_F4) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSPortal, field_100) == 0x100);
@@ -1383,15 +1945,20 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPrecomputedNavmeshInfoSearch_vtable,
     /// +0x8 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
     pub field_30: u64,
     /// +0x38 `undefined4`, base AStarSearch<BSNavmeshInfo_const*___ptr64,BSTSmartPointer<BSPathingDoor,BSTSmartPointerIntrusiveRefCount>,22>
@@ -1422,16 +1989,20 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     pub field_1F0: u8,
     pub unknown_1F1: [u8; 7],
     /// +0x1F8 `undefined8`, base BSNavmeshInfoSearch
-    pub field_1F8: u64,
+    #[doc(hidden)]
+    pub __field_1F8: [u8; 8],
     /// +0x200 `undefined4`, base BSNavmeshInfoSearch
-    pub field_200: u32,
+    #[doc(hidden)]
+    pub __field_200: [u8; 4],
     pub unknown_204: [u8; 4],
     /// +0x208 `undefined8`, base BSNavmeshInfoSearch
-    pub field_208: u64,
+    #[doc(hidden)]
+    pub __field_208: [u8; 8],
     /// +0x210 `undefined8`, base BSNavmeshInfoSearch
     pub field_210: u64,
     /// +0x218 `undefined4`, base BSNavmeshInfoSearch
-    pub field_218: u32,
+    #[doc(hidden)]
+    pub __field_218: [u8; 4],
     pub unknown_21C: [u8; 4],
     /// +0x220 `undefined8`, base BSNavmeshInfoSearch
     pub field_220: u64,
@@ -1439,17 +2010,18 @@ pub struct BSPrecomputedNavmeshInfoSearch {
     pub field_228: u64,
     pub unknown_230: [u8; 4],
     /// +0x234 `undefined2`, base BSNavmeshInfoSearch
-    pub field_234: u16,
+    #[doc(hidden)]
+    pub __field_234: [u8; 2],
     pub unknown_236: [u8; 2],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_4C) == 0x4C);
@@ -1462,14 +2034,14 @@ const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, fiel
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_1F8) == 0x1F8);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_200) == 0x200);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_208) == 0x208);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_1F8) == 0x1F8);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_200) == 0x200);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_208) == 0x208);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_218) == 0x218);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_218) == 0x218);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_228) == 0x228);
-const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, field_234) == 0x234);
+const _: () = assert!(core::mem::offset_of!(BSPrecomputedNavmeshInfoSearch, __field_234) == 0x234);
 
 /// `BSProceduralLightningController`: size 0x190 (exact, high); primary base `NiInterpController`.
 /// Evidence: allocation sites (high): {'400': 3}.
@@ -1491,13 +2063,15 @@ pub struct BSProceduralLightningController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -1506,7 +2080,8 @@ pub struct BSProceduralLightningController {
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     /// +0x48 `class:BSTEventSource`, RTTI base BSTEventSource<BSProceduralGeomEvent>
-    pub source_BSProceduralGeomEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BSProceduralGeomEvent: [u8; 88],
     /// +0xA0 `undefined8`, ctor store
     pub field_A0: u64,
     pub unknown_A8: [u8; 80],
@@ -1517,7 +2092,8 @@ pub struct BSProceduralLightningController {
     pub field_100: u64,
     pub unknown_108: [u8; 72],
     /// +0x150 `undefined4`, ctor store
-    pub field_150: u32,
+    #[doc(hidden)]
+    pub __field_150: [u8; 4],
     /// +0x154 `undefined2`, ctor store
     pub field_154: u16,
     pub unknown_156: [u8; 2],
@@ -1548,18 +2124,18 @@ const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, fie
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, source_BSProceduralGeomEvent) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, __source_BSProceduralGeomEvent) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_F8) == 0xF8);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, __field_150) == 0x150);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_154) == 0x154);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSProceduralLightningController, field_160) == 0x160);
@@ -1588,7 +2164,7 @@ const _: () = assert!(core::mem::offset_of!(BSProceduralLightningTasklet, __vfta
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>`: size 0x88 (exact, medium); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: allocation sites (medium): {'136': 1}.
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSFaceGenDB::TRI::DBTraits>,2>:0`, rtti
     #[doc(hidden)]
@@ -1603,7 +2179,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTr
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1631,7 +2208,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSFaceGenDB__TRI__DBTraits_2, __vftable_38) == 0x38);
@@ -1643,7 +2220,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>`: size 0x90 (exact, high); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: conflict, allocation size kept: allocation size 0x90 above upper bound 0x58 (first own field of BGSArtObjectCloneTask at 0x58 (soft)).
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,1>:0`, rtti
     #[doc(hidden)]
@@ -1658,7 +2235,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1 
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1686,7 +2264,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_1, __vftable_38) == 0x38);
@@ -1698,7 +2276,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>`: size 0x88 (exact, high); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: conflict, allocation size kept: allocation size 0x88 above upper bound 0x58 (first own field of AnimationSystemUtils::TESModelAndAnimationHandles at 0x58 (soft)).
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,2>:0`, rtti
     #[doc(hidden)]
@@ -1713,7 +2291,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2 
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1741,7 +2320,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_2, __vftable_38) == 0x38);
@@ -1753,7 +2332,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>`: size 0x5B8 (exact, medium); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: conflict, allocation size kept: allocation size 0x5B8 above upper bound 0x58 (first own field of QueuedHelmet at 0x58 (soft)).
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSModelDB::DBTraits>,42>:0`, rtti
     #[doc(hidden)]
@@ -1768,7 +2347,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1796,7 +2376,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSModelDB__DBTraits_42, __vftable_38) == 0x38);
@@ -1808,7 +2388,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>`: size 0x58 (exact, low); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: lower bound base BSQueuedResourceCollectionBase at 0x0 meets upper bound first own field of BSTextureDB::QueuedHandles at 0x58 (soft).
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>:0`, rtti
     #[doc(hidden)]
@@ -1823,7 +2403,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1851,7 +2432,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BSTextureDB__DBTraits_2, __vftable_38) == 0x38);
@@ -1863,7 +2444,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>`: size 0x58 (exact, low); primary base `BSQueuedResourceCollectionBase`.
 /// Evidence: lower bound base BSQueuedResourceCollectionBase at 0x0 meets upper bound first own field of BShkbHkxDB::QueuedHandles at 0x58 (soft).
 /// Bases: `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2 {
     /// +0x0 `vtbl:BSQueuedResourceCollection<BSResource::EntryDB<BShkbHkxDB::DBTraits>,2>:0`, rtti
     #[doc(hidden)]
@@ -1878,7 +2459,8 @@ pub struct BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1906,7 +2488,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResource__EntryDB_BShkbHkxDB__DBTraits_2, __vftable_38) == 0x38);
@@ -1918,7 +2500,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollection_BSResourc
 /// `BSQueuedResourceCollectionBase`: size 0x88 (exact, high); primary base `QueuedFile`.
 /// Evidence: conflict, allocation size kept: allocation size 0x88 above upper bound 0x58 (first own field of AnimationSystemUtils::TESModelAndAnimationHandles at 0x58 (soft)).
 /// Bases: `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSQueuedResourceCollectionBase {
     /// +0x0 `vtbl:BSQueuedResourceCollectionBase:0`, rtti
     #[doc(hidden)]
@@ -1933,7 +2515,8 @@ pub struct BSQueuedResourceCollectionBase {
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, base QueuedFile
     pub field_28: u64,
     /// +0x30 `undefined4`, base QueuedFile
@@ -1961,7 +2544,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, fiel
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, __vftable_38) == 0x38);
@@ -1973,7 +2556,7 @@ const _: () = assert!(core::mem::offset_of!(BSQueuedResourceCollectionBase, fiel
 /// `BSRagdollContactListenerModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbModifier`.
 /// Evidence: field field_114.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpContactListener`@0x50.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSRagdollContactListenerModifier {
     /// +0x0 `vtbl:BSRagdollContactListenerModifier:0`, rtti
     #[doc(hidden)]
@@ -2047,26 +2630,36 @@ pub struct BSRagdollContactListenerModifier {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2104,16 +2697,16 @@ const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, fi
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSRagdollContactListenerModifier, __field_114) == 0x114);
 
 /// `BSRagdollContactListenerModifierInterface`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSIRagdollContactListenerModifierSingleton`.
 /// Evidence: vptr at 0x0.
@@ -2270,7 +2863,7 @@ const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveManager, __vftabl
 /// `BSResource::ArchiveStream`: size 0x30 (exact, low); primary base `BSResource::Stream`.
 /// Evidence: runtime: 0x30 at 1 allocation sites.
 /// Bases: `BSResource::Stream`@0x0, `BSResource::StreamBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource__ArchiveStream {
     /// +0x0 `vtbl:BSResource::ArchiveStream:0`, rtti
     #[doc(hidden)]
@@ -2278,14 +2871,18 @@ pub struct BSResource__ArchiveStream {
     /// +0x8 `undefined8`, ctor store
     pub field_8: u64,
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
-    pub field_24: u32,
+    #[doc(hidden)]
+    pub __field_24: [u8; 4],
     pub unknown_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -2293,10 +2890,10 @@ pub struct BSResource__ArchiveStream {
 const _: () = assert!(size_of::<BSResource__ArchiveStream>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSResource__ArchiveStream, __field_24) == 0x24);
 
 /// `BSResource::AsyncStream`: size 0x8 (exact, low); primary base `BSResource::StreamBase`.
 /// Evidence: lower bound vptr at 0x0 meets upper bound first own field of BSResource::_anon_30629CF1::AsyncArchiveStream at 0x8 (soft).
@@ -2455,34 +3052,38 @@ const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Op, field_40
 /// `BSResource::CacheDrive::Task`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_38.
 /// Bases: `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource__CacheDrive__Task {
     /// +0x0 `vtbl:BSResource::CacheDrive::Task:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource__CacheDrive__Task_vtable,
     /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     pub unknown_C: [u8; 28],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined2`, ctor store
-    pub field_38: u16,
+    #[doc(hidden)]
+    pub __field_38: [u8; 2],
     pub unknown_3A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSResource__CacheDrive__Task, __field_38) == 0x38);
 
 /// `BSResource::CompressedArchiveStream`: size 0x40 (exact, high); primary base `BSResource::ArchiveStream`.
 /// Evidence: runtime: 0x40 at 3 allocation sites.
 /// Bases: `BSResource::ArchiveStream`@0x0, `BSResource::Stream`@0x0, `BSResource::StreamBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource__CompressedArchiveStream {
     /// +0x0 `vtbl:BSResource::CompressedArchiveStream:0`, rtti
     #[doc(hidden)]
@@ -2490,17 +3091,22 @@ pub struct BSResource__CompressedArchiveStream {
     /// +0x8 `undefined8`, base BSResource::ArchiveStream
     pub field_8: u64,
     /// +0x10 `undefined4`, base BSResource::ArchiveStream
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined8`, base BSResource::ArchiveStream
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, base BSResource::ArchiveStream
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base BSResource::ArchiveStream
-    pub field_24: u32,
+    #[doc(hidden)]
+    pub __field_24: [u8; 4],
     pub unknown_28: [u8; 8],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -2508,11 +3114,11 @@ pub struct BSResource__CompressedArchiveStream {
 const _: () = assert!(size_of::<BSResource__CompressedArchiveStream>() == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(BSResource__CompressedArchiveStream, __field_30) == 0x30);
 
 /// `BSResource::EntryDB<BGSBtoDB::DBTraits>`: size >= 0xD0 (lower bound); partial, the struct stops at the lower bound; primary base `BSResource::IEntryDB`.
 /// Evidence: base BSResource::IEntryDB at 0x0.
@@ -2832,38 +3438,44 @@ const _: () = assert!(core::mem::offset_of!(BSResource__StreamBase, __vftable) =
 /// `BSResource::_anon_30629CF1::AsyncArchiveStream`: size 0x768 (exact, medium); primary base `BSResource::AsyncStream`.
 /// Evidence: allocation sites (medium): {'1896': 1}.
 /// Bases: `BSResource::AsyncStream`@0x0, `BSResource::StreamBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource___anon_30629CF1__AsyncArchiveStream {
     /// +0x0 `vtbl:BSResource::_anon_30629CF1::AsyncArchiveStream:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource___anon_30629CF1__AsyncArchiveStream_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store
-    pub field_10: u32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     pub unknown_14: [u8; 4],
     /// +0x18 `undefined4`, ctor store
-    pub field_18: u32,
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 1840],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSResource___anon_30629CF1__AsyncArchiveStream>() == 0x768);
 const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_30629CF1__AsyncArchiveStream, __field_30) == 0x30);
 
 /// `BSResource::_anon_5F811FAA::LooseFileAsyncBase::FunctorType`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSSystemFileAsyncFunctor`.
 /// Evidence: vptr at 0x0.
@@ -2896,7 +3508,7 @@ const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFil
 /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream`: size 0x98 (exact, medium); primary base `BSResource::_anon_5F811FAA::LooseFileStreamBase`.
 /// Evidence: runtime: 0x98 at 1 allocation sites.
 /// Bases: `BSResource::_anon_5F811FAA::LooseFileStreamBase`@0x0, `BSResource::_anon_5F811FAA::LooseFileAsyncBase`@0x50, `BSResource::AsyncStream`@0x30, `BSResource::StreamBase`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// +0x0 `vtbl:BSResource::_anon_5F811FAA::LooseFileAsyncStream:0`, rtti
     #[doc(hidden)]
@@ -2904,14 +3516,14 @@ pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream {
     pub unknown_8: [u8; 40],
     /// +0x30 `vtbl:BSResource::_anon_5F811FAA::LooseFileAsyncStream:30`, rtti
     #[doc(hidden)]
-    pub __vftable_30: *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30,
+    pub ____vftable_30: [u8; 8],
     pub unknown_38: [u8; 96],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSResource___anon_5F811FAA__LooseFileAsyncStream>() == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileAsyncStream, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileAsyncStream, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileAsyncStream, ____vftable_30) == 0x30);
 
 /// `BSResource::_anon_5F811FAA::LooseFileSBTraits::AsyncFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSSystemFileAsyncFunctor`.
 /// Evidence: vptr at 0x0.
@@ -2929,7 +3541,7 @@ const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFil
 /// `BSResource::_anon_5F811FAA::LooseFileStream`: size 0x60 (exact, medium); primary base `BSResource::_anon_5F811FAA::LooseFileStreamBase`.
 /// Evidence: runtime: 0x60 at 1 allocation sites.
 /// Bases: `BSResource::_anon_5F811FAA::LooseFileStreamBase`@0x0, `BSResource::Stream`@0x30, `BSResource::StreamBase`@0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource___anon_5F811FAA__LooseFileStream {
     /// +0x0 `vtbl:BSResource::_anon_5F811FAA::LooseFileStream:0`, rtti
     #[doc(hidden)]
@@ -2937,26 +3549,26 @@ pub struct BSResource___anon_5F811FAA__LooseFileStream {
     pub unknown_8: [u8; 40],
     /// +0x30 `vtbl:BSResource::_anon_5F811FAA::LooseFileStream:30`, rtti
     #[doc(hidden)]
-    pub __vftable_30: *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileStream_vtable_30,
+    pub ____vftable_30: [u8; 8],
     pub unknown_38: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSResource___anon_5F811FAA__LooseFileStream>() == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileStream, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileStream, __vftable_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileStream, ____vftable_30) == 0x30);
 
 /// `BSResource::_anon_5F811FAA::LooseFileStreamBase`: size >= 0x8 (lower bound, upper bound 0x30); partial, the struct stops at the lower bound.
 /// Evidence: lower vptr at 0x0; upper next base of BSResource::_anon_5F811FAA::LooseFileAsyncStream at 0x30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource___anon_5F811FAA__LooseFileStreamBase {
     /// +0x0 `vtbl:BSResource::_anon_5F811FAA::LooseFileStreamBase:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSResource___anon_5F811FAA__LooseFileStreamBase_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileStreamBase, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_5F811FAA__LooseFileStreamBase, ____vftable) == 0x0);
 
 /// `BSResource::_anon_AC99F91C::ArchiveRegistrationTaskData`: size 0x50 (exact, medium); primary base `BSWin32TaskletData`.
 /// Evidence: runtime: 0x50 at 1 allocation sites.
@@ -3004,37 +3616,43 @@ const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__DevNull_
 /// `BSResource::_anon_AC99F91C::EventSources`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_110.
 /// Bases: `BSTSingletonSDM<BSResource::_anon_AC99F91C::EventSources,BSTSingletonSDMOpStaticBuffer>`@0x8, `BSTSingletonSDMBase<BSTSDMTraits<BSResource::_anon_AC99F91C::EventSources,BSTSingletonSDMOpStaticBuffer<BSResource::_anon_AC99F91C::EventSources>_>_>`@0x8, `BSTSDMTraits<BSResource::_anon_AC99F91C::EventSources,BSTSingletonSDMOpStaticBuffer<BSResource::_anon_AC99F91C::EventSources>_>`@0x8, `BSTSingletonSDMOpStaticBuffer<BSResource::_anon_AC99F91C::EventSources>`@0x9.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResource___anon_AC99F91C__EventSources {
     /// +0x0 `vtbl:BSResource::_anon_AC99F91C::EventSources:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResource___anon_AC99F91C__EventSources_vtable,
     pub unknown_8: [u8; 80],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined1`, ctor store
-    pub field_60: u8,
+    #[doc(hidden)]
+    pub __field_60: [u8; 1],
     pub unknown_61: [u8; 79],
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     /// +0xB8 `undefined1`, ctor store
-    pub field_B8: u8,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 1],
     pub unknown_B9: [u8; 79],
     /// +0x108 `undefined8`, ctor store
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined1`, ctor store
-    pub field_110: u8,
+    #[doc(hidden)]
+    pub __field_110: [u8; 1],
     pub unknown_111: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSResource___anon_AC99F91C__EventSources, __field_110) == 0x110);
 
 /// `BSResource::_anon_AC99F91C::GlobalLocations`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSResource::Location`.
 /// Evidence: vptr at 0x0.
@@ -3101,25 +3719,30 @@ const _: () = assert!(core::mem::offset_of!(BSResource___anon_AEA03715__DefaultL
 /// `BSResourceFaceGenBinaryFile`: size >= 0x58 (lower bound); partial, the struct stops at the lower bound; primary base `FutBinaryFileC`.
 /// Evidence: field field_50.
 /// Bases: `FutBinaryFileC`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSResourceFaceGenBinaryFile {
     /// +0x0 `vtbl:BSResourceFaceGenBinaryFile:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSResourceFaceGenBinaryFile_vtable,
     /// +0x8 `undefined1`, base FutBinaryFileC
-    pub field_8: u8,
+    #[doc(hidden)]
+    pub __field_8: [u8; 1],
     pub unknown_9: [u8; 15],
     /// +0x18 `undefined8`, base FutBinaryFileC
     pub field_18: u64,
     /// +0x20 `undefined8`, base FutBinaryFileC
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined1`, base FutBinaryFileC
-    pub field_28: u8,
+    #[doc(hidden)]
+    pub __field_28: [u8; 1],
     pub unknown_29: [u8; 15],
     /// +0x38 `undefined8`, base FutBinaryFileC
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, base FutBinaryFileC
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, base FutBinaryFileC
     pub field_48: u64,
     /// +0x50 `undefined8`, ctor store
@@ -3128,12 +3751,12 @@ pub struct BSResourceFaceGenBinaryFile {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSResourceFaceGenBinaryFile, field_50) == 0x50);
 
@@ -3297,14 +3920,17 @@ pub struct BSSaveDataSystemUtility {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSaveDataSystemUtility_vtable,
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSSaveDataEvent>
-    pub source_BSSaveDataEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BSSaveDataEvent: [u8; 88],
     /// +0x60 `undefined1`, ctor store
-    pub field_60: u8,
+    #[doc(hidden)]
+    pub __field_60: [u8; 1],
     pub unknown_61: [u8; 3],
     /// +0x64 `undefined4`, ctor store
     pub field_64: u32,
     /// +0x68 `undefined1`, ctor store
-    pub field_68: u8,
+    #[doc(hidden)]
+    pub __field_68: [u8; 1],
     pub unknown_69: [u8; 7],
     /// +0x70 `undefined8`, member ctor BSSaveDataSystemUtility::Entry
     pub m_Entry_70: u64,
@@ -3341,7 +3967,8 @@ pub struct BSSaveDataSystemUtility {
     pub field_1E0: u64,
     pub unknown_1E8: [u8; 4],
     /// +0x1EC `undefined8`, ctor store
-    pub field_1EC: u64,
+    #[doc(hidden)]
+    pub __field_1EC: [u8; 8],
     /// +0x1F4 `undefined4`, ctor store
     pub field_1F4: u32,
     /// +0x1F8 `undefined2`, ctor store
@@ -3361,10 +3988,10 @@ pub struct BSSaveDataSystemUtility {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, source_BSSaveDataEvent) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, __source_BSSaveDataEvent) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, m_Entry_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_180) == 0x180);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_188) == 0x188);
@@ -3378,7 +4005,7 @@ const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1C0) 
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1C8) == 0x1C8);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1D0) == 0x1D0);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1E0) == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1EC) == 0x1EC);
+const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, __field_1EC) == 0x1EC);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1F4) == 0x1F4);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1F8) == 0x1F8);
 const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtility, field_1FA) == 0x1FA);
@@ -3543,7 +4170,7 @@ const _: () = assert!(core::mem::offset_of!(BSSaveDataSystemUtilityFile, field_1
 /// `BSScaleformFileOpener`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxFileOpenerBase`.
 /// Evidence: field field_BC.
 /// Bases: `GFxFileOpenerBase`@0x0, `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScaleformFileOpener {
     /// +0x0 `vtbl:BSScaleformFileOpener:0`, rtti
     #[doc(hidden)]
@@ -3554,9 +4181,11 @@ pub struct BSScaleformFileOpener {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -3663,15 +4292,16 @@ pub struct BSScaleformFileOpener {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_1C) == 0x1C);
@@ -3716,12 +4346,12 @@ const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_AC) == 
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(BSScaleformFileOpener, __field_BC) == 0xBC);
 
 /// `BSScaleformImageLoader`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxImageLoader`.
 /// Evidence: field field_BC.
 /// Bases: `GFxImageLoader`@0x0, `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScaleformImageLoader {
     /// +0x0 `vtbl:BSScaleformImageLoader:0`, rtti
     #[doc(hidden)]
@@ -3732,9 +4362,11 @@ pub struct BSScaleformImageLoader {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -3841,15 +4473,16 @@ pub struct BSScaleformImageLoader {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_1C) == 0x1C);
@@ -3894,7 +4527,7 @@ const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_AC) ==
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(BSScaleformImageLoader, __field_BC) == 0xBC);
 
 /// `BSScaleformMovieLoadTask`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound; primary base `IOTask`.
 /// Evidence: field field_34.
@@ -3936,7 +4569,7 @@ const _: () = assert!(core::mem::offset_of!(BSScaleformMovieLoadTask, field_34) 
 /// `BSScaleformTranslator`: size >= 0xC0 (lower bound); partial, the struct stops at the lower bound; primary base `GFxTranslator`.
 /// Evidence: field field_BC.
 /// Bases: `GFxTranslator`@0x0, `GFxState`@0x0, `GRefCountBase<GFxState,2>`@0x0, `GRefCountBaseStatImpl<GRefCountImpl,2>`@0x0, `GRefCountImpl`@0x0, `GRefCountImplCore`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScaleformTranslator {
     /// +0x0 `vtbl:BSScaleformTranslator:0`, rtti
     #[doc(hidden)]
@@ -3947,9 +4580,11 @@ pub struct BSScaleformTranslator {
     /// +0x10 `undefined1`, base GRefCountImplCore
     pub field_10: u8,
     /// +0x11 `undefined1`, base GRefCountImplCore
-    pub field_11: u8,
+    #[doc(hidden)]
+    pub __field_11: [u8; 1],
     /// +0x12 `undefined2`, base GRefCountImplCore
-    pub field_12: u16,
+    #[doc(hidden)]
+    pub __field_12: [u8; 2],
     /// +0x14 `undefined4`, base GRefCountImplCore
     pub field_14: u32,
     /// +0x18 `undefined4`, base GRefCountImplCore
@@ -4056,15 +4691,16 @@ pub struct BSScaleformTranslator {
     pub field_B8: u8,
     pub unknown_B9: [u8; 3],
     /// +0xBC `undefined4`, base GRefCountImplCore
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_11) == 0x11);
-const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_12) == 0x12);
+const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, __field_11) == 0x11);
+const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, __field_12) == 0x12);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_1C) == 0x1C);
@@ -4109,7 +4745,7 @@ const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_AC) == 
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_B4) == 0xB4);
 const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(BSScaleformTranslator, __field_BC) == 0xBC);
 
 /// `BSSceneGraph`: size 0x140 (exact, low); primary base `NiNode`.
 /// Evidence: lower bound field field_138 meets upper bound first own field of SceneGraph at 0x140 (soft).
@@ -4344,7 +4980,7 @@ const _: () = assert!(core::mem::offset_of!(BSSearchPath, field_110) == 0x110);
 /// `BSSegmentedTriShape`: size 0x150 (exact, high); primary base `NiTriShape`.
 /// Evidence: allocation sites (high): {'336': 3}.
 /// Bases: `NiTriShape`@0x0, `NiTriBasedGeom`@0x0, `NiGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSegmentedTriShape {
     /// +0x0 `vtbl:BSSegmentedTriShape:0`, rtti
     #[doc(hidden)]
@@ -4404,7 +5040,8 @@ pub struct BSSegmentedTriShape {
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
     /// +0x140 `undefined4`, ctor store (widths [4, 8])
-    pub field_140: u32,
+    #[doc(hidden)]
+    pub __field_140: [u8; 4],
     /// +0x144 `undefined4`, ctor store
     pub field_144: u32,
     /// +0x148 `undefined2`, ctor store
@@ -4440,7 +5077,7 @@ const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_120) == 0
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, __field_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_144) == 0x144);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_148) == 0x148);
 
@@ -4501,13 +5138,15 @@ pub struct BSSimpleScaleController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -4529,10 +5168,10 @@ const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_8) ==
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSSimpleScaleController, field_40) == 0x40);
@@ -4758,8 +5397,8 @@ pub struct BSSkyShaderProperty {
     pub fadeNode: *mut crate::BSFadeNode,
     /// +0x68 `pointer`, base BSShaderProperty, semantic; refcounted 0x88-byte record (NiPointers at +0x10/+0x18/+0x20, bytes +0x7d..+0x82, int +0x74); when set, slot 42 adds a pass on the effect shader (ID_415166) whose technique bits come from those bytes (low)
     pub effectOverlay: *mut c_void,
-    /// +0x70 `pointer`, base BSShaderProperty, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
-    pub lightData: *mut c_void,
+    /// +0x70 `ptr:ShaderPropertyLightData`, base BSShaderProperty, semantic; per-property light record: +0x1c u32 mask of the shadow lights affecting the geometry (bit i-1 for light i), +0x20 dirty byte; lighting points it at its own +0x138, effect allocates 0x28 when flag bit 62 is set (medium)
+    pub lightData: *mut crate::ShaderPropertyLightData,
     /// +0x78 `ptr:BSShaderMaterial`, base BSShaderProperty, semantic; material entry from the shared material cache (0x32309d8) (high)
     pub material: *mut crate::BSShaderMaterial,
     /// +0x80 `undefined4`, base BSShaderProperty, semantic; render frame the pass lists were last rebuilt in (high)
@@ -4819,203 +5458,267 @@ const _: () = assert!(core::mem::offset_of!(BSSkyShaderProperty, field_C0) == 0x
 /// `BSSmallBlockAllocator`: size >= 0x1268 (lower bound); partial, the struct stops at the lower bound; primary base `IMemoryStore`.
 /// Evidence: field field_1264.
 /// Bases: `IMemoryStore`@0x0, `IMemoryStoreBase`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSmallBlockAllocator {
     /// +0x0 `vtbl:BSSmallBlockAllocator:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSmallBlockAllocator_vtable,
     pub unknown_8: [u8; 28],
     /// +0x24 `undefined4`, ctor store
-    pub field_24: u32,
+    #[doc(hidden)]
+    pub __field_24: [u8; 4],
     pub unknown_28: [u8; 68],
     /// +0x6C `undefined4`, ctor store
-    pub field_6C: u32,
+    #[doc(hidden)]
+    pub __field_6C: [u8; 4],
     pub unknown_70: [u8; 68],
     /// +0xB4 `undefined4`, ctor store
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     pub unknown_B8: [u8; 68],
     /// +0xFC `undefined4`, ctor store
-    pub field_FC: u32,
+    #[doc(hidden)]
+    pub __field_FC: [u8; 4],
     pub unknown_100: [u8; 68],
     /// +0x144 `undefined4`, ctor store
-    pub field_144: u32,
+    #[doc(hidden)]
+    pub __field_144: [u8; 4],
     pub unknown_148: [u8; 68],
     /// +0x18C `undefined4`, ctor store
-    pub field_18C: u32,
+    #[doc(hidden)]
+    pub __field_18C: [u8; 4],
     pub unknown_190: [u8; 68],
     /// +0x1D4 `undefined4`, ctor store
-    pub field_1D4: u32,
+    #[doc(hidden)]
+    pub __field_1D4: [u8; 4],
     pub unknown_1D8: [u8; 68],
     /// +0x21C `undefined4`, ctor store
-    pub field_21C: u32,
+    #[doc(hidden)]
+    pub __field_21C: [u8; 4],
     pub unknown_220: [u8; 68],
     /// +0x264 `undefined4`, ctor store
-    pub field_264: u32,
+    #[doc(hidden)]
+    pub __field_264: [u8; 4],
     pub unknown_268: [u8; 68],
     /// +0x2AC `undefined4`, ctor store
-    pub field_2AC: u32,
+    #[doc(hidden)]
+    pub __field_2AC: [u8; 4],
     pub unknown_2B0: [u8; 68],
     /// +0x2F4 `undefined4`, ctor store
-    pub field_2F4: u32,
+    #[doc(hidden)]
+    pub __field_2F4: [u8; 4],
     pub unknown_2F8: [u8; 68],
     /// +0x33C `undefined4`, ctor store
-    pub field_33C: u32,
+    #[doc(hidden)]
+    pub __field_33C: [u8; 4],
     pub unknown_340: [u8; 68],
     /// +0x384 `undefined4`, ctor store
-    pub field_384: u32,
+    #[doc(hidden)]
+    pub __field_384: [u8; 4],
     pub unknown_388: [u8; 68],
     /// +0x3CC `undefined4`, ctor store
-    pub field_3CC: u32,
+    #[doc(hidden)]
+    pub __field_3CC: [u8; 4],
     pub unknown_3D0: [u8; 68],
     /// +0x414 `undefined4`, ctor store
-    pub field_414: u32,
+    #[doc(hidden)]
+    pub __field_414: [u8; 4],
     pub unknown_418: [u8; 68],
     /// +0x45C `undefined4`, ctor store
-    pub field_45C: u32,
+    #[doc(hidden)]
+    pub __field_45C: [u8; 4],
     pub unknown_460: [u8; 68],
     /// +0x4A4 `undefined4`, ctor store
-    pub field_4A4: u32,
+    #[doc(hidden)]
+    pub __field_4A4: [u8; 4],
     pub unknown_4A8: [u8; 68],
     /// +0x4EC `undefined4`, ctor store
-    pub field_4EC: u32,
+    #[doc(hidden)]
+    pub __field_4EC: [u8; 4],
     pub unknown_4F0: [u8; 68],
     /// +0x534 `undefined4`, ctor store
-    pub field_534: u32,
+    #[doc(hidden)]
+    pub __field_534: [u8; 4],
     pub unknown_538: [u8; 68],
     /// +0x57C `undefined4`, ctor store
-    pub field_57C: u32,
+    #[doc(hidden)]
+    pub __field_57C: [u8; 4],
     pub unknown_580: [u8; 68],
     /// +0x5C4 `undefined4`, ctor store
-    pub field_5C4: u32,
+    #[doc(hidden)]
+    pub __field_5C4: [u8; 4],
     pub unknown_5C8: [u8; 68],
     /// +0x60C `undefined4`, ctor store
-    pub field_60C: u32,
+    #[doc(hidden)]
+    pub __field_60C: [u8; 4],
     pub unknown_610: [u8; 68],
     /// +0x654 `undefined4`, ctor store
-    pub field_654: u32,
+    #[doc(hidden)]
+    pub __field_654: [u8; 4],
     pub unknown_658: [u8; 68],
     /// +0x69C `undefined4`, ctor store
-    pub field_69C: u32,
+    #[doc(hidden)]
+    pub __field_69C: [u8; 4],
     pub unknown_6A0: [u8; 68],
     /// +0x6E4 `undefined4`, ctor store
-    pub field_6E4: u32,
+    #[doc(hidden)]
+    pub __field_6E4: [u8; 4],
     pub unknown_6E8: [u8; 68],
     /// +0x72C `undefined4`, ctor store
-    pub field_72C: u32,
+    #[doc(hidden)]
+    pub __field_72C: [u8; 4],
     pub unknown_730: [u8; 68],
     /// +0x774 `undefined4`, ctor store
-    pub field_774: u32,
+    #[doc(hidden)]
+    pub __field_774: [u8; 4],
     pub unknown_778: [u8; 68],
     /// +0x7BC `undefined4`, ctor store
-    pub field_7BC: u32,
+    #[doc(hidden)]
+    pub __field_7BC: [u8; 4],
     pub unknown_7C0: [u8; 68],
     /// +0x804 `undefined4`, ctor store
-    pub field_804: u32,
+    #[doc(hidden)]
+    pub __field_804: [u8; 4],
     pub unknown_808: [u8; 68],
     /// +0x84C `undefined4`, ctor store
-    pub field_84C: u32,
+    #[doc(hidden)]
+    pub __field_84C: [u8; 4],
     pub unknown_850: [u8; 68],
     /// +0x894 `undefined4`, ctor store
-    pub field_894: u32,
+    #[doc(hidden)]
+    pub __field_894: [u8; 4],
     pub unknown_898: [u8; 68],
     /// +0x8DC `undefined4`, ctor store
-    pub field_8DC: u32,
+    #[doc(hidden)]
+    pub __field_8DC: [u8; 4],
     pub unknown_8E0: [u8; 68],
     /// +0x924 `undefined4`, ctor store
-    pub field_924: u32,
+    #[doc(hidden)]
+    pub __field_924: [u8; 4],
     pub unknown_928: [u8; 68],
     /// +0x96C `undefined4`, ctor store
-    pub field_96C: u32,
+    #[doc(hidden)]
+    pub __field_96C: [u8; 4],
     pub unknown_970: [u8; 68],
     /// +0x9B4 `undefined4`, ctor store
-    pub field_9B4: u32,
+    #[doc(hidden)]
+    pub __field_9B4: [u8; 4],
     pub unknown_9B8: [u8; 68],
     /// +0x9FC `undefined4`, ctor store
-    pub field_9FC: u32,
+    #[doc(hidden)]
+    pub __field_9FC: [u8; 4],
     pub unknown_A00: [u8; 68],
     /// +0xA44 `undefined4`, ctor store
-    pub field_A44: u32,
+    #[doc(hidden)]
+    pub __field_A44: [u8; 4],
     pub unknown_A48: [u8; 68],
     /// +0xA8C `undefined4`, ctor store
-    pub field_A8C: u32,
+    #[doc(hidden)]
+    pub __field_A8C: [u8; 4],
     pub unknown_A90: [u8; 68],
     /// +0xAD4 `undefined4`, ctor store
-    pub field_AD4: u32,
+    #[doc(hidden)]
+    pub __field_AD4: [u8; 4],
     pub unknown_AD8: [u8; 68],
     /// +0xB1C `undefined4`, ctor store
-    pub field_B1C: u32,
+    #[doc(hidden)]
+    pub __field_B1C: [u8; 4],
     pub unknown_B20: [u8; 68],
     /// +0xB64 `undefined4`, ctor store
-    pub field_B64: u32,
+    #[doc(hidden)]
+    pub __field_B64: [u8; 4],
     pub unknown_B68: [u8; 68],
     /// +0xBAC `undefined4`, ctor store
-    pub field_BAC: u32,
+    #[doc(hidden)]
+    pub __field_BAC: [u8; 4],
     pub unknown_BB0: [u8; 68],
     /// +0xBF4 `undefined4`, ctor store
-    pub field_BF4: u32,
+    #[doc(hidden)]
+    pub __field_BF4: [u8; 4],
     pub unknown_BF8: [u8; 68],
     /// +0xC3C `undefined4`, ctor store
-    pub field_C3C: u32,
+    #[doc(hidden)]
+    pub __field_C3C: [u8; 4],
     pub unknown_C40: [u8; 68],
     /// +0xC84 `undefined4`, ctor store
-    pub field_C84: u32,
+    #[doc(hidden)]
+    pub __field_C84: [u8; 4],
     pub unknown_C88: [u8; 68],
     /// +0xCCC `undefined4`, ctor store
-    pub field_CCC: u32,
+    #[doc(hidden)]
+    pub __field_CCC: [u8; 4],
     pub unknown_CD0: [u8; 68],
     /// +0xD14 `undefined4`, ctor store
-    pub field_D14: u32,
+    #[doc(hidden)]
+    pub __field_D14: [u8; 4],
     pub unknown_D18: [u8; 68],
     /// +0xD5C `undefined4`, ctor store
-    pub field_D5C: u32,
+    #[doc(hidden)]
+    pub __field_D5C: [u8; 4],
     pub unknown_D60: [u8; 68],
     /// +0xDA4 `undefined4`, ctor store
-    pub field_DA4: u32,
+    #[doc(hidden)]
+    pub __field_DA4: [u8; 4],
     pub unknown_DA8: [u8; 68],
     /// +0xDEC `undefined4`, ctor store
-    pub field_DEC: u32,
+    #[doc(hidden)]
+    pub __field_DEC: [u8; 4],
     pub unknown_DF0: [u8; 68],
     /// +0xE34 `undefined4`, ctor store
-    pub field_E34: u32,
+    #[doc(hidden)]
+    pub __field_E34: [u8; 4],
     pub unknown_E38: [u8; 68],
     /// +0xE7C `undefined4`, ctor store
-    pub field_E7C: u32,
+    #[doc(hidden)]
+    pub __field_E7C: [u8; 4],
     pub unknown_E80: [u8; 68],
     /// +0xEC4 `undefined4`, ctor store
-    pub field_EC4: u32,
+    #[doc(hidden)]
+    pub __field_EC4: [u8; 4],
     pub unknown_EC8: [u8; 68],
     /// +0xF0C `undefined4`, ctor store
-    pub field_F0C: u32,
+    #[doc(hidden)]
+    pub __field_F0C: [u8; 4],
     pub unknown_F10: [u8; 68],
     /// +0xF54 `undefined4`, ctor store
-    pub field_F54: u32,
+    #[doc(hidden)]
+    pub __field_F54: [u8; 4],
     pub unknown_F58: [u8; 68],
     /// +0xF9C `undefined4`, ctor store
-    pub field_F9C: u32,
+    #[doc(hidden)]
+    pub __field_F9C: [u8; 4],
     pub unknown_FA0: [u8; 68],
     /// +0xFE4 `undefined4`, ctor store
-    pub field_FE4: u32,
+    #[doc(hidden)]
+    pub __field_FE4: [u8; 4],
     pub unknown_FE8: [u8; 68],
     /// +0x102C `undefined4`, ctor store
-    pub field_102C: u32,
+    #[doc(hidden)]
+    pub __field_102C: [u8; 4],
     pub unknown_1030: [u8; 68],
     /// +0x1074 `undefined4`, ctor store
-    pub field_1074: u32,
+    #[doc(hidden)]
+    pub __field_1074: [u8; 4],
     pub unknown_1078: [u8; 68],
     /// +0x10BC `undefined4`, ctor store
-    pub field_10BC: u32,
+    #[doc(hidden)]
+    pub __field_10BC: [u8; 4],
     pub unknown_10C0: [u8; 68],
     /// +0x1104 `undefined4`, ctor store
-    pub field_1104: u32,
+    #[doc(hidden)]
+    pub __field_1104: [u8; 4],
     pub unknown_1108: [u8; 68],
     /// +0x114C `undefined4`, ctor store
-    pub field_114C: u32,
+    #[doc(hidden)]
+    pub __field_114C: [u8; 4],
     pub unknown_1150: [u8; 68],
     /// +0x1194 `undefined4`, ctor store
-    pub field_1194: u32,
+    #[doc(hidden)]
+    pub __field_1194: [u8; 4],
     pub unknown_1198: [u8; 68],
     /// +0x11DC `undefined4`, ctor store
-    pub field_11DC: u32,
+    #[doc(hidden)]
+    pub __field_11DC: [u8; 4],
     pub unknown_11E0: [u8; 80],
     /// +0x1230 `undefined4`, ctor store
     pub field_1230: u32,
@@ -5023,15 +5726,19 @@ pub struct BSSmallBlockAllocator {
     /// +0x1238 `undefined8`, ctor store
     pub field_1238: u64,
     /// +0x1240 `undefined8`, ctor store
-    pub field_1240: u64,
+    #[doc(hidden)]
+    pub __field_1240: [u8; 8],
     /// +0x1248 `undefined8`, ctor store
     pub field_1248: u64,
     /// +0x1250 `undefined8`, ctor store
-    pub field_1250: u64,
+    #[doc(hidden)]
+    pub __field_1250: [u8; 8],
     /// +0x1258 `undefined8`, ctor store
-    pub field_1258: u64,
+    #[doc(hidden)]
+    pub __field_1258: [u8; 8],
     /// +0x1260 `undefined4`, ctor store
-    pub field_1260: u32,
+    #[doc(hidden)]
+    pub __field_1260: [u8; 4],
     /// +0x1264 `undefined1`, ctor store
     pub field_1264: u8,
     pub unknown_1265: [u8; 3],
@@ -5039,109 +5746,115 @@ pub struct BSSmallBlockAllocator {
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_FC) == 0xFC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_144) == 0x144);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_18C) == 0x18C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1D4) == 0x1D4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_21C) == 0x21C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_264) == 0x264);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_2AC) == 0x2AC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_2F4) == 0x2F4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_33C) == 0x33C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_384) == 0x384);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_3CC) == 0x3CC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_414) == 0x414);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_45C) == 0x45C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_4A4) == 0x4A4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_4EC) == 0x4EC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_534) == 0x534);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_57C) == 0x57C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_5C4) == 0x5C4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_60C) == 0x60C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_654) == 0x654);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_69C) == 0x69C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_6E4) == 0x6E4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_72C) == 0x72C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_774) == 0x774);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_7BC) == 0x7BC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_804) == 0x804);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_84C) == 0x84C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_894) == 0x894);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_8DC) == 0x8DC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_924) == 0x924);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_96C) == 0x96C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_9B4) == 0x9B4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_9FC) == 0x9FC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_A44) == 0xA44);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_A8C) == 0xA8C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_AD4) == 0xAD4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_B1C) == 0xB1C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_B64) == 0xB64);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_BAC) == 0xBAC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_BF4) == 0xBF4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_C3C) == 0xC3C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_C84) == 0xC84);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_CCC) == 0xCCC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_D14) == 0xD14);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_D5C) == 0xD5C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_DA4) == 0xDA4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_DEC) == 0xDEC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_E34) == 0xE34);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_E7C) == 0xE7C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_EC4) == 0xEC4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_F0C) == 0xF0C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_F54) == 0xF54);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_F9C) == 0xF9C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_FE4) == 0xFE4);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_102C) == 0x102C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1074) == 0x1074);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_10BC) == 0x10BC);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1104) == 0x1104);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_114C) == 0x114C);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1194) == 0x1194);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_11DC) == 0x11DC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_6C) == 0x6C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_FC) == 0xFC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_144) == 0x144);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_18C) == 0x18C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1D4) == 0x1D4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_21C) == 0x21C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_264) == 0x264);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_2AC) == 0x2AC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_2F4) == 0x2F4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_33C) == 0x33C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_384) == 0x384);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_3CC) == 0x3CC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_414) == 0x414);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_45C) == 0x45C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_4A4) == 0x4A4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_4EC) == 0x4EC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_534) == 0x534);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_57C) == 0x57C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_5C4) == 0x5C4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_60C) == 0x60C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_654) == 0x654);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_69C) == 0x69C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_6E4) == 0x6E4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_72C) == 0x72C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_774) == 0x774);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_7BC) == 0x7BC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_804) == 0x804);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_84C) == 0x84C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_894) == 0x894);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_8DC) == 0x8DC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_924) == 0x924);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_96C) == 0x96C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_9B4) == 0x9B4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_9FC) == 0x9FC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_A44) == 0xA44);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_A8C) == 0xA8C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_AD4) == 0xAD4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_B1C) == 0xB1C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_B64) == 0xB64);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_BAC) == 0xBAC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_BF4) == 0xBF4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_C3C) == 0xC3C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_C84) == 0xC84);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_CCC) == 0xCCC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_D14) == 0xD14);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_D5C) == 0xD5C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_DA4) == 0xDA4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_DEC) == 0xDEC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_E34) == 0xE34);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_E7C) == 0xE7C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_EC4) == 0xEC4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_F0C) == 0xF0C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_F54) == 0xF54);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_F9C) == 0xF9C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_FE4) == 0xFE4);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_102C) == 0x102C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1074) == 0x1074);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_10BC) == 0x10BC);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1104) == 0x1104);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_114C) == 0x114C);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1194) == 0x1194);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_11DC) == 0x11DC);
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1230) == 0x1230);
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1238) == 0x1238);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1240) == 0x1240);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1240) == 0x1240);
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1248) == 0x1248);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1250) == 0x1250);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1258) == 0x1258);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1260) == 0x1260);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1250) == 0x1250);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1258) == 0x1258);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, __field_1260) == 0x1260);
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocator, field_1264) == 0x1264);
 
 /// `BSSmallBlockAllocatorUtil::UserPoolBase`: size >= 0x38 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: field field_30.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSmallBlockAllocatorUtil__UserPoolBase {
     /// +0x0 `vtbl:BSSmallBlockAllocatorUtil::UserPoolBase:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSmallBlockAllocatorUtil__UserPoolBase_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     /// +0x30 `undefined4`, ctor store
-    pub field_30: u32,
+    #[doc(hidden)]
+    pub __field_30: [u8; 4],
     pub unknown_34: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(BSSmallBlockAllocatorUtil__UserPoolBase, __field_30) == 0x30);
 
 /// `BSSocket`: size 0x10 (exact, low).
 /// Evidence: lower bound field field_8 meets upper bound first own field of BSSocketServer at 0x10 (soft).
@@ -5212,7 +5925,7 @@ const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerDBManager, field_40) =
 /// `BSSpeedSamplerModifier`: size >= 0x118 (lower bound); partial, the struct stops at the lower bound; primary base `hkbModifier`.
 /// Evidence: field field_114.
 /// Bases: `hkbModifier`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSpeedSamplerModifier {
     /// +0x0 `vtbl:BSSpeedSamplerModifier:0`, rtti
     #[doc(hidden)]
@@ -5287,26 +6000,36 @@ pub struct BSSpeedSamplerModifier {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5345,16 +6068,16 @@ const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_94) ==
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSSpeedSamplerModifier, __field_114) == 0x114);
 
 /// `BSSphereConstructor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSShapeConstructor`.
 /// Evidence: vptr at 0x0.
@@ -5474,7 +6197,8 @@ pub struct BSStream {
     /// +0x230 `undefined4`, base NiStream
     pub field_230: u32,
     /// +0x234 `undefined4`, base NiStream
-    pub field_234: u32,
+    #[doc(hidden)]
+    pub __field_234: [u8; 4],
     /// +0x238 `undefined8`, base NiStream
     pub m_NiTLargePrimitiveArray_238: u64,
     /// +0x240 `undefined8`, base NiStream
@@ -5568,7 +6292,7 @@ const _: () = assert!(core::mem::offset_of!(BSStream, m_NiTLargeObjectArray_218)
 const _: () = assert!(core::mem::offset_of!(BSStream, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(BSStream, field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(BSStream, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(BSStream, field_234) == 0x234);
+const _: () = assert!(core::mem::offset_of!(BSStream, __field_234) == 0x234);
 const _: () = assert!(core::mem::offset_of!(BSStream, m_NiTLargePrimitiveArray_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(BSStream, field_240) == 0x240);
 const _: () = assert!(core::mem::offset_of!(BSStream, field_248) == 0x248);
@@ -5644,7 +6368,7 @@ const _: () = assert!(core::mem::offset_of!(BSStringPool__IterationCallback, __v
 /// `BSStripPSysData`: size 0xC0 (exact, medium); primary base `NiPSysData`.
 /// Evidence: runtime: 0xC0 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiPSysData`@0x0, `NiParticlesData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSStripPSysData {
     /// +0x0 `vtbl:BSStripPSysData:0`, rtti
     #[doc(hidden)]
@@ -5705,7 +6429,8 @@ pub struct BSStripPSysData {
     /// +0x98 `undefined8`, base NiPSysData
     pub field_98: u64,
     /// +0xA0 `undefined4`, base NiPSysData
-    pub field_A0: u32,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 4],
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
@@ -5748,7 +6473,7 @@ const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSStripPSysData, __field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(BSStripPSysData, field_B8) == 0xB8);
@@ -5902,7 +6627,7 @@ const _: () = assert!(core::mem::offset_of!(BSStripParticleSystem, field_192) ==
 /// `BSSubIndexLandTriShape`: size 0x180 (exact, medium); primary base `BSSubIndexTriShape`.
 /// Evidence: allocation sites (medium): {'384': 1}.
 /// Bases: `BSSubIndexTriShape`@0x0, `BSTriShape`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSubIndexLandTriShape {
     /// +0x0 `vtbl:BSSubIndexLandTriShape:0`, rtti
     #[doc(hidden)]
@@ -5980,7 +6705,8 @@ pub struct BSSubIndexLandTriShape {
     /// +0x160 `undefined8`, base BSSubIndexTriShape
     pub field_160: u64,
     /// +0x168 `undefined4`, base BSSubIndexTriShape
-    pub field_168: u32,
+    #[doc(hidden)]
+    pub __field_168: [u8; 4],
     pub unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, base BSSubIndexTriShape
     pub field_170: u16,
@@ -6025,14 +6751,14 @@ const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, type_) == 0x
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_15A) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, __field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_178) == 0x178);
 
 /// `BSSubIndexTriShape`: size 0x178 (exact, medium); primary base `BSTriShape`.
 /// Evidence: runtime: 0x178 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSTriShape`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSubIndexTriShape {
     /// +0x0 `vtbl:BSSubIndexTriShape:0`, rtti
     #[doc(hidden)]
@@ -6110,7 +6836,8 @@ pub struct BSSubIndexTriShape {
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
     /// +0x168 `undefined4`, ctor store (widths [4, 8])
-    pub field_168: u32,
+    #[doc(hidden)]
+    pub __field_168: [u8; 4],
     pub unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, ctor store
     pub field_170: u16,
@@ -6153,13 +6880,13 @@ const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, type_) == 0x150)
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_15A) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, __field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_170) == 0x170);
 
 /// `BSSynchronizedClipGenerator`: size >= 0x130 (lower bound); partial, the struct stops at the lower bound; primary base `hkbGenerator`.
 /// Evidence: field field_12C.
 /// Bases: `hkbGenerator`@0x0, `hkbNode`@0x0, `hkbBindable`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSynchronizedClipGenerator {
     /// +0x0 `vtbl:BSSynchronizedClipGenerator:0`, rtti
     #[doc(hidden)]
@@ -6234,19 +6961,26 @@ pub struct BSSynchronizedClipGenerator {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 8],
     /// +0xD0 `undefined1[16]`, ctor store
     pub field_D0: [u8; 16],
@@ -6257,9 +6991,11 @@ pub struct BSSynchronizedClipGenerator {
     /// +0x100 `undefined1[16]`, ctor store
     pub field_100: [u8; 16],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     /// +0x118 `undefined8`, ctor store
     pub field_118: u64,
     /// +0x120 `undefined8`, ctor store
@@ -6311,19 +7047,19 @@ const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_9
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_C4) == 0xC4);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_D0) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_E0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_F0) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, __field_114) == 0x114);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_118) == 0x118);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_120) == 0x120);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator, field_128) == 0x128);
@@ -6352,7 +7088,7 @@ const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbDefa
 /// `BSSynchronizedClipGenerator::hkbSynchronizedAnimationScene`: size >= 0x118 (lower bound, upper bound 0x18); partial, the struct stops at the lower bound; primary base `hkReferencedObject`.
 /// Evidence: lower field field_114; upper derived BSSynchronizedClipGenerator::hkbDefaultSynchronizedScene size 0x18 at 0x0.
 /// Bases: `hkReferencedObject`@0x0, `hkBaseObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene {
     /// +0x0 `vtbl:BSSynchronizedClipGenerator::hkbSynchronizedAnimationScene:0`, rtti
     #[doc(hidden)]
@@ -6425,26 +7161,36 @@ pub struct BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene {
     /// +0xA0 `undefined4`, base hkBaseObject
     pub field_A0: u32,
     /// +0xA4 `undefined4`, base hkBaseObject
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined8`, base hkBaseObject
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined4`, base hkBaseObject
-    pub field_B0: u32,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 4],
     /// +0xB4 `undefined4`, base hkBaseObject
-    pub field_B4: u32,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 4],
     /// +0xB8 `undefined8`, base hkBaseObject
-    pub field_B8: u64,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 8],
     /// +0xC0 `undefined4`, base hkBaseObject
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, base hkBaseObject
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     pub unknown_C8: [u8; 64],
     /// +0x108 `undefined8`, base hkBaseObject
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, base hkBaseObject
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined4`, base hkBaseObject
-    pub field_114: u32,
+    #[doc(hidden)]
+    pub __field_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6482,16 +7228,16 @@ const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSync
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_A4) == 0xA4);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_C4) == 0xC4);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSSynchronizedClipGenerator__hkbSynchronizedAnimationScene, __field_114) == 0x114);
 
 /// `BSSynchronizedClipGeneratorUtils::FindEventFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
@@ -6640,56 +7386,68 @@ const _: () = assert!(core::mem::offset_of!(BSSystemUtilitiesStrings, __vftable)
 /// `BSSystemUtility`: size 0x128 (exact, low); primary base `BSTEventSink<BSGamepadEvent>`.
 /// Evidence: lower bound field field_121 meets upper bound first own field of BSWin32SystemUtility at 0x128 (soft).
 /// Bases: `BSTEventSource<BSSystemEvent>`@0x8, `BSTEventSink<BSGamepadEvent>`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSSystemUtility {
     /// +0x0 `vtbl:BSSystemUtility:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSystemUtility_vtable,
     /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSSystemEvent>
-    pub source_BSSystemEvent: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BSSystemEvent: [u8; 88],
     pub unknown_60: [u8; 128],
     /// +0xE0 `undefined8`, ctor store
-    pub field_E0: u64,
+    #[doc(hidden)]
+    pub __field_E0: [u8; 8],
     /// +0xE8 `undefined8`, ctor store
-    pub field_E8: u64,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 8],
     /// +0xF0 `undefined8`, ctor store
-    pub field_F0: u64,
+    #[doc(hidden)]
+    pub __field_F0: [u8; 8],
     /// +0xF8 `undefined8`, ctor store
-    pub field_F8: u64,
+    #[doc(hidden)]
+    pub __field_F8: [u8; 8],
     /// +0x100 `undefined8`, ctor store
-    pub field_100: u64,
+    #[doc(hidden)]
+    pub __field_100: [u8; 8],
     /// +0x108 `undefined8`, ctor store
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, ctor store
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     /// +0x114 `undefined1`, ctor store
-    pub field_114: u8,
+    #[doc(hidden)]
+    pub __field_114: [u8; 1],
     pub unknown_115: [u8; 3],
     /// +0x118 `undefined4`, ctor store
-    pub field_118: u32,
+    #[doc(hidden)]
+    pub __field_118: [u8; 4],
     /// +0x11C `undefined4`, ctor store
-    pub field_11C: u32,
+    #[doc(hidden)]
+    pub __field_11C: [u8; 4],
     pub unknown_120: [u8; 1],
     /// +0x121 `undefined1`, ctor store
-    pub field_121: u8,
+    #[doc(hidden)]
+    pub __field_121: [u8; 1],
     pub unknown_122: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSSystemUtility>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, source_BSSystemEvent) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_E8) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_114) == 0x114);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_11C) == 0x11C);
-const _: () = assert!(core::mem::offset_of!(BSSystemUtility, field_121) == 0x121);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __source_BSSystemEvent) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_F8) == 0xF8);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_100) == 0x100);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_114) == 0x114);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_118) == 0x118);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_11C) == 0x11C);
+const _: () = assert!(core::mem::offset_of!(BSSystemUtility, __field_121) == 0x121);
 
 /// `BSTAlignedHeapArrayAllocator<16>::AllocatorFunctor`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTArrayBase::IAllocatorFunctor`.
 /// Evidence: vptr at 0x0.
@@ -14170,29 +14928,29 @@ const _: () = assert!(core::mem::offset_of!(BSTEventSink_TESActorLocationChangeE
 
 /// `BSTEventSink<TESAmiiboForcedStopDetectionEvent>`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of SkyrimVM at 0x190.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSTEventSink_TESAmiiboForcedStopDetectionEvent {
     /// +0x0 `vtbl:BSTEventSink<TESAmiiboForcedStopDetectionEvent>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTEventSink_TESAmiiboForcedStopDetectionEvent_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTEventSink_TESAmiiboForcedStopDetectionEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTEventSink_TESAmiiboForcedStopDetectionEvent, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSTEventSink_TESAmiiboForcedStopDetectionEvent, ____vftable) == 0x0);
 
 /// `BSTEventSink<TESAmiiboTouchEvent>`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of SkyrimVM at 0x188.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSTEventSink_TESAmiiboTouchEvent {
     /// +0x0 `vtbl:BSTEventSink<TESAmiiboTouchEvent>:0`, rtti
     #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTEventSink_TESAmiiboTouchEvent_vtable,
+    pub ____vftable: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSTEventSink_TESAmiiboTouchEvent>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTEventSink_TESAmiiboTouchEvent, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(BSTEventSink_TESAmiiboTouchEvent, ____vftable) == 0x0);
 
 /// `BSTEventSink<TESBookReadEvent>`: size 0x8 (exact, medium).
 /// Evidence: lower bound vptr at 0x0 meets upper bound next base of SkyrimVM at 0x30.
@@ -15185,97 +15943,119 @@ pub struct BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrappe
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16_vtable,
     /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     pub unknown_18: [u8; 24],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     pub unknown_38: [u8; 24],
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     pub unknown_58: [u8; 24],
     /// +0x70 `undefined8`, ctor store
-    pub field_70: u64,
+    #[doc(hidden)]
+    pub __field_70: [u8; 8],
     pub unknown_78: [u8; 24],
     /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
+    #[doc(hidden)]
+    pub __field_90: [u8; 8],
     pub unknown_98: [u8; 24],
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     pub unknown_B8: [u8; 24],
     /// +0xD0 `undefined8`, ctor store
-    pub field_D0: u64,
+    #[doc(hidden)]
+    pub __field_D0: [u8; 8],
     pub unknown_D8: [u8; 24],
     /// +0xF0 `undefined8`, ctor store
-    pub field_F0: u64,
+    #[doc(hidden)]
+    pub __field_F0: [u8; 8],
     pub unknown_F8: [u8; 24],
     /// +0x110 `undefined8`, ctor store
-    pub field_110: u64,
+    #[doc(hidden)]
+    pub __field_110: [u8; 8],
     pub unknown_118: [u8; 24],
     /// +0x130 `undefined8`, ctor store
-    pub field_130: u64,
+    #[doc(hidden)]
+    pub __field_130: [u8; 8],
     pub unknown_138: [u8; 24],
     /// +0x150 `undefined8`, ctor store
-    pub field_150: u64,
+    #[doc(hidden)]
+    pub __field_150: [u8; 8],
     pub unknown_158: [u8; 24],
     /// +0x170 `undefined8`, ctor store
-    pub field_170: u64,
+    #[doc(hidden)]
+    pub __field_170: [u8; 8],
     pub unknown_178: [u8; 24],
     /// +0x190 `undefined8`, ctor store
-    pub field_190: u64,
+    #[doc(hidden)]
+    pub __field_190: [u8; 8],
     pub unknown_198: [u8; 24],
     /// +0x1B0 `undefined8`, ctor store
-    pub field_1B0: u64,
+    #[doc(hidden)]
+    pub __field_1B0: [u8; 8],
     pub unknown_1B8: [u8; 24],
     /// +0x1D0 `undefined8`, ctor store
-    pub field_1D0: u64,
+    #[doc(hidden)]
+    pub __field_1D0: [u8; 8],
     pub unknown_1D8: [u8; 24],
     /// +0x1F0 `undefined8`, ctor store
-    pub field_1F0: u64,
+    #[doc(hidden)]
+    pub __field_1F0: [u8; 8],
     pub unknown_1F8: [u8; 24],
     /// +0x210 `undefined8`, ctor store
-    pub field_210: u64,
+    #[doc(hidden)]
+    pub __field_210: [u8; 8],
     pub unknown_218: [u8; 8],
     /// +0x220 `undefined4`, ctor store
-    pub field_220: u32,
+    #[doc(hidden)]
+    pub __field_220: [u8; 4],
     /// +0x224 `undefined8`, ctor store
-    pub field_224: u64,
+    #[doc(hidden)]
+    pub __field_224: [u8; 8],
     /// +0x22C `undefined4`, ctor store
-    pub field_22C: u32,
+    #[doc(hidden)]
+    pub __field_22C: [u8; 4],
     /// +0x230 `undefined8`, ctor store
-    pub field_230: u64,
+    #[doc(hidden)]
+    pub __field_230: [u8; 8],
     pub unknown_238: [u8; 384],
     /// +0x3B8 `undefined8`, ctor store
-    pub field_3B8: u64,
+    #[doc(hidden)]
+    pub __field_3B8: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_F0) == 0xF0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_150) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_190) == 0x190);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_1F0) == 0x1F0);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_210) == 0x210);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_220) == 0x220);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_224) == 0x224);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_22C) == 0x22C);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, field_3B8) == 0x3B8);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_90) == 0x90);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_F0) == 0xF0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_130) == 0x130);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_150) == 0x150);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_170) == 0x170);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_190) == 0x190);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_1B0) == 0x1B0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_1D0) == 0x1D0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_1F0) == 0x1F0);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_210) == 0x210);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_220) == 0x220);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_224) == 0x224);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_22C) == 0x22C);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_230) == 0x230);
+const _: () = assert!(core::mem::offset_of!(BSTStaticFreeList_ActorMovementMessageMap_16__RawMessageHandlerWrapperType_16, __field_3B8) == 0x3B8);
 
 /// `BSTStaticFreeList<BSScript::Internal::FunctionMessage,1024>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTFreeList<BSScript::Internal::FunctionMessage>`.
 /// Evidence: vptr at 0x0.
@@ -15383,20 +16163,24 @@ pub struct BSTaskManager {
     pub field_34: u64,
     pub unknown_3C: [u8; 4],
     /// +0x40 `class:BSTEventSource`, RTTI base BSTEventSource<BSTaskManagerWaitAction>
-    pub source_BSTaskManagerWaitAction: crate::BSTEventSource,
+    #[doc(hidden)]
+    pub __source_BSTaskManagerWaitAction: [u8; 88],
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined4`, ctor store
-    pub field_A0: u32,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 4],
     /// +0xA4 `undefined4`, ctor store
-    pub field_A4: u32,
+    #[doc(hidden)]
+    pub __field_A4: [u8; 4],
     /// +0xA8 `undefined4`, ctor store
     pub field_A8: u32,
     pub unknown_AC: [u8; 4],
     /// +0xB0 `undefined8`, ctor store
     pub field_B0: u64,
     /// +0xB8 `undefined4`, ctor store
-    pub field_B8: u32,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 4],
     pub unknown_BC: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -15409,13 +16193,13 @@ const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(BSTaskManager, source_BSTaskManagerWaitAction) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSTaskManager, __source_BSTaskManagerWaitAction) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_A4) == 0xA4);
+const _: () = assert!(core::mem::offset_of!(BSTaskManager, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(BSTaskManager, __field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_B0) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSTaskManager, field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(BSTaskManager, __field_B8) == 0xB8);
 
 /// `BSTaskManagerThread`: size 0x70 (exact, medium); primary base `BSTaskThread`.
 /// Evidence: runtime: 0x70 at 1 allocation sites.
@@ -15643,7 +16427,7 @@ const _: () = assert!(core::mem::offset_of!(BSTempEffectDebris, field_41) == 0x4
 /// `BSTempEffectGeometryDecal`: size >= 0xB8 (lower bound); partial, the struct stops at the lower bound; primary base `BSTempEffect`.
 /// Evidence: field field_B0.
 /// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSTempEffectGeometryDecal {
     /// +0x0 `vtbl:BSTempEffectGeometryDecal:0`, rtti
     #[doc(hidden)]
@@ -15675,37 +16459,46 @@ pub struct BSTempEffectGeometryDecal {
     /// +0x50 `undefined8`, ctor store
     pub field_50: u64,
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
+    #[doc(hidden)]
+    pub __field_60: [u8; 8],
     /// +0x68 `float`, ctor store
-    pub field_68: f32,
+    #[doc(hidden)]
+    pub __field_68: [u8; 4],
     /// +0x6C `float`, ctor store
     pub field_6C: f32,
     /// +0x70 `float`, ctor store
-    pub field_70: f32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `float`, ctor store
     pub field_74: f32,
     /// +0x78 `float`, ctor store
     pub field_78: f32,
     /// +0x7C `float`, ctor store
-    pub field_7C: f32,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 4],
     /// +0x80 `float`, ctor store
     pub field_80: f32,
     /// +0x84 `float`, ctor store
     pub field_84: f32,
     /// +0x88 `float`, ctor store
-    pub field_88: f32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     /// +0x8C `float`, ctor store (widths [4, 8])
-    pub field_8C: f32,
+    #[doc(hidden)]
+    pub __field_8C: [u8; 4],
     /// +0x90 `float`, ctor store
     pub field_90: f32,
     /// +0x94 `float`, ctor store (widths [4, 8])
-    pub field_94: f32,
+    #[doc(hidden)]
+    pub __field_94: [u8; 4],
     /// +0x98 `float`, ctor store
     pub field_98: f32,
     /// +0x9C `float`, ctor store (widths [4, 8])
-    pub field_9C: f32,
+    #[doc(hidden)]
+    pub __field_9C: [u8; 4],
     /// +0xA0 `float`, ctor store
     pub field_A0: f32,
     /// +0xA4 `float`, ctor store
@@ -15732,22 +16525,22 @@ const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_38)
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_7C) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_8C) == 0x8C);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_94) == 0x94);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_9C) == 0x9C);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, __field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectGeometryDecal, field_A8) == 0xA8);
@@ -15784,54 +16577,74 @@ pub struct BSTempEffectParticle {
     /// +0x38 `undefined8`, ctor store
     pub field_38: u64,
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
+    #[doc(hidden)]
+    pub __field_60: [u8; 8],
     /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `float`, ctor store
-    pub field_74: f32,
+    #[doc(hidden)]
+    pub __field_74: [u8; 4],
     /// +0x78 `float`, ctor store
-    pub field_78: f32,
+    #[doc(hidden)]
+    pub __field_78: [u8; 4],
     /// +0x7C `float`, ctor store
-    pub field_7C: f32,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 4],
     /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    #[doc(hidden)]
+    pub __field_80: [u8; 4],
     pub unknown_84: [u8; 4],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     pub unknown_90: [u8; 36],
     /// +0xB4 `undefined8`, ctor store
-    pub field_B4: u64,
+    #[doc(hidden)]
+    pub __field_B4: [u8; 8],
     /// +0xBC `undefined4`, ctor store
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     pub unknown_C0: [u8; 8],
     /// +0xC8 `undefined8`, ctor store
-    pub field_C8: u64,
+    #[doc(hidden)]
+    pub __field_C8: [u8; 8],
     /// +0xD0 `undefined4`, ctor store
-    pub field_D0: u32,
+    #[doc(hidden)]
+    pub __field_D0: [u8; 4],
     /// +0xD4 `undefined1`, ctor store
-    pub field_D4: u8,
+    #[doc(hidden)]
+    pub __field_D4: [u8; 1],
     pub unknown_D5: [u8; 3],
     /// +0xD8 `undefined4`, ctor store
-    pub field_D8: u32,
+    #[doc(hidden)]
+    pub __field_D8: [u8; 4],
     /// +0xDC `undefined4`, ctor store
-    pub field_DC: u32,
+    #[doc(hidden)]
+    pub __field_DC: [u8; 4],
     /// +0xE0 `undefined1`, ctor store
-    pub field_E0: u8,
+    #[doc(hidden)]
+    pub __field_E0: [u8; 1],
     pub unknown_E1: [u8; 3],
     /// +0xE4 `undefined4`, ctor store
-    pub field_E4: u32,
+    #[doc(hidden)]
+    pub __field_E4: [u8; 4],
     /// +0xE8 `undefined1`, ctor store
-    pub field_E8: u8,
+    #[doc(hidden)]
+    pub __field_E8: [u8; 1],
     pub unknown_E9: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -15846,28 +16659,28 @@ const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_24) == 0
 const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_78) == 0x78);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_BC) == 0xBC);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_C8) == 0xC8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_D0) == 0xD0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_D4) == 0xD4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_D8) == 0xD8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_DC) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_E0) == 0xE0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_E4) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, field_E8) == 0xE8);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_B4) == 0xB4);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_C8) == 0xC8);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_D0) == 0xD0);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_D4) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_D8) == 0xD8);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_DC) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_E0) == 0xE0);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_E4) == 0xE4);
+const _: () = assert!(core::mem::offset_of!(BSTempEffectParticle, __field_E8) == 0xE8);
 
 /// `BSTempEffectSPG`: size >= 0x50 (lower bound); partial, the struct stops at the lower bound; primary base `BSTempEffect`.
 /// Evidence: field field_48.
@@ -15916,639 +16729,4 @@ const _: () = assert!(core::mem::offset_of!(BSTempEffectSPG, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectSPG, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectSPG, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSTempEffectSPG, field_48) == 0x48);
-
-/// `BSTempEffectSimpleDecal`: size 0x1E0 (exact, medium); primary base `BSTempEffect`.
-/// Evidence: allocation sites (medium): {'480': 1}.
-/// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSTempEffectSimpleDecal {
-    /// +0x0 `vtbl:BSTempEffectSimpleDecal:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTempEffectSimpleDecal_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, base BSTempEffect
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base BSTempEffect
-    pub field_20: u32,
-    /// +0x24 `undefined1`, base BSTempEffect
-    pub field_24: u8,
-    pub unknown_25: [u8; 3],
-    /// +0x28 `undefined4`, base BSTempEffect
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined2`, ctor store
-    pub field_30: u16,
-    /// +0x32 `undefined1`, ctor store
-    pub field_32: u8,
-    pub unknown_33: [u8; 5],
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
-    pub unknown_44: [u8; 4],
-    /// +0x48 `undefined8`, ctor store
-    pub field_48: u64,
-    /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
-    /// +0x54 `undefined1`, ctor store (widths [1, 2])
-    pub field_54: u8,
-    /// +0x55 `undefined1`, ctor store
-    pub field_55: u8,
-    /// +0x56 `undefined1`, ctor store
-    pub field_56: u8,
-    pub unknown_57: [u8; 1],
-    /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
-    /// +0x60 `undefined8`, ctor store
-    pub field_60: u64,
-    /// +0x68 `float`, ctor store (widths [4, 4])
-    pub field_68: f32,
-    /// +0x6C `float`, ctor store (widths [4, 4])
-    pub field_6C: f32,
-    /// +0x70 `float`, ctor store (widths [4, 4])
-    pub field_70: f32,
-    /// +0x74 `float`, ctor store (widths [4, 4])
-    pub field_74: f32,
-    /// +0x78 `float`, ctor store (widths [4, 4])
-    pub field_78: f32,
-    /// +0x7C `float`, ctor store (widths [4, 4])
-    pub field_7C: f32,
-    /// +0x80 `float`, ctor store
-    pub field_80: f32,
-    /// +0x84 `float`, ctor store
-    pub field_84: f32,
-    /// +0x88 `float`, ctor store
-    pub field_88: f32,
-    /// +0x8C `float`, ctor store
-    pub field_8C: f32,
-    /// +0x90 `float`, ctor store
-    pub field_90: f32,
-    /// +0x94 `float`, ctor store
-    pub field_94: f32,
-    pub unknown_98: [u8; 96],
-    /// +0xF8 `undefined8`, ctor store
-    pub field_F8: u64,
-    /// +0x100 `undefined8`, ctor store
-    pub field_100: u64,
-    /// +0x108 `undefined8`, ctor store
-    pub field_108: u64,
-    /// +0x110 `undefined8`, ctor store
-    pub field_110: u64,
-    /// +0x118 `undefined8`, ctor store
-    pub field_118: u64,
-    /// +0x120 `undefined8`, ctor store
-    pub field_120: u64,
-    /// +0x128 `undefined8`, ctor store
-    pub field_128: u64,
-    /// +0x130 `undefined8`, ctor store
-    pub field_130: u64,
-    /// +0x138 `undefined8`, ctor store
-    pub field_138: u64,
-    /// +0x140 `undefined8`, ctor store
-    pub field_140: u64,
-    /// +0x148 `undefined8`, ctor store
-    pub field_148: u64,
-    /// +0x150 `undefined8`, ctor store
-    pub field_150: u64,
-    pub unknown_158: [u8; 16],
-    /// +0x168 `undefined4`, ctor store
-    pub field_168: u32,
-    pub unknown_16C: [u8; 4],
-    /// +0x170 `undefined8`, ctor store
-    pub field_170: u64,
-    /// +0x178 `undefined8`, ctor store
-    pub field_178: u64,
-    /// +0x180 `undefined4`, ctor store
-    pub field_180: u32,
-    /// +0x184 `undefined1[16]`, ctor store
-    pub field_184: [u8; 16],
-    /// +0x194 `undefined1[16]`, ctor store
-    pub field_194: [u8; 16],
-    /// +0x1A4 `undefined4`, ctor store
-    pub field_1A4: u32,
-    /// +0x1A8 `undefined4`, ctor store
-    pub field_1A8: u32,
-    /// +0x1AC `undefined4`, ctor store
-    pub field_1AC: u32,
-    /// +0x1B0 `undefined4`, ctor store
-    pub field_1B0: u32,
-    /// +0x1B4 `undefined4`, ctor store
-    pub field_1B4: u32,
-    /// +0x1B8 `undefined1`, ctor store (widths [1, 2])
-    pub field_1B8: u8,
-    /// +0x1B9 `undefined1`, ctor store
-    pub field_1B9: u8,
-    pub unknown_1BA: [u8; 2],
-    /// +0x1BC `undefined4`, ctor store
-    pub field_1BC: u32,
-    /// +0x1C0 `undefined1`, ctor store (widths [1, 2])
-    pub field_1C0: u8,
-    /// +0x1C1 `undefined1`, ctor store
-    pub field_1C1: u8,
-    /// +0x1C2 `undefined1`, ctor store
-    pub field_1C2: u8,
-    pub unknown_1C3: [u8; 1],
-    /// +0x1C4 `undefined4`, ctor store
-    pub field_1C4: u32,
-    /// +0x1C8 `double`, ctor store
-    pub field_1C8: f64,
-    /// +0x1D0 `undefined4`, ctor store
-    pub field_1D0: u32,
-    /// +0x1D4 `undefined1`, ctor store (widths [1, 2])
-    pub field_1D4: u8,
-    /// +0x1D5 `undefined1`, ctor store
-    pub field_1D5: u8,
-    /// +0x1D6 `undefined1`, ctor store
-    pub field_1D6: u8,
-    pub unknown_1D7: [u8; 1],
-    /// +0x1D8 `undefined4`, ctor store
-    pub field_1D8: u32,
-    pub unknown_1DC: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTempEffectSimpleDecal>() == 0x1E0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_32) == 0x32);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_55) == 0x55);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_56) == 0x56);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_74) == 0x74);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_8C) == 0x8C);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_94) == 0x94);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_F8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_100) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_110) == 0x110);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_118) == 0x118);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_120) == 0x120);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_128) == 0x128);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_130) == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_140) == 0x140);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_148) == 0x148);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_150) == 0x150);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_168) == 0x168);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_170) == 0x170);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_178) == 0x178);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_180) == 0x180);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_184) == 0x184);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_194) == 0x194);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1A4) == 0x1A4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1A8) == 0x1A8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1AC) == 0x1AC);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1B0) == 0x1B0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1B4) == 0x1B4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1B8) == 0x1B8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1B9) == 0x1B9);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1BC) == 0x1BC);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1C0) == 0x1C0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1C1) == 0x1C1);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1C2) == 0x1C2);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1C4) == 0x1C4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1C8) == 0x1C8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1D0) == 0x1D0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1D4) == 0x1D4);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1D5) == 0x1D5);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1D6) == 0x1D6);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectSimpleDecal, field_1D8) == 0x1D8);
-
-/// `BSTempEffectWeaponBlood`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `BSTempEffect`.
-/// Evidence: field field_38.
-/// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSTempEffectWeaponBlood {
-    /// +0x0 `vtbl:BSTempEffectWeaponBlood:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTempEffectWeaponBlood_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, base BSTempEffect
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base BSTempEffect
-    pub field_20: u32,
-    /// +0x24 `undefined1`, base BSTempEffect
-    pub field_24: u8,
-    pub unknown_25: [u8; 3],
-    /// +0x28 `undefined4`, base BSTempEffect
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
-    /// +0x38 `undefined4`, ctor store
-    pub field_38: u32,
-    pub unknown_3C: [u8; 4],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTempEffectWeaponBlood, field_38) == 0x38);
-
-/// `BSTempNode`: size >= 0x128 (lower bound); partial, the struct stops at the lower bound; primary base `NiNode`.
-/// Evidence: field field_124.
-/// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSTempNode {
-    /// +0x0 `vtbl:BSTempNode:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTempNode_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
-    pub controllers: *mut crate::NiTimeController,
-    /// +0x20 `ptr:NiExtraData`, base NiObjectNET, semantic; heap array of NiExtraData*, sorted ascending by name pointer (high)
-    pub extraData: *mut crate::NiExtraData,
-    /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
-    pub extraDataCount: u16,
-    /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
-    pub parent: *mut crate::NiNode,
-    /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
-    pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
-    pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
-    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
-    pub world: crate::NiTransform,
-    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
-    pub previousWorld: crate::NiTransform,
-    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
-    pub worldBound: crate::NiBound,
-    /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
-    pub flags: u32,
-    /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
-    pub unknownF8: u64,
-    /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
-    pub fadeAmount: f32,
-    /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
-    /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
-    pub unknown108: u8,
-    /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
-    /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
-    pub children: [u8; 24],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSTempNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, controllers) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, extraData) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, extraDataCapacity) == 0x2A);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, parent) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, parentIndex) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, local) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, world) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, previousWorld) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, worldBound) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, flags) == 0xF4);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, unknownF8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, previousWorldFrame) == 0x104);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, flags2) == 0x109);
-const _: () = assert!(core::mem::offset_of!(BSTempNode, children) == 0x110);
-
-/// `BSTempNodeManager`: size 0x130 (exact, medium); primary base `NiNode`.
-/// Evidence: runtime: 0x130 at 1 allocation sites; agrees with the static allocation sites.
-/// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSTempNodeManager {
-    /// +0x0 `vtbl:BSTempNodeManager:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTempNodeManager_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
-    pub name: crate::BSFixedString,
-    /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
-    pub controllers: *mut crate::NiTimeController,
-    /// +0x20 `ptr:NiExtraData`, base NiObjectNET, semantic; heap array of NiExtraData*, sorted ascending by name pointer (high)
-    pub extraData: *mut crate::NiExtraData,
-    /// +0x28 `undefined2`, base NiObjectNET, semantic; number of extra data entries (high)
-    pub extraDataCount: u16,
-    /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
-    pub extraDataCapacity: u16,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
-    pub parent: *mut crate::NiNode,
-    /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
-    pub parentIndex: u32,
-    pub unknown_3C: [u8; 4],
-    /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
-    pub collisionObject: *mut crate::NiCollisionObject,
-    /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
-    pub local: crate::NiTransform,
-    /// +0x7C `class:NiTransform`, base NiAVObject, semantic; world transform: rotation +0x7c, translation +0xa0, scale +0xac (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x7c, translation +0xa0, scale +0xac; NiSkinInstance::UpdatePalette 0x1015800 reads +0x7c..+0xac as a NiTransform for NiTransform::Multiply; NiCamera::UpdateWorldBound 0xef1950 reads translate +0xa0
-    pub world: crate::NiTransform,
-    /// +0xB0 `class:NiTransform`, base NiAVObject, semantic; copy of the world transform taken once per render frame before the update (same 0x34 layout as local/world) (high); retyped undefined1 -> class:NiTransform: meaning: same 0x34 layout as local/world (snapshot of world)
-    pub previousWorld: crate::NiTransform,
-    /// +0xE4 `class:NiBound`, base NiAVObject, semantic; bounding sphere: centre +0xe4, radius +0xf0 (high); retyped undefined1 -> class:NiBound: meaning: centre +0xe4, radius +0xf0; NiCamera::UpdateWorldBound 0xef1950 writes the centre; BSGeometry::UpdateWorldBound uses NiTransform::ApplyToBound 0xefcf20
-    pub worldBound: crate::NiBound,
-    /// +0xF4 `undefined4`, base NiAVObject, semantic; flag word: bit 0 hidden (no culling process visits the object), bit 11 skip the frustum test, bit 12 skipped unless the culler allows it (+0x11e; bit 20 then skips it outright), bit 26 set when a culler last accepted it; see the flag rows (high)
-    pub flags: u32,
-    /// +0xF8 `undefined8`, base NiAVObject, semantic; zeroed by the ctor; not read in this track's bodies (low)
-    pub unknownF8: u64,
-    /// +0x100 `float`, base NiAVObject, semantic; multiplicative fade, 1.0 by default; BSFadeNode skips its subtree when it is 0 (medium)
-    pub fadeAmount: f32,
-    /// +0x104 `undefined4`, base NiAVObject, semantic; g_RenderFrameCounter at the last previousWorld snapshot (high)
-    pub previousWorldFrame: u32,
-    /// +0x108 `undefined1`, base NiAVObject, semantic; zeroed by the ctor (low)
-    pub unknown108: u8,
-    /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
-    pub flags2: u8,
-    pub unknown_10A: [u8; 6],
-    /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
-    pub children: [u8; 24],
-    pub unknown_128: [u8; 8],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTempNodeManager>() == 0x130);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, controllers) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, extraData) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, extraDataCount) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, extraDataCapacity) == 0x2A);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, parent) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, parentIndex) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, collisionObject) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, local) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, world) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, previousWorld) == 0xB0);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, worldBound) == 0xE4);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, flags) == 0xF4);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, unknownF8) == 0xF8);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, fadeAmount) == 0x100);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, previousWorldFrame) == 0x104);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, unknown108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, flags2) == 0x109);
-const _: () = assert!(core::mem::offset_of!(BSTempNodeManager, children) == 0x110);
-
-/// `BSTerrainEffect`: size 0xB8 (exact, high); primary base `BSTempEffect`.
-/// Evidence: allocation sites (high): {'184': 4}.
-/// Bases: `BSTempEffect`@0x0, `NiObject`@0x0, `NiRefObject`@0x0, `BSTEventSink<PositionPlayerEvent>`@0x30.
-#[repr(C)]
-pub struct BSTerrainEffect {
-    /// +0x0 `vtbl:BSTerrainEffect:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTerrainEffect_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 4],
-    /// +0x10 `float`, base BSTempEffect
-    pub field_10: f32,
-    pub unknown_14: [u8; 4],
-    /// +0x18 `undefined8`, base BSTempEffect
-    pub field_18: u64,
-    /// +0x20 `undefined4`, base BSTempEffect
-    pub field_20: u32,
-    /// +0x24 `undefined1`, base BSTempEffect
-    pub field_24: u8,
-    pub unknown_25: [u8; 3],
-    /// +0x28 `undefined4`, base BSTempEffect
-    pub field_28: u32,
-    pub unknown_2C: [u8; 4],
-    /// +0x30 `vtbl:BSTerrainEffect:30`, rtti
-    #[doc(hidden)]
-    pub __vftable_30: *const crate::raw::vtables::BSTerrainEffect_vtable_30,
-    /// +0x38 `undefined1[16]`, ctor store
-    pub field_38: [u8; 16],
-    /// +0x48 `float`, ctor store
-    pub field_48: f32,
-    /// +0x4C `float`, ctor store
-    pub field_4C: f32,
-    /// +0x50 `float`, ctor store
-    pub field_50: f32,
-    pub unknown_54: [u8; 20],
-    /// +0x68 `undefined4`, ctor store
-    pub field_68: u32,
-    pub unknown_6C: [u8; 20],
-    /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
-    pub unknown_84: [u8; 4],
-    /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
-    /// +0x90 `undefined8`, ctor store
-    pub field_90: u64,
-    /// +0x98 `undefined8`, ctor store
-    pub field_98: u64,
-    /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
-    /// +0xA8 `undefined4`, ctor store
-    pub field_A8: u32,
-    pub unknown_AC: [u8; 4],
-    /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTerrainEffect>() == 0xB8);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, __vftable_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_88) == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_90) == 0x90);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(BSTerrainEffect, field_B0) == 0xB0);
-
-/// `BSTextureDB::QueuedHandles`: size 0x88 (exact, high); primary base `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>`.
-/// Evidence: runtime: 0x88 at 2 allocation sites; agrees with the static allocation sites.
-/// Bases: `BSQueuedResourceCollection<BSResource::EntryDB<BSTextureDB::DBTraits>,2>`@0x0, `BSQueuedResourceCollectionBase`@0x0, `QueuedFile`@0x0, `IOTask`@0x0, `BSTask`@0x0, `BSResource::IEntryDB::PostFlushNotify`@0x38.
-#[repr(C)]
-pub struct BSTextureDB__QueuedHandles {
-    /// +0x0 `vtbl:BSTextureDB::QueuedHandles:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTextureDB__QueuedHandles_vtable,
-    /// +0x8 `undefined4`, base QueuedFile
-    pub field_8: u32,
-    /// +0xC `undefined4`, base QueuedFile
-    pub field_C: u32,
-    /// +0x10 `undefined8`, base QueuedFile
-    pub field_10: u64,
-    /// +0x18 `undefined4`, base QueuedFile
-    pub field_18: u32,
-    pub unknown_1C: [u8; 4],
-    /// +0x20 `undefined8`, base QueuedFile
-    pub field_20: u64,
-    /// +0x28 `undefined8`, base QueuedFile
-    pub field_28: u64,
-    /// +0x30 `undefined4`, base QueuedFile
-    pub field_30: u32,
-    pub unknown_34: [u8; 4],
-    /// +0x38 `vtbl:BSTextureDB::QueuedHandles:38`, rtti
-    #[doc(hidden)]
-    pub __vftable_38: *const crate::raw::vtables::BSTextureDB__QueuedHandles_vtable_38,
-    /// +0x40 `undefined4`, base BSResource::IEntryDB::PostFlushNotify
-    pub field_40: u32,
-    pub unknown_44: [u8; 4],
-    /// +0x48 `undefined8`, base BSResource::IEntryDB::PostFlushNotify
-    pub field_48: u64,
-    /// +0x50 `undefined4`, base BSQueuedResourceCollectionBase
-    pub field_50: u32,
-    /// +0x54 `undefined2`, base BSQueuedResourceCollectionBase
-    pub field_54: u16,
-    pub unknown_56: [u8; 2],
-    /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
-    pub unknown_5C: [u8; 44],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTextureDB__QueuedHandles>() == 0x88);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, __vftable_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB__QueuedHandles, field_58) == 0x58);
-
-/// `BSTextureDB::_anon_4306A7DC::NiTextureDBForwarded`: size 0x8 (exact, medium); primary base `ITextureDB`.
-/// Evidence: runtime: 0x8 at 1 allocation sites.
-/// Bases: `ITextureDB`@0x0.
-#[repr(C)]
-pub struct BSTextureDB___anon_4306A7DC__NiTextureDBForwarded {
-    /// +0x0 `vtbl:BSTextureDB::_anon_4306A7DC::NiTextureDBForwarded:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTextureDB___anon_4306A7DC__NiTextureDBForwarded_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTextureDB___anon_4306A7DC__NiTextureDBForwarded>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSTextureDB___anon_4306A7DC__NiTextureDBForwarded, __vftable) == 0x0);
-
-/// `BSTextureSet`: size 0x58 (exact, medium); primary base `NiObject`.
-/// Evidence: lower bound BSShaderTextureSet (size 0x58 at 0x0) adds no fields or bases meets upper bound derived BSShaderTextureSet size 0x58 at 0x0.
-/// Bases: `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
-pub struct BSTextureSet {
-    /// +0x0 `vtbl:BSTextureSet:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSTextureSet_vtable,
-    /// +0x8 `undefined4`, base NiObject
-    pub field_8: u32,
-    pub unknown_C: [u8; 76],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSTextureSet>() == 0x58);
-const _: () = assert!(core::mem::offset_of!(BSTextureSet, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTextureSet, field_8) == 0x8);
-
-/// `BSThread`: size 0x50 (exact, medium).
-/// Evidence: lower bound _anon_D351A927::VMInitThread (size 0x50 at 0x0) adds no fields or bases meets upper bound derived _anon_D351A927::VMInitThread size 0x50 at 0x0.
-#[repr(C)]
-pub struct BSThread {
-    /// +0x0 `vtbl:BSThread:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSThread_vtable,
-    pub unknown_8: [u8; 40],
-    /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
-    /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
-    /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
-    /// +0x48 `undefined1`, ctor store
-    pub field_48: u8,
-    pub unknown_49: [u8; 7],
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<BSThread>() == 0x50);
-const _: () = assert!(core::mem::offset_of!(BSThread, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSThread, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSThread, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSThread, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSThread, field_48) == 0x48);
-
-/// `BSThreadEvent::_anon_939FB6BB::Source`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound.
-/// Evidence: field source_BSThreadEvent_ThreadEvent.
-/// Bases: `BSTEventSource<BSThreadEvent::ThreadEvent>`@0x8, `BSTSingletonSDM<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer>`@0x60, `BSTSingletonSDMBase<BSTSDMTraits<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>_>_>`@0x60, `BSTSDMTraits<BSThreadEvent::_anon_939FB6BB::Source,BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>_>`@0x60, `BSTSingletonSDMOpStaticBuffer<BSThreadEvent::_anon_939FB6BB::Source>`@0x61.
-#[repr(C)]
-pub struct BSThreadEvent___anon_939FB6BB__Source {
-    /// +0x0 `vtbl:BSThreadEvent::_anon_939FB6BB::Source:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::BSThreadEvent___anon_939FB6BB__Source_vtable,
-    /// +0x8 `class:BSTEventSource`, RTTI base BSTEventSource<BSThreadEvent::ThreadEvent>
-    pub source_BSThreadEvent_ThreadEvent: crate::BSTEventSource,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(core::mem::offset_of!(BSThreadEvent___anon_939FB6BB__Source, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSThreadEvent___anon_939FB6BB__Source, source_BSThreadEvent_ThreadEvent) == 0x8);
 

@@ -4843,18 +4843,22 @@ pub const BSSkinnedDecalTriShape__vdtor: u64 = 70665;
 pub const BSSkinnedDecalTriShape__vfunc_54: u64 = 70668;
 /// `BSSkyShader::NiBoneMatrixSetterI_vdtor` at 0x1552ed8 (slot_propagation, medium); signature (high): `undefined NiBoneMatrixSetterI_vdtor(BSSkyShader * this)`
 pub const BSSkyShader__NiBoneMatrixSetterI_vdtor: u64 = 107424;
+/// `BSSkyShader::RestoreTechnique` at 0x1552190 (semantic, high); signature (untiered): `undefined RestoreTechnique(void)`; semantic: the sky shader's technique restore (vtable slot 3): puts back the render state SetupTechnique changed: depth mode 3 (LESS_EQUAL with write) at g_RenderStateCache +0x88, and the +0xa8/+0xb0/+0xb4/+0xa0 states (dirty bits 0x80, 0x100, 0x40) (high); signature `void (BSSkyShader* this)`
+pub const BSSkyShader__RestoreTechnique: u64 = 107400;
+/// `BSSkyShader::RestoreTechnique` as a function pointer type (high).
+pub type BSSkyShader__RestoreTechnique_fn = unsafe extern "C" fn(this: *mut crate::BSSkyShader);
+/// `BSSkyShader::SetupTechnique` at 0x1552280 (semantic, high); signature (untiered): `ulonglong SetupTechnique(BSSkyShader * this, uint param_1)`; semantic: the sky shader's technique setup (vtable slot 2): technique ids 0x5c00005e..0x5c000064 and 0x5c006072 map to nine sky techniques (0..8), whose vertex/pixel shader pair LookupAndBindShaderPair 0x1579120 binds; sets depth mode 1 (LESS_EQUAL test, no write) in g_RenderStateCache +0x88, then per-technique state through a jump table. The sky's vertex shaders output (x, y, w, w) from a CPU-built matrix in cb2 (rows 0, 1, 3): depth is the viewport's maximum whatever the projection (high); signature `bool (BSSkyShader* this, u32 technique)`
+pub const BSSkyShader__SetupTechnique: u64 = 107402;
+/// `BSSkyShader::SetupTechnique` as a function pointer type (high).
+pub type BSSkyShader__SetupTechnique_fn = unsafe extern "C" fn(this: *mut crate::BSSkyShader, technique: u32) -> bool;
 /// `BSSkyShader::ctor` at 0x15520e0 (layout_inference, high); signature (high): `BSSkyShader * ctor(BSSkyShader * this)`
 pub const BSSkyShader__ctor: u64 = 107398;
 /// `BSSkyShader::vdtor` at 0x1552ef0 (layout_inference, medium); signature (low): `BSSkyShader * vdtor(BSSkyShader * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSSkyShader__vdtor: u64 = 107425;
-/// `BSSkyShader::vfunc_2` at 0x1552280 (rtti, high); signature (low): `ulonglong vfunc_2(BSSkyShader * this, uint param_1)`
-pub const BSSkyShader__vfunc_2: u64 = 107402;
 /// `BSSkyShader::vfunc_2_sub0` at 0x158d440 (callgraph, medium); signature (untiered): `undefined4 vfunc_2_sub0(undefined4 param_1)`
 pub const BSSkyShader__vfunc_2_sub0: u64 = 108900;
 /// `BSSkyShader::vfunc_2_sub1` at 0x158d450 (callgraph, medium); signature (untiered): `undefined4 vfunc_2_sub1(undefined4 param_1)`
 pub const BSSkyShader__vfunc_2_sub1: u64 = 108901;
-/// `BSSkyShader::vfunc_3` at 0x1552190 (rtti, high); signature (low): `undefined vfunc_3(void)`
-pub const BSSkyShader__vfunc_3: u64 = 107400;
 /// `BSSkyShader::vfunc_6` at 0x15525b0 (rtti, high); signature (low): `undefined vfunc_6(BSSkyShader * this, longlong param_1)`
 pub const BSSkyShader__vfunc_6: u64 = 107403;
 /// `BSSkyShader::vfunc_7` at 0x1552d00 (rtti, high); signature (low): `undefined vfunc_7(BSSkyShader * this, longlong param_1)`
@@ -6311,9 +6315,3 @@ pub const BSTDerivedCreator_BGSProcedureOrbitExecState_IProcedureTreeExecState__
 pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vdtor: u64 = 28955;
 /// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_1` at 0x47cb30 (rtti, medium); signature (low): `BGSProcedureBase * vfunc_1(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
 pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_1: u64 = 28959;
-/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_2` at 0x47cbb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 * param_1)`
-pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_2: u64 = 28960;
-/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vdtor` at 0x458870 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vdtor: u64 = 27988;
-/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d70 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_1: u64 = 28061;

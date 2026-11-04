@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GetColorTransformMemberByName` at 0xda52e0 (decompiler, medium); signature (untiered): `undefined8 GetColorTransformMemberByName(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
+pub const GetColorTransformMemberByName: u64 = 85871;
+/// `GetColorTransformMembers` at 0xda5050 (decompiler, medium); signature (untiered): `undefined GetColorTransformMembers(longlong param_1, longlong param_2, longlong param_3)`
+pub const GetColorTransformMembers: u64 = 85869;
+/// `GetComImageMetadataFromFile` at 0x1026330 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromFile(longlong param_1, uint param_2, ulonglong * param_3)`
+pub const GetComImageMetadataFromFile: u64 = 77607;
 /// `GetComImageMetadataFromMemory` at 0x10261a0 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromMemory(longlong param_1, ulonglong param_2, uint param_3, ulonglong * param_4)`
 pub const GetComImageMetadataFromMemory: u64 = 77606;
 /// `GetCombatGrenadeBounceTime` at 0x4202f0 (decompiler, medium); signature (medium): `float GetCombatGrenadeBounceTime(void)`
@@ -9087,11 +9093,3 @@ pub const INISetting_fActorLODMin_LOD__init: u64 = 7570;
 pub const INISetting_fAimChaseLookingMult_Combat__atexit: u64 = 171360;
 /// `INISetting_fAimChaseLookingMult_Combat__init` at 0xa3ea0 (crt_init, medium); signature (high): `void INISetting_fAimChaseLookingMult_Combat__init(void)`
 pub const INISetting_fAimChaseLookingMult_Combat__init: u64 = 6164;
-/// `INISetting_fAimDownDegrees_Combat__atexit` at 0x179a740 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__atexit(void)`
-pub const INISetting_fAimDownDegrees_Combat__atexit: u64 = 171361;
-/// `INISetting_fAimDownDegrees_Combat__init` at 0xa3f20 (crt_init, medium); signature (high): `void INISetting_fAimDownDegrees_Combat__init(void)`
-pub const INISetting_fAimDownDegrees_Combat__init: u64 = 6165;
-/// `INISetting_fAimUpDegrees_Combat__atexit` at 0x179a790 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__atexit(void)`
-pub const INISetting_fAimUpDegrees_Combat__atexit: u64 = 171362;
-/// `INISetting_fAimUpDegrees_Combat__init` at 0xa3fa0 (crt_init, medium); signature (high): `void INISetting_fAimUpDegrees_Combat__init(void)`
-pub const INISetting_fAimUpDegrees_Combat__init: u64 = 6166;

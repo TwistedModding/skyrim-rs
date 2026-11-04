@@ -300,16 +300,6 @@ impl crate::bhkCompressedMeshShapeData {
     pub unsafe fn ctor(&self) -> *mut Self { unsafe { function!(79423, (*const Self) -> *mut Self)(core::ptr::from_ref(self)) } }
 }
 
-impl crate::bhkConvexShape {
-    /// `bhkConvexShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78700, rva 0x1083bd0).
-    /// `undefined dtor(bhkConvexShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78700, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
 impl crate::bhkConvexSweepShape {
     /// `bhkConvexSweepShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 79485, rva 0x10ac510).
     /// `undefined dtor(bhkConvexSweepShape * this)`
@@ -644,16 +634,6 @@ impl crate::bhkSimpleShapePhantom {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78777, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
-}
-
-impl crate::bhkSphereRepShape {
-    /// `bhkSphereRepShape::dtor` (decompiler signature, tier high; ledger layout_inference evidence, name high; id 78699, rva 0x1083b90).
-    /// `undefined dtor(bhkSphereRepShape * this)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self) -> u64 { unsafe { function!(78699, (*const Self) -> u64)(core::ptr::from_ref(self)) } }
 }
 
 impl crate::bhkSphereShape {

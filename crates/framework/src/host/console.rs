@@ -6,13 +6,13 @@
 //! "Set" button does; `capture [n]` writes the next overlay frame to `skyrim-runtime-extender-overlay.bmp`
 //! (`skyrim-runtime-extender-overlay-<n>.bmp`) in the SKSE log folder; `reload <n>`, `unload <n>` and `load <n>`
 //! do what plugin `n`'s buttons in the Plugins tab do and `rescan` what its "Rescan folder" does, at
-//! the next frame.
+//! the next frame; `support <n>` lists what each runtime lacks of what plugin `n` uses.
 
 use skyrim::input::{Arg, CommandContext, Param};
 use sre::ScriptParamType;
 
 use super::reload::{self, Request};
-use super::{NAME, hooks, alias, command_lines, filters, flush_settings, gui, interface, keys, plugins, sink_lines, skse_plugins};
+use super::{NAME, hooks, alias, command_lines, filters, flush_settings, gui, interface, keys, plugins, sink_lines, skse_plugins, support};
 use crate::hooks::{Hooks, PatchId, PatchState, SiteReport, SubscriptionId};
 
 /// How a site's entry looked at install and looks now, the module behind another module's patch,
@@ -38,6 +38,7 @@ fn gui_lines() -> Vec<String> {
     for (rank, r) in gui::plugin_rows().iter().enumerate() {
         let reason = if r.reason.is_empty() { String::new() } else { format!(": {}", r.reason) };
         lines.push(format!("plugin {rank}: {} {} ({}): {}{reason}", r.name, r.version, r.file, r.status));
+        lines.push(format!("plugin {rank} runs on: {}", support::per_runtime(&r.file)));
     }
     lines.push(format!("legacy plugins, loaded by {}:", gui::hosted_by()));
     for p in skse_plugins() {
@@ -110,12 +111,12 @@ fn ask(n: i32, word: &str, make: fn(String) -> Request) -> String {
     }
 }
 
-/// `SkyrimRs gui [n] | hooks | toggle <id> | keys | commands | bind <n> | capture [n] | reload <n> | unload <n> | load <n> | rescan`.
+/// `SkyrimRs gui [n] | hooks | toggle <id> | keys | commands | bind <n> | capture [n] | reload <n> | unload <n> | load <n> | rescan | support <n>`.
 pub(super) struct Command;
 
 impl skyrim::input::Command for Command {
     const NAME: &'static core::ffi::CStr = c"SkyrimRs";
-    const HELP: &'static core::ffi::CStr = c"skyrim-runtime-extender: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan";
+    const HELP: &'static core::ffi::CStr = c"skyrim-runtime-extender: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan, support <plugin number>";
     const PARAMS: &'static [Param] = &PARAMS;
 
     fn execute(context: &mut CommandContext<'_>) -> bool {
@@ -133,6 +134,10 @@ impl skyrim::input::Command for Command {
                 overlay::set_open(true);
                 gui_lines()
             }
+            [Arg::Str(what), Arg::Int(n)] if is(what, "support") => match usize::try_from(*n).ok().and_then(|n| gui::plugin_rows().into_iter().nth(n)) {
+                Some(row) => support::details(&row.file),
+                None => vec![format!("SkyrimRs: no plugin {n}")],
+            },
             [Arg::Str(what), ..] if is(what, "keys") => key_lines(),
             [Arg::Str(what), ..] if is(what, "commands") => command_lines(),
             [Arg::Str(what), Arg::Int(n)] if is(what, "bind") => {
@@ -168,7 +173,7 @@ impl skyrim::input::Command for Command {
                 reload::request(Request::Rescan);
                 vec!["SkyrimRs: rescanning the plugin folder at the next frame".to_owned()]
             }
-            _ => vec!["SkyrimRs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number> or rescan".to_owned()],
+            _ => vec!["SkyrimRs: gui [page], hooks, toggle <subscription id>, keys, commands, bind <key number>, capture [number], reload|unload|load <plugin number>, rescan or support <plugin number>".to_owned()],
         };
         flush_settings(Some(NAME));
         for line in lines {

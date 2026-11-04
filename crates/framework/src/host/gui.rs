@@ -16,7 +16,7 @@ use overlay::theme;
 
 use super::owned::Owned;
 use super::reload::{self, Request, Status};
-use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins};
+use super::{HOSTED_BY, NAME, keys, plugins, refused, skse_plugins, support};
 use crate::abi::{Record, Sink, read_sized, size};
 use crate::settings::{self, Setting, Value};
 use crate::ui::{RawEvent, RawFrameInput, RawFrameOutput, RawMesh, RawPlatformOutput, RawTexture, RawView, UiCallback, corners, raw_modifiers};
@@ -334,6 +334,8 @@ pub(super) struct PluginRow {
     pub reason: String,
     /// The plugin's state; `None` for a file the host did not load.
     pub state: Option<Status>,
+    pub runs_on: String,
+    pub runs_on_hover: String,
 }
 
 pub(super) fn plugin_rows() -> Vec<PluginRow> {
@@ -349,10 +351,15 @@ pub(super) fn plugin_rows() -> Vec<PluginRow> {
                 (Status::Running, 2) => ("Running, reloaded once".to_owned(), String::new()),
                 (Status::Running, n) => (format!("Running, reloaded {} times", n - 1), String::new()),
             };
-            PluginRow { name: p.name.clone(), version: p.version.clone(), file: p.file.clone(), status, reason, state: Some(state) }
+            let (runs_on, runs_on_hover) = support::summary(&p.file);
+            PluginRow { name: p.name.clone(), version: p.version.clone(), file: p.file.clone(), status, reason, state: Some(state), runs_on, runs_on_hover }
         })
         .collect();
-    rows.extend(refused().into_iter().map(|(file, reason)| PluginRow { name: String::new(), version: String::new(), file, status: "Not loaded".to_owned(), reason, state: None }));
+    rows.extend(refused().into_iter().map(|(file, reason)| {
+        let (runs_on, runs_on_hover) = support::summary(&file);
+        let reason = support::refused_here(&file).unwrap_or(reason);
+        PluginRow { name: String::new(), version: String::new(), file, status: "Not loaded".to_owned(), reason, state: None, runs_on, runs_on_hover }
+    }));
     rows
 }
 
@@ -502,7 +509,7 @@ fn plugins_tab(ui: &mut egui::Ui) {
         return;
     }
     egui::Grid::new("plugins").striped(true).spacing([36.0, 10.0]).show(ui, |ui| {
-        for h in ["Name", "Version", "File", "Status", ""] {
+        for h in ["Name", "Version", "File", "Runs on", "Status", ""] {
             ui.label(dim(h).small());
         }
         ui.end_row();
@@ -510,6 +517,10 @@ fn plugins_tab(ui: &mut egui::Ui) {
             ui.label(RichText::new(&r.name));
             ui.label(dim(r.version));
             ui.label(dim(r.file));
+            let runs_on = ui.label(dim(r.runs_on));
+            if !r.runs_on_hover.is_empty() {
+                runs_on.on_hover_text(r.runs_on_hover);
+            }
             let status = ui.label(if r.reason.is_empty() { RichText::new(r.status) } else { warn(ui, r.status) });
             if !r.reason.is_empty() {
                 status.on_hover_text(r.reason);

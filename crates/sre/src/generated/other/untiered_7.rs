@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `Papyrus::Actor::ShowGiftMenu_sub1` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54840, rva 0xa0c210).
-/// `undefined ShowGiftMenu_sub1(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__show_gift_menu_sub1(param_1: *mut i64) -> u64 { unsafe { function!(54840, (*mut i64) -> u64)(param_1) } }
-/// `Papyrus::Actor::StartCombat_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 36959, rva 0x668eb0).
-/// `undefined StartCombat_sub0(longlong param_1, longlong param_2, longlong param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn papyrus__actor__start_combat_sub0(param_1: i64, param_2: i64, param_3: i64) -> u64 { unsafe { function!(36959, (i64, i64, i64) -> u64)(param_1, param_2, param_3) } }
 /// `Papyrus::Actor::StartVampireFeed_sub0` (decompiler signature, tier untiered; ledger callgraph evidence, name medium; id 54012, rva 0x9e1560).
 /// `undefined StartVampireFeed_sub0(longlong param_1, longlong param_2, longlong param_3)`
 ///
@@ -13590,3 +13576,17 @@ pub unsafe fn remove_all_map_items_3(param_1: *mut i64) -> u64 { unsafe { functi
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn remove_all_map_items_4(param_1: *mut i64) -> u64 { unsafe { function!(19372, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllMapItems_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19370, rva 0x2d5c50).
+/// `undefined RemoveAllMapItems_5(longlong * param_1)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_map_items_5(param_1: *mut i64) -> u64 { unsafe { function!(19370, (*mut i64) -> u64)(param_1) } }
+/// `RemoveAllOpenHashMapKeyEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58256, rva 0xac5a20).
+/// `int RemoveAllOpenHashMapKeyEntries(longlong * param_1, longlong param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn remove_all_open_hash_map_key_entries(param_1: *mut i64, param_2: i64) -> i32 { unsafe { function!(58256, (*mut i64, i64) -> i32)(param_1, param_2) } }

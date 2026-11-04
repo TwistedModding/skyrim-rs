@@ -11,8 +11,6 @@ use std::ffi::CString;
 
 use sre::{BGSSoundCategory, SoundHandle, TESForm};
 
-/// `BGSMusicType` keeps its `BSIMusicType` interface here.
-const MUSIC_TYPE_INTERFACE: usize = 0x20;
 
 /// Released by the audio thread once the sound has played and stopped (the end of a one-shot, or a
 /// stop); the handle then reads invalid. Papyrus `Sound.Play` and the UI path build with it.
@@ -73,5 +71,5 @@ pub fn current_music() -> Option<&'static TESForm> {
     if current == 0 || current == core::ptr::from_ref(sre::g_no_music()) as usize {
         return None;
     }
-    unsafe { ((current - MUSIC_TYPE_INTERFACE) as *const TESForm).as_ref() }
+    unsafe { ((current - sre::base_offset!("BGSMusicType:BSIMusicType", 0x20)) as *const TESForm).as_ref() }
 }

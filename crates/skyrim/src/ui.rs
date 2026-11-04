@@ -29,7 +29,7 @@ pub type ShowHudMessageFn = fns::ShowHUDMessage_fn;
 
 /// `MenuTable::Find` (id 82135): the table is the UI singleton's `menuTable`; the out value is
 /// `{menu (one reference added), create}`.
-type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const sre::BSFixedString, out: *mut MenuTableValue) -> bool;
+type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const sre::BSFixedString, out: *mut *mut IMenu) -> bool;
 type ObjectInvokeFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut sre::GFxValue, name: *const c_char, args: *const sre::GFxValue, count: u32, is_display: bool) -> bool;
 type ObjectGetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut sre::GFxValue, is_display: bool) -> bool;
 type ObjectSetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const sre::GFxValue, is_display: bool) -> bool;
@@ -50,12 +50,6 @@ type MovieRelease = unsafe extern "C" fn(this: *mut GFxMovieView);
 /// carries it as a global and the generator emits no vtable for it.
 const MOVIE_VIEW_VTABLE: u64 = 242_614;
 
-#[repr(C)]
-struct MenuTableValue {
-    menu: *mut IMenu,
-    create: *const c_void,
-}
-
 /// The engine's own `IMenu` vtable, whose slots a mod's menu forwards to.
 struct MenuVtable([*const c_void; 9]);
 
@@ -66,7 +60,8 @@ fn engine_menu_vtable() -> &'static [*const c_void; 9] {
     static VTABLE: OnceLock<MenuVtable> = OnceLock::new();
     &VTABLE
         .get_or_init(|| {
-            let base = crate::reloc().address(vtables::IMenu_vtable::ID).expect("IMenu vtable id") as *const [*const c_void; 9];
+            sre::fixed_slots!("IMenu", 0x0, 0, 1, 2, 3, 4, 5, 6, 7, 8);
+            let base = crate::reloc().address(sre::id!(vtables::IMenu_vtable::ID)).expect("IMenu vtable id") as *const [*const c_void; 9];
             MenuVtable(unsafe { *base })
         })
         .0
@@ -91,7 +86,7 @@ fn create<F: Copy>(id: u64, detour: F) -> Result<hook::Hook<F>, hook::Error> {
 /// # Safety
 /// `detour` must call the trampoline and return normally; it runs on the main or loading thread every frame.
 pub unsafe fn hook_render_menu_stack(detour: RenderMenuStackFn) -> Result<hook::Hook<RenderMenuStackFn>, hook::Error> {
-    create(fns::RenderMenuStack, detour)
+    create(sre::id!(fns::RenderMenuStack), detour)
 }
 
 /// Creates, disabled, a detour on `UIMessageQueue::AddMessage` (id 13631); store it, then enable.
@@ -99,7 +94,7 @@ pub unsafe fn hook_render_menu_stack(detour: RenderMenuStackFn) -> Result<hook::
 /// # Safety
 /// As [`hook_render_menu_stack`]; called from several threads.
 pub unsafe fn hook_add_message(detour: AddMessageFn) -> Result<hook::Hook<AddMessageFn>, hook::Error> {
-    create(fns::UIMessageQueue__AddMessage, detour)
+    create(sre::id!(fns::UIMessageQueue__AddMessage), detour)
 }
 
 /// Creates, disabled, a detour on `ShowHUDMessage` (id 52933); store it, then enable.
@@ -107,7 +102,7 @@ pub unsafe fn hook_add_message(detour: AddMessageFn) -> Result<hook::Hook<AddMes
 /// # Safety
 /// As [`hook_render_menu_stack`].
 pub unsafe fn hook_show_hud_message(detour: ShowHudMessageFn) -> Result<hook::Hook<ShowHudMessageFn>, hook::Error> {
-    create(fns::ShowHUDMessage, detour)
+    create(sre::id!(fns::ShowHUDMessage), detour)
 }
 
 /// Queues a HUD notification (`ShowHUDMessage`, id 52933, the path behind `Debug.Notification`):
@@ -119,40 +114,7 @@ pub fn show_hud_message(text: &str, sound: Option<&str>, suppress_repeats: bool)
     unsafe { sre::show_hud_message(text.as_ptr(), sound.as_ref().map_or(core::ptr::null(), |s| s.as_ptr()), suppress_repeats) }
 }
 
-/// The kinds of `UIMessage` the queue carries, as the binary numbers them.
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u32)]
-pub enum MessageType {
-    Update = 0,
-    Show = 1,
-    /// Show for a menu that is already open.
-    Reshow = 2,
-    Hide = 3,
-    /// Hide and unload; the binary never queues it itself.
-    ForceHide = 4,
-    ScaleformEvent = 6,
-    UserEvent = 7,
-    InventoryUpdate = 8,
-    Kinect = 0xC,
-}
-
-impl MessageType {
-    #[must_use]
-    pub const fn from_raw(raw: u32) -> Option<Self> {
-        Some(match raw {
-            0 => Self::Update,
-            1 => Self::Show,
-            2 => Self::Reshow,
-            3 => Self::Hide,
-            4 => Self::ForceHide,
-            6 => Self::ScaleformEvent,
-            7 => Self::UserEvent,
-            8 => Self::InventoryUpdate,
-            0xC => Self::Kinect,
-            _ => return None,
-        })
-    }
-}
+pub use sre::UIMessageType as MessageType;
 
 pub trait UIMessageQueueExt {
     /// Queues a message for the menu registered under `menu` (`UIMessageQueue::AddMessage`,
@@ -168,15 +130,15 @@ pub trait UIMessageQueueExt {
 impl UIMessageQueueExt for UIMessageQueue {
     unsafe fn queue(&self, menu: &str, kind: MessageType, data: *mut sre::IUIMessageData) {
         let name = BSFixedString::new(menu);
-        self.add_message(name.raw(), kind as u32, unsafe { data.as_ref() });
+        self.add_message(name.raw(), kind.to_engine().expect("this message type does not exist on this runtime"), unsafe { data.as_ref() });
     }
 
     fn show(&self, menu: &str) {
-        unsafe { self.queue(menu, MessageType::Show, core::ptr::null_mut()) }
+        unsafe { UIMessageQueueExt::queue(self, menu, MessageType::show, core::ptr::null_mut()) }
     }
 
     fn hide(&self, menu: &str) {
-        unsafe { self.queue(menu, MessageType::Hide, core::ptr::null_mut()) }
+        unsafe { UIMessageQueueExt::queue(self, menu, MessageType::hide, core::ptr::null_mut()) }
     }
 }
 
@@ -270,12 +232,12 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
 
     fn hud(&self) -> Option<&HUDMenu> {
         let menu = self.menu("HUD Menu")?;
-        (crate::class_of(menu)?.id == vtables::HUDMenu_vtable::ID).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<HUDMenu>() })
+        (crate::class_of(menu)?.id == sre::id!(vtables::HUDMenu_vtable::ID)).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<HUDMenu>() })
     }
 
     fn race_sex_menu(&self) -> Option<&RaceSexMenu> {
         let menu = self.menu("RaceSex Menu")?;
-        (crate::class_of(menu)?.id == vtables::RaceSexMenu_vtable::ID).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<RaceSexMenu>() })
+        (crate::class_of(menu)?.id == sre::id!(vtables::RaceSexMenu_vtable::ID)).then(|| unsafe { &*core::ptr::from_ref(menu).cast::<RaceSexMenu>() })
     }
 
     fn register_menu<M: Menu>(&self, name: &str) {
@@ -301,12 +263,12 @@ impl RaceSexMenuExt for RaceSexMenu {
     }
 }
 
-fn find(ui: &EventSourceHolder_MenuOpenClose, name: &str) -> Option<MenuTableValue> {
+fn find(ui: &EventSourceHolder_MenuOpenClose, name: &str) -> Option<sre::MenuTableEntry> {
     let name = BSFixedString::new(name);
-    let mut value = MenuTableValue { menu: core::ptr::null_mut(), create: core::ptr::null() };
+    let mut value: sre::MenuTableEntry = unsafe { core::mem::zeroed() };
     let table = (&raw const ui.menuTable).cast_mut().cast();
-    let find: FindFn = unsafe { crate::engine_fn(fns::MenuTable__Find) };
-    unsafe { find(table, name.raw(), &raw mut value) }.then_some(value)
+    let find: FindFn = unsafe { crate::engine_fn(sre::id!(fns::MenuTable__Find)) };
+    unsafe { find(table, name.raw(), &raw mut value.menu) }.then_some(value)
 }
 
 /// The `IMenu` part of a menu of this mod's own, handed to the [`Menu`] callbacks.
@@ -525,62 +487,64 @@ fn movie_ptr(movie: &GFxMovieView) -> *mut GFxMovieView {
 impl GFxMovieViewExt for GFxMovieView {
     fn is_engine_view(&self) -> bool {
         let vtable = unsafe { *core::ptr::from_ref(self).cast::<usize>() };
-        crate::reloc().address(MOVIE_VIEW_VTABLE).is_ok_and(|v| v == vtable)
+        crate::reloc().address(sre::id!(MOVIE_VIEW_VTABLE)).is_ok_and(|v| v == vtable)
     }
 
     fn visible(&self) -> bool {
-        unsafe { movie_slot::<MovieGetVisible>(self, 9)(movie_ptr(self)) }
+        unsafe { movie_slot::<MovieGetVisible>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 9))(movie_ptr(self)) }
     }
 
     fn set_visible(&self, visible: bool) {
-        unsafe { movie_slot::<MovieSetVisible>(self, 8)(movie_ptr(self), visible) }
+        unsafe { movie_slot::<MovieSetVisible>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 8))(movie_ptr(self), visible) }
     }
 
     fn create_string(&self, text: &str) -> Value {
         let text = c_string(text);
         let mut out = Value::undefined();
-        unsafe { movie_slot::<MovieCreateString>(self, 11)(movie_ptr(self), out.as_mut_ptr(), text.as_ptr()) };
+        unsafe { movie_slot::<MovieCreateString>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 11))(movie_ptr(self), out.as_mut_ptr(), text.as_ptr()) };
         out
     }
 
     fn create_object(&self) -> Value {
         let mut out = Value::undefined();
-        unsafe { movie_slot::<MovieCreateObject>(self, 13)(movie_ptr(self), out.as_mut_ptr(), core::ptr::null(), core::ptr::null(), 0) };
+        unsafe { movie_slot::<MovieCreateObject>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 13))(movie_ptr(self), out.as_mut_ptr(), core::ptr::null(), core::ptr::null(), 0) };
         out
     }
 
     fn create_array(&self) -> Value {
         let mut out = Value::undefined();
-        unsafe { movie_slot::<MovieCreateArray>(self, 14)(movie_ptr(self), out.as_mut_ptr()) };
+        unsafe { movie_slot::<MovieCreateArray>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 14))(movie_ptr(self), out.as_mut_ptr()) };
         out
     }
 
     fn create_function<H: FunctionHandler>(&self, function: &'static Function<H>) -> Value {
+        sre::fixed_slots!("GFxFunctionHandler", 0x0, 0, 1);
+        assert!(sre::member_offset!("GFxFunctionHandler.refCount", 0x8) == 8, "GFxFunctionHandler's reference count moved");
         let mut out = Value::undefined();
-        unsafe { movie_slot::<MovieCreateFunction>(self, 15)(movie_ptr(self), out.as_mut_ptr(), function.as_ptr(), core::ptr::null_mut()) };
+        unsafe { movie_slot::<MovieCreateFunction>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 15))(movie_ptr(self), out.as_mut_ptr(), function.as_ptr(), core::ptr::null_mut()) };
         out
     }
 
     fn variable(&self, path: &str) -> Option<Value> {
         let path = c_string(path);
         let mut out = Value::undefined();
-        unsafe { movie_slot::<MovieGetVariable>(self, 17)(movie_ptr(self), out.as_mut_ptr(), path.as_ptr()) }.then_some(out)
+        unsafe { movie_slot::<MovieGetVariable>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 17))(movie_ptr(self), out.as_mut_ptr(), path.as_ptr()) }.then_some(out)
     }
 
     fn set_variable(&self, path: &str, value: &Value) -> bool {
         let path = c_string(path);
-        unsafe { movie_slot::<MovieSetVariable>(self, 16)(movie_ptr(self), path.as_ptr(), value.as_ptr(), 0) }
+        unsafe { movie_slot::<MovieSetVariable>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 16))(movie_ptr(self), path.as_ptr(), value.as_ptr(), 0) }
     }
 
     fn invoke(&self, path: &str, args: &[Value]) -> Option<Value> {
         let path = c_string(path);
         let mut out = Value::undefined();
         let count = u32::try_from(args.len()).expect("argument count");
-        unsafe { movie_slot::<MovieInvoke>(self, 23)(movie_ptr(self), path.as_ptr(), out.as_mut_ptr(), args.as_ptr().cast(), count) }.then_some(out)
+        unsafe { movie_slot::<MovieInvoke>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 23))(movie_ptr(self), path.as_ptr(), out.as_mut_ptr(), args.as_ptr().cast(), count) }.then_some(out)
     }
 
     unsafe fn release(&self) {
-        unsafe { movie_slot::<MovieRelease>(self, 69)(movie_ptr(self)) }
+        unsafe { movie_slot::<MovieRelease>(self, sre::slot_index!("NoRTTI_1A2ADE8", 0x0, 69))(movie_ptr(self)) }
     }
 }
 
@@ -715,21 +679,21 @@ impl Value {
     pub fn get_member(&self, name: &str) -> Option<Value> {
         let name = c_string(name);
         let mut out = Value::undefined();
-        let get: ObjectGetMemberFn = unsafe { crate::engine_fn(fns::GFxValue__ObjectInterface__GetMember) };
+        let get: ObjectGetMemberFn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__ObjectInterface__GetMember)) };
         self.object_call(|iface, data, display| unsafe { get(iface, data, name.as_ptr(), out.as_mut_ptr(), display) })?.then_some(out)
     }
 
     #[must_use]
     pub fn set_member(&self, name: &str, value: &Value) -> bool {
         let name = c_string(name);
-        let set: ObjectSetMemberFn = unsafe { crate::engine_fn(fns::GFxValue__ObjectInterface__SetMember) };
+        let set: ObjectSetMemberFn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__ObjectInterface__SetMember)) };
         self.object_call(|iface, data, display| unsafe { set(iface, data, name.as_ptr(), value.as_ptr(), display) }) == Some(true)
     }
 
     #[must_use]
     pub fn has_member(&self, name: &str) -> bool {
         let name = c_string(name);
-        let has: ObjectHasMemberFn = unsafe { crate::engine_fn(fns::GFxValue__ObjectInterface__HasMember) };
+        let has: ObjectHasMemberFn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__ObjectInterface__HasMember)) };
         self.object_call(|iface, data, display| unsafe { has(iface, data, name.as_ptr(), display) }) == Some(true)
     }
 
@@ -739,7 +703,7 @@ impl Value {
         let name = c_string(name);
         let count = u32::try_from(args.len()).expect("argument count");
         let mut out = Value::undefined();
-        let invoke: ObjectInvokeFn = unsafe { crate::engine_fn(fns::GFxValue__ObjectInterface__Invoke) };
+        let invoke: ObjectInvokeFn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__ObjectInterface__Invoke)) };
         self.object_call(|iface, data, display| unsafe { invoke(iface, data, out.as_mut_ptr(), name.as_ptr(), args.as_ptr().cast(), count, display) })?.then_some(out)
     }
 }
@@ -747,7 +711,7 @@ impl Value {
 impl Drop for Value {
     fn drop(&mut self) {
         if self.is_managed() {
-            let release: fns::GFxValue__ReleaseManaged_fn = unsafe { crate::engine_fn(fns::GFxValue__ReleaseManaged) };
+            let release: fns::GFxValue__ReleaseManaged_fn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__ReleaseManaged)) };
             unsafe { release(&raw mut self.0) };
         }
     }
@@ -755,7 +719,7 @@ impl Drop for Value {
 
 /// `GFxValue::Assign` (id 33582): add-ref and release as needed.
 unsafe fn assign(target: *mut sre::GFxValue, value: &sre::GFxValue) {
-    let f: fns::GFxValue__Assign_fn = unsafe { crate::engine_fn(fns::GFxValue__Assign) };
+    let f: fns::GFxValue__Assign_fn = unsafe { crate::engine_fn(sre::id!(fns::GFxValue__Assign)) };
     unsafe { f(target, value) };
 }
 
@@ -794,6 +758,7 @@ impl Params {
         if self.0.args.is_null() || self.0.argCount == 0 {
             return &[];
         }
+        sre::fixed_size!("GFxValue", sre::GFxValue);
         unsafe { core::slice::from_raw_parts(self.0.args.cast::<Value>(), self.0.argCount as usize) }
     }
 

@@ -953,7 +953,8 @@ impl BSRangeNode_vtable {
 #[repr(C)]
 pub struct BSReference_vtable {
     /// `BSReference::vdtor` at 0xfd2a10 (layout_inference, medium); signature (low): `BSReference * vdtor(BSReference * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSReference::vfunc_2` at 0xfd2b10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -1405,7 +1406,8 @@ pub struct BSResource__EntryDB_BSModelDB__DBTraits_vtable {
     /// `BSResource::EntryDB<BSModelDB::DBTraits>::vfunc_4` at 0xfcafa0 (rtti, high); signature (low): `undefined vfunc_4(EntryDB<BSModelDB::DBTraits> * this, uint param_1, uint param_2)`
     pub slot_4: *const c_void,
     /// `BSResource::EntryDB<BSModelDB::DBTraits>::vfunc_5` at 0xfcb470 (rtti, high); signature (low): `undefined8 vfunc_5(EntryDB<BSModelDB::DBTraits> * this, ulonglong * param_1, longlong * param_2, undefined8 * param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
 }
 impl BSResource__EntryDB_BSModelDB__DBTraits_vtable {
     pub const ID: u64 = 238155;
@@ -1485,7 +1487,8 @@ pub struct BSResource__EntryDB_ScaleformFile__DBTraits_vtable {
     /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vfunc_4` at 0x1176520 (rtti, high); signature (low): `undefined vfunc_4(EntryDB<ScaleformFile::DBTraits> * this, uint param_1, uint param_2)`
     pub slot_4: *const c_void,
     /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vfunc_5` at 0x1177280 (rtti, high); signature (low): `undefined8 vfunc_5(EntryDB<ScaleformFile::DBTraits> * this, ulonglong * param_1, longlong * param_2, undefined8 * param_3)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
 }
 impl BSResource__EntryDB_ScaleformFile__DBTraits_vtable {
     pub const ID: u64 = 242093;
@@ -1737,7 +1740,8 @@ impl BSResource___anon_5F811FAA__LooseFileAsyncChild_vtable {
 #[repr(C)]
 pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable {
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::vdtor` at 0xed57d0 (layout_inference, medium); signature (low): `LooseFileAsyncStream * vdtor(LooseFileAsyncStream * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable {
     pub const ID: u64 = 237046;
@@ -1747,7 +1751,8 @@ impl BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable {
 #[repr(C)]
 pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30 {
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vdtor` at 0xed5830 (slot_propagation, medium); signature (high): `undefined BSResource_AsyncStream_vdtor(LooseFileAsyncStream * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_1` at 0xed5df0 (rtti, high); signature (high): `undefined8 BSResource_AsyncStream_vfunc_1(LooseFileAsyncStream * this)`
     pub slot_1: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_2` at 0xed5c80 (rtti, high); signature (high): `undefined BSResource_AsyncStream_vfunc_2(LooseFileAsyncStream * this)`
@@ -1767,7 +1772,8 @@ pub struct BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30 {
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_9` at 0xed6420 (rtti, high); signature (low): `undefined8 BSResource_AsyncStream_vfunc_9(LooseFileAsyncStream * this, longlong param_1)`
     pub slot_9: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_10` at 0xed6480 (rtti, high); signature (low): `undefined BSResource_AsyncStream_vfunc_10(LooseFileAsyncStream * this, ulonglong * param_1, char param_2)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
 }
 impl BSResource___anon_5F811FAA__LooseFileAsyncStream_vtable_30 {
     pub const ID: u64 = 237048;
@@ -1799,9 +1805,11 @@ impl BSResource___anon_5F811FAA__LooseFileStream_vtable {
 #[repr(C)]
 pub struct BSResource___anon_5F811FAA__LooseFileStream_vtable_30 {
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vdtor` at 0xed58ac (slot_propagation, medium); signature (high): `undefined BSResource_Stream_vdtor(LooseFileStream * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_1` at 0xed5e60 (rtti, high); signature (low): `undefined8 BSResource_Stream_vfunc_1(LooseFileStream * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_2` at 0xed5cd0 (rtti, high); signature (low): `undefined BSResource_Stream_vfunc_2(LooseFileStream * this, undefined8 param_1, ulonglong param_2, ulonglong * param_3)`
     pub slot_2: *const c_void,
     /// `BSResource::StreamBase::vfunc_3` at 0xecb9e0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
@@ -1813,7 +1821,8 @@ pub struct BSResource___anon_5F811FAA__LooseFileStream_vtable_30 {
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_6` at 0xed6010 (rtti, high); signature (low): `undefined4 BSResource_Stream_vfunc_6(LooseFileStream * this, LPVOID param_1, undefined8 param_2, ulonglong * param_3)`
     pub slot_6: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_7` at 0xed6490 (rtti, high); signature (low): `undefined4 BSResource_Stream_vfunc_7(LooseFileStream * this, LPCVOID param_1, undefined8 param_2, ulonglong * param_3)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_8` at 0xed6180 (rtti, high); signature (low): `DWORD BSResource_Stream_vfunc_8(LooseFileStream * this, LARGE_INTEGER param_1, int param_2, LARGE_INTEGER * param_3)`
     pub slot_8: *const c_void,
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_9` at 0xed62b0 (rtti, high); signature (high): `undefined8 BSResource_Stream_vfunc_9(LooseFileStream * this)`
@@ -1831,7 +1840,8 @@ impl BSResource___anon_5F811FAA__LooseFileStream_vtable_30 {
 #[repr(C)]
 pub struct BSResource___anon_5F811FAA__LooseFileStreamBase_vtable {
     /// `BSResource::_anon_5F811FAA::LooseFileStreamBase::vdtor` at 0xed58c0 (slot_propagation, medium); signature (low): `LooseFileStreamBase * vdtor(LooseFileStreamBase * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl BSResource___anon_5F811FAA__LooseFileStreamBase_vtable {
     pub const ID: u64 = 237040;
@@ -2295,43 +2305,62 @@ pub struct BSSaveDataSystemUtility_vtable {
     /// `BSSaveDataSystemUtility::vfunc_4` at 0x159ab10 (rtti, medium); signature (low): `undefined vfunc_4(void)`
     pub slot_4: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_5` at 0x159aa00 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_6` at 0x159aa20 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_7` at 0x159a9f0 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_8` at 0x159a9e0 (rtti, medium); signature (low): `undefined1 vfunc_8(void)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_9` at 0x159aa10 (rtti, medium); signature (low): `undefined1 vfunc_9(void)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_10` at 0x159ab30 (rtti, medium); signature (low): `undefined4 vfunc_10(BSSaveDataSystemUtility * this, LPCSTR param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_11` at 0x159af80 (rtti, high); signature (low): `undefined8 * vfunc_11(BSSaveDataSystemUtility * this, undefined8 * param_1)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_13` at 0x159b000 (rtti, high); signature (low): `undefined vfunc_13(BSSaveDataSystemUtility * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_14` at 0x159b030 (rtti, high); signature (low): `undefined vfunc_14(void)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_15` at 0x159b370 (rtti, high); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_16` at 0x159b040 (rtti, medium); signature (low): `undefined vfunc_16(BSSaveDataSystemUtility * this, longlong * param_1)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_17` at 0x159b070 (rtti, medium); signature (low): `undefined vfunc_17(void)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_18` at 0x159b080 (rtti, high); signature (low): `undefined vfunc_18(BSSaveDataSystemUtility * this, longlong * param_1)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_19` at 0x159b0b0 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_20` at 0x159a9b0 (rtti, medium); signature (low): `undefined1 vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_21` at 0x159a9d0 (rtti, medium); signature (low): `undefined1 vfunc_21(void)`
-    pub slot_21: *const c_void,
+    #[doc(hidden)]
+    pub __slot_21: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_22` at 0x159a9c0 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
-    pub slot_22: *const c_void,
+    #[doc(hidden)]
+    pub __slot_22: *const c_void,
     /// `BSSaveDataSystemUtility::vfunc_23` at 0x159b380 (rtti, high); signature (low): `undefined vfunc_23(void)`
-    pub slot_23: *const c_void,
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
 }
 impl BSSaveDataSystemUtility_vtable {
     pub const ID: u64 = 255925;
@@ -2449,7 +2478,8 @@ pub struct BSScaleformMovieLoadTask_vtable {
     /// `IOTask::vfunc_8` at 0xfc66e0 (rtti, medium); signature (low): `undefined vfunc_8(IOTask * this, int param_1)`
     pub slot_8: *const c_void,
     /// `BSScaleformMovieLoadTask::vfunc_9` at 0x1180a20 (rtti, high); signature (low): `BSScaleformMovieLoadTask * vfunc_9(BSScaleformMovieLoadTask * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
 }
 impl BSScaleformMovieLoadTask_vtable {
     pub const ID: u64 = 242930;

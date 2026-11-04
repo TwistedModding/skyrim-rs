@@ -3,6 +3,136 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>::vftable` at 0x1a50900, id 237485 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable {
+    /// `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>::vdtor` at 0xf1ff10 (layout_inference, medium); signature (low): `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_> * vdtor(NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable {
+    pub const ID: u64 = 237485;
+}
+
+/// `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_>::vftable` at 0x1a65d58, id 238051 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape_____vtable {
+    /// `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_>::vdtor` at 0xfb4a10 (layout_inference, medium); signature (low): `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_> * vdtor(NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape_____vtable {
+    pub const ID: u64 = 238051;
+}
+
+/// `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_>::vftable` at 0x1a6cc98, id 238292 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject_____vtable {
+    /// `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_>::vdtor` at 0xfe1b40 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_> * vdtor(NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject_____vtable {
+    pub const ID: u64 = 238292;
+}
+
+/// `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_>::vftable` at 0x1a46520, id 237094 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject_____vtable {
+    /// `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_>::vdtor` at 0xee3210 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_> * vdtor(NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject_____vtable {
+    pub const ID: u64 = 237094;
+}
+
+/// `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_>::vftable` at 0x1a51d50, id 237537 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence_____vtable {
+    /// `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_>::vdtor` at 0xf53260 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_> * vdtor(NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence_____vtable {
+    pub const ID: u64 = 237537;
+}
+
+/// `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_>::vftable` at 0x1a65d78, id 238055 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry_____vtable {
+    /// `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_>::vdtor` at 0xfb4aa0 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_> * vdtor(NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry_____vtable {
+    pub const ID: u64 = 238055;
+}
+
+/// `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_>::vftable` at 0x1a4dd50, id 237433 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule_____vtable {
+    /// `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_>::vdtor` at 0xf12b60 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_> * vdtor(NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule_____vtable {
+    pub const ID: u64 = 237433;
+}
+
+/// `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_>::vftable` at 0x18fb570, id 206051 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode_____vtable {
+    /// `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_>::vdtor` at 0x5e1d00 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_> * vdtor(NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode_____vtable {
+    pub const ID: u64 = 206051;
+}
+
+/// `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_>::vftable` at 0x1a47b00, id 237172 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject_____vtable {
+    /// `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_>::vdtor` at 0xeec300 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_> * vdtor(NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject_____vtable {
+    pub const ID: u64 = 237172;
+}
+
+/// `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_>::vftable` at 0x1b409f8, id 254768 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture_____vtable {
+    /// `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_>::vdtor` at 0x152b3a0 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_> * vdtor(NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture_____vtable {
+    pub const ID: u64 = 254768;
+}
+
+/// `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_>::vftable` at 0x1a5b778, id 237782 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController_____vtable {
+    /// `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_>::vdtor` at 0xf87b70 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_> * vdtor(NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController_____vtable {
+    pub const ID: u64 = 237782;
+}
+
+/// `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_>::vftable` at 0x1866248, id 196225 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody_____vtable {
+    /// `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_>::vdtor` at 0x3fb510 (layout_inference, medium); signature (low): `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_> * vdtor(NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody_____vtable {
+    pub const ID: u64 = 196225;
+}
+
+/// `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_>::vftable` at 0x1a61030, id 237979 (rtti, high); 1 slots.
+#[repr(C)]
+pub struct NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable {
+    /// `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_>::vdtor` at 0xfa3c80 (layout_inference, medium); signature (low): `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_> * vdtor(NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+}
+impl NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable {
+    pub const ID: u64 = 237979;
+}
+
 /// `NiTArray<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64,NiTMallocInterface<NiTPrimitiveSet<NiNode*___ptr64>*___ptr64>_>::vftable` at 0x1a6e9f0, id 238398 (rtti, high); 1 slots.
 #[repr(C)]
 pub struct NiTArray_NiTPrimitiveSet_NiNode____ptr64____ptr64_NiTMallocInterface_NiTPrimitiveSet_NiNode____ptr64____ptr64___vtable {
@@ -529,7 +659,8 @@ pub struct NiTMap_unsigned_long_BSNiUpdateTracker____ptr64_vtable {
     /// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_5` at 0xf02ab0 (rtti, high); signature (low): `undefined vfunc_5(NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>::vfunc_6` at 0xf02a70 (rtti, high); signature (low): `undefined vfunc_6(NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl NiTMap_unsigned_long_BSNiUpdateTracker____ptr64_vtable {
     pub const ID: u64 = 237312;
@@ -1223,7 +1354,8 @@ pub struct NiTPointerMap_NiNode____ptr64_unsigned_int_vtable {
     /// `NiTPointerMap<NiNode*___ptr64,unsigned_int>::vfunc_5` at 0xfed300 (rtti, high); signature (low): `undefined vfunc_5(NiTPointerMap<NiNode*___ptr64,unsigned_int> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `NiTPointerMap<NiNode*___ptr64,unsigned_int>::vfunc_6` at 0xfed230 (rtti, high); signature (low): `undefined vfunc_6(NiTPointerMap<NiNode*___ptr64,unsigned_int> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl NiTPointerMap_NiNode____ptr64_unsigned_int_vtable {
     pub const ID: u64 = 238407;
@@ -1245,7 +1377,8 @@ pub struct NiTPointerMap_NiObject_const____ptr64_unsigned_int_vtable {
     /// `NiTPointerMap<NiObject_const*___ptr64,unsigned_int>::vfunc_5` at 0xee9bb0 (rtti, high); signature (low): `undefined vfunc_5(NiTPointerMap<NiObject_const*___ptr64,unsigned_int> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `NiTPointerMap<NiObject_const*___ptr64,unsigned_int>::vfunc_6` at 0xee99d0 (rtti, high); signature (low): `undefined vfunc_6(NiTPointerMap<NiObject_const*___ptr64,unsigned_int> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl NiTPointerMap_NiObject_const____ptr64_unsigned_int_vtable {
     pub const ID: u64 = 237124;
@@ -1377,7 +1510,8 @@ pub struct NiTPointerMap_unsigned_int_bool_vtable {
     /// `NiTPointerMap<unsigned_int,bool>::vfunc_5` at 0xfed2a0 (rtti, high); signature (low): `undefined vfunc_5(NiTPointerMap<unsigned_int,bool> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_5: *const c_void,
     /// `NiTPointerMap<unsigned_int,bool>::vfunc_6` at 0xfed210 (rtti, high); signature (low): `undefined vfunc_6(NiTPointerMap<unsigned_int,bool> * this, void * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl NiTPointerMap_unsigned_int_bool_vtable {
     pub const ID: u64 = 238411;
@@ -2009,7 +2143,8 @@ impl NiThreadProcedure_vtable {
 #[repr(C)]
 pub struct NiTimeController_vtable {
     /// `NiTimeController::vdtor` at 0xef8940 (layout_inference, medium); signature (low): `NiTimeController * vdtor(NiTimeController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiTimeController::vfunc_2` at 0xef89c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -3927,47 +4062,68 @@ impl ObstacleTaskData_vtable {
 #[repr(C)]
 pub struct OfflineLoadOrder_vtable {
     /// `OfflineLoadOrder::vdtor` at 0x122050 (layout_inference, medium); signature (low): `OfflineLoadOrder * vdtor(OfflineLoadOrder * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `OfflineLoadOrder::vfunc_2` at 0x15df400 (rtti, high); signature (high): `undefined vfunc_2(OfflineLoadOrder * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `OfflineLoadOrder::vfunc_3` at 0x15df490 (rtti, high); signature (low): `undefined vfunc_3(OfflineLoadOrder * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `OfflineLoadOrder::vfunc_4` at 0x15def90 (rtti, high); signature (low): `undefined8 vfunc_4(OfflineLoadOrder * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `OfflineLoadOrder::vfunc_14` at 0x15df0c0 (rtti, high); signature (low): `undefined vfunc_14(OfflineLoadOrder * this, char * param_1, void * param_2, undefined8 param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `OfflineLoadOrder::vfunc_15` at 0x15dee80 (rtti, high); signature (low): `undefined vfunc_15(OfflineLoadOrder * this, longlong param_1)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `OfflineLoadOrder::vfunc_16` at 0x15dee50 (rtti, high); signature (low): `undefined vfunc_16(OfflineLoadOrder * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `OfflineLoadOrder::vfunc_17` at 0x15dfc30 (rtti, high); signature (low): `undefined vfunc_17(OfflineLoadOrder * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl OfflineLoadOrder_vtable {
     pub const ID: u64 = 469848;
@@ -4035,47 +4191,68 @@ impl OpenEffect_vtable {
 #[repr(C)]
 pub struct Options_vtable {
     /// `Options::vdtor` at 0x1378c0 (slot_propagation, medium); signature (low): `Options * vdtor(Options * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `Options::vfunc_2` at 0x16042e0 (rtti, high); signature (high): `undefined vfunc_2(Options * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `Options::vfunc_3` at 0x1604460 (rtti, high); signature (low): `undefined vfunc_3(Options * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `Options::vfunc_4` at 0x1603fa0 (rtti, high); signature (low): `undefined8 vfunc_4(Options * this, float * param_1, longlong * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `Options::vfunc_14` at 0x16041a0 (rtti, high); signature (low): `undefined vfunc_14(Options * this, longlong param_1, longlong param_2, undefined8 param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `Options::vfunc_15` at 0x1603f30 (rtti, high); signature (low): `undefined vfunc_15(Options * this, longlong param_1)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `Options::vfunc_16` at 0x1603f10 (rtti, high); signature (low): `undefined vfunc_16(Options * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `Options::vfunc_17` at 0x1605140 (rtti, high); signature (low): `undefined vfunc_17(Options * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl Options_vtable {
     pub const ID: u64 = 469894;
@@ -4289,7 +4466,8 @@ impl OwnedController_vtable {
 #[repr(C)]
 pub struct PArrayPoint_vtable {
     /// `PArrayPoint::vdtor` at 0xfe1c40 (slot_propagation, medium); signature (low): `PArrayPoint * vdtor(PArrayPoint * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `PArrayPoint::vfunc_2` at 0xfe1de0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -6483,7 +6661,8 @@ impl PlayerCharacter_vtable_38 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_A0 {
     /// `PlayerCharacter::MagicTarget_vfunc_0` at 0x769314 (rtti, high); signature (low): `undefined MagicTarget_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::MagicTarget_vfunc_1` at 0x6d7b90 (rtti, medium); signature (low): `char MagicTarget_vfunc_1(Actor * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `Actor::MagicTarget_vfunc_2` at 0x6bde90 (rtti, medium); signature (high): `undefined4 * MagicTarget_vfunc_2(Actor * this)`
@@ -6515,7 +6694,8 @@ impl PlayerCharacter_vtable_A0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_B8 {
     /// `PlayerCharacter::ActorValueOwner_vdtor` at 0x769320 (slot_propagation, medium); signature (low): `undefined ActorValueOwner_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::ActorValueOwner_GetActorValue` at 0x6c4cb0 (runtime, high); signature (untiered): `undefined8 ActorValueOwner_GetActorValue(Actor * this, int param_2)`
     pub slot_1: *const c_void,
     /// `Actor::ActorValueOwner_GetPermanentActorValue` at 0x6c4e20 (runtime, high); signature (untiered): `float ActorValueOwner_GetPermanentActorValue(Actor * this, int param_1)`
@@ -6541,7 +6721,8 @@ impl PlayerCharacter_vtable_B8 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_C0 {
     /// `PlayerCharacter::ActorState_vdtor` at 0x76932c (slot_propagation, medium); signature (low): `undefined ActorState_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::ActorState_vfunc_1` at 0x6b5770 (rtti, medium); signature (high): `undefined4 ActorState_vfunc_1(Actor * this)`
     pub slot_1: *const c_void,
     /// `Actor::ActorState_vfunc_2` at 0x6b5780 (rtti, medium); signature (low): `undefined ActorState_vfunc_2(Actor * this, undefined4 * param_1)`
@@ -6549,7 +6730,8 @@ pub struct PlayerCharacter_vtable_C0 {
     /// `Actor::ActorState_vfunc_3` at 0x6b57d0 (rtti, medium); signature (low): `undefined ActorState_vfunc_3(Actor * this, undefined4 * param_1)`
     pub slot_3: *const c_void,
     /// `PlayerCharacter::ActorState_vfunc_4` at 0x75ed30 (rtti, high); signature (low): `undefined ActorState_vfunc_4(PlayerCharacter * this, undefined4 * param_1)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `Actor::ActorState_GetMovementSpeed` at 0x6b5860 (semantic, high); signature (untiered): `undefined4 ActorState_GetMovementSpeed(Actor * this)`
     pub slot_5: *const c_void,
     /// `Actor::ActorState_vfunc_6` at 0x6b5500 (rtti, medium); signature (low): `undefined4 ActorState_vfunc_6(Actor * this)`
@@ -6593,7 +6775,8 @@ impl PlayerCharacter_vtable_C0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_D0 {
     /// `PlayerCharacter::BSTEventSink_BSTransformDeltaEvent_vdtor` at 0x769338 (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSTransformDeltaEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::BSTEventSink_BSTransformDeltaEvent_vfunc_1` at 0x6b1ab0 (rtti, medium); signature (low): `undefined8 BSTEventSink_BSTransformDeltaEvent_vfunc_1(Actor * this, uint * param_1)`
     pub slot_1: *const c_void,
 }
@@ -6605,7 +6788,8 @@ impl PlayerCharacter_vtable_D0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_D8 {
     /// `PlayerCharacter::BSTEventSink_bhkCharacterMoveFinishEvent_vdtor` at 0x769344 (slot_propagation, medium); signature (low): `undefined BSTEventSink_bhkCharacterMoveFinishEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1` at 0x6b21b0 (rtti, medium); signature (low): `undefined8 BSTEventSink_bhkCharacterMoveFinishEvent_vfunc_1(Actor * this, float * param_1, char * param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
 }
@@ -6617,7 +6801,8 @@ impl PlayerCharacter_vtable_D8 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_E0 {
     /// `PlayerCharacter::IPostAnimationChannelUpdateFunctor_vfunc_0` at 0x769350 (rtti, high); signature (low): `undefined IPostAnimationChannelUpdateFunctor_vfunc_0(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Actor::IPostAnimationChannelUpdateFunctor_vfunc_1` at 0x6b62e0 (rtti, medium); signature (high): `undefined IPostAnimationChannelUpdateFunctor_vfunc_1(Actor * this)`
     pub slot_1: *const c_void,
 }
@@ -6629,9 +6814,11 @@ impl PlayerCharacter_vtable_E0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_2B8 {
     /// `PlayerCharacter::BSTEventSink_MenuOpenCloseEvent_vdtor` at 0x7692c0 (slot_propagation, medium); signature (high): `undefined BSTEventSink_MenuOpenCloseEvent_vdtor(PlayerCharacter * this)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `PlayerCharacter::ProcessMenuOpenCloseEvent` at 0x75eb40 (runtime, high); signature (untiered): `undefined8 ProcessMenuOpenCloseEvent(PlayerCharacter * this, longlong * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2B8 {
     pub const ID: u64 = 208060;
@@ -6641,9 +6828,11 @@ impl PlayerCharacter_vtable_2B8 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_2C0 {
     /// `PlayerCharacter::BSTEventSink_MenuModeChangeEvent_vdtor` at 0x7692cc (slot_propagation, medium); signature (low): `undefined BSTEventSink_MenuModeChangeEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `PlayerCharacter::BSTEventSink_MenuModeChangeEvent_vfunc_1` at 0x75ecd0 (rtti, high); signature (low): `undefined8 BSTEventSink_MenuModeChangeEvent_vfunc_1(PlayerCharacter * this, longlong param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2C0 {
     pub const ID: u64 = 208062;
@@ -6653,9 +6842,11 @@ impl PlayerCharacter_vtable_2C0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_2C8 {
     /// `PlayerCharacter::BSTEventSink_UserEventEnabledEvent_vdtor` at 0x7692d8 (slot_propagation, medium); signature (low): `undefined BSTEventSink_UserEventEnabledEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `PlayerCharacter::BSTEventSink_UserEventEnabledEvent_vfunc_1` at 0x75ea90 (rtti, high); signature (low): `undefined8 BSTEventSink_UserEventEnabledEvent_vfunc_1(PlayerCharacter * this, uint * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2C8 {
     pub const ID: u64 = 208064;
@@ -6665,9 +6856,11 @@ impl PlayerCharacter_vtable_2C8 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_2D0 {
     /// `PlayerCharacter::BSTEventSink_TESTrackedStatsEvent_vdtor` at 0x7692e4 (slot_propagation, medium); signature (low): `undefined BSTEventSink_TESTrackedStatsEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `PlayerCharacter::BSTEventSink_TESTrackedStatsEvent_vfunc_1` at 0x75ed10 (rtti, high); signature (low): `undefined8 BSTEventSink_TESTrackedStatsEvent_vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2D0 {
     pub const ID: u64 = 208066;
@@ -6677,9 +6870,11 @@ impl PlayerCharacter_vtable_2D0 {
 #[repr(C)]
 pub struct PlayerCharacter_vtable_2D8 {
     /// `PlayerCharacter::BSTEventSink_BSSystemEvent_vdtor` at 0x7692f0 (slot_propagation, medium); signature (low): `undefined BSTEventSink_BSSystemEvent_vdtor(PlayerCharacter * this, ulonglong param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `PlayerCharacter::BSTEventSink_BSSystemEvent_vfunc_1` at 0x75ed20 (rtti, high); signature (low): `undefined8 BSTEventSink_BSSystemEvent_vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl PlayerCharacter_vtable_2D8 {
     pub const ID: u64 = 536577;
@@ -6761,15 +6956,20 @@ pub struct PlayerInputHandler_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`; `ProcessMotionGesture`: base: does nothing (high); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`; `ProcessSixaxis`: base: does nothing (high); semantic signature: `void (PlayerInputHandler* this, InputEvent* event, PlayerControlsData* data)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`; `ProcessThumbstick`: base: does nothing (high); semantic signature: `void (PlayerInputHandler* this, ThumbstickEvent* event, PlayerControlsData* data)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`; `ProcessMouseMove`: base: does nothing (high); semantic signature: `void (PlayerInputHandler* this, MouseMoveEvent* event, PlayerControlsData* data)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (untiered): `undefined ProcessButton(void)`; `ProcessButton`: eventType 0: ButtonEvent value +0x28, heldDownSecs +0x2c (high); semantic signature: `void (PlayerInputHandler* this, ButtonEvent* event, PlayerControlsData* data)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl PlayerInputHandler_vtable {
     pub const ID: u64 = 205234;
@@ -6779,35 +6979,50 @@ impl PlayerInputHandler_vtable {
     pub fn Destroy(&self) -> Option<PlayerInputHandler_vtable_Destroy> {
         unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_Destroy>>(self.slot_0) }
     }
-    pub const SLOT_ProcessMotionGesture: usize = 2;
+    /// The slot's index on the running game; 2 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessMotionGesture() -> usize { slot_index!("PlayerInputHandler", 0x0, 2) }
     /// Slot 2 as `PlayerInputHandler_vtable_ProcessMotionGesture`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMotionGesture(&self) -> Option<PlayerInputHandler_vtable_ProcessMotionGesture> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMotionGesture>>(self.slot_2) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMotionGesture>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 2))) }
     }
-    pub const SLOT_ProcessSixaxis: usize = 3;
+    /// The slot's index on the running game; 3 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessSixaxis() -> usize { slot_index!("PlayerInputHandler", 0x0, 3) }
     /// Slot 3 as `PlayerInputHandler_vtable_ProcessSixaxis`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessSixaxis(&self) -> Option<PlayerInputHandler_vtable_ProcessSixaxis> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessSixaxis>>(self.slot_3) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessSixaxis>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 3))) }
     }
-    pub const SLOT_ProcessThumbstick: usize = 4;
+    /// The slot's index on the running game; 4 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessThumbstick() -> usize { slot_index!("PlayerInputHandler", 0x0, 4) }
     /// Slot 4 as `PlayerInputHandler_vtable_ProcessThumbstick`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessThumbstick(&self) -> Option<PlayerInputHandler_vtable_ProcessThumbstick> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessThumbstick>>(self.slot_4) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessThumbstick>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 4))) }
     }
-    pub const SLOT_ProcessMouseMove: usize = 5;
+    /// The slot's index on the running game; 5 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessMouseMove() -> usize { slot_index!("PlayerInputHandler", 0x0, 5) }
     /// Slot 5 as `PlayerInputHandler_vtable_ProcessMouseMove`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessMouseMove(&self) -> Option<PlayerInputHandler_vtable_ProcessMouseMove> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMouseMove>>(self.slot_5) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessMouseMove>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 5))) }
     }
-    pub const SLOT_ProcessButton: usize = 6;
+    /// The slot's index on the running game; 6 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessButton() -> usize { slot_index!("PlayerInputHandler", 0x0, 6) }
     /// Slot 6 as `PlayerInputHandler_vtable_ProcessButton`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButton(&self) -> Option<PlayerInputHandler_vtable_ProcessButton> {
-        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessButton>>(self.slot_6) }
+        unsafe { core::mem::transmute::<*const c_void, Option<PlayerInputHandler_vtable_ProcessButton>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("PlayerInputHandler", 0x0, 6))) }
     }
 }
 /// `PlayerInputHandler::Destroy`, slot 0: destructor (high).
@@ -8345,17 +8560,23 @@ pub struct QuickSaveLoadHandler_vtable {
     /// `QuickSaveLoadHandler::CanProcess` at 0x9622f0 (semantic, high); signature (untiered): `undefined8 CanProcess(QuickSaveLoadHandler * this, longlong * param_1)`; `CanProcess`: Quicksave/Quickload/NewSave (high); semantic signature: `bool (QuickSaveLoadHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `QuickSaveLoadHandler::vfunc_4` at 0x961e90 (rtti, high); signature (low): `undefined1 vfunc_4(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `QuickSaveLoadHandler::ProcessButtonEvent` at 0x961dd0 (semantic, high); signature (untiered): `undefined8 ProcessButtonEvent(QuickSaveLoadHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`: queues the request (high); semantic signature: `bool (QuickSaveLoadHandler* this, ButtonEvent* event)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl QuickSaveLoadHandler_vtable {
     pub const ID: u64 = 215789;
@@ -8365,11 +8586,14 @@ impl QuickSaveLoadHandler_vtable {
     pub fn CanProcess(&self) -> Option<QuickSaveLoadHandler_vtable_CanProcess> {
         unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_CanProcess>>(self.slot_1) }
     }
-    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// The slot's index on the running game; 7 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("QuickSaveLoadHandler", 0x0, 7) }
     /// Slot 7 as `QuickSaveLoadHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+        unsafe { core::mem::transmute::<*const c_void, Option<QuickSaveLoadHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("QuickSaveLoadHandler", 0x0, 7))) }
     }
 }
 /// `QuickSaveLoadHandler::CanProcess`, slot 1: Quicksave/Quickload/NewSave (high).
@@ -8609,15 +8833,20 @@ pub struct RaceSexMenu_vtable_30 {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `RaceSexMenu::ProcessThumbstick` at 0x96b140 (semantic, high); signature (untiered): `undefined8 ProcessThumbstick(RaceSexMenu * this, longlong param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `RaceSexMenu::ProcessMouseMove` at 0x96b4e0 (semantic, high); signature (untiered): `undefined8 ProcessMouseMove(RaceSexMenu * this, longlong param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `RaceSexMenu::ProcessButton` at 0x96b480 (semantic, high); signature (untiered): `ulonglong ProcessButton(RaceSexMenu * this, longlong param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl RaceSexMenu_vtable_30 {
     pub const ID: u64 = 215887;
@@ -8761,15 +8990,20 @@ pub struct ReadyWeaponHandler_vtable {
     /// `ReadyWeaponHandler::CanProcess` at 0x7b5060 (semantic, high); signature (untiered): `bool CanProcess(ReadyWeaponHandler * this, longlong * param_1)`; `CanProcess`: Ready Weapon (high); semantic signature: `bool (ReadyWeaponHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `ReadyWeaponHandler::vfunc_6` at 0x7b38d0 (rtti, high); signature (low): `undefined vfunc_6(ReadyWeaponHandler * this, longlong param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl ReadyWeaponHandler_vtable {
     pub const ID: u64 = 208721;
@@ -9363,19 +9597,26 @@ pub struct RunHandler_vtable {
     /// `RunHandler::CanProcess` at 0x7b5090 (semantic, high); signature (untiered): `bool CanProcess(RunHandler * this, longlong * param_1)`; `CanProcess`: Run (high); semantic signature: `bool (RunHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `RunHandler::vfunc_6` at 0x7b3930 (rtti, high); signature (low): `undefined vfunc_6(RunHandler * this, longlong param_1, longlong param_2)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
 }
 impl RunHandler_vtable {
     pub const ID: u64 = 208729;
@@ -9701,15 +9942,20 @@ pub struct ScreenshotHandler_vtable {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `ScreenshotHandler::vfunc_7` at 0x961ea0 (rtti, high); signature (low): `undefined8 vfunc_7(ScreenshotHandler * this, longlong * param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl ScreenshotHandler_vtable {
     pub const ID: u64 = 215787;
@@ -10383,47 +10629,68 @@ impl ScrollItem_vtable_158 {
 #[repr(C)]
 pub struct SearchPage_vtable {
     /// `SearchPage::vdtor` at 0x13faa0 (slot_propagation, medium); signature (low): `SearchPage * vdtor(SearchPage * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `SearchPage::vfunc_2` at 0x1611410 (rtti, high); signature (low): `undefined vfunc_2(SearchPage * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `SearchPage::vfunc_3` at 0x1611640 (rtti, high); signature (low): `undefined vfunc_3(SearchPage * this, undefined4 param_2, ulonglong param_3, ulonglong param_4)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `SearchPage::vfunc_4` at 0x1611be0 (rtti, high); signature (low): `undefined8 vfunc_4(SearchPage * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `SearchPage::vfunc_14` at 0x1611c60 (rtti, high); signature (low): `undefined vfunc_14(SearchPage * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `UI_page::vfunc_15` at 0x15f2540 (rtti, medium); signature (low): `undefined vfunc_15(void)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `UI_page::vfunc_16` at 0x15f2530 (rtti, medium); signature (low): `undefined vfunc_16(void)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `SearchPage::vfunc_17` at 0x1611f30 (rtti, high); signature (low): `undefined vfunc_17(SearchPage * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl SearchPage_vtable {
     pub const ID: u64 = 469838;
@@ -10433,47 +10700,68 @@ impl SearchPage_vtable {
 #[repr(C)]
 pub struct SearchResultsPage_vtable {
     /// `SearchResultsPage::vdtor` at 0x1407b0 (layout_inference, medium); signature (low): `SearchResultsPage * vdtor(SearchResultsPage * this, void * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `SearchResultsPage::vfunc_2` at 0x1614680 (rtti, high); signature (low): `undefined vfunc_2(SearchResultsPage * this, undefined8 param_1, longlong param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `SearchResultsPage::vfunc_3` at 0x16149c0 (rtti, high); signature (low): `undefined vfunc_3(SearchResultsPage * this, undefined8 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `SearchResultsPage::vfunc_4` at 0x1614030 (rtti, high); signature (low): `undefined8 vfunc_4(SearchResultsPage * this, float * param_1, longlong * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `SearchResultsPage::vfunc_14` at 0x16141c0 (rtti, high); signature (low): `undefined vfunc_14(SearchResultsPage * this, char * param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `SearchResultsPage::vfunc_15` at 0x1613f90 (rtti, high); signature (low): `undefined vfunc_15(SearchResultsPage * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `SearchResultsPage::vfunc_16` at 0x1613eb0 (rtti, high); signature (low): `undefined vfunc_16(SearchResultsPage * this, longlong * param_1, longlong param_2, undefined8 param_3)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `SearchResultsPage::vfunc_17` at 0x1615120 (rtti, high); signature (low): `undefined vfunc_17(SearchResultsPage * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl SearchResultsPage_vtable {
     pub const ID: u64 = 469805;
@@ -10960,15 +11248,20 @@ pub struct ShoutHandler_vtable {
     /// `ShoutHandler::CanProcess` at 0x7b50c0 (semantic, high); signature (untiered): `undefined8 CanProcess(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`; `CanProcess`: Shout/KinectShout (high); semantic signature: `bool (ShoutHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `ShoutHandler::vfunc_6` at 0x7b3960 (rtti, high); signature (low): `undefined vfunc_6(ShoutHandler * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl ShoutHandler_vtable {
     pub const ID: u64 = 208735;
@@ -11006,47 +11299,68 @@ impl ShoutMeter_vtable {
 #[repr(C)]
 pub struct SideBar_vtable {
     /// `SideBar::vdtor` at 0x134c00 (layout_inference, medium); signature (low): `SideBar * vdtor(SideBar * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `SideBar::vfunc_2` at 0x15fb300 (rtti, high); signature (low): `undefined vfunc_2(SideBar * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `SideBar::vfunc_3` at 0x15fb5a0 (rtti, high); signature (medium): `undefined vfunc_3(SideBar * this, float param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `SideBar::vfunc_4` at 0x15fae50 (rtti, high); signature (low): `undefined8 vfunc_4(SideBar * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `SideBar::vfunc_14` at 0x15faf70 (rtti, high); signature (low): `undefined vfunc_14(SideBar * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `SideBar::vfunc_15` at 0x15fad30 (rtti, high); signature (low): `undefined vfunc_15(SideBar * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `SideBar::vfunc_16` at 0x15fad00 (rtti, high); signature (low): `undefined vfunc_16(SideBar * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `SideBar::vfunc_17` at 0x15fc130 (rtti, high); signature (low): `undefined vfunc_17(SideBar * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl SideBar_vtable {
     pub const ID: u64 = 469696;
@@ -11168,11 +11482,14 @@ impl SimpleAnimationGraphManagerLoadingTask_vtable_38 {
 #[repr(C)]
 pub struct SixaxisEvent_vtable {
     /// `SixaxisEvent::vdtor` at 0x7b1d30 (layout_inference, medium); signature (low): `SixaxisEvent * vdtor(SixaxisEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `IDEvent::vfunc_1` at 0x7b4470 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `IDEvent::vfunc_2` at 0x7b4830 (rtti, medium); signature (high): `IDEvent * vfunc_2(IDEvent * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl SixaxisEvent_vtable {
     pub const ID: u64 = 536598;
@@ -11182,63 +11499,92 @@ impl SixaxisEvent_vtable {
 #[repr(C)]
 pub struct Sizing__mpBoxSizer_vtable {
     /// `Sizing::mpBoxSizer::vdtor` at 0x134ba0 (slot_propagation, medium); signature (low): `mpBoxSizer * vdtor(mpBoxSizer * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Sizing::mpSizer::vfunc_1` at 0x15f96c0 (rtti, medium); signature (low): `undefined vfunc_1(mpSizer * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_2` at 0x15fa700 (rtti, high); signature (high): `undefined vfunc_2(mpBoxSizer * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `UI_element::vfunc_3` at 0x15e7870 (rtti, medium); signature (low): `undefined vfunc_3(UI_element * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `Sizing::mpSizer::vfunc_4` at 0x15f91c0 (rtti, medium); signature (low): `ulonglong vfunc_4(mpSizer * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `Sizing::mpSizer::vfunc_8` at 0x15f92e0 (rtti, medium); signature (low): `undefined vfunc_8(mpSizer * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_11` at 0x15fa660 (rtti, high); signature (high): `float vfunc_11(mpBoxSizer * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_12` at 0x15fa5c0 (rtti, high); signature (high): `float vfunc_12(mpBoxSizer * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `Sizing::mpSizer::vfunc_14` at 0x15f9ad0 (rtti, medium); signature (low): `undefined vfunc_14(mpSizer * this, undefined4 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5, undefined4 param_6)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `Sizing::mpSizer::vfunc_15` at 0x15f9ba0 (rtti, medium); signature (low): `undefined vfunc_15(mpSizer * this, longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `Sizing::mpSizer::vfunc_16` at 0x15f98a0 (rtti, medium); signature (low): `undefined vfunc_16(mpSizer * this, uint param_2, undefined4 param_3, undefined8 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `Sizing::mpSizer::vfunc_17` at 0x15f99c0 (rtti, medium); signature (low): `undefined vfunc_17(mpSizer * this, uint param_1, longlong param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_18` at 0x15fac50 (rtti, high); signature (low): `undefined vfunc_18(mpBoxSizer * this, int param_1)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `Sizing::mpSizer::vfunc_19` at 0x15f9840 (rtti, medium); signature (low): `undefined vfunc_19(mpSizer * this, undefined4 param_1)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_20` at 0x15fac00 (rtti, high); signature (low): `undefined vfunc_20(mpBoxSizer * this, undefined8 param_1, int param_2)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
     /// `Sizing::mpSizer::vfunc_21` at 0x15f97d0 (rtti, medium); signature (low): `undefined vfunc_21(mpSizer * this, undefined8 param_1, undefined4 param_2)`
-    pub slot_21: *const c_void,
+    #[doc(hidden)]
+    pub __slot_21: *const c_void,
     /// `Sizing::mpBoxSizer::vfunc_22` at 0x15fa780 (rtti, high); signature (high): `undefined vfunc_22(mpBoxSizer * this)`
-    pub slot_22: *const c_void,
+    #[doc(hidden)]
+    pub __slot_22: *const c_void,
     /// `Sizing::mpSizer::vfunc_23` at 0x15f96b0 (rtti, medium); signature (low): `undefined vfunc_23(mpSizer * this, undefined1 param_1)`
-    pub slot_23: *const c_void,
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
     /// `Sizing::mpSizer::vfunc_24` at 0x15f9590 (rtti, medium); signature (low): `undefined8 vfunc_24(mpSizer * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_24: *const c_void,
+    #[doc(hidden)]
+    pub __slot_24: *const c_void,
     /// `Sizing::mpSizer::vfunc_25` at 0x15f93b0 (rtti, medium); signature (low): `undefined8 vfunc_25(mpSizer * this, uint param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_25: *const c_void,
+    #[doc(hidden)]
+    pub __slot_25: *const c_void,
     /// `Sizing::mpSizer::vfunc_26` at 0x15f9460 (rtti, medium); signature (low): `undefined8 vfunc_26(mpSizer * this, longlong param_1)`
-    pub slot_26: *const c_void,
+    #[doc(hidden)]
+    pub __slot_26: *const c_void,
     /// `Sizing::mpSizer::vfunc_27` at 0x15f9340 (rtti, medium); signature (low): `longlong * vfunc_27(mpSizer * this, longlong param_1)`
-    pub slot_27: *const c_void,
+    #[doc(hidden)]
+    pub __slot_27: *const c_void,
     /// `Sizing::mpSizer::vfunc_28` at 0x15f9380 (rtti, medium); signature (low): `undefined8 vfunc_28(mpSizer * this, uint param_1)`
-    pub slot_28: *const c_void,
+    #[doc(hidden)]
+    pub __slot_28: *const c_void,
 }
 impl Sizing__mpBoxSizer_vtable {
     pub const ID: u64 = 469919;
@@ -11248,63 +11594,92 @@ impl Sizing__mpBoxSizer_vtable {
 #[repr(C)]
 pub struct Sizing__mpSizer_vtable {
     /// `Sizing::mpSizer::vdtor` at 0x133fe0 (slot_propagation, medium); signature (low): `mpSizer * vdtor(mpSizer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Sizing::mpSizer::vfunc_1` at 0x15f96c0 (rtti, medium); signature (low): `undefined vfunc_1(mpSizer * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `UI_element::vfunc_2` at 0x15e78e0 (rtti, medium); signature (high): `undefined vfunc_2(UI_element * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `UI_element::vfunc_3` at 0x15e7870 (rtti, medium); signature (low): `undefined vfunc_3(UI_element * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `Sizing::mpSizer::vfunc_4` at 0x15f91c0 (rtti, medium); signature (low): `ulonglong vfunc_4(mpSizer * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `Sizing::mpSizer::vfunc_8` at 0x15f92e0 (rtti, medium); signature (low): `undefined vfunc_8(mpSizer * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `Sizing::mpSizer::vfunc_14` at 0x15f9ad0 (rtti, medium); signature (low): `undefined vfunc_14(mpSizer * this, undefined4 param_2, undefined8 param_3, undefined8 param_4, undefined4 param_5, undefined4 param_6)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `Sizing::mpSizer::vfunc_15` at 0x15f9ba0 (rtti, medium); signature (low): `undefined vfunc_15(mpSizer * this, longlong param_1, undefined8 param_2, undefined8 param_3, undefined4 param_4)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `Sizing::mpSizer::vfunc_16` at 0x15f98a0 (rtti, medium); signature (low): `undefined vfunc_16(mpSizer * this, uint param_2, undefined4 param_3, undefined8 param_4, undefined4 param_5, undefined4 param_6, undefined4 param_7)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `Sizing::mpSizer::vfunc_17` at 0x15f99c0 (rtti, medium); signature (low): `undefined vfunc_17(mpSizer * this, uint param_1, longlong param_2, undefined8 param_3, undefined4 param_4, undefined4 param_5)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `Sizing::mpSizer::vfunc_18` at 0x15f9870 (rtti, high); signature (low): `undefined vfunc_18(mpSizer * this, int param_1)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `Sizing::mpSizer::vfunc_19` at 0x15f9840 (rtti, medium); signature (low): `undefined vfunc_19(mpSizer * this, undefined4 param_1)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `Sizing::mpSizer::vfunc_20` at 0x15f9800 (rtti, high); signature (low): `undefined vfunc_20(mpSizer * this, undefined8 param_1, int param_2)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
     /// `Sizing::mpSizer::vfunc_21` at 0x15f97d0 (rtti, medium); signature (low): `undefined vfunc_21(mpSizer * this, undefined8 param_1, undefined4 param_2)`
-    pub slot_21: *const c_void,
+    #[doc(hidden)]
+    pub __slot_21: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_22: *const c_void,
+    #[doc(hidden)]
+    pub __slot_22: *const c_void,
     /// `Sizing::mpSizer::vfunc_23` at 0x15f96b0 (rtti, medium); signature (low): `undefined vfunc_23(mpSizer * this, undefined1 param_1)`
-    pub slot_23: *const c_void,
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
     /// `Sizing::mpSizer::vfunc_24` at 0x15f9590 (rtti, medium); signature (low): `undefined8 vfunc_24(mpSizer * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_24: *const c_void,
+    #[doc(hidden)]
+    pub __slot_24: *const c_void,
     /// `Sizing::mpSizer::vfunc_25` at 0x15f93b0 (rtti, medium); signature (low): `undefined8 vfunc_25(mpSizer * this, uint param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_25: *const c_void,
+    #[doc(hidden)]
+    pub __slot_25: *const c_void,
     /// `Sizing::mpSizer::vfunc_26` at 0x15f9460 (rtti, medium); signature (low): `undefined8 vfunc_26(mpSizer * this, longlong param_1)`
-    pub slot_26: *const c_void,
+    #[doc(hidden)]
+    pub __slot_26: *const c_void,
     /// `Sizing::mpSizer::vfunc_27` at 0x15f9340 (rtti, medium); signature (low): `longlong * vfunc_27(mpSizer * this, longlong param_1)`
-    pub slot_27: *const c_void,
+    #[doc(hidden)]
+    pub __slot_27: *const c_void,
     /// `Sizing::mpSizer::vfunc_28` at 0x15f9380 (rtti, medium); signature (low): `undefined8 vfunc_28(mpSizer * this, uint param_1)`
-    pub slot_28: *const c_void,
+    #[doc(hidden)]
+    pub __slot_28: *const c_void,
 }
 impl Sizing__mpSizer_vtable {
     pub const ID: u64 = 469917;
@@ -12208,161 +12583,5 @@ pub struct SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
 }
 impl SkyrimScript___anon_0D8D4B7E__AttachAshPileFunctor_vtable {
     pub const ID: u64 = 217344;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vftable` at 0x1993cb8, id 217353 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vdtor` at 0xa093c0 (slot_propagation, medium); signature (low): `MoveToPackLocFunctor * vdtor(MoveToPackLocFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_1` at 0xa01410 (rtti, high); signature (low): `ulonglong * vfunc_1(MoveToPackLocFunctor * this, ulonglong * param_1, ulonglong param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_2` at 0xa093a0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_4` at 0xa014e0 (rtti, high); signature (low): `ulonglong vfunc_4(MoveToPackLocFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_5` at 0xa093b0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::MoveToPackLocFunctor::vfunc_6` at 0xa01580 (rtti, high); signature (low): `bool vfunc_6(MoveToPackLocFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__MoveToPackLocFunctor_vtable {
-    pub const ID: u64 = 217353;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vftable` at 0x1993c58, id 217348 (rtti, high); 7 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vdtor` at 0xa09200 (slot_propagation, medium); signature (low): `ResurrectFunctor * vdtor(ResurrectFunctor * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_1` at 0x9ff500 (rtti, high); signature (low): `ulonglong * vfunc_1(ResurrectFunctor * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_2` at 0xa091e0 (rtti, high); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::DelayFunctor::vfunc_3` at 0x9b2670 (rtti, medium); signature (low): `undefined1 vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_4` at 0x9ff5e0 (rtti, high); signature (low): `undefined8 vfunc_4(ResurrectFunctor * this, longlong * param_1)`
-    pub slot_4: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_5` at 0xa091f0 (rtti, high); signature (low): `undefined8 vfunc_5(void)`
-    pub slot_5: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::ResurrectFunctor::vfunc_6` at 0x9ff690 (rtti, high); signature (low): `undefined8 vfunc_6(ResurrectFunctor * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E__ResurrectFunctor_vtable {
-    pub const ID: u64 = 217348;
-}
-
-/// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vftable` at 0x1995be8, id 217429 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc_vtable {
-    /// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vdtor` at 0xa0d3b0 (layout_inference, medium); signature (low): `GiftMenuCallbackFunc * vdtor(GiftMenuCallbackFunc * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_0D8D4B7E::_anon_0D8D4B7E::GiftMenuCallbackFunc::vfunc_1` at 0xa0c350 (rtti, high); signature (low): `undefined vfunc_1(GiftMenuCallbackFunc * this, ulonglong param_1)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_0D8D4B7E___anon_0D8D4B7E__GiftMenuCallbackFunc_vtable {
-    pub const ID: u64 = 217429;
-}
-
-/// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vftable` at 0x199d7a0, id 217808 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_3A897AB3__LatentPlayerMover_vtable {
-    /// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vdtor` at 0xa21830 (layout_inference, medium); signature (low): `LatentPlayerMover * vdtor(LatentPlayerMover * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_3A897AB3::LatentPlayerMover::vfunc_1` at 0xa227b0 (rtti, high); signature (low): `undefined8 vfunc_1(LatentPlayerMover * this, longlong param_1, longlong * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_3A897AB3__LatentPlayerMover_vtable {
-    pub const ID: u64 = 217808;
-}
-
-/// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vftable` at 0x198aed8, id 216721 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindActiveEffectFunctor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vdtor` at 0x9bb490 (layout_inference, medium); signature (low): `FindActiveEffectFunctor * vdtor(FindActiveEffectFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindActiveEffectFunctor::vfunc_1` at 0x9bb470 (rtti, high); signature (low): `bool vfunc_1(FindActiveEffectFunctor * this, FindActiveEffectFunctor_vtbl * param_1)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindActiveEffectFunctor_vtable {
-    pub const ID: u64 = 216721;
-}
-
-/// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vftable` at 0x198ae88, id 216717 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindBaseObjVisitor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vdtor` at 0x9bb4c0 (layout_inference, medium); signature (low): `FindBaseObjVisitor * vdtor(FindBaseObjVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindBaseObjVisitor::vfunc_1` at 0x9babb0 (rtti, high); signature (low): `undefined vfunc_1(FindBaseObjVisitor * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindBaseObjVisitor_vtable {
-    pub const ID: u64 = 216717;
-}
-
-/// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vftable` at 0x198aeb0, id 216719 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_74852251__FindRefrObjVisitor_vtable {
-    /// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vdtor` at 0x9bb4f0 (layout_inference, medium); signature (low): `FindRefrObjVisitor * vdtor(FindRefrObjVisitor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_74852251::FindRefrObjVisitor::vfunc_1` at 0x9bac30 (rtti, high); signature (low): `bool vfunc_1(FindRefrObjVisitor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_2` at 0x2410b0 (rtti, medium); signature (low): `undefined1 vfunc_2(void)`
-    pub slot_2: *const c_void,
-    /// `InventoryChanges::IItemChangeVisitor::vfunc_3` at 0x242500 (rtti, medium); signature (low): `undefined vfunc_3(IItemChangeVisitor * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_74852251__FindRefrObjVisitor_vtable {
-    pub const ID: u64 = 216719;
-}
-
-/// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vftable` at 0x198c338, id 216771 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_91892E59__ProfileCallQueryTranslator_vtable {
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_0` at 0x9c5820 (rtti, high); signature (low): `undefined vfunc_0(ProfileCallQueryTranslator * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_1` at 0x9c57f0 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_1(ProfileCallQueryTranslator * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_2` at 0x9c5860 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_2(ProfileCallQueryTranslator * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::ProfileCallQueryTranslator::vfunc_3` at 0x9c57c0 (rtti, high); signature (high): `ProfileCallQueryTranslator * vfunc_3(ProfileCallQueryTranslator * this)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_91892E59__ProfileCallQueryTranslator_vtable {
-    pub const ID: u64 = 216771;
-}
-
-/// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vftable` at 0x198c310, id 216769 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_91892E59__RawProfileCallQuery_vtable {
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_0` at 0x9c5850 (rtti, high); signature (low): `undefined vfunc_0(RawProfileCallQuery * this, ulonglong * param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_1` at 0x9c5810 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_1(RawProfileCallQuery * this)`
-    pub slot_1: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_2` at 0x9c5880 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_2(RawProfileCallQuery * this)`
-    pub slot_2: *const c_void,
-    /// `SkyrimScript::_anon_91892E59::RawProfileCallQuery::vfunc_3` at 0x9c57e0 (rtti, high); signature (high): `RawProfileCallQuery * vfunc_3(RawProfileCallQuery * this)`
-    pub slot_3: *const c_void,
-}
-impl SkyrimScript___anon_91892E59__RawProfileCallQuery_vtable {
-    pub const ID: u64 = 216769;
-}
-
-/// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vftable` at 0x198d850, id 216841 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903_vtable {
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_0` at 0x9d4e20 (rtti, high); signature (low): `StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * vfunc_0(StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `SkyrimScript::_anon_946BA6A1::StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter>::vfunc_1` at 0x9d2ac0 (rtti, high); signature (low): `undefined8 vfunc_1(StoryEventArguments<SkyrimScript::_anon_946BA6A1::ActorValueStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter,SkyrimScript::_anon_946BA6A1::EmptyStoryEventArgConverter> * this, longlong param_1, undefined8 param_2, ulonglong param_3)`
-    pub slot_1: *const c_void,
-}
-impl SkyrimScript___anon_946BA6A1__StoryEventArguments_SkyrimScript___anon_946BA6A1__ActorValueStoryE_af99f9266903_vtable {
-    pub const ID: u64 = 216841;
 }
 

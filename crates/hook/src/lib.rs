@@ -16,6 +16,7 @@ pub enum Error {
     VersionLib(versionlib::Error),
     Io(io::Error),
     UnknownId(u64),
+    UnknownSite(u64, usize),
     NotRel32(usize),
 }
 
@@ -26,6 +27,7 @@ impl fmt::Display for Error {
             Self::VersionLib(e) => e.fmt(f),
             Self::Io(e) => write!(f, "hook: {e}"),
             Self::UnknownId(id) => write!(f, "address library has no id {id}"),
+            Self::UnknownSite(id, offset) => write!(f, "no site {id}+{offset:#x} on this runtime"),
             Self::NotRel32(site) => write!(f, "no call rel32, jump rel32 or virtual call on the first argument at {site:#x}"),
         }
     }
@@ -138,9 +140,20 @@ impl Reloc {
         self.running.base()
     }
 
+    #[must_use]
+    pub fn running(&self) -> &'static versionlib::Running {
+        self.running
+    }
+
     /// The live address of an AE id on the running game.
     pub fn address(&self, id: u64) -> Result<usize, Error> {
         self.running.address(id).ok_or(Error::UnknownId(id))
+    }
+
+    /// The live address of the site `offset` bytes into the function at an AE id on 1.7.104,
+    /// wherever the running game's profile places it.
+    pub fn site(&self, id: u64, offset: usize) -> Result<usize, Error> {
+        u32::try_from(offset).ok().and_then(|o| self.running.site(id, o)).ok_or(Error::UnknownSite(id, offset))
     }
 
     /// Installs `detour` on the function the Address Library knows as `id`.

@@ -3,6 +3,26 @@
 
 use core::ffi::{c_char, c_void};
 
+impl crate::BSTEventSink_GrandTheftHorse__Event {
+    /// `BSTEventSink<GrandTheftHorse::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37115, rva 0x66e9b0).
+    /// `BSTEventSink<GrandTheftHorse::Event> * vdtor(BSTEventSink<GrandTheftHorse::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
+impl crate::BSTEventSink_HoursPassed__Event {
+    /// `BSTEventSink<HoursPassed::Event>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 37052, rva 0x66dd70).
+    /// `BSTEventSink<HoursPassed::Event> * vdtor(BSTEventSink<HoursPassed::Event> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    ///
+    /// # Safety
+    /// The decompiler's prototype: nothing checks the arguments or the result.
+    #[inline]
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+}
+
 impl crate::BSTEventSink_InputEvent____ptr64 {
     /// `BSTEventSink<InputEvent*___ptr64>::vdtor`, vtable slot 0, through the object's vtable (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 36265, rva 0x644af0).
     /// `BSTEventSink<InputEvent*___ptr64> * vdtor(BSTEventSink<InputEvent*___ptr64> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -364,7 +384,7 @@ impl crate::BSTEventSink_TESAmiiboForcedStopDetectionEvent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSTEventSink_TESAmiiboTouchEvent {
@@ -374,7 +394,7 @@ impl crate::BSTEventSink_TESAmiiboTouchEvent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "BSTEventSink<TESAmiiboTouchEvent>", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BSTEventSink_TESBookReadEvent {

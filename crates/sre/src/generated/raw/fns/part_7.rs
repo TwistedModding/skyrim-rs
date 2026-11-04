@@ -3,6 +3,8 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x55d650 (callgraph, medium); signature (untiered): `longlong * vfunc_2_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_24206f7532d7: u64 = 33135;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vdtor` at 0x8d1cc0 (slot_propagation, medium); signature (low): `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * vdtor(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextShout_CombatBehaviorExpression_CombatB_2ea7c7153aac: u64 = 49769;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x8d1e80 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextShout,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
@@ -5569,7 +5571,3 @@ pub const CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_Combat
 pub const CombatPathingRequestMultiGoal__ctor: u64 = 50552;
 /// `CombatPathingRequestMultiGoal::vdtor` at 0x8e69d0 (slot_propagation, medium); signature (low): `CombatPathingRequestMultiGoal * vdtor(CombatPathingRequestMultiGoal * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatPathingRequestMultiGoal__vdtor: u64 = 50194;
-/// `CombatPathingRequestMultiGoal::vfunc_1` at 0x8e5ac0 (rtti, high); signature (untiered): `undefined4 vfunc_1(void)`
-pub const CombatPathingRequestMultiGoal__vfunc_1: u64 = 50177;
-/// `CombatPathingRequestMultiGoal::vfunc_10` at 0x8e5a00 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 * * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatPathingRequestMultiGoal__vfunc_10: u64 = 50175;

@@ -149,6 +149,42 @@ impl crate::BSAnimationGraphManager {
     /// `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn update_active_graph_foot_ik(&self, out: *mut *mut c_void) { unsafe { function!(43692, (*const Self, *mut *mut c_void))(core::ptr::from_ref(self), out) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_activeGraph(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSAnimationGraphManager.activeGraph", 0xB0, u32) } }
+    /// `BSAnimationGraphManager::activeGraph`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn activeGraph(&self) -> u32 { unsafe { Self::__member_activeGraph(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_activeGraph(&mut self, value: u32) { unsafe { Self::__member_activeGraph(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn activeGraph_ptr(&self) -> *mut u32 { Self::__member_activeGraph(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_dependentsLock(this: *const Self) -> *mut crate::BSSpinLock { unsafe { member!(this, "BSAnimationGraphManager.dependentsLock", 0xA8, crate::BSSpinLock) } }
+    /// `BSAnimationGraphManager::dependentsLock`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn dependentsLock(&self) -> &crate::BSSpinLock { unsafe { &*Self::__member_dependentsLock(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn dependentsLock_ptr(&self) -> *mut crate::BSSpinLock { Self::__member_dependentsLock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_graphsLock(this: *const Self) -> *mut crate::BSSpinLock { unsafe { member!(this, "BSAnimationGraphManager.graphsLock", 0xA0, crate::BSSpinLock) } }
+    /// `BSAnimationGraphManager::graphsLock`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn graphsLock(&self) -> &crate::BSSpinLock { unsafe { &*Self::__member_graphsLock(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn graphsLock_ptr(&self) -> *mut crate::BSSpinLock { Self::__member_graphsLock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_variableCache(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSAnimationGraphManager.variableCache", 0x70, [u8; 48]) } }
+    /// `BSAnimationGraphManager::variableCache`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn variableCache(&self) -> [u8; 48] { unsafe { Self::__member_variableCache(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_variableCache(&mut self, value: [u8; 48]) { unsafe { Self::__member_variableCache(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn variableCache_ptr(&self) -> *mut [u8; 48] { Self::__member_variableCache(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSDismemberSkinInstance {
@@ -158,6 +194,16 @@ impl crate::BSDismemberSkinInstance {
     /// `void (BSDismemberSkinInstance* this, u16 slot, bool visible)`
     #[inline]
     pub fn set_slot_visible(&self, slot: u16, visible: bool) { unsafe { function!(15753, (*const Self, u16, bool))(core::ptr::from_ref(self), slot, visible) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_paletteLock(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSDismemberSkinInstance.paletteLock", 0x60, [u8; 40]) } }
+    /// `BSDismemberSkinInstance::paletteLock`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn paletteLock(&self) -> [u8; 40] { unsafe { Self::__member_paletteLock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_paletteLock(&mut self, value: [u8; 40]) { unsafe { Self::__member_paletteLock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn paletteLock_ptr(&self) -> *mut [u8; 40] { Self::__member_paletteLock(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSFaceGenAnimationData {
@@ -234,7 +280,187 @@ impl crate::BSFaceGenAnimationData {
     ///
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn expression_target(&self) -> Option<&crate::BSFaceGenKeyframeMultiple> { unsafe { { self.expressionTarget }.as_ref() } }
+    pub fn expression_target(&self) -> Option<&crate::BSFaceGenKeyframeMultiple> { unsafe { Self::__member_expressionTarget(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_customInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.customInput", 0xA0, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::customInput`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn customInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_customInput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn customInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_customInput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_customOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.customOutput", 0x180, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::customOutput`, at +0x180 on 1.7.104.
+    #[inline]
+    pub fn customOutput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_customOutput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn customOutput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_customOutput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_customSpeech(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.customSpeech", 0x160, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::customSpeech`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn customSpeech(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_customSpeech(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn customSpeech_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_customSpeech(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_expression(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.expression", 0x20, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::expression`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn expression(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_expression(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn expression_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_expression(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_expressionInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.expressionInput", 0x40, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::expressionInput`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn expressionInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_expressionInput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn expressionInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_expressionInput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_expressionOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.expressionOutput", 0xC0, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::expressionOutput`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn expressionOutput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_expressionOutput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn expressionOutput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_expressionOutput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_expressionTarget(this: *const Self) -> *mut *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.expressionTarget", 0x18, *mut crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::expressionTarget`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn expressionTarget(&self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { Self::__member_expressionTarget(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_expressionTarget(&mut self, value: *mut crate::BSFaceGenKeyframeMultiple) { unsafe { Self::__member_expressionTarget(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn expressionTarget_ptr(&self) -> *mut *mut crate::BSFaceGenKeyframeMultiple { Self::__member_expressionTarget(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_eyeHeading(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSFaceGenAnimationData.eyeHeading", 0x1BC, f32) } }
+    /// `BSFaceGenAnimationData::eyeHeading`, at +0x1BC on 1.7.104.
+    #[inline]
+    pub fn eyeHeading(&self) -> f32 { unsafe { Self::__member_eyeHeading(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_eyeHeading(&mut self, value: f32) { unsafe { Self::__member_eyeHeading(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn eyeHeading_ptr(&self) -> *mut f32 { Self::__member_eyeHeading(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1AC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSFaceGenAnimationData.field_1AC", 0x1AC, u64) } }
+    /// `BSFaceGenAnimationData::field_1AC`, at +0x1AC on 1.7.104.
+    #[inline]
+    pub fn field_1AC(&self) -> u64 { unsafe { Self::__member_field_1AC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1AC(&mut self, value: u64) { unsafe { Self::__member_field_1AC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1AC_ptr(&self) -> *mut u64 { Self::__member_field_1AC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1DC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSFaceGenAnimationData.field_1DC", 0x1DC, u64) } }
+    /// `BSFaceGenAnimationData::field_1DC`, at +0x1DC on 1.7.104.
+    #[inline]
+    pub fn field_1DC(&self) -> u64 { unsafe { Self::__member_field_1DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1DC(&mut self, value: u64) { unsafe { Self::__member_field_1DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1DC_ptr(&self) -> *mut u64 { Self::__member_field_1DC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E4(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSFaceGenAnimationData.field_1E4", 0x1E4, u64) } }
+    /// `BSFaceGenAnimationData::field_1E4`, at +0x1E4 on 1.7.104.
+    #[inline]
+    pub fn field_1E4(&self) -> u64 { unsafe { Self::__member_field_1E4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E4(&mut self, value: u64) { unsafe { Self::__member_field_1E4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E4_ptr(&self) -> *mut u64 { Self::__member_field_1E4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1EC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSFaceGenAnimationData.field_1EC", 0x1EC, u64) } }
+    /// `BSFaceGenAnimationData::field_1EC`, at +0x1EC on 1.7.104.
+    #[inline]
+    pub fn field_1EC(&self) -> u64 { unsafe { Self::__member_field_1EC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1EC(&mut self, value: u64) { unsafe { Self::__member_field_1EC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1EC_ptr(&self) -> *mut u64 { Self::__member_field_1EC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSFaceGenAnimationData.field_1F4", 0x1F4, u32) } }
+    /// `BSFaceGenAnimationData::field_1F4`, at +0x1F4 on 1.7.104.
+    #[inline]
+    pub fn field_1F4(&self) -> u32 { unsafe { Self::__member_field_1F4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F4(&mut self, value: u32) { unsafe { Self::__member_field_1F4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F4_ptr(&self) -> *mut u32 { Self::__member_field_1F4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_forceUpdate(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSFaceGenAnimationData.forceUpdate", 0x218, u8) } }
+    /// `BSFaceGenAnimationData::forceUpdate`, at +0x218 on 1.7.104.
+    #[inline]
+    pub fn forceUpdate(&self) -> u8 { unsafe { Self::__member_forceUpdate(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_forceUpdate(&mut self, value: u8) { unsafe { Self::__member_forceUpdate(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn forceUpdate_ptr(&self) -> *mut u8 { Self::__member_forceUpdate(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_headAngles(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSFaceGenAnimationData.headAngles", 0x1B4, u64) } }
+    /// `BSFaceGenAnimationData::headAngles`, at +0x1B4 on 1.7.104.
+    #[inline]
+    pub fn headAngles(&self) -> u64 { unsafe { Self::__member_headAngles(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_headAngles(&mut self, value: u64) { unsafe { Self::__member_headAngles(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn headAngles_ptr(&self) -> *mut u64 { Self::__member_headAngles(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_modifierInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.modifierInput", 0x60, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::modifierInput`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn modifierInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_modifierInput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn modifierInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_modifierInput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_modifierOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.modifierOutput", 0x100, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::modifierOutput`, at +0x100 on 1.7.104.
+    #[inline]
+    pub fn modifierOutput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_modifierOutput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn modifierOutput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_modifierOutput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_phonemeAnim(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSFaceGenAnimationData.phonemeAnim", 0x228, *mut c_void) } }
+    /// `BSFaceGenAnimationData::phonemeAnim`, at +0x228 on 1.7.104.
+    #[inline]
+    pub fn phonemeAnim(&self) -> *mut c_void { unsafe { Self::__member_phonemeAnim(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_phonemeAnim(&mut self, value: *mut c_void) { unsafe { Self::__member_phonemeAnim(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn phonemeAnim_ptr(&self) -> *mut *mut c_void { Self::__member_phonemeAnim(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_phonemeInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.phonemeInput", 0x80, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::phonemeInput`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn phonemeInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_phonemeInput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn phonemeInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_phonemeInput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_phonemeOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.phonemeOutput", 0x140, crate::BSFaceGenKeyframeMultiple) } }
+    /// `BSFaceGenAnimationData::phonemeOutput`, at +0x140 on 1.7.104.
+    #[inline]
+    pub fn phonemeOutput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_phonemeOutput(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn phonemeOutput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_phonemeOutput(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSFaceGenNiNode {
@@ -475,6 +701,60 @@ impl crate::BShkbAnimationGraph {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn root_node(&self) -> Option<&crate::NiNode> { unsafe { { self.rootNode }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_eventsSuppressed(this: *const Self) -> *mut u8 { unsafe { member!(this, "BShkbAnimationGraph.eventsSuppressed", 0x243, u8) } }
+    /// `BShkbAnimationGraph::eventsSuppressed`, at +0x243 on 1.7.104.
+    #[inline]
+    pub fn eventsSuppressed(&self) -> u8 { unsafe { Self::__member_eventsSuppressed(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_eventsSuppressed(&mut self, value: u8) { unsafe { Self::__member_eventsSuppressed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn eventsSuppressed_ptr(&self) -> *mut u8 { Self::__member_eventsSuppressed(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nameMatchList(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BShkbAnimationGraph.nameMatchList", 0x190, crate::BSTArray) } }
+    /// `BShkbAnimationGraph::nameMatchList`, at +0x190 on 1.7.104.
+    #[inline]
+    pub fn nameMatchList(&self) -> &crate::BSTArray { unsafe { &*Self::__member_nameMatchList(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn nameMatchList_ptr(&self) -> *mut crate::BSTArray { Self::__member_nameMatchList(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ownedNodeData(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "BShkbAnimationGraph.ownedNodeData", 0x178, crate::BSTArray) } }
+    /// `BShkbAnimationGraph::ownedNodeData`, at +0x178 on 1.7.104.
+    #[inline]
+    pub fn ownedNodeData(&self) -> &crate::BSTArray { unsafe { &*Self::__member_ownedNodeData(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn ownedNodeData_ptr(&self) -> *mut crate::BSTArray { Self::__member_ownedNodeData(core::ptr::from_ref(self)) }
+}
+
+impl crate::BoneNodeEntry {
+    /// `BoneNodeEntry::node` at +0x0: the bone's node (or the flattened tree holding it)
+    ///
+    /// Semantic field, animation pass, high; `None` while the pointer is null.
+    #[inline]
+    pub fn node(&self) -> Option<&crate::NiAVObject> { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flatIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BoneNodeEntry.flatIndex", 0x8, u32) } }
+    /// `BoneNodeEntry::flatIndex`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn flatIndex(&self) -> u32 { unsafe { Self::__member_flatIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flatIndex(&mut self, value: u32) { unsafe { Self::__member_flatIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flatIndex_ptr(&self) -> *mut u32 { Self::__member_flatIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_node(this: *const Self) -> *mut *mut crate::NiAVObject { unsafe { member!(this, "BoneNodeEntry.node", 0x0, *mut crate::NiAVObject) } }
+    /// `BoneNodeEntry::node`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn node_field(&self) -> *mut crate::NiAVObject { unsafe { Self::__member_node(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_node(&mut self, value: *mut crate::NiAVObject) { unsafe { Self::__member_node(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn node_ptr(&self) -> *mut *mut crate::NiAVObject { Self::__member_node(core::ptr::from_ref(self)) }
 }
 
 impl crate::IAnimationGraphManagerHolder {
@@ -725,6 +1005,47 @@ impl crate::NiSkinData {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn save_binary(&self, s: &crate::NiStream) { unsafe { virtual_function!(self, 27, (*const Self, *const crate::NiStream))(core::ptr::from_ref(self), core::ptr::from_ref(s)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field10(this: *const Self) -> *mut *mut crate::NiObject { unsafe { member!(this, "NiSkinData.field10", 0x10, *mut crate::NiObject) } }
+    /// `NiSkinData::field10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field10(&self) -> *mut crate::NiObject { unsafe { Self::__member_field10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field10(&mut self, value: *mut crate::NiObject) { unsafe { Self::__member_field10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field10_ptr(&self) -> *mut *mut crate::NiObject { Self::__member_field10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_skinTransform(this: *const Self) -> *mut crate::NiTransform { unsafe { member!(this, "NiSkinData.skinTransform", 0x18, crate::NiTransform) } }
+    /// `NiSkinData::skinTransform`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn skinTransform(&self) -> &crate::NiTransform { unsafe { &*Self::__member_skinTransform(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn skinTransform_ptr(&self) -> *mut crate::NiTransform { Self::__member_skinTransform(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSkinData__BoneData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_weightCount(this: *const Self) -> *mut u16 { unsafe { member!(this, "NiSkinData::BoneData.weightCount", 0x50, u16) } }
+    /// `NiSkinData::BoneData::weightCount`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn weightCount(&self) -> u16 { unsafe { Self::__member_weightCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_weightCount(&mut self, value: u16) { unsafe { Self::__member_weightCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn weightCount_ptr(&self) -> *mut u16 { Self::__member_weightCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_weights(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "NiSkinData::BoneData.weights", 0x48, *mut c_void) } }
+    /// `NiSkinData::BoneData::weights`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn weights(&self) -> *mut c_void { unsafe { Self::__member_weights(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_weights(&mut self, value: *mut c_void) { unsafe { Self::__member_weights(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn weights_ptr(&self) -> *mut *mut c_void { Self::__member_weights(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiSkinPartition {
@@ -849,6 +1170,106 @@ impl crate::hkbBehaviorGraph {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn variable_value_set(&self) -> Option<&crate::hkbVariableValueSet> { unsafe { { self.variableValueSet }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbBehaviorGraph.field_108", 0x108, u64) } }
+    /// `hkbBehaviorGraph::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_110", 0x110, u32) } }
+    /// `hkbBehaviorGraph::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_114", 0x114, u32) } }
+    /// `hkbBehaviorGraph::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_A4", 0xA4, u32) } }
+    /// `hkbBehaviorGraph::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbBehaviorGraph.field_A8", 0xA8, u64) } }
+    /// `hkbBehaviorGraph::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_B0", 0xB0, u32) } }
+    /// `hkbBehaviorGraph::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_B4", 0xB4, u32) } }
+    /// `hkbBehaviorGraph::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbBehaviorGraph.field_B8", 0xB8, u64) } }
+    /// `hkbBehaviorGraph::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_C0", 0xC0, u32) } }
+    /// `hkbBehaviorGraph::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbBehaviorGraph.field_C4", 0xC4, u32) } }
+    /// `hkbBehaviorGraph::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkbCharacter {
@@ -949,6 +1370,76 @@ impl crate::hkbRagdollDriver {
     /// Semantic field, animation pass, high; `None` while the pointer is null.
     #[inline]
     pub fn ragdoll_instance(&self) -> Option<&crate::hkaRagdollInstance> { unsafe { { self.ragdollInstance }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbRagdollDriver.field_A4", 0xA4, u32) } }
+    /// `hkbRagdollDriver::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbRagdollDriver.field_A8", 0xA8, u64) } }
+    /// `hkbRagdollDriver::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbRagdollDriver.field_B0", 0xB0, u32) } }
+    /// `hkbRagdollDriver::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbRagdollDriver.field_B4", 0xB4, u32) } }
+    /// `hkbRagdollDriver::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "hkbRagdollDriver.field_B8", 0xB8, u64) } }
+    /// `hkbRagdollDriver::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbRagdollDriver.field_C0", 0xC0, u32) } }
+    /// `hkbRagdollDriver::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "hkbRagdollDriver.field_C4", 0xC4, u32) } }
+    /// `hkbRagdollDriver::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 /// `ApplyFaceMorphJob`: job body: ApplyMorphs(node, faceFlags bit 0), then drops the queue's reference
@@ -1115,24 +1606,6 @@ pub fn job_update_actor_animation(actorHandle: u32) { unsafe { function!(41453, 
 /// `void ()`
 #[inline]
 pub fn kick_serving_thread_frame() { unsafe { function!(35408, ())() } }
-/// `ProcessLists::QueueActorAnimationJobs`: for each actor handle of the process list (+0x30, count +0x40) appends job 0x7898e0, then 0x7899b0 jobs
-///
-/// Semantic, animation pass, high; ledger semantic evidence, name high; id 41370, rva 0x7836e0.
-/// `void (ProcessLists* this, JobList* list)`
-///
-/// # Safety
-/// `this`, `list` must point to what the engine expects.
-#[inline]
-pub unsafe fn process_lists__queue_actor_animation_jobs(this: *mut c_void, list: *mut c_void) { unsafe { function!(41370, (*mut c_void, *mut c_void))(this, list) } }
-/// `ProcessLists::UpdatePlayerAnimation`: PlayerCharacter slot 125 with g_FrameDelta * time scale when ProcessLists+0x1e6 is set
-///
-/// Semantic, animation pass, high; ledger semantic evidence, name high; id 41371, rva 0x7839c0.
-/// `void (ProcessLists* this)`
-///
-/// # Safety
-/// `this` must point to what the engine expects.
-#[inline]
-pub unsafe fn process_lists__update_player_animation(this: *mut c_void) { unsafe { function!(41371, (*mut c_void))(this) } }
 /// `QueueFaceMorphJobs`: adds the job 0x43a900 for every queued BSFaceGenNiNode and empties the queue
 ///
 /// Semantic, animation pass, high; ledger semantic evidence, name high; id 26996, rva 0x43a3b0.
@@ -1218,9 +1691,6 @@ pub fn g_job_list_serving_thread() -> &'static crate::JobListManager__ServingThr
 /// `g_MainLoopSteps` at 0x20b4f00, id 380514 (semantic, medium); named main loop job steps ('Process lists' 0x20b4f00 .. 'Post reset' 0x20b51a0), 16-byte entries (medium, animation pass), type `struct {fn, const char* name}[]`
 #[inline]
 pub fn g_main_loop_steps() -> *mut c_void { address!(380514) as *mut c_void }
-/// `g_ProcessLists_ptr` at 0x219e570, id 400315 (semantic, high); process lists singleton (points at the static 0x3241730) (high, animation pass), type `pointer`
-#[inline]
-pub fn g_process_lists_ptr() -> *mut *mut c_void { address!(400315) as *mut *mut c_void }
 /// `g_strIsAttacking` at 0x3252908, id 404830 (semantic, high); interned 'IsAttacking' built at static init (0xac720) (high, animation pass), type `class:BSFixedString`
 #[inline]
 pub fn g_str_is_attacking() -> &'static crate::BSFixedString { unsafe { &*(address!(404830) as *const crate::BSFixedString) } }

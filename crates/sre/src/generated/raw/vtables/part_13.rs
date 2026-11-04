@@ -475,9 +475,11 @@ impl ConeProjectile_vtable_38 {
 #[repr(C)]
 pub struct ConfirmResetCallback_vtable {
     /// `ConfirmResetCallback::vdtor` at 0x582340 (layout_inference, medium); signature (low): `ConfirmResetCallback * vdtor(ConfirmResetCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `ConfirmResetCallback::vfunc_1` at 0x582300 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl ConfirmResetCallback_vtable {
     pub const ID: u64 = 464977;
@@ -579,15 +581,20 @@ pub struct ConsoleOpenHandler_vtable {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `ConsoleOpenHandler::ProcessButtonEvent` at 0x960e20 (semantic, high); signature (untiered): `undefined1 ProcessButtonEvent(ConsoleOpenHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`; `ProcessButtonEvent`: press edge -> open/close console (high); semantic signature: `bool (ConsoleOpenHandler* this, ButtonEvent* event)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl ConsoleOpenHandler_vtable {
     pub const ID: u64 = 215781;
@@ -597,11 +604,14 @@ impl ConsoleOpenHandler_vtable {
     pub fn CanProcess(&self) -> Option<ConsoleOpenHandler_vtable_CanProcess> {
         unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_CanProcess>>(self.slot_1) }
     }
-    pub const SLOT_ProcessButtonEvent: usize = 7;
+    /// The slot's index on the running game; 7 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_ProcessButtonEvent() -> usize { slot_index!("ConsoleOpenHandler", 0x0, 7) }
     /// Slot 7 as `ConsoleOpenHandler_vtable_ProcessButtonEvent`, `None` when the slot is null.
     #[must_use]
     pub fn ProcessButtonEvent(&self) -> Option<ConsoleOpenHandler_vtable_ProcessButtonEvent> {
-        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(self.slot_7) }
+        unsafe { core::mem::transmute::<*const c_void, Option<ConsoleOpenHandler_vtable_ProcessButtonEvent>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("ConsoleOpenHandler", 0x0, 7))) }
     }
 }
 /// `ConsoleOpenHandler::CanProcess`, slot 1: Console (high).
@@ -639,7 +649,8 @@ impl ContainerMenu_vtable {
 #[repr(C)]
 pub struct ContentMenu_vtable {
     /// `ContentMenu::vfunc_0` at 0x573950 (rtti, high); signature (low): `undefined vfunc_0(ContentMenu * this, int param_1, int param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl ContentMenu_vtable {
     pub const ID: u64 = 422067;
@@ -649,9 +660,11 @@ impl ContentMenu_vtable {
 #[repr(C)]
 pub struct ContentMenu__errorCallback_vtable {
     /// `ContentMenu::errorCallback::vdtor` at 0x575ba0 (layout_inference, medium); signature (low): `errorCallback * vdtor(errorCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `ContentMenu::errorCallback::vfunc_1` at 0x575ab0 (rtti, high); signature (high): `undefined vfunc_1(errorCallback * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl ContentMenu__errorCallback_vtable {
     pub const ID: u64 = 422072;
@@ -1259,15 +1272,20 @@ pub struct CursorMenu_vtable_30 {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `CursorMenu::MenuEventHandler_vfunc_5` at 0x92a1f0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_5(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `CursorMenu::MenuEventHandler_vfunc_6` at 0x92a1d0 (rtti, high); signature (low): `undefined1 MenuEventHandler_vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl CursorMenu_vtable_30 {
     pub const ID: u64 = 215248;
@@ -1317,9 +1335,11 @@ impl CustomUtils__HasForceGreetVisitor_vtable {
 #[repr(C)]
 pub struct DLCPurchased__OpenVisitCreationClubCallback_vtable {
     /// `DLCPurchased::OpenVisitCreationClubCallback::vdtor` at 0x95e700 (layout_inference, medium); signature (low): `OpenVisitCreationClubCallback * vdtor(OpenVisitCreationClubCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `DLCPurchased::OpenVisitCreationClubCallback::vfunc_1` at 0x95e2d0 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl DLCPurchased__OpenVisitCreationClubCallback_vtable {
     pub const ID: u64 = 215706;
@@ -1329,9 +1349,11 @@ impl DLCPurchased__OpenVisitCreationClubCallback_vtable {
 #[repr(C)]
 pub struct DLCPurchased__PurchasedDLCDialogCallback_vtable {
     /// `DLCPurchased::PurchasedDLCDialogCallback::vdtor` at 0x95e730 (layout_inference, medium); signature (low): `PurchasedDLCDialogCallback * vdtor(PurchasedDLCDialogCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `DLCPurchased::PurchasedDLCDialogCallback::vfunc_1` at 0x95e2e0 (rtti, high); signature (low): `undefined vfunc_1(PurchasedDLCDialogCallback * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl DLCPurchased__PurchasedDLCDialogCallback_vtable {
     pub const ID: u64 = 215710;
@@ -1561,33 +1583,47 @@ impl DemoralizeEffect_vtable {
 #[repr(C)]
 pub struct DescriptionBox_vtable {
     /// `DescriptionBox::vdtor` at 0x12dd70 (slot_propagation, medium); signature (low): `DescriptionBox * vdtor(DescriptionBox * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `DescriptionBox::vfunc_1` at 0x15e9e80 (rtti, high); signature (low): `undefined vfunc_1(DescriptionBox * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `DescriptionBox::vfunc_2` at 0x15e8db0 (rtti, high); signature (high): `undefined vfunc_2(DescriptionBox * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `DescriptionBox::vfunc_3` at 0x15e8ed0 (rtti, high); signature (medium): `undefined vfunc_3(DescriptionBox * this, float param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `DescriptionBox::vfunc_4` at 0x15e8cb0 (rtti, high); signature (low): `undefined8 vfunc_4(DescriptionBox * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl DescriptionBox_vtable {
     pub const ID: u64 = 469932;
@@ -1911,15 +1947,20 @@ pub struct DirectionHandler_vtable {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `DirectionHandler::vfunc_5` at 0x960fc0 (rtti, high); signature (low): `undefined8 vfunc_5(DirectionHandler * this, longlong param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `DirectionHandler::vfunc_7` at 0x960e50 (rtti, high); signature (low): `undefined8 vfunc_7(DirectionHandler * this, longlong * param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl DirectionHandler_vtable {
     pub const ID: u64 = 215779;
@@ -2197,9 +2238,11 @@ impl DoorObstacleAdapter_vtable {
 #[repr(C)]
 pub struct DownloadAll__uiCallback_vtable {
     /// `DownloadAll::uiCallback::vdtor` at 0x6072c0 (layout_inference, medium); signature (low): `uiCallback * vdtor(uiCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `DownloadAll::uiCallback::vfunc_1` at 0x607170 (rtti, high); signature (low): `undefined vfunc_1(uiCallback * this, char param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl DownloadAll__uiCallback_vtable {
     pub const ID: u64 = 417106;
@@ -2209,33 +2252,47 @@ impl DownloadAll__uiCallback_vtable {
 #[repr(C)]
 pub struct DownloadProgressBar_vtable {
     /// `DownloadProgressBar::vdtor` at 0x119920 (slot_propagation, medium); signature (low): `DownloadProgressBar * vdtor(DownloadProgressBar * this, void * param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `DownloadProgressBar::vfunc_2` at 0x15c3740 (rtti, high); signature (high): `undefined vfunc_2(DownloadProgressBar * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `DownloadProgressBar::vfunc_3` at 0x15c3700 (rtti, high); signature (low): `undefined vfunc_3(DownloadProgressBar * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `UI_element::vfunc_4` at 0x15e7780 (rtti, medium); signature (low): `undefined8 vfunc_4(UI_element * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl DownloadProgressBar_vtable {
     pub const ID: u64 = 469747;
@@ -2393,15 +2450,20 @@ pub struct DragonCameraState_vtable_20 {
     /// `ThirdPersonState::InputHandler::CanProcess` at 0x8fdca0 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `DragonCameraState::InputHandler::ProcessButton` at 0x55c7f0 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1, undefined8 param_2)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl DragonCameraState_vtable_20 {
     pub const ID: u64 = 205242;
@@ -2673,7 +2735,8 @@ impl EffectSetting_vtable_40 {
 #[repr(C)]
 pub struct EffectSettingCollection_vtable {
     /// `EffectSettingCollection::vdtor` at 0x14d840 (layout_inference, medium); signature (low): `EffectSettingCollection * vdtor(EffectSettingCollection * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl EffectSettingCollection_vtable {
     pub const ID: u64 = 422043;
@@ -6095,17 +6158,23 @@ pub struct FavoritesHandler_vtable {
     /// `FavoritesHandler::CanProcess` at 0x962120 (semantic, high); signature (untiered): `ulonglong CanProcess(FavoritesHandler * this, longlong * param_1)`; `CanProcess`: Favorites, Hotkey1-8 and 29 more global names set by the Str_HK* initializers (speech hotkeys such as HKHealthPotion), looked up through 0x92cef0; false while 0x32583c8 is set (high); semantic signature: `bool (FavoritesHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `FavoritesHandler::vfunc_4` at 0x961410 (rtti, high); signature (low): `undefined1 vfunc_4(FavoritesHandler * this, longlong * param_1, BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * param_2, longlong param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `FavoritesHandler::vfunc_7` at 0x961190 (rtti, high); signature (low): `undefined8 vfunc_7(FavoritesHandler * this, longlong * param_1, BSTArrayAllocatorFunctor<BSScrapArrayAllocator>_vtbl * param_2, longlong param_3)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl FavoritesHandler_vtable {
     pub const ID: u64 = 215785;
@@ -6153,17 +6222,23 @@ pub struct FavoritesMenu_vtable_30 {
     /// `FavoritesMenu::MenuEventHandler_vfunc_1` at 0x92cd50 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_1(FavoritesMenu * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `FavoritesMenu::MenuEventHandler_vfunc_4` at 0x92ce30 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_4(FavoritesMenu * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `MenuEventHandler::ProcessThumbstickEvent` at 0x582610 (semantic, medium); signature (untiered): `undefined1 ProcessThumbstickEvent(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `FavoritesMenu::MenuEventHandler_vfunc_7` at 0x92cda0 (rtti, high); signature (low): `char MenuEventHandler_vfunc_7(FavoritesMenu * this, longlong * param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl FavoritesMenu_vtable_30 {
     pub const ID: u64 = 215309;
@@ -6173,47 +6248,68 @@ impl FavoritesMenu_vtable_30 {
 #[repr(C)]
 pub struct FilterSideBar_vtable {
     /// `FilterSideBar::vdtor` at 0x143470 (layout_inference, medium); signature (low): `FilterSideBar * vdtor(FilterSideBar * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `FilterSideBar::vfunc_2` at 0x161caa0 (rtti, high); signature (low): `undefined vfunc_2(FilterSideBar * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `FilterSideBar::vfunc_3` at 0x161ce30 (rtti, high); signature (medium): `undefined vfunc_3(FilterSideBar * this, float param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `FilterSideBar::vfunc_4` at 0x161c5f0 (rtti, high); signature (low): `undefined8 vfunc_4(FilterSideBar * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
     /// `FilterSideBar::vfunc_14` at 0x161c710 (rtti, high); signature (low): `undefined vfunc_14(FilterSideBar * this, longlong param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_14: *const c_void,
+    #[doc(hidden)]
+    pub __slot_14: *const c_void,
     /// `FilterSideBar::vfunc_15` at 0x161c500 (rtti, high); signature (low): `undefined vfunc_15(FilterSideBar * this, longlong * param_1)`
-    pub slot_15: *const c_void,
+    #[doc(hidden)]
+    pub __slot_15: *const c_void,
     /// `FilterSideBar::vfunc_16` at 0x161c4d0 (rtti, high); signature (low): `undefined vfunc_16(FilterSideBar * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_16: *const c_void,
+    #[doc(hidden)]
+    pub __slot_16: *const c_void,
     /// `FilterSideBar::vfunc_17` at 0x161d870 (rtti, high); signature (low): `undefined vfunc_17(FilterSideBar * this, undefined8 param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_17: *const c_void,
+    #[doc(hidden)]
+    pub __slot_17: *const c_void,
     /// `UI_page::vfunc_18` at 0x15f2560 (rtti, medium); signature (low): `undefined vfunc_18(void)`
-    pub slot_18: *const c_void,
+    #[doc(hidden)]
+    pub __slot_18: *const c_void,
     /// `UI_page::vfunc_19` at 0x122030 (rtti, medium); signature (low): `undefined vfunc_19(void)`
-    pub slot_19: *const c_void,
+    #[doc(hidden)]
+    pub __slot_19: *const c_void,
     /// `UI_page::vfunc_20` at 0x122040 (rtti, medium); signature (low): `undefined vfunc_20(void)`
-    pub slot_20: *const c_void,
+    #[doc(hidden)]
+    pub __slot_20: *const c_void,
 }
 impl FilterSideBar_vtable {
     pub const ID: u64 = 469872;
@@ -6465,15 +6561,20 @@ pub struct FirstPersonState_vtable_20 {
     /// `FirstPersonState::InputHandler::CanProcess` at 0x8f5430 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `FirstPersonState::InputHandler::ProcessButton` at 0x8f54b0 (runtime, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl FirstPersonState_vtable_20 {
     pub const ID: u64 = 214857;
@@ -7345,15 +7446,20 @@ pub struct FreeCameraState_vtable_20 {
     /// `FreeCameraState::InputHandler::CanProcess` at 0x8f6100 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `FreeCameraState::InputHandler::ProcessButton` at 0x8f6170 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl FreeCameraState_vtable_20 {
     pub const ID: u64 = 214865;
@@ -7545,7 +7651,8 @@ impl FutBinaryFileC_vtable {
 #[repr(C)]
 pub struct FxDelegate_vtable {
     /// `FxDelegate::vdtor` at 0x117b270 (layout_inference, medium); signature (low): `FxDelegate * vdtor(FxDelegate * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `FxDelegate::vfunc_1` at 0x117aad0 (rtti, high); signature (low): `undefined vfunc_1(FxDelegate * this, undefined8 param_1, longlong param_2, undefined8 * param_3, int param_4)`
     pub slot_1: *const c_void,
 }
@@ -7605,9 +7712,11 @@ impl FxResponseArgs_13_vtable {
 #[repr(C)]
 pub struct FxResponseArgs_15_vtable {
     /// `FxResponseArgs<15>::vdtor` at 0x95e370 (layout_inference, medium); signature (low): `FxResponseArgs<15> * vdtor(FxResponseArgs<15> * this, uint param_1)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `FxResponseArgs<15>::vfunc_1` at 0x95e9a0 (rtti, high); signature (low): `undefined4 vfunc_1(FxResponseArgs<15> * this, longlong * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl FxResponseArgs_15_vtable {
     pub const ID: u64 = 215746;
@@ -8007,7 +8116,8 @@ impl GRefCountBase_GFxState_2_vtable {
 #[repr(C)]
 pub struct GRefCountBaseStatImpl_GRefCountImpl_2_vtable {
     /// `GRefCountBaseStatImpl<GRefCountImpl,2>::vdtor` at 0x121900 (slot_propagation, medium); signature (low): `GRefCountBaseStatImpl<GRefCountImpl,2> * vdtor(GRefCountBaseStatImpl<GRefCountImpl,2> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl GRefCountBaseStatImpl_GRefCountImpl_2_vtable {
     pub const ID: u64 = 464946;
@@ -9830,33 +9940,46 @@ pub struct HeldStateHandler_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `PlayerInputHandler::ProcessButton` at 0x55d5c0 (semantic, high); signature (untiered): `undefined ProcessButton(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`; `UpdateHeldState`: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high); semantic signature: `void (HeldStateHandler* this, ButtonEvent* event)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`; `SetHeldState`: stores held (high); semantic signature: `void (HeldStateHandler* this, bool held)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
 }
 impl HeldStateHandler_vtable {
     pub const ID: u64 = 208684;
-    pub const SLOT_UpdateHeldState: usize = 7;
+    /// The slot's index on the running game; 7 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_UpdateHeldState() -> usize { slot_index!("HeldStateHandler", 0x0, 7) }
     /// Slot 7 as `HeldStateHandler_vtable_UpdateHeldState`, `None` when the slot is null.
     #[must_use]
     pub fn UpdateHeldState(&self) -> Option<HeldStateHandler_vtable_UpdateHeldState> {
-        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_UpdateHeldState>>(self.slot_7) }
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_UpdateHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("HeldStateHandler", 0x0, 7))) }
     }
-    pub const SLOT_SetHeldState: usize = 8;
+    /// The slot's index on the running game; 8 on 1.7.104.
+    #[inline]
+    #[must_use]
+    pub fn SLOT_SetHeldState() -> usize { slot_index!("HeldStateHandler", 0x0, 8) }
     /// Slot 8 as `HeldStateHandler_vtable_SetHeldState`, `None` when the slot is null.
     #[must_use]
     pub fn SetHeldState(&self) -> Option<HeldStateHandler_vtable_SetHeldState> {
-        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_SetHeldState>>(self.slot_8) }
+        unsafe { core::mem::transmute::<*const c_void, Option<HeldStateHandler_vtable_SetHeldState>>(*core::ptr::from_ref(self).cast::<*const c_void>().add(slot_index!("HeldStateHandler", 0x0, 8))) }
     }
 }
 /// `HeldStateHandler::UpdateHeldState`, slot 7: after ProcessButton, held = !(value == 0 && heldDownSecs >= 0) (high).
@@ -10064,15 +10187,20 @@ pub struct HorseCameraState_vtable_20 {
     /// `ThirdPersonState::InputHandler::CanProcess` at 0x8fdca0 (semantic, high); signature (untiered): `undefined8 CanProcess(void * this, longlong * param_1)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `HorseCameraState::InputHandler::ProcessButton` at 0x8f6d20 (semantic, high); signature (untiered): `undefined ProcessButton(void * this, longlong * param_1, undefined8 param_2, longlong param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl HorseCameraState_vtable_20 {
     pub const ID: u64 = 214839;
@@ -12711,33 +12839,47 @@ impl IRendererResourceManager_vtable {
 #[repr(C)]
 pub struct ISEntry_vtable {
     /// `ISEntry::vdtor` at 0x118ee0 (layout_inference, medium); signature (low): `ISEntry * vdtor(ISEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `ISEntry::vfunc_2` at 0x15c4060 (rtti, high); signature (high): `undefined vfunc_2(ISEntry * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `ISEntry::vfunc_3` at 0x15c4050 (rtti, high); signature (high): `undefined vfunc_3(ISEntry * this)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `ISEntry::vfunc_4` at 0x15c4100 (rtti, high); signature (low): `undefined8 vfunc_4(ISEntry * this, float * param_1, longlong * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl ISEntry_vtable {
     pub const ID: u64 = 469741;
@@ -12899,11 +13041,14 @@ impl IdleDialogueExitHandler_vtable {
 #[repr(C)]
 pub struct ImageCreationThread_vtable {
     /// `ImageCreationThread::vdtor` at 0x59dee0 (slot_propagation, medium); signature (low): `ImageCreationThread * vdtor(ImageCreationThread * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `ImageCreationThread::vfunc_1` at 0x59f130 (rtti, high); signature (low): `undefined8 vfunc_1(ImageCreationThread * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTaskThread::vfunc_2` at 0x19e7c0 (rtti, medium); signature (high): `undefined vfunc_2(BSTaskThread * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl ImageCreationThread_vtable {
     pub const ID: u64 = 465019;
@@ -12913,33 +13058,47 @@ impl ImageCreationThread_vtable {
 #[repr(C)]
 pub struct ImageScroller_vtable {
     /// `ImageScroller::vdtor` at 0x119270 (layout_inference, medium); signature (low): `ImageScroller * vdtor(ImageScroller * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `ImageScroller::vfunc_2` at 0x15c4a80 (rtti, high); signature (low): `undefined vfunc_2(ImageScroller * this, undefined8 param_1, void * param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `UI_element::vfunc_3` at 0x15e7870 (rtti, medium); signature (low): `undefined vfunc_3(UI_element * this, undefined4 param_2)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `ImageScroller::vfunc_4` at 0x15c4db0 (rtti, high); signature (low): `undefined8 vfunc_4(ImageScroller * this, float * param_1, longlong * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl ImageScroller_vtable {
     pub const ID: u64 = 469755;
@@ -13834,33 +13993,47 @@ impl ImageSpaceShaderParam_vtable {
 #[repr(C)]
 pub struct InfiniteList_vtable {
     /// `InfiniteList::vdtor` at 0x140860 (layout_inference, medium); signature (low): `InfiniteList * vdtor(InfiniteList * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `InfiniteList::vfunc_2` at 0x1613430 (rtti, high); signature (high): `undefined vfunc_2(InfiniteList * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `InfiniteList::vfunc_3` at 0x16137d0 (rtti, high); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `InfiniteList::vfunc_4` at 0x1613290 (rtti, high); signature (low): `undefined8 vfunc_4(InfiniteList * this, float * param_1, longlong * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `UI_element::vfunc_7` at 0x15e76d0 (rtti, medium); signature (medium): `undefined vfunc_7(UI_element * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl InfiniteList_vtable {
     pub const ID: u64 = 469807;
@@ -14316,9 +14489,11 @@ pub type InputEvent_vtable_QUserEvent = unsafe extern "C" fn(this: *mut crate::I
 #[repr(C)]
 pub struct InstalledContent_vtable {
     /// `InstalledContent::vdtor` at 0x60ae60 (slot_propagation, medium); signature (low): `InstalledContent * vdtor(InstalledContent * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `InstalledContent::ProcessLoadGameEvent` at 0x609560 (runtime, high); signature (untiered): `undefined8 ProcessLoadGameEvent(InstalledContent * this, BSTArrayAllocatorFunctor<BSTArrayHeapAllocator>_vtbl * * param_1, undefined8 * * param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl InstalledContent_vtable {
     pub const ID: u64 = 465278;
@@ -14384,15 +14559,20 @@ pub struct Inventory3DManager_vtable {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `Inventory3DManager::vfunc_5` at 0x93e5a0 (rtti, high); signature (low): `undefined1 vfunc_5(Inventory3DManager * this, longlong param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `Inventory3DManager::vfunc_6` at 0x93e620 (rtti, high); signature (low): `undefined1 vfunc_6(Inventory3DManager * this, longlong param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl Inventory3DManager_vtable {
     pub const ID: u64 = 215473;
@@ -14796,15 +14976,20 @@ pub struct JournalMenu_vtable_30 {
     /// `MenuEventHandler::Unk2` at 0x5825e0 (semantic, low); signature (untiered): `undefined1 Unk2(void)`
     pub slot_2: *const c_void,
     /// `MenuEventHandler::ProcessSixaxisEvent` at 0x582600 (semantic, medium); signature (untiered): `undefined1 ProcessSixaxisEvent(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `MenuEventHandler::ProcessKinectEvent` at 0x5825d0 (semantic, medium); signature (untiered): `undefined1 ProcessKinectEvent(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `JournalMenu::MenuEventHandler_vfunc_5` at 0x9acd90 (rtti, high); signature (low): `undefined8 MenuEventHandler_vfunc_5(JournalMenu * this, longlong param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `MenuEventHandler::ProcessMouseMoveEvent` at 0x5825f0 (semantic, medium); signature (untiered): `undefined1 ProcessMouseMoveEvent(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `MenuEventHandler::ProcessButtonEvent` at 0x5825c0 (semantic, medium); signature (untiered): `undefined1 ProcessButtonEvent(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl JournalMenu_vtable_30 {
     pub const ID: u64 = 216687;
@@ -14938,9 +15123,11 @@ impl Journal_SystemTab_vtable_30 {
 #[repr(C)]
 pub struct Json__BuiltStyledStreamWriter_vtable {
     /// `Json::BuiltStyledStreamWriter::vdtor` at 0xa7e0c0 (slot_propagation, medium); signature (low): `BuiltStyledStreamWriter * vdtor(BuiltStyledStreamWriter * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::BuiltStyledStreamWriter::vfunc_1` at 0xa91490 (rtti, high); signature (low): `undefined8 vfunc_1(BuiltStyledStreamWriter * this, double * param_1, undefined8 param_2, undefined8 * param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__BuiltStyledStreamWriter_vtable {
     pub const ID: u64 = 465747;
@@ -14950,9 +15137,11 @@ impl Json__BuiltStyledStreamWriter_vtable {
 #[repr(C)]
 pub struct Json__CharReader_vtable {
     /// `Json::CharReader::vdtor` at 0xa7e100 (layout_inference, medium); signature (low): `CharReader * vdtor(CharReader * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__CharReader_vtable {
     pub const ID: u64 = 465623;
@@ -14962,9 +15151,11 @@ impl Json__CharReader_vtable {
 #[repr(C)]
 pub struct Json__CharReader__Factory_vtable {
     /// `Json::CharReader::Factory::vdtor` at 0xa7e1c0 (layout_inference, medium); signature (low): `Factory * vdtor(Factory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__CharReader__Factory_vtable {
     pub const ID: u64 = 465621;
@@ -14974,9 +15165,11 @@ impl Json__CharReader__Factory_vtable {
 #[repr(C)]
 pub struct Json__CharReaderBuilder_vtable {
     /// `Json::CharReaderBuilder::vdtor` at 0xa7e130 (layout_inference, medium); signature (low): `CharReaderBuilder * vdtor(CharReaderBuilder * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::CharReaderBuilder::vfunc_1` at 0xa87f50 (rtti, high); signature (low): `undefined8 * vfunc_1(CharReaderBuilder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__CharReaderBuilder_vtable {
     pub const ID: u64 = 465625;
@@ -14986,9 +15179,11 @@ impl Json__CharReaderBuilder_vtable {
 #[repr(C)]
 pub struct Json__Exception_vtable {
     /// `Json::Exception::vdtor` at 0xa7e180 (slot_propagation, medium); signature (low): `Exception * vdtor(Exception * this, ulonglong param_1, Exception_vtbl * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::Exception::vfunc_1` at 0xa91460 (rtti, medium); signature (high): `Exception * vfunc_1(Exception * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__Exception_vtable {
     pub const ID: u64 = 465684;
@@ -14998,9 +15193,11 @@ impl Json__Exception_vtable {
 #[repr(C)]
 pub struct Json__FastWriter_vtable {
     /// `Json::FastWriter::vdtor` at 0xa7e220 (layout_inference, medium); signature (low): `FastWriter * vdtor(FastWriter * this, uint param_1, FastWriter_vtbl * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::FastWriter::vfunc_1` at 0xa91570 (rtti, high); signature (low): `undefined8 * vfunc_1(FastWriter * this, undefined8 * param_1, undefined8 param_2, undefined * param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__FastWriter_vtable {
     pub const ID: u64 = 465635;
@@ -15010,9 +15207,11 @@ impl Json__FastWriter_vtable {
 #[repr(C)]
 pub struct Json__LogicError_vtable {
     /// `Json::LogicError::vdtor` at 0xa7e2c0 (slot_propagation, medium); signature (low): `LogicError * vdtor(LogicError * this, ulonglong param_1, Exception_vtbl * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::Exception::vfunc_1` at 0xa91460 (rtti, medium); signature (high): `Exception * vfunc_1(Exception * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__LogicError_vtable {
     pub const ID: u64 = 465688;
@@ -15022,9 +15221,11 @@ impl Json__LogicError_vtable {
 #[repr(C)]
 pub struct Json__OurCharReader_vtable {
     /// `Json::OurCharReader::vdtor` at 0xa7e300 (layout_inference, medium); signature (low): `OurCharReader * vdtor(OurCharReader * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::OurCharReader::vfunc_1` at 0xa88780 (rtti, high); signature (low): `undefined vfunc_1(OurCharReader * this, undefined8 param_1, void * param_2, undefined8 param_3, longlong * param_4)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__OurCharReader_vtable {
     pub const ID: u64 = 465667;
@@ -15034,9 +15235,11 @@ impl Json__OurCharReader_vtable {
 #[repr(C)]
 pub struct Json__RuntimeError_vtable {
     /// `Json::RuntimeError::vdtor` at 0xa7e350 (slot_propagation, medium); signature (low): `RuntimeError * vdtor(RuntimeError * this, ulonglong param_1, Exception_vtbl * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::Exception::vfunc_1` at 0xa91460 (rtti, medium); signature (high): `Exception * vfunc_1(Exception * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__RuntimeError_vtable {
     pub const ID: u64 = 465686;
@@ -15046,9 +15249,11 @@ impl Json__RuntimeError_vtable {
 #[repr(C)]
 pub struct Json__StreamWriter_vtable {
     /// `Json::StreamWriter::vdtor` at 0xa7e390 (layout_inference, medium); signature (low): `StreamWriter * vdtor(StreamWriter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__StreamWriter_vtable {
     pub const ID: u64 = 465629;
@@ -15058,9 +15263,11 @@ impl Json__StreamWriter_vtable {
 #[repr(C)]
 pub struct Json__StreamWriter__Factory_vtable {
     /// `Json::StreamWriter::Factory::vdtor` at 0xa7e1f0 (layout_inference, medium); signature (low): `Factory * vdtor(Factory * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__StreamWriter__Factory_vtable {
     pub const ID: u64 = 465627;
@@ -15070,9 +15277,11 @@ impl Json__StreamWriter__Factory_vtable {
 #[repr(C)]
 pub struct Json__StreamWriterBuilder_vtable {
     /// `Json::StreamWriterBuilder::vdtor` at 0xa7e3c0 (layout_inference, medium); signature (low): `StreamWriterBuilder * vdtor(StreamWriterBuilder * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::StreamWriterBuilder::vfunc_1` at 0xa88210 (rtti, high); signature (low): `undefined vfunc_1(StreamWriterBuilder * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__StreamWriterBuilder_vtable {
     pub const ID: u64 = 465631;
@@ -15082,9 +15291,11 @@ impl Json__StreamWriterBuilder_vtable {
 #[repr(C)]
 pub struct Json__StyledWriter_vtable {
     /// `Json::StyledWriter::vdtor` at 0xa7e410 (slot_propagation, medium); signature (low): `StyledWriter * vdtor(StyledWriter * this, ulonglong param_1, StyledWriter_vtbl * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `Json::StyledWriter::vfunc_1` at 0xa91700 (rtti, high); signature (low): `undefined8 * vfunc_1(StyledWriter * this, undefined8 * param_1, double * param_2, undefined8 * param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__StyledWriter_vtable {
     pub const ID: u64 = 465637;
@@ -15094,9 +15305,11 @@ impl Json__StyledWriter_vtable {
 #[repr(C)]
 pub struct Json__Writer_vtable {
     /// `Json::Writer::vdtor` at 0xa7e450 (layout_inference, medium); signature (low): `Writer * vdtor(Writer * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl Json__Writer_vtable {
     pub const ID: u64 = 465633;
@@ -15122,15 +15335,20 @@ pub struct JumpHandler_vtable {
     /// `JumpHandler::CanProcess` at 0x7b4f10 (semantic, high); signature (untiered): `bool CanProcess(JumpHandler * this, longlong * param_1)`; `CanProcess`: Jump (high); semantic signature: `bool (JumpHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `JumpHandler::vfunc_6` at 0x7b3150 (rtti, high); signature (low): `undefined vfunc_6(JumpHandler * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl JumpHandler_vtable {
     pub const ID: u64 = 208731;
@@ -15252,77 +15470,5 @@ pub struct KinectStateChangeData_vtable {
 }
 impl KinectStateChangeData_vtable {
     pub const ID: u64 = 216354;
-}
-
-/// `KinectUserEventData::vftable` at 0x19849c8, id 216356 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct KinectUserEventData_vtable {
-    /// `KinectUserEventData::vdtor` at 0x98d9b0 (layout_inference, medium); signature (low): `KinectUserEventData * vdtor(KinectUserEventData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl KinectUserEventData_vtable {
-    pub const ID: u64 = 216356;
-}
-
-/// `LargestAreaFunctor::vftable` at 0x17e3528, id 186481 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LargestAreaFunctor_vtable {
-    /// `LargestAreaFunctor::vdtor` at 0x152600 (layout_inference, medium); signature (low): `LargestAreaFunctor * vdtor(LargestAreaFunctor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LargestAreaFunctor::vfunc_1` at 0x1522e0 (rtti, high); signature (low): `undefined8 vfunc_1(LargestAreaFunctor * this, longlong param_1)`
-    pub slot_1: *const c_void,
-}
-impl LargestAreaFunctor_vtable {
-    pub const ID: u64 = 186481;
-}
-
-/// `LeftHandSpellCastHandler::vftable` at 0x1937f20, id 208827 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LeftHandSpellCastHandler_vtable {
-    /// `LeftHandSpellCastHandler::vdtor` at 0x7d42d0 (layout_inference, medium); signature (low): `LeftHandSpellCastHandler * vdtor(LeftHandSpellCastHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LeftHandSpellCastHandler::vfunc_1` at 0x7cc870 (rtti, high); signature (low): `bool vfunc_1(LeftHandSpellCastHandler * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-}
-impl LeftHandSpellCastHandler_vtable {
-    pub const ID: u64 = 208827;
-}
-
-/// `LeftHandSpellFireHandler::vftable` at 0x1937ed8, id 208821 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct LeftHandSpellFireHandler_vtable {
-    /// `LeftHandSpellFireHandler::vdtor` at 0x7d4300 (layout_inference, medium); signature (low): `LeftHandSpellFireHandler * vdtor(LeftHandSpellFireHandler * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LeftHandSpellFireHandler::vfunc_1` at 0x7cc6b0 (rtti, high); signature (low): `undefined8 vfunc_1(LeftHandSpellFireHandler * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-}
-impl LeftHandSpellFireHandler_vtable {
-    pub const ID: u64 = 208821;
-}
-
-/// `LevelUpMenu::vftable` at 0x19788b0, id 215560 (rtti, high); 9 slots.
-#[repr(C)]
-pub struct LevelUpMenu_vtable {
-    /// `LevelUpMenu::vdtor` at 0x94aeb0 (slot_propagation, medium); signature (low): `LevelUpMenu * vdtor(LevelUpMenu * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `LevelUpMenu::vfunc_1` at 0x94aa80 (rtti, high); signature (low): `undefined vfunc_1(LevelUpMenu * this, longlong * param_1)`
-    pub slot_1: *const c_void,
-    /// `IMenu::PostCreate` at 0x57b440 (semantic, high); signature (untiered): `undefined PostCreate(void)`
-    pub slot_2: *const c_void,
-    /// `IMenu::Refresh` at 0x57b450 (semantic, low); signature (untiered): `undefined Refresh(void)`
-    pub slot_3: *const c_void,
-    /// `IMenu::ProcessMessage` at 0x116ede0 (semantic, high); signature (untiered): `undefined8 ProcessMessage(IMenu * this, longlong param_1)`
-    pub slot_4: *const c_void,
-    /// `IMenu::AdvanceMovie` at 0x116ee30 (semantic, high); signature (untiered): `undefined AdvanceMovie(IMenu * this, undefined4 param_2, uint param_3)`
-    pub slot_5: *const c_void,
-    /// `IMenu::PostDisplay` at 0x57b470 (semantic, high); signature (untiered): `undefined PostDisplay(IMenu * this)`
-    pub slot_6: *const c_void,
-    /// `IMenu::PreDisplay` at 0x116eee0 (semantic, high); signature (untiered): `undefined PreDisplay(void)`
-    pub slot_7: *const c_void,
-    /// `LevelUpMenu::vfunc_8` at 0x94acb0 (rtti, high); signature (low): `undefined vfunc_8(LevelUpMenu * this, undefined8 param_1, longlong param_2, undefined * param_3)`
-    pub slot_8: *const c_void,
-}
-impl LevelUpMenu_vtable {
-    pub const ID: u64 = 215560;
 }
 

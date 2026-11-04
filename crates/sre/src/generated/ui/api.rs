@@ -259,6 +259,80 @@ impl crate::BSTCommonStaticMessageQueue_UIMessage____ptr64_100 {
     /// `msg` must point to what the engine expects.
     #[inline]
     pub unsafe fn try_push(&self, msg: *mut *mut crate::UIMessage) -> bool { unsafe { virtual_function!(self, 2, (*const Self, *mut *mut crate::UIMessage) -> bool)(core::ptr::from_ref(self), msg) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_buffer(this: *const Self) -> *mut [u8; 800] { unsafe { member!(this, "BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.buffer", 0x10, [u8; 800]) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::buffer`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn buffer(&self) -> [u8; 800] { unsafe { Self::__member_buffer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_buffer(&mut self, value: [u8; 800]) { unsafe { Self::__member_buffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn buffer_ptr(&self) -> *mut [u8; 800] { Self::__member_buffer(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_count(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.count", 0x330, u32) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::count`, at +0x330 on 1.7.104.
+    #[inline]
+    pub fn count(&self) -> u32 { unsafe { Self::__member_count(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_count(&mut self, value: u32) { unsafe { Self::__member_count(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn count_ptr(&self) -> *mut u32 { Self::__member_count(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lock(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.lock", 0x8, u32) } }
+    /// `BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>::lock`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn lock(&self) -> u32 { unsafe { Self::__member_lock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lock(&mut self, value: u32) { unsafe { Self::__member_lock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lock_ptr(&self) -> *mut u32 { Self::__member_lock(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSUIMessageData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_fixedString(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSUIMessageData.fixedString", 0x18, crate::BSFixedString) } }
+    /// `BSUIMessageData::fixedString`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn fixedString(&self) -> &crate::BSFixedString { unsafe { &*Self::__member_fixedString(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn fixedString_ptr(&self) -> *mut crate::BSFixedString { Self::__member_fixedString(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_string(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSUIMessageData.string", 0x10, *mut c_void) } }
+    /// `BSUIMessageData::string`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn string(&self) -> *mut c_void { unsafe { Self::__member_string(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_string(&mut self, value: *mut c_void) { unsafe { Self::__member_string(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn string_ptr(&self) -> *mut *mut c_void { Self::__member_string(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_value(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSUIMessageData.value", 0x20, u32) } }
+    /// `BSUIMessageData::value`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn value(&self) -> u32 { unsafe { Self::__member_value(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_value(&mut self, value: u32) { unsafe { Self::__member_value(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn value_ptr(&self) -> *mut u32 { Self::__member_value(core::ptr::from_ref(self)) }
+}
+
+impl crate::BSUIScaleformData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scaleformEvent(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSUIScaleformData.scaleformEvent", 0x10, u64) } }
+    /// `BSUIScaleformData::scaleformEvent`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn scaleformEvent(&self) -> u64 { unsafe { Self::__member_scaleformEvent(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scaleformEvent(&mut self, value: u64) { unsafe { Self::__member_scaleformEvent(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scaleformEvent_ptr(&self) -> *mut u64 { Self::__member_scaleformEvent(core::ptr::from_ref(self)) }
 }
 
 impl crate::Console {
@@ -325,6 +399,69 @@ impl crate::Console {
     /// `handle` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_selected_ref(&self, handle: *const c_void) { unsafe { function!(51093, (*const Self, *const c_void))(core::ptr::from_ref(self), handle) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ctrlDown(this: *const Self) -> *mut u8 { unsafe { member!(this, "Console.ctrlDown", 0x4E, u8) } }
+    /// `Console::ctrlDown`, at +0x4E on 1.7.104.
+    #[inline]
+    pub fn ctrlDown(&self) -> u8 { unsafe { Self::__member_ctrlDown(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ctrlDown(&mut self, value: u8) { unsafe { Self::__member_ctrlDown(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ctrlDown_ptr(&self) -> *mut u8 { Self::__member_ctrlDown(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "Console.field_11", 0x11, u8) } }
+    /// `Console::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "Console.field_12", 0x12, u16) } }
+    /// `Console::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_showAchievementWarning(this: *const Self) -> *mut u8 { unsafe { member!(this, "Console.showAchievementWarning", 0x4D, u8) } }
+    /// `Console::showAchievementWarning`, at +0x4D on 1.7.104.
+    #[inline]
+    pub fn showAchievementWarning(&self) -> u8 { unsafe { Self::__member_showAchievementWarning(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_showAchievementWarning(&mut self, value: u8) { unsafe { Self::__member_showAchievementWarning(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn showAchievementWarning_ptr(&self) -> *mut u8 { Self::__member_showAchievementWarning(core::ptr::from_ref(self)) }
+}
+
+impl crate::ConsoleData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "ConsoleData.refHandle", 0x18, u32) } }
+    /// `ConsoleData::refHandle`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn refHandle(&self) -> u32 { unsafe { Self::__member_refHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refHandle(&mut self, value: u32) { unsafe { Self::__member_refHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refHandle_ptr(&self) -> *mut u32 { Self::__member_refHandle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_type_(this: *const Self) -> *mut u32 { unsafe { member!(this, "ConsoleData.type", 0x28, u32) } }
+    /// `ConsoleData::type`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn type_(&self) -> u32 { unsafe { Self::__member_type_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_type_(&mut self, value: u32) { unsafe { Self::__member_type_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn type__ptr(&self) -> *mut u32 { Self::__member_type_(core::ptr::from_ref(self)) }
 }
 
 impl crate::ContainerMenu {
@@ -339,6 +476,56 @@ impl crate::ContainerMenu {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "ContainerMenu.field_11", 0x11, u8) } }
+    /// `ContainerMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "ContainerMenu.field_12", 0x12, u16) } }
+    /// `ContainerMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B9(this: *const Self) -> *mut u8 { unsafe { member!(this, "ContainerMenu.field_B9", 0xB9, u8) } }
+    /// `ContainerMenu::field_B9`, at +0xB9 on 1.7.104.
+    #[inline]
+    pub fn field_B9(&self) -> u8 { unsafe { Self::__member_field_B9(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B9(&mut self, value: u8) { unsafe { Self::__member_field_B9(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B9_ptr(&self) -> *mut u8 { Self::__member_field_B9(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BA(this: *const Self) -> *mut u8 { unsafe { member!(this, "ContainerMenu.field_BA", 0xBA, u8) } }
+    /// `ContainerMenu::field_BA`, at +0xBA on 1.7.104.
+    #[inline]
+    pub fn field_BA(&self) -> u8 { unsafe { Self::__member_field_BA(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BA(&mut self, value: u8) { unsafe { Self::__member_field_BA(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BA_ptr(&self) -> *mut u8 { Self::__member_field_BA(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "ContainerMenu.field_BC", 0xBC, u32) } }
+    /// `ContainerMenu::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
 }
 
 impl crate::CursorMenu {
@@ -360,6 +547,26 @@ impl crate::CursorMenu {
     /// `cursor` must point to what the engine expects.
     #[inline]
     pub unsafe fn move_cursor_by_mouse(cursor: *mut crate::UICursor, e: *mut crate::MouseMoveEvent) { unsafe { function!(82539, (*mut crate::UICursor, *mut crate::MouseMoveEvent))(cursor, e) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "CursorMenu.field_11", 0x11, u8) } }
+    /// `CursorMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "CursorMenu.field_12", 0x12, u16) } }
+    /// `CursorMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::DialogueMenu {
@@ -372,6 +579,26 @@ impl crate::DialogueMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(51520, () -> Option<&'static crate::IMenu>)() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "DialogueMenu.field_11", 0x11, u8) } }
+    /// `DialogueMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "DialogueMenu.field_12", 0x12, u16) } }
+    /// `DialogueMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::GFxFunctionHandler {
@@ -397,6 +624,16 @@ impl crate::GFxFunctionHandler__Params {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn ret_val(&self) -> Option<&crate::GFxValue> { unsafe { { self.retVal }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_argsWithThis(this: *const Self) -> *mut *mut crate::GFxValue { unsafe { member!(this, "GFxFunctionHandler::Params.argsWithThis", 0x18, *mut crate::GFxValue) } }
+    /// `GFxFunctionHandler::Params::argsWithThis`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn argsWithThis(&self) -> *mut crate::GFxValue { unsafe { Self::__member_argsWithThis(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_argsWithThis(&mut self, value: *mut crate::GFxValue) { unsafe { Self::__member_argsWithThis(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn argsWithThis_ptr(&self) -> *mut *mut crate::GFxValue { Self::__member_argsWithThis(core::ptr::from_ref(self)) }
 }
 
 impl crate::GFxMovieView {
@@ -435,6 +672,66 @@ impl crate::GFxMovieView {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, movieDefImpl: *mut c_void) -> *mut Self { unsafe { function!(83671, (*const Self, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), movieDefImpl) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_alignment(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxMovieView.alignment", 0xC4, u32) } }
+    /// `GFxMovieView::alignment`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn alignment(&self) -> u32 { unsafe { Self::__member_alignment(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_alignment(&mut self, value: u32) { unsafe { Self::__member_alignment(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn alignment_ptr(&self) -> *mut u32 { Self::__member_alignment(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_backgroundColor(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxMovieView.backgroundColor", 0x9A0, u32) } }
+    /// `GFxMovieView::backgroundColor`, at +0x9A0 on 1.7.104.
+    #[inline]
+    pub fn backgroundColor(&self) -> u32 { unsafe { Self::__member_backgroundColor(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_backgroundColor(&mut self, value: u32) { unsafe { Self::__member_backgroundColor(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn backgroundColor_ptr(&self) -> *mut u32 { Self::__member_backgroundColor(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_controllerCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxMovieView.controllerCount", 0xA6C, u32) } }
+    /// `GFxMovieView::controllerCount`, at +0xA6C on 1.7.104.
+    #[inline]
+    pub fn controllerCount(&self) -> u32 { unsafe { Self::__member_controllerCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_controllerCount(&mut self, value: u32) { unsafe { Self::__member_controllerCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn controllerCount_ptr(&self) -> *mut u32 { Self::__member_controllerCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_invokeResultBuffer(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "GFxMovieView.invokeResultBuffer", 0x24A8, *mut c_void) } }
+    /// `GFxMovieView::invokeResultBuffer`, at +0x24A8 on 1.7.104.
+    #[inline]
+    pub fn invokeResultBuffer(&self) -> *mut c_void { unsafe { Self::__member_invokeResultBuffer(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_invokeResultBuffer(&mut self, value: *mut c_void) { unsafe { Self::__member_invokeResultBuffer(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn invokeResultBuffer_ptr(&self) -> *mut *mut c_void { Self::__member_invokeResultBuffer(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scaleMode(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxMovieView.scaleMode", 0xC0, u32) } }
+    /// `GFxMovieView::scaleMode`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn scaleMode(&self) -> u32 { unsafe { Self::__member_scaleMode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scaleMode(&mut self, value: u32) { unsafe { Self::__member_scaleMode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scaleMode_ptr(&self) -> *mut u32 { Self::__member_scaleMode(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_userData(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "GFxMovieView.userData", 0xA70, *mut c_void) } }
+    /// `GFxMovieView::userData`, at +0xA70 on 1.7.104.
+    #[inline]
+    pub fn userData(&self) -> *mut c_void { unsafe { Self::__member_userData(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_userData(&mut self, value: *mut c_void) { unsafe { Self::__member_userData(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn userData_ptr(&self) -> *mut *mut c_void { Self::__member_userData(core::ptr::from_ref(self)) }
 }
 
 impl crate::GFxValue {
@@ -456,6 +753,132 @@ impl crate::GFxValue {
     /// `void (GFxValue* v)`
     #[inline]
     pub fn release_managed(&self) { unsafe { function!(441651, (*const Self))(core::ptr::from_ref(self)) } }
+}
+
+impl crate::GFxViewport {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_aspectRatio(this: *const Self) -> *mut f32 { unsafe { member!(this, "GFxViewport.aspectRatio", 0x2C, f32) } }
+    /// `GFxViewport::aspectRatio`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn aspectRatio(&self) -> f32 { unsafe { Self::__member_aspectRatio(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_aspectRatio(&mut self, value: f32) { unsafe { Self::__member_aspectRatio(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn aspectRatio_ptr(&self) -> *mut f32 { Self::__member_aspectRatio(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.flags", 0x30, u32) } }
+    /// `GFxViewport::flags`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn flags(&self) -> u32 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_left(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.left", 0x8, u32) } }
+    /// `GFxViewport::left`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn left(&self) -> u32 { unsafe { Self::__member_left(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_left(&mut self, value: u32) { unsafe { Self::__member_left(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn left_ptr(&self) -> *mut u32 { Self::__member_left(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scale(this: *const Self) -> *mut f32 { unsafe { member!(this, "GFxViewport.scale", 0x28, f32) } }
+    /// `GFxViewport::scale`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn scale(&self) -> f32 { unsafe { Self::__member_scale(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scale(&mut self, value: f32) { unsafe { Self::__member_scale(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scale_ptr(&self) -> *mut f32 { Self::__member_scale(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_scissorRect(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "GFxViewport.scissorRect", 0x18, [u8; 16]) } }
+    /// `GFxViewport::scissorRect`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn scissorRect(&self) -> [u8; 16] { unsafe { Self::__member_scissorRect(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_scissorRect(&mut self, value: [u8; 16]) { unsafe { Self::__member_scissorRect(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn scissorRect_ptr(&self) -> *mut [u8; 16] { Self::__member_scissorRect(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_width(this: *const Self) -> *mut u32 { unsafe { member!(this, "GFxViewport.width", 0x10, u32) } }
+    /// `GFxViewport::width`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn width(&self) -> u32 { unsafe { Self::__member_width(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_width(&mut self, value: u32) { unsafe { Self::__member_width(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn width_ptr(&self) -> *mut u32 { Self::__member_width(core::ptr::from_ref(self)) }
+}
+
+impl crate::HUDData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_flag(this: *const Self) -> *mut u8 { unsafe { member!(this, "HUDData.flag", 0x40, u8) } }
+    /// `HUDData::flag`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn flag(&self) -> u8 { unsafe { Self::__member_flag(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_flag(&mut self, value: u8) { unsafe { Self::__member_flag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn flag_ptr(&self) -> *mut u8 { Self::__member_flag(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_form(this: *const Self) -> *mut u64 { unsafe { member!(this, "HUDData.form", 0x30, u64) } }
+    /// `HUDData::form`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn form(&self) -> u64 { unsafe { Self::__member_form(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_form(&mut self, value: u64) { unsafe { Self::__member_form(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn form_ptr(&self) -> *mut u64 { Self::__member_form(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_refHandle(this: *const Self) -> *mut u32 { unsafe { member!(this, "HUDData.refHandle", 0x28, u32) } }
+    /// `HUDData::refHandle`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn refHandle(&self) -> u32 { unsafe { Self::__member_refHandle(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_refHandle(&mut self, value: u32) { unsafe { Self::__member_refHandle(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn refHandle_ptr(&self) -> *mut u32 { Self::__member_refHandle(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_text(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "HUDData.text", 0x18, [u8; 16]) } }
+    /// `HUDData::text`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn text(&self) -> [u8; 16] { unsafe { Self::__member_text(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_text(&mut self, value: [u8; 16]) { unsafe { Self::__member_text(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn text_ptr(&self) -> *mut [u8; 16] { Self::__member_text(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_type_(this: *const Self) -> *mut u32 { unsafe { member!(this, "HUDData.type", 0x10, u32) } }
+    /// `HUDData::type`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn type_(&self) -> u32 { unsafe { Self::__member_type_(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_type_(&mut self, value: u32) { unsafe { Self::__member_type_(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn type__ptr(&self) -> *mut u32 { Self::__member_type_(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_value(this: *const Self) -> *mut u32 { unsafe { member!(this, "HUDData.value", 0x44, u32) } }
+    /// `HUDData::value`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn value(&self) -> u32 { unsafe { Self::__member_value(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_value(&mut self, value: u32) { unsafe { Self::__member_value(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn value_ptr(&self) -> *mut u32 { Self::__member_value(core::ptr::from_ref(self)) }
 }
 
 impl crate::HUDMenu {
@@ -537,6 +960,26 @@ impl crate::HUDMenu {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn user_event_enabled_sink(&self) -> Option<&crate::BSTEventSink_UserEventEnabledEvent> { unsafe { { self.userEventEnabledSink }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "HUDMenu.field_11", 0x11, u8) } }
+    /// `HUDMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "HUDMenu.field_12", 0x12, u16) } }
+    /// `HUDMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::HUDNotifications {
@@ -546,6 +989,14 @@ impl crate::HUDNotifications {
     /// `void (HUDNotifications* this)`
     #[inline]
     pub fn update(&self) { unsafe { virtual_function!(self, 1, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_queue(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "HUDNotifications.queue", 0x28, crate::BSTArray) } }
+    /// `HUDNotifications::queue`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn queue(&self) -> &crate::BSTArray { unsafe { &*Self::__member_queue(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn queue_ptr(&self) -> *mut crate::BSTArray { Self::__member_queue(core::ptr::from_ref(self)) }
 }
 
 impl crate::HUDObject {
@@ -705,6 +1156,19 @@ impl crate::IMessageBoxCallback {
     pub unsafe fn dtor(&self, flags: u32) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32) -> *mut Self)(core::ptr::from_ref(self), flags) } }
 }
 
+impl crate::IUIMessageData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isPooled(this: *const Self) -> *mut u8 { unsafe { member!(this, "IUIMessageData.isPooled", 0x9, u8) } }
+    /// `IUIMessageData::isPooled`, at +0x9 on 1.7.104.
+    #[inline]
+    pub fn isPooled(&self) -> u8 { unsafe { Self::__member_isPooled(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isPooled(&mut self, value: u8) { unsafe { Self::__member_isPooled(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isPooled_ptr(&self) -> *mut u8 { Self::__member_isPooled(core::ptr::from_ref(self)) }
+}
+
 impl crate::InventoryMenu {
     /// `InventoryMenu::CloseTweenMenuCallback`: the 'CloseTweenMenu' callback of the InventoryMenu: PlayerCamera::BeginCloseTweenMenu, hide the TweenMenu, mark the menu (+0x81 = 1)
     ///
@@ -732,6 +1196,26 @@ impl crate::InventoryMenu {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "InventoryMenu.field_11", 0x11, u8) } }
+    /// `InventoryMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "InventoryMenu.field_12", 0x12, u16) } }
+    /// `InventoryMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::ItemList {
@@ -785,6 +1269,26 @@ impl crate::LoadingMenu {
     /// `IMenu* ()`
     #[inline]
     pub fn create() -> Option<&'static crate::IMenu> { unsafe { function!(51943, () -> Option<&'static crate::IMenu>)() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "LoadingMenu.field_11", 0x11, u8) } }
+    /// `LoadingMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "LoadingMenu.field_12", 0x12, u16) } }
+    /// `LoadingMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::MagicMenu {
@@ -808,6 +1312,26 @@ impl crate::MagicMenu {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn item_list(&self) -> Option<&crate::ItemList> { unsafe { { self.itemList }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "MagicMenu.field_11", 0x11, u8) } }
+    /// `MagicMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "MagicMenu.field_12", 0x12, u16) } }
+    /// `MagicMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::MainMenu {
@@ -832,6 +1356,36 @@ impl crate::MainMenu {
     /// `void ()`
     #[inline]
     pub fn start_new_game() { unsafe { function!(52118, ())() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "MainMenu.field_11", 0x11, u8) } }
+    /// `MainMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "MainMenu.field_12", 0x12, u16) } }
+    /// `MainMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_52(this: *const Self) -> *mut u16 { unsafe { member!(this, "MainMenu.field_52", 0x52, u16) } }
+    /// `MainMenu::field_52`, at +0x52 on 1.7.104.
+    #[inline]
+    pub fn field_52(&self) -> u16 { unsafe { Self::__member_field_52(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_52(&mut self, value: u16) { unsafe { Self::__member_field_52(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_52_ptr(&self) -> *mut u16 { Self::__member_field_52(core::ptr::from_ref(self)) }
 }
 
 impl crate::MenuControls {
@@ -932,6 +1486,44 @@ impl crate::MenuControls {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn screenshot_handler(&self) -> Option<&crate::ScreenshotHandler> { unsafe { { self.screenshotHandler }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_ignoreInput(this: *const Self) -> *mut u8 { unsafe { member!(this, "MenuControls.ignoreInput", 0x83, u8) } }
+    /// `MenuControls::ignoreInput`, at +0x83 on 1.7.104.
+    #[inline]
+    pub fn ignoreInput(&self) -> u8 { unsafe { Self::__member_ignoreInput(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_ignoreInput(&mut self, value: u8) { unsafe { Self::__member_ignoreInput(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn ignoreInput_ptr(&self) -> *mut u8 { Self::__member_ignoreInput(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_menuHotkeysDisabled(this: *const Self) -> *mut u8 { unsafe { member!(this, "MenuControls.menuHotkeysDisabled", 0x81, u8) } }
+    /// `MenuControls::menuHotkeysDisabled`, at +0x81 on 1.7.104.
+    #[inline]
+    pub fn menuHotkeysDisabled(&self) -> u8 { unsafe { Self::__member_menuHotkeysDisabled(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_menuHotkeysDisabled(&mut self, value: u8) { unsafe { Self::__member_menuHotkeysDisabled(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn menuHotkeysDisabled_ptr(&self) -> *mut u8 { Self::__member_menuHotkeysDisabled(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingHandlerChanges(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "MenuControls.pendingHandlerChanges", 0x30, crate::BSTArray) } }
+    /// `MenuControls::pendingHandlerChanges`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn pendingHandlerChanges(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingHandlerChanges(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn pendingHandlerChanges_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingHandlerChanges(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_remapMode(this: *const Self) -> *mut u8 { unsafe { member!(this, "MenuControls.remapMode", 0x82, u8) } }
+    /// `MenuControls::remapMode`, at +0x82 on 1.7.104.
+    #[inline]
+    pub fn remapMode(&self) -> u8 { unsafe { Self::__member_remapMode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_remapMode(&mut self, value: u8) { unsafe { Self::__member_remapMode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn remapMode_ptr(&self) -> *mut u8 { Self::__member_remapMode(core::ptr::from_ref(self)) }
 }
 
 impl crate::MenuEventHandler {
@@ -944,7 +1536,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_button_event(&self, event: *mut crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, 7, (*const Self, *mut crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), event) } }
+    pub unsafe fn process_button_event(&self, event: *mut crate::ButtonEvent) -> bool { unsafe { virtual_function!(self, "MenuEventHandler", 0x0, 7, (*const Self, *mut crate::ButtonEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessKinectEvent`, vtable slot 4: event type 5 (KinectEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -954,7 +1546,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_kinect_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 4, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
+    pub unsafe fn process_kinect_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, "MenuEventHandler", 0x0, 4, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessMouseMoveEvent`, vtable slot 6: event type 1 (MouseMoveEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -964,7 +1556,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_mouse_move_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 6, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
+    pub unsafe fn process_mouse_move_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, "MenuEventHandler", 0x0, 6, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessSixaxisEvent`, vtable slot 3: event type 6 (SixaxisEvent); returns handled
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -974,7 +1566,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_sixaxis_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 3, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
+    pub unsafe fn process_sixaxis_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, "MenuEventHandler", 0x0, 3, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::ProcessThumbstickEvent`, vtable slot 5: event type 3 (ThumbstickEvent)
     ///
     /// Semantic, ui pass, medium; called through the object's vtable.
@@ -984,7 +1576,7 @@ impl crate::MenuEventHandler {
     /// # Safety
     /// The pass rates the signature medium.
     #[inline]
-    pub unsafe fn process_thumbstick_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, 5, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
+    pub unsafe fn process_thumbstick_event(&self, event: *mut crate::InputEvent) -> bool { unsafe { virtual_function!(self, "MenuEventHandler", 0x0, 5, (*const Self, *mut crate::InputEvent) -> bool)(core::ptr::from_ref(self), event) } }
     /// `MenuEventHandler::Unk2`, vtable slot 2: returns false in the base; not called by MenuControls::ProcessEvent
     ///
     /// Semantic, ui pass, low; called through the object's vtable.
@@ -1020,6 +1612,16 @@ impl crate::MenuOpenHandler {
     /// `void ()`
     #[inline]
     pub fn open_tween_menu() { unsafe { function!(52714, ())() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_tweenMenuAllowed(this: *const Self) -> *mut u8 { unsafe { member!(this, "MenuOpenHandler.tweenMenuAllowed", 0x10, u8) } }
+    /// `MenuOpenHandler::tweenMenuAllowed`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn tweenMenuAllowed(&self) -> u8 { unsafe { Self::__member_tweenMenuAllowed(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_tweenMenuAllowed(&mut self, value: u8) { unsafe { Self::__member_tweenMenuAllowed(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn tweenMenuAllowed_ptr(&self) -> *mut u8 { Self::__member_tweenMenuAllowed(core::ptr::from_ref(self)) }
 }
 
 impl crate::MenuTableEntry {
@@ -1050,6 +1652,54 @@ impl crate::MessageBoxData {
     /// Semantic field, ui pass, high; `None` while the pointer is null.
     #[inline]
     pub fn callback(&self) -> Option<&crate::IMessageBoxCallback> { unsafe { { self.callback }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_buttonBase(this: *const Self) -> *mut u8 { unsafe { member!(this, "MessageBoxData.buttonBase", 0x4C, u8) } }
+    /// `MessageBoxData::buttonBase`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn buttonBase(&self) -> u8 { unsafe { Self::__member_buttonBase(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_buttonBase(&mut self, value: u8) { unsafe { Self::__member_buttonBase(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn buttonBase_ptr(&self) -> *mut u8 { Self::__member_buttonBase(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_buttons(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "MessageBoxData.buttons", 0x20, crate::BSTArray) } }
+    /// `MessageBoxData::buttons`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn buttons(&self) -> &crate::BSTArray { unsafe { &*Self::__member_buttons(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn buttons_ptr(&self) -> *mut crate::BSTArray { Self::__member_buttons(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isCancellable(this: *const Self) -> *mut u8 { unsafe { member!(this, "MessageBoxData.isCancellable", 0x4F, u8) } }
+    /// `MessageBoxData::isCancellable`, at +0x4F on 1.7.104.
+    #[inline]
+    pub fn isCancellable(&self) -> u8 { unsafe { Self::__member_isCancellable(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isCancellable(&mut self, value: u8) { unsafe { Self::__member_isCancellable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isCancellable_ptr(&self) -> *mut u8 { Self::__member_isCancellable(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_isVertical(this: *const Self) -> *mut u8 { unsafe { member!(this, "MessageBoxData.isVertical", 0x4E, u8) } }
+    /// `MessageBoxData::isVertical`, at +0x4E on 1.7.104.
+    #[inline]
+    pub fn isVertical(&self) -> u8 { unsafe { Self::__member_isVertical(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_isVertical(&mut self, value: u8) { unsafe { Self::__member_isVertical(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn isVertical_ptr(&self) -> *mut u8 { Self::__member_isVertical(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_textFlag(this: *const Self) -> *mut u8 { unsafe { member!(this, "MessageBoxData.textFlag", 0x4D, u8) } }
+    /// `MessageBoxData::textFlag`, at +0x4D on 1.7.104.
+    #[inline]
+    pub fn textFlag(&self) -> u8 { unsafe { Self::__member_textFlag(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_textFlag(&mut self, value: u8) { unsafe { Self::__member_textFlag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn textFlag_ptr(&self) -> *mut u8 { Self::__member_textFlag(core::ptr::from_ref(self)) }
 }
 
 impl crate::MessageBoxMenu {
@@ -1106,6 +1756,26 @@ impl crate::MessageBoxMenu {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn dtor_2(&self) { unsafe { function!(52268, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "MessageBoxMenu.field_11", 0x11, u8) } }
+    /// `MessageBoxMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "MessageBoxMenu.field_12", 0x12, u16) } }
+    /// `MessageBoxMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::SkyrimScript___anon_0B1D96E2__ScriptMessageBoxCallback {
@@ -1218,6 +1888,26 @@ impl crate::TweenMenu {
     /// `void (TweenMenu* this, i32 selection)`
     #[inline]
     pub fn on_menu_selected(&self, selection: i32) { unsafe { function!(52718, (*const Self, i32))(core::ptr::from_ref(self), selection) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11(this: *const Self) -> *mut u8 { unsafe { member!(this, "TweenMenu.field_11", 0x11, u8) } }
+    /// `TweenMenu::field_11`, at +0x11 on 1.7.104.
+    #[inline]
+    pub fn field_11(&self) -> u8 { unsafe { Self::__member_field_11(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11(&mut self, value: u8) { unsafe { Self::__member_field_11(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11_ptr(&self) -> *mut u8 { Self::__member_field_11(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_12(this: *const Self) -> *mut u16 { unsafe { member!(this, "TweenMenu.field_12", 0x12, u16) } }
+    /// `TweenMenu::field_12`, at +0x12 on 1.7.104.
+    #[inline]
+    pub fn field_12(&self) -> u16 { unsafe { Self::__member_field_12(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_12(&mut self, value: u16) { unsafe { Self::__member_field_12(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_12_ptr(&self) -> *mut u16 { Self::__member_field_12(core::ptr::from_ref(self)) }
 }
 
 impl crate::UIMessage {
@@ -1262,6 +1952,16 @@ impl crate::UIMessageQueue {
     /// `void (UIMessageQueue* this)`
     #[inline]
     pub fn release_static_messages(&self) { unsafe { function!(82167, (*const Self))(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_dataPool(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "UIMessageQueue.dataPool", 0x350, [u8; 40]) } }
+    /// `UIMessageQueue::dataPool`, at +0x350 on 1.7.104.
+    #[inline]
+    pub fn dataPool(&self) -> [u8; 40] { unsafe { Self::__member_dataPool(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_dataPool(&mut self, value: [u8; 40]) { unsafe { Self::__member_dataPool(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn dataPool_ptr(&self) -> *mut [u8; 40] { Self::__member_dataPool(core::ptr::from_ref(self)) }
 }
 
 impl crate::_anon_7C6875DF__OldMessageBoxCallback {

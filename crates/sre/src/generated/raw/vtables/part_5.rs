@@ -485,9 +485,11 @@ impl BGShkPhonemeController_vtable {
 #[repr(C)]
 pub struct BNETSystem__ModsChanged_ConfirmResetCallback_vtable {
     /// `BNETSystem::ModsChanged_ConfirmResetCallback::vdtor` at 0x600a50 (layout_inference, medium); signature (low): `ModsChanged_ConfirmResetCallback * vdtor(ModsChanged_ConfirmResetCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BNETSystem::ModsChanged_ConfirmResetCallback::vfunc_1` at 0x600a30 (rtti, high); signature (low): `undefined vfunc_1(ModsChanged_ConfirmResetCallback * this, char param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BNETSystem__ModsChanged_ConfirmResetCallback_vtable {
     pub const ID: u64 = 206224;
@@ -497,9 +499,11 @@ impl BNETSystem__ModsChanged_ConfirmResetCallback_vtable {
 #[repr(C)]
 pub struct BNetUnavailable__ModsNotMountedCallback_vtable {
     /// `BNetUnavailable::ModsNotMountedCallback::vdtor` at 0x95e640 (layout_inference, medium); signature (low): `ModsNotMountedCallback * vdtor(ModsNotMountedCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BNetUnavailable::ModsNotMountedCallback::vfunc_1` at 0x95e190 (rtti, high); signature (low): `undefined vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BNetUnavailable__ModsNotMountedCallback_vtable {
     pub const ID: u64 = 536647;
@@ -509,9 +513,11 @@ impl BNetUnavailable__ModsNotMountedCallback_vtable {
 #[repr(C)]
 pub struct BNetUnavailable__OpenConnectingToNetworkCallback_vtable {
     /// `BNetUnavailable::OpenConnectingToNetworkCallback::vdtor` at 0x95e6a0 (layout_inference, medium); signature (low): `OpenConnectingToNetworkCallback * vdtor(OpenConnectingToNetworkCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BNetUnavailable::OpenConnectingToNetworkCallback::vfunc_1` at 0x95e270 (rtti, high); signature (low): `undefined vfunc_1(OpenConnectingToNetworkCallback * this, char param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BNetUnavailable__OpenConnectingToNetworkCallback_vtable {
     pub const ID: u64 = 536644;
@@ -521,9 +527,11 @@ impl BNetUnavailable__OpenConnectingToNetworkCallback_vtable {
 #[repr(C)]
 pub struct BNetUnavailable__OpenMarketplaceCallback_vtable {
     /// `BNetUnavailable::OpenMarketplaceCallback::vdtor` at 0x95e6d0 (layout_inference, medium); signature (low): `OpenMarketplaceCallback * vdtor(OpenMarketplaceCallback * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `BNetUnavailable::OpenMarketplaceCallback::vfunc_1` at 0x95e290 (rtti, high); signature (low): `undefined vfunc_1(OpenMarketplaceCallback * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl BNetUnavailable__OpenMarketplaceCallback_vtable {
     pub const ID: u64 = 465521;
@@ -1897,7 +1905,8 @@ impl BSBoneLODExtraData_vtable {
 #[repr(C)]
 pub struct BSBoneMap_vtable {
     /// `BSBoneMap::vdtor` at 0xff3f80 (slot_propagation, medium); signature (low): `BSBoneMap * vdtor(BSBoneMap * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSBoneMap::vfunc_2` at 0xff40f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -3444,7 +3453,8 @@ impl BSDistTriggerModifier_vtable {
 #[repr(C)]
 pub struct BSDistantObjectLargeRefExtraData_vtable {
     /// `BSDistantObjectLargeRefExtraData::vdtor` at 0xff6ec0 (layout_inference, medium); signature (low): `BSDistantObjectLargeRefExtraData * vdtor(BSDistantObjectLargeRefExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSDistantObjectLargeRefExtraData::vfunc_2` at 0xff6f00 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -6524,9 +6534,11 @@ pub struct BSGamerProfile_vtable {
     /// `BSGamerProfile::vfunc_5` at 0xcfad90 (rtti, medium); signature (low): `undefined vfunc_5(void)`
     pub slot_5: *const c_void,
     /// `BSGamerProfile::vfunc_6` at 0xcfad70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `BSGamerProfile::vfunc_7` at 0xcfad80 (rtti, medium); signature (low): `undefined1 vfunc_7(void)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
 }
 impl BSGamerProfile_vtable {
     pub const ID: u64 = 236733;
@@ -14025,43 +14037,5 @@ pub struct BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
 }
 impl BSImagespaceShaderISSAOCameraZAndMipsCS_vtable_90 {
     pub const ID: u64 = 254385;
-}
-
-/// `BSImagespaceShaderISSAOCompositeFog::vftable` at 0x1b3bb48, id 254415 (rtti, high); 15 slots.
-#[repr(C)]
-pub struct BSImagespaceShaderISSAOCompositeFog_vtable {
-    /// `BSImagespaceShaderISSAOCompositeFog::vdtor` at 0x1508e90 (slot_propagation, medium); signature (low): `BSImagespaceShaderISSAOCompositeFog * vdtor(BSImagespaceShaderISSAOCompositeFog * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
-    pub slot_1: *const c_void,
-    /// `BSImagespaceShader::vfunc_2` at 0x1564960 (rtti, medium); signature (high): `undefined vfunc_2(BSImagespaceShader * this)`
-    pub slot_2: *const c_void,
-    /// `BSImagespaceShader::vfunc_3` at 0x1564a00 (rtti, medium); signature (low): `undefined vfunc_3(void)`
-    pub slot_3: *const c_void,
-    /// `BSShader::SetupMaterial` at 0x1578910 (semantic, high); signature (untiered): `undefined SetupMaterial(void)`
-    pub slot_4: *const c_void,
-    /// `BSShader::RestoreMaterial` at 0x1578920 (semantic, low); signature (untiered): `undefined RestoreMaterial(void)`
-    pub slot_5: *const c_void,
-    /// `BSImagespaceShader::vfunc_6` at 0x1564a80 (rtti, medium); signature (high): `undefined vfunc_6(BSImagespaceShader * this)`
-    pub slot_6: *const c_void,
-    /// `BSImagespaceShader::vfunc_7` at 0x1564d90 (rtti, medium); signature (high): `undefined vfunc_7(BSImagespaceShader * this)`
-    pub slot_7: *const c_void,
-    /// `BSShader::vfunc_8` at 0x1578ac0 (semantic, high); signature (low): `undefined vfunc_8(void)`
-    pub slot_8: *const c_void,
-    /// `BSImagespaceShader::vfunc_9` at 0x1564df0 (rtti, medium); signature (low): `undefined vfunc_9(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_9: *const c_void,
-    /// `BSImagespaceShader::vfunc_10` at 0x150b510 (rtti, medium); signature (low): `undefined vfunc_10(void)`
-    pub slot_10: *const c_void,
-    /// `BSImagespaceShader::vfunc_11` at 0x150b490 (rtti, medium); signature (low): `undefined vfunc_11(void)`
-    pub slot_11: *const c_void,
-    /// `BSImagespaceShader::vfunc_12` at 0x1565170 (rtti, medium); signature (low): `undefined vfunc_12(BSImagespaceShader * this, undefined4 param_1, undefined4 param_2, undefined4 param_3)`
-    pub slot_12: *const c_void,
-    /// `BSImagespaceShaderISSAOCompositeFog::vfunc_13` at 0x150aac0 (rtti, high); signature (low): `undefined8 * vfunc_13(BSImagespaceShaderISSAOCompositeFog * this, undefined8 * param_1)`
-    pub slot_13: *const c_void,
-    /// `BSImagespaceShader::vfunc_14` at 0x1565200 (rtti, medium); signature (low): `undefined vfunc_14(BSImagespaceShader * this, undefined8 param_1, undefined8 param_2, undefined1 * param_3)`
-    pub slot_14: *const c_void,
-}
-impl BSImagespaceShaderISSAOCompositeFog_vtable {
-    pub const ID: u64 = 254415;
 }
 

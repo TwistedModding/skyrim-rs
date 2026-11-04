@@ -63,6 +63,7 @@ mod interface;
 mod keys;
 mod owned;
 mod reload;
+mod support;
 
 use owned::Owned;
 
@@ -198,6 +199,13 @@ pub fn load(skse: &skse::Interface) -> bool {
     let hosted_by = if skse::runtime::script_extender_loaded(skse.runtime_version) { "the script extender" } else { "the standalone loader" };
     let _ = HOSTED_BY.set(hosted_by);
     log!("hosted by {hosted_by}, plugin interface {:08x}, runtime {:08x}", skse.skse_version, skse.runtime_version);
+    // The loader unloads a DLL whose load returns false, so nothing of it may outlive that: this
+    // check comes before the crash handler's thread and exception handler.
+    if let Err(e) = skyrim::init(skse) {
+        log!("game layer: {e}");
+        log!("nothing was patched and no plugin was loaded");
+        return false;
+    }
     let symbol_path = [plugins_dir(), plugins_dir().join(PLUGIN_DIR), plugins_dir().join(PLUGIN_DIR).join(reload::SHADOW_DIR)].iter().map(|p| p.to_string_lossy().into_owned()).collect::<Vec<_>>().join(";");
     match crash::install(&crash::Options { name: NAME, runtime_version: skse.runtime_version, build: VERSION, facts: Some(crash_facts), symbol_path: Some(symbol_path) }) {
         Ok(crash::Installed::Here { watchdog, symbols, symbol_mismatches }) => log!("crash handler installed, watchdog thread {watchdog}, game symbols {symbols:?} ({} functions, {symbol_mismatches} offsets differ from the ledger)", crash::symbols::count()),
@@ -205,10 +213,6 @@ pub fn load(skse: &skse::Interface) -> bool {
         Err(e) => log!("crash handler not installed: {e}"),
     }
     Hooks::set_logger(|line| log!("hooks: {line}"));
-    if let Err(e) = skyrim::init(skse) {
-        log!("game layer: {e}");
-        return false;
-    }
     let (compat, source) = match std::fs::read_to_string(plugins_dir().join(CONFIG)).ok().as_deref().and_then(|text| setting(text, "compat")).map(str::parse::<Compat>) {
         Some(Ok(compat)) => (compat, CONFIG.to_owned()),
         Some(Err(e)) => (Compat::Refuse, format!("{CONFIG}: {e}")),
@@ -262,7 +266,7 @@ fn read_plugins(files: Vec<PathBuf>, shadow: &Path, running: &[Plugin]) -> Vec<R
     let mut read = Vec::new();
     for path in files {
         let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
-        let loaded = reload::copy(&path, shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_descriptor(&copy).map(|(module, descriptor)| (module, descriptor, copy)));
+        let loaded = reload::copy(&path, shadow, 1).map_err(|e| format!("copy: {e}")).and_then(|copy| read_checked(&copy, &file).map(|(module, descriptor)| (module, descriptor, copy)));
         match loaded {
             Ok((module, descriptor, _)) if plugin_name(descriptor) == NAME => {
                 refuse(file, format!("{NAME} is the host's own name, which its settings file and keys use"));
@@ -423,6 +427,18 @@ fn plugin_files(dir: &Path) -> Vec<PathBuf> {
     let mut files: Vec<PathBuf> = std::fs::read_dir(dir).into_iter().flatten().flatten().map(|e| e.path()).filter(|p| p.extension().is_some_and(|x| x.eq_ignore_ascii_case("dll"))).collect();
     files.sort();
     files
+}
+
+/// Checks the DLL at `path`, a copy of the plugin file `file`, against the running game from its
+/// bytes alone, and only then loads it.
+fn read_checked(path: &Path, file: &str) -> Result<(HMODULE, &'static Descriptor), String> {
+    let pe = std::fs::read(path).map_err(|e| format!("{}: {e}", path.display()))?;
+    support::note(file, &pe);
+    let running = versionlib::running().map_err(|e| e.to_string())?;
+    match running.refusal(&pe) {
+        Some(why) => Err(why),
+        None => read_descriptor(path),
+    }
 }
 
 /// Whether this host knows the descriptor's layout. A stage 1 to 4 plugin of ABI 5 has the same

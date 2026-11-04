@@ -70,7 +70,7 @@ const fn variable(type_bits: u64, value: u64) -> VariableRaw {
 
 /// `Variable::assign` (id 104297): releases what `target` held and takes a reference to `value`'s.
 unsafe fn assign(target: *mut VariableRaw, value: &VariableRaw) {
-    let f: fns::BSScript__Variable__assign_fn = unsafe { crate::engine_fn(fns::BSScript__Variable__assign) };
+    let f: fns::BSScript__Variable__assign_fn = unsafe { crate::engine_fn(sre::id!(fns::BSScript__Variable__assign)) };
     unsafe { f(target, value) }
 }
 
@@ -90,7 +90,8 @@ unsafe impl Sync for Vtable {}
 fn native_vtable() -> &'static Vtable {
     static VTABLE: OnceLock<Vtable> = OnceLock::new();
     VTABLE.get_or_init(|| {
-        let base = crate::reloc().address(NativeVtable::ID).expect("NativeFunctionBase vtable id") as *const *const c_void;
+        sre::fixed_slots!("BSScript::NF_util::NativeFunctionBase", 0x0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
+        let base = crate::reloc().address(sre::id!(NativeVtable::ID)).expect("NativeFunctionBase vtable id") as *const *const c_void;
         let mut slots = [core::ptr::null(); IFUNCTION_SLOTS];
         for (i, slot) in slots.iter_mut().enumerate().take(NativeVtable::SLOT_HasBinding) {
             *slot = unsafe { *base.add(i) };
@@ -183,7 +184,7 @@ pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
     let array = unsafe { &*core::ptr::from_ref(extra).cast::<sre::ExtraAliasInstanceArray>() };
     array.lock.lock_for_read();
     let entries = array.entries.cast::<*const sre::ExtraAliasInstanceArray__Entry>();
-    let handles = (0..array.count as usize)
+    let handles = (0..array.count() as usize)
         .filter_map(|i| {
             let entry = unsafe { (*entries.add(i)).as_ref() }?;
             Some(Handle::alias(entry.quest()?.formID, entry.alias()?.aliasID as u16))
@@ -193,24 +194,17 @@ pub fn alias_handles(reference: &TESObjectREFR) -> Vec<Handle> {
     handles
 }
 
-/// A node of the actor's `BSSimpleList<ActiveEffect*>`.
-#[repr(C)]
-struct EffectNode {
-    effect: *const sre::ActiveEffect,
-    next: *const EffectNode,
-}
-
 /// `actor`'s active effects, walked as `MagicTarget::HasActiveEffectWithBase` walks them: the list
 /// `MagicTarget` slot 7 returns (empty for an actor without middle-high process data), up to a null
 /// node or one whose effect and next are both null, null effects skipped (RE `camera.md` request
 /// IC3 G). The list changes on the main thread, where it is read.
 #[must_use]
 pub fn active_effects(actor: &Actor) -> Vec<&'static sre::ActiveEffect> {
-    let mut node = unsafe { actor.get_active_effect_list() }.cast_const().cast::<EffectNode>();
+    let mut node = unsafe { actor.get_active_effect_list() }.cast_const().cast::<sre::BSSimpleListNode>();
     let mut effects = Vec::new();
-    while let Some(n) = unsafe { node.as_ref() }.filter(|n| !n.effect.is_null() || !n.next.is_null()) {
-        effects.extend(unsafe { n.effect.as_ref() });
-        node = n.next;
+    while let Some(n) = unsafe { node.as_ref() }.filter(|n| !n.item.is_null() || !n.next.is_null()) {
+        effects.extend(unsafe { n.item.cast::<sre::ActiveEffect>().as_ref() });
+        node = n.next.cast();
     }
     effects
 }
@@ -435,7 +429,8 @@ impl Variable {
     #[must_use]
     pub fn elements(&self) -> Option<&[Variable]> {
         let array = self.as_array()?;
-        Some(unsafe { core::slice::from_raw_parts(core::ptr::from_ref(array).add(1).cast::<Variable>(), array.size as usize) })
+        sre::fixed_size!("BSScript::Variable", VariableRaw);
+        Some(unsafe { core::slice::from_raw_parts(core::ptr::from_ref(array).byte_add(sre::class_size!("BSScript::Array", sre::BSScript__Array)).cast::<Variable>(), array.size as usize) })
     }
 
     /// Copies `value` into element `index` of an array-typed Variable through `Variable::assign`;
@@ -458,7 +453,7 @@ impl Variable {
 
 impl Drop for Variable {
     fn drop(&mut self) {
-        let reset: fns::BSScript__Variable__reset_fn = unsafe { crate::engine_fn(fns::BSScript__Variable__reset) };
+        let reset: fns::BSScript__Variable__reset_fn = unsafe { crate::engine_fn(sre::id!(fns::BSScript__Variable__reset)) };
         unsafe { reset(&raw mut self.0) };
     }
 }
@@ -831,6 +826,7 @@ impl NativeFunction {
 
     #[must_use]
     pub fn param_types(&self) -> Vec<TypeInfo> {
+        sre::fixed_size!("BSScript::NF_util::ParamInfo", sre::BSScript__NF_util__ParamInfo);
         (0..usize::from(self.0.base.paramCount)).map(|i| TypeInfo(unsafe { (*self.0.base.params.add(i)).type_.rawTypeOrObjectType })).collect()
     }
 }
@@ -906,7 +902,7 @@ unsafe extern "C" fn call_binding(this: *mut NativeHeader, self_: *mut VariableR
     };
     let count = usize::from(this.base.paramCount);
     let Some(stack) = frame.owning_stack() else { return false };
-    if count > MAX_PARAMS || (frame.size as usize) < count {
+    if count > MAX_PARAMS {
         return false;
     }
     let page = stack.get_page_for_frame(frame);
@@ -1017,6 +1013,7 @@ impl Callback {
 
     /// A callback holding the one reference the dispatch call borrows.
     fn new(f: ResultFn) -> *mut Self {
+        sre::fixed_slots!("BSScript::IStackCallbackFunctor", 0x0, 0, 1, 2, 3);
         Box::into_raw(Box::new(Self {
             header: sre::BSScript__IStackCallbackFunctor { __vftable: core::ptr::from_ref(Self::VTABLE).cast(), refCount: 1, unknown_C: [0; 4], __engine: sre::Engine::new() },
             f: Some(f),
@@ -1069,6 +1066,7 @@ impl Args {
     const VTABLE: &'static ArgsVtable = &ArgsVtable { dtor: Self::dtor, supply: Self::supply };
 
     fn new(values: &[Variable]) -> Self {
+        sre::fixed_slots!("BSScript::IFunctionArguments", 0x0, 0, 1);
         Self { vtable: Self::VTABLE, values: values.as_ptr(), len: values.len() }
     }
 
@@ -1175,12 +1173,12 @@ pub trait VirtualMachineExt {
 
 impl VirtualMachineExt for VirtualMachine {
     fn singleton() -> Option<&'static Self> {
-        unsafe { (sre::g_skyrim_vm().field_210 as *const Self).as_ref() }
+        unsafe { (sre::g_skyrim_vm().field_210() as *const Self).as_ref() }
     }
 
     unsafe fn from_registry(p: *mut c_void) -> Option<&'static Self> {
         let object = unsafe { p.cast::<Self>().as_ref() }?;
-        (crate::class_of(object)?.id == sre::raw::vtables::BSScript__Internal__VirtualMachine_vtable::ID).then_some(object)
+        (crate::class_of(object)?.id == sre::id!(sre::raw::vtables::BSScript__Internal__VirtualMachine_vtable::ID)).then_some(object)
     }
 
     fn handle_for_form(&self, form: &TESForm) -> Handle {

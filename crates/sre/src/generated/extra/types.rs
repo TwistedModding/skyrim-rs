@@ -215,28 +215,31 @@ const _: () = assert!(core::mem::offset_of!(ExtraAttachRefChildren, __vftable) =
 /// `ExtraAttachedArrows3D`: size 0x30 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'48': 1}.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraAttachedArrows3D {
     /// +0x0 `vtbl:ExtraAttachedArrows3D:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraAttachedArrows3D_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     pub unknown_10: [u8; 16],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraAttachedArrows3D>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ExtraAttachedArrows3D, __field_28) == 0x28);
 
 /// `ExtraBadPosition`: size 0x10 (exact, medium); primary base `BSExtraData`.
 /// Evidence: runtime: 0x10 at 1 allocation sites.
@@ -985,7 +988,7 @@ const _: () = assert!(core::mem::offset_of!(ExtraGlobal, field_10) == 0x10);
 /// `ExtraGroupConstraint`: size 0x48 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'72': 1}.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraGroupConstraint {
     /// +0x0 `vtbl:ExtraGroupConstraint:0`, rtti
     #[doc(hidden)]
@@ -997,9 +1000,11 @@ pub struct ExtraGroupConstraint {
     /// +0x14 `undefined4`, ctor store
     pub field_14: u32,
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `float`, ctor store (widths [4, 4])
     pub field_28: f32,
     /// +0x2C `float`, ctor store (widths [4, 4])
@@ -1024,8 +1029,8 @@ const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, __vftable) == 
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(ExtraGroupConstraint, field_30) == 0x30);
@@ -1793,13 +1798,14 @@ const _: () = assert!(core::mem::offset_of!(ExtraOwnership, field_10) == 0x10);
 /// `ExtraPackage`: size 0x28 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'40': 1}.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraPackage {
     /// +0x0 `vtbl:ExtraPackage:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraPackage_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store
@@ -1808,18 +1814,19 @@ pub struct ExtraPackage {
     pub field_1C: u16,
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined1`, ctor store
-    pub field_20: u8,
+    #[doc(hidden)]
+    pub __field_20: [u8; 1],
     pub unknown_21: [u8; 7],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraPackage>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraPackage, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ExtraPackage, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ExtraPackage, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraPackage, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraPackage, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPackage, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(ExtraPackage, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ExtraPackage, __field_20) == 0x20);
 
 /// `ExtraPackageData`: size 0x18 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'24': 1}.
@@ -1839,13 +1846,14 @@ const _: () = assert!(core::mem::offset_of!(ExtraPackageData, __vftable) == 0x0)
 /// `ExtraPackageStartLocation`: size 0x28 (exact, high); primary base `BSExtraData`.
 /// Evidence: runtime: 0x28 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraPackageStartLocation {
     /// +0x0 `vtbl:ExtraPackageStartLocation:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraPackageStartLocation_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined8`, ctor store
     pub field_10: u64,
     /// +0x18 `undefined4`, ctor store (widths [4, 8])
@@ -1861,7 +1869,7 @@ pub struct ExtraPackageStartLocation {
 }
 const _: () = assert!(size_of::<ExtraPackageStartLocation>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraPackageStartLocation, field_1C) == 0x1C);
@@ -2422,20 +2430,21 @@ const _: () = assert!(core::mem::offset_of!(ExtraSceneData, __vftable) == 0x0);
 /// `ExtraScriptedAnimDependence`: size 0x28 (exact, medium); primary base `BSExtraData`.
 /// Evidence: allocation sites (medium): {'40': 1}.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraScriptedAnimDependence {
     /// +0x0 `vtbl:ExtraScriptedAnimDependence:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraScriptedAnimDependence_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     pub unknown_10: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<ExtraScriptedAnimDependence>() == 0x28);
 const _: () = assert!(core::mem::offset_of!(ExtraScriptedAnimDependence, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ExtraScriptedAnimDependence, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ExtraScriptedAnimDependence, __field_8) == 0x8);
 
 /// `ExtraSeenData`: size 0x18 (exact, medium); primary base `BSExtraData`.
 /// Evidence: runtime: 0x18 at 1 allocation sites.
@@ -2525,13 +2534,14 @@ const _: () = assert!(core::mem::offset_of!(ExtraSpawnContainer, __vftable) == 0
 /// `ExtraStartingPosition`: size 0x30 (exact, high); primary base `BSExtraData`.
 /// Evidence: runtime: 0x30 at 2 allocation sites.
 /// Bases: `BSExtraData`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct ExtraStartingPosition {
     /// +0x0 `vtbl:ExtraStartingPosition:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::ExtraStartingPosition_vtable,
     /// +0x8 `undefined8`, ctor store
-    pub field_8: u64,
+    #[doc(hidden)]
+    pub __field_8: [u8; 8],
     /// +0x10 `undefined4`, ctor store (widths [4, 8])
     pub field_10: u32,
     /// +0x14 `undefined4`, ctor store
@@ -2541,7 +2551,8 @@ pub struct ExtraStartingPosition {
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
     /// +0x20 `undefined4`, ctor store (widths [4, 8])
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
     /// +0x28 `undefined8`, ctor store
@@ -2551,12 +2562,12 @@ pub struct ExtraStartingPosition {
 }
 const _: () = assert!(size_of::<ExtraStartingPosition>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(ExtraStartingPosition, field_28) == 0x28);
 

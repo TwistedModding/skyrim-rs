@@ -154,7 +154,7 @@ static PASS_HOOK: Detour<fns::RenderPassImmediately_fn> = Detour::new();
 
 /// Whether the map belongs to the sun's cascades (its accumulator is a cascade accumulator).
 fn is_sun_map(map: *mut ShadowMapData) -> bool {
-    unsafe { map.as_ref().and_then(|m| m.accumulator.as_ref()).is_some_and(|a| a.isCascadeAccumulator != 0) }
+    unsafe { map.as_ref().and_then(|m| m.accumulator()).is_some_and(|a| a.isCascadeAccumulator != 0) }
 }
 
 unsafe extern "C" fn map_cull(this: *mut BSShadowLight, map: *mut ShadowMapData, counter: *mut u32, lists: *mut BSTArray, tag: u32) {
@@ -206,23 +206,23 @@ unsafe extern "C" fn pass(pass: *mut c_void, technique: u32, alpha_test: bool, f
 /// Hooks every step and counter; the hooks stay in until [`remove`].
 pub fn install() -> Result<(), String> {
     unsafe {
-        RENDER_WORLD_HOOK.install(fns::RenderWorld, render_world, "RenderWorld")?;
-        CULL_SCENE_HOOK.install(fns::CullShadowCastersAndScene, cull_scene, "CullShadowCastersAndScene")?;
-        SUN_UPDATE_HOOK.install(fns::BSShadowDirectionalLight__UpdateForCamera, sun_update, "BSShadowDirectionalLight::UpdateForCamera")?;
-        SUN_LISTS_HOOK.install(fns::BSShadowDirectionalLight__CullGeometryLists, sun_lists, "BSShadowDirectionalLight::CullGeometryLists")?;
-        CULL_LIGHTS_HOOK.install(fns::CullShadowLights, cull_lights, "CullShadowLights")?;
-        SUN_CASTERS_HOOK.install(fns::BSShadowDirectionalLight__CullCasters, sun_casters, "BSShadowDirectionalLight::CullCasters")?;
-        MAP_CULL_HOOK.install(fns::BSShadowLight__CullMapCasters, map_cull, "BSShadowLight::CullMapCasters")?;
-        FOCUS_CULL_HOOK.install(fns::BSShadowLight__CullFocusShadowCasters, focus_cull, "BSShadowLight::CullFocusShadowCasters")?;
-        SHADOW_MAPS_HOOK.install(fns::RenderShadowMaps, shadow_maps, "RenderShadowMaps")?;
-        MAP_DRAW_HOOK.install(fns::BSShadowLight__RenderShadowMap, map_draw, "BSShadowLight::RenderShadowMap")?;
-        PREPASS_HOOK.install(fns::RenderWorldDepthPrepass, prepass, "RenderWorldDepthPrepass")?;
-        SHADOW_MASKS_HOOK.install(fns::RenderShadowMasks, shadow_masks, "RenderShadowMasks")?;
-        WORLD_COLOR_HOOK.install(fns::RenderWorldColor, world_color, "RenderWorldColor")?;
-        REG_DEPTH_HOOK.install(fns::BSShaderAccumulator__RegisterDepthGeometry, reg_depth, "BSShaderAccumulator::RegisterDepthGeometry")?;
-        REG_GEOM_HOOK.install(fns::BSShaderAccumulator__RegisterGeometry, reg_geom, "BSShaderAccumulator::RegisterGeometry")?;
-        GET_PASSES_HOOK.install(fns::BSLightingShaderProperty__GetDepthRenderPasses, get_passes, "BSLightingShaderProperty::GetDepthRenderPasses")?;
-        PASS_HOOK.install(fns::RenderPassImmediately, pass, "RenderPassImmediately")?;
+        RENDER_WORLD_HOOK.install(sre::id!(fns::RenderWorld), render_world, "RenderWorld")?;
+        CULL_SCENE_HOOK.install(sre::id!(fns::CullShadowCastersAndScene), cull_scene, "CullShadowCastersAndScene")?;
+        SUN_UPDATE_HOOK.install(sre::id!(fns::BSShadowDirectionalLight__UpdateForCamera), sun_update, "BSShadowDirectionalLight::UpdateForCamera")?;
+        SUN_LISTS_HOOK.install(sre::id!(fns::BSShadowDirectionalLight__CullGeometryLists), sun_lists, "BSShadowDirectionalLight::CullGeometryLists")?;
+        CULL_LIGHTS_HOOK.install(sre::id!(fns::CullShadowLights), cull_lights, "CullShadowLights")?;
+        SUN_CASTERS_HOOK.install(sre::id!(fns::BSShadowDirectionalLight__CullCasters), sun_casters, "BSShadowDirectionalLight::CullCasters")?;
+        MAP_CULL_HOOK.install(sre::id!(fns::BSShadowLight__CullMapCasters), map_cull, "BSShadowLight::CullMapCasters")?;
+        FOCUS_CULL_HOOK.install(sre::id!(fns::BSShadowLight__CullFocusShadowCasters), focus_cull, "BSShadowLight::CullFocusShadowCasters")?;
+        SHADOW_MAPS_HOOK.install(sre::id!(fns::RenderShadowMaps), shadow_maps, "RenderShadowMaps")?;
+        MAP_DRAW_HOOK.install(sre::id!(fns::BSShadowLight__RenderShadowMap), map_draw, "BSShadowLight::RenderShadowMap")?;
+        PREPASS_HOOK.install(sre::id!(fns::RenderWorldDepthPrepass), prepass, "RenderWorldDepthPrepass")?;
+        SHADOW_MASKS_HOOK.install(sre::id!(fns::RenderShadowMasks), shadow_masks, "RenderShadowMasks")?;
+        WORLD_COLOR_HOOK.install(sre::id!(fns::RenderWorldColor), world_color, "RenderWorldColor")?;
+        REG_DEPTH_HOOK.install(sre::id!(fns::BSShaderAccumulator__RegisterDepthGeometry), reg_depth, "BSShaderAccumulator::RegisterDepthGeometry")?;
+        REG_GEOM_HOOK.install(sre::id!(fns::BSShaderAccumulator__RegisterGeometry), reg_geom, "BSShaderAccumulator::RegisterGeometry")?;
+        GET_PASSES_HOOK.install(sre::id!(fns::BSLightingShaderProperty__GetDepthRenderPasses), get_passes, "BSLightingShaderProperty::GetDepthRenderPasses")?;
+        PASS_HOOK.install(sre::id!(fns::RenderPassImmediately), pass, "RenderPassImmediately")?;
     }
     Ok(())
 }

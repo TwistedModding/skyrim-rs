@@ -1,7 +1,7 @@
 # DevBench comparisons for the compat suite (the hooks scenario, step indices of hooks-steps.json); dot-sourced by
 # verify.ps1. Next to the hooks suite's plugins, skyrim_legacy_patch_a.dll (loaded before skyrim_runtime_extender.dll by file name)
 # detours Actor::ModActorValueImpl with MinHook in its SKSEPlugin_Load and logs the player's health damage it receives;
-# skyrim_rs_legacy_patch_z.dll (loaded after it) detours TESObjectREFR::GetScale, where hooks plugin a has an After, at
+# skyrim_z_legacy_patch.dll (loaded after it) detours TESObjectREFR::GetScale, where hooks plugin a has an After, at
 # PLUGINS_LOADED_2, after the host's check of that moment. skyrim-runtime-extender.ini sets the host's mode to -Compat.
 # refuse: the host reports a's patch at startup and refuses both hooks plugins' subscriptions on ModActorValueImpl, so
 # the damage reaches the game unedited (100, 90, 85, 75) through a's detour alone; it finds z's overwrite at DATA_LOADED
@@ -14,7 +14,7 @@ function LogOf($name) { @(if (Test-Path "$OutDir\$name") { Get-Content "$OutDir\
 $legacyA = LogOf "skyrim-rs-legacy-patch-a.log"
 $legacyZ = LogOf "skyrim-rs-legacy-patch-z.log"
 $hooksLog = LogOf "skyrim-rs-hooks.log"
-$handles = @("skyrim_legacy_patch_a.dll", "skyrim_runtime_extender.dll", "skyrim_rs_legacy_patch_z.dll" | ForEach-Object { Loaded $_ })
+$handles = @("skyrim_legacy_patch_a.dll", "skyrim_runtime_extender.dll", "skyrim_z_legacy_patch.dll" | ForEach-Object { Loaded $_ })
 $hooked = @{}
 foreach ($l in $legacyA + $legacyZ) { if ($l -match '^hooked (\S+) at (0x[0-9a-f]+)$') { $hooked[$Matches[1]] = $Matches[2] } }
 $deltas = @($legacyA | Where-Object { $_ -match '^player health damage (-?[\d.]+)$' } | ForEach-Object { [double]$Matches[1] })
@@ -22,9 +22,9 @@ $scaleCalls = Captured ($legacyZ -join ' ') 'GetScale ran (\d+) times'
 $health = @(5, 8, 11, 17 | ForEach-Object { Returned $_ })
 $mode = @($hostLog | Where-Object { $_ -eq "hooks: compatibility mode $Compat (skyrim-runtime-extender.ini)" })
 $unmanaged = @($hostLog | Where-Object { $_ -match "^hooks: startup: Actor::ModActorValueImpl at $($hooked['Actor::ModActorValueImpl']): patched by skyrim_legacy_patch_a\.dll: unmanaged patch, found e9 " })
-$overwrite = @($hostLog | Where-Object { $_ -match "^hooks: (\w+): TESObjectREFR::GetScale at $($hooked['TESObjectREFR::GetScale']): managed detour overwritten by skyrim_rs_legacy_patch_z\.dll: " })
+$overwrite = @($hostLog | Where-Object { $_ -match "^hooks: (\w+): TESObjectREFR::GetScale at $($hooked['TESObjectREFR::GetScale']): managed detour overwritten by skyrim_z_legacy_patch\.dll: " })
 $overwriteMoment = Captured ($overwrite -join ' ') '^hooks: (\w+):'
-$scaleDiagnostics = @($hooksLog | Where-Object { $_ -match '^diagnostics: TESObjectREFR::GetScale at .*, patched by skyrim_rs_legacy_patch_z\.dll' })
+$scaleDiagnostics = @($hooksLog | Where-Object { $_ -match '^diagnostics: TESObjectREFR::GetScale at .*, patched by skyrim_z_legacy_patch\.dll' })
 function Result($run, $name) { if ($runs[$run] -and $runs[$run][$name]) { $runs[$run][$name] } else { $null } }
 $scaleResult = Result "hooks aSave1" "a_scale_calls"
 

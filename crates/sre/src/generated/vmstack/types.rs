@@ -38,16 +38,18 @@ const _: () = assert!(core::mem::offset_of!(BSScript__CompiledScriptLoader, flag
 /// Meaning: the generated getter of an auto property; reports itself native (slot 8 true) (high, vmstack pass).
 /// Evidence: vmstack pass (semantic): slot 1 returns +0x18, slot 2 +0x10 (note the order differs from the other implementations), slot 4 copies +0x20, slot 11 returns 1; size: vdtor 0x14d7190 frees 0x30.
 /// Bases: `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__AutoPropGetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropGetFunction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropGetFunction_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
-    pub objectTypeName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __objectTypeName: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; function name (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x20 `undefined8`, semantic; TypeInfo (high)
     pub returnType: u64,
     pub unknown_28: [u8; 8],
@@ -56,38 +58,40 @@ pub struct BSScript__Internal__AutoPropGetFunction {
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropGetFunction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, objectTypeName) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, name) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __objectTypeName) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, __name) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropGetFunction, returnType) == 0x20);
 
 /// `BSScript::Internal::AutoPropSetFunction`: size 0x30 (exact, high); primary base `BSScript::IFunction`.
 /// Meaning: the generated setter of an auto property (high, vmstack pass).
 /// Evidence: vmstack pass (semantic): slot 1 returns +0x18, slot 2 +0x10; size: vdtor 0x14d71e0 frees 0x30.
 /// Bases: `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__AutoPropSetFunction {
     /// +0x0 `vtbl:BSScript::Internal::AutoPropSetFunction:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSScript__Internal__AutoPropSetFunction_vtable,
     pub unknown_8: [u8; 8],
     /// +0x10 `class:BSFixedString`, semantic; class name (high)
-    pub objectTypeName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __objectTypeName: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic; function name (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     pub unknown_20: [u8; 16],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__AutoPropSetFunction>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, objectTypeName) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, name) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, __objectTypeName) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__AutoPropSetFunction, __name) == 0x18);
 
 /// `BSScript::Internal::CodeTasklet`: size 0x50 (exact, high); primary base `BSScript::Internal::IFuncCallQuery`.
 /// Meaning: the interpreter state of one stack: stack, VM, logger, run state, the frame being interpreted and its bytecode cursor setup; also the IFuncCallQuery the interpreter hands to VM_ExecuteFunctionCall for call opcodes (high, vmstack pass).
 /// Evidence: runtime: 0x50 at 2 allocation sites.
 /// Bases: `BSScript::Internal::IFuncCallQuery`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__CodeTasklet {
     /// +0x0 `vtbl:BSScript::Internal::CodeTasklet:0`, rtti
     #[doc(hidden)]
@@ -107,16 +111,19 @@ pub struct BSScript__Internal__CodeTasklet {
     /// +0x30 `ptr:BSScript::StackFrame`, semantic, runtime; the frame being interpreted (the stack's top when loaded) (medium)
     pub frame: *mut crate::BSScript__StackFrame,
     /// +0x38 `u32`, semantic; page index of the frame (high)
-    pub framePage: u32,
+    #[doc(hidden)]
+    pub __framePage: [u8; 4],
     /// +0x3C `u8`, semantic; bit width of jump targets (medium)
-    pub jumpBits: u8,
+    #[doc(hidden)]
+    pub __jumpBits: [u8; 1],
     /// +0x3D `u8`, semantic; operand width parameter (medium)
     pub operandBitsA: u8,
     /// +0x3E `u8`, semantic; operand width parameter (medium)
     pub operandBitsB: u8,
     pub unknown_3F: [u8; 1],
     /// +0x40 `u32`, semantic; bytecode length in bits (high)
-    pub codeBits: u32,
+    #[doc(hidden)]
+    pub __codeBits: [u8; 4],
     pub unknown_44: [u8; 4],
     /// +0x48 `pointer`, semantic; u64 words of the bytecode bit stream (high)
     pub code: *mut c_void,
@@ -131,11 +138,11 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, vm)
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, errorLogger) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, state) == 0x28);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, frame) == 0x30);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, framePage) == 0x38);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, jumpBits) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __framePage) == 0x38);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __jumpBits) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, operandBitsA) == 0x3D);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, operandBitsB) == 0x3E);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, codeBits) == 0x40);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, __codeBits) == 0x40);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__CodeTasklet, code) == 0x48);
 
 /// `BSScript::Internal::FunctionMessage`: size 0x18 (exact).
@@ -162,7 +169,7 @@ const _: () = assert!(core::mem::offset_of!(BSScript__Internal__FunctionMessage,
 /// Meaning: a native declared in a .pex with no bound implementation; same field offsets as NativeFunctionBase up to +0x48 (medium, vmstack pass).
 /// Evidence: runtime: 0x50 at 1 allocation sites.
 /// Bases: `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x0 `vtbl:BSScript::Internal::NativeFunctionStub:0`, rtti
     #[doc(hidden)]
@@ -171,9 +178,11 @@ pub struct BSScript__Internal__NativeFunctionStub {
     /// +0x10 `class:BSFixedString`, semantic; function name (high)
     pub name: crate::BSFixedString,
     /// +0x18 `class:BSFixedString`, semantic; class name (high)
-    pub objectTypeName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __objectTypeName: [u8; 8],
     /// +0x20 `class:BSFixedString`, semantic; state name (high)
-    pub stateName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __stateName: [u8; 8],
     pub unknown_28: [u8; 40],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -181,14 +190,14 @@ pub struct BSScript__Internal__NativeFunctionStub {
 const _: () = assert!(size_of::<BSScript__Internal__NativeFunctionStub>() == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, stateName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __objectTypeName) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__NativeFunctionStub, __stateName) == 0x20);
 
 /// `BSScript::Internal::ScriptFunction`: size 0x80 (exact, medium); primary base `BSScript::IFunction`.
 /// Meaning: (existing class) compiled script function (high, vmstack pass).
 /// Evidence: runtime: 0x80 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSScript::IFunction`@0x0, `BSIntrusiveRefCounted`@0x8.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__ScriptFunction {
     /// +0x0 `vtbl:BSScript::Internal::ScriptFunction:0`, rtti
     #[doc(hidden)]
@@ -197,15 +206,19 @@ pub struct BSScript__Internal__ScriptFunction {
     pub refCount: u32,
     pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, semantic, runtime; function name (high)
-    pub name: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __name: [u8; 8],
     /// +0x18 `class:BSFixedString`, semantic, runtime; script (class) the function is declared in (high)
-    pub objectTypeName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __objectTypeName: [u8; 8],
     /// +0x20 `class:BSFixedString`, semantic, runtime; state the function belongs to (the interned "" for the empty state) (high)
-    pub stateName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __stateName: [u8; 8],
     /// +0x28 `undefined8`, semantic; BSScript::TypeInfo of the return value (high)
     pub returnType: u64,
     /// +0x30 `pointer`, semantic; array of {BSFixedString name; TypeInfo type} (0x10 each): the parameters, then the locals (high)
-    pub variables: *mut c_void,
+    #[doc(hidden)]
+    pub __variables: [u8; 8],
     /// +0x38 `undefined2`, semantic; number of parameters (high)
     pub paramCount: u16,
     /// +0x3A `undefined2`, semantic; parameters plus locals: the frame size (high)
@@ -215,24 +228,31 @@ pub struct BSScript__Internal__ScriptFunction {
     pub userFlags: u32,
     pub unknown_44: [u8; 4],
     /// +0x48 `undefined4`, semantic, runtime; length of the packed instruction stream in bits (0 = empty function) (high)
-    pub instructionBitCount: u32,
+    #[doc(hidden)]
+    pub __instructionBitCount: [u8; 4],
     /// +0x4C `undefined2`, semantic, runtime; bit width of a jump offset operand (opcodes 0x14-0x16) (medium)
-    pub jumpOperandBits: u16,
+    #[doc(hidden)]
+    pub __jumpOperandBits: [u8; 2],
     /// +0x4E `undefined1`, semantic, runtime; bit width of an operand of tag 6 (a variable index, by its use) (medium)
-    pub operandBitsTag6: u8,
+    #[doc(hidden)]
+    pub __operandBitsTag6: [u8; 1],
     /// +0x4F `undefined1`, semantic, runtime; bit width of an operand of tag 7 (medium)
-    pub operandBitsTag7: u8,
+    #[doc(hidden)]
+    pub __operandBitsTag7: [u8; 1],
     /// +0x50 `pointer`, semantic, runtime; u64-aligned bit buffer of the instructions, read LSB first, a 6-bit opcode then its operands (high)
-    pub instructionData: *mut c_void,
+    #[doc(hidden)]
+    pub __instructionData: [u8; 8],
     /// +0x58 `undefined2`, semantic; 0 normal, 1 property getter, 2 property setter (medium)
     pub functionType: u16,
     /// +0x5A `undefined1`, semantic; global (static) function (high)
     pub isStatic: u8,
     pub unknown_5B: [u8; 5],
     /// +0x60 `class:BSFixedString`, semantic; documentation string (high)
-    pub docString: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __docString: [u8; 8],
     /// +0x68 `class:BSFixedString`, semantic; source file name the trace prints in quotes (high)
-    pub sourceFileName: crate::BSFixedString,
+    #[doc(hidden)]
+    pub __sourceFileName: [u8; 8],
     /// +0x70 `undefined4`, ctor store, semantic, runtime; number of entries in lineNumbers (0 when the debug section was not kept) (high)
     pub lineCount: u32,
     pub unknown_74: [u8; 4],
@@ -244,45 +264,47 @@ pub struct BSScript__Internal__ScriptFunction {
 const _: () = assert!(size_of::<BSScript__Internal__ScriptFunction>() == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, refCount) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, name) == 0x10);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, objectTypeName) == 0x18);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, stateName) == 0x20);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __name) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __objectTypeName) == 0x18);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __stateName) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, returnType) == 0x28);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, variables) == 0x30);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __variables) == 0x30);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, paramCount) == 0x38);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, variableCount) == 0x3A);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, userFlags) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, instructionBitCount) == 0x48);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, jumpOperandBits) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, operandBitsTag6) == 0x4E);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, operandBitsTag7) == 0x4F);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, instructionData) == 0x50);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __instructionBitCount) == 0x48);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __jumpOperandBits) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __operandBitsTag6) == 0x4E);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __operandBitsTag7) == 0x4F);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __instructionData) == 0x50);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, functionType) == 0x58);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, isStatic) == 0x5A);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, docString) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, sourceFileName) == 0x68);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __docString) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, __sourceFileName) == 0x68);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, lineCount) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__ScriptFunction, lineNumbers) == 0x78);
 
 /// `BSScript::Internal::StackMapEntry`: size 0x18 (exact).
 /// Meaning: entry of runningStacks / latentWaits (high, vmstack pass).
 /// Evidence: entry of runningStacks / latentWaits; empty when next == 0; a chain ends at the map's sentinel pointer (map+0x10). Insert writes key, value, then next (0x14c5120); size: stride 0x18 in FindStackById, InsertOrAssignByUIntKey, VM::Update's freeze walk; DevBench's Utility.Wait stack 0x1a1cc023680 (id 0x93d from Run's r9, WaitForLatent's rdx 0x93d) read from the tracer's thread without the lock (VM vtable B+0x1b299e8; owner 0, count 0, the header changed between the two reads): running map VM+0x9320: capacity 2048, free 2031, 17 live entries each reached from its CRC bucket (17), id 0x93d at entry 1011 after 1 step(s) -> Stack 0x1a1cc023680; latent map VM+0x9350: capacity 32, free 15, 17 live entries each reached from its CRC bucket (17), id 0x93d at entry 19 after 1 step(s) -> Stack 0x1a1cc023680; Stack+0x80 = 0x93d.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct BSScript__Internal__StackMapEntry {
     /// +0x0 `u32`, semantic; key (high)
     pub stackID: u32,
     pub unknown_4: [u8; 4],
     /// +0x8 `ptr:BSScript::Stack`, semantic; BSTSmartPointer<Stack> (the map holds a reference) (high)
-    pub stack: *mut crate::BSScript__Stack,
+    #[doc(hidden)]
+    pub __stack: [u8; 8],
     /// +0x10 `pointer`, semantic; next entry of the chain, the sentinel at the end, 0 for an empty slot (high)
-    pub next: *mut c_void,
+    #[doc(hidden)]
+    pub __next: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<BSScript__Internal__StackMapEntry>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, stackID) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, stack) == 0x8);
-const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, next) == 0x10);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, __stack) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSScript__Internal__StackMapEntry, __next) == 0x10);
 
 /// `BSScript::Internal::SuspendedStack`: size 0x10 (exact).
 /// Meaning: a stack waiting to retry a call or a return, with the call query (high, vmstack pass).

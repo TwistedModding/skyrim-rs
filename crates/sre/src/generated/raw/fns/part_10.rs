@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (untiered): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
+pub const FocusListAndSelectIndex: u64 = 454102;
+/// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (untiered): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FocusNextListEntry: u64 = 454941;
+/// `FocusPreviousListEntry` at 0x1602f10 (decompiler, medium); signature (untiered): `undefined FocusPreviousListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const FocusPreviousListEntry: u64 = 454942;
+/// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (untiered): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
+pub const ForEachActorInHandleArray: u64 = 41326;
 /// `ForEachAliasInstanceOfRef` at 0x2e6a70 (semantic, high); signature (untiered): `undefined ForEachAliasInstanceOfRef(longlong param_1, longlong * param_2)`; semantic: the reference's ExtraAliasInstanceArray (extra 0x88), or, when the reference carries an ExtraReferenceHandle (0x1c) whose target has form flag bit 5 set, that target's array; each alias goes to functor slot 1 (high); signature `void (TESObjectREFR* ref, void* functor)`
 pub const ForEachAliasInstanceOfRef: u64 = 19656;
 /// `ForEachAliasInstanceOfRef` as a function pointer type (high).
@@ -8527,11 +8535,3 @@ pub const GameSetting_fImpactShaderMaxDistance__init: u64 = 3329;
 pub const GameSetting_fImpactShaderMaxMagnitude__atexit: u64 = 168540;
 /// `GameSetting_fImpactShaderMaxMagnitude__init` at 0x5a570 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMaxMagnitude__init(void)`
 pub const GameSetting_fImpactShaderMaxMagnitude__init: u64 = 3330;
-/// `GameSetting_fImpactShaderMinMagnitude__atexit` at 0x17705b0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__atexit(void)`
-pub const GameSetting_fImpactShaderMinMagnitude__atexit: u64 = 168541;
-/// `GameSetting_fImpactShaderMinMagnitude__init` at 0x5a5f0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__init(void)`
-pub const GameSetting_fImpactShaderMinMagnitude__init: u64 = 3331;
-/// `GameSetting_fIntimidateConfidenceMultAverage__atexit` at 0x1753730 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultAverage__atexit(void)`
-pub const GameSetting_fIntimidateConfidenceMultAverage__atexit: u64 = 167061;
-/// `GameSetting_fIntimidateConfidenceMultAverage__init` at 0x2cac0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultAverage__init(void)`
-pub const GameSetting_fIntimidateConfidenceMultAverage__init: u64 = 1851;

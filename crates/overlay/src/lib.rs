@@ -109,8 +109,8 @@ static KEYBOARD_FOCUS: AtomicBool = AtomicBool::new(false);
 pub fn install() -> Result<(), Error> {
     let ctx = themed_context(font_definitions().ok_or(Error::NoFont)?.clone());
     let reloc = skyrim::reloc();
-    let render_frame = reloc.address(fns::RenderFrame)?;
-    let present = reloc.address(fns::PresentFrame)?;
+    let render_frame = reloc.address(sre::id!(fns::RenderFrame))?;
+    let present = reloc.address(sre::id!(fns::PresentFrame))?;
     let site = hook::find_call(render_frame, RENDER_FRAME_LEN, present).ok_or(Error::NoPresentCall)?;
     let mut state = STATE.lock().unwrap();
     if state.is_some() {
@@ -273,7 +273,7 @@ fn draw(rtv: *mut core::ffi::c_void) {
     let Some(state) = state.as_mut() else { return };
     if state.painter.is_none() {
         let reloc = skyrim::reloc();
-        let (device, context) = match (reloc.address(globals::g_D3D11Device), reloc.address(globals::g_D3D11Context)) {
+        let (device, context) = match (reloc.address(sre::id!(globals::g_D3D11Device)), reloc.address(sre::id!(globals::g_D3D11Context))) {
             (Ok(d), Ok(c)) => unsafe { (*(d as *const *mut core::ffi::c_void), *(c as *const *mut core::ffi::c_void)) },
             _ => return,
         };

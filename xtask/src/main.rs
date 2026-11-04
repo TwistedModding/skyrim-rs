@@ -6,8 +6,11 @@ fn main() -> ExitCode {
     match args.get(1).map(String::as_str) {
         Some("gen") => generate(),
         Some("crash") if args.len() >= 3 => decode(Path::new(&args[2]), args.get(3).map(Path::new)),
+        Some("manifest") if args.len() == 3 => manifest(Path::new(&args[2]), None),
+        Some("manifest") if args.len() == 5 && args[3] == "--check" => manifest(Path::new(&args[2]), Some(Path::new(&args[4]))),
         _ => {
             eprintln!("usage: cargo xtask gen                      (reads SKYRIMRE_DIR or ../{})", xtask::RE_REPO);
+            eprintln!("       cargo xtask manifest <dll> [--check <profile>]  (what a DLL records it uses of the game; what a profile lacks of it)");
             eprintln!("       cargo crash-decode <file.dmp> [out.log]  (the crash log from a minidump; stdout without out.log; the decode feature)");
             ExitCode::FAILURE
         }
@@ -82,7 +85,40 @@ fn generate() -> ExitCode {
             t.unexpressible.iter().map(|(why, n)| format!("{} {n}", why.label())).collect::<Vec<_>>().join(", ")
         );
     }
+    println!("runtimes compared: {}", if stats.compared.is_empty() { "none".to_owned() } else { stats.compared.join(", ") });
+    if let Some(n) = stats.self_check_differences {
+        println!("1.7.104 self-check: {n} rows not same");
+    }
+    for (group, c) in &stats.accessors {
+        println!("accessors in {group}: fields {}, slots {}, bases {}, sizes {}", c.fields, c.slots, c.bases, c.sizes);
+    }
     ExitCode::SUCCESS
+}
+
+fn manifest(dll: &Path, profile: Option<&Path>) -> ExitCode {
+    let run = || -> Result<ExitCode, String> {
+        let bytes = std::fs::read(dll).map_err(|e| format!("{}: {e}", dll.display()))?;
+        let records = versionlib::manifest::read(&bytes).map_err(|e| format!("{}: {e}", dll.display()))?;
+        let Some(path) = profile else {
+            for record in &records {
+                println!("{record}");
+            }
+            eprintln!("{} records", records.len());
+            return Ok(ExitCode::SUCCESS);
+        };
+        let text = std::fs::read_to_string(path).map_err(|e| format!("{}: {e}", path.display()))?;
+        let parsed = versionlib::profile::parse(&text).map_err(|e| format!("{}: {e}", path.display()))?;
+        let lacking = versionlib::manifest::lacking(&records, &parsed);
+        for (record, why) in &lacking {
+            println!("{record} {why}");
+        }
+        eprintln!("{} of {} records lacking", lacking.len(), records.len());
+        Ok(if lacking.is_empty() { ExitCode::SUCCESS } else { ExitCode::FAILURE })
+    };
+    run().unwrap_or_else(|e| {
+        eprintln!("{e}");
+        ExitCode::FAILURE
+    })
 }
 
 #[cfg(not(feature = "decode"))]

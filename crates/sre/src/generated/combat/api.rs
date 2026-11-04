@@ -2961,6 +2961,3461 @@ impl core::ops::Deref for crate::CombatTrackTargetAimController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::CombatCoverLocation {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_10", 0x10, u32) } }
+    /// `CombatCoverLocation::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatCoverLocation.field_18", 0x18, u64) } }
+    /// `CombatCoverLocation::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatCoverLocation.field_20", 0x20, u16) } }
+    /// `CombatCoverLocation::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u16 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u16) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u16 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_28", 0x28, u32) } }
+    /// `CombatCoverLocation::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_30", 0x30, u32) } }
+    /// `CombatCoverLocation::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u32 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u32) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u32 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_34(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_34", 0x34, u32) } }
+    /// `CombatCoverLocation::field_34`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn field_34(&self) -> u32 { unsafe { Self::__member_field_34(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_34(&mut self, value: u32) { unsafe { Self::__member_field_34(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_34_ptr(&self) -> *mut u32 { Self::__member_field_34(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_38", 0x38, u32) } }
+    /// `CombatCoverLocation::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u32 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u32) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u32 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_3C(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_3C", 0x3C, u32) } }
+    /// `CombatCoverLocation::field_3C`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn field_3C(&self) -> u32 { unsafe { Self::__member_field_3C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_3C(&mut self, value: u32) { unsafe { Self::__member_field_3C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_3C_ptr(&self) -> *mut u32 { Self::__member_field_3C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_40", 0x40, u32) } }
+    /// `CombatCoverLocation::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_44(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_44", 0x44, u32) } }
+    /// `CombatCoverLocation::field_44`, at +0x44 on 1.7.104.
+    #[inline]
+    pub fn field_44(&self) -> u32 { unsafe { Self::__member_field_44(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_44(&mut self, value: u32) { unsafe { Self::__member_field_44(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_44_ptr(&self) -> *mut u32 { Self::__member_field_44(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_48", 0x48, u32) } }
+    /// `CombatCoverLocation::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_4C", 0x4C, u32) } }
+    /// `CombatCoverLocation::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> u32 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: u32) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut u32 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_50", 0x50, u32) } }
+    /// `CombatCoverLocation::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_5C(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_5C", 0x5C, u32) } }
+    /// `CombatCoverLocation::field_5C`, at +0x5C on 1.7.104.
+    #[inline]
+    pub fn field_5C(&self) -> u32 { unsafe { Self::__member_field_5C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_5C(&mut self, value: u32) { unsafe { Self::__member_field_5C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_5C_ptr(&self) -> *mut u32 { Self::__member_field_5C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_64", 0x64, u32) } }
+    /// `CombatCoverLocation::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_68", 0x68, u32) } }
+    /// `CombatCoverLocation::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u32 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u32) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u32 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_84(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_84", 0x84, u32) } }
+    /// `CombatCoverLocation::field_84`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn field_84(&self) -> u32 { unsafe { Self::__member_field_84(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_84(&mut self, value: u32) { unsafe { Self::__member_field_84(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_84_ptr(&self) -> *mut u32 { Self::__member_field_84(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_94(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverLocation.field_94", 0x94, u32) } }
+    /// `CombatCoverLocation::field_94`, at +0x94 on 1.7.104.
+    #[inline]
+    pub fn field_94(&self) -> u32 { unsafe { Self::__member_field_94(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_94(&mut self, value: u32) { unsafe { Self::__member_field_94(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_94_ptr(&self) -> *mut u32 { Self::__member_field_94(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatCoverSearch {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_74(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatCoverSearch.field_74", 0x74, u64) } }
+    /// `CombatCoverSearch::field_74`, at +0x74 on 1.7.104.
+    #[inline]
+    pub fn field_74(&self) -> u64 { unsafe { Self::__member_field_74(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_74(&mut self, value: u64) { unsafe { Self::__member_field_74(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_74_ptr(&self) -> *mut u64 { Self::__member_field_74(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7C(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatCoverSearch.field_7C", 0x7C, u64) } }
+    /// `CombatCoverSearch::field_7C`, at +0x7C on 1.7.104.
+    #[inline]
+    pub fn field_7C(&self) -> u64 { unsafe { Self::__member_field_7C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7C(&mut self, value: u64) { unsafe { Self::__member_field_7C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7C_ptr(&self) -> *mut u64 { Self::__member_field_7C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_84(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatCoverSearch.field_84", 0x84, u32) } }
+    /// `CombatCoverSearch::field_84`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn field_84(&self) -> u32 { unsafe { Self::__member_field_84(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_84(&mut self, value: u32) { unsafe { Self::__member_field_84(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_84_ptr(&self) -> *mut u32 { Self::__member_field_84(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagic {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagic.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagic::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterArmor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterArmor>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterArmor>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterBoundItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterBoundItem>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterBoundItem>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterCloak {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterCloak>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterCloak>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterDisarm {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterDisarm>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterDisarm>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterInvisibility {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterInvisibility>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterInvisibility>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterLight {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterLight>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterLight>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterOffensive {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterOffensive>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterOffensive>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterParalyze {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterParalyze>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterParalyze>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterReanimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterReanimate>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterReanimate>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterRestore {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterRestore>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterRestore>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterScript {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterScript>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterScript>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterStagger {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterStagger>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterStagger>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterSummon {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterSummon>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterSummon>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterTargetEffect {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterTargetEffect>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterTargetEffect>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemMagic_CombatMagicCasterWard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterWard>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemMagic,CombatMagicCasterWard>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterArmor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterArmor>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterArmor>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterBoundItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterBoundItem>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterBoundItem>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterCloak {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterCloak>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterCloak>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterDisarm {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterDisarm>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterDisarm>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterInvisibility {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterInvisibility>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterInvisibility>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterLight {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterLight>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterLight>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterOffensive {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterOffensive>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterOffensive>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterParalyze {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterParalyze>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterParalyze>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterReanimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterReanimate>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterReanimate>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterRestore {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterRestore>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterRestore>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterScript {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterScript>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterScript>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterStagger {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterStagger>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterStagger>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterSummon {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterSummon>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterSummon>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterTargetEffect {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterTargetEffect>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterTargetEffect>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemPotion_CombatMagicCasterWard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterWard>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemPotion,CombatMagicCasterWard>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterArmor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterArmor>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterArmor>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterBoundItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterBoundItem>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterBoundItem>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterCloak {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterCloak>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterCloak>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterDisarm {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterDisarm>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterDisarm>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterInvisibility {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterInvisibility>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterInvisibility>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterLight {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterLight>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterLight>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterOffensive {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterOffensive>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterOffensive>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterReanimate>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterReanimate>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterRestore {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterRestore>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterScript {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterScript>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterStagger {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterStagger>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterSummon {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterSummon>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterTargetEffect {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterTargetEffect>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterTargetEffect>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterWard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterWard>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterWard>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterArmor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterArmor>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterArmor>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterBoundItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterBoundItem>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterBoundItem>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterCloak {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterCloak>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterCloak>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterDisarm {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterDisarm>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterDisarm>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterInvisibility {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterInvisibility>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterInvisibility>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterLight {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterLight>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterLight>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterOffensive {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterOffensive>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterOffensive>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterParalyze {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterParalyze>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterParalyze>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterReanimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterReanimate>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterReanimate>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterRestore {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterRestore>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterRestore>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterScript {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterScript>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterScript>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterStagger {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterStagger>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterStagger>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterSummon {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterSummon>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterSummon>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterWard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterWard>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterWard>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterArmor {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterArmor>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterArmor>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterBoundItem {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterBoundItem>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterBoundItem>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterCloak {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterCloak>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterCloak>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterDisarm {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterDisarm>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterDisarm>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterInvisibility {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterInvisibility>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterInvisibility>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterLight {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterLight>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterLight>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterOffensive {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterOffensive>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterOffensive>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterParalyze {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterParalyze>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterParalyze>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterReanimate {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterReanimate>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterReanimate>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterRestore {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterRestore>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterScript {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterScript>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterStagger {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterStagger>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterSummon {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterSummon>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterTargetEffect {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterTargetEffect>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemMagicT_CombatInventoryItemStaff_CombatMagicCasterWard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemMagicT<CombatInventoryItemStaff,CombatMagicCasterWard>::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemPotion {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemPotion.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemPotion::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemScroll {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemScroll.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemScroll::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemShout {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemShout.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemShout::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatInventoryItemStaff {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatInventoryItemStaff.field_48", 0x48, u64) } }
+    /// `CombatInventoryItemStaff::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u64 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u64) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u64 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearch {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearch::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearch::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearch::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearch::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearch.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearch::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearch::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearch::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearch.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearch::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearch::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearch::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearch.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearch::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F0", 0x1F0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1F0`, at +0x1F0 on 1.7.104.
+    #[inline]
+    pub fn field_1F0(&self) -> u64 { unsafe { Self::__member_field_1F0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F0(&mut self, value: u64) { unsafe { Self::__member_field_1F0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F0_ptr(&self) -> *mut u64 { Self::__member_field_1F0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F8(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_1F8", 0x1F8, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_1F8`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn field_1F8(&self) -> u32 { unsafe { Self::__member_field_1F8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F8(&mut self, value: u32) { unsafe { Self::__member_field_1F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F8_ptr(&self) -> *mut u32 { Self::__member_field_1F8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_218(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_218", 0x218, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_218`, at +0x218 on 1.7.104.
+    #[inline]
+    pub fn field_218(&self) -> u64 { unsafe { Self::__member_field_218(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_218(&mut self, value: u64) { unsafe { Self::__member_field_218(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_218_ptr(&self) -> *mut u64 { Self::__member_field_218(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_220(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_220", 0x220, u16) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_220`, at +0x220 on 1.7.104.
+    #[inline]
+    pub fn field_220(&self) -> u16 { unsafe { Self::__member_field_220(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_220(&mut self, value: u16) { unsafe { Self::__member_field_220(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_220_ptr(&self) -> *mut u16 { Self::__member_field_220(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_223(this: *const Self) -> *mut u8 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_223", 0x223, u8) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_223`, at +0x223 on 1.7.104.
+    #[inline]
+    pub fn field_223(&self) -> u8 { unsafe { Self::__member_field_223(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_223(&mut self, value: u8) { unsafe { Self::__member_field_223(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_223_ptr(&self) -> *mut u8 { Self::__member_field_223(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1F8", 0x1F8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_1F8`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn field_1F8(&self) -> u64 { unsafe { Self::__member_field_1F8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F8(&mut self, value: u64) { unsafe { Self::__member_field_1F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F8_ptr(&self) -> *mut u64 { Self::__member_field_1F8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_200(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_200", 0x200, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_200`, at +0x200 on 1.7.104.
+    #[inline]
+    pub fn field_200(&self) -> u32 { unsafe { Self::__member_field_200(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_200(&mut self, value: u32) { unsafe { Self::__member_field_200(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_200_ptr(&self) -> *mut u32 { Self::__member_field_200(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_208(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_208", 0x208, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_208`, at +0x208 on 1.7.104.
+    #[inline]
+    pub fn field_208(&self) -> u64 { unsafe { Self::__member_field_208(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_208(&mut self, value: u64) { unsafe { Self::__member_field_208(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_208_ptr(&self) -> *mut u64 { Self::__member_field_208(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_210(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_210", 0x210, u16) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_210`, at +0x210 on 1.7.104.
+    #[inline]
+    pub fn field_210(&self) -> u16 { unsafe { Self::__member_field_210(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_210(&mut self, value: u16) { unsafe { Self::__member_field_210(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_210_ptr(&self) -> *mut u16 { Self::__member_field_210(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_213(this: *const Self) -> *mut u8 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_213", 0x213, u8) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_213`, at +0x213 on 1.7.104.
+    #[inline]
+    pub fn field_213(&self) -> u8 { unsafe { Self::__member_field_213(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_213(&mut self, value: u8) { unsafe { Self::__member_field_213(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_213_ptr(&self) -> *mut u8 { Self::__member_field_213(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyLocation_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_208(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_208", 0x208, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_208`, at +0x208 on 1.7.104.
+    #[inline]
+    pub fn field_208(&self) -> u64 { unsafe { Self::__member_field_208(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_208(&mut self, value: u64) { unsafe { Self::__member_field_208(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_208_ptr(&self) -> *mut u64 { Self::__member_field_208(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_210(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_210", 0x210, u16) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_210`, at +0x210 on 1.7.104.
+    #[inline]
+    pub fn field_210(&self) -> u16 { unsafe { Self::__member_field_210(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_210(&mut self, value: u16) { unsafe { Self::__member_field_210(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_210_ptr(&self) -> *mut u16 { Self::__member_field_210(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_213(this: *const Self) -> *mut u8 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_213", 0x213, u8) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_213`, at +0x213 on 1.7.104.
+    #[inline]
+    pub fn field_213(&self) -> u8 { unsafe { Self::__member_field_213(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_213(&mut self, value: u8) { unsafe { Self::__member_field_213(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_213_ptr(&self) -> *mut u8 { Self::__member_field_213(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1F8", 0x1F8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_1F8`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn field_1F8(&self) -> u64 { unsafe { Self::__member_field_1F8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F8(&mut self, value: u64) { unsafe { Self::__member_field_1F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F8_ptr(&self) -> *mut u64 { Self::__member_field_1F8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_200(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_200", 0x200, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_200`, at +0x200 on 1.7.104.
+    #[inline]
+    pub fn field_200(&self) -> u32 { unsafe { Self::__member_field_200(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_200(&mut self, value: u32) { unsafe { Self::__member_field_200(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_200_ptr(&self) -> *mut u32 { Self::__member_field_200(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_230(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_230", 0x230, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_230`, at +0x230 on 1.7.104.
+    #[inline]
+    pub fn field_230(&self) -> u64 { unsafe { Self::__member_field_230(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_230(&mut self, value: u64) { unsafe { Self::__member_field_230(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_230_ptr(&self) -> *mut u64 { Self::__member_field_230(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_238(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_238", 0x238, u16) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_238`, at +0x238 on 1.7.104.
+    #[inline]
+    pub fn field_238(&self) -> u16 { unsafe { Self::__member_field_238(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_238(&mut self, value: u16) { unsafe { Self::__member_field_238(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_238_ptr(&self) -> *mut u16 { Self::__member_field_238(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_23B(this: *const Self) -> *mut u8 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_23B", 0x23B, u8) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_23B`, at +0x23B on 1.7.104.
+    #[inline]
+    pub fn field_23B(&self) -> u8 { unsafe { Self::__member_field_23B(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_23B(&mut self, value: u8) { unsafe { Self::__member_field_23B(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_23B_ptr(&self) -> *mut u8 { Self::__member_field_23B(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_1F8", 0x1F8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_1F8`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn field_1F8(&self) -> u64 { unsafe { Self::__member_field_1F8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F8(&mut self, value: u64) { unsafe { Self::__member_field_1F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F8_ptr(&self) -> *mut u64 { Self::__member_field_1F8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_200(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_200", 0x200, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_200`, at +0x200 on 1.7.104.
+    #[inline]
+    pub fn field_200(&self) -> u32 { unsafe { Self::__member_field_200(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_200(&mut self, value: u32) { unsafe { Self::__member_field_200(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_200_ptr(&self) -> *mut u32 { Self::__member_field_200(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatNavmeshSearchT_CombatPathingGoalPolicyStandard_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_10", 0x10, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> u64 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: u64) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut u64 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_18", 0x18, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1B0", 0x1B0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1B0`, at +0x1B0 on 1.7.104.
+    #[inline]
+    pub fn field_1B0(&self) -> u64 { unsafe { Self::__member_field_1B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B0(&mut self, value: u64) { unsafe { Self::__member_field_1B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B0_ptr(&self) -> *mut u64 { Self::__member_field_1B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1B8", 0x1B8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1B8`, at +0x1B8 on 1.7.104.
+    #[inline]
+    pub fn field_1B8(&self) -> u64 { unsafe { Self::__member_field_1B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1B8(&mut self, value: u64) { unsafe { Self::__member_field_1B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1B8_ptr(&self) -> *mut u64 { Self::__member_field_1B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1C0", 0x1C0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1C0`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn field_1C0(&self) -> u32 { unsafe { Self::__member_field_1C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C0(&mut self, value: u32) { unsafe { Self::__member_field_1C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C0_ptr(&self) -> *mut u32 { Self::__member_field_1C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1D0", 0x1D0, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1D0`, at +0x1D0 on 1.7.104.
+    #[inline]
+    pub fn field_1D0(&self) -> u64 { unsafe { Self::__member_field_1D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D0(&mut self, value: u64) { unsafe { Self::__member_field_1D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D0_ptr(&self) -> *mut u64 { Self::__member_field_1D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1D8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1D8", 0x1D8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1D8`, at +0x1D8 on 1.7.104.
+    #[inline]
+    pub fn field_1D8(&self) -> u64 { unsafe { Self::__member_field_1D8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1D8(&mut self, value: u64) { unsafe { Self::__member_field_1D8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1D8_ptr(&self) -> *mut u64 { Self::__member_field_1D8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1E0(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1E0", 0x1E0, u32) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1E0`, at +0x1E0 on 1.7.104.
+    #[inline]
+    pub fn field_1E0(&self) -> u32 { unsafe { Self::__member_field_1E0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1E0(&mut self, value: u32) { unsafe { Self::__member_field_1E0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1E0_ptr(&self) -> *mut u32 { Self::__member_field_1E0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1F8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_1F8", 0x1F8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_1F8`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn field_1F8(&self) -> u64 { unsafe { Self::__member_field_1F8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1F8(&mut self, value: u64) { unsafe { Self::__member_field_1F8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1F8_ptr(&self) -> *mut u64 { Self::__member_field_1F8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_20", 0x20, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_208(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_208", 0x208, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_208`, at +0x208 on 1.7.104.
+    #[inline]
+    pub fn field_208(&self) -> u64 { unsafe { Self::__member_field_208(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_208(&mut self, value: u64) { unsafe { Self::__member_field_208(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_208_ptr(&self) -> *mut u64 { Self::__member_field_208(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_210(this: *const Self) -> *mut u16 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_210", 0x210, u16) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_210`, at +0x210 on 1.7.104.
+    #[inline]
+    pub fn field_210(&self) -> u16 { unsafe { Self::__member_field_210(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_210(&mut self, value: u16) { unsafe { Self::__member_field_210(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_210_ptr(&self) -> *mut u16 { Self::__member_field_210(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_213(this: *const Self) -> *mut u8 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_213", 0x213, u8) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_213`, at +0x213 on 1.7.104.
+    #[inline]
+    pub fn field_213(&self) -> u8 { unsafe { Self::__member_field_213(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_213(&mut self, value: u8) { unsafe { Self::__member_field_213(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_213_ptr(&self) -> *mut u8 { Self::__member_field_213(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_28", 0x28, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_8", 0x8, u64) } }
+    /// `CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u64 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u64) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u64 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequest {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequest.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequest::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestAdapter {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestAdapter.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestAdapter::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyExitWater_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyExitWater,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindAttackLocation_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFindAttackLocation,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindCover_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFindCover,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindHideCover_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFindHideCover,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFindTargetLocation_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFindTargetLocation,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlank_CombatPathingSearchPolicyFlank {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlankDistant_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlankDistant,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyFlee_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyFlee,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyRetreat_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyRetreat,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicyReturnToCombatArea_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicySearch_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestGeneric_CombatPathingGoalPolicySearchWander_CombatPathingSearchPolicyStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestGeneric<CombatPathingGoalPolicySearchWander,CombatPathingSearchPolicyStandard>::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestMultiGoal {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestMultiGoal.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestMultiGoal::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatPathingRequestStandard {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C8(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatPathingRequestStandard.field_C8", 0xC8, u64) } }
+    /// `CombatPathingRequestStandard::field_C8`, at +0xC8 on 1.7.104.
+    #[inline]
+    pub fn field_C8(&self) -> u64 { unsafe { Self::__member_field_C8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C8(&mut self, value: u64) { unsafe { Self::__member_field_C8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C8_ptr(&self) -> *mut u64 { Self::__member_field_C8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatProjectileAimController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut f32 { unsafe { member!(this, "CombatProjectileAimController.field_B8", 0xB8, f32) } }
+    /// `CombatProjectileAimController::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> f32 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: f32) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut f32 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+}
+
+impl crate::CombatThreat {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatThreat.field_1C", 0x1C, u64) } }
+    /// `CombatThreat::field_1C`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn field_1C(&self) -> u64 { unsafe { Self::__member_field_1C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C(&mut self, value: u64) { unsafe { Self::__member_field_1C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C_ptr(&self) -> *mut u64 { Self::__member_field_1C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u64 { unsafe { member!(this, "CombatThreat.field_24", 0x24, u64) } }
+    /// `CombatThreat::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u64 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u64) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u64 { Self::__member_field_24(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "CombatThreat.field_2C", 0x2C, u32) } }
+    /// `CombatThreat::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut f32 { unsafe { member!(this, "CombatThreat.field_60", 0x60, f32) } }
+    /// `CombatThreat::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> f32 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: f32) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut f32 { Self::__member_field_60(core::ptr::from_ref(self)) }
+}
+
 /// `g_CombatBehaviorTreeAcquireWeapon` at 0x3254ca0, id 405299 (layout_inference, medium)
 #[inline]
 pub fn g_combat_behavior_tree_acquire_weapon() -> *mut c_void { address!(405299) as *mut c_void }

@@ -92,6 +92,42 @@ impl crate::BSReadWriteLock {
     pub fn unlock_for_write(&self) { unsafe { function!(68240, (*const Self))(core::ptr::from_ref(self)) } }
 }
 
+impl crate::BSTArray {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_capacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSTArray.capacity", 0x8, u32) } }
+    /// `BSTArray::capacity`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn capacity(&self) -> u32 { unsafe { Self::__member_capacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+}
+
+impl crate::Setting {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_name(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "Setting.name", 0x10, *mut c_void) } }
+    /// `Setting::name`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn name(&self) -> *mut c_void { unsafe { Self::__member_name(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_name(&mut self, value: *mut c_void) { unsafe { Self::__member_name(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn name_ptr(&self) -> *mut *mut c_void { Self::__member_name(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_value(this: *const Self) -> *mut u64 { unsafe { member!(this, "Setting.value", 0x8, u64) } }
+    /// `Setting::value`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn value(&self) -> u64 { unsafe { Self::__member_value(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_value(&mut self, value: u64) { unsafe { Self::__member_value(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn value_ptr(&self) -> *mut u64 { Self::__member_value(core::ptr::from_ref(self)) }
+}
+
 impl crate::TESDataHandler {
     /// `g_TESDataHandler_ptr` at 0x219ded8, id 400269 (runtime, high); pointer to `TESDataHandler`: pointer to the data handler singleton; pointer to the data handler singleton (high, forms pass), type `ptr:TESDataHandler`
     ///
@@ -190,6 +226,14 @@ impl crate::TESDataHandler {
     /// Semantic field, forms pass, high; `None` while the pointer is null.
     #[inline]
     pub fn region_list(&self) -> Option<&crate::TESRegionList> { unsafe { { self.regionList }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_selectedFiles(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "TESDataHandler.selectedFiles", 0xDC0, crate::BSTArray) } }
+    /// `TESDataHandler::selectedFiles`, at +0xDC0 on 1.7.104.
+    #[inline]
+    pub fn selectedFiles(&self) -> &crate::BSTArray { unsafe { &*Self::__member_selectedFiles(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn selectedFiles_ptr(&self) -> *mut crate::BSTArray { Self::__member_selectedFiles(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESEditorIDMap {
@@ -227,6 +271,36 @@ impl crate::TESEditorIDMap {
     /// `editorID` must point to what the engine expects.
     #[inline]
     pub unsafe fn insert_editor_id(&self, editorID: *const c_char, form: *mut crate::TESForm) -> bool { unsafe { function!(13907, (*const Self, *const c_char, *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), editorID, form) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_entries(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESEditorIDMap.entries", 0x28, *mut c_void) } }
+    /// `TESEditorIDMap::entries`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn entries(&self) -> *mut c_void { unsafe { Self::__member_entries(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_entries(&mut self, value: *mut c_void) { unsafe { Self::__member_entries(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn entries_ptr(&self) -> *mut *mut c_void { Self::__member_entries(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_free(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESEditorIDMap.free", 0x10, u32) } }
+    /// `TESEditorIDMap::free`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn free(&self) -> u32 { unsafe { Self::__member_free(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_free(&mut self, value: u32) { unsafe { Self::__member_free(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn free_ptr(&self) -> *mut u32 { Self::__member_free(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freeScan(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESEditorIDMap.freeScan", 0x14, u32) } }
+    /// `TESEditorIDMap::freeScan`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn freeScan(&self) -> u32 { unsafe { Self::__member_freeScan(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freeScan(&mut self, value: u32) { unsafe { Self::__member_freeScan(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freeScan_ptr(&self) -> *mut u32 { Self::__member_freeScan(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESEditorIDMapEntry {
@@ -234,7 +308,37 @@ impl crate::TESEditorIDMapEntry {
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { Self::__member_form(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_editorID(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESEditorIDMapEntry.editorID", 0x0, *mut c_void) } }
+    /// `TESEditorIDMapEntry::editorID`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn editorID(&self) -> *mut c_void { unsafe { Self::__member_editorID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_editorID(&mut self, value: *mut c_void) { unsafe { Self::__member_editorID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn editorID_ptr(&self) -> *mut *mut c_void { Self::__member_editorID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_form(this: *const Self) -> *mut *mut crate::TESForm { unsafe { member!(this, "TESEditorIDMapEntry.form", 0x8, *mut crate::TESForm) } }
+    /// `TESEditorIDMapEntry::form`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn form_field(&self) -> *mut crate::TESForm { unsafe { Self::__member_form(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_form(&mut self, value: *mut crate::TESForm) { unsafe { Self::__member_form(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn form_ptr(&self) -> *mut *mut crate::TESForm { Self::__member_form(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_next(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESEditorIDMapEntry.next", 0x10, *mut c_void) } }
+    /// `TESEditorIDMapEntry::next`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn next(&self) -> *mut c_void { unsafe { Self::__member_next(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_next(&mut self, value: *mut c_void) { unsafe { Self::__member_next(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn next_ptr(&self) -> *mut *mut c_void { Self::__member_next(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESFile {
@@ -323,6 +427,16 @@ impl crate::TESFile {
     /// It constructs or destroys an object in place.
     #[inline]
     pub unsafe fn ctor(&self, path: *const c_char, name: *const c_char, bufferSize: i32, unused: u32, arg: *mut c_void) -> *mut Self { unsafe { function!(441548, (*const Self, *const c_char, *const c_char, i32, u32, *mut c_void) -> *mut Self)(core::ptr::from_ref(self), path, name, bufferSize, unused, arg) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_version(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESFile.version", 0x42C, f32) } }
+    /// `TESFile::version`, at +0x42C on 1.7.104.
+    #[inline]
+    pub fn version(&self) -> f32 { unsafe { Self::__member_version(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_version(&mut self, value: f32) { unsafe { Self::__member_version(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn version_ptr(&self) -> *mut f32 { Self::__member_version(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESForm {
@@ -494,6 +608,36 @@ impl crate::TESFormIDMap {
     /// `formID`, `out` must point to what the engine expects.
     #[inline]
     pub unsafe fn remove(&self, formID: *const u32, out: *mut *mut crate::TESForm) -> bool { unsafe { function!(14710, (*const Self, *const u32, *mut *mut crate::TESForm) -> bool)(core::ptr::from_ref(self), formID, out) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_entries(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESFormIDMap.entries", 0x28, *mut c_void) } }
+    /// `TESFormIDMap::entries`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn entries(&self) -> *mut c_void { unsafe { Self::__member_entries(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_entries(&mut self, value: *mut c_void) { unsafe { Self::__member_entries(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn entries_ptr(&self) -> *mut *mut c_void { Self::__member_entries(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_free(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESFormIDMap.free", 0x10, u32) } }
+    /// `TESFormIDMap::free`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn free(&self) -> u32 { unsafe { Self::__member_free(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_free(&mut self, value: u32) { unsafe { Self::__member_free(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn free_ptr(&self) -> *mut u32 { Self::__member_free(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freeScan(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESFormIDMap.freeScan", 0x14, u32) } }
+    /// `TESFormIDMap::freeScan`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn freeScan(&self) -> u32 { unsafe { Self::__member_freeScan(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freeScan(&mut self, value: u32) { unsafe { Self::__member_freeScan(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freeScan_ptr(&self) -> *mut u32 { Self::__member_freeScan(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESFormIDMapEntry {
@@ -501,7 +645,37 @@ impl crate::TESFormIDMapEntry {
     ///
     /// Semantic field, forms pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { { self.form }.as_ref() } }
+    pub fn form(&self) -> Option<&crate::TESForm> { unsafe { Self::__member_form(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_form(this: *const Self) -> *mut *mut crate::TESForm { unsafe { member!(this, "TESFormIDMapEntry.form", 0x8, *mut crate::TESForm) } }
+    /// `TESFormIDMapEntry::form`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn form_field(&self) -> *mut crate::TESForm { unsafe { Self::__member_form(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_form(&mut self, value: *mut crate::TESForm) { unsafe { Self::__member_form(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn form_ptr(&self) -> *mut *mut crate::TESForm { Self::__member_form(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_formID(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESFormIDMapEntry.formID", 0x0, u32) } }
+    /// `TESFormIDMapEntry::formID`, at +0x0 on 1.7.104.
+    #[inline]
+    pub fn formID(&self) -> u32 { unsafe { Self::__member_formID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_formID(&mut self, value: u32) { unsafe { Self::__member_formID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn formID_ptr(&self) -> *mut u32 { Self::__member_formID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_next(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "TESFormIDMapEntry.next", 0x10, *mut c_void) } }
+    /// `TESFormIDMapEntry::next`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn next(&self) -> *mut c_void { unsafe { Self::__member_next(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_next(&mut self, value: *mut c_void) { unsafe { Self::__member_next(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn next_ptr(&self) -> *mut *mut c_void { Self::__member_next(core::ptr::from_ref(self)) }
 }
 
 /// `FindFormByEditorID`: returns the form registered under that editor id or null; only the 31 classes overriding slot 50 register

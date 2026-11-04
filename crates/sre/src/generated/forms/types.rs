@@ -140,7 +140,8 @@ pub struct BSTArray {
     /// +0x0 `pointer`, semantic; element array (high)
     pub data: *mut c_void,
     /// +0x8 `undefined4`, semantic; allocated elements (high)
-    pub capacity: u32,
+    #[doc(hidden)]
+    pub __capacity: [u8; 4],
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined4`, semantic; used elements (high)
     pub size: u32,
@@ -150,13 +151,35 @@ pub struct BSTArray {
 }
 const _: () = assert!(size_of::<BSTArray>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSTArray, data) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSTArray, capacity) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSTArray, __capacity) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSTArray, size) == 0x10);
+
+/// `Setting`: size 0x18 (exact, high).
+/// Meaning: one INI or game setting: vtable, value, name (high, forms pass).
+/// Evidence: forms pass (semantic): item 9 (request V). Every SettingT<...> static in .data is 0x18 long, {vftable +0, value +8, char* name +0x10} (03d_settings; e.g. INISetting_fNearDistance_Display 0x20cf9a8 = {SettingT<INISettingCollection>::vftable 0x17ee3f8, 15.0f, "fNearDistance:Display"}, 0x2077748 = {0x17ee3f8, 3, "uInterior Cell Buffer:General"}); the *_value globals of the ledger are object+8.; size: the statics are 0x18 apart; the old layout size 8 was a soft bound from SettingT's first field at +8, which is this value.
+#[repr(C, align(8))]
+pub struct Setting {
+    /// +0x0 `vtbl:Setting:0`, rtti
+    #[doc(hidden)]
+    pub __vftable: *const crate::raw::vtables::Setting_vtable,
+    /// +0x8 `undefined8`, semantic; the value, typed by the name's first letter: f float, i i32, u u32, b bool, r colour, s char* (high)
+    #[doc(hidden)]
+    pub __value: [u8; 8],
+    /// +0x10 `pointer`, semantic; "name:Section" (char*) (high)
+    #[doc(hidden)]
+    pub __name: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<Setting>() == 0x18);
+const _: () = assert!(core::mem::offset_of!(Setting, __vftable) == 0x0);
+const _: () = assert!(core::mem::offset_of!(Setting, __value) == 0x8);
+const _: () = assert!(core::mem::offset_of!(Setting, __name) == 0x10);
 
 /// `TESDataHandler`: size 0xDD8 (exact).
 /// Meaning: the loaded files and the per-type form arrays; one static instance (high, forms pass).
 /// Evidence: the loaded files and the per-type form arrays; one static instance; static object at rva 0x21a2890 (placeholder ID_400457), constructed by 0x1b6290 with this=0x21a2890 (hit dump 01-menu: 1 hit, caller TES::ctor 0x19f45f, arg 21a2890); the ctor initialises fields up to 0xdd0 and the next static symbol lies at 0x21a3668 = +0xdd8; run-forms peek dh-menu read 0xdd8 bytes consistent with every field below.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESDataHandler {
     pub unknown_0: [u8; 16],
     /// +0x10 `undefined1`, semantic; BSTArray<TESForm*>[138] indexed by FormType, stride 0x18 (high)
@@ -189,7 +212,8 @@ pub struct TESDataHandler {
     pub regionDataManager: *mut crate::TESRegionDataManager,
     pub unknown_DB8: [u8; 8],
     /// +0xDC0 `class:BSTArray`, semantic; BSTArray<TESFile*> of the files named by the plugin list (medium)
-    pub selectedFiles: crate::BSTArray,
+    #[doc(hidden)]
+    pub __selectedFiles: [u8; 24],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -206,58 +230,64 @@ const _: () = assert!(core::mem::offset_of!(TESDataHandler, lightFiles) == 0xD88
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, skipFormRegistration) == 0xDA8);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, lockNextFormID) == 0xDA9);
 const _: () = assert!(core::mem::offset_of!(TESDataHandler, regionDataManager) == 0xDB0);
-const _: () = assert!(core::mem::offset_of!(TESDataHandler, selectedFiles) == 0xDC0);
+const _: () = assert!(core::mem::offset_of!(TESDataHandler, __selectedFiles) == 0xDC0);
 
 /// `TESEditorIDMap`: size 0x30 (exact).
 /// Meaning: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it (high, forms pass).
 /// Evidence: hash map editor id to TESForm*; only forms whose class implements GetFormEditorID are in it; same box layout as TESFormIDMap, allocated by 0x1e6eb0 with capacity 0x1000 and grown since (run-forms peek edidmap: cap=32768 free=10969 sentinel=rva 0x2078f38); keys are BSFixedString (interned char*, compared by pointer in 0x1e7bf0).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESEditorIDMap {
     pub unknown_0: [u8; 12],
     /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
     /// +0x10 `undefined4`, semantic; unused buckets (high)
-    pub free: u32,
+    #[doc(hidden)]
+    pub __free: [u8; 4],
     /// +0x14 `undefined4`, semantic; scan position for the next free bucket (medium)
-    pub freeScan: u32,
+    #[doc(hidden)]
+    pub __freeScan: [u8; 4],
     /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
-    pub entries: *mut c_void,
+    #[doc(hidden)]
+    pub __entries: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMap>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, capacity) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, free) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, freeScan) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, __free) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, __freeScan) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, sentinel) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, entries) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMap, __entries) == 0x28);
 
 /// `TESEditorIDMapEntry`: size 0x18 (exact).
 /// Meaning: editor id map bucket (high, forms pass).
 /// Evidence: editor id map bucket; entry layout from 0x1e7bf0 and 0x1c5fb0 (BSFixedString key at +0, TESForm* at +8, chain at +0x10).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESEditorIDMapEntry {
     /// +0x0 `pointer`, semantic; BSFixedString key (interned, case-insensitive) (high)
-    pub editorID: *mut c_void,
+    #[doc(hidden)]
+    pub __editorID: [u8; 8],
     /// +0x8 `ptr:TESForm`, semantic; value (high)
-    pub form: *mut crate::TESForm,
+    #[doc(hidden)]
+    pub __form: [u8; 8],
     /// +0x10 `pointer`, semantic; chain (high)
-    pub next: *mut c_void,
+    #[doc(hidden)]
+    pub __next: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESEditorIDMapEntry>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, editorID) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, form) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, next) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, __editorID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, __form) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESEditorIDMapEntry, __next) == 0x10);
 
 /// `TESFile`: size 0x4C8 (exact).
 /// Meaning: one loaded plugin file (high, forms pass).
 /// Evidence: one loaded plugin file; 0x4c8 bytes: allocated with 0x4c8 in 0x1cf680 and freed with 0x4c8 in 0x1ce6f0 and 0x1bdd00; the ctor 0x1c9b20 was hit 10 times in run-forms, once per plugin in the Data folder; name and index fields read live (file-skyrim, file-update, file-curios, file-fish, cfile-*, lfile-*).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESFile {
     pub unknown_0: [u8; 88],
     /// +0x58 `undefined1`, semantic; file name, NUL-terminated (high)
@@ -266,7 +296,8 @@ pub struct TESFile {
     pub path: [u8; 260],
     pub unknown_260: [u8; 460],
     /// +0x42C `float`, semantic; header version (medium)
-    pub version: f32,
+    #[doc(hidden)]
+    pub __version: [u8; 4],
     pub unknown_430: [u8; 4],
     /// +0x434 `undefined4`, semantic; form id counter of the file; the top byte is the compile index (high)
     pub currentFormID: u32,
@@ -294,7 +325,7 @@ pub struct TESFile {
 const _: () = assert!(size_of::<TESFile>() == 0x4C8);
 const _: () = assert!(core::mem::offset_of!(TESFile, fileName) == 0x58);
 const _: () = assert!(core::mem::offset_of!(TESFile, path) == 0x15C);
-const _: () = assert!(core::mem::offset_of!(TESFile, version) == 0x42C);
+const _: () = assert!(core::mem::offset_of!(TESFile, __version) == 0x42C);
 const _: () = assert!(core::mem::offset_of!(TESFile, currentFormID) == 0x434);
 const _: () = assert!(core::mem::offset_of!(TESFile, fileFlags) == 0x438);
 const _: () = assert!(core::mem::offset_of!(TESFile, masterNames) == 0x440);
@@ -354,49 +385,55 @@ const _: () = assert!(core::mem::offset_of!(TESForm, formType) == 0x1A);
 /// `TESFormIDMap`: size 0x30 (exact).
 /// Meaning: hash map form id to TESForm*, the global form table (high, forms pass).
 /// Evidence: hash map form id to TESForm*, the global form table; 0x30-byte box allocated by 0x1e6eb0 (capacity 0x40000 entries of 0x18); the lookup 0x1e5860 reads capacity at +0xc, the end-of-chain sentinel at +0x18 and the entry array at +0x28; insert/remove take the map at +8; run-forms peek formmap: cap=262144 free=72601 good=154813 sentinel=rva 0x2078f3c entries=0x24340e00020.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESFormIDMap {
     pub unknown_0: [u8; 12],
     /// +0xC `undefined4`, semantic; bucket count, a power of two (high)
     pub capacity: u32,
     /// +0x10 `undefined4`, semantic; unused buckets (high)
-    pub free: u32,
+    #[doc(hidden)]
+    pub __free: [u8; 4],
     /// +0x14 `undefined4`, semantic; scan position for the next free bucket (medium)
-    pub freeScan: u32,
+    #[doc(hidden)]
+    pub __freeScan: [u8; 4],
     /// +0x18 `pointer`, semantic; end-of-chain marker (a static byte in .rdata) (high)
     pub sentinel: *mut c_void,
     pub unknown_20: [u8; 8],
     /// +0x28 `pointer`, semantic; bucket array of 0x18-byte entries (high)
-    pub entries: *mut c_void,
+    #[doc(hidden)]
+    pub __entries: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMap>() == 0x30);
 const _: () = assert!(core::mem::offset_of!(TESFormIDMap, capacity) == 0xC);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMap, free) == 0x10);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMap, freeScan) == 0x14);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, __free) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, __freeScan) == 0x14);
 const _: () = assert!(core::mem::offset_of!(TESFormIDMap, sentinel) == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMap, entries) == 0x28);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMap, __entries) == 0x28);
 
 /// `TESFormIDMapEntry`: size 0x18 (exact).
 /// Meaning: form map bucket; next == sentinel ends a chain, next == 0 marks an unused bucket (high, forms pass).
 /// Evidence: form map bucket; next == sentinel ends a chain, next == 0 marks an unused bucket; entry layout from 0x1e5860 (key compare at +0, value at +8, chain pointer at +0x10, stride 0x18); run-forms peek formmap-entries entry 3 = {0x100e41, 0x2435ff1c550, sentinel} and the form at 0x2435ff1c550 has formID 0x100e41.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct TESFormIDMapEntry {
     /// +0x0 `undefined4`, semantic; key (high)
-    pub formID: u32,
+    #[doc(hidden)]
+    pub __formID: [u8; 4],
     pub unknown_4: [u8; 4],
     /// +0x8 `ptr:TESForm`, semantic; value (high)
-    pub form: *mut crate::TESForm,
+    #[doc(hidden)]
+    pub __form: [u8; 8],
     /// +0x10 `pointer`, semantic; chain (high)
-    pub next: *mut c_void,
+    #[doc(hidden)]
+    pub __next: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<TESFormIDMapEntry>() == 0x18);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, formID) == 0x0);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, form) == 0x8);
-const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, next) == 0x10);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, __formID) == 0x0);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, __form) == 0x8);
+const _: () = assert!(core::mem::offset_of!(TESFormIDMapEntry, __next) == 0x10);
 
 /// `TESGlobal`: size 0x38 (exact, high); primary base `TESForm`.
 /// Meaning: GLOB form (medium, forms pass).

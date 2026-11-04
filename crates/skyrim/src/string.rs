@@ -29,7 +29,7 @@ impl BSFixedString {
     pub fn new(text: &str) -> Self {
         let text = CString::new(text.split('\0').next().unwrap_or("")).unwrap_or_default();
         let mut s = Self::empty();
-        let ctor: fns::BSFixedString__ctor_fn = unsafe { crate::engine_fn(fns::BSFixedString__ctor) };
+        let ctor: fns::BSFixedString__ctor_fn = unsafe { crate::engine_fn(sre::id!(fns::BSFixedString__ctor)) };
         unsafe { ctor(&raw mut s.0, text.as_ptr()) };
         s
     }
@@ -77,7 +77,7 @@ impl BSFixedString {
         if self.is_empty() {
             return None;
         }
-        unsafe { self.0.data.cast::<sre::BSStringPool__Entry>().sub(1).as_ref() }
+        unsafe { self.0.data.byte_sub(sre::class_size!("BSStringPool::Entry", sre::BSStringPool__Entry)).cast::<sre::BSStringPool__Entry>().as_ref() }
     }
 
     /// Byte count up to the NUL.
@@ -130,7 +130,7 @@ impl Clone for BSFixedString {
     /// Adds a reference through `BSFixedString::copy` (id 69162).
     fn clone(&self) -> Self {
         let mut s = Self::empty();
-        let copy: fns::BSFixedString__copy_fn = unsafe { crate::engine_fn(fns::BSFixedString__copy) };
+        let copy: fns::BSFixedString__copy_fn = unsafe { crate::engine_fn(sre::id!(fns::BSFixedString__copy)) };
         unsafe { copy(&raw mut s.0, &raw const self.0) };
         s
     }
@@ -140,7 +140,7 @@ impl Drop for BSFixedString {
     /// Drops the reference through `BSFixedString::release` (id 69164).
     fn drop(&mut self) {
         if !self.is_empty() {
-            let release: fns::BSFixedString__release_fn = unsafe { crate::engine_fn(fns::BSFixedString__release) };
+            let release: fns::BSFixedString__release_fn = unsafe { crate::engine_fn(sre::id!(fns::BSFixedString__release)) };
             unsafe { release(&raw mut self.0) };
         }
     }

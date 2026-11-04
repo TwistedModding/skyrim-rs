@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatPathingRequestMultiGoal::vfunc_1` at 0x8e5ac0 (rtti, high); signature (untiered): `undefined4 vfunc_1(void)`
+pub const CombatPathingRequestMultiGoal__vfunc_1: u64 = 50177;
+/// `CombatPathingRequestMultiGoal::vfunc_10` at 0x8e5a00 (rtti, high); signature (untiered): `CombatPathBuilderStandard * vfunc_10(undefined8 * param_1, undefined8 * * param_2, undefined8 param_3, undefined8 param_4)`
+pub const CombatPathingRequestMultiGoal__vfunc_10: u64 = 50175;
 /// `CombatPathingRequestMultiGoal::vfunc_11` at 0x8e5ad0 (rtti, high); signature (low): `undefined vfunc_11(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatPathingRequestMultiGoal__vfunc_11: u64 = 50178;
 /// `CombatPathingRequestMultiGoal::vfunc_12` at 0x8e5be0 (rtti, high); signature (low): `undefined vfunc_12(CombatPathingRequestMultiGoal * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -6272,7 +6276,7 @@ pub const CopyWaveFormatToBuffer: u64 = 56;
 /// `CopyWeatherVolumetricLighting` at 0x1532240 (semantic, high); signature (untiered): `undefined CopyWeatherVolumetricLighting(undefined4 * param_1)`; semantic: when g_VolumetricLightingWeatherUpdate, copies the 12 weather floats g_WeatherVolumetricLighting into params+0x0..+0x2c and refills both tables when the range factor changed (the same copy is inlined in BuildVolumetricLightingVolume) (high); signature `void (VolumetricLightingParams* params)`
 pub const CopyWeatherVolumetricLighting: u64 = 107028;
 /// `CopyWeatherVolumetricLighting` as a function pointer type (high).
-pub type CopyWeatherVolumetricLighting_fn = unsafe extern "C" fn(params: *mut c_void);
+pub type CopyWeatherVolumetricLighting_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams);
 /// `CopyWithIncRefOfThirdField` at 0xd3d7f0 (decompiler, high); signature (high): `undefined8 * CopyWithIncRefOfThirdField(undefined8 * param_1, undefined8 * param_2)`
 pub const CopyWithIncRefOfThirdField: u64 = 83656;
 /// `CopyWithRefCountedField20` at 0x11b6600 (decompiler, medium); signature (untiered): `undefined4 * CopyWithRefCountedField20(undefined4 * param_1, undefined4 * param_2)`
@@ -7817,7 +7821,3 @@ pub const CreatePackfileDataFromGlobal408436: u64 = 66242;
 pub const CreateParticleShaderEmitter: u64 = 34936;
 /// `CreatePathingDoor` at 0x4db6f0 (decompiler, high); signature (high): `PathingDoor * CreatePathingDoor(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreatePathingDoor: u64 = 30688;
-/// `CreatePerkEntryByType` at 0x395990 (decompiler, high); signature (untiered): `longlong * CreatePerkEntryByType(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const CreatePerkEntryByType: u64 = 23787;
-/// `CreatePhysicsSystem` at 0xb5b420 (decompiler, medium); signature (medium): `hkpPhysicsSystem * CreatePhysicsSystem(longlong param_1)`
-pub const CreatePhysicsSystem: u64 = 61422;

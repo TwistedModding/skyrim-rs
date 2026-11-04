@@ -3,6 +3,448 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bhkBlendCollisionObject::vftable` at 0x1a85198, id 239339 (rtti, high); 49 slots.
+#[repr(C)]
+pub struct bhkBlendCollisionObject_vtable {
+    /// `bhkBlendCollisionObject::vdtor` at 0x108d930 (layout_inference, medium); signature (low): `bhkBlendCollisionObject * vdtor(bhkBlendCollisionObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_2` at 0x108d980 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `bhkNiCollisionObject::vfunc_18` at 0x2fa2e0 (rtti, medium); signature (high): `bhkNiCollisionObject * vfunc_18(bhkNiCollisionObject * this)`
+    pub slot_18: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_19` at 0x107f9f0 (rtti, medium); signature (high): `bhkBlendCollisionObject * vfunc_19(bhkBlendCollisionObject * this)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_23` at 0x108c8e0 (rtti, high); signature (low): `bhkNiCollisionObject * vfunc_23(bhkBlendCollisionObject * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_24` at 0x108ca40 (rtti, medium); signature (low): `undefined vfunc_24(bhkBlendCollisionObject * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_25` at 0x108cad0 (rtti, medium); signature (low): `undefined vfunc_25(bhkBlendCollisionObject * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_26` at 0x108cb30 (rtti, medium); signature (untiered): `undefined vfunc_26(bhkBlendCollisionObject * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_27` at 0x108cb40 (rtti, medium); signature (low): `undefined vfunc_27(bhkBlendCollisionObject * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_28` at 0x108cbd0 (rtti, medium); signature (low): `ulonglong vfunc_28(bhkBlendCollisionObject * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `bhkNiCollisionObject::vfunc_37` at 0x106b100 (rtti, medium); signature (untiered): `undefined vfunc_37(bhkNiCollisionObject * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_38` at 0x108d310 (rtti, medium); signature (low): `undefined vfunc_38(bhkBlendCollisionObject * this, longlong param_1)`
+    pub slot_38: *const c_void,
+    /// `bhkNiCollisionObject::vfunc_39` at 0x106b0f0 (rtti, medium); signature (low): `undefined vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `NiCollisionObject::vfunc_40` at 0x2fa2c0 (rtti, medium); signature (low): `undefined vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `NiCollisionObject::vfunc_41` at 0x2f9e90 (rtti, medium); signature (low): `undefined vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `bhkCollisionObject::vfunc_42` at 0x105d680 (rtti, medium); signature (low): `float * vfunc_42(bhkCollisionObject * this, float * param_1)`
+    pub slot_42: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_43` at 0x108cdd0 (rtti, medium); signature (high): `undefined vfunc_43(bhkBlendCollisionObject * this)`
+    pub slot_43: *const c_void,
+    /// `bhkCollisionObject::vfunc_44` at 0x105d0e0 (rtti, medium); signature (high): `undefined vfunc_44(bhkCollisionObject * this)`
+    pub slot_44: *const c_void,
+    /// `bhkCollisionObject::vfunc_45` at 0x105d420 (rtti, medium); signature (high): `undefined vfunc_45(bhkCollisionObject * this)`
+    pub slot_45: *const c_void,
+    /// `bhkBlendCollisionObject::vfunc_46` at 0x108d430 (rtti, medium); signature (low): `undefined vfunc_46(bhkBlendCollisionObject * this, uint param_1, longlong * param_2, char param_3)`
+    pub slot_46: *const c_void,
+    /// `bhkCollisionObject::vfunc_47` at 0x105d3a0 (rtti, medium); signature (high): `ulonglong vfunc_47(bhkCollisionObject * this)`
+    pub slot_47: *const c_void,
+    /// `bhkNiCollisionObject::vfunc_48` at 0x2fb9e0 (rtti, medium); signature (low): `undefined1 vfunc_48(void)`
+    pub slot_48: *const c_void,
+}
+impl bhkBlendCollisionObject_vtable {
+    pub const ID: u64 = 239339;
+}
+
+/// `bhkBlendController::vftable` at 0x1a917c0, id 240790 (rtti, high); 47 slots.
+#[repr(C)]
+pub struct bhkBlendController_vtable {
+    /// `bhkBlendController::vdtor` at 0x10c18d0 (slot_propagation, medium); signature (low): `bhkBlendController * vdtor(bhkBlendController * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBlendController::vfunc_2` at 0x10c1910 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `bhkBlendController::vfunc_23` at 0x10c1400 (rtti, high); signature (low): `NiTimeController * vfunc_23(bhkBlendController * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `bhkBlendController::vfunc_24` at 0x10c1540 (rtti, high); signature (low): `undefined vfunc_24(bhkBlendController * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkBlendController::vfunc_25` at 0x10c1630 (rtti, high); signature (untiered): `undefined vfunc_25(bhkBlendController * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `bhkBlendController::vfunc_26` at 0x10c1640 (rtti, high); signature (untiered): `undefined1 vfunc_26(bhkBlendController * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkBlendController::vfunc_27` at 0x10c1650 (rtti, high); signature (low): `undefined vfunc_27(bhkBlendController * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkBlendController::vfunc_28` at 0x10c16b0 (rtti, high); signature (low): `undefined1 vfunc_28(void)`
+    pub slot_28: *const c_void,
+    /// `NiTimeController::vfunc_29` at 0xef8900 (rtti, medium); signature (low): `undefined vfunc_29(NiTimeController * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `bhkBlendController::vfunc_30` at 0x10c1770 (rtti, high); signature (high): `undefined vfunc_30(bhkBlendController * this)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiTimeController::vfunc_37` at 0xef8320 (rtti, medium); signature (low): `undefined vfunc_37(NiTimeController * this, undefined4 param_2)`
+    pub slot_37: *const c_void,
+    /// `NiTimeController::vfunc_38` at 0xef8340 (rtti, medium); signature (high): `undefined vfunc_38(NiTimeController * this)`
+    pub slot_38: *const c_void,
+    /// `bhkBlendController::vfunc_39` at 0x10c1790 (rtti, high); signature (low): `undefined vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `NiTimeController::vfunc_40` at 0xef8370 (rtti, medium); signature (low): `undefined vfunc_40(NiTimeController * this, longlong param_1)`
+    pub slot_40: *const c_void,
+    /// `NiTimeController::vfunc_41` at 0x305d80 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `NiTimeController::vfunc_42` at 0x305d90 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `NiTimeController::vfunc_43` at 0xef86d0 (rtti, medium); signature (medium): `float vfunc_43(NiTimeController * this, float param_1)`
+    pub slot_43: *const c_void,
+    /// `NiTimeController::vfunc_44` at 0xef88f0 (rtti, medium); signature (low): `undefined vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `NiTimeController::vfunc_45` at 0x305d70 (rtti, medium); signature (low): `undefined1 vfunc_45(void)`
+    pub slot_45: *const c_void,
+    /// `bhkBlendController::vfunc_46` at 0x10c17a0 (rtti, high); signature (high): `undefined * vfunc_46(bhkBlendController * this)`
+    pub slot_46: *const c_void,
+}
+impl bhkBlendController_vtable {
+    pub const ID: u64 = 240790;
+}
+
+/// `bhkBoxShape::vftable` at 0x1828d48, id 190291 (rtti, high); 54 slots.
+#[repr(C)]
+pub struct bhkBoxShape_vtable {
+    /// `bhkBoxShape::vdtor` at 0x2f92c0 (slot_propagation, medium); signature (low): `bhkBoxShape * vdtor(bhkBoxShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBoxShape::vfunc_2` at 0x2fa0c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `bhkBoxShape::vfunc_23` at 0x10892c0 (rtti, high); signature (low): `undefined8 vfunc_23(bhkBoxShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `bhkBoxShape::vfunc_24` at 0x10896e0 (rtti, high); signature (low): `undefined vfunc_24(bhkBoxShape * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkShape::vfunc_25` at 0x1082d50 (rtti, medium); signature (untiered): `undefined vfunc_25(bhkShape * this)`
+    pub slot_25: *const c_void,
+    /// `bhkShape::vfunc_26` at 0x1082d60 (rtti, medium); signature (untiered): `undefined vfunc_26(bhkShape * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkBoxShape::vfunc_27` at 0x1089770 (rtti, high); signature (low): `undefined vfunc_27(bhkBoxShape * this, longlong param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkShape::vfunc_28` at 0x1082df0 (rtti, medium); signature (low): `ulonglong vfunc_28(bhkShape * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `bhkShape::SetReferencedObject` at 0x10829c0 (semantic, high); signature (untiered): `undefined SetReferencedObject(bhkShape * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `bhkShape::LinkHavokObject` at 0x1082f90 (semantic, high); signature (untiered): `undefined LinkHavokObject(bhkShape * this, char param_1)`
+    pub slot_38: *const c_void,
+    /// `bhkSerializable::vfunc_39` at 0x2fa2a0 (rtti, medium); signature (low): `undefined8 vfunc_39(void)`
+    pub slot_39: *const c_void,
+    /// `bhkSerializable::vfunc_40` at 0x2fa2b0 (rtti, medium); signature (low): `undefined8 vfunc_40(void)`
+    pub slot_40: *const c_void,
+    /// `bhkSerializable::vfunc_41` at 0x2f9b60 (rtti, medium); signature (low): `undefined1 vfunc_41(void)`
+    pub slot_41: *const c_void,
+    /// `bhkSerializable::vfunc_42` at 0x2fbbe0 (rtti, medium); signature (low): `undefined1 vfunc_42(void)`
+    pub slot_42: *const c_void,
+    /// `bhkBoxShape::vfunc_43` at 0x1089540 (rtti, high); signature (low): `undefined vfunc_43(bhkBoxShape * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_43: *const c_void,
+    /// `bhkBoxShape::vfunc_44` at 0x2fb820 (rtti, high); signature (low): `undefined8 vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `bhkSerializable::vfunc_45` at 0x1082b10 (rtti, medium); signature (low): `undefined4 vfunc_45(bhkSerializable * this, longlong param_1)`
+    pub slot_45: *const c_void,
+    /// `bhkBoxShape::vfunc_46` at 0x10895f0 (rtti, high); signature (low): `undefined vfunc_46(bhkBoxShape * this, longlong param_1)`
+    pub slot_46: *const c_void,
+    /// `bhkBoxShape::vfunc_47` at 0x10893f0 (rtti, high); signature (low): `undefined8 vfunc_47(bhkBoxShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_47: *const c_void,
+    /// `bhkSerializable::vfunc_48` at 0x1082b90 (rtti, medium); signature (high): `undefined vfunc_48(bhkSerializable * this)`
+    pub slot_48: *const c_void,
+    /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
+    pub slot_49: *const c_void,
+    /// `bhkBoxShape::vfunc_50` at 0x1089390 (rtti, high); signature (low): `undefined vfunc_50(bhkBoxShape * this, longlong * param_1, longlong param_2)`
+    pub slot_50: *const c_void,
+    /// `bhkShape::vfunc_51` at 0x1082ea0 (rtti, medium); signature (low): `undefined8 vfunc_51(bhkShape * this, undefined4 * param_1)`
+    pub slot_51: *const c_void,
+    /// `bhkShape::vfunc_52` at 0x2f9f20 (rtti, medium); signature (low): `undefined8 vfunc_52(void)`
+    pub slot_52: *const c_void,
+    /// `bhkShape::vfunc_53` at 0x1082ee0 (rtti, medium); signature (low): `undefined1 vfunc_53(bhkShape * this, longlong param_1)`
+    pub slot_53: *const c_void,
+}
+impl bhkBoxShape_vtable {
+    pub const ID: u64 = 190291;
+}
+
+/// `bhkBreakableConstraint::vftable` at 0x1a90128, id 240764 (rtti, high); 55 slots.
+#[repr(C)]
+pub struct bhkBreakableConstraint_vtable {
+    /// `bhkBreakableConstraint::vdtor` at 0x10bc790 (layout_inference, medium); signature (low): `bhkBreakableConstraint * vdtor(bhkBreakableConstraint * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_2` at 0x10bc840 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_23` at 0x10bc240 (rtti, high); signature (low): `bhkRefObject * vfunc_23(bhkBreakableConstraint * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_23: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_24` at 0x10bc5c0 (rtti, high); signature (untiered): `undefined vfunc_24(bhkBreakableConstraint * this, undefined8 param_1)`
+    pub slot_24: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_25` at 0x10bc5d0 (rtti, high); signature (low): `undefined vfunc_25(bhkBreakableConstraint * this, longlong param_1)`
+    pub slot_25: *const c_void,
+    /// `bhkConstraint::vfunc_26` at 0x1091700 (rtti, medium); signature (low): `undefined vfunc_26(bhkConstraint * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `bhkConstraint::vfunc_27` at 0x1091750 (rtti, medium); signature (low): `undefined vfunc_27(bhkConstraint * this, undefined8 param_1)`
+    pub slot_27: *const c_void,
+    /// `bhkConstraint::vfunc_28` at 0x10917a0 (rtti, medium); signature (low): `ulonglong vfunc_28(bhkConstraint * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiObject::vfunc_29` at 0xedca00 (rtti, medium); signature (low): `undefined vfunc_29(NiObject * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `bhkConstraint::vfunc_37` at 0x10918c0 (rtti, medium); signature (low): `undefined vfunc_37(bhkConstraint * this, longlong param_1)`
+    pub slot_37: *const c_void,
+    /// `bhkConstraint::vfunc_38` at 0x10923e0 (rtti, medium); signature (low): `undefined vfunc_38(bhkConstraint * this, char param_1)`
+    pub slot_38: *const c_void,
+    /// `bhkConstraint::vfunc_39` at 0x1091870 (rtti, medium); signature (high): `undefined8 vfunc_39(bhkConstraint * this)`
+    pub slot_39: *const c_void,
+    /// `bhkConstraint::vfunc_40` at 0x10918b0 (rtti, medium); signature (high): `undefined vfunc_40(bhkConstraint * this)`
+    pub slot_40: *const c_void,
+    /// `bhkConstraint::vfunc_41` at 0x1091e20 (rtti, medium); signature (low): `undefined8 vfunc_41(bhkConstraint * this, longlong * param_1)`
+    pub slot_41: *const c_void,
+    /// `bhkConstraint::vfunc_42` at 0x1091ed0 (rtti, medium); signature (high): `undefined1 vfunc_42(bhkConstraint * this)`
+    pub slot_42: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_43` at 0x10bc430 (rtti, high); signature (low): `undefined vfunc_43(bhkBreakableConstraint * this, char param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_43: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_44` at 0x10bc850 (rtti, high); signature (low): `undefined8 vfunc_44(void)`
+    pub slot_44: *const c_void,
+    /// `bhkConstraint::vfunc_45` at 0x1092190 (rtti, medium); signature (low): `undefined vfunc_45(bhkConstraint * this, undefined8 param_1)`
+    pub slot_45: *const c_void,
+    /// `bhkConstraint::vfunc_46` at 0x1092200 (rtti, medium); signature (low): `undefined vfunc_46(bhkConstraint * this, undefined8 * param_1)`
+    pub slot_46: *const c_void,
+    /// `bhkBreakableConstraint::vfunc_47` at 0x10bc340 (rtti, high); signature (low): `bhkBreakableConstraint_vtbl * vfunc_47(bhkBreakableConstraint * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_47: *const c_void,
+    /// `bhkSerializable::vfunc_48` at 0x1082b90 (rtti, medium); signature (high): `undefined vfunc_48(bhkSerializable * this)`
+    pub slot_48: *const c_void,
+    /// `bhkSerializable::vfunc_49` at 0x1082bd0 (rtti, medium); signature (high): `undefined vfunc_49(bhkSerializable * this)`
+    pub slot_49: *const c_void,
+    /// `bhkConstraint::vfunc_50` at 0x1091970 (rtti, medium); signature (low): `undefined vfunc_50(bhkConstraint * this, longlong param_1)`
+    pub slot_50: *const c_void,
+    /// `bhkConstraint::vfunc_51` at 0x1091a10 (rtti, medium); signature (low): `undefined vfunc_51(bhkConstraint * this, longlong param_1)`
+    pub slot_51: *const c_void,
+    /// `bhkConstraint::vfunc_52` at 0x1091ab0 (rtti, medium); signature (high): `undefined8 vfunc_52(bhkConstraint * this)`
+    pub slot_52: *const c_void,
+    /// `bhkConstraint::vfunc_53` at 0x1091ad0 (rtti, medium); signature (high): `undefined8 vfunc_53(bhkConstraint * this)`
+    pub slot_53: *const c_void,
+    /// `bhkConstraint::vfunc_54` at 0x1091f80 (rtti, medium); signature (low): `undefined8 vfunc_54(bhkConstraint * this, longlong * param_1, char param_2)`
+    pub slot_54: *const c_void,
+}
+impl bhkBreakableConstraint_vtable {
+    pub const ID: u64 = 240764;
+}
+
 /// `bhkBvTreeShape::vftable` at 0x1865eb0, id 196219 (rtti, high); 54 slots.
 #[repr(C)]
 pub struct bhkBvTreeShape_vtable {
@@ -9358,13 +9800,17 @@ impl bhkWorldObject_vtable {
 #[repr(C)]
 pub struct bnet__AsyncOperationProxy_vtable {
     /// `bnet::AsyncOperationProxy::vfunc_0` at 0x12ed610 (rtti, high); signature (low): `undefined vfunc_0(AsyncOperationProxy * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::AsyncOperationProxy::vfunc_1` at 0x12ed7e0 (rtti, high); signature (low): `ulonglong vfunc_1(AsyncOperationProxy * this, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::impl::AsyncOperation::vfunc_2` at 0x1284160 (rtti, medium); signature (high): `undefined8 vfunc_2(AsyncOperation * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::AsyncOperationProxy::vfunc_3` at 0x1290ca0 (rtti, high); signature (low): `AsyncOperationProxy * vfunc_3(AsyncOperationProxy * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet__AsyncOperationProxy_vtable {
     pub const ID: u64 = 465961;
@@ -9378,7 +9824,8 @@ pub struct bnet__BaseCallback_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
     pub slot_1: *const c_void,
     /// `bnet::BaseCallback::vfunc_2` at 0x1284150 (rtti, high); signature (low): `undefined8 vfunc_2(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__BaseCallback_vtable {
     pub const ID: u64 = 465962;
@@ -9388,15 +9835,20 @@ impl bnet__BaseCallback_vtable {
 #[repr(C)]
 pub struct bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_0` at 0x12bc350 (rtti, high); signature (low): `Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_1` at 0x12bc6b0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_2` at 0x12bcc10 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_3` at 0x12bc6d0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_4` at 0x12bd0c0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466741;
@@ -9406,15 +9858,20 @@ impl bnet__Callback_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseI
 #[repr(C)]
 pub struct bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_0` at 0x128ba70 (rtti, high); signature (low): `Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_1` at 0x128c180 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_2` at 0x128c350 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_3` at 0x128c1b0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_4` at 0x128cb20 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined1 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536985;
@@ -9424,15 +9881,20 @@ impl bnet__Callback_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo_vtable
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_0` at 0x12ad480 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * vfunc_0(Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_1` at 0x12ae380 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_2` at 0x12af640 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_3` at 0x12ae930 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_4` at 0x12b05e0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable {
     pub const ID: u64 = 466514;
@@ -9442,15 +9904,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__Aut
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad580 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3c0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af660 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_3` at 0x12aec00 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_4` at 0x12b0870 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466529;
@@ -9460,15 +9927,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bne
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad600 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3e0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af670 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_3` at 0x12aed70 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_4` at 0x12b0990 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466552;
@@ -9478,15 +9950,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpRespo
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338300 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e40 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a090 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_3` at 0x13390d0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_4` at 0x133ac60 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467971;
@@ -9496,15 +9973,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_v
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282d20 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283550 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284130 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_3` at 0x1283af0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_4` at 0x12848f0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466000;
@@ -9514,15 +9996,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338280 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e20 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a080 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_3` at 0x1338f60 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_4` at 0x133ab40 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 537448;
@@ -9532,15 +10019,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vt
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_0` at 0x12c9430 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_1` at 0x12c9a80 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ca6c0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_3` at 0x12c9b00 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_4` at 0x12cb2a0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466882;
@@ -9550,15 +10042,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInf
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_0` at 0x12c94b0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_1` at 0x12c9aa0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ca6d0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_3` at 0x12c9c70 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_4` at 0x12cb3c0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466867;
@@ -9568,15 +10065,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_v
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282c20 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283510 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284110 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x1283810 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x12846b0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536856;
@@ -9586,15 +10088,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x129e4b0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x129e900 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ed40 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x129e940 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x129eef0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466474;
@@ -9604,15 +10111,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__Htt
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338380 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e60 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a0a0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x1339240 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x133ad80 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 537434;
@@ -9622,15 +10134,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpRe
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x12cde10 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ce130 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ce500 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x12ce150 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x12ce600 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467075;
@@ -9640,15 +10157,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__Htt
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338400 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e80 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a0b0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x13393b0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x133aea0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467987;
@@ -9658,15 +10180,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__Htt
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282ca0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283530 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284120 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x1283980 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x12847d0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466020;
@@ -9676,15 +10203,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpRe
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d2000 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d2a10 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30b0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_3` at 0x12d2be0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_4` at 0x12d34e0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467125;
@@ -9694,15 +10226,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__Htt
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_0` at 0x129a2a0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_1` at 0x129a800 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ac60 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_3` at 0x129a9c0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_4` at 0x129b0b0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466205;
@@ -9712,15 +10249,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseIn
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x129e530 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x129e920 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ed50 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_3` at 0x129eab0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_4` at 0x129f010 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466461;
@@ -9730,15 +10272,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet_
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282ba0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_1` at 0x12834f0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284100 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_3` at 0x12836a0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_4` at 0x1284590 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 465988;
@@ -9748,15 +10295,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpR
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad500 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3a0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af650 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_3` at 0x12aea90 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_4` at 0x12b0750 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466601;
@@ -9766,15 +10318,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12a23a0 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12a2830 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12a2d10 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_3` at 0x12a2870 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_4` at 0x12a2df0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536942;
@@ -9784,15 +10341,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__Ht
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12a2420 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12a2850 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12a2d20 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_3` at 0x12a29e0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_4` at 0x12a2f10 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466901;
@@ -9802,15 +10364,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpRespo
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad300 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae320 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af610 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_3` at 0x12ae520 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_4` at 0x12b0280 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_bnet__impl__S_cc1647b345a1_vtable {
     pub const ID: u64 = 466564;
@@ -9820,15 +10387,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Documen
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9_vtable {
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_0` at 0x12ad380 (rtti, high); signature (low): `Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * vfunc_0(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_1` at 0x12ae340 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_2` at 0x12af620 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_3` at 0x12ae690 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_4` at 0x12b03a0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_5_1_1_bnet__i_03ab651bc6e9_vtable {
     pub const ID: u64 = 466576;
@@ -9838,15 +10410,20 @@ impl bnet__Callback_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Documen
 #[repr(C)]
 pub struct bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529_vtable {
     /// `bnet::Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad400 (rtti, high); signature (low): `Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae360 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af630 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_3` at 0x12ae7c0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_4` at 0x12b04c0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__StdAllocator_bne_13cada492529_vtable {
     pub const ID: u64 = 466588;
@@ -9856,15 +10433,20 @@ impl bnet__Callback_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__i
 #[repr(C)]
 pub struct bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d1fc0 (rtti, high); signature (low): `Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d29f0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30a0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_3` at 0x12d2a50 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_4` at 0x12d33c0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467113;
@@ -9876,13 +10458,15 @@ pub struct bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_0` at 0x129a240 (rtti, high); signature (low): `Callback<bnet_std::void_t,bnet::HttpResponseInfo> * vfunc_0(Callback<bnet_std::void_t,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_1` at 0x129a7e0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_2` at 0x129ac50 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * this)`
     pub slot_2: *const c_void,
     /// `bnet::Callback<bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_3` at 0x129a860 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bnet_std::void_t,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
     /// `bnet::Callback<bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_4` at 0x129af40 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bnet_std::void_t,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bnet_std__void_t_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 246992;
@@ -9894,13 +10478,15 @@ pub struct bnet__Callback_bool_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<bool,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad680 (rtti, high); signature (low): `Callback<bool,bnet::HttpResponseInfo> * vfunc_0(Callback<bool,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae400 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bool,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>::vfunc_2` at 0x12af680 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bool,bnet::HttpResponseInfo> * this)`
     pub slot_2: *const c_void,
     /// `bnet::Callback<bool,bnet::HttpResponseInfo>::vfunc_3` at 0x12aeee0 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<bool,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
     pub slot_3: *const c_void,
     /// `bnet::Callback<bool,bnet::HttpResponseInfo>::vfunc_4` at 0x12b0ab0 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<bool,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_bool_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 248099;
@@ -9910,15 +10496,20 @@ impl bnet__Callback_bool_bnet__HttpResponseInfo_vtable {
 #[repr(C)]
 pub struct bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d2080 (rtti, high); signature (low): `Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * vfunc_0(Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d2a30 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30c0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_3` at 0x12d2d50 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_4` at 0x12d3600 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467099;
@@ -9928,15 +10519,20 @@ impl bnet__Callback_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponse
 #[repr(C)]
 pub struct bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable {
     /// `bnet::Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282da0 (rtti, high); signature (low): `Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * vfunc_0(Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283570 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284140 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_3` at 0x1283c60 (rtti, high); signature (low): `undefined8 * vfunc_3(Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this, undefined8 * param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `bnet::Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_4` at 0x1284a10 (rtti, high); signature (low): `undefined8 * vfunc_4(Callback<std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this, undefined8 * param_1, undefined8 * param_2, undefined8 param_3)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
 }
 impl bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 465976;
@@ -9946,7 +10542,8 @@ impl bnet__Callback_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtabl
 #[repr(C)]
 pub struct bnet__Mods__BaseUpdatePreferenceInfo_vtable {
     /// `bnet::Mods::BaseUpdatePreferenceInfo::vdtor` at 0x12c9960 (layout_inference, medium); signature (low): `BaseUpdatePreferenceInfo * vdtor(BaseUpdatePreferenceInfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl bnet__Mods__BaseUpdatePreferenceInfo_vtable {
     pub const ID: u64 = 466847;
@@ -9956,7 +10553,8 @@ impl bnet__Mods__BaseUpdatePreferenceInfo_vtable {
 #[repr(C)]
 pub struct bnet__Mods__UpdateContentPreferenceInfo_vtable {
     /// `bnet::Mods::UpdateContentPreferenceInfo::vdtor` at 0x12c9a50 (layout_inference, medium); signature (low): `UpdateContentPreferenceInfo * vdtor(UpdateContentPreferenceInfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl bnet__Mods__UpdateContentPreferenceInfo_vtable {
     pub const ID: u64 = 466849;
@@ -9966,11 +10564,14 @@ impl bnet__Mods__UpdateContentPreferenceInfo_vtable {
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_0` at 0x12bc3b0 (rtti, high); signature (low): `CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_1` at 0x12bc6b0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>::vfunc_2` at 0x12bcc10 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466739;
@@ -9980,11 +10581,14 @@ impl bnet__detail__CallbackImpl_1_bnet__Mods__VerifiedCreatorCheckResponse_bnet_
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_0` at 0x128bab0 (rtti, high); signature (low): `CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_1` at 0x128c180 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>::vfunc_2` at 0x128c350 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::Telemetry::EventResponse,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536983;
@@ -9994,11 +10598,14 @@ impl bnet__detail__CallbackImpl_1_bnet__Telemetry__EventResponse_bnet__HttpRespo
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_0` at 0x12ad860 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_1` at 0x12ae380 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>::vfunc_2` at 0x12af640 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet__Account__AuthenticationStatus_vtable {
     pub const ID: u64 = 466512;
@@ -10008,11 +10615,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__AuthResult_bnet
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad960 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3c0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af660 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccountInfoResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466527;
@@ -10022,11 +10632,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__ExternalAccount
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad9e0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3e0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af670 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466550;
@@ -10036,11 +10649,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Account__LinkingResult_b
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338500 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e40 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a090 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467969;
@@ -10050,11 +10666,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Catalog__Item_bnet__Http
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282f60 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283550 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284130 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 465998;
@@ -10064,11 +10683,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__MOTD__Messages_bnet__Htt
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338480 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e20 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a080 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 537446;
@@ -10078,11 +10700,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Bundle_bnet__HttpR
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_0` at 0x12c9530 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_1` at 0x12c9a80 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ca6c0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466880;
@@ -10092,11 +10717,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Collection_bnet__H
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_0` at 0x12c95b0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_1` at 0x12c9aa0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ca6d0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466865;
@@ -10106,11 +10734,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__Content_bnet__Http
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282e60 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283510 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284110 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLegacyIdResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536854;
@@ -10120,11 +10751,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetContentIdFromLe
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x129e5b0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x129e900 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ed40 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466472;
@@ -10134,11 +10768,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__GetCuratedListResp
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338580 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e60 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a0a0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 537432;
@@ -10148,11 +10785,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListBundlesRespons
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x12cde90 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ce130 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x12ce500 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467073;
@@ -10162,11 +10802,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCategoriesResp
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1338600 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1338e80 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x133a0b0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467985;
@@ -10176,11 +10819,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListCollectionResp
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282ee0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283530 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284120 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466018;
@@ -10190,11 +10836,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ListContentRespons
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d2100 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d2a10 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30b0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::MultipartUploadSession>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSession_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467123;
@@ -10204,11 +10853,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__MultipartUploadSes
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_0` at 0x129a380 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_1` at 0x129a800 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ac60 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::ReleaseNote>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466203;
@@ -10218,11 +10870,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__ReleaseNote_bnet__
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_0` at 0x129e630 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_1` at 0x129e920 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo>::vfunc_2` at 0x129ed50 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Mods::SearchCuratedListsResponse>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedListsResponse_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466459;
@@ -10232,11 +10887,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Mods__SearchCuratedLists
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282de0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_1` at 0x12834f0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284100 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::TitleStorage::DownloadData>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadData_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 465986;
@@ -10246,11 +10904,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__TitleStorage__DownloadDa
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad8e0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae3a0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af650 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::Balance>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466599;
@@ -10260,11 +10921,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__Balance_bnet__Ht
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12a24a0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12a2830 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12a2d10 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchasePreviewResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 536940;
@@ -10274,11 +10938,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchasePreviewR
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12a2520 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12a2850 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12a2d20 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::Wallet::PurchaseResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466899;
@@ -10288,11 +10955,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__Wallet__PurchaseResult_b
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad6e0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae320 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af610 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::Document,5,1,1,bnet::impl::StdAllocator<bnet::Legal::Document>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__Document_5_1_1_fed1531e66d0_vtable {
     pub const ID: u64 = 466562;
@@ -10302,11 +10972,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_0` at 0x12ad760 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_1` at 0x12ae340 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus>::vfunc_2` at 0x12af620 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<bnet::impl::FixedVector<bnet::Legal::DocumentResult,5,1,1,bnet::impl::StdAllocator<bnet::Legal::DocumentResult>_>_>,bnet::Legal::AcceptDocumentsStatus> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__Legal__DocumentResult_d0731f9d3b54_vtable {
     pub const ID: u64 = 466574;
@@ -10316,11 +10989,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_bnet__impl__FixedVector_bnet__
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12ad7e0 (rtti, high); signature (low): `CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae360 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12af630 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::UniquePtr<std::vector<bnet::Entitlements::Item,bnet::impl::StdAllocator<bnet::Entitlements::Item>_>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements__Item_bnet__impl__St_cffbae195d6d_vtable {
     pub const ID: u64 = 466586;
@@ -10330,11 +11006,14 @@ impl bnet__detail__CallbackImpl_1_bnet__UniquePtr_std__vector_bnet__Entitlements
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d20c0 (rtti, high); signature (low): `CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d29f0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30a0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet::impl::FixedString<2048,1,1,bnet::impl::StdAllocator<char>_>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__StdAllocator_char___bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467111;
@@ -10344,11 +11023,14 @@ impl bnet__detail__CallbackImpl_1_bnet__impl__FixedString_2048_1_1_bnet__impl__S
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_0` at 0x129a320 (rtti, high); signature (low): `CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_1` at 0x129a7e0 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo>::vfunc_2` at 0x129ac50 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bnet_std::void_t,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466217;
@@ -10358,11 +11040,14 @@ impl bnet__detail__CallbackImpl_1_bnet_std__void_t_bnet__HttpResponseInfo_vtable
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>::vfunc_0` at 0x12ada60 (rtti, high); signature (low): `CallbackImpl<1,bool,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,bool,bnet::HttpResponseInfo> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>::vfunc_1` at 0x12ae400 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,bool,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,bool,bnet::HttpResponseInfo>::vfunc_2` at 0x12af680 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,bool,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 466540;
@@ -10372,11 +11057,14 @@ impl bnet__detail__CallbackImpl_1_bool_bnet__HttpResponseInfo_vtable {
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_0` at 0x12d2180 (rtti, high); signature (low): `CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_1` at 0x12d2a30 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo>::vfunc_2` at 0x12d30c0 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,std::shared_ptr<bnet::ChunkUploadedResult>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 467097;
@@ -10386,11 +11074,14 @@ impl bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__ChunkUploadedResult_bnet
 #[repr(C)]
 pub struct bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable {
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_0` at 0x1282fe0 (rtti, high); signature (low): `CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * vfunc_0(CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_1` at 0x1283570 (rtti, medium); signature (high): `undefined vfunc_1(CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::detail::CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo>::vfunc_2` at 0x1284140 (rtti, medium); signature (high): `undefined8 vfunc_2(CallbackImpl<1,std::shared_ptr<bnet::FileChunk>,bnet::HttpResponseInfo> * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResponseInfo_vtable {
     pub const ID: u64 = 465974;
@@ -10400,13 +11091,17 @@ impl bnet__detail__CallbackImpl_1_std__shared_ptr_bnet__FileChunk_bnet__HttpResp
 #[repr(C)]
 pub struct bnet__impl__AsyncOperation_vtable {
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet::impl::AsyncOperation::vfunc_2` at 0x1284160 (rtti, medium); signature (high): `undefined8 vfunc_2(AsyncOperation * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet::impl::AsyncOperation::vfunc_3` at 0x1290c70 (rtti, high); signature (low): `AsyncOperation * vfunc_3(AsyncOperation * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet__impl__AsyncOperation_vtable {
     pub const ID: u64 = 465959;
@@ -10416,13 +11111,17 @@ impl bnet__impl__AsyncOperation_vtable {
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_0` at 0x12bc2f0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_1` at 0x12bd020 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2e7363663d7a_vtable {
     pub const ID: u64 = 466752;
@@ -10432,13 +11131,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_0` at 0x12bc530 (rtti, high); signature (low): `CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_> * vfunc_0(CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_1` at 0x12bd020 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_2` at 0x12bca80 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_>::vfunc_3` at 0x12bd420 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_b7438afc9891b435608fdff844ca8d0f>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2d9874610e96_vtable {
     pub const ID: u64 = 466754;
@@ -10448,9 +11151,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12e89c043219_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12bc620 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_12e89c043219_vtable {
     pub const ID: u64 = 466731;
@@ -10460,13 +11165,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Mods::VerifiedCreatorCheckResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12bc680 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0a3e76f905f8_vtable {
     pub const ID: u64 = 466734;
@@ -10476,13 +11185,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0099e4fcbb51_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_0` at 0x12bc2c0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_1` at 0x12bcfa0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0099e4fcbb51_vtable {
     pub const ID: u64 = 536987;
@@ -10492,13 +11205,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_775f86ea116e_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_0` at 0x12bc5c0 (rtti, high); signature (low): `CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * vfunc_0(CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_1` at 0x12bcfa0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_2` at 0x12bcbb0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_>::vfunc_3` at 0x12bd4e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f0c7aaf269a7e80ae9fa79b79669e531>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_775f86ea116e_vtable {
     pub const ID: u64 = 536992;
@@ -10508,9 +11225,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b472202d6f92_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12bc5f0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b472202d6f92_vtable {
     pub const ID: u64 = 536975;
@@ -10520,13 +11239,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec3928470ab_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12bc650 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_eec3928470ab_vtable {
     pub const ID: u64 = 536978;
@@ -10536,13 +11259,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b4f8c0e7db1_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_0` at 0x12ad150 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_1` at 0x12afa10 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_4b4f8c0e7db1_vtable {
     pub const ID: u64 = 466644;
@@ -10552,13 +11279,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5de015dc7c2_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_0` at 0x12ad180 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_1` at 0x12afb00 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d5de015dc7c2_vtable {
     pub const ID: u64 = 466636;
@@ -10568,13 +11299,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7eb4fed21b5a_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_0` at 0x12ad1b0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_1` at 0x12afbf0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7eb4fed21b5a_vtable {
     pub const ID: u64 = 466640;
@@ -10584,13 +11319,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9163894b477a_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_0` at 0x12ad1e0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_1` at 0x12afce0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9163894b477a_vtable {
     pub const ID: u64 = 466652;
@@ -10600,13 +11339,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af068a724e75_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_0` at 0x12adb50 (rtti, high); signature (low): `CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * vfunc_0(CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_1` at 0x12afa10 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_2` at 0x12af1a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_>::vfunc_3` at 0x12b0cf0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_82bcbd3fb251b2263e67e6db424f121b>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_af068a724e75_vtable {
     pub const ID: u64 = 466646;
@@ -10616,13 +11359,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ecb528227c9_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_0` at 0x12adbe0 (rtti, high); signature (low): `CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * vfunc_0(CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_1` at 0x12afb00 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_2` at 0x12af2c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_>::vfunc_3` at 0x12b0e10 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_bca3863b820df7f7fa9be398e1d217f8>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ecb528227c9_vtable {
     pub const ID: u64 = 466638;
@@ -10632,13 +11379,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80f3004566f9_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_0` at 0x12adc10 (rtti, high); signature (low): `CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * vfunc_0(CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_1` at 0x12afbf0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_2` at 0x12af320 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_>::vfunc_3` at 0x12b0e70 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_bcd3b9aeaecd808c029e42744a27bbf8>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_80f3004566f9_vtable {
     pub const ID: u64 = 466642;
@@ -10648,13 +11399,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc14cb4746ae_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_0` at 0x12adcd0 (rtti, high); signature (low): `CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * vfunc_0(CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_1` at 0x12afce0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable,<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, undefined8 * param_1)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_2` at 0x12af4a0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_>::vfunc_3` at 0x12b0ff0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_dbc23dd6b7bc37a8708c3ae040177d1c>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bc14cb4746ae_vtable {
     pub const ID: u64 = 466654;
@@ -10664,9 +11419,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f93b8747dbec_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12ade20 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f93b8747dbec_vtable {
     pub const ID: u64 = 466504;
@@ -10676,13 +11433,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_481343f30148_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::AuthResult>,bnet::Account::AuthenticationStatus>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12adfa0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_481343f30148_vtable {
     pub const ID: u64 = 466507;
@@ -10692,13 +11453,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a8c343409674_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_0` at 0x12ad240 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_1` at 0x12afe20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a8c343409674_vtable {
     pub const ID: u64 = 466648;
@@ -10708,13 +11473,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b3337b93b1f_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_0` at 0x12adca0 (rtti, high); signature (low): `CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * vfunc_0(CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_1` at 0x12afe20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_2` at 0x12af440 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_>::vfunc_3` at 0x12b0f90 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_c2dd550c3b1908dd6607d96f060fdc04>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b3337b93b1f_vtable {
     pub const ID: u64 = 466650;
@@ -10724,9 +11493,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8188bf1912cc_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12ade80 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8188bf1912cc_vtable {
     pub const ID: u64 = 466519;
@@ -10736,13 +11507,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b9f253363cc_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::ExternalAccountInfoResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12ae000 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8b9f253363cc_vtable {
     pub const ID: u64 = 466522;
@@ -10752,13 +11527,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f0a54e4d703e_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_0` at 0x12ad270 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_1` at 0x12affa0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f0a54e4d703e_vtable {
     pub const ID: u64 = 466663;
@@ -10768,13 +11547,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a73bb24356f_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_0` at 0x12add30 (rtti, high); signature (low): `CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_> * vfunc_0(CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_1` at 0x12affa0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ebc9de367fd9436c006efd750a462274>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_2` at 0x12af560 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_>::vfunc_3` at 0x12b10b0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_ebc9de367fd9436c006efd750a462274>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1a73bb24356f_vtable {
     pub const ID: u64 = 466665;
@@ -10784,9 +11567,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28ca7612e75f_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12adeb0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28ca7612e75f_vtable {
     pub const ID: u64 = 466542;
@@ -10796,13 +11581,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50c290519a60_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Account::LinkingResult>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12ae030 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50c290519a60_vtable {
     pub const ID: u64 = 466545;
@@ -10812,13 +11601,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c9d16303f269_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_0` at 0x1337de0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_1` at 0x133a4d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c9d16303f269_vtable {
     pub const ID: u64 = 468044;
@@ -10828,13 +11621,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_18e07702b2d5_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_0` at 0x13389b0 (rtti, high); signature (low): `CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * vfunc_0(CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_1` at 0x133a4d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_2` at 0x1339bd0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_>::vfunc_3` at 0x133b3e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_b425cdcec433e15b9d26f95e9abc5c59>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_18e07702b2d5_vtable {
     pub const ID: u64 = 468049;
@@ -10844,9 +11641,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8a8fe757bc8f_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338cd0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8a8fe757bc8f_vtable {
     pub const ID: u64 = 467961;
@@ -10856,13 +11655,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_66d07c381bf2_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Catalog::Item>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338d90 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_66d07c381bf2_vtable {
     pub const ID: u64 = 467964;
@@ -10872,13 +11675,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5cca9a5903f0_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_0` at 0x1282af0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_1` at 0x1284320 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5cca9a5903f0_vtable {
     pub const ID: u64 = 466035;
@@ -10888,13 +11695,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fee3237b40ce_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_0` at 0x12830d0 (rtti, high); signature (low): `CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_> * vfunc_0(CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_1` at 0x1284320 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_2` at 0x1283f00 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_>::vfunc_3` at 0x1284bf0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_b78ea52940478ace5def42612ac5fdc0>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fee3237b40ce_vtable {
     pub const ID: u64 = 466037;
@@ -10904,9 +11715,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dca63ee5bcb6_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12832e0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dca63ee5bcb6_vtable {
     pub const ID: u64 = 465990;
@@ -10916,13 +11729,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0f4ae2366257_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::MOTD::Messages>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12833d0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0f4ae2366257_vtable {
     pub const ID: u64 = 465993;
@@ -10932,13 +11749,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6f0c1c4b943f_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_0` at 0x1337d50 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_1` at 0x133a130 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_6f0c1c4b943f_vtable {
     pub const ID: u64 = 537489;
@@ -10948,13 +11769,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f9d4e4084c89_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_0` at 0x1338a40 (rtti, high); signature (low): `CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * vfunc_0(CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_1` at 0x133a130 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_2` at 0x1339cf0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_>::vfunc_3` at 0x133b500 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d8d7aa5ad5983741e244fe5362712ecd>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f9d4e4084c89_vtable {
     pub const ID: u64 = 537494;
@@ -10964,9 +11789,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07c3b35260d5_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338ca0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_07c3b35260d5_vtable {
     pub const ID: u64 = 537438;
@@ -10976,13 +11803,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28772759f4e5_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Bundle>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338d60 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_28772759f4e5_vtable {
     pub const ID: u64 = 537441;
@@ -10992,13 +11823,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b7bdd6de585_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_0` at 0x12c9340 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_1` at 0x12cadf0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b7bdd6de585_vtable {
     pub const ID: u64 = 466989;
@@ -11008,13 +11843,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc2104a418dd_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_>::vfunc_0` at 0x12c9370 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_>::vfunc_1` at 0x12caf20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc2104a418dd_vtable {
     pub const ID: u64 = 466975;
@@ -11024,13 +11863,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dfdf237e9238_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_0` at 0x1337d80 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_1` at 0x133a270 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dfdf237e9238_vtable {
     pub const ID: u64 = 468077;
@@ -11040,13 +11883,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e3273b6e2824_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_0` at 0x12c97b0 (rtti, high); signature (low): `CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_> * vfunc_0(CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_1` at 0x12cadf0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_2` at 0x12ca0e0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_>::vfunc_3` at 0x12cb7e0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_49fbb219d9af7b4f36dd014c32901436>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e3273b6e2824_vtable {
     pub const ID: u64 = 466994;
@@ -11056,13 +11903,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc813e3f4055_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_>::vfunc_0` at 0x12c97e0 (rtti, high); signature (low): `CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_> * vfunc_0(CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_>::vfunc_1` at 0x12caf20 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_5e73326145ba244a2320511712107396>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_>::vfunc_2` at 0x12ca140 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_>::vfunc_3` at 0x12cb840 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_5e73326145ba244a2320511712107396>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc813e3f4055_vtable {
     pub const ID: u64 = 466980;
@@ -11072,13 +11923,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e86d7d6680da_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_0` at 0x1338910 (rtti, high); signature (low): `CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * vfunc_0(CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_1` at 0x133a270 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_2` at 0x1339a50 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_>::vfunc_3` at 0x133b2c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_9a315ca27cd8bf429b1feb16fd219afa>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_e86d7d6680da_vtable {
     pub const ID: u64 = 468082;
@@ -11088,9 +11943,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_942d5e3ca1c2_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12c9990 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_942d5e3ca1c2_vtable {
     pub const ID: u64 = 466872;
@@ -11100,13 +11957,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_48509bf8b2fe_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Collection>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12c99f0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_48509bf8b2fe_vtable {
     pub const ID: u64 = 537011;
@@ -11116,13 +11977,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb2f0e3efa95_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_0` at 0x12c93a0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_1` at 0x12cb050 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_bb2f0e3efa95_vtable {
     pub const ID: u64 = 466968;
@@ -11132,13 +11997,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe5f094cf305_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_0` at 0x12c93d0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_1` at 0x12cb1a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_fe5f094cf305_vtable {
     pub const ID: u64 = 466982;
@@ -11148,13 +12017,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_abe103ec2179_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_0` at 0x1337db0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_1` at 0x133a390 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_abe103ec2179_vtable {
     pub const ID: u64 = 468058;
@@ -11164,13 +12037,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1e8dffda57b_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_0` at 0x12c96f0 (rtti, high); signature (low): `CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * vfunc_0(CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_1` at 0x12cb050 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_2` at 0x12c9f60 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_>::vfunc_3` at 0x12cb660 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_19844420caa9a8145aec57e4c89aa2b4>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f1e8dffda57b_vtable {
     pub const ID: u64 = 466973;
@@ -11180,13 +12057,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_69ffae7780b6_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_0` at 0x12c9750 (rtti, high); signature (low): `CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * vfunc_0(CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_1` at 0x12cb1a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_2` at 0x12ca020 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_>::vfunc_3` at 0x12cb720 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_3cb0228eaac2ad1f4e92a8e48c5a3976>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_69ffae7780b6_vtable {
     pub const ID: u64 = 466987;
@@ -11196,13 +12077,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_17e0cd64dcb5_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_0` at 0x13389e0 (rtti, high); signature (low): `CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * vfunc_0(CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_1` at 0x133a390 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_2` at 0x1339c30 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_>::vfunc_3` at 0x133b440 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_ba75da216330e677d7d9aaf12f4e48d7>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_17e0cd64dcb5_vtable {
     pub const ID: u64 = 468063;
@@ -11212,9 +12097,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_139c8240148b_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12c99c0 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_139c8240148b_vtable {
     pub const ID: u64 = 466857;
@@ -11224,13 +12111,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00e76eb446aa_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::Content>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12c9a20 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_00e76eb446aa_vtable {
     pub const ID: u64 = 466860;
@@ -11240,13 +12131,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89b64a249bf4_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_0` at 0x1282a60 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_1` at 0x1284290 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_89b64a249bf4_vtable {
     pub const ID: u64 = 507107;
@@ -11256,13 +12151,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ebb09fce599_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_0` at 0x1283160 (rtti, high); signature (low): `CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * vfunc_0(CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_1` at 0x1284290 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_2` at 0x1284040 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_>::vfunc_3` at 0x1284cb0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_e4df452180a1b9a2d1083726a24b9a50>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_2ebb09fce599_vtable {
     pub const ID: u64 = 536863;
@@ -11272,9 +12171,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8e4b2c5c105b_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1283280 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8e4b2c5c105b_vtable {
     pub const ID: u64 = 536846;
@@ -11284,13 +12185,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9859d23f29a1_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetContentIdFromLegacyIdResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1283370 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9859d23f29a1_vtable {
     pub const ID: u64 = 536849;
@@ -11300,13 +12205,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c2e4323105ab_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_0` at 0x129e420 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_1` at 0x129ed60 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c2e4323105ab_vtable {
     pub const ID: u64 = 466487;
@@ -11316,13 +12225,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f512006e124_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_0` at 0x129e450 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_1` at 0x129ee90 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_7f512006e124_vtable {
     pub const ID: u64 = 466483;
@@ -11332,13 +12245,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_53a9513412a1_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_0` at 0x129e6e0 (rtti, high); signature (low): `CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * vfunc_0(CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_1` at 0x129ed60 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_2` at 0x129ec80 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_>::vfunc_3` at 0x129f190 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_7b2ae8c3b996c550abe404ad0e5b1e47>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_53a9513412a1_vtable {
     pub const ID: u64 = 466492;
@@ -11348,13 +12265,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_30e622abe0b9_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_0` at 0x129e710 (rtti, high); signature (low): `CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_> * vfunc_0(CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_1` at 0x129ee90 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_2` at 0x129ece0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_>::vfunc_3` at 0x129f1f0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f441b7a089aaaea6276058c22baa6c41>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_30e622abe0b9_vtable {
     pub const ID: u64 = 466485;
@@ -11364,9 +12285,11 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x129e740 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5912d381f85a_vtable {
     pub const ID: u64 = 466464;
@@ -11376,13 +12299,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::GetCuratedListResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x129e7a0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1f07fb75429c_vtable {
     pub const ID: u64 = 466467;
@@ -11392,13 +12319,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1337e10 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a586519434b0_vtable {
     pub const ID: u64 = 537473;
@@ -11408,13 +12339,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_0` at 0x1337e50 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_1` at 0x133a5c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_37a46b686ea9_vtable {
     pub const ID: u64 = 537468;
@@ -11424,13 +12359,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_0` at 0x1337ed0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_1` at 0x133a5f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_268a060425ab_vtable {
     pub const ID: u64 = 537460;
@@ -11440,13 +12379,17 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_0` at 0x1337f00 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_1` at 0x133a660 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_d91aefc204e7_vtable {
     pub const ID: u64 = 537482;
@@ -11456,291 +12399,19 @@ impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cd
 #[repr(C)]
 pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_0` at 0x1338680 (rtti, high); signature (low): `CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * vfunc_0(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_1` at 0x133a500 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_2` at 0x1339560 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_>::vfunc_3` at 0x133afc0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_0a19a9583547489a643c1d25b09011dc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
 }
 impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b598d94cad70_vtable {
     pub const ID: u64 = 537475;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vftable` at 0x1aefe70, id 537470 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_0` at 0x13387e0 (rtti, high); signature (low): `CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * vfunc_0(CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_1` at 0x133a5c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_2` at 0x1339850 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_>::vfunc_3` at 0x133b1a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_47af9f2ced50f6065f1eccf21d3e4629>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_9cb166b5828e_vtable {
-    pub const ID: u64 = 537470;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vftable` at 0x1aefdd0, id 537465 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_0` at 0x1338aa0 (rtti, high); signature (low): `CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * vfunc_0(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_1` at 0x133a5f0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_2` at 0x1339db0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_>::vfunc_3` at 0x133b5c0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_eb78b71c8d6cc9908f9dee665c73db75>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_c0d1583ce9ce_vtable {
-    pub const ID: u64 = 537465;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vftable` at 0x1af00f0, id 537487 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_0` at 0x1338b00 (rtti, high); signature (low): `CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * vfunc_0(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_1` at 0x133a660 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_2` at 0x1339e70 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_>::vfunc_3` at 0x133b680 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_f5038a3a46b07fd433adb1813db79985>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_061061ede16a_vtable {
-    pub const ID: u64 = 537487;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1aef638, id 537424 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338d00 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_0ff7591c0378_vtable {
-    pub const ID: u64 = 537424;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1aef650, id 537427 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListBundlesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338dc0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_055a751a3461_vtable {
-    pub const ID: u64 = 537427;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vftable` at 0x1ae0d90, id 467080 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_0` at 0x12cdde0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_1` at 0x12ce510 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_f030d037be3f_vtable {
-    pub const ID: u64 = 467080;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vftable` at 0x1ae0db8, id 467082 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_0` at 0x12cdf10 (rtti, high); signature (low): `CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * vfunc_0(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_1` at 0x12ce510 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_2` at 0x12ce2c0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_>::vfunc_3` at 0x12ce720 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_bfe8378b8aa588e20458806ccc5cafad>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_becdd9105bfb_vtable {
-    pub const ID: u64 = 467082;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1ae0ca8, id 467065 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x12cdf40 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_1dfe869c7409_vtable {
-    pub const ID: u64 = 467065;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1ae0cc0, id 467068 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCategoriesResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x12cdf70 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_26615aa9a18c_vtable {
-    pub const ID: u64 = 467068;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vftable` at 0x1af01b8, id 468073 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_0` at 0x1337f30 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_1` at 0x133a6d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ff29d921b2a4_vtable {
-    pub const ID: u64 = 468073;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vftable` at 0x1af01e0, id 468075 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_0` at 0x1338a10 (rtti, high); signature (low): `CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * vfunc_0(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_1` at 0x133a6d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_2` at 0x1339c90 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_2: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_>::vfunc_3` at 0x133b4a0 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_d4b5c51e81d59193dd702c093fbeb980>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_def6efe8c1ba_vtable {
-    pub const ID: u64 = 468075;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vftable` at 0x1aef8e0, id 467977 (rtti, high); 2 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICallableBase::vfunc_0` at 0x1338d30 (rtti, high); signature (low): `ICallableBase * vfunc_0(ICallableBase * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_dc4837c3df49_vtable {
-    pub const ID: u64 = 467977;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vftable` at 0x1aef8f8, id 467980 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListCollectionResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable::vfunc_0` at 0x1338df0 (rtti, high); signature (low): `ICopyableCallable * vfunc_0(ICopyableCallable * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_50b9a60d7dc0_vtable {
-    pub const ID: u64 = 467980;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vftable` at 0x1ad1c10, id 507101 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vfunc_0` at 0x1282a90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_>::vfunc_1` at 0x12842c0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0334f3ea506f392b6646d961847017d0>_> * this, undefined8 * param_1, undefined8 param_2, TypeDescriptor * param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_5b077b768224_vtable {
-    pub const ID: u64 = 507101;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vftable` at 0x1aefd08, id 468024 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vfunc_0` at 0x1337f60 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_>::vfunc_1` at 0x133a700 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_0c25bdcaa5c2e97f86c2d0ea684e7e3f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31438fa55c51_vtable {
-    pub const ID: u64 = 468024;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vftable` at 0x1aeff38, id 468040 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vfunc_0` at 0x1337f90 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_>::vfunc_1` at 0x133a7a0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_2c0586bafc78585bda7c70f1ee53129f>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_31803902b818_vtable {
-    pub const ID: u64 = 468040;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vftable` at 0x1aefc68, id 468013 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vfunc_0` at 0x1337fd0 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_>::vfunc_1` at 0x133a830 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_37d93f6d237fec52d272d7677b362e70>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_8321aa80d928_vtable {
-    pub const ID: u64 = 468013;
-}
-
-/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>::vftable` at 0x1aefdf8, id 468032 (rtti, high); 4 slots.
-#[repr(C)]
-pub struct bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c_vtable {
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>::vfunc_0` at 0x1338000 (rtti, high); signature (low): `CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_> * vfunc_0(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-    /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_>::vfunc_1` at 0x133a8d0 (rtti, medium); signature (low): `undefined vfunc_1(CallableBase<bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet::UniquePtr<bnet::Mods::ListContentResponse>,bnet::HttpResponseInfo>&&___ptr64)>::ICopyableCallable,<lambda_3fbfdc5799edac0af451d6bbf3745028>_> * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_2: *const c_void,
-    /// `_purecall_thunk` at 0x15a97c8 (os_api, high)
-    pub slot_3: *const c_void,
-}
-impl bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_92d95a0fd60c_vtable {
-    pub const ID: u64 = 468032;
 }
 

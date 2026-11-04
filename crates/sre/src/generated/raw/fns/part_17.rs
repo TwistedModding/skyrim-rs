@@ -3,6 +3,28 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `ReleaseOwnedPtrWithDeleter` at 0x12dca40 (decompiler, medium); signature (untiered): `undefined ReleaseOwnedPtrWithDeleter(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter: u64 = 525460;
+/// `ReleaseOwnedPtrWithDeleter_2` at 0x13d8990 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_2(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_2: u64 = 527184;
+/// `ReleaseOwnedPtrWithDeleter_3` at 0x13d89d0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_3(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_3: u64 = 527185;
+/// `ReleaseOwnedPtrWithDeleter_4` at 0x13d8a90 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_4(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_4: u64 = 527188;
+/// `ReleaseOwnedPtrWithDeleter_5` at 0x13d8ad0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_5(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_5: u64 = 527189;
+/// `ReleaseOwnedPtrWithDeleter_6` at 0x13d8b10 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_6(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_6: u64 = 527190;
+/// `ReleaseOwnedPtrWithDeleter_7` at 0x13d8b90 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_7(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_7: u64 = 527192;
+/// `ReleaseOwnedPtrWithDeleter_8` at 0x13d8bd0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_8(undefined8 * param_1)`
+pub const ReleaseOwnedPtrWithDeleter_8: u64 = 527193;
+/// `ReleasePackageSlotUnderLock` at 0x6e0e60 (decompiler, medium); signature (untiered): `undefined8 * ReleasePackageSlotUnderLock(DWORD * param_1, longlong * param_2, undefined8 param_3)`
+pub const ReleasePackageSlotUnderLock: u64 = 38972;
+/// `ReleasePackedOpcodeBuffer` at 0x14a39c0 (decompiler, medium); signature (untiered): `undefined ReleasePackedOpcodeBuffer(uint * param_1, undefined8 param_2, undefined * param_3, undefined8 param_4)`
+pub const ReleasePackedOpcodeBuffer: u64 = 104557;
+/// `ReleasePackedRefCountPtr` at 0x1270b0 (decompiler, high); signature (untiered): `undefined ReleasePackedRefCountPtr(longlong * param_1)`
+pub const ReleasePackedRefCountPtr: u64 = 11349;
 /// `ReleasePagesAndClearSegmentBitmap` at 0x1185c30 (decompiler, medium); signature (untiered): `ulonglong ReleasePagesAndClearSegmentBitmap(longlong param_1, ulonglong param_2, ulonglong param_3)`
 pub const ReleasePagesAndClearSegmentBitmap: u64 = 84799;
 /// `ReleasePair16Vector` at 0x142b6d0 (decompiler, medium); signature (medium): `undefined ReleasePair16Vector(undefined8 * param_1)`
@@ -9031,27 +9053,3 @@ pub const SetBehaviorGraphVariableValue4: u64 = 63654;
 pub const SetBehaviorGraphVariableValue4_2: u64 = 63655;
 /// `SetBevelFilterMember` at 0xde4850 (decompiler, medium); signature (untiered): `undefined1 SetBevelFilterMember(byte * param_1, longlong * param_2, ulonglong * param_3, byte * param_4, byte * param_5)`
 pub const SetBevelFilterMember: u64 = 87096;
-/// `SetBit0OfExtraActivateRefField20` at 0x1689e0 (decompiler, medium); signature (medium): `undefined SetBit0OfExtraActivateRefField20(longlong param_1, char param_2, undefined8 param_3, undefined8 param_4)`
-pub const SetBit0OfExtraActivateRefField20: u64 = 11795;
-/// `SetBit0OfExtraType36Field10` at 0x1657c0 (decompiler, high); signature (high): `undefined SetBit0OfExtraType36Field10(longlong param_1, char param_2)`
-pub const SetBit0OfExtraType36Field10: u64 = 11742;
-/// `SetBit0OfF4OnField8And10` at 0x5117b0 (decompiler, high); signature (high): `undefined SetBit0OfF4OnField8And10(longlong param_1)`
-pub const SetBit0OfF4OnField8And10: u64 = 31745;
-/// `SetBit0OfField0xDC` at 0x3d0390 (decompiler, medium); signature (medium): `undefined SetBit0OfField0xDC(longlong * param_1, char param_2)`
-pub const SetBit0OfField0xDC: u64 = 24987;
-/// `SetBit0OfField10` at 0x1e6050 (decompiler, high); signature (high): `undefined SetBit0OfField10(longlong param_1, char param_2)`
-pub const SetBit0OfField10: u64 = 14635;
-/// `SetBit0OfField10Field138` at 0x5266e0 (decompiler, medium); signature (untiered): `undefined SetBit0OfField10Field138(longlong param_1, char param_2)`
-pub const SetBit0OfField10Field138: u64 = 32112;
-/// `SetBit0OfField136` at 0x6ea920 (decompiler, high); signature (high): `undefined SetBit0OfField136(longlong param_1, char param_2)`
-pub const SetBit0OfField136: u64 = 39176;
-/// `SetBit0OfField154` at 0x11a7690 (decompiler, high); signature (high): `undefined SetBit0OfField154(longlong param_1)`
-pub const SetBit0OfField154: u64 = 90130;
-/// `SetBit0OfField1C6AndBit1OfField1C8` at 0xe4fab0 (decompiler, high); signature (high): `undefined SetBit0OfField1C6AndBit1OfField1C8(longlong param_1)`
-pub const SetBit0OfField1C6AndBit1OfField1C8: u64 = 88640;
-/// `SetBit0OfField20OfExtraType19` at 0x162410 (decompiler, high); signature (untiered): `undefined SetBit0OfField20OfExtraType19(longlong param_1, byte param_2)`
-pub const SetBit0OfField20OfExtraType19: u64 = 11643;
-/// `SetBit0OfField40` at 0x2bf550 (decompiler, high); signature (high): `undefined SetBit0OfField40(longlong param_1, char param_2)`
-pub const SetBit0OfField40: u64 = 19013;
-/// `SetBit0OfField8` at 0x525010 (decompiler, medium); signature (medium): `undefined SetBit0OfField8(longlong * param_1, char param_2)`
-pub const SetBit0OfField8: u64 = 32086;

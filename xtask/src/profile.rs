@@ -23,11 +23,16 @@ pub enum Row {
     SlotMissing(Slot),
     SlotUnverified(Slot),
     Size { class: String, size: u32 },
+    SizeMissing(String),
     SizeUnverified(String),
     Base { class_and_base: String, offset: u32 },
+    BaseMissing(String),
+    BaseUnverified(String),
     Site { ae: u32, canonical: u32, here: u32, expected: Vec<u8>, replacement: Option<Vec<u8>> },
     SiteMissing { ae: u32, canonical: u32 },
     SiteUnverified { ae: u32, canonical: u32 },
+    Enum { value: String, here: u32 },
+    EnumMissing(String),
 }
 
 pub struct Slot {
@@ -63,14 +68,19 @@ impl fmt::Display for Row {
             Self::SlotMissing(slot) => write!(f, "slot-missing {slot}"),
             Self::SlotUnverified(slot) => write!(f, "slot-unverified {slot}"),
             Self::Size { class, size } => write!(f, "size {class} {size:x}"),
+            Self::SizeMissing(class) => write!(f, "size-missing {class}"),
             Self::SizeUnverified(class) => write!(f, "size-unverified {class}"),
             Self::Base { class_and_base, offset } => write!(f, "base {class_and_base} {offset:x}"),
+            Self::BaseMissing(class_and_base) => write!(f, "base-missing {class_and_base}"),
+            Self::BaseUnverified(class_and_base) => write!(f, "base-unverified {class_and_base}"),
             Self::Site { ae, canonical, here, expected, replacement } => {
                 write!(f, "site {ae} {canonical:x} {here:x} {}", Bytes(expected))?;
                 replacement.as_ref().map_or(Ok(()), |bytes| write!(f, " {}", Bytes(bytes)))
             }
             Self::SiteMissing { ae, canonical } => write!(f, "site-missing {ae} {canonical:x}"),
             Self::SiteUnverified { ae, canonical } => write!(f, "site-unverified {ae} {canonical:x}"),
+            Self::Enum { value, here } => write!(f, "enum {value} {here:x}"),
+            Self::EnumMissing(value) => write!(f, "enum-missing {value}"),
         }
     }
 }
@@ -134,12 +144,17 @@ mod tests {
                 Row::SlotMissing(slot(2)),
                 Row::SlotUnverified(slot(3)),
                 Row::Size { class: "Actor".to_owned(), size: 0x2B0 },
+                Row::SizeMissing("Gone".to_owned()),
                 Row::SizeUnverified("Player".to_owned()),
                 Row::Base { class_and_base: "Actor:TESForm".to_owned(), offset: 0x10 },
+                Row::BaseMissing("Actor:Gone".to_owned()),
+                Row::BaseUnverified("Actor:Unsure".to_owned()),
                 Row::Site { ae: 100, canonical: 0x1A, here: 0x2B, expected: vec![0xE8, 0x0F], replacement: None },
                 Row::Site { ae: 100, canonical: 0x1B, here: 0x2C, expected: vec![0xE8], replacement: Some(vec![0x90, 0x90]) },
                 Row::SiteMissing { ae: 101, canonical: 4 },
                 Row::SiteUnverified { ae: 102, canonical: 4 },
+                Row::Enum { value: "InputContext.Favor".to_owned(), here: 0x10 },
+                Row::EnumMissing("InputContext.Marketplace".to_owned()),
             ],
         }
         .text();
@@ -149,10 +164,11 @@ mod tests {
         assert_eq!((read.id(100), read.id(101), read.id(102)), (Read::Here(200), Read::Missing, Read::Unverified));
         assert_eq!((read.member("Actor.a"), read.member("Actor.b"), read.member("Actor.c")), (Read::Here(0x1F8), Read::Missing, Read::Unverified));
         assert_eq!((read.slot("Actor", 0xB0, 0x1F), read.slot("Actor", 0xB0, 2), read.slot("Actor", 0xB0, 3)), (Read::Here(0x1E), Read::Missing, Read::Unverified));
-        assert_eq!((read.size("Actor"), read.size("Player")), (Read::Here(0x2B0), Read::Unverified));
-        assert_eq!(read.base("Actor:TESForm"), Read::Here(0x10));
+        assert_eq!((read.size("Actor"), read.size("Gone"), read.size("Player")), (Read::Here(0x2B0), Read::Missing, Read::Unverified));
+        assert_eq!((read.base("Actor:TESForm"), read.base("Actor:Gone"), read.base("Actor:Unsure")), (Read::Here(0x10), Read::Missing, Read::Unverified));
         assert_eq!(read.site(100, 0x1A), Read::Here(&Site { offset: 0x2B, expected: vec![0xE8, 0x0F], replacement: None }));
         assert_eq!(read.site(100, 0x1B), Read::Here(&Site { offset: 0x2C, expected: vec![0xE8], replacement: Some(vec![0x90, 0x90]) }));
         assert_eq!((read.site(101, 4), read.site(102, 4)), (Read::Missing, Read::Unverified));
+        assert_eq!((read.enum_value("InputContext.Favor"), read.enum_value("InputContext.Marketplace")), (Read::Here(0x10), Read::Missing));
     }
 }

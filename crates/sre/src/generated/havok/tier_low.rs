@@ -344,23 +344,6 @@ impl crate::bhkBreakableConstraint {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(79881, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::bhkBvTreeShape {
-    /// `bhkBvTreeShape::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 78835, rva 0x108a0a0).
-    /// `undefined dtor(bhkBvTreeShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(78835, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `bhkBvTreeShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 25805, rva 0x3fb790).
-    /// `bhkBvTreeShape * vdtor(bhkBvTreeShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(25805, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::bhkCachingShapePhantom {
     /// `bhkCachingShapePhantom::Create` (decompiler signature, tier low; ledger string evidence, name high; id 79116, rva 0x1096ee0).
     /// `bhkWorldObject * Create(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -786,16 +769,6 @@ impl crate::bhkContactListener {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(25831, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::bhkConvexShape {
-    /// `bhkConvexShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19942, rva 0x2f9340).
-    /// `bhkConvexShape * vdtor(bhkConvexShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(19942, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bhkConvexSweepShape {
@@ -1863,23 +1836,6 @@ impl crate::bhkSerializable {
     pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(19948, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
-impl crate::bhkShapeCollection {
-    /// `bhkShapeCollection::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 80128, rva 0x10c9b50).
-    /// `undefined dtor(bhkShapeCollection * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn dtor(&self, param_1: u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(80128, (*const Self, u64, u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-    /// `bhkShapeCollection::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 78350, rva 0x1069b10).
-    /// `bhkShapeCollection * vdtor(bhkShapeCollection * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(78350, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
 impl crate::bhkShapePhantom {
     /// `bhkShapePhantom::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19950, rva 0x2f95a0).
     /// `bhkShapePhantom * vdtor(bhkShapePhantom * this, uint param_1, undefined8 param_2, undefined8 param_3)`
@@ -1905,16 +1861,6 @@ impl crate::bhkSimpleShapePhantom {
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
     pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(19951, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
-}
-
-impl crate::bhkSphereRepShape {
-    /// `bhkSphereRepShape::vdtor` (decompiler signature, tier low; ledger slot_propagation evidence, name medium; id 19952, rva 0x2f9620).
-    /// `bhkSphereRepShape * vdtor(bhkSphereRepShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    ///
-    /// # Safety
-    /// The decompiler's prototype: nothing checks the arguments or the result.
-    #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { function!(19952, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bhkSphereShape {

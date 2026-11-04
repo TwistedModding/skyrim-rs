@@ -140,7 +140,7 @@ impl ActorExt for Actor {
     fn occupied_furniture(&self) -> Option<RefPtr> {
         type GetFn = unsafe extern "C" fn(process: *const AIProcess, out: *mut u32) -> *mut u32;
         let process = self.current_process()?;
-        let get: GetFn = unsafe { crate::engine_fn(fns::GetField8RefHandle) };
+        let get: GetFn = unsafe { crate::engine_fn(sre::id!(fns::GetField8RefHandle)) };
         let mut handle = 0;
         unsafe { get(process, &raw mut handle) };
         RefHandle(handle).lookup()
@@ -153,20 +153,20 @@ impl ActorExt for Actor {
     }
 
     fn motion_mode(&self) -> Option<MotionDriveMode> {
-        let controller = unsafe { self.movementController.as_ref() }?;
+        let controller = unsafe { self.movementController().as_ref() }?;
         MotionDriveMode::from_u32(controller.motionMode)
     }
 
     fn set_graph_paused(&self, paused: bool) {
-        crate::store(&self.boolFlags2, graph_flags(self.boolFlags2, paused));
+        unsafe { self.boolFlags2_ptr().write_volatile(graph_flags(self.boolFlags2(), paused)) };
     }
 
     fn biped_objects(&self) -> &[BipedObject] {
         const COUNT: usize = 42;
-        const _: () = assert!(size_of::<BipedObject>() * COUNT == 0x13b0);
-        let biped = self.field_268 as *const BipedAnim;
+        sre::fixed_size!("BipedObject", BipedObject);
+        let biped = self.field_268() as *const BipedAnim;
         match unsafe { biped.as_ref() } {
-            Some(b) => unsafe { core::slice::from_raw_parts((core::ptr::from_ref(b) as usize + core::mem::offset_of!(BipedAnim, objects)) as *const BipedObject, COUNT) },
+            Some(b) => unsafe { core::slice::from_raw_parts((core::ptr::from_ref(b) as usize + sre::member_offset!("BipedAnim.objects", 0x10)) as *const BipedObject, COUNT) },
             None => &[],
         }
     }
@@ -191,7 +191,7 @@ fn live_handles(found: Vec<*mut TESObjectREFR>) -> Vec<RefHandle> {
 pub fn references_in_radius(cell: &TESObjectCELL, origin: [f32; 3], radius: f32) -> Vec<RefHandle> {
     let mut found: Vec<*mut TESObjectREFR> = Vec::new();
     let [x, y, z] = origin;
-    let origin = NiPoint3 { x, y, z, __engine: sre::Engine::new() };
+    let origin = crate::point(x, y, z);
     unsafe { cell.for_each_reference_in_radius(&raw const origin, radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
     live_handles(found)
 }
@@ -203,7 +203,7 @@ pub fn references_in_radius(cell: &TESObjectCELL, origin: [f32; 3], radius: f32)
 #[must_use]
 pub fn references_around(center: &TESObjectREFR, radius: f32) -> Vec<RefHandle> {
     let mut found: Vec<*mut TESObjectREFR> = Vec::new();
-    let origin = NiPoint3 { x: center.posX, y: center.posY, z: center.posZ, __engine: sre::Engine::new() };
+    let origin = crate::point(center.posX, center.posY, center.posZ);
     unsafe { sre::TES::for_each_reference_in_radius_of_ref(core::ptr::null_mut(), core::ptr::from_ref(center).cast_mut(), radius, &raw const origin, radius, collect as *const c_void, (&raw mut found).cast()) };
     live_handles(found)
 }
@@ -215,7 +215,7 @@ pub fn references_around(center: &TESObjectREFR, radius: f32) -> Vec<RefHandle> 
 /// native calls it once per copy). `None` when the engine placed nothing. Main thread.
 #[must_use]
 pub fn place_at_me(at: &TESObjectREFR, base: &TESBoundObject, persist: bool) -> Option<RefHandle> {
-    let holder = crate::reloc().address(globals::g_TESDataHandler_ptr).ok()? as *const *mut c_void;
+    let holder = crate::reloc().address(sre::id!(globals::g_TESDataHandler_ptr)).ok()? as *const *mut c_void;
     let data = unsafe { *holder };
     if data.is_null() {
         return None;
@@ -235,28 +235,24 @@ pub fn place_at_me(at: &TESObjectREFR, base: &TESBoundObject, persist: bool) -> 
 pub fn delete_reference(reference: &TESObjectREFR) {
     type DisableFn = unsafe extern "C" fn(*const TESObjectREFR);
     type SetDeleteFn = unsafe extern "C" fn(*const TESForm, bool);
-    let disable: DisableFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, 137)) };
-    let set_delete: SetDeleteFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, 35)) };
+    let disable: DisableFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, sre::slot_index!("TESObjectREFR", 0x0, 137))) };
+    let set_delete: SetDeleteFn = unsafe { core::mem::transmute(sre::vtable_entry(reference, sre::slot_index!("TESObjectREFR", 0x0, 35))) };
     unsafe {
         disable(reference);
         set_delete(core::ptr::from_ref(reference).cast(), true);
     }
 }
 
-/// Offset of the high actor handle array in `ProcessLists` (data +0, capacity +8, size +0x10).
-const HIGH_ACTOR_HANDLES: usize = 0x30;
-
 /// The handles of an engine array of `u32` handles laid out as `{ data, capacity, size }` at `array`.
 ///
 /// # Safety
 /// `array` must point to such an array whose data stays readable while this runs.
-unsafe fn handles_at(array: *const u8) -> Vec<RefHandle> {
-    let data = unsafe { array.cast::<*const u32>().read_unaligned() };
-    let size = unsafe { array.add(0x10).cast::<u32>().read_unaligned() };
-    if data.is_null() {
+unsafe fn handles_at(array: *const sre::BSTArray) -> Vec<RefHandle> {
+    let array = unsafe { &*array };
+    if array.data.is_null() {
         return Vec::new();
     }
-    unsafe { core::slice::from_raw_parts(data, size as usize) }.iter().map(|&h| RefHandle(h)).collect()
+    unsafe { core::slice::from_raw_parts(array.data.cast::<u32>(), array.size as usize) }.iter().map(|&h| RefHandle(h)).collect()
 }
 
 /// The actors in high process, as the handles of the process lists' high array (`ProcessLists`
@@ -265,13 +261,13 @@ unsafe fn handles_at(array: *const u8) -> Vec<RefHandle> {
 #[must_use]
 pub fn high_actor_handles() -> Vec<RefHandle> {
     let reloc = crate::reloc();
-    let (Ok(holder), Ok(lock)) = (reloc.address(globals::g_ProcessLists_ptr), reloc.address(globals::g_ProcessListsHandleLock)) else { return Vec::new() };
+    let (Ok(holder), Ok(lock)) = (reloc.address(sre::id!(globals::g_ProcessLists_ptr)), reloc.address(sre::id!(globals::g_ProcessListsHandleLock))) else { return Vec::new() };
     let lists = unsafe { *(holder as *const *const u8) };
     if lists.is_null() {
         return Vec::new();
     }
     let _guard = crate::RwGuard::read(unsafe { &*(lock as *const sre::BSReadWriteLock) });
-    unsafe { handles_at(lists.add(HIGH_ACTOR_HANDLES)) }
+    unsafe { handles_at(lists.add(sre::member_offset!("ProcessLists.highActorHandles", 0x30)).cast()) }
 }
 
 pub trait PlayerCharacterExt {
@@ -353,7 +349,7 @@ pub fn lookup_actor_value(name: &str) -> Option<ActorValue> {
 
 #[cfg(test)]
 mod tests {
-    use super::{HIGH_ACTOR_HANDLES, RefHandle, graph_flags, handles_at};
+    use super::{RefHandle, graph_flags, handles_at};
 
     #[test]
     fn a_pause_clears_the_update_bit_and_forces_one_update() {
@@ -365,13 +361,12 @@ mod tests {
     #[test]
     fn the_high_array_is_read_from_its_data_and_size() {
         let handles = [0x0010_0001u32, 0x0020_0002, 0x0030_0003];
-        let mut lists = [0u8; 0x80];
-        let array = &mut lists[HIGH_ACTOR_HANDLES..];
-        array[..8].copy_from_slice(&(handles.as_ptr() as usize).to_le_bytes());
-        array[8..12].copy_from_slice(&8u32.to_le_bytes());
-        array[0x10..0x14].copy_from_slice(&2u32.to_le_bytes());
-        let read = unsafe { handles_at(lists.as_ptr().add(HIGH_ACTOR_HANDLES)) };
+        let mut array = [0usize; 3];
+        array[0] = handles.as_ptr() as usize;
+        array[1] = 8;
+        array[2] = 2;
+        let read = unsafe { handles_at(array.as_ptr().cast()) };
         assert_eq!(read, [RefHandle(0x0010_0001), RefHandle(0x0020_0002)]);
-        assert_eq!(unsafe { handles_at([0u8; 0x18].as_ptr()) }, []);
+        assert_eq!(unsafe { handles_at([0usize; 3].as_ptr().cast()) }, []);
     }
 }

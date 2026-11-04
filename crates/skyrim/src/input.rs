@@ -128,7 +128,7 @@ pub trait ControlMapExt {
 
 impl ControlMapExt for EventSourceHolder_User {
     fn context_stack(&self) -> &[u32] {
-        let stack = &self.contextStack;
+        let stack = self.contextStack();
         if stack.data.is_null() {
             return &[];
         }
@@ -138,7 +138,7 @@ impl ControlMapExt for EventSourceHolder_User {
     fn button_name(&self, user_event: &str, device: InputDevice) -> Option<String> {
         let name = BSFixedString::new(user_event);
         let mut out = BSFixedString::empty();
-        let get: GetButtonNameFn = unsafe { crate::engine_fn(fns::ControlMap__GetButtonNameForUserEvent) };
+        let get: GetButtonNameFn = unsafe { crate::engine_fn(sre::id!(fns::ControlMap__GetButtonNameForUserEvent)) };
         let found = unsafe { get(core::ptr::from_ref(self).cast_mut(), name.raw(), device as u32, (&raw mut out).cast()) };
         found.then(|| out.to_string())
     }
@@ -164,10 +164,11 @@ fn mappings(map: &EventSourceHolder_User, device: InputDevice) -> impl Iterator<
         let lines = context.and_then(|c| match device {
             InputDevice::Keyboard => Some(&c.keyboardMappings),
             InputDevice::Mouse => Some(&c.mouseMappings),
-            InputDevice::Gamepad => Some(&c.gamepadMappings),
+            InputDevice::Gamepad => Some(c.gamepadMappings()),
             _ => None,
         });
-        let lines = lines.filter(|l| !l.data.is_null()).map_or(&[][..], |l| unsafe { core::slice::from_raw_parts(l.data.cast::<sre::UserEventMapping>(), l.size as usize) });
+        sre::fixed_size!("UserEventMapping", sre::UserEventMapping);
+    let lines = lines.filter(|l| !l.data.is_null()).map_or(&[][..], |l| unsafe { core::slice::from_raw_parts(l.data.cast::<sre::UserEventMapping>(), l.size as usize) });
         lines.iter().filter(|m| m.inputKey != LINKED).map(move |m| (index, m))
     })
 }
@@ -192,7 +193,7 @@ pub fn print(text: &str) {
         return;
     }
     let text = std::ffi::CString::new(text.replace('\0', "")).expect("no interior nul left");
-    let print: PrintFn = unsafe { crate::engine_fn(fns::ConsoleLog__Print) };
+    let print: PrintFn = unsafe { crate::engine_fn(sre::id!(fns::ConsoleLog__Print)) };
     unsafe { print(log, c"%s".as_ptr(), text.as_ptr()) }
 }
 
@@ -205,7 +206,7 @@ unsafe impl Sync for Param {}
 impl Param {
     #[must_use]
     pub const fn new(name: &'static CStr, kind: ScriptParamType, optional: bool) -> Self {
-        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, optional: optional as u8, unknown_D: [0; 3], __engine: sre::Engine::new() })
+        Self(sre::ParamInfo { name: name.as_ptr().cast_mut().cast(), typeCode: kind as u32, __optional: [optional as u8], unknown_D: [0; 3], __engine: sre::Engine::new() })
     }
 }
 
@@ -396,7 +397,7 @@ pub fn register_erased(name: &CStr, help: &CStr, params: &[Param], needs_referen
     let _serialized = REGISTER.lock().unwrap_or_else(PoisonError::into_inner);
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
     let leak = |s: &CStr| -> &'static CStr { Box::leak(s.to_owned().into_boxed_c_str()) };
-    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, optional: p.0.optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
+    let params: &'static [Param] = Box::leak(params.iter().map(|p| Param(sre::ParamInfo { name: leak(text_c(p.0.name)).as_ptr().cast_mut().cast(), typeCode: p.0.typeCode, __optional: p.0.__optional, unknown_D: p.0.unknown_D, __engine: sre::Engine::new() })).collect());
     let slot = take_entry(leak(name), leak(help), params, needs_reference, EXECUTES[index])?;
     *ERASED[index].execute.write().unwrap_or_else(PoisonError::into_inner) = Some(execute);
     let _ = ERASED[index].params.set(params);
@@ -456,6 +457,7 @@ fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExec
         return Err(CommandError::TooManyParams);
     }
     let index = ERASED.iter().position(|s| s.params.get().is_none()).ok_or(CommandError::NoFreeEntry)?;
+    sre::fixed_size!("ParamInfo", sre::ParamInfo);
     let params: &'static [Param] = if entry.params.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(entry.params.cast::<Param>(), usize::from(entry.numParams)) } };
     let _ = ERASED[index].params.set(params);
     let execute_field = unsafe { AtomicUsize::from_ptr((&raw mut entry.execute).cast()) };
@@ -464,7 +466,12 @@ fn replace_entry(entry: &'static mut sre::CommandTableEntry, execute: ErasedExec
     Ok(replaced)
 }
 
+fn check_param_layout() {
+    assert!(sre::member_offset!("ParamInfo.optional", 0xc) == 0xc, "ParamInfo's optional flag moved");
+}
+
 fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param], needs_reference: bool, execute: ExecuteFn) -> Result<CommandSlot, CommandError> {
+    check_param_layout();
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
@@ -480,7 +487,7 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     entry.referenceFunction = u8::from(needs_reference);
     entry.numParams = u16::try_from(params.len()).expect("at most MAX_ARGS");
     entry.params = if params.is_empty() { core::ptr::null_mut() } else { params.as_ptr().cast_mut().cast() };
-    entry.parse = crate::reloc().address(fns::ParseCommandParams).expect("ParseCommandParams id") as *mut c_void;
+    entry.parse = crate::reloc().address(sre::id!(fns::ParseCommandParams)).expect("ParseCommandParams id") as *mut c_void;
     entry.eval = core::ptr::null_mut();
     entry.flags = 0;
     entry.execute = execute as *mut c_void;
@@ -520,7 +527,7 @@ unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_
     let out: [*mut ArgSlot; MAX_ARGS] = core::array::from_fn(|i| &raw mut slots[i]);
     // A command without parameters has no parameter table for the engine to unpack from.
     if !declared.is_empty() {
-        let unpack: UnpackFn = unsafe { crate::engine_fn(fns::UnpackCommandArguments) };
+        let unpack: UnpackFn = unsafe { crate::engine_fn(sre::id!(fns::UnpackCommandArguments)) };
         if !unsafe { unpack(params, data, offset, this_ref, containing, script, locals, out[0], out[1], out[2], out[3], out[4], out[5], out[6], out[7]) } {
             return false;
         }
@@ -531,6 +538,7 @@ unsafe fn run(declared: &[Param], params: *const sre::ParamInfo, data: *const c_
 
 fn decode(kind: u32, slot: &ArgSlot) -> Arg<'_> {
     let bytes = &slot.0;
+    sre::fixed_size!("ScriptParamTypeInfo", sre::ScriptParamTypeInfo);
     let info = unsafe { &*sre::g_script_param_type_info().cast::<sre::ScriptParamTypeInfo>().add(kind as usize) };
     if info.isForm != 0 {
         let form = usize::from_le_bytes(bytes[..8].try_into().expect("8 bytes")) as *const TESForm;

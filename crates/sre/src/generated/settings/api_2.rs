@@ -3,6 +3,54 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `INISetting_iShaderPackageMemoryCap_Display` at 0x20d90d8, id 391745 (setting, high)
+#[inline]
+pub fn ini_setting_i_shader_package_memory_cap_display() -> *mut c_void { address!(391745) as *mut c_void }
+/// `INISetting_iShowHitVector_Combat` at 0x20b6908, id 381228 (setting, high)
+#[inline]
+pub fn ini_setting_i_show_hit_vector_combat() -> *mut c_void { address!(381228) as *mut c_void }
+/// `INISetting_iSimType_HAVOK` at 0x209e2d0, id 370079 (setting, high)
+#[inline]
+pub fn ini_setting_i_sim_type_havok() -> *mut c_void { address!(370079) as *mut c_void }
+/// `INISetting_iSnowNoiseTextureSize` at 0x20d89f8, id 391526 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_noise_texture_size() -> *mut c_void { address!(391526) as *mut c_void }
+/// `INISetting_iSnowSSSCurrentColor_Display` at 0x20d8bf0, id 391588 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_sss_current_color_display() -> *mut c_void { address!(391588) as *mut c_void }
+/// `INISetting_iSnowSparklesColor_Display` at 0x20d8998, id 391514 (setting, high)
+#[inline]
+pub fn ini_setting_i_snow_sparkles_color_display() -> *mut c_void { address!(391514) as *mut c_void }
+/// `INISetting_iSubtitleSpeakerNameColor_Interface` at 0x20bb9e8, id 383210 (setting, high)
+#[inline]
+pub fn ini_setting_i_subtitle_speaker_name_color_interface() -> *mut c_void { address!(383210) as *mut c_void }
+/// `INISetting_iTake_CameraPath` at 0x20b5dc8, id 380920 (setting, high)
+#[inline]
+pub fn ini_setting_i_take_camera_path() -> *mut c_void { address!(380920) as *mut c_void }
+/// `INISetting_iTrilinearThreshold_Display` at 0x20d6a28, id 391018 (setting, high)
+#[inline]
+pub fn ini_setting_i_trilinear_threshold_display() -> *mut c_void { address!(391018) as *mut c_void }
+/// `INISetting_iUnstableFrameTimeHistorySize_Display` at 0x20b5840, id 380753 (setting, high)
+#[inline]
+pub fn ini_setting_i_unstable_frame_time_history_size_display() -> *mut c_void { address!(380753) as *mut c_void }
+/// `INISetting_iUpdateActorsPerFrame_HeadTracking` at 0x20b6aa0, id 381270 (setting, high)
+#[inline]
+pub fn ini_setting_i_update_actors_per_frame_head_tracking() -> *mut c_void { address!(381270) as *mut c_void }
+/// `INISetting_iUpdateDetectionsAllowedPerFrame_General` at 0x20b0ef0, id 378853 (setting, high)
+#[inline]
+pub fn ini_setting_i_update_detections_allowed_per_frame_general() -> *mut c_void { address!(378853) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureDepth_Display` at 0x20d70a8, id 391199 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_depth_display() -> *mut c_void { address!(391199) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureHeight_Display` at 0x20d7090, id 391196 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_height_display() -> *mut c_void { address!(391196) as *mut c_void }
+/// `INISetting_iVolumetricLightingNoiseTextureWidth_Display` at 0x20d7078, id 391193 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_noise_texture_width_display() -> *mut c_void { address!(391193) as *mut c_void }
+/// `INISetting_iVolumetricLightingTextureDepthHigh_Display` at 0x20d7048, id 391188 (setting, high)
+#[inline]
+pub fn ini_setting_i_volumetric_lighting_texture_depth_high_display() -> *mut c_void { address!(391188) as *mut c_void }
 /// `INISetting_iVolumetricLightingTextureDepthLow_Display` at 0x20d6f88, id 391166 (setting, high)
 #[inline]
 pub fn ini_setting_i_volumetric_lighting_texture_depth_low_display() -> *mut c_void { address!(391166) as *mut c_void }

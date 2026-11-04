@@ -15,6 +15,26 @@ impl crate::CameraMatrixEntry {
     /// Semantic field, graphics pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_jittered(this: *const Self) -> *mut u8 { unsafe { member!(this, "CameraMatrixEntry.jittered", 0x284, u8) } }
+    /// `CameraMatrixEntry::jittered`, at +0x284 on 1.7.104.
+    #[inline]
+    pub fn jittered(&self) -> u8 { unsafe { Self::__member_jittered(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_jittered(&mut self, value: u8) { unsafe { Self::__member_jittered(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn jittered_ptr(&self) -> *mut u8 { Self::__member_jittered(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_viewProjection(this: *const Self) -> *mut [u8; 64] { unsafe { member!(this, "CameraMatrixEntry.viewProjection", 0xC0, [u8; 64]) } }
+    /// `CameraMatrixEntry::viewProjection`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn viewProjection(&self) -> [u8; 64] { unsafe { Self::__member_viewProjection(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_viewProjection(&mut self, value: [u8; 64]) { unsafe { Self::__member_viewProjection(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn viewProjection_ptr(&self) -> *mut [u8; 64] { Self::__member_viewProjection(core::ptr::from_ref(self)) }
 }
 
 impl crate::ImageSpaceModifierInstanceForm {
@@ -35,6 +55,59 @@ impl crate::ImageSpaceModifierInstanceForm {
     /// Semantic field, graphics pass, high; `None` while the pointer is null.
     #[inline]
     pub fn imod(&self) -> Option<&crate::TESImageSpaceModifier> { unsafe { { self.imod }.as_ref() } }
+}
+
+impl crate::VolumetricLightingParams {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_inverseRepartitionFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.inverseRepartitionFunction", 0x48, *mut c_void) } }
+    /// `VolumetricLightingParams::inverseRepartitionFunction`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn inverseRepartitionFunction(&self) -> *mut c_void { unsafe { Self::__member_inverseRepartitionFunction(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_inverseRepartitionFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_inverseRepartitionFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn inverseRepartitionFunction_ptr(&self) -> *mut *mut c_void { Self::__member_inverseRepartitionFunction(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_inverseRepartitionTable(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.inverseRepartitionTable", 0x80, *mut c_void) } }
+    /// `VolumetricLightingParams::inverseRepartitionTable`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn inverseRepartitionTable(&self) -> *mut c_void { unsafe { Self::__member_inverseRepartitionTable(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_inverseRepartitionTable(&mut self, value: *mut c_void) { unsafe { Self::__member_inverseRepartitionTable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn inverseRepartitionTable_ptr(&self) -> *mut *mut c_void { Self::__member_inverseRepartitionTable(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_rangeFactor(this: *const Self) -> *mut f32 { unsafe { member!(this, "VolumetricLightingParams.rangeFactor", 0x2C, f32) } }
+    /// `VolumetricLightingParams::rangeFactor`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn rangeFactor(&self) -> f32 { unsafe { Self::__member_rangeFactor(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_rangeFactor(&mut self, value: f32) { unsafe { Self::__member_rangeFactor(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn rangeFactor_ptr(&self) -> *mut f32 { Self::__member_rangeFactor(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_repartitionFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.repartitionFunction", 0x40, *mut c_void) } }
+    /// `VolumetricLightingParams::repartitionFunction`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn repartitionFunction(&self) -> *mut c_void { unsafe { Self::__member_repartitionFunction(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_repartitionFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_repartitionFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn repartitionFunction_ptr(&self) -> *mut *mut c_void { Self::__member_repartitionFunction(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_repartitionTable(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "VolumetricLightingParams.repartitionTable", 0x78, *mut c_void) } }
+    /// `VolumetricLightingParams::repartitionTable`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn repartitionTable(&self) -> *mut c_void { unsafe { Self::__member_repartitionTable(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_repartitionTable(&mut self, value: *mut c_void) { unsafe { Self::__member_repartitionTable(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn repartitionTable_ptr(&self) -> *mut *mut c_void { Self::__member_repartitionTable(core::ptr::from_ref(self)) }
 }
 
 /// `AddFocusShadowNode`: appends {key, node} (refcounted) to g_FocusShadowNodes
@@ -112,7 +185,7 @@ pub fn build_frame_job_lists() { unsafe { function!(35402, ())() } }
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn build_volumetric_lighting_volume(params: *mut c_void, camera: *mut crate::NiCamera, interior: bool) { unsafe { function!(107023, (*mut c_void, *mut crate::NiCamera, bool))(params, camera, interior) } }
+pub unsafe fn build_volumetric_lighting_volume(params: *mut crate::VolumetricLightingParams, camera: *mut crate::NiCamera, interior: bool) { unsafe { function!(107023, (*mut crate::VolumetricLightingParams, *mut crate::NiCamera, bool))(params, camera, interior) } }
 /// `CacheShadowMapResolution`: g_ShadowMapResolution (0x34869c0) = iShadowMapResolution value, once at startup
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107596, rva 0x155c650.
@@ -155,7 +228,16 @@ pub unsafe fn compute_target_texel_constants(effect: *mut c_void, constants: *mu
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn copy_weather_volumetric_lighting(params: *mut c_void) { unsafe { function!(107028, (*mut c_void))(params) } }
+pub unsafe fn copy_weather_volumetric_lighting(params: *mut crate::VolumetricLightingParams) { unsafe { function!(107028, (*mut crate::VolumetricLightingParams))(params) } }
+/// `CreateVertexShaderRecord`: the record of ReadVertexShaderFromStream built from bytecode in memory: copies the container to +0x68, sets +0x10 = size and +0x48, and creates the ID3D11VertexShader at +0x8
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 77349, rva 0x100fdd0.
+/// `void* (void* this, const void* bytecode, u64 size, u64 unused, u64 field48)`
+///
+/// # Safety
+/// `this`, `bytecode` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn create_vertex_shader_record(this: *mut c_void, bytecode: *const c_void, size: u64, unused: u64, field48: u64) -> *mut c_void { unsafe { function!(77349, (*mut c_void, *const c_void, u64, u64, u64) -> *mut c_void)(this, bytecode, size, unused, field48) } }
 /// `DispatchVolumetricLightingGenerate`: the generate dispatch alone (constants, volumes +0x68/+0x70, noise +0x60, inverse repartition +0x80, shader +0x50) without the per-slice march
 ///
 /// Semantic, graphics pass, medium; ledger semantic evidence, name medium; id 107025, rva 0x1531820.
@@ -164,7 +246,7 @@ pub unsafe fn copy_weather_volumetric_lighting(params: *mut c_void) { unsafe { f
 /// # Safety
 /// The pass rates the signature medium.
 #[inline]
-pub unsafe fn dispatch_volumetric_lighting_generate(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107025, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
+pub unsafe fn dispatch_volumetric_lighting_generate(params: *mut crate::VolumetricLightingParams, camera: *mut crate::NiCamera) { unsafe { function!(107025, (*mut crate::VolumetricLightingParams, *mut crate::NiCamera))(params, camera) } }
 /// `DownsampleNormalsForSSR`: SSR setup: optional normal downsample into colour 6 (bDownSampleNormalSSR, iReflectionResolutionDivider 2 by pixel shader, 4 by compute), then RenderScreenSpaceReflectionPass 0x15419a0 into colour 0x6e
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107146, rva 0x153a6b0.
@@ -191,7 +273,7 @@ pub fn end_depth_shift() { unsafe { function!(107126, ())() } }
 /// # Safety
 /// `params`, `function`, `texture` must point to what the engine expects.
 #[inline]
-pub unsafe fn fill_volumetric_repartition_table(params: *mut c_void, function: *mut c_void, texture: *mut c_void) { unsafe { function!(107035, (*mut c_void, *mut c_void, *mut c_void))(params, function, texture) } }
+pub unsafe fn fill_volumetric_repartition_table(params: *mut crate::VolumetricLightingParams, function: *mut c_void, texture: *mut c_void) { unsafe { function!(107035, (*mut crate::VolumetricLightingParams, *mut c_void, *mut c_void))(params, function, texture) } }
 /// `FlushFirstPersonAccumulator`: step 14, first person only: shows the first-person root, marks g_FirstPersonAccumulator as the main-view kind (shadowMapIndex 0xffff, mask 0) unless g_SunShadowDisabled, and flushes g_FirstPersonCuller's lists into it
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107128, rva 0x1537a80.
@@ -263,6 +345,12 @@ pub unsafe fn image_space_modifier__remove_cross_fade(seconds: f32) { unsafe { f
 /// `this` must point to what the engine expects, and the result is an untyped pointer.
 #[inline]
 pub unsafe fn init_culling_params(this: *mut c_void) -> *mut c_void { unsafe { function!(106919, (*mut c_void) -> *mut c_void)(this) } }
+/// `InitDepthBiasViewportPulls`: fills g_DepthBiasViewportPulls 0x3330200 with the twelve viewport depth pulls per rasterizer depth-bias mode, copied from .rdata 0x1a76790: 0, 1.5e-5, 0, 0, 0, 0, 2.6e-5, 1.5e-5, 2.8e-5, 1.7e-5, 3e-5, 1.9e-5 (decals use modes 6-9); called at renderer init and reset (0x1007e36, 0x1012e7a)
+///
+/// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77651, rva 0x102b680.
+/// `void ()`
+#[inline]
+pub fn init_depth_bias_viewport_pulls() { unsafe { function!(77651, ())() } }
 /// `InitRasterizerStateTable`: creates the 2 x 3 x 12 x 2 rasterizer states (fill solid/wireframe, cull none/back/front, 12 depth-bias modes: 0; -3/-0.4; -9/-1.2; 3/0.4; 6/0.8; -1/-0.65, clamp -100; scissor off/on), every one with DepthClipEnable 1. Shadow casters are therefore clipped to each cascade camera's depth range (the slice's corners +-20 units); only four position-only vertex shaders in the archive clamp z to 0
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 77652, rva 0x102b6c0.
@@ -277,7 +365,7 @@ pub fn init_rasterizer_state_table() { unsafe { function!(77652, ())() } }
 /// # Safety
 /// `params`, `shaderStream` must point to what the engine expects.
 #[inline]
-pub unsafe fn init_volumetric_lighting(params: *mut c_void, shaderStream: *mut c_void) { unsafe { function!(107021, (*mut c_void, *mut c_void))(params, shaderStream) } }
+pub unsafe fn init_volumetric_lighting(params: *mut crate::VolumetricLightingParams, shaderStream: *mut c_void) { unsafe { function!(107021, (*mut crate::VolumetricLightingParams, *mut c_void))(params, shaderStream) } }
 /// `MainWindowProc`: the game window's WNDPROC (ledger: Err_ThisApplicationCannotBeRunFrom_cb2): WM_ACTIVATE app activation, WM_NCACTIVATE, WM_SIZE/WM_WINDOWPOSCHANGED -> resize request and SetWindowPosition, WM_NCHITTEST, WM_DESTROY
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 36649, rva 0x65f270.
@@ -311,6 +399,15 @@ pub unsafe fn process_cull_object_list(culler: *mut crate::BSCullingProcess, obj
 /// `void (bool fadingOut, bool black, float duration, bool hold, float secondTime)`
 #[inline]
 pub fn queue_fade_message(fadingOut: bool, black: bool, duration: f32, hold: bool, secondTime: f32) { unsafe { function!(52847, (bool, bool, f32, bool, f32))(fadingOut, black, duration, hold, secondTime) } }
+/// `ReadVertexShaderFromStream`: reads one vertex shader of a shader package (magic 0x11223344, then id u32, bytecode size u32, +0x48 8 bytes, +0x50 0x14 bytes of constant-buffer tables, a u32 of three table indices, the bytecode) into a record of 0x68 + size bytes: +0x0 id, +0x8 the ID3D11VertexShader (CreateVertexShader, device vtable +0x60, from the bytecode at +0x68), +0x10 the bytecode size, +0x18/+0x28/+0x38 the three constant-buffer tables (ID_411371/ID_411373/ID_411375 by index, ID_411446 when none), +0x48, +0x50, +0x68 the DXBC container kept for the record's life
+///
+/// Semantic, graphics pass, high; ledger runtime evidence, name high; id 77348, rva 0x100fc10.
+/// `void* (void* this, void* stream)`
+///
+/// # Safety
+/// `this`, `stream` must point to what the engine expects, and the result is an untyped pointer.
+#[inline]
+pub unsafe fn read_vertex_shader_from_stream(this: *mut c_void, stream: *mut c_void) -> *mut c_void { unsafe { function!(77348, (*mut c_void, *mut c_void) -> *mut c_void)(this, stream) } }
 /// `RegisterChildGeometriesWithAccumulator`: (existing row) focus maps: registers every non-hidden geometry child of a node into the accumulator without any frustum or NiAVObject::Cull (returns 2 for a hidden node)
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 106623, rva 0x1521ad0.
@@ -374,7 +471,7 @@ pub fn set_shadow_distance_for_interior(isInterior: bool) { unsafe { function!(1
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn set_volumetric_range_factor(params: *mut c_void, range: f32) { unsafe { function!(107020, (*mut c_void, f32))(params, range) } }
+pub unsafe fn set_volumetric_range_factor(params: *mut crate::VolumetricLightingParams, range: f32) { unsafe { function!(107020, (*mut crate::VolumetricLightingParams, f32))(params, range) } }
 /// `SetVolumetricRepartitionMode`: svlp function: mode 0 sets +0x40/+0x48 to VolumetricRepartitionPow/VolumetricInverseRepartitionPow, mode 1 to the base-3 exponential pair; any other mode keeps the pointers; then refills both tables from +0x2c
 ///
 /// Semantic, graphics pass, high; ledger runtime evidence, name high; id 107019, rva 0x1530e60.
@@ -383,7 +480,7 @@ pub unsafe fn set_volumetric_range_factor(params: *mut c_void, range: f32) { uns
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn set_volumetric_repartition_mode(params: *mut c_void, mode: i32) { unsafe { function!(107019, (*mut c_void, i32))(params, mode) } }
+pub unsafe fn set_volumetric_repartition_mode(params: *mut crate::VolumetricLightingParams, mode: i32) { unsafe { function!(107019, (*mut crate::VolumetricLightingParams, i32))(params, mode) } }
 /// `SetVolumetricTextureQuality`: svlp quality: copies the quality's width/height/depth into +0x30..+0x38, releases and recreates the volumes
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107016, rva 0x1530d90.
@@ -392,7 +489,7 @@ pub unsafe fn set_volumetric_repartition_mode(params: *mut c_void, mode: i32) { 
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn set_volumetric_texture_quality(params: *mut c_void, quality: i32) { unsafe { function!(107016, (*mut c_void, i32))(params, quality) } }
+pub unsafe fn set_volumetric_texture_quality(params: *mut crate::VolumetricLightingParams, quality: i32) { unsafe { function!(107016, (*mut crate::VolumetricLightingParams, i32))(params, quality) } }
 /// `SetWeatherVolumetricLighting`: copies 12 floats into g_WeatherVolumetricLighting 0x33d3ea8
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 105632, rva 0x14ebf80.
@@ -465,7 +562,7 @@ pub unsafe fn update_image_space_modifiers(unused: *mut c_void, advanceClock: bo
 /// # Safety
 /// `params` must point to what the engine expects.
 #[inline]
-pub unsafe fn update_volumetric_lighting_constants(params: *mut c_void, camera: *mut crate::NiCamera) { unsafe { function!(107027, (*mut c_void, *mut crate::NiCamera))(params, camera) } }
+pub unsafe fn update_volumetric_lighting_constants(params: *mut crate::VolumetricLightingParams, camera: *mut crate::NiCamera) { unsafe { function!(107027, (*mut crate::VolumetricLightingParams, *mut crate::NiCamera))(params, camera) } }
 /// `VolumetricInverseRepartitionExp`: inverse table of mode 1: log(s) / log(3^range) + 1 (not the exact inverse of VolumetricRepartitionExp)
 ///
 /// Semantic, graphics pass, high; ledger semantic evidence, name high; id 107039, rva 0x15328c0.
@@ -517,9 +614,15 @@ pub fn g_current_camera_state() -> *mut u8 { address!(388915) as *mut u8 }
 /// `g_CurrentRenderCamera` at 0x33d3d28, id 414580 (runtime, high); pointer to `NiCamera`: camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it; camera of the draw in progress; every draw-time near/far constant reads +0x160/+0x164 through it (high, graphics pass), type `ptr:NiCamera`
 #[inline]
 pub fn g_current_render_camera() -> Option<&'static crate::NiCamera> { unsafe { *(address!(414580) as *const Option<&'static crate::NiCamera>) } }
+/// `g_CurrentVertexShaderRecord` at 0x20cff48, id 388906 (runtime, high); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high, graphics pass), type `ptr`
+#[inline]
+pub fn g_current_vertex_shader_record() -> *mut *mut c_void { address!(388906) as *mut *mut c_void }
 /// `g_DOFOverrideMode` at 0x20d69d8, id 391008 (semantic, medium); 2: the depth of field takes its four parameters from g_ImageSpaceState+0xb8 (+0x40..+0x4c) instead of the current params +0x14c..+0x158; 1 disables the dynamic DOF path (medium, graphics pass), type `i32`
 #[inline]
 pub fn g_dof_override_mode() -> *mut i32 { address!(391008) as *mut i32 }
+/// `g_DepthBiasViewportPulls` at 0x3330200, id 411359 (semantic, high); per rasterizer depth-bias mode (g_RenderStateCache +0xa0), the amount ApplyDirtyRenderStates 0x10110bd subtracts from the viewport's maximum depth whenever the mode is not 0: decals (BSShaderAccumulator::RenderDecals 0x151fd60, modes 6/7 and 8/9) and skinned overlays draw pulled toward the camera by a fixed depth, which is about pull z^2 / near in distance (1,150 units at 25,800 at near 15, 8,650 at near 2). At a lowered near decals on far terrain come through the mist and cloud meshes in front of them; scaling the pulls by near / 15 keeps them as at 15 (high, graphics pass), type `f32[12]`
+#[inline]
+pub fn g_depth_bias_viewport_pulls() -> *mut c_void { address!(411359) as *mut c_void }
 /// `g_DepthShiftEnabled` at 0x20d72c0, id 391260 (semantic, high); enables BeginDepthShift/EndDepthShift and the prepass's inline shift; static 1 (high, graphics pass), type `u8`
 #[inline]
 pub fn g_depth_shift_enabled() -> *mut u8 { address!(391260) as *mut u8 }
@@ -622,9 +725,9 @@ pub fn g_system_timers() -> &'static crate::SystemTimerRecord { unsafe { &*(addr
 /// `g_UseHDRTonemap` at 0x20d75e4, id 391301 (semantic, medium); non-zero (static 1): the chain's tonemap step runs effect 30 (HDR) instead of the copy 0x22 (medium, graphics pass), type `u8`
 #[inline]
 pub fn g_use_hdr_tonemap() -> *mut u8 { address!(391301) as *mut u8 }
-/// `g_VolumetricLighting` at 0x20d7230, id 391247 (runtime, high); VolumetricLightingParams, static (GetVolumetricLightingParams 0x1530c50): +0x0 intensity, +0x4 custom colour contribution, +0x8 custom colour, +0x14 density contribution, +0x18 density size, +0x1c wind speed, +0x20 falling speed, +0x24 phase contribution, +0x28 phase scattering, +0x2c range factor (40), +0x30/+0x34/+0x38 volume width/height/depth (320x192x90 at quality 2), +0x40 repartition function, +0x48 inverse repartition function, +0x50/+0x58 generate/raymarch shaders, +0x60 noise volume, +0x68/+0x70 the two volumes, +0x78/+0x80 the repartition/inverse 1D textures, +0x88 frame counter (high, graphics pass), type `u8[0x90]`
+/// `g_VolumetricLighting` at 0x20d7230, id 391247 (runtime, high); VolumetricLightingParams, static (GetVolumetricLightingParams 0x1530c50): +0x0 intensity, +0x4 custom colour contribution, +0x8 custom colour, +0x14 density contribution, +0x18 density size, +0x1c wind speed, +0x20 falling speed, +0x24 phase contribution, +0x28 phase scattering, +0x2c range factor (40), +0x30/+0x34/+0x38 volume width/height/depth (320x192x90 at quality 2), +0x40 repartition function, +0x48 inverse repartition function, +0x50/+0x58 generate/raymarch shaders, +0x60 noise volume, +0x68/+0x70 the two volumes, +0x78/+0x80 the repartition/inverse 1D textures, +0x88 frame counter (high, graphics pass), type `class:VolumetricLightingParams`
 #[inline]
-pub fn g_volumetric_lighting() -> *mut c_void { address!(391247) as *mut c_void }
+pub fn g_volumetric_lighting() -> &'static crate::VolumetricLightingParams { unsafe { &*(address!(391247) as *const crate::VolumetricLightingParams) } }
 /// `g_VolumetricLightingEnabled` at 0x3435f44, id 414913 (semantic, high); copy of bVolumetricLightingEnable:Display made at init; gates the volumetric step (RenderWorldScene 0x65716f) and the apply (RenderImageSpace 0x153ad46) (high, graphics pass), type `u8`
 #[inline]
 pub fn g_volumetric_lighting_enabled() -> *mut u8 { address!(414913) as *mut u8 }

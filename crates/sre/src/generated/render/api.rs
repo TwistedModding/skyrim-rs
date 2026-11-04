@@ -152,6 +152,194 @@ impl crate::BSCullingProcess {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_acceptFlag12Nodes(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.acceptFlag12Nodes", 0x11E, u8) } }
+    /// `BSCullingProcess::acceptFlag12Nodes`, at +0x11E on 1.7.104.
+    #[inline]
+    pub fn acceptFlag12Nodes(&self) -> u8 { unsafe { Self::__member_acceptFlag12Nodes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_acceptFlag12Nodes(&mut self, value: u8) { unsafe { Self::__member_acceptFlag12Nodes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn acceptFlag12Nodes_ptr(&self) -> *mut u8 { Self::__member_acceptFlag12Nodes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_customPlanes(this: *const Self) -> *mut [u8; 112] { unsafe { member!(this, "BSCullingProcess.customPlanes", 0xAC, [u8; 112]) } }
+    /// `BSCullingProcess::customPlanes`, at +0xAC on 1.7.104.
+    #[inline]
+    pub fn customPlanes(&self) -> [u8; 112] { unsafe { Self::__member_customPlanes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_customPlanes(&mut self, value: [u8; 112]) { unsafe { Self::__member_customPlanes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn customPlanes_ptr(&self) -> *mut [u8; 112] { Self::__member_customPlanes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_deferAllAppends(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.deferAllAppends", 0x301D5, u8) } }
+    /// `BSCullingProcess::deferAllAppends`, at +0x301D5 on 1.7.104.
+    #[inline]
+    pub fn deferAllAppends(&self) -> u8 { unsafe { Self::__member_deferAllAppends(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_deferAllAppends(&mut self, value: u8) { unsafe { Self::__member_deferAllAppends(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn deferAllAppends_ptr(&self) -> *mut u8 { Self::__member_deferAllAppends(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_descendIntoNodes(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.descendIntoNodes", 0x301D4, u8) } }
+    /// `BSCullingProcess::descendIntoNodes`, at +0x301D4 on 1.7.104.
+    #[inline]
+    pub fn descendIntoNodes(&self) -> u8 { unsafe { Self::__member_descendIntoNodes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_descendIntoNodes(&mut self, value: u8) { unsafe { Self::__member_descendIntoNodes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn descendIntoNodes_ptr(&self) -> *mut u8 { Self::__member_descendIntoNodes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_3016C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSCullingProcess.field_3016C", 0x3016C, u64) } }
+    /// `BSCullingProcess::field_3016C`, at +0x3016C on 1.7.104.
+    #[inline]
+    pub fn field_3016C(&self) -> u64 { unsafe { Self::__member_field_3016C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_3016C(&mut self, value: u64) { unsafe { Self::__member_field_3016C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_3016C_ptr(&self) -> *mut u64 { Self::__member_field_3016C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30174(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSCullingProcess.field_30174", 0x30174, u32) } }
+    /// `BSCullingProcess::field_30174`, at +0x30174 on 1.7.104.
+    #[inline]
+    pub fn field_30174(&self) -> u32 { unsafe { Self::__member_field_30174(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30174(&mut self, value: u32) { unsafe { Self::__member_field_30174(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30174_ptr(&self) -> *mut u32 { Self::__member_field_30174(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30178(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSCullingProcess.field_30178", 0x30178, u64) } }
+    /// `BSCullingProcess::field_30178`, at +0x30178 on 1.7.104.
+    #[inline]
+    pub fn field_30178(&self) -> u64 { unsafe { Self::__member_field_30178(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30178(&mut self, value: u64) { unsafe { Self::__member_field_30178(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30178_ptr(&self) -> *mut u64 { Self::__member_field_30178(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30188(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSCullingProcess.field_30188", 0x30188, u64) } }
+    /// `BSCullingProcess::field_30188`, at +0x30188 on 1.7.104.
+    #[inline]
+    pub fn field_30188(&self) -> u64 { unsafe { Self::__member_field_30188(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30188(&mut self, value: u64) { unsafe { Self::__member_field_30188(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30188_ptr(&self) -> *mut u64 { Self::__member_field_30188(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30190(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSCullingProcess.field_30190", 0x30190, u64) } }
+    /// `BSCullingProcess::field_30190`, at +0x30190 on 1.7.104.
+    #[inline]
+    pub fn field_30190(&self) -> u64 { unsafe { Self::__member_field_30190(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30190(&mut self, value: u64) { unsafe { Self::__member_field_30190(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30190_ptr(&self) -> *mut u64 { Self::__member_field_30190(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_301D0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSCullingProcess.field_301D0", 0x301D0, u32) } }
+    /// `BSCullingProcess::field_301D0`, at +0x301D0 on 1.7.104.
+    #[inline]
+    pub fn field_301D0(&self) -> u32 { unsafe { Self::__member_field_301D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_301D0(&mut self, value: u32) { unsafe { Self::__member_field_301D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_301D0_ptr(&self) -> *mut u32 { Self::__member_field_301D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freeRecords(this: *const Self) -> *mut [u8; 65552] { unsafe { member!(this, "BSCullingProcess.freeRecords", 0x20150, [u8; 65552]) } }
+    /// `BSCullingProcess::freeRecords`, at +0x20150 on 1.7.104.
+    #[inline]
+    pub fn freeRecords(&self) -> [u8; 65552] { unsafe { Self::__member_freeRecords(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freeRecords(&mut self, value: [u8; 65552]) { unsafe { Self::__member_freeRecords(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freeRecords_ptr(&self) -> *mut [u8; 65552] { Self::__member_freeRecords(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frustum(this: *const Self) -> *mut crate::NiFrustum { unsafe { member!(this, "BSCullingProcess.frustum", 0x20, crate::NiFrustum) } }
+    /// `BSCullingProcess::frustum`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn frustum(&self) -> &crate::NiFrustum { unsafe { &*Self::__member_frustum(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn frustum_ptr(&self) -> *mut crate::NiFrustum { Self::__member_frustum(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lastGroupIndex(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSCullingProcess.lastGroupIndex", 0x301F0, u32) } }
+    /// `BSCullingProcess::lastGroupIndex`, at +0x301F0 on 1.7.104.
+    #[inline]
+    pub fn lastGroupIndex(&self) -> u32 { unsafe { Self::__member_lastGroupIndex(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lastGroupIndex(&mut self, value: u32) { unsafe { Self::__member_lastGroupIndex(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lastGroupIndex_ptr(&self) -> *mut u32 { Self::__member_lastGroupIndex(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_maintainVisibleFlag(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.maintainVisibleFlag", 0x11D, u8) } }
+    /// `BSCullingProcess::maintainVisibleFlag`, at +0x11D on 1.7.104.
+    #[inline]
+    pub fn maintainVisibleFlag(&self) -> u8 { unsafe { Self::__member_maintainVisibleFlag(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_maintainVisibleFlag(&mut self, value: u8) { unsafe { Self::__member_maintainVisibleFlag(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn maintainVisibleFlag_ptr(&self) -> *mut u8 { Self::__member_maintainVisibleFlag(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_narrowPlaneMask(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.narrowPlaneMask", 0x120, u8) } }
+    /// `BSCullingProcess::narrowPlaneMask`, at +0x120 on 1.7.104.
+    #[inline]
+    pub fn narrowPlaneMask(&self) -> u8 { unsafe { Self::__member_narrowPlaneMask(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_narrowPlaneMask(&mut self, value: u8) { unsafe { Self::__member_narrowPlaneMask(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn narrowPlaneMask_ptr(&self) -> *mut u8 { Self::__member_narrowPlaneMask(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_planes(this: *const Self) -> *mut [u8; 96] { unsafe { member!(this, "BSCullingProcess.planes", 0x3C, [u8; 96]) } }
+    /// `BSCullingProcess::planes`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn planes(&self) -> [u8; 96] { unsafe { Self::__member_planes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_planes(&mut self, value: [u8; 96]) { unsafe { Self::__member_planes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn planes_ptr(&self) -> *mut [u8; 96] { Self::__member_planes(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalPlaneTree(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSCullingProcess.portalPlaneTree", 0x301A0, u64) } }
+    /// `BSCullingProcess::portalPlaneTree`, at +0x301A0 on 1.7.104.
+    #[inline]
+    pub fn portalPlaneTree(&self) -> u64 { unsafe { Self::__member_portalPlaneTree(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalPlaneTree(&mut self, value: u64) { unsafe { Self::__member_portalPlaneTree(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalPlaneTree_ptr(&self) -> *mut u64 { Self::__member_portalPlaneTree(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_queuedVisible(this: *const Self) -> *mut [u8; 65552] { unsafe { member!(this, "BSCullingProcess.queuedVisible", 0x10140, [u8; 65552]) } }
+    /// `BSCullingProcess::queuedVisible`, at +0x10140 on 1.7.104.
+    #[inline]
+    pub fn queuedVisible(&self) -> [u8; 65552] { unsafe { Self::__member_queuedVisible(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_queuedVisible(&mut self, value: [u8; 65552]) { unsafe { Self::__member_queuedVisible(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn queuedVisible_ptr(&self) -> *mut [u8; 65552] { Self::__member_queuedVisible(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_useCustomPlanes(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSCullingProcess.useCustomPlanes", 0x11F, u8) } }
+    /// `BSCullingProcess::useCustomPlanes`, at +0x11F on 1.7.104.
+    #[inline]
+    pub fn useCustomPlanes(&self) -> u8 { unsafe { Self::__member_useCustomPlanes(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_useCustomPlanes(&mut self, value: u8) { unsafe { Self::__member_useCustomPlanes(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn useCustomPlanes_ptr(&self) -> *mut u8 { Self::__member_useCustomPlanes(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSGeometry {
@@ -188,6 +376,66 @@ impl crate::BSLight {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn portal_graph(&self) -> Option<&crate::BSPortalGraph> { unsafe { { self.portalGraph }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLight.field_130", 0x130, u64) } }
+    /// `BSLight::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLight.field_18", 0x18, u64) } }
+    /// `BSLight::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSLight.field_28", 0x28, u32) } }
+    /// `BSLight::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSLight.field_30", 0x30, u64) } }
+    /// `BSLight::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalStrictCull(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSLight.portalStrictCull", 0x47, u8) } }
+    /// `BSLight::portalStrictCull`, at +0x47 on 1.7.104.
+    #[inline]
+    pub fn portalStrictCull(&self) -> u8 { unsafe { Self::__member_portalStrictCull(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
+    /// `BSLight::sphereCuller`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn sphereCuller(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_sphereCuller(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSLightingShaderProperty {
@@ -256,6 +504,46 @@ impl crate::BSLightingShaderProperty {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn material(&self) -> Option<&crate::BSShaderMaterial> { unsafe { { self.material }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_depthPassLists(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSLightingShaderProperty.depthPassLists", 0x88, [u8; 48]) } }
+    /// `BSLightingShaderProperty::depthPassLists`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn depthPassLists(&self) -> [u8; 48] { unsafe { Self::__member_depthPassLists(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_depthPassLists(&mut self, value: [u8; 48]) { unsafe { Self::__member_depthPassLists(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn depthPassLists_ptr(&self) -> *mut [u8; 48] { Self::__member_depthPassLists(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lightDataStorage(this: *const Self) -> *mut [u8; 36] { unsafe { member!(this, "BSLightingShaderProperty.lightDataStorage", 0x138, [u8; 36]) } }
+    /// `BSLightingShaderProperty::lightDataStorage`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn lightDataStorage(&self) -> [u8; 36] { unsafe { Self::__member_lightDataStorage(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lightDataStorage(&mut self, value: [u8; 36]) { unsafe { Self::__member_lightDataStorage(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lightDataStorage_ptr(&self) -> *mut [u8; 36] { Self::__member_lightDataStorage(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_projectedUVParams(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSLightingShaderProperty.projectedUVParams", 0x10C, [u8; 16]) } }
+    /// `BSLightingShaderProperty::projectedUVParams`, at +0x10C on 1.7.104.
+    #[inline]
+    pub fn projectedUVParams(&self) -> [u8; 16] { unsafe { Self::__member_projectedUVParams(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_projectedUVParams(&mut self, value: [u8; 16]) { unsafe { Self::__member_projectedUVParams(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn projectedUVParams_ptr(&self) -> *mut [u8; 16] { Self::__member_projectedUVParams(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shadowMaskPasses(this: *const Self) -> *mut [u8; 16] { unsafe { member!(this, "BSLightingShaderProperty.shadowMaskPasses", 0xB8, [u8; 16]) } }
+    /// `BSLightingShaderProperty::shadowMaskPasses`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn shadowMaskPasses(&self) -> [u8; 16] { unsafe { Self::__member_shadowMaskPasses(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shadowMaskPasses(&mut self, value: [u8; 16]) { unsafe { Self::__member_shadowMaskPasses(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shadowMaskPasses_ptr(&self) -> *mut [u8; 16] { Self::__member_shadowMaskPasses(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShaderAccumulator {
@@ -263,11 +551,8 @@ impl crate::BSShaderAccumulator {
     ///
     /// Semantic, render pass, high; called through the object's vtable.
     /// `TypeNode* (BSShaderAccumulator* this)`
-    ///
-    /// # Safety
-    /// The result is an untyped pointer.
     #[inline]
-    pub unsafe fn get_rtti(&self) -> *mut c_void { unsafe { virtual_function!(self, 2, (*const Self) -> *mut c_void)(core::ptr::from_ref(self)) } }
+    pub fn get_rtti(&self) -> Option<&'static crate::TypeNode> { unsafe { virtual_function!(self, 2, (*const Self) -> Option<&'static crate::TypeNode>)(core::ptr::from_ref(self)) } }
     /// `BSShaderAccumulator::PopDepthGroup`, vtable slot 41: closes the group opened by slot 40
     ///
     /// Semantic, render pass, medium; called through the object's vtable.
@@ -438,6 +723,76 @@ impl crate::BSShaderAccumulator {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.camera }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_acceptAlphaDecalsInDepth(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShaderAccumulator.acceptAlphaDecalsInDepth", 0x12D, u8) } }
+    /// `BSShaderAccumulator::acceptAlphaDecalsInDepth`, at +0x12D on 1.7.104.
+    #[inline]
+    pub fn acceptAlphaDecalsInDepth(&self) -> u8 { unsafe { Self::__member_acceptAlphaDecalsInDepth(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_acceptAlphaDecalsInDepth(&mut self, value: u8) { unsafe { Self::__member_acceptAlphaDecalsInDepth(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn acceptAlphaDecalsInDepth_ptr(&self) -> *mut u8 { Self::__member_acceptAlphaDecalsInDepth(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_129(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShaderAccumulator.field_129", 0x129, u8) } }
+    /// `BSShaderAccumulator::field_129`, at +0x129 on 1.7.104.
+    #[inline]
+    pub fn field_129(&self) -> u8 { unsafe { Self::__member_field_129(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_129(&mut self, value: u8) { unsafe { Self::__member_field_129(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_129_ptr(&self) -> *mut u8 { Self::__member_field_129(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShaderAccumulator.field_A0", 0xA0, u64) } }
+    /// `BSShaderAccumulator::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u64 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u64) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u64 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShaderAccumulator.field_A8", 0xA8, u64) } }
+    /// `BSShaderAccumulator::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShaderAccumulator.field_B0", 0xB0, u32) } }
+    /// `BSShaderAccumulator::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShaderAccumulator.field_B4", 0xB4, u8) } }
+    /// `BSShaderAccumulator::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u8 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u8) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u8 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_shadowSceneNode(this: *const Self) -> *mut *mut crate::ShadowSceneNode { unsafe { member!(this, "BSShaderAccumulator.shadowSceneNode", 0x148, *mut crate::ShadowSceneNode) } }
+    /// `BSShaderAccumulator::shadowSceneNode`, at +0x148 on 1.7.104.
+    #[inline]
+    pub fn shadowSceneNode(&self) -> *mut crate::ShadowSceneNode { unsafe { Self::__member_shadowSceneNode(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_shadowSceneNode(&mut self, value: *mut crate::ShadowSceneNode) { unsafe { Self::__member_shadowSceneNode(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn shadowSceneNode_ptr(&self) -> *mut *mut crate::ShadowSceneNode { Self::__member_shadowSceneNode(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShaderProperty {
@@ -652,6 +1007,94 @@ impl crate::BSShadowDirectionalLight {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn light_camera(&self) -> Option<&crate::NiCamera> { unsafe { { self.lightCamera }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_directionBlend(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSShadowDirectionalLight.directionBlend", 0x5B0, f32) } }
+    /// `BSShadowDirectionalLight::directionBlend`, at +0x5B0 on 1.7.104.
+    #[inline]
+    pub fn directionBlend(&self) -> f32 { unsafe { Self::__member_directionBlend(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_directionBlend(&mut self, value: f32) { unsafe { Self::__member_directionBlend(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn directionBlend_ptr(&self) -> *mut f32 { Self::__member_directionBlend(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowDirectionalLight.field_130", 0x130, u64) } }
+    /// `BSShadowDirectionalLight::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowDirectionalLight.field_18", 0x18, u64) } }
+    /// `BSShadowDirectionalLight::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowDirectionalLight.field_28", 0x28, u32) } }
+    /// `BSShadowDirectionalLight::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowDirectionalLight.field_30", 0x30, u64) } }
+    /// `BSShadowDirectionalLight::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_focusShadowMaps(this: *const Self) -> *mut [u8; 960] { unsafe { member!(this, "BSShadowDirectionalLight.focusShadowMaps", 0x160, [u8; 960]) } }
+    /// `BSShadowDirectionalLight::focusShadowMaps`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn focusShadowMaps(&self) -> [u8; 960] { unsafe { Self::__member_focusShadowMaps(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_focusShadowMaps(&mut self, value: [u8; 960]) { unsafe { Self::__member_focusShadowMaps(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn focusShadowMaps_ptr(&self) -> *mut [u8; 960] { Self::__member_focusShadowMaps(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalStrictCull(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShadowDirectionalLight.portalStrictCull", 0x47, u8) } }
+    /// `BSShadowDirectionalLight::portalStrictCull`, at +0x47 on 1.7.104.
+    #[inline]
+    pub fn portalStrictCull(&self) -> u8 { unsafe { Self::__member_portalStrictCull(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousLightDirection(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "BSShadowDirectionalLight.previousLightDirection", 0x56C, crate::NiPoint3) } }
+    /// `BSShadowDirectionalLight::previousLightDirection`, at +0x56C on 1.7.104.
+    #[inline]
+    pub fn previousLightDirection(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_previousLightDirection(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn previousLightDirection_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_previousLightDirection(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowDirectionalLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
+    /// `BSShadowDirectionalLight::sphereCuller`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn sphereCuller(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_sphereCuller(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShadowFrustumLight {
@@ -699,6 +1142,96 @@ impl crate::BSShadowFrustumLight {
     /// A class parameter without a null mark had no null test in the overrides read; that does not prove the engine never passes null to one.
     #[inline]
     pub fn update_for_camera(&self, camera: &crate::NiCamera) -> bool { unsafe { virtual_function!(self, 16, (*const Self, *const crate::NiCamera) -> bool)(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowFrustumLight.field_130", 0x130, u64) } }
+    /// `BSShadowFrustumLight::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowFrustumLight.field_18", 0x18, u64) } }
+    /// `BSShadowFrustumLight::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowFrustumLight.field_28", 0x28, u32) } }
+    /// `BSShadowFrustumLight::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowFrustumLight.field_30", 0x30, u64) } }
+    /// `BSShadowFrustumLight::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_focusShadowMaps(this: *const Self) -> *mut [u8; 960] { unsafe { member!(this, "BSShadowFrustumLight.focusShadowMaps", 0x160, [u8; 960]) } }
+    /// `BSShadowFrustumLight::focusShadowMaps`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn focusShadowMaps(&self) -> [u8; 960] { unsafe { Self::__member_focusShadowMaps(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_focusShadowMaps(&mut self, value: [u8; 960]) { unsafe { Self::__member_focusShadowMaps(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn focusShadowMaps_ptr(&self) -> *mut [u8; 960] { Self::__member_focusShadowMaps(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalStrictCull(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShadowFrustumLight.portalStrictCull", 0x47, u8) } }
+    /// `BSShadowFrustumLight::portalStrictCull`, at +0x47 on 1.7.104.
+    #[inline]
+    pub fn portalStrictCull(&self) -> u8 { unsafe { Self::__member_portalStrictCull(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowFrustumLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
+    /// `BSShadowFrustumLight::sphereCuller`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn sphereCuller(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_sphereCuller(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_tanHalfFovX(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSShadowFrustumLight.tanHalfFovX", 0x560, f32) } }
+    /// `BSShadowFrustumLight::tanHalfFovX`, at +0x560 on 1.7.104.
+    #[inline]
+    pub fn tanHalfFovX(&self) -> f32 { unsafe { Self::__member_tanHalfFovX(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_tanHalfFovX(&mut self, value: f32) { unsafe { Self::__member_tanHalfFovX(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn tanHalfFovX_ptr(&self) -> *mut f32 { Self::__member_tanHalfFovX(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_tanHalfFovY(this: *const Self) -> *mut f32 { unsafe { member!(this, "BSShadowFrustumLight.tanHalfFovY", 0x564, f32) } }
+    /// `BSShadowFrustumLight::tanHalfFovY`, at +0x564 on 1.7.104.
+    #[inline]
+    pub fn tanHalfFovY(&self) -> f32 { unsafe { Self::__member_tanHalfFovY(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_tanHalfFovY(&mut self, value: f32) { unsafe { Self::__member_tanHalfFovY(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn tanHalfFovY_ptr(&self) -> *mut f32 { Self::__member_tanHalfFovY(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShadowLight {
@@ -778,6 +1311,66 @@ impl crate::BSShadowLight {
     /// `void (BSShadowLight* this, NiAVObject* camera)`
     #[inline]
     pub fn setup_focus_shadows(&self, camera: &crate::NiAVObject) { unsafe { function!(107601, (*const Self, *const crate::NiAVObject))(core::ptr::from_ref(self), core::ptr::from_ref(camera)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowLight.field_130", 0x130, u64) } }
+    /// `BSShadowLight::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowLight.field_18", 0x18, u64) } }
+    /// `BSShadowLight::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowLight.field_28", 0x28, u32) } }
+    /// `BSShadowLight::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowLight.field_30", 0x30, u64) } }
+    /// `BSShadowLight::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalStrictCull(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShadowLight.portalStrictCull", 0x47, u8) } }
+    /// `BSShadowLight::portalStrictCull`, at +0x47 on 1.7.104.
+    #[inline]
+    pub fn portalStrictCull(&self) -> u8 { unsafe { Self::__member_portalStrictCull(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
+    /// `BSShadowLight::sphereCuller`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn sphereCuller(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_sphereCuller(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSShadowParabolicLight {
@@ -821,6 +1414,76 @@ impl crate::BSShadowParabolicLight {
     /// `bool (BSShadowParabolicLight* this)`
     #[inline]
     pub fn uses_two_maps(&self) -> bool { unsafe { virtual_function!(self, 8, (*const Self) -> bool)(core::ptr::from_ref(self)) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_130(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowParabolicLight.field_130", 0x130, u64) } }
+    /// `BSShadowParabolicLight::field_130`, at +0x130 on 1.7.104.
+    #[inline]
+    pub fn field_130(&self) -> u64 { unsafe { Self::__member_field_130(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_130(&mut self, value: u64) { unsafe { Self::__member_field_130(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_130_ptr(&self) -> *mut u64 { Self::__member_field_130(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowParabolicLight.field_18", 0x18, u64) } }
+    /// `BSShadowParabolicLight::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u64 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u64) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u64 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSShadowParabolicLight.field_28", 0x28, u32) } }
+    /// `BSShadowParabolicLight::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSShadowParabolicLight.field_30", 0x30, u64) } }
+    /// `BSShadowParabolicLight::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_focusShadowMaps(this: *const Self) -> *mut [u8; 960] { unsafe { member!(this, "BSShadowParabolicLight.focusShadowMaps", 0x160, [u8; 960]) } }
+    /// `BSShadowParabolicLight::focusShadowMaps`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn focusShadowMaps(&self) -> [u8; 960] { unsafe { Self::__member_focusShadowMaps(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_focusShadowMaps(&mut self, value: [u8; 960]) { unsafe { Self::__member_focusShadowMaps(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn focusShadowMaps_ptr(&self) -> *mut [u8; 960] { Self::__member_focusShadowMaps(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_portalStrictCull(this: *const Self) -> *mut u8 { unsafe { member!(this, "BSShadowParabolicLight.portalStrictCull", 0x47, u8) } }
+    /// `BSShadowParabolicLight::portalStrictCull`, at +0x47 on 1.7.104.
+    #[inline]
+    pub fn portalStrictCull(&self) -> u8 { unsafe { Self::__member_portalStrictCull(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_portalStrictCull(&mut self, value: u8) { unsafe { Self::__member_portalStrictCull(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn portalStrictCull_ptr(&self) -> *mut u8 { Self::__member_portalStrictCull(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_sphereCuller(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "BSShadowParabolicLight.sphereCuller", 0x128, *mut crate::BSCullingProcess) } }
+    /// `BSShadowParabolicLight::sphereCuller`, at +0x128 on 1.7.104.
+    #[inline]
+    pub fn sphereCuller(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_sphereCuller(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_sphereCuller(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_sphereCuller(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn sphereCuller_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_sphereCuller(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiAVObject {
@@ -1155,6 +1818,19 @@ impl crate::NiSkinInstance {
     pub fn skin_partition(&self) -> Option<&crate::NiSkinPartition> { unsafe { { self.skinPartition }.as_ref() } }
 }
 
+impl crate::ShaderPropertyLightData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_receiverMask(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShaderPropertyLightData.receiverMask", 0x1C, u32) } }
+    /// `ShaderPropertyLightData::receiverMask`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn receiverMask(&self) -> u32 { unsafe { Self::__member_receiverMask(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_receiverMask(&mut self, value: u32) { unsafe { Self::__member_receiverMask(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn receiverMask_ptr(&self) -> *mut u32 { Self::__member_receiverMask(core::ptr::from_ref(self)) }
+}
+
 impl crate::ShadowMapData {
     /// `ShadowMapData::accumulator` at +0x48: the accumulator the map's casters are gathered into
     ///
@@ -1170,7 +1846,27 @@ impl crate::ShadowMapData {
     ///
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { { self.culler }.as_ref() } }
+    pub fn culler(&self) -> Option<&crate::BSCullingProcess> { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_culler(this: *const Self) -> *mut *mut crate::BSCullingProcess { unsafe { member!(this, "ShadowMapData.culler", 0xE0, *mut crate::BSCullingProcess) } }
+    /// `ShadowMapData::culler`, at +0xE0 on 1.7.104.
+    #[inline]
+    pub fn culler_field(&self) -> *mut crate::BSCullingProcess { unsafe { Self::__member_culler(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_culler(&mut self, value: *mut crate::BSCullingProcess) { unsafe { Self::__member_culler(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn culler_ptr(&self) -> *mut *mut crate::BSCullingProcess { Self::__member_culler(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_slice(this: *const Self) -> *mut u32 { unsafe { member!(this, "ShadowMapData.slice", 0x58, u32) } }
+    /// `ShadowMapData::slice`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn slice(&self) -> u32 { unsafe { Self::__member_slice(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_slice(&mut self, value: u32) { unsafe { Self::__member_slice(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn slice_ptr(&self) -> *mut u32 { Self::__member_slice(core::ptr::from_ref(self)) }
 }
 
 impl crate::ShadowSceneNode {
@@ -1268,6 +1964,92 @@ impl crate::ShadowSceneNode {
     /// Semantic field, render pass, high; `None` while the pointer is null.
     #[inline]
     pub fn sun_shadow_light(&self) -> Option<&crate::BSShadowDirectionalLight> { unsafe { { self.sunShadowLight }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2CC(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.field_2CC", 0x2CC, u64) } }
+    /// `ShadowSceneNode::field_2CC`, at +0x2CC on 1.7.104.
+    #[inline]
+    pub fn field_2CC(&self) -> u64 { unsafe { Self::__member_field_2CC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2CC(&mut self, value: u64) { unsafe { Self::__member_field_2CC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2CC_ptr(&self) -> *mut u64 { Self::__member_field_2CC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2D4(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.field_2D4", 0x2D4, u64) } }
+    /// `ShadowSceneNode::field_2D4`, at +0x2D4 on 1.7.104.
+    #[inline]
+    pub fn field_2D4(&self) -> u64 { unsafe { Self::__member_field_2D4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2D4(&mut self, value: u64) { unsafe { Self::__member_field_2D4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2D4_ptr(&self) -> *mut u64 { Self::__member_field_2D4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2DC(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.field_2DC", 0x2DC, u64) } }
+    /// `ShadowSceneNode::field_2DC`, at +0x2DC on 1.7.104.
+    #[inline]
+    pub fn field_2DC(&self) -> u64 { unsafe { Self::__member_field_2DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2DC(&mut self, value: u64) { unsafe { Self::__member_field_2DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2DC_ptr(&self) -> *mut u64 { Self::__member_field_2DC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2E8(this: *const Self) -> *mut f32 { unsafe { member!(this, "ShadowSceneNode.field_2E8", 0x2E8, f32) } }
+    /// `ShadowSceneNode::field_2E8`, at +0x2E8 on 1.7.104.
+    #[inline]
+    pub fn field_2E8(&self) -> f32 { unsafe { Self::__member_field_2E8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2E8(&mut self, value: f32) { unsafe { Self::__member_field_2E8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2E8_ptr(&self) -> *mut f32 { Self::__member_field_2E8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2F0(this: *const Self) -> *mut f32 { unsafe { member!(this, "ShadowSceneNode.field_2F0", 0x2F0, f32) } }
+    /// `ShadowSceneNode::field_2F0`, at +0x2F0 on 1.7.104.
+    #[inline]
+    pub fn field_2F0(&self) -> f32 { unsafe { Self::__member_field_2F0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2F0(&mut self, value: f32) { unsafe { Self::__member_field_2F0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2F0_ptr(&self) -> *mut f32 { Self::__member_field_2F0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frameShadowLights(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.frameShadowLights", 0x230, crate::BSTArray) } }
+    /// `ShadowSceneNode::frameShadowLights`, at +0x230 on 1.7.104.
+    #[inline]
+    pub fn frameShadowLights(&self) -> &crate::BSTArray { unsafe { &*Self::__member_frameShadowLights(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn frameShadowLights_ptr(&self) -> *mut crate::BSTArray { Self::__member_frameShadowLights(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_geometryQueueLock(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.geometryQueueLock", 0x1F8, u64) } }
+    /// `ShadowSceneNode::geometryQueueLock`, at +0x1F8 on 1.7.104.
+    #[inline]
+    pub fn geometryQueueLock(&self) -> u64 { unsafe { Self::__member_geometryQueueLock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_geometryQueueLock(&mut self, value: u64) { unsafe { Self::__member_geometryQueueLock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn geometryQueueLock_ptr(&self) -> *mut u64 { Self::__member_geometryQueueLock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lightQueueLock(this: *const Self) -> *mut u64 { unsafe { member!(this, "ShadowSceneNode.lightQueueLock", 0x1A8, u64) } }
+    /// `ShadowSceneNode::lightQueueLock`, at +0x1A8 on 1.7.104.
+    #[inline]
+    pub fn lightQueueLock(&self) -> u64 { unsafe { Self::__member_lightQueueLock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lightQueueLock(&mut self, value: u64) { unsafe { Self::__member_lightQueueLock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lightQueueLock_ptr(&self) -> *mut u64 { Self::__member_lightQueueLock(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pendingLightAdds(this: *const Self) -> *mut crate::BSTArray { unsafe { member!(this, "ShadowSceneNode.pendingLightAdds", 0x160, crate::BSTArray) } }
+    /// `ShadowSceneNode::pendingLightAdds`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn pendingLightAdds(&self) -> &crate::BSTArray { unsafe { &*Self::__member_pendingLightAdds(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn pendingLightAdds_ptr(&self) -> *mut crate::BSTArray { Self::__member_pendingLightAdds(core::ptr::from_ref(self)) }
 }
 
 /// `CullShadowLights`: updates and culls the casters of the scene's shadow lights and runs the sun's slot 9 (cascade caster cull) while the main camera cull jobs run

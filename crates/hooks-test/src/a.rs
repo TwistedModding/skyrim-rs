@@ -1,7 +1,8 @@
 //! Plugin a: runs its `Before` before b's and takes one more point of damage, observes the result
 //! in an `After`, replaces the outer `ActorValueOwner_ModActorValue` (delegating to the original),
 //! counts `TESObjectREFR::GetScale` calls in an `After` (the site the compat suite's legacy plugin
-//! overwrites) and reads the dispatcher's diagnostics at each save.
+//! overwrites), writes a managed patch by id and offset (the same bytes, so the game runs on as it
+//! was) and reads the dispatcher's diagnostics at each save.
 
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Mutex, OnceLock};
@@ -27,7 +28,7 @@ pub fn load(host: &'static Host) -> bool {
         return false;
     }
     let _ = HOOKS.set(host.hooks());
-    run("aLoad", &[("a_pristine", pristine), ("a_scale", scale), ("a_subscribe", subscribe)]);
+    run("aLoad", &[("a_pristine", pristine), ("a_scale", scale), ("a_subscribe", subscribe), ("a_patch", patch)]);
     host.on_message(|msg| {
         if msg.kind == skse::MessagingInterface::DATA_LOADED {
             SCALE_AT_DATA_LOADED.store(SCALE_CALLS.load(Ordering::Relaxed), Ordering::Relaxed);
@@ -50,13 +51,25 @@ pub fn load(host: &'static Host) -> bool {
 fn pristine() -> Result<String, String> {
     let reloc = skyrim::reloc();
     let mut results = Vec::new();
-    for (name, id) in [("Actor::ModActorValueImpl", fns::Actor__ModActorValueImpl), ("Actor::ActorValueOwner_ModActorValue", fns::Actor__ActorValueOwner_ModActorValue), ("TESObjectREFR::GetScale", fns::TESObjectREFR__GetScale)] {
+    for (name, id) in [("Actor::ModActorValueImpl", sre::id!(fns::Actor__ModActorValueImpl)), ("Actor::ActorValueOwner_ModActorValue", sre::id!(fns::Actor__ActorValueOwner_ModActorValue)), ("TESObjectREFR::GetScale", sre::id!(fns::TESObjectREFR__GetScale))] {
         let address = reloc.address(id).map_err(|e| e.to_string())?;
         results.push((format!("{name} at {address:#x}"), validate(address, None)));
     }
     let detail = results.iter().map(|(name, v)| format!("{name}: {v}")).collect::<Vec<_>>().join("; ");
     check(results.iter().all(|(_, v)| *v == Validation::Pristine), &detail)?;
     Ok(detail)
+}
+
+/// A patch stated for 1.7.104 goes through the profile; here it writes what is already there.
+fn patch() -> Result<String, String> {
+    const OFFSET: usize = 4;
+    let hooks = HOOKS.get().ok_or("no hooks")?;
+    let at = skyrim::reloc().address(sre::id!(fns::Actor__GetLevel)).map_err(|e| e.to_string())? + OFFSET;
+    let bytes = unsafe { core::slice::from_raw_parts(at as *const u8, 2) }.to_vec();
+    let id = unsafe { hooks.patch(A, framework::location!(fns::Actor__GetLevel, OFFSET), &bytes, &bytes) }.map_err(|e| e.to_string())?;
+    let report = hooks.patches().iter().find(|p| p.id == id).map(ToString::to_string).ok_or("the patch is not reported")?;
+    check(hooks.unpatch(id), "the patch could not be removed")?;
+    Ok(report)
 }
 
 fn scale() -> Result<String, String> {

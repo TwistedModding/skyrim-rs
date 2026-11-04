@@ -76,7 +76,7 @@ fn player() -> Result<String, String> {
     check(address(actor) == address(player), "FindFormByID(0x14) and g_PlayerCharacter_ptr differ")?;
     check(form.cast::<PlayerCharacter>().is_some() && form.cast::<Character>().is_some(), "the player does not cast to PlayerCharacter and Character")?;
     let class = skyrim::class_of(player).ok_or("the player's vtable is not in the ledger")?;
-    check(class.id == vtables::PlayerCharacter_vtable::ID, &format!("the player's class is {}", class.class))?;
+    check(class.id == sre::id!(vtables::PlayerCharacter_vtable::ID), &format!("the player's class is {}", class.class))?;
     let count = player.refCount & 0x3FF;
     check(count >= 1, "refCount is 0")?;
     Ok(format!("{} at {:#x}, class {}, refCount {count}", describe(player), address(player), class.class))
@@ -88,7 +88,7 @@ fn base_object() -> Result<String, String> {
     check(base.formID == PLAYER_NPC && base.formType == FormType::NPC_ as u8, &format!("baseObject is {}", describe(base)))?;
     let npc = base_npc(player)?;
     check(address(npc) == address(base), "the NPC cast moved the pointer")?;
-    check(skyrim::class_of(npc).is_some_and(|c| c.id == vtables::TESNPC_vtable::ID), "the base's vtable is not TESNPC's")?;
+    check(skyrim::class_of(npc).is_some_and(|c| c.id == sre::id!(vtables::TESNPC_vtable::ID)), "the base's vtable is not TESNPC's")?;
     Ok(format!("baseObject = {} ({})", describe(base), class_name(skyrim::class_of(base))))
 }
 
@@ -108,7 +108,7 @@ fn parent_cell() -> Result<String, String> {
     check(world.formID == TAMRIEL && world.formType == FormType::WRLD as u8, &format!("worldspace is {}", describe(world)))?;
     let location: &BGSLocation = player.get_current_location().ok_or("GetCurrentLocation returned null")?;
     check(location.formID == RIVERWOOD_LOCATION && location.formType == FormType::LCTN as u8, &format!("location is {}", describe(location)))?;
-    check(core::ptr::eq(player.currentLocation, location), "PlayerCharacter.currentLocation differs from GetCurrentLocation")?;
+    check(core::ptr::eq(player.currentLocation(), location), "PlayerCharacter.currentLocation differs from GetCurrentLocation")?;
     Ok(format!("parentCell={} worldspace={} location={} = PlayerCharacter.currentLocation", describe(cell), describe(world), describe(location)))
 }
 
@@ -118,7 +118,7 @@ fn node_3d() -> Result<String, String> {
     let loaded = player.loaded_data().and_then(|d| d.node3_d()).ok_or("loadedData->node3D is null")?;
     let class = skyrim::class_of(node).ok_or("the node's vtable is not in the ledger")?;
     let loaded_class = skyrim::class_of(loaded).ok_or("the loaded node's vtable is not in the ledger")?;
-    check(class.id == vtables::BSFadeNode_vtable::ID && loaded_class.id == vtables::BSFadeNode_vtable::ID, &format!("the root nodes are {} and {}", class.class, loaded_class.class))?;
+    check(class.id == sre::id!(vtables::BSFadeNode_vtable::ID) && loaded_class.id == sre::id!(vtables::BSFadeNode_vtable::ID), &format!("the root nodes are {} and {}", class.class, loaded_class.class))?;
     let same = core::ptr::eq(node, loaded);
     Ok(format!("Get3D at {:#x} ({}), loadedData->node3D at {:#x} ({}), same={same}", address(node), class.class, address(loaded), loaded_class.class))
 }
@@ -127,7 +127,7 @@ fn scale() -> Result<String, String> {
     let player = player_ref()?;
     let scale = player.get_scale();
     let npc = base_npc(player)?;
-    let ref_scale = player.refScale;
+    let ref_scale = player.refScale();
     check(ref_scale == 100, &format!("refScale is {ref_scale}"))?;
     check((scale - 1.03).abs() < 0.001, &format!("GetScale is {scale}"))?;
     check((npc.height - 1.0).abs() < f32::EPSILON, &format!("base height is {}", npc.height))?;
@@ -212,7 +212,7 @@ fn process() -> Result<String, String> {
     check(process.get_equipped_entry(true).is_none(), "GetEquippedEntry(true) is not null")?;
     let object = player.get_equipped_object(false).ok_or("GetEquippedObject(false) is null")?;
     check(core::ptr::eq(object, right), "GetEquippedObject(false) differs from equippedRight")?;
-    check(skyrim::class_of(object).is_some_and(|c| c.id == vtables::TESObjectWEAP_vtable::ID), "the weapon's vtable is not TESObjectWEAP's")?;
+    check(skyrim::class_of(object).is_some_and(|c| c.id == sre::id!(vtables::TESObjectWEAP_vtable::ID)), "the weapon's vtable is not TESObjectWEAP's")?;
     check(player.get_equipped_object(true).is_none(), "GetEquippedObject(true) is not null")?;
     Ok(format!("right={} ({}) countDelta {} left=none; GetEquippedObject, equippedRight and rightHandEntry agree", describe(right), class_name(skyrim::class_of(object)), entry.countDelta.cast_signed()))
 }
@@ -231,7 +231,7 @@ fn actor_values() -> Result<String, String> {
     let permanent = owner.get_permanent_actor_value(ActorValue::Health);
     check((base - 100.0).abs() < 0.01 && (permanent - 100.0).abs() < 0.01, &format!("base {base} permanent {permanent}"))?;
     let modifiers = [Modifier::Permanent, Modifier::Temporary, Modifier::Damage].map(|m| player.get_actor_value_modifier(m as i32, ActorValue::Health));
-    let field = skyrim::render::floats::<3>(&player.healthModifiers);
+    let field = skyrim::render::floats::<3>(unsafe { &*player.healthModifiers_ptr() });
     check(modifiers.iter().chain(&field).all(|m| m.abs() < f32::EPSILON), &format!("health modifiers {modifiers:?}, healthModifiers {field:?}"))?;
     let text: Vec<String> = values.iter().map(|(v, x)| format!("{v:?}={x}")).collect();
     Ok(format!("{} base(Health)={base} permanent(Health)={permanent} healthModifiers={modifiers:?}", text.join(" ")))
@@ -280,9 +280,9 @@ fn actor_queries() -> Result<String, String> {
     check(!player.is_in_combat(), "IsInCombat is true")?;
     check(!player.is_running(), "IsRunning is true")?;
     check(!player.is_on_mount(), "IsOnMount is true")?;
-    check(!Actor_boolFlags(player.boolFlags).contains(Actor_boolFlags::PLAYER_TEAMMATE), "the player is its own teammate")?;
+    check(!Actor_boolFlags(player.boolFlags()).contains(Actor_boolFlags::PLAYER_TEAMMATE), "the player is its own teammate")?;
     check(player.get_level() == 1, &format!("level is {}", player.get_level()))?;
-    Ok(format!("dead=false inCombat=false running=false mounted=false teammate=false level=1 boolFlags={:#x}", { player.boolFlags }))
+    Ok(format!("dead=false inCombat=false running=false mounted=false teammate=false level=1 boolFlags={:#x}", player.boolFlags()))
 }
 
 fn race() -> Result<String, String> {

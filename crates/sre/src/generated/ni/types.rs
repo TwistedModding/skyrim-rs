@@ -231,13 +231,15 @@ pub struct NiBSBoneLODController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -256,7 +258,8 @@ pub struct NiBSBoneLODController {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
-    pub field_64: u32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -265,10 +268,10 @@ const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_8) == 0
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_40) == 0x40);
@@ -277,7 +280,7 @@ const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_4C) == 
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, m_NiTPrimitiveArray_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(NiBSBoneLODController, __field_64) == 0x64);
 
 /// `NiBSPNode`: size 0x148 (exact, high); primary base `NiNode`.
 /// Evidence: allocation sites (high): {'328': 3}.
@@ -1046,7 +1049,8 @@ pub struct NiBlendAccumTransformInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1086,7 +1090,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, f
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendAccumTransformInterpolator, field_30) == 0x30);
@@ -1122,7 +1126,8 @@ pub struct NiBlendBoolInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1151,7 +1156,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_8) ==
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendBoolInterpolator, field_30) == 0x30);
@@ -1181,7 +1186,8 @@ pub struct NiBlendColorInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1211,7 +1217,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendColorInterpolator, field_30) == 0x30);
@@ -1242,7 +1248,8 @@ pub struct NiBlendFloatInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1260,7 +1267,8 @@ pub struct NiBlendFloatInterpolator {
     pub field_40: u32,
     pub unknown_44: [u8; 4],
     /// +0x48 `float`, ctor store
-    pub field_48: f32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     pub unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1271,7 +1279,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_30) == 0x30);
@@ -1279,7 +1287,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_34) 
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_3C) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiBlendFloatInterpolator, __field_48) == 0x48);
 
 /// `NiBlendInterpolator`: size 0x48 (exact, low); primary base `NiInterpolator`.
 /// Evidence: lower bound field field_40 meets upper bound first own field of BSBlendTreadTransfInterpolator at 0x48 (soft).
@@ -1301,7 +1309,8 @@ pub struct NiBlendInterpolator {
     /// +0x19 `undefined1`, ctor store
     pub field_19: u8,
     /// +0x1A `undefined4`, ctor store
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
@@ -1327,7 +1336,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_8) == 0x8
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendInterpolator, field_30) == 0x30);
@@ -1356,7 +1365,8 @@ pub struct NiBlendPoint3Interpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1391,7 +1401,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_8) 
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendPoint3Interpolator, field_30) == 0x30);
@@ -1424,7 +1434,8 @@ pub struct NiBlendQuaternionInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1451,7 +1462,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendQuaternionInterpolator, field_30) == 0x30);
@@ -1481,7 +1492,8 @@ pub struct NiBlendTransformInterpolator {
     /// +0x19 `undefined1`, base NiBlendInterpolator
     pub field_19: u8,
     /// +0x1A `undefined4`, base NiBlendInterpolator
-    pub field_1A: u32,
+    #[doc(hidden)]
+    pub __field_1A: [u8; 4],
     pub unknown_1E: [u8; 2],
     /// +0x20 `undefined8`, base NiBlendInterpolator
     pub field_20: u64,
@@ -1506,7 +1518,7 @@ const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_19) == 0x19);
-const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_1A) == 0x1A);
+const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, __field_1A) == 0x1A);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiBlendTransformInterpolator, field_30) == 0x30);
@@ -1566,13 +1578,15 @@ pub struct NiBoolInterpController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -1591,10 +1605,10 @@ const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_8) == 
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiBoolInterpController, field_40) == 0x40);
@@ -1711,7 +1725,7 @@ const _: () = assert!(core::mem::offset_of!(NiBoundingVolume, __vftable) == 0x0)
 /// `NiBoxBV`: size >= 0x48 (lower bound); partial, the struct stops at the lower bound; primary base `NiBoundingVolume`.
 /// Evidence: field field_40.
 /// Bases: `NiBoundingVolume`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiBoxBV {
     /// +0x0 `vtbl:NiBoxBV:0`, rtti
     #[doc(hidden)]
@@ -1723,29 +1737,41 @@ pub struct NiBoxBV {
     /// +0x10 `float`, ctor store (widths [4, 4])
     pub field_10: f32,
     /// +0x14 `undefined4`, ctor store (widths [4, 8])
-    pub field_14: u32,
+    #[doc(hidden)]
+    pub __field_14: [u8; 4],
     /// +0x18 `undefined4`, ctor store (widths [4, 8])
-    pub field_18: u32,
+    #[doc(hidden)]
+    pub __field_18: [u8; 4],
     /// +0x1C `undefined4`, ctor store (widths [4, 8])
-    pub field_1C: u32,
+    #[doc(hidden)]
+    pub __field_1C: [u8; 4],
     /// +0x20 `undefined4`, ctor store (widths [4, 8])
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store (widths [4, 8])
-    pub field_24: u32,
+    #[doc(hidden)]
+    pub __field_24: [u8; 4],
     /// +0x28 `undefined4`, ctor store (widths [4, 8])
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     /// +0x2C `undefined4`, ctor store (widths [4, 8])
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store (widths [4, 8])
-    pub field_30: u32,
+    #[doc(hidden)]
+    pub __field_30: [u8; 4],
     /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
+    #[doc(hidden)]
+    pub __field_34: [u8; 4],
     /// +0x38 `undefined4`, ctor store (widths [4, 8])
-    pub field_38: u32,
+    #[doc(hidden)]
+    pub __field_38: [u8; 4],
     /// +0x3C `undefined4`, ctor store
-    pub field_3C: u32,
+    #[doc(hidden)]
+    pub __field_3C: [u8; 4],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     pub unknown_44: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -1754,23 +1780,23 @@ const _: () = assert!(core::mem::offset_of!(NiBoxBV, __vftable) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_C) == 0xC);
 const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(NiBoxBV, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(NiBoxBV, __field_40) == 0x40);
 
 /// `NiBoxCapsuleIntersector`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiIntersector`.
 /// Evidence: field field_5C.
 /// Bases: `NiIntersector`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiBoxCapsuleIntersector {
     /// +0x0 `vtbl:NiBoxCapsuleIntersector:0`, rtti
     #[doc(hidden)]
@@ -1809,9 +1835,11 @@ pub struct NiBoxCapsuleIntersector {
     /// +0x50 `float`, ctor store
     pub field_50: f32,
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `undefined4`, ctor store
-    pub field_58: u32,
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
     #[doc(hidden)]
@@ -1834,8 +1862,8 @@ const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_38) =
 const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, __field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiBoxCapsuleIntersector, field_5C) == 0x5C);
 
 /// `NiBoxSphereIntersector`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiIntersector`.
@@ -2101,7 +2129,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleSphereIntersector, field_54
 /// `NiCapsuleTriIntersector`: size >= 0x78 (lower bound); partial, the struct stops at the lower bound; primary base `NiIntersector`.
 /// Evidence: field field_74.
 /// Bases: `NiIntersector`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiCapsuleTriIntersector {
     /// +0x0 `vtbl:NiCapsuleTriIntersector:0`, rtti
     #[doc(hidden)]
@@ -2148,7 +2176,8 @@ pub struct NiCapsuleTriIntersector {
     /// +0x5C `float`, ctor store (widths [4, 4])
     pub field_5C: f32,
     /// +0x60 `float`, ctor store
-    pub field_60: f32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     /// +0x64 `float`, ctor store (widths [4, 4])
     pub field_64: f32,
     /// +0x68 `float`, ctor store (widths [4, 4])
@@ -2183,7 +2212,7 @@ const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_50) =
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, __field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiCapsuleTriIntersector, field_6C) == 0x6C);
@@ -2213,7 +2242,8 @@ pub struct NiCollisionData {
     /// +0x24 `float`, ctor store
     pub field_24: f32,
     /// +0x28 `float`, ctor store (widths [4, 8])
-    pub field_28: f32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     /// +0x2C `float`, ctor store
     pub field_2C: f32,
     /// +0x30 `undefined4`, ctor store
@@ -2251,7 +2281,7 @@ const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiCollisionData, __field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiCollisionData, field_34) == 0x34);
@@ -2335,7 +2365,7 @@ const _: () = assert!(core::mem::offset_of!(NiColorData, field_24) == 0x24);
 /// `NiColorExtraData`: size >= 0x28 (lower bound); partial, the struct stops at the lower bound; primary base `NiExtraData`.
 /// Evidence: field field_24.
 /// Bases: `NiExtraData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiColorExtraData {
     /// +0x0 `vtbl:NiColorExtraData:0`, rtti
     #[doc(hidden)]
@@ -2348,11 +2378,14 @@ pub struct NiColorExtraData {
     /// +0x18 `float`, ctor store (widths [4, 8, 16])
     pub field_18: f32,
     /// +0x1C `float`, ctor store
-    pub field_1C: f32,
+    #[doc(hidden)]
+    pub __field_1C: [u8; 4],
     /// +0x20 `float`, ctor store (widths [4, 8])
-    pub field_20: f32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
-    pub field_24: u32,
+    #[doc(hidden)]
+    pub __field_24: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -2360,9 +2393,9 @@ const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __vftable) == 0x0)
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraData, field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraData, __field_24) == 0x24);
 
 /// `NiColorExtraDataController`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiExtraDataController`.
 /// Evidence: field field_58.
@@ -2384,13 +2417,15 @@ pub struct NiColorExtraDataController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -2412,10 +2447,10 @@ const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_8)
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiColorExtraDataController, field_40) == 0x40);
@@ -2475,13 +2510,15 @@ pub struct NiControllerManager {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -2531,10 +2568,10 @@ const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_8) == 0x8
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiControllerManager, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiControllerManager, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiControllerManager, field_40) == 0x40);
@@ -2847,13 +2884,15 @@ pub struct NiExtraDataController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -2876,10 +2915,10 @@ const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_8) == 0
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiExtraDataController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiExtraDataController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiExtraDataController, field_40) == 0x40);
@@ -2954,13 +2993,15 @@ pub struct NiFloatController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -2979,10 +3020,10 @@ const _: () = assert!(core::mem::offset_of!(NiFloatController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFloatController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiFloatController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFloatController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiFloatController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiFloatController, field_40) == 0x40);
@@ -3062,13 +3103,15 @@ pub struct NiFloatExtraDataController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3091,10 +3134,10 @@ const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_8)
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiFloatExtraDataController, field_40) == 0x40);
@@ -3122,13 +3165,15 @@ pub struct NiFloatInterpController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3147,10 +3192,10 @@ const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_8) ==
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiFloatInterpController, field_40) == 0x40);
@@ -3236,13 +3281,15 @@ pub struct NiFloatsExtraDataController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3267,10 +3314,10 @@ const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_8
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataController, field_40) == 0x40);
@@ -3299,13 +3346,15 @@ pub struct NiFloatsExtraDataPoint3Controller {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3332,10 +3381,10 @@ const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, f
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiFloatsExtraDataPoint3Controller, field_40) == 0x40);
@@ -3677,13 +3726,15 @@ pub struct NiInterpController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3700,10 +3751,10 @@ const _: () = assert!(core::mem::offset_of!(NiInterpController, field_8) == 0x8)
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiInterpController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiInterpController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiInterpController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiInterpController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiInterpController, field_40) == 0x40);
@@ -3825,13 +3876,15 @@ pub struct NiKeyframeManager {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3860,10 +3913,10 @@ const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiKeyframeManager, field_40) == 0x40);
@@ -3893,13 +3946,15 @@ pub struct NiLightColorController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3920,10 +3975,10 @@ const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_8) == 
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiLightColorController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiLightColorController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiLightColorController, field_40) == 0x40);
@@ -3950,13 +4005,15 @@ pub struct NiLightDimmerController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -3974,10 +4031,10 @@ const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_8) ==
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiLightDimmerController, field_40) == 0x40);
@@ -4003,13 +4060,15 @@ pub struct NiLookAtController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -4025,10 +4084,10 @@ const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_8) == 0x8)
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiLookAtController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiLookAtController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiLookAtController, field_40) == 0x40);
@@ -4131,7 +4190,7 @@ const _: () = assert!(core::mem::offset_of!(NiMemStream, field_34) == 0x34);
 /// `NiMeshPSysData`: size 0xD0 (exact, high); primary base `NiPSysData`.
 /// Evidence: allocation sites (high): {'208': 3}.
 /// Bases: `NiPSysData`@0x0, `NiParticlesData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiMeshPSysData {
     /// +0x0 `vtbl:NiMeshPSysData:0`, rtti
     #[doc(hidden)]
@@ -4192,7 +4251,8 @@ pub struct NiMeshPSysData {
     /// +0x98 `undefined8`, base NiPSysData
     pub field_98: u64,
     /// +0xA0 `undefined4`, base NiPSysData
-    pub field_A0: u32,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 4],
     pub unknown_A4: [u8; 4],
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
@@ -4239,7 +4299,7 @@ const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, __field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_A8) == 0xA8);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_B0) == 0xB0);
 const _: () = assert!(core::mem::offset_of!(NiMeshPSysData, field_B4) == 0xB4);
@@ -4446,13 +4506,15 @@ pub struct NiMultiTargetTransformController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -4470,10 +4532,10 @@ const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, fi
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiMultiTargetTransformController, field_40) == 0x40);
@@ -4488,25 +4550,34 @@ pub struct NiOBBLeaf {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiOBBLeaf_vtable,
     /// +0x8 `float`, base NiOBBNode
-    pub field_8: f32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     /// +0xC `float`, base NiOBBNode
     pub field_C: f32,
     /// +0x10 `float`, base NiOBBNode
-    pub field_10: f32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     /// +0x14 `undefined8`, base NiOBBNode
-    pub field_14: u64,
+    #[doc(hidden)]
+    pub __field_14: [u8; 8],
     /// +0x1C `undefined8`, base NiOBBNode
-    pub field_1C: u64,
+    #[doc(hidden)]
+    pub __field_1C: [u8; 8],
     /// +0x24 `undefined8`, base NiOBBNode
-    pub field_24: u64,
+    #[doc(hidden)]
+    pub __field_24: [u8; 8],
     /// +0x2C `undefined8`, base NiOBBNode
-    pub field_2C: u64,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 8],
     /// +0x34 `undefined4`, base NiOBBNode
-    pub field_34: u32,
+    #[doc(hidden)]
+    pub __field_34: [u8; 4],
     /// +0x38 `undefined8`, base NiOBBNode
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, base NiOBBNode
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `float`, base NiOBBNode
     pub field_44: f32,
     /// +0x48 `float`, base NiOBBNode
@@ -4514,21 +4585,26 @@ pub struct NiOBBLeaf {
     /// +0x4C `float`, base NiOBBNode
     pub field_4C: f32,
     /// +0x50 `undefined8`, base NiOBBNode
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     /// +0x58 `undefined8`, base NiOBBNode
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined8`, base NiOBBNode
     pub field_60: u64,
     /// +0x68 `undefined8`, base NiOBBNode
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, base NiOBBNode
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `undefined8`, base NiOBBNode
     pub field_74: u64,
     /// +0x7C `undefined4`, base NiOBBNode
     pub field_7C: u32,
     /// +0x80 `undefined8`, base NiOBBNode
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, base NiOBBNode
     pub field_88: u64,
     /// +0x90 `undefined8`, base NiOBBNode
@@ -4537,43 +4613,46 @@ pub struct NiOBBLeaf {
     pub field_98: u32,
     pub unknown_9C: [u8; 4],
     /// +0xA0 `undefined8`, ctor store
-    pub field_A0: u64,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 8],
     /// +0xA8 `undefined8`, ctor store
-    pub field_A8: u64,
+    #[doc(hidden)]
+    pub __field_A8: [u8; 8],
     /// +0xB0 `undefined8`, ctor store
-    pub field_B0: u64,
+    #[doc(hidden)]
+    pub __field_B0: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiOBBLeaf>() == 0xB8);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_A0) == 0xA0);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_A8) == 0xA8);
+const _: () = assert!(core::mem::offset_of!(NiOBBLeaf, __field_B0) == 0xB0);
 
 /// `NiOBBNode`: size 0xA0 (exact, high).
 /// Evidence: allocation sites (high): {'160': 3}.
@@ -4584,25 +4663,34 @@ pub struct NiOBBNode {
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiOBBNode_vtable,
     /// +0x8 `float`, ctor store
-    pub field_8: f32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     /// +0xC `float`, ctor store
     pub field_C: f32,
     /// +0x10 `float`, ctor store
-    pub field_10: f32,
+    #[doc(hidden)]
+    pub __field_10: [u8; 4],
     /// +0x14 `undefined8`, ctor store
-    pub field_14: u64,
+    #[doc(hidden)]
+    pub __field_14: [u8; 8],
     /// +0x1C `undefined8`, ctor store
-    pub field_1C: u64,
+    #[doc(hidden)]
+    pub __field_1C: [u8; 8],
     /// +0x24 `undefined8`, ctor store
-    pub field_24: u64,
+    #[doc(hidden)]
+    pub __field_24: [u8; 8],
     /// +0x2C `undefined8`, ctor store
-    pub field_2C: u64,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 8],
     /// +0x34 `undefined4`, ctor store
-    pub field_34: u32,
+    #[doc(hidden)]
+    pub __field_34: [u8; 4],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined4`, ctor store
-    pub field_40: u32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `float`, ctor store
     pub field_44: f32,
     /// +0x48 `float`, ctor store
@@ -4610,21 +4698,26 @@ pub struct NiOBBNode {
     /// +0x4C `float`, ctor store
     pub field_4C: f32,
     /// +0x50 `undefined8`, ctor store
-    pub field_50: u64,
+    #[doc(hidden)]
+    pub __field_50: [u8; 8],
     /// +0x58 `undefined8`, ctor store
-    pub field_58: u64,
+    #[doc(hidden)]
+    pub __field_58: [u8; 8],
     /// +0x60 `undefined8`, ctor store
     pub field_60: u64,
     /// +0x68 `undefined8`, ctor store
-    pub field_68: u64,
+    #[doc(hidden)]
+    pub __field_68: [u8; 8],
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `undefined8`, ctor store
     pub field_74: u64,
     /// +0x7C `undefined4`, ctor store
     pub field_7C: u32,
     /// +0x80 `undefined8`, ctor store
-    pub field_80: u64,
+    #[doc(hidden)]
+    pub __field_80: [u8; 8],
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined8`, ctor store
@@ -4637,27 +4730,27 @@ pub struct NiOBBNode {
 }
 const _: () = assert!(size_of::<NiOBBNode>() == 0xA0);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_C) == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_14) == 0x14);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_2C) == 0x2C);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_34) == 0x34);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_14) == 0x14);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_1C) == 0x1C);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_24) == 0x24);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_34) == 0x34);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_68) == 0x68);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(NiOBBNode, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiOBBNode, field_98) == 0x98);
@@ -4686,9 +4779,11 @@ pub struct NiOBBRoot {
     pub field_24: f32,
     pub unknown_28: [u8; 36],
     /// +0x4C `undefined8`, ctor store
-    pub field_4C: u64,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 8],
     /// +0x54 `undefined4`, ctor store
-    pub field_54: u32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     pub unknown_58: [u8; 4],
     /// +0x5C `undefined4`, ctor store
     pub field_5C: u32,
@@ -4702,8 +4797,8 @@ const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_1C) == 0x1C);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_24) == 0x24);
-const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(NiOBBRoot, __field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(NiOBBRoot, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(NiOBBRoot, field_5C) == 0x5C);
 
 /// `NiObject`: size 0x10 (exact, low); primary base `NiRefObject`.
@@ -4783,13 +4878,15 @@ pub struct NiPSysAirFieldAirFrictionCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -4811,10 +4908,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldAirFrictionCtlr, field_40) == 0x40);
@@ -4842,13 +4939,15 @@ pub struct NiPSysAirFieldInheritVelocityCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -4870,10 +4969,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, f
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, field_40) == 0x40);
@@ -4884,7 +4983,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldInheritVelocityCtlr, f
 /// `NiPSysAirFieldModifier`: size 0x88 (exact, high); primary base `NiPSysFieldModifier`.
 /// Evidence: allocation sites (high): {'136': 3}.
 /// Bases: `NiPSysFieldModifier`@0x0, `NiPSysModifier`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPSysAirFieldModifier {
     /// +0x0 `vtbl:NiPSysAirFieldModifier:0`, rtti
     #[doc(hidden)]
@@ -4939,7 +5038,8 @@ pub struct NiPSysAirFieldModifier {
     /// +0x78 `float`, ctor store (widths [4, 8])
     pub field_78: f32,
     /// +0x7C `float`, ctor store
-    pub field_7C: f32,
+    #[doc(hidden)]
+    pub __field_7C: [u8; 4],
     /// +0x80 `undefined1`, ctor store (widths [1, 2])
     pub field_80: u8,
     /// +0x81 `undefined1`, ctor store
@@ -4948,7 +5048,8 @@ pub struct NiPSysAirFieldModifier {
     pub field_82: u8,
     pub unknown_83: [u8; 1],
     /// +0x84 `float`, ctor store (widths [4, 4])
-    pub field_84: f32,
+    #[doc(hidden)]
+    pub __field_84: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -4976,11 +5077,11 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_6C) ==
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_7C) == 0x7C);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, __field_7C) == 0x7C);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_81) == 0x81);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_82) == 0x82);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldModifier, __field_84) == 0x84);
 
 /// `NiPSysAirFieldSpreadCtlr`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiPSysModifierFloatCtlr`.
 /// Evidence: field field_58.
@@ -5002,13 +5103,15 @@ pub struct NiPSysAirFieldSpreadCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -5030,10 +5133,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_40) == 0x40);
@@ -5044,7 +5147,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysAirFieldSpreadCtlr, field_58) 
 /// `NiPSysBombModifier`: size 0x58 (exact, high); primary base `NiPSysModifier`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
 /// Bases: `NiPSysModifier`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPSysBombModifier {
     /// +0x0 `vtbl:NiPSysBombModifier:0`, rtti
     #[doc(hidden)]
@@ -5065,11 +5168,14 @@ pub struct NiPSysBombModifier {
     /// +0x30 `undefined8`, ctor store
     pub field_30: u64,
     /// +0x38 `float`, ctor store (widths [4, 4])
-    pub field_38: f32,
+    #[doc(hidden)]
+    pub __field_38: [u8; 4],
     /// +0x3C `float`, ctor store (widths [4, 4])
-    pub field_3C: f32,
+    #[doc(hidden)]
+    pub __field_3C: [u8; 4],
     /// +0x40 `float`, ctor store (widths [4, 4])
-    pub field_40: f32,
+    #[doc(hidden)]
+    pub __field_40: [u8; 4],
     /// +0x44 `float`, ctor store (widths [4, 8])
     pub field_44: f32,
     /// +0x48 `float`, ctor store
@@ -5090,9 +5196,9 @@ const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_18) == 0x1
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_28) == 0x28);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_3C) == 0x3C);
-const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, __field_3C) == 0x3C);
+const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiPSysBombModifier, field_4C) == 0x4C);
@@ -5428,7 +5534,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysCylinderEmitter, field_7C) == 
 /// `NiPSysData`: size 0xA8 (exact, high); primary base `NiParticlesData`.
 /// Evidence: runtime: 0xA8 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiParticlesData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPSysData {
     /// +0x0 `vtbl:NiPSysData:0`, rtti
     #[doc(hidden)]
@@ -5489,7 +5595,8 @@ pub struct NiPSysData {
     /// +0x98 `undefined8`, ctor store
     pub field_98: u64,
     /// +0xA0 `undefined4`, ctor store
-    pub field_A0: u32,
+    #[doc(hidden)]
+    pub __field_A0: [u8; 4],
     pub unknown_A4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -5521,7 +5628,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysData, field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(NiPSysData, field_98) == 0x98);
-const _: () = assert!(core::mem::offset_of!(NiPSysData, field_A0) == 0xA0);
+const _: () = assert!(core::mem::offset_of!(NiPSysData, __field_A0) == 0xA0);
 
 /// `NiPSysDragFieldModifier`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiPSysFieldModifier`.
 /// Evidence: field field_5C.
@@ -5731,13 +5838,15 @@ pub struct NiPSysEmitterCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -5765,7 +5874,8 @@ pub struct NiPSysEmitterCtlr {
     /// +0x80 `undefined8`, ctor store
     pub field_80: u64,
     /// +0x88 `undefined8`, ctor store
-    pub field_88: u64,
+    #[doc(hidden)]
+    pub __field_88: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5775,10 +5885,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_40) == 0x40);
@@ -5791,7 +5901,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_70) == 0x70
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_78) == 0x78);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterCtlr, __field_88) == 0x88);
 
 /// `NiPSysEmitterCtlrData`: size >= 0x40 (lower bound); partial, the struct stops at the lower bound; primary base `NiObject`.
 /// Evidence: field field_3C.
@@ -5858,13 +5968,15 @@ pub struct NiPSysEmitterDeclinationCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -5886,10 +5998,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationCtlr, field_40) == 0x40);
@@ -5917,13 +6029,15 @@ pub struct NiPSysEmitterDeclinationVarCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -5945,10 +6059,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, fie
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterDeclinationVarCtlr, field_40) == 0x40);
@@ -5976,13 +6090,15 @@ pub struct NiPSysEmitterInitialRadiusCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6005,10 +6121,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, fiel
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterInitialRadiusCtlr, field_40) == 0x40);
@@ -6036,13 +6152,15 @@ pub struct NiPSysEmitterLifeSpanCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6065,10 +6183,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_8) 
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterLifeSpanCtlr, field_40) == 0x40);
@@ -6096,13 +6214,15 @@ pub struct NiPSysEmitterPlanarAngleCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6124,10 +6244,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleCtlr, field_40) == 0x40);
@@ -6155,13 +6275,15 @@ pub struct NiPSysEmitterPlanarAngleVarCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6183,10 +6305,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, fie
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterPlanarAngleVarCtlr, field_40) == 0x40);
@@ -6214,13 +6336,15 @@ pub struct NiPSysEmitterSpeedCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6243,10 +6367,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_8) == 
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysEmitterSpeedCtlr, field_40) == 0x40);
@@ -6274,13 +6398,15 @@ pub struct NiPSysFieldAttenuationCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6302,10 +6428,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_8)
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldAttenuationCtlr, field_40) == 0x40);
@@ -6333,13 +6459,15 @@ pub struct NiPSysFieldMagnitudeCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6361,10 +6489,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMagnitudeCtlr, field_40) == 0x40);
@@ -6392,13 +6520,15 @@ pub struct NiPSysFieldMaxDistanceCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6420,10 +6550,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_8)
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysFieldMaxDistanceCtlr, field_40) == 0x40);
@@ -6486,7 +6616,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysFieldModifier, field_48) == 0x
 /// `NiPSysGravityFieldModifier`: size >= 0x68 (lower bound); partial, the struct stops at the lower bound; primary base `NiPSysFieldModifier`.
 /// Evidence: field field_64.
 /// Bases: `NiPSysFieldModifier`@0x0, `NiPSysModifier`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPSysGravityFieldModifier {
     /// +0x0 `vtbl:NiPSysGravityFieldModifier:0`, rtti
     #[doc(hidden)]
@@ -6519,17 +6649,22 @@ pub struct NiPSysGravityFieldModifier {
     pub field_48: f32,
     pub unknown_4C: [u8; 4],
     /// +0x50 `float`, ctor store (widths [4, 8])
-    pub field_50: f32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     /// +0x54 `float`, ctor store
-    pub field_54: f32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `float`, ctor store (widths [4, 8])
     pub field_58: f32,
     /// +0x5C `float`, ctor store
-    pub field_5C: f32,
+    #[doc(hidden)]
+    pub __field_5C: [u8; 4],
     /// +0x60 `float`, ctor store (widths [4, 8])
-    pub field_60: f32,
+    #[doc(hidden)]
+    pub __field_60: [u8; 4],
     /// +0x64 `float`, ctor store
-    pub field_64: f32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6545,12 +6680,12 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_3C
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_58) == 0x58);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_5C) == 0x5C);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __field_5C) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __field_60) == 0x60);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityFieldModifier, __field_64) == 0x64);
 
 /// `NiPSysGravityModifier`: size 0x60 (exact, high); primary base `NiPSysModifier`.
 /// Evidence: runtime: 0x60 at 2 allocation sites.
@@ -6635,13 +6770,15 @@ pub struct NiPSysGravityStrengthCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6664,10 +6801,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_8) 
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysGravityStrengthCtlr, field_40) == 0x40);
@@ -6744,13 +6881,15 @@ pub struct NiPSysInitialRotAngleCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6772,10 +6911,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_8) 
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleCtlr, field_40) == 0x40);
@@ -6803,13 +6942,15 @@ pub struct NiPSysInitialRotAngleVarCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6831,10 +6972,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotAngleVarCtlr, field_40) == 0x40);
@@ -6862,13 +7003,15 @@ pub struct NiPSysInitialRotSpeedCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6890,10 +7033,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_8) 
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedCtlr, field_40) == 0x40);
@@ -6921,13 +7064,15 @@ pub struct NiPSysInitialRotSpeedVarCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -6949,10 +7094,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysInitialRotSpeedVarCtlr, field_40) == 0x40);
@@ -7167,13 +7312,15 @@ pub struct NiPSysModifierActiveCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -7196,10 +7343,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierActiveCtlr, field_40) == 0x40);
@@ -7227,13 +7374,15 @@ pub struct NiPSysModifierBoolCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -7256,10 +7405,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_8) == 
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierBoolCtlr, field_40) == 0x40);
@@ -7287,13 +7436,15 @@ pub struct NiPSysModifierCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -7316,10 +7467,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_8) == 0x8)
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierCtlr, field_40) == 0x40);
@@ -7347,13 +7498,15 @@ pub struct NiPSysModifierFloatCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -7376,10 +7529,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_8) ==
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysModifierFloatCtlr, field_40) == 0x40);
@@ -7437,7 +7590,8 @@ pub struct NiPSysPlanarCollider {
     /// +0x60 `undefined4`, ctor store
     pub field_60: u32,
     /// +0x64 `undefined4`, ctor store
-    pub field_64: u32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     /// +0x68 `undefined4`, ctor store
     pub field_68: u32,
     /// +0x6C `undefined4`, ctor store
@@ -7446,9 +7600,11 @@ pub struct NiPSysPlanarCollider {
     /// +0x80 `float`, ctor store
     pub field_80: f32,
     /// +0x84 `float`, ctor store
-    pub field_84: f32,
+    #[doc(hidden)]
+    pub __field_84: [u8; 4],
     /// +0x88 `float`, ctor store
-    pub field_88: f32,
+    #[doc(hidden)]
+    pub __field_88: [u8; 4],
     /// +0x8C `undefined1[16]`, ctor store
     pub field_8C: [u8; 16],
     /// +0x9C `undefined1[16]`, ctor store
@@ -7457,14 +7613,18 @@ pub struct NiPSysPlanarCollider {
     pub field_AC: u32,
     pub unknown_B0: [u8; 36],
     /// +0xD4 `undefined8`, ctor store
-    pub field_D4: u64,
+    #[doc(hidden)]
+    pub __field_D4: [u8; 8],
     /// +0xDC `undefined4`, ctor store
-    pub field_DC: u32,
+    #[doc(hidden)]
+    pub __field_DC: [u8; 4],
     pub unknown_E0: [u8; 40],
     /// +0x108 `undefined8`, ctor store
-    pub field_108: u64,
+    #[doc(hidden)]
+    pub __field_108: [u8; 8],
     /// +0x110 `undefined4`, ctor store
-    pub field_110: u32,
+    #[doc(hidden)]
+    pub __field_110: [u8; 4],
     pub unknown_114: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -7490,19 +7650,19 @@ const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_54) == 0
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_64) == 0x64);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_80) == 0x80);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_84) == 0x84);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_88) == 0x88);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_84) == 0x84);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_8C) == 0x8C);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_9C) == 0x9C);
 const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_AC) == 0xAC);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_D4) == 0xD4);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_DC) == 0xDC);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_108) == 0x108);
-const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, field_110) == 0x110);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_D4) == 0xD4);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_DC) == 0xDC);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_108) == 0x108);
+const _: () = assert!(core::mem::offset_of!(NiPSysPlanarCollider, __field_110) == 0x110);
 
 /// `NiPSysPositionModifier`: size 0x30 (exact, high); primary base `NiPSysModifier`.
 /// Evidence: runtime: 0x30 at 2 allocation sites.
@@ -7611,13 +7771,15 @@ pub struct NiPSysResetOnLoopCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -7626,7 +7788,8 @@ pub struct NiPSysResetOnLoopCtlr {
     /// +0x40 `undefined8`, base NiTimeController
     pub field_40: u64,
     /// +0x48 `undefined4`, ctor store
-    pub field_48: u32,
+    #[doc(hidden)]
+    pub __field_48: [u8; 4],
     pub unknown_4C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -7636,14 +7799,14 @@ const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_8) == 0
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_40) == 0x40);
-const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, field_48) == 0x48);
+const _: () = assert!(core::mem::offset_of!(NiPSysResetOnLoopCtlr, __field_48) == 0x48);
 
 /// `NiPSysRotationModifier`: size 0x50 (exact, high); primary base `NiPSysModifier`.
 /// Evidence: runtime: 0x50 at 2 allocation sites.
@@ -7844,7 +8007,7 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSphereEmitter, field_78) == 0x
 /// `NiPSysSphericalCollider`: size 0xC8 (exact, high); primary base `NiPSysCollider`.
 /// Evidence: runtime: 0xC8 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiPSysCollider`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiPSysSphericalCollider {
     /// +0x0 `vtbl:NiPSysSphericalCollider:0`, rtti
     #[doc(hidden)]
@@ -7881,9 +8044,11 @@ pub struct NiPSysSphericalCollider {
     /// +0x50 `undefined4`, ctor store
     pub field_50: u32,
     /// +0x54 `float`, ctor store
-    pub field_54: f32,
+    #[doc(hidden)]
+    pub __field_54: [u8; 4],
     /// +0x58 `float`, ctor store
-    pub field_58: f32,
+    #[doc(hidden)]
+    pub __field_58: [u8; 4],
     /// +0x5C `float`, ctor store
     pub field_5C: f32,
     /// +0x60 `undefined1[16]`, ctor store
@@ -7907,13 +8072,17 @@ pub struct NiPSysSphericalCollider {
     /// +0xB4 `undefined4`, ctor store
     pub field_B4: u32,
     /// +0xB8 `undefined4`, ctor store
-    pub field_B8: u32,
+    #[doc(hidden)]
+    pub __field_B8: [u8; 4],
     /// +0xBC `undefined4`, ctor store
-    pub field_BC: u32,
+    #[doc(hidden)]
+    pub __field_BC: [u8; 4],
     /// +0xC0 `undefined4`, ctor store
-    pub field_C0: u32,
+    #[doc(hidden)]
+    pub __field_C0: [u8; 4],
     /// +0xC4 `undefined4`, ctor store
-    pub field_C4: u32,
+    #[doc(hidden)]
+    pub __field_C4: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -7933,8 +8102,8 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_38) =
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_50) == 0x50);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_54) == 0x54);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_58) == 0x58);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_54) == 0x54);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_70) == 0x70);
@@ -7946,10 +8115,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_90) =
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_94) == 0x94);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_A4) == 0xA4);
 const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_B4) == 0xB4);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_B8) == 0xB8);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_BC) == 0xBC);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_C0) == 0xC0);
-const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, field_C4) == 0xC4);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_B8) == 0xB8);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_BC) == 0xBC);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_C0) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(NiPSysSphericalCollider, __field_C4) == 0xC4);
 
 /// `NiPSysTurbulenceFieldModifier`: size >= 0x60 (lower bound); partial, the struct stops at the lower bound; primary base `NiPSysFieldModifier`.
 /// Evidence: field field_58.
@@ -8032,13 +8201,15 @@ pub struct NiPSysUpdateCtlr {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -8055,10 +8226,10 @@ const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPSysUpdateCtlr, field_40) == 0x40);
@@ -8778,13 +8949,15 @@ pub struct NiPathController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -8796,7 +8969,8 @@ pub struct NiPathController {
     pub field_48: u16,
     pub unknown_4A: [u8; 2],
     /// +0x4C `undefined8`, ctor store
-    pub field_4C: u64,
+    #[doc(hidden)]
+    pub __field_4C: [u8; 8],
     pub unknown_54: [u8; 4],
     /// +0x58 `undefined8`, ctor store
     pub field_58: u64,
@@ -8812,7 +8986,8 @@ pub struct NiPathController {
     pub field_7C: u16,
     pub unknown_7E: [u8; 2],
     /// +0x80 `undefined4`, ctor store
-    pub field_80: u32,
+    #[doc(hidden)]
+    pub __field_80: [u8; 4],
     /// +0x84 `undefined4`, ctor store
     pub field_84: u32,
     #[doc(hidden)]
@@ -8824,22 +8999,22 @@ const _: () = assert!(core::mem::offset_of!(NiPathController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPathController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPathController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPathController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPathController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_48) == 0x48);
-const _: () = assert!(core::mem::offset_of!(NiPathController, field_4C) == 0x4C);
+const _: () = assert!(core::mem::offset_of!(NiPathController, __field_4C) == 0x4C);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_60) == 0x60);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_74) == 0x74);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_7C) == 0x7C);
-const _: () = assert!(core::mem::offset_of!(NiPathController, field_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(NiPathController, __field_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(NiPathController, field_84) == 0x84);
 
 /// `NiPathInterpolator`: size 0x78 (exact, high); primary base `NiKeyBasedInterpolator`.
@@ -8877,7 +9052,8 @@ pub struct NiPathInterpolator {
     pub field_4C: u16,
     pub unknown_4E: [u8; 2],
     /// +0x50 `undefined4`, ctor store
-    pub field_50: u32,
+    #[doc(hidden)]
+    pub __field_50: [u8; 4],
     /// +0x54 `undefined4`, ctor store
     pub field_54: u32,
     /// +0x58 `undefined1[16]`, ctor store
@@ -8905,7 +9081,7 @@ const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_38) == 0x3
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_4C) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_50) == 0x50);
+const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, __field_50) == 0x50);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_54) == 0x54);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiPathInterpolator, field_68) == 0x68);
@@ -8946,13 +9122,15 @@ pub struct NiPoint3InterpController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -8971,10 +9149,10 @@ const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiPoint3InterpController, field_40) == 0x40);
@@ -9135,13 +9313,15 @@ pub struct NiRollController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -9160,10 +9340,10 @@ const _: () = assert!(core::mem::offset_of!(NiRollController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiRollController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiRollController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiRollController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiRollController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiRollController, field_40) == 0x40);
@@ -9362,13 +9542,15 @@ pub struct NiSingleInterpController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -9387,10 +9569,10 @@ const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_8) =
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_40) == 0x40);
@@ -9399,7 +9581,7 @@ const _: () = assert!(core::mem::offset_of!(NiSingleInterpController, field_48) 
 /// `NiSourceTexture`: size 0x58 (exact, high); primary base `NiTexture`.
 /// Evidence: runtime: 0x58 at 2 allocation sites.
 /// Bases: `NiTexture`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSourceTexture {
     /// +0x0 `vtbl:NiSourceTexture:0`, rtti
     #[doc(hidden)]
@@ -9415,16 +9597,20 @@ pub struct NiSourceTexture {
     pub field_18: u32,
     pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, ctor store
-    pub field_20: u64,
+    #[doc(hidden)]
+    pub __field_20: [u8; 8],
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     pub unknown_2C: [u8; 4],
     /// +0x30 `undefined8`, ctor store
-    pub field_30: u64,
+    #[doc(hidden)]
+    pub __field_30: [u8; 8],
     /// +0x38 `undefined8`, ctor store
-    pub field_38: u64,
+    #[doc(hidden)]
+    pub __field_38: [u8; 8],
     /// +0x40 `undefined8`, ctor store
-    pub field_40: u64,
+    #[doc(hidden)]
+    pub __field_40: [u8; 8],
     /// +0x48 `undefined8`, ctor store
     pub field_48: u64,
     /// +0x50 `undefined1`, ctor store
@@ -9439,11 +9625,11 @@ const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiSourceTexture, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_30) == 0x30);
-const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_38) == 0x38);
-const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_40) == 0x40);
+const _: () = assert!(core::mem::offset_of!(NiSourceTexture, __field_30) == 0x30);
+const _: () = assert!(core::mem::offset_of!(NiSourceTexture, __field_38) == 0x38);
+const _: () = assert!(core::mem::offset_of!(NiSourceTexture, __field_40) == 0x40);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(NiSourceTexture, field_50) == 0x50);
 
@@ -9475,7 +9661,7 @@ const _: () = assert!(core::mem::offset_of!(NiSphereBV, field_14) == 0x14);
 /// `NiSphereTriIntersector`: size >= 0x78 (lower bound); partial, the struct stops at the lower bound; primary base `NiIntersector`.
 /// Evidence: field field_74.
 /// Bases: `NiIntersector`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSphereTriIntersector {
     /// +0x0 `vtbl:NiSphereTriIntersector:0`, rtti
     #[doc(hidden)]
@@ -9524,15 +9710,19 @@ pub struct NiSphereTriIntersector {
     /// +0x60 `float`, ctor store
     pub field_60: f32,
     /// +0x64 `float`, ctor store
-    pub field_64: f32,
+    #[doc(hidden)]
+    pub __field_64: [u8; 4],
     /// +0x68 `float`, ctor store
-    pub field_68: f32,
+    #[doc(hidden)]
+    pub __field_68: [u8; 4],
     /// +0x6C `float`, ctor store
     pub field_6C: f32,
     /// +0x70 `undefined4`, ctor store
-    pub field_70: u32,
+    #[doc(hidden)]
+    pub __field_70: [u8; 4],
     /// +0x74 `undefined4`, ctor store
-    pub field_74: u32,
+    #[doc(hidden)]
+    pub __field_74: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -9558,11 +9748,11 @@ const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_54) ==
 const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_58) == 0x58);
 const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_5C) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_60) == 0x60);
-const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_64) == 0x64);
-const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_68) == 0x68);
+const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __field_64) == 0x64);
+const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __field_68) == 0x68);
 const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_6C) == 0x6C);
-const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_70) == 0x70);
-const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, field_74) == 0x74);
+const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __field_70) == 0x70);
+const _: () = assert!(core::mem::offset_of!(NiSphereTriIntersector, __field_74) == 0x74);
 
 /// `NiSpotLight`: size 0x168 (exact, high); primary base `NiPointLight`.
 /// Evidence: allocation sites (high): {'360': 3}.
@@ -9732,7 +9922,8 @@ pub struct NiStream {
     /// +0x230 `undefined4`, ctor store
     pub field_230: u32,
     /// +0x234 `undefined4`, ctor store
-    pub field_234: u32,
+    #[doc(hidden)]
+    pub __field_234: [u8; 4],
     /// +0x238 `undefined8`, member ctor NiTLargePrimitiveArray<unsigned_int>
     pub m_NiTLargePrimitiveArray_238: u64,
     /// +0x240 `undefined8`, ctor store
@@ -9826,7 +10017,7 @@ const _: () = assert!(core::mem::offset_of!(NiStream, m_NiTLargeObjectArray_218)
 const _: () = assert!(core::mem::offset_of!(NiStream, field_220) == 0x220);
 const _: () = assert!(core::mem::offset_of!(NiStream, field_228) == 0x228);
 const _: () = assert!(core::mem::offset_of!(NiStream, field_230) == 0x230);
-const _: () = assert!(core::mem::offset_of!(NiStream, field_234) == 0x234);
+const _: () = assert!(core::mem::offset_of!(NiStream, __field_234) == 0x234);
 const _: () = assert!(core::mem::offset_of!(NiStream, m_NiTLargePrimitiveArray_238) == 0x238);
 const _: () = assert!(core::mem::offset_of!(NiStream, field_240) == 0x240);
 const _: () = assert!(core::mem::offset_of!(NiStream, field_248) == 0x248);
@@ -9923,7 +10114,7 @@ const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_20) == 0x2
 /// `NiSwitchNode`: size 0x150 (exact, high); primary base `NiNode`.
 /// Evidence: runtime: 0x150 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSwitchNode {
     /// +0x0 `vtbl:NiSwitchNode:0`, rtti
     #[doc(hidden)]
@@ -9982,7 +10173,8 @@ pub struct NiSwitchNode {
     /// +0x134 `undefined4`, ctor store
     pub field_134: u32,
     /// +0x138 `undefined8`, member ctor NiTPrimitiveArray<unsigned_int>
-    pub m_NiTPrimitiveArray_138: u64,
+    #[doc(hidden)]
+    pub __m_NiTPrimitiveArray_138: [u8; 8],
     /// +0x140 `undefined8`, member ctor NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_>
     pub m_NiTArray_140: u64,
     /// +0x148 `undefined4`, ctor store
@@ -10018,7 +10210,7 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_12C) == 0x12C);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_134) == 0x134);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, m_NiTPrimitiveArray_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __m_NiTPrimitiveArray_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, m_NiTArray_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_148) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_14C) == 0x14C);
@@ -10026,7 +10218,7 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_14C) == 0x14C);
 /// `NiSwitchStringExtraData`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `NiExtraData`.
 /// Evidence: field field_28.
 /// Bases: `NiExtraData`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct NiSwitchStringExtraData {
     /// +0x0 `vtbl:NiSwitchStringExtraData:0`, rtti
     #[doc(hidden)]
@@ -10042,7 +10234,8 @@ pub struct NiSwitchStringExtraData {
     /// +0x20 `undefined8`, ctor store
     pub field_20: u64,
     /// +0x28 `undefined4`, ctor store
-    pub field_28: u32,
+    #[doc(hidden)]
+    pub __field_28: [u8; 4],
     pub unknown_2C: [u8; 4],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -10052,7 +10245,7 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_8) ==
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, name) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_18) == 0x18);
 const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(NiSwitchStringExtraData, __field_28) == 0x28);
 
 /// `NiTArray<BGSAddonNode*___ptr64,NiTMallocInterface<BGSAddonNode*___ptr64>_>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound.
 /// Evidence: vptr at 0x0.
@@ -11933,13 +12126,15 @@ pub struct NiTimeController {
     /// +0x1C `undefined4`, ctor store
     pub field_1C: u32,
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, ctor store
     pub field_24: u32,
     /// +0x28 `undefined4`, ctor store
     pub field_28: u32,
     /// +0x2C `undefined4`, ctor store
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, ctor store
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -11956,10 +12151,10 @@ const _: () = assert!(core::mem::offset_of!(NiTimeController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiTimeController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiTimeController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiTimeController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiTimeController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiTimeController, field_40) == 0x40);
@@ -11984,13 +12179,15 @@ pub struct NiTransformController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -12009,10 +12206,10 @@ const _: () = assert!(core::mem::offset_of!(NiTransformController, field_8) == 0
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiTransformController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiTransformController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiTransformController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiTransformController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiTransformController, field_40) == 0x40);
@@ -12758,13 +12955,15 @@ pub struct NiVisController {
     /// +0x1C `undefined4`, base NiTimeController
     pub field_1C: u32,
     /// +0x20 `undefined4`, base NiTimeController
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     /// +0x24 `undefined4`, base NiTimeController
     pub field_24: u32,
     /// +0x28 `undefined4`, base NiTimeController
     pub field_28: u32,
     /// +0x2C `undefined4`, base NiTimeController
-    pub field_2C: u32,
+    #[doc(hidden)]
+    pub __field_2C: [u8; 4],
     /// +0x30 `undefined4`, base NiTimeController
     pub field_30: u32,
     pub unknown_34: [u8; 4],
@@ -12783,10 +12982,10 @@ const _: () = assert!(core::mem::offset_of!(NiVisController, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_10) == 0x10);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_14) == 0x14);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_1C) == 0x1C);
-const _: () = assert!(core::mem::offset_of!(NiVisController, field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(NiVisController, __field_20) == 0x20);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_24) == 0x24);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_28) == 0x28);
-const _: () = assert!(core::mem::offset_of!(NiVisController, field_2C) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(NiVisController, __field_2C) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_30) == 0x30);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_38) == 0x38);
 const _: () = assert!(core::mem::offset_of!(NiVisController, field_40) == 0x40);

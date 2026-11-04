@@ -4,6 +4,7 @@ mod api;
 mod emit;
 mod groups;
 mod inputs;
+mod versions;
 pub mod profile;
 
 use std::collections::BTreeMap;
@@ -50,16 +51,18 @@ pub fn commit_of(re_dir: &Path) -> String {
 /// Generated files keyed by path relative to the workspace root; `commit` is recorded as the inputs' provenance.
 pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>, Stats), Box<dyn Error>> {
     let inputs = inputs::read(re_dir)?;
-    let (modules, stats) = emit::all(&inputs, commit);
+    let (runtimes, hashes) = versions::read(re_dir)?;
+    let variance = versions::Variance::of(&inputs, &runtimes);
+    let (modules, mut stats) = emit::all(&inputs, &variance, commit);
     let mut files: BTreeMap<String, String> =
         modules.into_iter().map(|(name, text)| (format!("{CRATE_DIR}/{name}"), text)).collect();
+    files.extend(versions::profiles(&inputs, &runtimes));
+    stats.self_check_differences = runtimes.iter().find(|r| r.name == versions::CANONICAL).map(versions::Runtime::differences);
     let mut lock = format!("# Inputs of {MODULE_DIR}, recorded by `cargo xtask gen`.\nrepo {RE_REPO}\ncommit {commit}\n");
-    for (path, hash) in &inputs.hashes {
+    for (path, hash) in inputs.hashes.iter().chain(&hashes) {
         writeln!(lock, "sha256 {hash} {path}").unwrap();
     }
     files.insert(LOCK.to_owned(), lock);
-    let canonical = profile::Profile::canonical();
-    files.insert(format!("{PROFILE_DIR}/{}", canonical.file_name()), canonical.text());
     Ok((files, stats))
 }
 

@@ -3,6 +3,10 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CreatePerkEntryByType` at 0x395990 (decompiler, high); signature (untiered): `longlong * CreatePerkEntryByType(int param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
+pub const CreatePerkEntryByType: u64 = 23787;
+/// `CreatePhysicsSystem` at 0xb5b420 (decompiler, medium); signature (medium): `hkpPhysicsSystem * CreatePhysicsSystem(longlong param_1)`
+pub const CreatePhysicsSystem: u64 = 61422;
 /// `CreatePhysicsWorldAndIslandListener` at 0x2cc620 (decompiler, medium); signature (untiered): `undefined CreatePhysicsWorldAndIslandListener(undefined8 param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const CreatePhysicsWorldAndIslandListener: u64 = 19193;
 /// `CreatePhysicsWorldWithListeners` at 0x2cc880 (decompiler, medium); signature (untiered): `bhkWorldM * CreatePhysicsWorldWithListeners(float * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
@@ -251,8 +255,10 @@ pub const CreateVertexIndexBufferRecord: u64 = 77281;
 pub const CreateVertexIndexBuffersWithIndexCopy: u64 = 77269;
 /// `CreateVertexNode` at 0x124fc10 (decompiler, medium); signature (untiered): `ushort * CreateVertexNode(longlong param_1, ushort param_2, undefined1 param_3, char param_4, char param_5)`
 pub const CreateVertexNode: u64 = 93354;
-/// `CreateVertexShaderRecord` at 0x100fdd0 (decompiler, medium); signature (untiered): `void * CreateVertexShaderRecord(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
+/// `CreateVertexShaderRecord` at 0x100fdd0 (runtime, high); signature (untiered): `void * CreateVertexShaderRecord(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`; semantic: the record of ReadVertexShaderFromStream built from bytecode in memory: copies the container to +0x68, sets +0x10 = size and +0x48, and creates the ID3D11VertexShader at +0x8 (high); signature `void* (void* this, const void* bytecode, u64 size, u64 unused, u64 field48)`
 pub const CreateVertexShaderRecord: u64 = 77349;
+/// `CreateVertexShaderRecord` as a function pointer type (high).
+pub type CreateVertexShaderRecord_fn = unsafe extern "C" fn(this: *mut c_void, bytecode: *const c_void, size: u64, unused: u64, field48: u64) -> *mut c_void;
 /// `CreateVtable243694Object` at 0xdaa940 (decompiler, medium); signature (untiered): `undefined CreateVtable243694Object(undefined8 param_1, longlong param_2)`
 pub const CreateVtable243694Object: u64 = 85946;
 /// `CreateVtable243714ObjectAsResult` at 0xdacae0 (decompiler, medium); signature (untiered): `undefined CreateVtable243714ObjectAsResult(longlong param_1)`
@@ -6896,7 +6902,7 @@ pub const FillVerticesAndTrianglesFromGeometry: u64 = 79476;
 /// `FillVolumetricRepartitionTable` at 0x1532730 (runtime, high); signature (untiered): `undefined FillVolumetricRepartitionTable(longlong param_1, undefined * param_2, undefined8 * param_3)`; semantic: maps the 1D texture (MapD3DResource mode 4, write-discard) and writes texel i = function(i / 4096, params+0x2c) for i in 0..4095; function is float (float x, float range) in xmm0/xmm1 (high); signature `void (VolumetricLightingParams* params, void* function, void* texture)`
 pub const FillVolumetricRepartitionTable: u64 = 107035;
 /// `FillVolumetricRepartitionTable` as a function pointer type (high).
-pub type FillVolumetricRepartitionTable_fn = unsafe extern "C" fn(params: *mut c_void, function: *mut c_void, texture: *mut c_void);
+pub type FillVolumetricRepartitionTable_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, function: *mut c_void, texture: *mut c_void);
 /// `FilterCandidatesContainingPoint` at 0x11b7b20 (decompiler, medium); signature (untiered): `bool FilterCandidatesContainingPoint(float * param_1)`
 pub const FilterCandidatesContainingPoint: u64 = 90370;
 /// `FilterSideBar::ctor` at 0x161e7a0 (layout_inference, medium); signature (low): `undefined ctor(FilterSideBar * this, ulonglong param_1, undefined8 * param_2, undefined8 param_3)`
@@ -8721,11 +8727,3 @@ pub type Fmt_PtLight_fn = unsafe extern "C" fn(light: *mut crate::TESObjectLIGH,
 pub const Fmt_PtLight_sub1: u64 = 17627;
 /// `Fmt_PtLight_sub1` as a function pointer type (high).
 pub type Fmt_PtLight_sub1_fn = unsafe extern "C" fn(node: *mut crate::NiNode) -> *mut crate::NiLight;
-/// `FocusListAndSelectIndex` at 0x15fee40 (decompiler, medium); signature (untiered): `undefined FocusListAndSelectIndex(longlong param_1, uint param_2, ulonglong param_3, undefined8 param_4)`
-pub const FocusListAndSelectIndex: u64 = 454102;
-/// `FocusNextListEntry` at 0x1602d50 (decompiler, medium); signature (untiered): `undefined FocusNextListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FocusNextListEntry: u64 = 454941;
-/// `FocusPreviousListEntry` at 0x1602f10 (decompiler, medium); signature (untiered): `undefined FocusPreviousListEntry(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-pub const FocusPreviousListEntry: u64 = 454942;
-/// `ForEachActorInHandleArray` at 0x77ece0 (decompiler, medium); signature (untiered): `undefined ForEachActorInHandleArray(longlong param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const ForEachActorInHandleArray: u64 = 41326;

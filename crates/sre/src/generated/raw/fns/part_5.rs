@@ -3,6 +3,12 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BSTDerivedCreator<BGSProcedurePatrol,IProcedure>::vfunc_2` at 0x47cbb0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrol,IProcedure> * this, undefined8 * param_1)`
+pub const BSTDerivedCreator_BGSProcedurePatrol_IProcedure__vfunc_2: u64 = 28960;
+/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vdtor` at 0x458870 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * vdtor(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vdtor: u64 = 27988;
+/// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_1` at 0x459d70 (rtti, medium); signature (low): `undefined8 vfunc_1(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_1: u64 = 28061;
 /// `BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState>::vfunc_2` at 0x45a8d0 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<BGSProcedurePatrolExecState,IProcedureTreeExecState> * this, undefined8 * param_1)`
 pub const BSTDerivedCreator_BGSProcedurePatrolExecState_IProcedureTreeExecState__vfunc_2: u64 = 28101;
 /// `BSTDerivedCreator<BGSProcedurePursue,IProcedure>::vdtor` at 0x47d300 (layout_inference, medium); signature (low): `BSTDerivedCreator<BGSProcedurePursue,IProcedure> * vdtor(BSTDerivedCreator<BGSProcedurePursue,IProcedure> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
@@ -5581,13 +5587,3 @@ pub const BuildGradientOrTextureFillMatrix: u64 = 87519;
 pub const BuildHkpCylinderShape: u64 = 79574;
 /// `BuildHkxDBContextPath` at 0xbc4f00 (decompiler, high); signature (high): `char * BuildHkxDBContextPath(char * param_1, char * param_2)`
 pub const BuildHkxDBContextPath: u64 = 63457;
-/// `BuildHomePageControls` at 0x15ff4e0 (decompiler, medium); signature (untiered): `undefined BuildHomePageControls(UI_page * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildHomePageControls: u64 = 454104;
-/// `BuildHullIndexArrays` at 0x10f52b0 (decompiler, high); signature (high): `undefined BuildHullIndexArrays(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4, char param_5)`
-pub const BuildHullIndexArrays: u64 = 80933;
-/// `BuildImagesTextAndBottomBarControls` at 0x1606a20 (decompiler, medium); signature (untiered): `undefined BuildImagesTextAndBottomBarControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
-pub const BuildImagesTextAndBottomBarControls: u64 = 454669;
-/// `BuildIndexPairMapBySubstringSwap` at 0xacf240 (decompiler, medium); signature (untiered): `undefined BuildIndexPairMapBySubstringSwap(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
-pub const BuildIndexPairMapBySubstringSwap: u64 = 58375;
-/// `BuildIndexedNameArrayFromMap` at 0xbdf3b0 (decompiler, medium); signature (untiered): `undefined BuildIndexedNameArrayFromMap(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
-pub const BuildIndexedNameArrayFromMap: u64 = 63852;

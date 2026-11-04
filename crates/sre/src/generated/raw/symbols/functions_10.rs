@@ -4,6 +4,8 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x13b6a30, id: 526990, confidence: Confidence::Medium, name: "IsEnabledChildReadyAndField148Null_3" },
+    Function { rva: 0x13b7010, id: 450744, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_45" },
     Function { rva: 0x13b70d0, id: 450746, confidence: Confidence::Medium, name: "ConstructFunctionalStorage10_5" },
     Function { rva: 0x13b75d0, id: 450752, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_70" },
     Function { rva: 0x13b7600, id: 450753, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_71" },
@@ -3549,8 +3551,8 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x1551f10, id: 107396, confidence: Confidence::Medium, name: "ImageSpaceEffectDepthOfField::vdtor" },
     Function { rva: 0x1552080, id: 107397, confidence: Confidence::Medium, name: "ImageSpaceEffectOption::vdtor" },
     Function { rva: 0x15520e0, id: 107398, confidence: Confidence::High, name: "BSSkyShader::ctor" },
-    Function { rva: 0x1552190, id: 107400, confidence: Confidence::High, name: "BSSkyShader::vfunc_3" },
-    Function { rva: 0x1552280, id: 107402, confidence: Confidence::High, name: "BSSkyShader::vfunc_2" },
+    Function { rva: 0x1552190, id: 107400, confidence: Confidence::High, name: "BSSkyShader::RestoreTechnique" },
+    Function { rva: 0x1552280, id: 107402, confidence: Confidence::High, name: "BSSkyShader::SetupTechnique" },
     Function { rva: 0x15525b0, id: 107403, confidence: Confidence::High, name: "BSSkyShader::vfunc_6" },
     Function { rva: 0x1552d00, id: 107404, confidence: Confidence::High, name: "BSSkyShader::vfunc_7" },
     Function { rva: 0x1552ed8, id: 107424, confidence: Confidence::Medium, name: "BSSkyShader::NiBoneMatrixSetterI_vdtor" },
@@ -8205,6 +8207,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x176ffc0, id: 168522, confidence: Confidence::Medium, name: "GameSetting_fGameplayImpulseMultDebrisLarge__atexit" },
     Function { rva: 0x1770010, id: 168523, confidence: Confidence::Medium, name: "GameSetting_fGameplayImpulseMultProp__atexit" },
     Function { rva: 0x1770060, id: 168524, confidence: Confidence::Medium, name: "GameSetting_fGameplayImpulseMultTrap__atexit" },
-    Function { rva: 0x17700b0, id: 168525, confidence: Confidence::Medium, name: "GameSetting_fGameplayImpulseScale__atexit" },
-    Function { rva: 0x1770100, id: 168526, confidence: Confidence::Medium, name: "GameSetting_fGameplaySpeakingEmotionMaxChangeValue__atexit" },
 ];

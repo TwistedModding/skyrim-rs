@@ -5082,28 +5082,28 @@ impl crate::BSResource___anon_5F811FAA__LooseFileAsyncStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vdtor(&self) -> u64 { unsafe { function!(76058, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_async_stream_vdtor(&self) -> u64 { unsafe { function!(76058, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 70030, rva 0xed5df0).
     /// `undefined8 BSResource_AsyncStream_vfunc_1(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_1(&self) -> u64 { unsafe { function!(70030, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_1(&self) -> u64 { unsafe { function!(70030, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_2` (decompiler signature, tier high; ledger rtti evidence, name high; id 70024, rva 0xed5c80).
     /// `undefined BSResource_AsyncStream_vfunc_2(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_2(&self) -> u64 { unsafe { function!(70024, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_2(&self) -> u64 { unsafe { function!(70024, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::BSResource_AsyncStream_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 70027, rva 0xed5d50).
     /// `undefined BSResource_AsyncStream_vfunc_4(LooseFileAsyncStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_async_stream_vfunc_4(&self) -> u64 { unsafe { function!(70027, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_async_stream_vfunc_4(&self) -> u64 { unsafe { function!(70027, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileAsyncStream:BSResource::AsyncStream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileAsyncStream::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 70008, rva 0xed5580).
     /// `undefined ctor(LooseFileAsyncStream * this)`
     ///
@@ -5120,21 +5120,21 @@ impl crate::BSResource___anon_5F811FAA__LooseFileStream {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vdtor(&self) -> u64 { unsafe { function!(70019, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_stream_vdtor(&self) -> u64 { unsafe { function!(70019, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_4` (decompiler signature, tier high; ledger rtti evidence, name high; id 70028, rva 0xed5d60).
     /// `undefined BSResource_Stream_vfunc_4(LooseFileStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_4(&self) -> u64 { unsafe { function!(70028, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_stream_vfunc_4(&self) -> u64 { unsafe { function!(70028, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::BSResource_Stream_vfunc_9` (decompiler signature, tier high; ledger rtti evidence, name high; id 70034, rva 0xed62b0).
     /// `undefined8 BSResource_Stream_vfunc_9(LooseFileStream * this)`
     ///
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bs_resource_stream_vfunc_9(&self) -> u64 { unsafe { function!(70034, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x30)) } }
+    pub unsafe fn bs_resource_stream_vfunc_9(&self) -> u64 { unsafe { function!(70034, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("BSResource::_anon_5F811FAA::LooseFileStream:BSResource::Stream", 0x30))) } }
     /// `BSResource::_anon_5F811FAA::LooseFileStream::ctor` (decompiler signature, tier high; ledger layout_inference evidence, name medium; id 70009, rva 0xed55c0).
     /// `undefined ctor(LooseFileStream * this)`
     ///

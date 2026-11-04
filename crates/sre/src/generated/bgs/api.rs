@@ -1941,6 +1941,39 @@ impl core::ops::Deref for crate::BGSWaterCollisionManager__bshkAutoWater {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::BGSAIWorldLocationPointRadius {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSAIWorldLocationPointRadius.field_10", 0x10, f32) } }
+    /// `BGSAIWorldLocationPointRadius::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> f32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: f32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut f32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSAIWorldLocationPointRadius.field_8", 0x8, f32) } }
+    /// `BGSAIWorldLocationPointRadius::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> f32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: f32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut f32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C(this: *const Self) -> *mut f32 { unsafe { member!(this, "BGSAIWorldLocationPointRadius.field_C", 0xC, f32) } }
+    /// `BGSAIWorldLocationPointRadius::field_C`, at +0xC on 1.7.104.
+    #[inline]
+    pub fn field_C(&self) -> f32 { unsafe { Self::__member_field_C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C(&mut self, value: f32) { unsafe { Self::__member_field_C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C_ptr(&self) -> *mut f32 { Self::__member_field_C(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSAddonNode {
     /// The `BaseFormComponent` base at +0x30.
     #[inline]
@@ -1951,6 +1984,16 @@ impl crate::BGSAddonNode {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSAddonNode.field_40", 0x40, u64) } }
+    /// `BGSAddonNode::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSApparatus {
@@ -1966,6 +2009,16 @@ impl crate::BGSApparatus {
     /// The `TESQualityForm` base at +0x100.
     #[inline]
     pub fn as_tes_quality_form(&self) -> &crate::TESQualityForm { unsafe { &*core::ptr::from_ref(self).byte_add(0x100).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSApparatus.field_50", 0x50, u64) } }
+    /// `BGSApparatus::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSArtObject {
@@ -1978,6 +2031,29 @@ impl crate::BGSArtObject {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSArtObject.field_40", 0x40, u64) } }
+    /// `BGSArtObject::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSArtObjectCloneTask {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSArtObjectCloneTask.field_20", 0x20, u64) } }
+    /// `BGSArtObjectCloneTask::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSCollisionLayer {
@@ -1987,6 +2063,16 @@ impl crate::BGSCollisionLayer {
     /// The `TESDescription` base at +0x20.
     #[inline]
     pub fn as_tes_description(&self) -> &crate::TESDescription { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSCollisionLayer.field_58", 0x58, u32) } }
+    /// `BGSCollisionLayer::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSColorForm {
@@ -2040,6 +2126,109 @@ impl crate::BGSExplosion {
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
 }
 
+impl crate::BGSGamebryoSequenceGenerator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_108", 0x108, u64) } }
+    /// `BGSGamebryoSequenceGenerator::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_110", 0x110, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_114", 0x114, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_A4", 0xA4, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_A8", 0xA8, u64) } }
+    /// `BGSGamebryoSequenceGenerator::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_B0", 0xB0, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_B4", 0xB4, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_B8", 0xB8, u64) } }
+    /// `BGSGamebryoSequenceGenerator::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_C0", 0xC0, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSGamebryoSequenceGenerator.field_C4", 0xC4, u32) } }
+    /// `BGSGamebryoSequenceGenerator::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSHazard {
     /// The `BGSPreloadable` base at +0x68.
     #[inline]
@@ -2083,6 +2272,16 @@ impl crate::BGSHeadPart {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSHeadPart.field_40", 0x40, u64) } }
+    /// `BGSHeadPart::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSIdleMarker {
@@ -2127,6 +2326,32 @@ impl crate::BGSImpactManager {
     pub fn as_bst_event_sink_bgs_combat_impact_event(&self) -> &crate::BSTEventSink_BGSCombatImpactEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
 }
 
+impl crate::BGSLensFlare {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSLensFlare.field_20", 0x20, u32) } }
+    /// `BGSLensFlare::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSLocAlias {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSLocAlias.field_40", 0x40, u64) } }
+    /// `BGSLocAlias::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSLocation {
     /// The `BGSKeywordForm` base at +0x30.
     #[inline]
@@ -2152,6 +2377,96 @@ impl crate::BGSMaterialObject {
     /// The `TESModel` base at +0x20.
     #[inline]
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMaterialObject.field_50", 0x50, u32) } }
+    /// `BGSMaterialObject::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMaterialObject.field_54", 0x54, u32) } }
+    /// `BGSMaterialObject::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMaterialObject.field_58", 0x58, u32) } }
+    /// `BGSMaterialObject::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_5C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMaterialObject.field_5C", 0x5C, u64) } }
+    /// `BGSMaterialObject::field_5C`, at +0x5C on 1.7.104.
+    #[inline]
+    pub fn field_5C(&self) -> u64 { unsafe { Self::__member_field_5C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_5C(&mut self, value: u64) { unsafe { Self::__member_field_5C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_5C_ptr(&self) -> *mut u64 { Self::__member_field_5C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMaterialObject.field_64", 0x64, u32) } }
+    /// `BGSMaterialObject::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSMaterialObject.field_68", 0x68, u32) } }
+    /// `BGSMaterialObject::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u32 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u32) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u32 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_6C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMaterialObject.field_6C", 0x6C, u64) } }
+    /// `BGSMaterialObject::field_6C`, at +0x6C on 1.7.104.
+    #[inline]
+    pub fn field_6C(&self) -> u64 { unsafe { Self::__member_field_6C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_6C(&mut self, value: u64) { unsafe { Self::__member_field_6C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_6C_ptr(&self) -> *mut u64 { Self::__member_field_6C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_74(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMaterialObject.field_74", 0x74, u64) } }
+    /// `BGSMaterialObject::field_74`, at +0x74 on 1.7.104.
+    #[inline]
+    pub fn field_74(&self) -> u64 { unsafe { Self::__member_field_74(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_74(&mut self, value: u64) { unsafe { Self::__member_field_74(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_74_ptr(&self) -> *mut u64 { Self::__member_field_74(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMaterialObject.field_7C", 0x7C, u64) } }
+    /// `BGSMaterialObject::field_7C`, at +0x7C on 1.7.104.
+    #[inline]
+    pub fn field_7C(&self) -> u64 { unsafe { Self::__member_field_7C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7C(&mut self, value: u64) { unsafe { Self::__member_field_7C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7C_ptr(&self) -> *mut u64 { Self::__member_field_7C(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSMenuIcon {
@@ -2179,6 +2494,16 @@ impl crate::BGSMessage {
     /// The `TESFullName` base at +0x20.
     #[inline]
     pub fn as_tes_full_name(&self) -> &crate::TESFullName { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMessage.field_58", 0x58, u64) } }
+    /// `BGSMessage::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u64 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u64) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u64 { Self::__member_field_58(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSMovableStatic {
@@ -2212,12 +2537,35 @@ impl crate::BGSMovableStatic {
     /// The `TESObjectSTAT` base at +0x20.
     #[inline]
     pub fn as_tes_object_stat(&self) -> &crate::TESObjectSTAT { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMovableStatic.field_60", 0x60, u64) } }
+    /// `BGSMovableStatic::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> u64 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: u64) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut u64 { Self::__member_field_60(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSMoviePlayer {
     /// The `BSTEventSink<InputEvent*___ptr64>` base at +0x58.
     #[inline]
     pub fn as_bst_event_sink_input_event____ptr64(&self) -> &crate::BSTEventSink_InputEvent____ptr64 { unsafe { &*core::ptr::from_ref(self).byte_add(0x58).cast() } }
+}
+
+impl crate::BGSMusicPaletteTrack {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSMusicPaletteTrack.field_80", 0x80, u64) } }
+    /// `BGSMusicPaletteTrack::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSNote {
@@ -2278,6 +2626,166 @@ impl crate::BGSPlayerMusicChanger {
     /// The `BSTEventSink<BGSActorDeathEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_bgs_actor_death_event(&self) -> &crate::BSTEventSink_BGSActorDeathEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_source_BSMusicEvent(this: *const Self) -> *mut crate::BSTEventSource { unsafe { member!(this, "BGSPlayerMusicChanger.source_BSMusicEvent", 0x10, crate::BSTEventSource) } }
+    /// `BGSPlayerMusicChanger::source_BSMusicEvent`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn source_BSMusicEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_BSMusicEvent(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn source_BSMusicEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_BSMusicEvent(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSProcedureAcquireExecState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureAcquireExecState.field_30", 0x30, u64) } }
+    /// `BGSProcedureAcquireExecState::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureAcquireExecState.field_38", 0x38, u64) } }
+    /// `BGSProcedureAcquireExecState::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_BGSPackageDataRef_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureAcquireExecState.m_BGSPackageDataRef_28", 0x28, u64) } }
+    /// `BGSProcedureAcquireExecState::m_BGSPackageDataRef_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn m_BGSPackageDataRef_28(&self) -> u64 { unsafe { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_BGSPackageDataRef_28(&mut self, value: u64) { unsafe { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_BGSPackageDataRef_28_ptr(&self) -> *mut u64 { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSProcedureFollowExecState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_34(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSProcedureFollowExecState.field_34", 0x34, u32) } }
+    /// `BGSProcedureFollowExecState::field_34`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn field_34(&self) -> u32 { unsafe { Self::__member_field_34(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_34(&mut self, value: u32) { unsafe { Self::__member_field_34(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_34_ptr(&self) -> *mut u32 { Self::__member_field_34(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureFollowExecState.field_38", 0x38, u64) } }
+    /// `BGSProcedureFollowExecState::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSProcedurePatrolExecState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedurePatrolExecState.field_30", 0x30, u64) } }
+    /// `BGSProcedurePatrolExecState::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedurePatrolExecState.field_38", 0x38, u64) } }
+    /// `BGSProcedurePatrolExecState::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedurePatrolExecState.field_40", 0x40, u64) } }
+    /// `BGSProcedurePatrolExecState::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u16 { unsafe { member!(this, "BGSProcedurePatrolExecState.field_50", 0x50, u16) } }
+    /// `BGSProcedurePatrolExecState::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u16 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u16) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u16 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_BGSPackageDataRef_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedurePatrolExecState.m_BGSPackageDataRef_28", 0x28, u64) } }
+    /// `BGSProcedurePatrolExecState::m_BGSPackageDataRef_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn m_BGSPackageDataRef_28(&self) -> u64 { unsafe { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_BGSPackageDataRef_28(&mut self, value: u64) { unsafe { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_BGSPackageDataRef_28_ptr(&self) -> *mut u64 { Self::__member_m_BGSPackageDataRef_28(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSProcedureSandboxExecState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureSandboxExecState.field_58", 0x58, u64) } }
+    /// `BGSProcedureSandboxExecState::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u64 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u64) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u64 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSProcedureSandboxExecState.field_60", 0x60, u64) } }
+    /// `BGSProcedureSandboxExecState::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> u64 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: u64) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut u64 { Self::__member_field_60(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSProcedureSandboxExecState.field_A4", 0xA4, u32) } }
+    /// `BGSProcedureSandboxExecState::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B1(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSProcedureSandboxExecState.field_B1", 0xB1, u8) } }
+    /// `BGSProcedureSandboxExecState::field_B1`, at +0xB1 on 1.7.104.
+    #[inline]
+    pub fn field_B1(&self) -> u8 { unsafe { Self::__member_field_B1(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B1(&mut self, value: u8) { unsafe { Self::__member_field_B1(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B1_ptr(&self) -> *mut u8 { Self::__member_field_B1(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSProcedureShoutExecState {
@@ -2290,6 +2798,19 @@ impl crate::BGSProcedureUseMagicExecState {
     /// The `BSTEventSink<TESSpellCastEvent>` base at +0x8.
     #[inline]
     pub fn as_bst_event_sink_tes_spell_cast_event(&self) -> &crate::BSTEventSink_TESSpellCastEvent { unsafe { &*core::ptr::from_ref(self).byte_add(0x8).cast() } }
+}
+
+impl crate::BGSProcedureUseWeaponExecState {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSProcedureUseWeaponExecState.field_2C", 0x2C, u32) } }
+    /// `BGSProcedureUseWeaponExecState::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSProjectile {
@@ -2319,6 +2840,19 @@ impl crate::BGSProjectile {
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x40).cast() } }
 }
 
+impl crate::BGSQueuedGrassModelHandles {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSQueuedGrassModelHandles.field_20", 0x20, u64) } }
+    /// `BGSQueuedGrassModelHandles::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSRagdoll {
     /// The `BaseFormComponent` base at +0x20.
     #[inline]
@@ -2326,12 +2860,116 @@ impl crate::BGSRagdoll {
     /// The `TESModel` base at +0x20.
     #[inline]
     pub fn as_tes_model(&self) -> &crate::TESModel { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_178(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSRagdoll.field_178", 0x178, u64) } }
+    /// `BGSRagdoll::field_178`, at +0x178 on 1.7.104.
+    #[inline]
+    pub fn field_178(&self) -> u64 { unsafe { Self::__member_field_178(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_178(&mut self, value: u64) { unsafe { Self::__member_field_178(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_178_ptr(&self) -> *mut u64 { Self::__member_field_178(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_180(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSRagdoll.field_180", 0x180, u32) } }
+    /// `BGSRagdoll::field_180`, at +0x180 on 1.7.104.
+    #[inline]
+    pub fn field_180(&self) -> u32 { unsafe { Self::__member_field_180(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_180(&mut self, value: u32) { unsafe { Self::__member_field_180(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_180_ptr(&self) -> *mut u32 { Self::__member_field_180(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSRagdoll.field_58", 0x58, u8) } }
+    /// `BGSRagdoll::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u8 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u8) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u8 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_90(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSRagdoll.field_90", 0x90, u32) } }
+    /// `BGSRagdoll::field_90`, at +0x90 on 1.7.104.
+    #[inline]
+    pub fn field_90(&self) -> u32 { unsafe { Self::__member_field_90(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_90(&mut self, value: u32) { unsafe { Self::__member_field_90(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_90_ptr(&self) -> *mut u32 { Self::__member_field_90(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_94(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSRagdoll.field_94", 0x94, u32) } }
+    /// `BGSRagdoll::field_94`, at +0x94 on 1.7.104.
+    #[inline]
+    pub fn field_94(&self) -> u32 { unsafe { Self::__member_field_94(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_94(&mut self, value: u32) { unsafe { Self::__member_field_94(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_94_ptr(&self) -> *mut u32 { Self::__member_field_94(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSRagdoll.field_C4", 0xC4, u64) } }
+    /// `BGSRagdoll::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u64 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u64) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u64 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_CC(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSRagdoll.field_CC", 0xCC, u32) } }
+    /// `BGSRagdoll::field_CC`, at +0xCC on 1.7.104.
+    #[inline]
+    pub fn field_CC(&self) -> u32 { unsafe { Self::__member_field_CC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_CC(&mut self, value: u32) { unsafe { Self::__member_field_CC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_CC_ptr(&self) -> *mut u32 { Self::__member_field_CC(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSReverbParameters {
     /// The `BSIReverbType` base at +0x20.
     #[inline]
     pub fn as_bsi_reverb_type(&self) -> &crate::BSIReverbType { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+}
+
+impl crate::BGSScene {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSScene.field_60", 0x60, u32) } }
+    /// `BGSScene::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> u32 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: u32) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut u32 { Self::__member_field_60(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_78(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSScene.field_78", 0x78, u32) } }
+    /// `BGSScene::field_78`, at +0x78 on 1.7.104.
+    #[inline]
+    pub fn field_78(&self) -> u32 { unsafe { Self::__member_field_78(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_78(&mut self, value: u32) { unsafe { Self::__member_field_78(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_78_ptr(&self) -> *mut u32 { Self::__member_field_78(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSShaderParticleGeometryData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_TESTexture_38(this: *const Self) -> *mut crate::TESTexture { unsafe { member!(this, "BGSShaderParticleGeometryData.m_TESTexture_38", 0x38, crate::TESTexture) } }
+    /// `BGSShaderParticleGeometryData::m_TESTexture_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn m_TESTexture_38(&self) -> &crate::TESTexture { unsafe { &*Self::__member_m_TESTexture_38(core::ptr::from_ref(self)) } }
+    #[inline]
+    pub fn m_TESTexture_38_ptr(&self) -> *mut crate::TESTexture { Self::__member_m_TESTexture_38(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSStaticCollection {
@@ -2344,6 +2982,16 @@ impl crate::BGSStaticCollection {
     /// The `TESModelTextureSwap` base at +0x30.
     #[inline]
     pub fn as_tes_model_texture_swap(&self) -> &crate::TESModelTextureSwap { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSStaticCollection.field_40", 0x40, u64) } }
+    /// `BGSStaticCollection::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSSynchronizedAnimationInstance {
@@ -2358,6 +3006,19 @@ impl crate::BGSSynchronizedAnimationInstance {
     pub unsafe fn add_actor(&self, actorHandle: *const u32, syncClipName: *const crate::BSFixedString) -> bool { unsafe { function!(32782, (*const Self, *const u32, *const crate::BSFixedString) -> bool)(core::ptr::from_ref(self), actorHandle, syncClipName) } }
 }
 
+impl crate::BGSTalkingActivator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTalkingActivator.field_50", 0x50, u64) } }
+    /// `BGSTalkingActivator::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+}
+
 impl crate::BGSTextureSet {
     /// The `BSTextureSet` base at +0x30.
     #[inline]
@@ -2368,6 +3029,172 @@ impl crate::BGSTextureSet {
     /// The `NiRefObject` base at +0x30.
     #[inline]
     pub fn as_ni_ref_object(&self) -> &crate::NiRefObject { unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_104(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_104", 0x104, u64) } }
+    /// `BGSTextureSet::field_104`, at +0x104 on 1.7.104.
+    #[inline]
+    pub fn field_104(&self) -> u64 { unsafe { Self::__member_field_104(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_104(&mut self, value: u64) { unsafe { Self::__member_field_104(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_104_ptr(&self) -> *mut u64 { Self::__member_field_104(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_10C", 0x10C, u64) } }
+    /// `BGSTextureSet::field_10C`, at +0x10C on 1.7.104.
+    #[inline]
+    pub fn field_10C(&self) -> u64 { unsafe { Self::__member_field_10C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10C(&mut self, value: u64) { unsafe { Self::__member_field_10C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10C_ptr(&self) -> *mut u64 { Self::__member_field_10C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_114", 0x114, u64) } }
+    /// `BGSTextureSet::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u64 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u64) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u64 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_11C(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_11C", 0x11C, u64) } }
+    /// `BGSTextureSet::field_11C`, at +0x11C on 1.7.104.
+    #[inline]
+    pub fn field_11C(&self) -> u64 { unsafe { Self::__member_field_11C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_11C(&mut self, value: u64) { unsafe { Self::__member_field_11C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_11C_ptr(&self) -> *mut u64 { Self::__member_field_11C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_124(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_124", 0x124, u64) } }
+    /// `BGSTextureSet::field_124`, at +0x124 on 1.7.104.
+    #[inline]
+    pub fn field_124(&self) -> u64 { unsafe { Self::__member_field_124(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_124(&mut self, value: u64) { unsafe { Self::__member_field_124(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_124_ptr(&self) -> *mut u64 { Self::__member_field_124(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_D4(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_D4", 0xD4, u64) } }
+    /// `BGSTextureSet::field_D4`, at +0xD4 on 1.7.104.
+    #[inline]
+    pub fn field_D4(&self) -> u64 { unsafe { Self::__member_field_D4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_D4(&mut self, value: u64) { unsafe { Self::__member_field_D4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_D4_ptr(&self) -> *mut u64 { Self::__member_field_D4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_DC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_DC", 0xDC, u64) } }
+    /// `BGSTextureSet::field_DC`, at +0xDC on 1.7.104.
+    #[inline]
+    pub fn field_DC(&self) -> u64 { unsafe { Self::__member_field_DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_DC(&mut self, value: u64) { unsafe { Self::__member_field_DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_DC_ptr(&self) -> *mut u64 { Self::__member_field_DC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_E4(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_E4", 0xE4, u64) } }
+    /// `BGSTextureSet::field_E4`, at +0xE4 on 1.7.104.
+    #[inline]
+    pub fn field_E4(&self) -> u64 { unsafe { Self::__member_field_E4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_E4(&mut self, value: u64) { unsafe { Self::__member_field_E4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_E4_ptr(&self) -> *mut u64 { Self::__member_field_E4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_EC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_EC", 0xEC, u64) } }
+    /// `BGSTextureSet::field_EC`, at +0xEC on 1.7.104.
+    #[inline]
+    pub fn field_EC(&self) -> u64 { unsafe { Self::__member_field_EC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_EC(&mut self, value: u64) { unsafe { Self::__member_field_EC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_EC_ptr(&self) -> *mut u64 { Self::__member_field_EC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_F4(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_F4", 0xF4, u64) } }
+    /// `BGSTextureSet::field_F4`, at +0xF4 on 1.7.104.
+    #[inline]
+    pub fn field_F4(&self) -> u64 { unsafe { Self::__member_field_F4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_F4(&mut self, value: u64) { unsafe { Self::__member_field_F4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_F4_ptr(&self) -> *mut u64 { Self::__member_field_F4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_FC(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSTextureSet.field_FC", 0xFC, u64) } }
+    /// `BGSTextureSet::field_FC`, at +0xFC on 1.7.104.
+    #[inline]
+    pub fn field_FC(&self) -> u64 { unsafe { Self::__member_field_FC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_FC(&mut self, value: u64) { unsafe { Self::__member_field_FC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_FC_ptr(&self) -> *mut u64 { Self::__member_field_FC(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSWaterCollisionManager__BGSWaterUpdateI {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::BGSWaterUpdateI.field_28", 0x28, u64) } }
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u64 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u64) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u64 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::BGSWaterUpdateI.field_30", 0x30, u64) } }
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::BGSWaterUpdateI.field_38", 0x38, u64) } }
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::BGSWaterUpdateI.field_8", 0x8, u32) } }
+    /// `BGSWaterCollisionManager::BGSWaterUpdateI::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> u32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: u32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut u32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+}
+
+impl crate::BGSWaterCollisionManager__bhkAutoWater {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u8 { unsafe { member!(this, "BGSWaterCollisionManager::bhkAutoWater.field_28", 0x28, u8) } }
+    /// `BGSWaterCollisionManager::bhkAutoWater::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u8 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u8) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u8 { Self::__member_field_28(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSWaterCollisionManager__bhkPlaceableWater {
@@ -2380,12 +3207,242 @@ impl crate::BGSWaterCollisionManager__bhkWaterfall {
     /// The `BGSWaterCollisionManager::BGSWaterUpdateI` base at +0x20.
     #[inline]
     pub fn as_bgs_water_collision_manager__bgs_water_update_i(&self) -> &crate::BGSWaterCollisionManager__BGSWaterUpdateI { unsafe { &*core::ptr::from_ref(self).byte_add(0x20).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_108", 0x108, u64) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_110", 0x110, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_114", 0x114, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_A4", 0xA4, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_A8", 0xA8, u64) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_B0", 0xB0, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_B4", 0xB4, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_B8", 0xB8, u64) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_C0", 0xC0, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bhkWaterfall.field_C4", 0xC4, u32) } }
+    /// `BGSWaterCollisionManager::bhkWaterfall::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 impl crate::BGSWaterCollisionManager__bshkAutoWater {
     /// The `BGSWaterCollisionManager::BGSWaterUpdateI` base at +0x130.
     #[inline]
     pub fn as_bgs_water_collision_manager__bgs_water_update_i(&self) -> &crate::BGSWaterCollisionManager__BGSWaterUpdateI { unsafe { &*core::ptr::from_ref(self).byte_add(0x130).cast() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_110", 0x110, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_114(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_114", 0x114, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_114`, at +0x114 on 1.7.104.
+    #[inline]
+    pub fn field_114(&self) -> u32 { unsafe { Self::__member_field_114(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_114(&mut self, value: u32) { unsafe { Self::__member_field_114(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_114_ptr(&self) -> *mut u32 { Self::__member_field_114(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_138(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_138", 0x138, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_138`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn field_138(&self) -> u32 { unsafe { Self::__member_field_138(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_138(&mut self, value: u32) { unsafe { Self::__member_field_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_138_ptr(&self) -> *mut u32 { Self::__member_field_138(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_158(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_158", 0x158, u64) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_158`, at +0x158 on 1.7.104.
+    #[inline]
+    pub fn field_158(&self) -> u64 { unsafe { Self::__member_field_158(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_158(&mut self, value: u64) { unsafe { Self::__member_field_158(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_158_ptr(&self) -> *mut u64 { Self::__member_field_158(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_160(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_160", 0x160, u64) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_160`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn field_160(&self) -> u64 { unsafe { Self::__member_field_160(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_160(&mut self, value: u64) { unsafe { Self::__member_field_160(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_160_ptr(&self) -> *mut u64 { Self::__member_field_160(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_168(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_168", 0x168, u64) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_168`, at +0x168 on 1.7.104.
+    #[inline]
+    pub fn field_168(&self) -> u64 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_168(&mut self, value: u64) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_168_ptr(&self) -> *mut u64 { Self::__member_field_168(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_A4", 0xA4, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_A4`, at +0xA4 on 1.7.104.
+    #[inline]
+    pub fn field_A4(&self) -> u32 { unsafe { Self::__member_field_A4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A4(&mut self, value: u32) { unsafe { Self::__member_field_A4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A4_ptr(&self) -> *mut u32 { Self::__member_field_A4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_A8", 0xA8, u64) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_B0", 0xB0, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u32 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u32) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u32 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_B4", 0xB4, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_B4`, at +0xB4 on 1.7.104.
+    #[inline]
+    pub fn field_B4(&self) -> u32 { unsafe { Self::__member_field_B4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B4(&mut self, value: u32) { unsafe { Self::__member_field_B4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B4_ptr(&self) -> *mut u32 { Self::__member_field_B4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u64 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_B8", 0xB8, u64) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u64 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u64) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u64 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_C0", 0xC0, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "BGSWaterCollisionManager::bshkAutoWater.field_C4", 0xC4, u32) } }
+    /// `BGSWaterCollisionManager::bshkAutoWater::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
 }
 
 /// `g_BGSAnimSoundStateManager` at 0x3231550, id 403608 (layout_inference, medium)

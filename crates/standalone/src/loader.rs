@@ -35,8 +35,6 @@ use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
 
 const LOG_NAME: &str = "skyrim-runtime-extender-standalone";
 const PLUGIN_DIR: &str = "Data\\SKSE\\Plugins";
-/// The save name pointer in the save stream (`Win32FileType` +0xbb0).
-const SAVE_NAME: usize = 0xbb0;
 
 struct Plugin {
     name: CString,
@@ -351,7 +349,7 @@ unsafe extern "C" fn add_task(task: *mut c_void) {
 }
 
 unsafe extern "C" fn add_ui_task(task: *mut c_void) {
-    let queue = RELOC.get().and_then(|r| r.address(globals::g_UIMessageQueue_ptr).ok()).is_some_and(|p| !unsafe { *(p as *const *const c_void) }.is_null());
+    let queue = RELOC.get().and_then(|r| r.address(sre::id!(globals::g_UIMessageQueue_ptr)).ok()).is_some_and(|p| !unsafe { *(p as *const *const c_void) }.is_null());
     if queue {
         UI_TASKS.lock().unwrap().push_back(task as usize);
     }
@@ -410,31 +408,46 @@ struct Site {
     callee: u64,
 }
 
-const SITE_LOAD: Site = Site { moment: "kinds 2 and 3, the game load", caller: fns::BGSSaveLoadManager__LoadGame, offset: 0x34f, callee: fns::BGSSaveLoadGame__LoadGame };
-const SITE_SAVE: Site = Site { moment: "kind 4, the game save", caller: fns::BGSSaveLoadManager__Save, offset: 0x2b3, callee: fns::BGSSaveLoadGame__SaveGame };
-const SITE_DELETE_OVER: Site = Site { moment: "kind 5, a save overwritten", caller: fns::SaveOverEntry, offset: 0x77, callee: fns::BGSSaveLoadManager__DeleteSaveFile };
-const SITE_DELETE: Site = Site { moment: "kind 5, a save deleted", caller: fns::DeleteSaveEntry, offset: 0x17, callee: fns::BGSSaveLoadManager__DeleteSaveFile };
-const SITE_CONTROLS: Site = Site { moment: "kind 6, the player controls", caller: fns::Main__ctor, offset: 0xd7a, callee: fns::PlayerControls__ctor };
-const SITE_NEW_GAME: Site = Site { moment: "kind 7, a new game", caller: fns::MainMenu__StartNewGame, offset: 0x59, callee: fns::TryStartQuest };
-const SITE_INIT_DONE: Site = Site { moment: "kind 8, the data load", caller: fns::InitTESThread__vfunc_1_sub0, offset: 0x3f7, callee: fns::TESDataHandler__CallSlot19OnArray1D8 };
-const SITE_VM: Site = Site { moment: "Papyrus registration", caller: fns::SkyrimVM__ctor, offset: 0xcfb, callee: fns::SkyrimVM__RegisterNatives };
-const SITE_DRAIN_WORLD: Site = Site { moment: "the task queue, first drain", caller: fns::SetupWorldRenderContext, offset: 0x178e, callee: fns::TaskQueue__Drain };
-const SITE_DRAIN_REFS: Site = Site { moment: "the task queue, second drain", caller: fns::ProcessReferenceQueuesAndDrainTaskQueue, offset: 0x1c, callee: fns::TaskQueue__Drain };
-const SITE_UI_DRAIN: Site = Site { moment: "the UI tasks", caller: fns::EventSourceHolder_MenuOpenClose__ProcessMessages, offset: 0xab5, callee: fns::UIMessageQueue__ReleaseStaticMessages };
-const SITE_REQUESTS: Site = Site { moment: "the save and load requests", caller: fns::SetupWorldRenderContext, offset: 0xc7a, callee: fns::ProcessSaveLoadRequests };
+macro_rules! sites {
+    ($($name:ident $moment:literal $caller:ident $offset:literal $callee:ident;)*) => {
+        $(const $name: Site = Site { moment: $moment, caller: fns::$caller, offset: $offset, callee: fns::$callee };)*
+        const SITES: &[Site] = &[$($name),*];
 
-const SITES: [Site; 12] = [SITE_LOAD, SITE_SAVE, SITE_DELETE_OVER, SITE_DELETE, SITE_CONTROLS, SITE_NEW_GAME, SITE_INIT_DONE, SITE_VM, SITE_DRAIN_WORLD, SITE_DRAIN_REFS, SITE_UI_DRAIN, SITE_REQUESTS];
+        /// Puts every site and callee in the DLL's manifest.
+        fn record_sites() {
+            $(
+                sre::record_site!(fns::$caller, $offset);
+                sre::id!(fns::$callee);
+            )*
+        }
+    };
+}
+
+sites! {
+    SITE_LOAD "kinds 2 and 3, the game load" BGSSaveLoadManager__LoadGame 0x34f BGSSaveLoadGame__LoadGame;
+    SITE_SAVE "kind 4, the game save" BGSSaveLoadManager__Save 0x2b3 BGSSaveLoadGame__SaveGame;
+    SITE_DELETE_OVER "kind 5, a save overwritten" SaveOverEntry 0x77 BGSSaveLoadManager__DeleteSaveFile;
+    SITE_DELETE "kind 5, a save deleted" DeleteSaveEntry 0x17 BGSSaveLoadManager__DeleteSaveFile;
+    SITE_CONTROLS "kind 6, the player controls" Main__ctor 0xd7a PlayerControls__ctor;
+    SITE_NEW_GAME "kind 7, a new game" MainMenu__StartNewGame 0x59 TryStartQuest;
+    SITE_INIT_DONE "kind 8, the data load" InitTESThread__vfunc_1_sub0 0x3f7 TESDataHandler__CallSlot19OnArray1D8;
+    SITE_VM "Papyrus registration" SkyrimVM__ctor 0xcfb SkyrimVM__RegisterNatives;
+    SITE_DRAIN_WORLD "the task queue, first drain" SetupWorldRenderContext 0x178e TaskQueue__Drain;
+    SITE_DRAIN_REFS "the task queue, second drain" ProcessReferenceQueuesAndDrainTaskQueue 0x1c TaskQueue__Drain;
+    SITE_UI_DRAIN "the UI tasks" EventSourceHolder_MenuOpenClose__ProcessMessages 0xab5 UIMessageQueue__ReleaseStaticMessages;
+    SITE_REQUESTS "the save and load requests" SetupWorldRenderContext 0xc7a ProcessSaveLoadRequests;
+}
 
 /// The sites a runtime has no offset for: all of them until its profile gives the offsets.
 fn missing_sites(runtime: u32) -> &'static [Site] {
-    if skse::runtime::is_canonical(runtime) { &[] } else { &SITES }
+    if skse::runtime::is_canonical(runtime) { &[] } else { SITES }
 }
 
 /// Where `site` is, after checking that it calls its callee.
 fn locate(site: Site) -> Result<usize, String> {
     let reloc = RELOC.get().ok_or("no Address Library")?;
-    let resolve = |id| reloc.address(id).map_err(|e| e.to_string());
-    let (at, target) = (resolve(site.caller)? + site.offset, resolve(site.callee)?);
+    let at = reloc.site(site.caller, site.offset).map_err(|e| e.to_string())?;
+    let target = reloc.address(site.callee).map_err(|e| e.to_string())?;
     (hook::find_call(at, 5, target) == Some(at)).then_some(at).ok_or_else(|| format!("no call to {target:#x} at {at:#x}"))
 }
 
@@ -447,6 +460,7 @@ fn patch<F: Copy>(cell: &OnceLock<hook::CallSite<F>>, at: usize, detour: F) -> R
 }
 
 fn install_moments() -> Result<(), String> {
+    record_sites();
     patch(&LOAD_GAME, locate(SITE_LOAD)?, load_game as LoadGameFn)?;
     patch(&SAVE_GAME, locate(SITE_SAVE)?, save_game as SaveGameFn)?;
     let delete = [locate(SITE_DELETE_OVER)?, locate(SITE_DELETE)?];
@@ -474,7 +488,7 @@ fn send_name(kind: u32, name: *const c_char) {
 }
 
 fn stream_name(stream: *mut c_void) -> *const c_char {
-    if stream.is_null() { core::ptr::null() } else { unsafe { stream.cast::<u8>().add(SAVE_NAME).cast::<*const c_char>().read_unaligned() } }
+    if stream.is_null() { core::ptr::null() } else { unsafe { (*stream.cast::<sre::_anon_14F04957__Win32FileType>()).saveName_ptr().cast::<*const c_char>().read_unaligned() } }
 }
 
 unsafe extern "C" fn load_game(this: *mut c_void, stream: *mut c_void, ignore_missing: bool, kind: u32, missing: *mut c_void, skip_match: bool) -> bool {

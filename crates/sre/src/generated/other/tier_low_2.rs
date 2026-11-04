@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Cmd::DamageActorValue_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22029, rva 0x34e910).
+/// `ulonglong DamageActorValue_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_actor_value_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22029, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
+/// `Cmd::DamageObject_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22443, rva 0x35fdf0).
+/// `undefined8 DamageObject_Execute(longlong param_1, longlong param_2, double param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn cmd__damage_object_execute(param_1: i64, param_2: i64, param_3: f64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22443, (i64, i64, f64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
 /// `Cmd::DebugCombatBehavior_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22999, rva 0x377d80).
 /// `undefined8 DebugCombatBehavior_Execute(undefined8 param_1, undefined8 param_2, longlong param_3)`
 ///
@@ -12456,17 +12470,3 @@ pub unsafe fn wrap_memmove_id_440176(param_1: *mut c_void, param_2: i64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn wrap_memmove_id_440254(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440254, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440260` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440260, rva 0x11ea90).
-/// `longlong Wrap_memmove_ID_440260(undefined8 param_1, void * param_2, longlong param_3, void * param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440260(param_1: u64, param_2: *mut c_void, param_3: i64, param_4: *mut c_void) -> i64 { unsafe { function!(440260, (u64, *mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3, param_4) } }
-/// `Wrap_memmove_ID_440309` (decompiler signature, tier low; ledger os_api evidence, name medium; id 440309, rva 0x11fe00).
-/// `longlong Wrap_memmove_ID_440309(void * param_1, longlong param_2, void * param_3)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn wrap_memmove_id_440309(param_1: *mut c_void, param_2: i64, param_3: *mut c_void) -> i64 { unsafe { function!(440309, (*mut c_void, i64, *mut c_void) -> i64)(param_1, param_2, param_3) } }

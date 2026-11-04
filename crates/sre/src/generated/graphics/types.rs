@@ -6,7 +6,7 @@ use core::ffi::c_void;
 /// `CameraMatrixEntry`: size 0x290 (exact).
 /// Meaning: per-camera GPU matrices cached in FrameState (array data +0xb8, capacity +0xc0, size +0xc8); the frame camera's projection used by every draw of the frame is the one stored here, not the live NiCamera frustum (high, graphics pass).
 /// Evidence: per-camera GPU matrices cached in FrameState (array data +0xb8, capacity +0xc0, size +0xc8); the frame camera's projection used by every draw of the frame is the one stored here, not the live NiCamera frustum; No RTTI, descriptive name. Only RenderWorldScene (frame camera 0x65712f/0x657144, first-person camera 0x6570f5/0x65710e) and UI3DScene::Render 0x9899c0 add entries; RenderAccumulator/BeginAccumulatorDraw/RenderTransparentPasses/RenderShadowMasks/DownsampleNormalsForSSR look the camera up with FindOrInitEntry290 0x101c660 and use the cached entry when found (key: camera pointer and jitter flag), else compute a temporary entry 0x20d0520 from the live camera (shadow, water, cube map cameras).; size: FindOrAddEntry290 0x101cb50 reserves 0x290 per element; FindOrInitEntry290 strides 0x52 qwords; run-gfx third: 2 of FrameState's 5 cached camera entries hold the frame camera (jitter bytes [0, 1]); their unjittered projection has [10] = 1 = f/(f-n), [14] = -15 = -nf/(f-n), [11] = 1, [15] = 0 for near 15, far 3.538e+05 (standard Z).
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct CameraMatrixEntry {
     /// +0x0 `ptr:NiCamera`, semantic; lookup key (high)
     pub camera: *mut crate::NiCamera,
@@ -18,7 +18,8 @@ pub struct CameraMatrixEntry {
     /// +0x80 `undefined1`, semantic; projection (jittered when TAA is on and the entry's jitter flag is set) (high)
     pub projection: [u8; 64],
     /// +0xC0 `undefined1`, semantic; view * projection (jittered) (medium)
-    pub viewProjection: [u8; 64],
+    #[doc(hidden)]
+    pub __viewProjection: [u8; 64],
     /// +0x100 `undefined1`, semantic; unjittered view-projection of the previous update (low)
     pub previousViewProjection: [u8; 64],
     /// +0x140 `undefined1`, semantic (medium)
@@ -31,7 +32,8 @@ pub struct CameraMatrixEntry {
     pub eyePosition: crate::NiPoint3,
     pub unknown_26C: [u8; 24],
     /// +0x284 `u8`, semantic; second lookup key: entry built with TAA jitter (high)
-    pub jittered: u8,
+    #[doc(hidden)]
+    pub __jittered: [u8; 1],
     pub unknown_285: [u8; 11],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -41,12 +43,12 @@ const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, camera) == 0x0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, worldRotation) == 0x10);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, view) == 0x40);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projection) == 0x80);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, viewProjection) == 0xC0);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __viewProjection) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, previousViewProjection) == 0x100);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, viewProjectionUnjittered) == 0x140);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, projectionUnjittered) == 0x1C0);
 const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, eyePosition) == 0x260);
-const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, jittered) == 0x284);
+const _: () = assert!(core::mem::offset_of!(CameraMatrixEntry, __jittered) == 0x284);
 
 /// `ImageSpaceModifierInstanceForm`: size 0x50 (exact, medium); primary base `ImageSpaceModifierInstance`.
 /// Meaning: a running TESImageSpaceModifier on the instance list g_TES+0x108 (high, graphics pass).
@@ -121,4 +123,38 @@ const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, startTicks) == 0x
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, field_8) == 0x8);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, accumulatedSeconds) == 0x10);
 const _: () = assert!(core::mem::offset_of!(SystemTimerRecord, lastTotal) == 0x14);
+
+/// `VolumetricLightingParams`: size 0x90 (exact).
+/// Meaning: the volumetric lighting state; one static instance, g_VolumetricLighting (high, graphics pass).
+/// Evidence: the volumetric lighting state; one static instance, g_VolumetricLighting; item 9 (request V). The static g_VolumetricLighting 0x20d7230 (0x90 bytes) that GetVolumetricLightingParams 0x1530c50 returns; offsets of the other members are in that global's row; fields here from CopyWeatherVolumetricLighting 0x1532240.; size: the global's 0x90.
+#[repr(C, align(8))]
+pub struct VolumetricLightingParams {
+    pub unknown_0: [u8; 44],
+    /// +0x2C `float`, semantic; range factor (40 by default); both tables are refilled when it changes (high)
+    #[doc(hidden)]
+    pub __rangeFactor: [u8; 4],
+    pub unknown_30: [u8; 16],
+    /// +0x40 `pointer`, semantic; function that fills repartitionTable (x^r) (high)
+    #[doc(hidden)]
+    pub __repartitionFunction: [u8; 8],
+    /// +0x48 `pointer`, semantic; function that fills inverseRepartitionTable (s^(1/r)) (high)
+    #[doc(hidden)]
+    pub __inverseRepartitionFunction: [u8; 8],
+    pub unknown_50: [u8; 40],
+    /// +0x78 `pointer`, semantic; the repartition 1D texture filled from +0x40 (high)
+    #[doc(hidden)]
+    pub __repartitionTable: [u8; 8],
+    /// +0x80 `pointer`, semantic; the inverse repartition 1D texture filled from +0x48 (high)
+    #[doc(hidden)]
+    pub __inverseRepartitionTable: [u8; 8],
+    pub unknown_88: [u8; 8],
+    #[doc(hidden)]
+    pub __engine: crate::Engine,
+}
+const _: () = assert!(size_of::<VolumetricLightingParams>() == 0x90);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __rangeFactor) == 0x2C);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __repartitionFunction) == 0x40);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __inverseRepartitionFunction) == 0x48);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __repartitionTable) == 0x78);
+const _: () = assert!(core::mem::offset_of!(VolumetricLightingParams, __inverseRepartitionTable) == 0x80);
 

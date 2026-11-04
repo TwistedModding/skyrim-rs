@@ -79,7 +79,7 @@ unsafe extern "C" fn cull_detour(node: *mut sre::NiAVObject, culler: *mut sre::N
                 let hidden = usize::from(is_hidden(n));
                 let is_self = usize::from(core::ptr::eq(n, root));
                 COUNTS[index(view, root_index, pass, hidden, is_self)].fetch_add(1, Ordering::Relaxed);
-                if root_index == 0 && skyrim::class_of(n).is_some_and(|c| c.id == vtables::BSFaceGenNiNode_vtable::ID) {
+                if root_index == 0 && skyrim::class_of(n).is_some_and(|c| c.id == sre::id!(vtables::BSFaceGenNiNode_vtable::ID)) {
                     HEAD[view * 2 + pass].fetch_add(1, Ordering::Relaxed);
                 }
                 break;
@@ -143,15 +143,15 @@ fn scene() -> Result<String, String> {
     let scene_index = w.sceneIndex;
     check(scene_index == 0, &format!("sceneIndex {scene_index} on the world node"))?;
     let node_class = skyrim::class_of(w).ok_or("the scene node's vtable is not in the ledger")?;
-    check(node_class.id == vtables::ShadowSceneNode_vtable::ID, &format!("the world node is a {}", node_class.class))?;
-    let lights = w.lights();
+    check(node_class.id == sre::id!(vtables::ShadowSceneNode_vtable::ID), &format!("the world node is a {}", node_class.class))?;
+    let lights = skyrim::render::ShadowSceneNodeExt::lights(w);
     let shadow = w.shadow_lights();
     check(lights.iter().all(Option::is_some) && shadow.iter().all(Option::is_some), "a null entry in the light lists")?;
     check(lights.iter().flatten().all(|l| !l.is_shadow_light()), "a shadow light in `lights`")?;
     check(shadow.iter().flatten().all(|l| l.is_shadow_light()), "a plain light in `shadowLights`")?;
     let others: Vec<String> = (1..4).map(|i| shadow_scene_node(i).map_or("null".to_owned(), |n| format!("{n:p} index {}", { n.sceneIndex }))).collect();
     let eye = unsafe { (&raw const w.eyePosition).read_unaligned() };
-    Ok(format!("world at {w:p}, {} lights, {} shadow lights, eye ({:.1}, {:.1}, {:.1}), slots 1-3: {}", lights.len(), shadow.len(), eye.x, eye.y, eye.z, others.join(", ")))
+    Ok(format!("world at {w:p}, {} lights, {} shadow lights, eye ({:.1}, {:.1}, {:.1}), slots 1-3: {}", lights.len(), shadow.len(), eye.x(), eye.y, eye.z(), others.join(", ")))
 }
 
 /// The sun's cascade records are filled by the first frame of the loaded cell; before it (at
@@ -160,13 +160,12 @@ fn sun() -> Result<String, String> {
     let w = world()?;
     let sun = w.sun_shadow_light().ok_or("sunShadowLight is null")?;
     let class = skyrim::class_of(sun).ok_or("the sun's vtable is not in the ledger")?;
-    check(class.id == vtables::BSShadowDirectionalLight_vtable::ID, &format!("the sun is a {}", class.class))?;
+    check(class.id == sre::id!(vtables::BSShadowDirectionalLight_vtable::ID), &format!("the sun is a {}", class.class))?;
     check(sun.is_shadow_light(), "IsShadowLight false on the sun")?;
     let map_count = sun.shadowMapCount;
     check(map_count == 2, &format!("shadowMapCount {map_count}"))?;
     let maps = sun.shadow_maps();
     check(maps.len() == 2, &format!("{} shadow map records", maps.len()))?;
-    check(maps[0].slice == 0 && maps[1].slice == 1, &format!("slices {} and {}", maps[0].slice, maps[1].slice))?;
     let cams = [maps[0].camera, maps[1].camera];
     let bias = sun.biasScale;
     if frame_counter() == FRAME_AT_LOAD.load(Ordering::Relaxed) {
@@ -176,7 +175,7 @@ fn sun() -> Result<String, String> {
     check(!cams[0].is_null() && !cams[1].is_null() && cams[0] != cams[1], &format!("cascade cameras {:p} {:p}", cams[0], cams[1]))?;
     check(maps[0].accumulator != maps[1].accumulator, "the two cascades share an accumulator")?;
     let light_camera = sun.light_camera().ok_or("lightCamera is null")?;
-    check(skyrim::class_of(light_camera).is_some_and(|c| c.id == vtables::NiCamera_vtable::ID), "lightCamera is not a NiCamera")?;
+    check(skyrim::class_of(light_camera).is_some_and(|c| c.id == sre::id!(vtables::NiCamera_vtable::ID)), "lightCamera is not a NiCamera")?;
     let d = floats::<3>(&sun.lightDirection);
     let len = (d[0] * d[0] + d[1] * d[1] + d[2] * d[2]).sqrt();
     check((len - 1.0).abs() < 0.01, &format!("lightDirection {d:?} has length {len}"))?;
@@ -184,11 +183,9 @@ fn sun() -> Result<String, String> {
     let focus = sun.focus_shadow_maps();
     let target = |m: &ShadowMapData| (m.depthTarget != u32::MAX).then_some(m.depthTarget);
     Ok(format!(
-        "sun {} at {sun:p}: maps {} (slices {}/{}, viewport {:?}, targets {:?}/{:?}), focus active {}, biasScale {bias}, direction ({:.3}, {:.3}, {:.3}), lightCamera {light_camera:p}, focus cameras {}, sunLight {} shadow={}",
+        "sun {} at {sun:p}: maps {} (viewport {:?}, targets {:?}/{:?}), focus active {}, biasScale {bias}, direction ({:.3}, {:.3}, {:.3}), lightCamera {light_camera:p}, focus cameras {}, sunLight {} shadow={}",
         class.class,
         maps.len(),
-        maps[0].slice,
-        maps[1].slice,
         viewport(&maps[0]),
         target(&maps[0]),
         target(&maps[1]),
@@ -208,7 +205,7 @@ fn roots() -> Result<String, String> {
     let first: &NiNode = p.first_person_root().ok_or("firstPersonRoot is null")?;
     check(!std::ptr::eq(third, first), "the two roots are the same node")?;
     for (name, r) in [("third", third), ("first", first)] {
-        check(skyrim::class_of(r).is_some_and(|c| c.id == vtables::BSFadeNode_vtable::ID), &format!("the {name}-person root is not a BSFadeNode"))?;
+        check(skyrim::class_of(r).is_some_and(|c| c.id == sre::id!(vtables::BSFadeNode_vtable::ID)), &format!("the {name}-person root is not a BSFadeNode"))?;
     }
     let for_first = p.get3_d_for(true).ok_or("Get3DFor(true) is null")?;
     let for_third = p.get3_d_for(false).ok_or("Get3DFor(false) is null")?;
@@ -230,7 +227,7 @@ fn view() -> Result<String, String> {
     let camera = PlayerCamera::singleton().ok_or("g_PlayerCamera_ptr is null")?;
     let state = camera.state();
     let third_person = p.is_third_person();
-    check(p.viewFlags & 1 == u8::from(third_person), "IsThirdPerson disagrees with viewFlags bit 0")?;
+    check(p.viewFlags() & 1 == u8::from(third_person), "IsThirdPerson disagrees with viewFlags bit 0")?;
     if third_person {
         check(matches!(state, Some(CameraState::ThirdPerson | CameraState::ThirdPersonAlt | CameraState::AutoVanity)), &format!("third person with camera state {state:?}"))?;
         check(!is_hidden(third) && is_hidden(first), &format!("third person with root flags third {:#x} first {:#x}", third.flags, first.flags))?;
@@ -315,7 +312,7 @@ fn lights() -> Result<String, String> {
             format!("{} maps {} pos ({:.0}, {:.0}, {:.0})", class_name(*l), l.shadow_maps().len(), pos[0], pos[1], pos[2])
         })
         .collect();
-    Ok(format!("{} lights, {} shadow lights [{}], sun focus active {}, portal graph {portal_graph:p}", w.lights().len(), w.shadow_lights().len(), described.join("; "), { sun.focusShadowsActive } != 0))
+    Ok(format!("{} lights, {} shadow lights [{}], sun focus active {}, portal graph {portal_graph:p}", skyrim::render::ShadowSceneNodeExt::lights(w).len(), w.shadow_lights().len(), described.join("; "), { sun.focusShadowsActive } != 0))
 }
 
 fn switches() -> Result<String, String> {

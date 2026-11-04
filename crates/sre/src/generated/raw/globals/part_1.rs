@@ -12085,6 +12085,8 @@ pub const g_CurrentRenderWindow: u64 = 411349;
 pub const g_CurrentShader: u64 = 415273;
 /// `g_CurrentTechnique` at 0x36939d4 (semantic, high); technique id currently set up (high); type `undefined4`
 pub const g_CurrentTechnique: u64 = 415272;
+/// `g_CurrentVertexShaderRecord` at 0x20cff48 (runtime, high); the engine vertex shader record last bound by SetCurrentVertexShader 0x100fee0 (+0x8 its ID3D11VertexShader, +0x10 bytecode size, +0x68 the DXBC container) (high); type `ptr`
+pub const g_CurrentVertexShaderRecord: u64 = 388906;
 /// `g_D3D11Context` at 0x3331f30 (semantic, high); the immediate context (high); type `pointer`
 pub const g_D3D11Context: u64 = 411391;
 /// `g_D3D11Device` at 0x3330190 (runtime, high); the device (high); type `pointer`
@@ -12123,6 +12125,8 @@ pub const g_DefaultObjectRecords: u64 = 360620;
 pub const g_DefaultShaderMaterial: u64 = 415311;
 /// `g_DepthAccumulator2` at 0x3436248 (runtime, high); pointer to `BSShaderAccumulator`: renderMode 0xc, decals off; only Main and Msg_LODTrees reference it; renderMode 0xc, decals off; only Main and Msg_LODTrees reference it (high); type `ptr:BSShaderAccumulator`
 pub const g_DepthAccumulator2: u64 = 415012;
+/// `g_DepthBiasViewportPulls` at 0x3330200 (semantic, high); per rasterizer depth-bias mode (g_RenderStateCache +0xa0), the amount ApplyDirtyRenderStates 0x10110bd subtracts from the viewport's maximum depth whenever the mode is not 0: decals (BSShaderAccumulator::RenderDecals 0x151fd60, modes 6/7 and 8/9) and skinned overlays draw pulled toward the camera by a fixed depth, which is about pull z^2 / near in distance (1,150 units at 25,800 at near 15, 8,650 at near 2). At a lowered near decals on far terrain come through the mist and cloud meshes in front of them; scaling the pulls by near / 15 keeps them as at 15 (high); type `f32[12]`
+pub const g_DepthBiasViewportPulls: u64 = 411359;
 /// `g_DepthShiftEnabled` at 0x20d72c0 (semantic, high); enables BeginDepthShift/EndDepthShift and the prepass's inline shift; static 1 (high); type `u8`
 pub const g_DepthShiftEnabled: u64 = 391260;
 /// `g_DepthShiftFar` at 0x3436050 (runtime, high); slot 62 cached by BeginDepthShift, restored by EndDepthShift (high); type `float`
@@ -12531,7 +12535,7 @@ pub const g_PrecipitationOcclusionMapEnabled: u64 = 370126;
 pub const g_ProcessListMovementInterface: u64 = 381866;
 /// `g_ProcessListsHandleLock` at 0x3245560 (semantic, high); guards the four actor handle arrays: write in Add/Remove (0x77a790, 0x77a940, 0x77a890, 0x77abd0, 0x77d0e0), read in UpdateWithTimeBudget 0x77b818 (high); type `BSReadWriteLock`
 pub const g_ProcessListsHandleLock: u64 = 404442;
-/// `g_ProcessLists_ptr` at 0x219e570 (semantic, high); process lists singleton (points at the static 0x3241730) (high); type `pointer`
+/// `g_ProcessLists_ptr` at 0x219e570 (semantic, high); pointer to `ProcessLists`: process lists singleton (points at the static 0x3241730); process lists singleton (points at the static 0x3241730) (high); type `ptr:ProcessLists`
 pub const g_ProcessLists_ptr: u64 = 400315;
 /// `g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack` at 0x31e02b0 (layout_inference, medium)
 pub const g_REFREventCallbacks_ConcreteEventCallbackFactory__anon_01A9FA1F_SceneResultsCallBack: u64 = 401377;
@@ -13537,21 +13541,3 @@ pub const g_TypeNode_bhkMouseSpringAction: u64 = 411661;
 pub const g_TypeNode_bhkMultiSphereShape: u64 = 411687;
 /// `g_TypeNode_bhkNiCollisionObject` at 0x3337740 (string, high)
 pub const g_TypeNode_bhkNiCollisionObject: u64 = 411565;
-/// `g_TypeNode_bhkNiTriStripsShape` at 0x33379b0 (string, high)
-pub const g_TypeNode_bhkNiTriStripsShape: u64 = 411617;
-/// `g_TypeNode_bhkOrientHingedBodyAction` at 0x3338ab0 (string, high)
-pub const g_TypeNode_bhkOrientHingedBodyAction: u64 = 411728;
-/// `g_TypeNode_bhkPCollisionObject` at 0x33378f8 (string, high)
-pub const g_TypeNode_bhkPCollisionObject: u64 = 411602;
-/// `g_TypeNode_bhkPackedNiTriStripsShape` at 0x33379d8 (string, high)
-pub const g_TypeNode_bhkPackedNiTriStripsShape: u64 = 411620;
-/// `g_TypeNode_bhkPhantom` at 0x33378a0 (string, high)
-pub const g_TypeNode_bhkPhantom: u64 = 411594;
-/// `g_TypeNode_bhkPlaneShape` at 0x33388e0 (string, high)
-pub const g_TypeNode_bhkPlaneShape: u64 = 411689;
-/// `g_TypeNode_bhkPointToPathConstraint` at 0x333ad20 (string, high)
-pub const g_TypeNode_bhkPointToPathConstraint: u64 = 411942;
-/// `g_TypeNode_bhkPoseArray` at 0x3338af8 (string, high)
-pub const g_TypeNode_bhkPoseArray: u64 = 411733;
-/// `g_TypeNode_bhkPositionConstraintMotor` at 0x3338bc0 (string, high)
-pub const g_TypeNode_bhkPositionConstraintMotor: u64 = 411743;

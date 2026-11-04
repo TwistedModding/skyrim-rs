@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `GameSetting_fImpactShaderMinMagnitude__atexit` at 0x17705b0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__atexit(void)`
+pub const GameSetting_fImpactShaderMinMagnitude__atexit: u64 = 168541;
+/// `GameSetting_fImpactShaderMinMagnitude__init` at 0x5a5f0 (crt_init, medium); signature (high): `void GameSetting_fImpactShaderMinMagnitude__init(void)`
+pub const GameSetting_fImpactShaderMinMagnitude__init: u64 = 3331;
+/// `GameSetting_fIntimidateConfidenceMultAverage__atexit` at 0x1753730 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultAverage__atexit(void)`
+pub const GameSetting_fIntimidateConfidenceMultAverage__atexit: u64 = 167061;
+/// `GameSetting_fIntimidateConfidenceMultAverage__init` at 0x2cac0 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultAverage__init(void)`
+pub const GameSetting_fIntimidateConfidenceMultAverage__init: u64 = 1851;
 /// `GameSetting_fIntimidateConfidenceMultBrave__atexit` at 0x1753780 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultBrave__atexit(void)`
 pub const GameSetting_fIntimidateConfidenceMultBrave__atexit: u64 = 167062;
 /// `GameSetting_fIntimidateConfidenceMultBrave__init` at 0x2cb40 (crt_init, medium); signature (high): `void GameSetting_fIntimidateConfidenceMultBrave__init(void)`
@@ -9435,9 +9443,3 @@ pub const GetColorMatrixFilterMember: u64 = 87122;
 pub const GetColorRGBAsNumber: u64 = 85775;
 /// `GetColorTransformAsObject` at 0xd9f4a0 (decompiler, medium); signature (untiered): `undefined GetColorTransformAsObject(longlong param_1)`
 pub const GetColorTransformAsObject: u64 = 85773;
-/// `GetColorTransformMemberByName` at 0xda52e0 (decompiler, medium); signature (untiered): `undefined8 GetColorTransformMemberByName(longlong * param_1, longlong param_2, undefined8 * param_3, byte * param_4)`
-pub const GetColorTransformMemberByName: u64 = 85871;
-/// `GetColorTransformMembers` at 0xda5050 (decompiler, medium); signature (untiered): `undefined GetColorTransformMembers(longlong param_1, longlong param_2, longlong param_3)`
-pub const GetColorTransformMembers: u64 = 85869;
-/// `GetComImageMetadataFromFile` at 0x1026330 (decompiler, medium); signature (untiered): `ulonglong GetComImageMetadataFromFile(longlong param_1, uint param_2, ulonglong * param_3)`
-pub const GetComImageMetadataFromFile: u64 = 77607;

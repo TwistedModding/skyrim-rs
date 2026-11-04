@@ -8,9 +8,13 @@ pub use types_2::*;
 mod types_3;
 pub use types_3::*;
 #[cfg(feature = "other")]
-mod api;
+mod api_1;
 #[cfg(feature = "other")]
-pub use api::*;
+mod api_2;
+#[cfg(feature = "other")]
+mod api_3;
+#[cfg(feature = "other")]
+pub use api_3::*;
 #[cfg(all(feature = "other", feature = "tier-high"))]
 mod tier_high_1;
 #[cfg(all(feature = "other", feature = "tier-high"))]

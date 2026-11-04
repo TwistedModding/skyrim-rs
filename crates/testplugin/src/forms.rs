@@ -47,7 +47,7 @@ fn handler() -> Result<&'static TESDataHandler, String> {
 
 fn lookup_player() -> Result<String, String> {
     let player = form(PLAYER)?;
-    let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
+    let global = skyrim::reloc().address(sre::id!(globals::g_PlayerCharacter_ptr)).map_err(|e| e.to_string())?;
     let held = unsafe { *(global as *const *const TESForm) };
     check(core::ptr::eq(held, player), "FindFormByID(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(player.formID == PLAYER, "formID is not 0x14")?;
@@ -143,7 +143,7 @@ fn keywords() -> Result<String, String> {
 
 fn data_handler() -> Result<String, String> {
     let handler = handler()?;
-    let object = skyrim::reloc().address(globals::g_TESDataHandler).map_err(|e| e.to_string())?;
+    let object = skyrim::reloc().address(sre::id!(globals::g_TESDataHandler)).map_err(|e| e.to_string())?;
     check(object == address(handler), "the pointer does not hold the static object")?;
     Ok(format!("TESDataHandler at {:#x} = g_TESDataHandler (base + {:#x})", object, object - skyrim::reloc().base()))
 }
@@ -253,7 +253,7 @@ fn form_list() -> Result<String, String> {
 fn generated_api() -> Result<String, String> {
     let player = form(PLAYER)?;
     let sword = form(IRON_SWORD)?;
-    let global = skyrim::reloc().address(globals::g_PlayerCharacter_ptr).map_err(|e| e.to_string())?;
+    let global = skyrim::reloc().address(sre::id!(globals::g_PlayerCharacter_ptr)).map_err(|e| e.to_string())?;
     check(core::ptr::eq(player, unsafe { *(global as *const *const TESForm) }), "sre::find_form_by_id(0x14) is not the object g_PlayerCharacter_ptr holds")?;
     check(sre::find_form_by_id(0x7FFF_FFFF).is_none(), "sre::find_form_by_id(0x7fffffff) is Some")?;
 

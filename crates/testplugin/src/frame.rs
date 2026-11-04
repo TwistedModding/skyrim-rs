@@ -69,7 +69,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
     let id = CameraState::from_u32(state.id)?;
     let root = camera.camera_root()?;
     let frame_camera = sre::get_main_camera()?;
-    let third = state.as_third_person().map(|t| (floats(&t.targetOffset), floats(&t.currentOffset), t.currentYaw, t.currentZoom, floats(&t.freeRotation), t.freeRotationEnabled != 0));
+    let third = state.as_third_person().map(|t| (floats(t.targetOffset()), floats(&t.currentOffset), t.currentYaw, t.currentZoom, floats(&t.freeRotation), t.freeRotationEnabled != 0));
     let free = state.as_free().map(|f| (floats(&f.position), f.pitch, f.yaw));
     let key = match (id, third) {
         (CameraState::ThirdPerson, Some((_, _, _, _, [yaw, _], true))) if yaw.abs() > 0.5 => "orbit",
@@ -91,7 +91,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
             world_fov: camera.worldFOV,
             frustum: frustum(frame_camera),
             viewport: viewport(frame_camera),
-            yaw: camera.yaw,
+            yaw: camera.yaw(),
             third,
             free,
             delta: frame_delta(),
@@ -167,7 +167,7 @@ fn shaders() -> Result<String, String> {
         let Some(geometry) = child.cast::<BSGeometry>() else { continue };
         let property = unsafe { geometry.shaderProperty.as_ref() }.ok_or("a skin without a shader property")?;
         let class = skyrim::class_of(property).ok_or("the property's vtable is not in the ledger")?;
-        check(class.id == vtables::BSLightingShaderProperty_vtable::ID, &format!("a skin's property is a {}", class.class))?;
+        check(class.id == sre::id!(vtables::BSLightingShaderProperty_vtable::ID), &format!("a skin's property is a {}", class.class))?;
         let flags = ShaderFlags(property.flags);
         let required = [ShaderFlags::SKINNED, ShaderFlags::RECEIVE_SHADOWS, ShaderFlags::CAST_SHADOWS, ShaderFlags::Z_BUFFER_TEST, ShaderFlags::Z_BUFFER_WRITE];
         let forbidden = [ShaderFlags::REFRACTION, ShaderFlags::REFRACTION2, ShaderFlags::DECAL, ShaderFlags::DYNAMIC_DECAL];
@@ -218,7 +218,7 @@ fn sky() -> Result<String, String> {
 fn frame_camera() -> Result<String, String> {
     let camera = sre::get_main_camera().ok_or("GetMainCamera returned null")?;
     let graph = sre::g_scene_graph().ok_or("g_SceneGraph is null")?;
-    check(skyrim::class_of(camera).is_some_and(|c| c.id == vtables::NiCamera_vtable::ID), "the main camera is not a NiCamera")?;
+    check(skyrim::class_of(camera).is_some_and(|c| c.id == sre::id!(vtables::NiCamera_vtable::ID)), "the main camera is not a NiCamera")?;
     let root = PlayerCamera::singleton().and_then(|c| c.camera_root()).ok_or("the player camera has no root")?;
     check(camera.parent().is_some_and(|p| core::ptr::eq(p, root)), "the frame camera is not a child of the camera root")?;
     let f = frustum(camera);

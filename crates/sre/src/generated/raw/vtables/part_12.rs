@@ -3,6 +3,60 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vftable` at 0x194a8c0, id 211060 (rtti, high); 23 slots.
+#[repr(C)]
+pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze_vtable {
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vdtor` at 0x83d510 (slot_propagation, medium); signature (low): `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * vdtor(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_2` at 0x83d460 (rtti, high); signature (untiered): `uint vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_3` at 0x82eda0 (rtti, medium); signature (low): `undefined vfunc_3(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_3: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_4` at 0x82ee90 (rtti, medium); signature (low): `undefined vfunc_4(CombatInventoryItemMagic * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_4: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_5` at 0x82e920 (rtti, medium); signature (low): `undefined4 vfunc_5(CombatInventoryItemMagic * this)`
+    pub slot_5: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_6` at 0x82e930 (rtti, medium); signature (low): `undefined4 vfunc_6(CombatInventoryItemMagic * this)`
+    pub slot_6: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_7` at 0x82e940 (rtti, medium); signature (high): `float vfunc_7(CombatInventoryItemMagic * this)`
+    pub slot_7: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_8` at 0x82e960 (rtti, medium); signature (high): `float vfunc_8(CombatInventoryItemMagic * this)`
+    pub slot_8: *const c_void,
+    /// `CombatInventoryItemScroll::vfunc_9` at 0x82f190 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_10` at 0x82e840 (rtti, medium); signature (low): `ulonglong vfunc_10(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_10: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_11` at 0x83d2e0 (rtti, high); signature (high): `char vfunc_11(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * this)`
+    pub slot_11: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_12` at 0x82e980 (rtti, medium); signature (low): `undefined vfunc_12(CombatInventoryItemMagic * this, longlong param_1)`
+    pub slot_12: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_13` at 0x83d300 (rtti, high); signature (low): `CombatInventoryItem * vfunc_13(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_13: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_14` at 0x82ec80 (rtti, medium); signature (low): `undefined8 vfunc_14(CombatInventoryItemMagic * this, longlong * * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_14: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_15` at 0x83d3c0 (rtti, high); signature (low): `undefined1 vfunc_15(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_15: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_16` at 0x82e890 (rtti, medium); signature (low): `ulonglong vfunc_16(CombatInventoryItemMagic * this, undefined8 * param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_16: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_17` at 0x83d410 (rtti, high); signature (low): `undefined vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_18` at 0x83d450 (rtti, high); signature (low): `undefined vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_19` at 0x82ed80 (rtti, medium); signature (high): `undefined1 vfunc_19(CombatInventoryItemMagic * this)`
+    pub slot_19: *const c_void,
+    /// `CombatInventoryItem::vfunc_20` at 0x82d040 (rtti, medium); signature (low): `undefined vfunc_20(CombatInventoryItem * this, char * param_1, ulonglong param_2)`
+    pub slot_20: *const c_void,
+    /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze>::vfunc_21` at 0x83d270 (rtti, high); signature (low): `CombatMagicCasterParalyze * vfunc_21(CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterParalyze> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `CombatInventoryItemMagic::vfunc_22` at 0x82ec70 (rtti, medium); signature (high): `undefined8 vfunc_22(CombatInventoryItemMagic * this)`
+    pub slot_22: *const c_void,
+}
+impl CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterParalyze_vtable {
+    pub const ID: u64 = 211060;
+}
+
 /// `CombatInventoryItemMagicT<CombatInventoryItemScroll,CombatMagicCasterReanimate>::vftable` at 0x194aef0, id 211108 (rtti, high); 23 slots.
 #[repr(C)]
 pub struct CombatInventoryItemMagicT_CombatInventoryItemScroll_CombatMagicCasterReanimate_vtable {

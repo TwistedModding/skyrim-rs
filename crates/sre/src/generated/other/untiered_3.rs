@@ -9866,13 +9866,6 @@ pub unsafe fn create_vertex_index_buffers_with_index_copy(param_1: i64, param_2:
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn create_vertex_node(param_1: i64, param_2: u16, param_3: u8, param_4: c_char, param_5: c_char) -> *mut u16 { unsafe { function!(93354, (i64, u16, u8, c_char, c_char) -> *mut u16)(param_1, param_2, param_3, param_4, param_5) } }
-/// `CreateVertexShaderRecord` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 77349, rva 0x100fdd0).
-/// `void * CreateVertexShaderRecord(undefined8 param_1, void * param_2, ulonglong param_3, undefined8 param_4, undefined8 param_5)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn create_vertex_shader_record(param_1: u64, param_2: *mut c_void, param_3: u64, param_4: u64, param_5: u64) -> *mut c_void { unsafe { function!(77349, (u64, *mut c_void, u64, u64, u64) -> *mut c_void)(param_1, param_2, param_3, param_4, param_5) } }
 /// `CreateVtable243694Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 85946, rva 0xdaa940).
 /// `undefined CreateVtable243694Object(undefined8 param_1, longlong param_2)`
 ///
@@ -12407,3 +12400,10 @@ pub unsafe fn deleting_dtor_vtable242327_object_3(param_1: *mut u64, param_2: u3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn deleting_dtor_vtable242327_object_4(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(85581, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }
+/// `DeletingDtorVtable244415Object` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 86711, rva 0xdcfff0).
+/// `undefined8 * DeletingDtorVtable244415Object(undefined8 * param_1, uint param_2, undefined8 param_3, undefined8 param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn deleting_dtor_vtable244415_object(param_1: *mut u64, param_2: u32, param_3: u64, param_4: u64) -> *mut u64 { unsafe { function!(86711, (*mut u64, u32, u64, u64) -> *mut u64)(param_1, param_2, param_3, param_4) } }

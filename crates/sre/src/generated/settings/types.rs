@@ -46,19 +46,6 @@ pub struct INISettingCollection {
 const _: () = assert!(size_of::<INISettingCollection>() == 0x128);
 const _: () = assert!(core::mem::offset_of!(INISettingCollection, __vftable) == 0x0);
 
-/// `Setting`: size 0x8 (exact, low).
-/// Evidence: lower bound vptr at 0x0 meets upper bound first own field of SettingT<INIPrefSettingCollection> at 0x8 (soft).
-#[repr(C)]
-pub struct Setting {
-    /// +0x0 `vtbl:Setting:0`, rtti
-    #[doc(hidden)]
-    pub __vftable: *const crate::raw::vtables::Setting_vtable,
-    #[doc(hidden)]
-    pub __engine: crate::Engine,
-}
-const _: () = assert!(size_of::<Setting>() == 0x8);
-const _: () = assert!(core::mem::offset_of!(Setting, __vftable) == 0x0);
-
 /// `SettingCollection<Setting>`: size 0x128 (exact, medium).
 /// Evidence: lower bound INIPrefSettingCollection (size 0x128 at 0x0) adds no fields or bases meets upper bound derived INIPrefSettingCollection size 0x128 at 0x0.
 #[repr(C)]
@@ -119,32 +106,37 @@ const _: () = assert!(core::mem::offset_of!(SettingT_GameSettingCollection, __vf
 /// `SettingT<INIPrefSettingCollection>`: size >= 0x30 (lower bound); partial, the struct stops at the lower bound; primary base `Setting`.
 /// Evidence: field field_28.
 /// Bases: `Setting`@0x0.
-#[repr(C)]
+#[repr(C, align(8))]
 pub struct SettingT_INIPrefSettingCollection {
     /// +0x0 `vtbl:SettingT<INIPrefSettingCollection>:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::SettingT_INIPrefSettingCollection_vtable,
     /// +0x8 `undefined4`, ctor store
-    pub field_8: u32,
+    #[doc(hidden)]
+    pub __field_8: [u8; 4],
     pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, ctor store
-    pub field_10: u64,
+    #[doc(hidden)]
+    pub __field_10: [u8; 8],
     /// +0x18 `undefined8`, ctor store
-    pub field_18: u64,
+    #[doc(hidden)]
+    pub __field_18: [u8; 8],
     /// +0x20 `undefined4`, ctor store
-    pub field_20: u32,
+    #[doc(hidden)]
+    pub __field_20: [u8; 4],
     pub unknown_24: [u8; 4],
     /// +0x28 `undefined8`, ctor store
-    pub field_28: u64,
+    #[doc(hidden)]
+    pub __field_28: [u8; 8],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __vftable) == 0x0);
-const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_8) == 0x8);
-const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_10) == 0x10);
-const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_18) == 0x18);
-const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_20) == 0x20);
-const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, field_28) == 0x28);
+const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __field_8) == 0x8);
+const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __field_10) == 0x10);
+const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __field_18) == 0x18);
+const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __field_20) == 0x20);
+const _: () = assert!(core::mem::offset_of!(SettingT_INIPrefSettingCollection, __field_28) == 0x28);
 
 /// `SettingT<INISettingCollection>`: size >= 0x8 (lower bound); partial, the struct stops at the lower bound; primary base `Setting`.
 /// Evidence: vptr at 0x0.

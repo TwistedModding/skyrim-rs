@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `BuildHomePageControls` at 0x15ff4e0 (decompiler, medium); signature (untiered): `undefined BuildHomePageControls(UI_page * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildHomePageControls: u64 = 454104;
+/// `BuildHullIndexArrays` at 0x10f52b0 (decompiler, high); signature (high): `undefined BuildHullIndexArrays(longlong param_1, int param_2, undefined8 param_3, undefined8 param_4, char param_5)`
+pub const BuildHullIndexArrays: u64 = 80933;
+/// `BuildImagesTextAndBottomBarControls` at 0x1606a20 (decompiler, medium); signature (untiered): `undefined BuildImagesTextAndBottomBarControls(longlong * param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`
+pub const BuildImagesTextAndBottomBarControls: u64 = 454669;
+/// `BuildIndexPairMapBySubstringSwap` at 0xacf240 (decompiler, medium); signature (untiered): `undefined BuildIndexPairMapBySubstringSwap(longlong param_1, longlong * param_2, longlong * param_3, longlong * param_4)`
+pub const BuildIndexPairMapBySubstringSwap: u64 = 58375;
+/// `BuildIndexedNameArrayFromMap` at 0xbdf3b0 (decompiler, medium); signature (untiered): `undefined BuildIndexedNameArrayFromMap(longlong param_1, longlong param_2, longlong * param_3, undefined8 param_4)`
+pub const BuildIndexedNameArrayFromMap: u64 = 63852;
 /// `BuildInstanceTableFromNode` at 0x55b7c0 (decompiler, medium); signature (untiered): `undefined BuildInstanceTableFromNode(longlong param_1, uint param_2, longlong * param_3, undefined8 param_4)`
 pub const BuildInstanceTableFromNode: u64 = 33078;
 /// `BuildInterpolatedEndpointPalette` at 0x103b990 (decompiler, medium); signature (untiered): `undefined BuildInterpolatedEndpointPalette(undefined8 param_1, longlong param_2, uint * param_3, undefined8 * param_4)`
@@ -160,7 +170,7 @@ pub type BuildViewProjectionMatrices_fn = unsafe extern "C" fn(this: *mut crate:
 /// `BuildVolumetricLightingVolume` at 0x15312d0 (runtime, high); signature (untiered): `undefined BuildVolumetricLightingVolume(undefined4 * param_1, undefined8 param_2, char param_3)`; semantic: the frame's volumetric step (RenderWorldScene 0x6571b3, after RenderShadowMaps and before the depth pre-pass): unless interior and bVolumetricLightingDisableInterior (or the map menu flag 0x343635e) disables it, copies the weather's parameters into params when g_VolumetricLightingWeatherUpdate (refilling both repartition tables when the range factor +0x2c changed), fills the generate constants (UpdateVolumetricLightingConstants), dispatches ISVolumetricLightingGenerateCS (+0x50) over width/32 x height/32 x depth into both volumes +0x68/+0x70 with the inverse repartition table +0x80 at t2 and the noise volume +0x60 at t3, then ISVolumetricLightingRaymarchCS (+0x58) once per slice 1..depth-1, ping-ponging the volumes with the slice index in 0x3435f40 (high); signature `void (VolumetricLightingParams* params, NiCamera* camera, bool interior)`
 pub const BuildVolumetricLightingVolume: u64 = 107023;
 /// `BuildVolumetricLightingVolume` as a function pointer type (high).
-pub type BuildVolumetricLightingVolume_fn = unsafe extern "C" fn(params: *mut c_void, camera: *mut crate::NiCamera, interior: bool);
+pub type BuildVolumetricLightingVolume_fn = unsafe extern "C" fn(params: *mut crate::VolumetricLightingParams, camera: *mut crate::NiCamera, interior: bool);
 /// `BuildYesNoDialogControls` at 0x15e8080 (decompiler, medium); signature (untiered): `undefined BuildYesNoDialogControls(longlong * param_1, float * param_2, void * param_3, longlong * param_4, longlong * param_5)`
 pub const BuildYesNoDialogControls: u64 = 454781;
 /// `BumpAllocate0x140FromFieldB8` at 0x517290 (decompiler, medium); signature (medium): `longlong BumpAllocate0x140FromFieldB8(longlong param_1)`
@@ -7937,5 +7947,3 @@ pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextMagic_Combat
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_63773595f690: u64 = 33157;
 /// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2` at 0x55f2f0 (rtti, high); signature (low): `undefined vfunc_2(CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_> * this, longlong * param_1, undefined8 param_2, undefined8 param_3)`
 pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_2bf56e492cf4: u64 = 33174;
-/// `CombatBehaviorTreeCreateContextNode1<CombatBehaviorContextRanged,CombatBehaviorExpression<CombatBehaviorMemberFunc<CombatBehaviorEquipContext,class_NiPointer<CombatInventoryItem>_const&___ptr64_(__cdecl_CombatBehaviorEquipContext::*)(void)const___ptr64>_>_>::vfunc_2_sub0` at 0x55d650 (callgraph, medium); signature (untiered): `longlong * vfunc_2_sub0(longlong * param_1, longlong * param_2, undefined8 param_3, undefined8 param_4)`
-pub const CombatBehaviorTreeCreateContextNode1_CombatBehaviorContextRanged_CombatBehaviorExpression_Combat_24206f7532d7: u64 = 33135;

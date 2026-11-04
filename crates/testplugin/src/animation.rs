@@ -63,7 +63,7 @@ static SINK: Sink<BSAnimationGraphEvent, TagCounter> = Sink::new(TagCounter);
 
 fn head_index(graph: &BShkbAnimationGraph) -> Option<usize> {
     let head = HEAD.load(Ordering::Relaxed);
-    graph.bone_nodes().iter().position(|e| core::ptr::eq(e.node, head))
+    graph.bone_nodes().iter().position(|e| core::ptr::eq(e.node_field(), head))
 }
 
 unsafe extern "C" fn apply_detour(pose: *const HkQsTransform, nodes: *mut core::ffi::c_void, count: i32) {
@@ -156,7 +156,7 @@ fn graphs() -> Result<String, String> {
     let manager = graph_manager(p).ok_or("no animation graph manager")?;
     let graphs = manager.graphs();
     check(graphs.len() == 2, &format!("{} graphs", graphs.len()))?;
-    let active = manager.activeGraph;
+    let active = manager.activeGraph();
     check((active == 1) != p.is_third_person(), &format!("active graph {active} with IsThirdPerson {}", p.is_third_person()))?;
     let mut described = Vec::new();
     for (i, g) in graphs.iter().enumerate() {

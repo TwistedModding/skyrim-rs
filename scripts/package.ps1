@@ -17,7 +17,9 @@ $entries = [ordered]@{
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"
 }
-foreach ($p in Get-ChildItem "$Root\crates\host\profiles" -Filter *.profile) { $entries["SKSE/Plugins/skyrim-runtime-extender/profiles/$($p.Name)"] = $p.FullName }
+# The only profiles a release carries. A runtime goes on this list once its suites have passed there; verify.ps1 installs from crates\host\profiles whatever this says.
+$ShippedProfiles = @("1-7-104")
+foreach ($name in $ShippedProfiles) { $entries["SKSE/Plugins/skyrim-runtime-extender/profiles/$name.profile"] = "$Root\crates\host\profiles\$name.profile" }
 New-Item -ItemType Directory -Force "$Root\dist" | Out-Null
 $out = "$Root\dist\skyrim-runtime-extender-$version.zip"
 Remove-Item -Force $out -ErrorAction SilentlyContinue

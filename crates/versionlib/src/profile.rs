@@ -3,7 +3,7 @@
 
 use std::collections::BTreeMap;
 use std::io;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::sync::OnceLock;
 
 use skse::runtime;
@@ -39,17 +39,25 @@ pub struct Profile {
     sizes: BTreeMap<String, Row<u32>>,
     bases: BTreeMap<String, Row<u32>>,
     sites: BTreeMap<(u32, u32), Row<Site>>,
+    enums: BTreeMap<String, Row<u32>>,
 }
 
 impl Profile {
     fn new(runtime: u32, address_library: String, se_database: bool) -> Self {
-        Self { runtime, address_library, se_database, ids: BTreeMap::new(), members: BTreeMap::new(), slots: BTreeMap::new(), sizes: BTreeMap::new(), bases: BTreeMap::new(), sites: BTreeMap::new() }
+        Self { runtime, address_library, se_database, ids: BTreeMap::new(), members: BTreeMap::new(), slots: BTreeMap::new(), sizes: BTreeMap::new(), bases: BTreeMap::new(), sites: BTreeMap::new(), enums: BTreeMap::new() }
     }
 
     /// The runtime the file describes, packed with store 0.
     #[must_use]
     pub fn runtime(&self) -> u32 {
         self.runtime
+    }
+
+    /// The runtime as a player reads it, `1.7.104`.
+    #[must_use]
+    pub fn name(&self) -> String {
+        let [major, minor, build, _] = runtime::unpack(self.runtime);
+        format!("{major}.{minor}.{build}")
     }
 
     /// The Address Library file's name in the plugins folder.
@@ -98,15 +106,23 @@ impl Profile {
         self.bases.get(class_and_base).copied().unwrap_or(Row::Same)
     }
 
-    /// The site at `canonical_offset` into the function with an AE id.
+    /// The site at `canonical_offset` into the function with an AE id. Sites cannot be enumerated
+    /// the way members can, so off 1.7.104 one with no row was never compared.
     #[must_use]
     pub fn site(&self, ae_id: u32, canonical_offset: u32) -> Row<&Site> {
         match self.sites.get(&(ae_id, canonical_offset)) {
-            None | Some(Row::Same) => Row::Same,
+            None if runtime::is_canonical(self.runtime) => Row::Same,
+            Some(Row::Same) => Row::Same,
             Some(Row::Here(site)) => Row::Here(site),
             Some(Row::Missing) => Row::Missing,
-            Some(Row::Unverified) => Row::Unverified,
+            None | Some(Row::Unverified) => Row::Unverified,
         }
+    }
+
+    /// The number of `Enum.Value` here.
+    #[must_use]
+    pub fn enum_value(&self, value: &str) -> Row<u32> {
+        self.enums.get(value).copied().unwrap_or(Row::Same)
     }
 
     /// Adds a body row; `None` when the row is malformed or repeats a key.
@@ -122,12 +138,17 @@ impl Profile {
             ["slot-missing", key] => put(&mut self.slots, slot_key(key)?, Row::Missing),
             ["slot-unverified", key] => put(&mut self.slots, slot_key(key)?, Row::Unverified),
             ["size", class, size] => put(&mut self.sizes, nonempty(class)?, Row::Here(hex(size)?)),
+            ["size-missing", class] => put(&mut self.sizes, nonempty(class)?, Row::Missing),
             ["size-unverified", class] => put(&mut self.sizes, nonempty(class)?, Row::Unverified),
             ["base", key, offset] => put(&mut self.bases, base_key(key)?, Row::Here(hex(offset)?)),
+            ["base-missing", key] => put(&mut self.bases, base_key(key)?, Row::Missing),
+            ["base-unverified", key] => put(&mut self.bases, base_key(key)?, Row::Unverified),
             ["site", id, canonical, here, expected] => put(&mut self.sites, (decimal(id)?, hex(canonical)?), Row::Here(Site { offset: hex(here)?, expected: bytes(expected)?, replacement: None })),
             ["site", id, canonical, here, expected, replacement] => put(&mut self.sites, (decimal(id)?, hex(canonical)?), Row::Here(Site { offset: hex(here)?, expected: bytes(expected)?, replacement: Some(bytes(replacement)?) })),
             ["site-missing", id, canonical] => put(&mut self.sites, (decimal(id)?, hex(canonical)?), Row::Missing),
             ["site-unverified", id, canonical] => put(&mut self.sites, (decimal(id)?, hex(canonical)?), Row::Unverified),
+            ["enum", key, value] => put(&mut self.enums, member_key(key)?, Row::Here(hex(value)?)),
+            ["enum-missing", key] => put(&mut self.enums, member_key(key)?, Row::Missing),
             _ => None,
         }
     }
@@ -206,11 +227,23 @@ pub fn parse(text: &str) -> Result<Profile, String> {
     Ok(profile)
 }
 
+fn folder(plugins: &Path) -> PathBuf {
+    plugins.join("skyrim-runtime-extender").join("profiles")
+}
+
+/// Every `*.profile` in a plugins folder's profile folder, each read or the reason it could not be.
+#[must_use]
+pub fn all(plugins: &Path) -> Vec<Result<Profile, String>> {
+    let mut paths: Vec<PathBuf> = std::fs::read_dir(folder(plugins)).into_iter().flatten().flatten().map(|e| e.path()).filter(|p| p.extension().is_some_and(|x| x.eq_ignore_ascii_case("profile"))).collect();
+    paths.sort();
+    paths.iter().map(|path| std::fs::read_to_string(path).map_err(|e| e.to_string()).and_then(|text| parse(&text)).map_err(|e| format!("{}: {e}", path.display()))).collect()
+}
+
 /// The profile of `runtime` from a plugins folder. 1.7.104 with no file is an empty profile; any
 /// other runtime with no file is an error naming the runtime and the path.
 fn load(runtime: u32, plugins: &Path) -> Result<Profile, String> {
     let [major, minor, build, _] = runtime::unpack(runtime);
-    let path = plugins.join("skyrim-runtime-extender").join("profiles").join(format!("{major}-{minor}-{build}.profile"));
+    let path = folder(plugins).join(format!("{major}-{minor}-{build}.profile"));
     let text = match std::fs::read_to_string(&path) {
         Ok(text) => text,
         Err(e) if e.kind() == io::ErrorKind::NotFound && runtime::is_canonical(runtime) => return Ok(Profile::new(runtime::CANONICAL, runtime::versionlib_name(runtime::CANONICAL), false)),
@@ -310,7 +343,8 @@ mod tests {
 
     #[test]
     fn sizes() {
-        let p = with(HEADER, "size Actor 2b0\nsize-unverified Player\n").unwrap();
+        let p = with(HEADER, "size Actor 2b0\nsize-missing Gone\nsize-unverified Player\n").unwrap();
+        assert_eq!(p.size("Gone"), Row::Missing);
         assert_eq!(p.size("Actor"), Row::Here(0x2B0));
         assert_eq!(p.size("Player"), Row::Unverified);
         assert_eq!(p.size("TESForm"), Row::Same);
@@ -318,8 +352,10 @@ mod tests {
 
     #[test]
     fn bases() {
-        let p = with(HEADER, "base Actor:TESForm 10\n").unwrap();
+        let p = with(HEADER, "base Actor:TESForm 10\nbase-missing Actor:Gone\nbase-unverified Actor:Unsure\n").unwrap();
         assert_eq!(p.base("Actor:TESForm"), Row::Here(0x10));
+        assert_eq!(p.base("Actor:Gone"), Row::Missing);
+        assert_eq!(p.base("Actor:Unsure"), Row::Unverified);
         assert_eq!(p.base("Actor:Other"), Row::Same);
     }
 
@@ -330,7 +366,16 @@ mod tests {
         assert_eq!(p.site(101, 0x1A), Row::Here(&Site { offset: 0x2B, expected: vec![0xE8], replacement: Some(vec![0x90]) }));
         assert_eq!(p.site(102, 4), Row::Missing);
         assert_eq!(p.site(103, 4), Row::Unverified);
-        assert_eq!(p.site(100, 4), Row::Same);
+        assert_eq!(p.site(100, 4), Row::Unverified, "no row off 1.7.104 was never compared");
+        assert_eq!(parse("skyrim-rs-profile 1\nruntime 1.7.104\naddress-library versionlib-1-7-104-0.bin\ndatabase ae\n").unwrap().site(100, 4), Row::Same);
+    }
+
+    #[test]
+    fn enums() {
+        let p = with(HEADER, "enum InputContext.Favor 10\nenum-missing InputContext.Marketplace\n").unwrap();
+        assert_eq!(p.enum_value("InputContext.Favor"), Row::Here(0x10));
+        assert_eq!(p.enum_value("InputContext.Marketplace"), Row::Missing);
+        assert_eq!(p.enum_value("InputContext.Console"), Row::Same);
     }
 
     #[test]

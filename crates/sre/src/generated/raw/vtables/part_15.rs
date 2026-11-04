@@ -3,6 +3,157 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiCullingProcess::vftable` at 0x1a4b160, id 237327 (rtti, high); 25 slots.
+#[repr(C)]
+pub struct NiCullingProcess_vtable {
+    /// `NiCullingProcess::vfunc_0` at 0xf04cb0 (rtti, high); signature (low): `TypeNode * vfunc_0(void)`
+    pub slot_0: *const c_void,
+    /// `NiCullingProcess::vfunc_1` at 0x410490 (rtti, medium); signature (low): `undefined8 vfunc_1(void)`
+    pub slot_1: *const c_void,
+    /// `NiCullingProcess::vfunc_2` at 0x4104d0 (rtti, medium); signature (low): `undefined8 vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiCullingProcess::vfunc_3` at 0x410420 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiCullingProcess::vfunc_4` at 0x410450 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiCullingProcess::vfunc_5` at 0x410430 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiCullingProcess::vfunc_6` at 0x4104f0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiCullingProcess::vfunc_7` at 0x4104e0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiCullingProcess::vfunc_8` at 0x4104b0 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiCullingProcess::vfunc_9` at 0x4104c0 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiCullingProcess::vfunc_10` at 0x410410 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiCullingProcess::vfunc_11` at 0x410460 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiCullingProcess::vfunc_12` at 0x410470 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiCullingProcess::vfunc_13` at 0x410480 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiCullingProcess::vfunc_14` at 0x4104a0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiCullingProcess::vfunc_15` at 0x410440 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiCullingProcess::vfunc_16` at 0x4103f0 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiCullingProcess::vfunc_17` at 0x4103d0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiCullingProcess::vfunc_18` at 0x4103c0 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiCullingProcess::vfunc_19` at 0x410400 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiCullingProcess::vfunc_20` at 0x4103e0 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiCullingProcess::vdtor` at 0xf04c80 (layout_inference, medium); signature (low): `NiCullingProcess * vdtor(NiCullingProcess * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_21: *const c_void,
+    /// `NiCullingProcess::vfunc_22` at 0xf04ae0 (rtti, high); signature (low): `undefined vfunc_22(NiCullingProcess * this, longlong * param_1)`
+    pub slot_22: *const c_void,
+    /// `NiCullingProcess::vfunc_23` at 0xf04840 (rtti, high); signature (low): `undefined vfunc_23(void)`
+    pub slot_23: *const c_void,
+    /// `NiCullingProcess::vfunc_24` at 0x441460 (rtti, medium); signature (low): `undefined vfunc_24(void)`
+    pub slot_24: *const c_void,
+}
+impl NiCullingProcess_vtable {
+    pub const ID: u64 = 237327;
+}
+
+/// `NiDefaultAVObjectPalette::vftable` at 0x1a4ab00, id 237305 (rtti, high); 42 slots.
+#[repr(C)]
+pub struct NiDefaultAVObjectPalette_vtable {
+    /// `NiDefaultAVObjectPalette::vdtor` at 0xf00a10 (layout_inference, medium); signature (low): `NiDefaultAVObjectPalette * vdtor(NiDefaultAVObjectPalette * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+    pub slot_0: *const c_void,
+    /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
+    pub slot_1: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_2` at 0xf00b10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+    pub slot_2: *const c_void,
+    /// `NiObject::vfunc_3` at 0x20bec0 (rtti, medium); signature (low): `undefined8 vfunc_3(void)`
+    pub slot_3: *const c_void,
+    /// `NiObject::vfunc_4` at 0x1b4d50 (rtti, medium); signature (low): `undefined8 vfunc_4(void)`
+    pub slot_4: *const c_void,
+    /// `NiObject::vfunc_5` at 0x1b4ca0 (rtti, medium); signature (low): `undefined8 vfunc_5(void)`
+    pub slot_5: *const c_void,
+    /// `NiObject::vfunc_6` at 0x1b4cd0 (rtti, medium); signature (low): `undefined8 vfunc_6(void)`
+    pub slot_6: *const c_void,
+    /// `NiObject::vfunc_7` at 0x1b4cb0 (rtti, medium); signature (low): `undefined8 vfunc_7(void)`
+    pub slot_7: *const c_void,
+    /// `NiObject::vfunc_8` at 0x1b4d70 (rtti, medium); signature (low): `undefined8 vfunc_8(void)`
+    pub slot_8: *const c_void,
+    /// `NiObject::vfunc_9` at 0x1b4d60 (rtti, medium); signature (low): `undefined8 vfunc_9(void)`
+    pub slot_9: *const c_void,
+    /// `NiObject::vfunc_10` at 0x1b4d30 (rtti, medium); signature (low): `undefined8 vfunc_10(void)`
+    pub slot_10: *const c_void,
+    /// `NiObject::vfunc_11` at 0x1b4d40 (rtti, medium); signature (low): `undefined8 vfunc_11(void)`
+    pub slot_11: *const c_void,
+    /// `NiObject::vfunc_12` at 0x1b4c90 (rtti, medium); signature (low): `undefined8 vfunc_12(void)`
+    pub slot_12: *const c_void,
+    /// `NiObject::vfunc_13` at 0x1b4ce0 (rtti, medium); signature (low): `undefined8 vfunc_13(void)`
+    pub slot_13: *const c_void,
+    /// `NiObject::vfunc_14` at 0x1b4cf0 (rtti, medium); signature (low): `undefined8 vfunc_14(void)`
+    pub slot_14: *const c_void,
+    /// `NiObject::vfunc_15` at 0x1b4d00 (rtti, medium); signature (low): `undefined8 vfunc_15(void)`
+    pub slot_15: *const c_void,
+    /// `NiObject::vfunc_16` at 0x1b4d20 (rtti, medium); signature (low): `undefined8 vfunc_16(void)`
+    pub slot_16: *const c_void,
+    /// `NiObject::vfunc_17` at 0x1b4cc0 (rtti, medium); signature (low): `undefined8 vfunc_17(void)`
+    pub slot_17: *const c_void,
+    /// `NiObject::vfunc_18` at 0x1b4c70 (rtti, medium); signature (low): `undefined8 vfunc_18(void)`
+    pub slot_18: *const c_void,
+    /// `NiObject::vfunc_19` at 0x1b4c50 (rtti, medium); signature (low): `undefined8 vfunc_19(void)`
+    pub slot_19: *const c_void,
+    /// `NiObject::vfunc_20` at 0x1b4c40 (rtti, medium); signature (low): `undefined8 vfunc_20(void)`
+    pub slot_20: *const c_void,
+    /// `NiObject::vfunc_21` at 0x1b4c80 (rtti, medium); signature (low): `undefined8 vfunc_21(void)`
+    pub slot_21: *const c_void,
+    /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
+    pub slot_22: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_23` at 0xeff690 (rtti, high); signature (low): `NiObject * vfunc_23(NiDefaultAVObjectPalette * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
+    #[doc(hidden)]
+    pub __slot_23: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_24` at 0xeff820 (rtti, high); signature (low): `undefined vfunc_24(NiDefaultAVObjectPalette * this, longlong param_1)`
+    pub slot_24: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_25` at 0xeff980 (rtti, high); signature (low): `undefined vfunc_25(NiDefaultAVObjectPalette * this, ulonglong * * * * param_1)`
+    pub slot_25: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_26` at 0xeffce0 (rtti, high); signature (untiered): `bool vfunc_26(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_26: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_27` at 0xeffcf0 (rtti, high); signature (low): `undefined vfunc_27(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_27: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_28` at 0xeffe40 (rtti, high); signature (low): `ulonglong vfunc_28(NiDefaultAVObjectPalette * this, longlong * param_1)`
+    pub slot_28: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_29` at 0xf000d0 (rtti, high); signature (low): `undefined vfunc_29(NiDefaultAVObjectPalette * this, longlong param_1)`
+    pub slot_29: *const c_void,
+    /// `NiObject::vfunc_30` at 0xedcb50 (rtti, medium); signature (low): `undefined vfunc_30(void)`
+    pub slot_30: *const c_void,
+    /// `NiObject::vfunc_31` at 0xedcb60 (rtti, medium); signature (low): `undefined1 vfunc_31(void)`
+    pub slot_31: *const c_void,
+    /// `NiObject::vfunc_32` at 0xedcb70 (rtti, medium); signature (high): `undefined vfunc_32(NiObject * this)`
+    pub slot_32: *const c_void,
+    /// `NiObject::vfunc_33` at 0xedcb80 (rtti, medium); signature (low): `undefined8 vfunc_33(void)`
+    pub slot_33: *const c_void,
+    /// `NiObject::vfunc_34` at 0xedcb90 (rtti, medium); signature (low): `undefined8 vfunc_34(void)`
+    pub slot_34: *const c_void,
+    /// `NiObject::vfunc_35` at 0xedcba0 (rtti, medium); signature (low): `undefined vfunc_35(void)`
+    pub slot_35: *const c_void,
+    /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
+    pub slot_36: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_37` at 0xf00a70 (rtti, high); signature (low): `ulonglong vfunc_37(NiDefaultAVObjectPalette * this, ulonglong * param_1)`
+    pub slot_37: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_38` at 0xf01190 (rtti, high); signature (low): `undefined vfunc_38(NiDefaultAVObjectPalette * this, ulonglong * param_1, ulonglong param_2)`
+    pub slot_38: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_39` at 0xf002d0 (rtti, high); signature (high): `undefined vfunc_39(NiDefaultAVObjectPalette * this)`
+    pub slot_39: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_40` at 0xf011d0 (rtti, high); signature (low): `undefined vfunc_40(NiDefaultAVObjectPalette * this, NiDefaultAVObjectPalette_vtbl * param_1)`
+    pub slot_40: *const c_void,
+    /// `NiDefaultAVObjectPalette::vfunc_41` at 0xf00b20 (rtti, high); signature (high): `NiDefaultAVObjectPalette_vtbl * vfunc_41(NiDefaultAVObjectPalette * this)`
+    pub slot_41: *const c_void,
+}
+impl NiDefaultAVObjectPalette_vtable {
+    pub const ID: u64 = 237305;
+}
+
 /// `NiDirectionalLight::vftable` at 0x1a4af98, id 237324 (rtti, high); 53 slots.
 #[repr(C)]
 pub struct NiDirectionalLight_vtable {
@@ -1473,7 +1624,8 @@ impl NiFormArray_vtable {
 #[repr(C)]
 pub struct NiGeometry_vtable {
     /// `NiGeometry::vdtor` at 0xf0cab0 (slot_propagation, medium); signature (low): `NiGeometry * vdtor(NiGeometry * this, ulonglong param_1)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiGeometry::vfunc_2` at 0xf0cbd0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -1721,7 +1873,8 @@ impl NiHalfSpaceBV_vtable {
 #[repr(C)]
 pub struct NiIntegerExtraData_vtable {
     /// `NiIntegerExtraData::vdtor` at 0xf12380 (layout_inference, medium); signature (low): `NiIntegerExtraData * vdtor(NiIntegerExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiIntegerExtraData::vfunc_2` at 0xf123c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -3893,7 +4046,7 @@ impl NiObjectNET_vtable {
     pub const SLOT_PostLinkObject: usize = 30;
 }
 /// `NiObjectNET::GetRTTI`, slot 2: returns the class TypeNode (IsKindOf walks TypeNode::parent) (high).
-pub type NiObjectNET_vtable_GetRTTI = unsafe extern "C" fn(this: *const crate::NiObject) -> *mut c_void;
+pub type NiObjectNET_vtable_GetRTTI = unsafe extern "C" fn(this: *const crate::NiObject) -> *mut crate::TypeNode;
 
 /// `NiPSysAgeDeathModifier::vftable` at 0x1a61ba0, id 237993 (rtti, high); 42 slots.
 #[repr(C)]
@@ -9219,7 +9372,8 @@ pub struct NiPSysRadialFieldModifier_vtable {
     /// `NiObject::vfunc_36` at 0xedcbb0 (rtti, medium); signature (low): `undefined8 vfunc_36(void)`
     pub slot_36: *const c_void,
     /// `NiPSysRadialFieldModifier::vfunc_37` at 0xfb79d0 (rtti, high); signature (low): `undefined8 vfunc_37(NiPSysRadialFieldModifier * this, float param_1, longlong param_2, longlong param_3)`
-    pub slot_37: *const c_void,
+    #[doc(hidden)]
+    pub __slot_37: *const c_void,
     /// `NiPSysModifier::vfunc_38` at 0xfa11a0 (rtti, medium); signature (low): `undefined vfunc_38(void)`
     pub slot_38: *const c_void,
     /// `NiPSysModifier::vfunc_39` at 0xfa11b0 (rtti, medium); signature (low): `undefined vfunc_39(void)`
@@ -10881,7 +11035,8 @@ impl NiPathInterpolator_vtable {
 #[repr(C)]
 pub struct NiPick__Results_vtable {
     /// `NiPick::Results::vdtor` at 0xf1ffb0 (slot_propagation, medium); signature (low): `Results * vdtor(Results * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
 }
 impl NiPick__Results_vtable {
     pub const ID: u64 = 237489;
@@ -12405,7 +12560,8 @@ pub type NiSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::
 #[repr(C)]
 pub struct NiSkinPartition_vtable {
     /// `NiSkinPartition::vdtor` at 0xf090f0 (layout_inference, medium); signature (low): `NiSkinPartition * vdtor(NiSkinPartition * this, uint param_1, longlong param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiSkinPartition::vfunc_2` at 0xf09190 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -13120,7 +13276,8 @@ impl NiStringsExtraData_vtable {
 #[repr(C)]
 pub struct NiSwitchNode_vtable {
     /// `NiSwitchNode::vdtor` at 0xeee310 (slot_propagation, medium); signature (low): `NiSwitchNode * vdtor(NiSwitchNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiSwitchNode::vfunc_2` at 0xeee370 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -13452,135 +13609,5 @@ pub struct NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolum
 }
 impl NiTArray_NiBoundingVolume____ptr64_NiTMallocInterface_NiBoundingVolume____ptr64___vtable {
     pub const ID: u64 = 237511;
-}
-
-/// `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>::vftable` at 0x1a50900, id 237485 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable {
-    /// `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_>::vdtor` at 0xf1ff10 (layout_inference, medium); signature (low): `NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_> * vdtor(NiTArray<NiPick::Record*___ptr64,NiTScrapHeapInterface<NiPick::Record*___ptr64>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPick__Record____ptr64_NiTScrapHeapInterface_NiPick__Record____ptr64___vtable {
-    pub const ID: u64 = 237485;
-}
-
-/// `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_>::vftable` at 0x1a65d58, id 238051 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape_____vtable {
-    /// `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_>::vdtor` at 0xfb4a10 (layout_inference, medium); signature (low): `NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_> * vdtor(NiTArray<NiPointer<BSTriShape>,NiTNewInterface<NiPointer<BSTriShape>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_BSTriShape_NiTNewInterface_NiPointer_BSTriShape_____vtable {
-    pub const ID: u64 = 238051;
-}
-
-/// `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_>::vftable` at 0x1a6cc98, id 238292 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject_____vtable {
-    /// `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_>::vdtor` at 0xfe1b40 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_> * vdtor(NiTArray<NiPointer<NiAVObject>,NiTMallocInterface<NiPointer<NiAVObject>_>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiAVObject_NiTMallocInterface_NiPointer_NiAVObject_____vtable {
-    pub const ID: u64 = 238292;
-}
-
-/// `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_>::vftable` at 0x1a46520, id 237094 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject_____vtable {
-    /// `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_>::vdtor` at 0xee3210 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_> * vdtor(NiTArray<NiPointer<NiAVObject>,NiTNewInterface<NiPointer<NiAVObject>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiAVObject_NiTNewInterface_NiPointer_NiAVObject_____vtable {
-    pub const ID: u64 = 237094;
-}
-
-/// `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_>::vftable` at 0x1a51d50, id 237537 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence_____vtable {
-    /// `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_>::vdtor` at 0xf53260 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_> * vdtor(NiTArray<NiPointer<NiControllerSequence>,NiTNewInterface<NiPointer<NiControllerSequence>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiControllerSequence_NiTNewInterface_NiPointer_NiControllerSequence_____vtable {
-    pub const ID: u64 = 237537;
-}
-
-/// `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_>::vftable` at 0x1a65d78, id 238055 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry_____vtable {
-    /// `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_>::vdtor` at 0xfb4aa0 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_> * vdtor(NiTArray<NiPointer<NiGeometry>,NiTNewInterface<NiPointer<NiGeometry>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiGeometry_NiTNewInterface_NiPointer_NiGeometry_____vtable {
-    pub const ID: u64 = 238055;
-}
-
-/// `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_>::vftable` at 0x1a4dd50, id 237433 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule_____vtable {
-    /// `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_>::vdtor` at 0xf12b60 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_> * vdtor(NiTArray<NiPointer<NiMetricsOutputModule>,NiTNewInterface<NiPointer<NiMetricsOutputModule>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiMetricsOutputModule_NiTNewInterface_NiPointer_NiMetricsOutputModule_____vtable {
-    pub const ID: u64 = 237433;
-}
-
-/// `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_>::vftable` at 0x18fb570, id 206051 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode_____vtable {
-    /// `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_>::vdtor` at 0x5e1d00 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_> * vdtor(NiTArray<NiPointer<NiNode>,NiTNewInterface<NiPointer<NiNode>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiNode_NiTNewInterface_NiPointer_NiNode_____vtable {
-    pub const ID: u64 = 206051;
-}
-
-/// `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_>::vftable` at 0x1a47b00, id 237172 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject_____vtable {
-    /// `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_>::vdtor` at 0xeec300 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_> * vdtor(NiTArray<NiPointer<NiRefObject>,NiTNewInterface<NiPointer<NiRefObject>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiRefObject_NiTNewInterface_NiPointer_NiRefObject_____vtable {
-    pub const ID: u64 = 237172;
-}
-
-/// `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_>::vftable` at 0x1b409f8, id 254768 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture_____vtable {
-    /// `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_>::vdtor` at 0x152b3a0 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_> * vdtor(NiTArray<NiPointer<NiTexture>,NiTNewInterface<NiPointer<NiTexture>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiTexture_NiTNewInterface_NiPointer_NiTexture_____vtable {
-    pub const ID: u64 = 254768;
-}
-
-/// `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_>::vftable` at 0x1a5b778, id 237782 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController_____vtable {
-    /// `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_>::vdtor` at 0xf87b70 (layout_inference, medium); signature (low): `NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_> * vdtor(NiTArray<NiPointer<NiTransformController>,NiTNewInterface<NiPointer<NiTransformController>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_NiTransformController_NiTNewInterface_NiPointer_NiTransformController_____vtable {
-    pub const ID: u64 = 237782;
-}
-
-/// `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_>::vftable` at 0x1866248, id 196225 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody_____vtable {
-    /// `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_>::vdtor` at 0x3fb510 (layout_inference, medium); signature (low): `NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_> * vdtor(NiTArray<NiPointer<bhkRigidBody>,NiTNewInterface<NiPointer<bhkRigidBody>_>_> * this, uint param_1, void * param_2, undefined * param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiPointer_bhkRigidBody_NiTNewInterface_NiPointer_bhkRigidBody_____vtable {
-    pub const ID: u64 = 196225;
-}
-
-/// `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_>::vftable` at 0x1a61030, id 237979 (rtti, high); 1 slots.
-#[repr(C)]
-pub struct NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable {
-    /// `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_>::vdtor` at 0xfa3c80 (layout_inference, medium); signature (low): `NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_> * vdtor(NiTArray<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64,NiTMallocInterface<NiTObjectArray<NiPointer<NiAVObject>_>*___ptr64>_> * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
-}
-impl NiTArray_NiTObjectArray_NiPointer_NiAVObject______ptr64_NiTMallocInterface_NiTObjectArray_NiPoin_6beaedd6e5e3_vtable {
-    pub const ID: u64 = 237979;
 }
 

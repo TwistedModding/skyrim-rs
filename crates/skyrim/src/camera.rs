@@ -43,26 +43,22 @@ fn address(id: u64) -> Result<usize, hook::Error> {
     crate::reloc().address(id)
 }
 
-fn frame_timer<T: Copy>(offset: usize) -> T {
-    unsafe { sre::g_frame_timer().add(offset).cast::<T>().read_unaligned() }
-}
-
 /// Frame time of the last frame in seconds, scaled by the time multiplier (`g_FrameTimer` +0x18).
 #[must_use]
 pub fn frame_delta() -> f32 {
-    frame_timer(0x18)
+    unsafe { sre::g_frame_delta().read_unaligned() }
 }
 
 /// Frame time of the last frame in seconds, unscaled (`g_FrameTimer` +0x1c).
 #[must_use]
 pub fn frame_delta_real() -> f32 {
-    frame_timer(0x1c)
+    unsafe { sre::g_frame_delta_real().read_unaligned() }
 }
 
 /// Milliseconds elapsed since the timer started (`g_FrameTimer` +0x20).
 #[must_use]
 pub fn frame_time_ms() -> u32 {
-    frame_timer(0x20)
+    unsafe { sre::g_frame_time_ms().read_unaligned() }
 }
 
 /// `g_CameraFOVOffset` (id 414942): added to the world FOV by `ApplyWorldFOV` and to the hands
@@ -82,7 +78,7 @@ pub fn set_fov_offset(offset: f32) {
 #[must_use]
 #[allow(clippy::cast_ptr_alignment)]
 pub fn hands_fov() -> f32 {
-    unsafe { (*sre::g_first_person_view_params().cast::<sre::FirstPersonRenderContext>()).firstPersonFOV }
+    unsafe { (*sre::g_first_person_view_params().cast::<sre::FirstPersonRenderContext>()).firstPersonFOV() }
 }
 
 /// Creates, disabled, a detour on `TESCamera::Update` (id 33025), the per-frame camera update on
@@ -92,7 +88,7 @@ pub fn hands_fov() -> f32 {
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_update(detour: CameraUpdateFn) -> Result<hook::Hook<CameraUpdateFn>, hook::Error> {
-    unsafe { hook::Hook::create(address(fns::TESCamera__Update)?, detour) }
+    unsafe { hook::Hook::create(address(sre::id!(fns::TESCamera__Update))?, detour) }
 }
 
 /// Two `call rel32` sites redirected to one detour; created disabled, enabled once stored.
@@ -140,8 +136,8 @@ pub type StateStepHook = CallSites<CameraUpdateFn>;
 /// # Safety
 /// Same as [`hook::CallSite::create`].
 pub unsafe fn hook_state_step(detour: CameraUpdateFn) -> Result<StateStepHook, hook::Error> {
-    let sites = [address(fns::PlayerCamera__Update)? + PLAYER_UPDATE_STATE_STEP, address(fns::UpdateActorWithCamera)? + FREE_CAMERA_STATE_STEP];
-    unsafe { CallSites::create(sites, address(fns::TESCamera__Update)?, detour) }
+    let sites = [sre::site!(fns::PlayerCamera__Update, PLAYER_UPDATE_STATE_STEP), sre::site!(fns::UpdateActorWithCamera, FREE_CAMERA_STATE_STEP)];
+    unsafe { CallSites::create(sites, address(sre::id!(fns::TESCamera__Update))?, detour) }
 }
 
 /// The two hands projection sites, as [`hook_hands_projection`] installs them.
@@ -157,8 +153,8 @@ pub type HandsProjectionHook = CallSites<SetPerspectiveFromFovFn>;
 /// # Safety
 /// Same as [`hook::CallSite::create`].
 pub unsafe fn hook_hands_projection(detour: SetPerspectiveFromFovFn) -> Result<HandsProjectionHook, hook::Error> {
-    let sites = [address(fns::SetupFirstPersonCamera)? + SETUP_FIRST_PERSON_PROJECTION, address(fns::RenderWorldDepthPrepass)? + DEPTH_PREPASS_PROJECTION];
-    unsafe { CallSites::create(sites, address(fns::NiCamera__SetPerspectiveFromFov)?, detour) }
+    let sites = [sre::site!(fns::SetupFirstPersonCamera, SETUP_FIRST_PERSON_PROJECTION), sre::site!(fns::RenderWorldDepthPrepass, DEPTH_PREPASS_PROJECTION)];
+    unsafe { CallSites::create(sites, address(sre::id!(fns::NiCamera__SetPerspectiveFromFov))?, detour) }
 }
 
 pub trait PlayerCameraExt {

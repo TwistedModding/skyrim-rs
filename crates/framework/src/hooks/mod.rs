@@ -49,6 +49,7 @@ mod site;
 mod validate;
 
 use raw::{RawLocation, RawPatch, RawPatchReport, RawSignature, RawSiteReport, RawSubscription, RawTarget};
+use versionlib::profile::{Row, Site as ProfileSite};
 pub use raw::{Next, Original, Slot};
 pub(crate) use site::Subscriber;
 pub use site::{Args, Op, Outcome, Ret, Signature, Site, Timing};
@@ -214,7 +215,9 @@ impl fmt::Display for Error {
 
 impl std::error::Error for Error {}
 
-/// An address in the game: an Address Library id plus an offset, or an address already resolved.
+/// An address in the game: an Address Library id plus an offset on 1.7.104, which the running
+/// game's profile places ([`location!`](crate::location) records it in the DLL's manifest), or an
+/// address already resolved.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum Location {
     Id { id: u64, offset: usize },
@@ -229,9 +232,49 @@ impl Location {
 
     fn resolve(self) -> Result<usize, String> {
         match self {
-            Self::Id { id, offset } => skyrim::reloc().address(id).map(|a| a + offset).map_err(|e| e.to_string()),
+            Self::Id { id, offset } => skyrim::reloc().site(id, offset).map_err(|e| e.to_string()),
             Self::Address(address) => Ok(address),
         }
+    }
+
+    /// What a patch stated for 1.7.104 expects and writes at this location on the running game.
+    fn patch_bytes(self, expected: Vec<u8>, replacement: Vec<u8>, cave: bool) -> Result<(Vec<u8>, Vec<u8>), String> {
+        let Self::Id { id, offset } = self else { return Ok((expected, replacement)) };
+        let row = u32::try_from(id).ok().zip(u32::try_from(offset).ok()).map_or(Row::Missing, |(id, offset)| skyrim::reloc().running().profile().site(id, offset));
+        patch_row(row, expected, replacement, cave)
+    }
+
+    /// Slot `slot` of the vtable at this location, on the running game.
+    fn slot_here(self, slot: usize) -> Result<usize, String> {
+        let Self::Id { id, .. } = self else { return Ok(slot) };
+        let Some(vtable) = sre::raw::vtables::ALL.iter().find(|v| v.id == id) else { return Ok(slot) };
+        let row = u32::try_from(slot).map_or(Row::Missing, |slot| skyrim::reloc().running().profile().slot(vtable.class, vtable.offset, slot));
+        slot_row(row, slot)
+    }
+}
+
+/// A patch's bytes from its site's profile row. Canonical replacement bytes never go over code
+/// that differs from the canonical expected bytes.
+fn patch_row(row: Row<&ProfileSite>, expected: Vec<u8>, replacement: Vec<u8>, cave: bool) -> Result<(Vec<u8>, Vec<u8>), String> {
+    match row {
+        Row::Same => Ok((expected, replacement)),
+        Row::Missing => Err("the site does not exist on this runtime".to_owned()),
+        Row::Unverified => Err("the site is unverified on this runtime".to_owned()),
+        Row::Here(site) => match &site.replacement {
+            Some(_) if cave => Err("the profile gives this site replacement bytes, which do not apply to a cave".to_owned()),
+            Some(here) => Ok((site.expected.clone(), here.clone())),
+            None if site.expected == expected => Ok((expected, replacement)),
+            None => Err(format!("this runtime has {} where 1.7.104 has {} and its profile gives no replacement", validate::hex(&site.expected), validate::hex(&expected))),
+        },
+    }
+}
+
+fn slot_row(row: Row<u32>, slot: usize) -> Result<usize, String> {
+    match row {
+        Row::Same => Ok(slot),
+        Row::Here(here) => Ok(here as usize),
+        Row::Missing => Err(format!("slot {slot} does not exist on this runtime")),
+        Row::Unverified => Err(format!("slot {slot} is unverified on this runtime")),
     }
 }
 
@@ -535,7 +578,10 @@ impl Hooks {
     }
 
     /// Writes `replacement` over the bytes at `at`, which must hold `expected` (of the same length,
-    /// 1 to 64 bytes). Refused when the bytes differ, or overlap another patch, an installed hook
+    /// 1 to 64 bytes). `at`, `expected` and `replacement` are stated for 1.7.104: on another runtime
+    /// the site's profile row gives the offset, the bytes and the replacement, no row means the same
+    /// code, and a site with no row usable here, or whose code differs with no replacement given,
+    /// is refused. Refused when the bytes differ, or overlap another patch, an installed hook
     /// site or another module's patch the host has seen; a hook subscription whose site would
     /// overlap the patch is refused in turn. The patch belongs to `owner` (this plugin's name) and
     /// its original bytes are written back when it is disabled or removed, and before the

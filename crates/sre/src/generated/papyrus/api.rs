@@ -463,6 +463,166 @@ impl crate::BSScript__Internal__VirtualMachine {
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn handle_policy(&self) -> Option<&crate::SkyrimScript__HandlePolicy> { unsafe { { self.handlePolicy }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_210(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_210", 0x210, u32) } }
+    /// `BSScript::Internal::VirtualMachine::field_210`, at +0x210 on 1.7.104.
+    #[inline]
+    pub fn field_210(&self) -> u32 { unsafe { Self::__member_field_210(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_210(&mut self, value: u32) { unsafe { Self::__member_field_210(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_210_ptr(&self) -> *mut u32 { Self::__member_field_210(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_218(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_218", 0x218, u64) } }
+    /// `BSScript::Internal::VirtualMachine::field_218`, at +0x218 on 1.7.104.
+    #[inline]
+    pub fn field_218(&self) -> u64 { unsafe { Self::__member_field_218(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_218(&mut self, value: u64) { unsafe { Self::__member_field_218(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_218_ptr(&self) -> *mut u64 { Self::__member_field_218(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_238(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_238", 0x238, u64) } }
+    /// `BSScript::Internal::VirtualMachine::field_238`, at +0x238 on 1.7.104.
+    #[inline]
+    pub fn field_238(&self) -> u64 { unsafe { Self::__member_field_238(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_238(&mut self, value: u64) { unsafe { Self::__member_field_238(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_238_ptr(&self) -> *mut u64 { Self::__member_field_238(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_258(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_258", 0x258, u64) } }
+    /// `BSScript::Internal::VirtualMachine::field_258`, at +0x258 on 1.7.104.
+    #[inline]
+    pub fn field_258(&self) -> u64 { unsafe { Self::__member_field_258(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_258(&mut self, value: u64) { unsafe { Self::__member_field_258(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_258_ptr(&self) -> *mut u64 { Self::__member_field_258(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_93D0(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_93D0", 0x93D0, u64) } }
+    /// `BSScript::Internal::VirtualMachine::field_93D0`, at +0x93D0 on 1.7.104.
+    #[inline]
+    pub fn field_93D0(&self) -> u64 { unsafe { Self::__member_field_93D0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_93D0(&mut self, value: u64) { unsafe { Self::__member_field_93D0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_93D0_ptr(&self) -> *mut u64 { Self::__member_field_93D0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_9490(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.field_9490", 0x9490, u64) } }
+    /// `BSScript::Internal::VirtualMachine::field_9490`, at +0x9490 on 1.7.104.
+    #[inline]
+    pub fn field_9490(&self) -> u64 { unsafe { Self::__member_field_9490(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_9490(&mut self, value: u64) { unsafe { Self::__member_field_9490(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_9490_ptr(&self) -> *mut u64 { Self::__member_field_9490(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freezeQuery(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::Internal::VirtualMachine.freezeQuery", 0xA0, *mut c_void) } }
+    /// `BSScript::Internal::VirtualMachine::freezeQuery`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn freezeQuery(&self) -> *mut c_void { unsafe { Self::__member_freezeQuery(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freezeQuery(&mut self, value: *mut c_void) { unsafe { Self::__member_freezeQuery(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freezeQuery_ptr(&self) -> *mut *mut c_void { Self::__member_freezeQuery(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_freezeState(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.freezeState", 0x939C, u32) } }
+    /// `BSScript::Internal::VirtualMachine::freezeState`, at +0x939C on 1.7.104.
+    #[inline]
+    pub fn freezeState(&self) -> u32 { unsafe { Self::__member_freezeState(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_freezeState(&mut self, value: u32) { unsafe { Self::__member_freezeState(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn freezeState_ptr(&self) -> *mut u32 { Self::__member_freezeState(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_functionMessageOverflow(this: *const Self) -> *mut [u8; 24] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.functionMessageOverflow", 0x8248, [u8; 24]) } }
+    /// `BSScript::Internal::VirtualMachine::functionMessageOverflow`, at +0x8248 on 1.7.104.
+    #[inline]
+    pub fn functionMessageOverflow(&self) -> [u8; 24] { unsafe { Self::__member_functionMessageOverflow(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_functionMessageOverflow(&mut self, value: [u8; 24]) { unsafe { Self::__member_functionMessageOverflow(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn functionMessageOverflow_ptr(&self) -> *mut [u8; 24] { Self::__member_functionMessageOverflow(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_latentWaits(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.latentWaits", 0x9358, [u8; 40]) } }
+    /// `BSScript::Internal::VirtualMachine::latentWaits`, at +0x9358 on 1.7.104.
+    #[inline]
+    pub fn latentWaits(&self) -> [u8; 40] { unsafe { Self::__member_latentWaits(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_latentWaits(&mut self, value: [u8; 40]) { unsafe { Self::__member_latentWaits(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn latentWaits_ptr(&self) -> *mut [u8; 40] { Self::__member_latentWaits(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_FunctionMessage_1024__208(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.m_FunctionMessage,1024>_208", 0x208, u64) } }
+    /// `BSScript::Internal::VirtualMachine::m_FunctionMessage,1024>_208`, at +0x208 on 1.7.104.
+    #[inline]
+    pub fn m_FunctionMessage_1024__208(&self) -> u64 { unsafe { Self::__member_m_FunctionMessage_1024__208(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_FunctionMessage_1024__208(&mut self, value: u64) { unsafe { Self::__member_m_FunctionMessage_1024__208(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_FunctionMessage_1024__208_ptr(&self) -> *mut u64 { Self::__member_m_FunctionMessage_1024__208(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_nameToTypeID(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.nameToTypeID", 0x1C0, [u8; 48]) } }
+    /// `BSScript::Internal::VirtualMachine::nameToTypeID`, at +0x1C0 on 1.7.104.
+    #[inline]
+    pub fn nameToTypeID(&self) -> [u8; 48] { unsafe { Self::__member_nameToTypeID(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_nameToTypeID(&mut self, value: [u8; 48]) { unsafe { Self::__member_nameToTypeID(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn nameToTypeID_ptr(&self) -> *mut [u8; 48] { Self::__member_nameToTypeID(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_objectTypeMap(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.objectTypeMap", 0x160, [u8; 48]) } }
+    /// `BSScript::Internal::VirtualMachine::objectTypeMap`, at +0x160 on 1.7.104.
+    #[inline]
+    pub fn objectTypeMap(&self) -> [u8; 48] { unsafe { Self::__member_objectTypeMap(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_objectTypeMap(&mut self, value: [u8; 48]) { unsafe { Self::__member_objectTypeMap(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn objectTypeMap_ptr(&self) -> *mut [u8; 48] { Self::__member_objectTypeMap(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_queuedMessageCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Internal::VirtualMachine.queuedMessageCount", 0x8278, u32) } }
+    /// `BSScript::Internal::VirtualMachine::queuedMessageCount`, at +0x8278 on 1.7.104.
+    #[inline]
+    pub fn queuedMessageCount(&self) -> u32 { unsafe { Self::__member_queuedMessageCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_queuedMessageCount(&mut self, value: u32) { unsafe { Self::__member_queuedMessageCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn queuedMessageCount_ptr(&self) -> *mut u32 { Self::__member_queuedMessageCount(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_runningStacks(this: *const Self) -> *mut [u8; 40] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.runningStacks", 0x9328, [u8; 40]) } }
+    /// `BSScript::Internal::VirtualMachine::runningStacks`, at +0x9328 on 1.7.104.
+    #[inline]
+    pub fn runningStacks(&self) -> [u8; 40] { unsafe { Self::__member_runningStacks(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_runningStacks(&mut self, value: [u8; 40]) { unsafe { Self::__member_runningStacks(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn runningStacks_ptr(&self) -> *mut [u8; 40] { Self::__member_runningStacks(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_typeIDToName(this: *const Self) -> *mut [u8; 48] { unsafe { member!(this, "BSScript::Internal::VirtualMachine.typeIDToName", 0x190, [u8; 48]) } }
+    /// `BSScript::Internal::VirtualMachine::typeIDToName`, at +0x190 on 1.7.104.
+    #[inline]
+    pub fn typeIDToName(&self) -> [u8; 48] { unsafe { Self::__member_typeIDToName(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_typeIDToName(&mut self, value: [u8; 48]) { unsafe { Self::__member_typeIDToName(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn typeIDToName_ptr(&self) -> *mut [u8; 48] { Self::__member_typeIDToName(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__NF_util__NativeFunctionBase {
@@ -732,6 +892,26 @@ impl crate::BSScript__ObjectTypeInfo {
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn parent(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.parent }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_counts(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::ObjectTypeInfo.counts", 0x24, u32) } }
+    /// `BSScript::ObjectTypeInfo::counts`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn counts(&self) -> u32 { unsafe { Self::__member_counts(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_counts(&mut self, value: u32) { unsafe { Self::__member_counts(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn counts_ptr(&self) -> *mut u32 { Self::__member_counts(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_counts2(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::ObjectTypeInfo.counts2", 0x28, u32) } }
+    /// `BSScript::ObjectTypeInfo::counts2`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn counts2(&self) -> u32 { unsafe { Self::__member_counts2(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_counts2(&mut self, value: u32) { unsafe { Self::__member_counts2(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn counts2_ptr(&self) -> *mut u32 { Self::__member_counts2(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Stack {
@@ -771,6 +951,16 @@ impl crate::BSScript__Stack {
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn top(&self) -> Option<&crate::BSScript__StackFrame> { unsafe { { self.top }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_pageCount(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::Stack.pageCount", 0x50, u32) } }
+    /// `BSScript::Stack::pageCount`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn pageCount(&self) -> u32 { unsafe { Self::__member_pageCount(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_pageCount(&mut self, value: u32) { unsafe { Self::__member_pageCount(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn pageCount_ptr(&self) -> *mut u32 { Self::__member_pageCount(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__StackFrame {
@@ -778,12 +968,52 @@ impl crate::BSScript__StackFrame {
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn owning_object_type(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { { self.owningObjectType }.as_ref() } }
+    pub fn owning_object_type(&self) -> Option<&crate::BSScript__ObjectTypeInfo> { unsafe { Self::__member_owningObjectType(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
     /// `BSScript::StackFrame::owningStack` at +0x0: the stack the frame belongs to
     ///
     /// Semantic field, papyrus pass, high; `None` while the pointer is null.
     #[inline]
     pub fn owning_stack(&self) -> Option<&crate::BSScript__Stack> { unsafe { { self.owningStack }.as_ref() } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_owningFunction(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::StackFrame.owningFunction", 0x10, *mut c_void) } }
+    /// `BSScript::StackFrame::owningFunction`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn owningFunction(&self) -> *mut c_void { unsafe { Self::__member_owningFunction(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_owningFunction(&mut self, value: *mut c_void) { unsafe { Self::__member_owningFunction(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn owningFunction_ptr(&self) -> *mut *mut c_void { Self::__member_owningFunction(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_owningObjectType(this: *const Self) -> *mut *mut crate::BSScript__ObjectTypeInfo { unsafe { member!(this, "BSScript::StackFrame.owningObjectType", 0x18, *mut crate::BSScript__ObjectTypeInfo) } }
+    /// `BSScript::StackFrame::owningObjectType`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn owningObjectType(&self) -> *mut crate::BSScript__ObjectTypeInfo { unsafe { Self::__member_owningObjectType(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_owningObjectType(&mut self, value: *mut crate::BSScript__ObjectTypeInfo) { unsafe { Self::__member_owningObjectType(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn owningObjectType_ptr(&self) -> *mut *mut crate::BSScript__ObjectTypeInfo { Self::__member_owningObjectType(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_previousFrame(this: *const Self) -> *mut *mut c_void { unsafe { member!(this, "BSScript::StackFrame.previousFrame", 0x8, *mut c_void) } }
+    /// `BSScript::StackFrame::previousFrame`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn previousFrame(&self) -> *mut c_void { unsafe { Self::__member_previousFrame(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_previousFrame(&mut self, value: *mut c_void) { unsafe { Self::__member_previousFrame(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn previousFrame_ptr(&self) -> *mut *mut c_void { Self::__member_previousFrame(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_size(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSScript::StackFrame.size", 0x38, u32) } }
+    /// `BSScript::StackFrame::size`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn size(&self) -> u32 { unsafe { Self::__member_size(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_size(&mut self, value: u32) { unsafe { Self::__member_size(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn size_ptr(&self) -> *mut u32 { Self::__member_size(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSScript__Variable {
@@ -835,6 +1065,26 @@ impl crate::ExtraAliasInstanceArray {
     /// `functor` must point to what the engine expects.
     #[inline]
     pub unsafe fn for_each_alias(&self, functor: *mut c_void) { unsafe { function!(12720, (*const Self, *mut c_void))(core::ptr::from_ref(self), functor) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_capacity(this: *const Self) -> *mut u32 { unsafe { member!(this, "ExtraAliasInstanceArray.capacity", 0x18, u32) } }
+    /// `ExtraAliasInstanceArray::capacity`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn capacity(&self) -> u32 { unsafe { Self::__member_capacity(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_capacity(&mut self, value: u32) { unsafe { Self::__member_capacity(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn capacity_ptr(&self) -> *mut u32 { Self::__member_capacity(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_count(this: *const Self) -> *mut u32 { unsafe { member!(this, "ExtraAliasInstanceArray.count", 0x20, u32) } }
+    /// `ExtraAliasInstanceArray::count`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn count(&self) -> u32 { unsafe { Self::__member_count(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_count(&mut self, value: u32) { unsafe { Self::__member_count(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn count_ptr(&self) -> *mut u32 { Self::__member_count(core::ptr::from_ref(self)) }
 }
 
 impl crate::ExtraAliasInstanceArray__Entry {
@@ -948,6 +1198,16 @@ impl crate::SkyrimScript__HandlePolicy {
     /// The pass rates the signature medium.
     #[inline]
     pub unsafe fn release_handle(&self, handle: u64) { unsafe { virtual_function!(self, 10, (*const Self, u64))(core::ptr::from_ref(self), handle) } }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_lock(this: *const Self) -> *mut u64 { unsafe { member!(this, "SkyrimScript::HandlePolicy.lock", 0x8, u64) } }
+    /// `SkyrimScript::HandlePolicy::lock`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn lock(&self) -> u64 { unsafe { Self::__member_lock(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_lock(&mut self, value: u64) { unsafe { Self::__member_lock(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn lock_ptr(&self) -> *mut u64 { Self::__member_lock(core::ptr::from_ref(self)) }
 }
 
 /// `BSScript::NF_util::SignaturesMatch`: same isStatic (slot 9), same parameter count (slot 5), every parameter type equal (slot 6 on both) and the same return type (slot 4)

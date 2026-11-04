@@ -4,6 +4,8 @@
 use crate::raw::*;
 
 pub(super) const ROWS: &[Function] = &[
+    Function { rva: 0x116c260, id: 82103, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_34" },
+    Function { rva: 0x116c2c0, id: 82104, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_35" },
     Function { rva: 0x116c320, id: 82105, confidence: Confidence::High, name: "FreeArrayBufferIfAllocated_36" },
     Function { rva: 0x116c380, id: 82106, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArrayAt8" },
     Function { rva: 0x116c400, id: 82107, confidence: Confidence::Medium, name: "DecRefElementsAndFreeArray" },
@@ -6654,6 +6656,4 @@ pub(super) const ROWS: &[Function] = &[
     Function { rva: 0x13b67b0, id: 526983, confidence: Confidence::Medium, name: "MoveAssignOwnedPtrPair_2" },
     Function { rva: 0x13b6840, id: 526985, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_68" },
     Function { rva: 0x13b6870, id: 526986, confidence: Confidence::High, name: "ScalarDeletingDtorSize10_69" },
-    Function { rva: 0x13b6a30, id: 526990, confidence: Confidence::Medium, name: "IsEnabledChildReadyAndField148Null_3" },
-    Function { rva: 0x13b7010, id: 450744, confidence: Confidence::Medium, name: "DestroyViaVfunc0AndFree_45" },
 ];

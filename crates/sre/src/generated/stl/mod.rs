@@ -3,6 +3,8 @@
 
 mod types;
 pub use types::*;
+#[cfg(feature = "stl")]
+mod api;
 #[cfg(all(feature = "stl", feature = "tier-high"))]
 mod tier_high;
 #[cfg(all(feature = "stl", feature = "tier-low"))]

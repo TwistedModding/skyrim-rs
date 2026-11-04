@@ -3,20 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `RemoveAllMapItems_5` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 19370, rva 0x2d5c50).
-/// `undefined RemoveAllMapItems_5(longlong * param_1)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_map_items_5(param_1: *mut i64) -> u64 { unsafe { function!(19370, (*mut i64) -> u64)(param_1) } }
-/// `RemoveAllOpenHashMapKeyEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58256, rva 0xac5a20).
-/// `int RemoveAllOpenHashMapKeyEntries(longlong * param_1, longlong param_2)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn remove_all_open_hash_map_key_entries(param_1: *mut i64, param_2: i64) -> i32 { unsafe { function!(58256, (*mut i64, i64) -> i32)(param_1, param_2) } }
 /// `RemoveAllPtrKeyEntries` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 58255, rva 0xac5990).
 /// `int RemoveAllPtrKeyEntries(longlong * param_1, ulonglong param_2)`
 ///
@@ -14150,3 +14136,17 @@ pub unsafe fn set_bits2001000_of_field154_unchecked(param_1: i64) -> u64 { unsaf
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn set_bits2001000_of_field154_2(param_1: i64) -> u64 { unsafe { function!(89527, (i64) -> u64)(param_1) } }
+/// `SetBlendCollisionField38Recursive` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 40864, rva 0x766a90).
+/// `longlong * SetBlendCollisionField38Recursive(longlong * param_1, longlong * param_2)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_blend_collision_field38_recursive(param_1: *mut i64, param_2: *mut i64) -> *mut i64 { unsafe { function!(40864, (*mut i64, *mut i64) -> *mut i64)(param_1, param_2) } }
+/// `SetBlenderChildBoneWeight` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 59533, rva 0xb02660).
+/// `undefined SetBlenderChildBoneWeight(longlong param_1, int param_2, int param_3, float param_4)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn set_blender_child_bone_weight(param_1: i64, param_2: i32, param_3: i32, param_4: f32) -> u64 { unsafe { function!(59533, (i64, i32, i32, f32) -> u64)(param_1, param_2, param_3, param_4) } }

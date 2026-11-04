@@ -22,15 +22,17 @@ use sre::BSEventNotifyControl;
 type SinkFn = unsafe extern "C" fn(source: *mut sre::BSTEventSource, sink: *const c_void);
 
 fn sink_fn(id: u64) -> SinkFn {
+    // Every instantiation of the engine's sink has these two slots; the sink objects here copy that shape.
+    sre::fixed_slots!("BSTEventSink<MenuOpenCloseEvent>", 0x0, 0, 1);
     unsafe { crate::engine_fn(id) }
 }
 
 /// An event type with the engine source that sends it.
 pub trait Event: Sized + 'static {
     /// Address Library id of this instantiation's `BSTEventSource<E>::AddEventSink`.
-    const ADD_SINK: u64;
+    fn add_sink() -> u64;
     /// Address Library id of this instantiation's `BSTEventSource<E>::RemoveEventSink`.
-    const REMOVE_SINK: u64;
+    fn remove_sink() -> u64;
     /// The source the engine notifies with this event, `None` while its holder does not exist yet.
     fn source() -> Option<&'static BSTEventSource<Self>>;
 }
@@ -141,7 +143,7 @@ impl ErasedSource {
     /// A source of `E` reached some other way, such as a reference's graph source.
     #[must_use]
     pub fn new<E: Event>(source: &BSTEventSource<E>) -> Self {
-        Self { source: source.as_mut_ptr(), add: E::ADD_SINK }
+        Self { source: source.as_mut_ptr(), add: E::add_sink() }
     }
 
     #[must_use]
@@ -179,7 +181,7 @@ impl<E: Event> Registration<E> {
 
 impl<E: Event> Drop for Registration<E> {
     fn drop(&mut self) {
-        unsafe { sink_fn(E::REMOVE_SINK)(self.source.as_mut_ptr(), self.sink) };
+        unsafe { sink_fn(E::remove_sink())(self.source.as_mut_ptr(), self.sink) };
     }
 }
 
@@ -216,7 +218,7 @@ impl<E: Event> BSTEventSource<E> {
     /// Registers `sink` through `BSTEventSource<E>::AddEventSink`; a sink already registered is
     /// not added again. The engine keeps the pointer, so the sink is `'static` and must never move.
     pub fn add_sink<S: EventSink<E>>(&'static self, sink: &'static Sink<E, S>) -> Registration<E> {
-        unsafe { sink_fn(E::ADD_SINK)(self.as_mut_ptr(), sink.as_ptr()) };
+        unsafe { sink_fn(E::add_sink())(self.as_mut_ptr(), sink.as_ptr()) };
         Registration { source: self, sink: sink.as_ptr() }
     }
 
@@ -266,8 +268,12 @@ macro_rules! sources {
     ($($event:ty => $source:expr, $add:ident, $remove:ident;)*) => {
         $(
             impl Event for $event {
-                const ADD_SINK: u64 = fns::$add;
-                const REMOVE_SINK: u64 = fns::$remove;
+                fn add_sink() -> u64 {
+                    sre::id!(fns::$add)
+                }
+                fn remove_sink() -> u64 {
+                    sre::id!(fns::$remove)
+                }
                 fn source() -> Option<&'static BSTEventSource<Self>> {
                     unsafe { source_at($source) }
                 }
@@ -298,20 +304,23 @@ opaque_events! {
 }
 
 macro_rules! tes {
+    (ptr $accessor:ident) => {
+        sre::EventSourceHolder_TES::get_singleton().map_or(core::ptr::null(), |h| h.$accessor().cast_const())
+    };
     ($field:ident) => {
         sre::EventSourceHolder_TES::get_singleton().map_or(core::ptr::null(), |h| &raw const h.$field)
     };
 }
 
 sources! {
-    BGSEventProcessedEvent => tes!(source_BGSEventProcessedEvent), BSTEventSource_BGSEventProcessedEvent__AddEventSink, BSTEventSource_BGSEventProcessedEvent__RemoveEventSink;
+    BGSEventProcessedEvent => tes!(ptr source_BGSEventProcessedEvent_ptr), BSTEventSource_BGSEventProcessedEvent__AddEventSink, BSTEventSource_BGSEventProcessedEvent__RemoveEventSink;
     sre::TESActivateEvent => tes!(source_TESActivateEvent), BSTEventSource_TESActivateEvent__AddEventSink, BSTEventSource_TESActivateEvent__RemoveEventSink;
     sre::TESActiveEffectApplyRemoveEvent => tes!(source_TESActiveEffectApplyRemoveEvent), BSTEventSource_TESActiveEffectApplyRemoveEvent__AddEventSink, BSTEventSource_TESActiveEffectApplyRemoveEvent__RemoveEventSink;
     sre::TESActorLocationChangeEvent => tes!(source_TESActorLocationChangeEvent), BSTEventSource_TESActorLocationChangeEvent__AddEventSink, BSTEventSource_TESActorLocationChangeEvent__RemoveEventSink;
     sre::TESBookReadEvent => tes!(source_TESBookReadEvent), BSTEventSource_TESBookReadEvent__AddEventSink, BSTEventSource_TESBookReadEvent__RemoveEventSink;
     sre::TESCellAttachDetachEvent => tes!(source_TESCellAttachDetachEvent), BSTEventSource_TESCellAttachDetachEvent__AddEventSink, BSTEventSource_TESCellAttachDetachEvent__RemoveEventSink;
     sre::TESCellFullyLoadedEvent => tes!(source_TESCellFullyLoadedEvent), BSTEventSource_TESCellFullyLoadedEvent__AddEventSink, BSTEventSource_TESCellFullyLoadedEvent__RemoveEventSink;
-    TESCellReadyToApplyDecalsEvent => tes!(source_TESCellReadyToApplyDecalsEvent), BSTEventSource_TESCellReadyToApplyDecalsEvent__AddEventSink, BSTEventSource_TESCellReadyToApplyDecalsEvent__RemoveEventSink;
+    TESCellReadyToApplyDecalsEvent => tes!(ptr source_TESCellReadyToApplyDecalsEvent_ptr), BSTEventSource_TESCellReadyToApplyDecalsEvent__AddEventSink, BSTEventSource_TESCellReadyToApplyDecalsEvent__RemoveEventSink;
     sre::TESCombatEvent => tes!(source_TESCombatEvent), BSTEventSource_TESCombatEvent__AddEventSink, BSTEventSource_TESCombatEvent__RemoveEventSink;
     sre::TESContainerChangedEvent => tes!(source_TESContainerChangedEvent), BSTEventSource_TESContainerChangedEvent__AddEventSink, BSTEventSource_TESContainerChangedEvent__RemoveEventSink;
     sre::TESDeathEvent => tes!(source_TESDeathEvent), BSTEventSource_TESDeathEvent__AddEventSink, BSTEventSource_TESDeathEvent__RemoveEventSink;
@@ -335,8 +344,8 @@ sources! {
     sre::TESPerkEntryRunEvent => tes!(source_TESPerkEntryRunEvent), BSTEventSource_TESPerkEntryRunEvent__AddEventSink, BSTEventSource_TESPerkEntryRunEvent__RemoveEventSink;
     TESQuestInitEvent => tes!(source_TESQuestInitEvent), BSTEventSource_TESQuestInitEvent__AddEventSink, BSTEventSource_TESQuestInitEvent__RemoveEventSink;
     sre::TESQuestStageEvent => tes!(source_TESQuestStageEvent), BSTEventSource_TESQuestStageEvent__AddEventSink, BSTEventSource_TESQuestStageEvent__RemoveEventSink;
-    sre::TESQuestStageItemDoneEvent => tes!(source_TESQuestStageItemDoneEvent), BSTEventSource_TESQuestStageItemDoneEvent__AddEventSink, BSTEventSource_TESQuestStageItemDoneEvent__RemoveEventSink;
-    sre::TESQuestStartStopEvent => tes!(source_TESQuestStartStopEvent), BSTEventSource_TESQuestStartStopEvent__AddEventSink, BSTEventSource_TESQuestStartStopEvent__RemoveEventSink;
+    sre::TESQuestStageItemDoneEvent => tes!(ptr source_TESQuestStageItemDoneEvent_ptr), BSTEventSource_TESQuestStageItemDoneEvent__AddEventSink, BSTEventSource_TESQuestStageItemDoneEvent__RemoveEventSink;
+    sre::TESQuestStartStopEvent => tes!(ptr source_TESQuestStartStopEvent_ptr), BSTEventSource_TESQuestStartStopEvent__AddEventSink, BSTEventSource_TESQuestStartStopEvent__RemoveEventSink;
     sre::TESResetEvent => tes!(source_TESResetEvent), BSTEventSource_TESResetEvent__AddEventSink, BSTEventSource_TESResetEvent__RemoveEventSink;
     sre::TESResolveNPCTemplatesEvent => tes!(source_TESResolveNPCTemplatesEvent), BSTEventSource_TESResolveNPCTemplatesEvent__AddEventSink, BSTEventSource_TESResolveNPCTemplatesEvent__RemoveEventSink;
     sre::TESSceneEvent => tes!(source_TESSceneEvent), BSTEventSource_TESSceneEvent__AddEventSink, BSTEventSource_TESSceneEvent__RemoveEventSink;
@@ -346,7 +355,7 @@ sources! {
     sre::TESSleepStartEvent => tes!(source_TESSleepStartEvent), BSTEventSource_TESSleepStartEvent__AddEventSink, BSTEventSource_TESSleepStartEvent__RemoveEventSink;
     sre::TESSleepStopEvent => tes!(source_TESSleepStopEvent), BSTEventSource_TESSleepStopEvent__AddEventSink, BSTEventSource_TESSleepStopEvent__RemoveEventSink;
     sre::TESSpellCastEvent => tes!(source_TESSpellCastEvent), BSTEventSource_TESSpellCastEvent__AddEventSink, BSTEventSource_TESSpellCastEvent__RemoveEventSink;
-    sre::TESPlayerBowShotEvent => tes!(source_TESPlayerBowShotEvent), BSTEventSource_TESPlayerBowShotEvent__AddEventSink, BSTEventSource_TESPlayerBowShotEvent__RemoveEventSink;
+    sre::TESPlayerBowShotEvent => tes!(ptr source_TESPlayerBowShotEvent_ptr), BSTEventSource_TESPlayerBowShotEvent__AddEventSink, BSTEventSource_TESPlayerBowShotEvent__RemoveEventSink;
     sre::TESTopicInfoEvent => tes!(source_TESTopicInfoEvent), BSTEventSource_TESTopicInfoEvent__AddEventSink, BSTEventSource_TESTopicInfoEvent__RemoveEventSink;
     sre::TESTrackedStatsEvent => tes!(source_TESTrackedStatsEvent), BSTEventSource_TESTrackedStatsEvent__AddEventSink, BSTEventSource_TESTrackedStatsEvent__RemoveEventSink;
     sre::TESTrapHitEvent => tes!(source_TESTrapHitEvent), BSTEventSource_TESTrapHitEvent__AddEventSink, BSTEventSource_TESTrapHitEvent__RemoveEventSink;
@@ -356,12 +365,12 @@ sources! {
     sre::TESUniqueIDChangeEvent => tes!(source_TESUniqueIDChangeEvent), BSTEventSource_TESUniqueIDChangeEvent__AddEventSink, BSTEventSource_TESUniqueIDChangeEvent__RemoveEventSink;
     // The four sources below have no named RemoveEventSink instance; they use the template body
     // events.md documents (0x3cd9e0), which every instance shares instruction for instruction.
-    sre::TESWaitStartEvent => tes!(source_TESWaitStartEvent), BSTEventSource_TESWaitStartEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
-    sre::TESWaitStopEvent => tes!(source_TESWaitStopEvent), BSTEventSource_TESWaitStopEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
+    sre::TESWaitStartEvent => tes!(ptr source_TESWaitStartEvent_ptr), BSTEventSource_TESWaitStartEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
+    sre::TESWaitStopEvent => tes!(ptr source_TESWaitStopEvent_ptr), BSTEventSource_TESWaitStopEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
     sre::TESSwitchRaceCompleteEvent => tes!(source_TESSwitchRaceCompleteEvent), BSTEventSource_TESSwitchRaceCompleteEvent__AddEventSink, BSTEventSource_TESSwitchRaceCompleteEvent__RemoveEventSink;
-    sre::TESFastTravelEndEvent => tes!(source_TESFastTravelEndEvent), BSTEventSource_TESFastTravelEndEvent__AddEventSink, BSTEventSource_TESFastTravelEndEvent__RemoveEventSink;
-    TESAmiiboTouchEvent => tes!(source_TESAmiiboTouchEvent), BSTEventSource_TESAmiiboTouchEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
-    TESAmiiboForcedStopDetectionEvent => tes!(source_TESAmiiboForcedStopDetectionEvent), BSTEventSource_TESAmiiboForcedStopDetectionEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
+    sre::TESFastTravelEndEvent => tes!(ptr source_TESFastTravelEndEvent_ptr), BSTEventSource_TESFastTravelEndEvent__AddEventSink, BSTEventSource_TESFastTravelEndEvent__RemoveEventSink;
+    TESAmiiboTouchEvent => tes!(ptr source_TESAmiiboTouchEvent_ptr), BSTEventSource_TESAmiiboTouchEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
+    TESAmiiboForcedStopDetectionEvent => tes!(ptr source_TESAmiiboForcedStopDetectionEvent_ptr), BSTEventSource_TESAmiiboForcedStopDetectionEvent__AddEventSink, BSTEventSource_MenuOpenCloseEvent__RemoveEventSink;
 }
 
 /// What the input source sends: a pointer to the head of the frame's `InputEvent` list (pass 9
@@ -399,16 +408,20 @@ sources! {
     sre::MenuModeChangeEvent => ui_source(|ui| &raw const ui.source_MenuModeChangeEvent), BSTEventSource_MenuModeChangeEvent__AddEventSink, BSTEventSource_MenuModeChangeEvent__RemoveEventSink;
     InputEventList => sre::EventSourceHolder_Input::singleton().map_or(core::ptr::null(), |i| &raw const i.source_InputEvent), BSTEventSource_InputEvent____ptr64__AddEventSink, BSTEventSource_InputEvent____ptr64__RemoveEventSink;
     sre::BGSFootstepEvent => sre::g_footstep_event_source_ptr().map_or(core::ptr::null(), core::ptr::from_ref), BSTEventSource_BGSFootstepEvent__AddEventSink, BSTEventSource_BGSFootstepEvent__RemoveEventSink;
-    sre::BGSActorCellEvent => player_source(|p| &raw const p.source_BGSActorCellEvent), BSTEventSource_BGSActorCellEvent__AddEventSink, BSTEventSource_BGSActorCellEvent__RemoveEventSink;
-    sre::PositionPlayerEvent => player_source(|p| &raw const p.source_PositionPlayerEvent), BSTEventSource_PositionPlayerEvent__AddEventSink, BSTEventSource_PositionPlayerEvent__RemoveEventSink;
+    sre::BGSActorCellEvent => player_source(|p| p.source_BGSActorCellEvent_ptr().cast_const()), BSTEventSource_BGSActorCellEvent__AddEventSink, BSTEventSource_BGSActorCellEvent__RemoveEventSink;
+    sre::PositionPlayerEvent => player_source(|p| p.source_PositionPlayerEvent_ptr().cast_const()), BSTEventSource_PositionPlayerEvent__AddEventSink, BSTEventSource_PositionPlayerEvent__RemoveEventSink;
 }
 
 /// A behaviour graph's events come from the per-graph sources (`BShkbAnimationGraph` + 0x68):
 /// `source()` is `None`, register on [`crate::animation::graph_event_source`] or
 /// `BShkbAnimationGraphExt::event_source`.
 impl Event for sre::BSAnimationGraphEvent {
-    const ADD_SINK: u64 = fns::BSTEventSource_BSAnimationGraphEvent__AddEventSink;
-    const REMOVE_SINK: u64 = fns::BSTEventSource_BSAnimationGraphEvent__RemoveEventSink;
+    fn add_sink() -> u64 {
+        sre::id!(fns::BSTEventSource_BSAnimationGraphEvent__AddEventSink)
+    }
+    fn remove_sink() -> u64 {
+        sre::id!(fns::BSTEventSource_BSAnimationGraphEvent__RemoveEventSink)
+    }
     fn source() -> Option<&'static BSTEventSource<Self>> {
         None
     }
@@ -432,8 +445,12 @@ pub mod story {
                 }
 
                 impl Event for $name {
-                    const ADD_SINK: u64 = fns::$add;
-                    const REMOVE_SINK: u64 = fns::$remove;
+                    fn add_sink() -> u64 {
+                    sre::id!(fns::$add)
+                }
+                    fn remove_sink() -> u64 {
+                    sre::id!(fns::$remove)
+                }
                     fn source() -> Option<&'static BSTEventSource<Self>> {
                         unsafe { source_at(sre::$get().cast()) }
                     }

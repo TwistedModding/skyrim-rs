@@ -66,14 +66,14 @@ unsafe impl FormClass for Actor {
 unsafe impl FormClass for Character {
     const TYPE_ID: VMTypeID = VMTypeID::Actor;
     fn is(form: &TESForm) -> bool {
-        crate::class_of(form).is_some_and(|c| c.id == sre::raw::vtables::Character_vtable::ID || c.id == sre::raw::vtables::PlayerCharacter_vtable::ID)
+        crate::class_of(form).is_some_and(|c| c.id == sre::id!(sre::raw::vtables::Character_vtable::ID) || c.id == sre::id!(sre::raw::vtables::PlayerCharacter_vtable::ID))
     }
 }
 
 unsafe impl FormClass for PlayerCharacter {
     const TYPE_ID: VMTypeID = VMTypeID::Actor;
     fn is(form: &TESForm) -> bool {
-        crate::class_of(form).is_some_and(|c| c.id == sre::raw::vtables::PlayerCharacter_vtable::ID)
+        crate::class_of(form).is_some_and(|c| c.id == sre::id!(sre::raw::vtables::PlayerCharacter_vtable::ID))
     }
 }
 
@@ -153,7 +153,8 @@ pub trait TESDataHandlerExt {
 
 impl TESDataHandlerExt for TESDataHandler {
     fn forms_of_type(&self, ty: FormType) -> &[Option<&TESForm>] {
-        let arrays = core::ptr::from_ref(self).cast::<sre::BSTArray>().wrapping_byte_add(core::mem::offset_of!(TESDataHandler, formArrays));
+        let arrays = core::ptr::from_ref(self).cast::<sre::BSTArray>().wrapping_byte_add(sre::member_offset!("TESDataHandler.formArrays", 0x10));
+        sre::fixed_size!("BSTArray", sre::BSTArray);
         let array = unsafe { &*arrays.add(ty as usize) };
         unsafe { ptr_slice(array.data, array.size) }
     }

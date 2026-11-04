@@ -307,19 +307,26 @@ pub struct ActivateHandler_vtable {
     /// `ActivateHandler::CanProcess` at 0x7b4e50 (semantic, high); signature (untiered): `bool CanProcess(ActivateHandler * this, longlong * param_1)`; `CanProcess`: Activate (high); semantic signature: `bool (ActivateHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `ActivateHandler::vfunc_6` at 0x7b2660 (rtti, high); signature (low): `undefined vfunc_6(ActivateHandler * this, longlong param_1, undefined8 param_2, PlayerCamera * param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `HeldStateHandler::UpdateHeldState` at 0x7ad430 (semantic, high); signature (untiered): `undefined UpdateHeldState(HeldStateHandler * this, longlong param_1)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `HeldStateHandler::SetHeldState` at 0x7b4e40 (semantic, high); signature (untiered): `undefined SetHeldState(HeldStateHandler * this, undefined1 param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
 }
 impl ActivateHandler_vtable {
     pub const ID: u64 = 208723;
@@ -2782,11 +2789,14 @@ impl AllowRotationHandler_vtable {
 #[repr(C)]
 pub struct AmiiboEvent_vtable {
     /// `AmiiboEvent::vdtor` at 0xcfa4b0 (layout_inference, medium); signature (low): `AmiiboEvent * vdtor(AmiiboEvent * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `IDEvent::vfunc_1` at 0x7b4470 (rtti, medium); signature (low): `undefined1 vfunc_1(void)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `IDEvent::vfunc_2` at 0x7b4830 (rtti, medium); signature (high): `IDEvent * vfunc_2(IDEvent * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl AmiiboEvent_vtable {
     pub const ID: u64 = 536708;
@@ -3980,33 +3990,47 @@ impl ArrowReleaseHandler_vtable {
 #[repr(C)]
 pub struct ArrowScroller_vtable {
     /// `ArrowScroller::vdtor` at 0x12e590 (layout_inference, medium); signature (low): `ArrowScroller * vdtor(ArrowScroller * this, ulonglong param_1, void * param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `UI_element::vfunc_1` at 0x15e7950 (rtti, medium); signature (high): `undefined vfunc_1(UI_element * this)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `ArrowScroller::vfunc_2` at 0x15ebe80 (rtti, high); signature (high): `undefined vfunc_2(ArrowScroller * this)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `ArrowScroller::vfunc_3` at 0x15ebdb0 (rtti, high); signature (medium): `undefined vfunc_3(ArrowScroller * this, float param_1)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `ArrowScroller::vfunc_4` at 0x15ec050 (rtti, high); signature (low): `undefined8 vfunc_4(ArrowScroller * this, float * param_1, undefined8 * param_2)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `UI_element::vfunc_5` at 0x15e7770 (rtti, medium); signature (low): `undefined vfunc_5(UI_element * this, undefined1 param_1)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `UI_element::vfunc_6` at 0x15e7760 (rtti, medium); signature (low): `undefined vfunc_6(UI_element * this, undefined1 param_1)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `ArrowScroller::vfunc_7` at 0x15ebfc0 (rtti, high); signature (medium): `undefined vfunc_7(ArrowScroller * this, float param_1, float param_2)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `UI_element::vfunc_8` at 0x15e76a0 (rtti, medium); signature (low): `undefined vfunc_8(UI_element * this, undefined4 * param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
     /// `UI_element::vfunc_9` at 0x15e7620 (rtti, medium); signature (low): `undefined vfunc_9(UI_element * this, longlong param_1)`
-    pub slot_9: *const c_void,
+    #[doc(hidden)]
+    pub __slot_9: *const c_void,
     /// `UI_element::vfunc_10` at 0x15e7590 (rtti, medium); signature (low): `undefined vfunc_10(UI_element * this, undefined8 param_1)`
-    pub slot_10: *const c_void,
+    #[doc(hidden)]
+    pub __slot_10: *const c_void,
     /// `UI_element::vfunc_11` at 0x118cd0 (rtti, medium); signature (high): `float vfunc_11(UI_element * this)`
-    pub slot_11: *const c_void,
+    #[doc(hidden)]
+    pub __slot_11: *const c_void,
     /// `UI_element::vfunc_12` at 0x118ce0 (rtti, medium); signature (high): `float vfunc_12(UI_element * this)`
-    pub slot_12: *const c_void,
+    #[doc(hidden)]
+    pub __slot_12: *const c_void,
     /// `UI_element::vfunc_13` at 0x15e7470 (rtti, medium); signature (low): `undefined vfunc_13(UI_element * this, longlong * param_1)`
-    pub slot_13: *const c_void,
+    #[doc(hidden)]
+    pub __slot_13: *const c_void,
 }
 impl ArrowScroller_vtable {
     pub const ID: u64 = 469721;
@@ -4072,23 +4096,31 @@ impl AttackAnimationArrayMap_vtable {
 #[repr(C)]
 pub struct AttackBlockHandler_vtable {
     /// `AttackBlockHandler::vdtor` at 0x7b19c0 (layout_inference, medium); signature (low): `AttackBlockHandler * vdtor(AttackBlockHandler * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_0: *const c_void,
+    #[doc(hidden)]
+    pub __slot_0: *const c_void,
     /// `AttackBlockHandler::CanProcess` at 0x7b4e80 (semantic, high); signature (untiered): `undefined8 CanProcess(AttackBlockHandler * this, longlong * param_1)`; `CanProcess`: Left/Right Attack/Block (high); semantic signature: `bool (AttackBlockHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `AttackBlockHandler::vfunc_2` at 0x7b2b90 (rtti, high); signature (low): `undefined vfunc_2(AttackBlockHandler * this, longlong * param_1, ulonglong param_2, undefined8 param_3)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `AttackBlockHandler::vfunc_6` at 0x7b28d0 (rtti, high); signature (low): `undefined vfunc_6(AttackBlockHandler * this, longlong * param_1, ButtonEvent * param_2, undefined8 param_3)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
     /// `AttackBlockHandler::vfunc_7` at 0x7b5810 (rtti, high); signature (high): `undefined vfunc_7(AttackBlockHandler * this)`
-    pub slot_7: *const c_void,
+    #[doc(hidden)]
+    pub __slot_7: *const c_void,
     /// `AttackBlockHandler::vfunc_8` at 0x7b4e20 (rtti, high); signature (low): `undefined vfunc_8(AttackBlockHandler * this, char param_1)`
-    pub slot_8: *const c_void,
+    #[doc(hidden)]
+    pub __slot_8: *const c_void,
 }
 impl AttackBlockHandler_vtable {
     pub const ID: u64 = 208719;
@@ -4210,15 +4242,20 @@ pub struct AutoMoveHandler_vtable {
     /// `AutoMoveHandler::CanProcess` at 0x7b4ee0 (semantic, high); signature (untiered): `bool CanProcess(AutoMoveHandler * this, longlong * param_1)`; `CanProcess`: Auto-Move (high); semantic signature: `bool (AutoMoveHandler* this, InputEvent* event)`
     pub slot_1: *const c_void,
     /// `PlayerInputHandler::ProcessMotionGesture` at 0x55d5d0 (semantic, high); signature (untiered): `undefined ProcessMotionGesture(void)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
     /// `PlayerInputHandler::ProcessSixaxis` at 0x55d5f0 (semantic, high); signature (untiered): `undefined ProcessSixaxis(void)`
-    pub slot_3: *const c_void,
+    #[doc(hidden)]
+    pub __slot_3: *const c_void,
     /// `PlayerInputHandler::ProcessThumbstick` at 0x55d600 (semantic, high); signature (untiered): `undefined ProcessThumbstick(void)`
-    pub slot_4: *const c_void,
+    #[doc(hidden)]
+    pub __slot_4: *const c_void,
     /// `PlayerInputHandler::ProcessMouseMove` at 0x55d5e0 (semantic, high); signature (untiered): `undefined ProcessMouseMove(void)`
-    pub slot_5: *const c_void,
+    #[doc(hidden)]
+    pub __slot_5: *const c_void,
     /// `AutoMoveHandler::vfunc_6` at 0x7b3130 (rtti, high); signature (low): `undefined vfunc_6(AutoMoveHandler * this, longlong param_1, longlong param_2)`
-    pub slot_6: *const c_void,
+    #[doc(hidden)]
+    pub __slot_6: *const c_void,
 }
 impl AutoMoveHandler_vtable {
     pub const ID: u64 = 208725;
@@ -5232,9 +5269,11 @@ pub struct AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIte
     /// `AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_>::vdtor` at 0x82fdb0 (layout_inference, medium); signature (low): `AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_> * vdtor(AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect___vtable {
     pub const ID: u64 = 211841;
@@ -5652,9 +5691,11 @@ pub struct AutoRegisterCombatObject_CombatMagicCasterReanimate_vtable {
     /// `AutoRegisterCombatObject<CombatMagicCasterReanimate>::vdtor` at 0x830400 (layout_inference, medium); signature (low): `AutoRegisterCombatObject<CombatMagicCasterReanimate> * vdtor(AutoRegisterCombatObject<CombatMagicCasterReanimate> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl AutoRegisterCombatObject_CombatMagicCasterReanimate_vtable {
     pub const ID: u64 = 211903;
@@ -9464,9 +9505,11 @@ pub struct AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShou
     /// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82fd50 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEf_4c5776ceb473_vtable {
     pub const ID: u64 = 536610;
@@ -9884,9 +9927,11 @@ pub struct AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManage
     /// `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8303d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    pub slot_1: *const c_void,
+    #[doc(hidden)]
+    pub __slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
-    pub slot_2: *const c_void,
+    #[doc(hidden)]
+    pub __slot_2: *const c_void,
 }
 impl AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
     pub const ID: u64 = 211899;

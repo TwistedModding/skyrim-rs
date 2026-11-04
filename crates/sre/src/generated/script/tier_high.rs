@@ -543,7 +543,7 @@ impl crate::SkyrimVM {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(0x188)) } }
+    pub unsafe fn bst_event_sink_tes_amiibo_forced_stop_detection_event_vfunc_1(&self) -> u64 { unsafe { function!(524033, (*const Self) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("SkyrimVM:BSTEventSink<TESAmiiboForcedStopDetectionEvent>", 0x188))) } }
     /// `SkyrimVM::BSTEventSink_TESLoadGameEvent_vfunc_1` (decompiler signature, tier high; ledger rtti evidence, name high; id 53976, rva 0x9dcfc0).
     /// `undefined8 BSTEventSink_TESLoadGameEvent_vfunc_1(SkyrimVM * this)`
     ///

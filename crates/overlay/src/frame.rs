@@ -108,7 +108,7 @@ fn read_target(rtv: *mut core::ffi::c_void) -> Result<Frame, String> {
     let e = |e: windows::core::Error| e.to_string();
     let reloc = skyrim::reloc();
     let global = |id| reloc.address(id).map(|a| unsafe { *(a as *const *mut core::ffi::c_void) }).map_err(|e| e.to_string());
-    let (device, context) = (global(globals::g_D3D11Device)?, global(globals::g_D3D11Context)?);
+    let (device, context) = (global(sre::id!(globals::g_D3D11Device))?, global(sre::id!(globals::g_D3D11Context))?);
     let device = unsafe { ID3D11Device::from_raw_borrowed(&device) }.ok_or("no device")?;
     let context = unsafe { ID3D11DeviceContext::from_raw_borrowed(&context) }.ok_or("no context")?;
     let rtv = unsafe { ID3D11RenderTargetView::from_raw_borrowed(&rtv) }.ok_or("no view")?;

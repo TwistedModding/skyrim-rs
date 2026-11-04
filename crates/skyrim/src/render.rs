@@ -17,7 +17,7 @@ use core::ffi::{CStr, c_void};
 use core::sync::atomic::{AtomicU32, AtomicUsize, Ordering};
 
 use sre::raw::{fns, vtables};
-use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiPointLight, NiSkinInstance, TESFullName, TESObjectLIGH, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
+use sre::{BGSArtObject, BSCullingProcess, Calendar, ModelReferenceEffect, ReferenceEffect, ShaderReferenceEffect, Sky, TESObjectREFR, TESWeather, BSEffectShaderData, BSFadeNode, BSFlattenedBoneTree, BSGeometry, BSLight, BSLightingShaderMaterialBase, BSShaderMaterial, BSShaderProperty, BSShaderTextureSet, BSShadowLight, BSTextureSet, CameraMatrixEntry, NiAVObject, NiCamera, NiNode, NiPointLight, NiSkinInstance, TESObjectLIGH, NiTransform, ShaderMaterialType, ShadowMapData, ShadowSceneNode, TESEffectShader, TextureSetSlot};
 
 use crate::ptr_slice;
 
@@ -35,14 +35,6 @@ pub type CullFn = fns::NiAVObject__Cull_fn;
 /// `NiAVObject::flags` bit 0: no culling process visits the object.
 pub const HIDDEN: u32 = 1;
 
-/// `FrameState` +0xb8 and +0xc8: the array of `CameraMatrixEntry` (0x290 bytes each) and its
-/// count (`graphics.md` section 2.2; the fields are not laid out in the ledger).
-const FRAME_CAMERA_ENTRIES: usize = 0xb8;
-const FRAME_CAMERA_ENTRY_COUNT: usize = 0xc8;
-/// `ShaderPropertyLightData` +0x1c, the receiver mask behind `BSShaderProperty::lightData` (`graphics.md` section 4.3).
-const RECEIVER_MASK: usize = 0x1c;
-/// A `Setting`'s value, 8 bytes after its vtable (the ledger's `_value` rows).
-const SETTING_VALUE: usize = 8;
 
 fn create<F: Copy>(id: u64, detour: F) -> Result<hook::Hook<F>, hook::Error> {
     unsafe { hook::Hook::create(crate::reloc().address(id)?, detour) }
@@ -70,7 +62,7 @@ pub fn frame_counter() -> u32 {
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_cull(detour: CullFn) -> Result<hook::Hook<CullFn>, hook::Error> {
-    create(fns::NiAVObject__Cull, detour)
+    create(sre::id!(fns::NiAVObject__Cull), detour)
 }
 
 /// Creates, disabled, a detour on `RenderWorld` (id 36558): the world draw of a frame, on the main
@@ -79,7 +71,7 @@ pub unsafe fn hook_cull(detour: CullFn) -> Result<hook::Hook<CullFn>, hook::Erro
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_render_world(detour: RenderWorldFn) -> Result<hook::Hook<RenderWorldFn>, hook::Error> {
-    create(fns::RenderWorld, detour)
+    create(sre::id!(fns::RenderWorld), detour)
 }
 
 /// Creates, disabled, a detour on `PresentFrame` (id 77246): the swap chain present, called by the
@@ -89,7 +81,7 @@ pub unsafe fn hook_render_world(detour: RenderWorldFn) -> Result<hook::Hook<Rend
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_present(detour: PresentFn) -> Result<hook::Hook<PresentFn>, hook::Error> {
-    create(fns::PresentFrame, detour)
+    create(sre::id!(fns::PresentFrame), detour)
 }
 
 /// Creates, disabled, a detour on `PlayerCharacter::SetFirstPerson` (id 40476), called on the
@@ -98,7 +90,7 @@ pub unsafe fn hook_present(detour: PresentFn) -> Result<hook::Hook<PresentFn>, h
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_set_first_person(detour: SetFirstPersonFn) -> Result<hook::Hook<SetFirstPersonFn>, hook::Error> {
-    create(fns::PlayerCharacter__SetFirstPerson, detour)
+    create(sre::id!(fns::PlayerCharacter__SetFirstPerson), detour)
 }
 
 /// Creates, disabled, a detour on `BSShaderAccumulator::RegisterDepthGeometry` (id 106576): every
@@ -110,7 +102,7 @@ pub unsafe fn hook_set_first_person(detour: SetFirstPersonFn) -> Result<hook::Ho
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_register_depth_geometry(detour: RegisterDepthGeometryFn) -> Result<hook::Hook<RegisterDepthGeometryFn>, hook::Error> {
-    create(fns::BSShaderAccumulator__RegisterDepthGeometry, detour)
+    create(sre::id!(fns::BSShaderAccumulator__RegisterDepthGeometry), detour)
 }
 
 /// Creates, disabled, a detour on `ProcessCullObjectList` (id 76561): the replay of a geometry
@@ -120,7 +112,7 @@ pub unsafe fn hook_register_depth_geometry(detour: RegisterDepthGeometryFn) -> R
 /// # Safety
 /// Same as [`hook::Hook::create`].
 pub unsafe fn hook_process_cull_object_list(detour: ProcessCullObjectListFn) -> Result<hook::Hook<ProcessCullObjectListFn>, hook::Error> {
-    create(fns::ProcessCullObjectList, detour)
+    create(sre::id!(fns::ProcessCullObjectList), detour)
 }
 
 /// `fNearDistance:Display` (id 388779): the world near plane every frustum rebuild and every depth shift read.
@@ -168,9 +160,14 @@ pub fn set_near_plane(near: f32) {
 /// `VolumetricLightingParams` (`g_VolumetricLighting`, `graphics.md` "Request IC10"): the range
 /// factor, the repartition function pair `float (float x, float range)` the tables are filled
 /// through, and the two 4096-texel tables.
-const VOLUMETRIC_RANGE: usize = 0x2c;
-const VOLUMETRIC_FUNCTIONS: [usize; 2] = [0x40, 0x48];
-const VOLUMETRIC_TABLES: [usize; 2] = [0x78, 0x80];
+fn volumetric_functions() -> [usize; 2] {
+    [sre::member_offset!("VolumetricLightingParams.repartitionFunction", 0x40), sre::member_offset!("VolumetricLightingParams.inverseRepartitionFunction", 0x48)]
+}
+
+fn volumetric_tables() -> [usize; 2] {
+    [sre::member_offset!("VolumetricLightingParams.repartitionTable", 0x78), sre::member_offset!("VolumetricLightingParams.inverseRepartitionTable", 0x80)]
+}
+
 /// The tables' half texel and last texel centre.
 const HALF_TEXEL: f32 = 1.0 / 8192.0;
 const LAST_TEXEL: f32 = 4095.0 / 4096.0;
@@ -200,17 +197,17 @@ extern "C" fn near_inverse_repartition(s: f32, range: f32) -> f32 {
 }
 
 fn volumetric_field<T>(offset: usize) -> *mut T {
-    sre::g_volumetric_lighting().wrapping_byte_add(offset).cast()
+    core::ptr::from_ref(sre::g_volumetric_lighting()).cast_mut().wrapping_byte_add(offset).cast()
 }
 
 /// Whether both tables exist, so a refill has something to fill.
 fn volumetric_tables_exist() -> bool {
-    !sre::g_volumetric_lighting().is_null() && VOLUMETRIC_TABLES.iter().all(|&t| unsafe { volumetric_field::<usize>(t).read_volatile() } != 0)
+    volumetric_tables().iter().all(|&t| unsafe { volumetric_field::<usize>(t).read_volatile() } != 0)
 }
 
 fn refill_volumetric_tables() {
-    let range = unsafe { volumetric_field::<f32>(VOLUMETRIC_RANGE).read_volatile() };
-    unsafe { sre::set_volumetric_range_factor(sre::g_volumetric_lighting(), range) };
+    let range = unsafe { volumetric_field::<f32>(sre::member_offset!("VolumetricLightingParams.rangeFactor", 0x2c)).read_volatile() };
+    unsafe { sre::set_volumetric_range_factor(core::ptr::from_ref(sre::g_volumetric_lighting()).cast_mut(), range) };
 }
 
 /// Keeps volumetric lighting at the look it has under the `reference` near while the world draws
@@ -227,7 +224,7 @@ pub fn compensate_volumetric_near(reference: f32, near: f32) {
     VOLUMETRIC_SCALE.store(scale.to_bits(), Ordering::Relaxed);
     if installed == 0 {
         let ours = [near_repartition as *const () as usize, near_inverse_repartition as *const () as usize];
-        for ((offset, original), function) in VOLUMETRIC_FUNCTIONS.into_iter().zip(&VOLUMETRIC_ORIGINALS).zip(ours) {
+        for ((offset, original), function) in volumetric_functions().into_iter().zip(&VOLUMETRIC_ORIGINALS).zip(ours) {
             let slot = volumetric_field::<usize>(offset);
             original.store(unsafe { slot.read_volatile() }, Ordering::Relaxed);
             unsafe { slot.write_volatile(function) };
@@ -241,7 +238,7 @@ pub fn release_volumetric_near() {
     if VOLUMETRIC_SCALE.swap(0, Ordering::Relaxed) == 0 {
         return;
     }
-    for (offset, original) in VOLUMETRIC_FUNCTIONS.into_iter().zip(&VOLUMETRIC_ORIGINALS) {
+    for (offset, original) in volumetric_functions().into_iter().zip(&VOLUMETRIC_ORIGINALS) {
         unsafe { volumetric_field::<usize>(offset).write_volatile(original.load(Ordering::Relaxed)) };
     }
     if volumetric_tables_exist() {
@@ -315,7 +312,7 @@ fn depth_bias_pulls(scale: f32) -> [f32; 12] {
 /// Writes the pulls scaled by `scale` unless another module changed them; the engine refilling
 /// its own values (renderer init or reset) counts as unchanged.
 fn write_depth_bias(scale: f32) {
-    let Ok(at) = crate::reloc().address(DEPTH_BIAS_PULLS) else { return };
+    let Ok(at) = crate::reloc().address(sre::id!(DEPTH_BIAS_PULLS)) else { return };
     let table = at as *mut [f32; 12];
     let bits = |pulls: [f32; 12]| pulls.map(f32::to_bits);
     let current = bits(unsafe { table.read_volatile() });
@@ -382,7 +379,7 @@ pub struct CascadeSettings {
 /// sits at +8 of the object; `T` is the setting's type (`f32` for an `f` setting, `u32` for `i`).
 #[must_use]
 pub fn setting_value<T>(setting: *mut c_void) -> *mut T {
-    setting.wrapping_byte_add(SETTING_VALUE).cast()
+    setting.wrapping_byte_add(sre::member_offset!("Setting.value", 0x8)).cast()
 }
 
 /// Reads the four cascade settings.
@@ -413,15 +410,16 @@ pub fn set_cascade_settings(settings: CascadeSettings) {
 /// and 1), the hands camera in first person.
 #[must_use]
 pub fn camera_entries() -> &'static [CameraMatrixEntry] {
-    let base = core::ptr::from_ref(sre::g_frame_state()).cast::<u8>();
-    let (data, count) = unsafe { (base.add(FRAME_CAMERA_ENTRIES).cast::<*const CameraMatrixEntry>().read_unaligned(), base.add(FRAME_CAMERA_ENTRY_COUNT).cast::<u32>().read_unaligned()) };
-    if data.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(data, count as usize) } }
+    let base = core::ptr::from_ref(sre::g_frame_state());
+    sre::fixed_size!("CameraMatrixEntry", CameraMatrixEntry);
+    let entries = unsafe { &*base.byte_add(sre::member_offset!("FrameState.cameraMatrices", 0xb8)).cast::<sre::BSTArray>() };
+    if entries.data.is_null() { &[] } else { unsafe { core::slice::from_raw_parts(entries.data.cast(), entries.size as usize) } }
 }
 
 /// `g_ShadowSceneNode[index]` (id 390951), `None` while the slot is empty; index 0 is the world.
 #[must_use]
 pub fn shadow_scene_node(index: usize) -> Option<&'static ShadowSceneNode> {
-    let slots = crate::reloc().address(sre::raw::globals::g_ShadowSceneNode).ok()? as *const [*const ShadowSceneNode; 4];
+    let slots = crate::reloc().address(sre::id!(sre::raw::globals::g_ShadowSceneNode)).ok()? as *const [*const ShadowSceneNode; 4];
     unsafe { (*slots).get(index)?.as_ref() }
 }
 
@@ -519,50 +517,30 @@ impl From<&NiTransform> for Transform {
 /// A scene graph class an `NiAVObject` can be checked and viewed as ([`NiAVObjectExt::cast`]).
 ///
 /// # Safety
-/// `VTABLES` must list only vtables of `Self` and the classes derived from it.
+/// `vtables` must list only vtables of `Self` and the classes derived from it.
 pub unsafe trait NodeClass: 'static {
-    const VTABLES: &'static [u64];
+    fn vtables() -> &'static [u64];
 }
 
-unsafe impl NodeClass for NiNode {
-    const VTABLES: &'static [u64] = &[
-        vtables::NiNode_vtable::ID,
-        vtables::BSFadeNode_vtable::ID,
-        vtables::BSFlattenedBoneTree_vtable::ID,
-        vtables::BSFaceGenNiNode_vtable::ID,
-        vtables::BSLeafAnimNode_vtable::ID,
-        vtables::BSTreeNode_vtable::ID,
-        vtables::BSMultiBoundNode_vtable::ID,
-        vtables::BSMultiBoundRoom_vtable::ID,
-        vtables::BSOrderedNode_vtable::ID,
-        vtables::BSBlastNode_vtable::ID,
-        vtables::BSDamageStage_vtable::ID,
-        vtables::BSValueNode_vtable::ID,
-        vtables::NiBillboardNode_vtable::ID,
-        vtables::NiSwitchNode_vtable::ID,
-        vtables::BSPortalSharedNode_vtable::ID,
-        vtables::ShadowSceneNode_vtable::ID,
-    ];
+macro_rules! node_classes {
+    ($($class:ty: $($vtable:ident),+;)*) => {
+        $(
+            unsafe impl NodeClass for $class {
+                fn vtables() -> &'static [u64] {
+                    $(sre::id!(vtables::$vtable::ID);)+
+                    &[$(vtables::$vtable::ID),+]
+                }
+            }
+        )*
+    };
 }
 
-unsafe impl NodeClass for BSFadeNode {
-    const VTABLES: &'static [u64] = &[vtables::BSFadeNode_vtable::ID];
-}
-
-unsafe impl NodeClass for BSFlattenedBoneTree {
-    const VTABLES: &'static [u64] = &[vtables::BSFlattenedBoneTree_vtable::ID];
-}
-
-unsafe impl NodeClass for BSGeometry {
-    const VTABLES: &'static [u64] = &[
-        vtables::BSGeometry_vtable::ID,
-        vtables::BSTriShape_vtable::ID,
-        vtables::BSDynamicTriShape_vtable::ID,
-        vtables::BSSubIndexTriShape_vtable::ID,
-        vtables::BSMeshLODTriShape_vtable::ID,
-        vtables::BSLODTriShape_vtable::ID,
-        vtables::BSLines_vtable::ID,
-    ];
+node_classes! {
+    NiNode: NiNode_vtable, BSFadeNode_vtable, BSFlattenedBoneTree_vtable, BSFaceGenNiNode_vtable, BSLeafAnimNode_vtable, BSTreeNode_vtable, BSMultiBoundNode_vtable, BSMultiBoundRoom_vtable,
+        BSOrderedNode_vtable, BSBlastNode_vtable, BSDamageStage_vtable, BSValueNode_vtable, NiBillboardNode_vtable, NiSwitchNode_vtable, BSPortalSharedNode_vtable, ShadowSceneNode_vtable;
+    BSFadeNode: BSFadeNode_vtable;
+    BSFlattenedBoneTree: BSFlattenedBoneTree_vtable;
+    BSGeometry: BSGeometry_vtable, BSTriShape_vtable, BSDynamicTriShape_vtable, BSSubIndexTriShape_vtable, BSMeshLODTriShape_vtable, BSLODTriShape_vtable, BSLines_vtable;
 }
 
 pub trait NiAVObjectExt {
@@ -602,7 +580,7 @@ pub trait NiAVObjectExt {
 impl NiAVObjectExt for NiAVObject {
     fn cast<T: NodeClass>(&self) -> Option<&T> {
         let id = crate::class_of(self)?.id;
-        T::VTABLES.contains(&id).then(|| unsafe { &*core::ptr::from_ref(self).cast::<T>() })
+        T::vtables().contains(&id).then(|| unsafe { &*core::ptr::from_ref(self).cast::<T>() })
     }
 
     fn set_hidden(&self, hidden: bool) {
@@ -737,21 +715,7 @@ impl NiSkinInstanceExt for NiSkinInstance {
     }
 }
 
-/// One flat bone of a `BSFlattenedBoneTree` (0x80 bytes, `camera.md` section 10).
-#[repr(C)]
-pub struct FlatBone {
-    pub local: NiTransform,
-    pub world: NiTransform,
-    /// Index of the parent entry, negative for the tree node itself.
-    pub parent: i16,
-    unknown_6a: [u8; 6],
-    /// The bone's own node, null for a bone dissolved into the tree.
-    pub node: *mut NiAVObject,
-    pub name: *const core::ffi::c_char,
-}
-
-const _: () = assert!(size_of::<FlatBone>() == 0x80);
-const _: () = assert!(core::mem::offset_of!(FlatBone, parent) == 0x68 && core::mem::offset_of!(FlatBone, node) == 0x70);
+pub use sre::FlatBone;
 
 pub trait BSFlattenedBoneTreeExt {
     fn bones(&self) -> &[FlatBone];
@@ -766,20 +730,21 @@ impl BSFlattenedBoneTreeExt for BSFlattenedBoneTree {
         if self.bones.is_null() {
             return &[];
         }
+        sre::fixed_size!("FlatBone", FlatBone);
         unsafe { core::slice::from_raw_parts(self.bones.cast::<FlatBone>(), self.boneCount as usize) }
     }
 
     fn rechain_bones(&self) {
-        let bones = self.bones();
+        let bones = BSFlattenedBoneTreeExt::bones(self);
         for bone in bones {
-            let world = unsafe { bone.node.as_ref() }.map_or_else(
+            let world = bone.node().map_or_else(
                 || {
-                    let parent = usize::try_from(bone.parent).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| &p.world);
-                    Transform::from(parent).compose(&Transform::from(&bone.local))
+                    let parent = usize::try_from(bone.parentIndex().cast_signed()).ok().and_then(|i| bones.get(i)).map_or(&self.world, |p| p.world());
+                    Transform::from(parent).compose(&Transform::from(bone.local()))
                 },
-                NiAVObjectExt::world_transform,
+                |node| node.world_transform(),
             );
-            unsafe { core::ptr::from_ref(&bone.world).cast::<Transform>().cast_mut().write_volatile(world) }
+            unsafe { bone.world_ptr().cast::<Transform>().write_volatile(world) }
         }
     }
 }
@@ -799,6 +764,7 @@ impl BSShadowLightExt for BSShadowLight {
         if maps.data.is_null() || maps.size == 0 {
             return &[];
         }
+        sre::fixed_size!("ShadowMapData", ShadowMapData);
         unsafe { core::slice::from_raw_parts(maps.data.cast::<ShadowMapData>(), maps.size as usize) }
     }
 
@@ -830,7 +796,7 @@ impl BSCullingProcessExt for BSCullingProcess {
     }
 
     fn is_sun_list_walk(&self) -> bool {
-        crate::class_of(self).is_some_and(|c| c.id == vtables::BSGeometryListCullingProcess_vtable::ID)
+        crate::class_of(self).is_some_and(|c| c.id == sre::id!(vtables::BSGeometryListCullingProcess_vtable::ID))
             && shadow_scene_node(0).and_then(ShadowSceneNode::sun_shadow_light).is_some_and(|sun| core::ptr::eq(sun.lightCamera, self.camera))
     }
 }
@@ -862,7 +828,7 @@ pub trait BSShaderPropertyExt {
 impl BSShaderPropertyExt for BSShaderProperty {
     fn receiver_mask(&self) -> Option<u32> {
         let data = self.lightData;
-        (!data.is_null()).then(|| unsafe { data.cast::<u8>().add(RECEIVER_MASK).cast::<u32>().read_unaligned() })
+        (!data.is_null()).then(|| unsafe { data.cast::<u8>().add(sre::member_offset!("ShaderPropertyLightData.receiverMask", 0x1c)).cast::<u32>().read_unaligned() })
     }
 }
 
@@ -885,7 +851,7 @@ pub trait BSTextureSetExt {
 
 impl BSTextureSetExt for BSTextureSet {
     fn texture_path(&self, slot: TextureSetSlot) -> Option<&CStr> {
-        if crate::class_of(self)?.id != vtables::BSShaderTextureSet_vtable::ID {
+        if crate::class_of(self)?.id != sre::id!(vtables::BSShaderTextureSet_vtable::ID) {
             return None;
         }
         let p = unsafe { &*core::ptr::from_ref(self).cast::<BSShaderTextureSet>() }.get_texture_path(slot);
@@ -898,7 +864,7 @@ impl BSTextureSetExt for BSTextureSet {
 /// no camera attachment (RE `camera.md` IC8 F). Main thread.
 pub fn play_art_object(target: &TESObjectREFR, art: &BGSArtObject, duration: f32) {
     type PlayFn = unsafe extern "C" fn(*const TESObjectREFR, *const BGSArtObject, f32, *const TESObjectREFR, bool, bool, *const NiAVObject, bool);
-    let play: PlayFn = unsafe { crate::engine_fn(fns::CreateModelReferenceEffect) };
+    let play: PlayFn = unsafe { crate::engine_fn(sre::id!(fns::CreateModelReferenceEffect)) };
     unsafe { play(target, art, duration, core::ptr::null(), false, false, core::ptr::null(), false) };
 }
 
@@ -906,26 +872,21 @@ pub fn play_art_object(target: &TESObjectREFR, art: &BGSArtObject, duration: f32
 /// (`PlayShaderReferenceEffect`, id 19872). Main thread.
 pub fn play_effect_shader(target: &TESObjectREFR, shader: &TESEffectShader, duration: f32) {
     type PlayFn = unsafe extern "C" fn(*const TESObjectREFR, *const TESEffectShader, f32, *const TESObjectREFR, bool, bool, *const NiAVObject, bool);
-    let play: PlayFn = unsafe { crate::engine_fn(fns::PlayShaderReferenceEffect) };
+    let play: PlayFn = unsafe { crate::engine_fn(sre::id!(fns::PlayShaderReferenceEffect)) };
     unsafe { play(target, shader, duration, core::ptr::null(), false, false, core::ptr::null(), false) };
 }
-
-/// The reference effect list in `ProcessLists` (data +0x108, count +0x118, spin lock +0x120).
-const EFFECTS: usize = 0x108;
-const EFFECT_COUNT: usize = 0x118;
-const EFFECT_LOCK: usize = 0x120;
 
 /// Whether the object's class is `node` or derives from it: the type node of slot 2, walked up
 /// through the parent at +8 (RE `camera.md` IC8 E and F).
 fn derives_from<T>(object: &T, node: *const u8) -> bool {
     type TypeFn = unsafe extern "C" fn(*const c_void) -> *const u8;
-    let get: TypeFn = unsafe { core::mem::transmute(sre::vtable_entry(object, 2)) };
+    let get: TypeFn = unsafe { core::mem::transmute(sre::vtable_entry(object, sre::slot_index!("NiObject", 0x0, 2))) };
     let mut current = unsafe { get(core::ptr::from_ref(object).cast()) };
     while !current.is_null() {
         if current == node {
             return true;
         }
-        current = unsafe { current.add(8).cast::<*const u8>().read_unaligned() };
+        current = unsafe { current.add(sre::member_offset!("TypeNode.parent", 0x8)).cast::<*const u8>().read_unaligned() };
     }
     false
 }
@@ -934,13 +895,14 @@ fn derives_from<T>(object: &T, node: *const u8) -> bool {
 /// handle `target`, as the engine ends one: their `finished` flag set, under the effect list's
 /// lock (RE `camera.md` IC8 F). Main thread.
 pub fn stop_reference_effects(target: u32, form_id: u32, art: bool) {
-    let Ok(holder) = crate::reloc().address(sre::raw::globals::g_ProcessLists_ptr) else { return };
-    let lists = unsafe { *(holder as *const *const u8) };
+    let Ok(holder) = crate::reloc().address(sre::id!(sre::raw::globals::g_ProcessLists_ptr)) else { return };
+    let lists = unsafe { *(holder as *const *const sre::ProcessLists) };
     if lists.is_null() {
         return;
     }
-    let _guard = crate::spin::SpinGuard::lock(unsafe { &*((lists as usize + EFFECT_LOCK) as *const sre::BSSpinLock) });
-    let (data, count) = unsafe { (lists.add(EFFECTS).cast::<*const c_void>().read_unaligned(), lists.add(EFFECT_COUNT).cast::<u32>().read_unaligned()) };
+    let _guard = crate::spin::SpinGuard::lock(unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffectsLock", 0x120)).cast::<sre::BSSpinLock>() });
+    let effects = unsafe { &*lists.byte_add(sre::member_offset!("ProcessLists.referenceEffects", 0x108)).cast::<sre::BSTArray>() };
+    let (data, count) = (effects.data.cast_const(), effects.size);
     let node = if art { sre::g_type_node_model_reference_effect() } else { sre::g_type_node_shader_reference_effect() };
     for effect in unsafe { ptr_slice::<ReferenceEffect>(data, count) }.iter().flatten() {
         if effect.target != target || !derives_from(effect, node) {
@@ -985,14 +947,18 @@ pub trait NiPointLightExt {
 
 impl NiPointLightExt for NiPointLight {
     fn values(&self) -> LightValues {
-        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x }
+        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x() }
     }
 
     #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
     fn set_values(&self, values: LightValues) {
         let [r, g, b] = values.color;
-        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.x, values.radius), (&self.radius.y, values.radius), (&self.radius.z, values.radius), (&self.fade, values.fade)] {
+        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.y, values.radius), (&self.fade, values.fade)] {
             crate::store(field, value);
+        }
+        unsafe {
+            self.radius.x_ptr().write_volatile(values.radius);
+            self.radius.z_ptr().write_volatile(values.radius);
         }
         sre::apply_light_attenuation_settings(self, values.radius.max(0.0) as u32);
     }
@@ -1005,7 +971,7 @@ pub trait TESObjectLIGHExt {
 
 impl TESObjectLIGHExt for TESObjectLIGH {
     fn full_name(&self) -> Option<&CStr> {
-        let name = unsafe { &*core::ptr::from_ref(self).byte_add(0x30).cast::<TESFullName>() }.name;
+        let name = self.as_tes_full_name().name;
         if name.is_null() { None } else { Some(unsafe { CStr::from_ptr(name.cast()) }).filter(|s| !s.is_empty()) }
     }
 }

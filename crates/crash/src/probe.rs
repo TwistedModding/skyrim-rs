@@ -2,7 +2,7 @@
 //! the ledger, and the class family decides what else is read, every byte through the guarded
 //! source: a form's id, type, flags and owning file; a reference's base object, cell and
 //! position; an actor's name; a scene node's name and parents; a navmesh's file; an interned
-//! string's text.
+//! string's text. The layouts are 1.7.104's, so on another runtime only the class is named.
 
 use core::fmt::{self, Write};
 
@@ -182,9 +182,14 @@ fn node(w: &mut dyn Write, address: u64, rec: &Record, src: &dyn Source) -> fmt:
 /// the address is not an interned string.
 pub fn describe(w: &mut dyn Write, address: u64, ctx: &Context<'_>) -> Result<bool, fmt::Error> {
     let (rec, src) = (ctx.rec, ctx.src);
+    let canonical = skse::runtime::is_canonical(rec.runtime);
     let Some(vt) = class_of(address, rec, src) else {
-        return fixed_string(w, address, src);
+        return if canonical { fixed_string(w, address, src) } else { Ok(false) };
     };
+    if !canonical {
+        w.write_str(vt.class)?;
+        return Ok(true);
+    }
     if vt.offset != 0 {
         write!(w, "{} (the subobject at +{:#x}; the object starts at {:#x})", vt.class, vt.offset, address.wrapping_sub(u64::from(vt.offset)))?;
         return Ok(true);

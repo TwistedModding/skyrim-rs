@@ -3,6 +3,16 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_2` at 0x12af200 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_b47a7685b480: u64 = 445592;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_>::vfunc_3` at 0x12b0d50 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_996cdf0862a56af86372b0f56da3e7fc>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_027b99c9b684: u64 = 445637;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_0` at 0x12c9870 (rtti, high); signature (low): `CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * vfunc_0(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_a4ee14e39d32: u64 = 446225;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_2` at 0x12ca260 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_500704cd1f1a: u64 = 446258;
+/// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_>::vfunc_3` at 0x12cb960 (rtti, high); signature (low): `undefined8 * vfunc_3(CopyableCallable<<lambda_9cc4381cb528551df1adb7b5fc690a8e>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
+pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_ddc541c03e06: u64 = 446299;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_0` at 0x129a460 (rtti, high); signature (low): `CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * vfunc_0(CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const bnet_std__detail__FunctionImpl_bnet_std__detail__attrib__Copyable_void___cdecl_bnet__CallbackPar_44853b878fee: u64 = 445072;
 /// `bnet_std::detail::FunctionImpl<bnet_std::detail::attrib::Copyable,void___cdecl(bnet::CallbackParams<bnet_std::void_t,bnet::HttpResponseInfo>&&___ptr64)>::CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_>::vfunc_2` at 0x129abf0 (rtti, high); signature (low): `undefined8 * vfunc_2(CopyableCallable<<lambda_adea97f238d027e01a467b281ee4d039>_> * this, undefined8 * param_1, undefined8 * param_2, ulonglong param_3)`
@@ -2887,6 +2897,10 @@ pub const hkContainerDebugAllocator__Allocator__vfunc_4: u64 = 57075;
 pub const hkContainerDebugAllocator__Allocator__vfunc_8: u64 = 57076;
 /// `hkContainerDebugAllocator::Allocator::vfunc_9` at 0xaa3e40 (rtti, high); signature (low): `undefined vfunc_9(Allocator * this, undefined8 param_1, undefined4 param_2)`
 pub const hkContainerDebugAllocator__Allocator__vfunc_9: u64 = 57077;
+/// `hkContainerHeapAllocator::Allocator::AllocateBuffer` at 0xaa3c50 (semantic, medium); signature (untiered): `undefined AllocateBuffer(Allocator * this, undefined8 param_1)`
+pub const hkContainerHeapAllocator__Allocator__AllocateBuffer: u64 = 57068;
+/// `hkContainerHeapAllocator::Allocator::FreeBuffer` at 0xaa3c80 (semantic, high); signature (untiered): `undefined FreeBuffer(Allocator * this, undefined8 param_1, undefined4 param_2)`
+pub const hkContainerHeapAllocator__Allocator__FreeBuffer: u64 = 57069;
 /// `hkContainerHeapAllocator::Allocator::vfunc_0` at 0xaa3ec0 (rtti, high); signature (low): `Allocator * vfunc_0(Allocator * this, byte param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_0: u64 = 57079;
 /// `hkContainerHeapAllocator::Allocator::vfunc_1` at 0xaa3be0 (rtti, high); signature (low): `undefined vfunc_1(Allocator * this, undefined4 param_1)`
@@ -2947,10 +2961,6 @@ pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_7: u64 = 80979;
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_8: u64 = 80980;
 /// `hkContainerHeapAllocator::Allocator::vfunc_2_caller_9` at 0x1150a40 (callgraph, medium); signature (untiered): `undefined vfunc_2_caller_9(longlong * param_1)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_2_caller_9: u64 = 81849;
-/// `hkContainerHeapAllocator::Allocator::vfunc_3` at 0xaa3c50 (rtti, high); signature (low): `undefined vfunc_3(Allocator * this, undefined8 param_1)`
-pub const hkContainerHeapAllocator__Allocator__vfunc_3: u64 = 57068;
-/// `hkContainerHeapAllocator::Allocator::vfunc_4` at 0xaa3c80 (rtti, high); signature (low): `undefined vfunc_4(Allocator * this, undefined8 param_1, undefined4 param_2)`
-pub const hkContainerHeapAllocator__Allocator__vfunc_4: u64 = 57069;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller` at 0x1b2a30 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 pub const hkContainerHeapAllocator__Allocator__vfunc_4_caller: u64 = 13591;
 /// `hkContainerHeapAllocator::Allocator::vfunc_4_caller_1` at 0x1b2aa0 (callgraph, medium); signature (untiered): `undefined vfunc_4_caller_1(undefined8 * param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
@@ -8041,33 +8051,3 @@ pub const hkpConstraintListener__vfunc_5: u64 = 61239;
 pub const hkpConstraintListener__vfunc_6: u64 = 61242;
 /// `hkpConstraintMotor::vdtor` at 0xb51e30 (layout_inference, medium); signature (low): `hkpConstraintMotor * vdtor(hkpConstraintMotor * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
 pub const hkpConstraintMotor__vdtor: u64 = 61211;
-/// `hkpConstraintOwner::vdtor` at 0xb66eb0 (layout_inference, medium); signature (low): `hkpConstraintOwner * vdtor(hkpConstraintOwner * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpConstraintOwner__vdtor: u64 = 61674;
-/// `hkpConstraintOwner::vfunc_3` at 0xb66f50 (rtti, high); signature (low): `undefined vfunc_3(void)`
-pub const hkpConstraintOwner__vfunc_3: u64 = 61676;
-/// `hkpConstraintOwner::vfunc_4` at 0xb66f70 (rtti, high); signature (low): `undefined vfunc_4(void)`
-pub const hkpConstraintOwner__vfunc_4: u64 = 61678;
-/// `hkpConstraintOwner::vfunc_5` at 0xb66f40 (rtti, high); signature (low): `undefined vfunc_5(void)`
-pub const hkpConstraintOwner__vfunc_5: u64 = 61675;
-/// `hkpConstraintOwner::vfunc_6` at 0xb66f60 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-pub const hkpConstraintOwner__vfunc_6: u64 = 61677;
-/// `hkpConstraintUtils::CollectConstraintsFilter::vdtor` at 0xc414f0 (layout_inference, medium); signature (low): `CollectConstraintsFilter * vdtor(CollectConstraintsFilter * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpConstraintUtils__CollectConstraintsFilter__vdtor: u64 = 65192;
-/// `hkpConstraintUtils::CollectConstraintsFilter::vfunc_1` at 0xc41600 (rtti, high); signature (low): `undefined1 * vfunc_1(CollectConstraintsFilter * this, undefined1 * param_1)`
-pub const hkpConstraintUtils__CollectConstraintsFilter__vfunc_1: u64 = 65195;
-/// `hkpContactListener::dtor` at 0x3fc740 (layout_inference, high); signature (high): `undefined dtor(hkpContactListener * this)`
-pub const hkpContactListener__dtor: u64 = 25828;
-/// `hkpContactListener::vdtor` at 0x3fc8d0 (layout_inference, medium); signature (low): `hkpContactListener * vdtor(hkpContactListener * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-pub const hkpContactListener__vdtor: u64 = 25832;
-/// `hkpContactListener::vfunc_0` at 0x3fcb50 (rtti, medium); signature (low): `undefined vfunc_0(void)`
-pub const hkpContactListener__vfunc_0: u64 = 25841;
-/// `hkpContactListener::vfunc_1` at 0x3fcb20 (rtti, medium); signature (low): `undefined vfunc_1(void)`
-pub const hkpContactListener__vfunc_1: u64 = 25838;
-/// `hkpContactListener::vfunc_2` at 0x3fcb30 (rtti, medium); signature (low): `undefined vfunc_2(void)`
-pub const hkpContactListener__vfunc_2: u64 = 25839;
-/// `hkpContactListener::vfunc_4` at 0x3fcb40 (rtti, medium); signature (low): `undefined vfunc_4(void)`
-pub const hkpContactListener__vfunc_4: u64 = 25840;
-/// `hkpContactListener::vfunc_5` at 0x3fcb60 (rtti, medium); signature (low): `undefined vfunc_5(void)`
-pub const hkpContactListener__vfunc_5: u64 = 25842;
-/// `hkpContactListener::vfunc_6` at 0x3fcb70 (rtti, medium); signature (low): `undefined vfunc_6(void)`
-pub const hkpContactListener__vfunc_6: u64 = 25843;

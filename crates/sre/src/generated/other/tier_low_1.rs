@@ -920,7 +920,7 @@ impl crate::BNETSystem__ModsChanged_ConfirmResetCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "BNETSystem::ModsChanged_ConfirmResetCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BNetUnavailable__ModsNotMountedCallback {
@@ -930,7 +930,7 @@ impl crate::BNetUnavailable__ModsNotMountedCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "BNetUnavailable::ModsNotMountedCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BNetUnavailable__OpenConnectingToNetworkCallback {
@@ -940,7 +940,7 @@ impl crate::BNetUnavailable__OpenConnectingToNetworkCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "BNetUnavailable::OpenConnectingToNetworkCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BNetUnavailable__OpenMarketplaceCallback {
@@ -950,7 +950,7 @@ impl crate::BNetUnavailable__OpenMarketplaceCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "BNetUnavailable::OpenMarketplaceCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::BShkFloatController {
@@ -1378,7 +1378,7 @@ impl crate::CCallbackImpl_1 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 3, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "CCallbackImpl<1>", 0x0, 3, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CCallbackImpl_8 {
@@ -1388,7 +1388,7 @@ impl crate::CCallbackImpl_8 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 3, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "CCallbackImpl<8>", 0x0, 3, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CalmEffect {
@@ -1445,7 +1445,7 @@ impl crate::ChainExplosion {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vfunc_1(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36414, (*const Self, i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(0x148), param_1, param_2) } }
+    pub unsafe fn bst_event_sink_beam_projectile_impact_event_vfunc_1(&self, param_1: i64, param_2: *mut i64) -> u64 { unsafe { function!(36414, (*const Self, i64, *mut i64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("ChainExplosion:BSTEventSink<BeamProjectileImpactEvent>", 0x148)), param_1, param_2) } }
     /// `ChainExplosion::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 36405, rva 0x64b370).
     /// `ChainExplosion * ctor(ChainExplosion * this, longlong * param_1)`
     ///
@@ -1736,7 +1736,7 @@ impl crate::ConfirmResetCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "ConfirmResetCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::ConsoleNativeUIMenu {
@@ -1766,7 +1766,7 @@ impl crate::ContentMenu__errorCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "ContentMenu::errorCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::CraftingMenu {
@@ -2111,7 +2111,7 @@ impl crate::DLCPurchased__OpenVisitCreationClubCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "DLCPurchased::OpenVisitCreationClubCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::DLCPurchased__PurchasedDLCDialogCallback {
@@ -2121,7 +2121,7 @@ impl crate::DLCPurchased__PurchasedDLCDialogCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "DLCPurchased::PurchasedDLCDialogCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::DarknessEffect {
@@ -2421,7 +2421,7 @@ impl crate::DownloadAll__uiCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "DownloadAll::uiCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::DownloadProgressBar {
@@ -2496,7 +2496,7 @@ impl crate::EffectSettingCollection {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "EffectSettingCollection", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `EffectSettingCollection::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 11163, rva 0x14d6a0).
     /// `undefined ctor(EffectSettingCollection * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -5082,7 +5082,7 @@ impl crate::ISEntry {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "ISEntry", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `ISEntry::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 440958, rva 0x118cf0).
     /// `ISEntry * ctor(ISEntry * this, undefined8 param_1, longlong * param_2)`
     ///
@@ -5986,7 +5986,7 @@ impl crate::Json__CharReader {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "Json::CharReader", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::Json__CharReader__Factory {
@@ -5996,7 +5996,7 @@ impl crate::Json__CharReader__Factory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "Json::CharReader::Factory", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::Json__CharReaderBuilder {
@@ -6101,7 +6101,7 @@ impl crate::Json__StreamWriter {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "Json::StreamWriter", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `Json::StreamWriter::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 442966, rva 0xa7c450).
     /// `undefined ctor(StreamWriter * this, undefined8 param_1, void * param_2, undefined8 param_3)`
     ///
@@ -6118,7 +6118,7 @@ impl crate::Json__StreamWriter__Factory {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "Json::StreamWriter::Factory", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::Json__StreamWriterBuilder {
@@ -6162,7 +6162,7 @@ impl crate::Json__Writer {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "Json::Writer", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::JumpAnimEventHandler {
@@ -6356,7 +6356,7 @@ impl crate::LoadGameDifferentLoadOrderCallBack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "LoadGameDifferentLoadOrderCallBack", 0x0, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::LoadGameInactiveContentCallBack {
@@ -6366,7 +6366,7 @@ impl crate::LoadGameInactiveContentCallBack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "LoadGameInactiveContentCallBack", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `LoadGameInactiveContentCallBack::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 442587, rva 0x62c230).
     /// `undefined dtor(LoadGameInactiveContentCallBack * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6393,7 +6393,7 @@ impl crate::LoadGameMissingContentCallBack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u32, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "LoadGameMissingContentCallBack", 0x0, 0, (*const Self, u32, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::LoadGameMissingContentDownloadCallBack {
@@ -6403,7 +6403,7 @@ impl crate::LoadGameMissingContentDownloadCallBack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "LoadGameMissingContentDownloadCallBack", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `LoadGameMissingContentDownloadCallBack::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 442589, rva 0x62c2d0).
     /// `undefined dtor(LoadGameMissingContentDownloadCallBack * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6420,7 +6420,7 @@ impl crate::LoadGameUnrecognizedContentCallBack {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "LoadGameUnrecognizedContentCallBack", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `LoadGameUnrecognizedContentCallBack::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 442590, rva 0x62c330).
     /// `undefined dtor(LoadGameUnrecognizedContentCallBack * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -6707,7 +6707,7 @@ impl crate::LoginMenu__errorCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "LoginMenu::errorCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::LoginMenu__loginMenu {
@@ -6717,7 +6717,7 @@ impl crate::LoginMenu__loginMenu {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(441666, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(0x30), param_1, param_2, param_3) } }
+    pub unsafe fn g_fx_function_handler_vfunc_1(&self, param_1: *mut u64, param_2: u64, param_3: u64) -> u64 { unsafe { function!(441666, (*const Self, *mut u64, u64, u64) -> u64)(core::ptr::from_ref(self).byte_add(base_offset!("LoginMenu::loginMenu:GFxFunctionHandler", 0x30)), param_1, param_2, param_3) } }
     /// `LoginMenu::loginMenu::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 441692, rva 0x57def0).
     /// `undefined dtor(loginMenu * this, char * param_1, longlong * param_2, ulonglong param_3)`
     ///
@@ -7050,7 +7050,7 @@ impl crate::MarketplaceContent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "MarketplaceContent", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `MarketplaceContent::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 523687, rva 0x586410).
     /// `MarketplaceContent * ctor(MarketplaceContent * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -7170,7 +7170,7 @@ impl crate::MarketplaceMenu__errorCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "MarketplaceMenu::errorCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::MemoryHeap {
@@ -7810,7 +7810,7 @@ impl crate::NeedToUpdateCreationClubCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "NeedToUpdateCreationClubCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::NewInventoryMenuItemLoadTask {
@@ -10407,7 +10407,7 @@ impl crate::UI_bar {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "UI_bar", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `UI_bar::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 454777, rva 0x16071f0).
     /// `UI_bar * ctor(UI_bar * this, undefined8 param_1)`
     ///
@@ -10489,7 +10489,7 @@ impl crate::UI_detailsPage__OnSale {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "UI_detailsPage::OnSale", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `UI_detailsPage::OnSale::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 454306, rva 0x15c2e00).
     /// `OnSale * ctor(OnSale * this, undefined8 param_1)`
     ///
@@ -10506,7 +10506,7 @@ impl crate::UI_element {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "UI_element", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `UI_element::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name medium; id 440944, rva 0x12ddc0).
     /// `UI_element * ctor(UI_element * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     ///
@@ -10537,7 +10537,7 @@ impl crate::UI_element2 {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "UI_element2", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `UI_element2::dtor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 454889, rva 0x160a9a0).
     /// `undefined dtor(UI_element2 * this, undefined8 param_1, void * param_2, undefined8 param_3)`
     ///
@@ -10639,7 +10639,7 @@ impl crate::UI_listEntry__OnSale {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "UI_listEntry::OnSale", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
     /// `UI_listEntry::OnSale::ctor` (decompiler signature, tier low; ledger layout_inference evidence, name high; id 441333, rva 0x1450b0).
     /// `OnSale * ctor(OnSale * this, undefined8 param_1)`
     ///
@@ -10656,7 +10656,7 @@ impl crate::UI_page {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: *mut c_void, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "UI_page", 0x0, 0, (*const Self, u64, *mut c_void, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::UI_tag {
@@ -13034,7 +13034,7 @@ impl crate::_public__static_void___cdecl_MainMenu__OpenCreationClubMenu_void____
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "`public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::_public__static_void___cdecl_MarketplaceMenu__Start_MarketplaceMenu__MarketplaceMode____l8__doNothingCallback {
@@ -13044,7 +13044,7 @@ impl crate::_public__static_void___cdecl_MarketplaceMenu__Start_MarketplaceMenu_
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "`public:_static_void___cdecl_MarketplaceMenu::Start(MarketplaceMenu::MarketplaceMode)'::__l8::doNothingCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::_void___cdecl_BSResource__RegisterPrefix_char_const____ptr64_char_const____ptr64_BSResource__Loc_97d1ac573c19 {
@@ -13114,7 +13114,7 @@ impl crate::allCreationsDownloadedCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "allCreationsDownloadedCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::bgs__saveload__BuildSaveListRequest {
@@ -13134,7 +13134,7 @@ impl crate::doDownloads__waitingCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut c_void { unsafe { virtual_function!(self, "doDownloads::waitingCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut c_void)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::downloadConfirmResetCallback {
@@ -13144,7 +13144,7 @@ impl crate::downloadConfirmResetCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "downloadConfirmResetCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::noCreationsDownloadedCallback {
@@ -13154,7 +13154,7 @@ impl crate::noCreationsDownloadedCallback {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn vdtor(&self, param_1: u64, param_2: u64, param_3: u64) -> *mut Self { unsafe { virtual_function!(self, "noCreationsDownloadedCallback", 0x0, 0, (*const Self, u64, u64, u64) -> *mut Self)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::type_info {
@@ -13776,17 +13776,3 @@ pub unsafe fn cmd__create_grass_at_execute() -> u8 { unsafe { function!(23072, (
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn cmd__create_save_data_execute() -> u8 { unsafe { function!(23022, () -> u8)() } }
-/// `Cmd::DamageActorValue_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22029, rva 0x34e910).
-/// `ulonglong DamageActorValue_Execute(longlong param_1, longlong param_2, longlong param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__damage_actor_value_execute(param_1: i64, param_2: i64, param_3: i64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22029, (i64, i64, i64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }
-/// `Cmd::DamageObject_Execute` (decompiler signature, tier low; ledger console_cmd evidence, name high; id 22443, rva 0x35fdf0).
-/// `undefined8 DamageObject_Execute(longlong param_1, longlong param_2, double param_3, ulonglong param_4, longlong param_5, longlong param_6, undefined8 param_7, uint * param_8)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn cmd__damage_object_execute(param_1: i64, param_2: i64, param_3: f64, param_4: u64, param_5: i64, param_6: i64, param_7: u64, param_8: *mut u32) -> u64 { unsafe { function!(22443, (i64, i64, f64, u64, i64, i64, u64, *mut u32) -> u64)(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8) } }

@@ -1545,6 +1545,153 @@ impl core::ops::Deref for crate::NiVisController {
     #[inline]
     fn deref(&self) -> &Self::Target { unsafe { &*core::ptr::from_ref(self).cast() } }
 }
+impl crate::NiBSBoneLODController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBSBoneLODController.field_20", 0x20, u32) } }
+    /// `NiBSBoneLODController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBSBoneLODController.field_2C", 0x2C, u32) } }
+    /// `NiBSBoneLODController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBSBoneLODController.field_64", 0x64, u32) } }
+    /// `NiBSBoneLODController::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendAccumTransformInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendAccumTransformInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendAccumTransformInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendBoolInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendBoolInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendBoolInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendColorInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendColorInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendColorInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendFloatInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendFloatInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendFloatInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiBlendFloatInterpolator.field_48", 0x48, f32) } }
+    /// `NiBlendFloatInterpolator::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> f32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: f32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut f32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendPoint3Interpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendPoint3Interpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendPoint3Interpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendQuaternionInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendQuaternionInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendQuaternionInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBlendTransformInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1A(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBlendTransformInterpolator.field_1A", 0x1A, u32) } }
+    /// `NiBlendTransformInterpolator::field_1A`, at +0x1A on 1.7.104.
+    #[inline]
+    pub fn field_1A(&self) -> u32 { unsafe { Self::__member_field_1A(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1A(&mut self, value: u32) { unsafe { Self::__member_field_1A(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1A_ptr(&self) -> *mut u32 { Self::__member_field_1A(core::ptr::from_ref(self)) }
+}
+
 impl crate::NiBoneMatrixSetterI {
     /// `BSShader::NiBoneMatrixSetterI::SetBoneMatrices`: slot 1 of the setter interface at BSShader+0x10: when skin differs from the thread's last skin (TLS+0x2a00) and partition+0x3c != 0, UpdatePalette, then upload palette to VS constant buffer 10 and previousPalette to buffer 9 (count*3 float4 each)
     ///
@@ -1556,6 +1703,280 @@ impl crate::NiBoneMatrixSetterI {
     /// `partition` must point to what the engine expects.
     #[inline]
     pub unsafe fn set_bone_matrices(&self, skin: *mut crate::NiSkinInstance, partition: *mut crate::NiSkinPartition__Partition, geometryWorld: *const crate::NiTransform) { unsafe { function!(108322, (*const Self, *mut crate::NiSkinInstance, *mut crate::NiSkinPartition__Partition, *const crate::NiTransform))(core::ptr::from_ref(self), skin, partition, geometryWorld) } }
+}
+
+impl crate::NiBoolInterpController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoolInterpController.field_20", 0x20, u32) } }
+    /// `NiBoolInterpController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoolInterpController.field_2C", 0x2C, u32) } }
+    /// `NiBoolInterpController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBoxBV {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_14", 0x14, u32) } }
+    /// `NiBoxBV::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> u32 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: u32) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut u32 { Self::__member_field_14(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_18(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_18", 0x18, u32) } }
+    /// `NiBoxBV::field_18`, at +0x18 on 1.7.104.
+    #[inline]
+    pub fn field_18(&self) -> u32 { unsafe { Self::__member_field_18(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_18(&mut self, value: u32) { unsafe { Self::__member_field_18(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_18_ptr(&self) -> *mut u32 { Self::__member_field_18(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_1C", 0x1C, u32) } }
+    /// `NiBoxBV::field_1C`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn field_1C(&self) -> u32 { unsafe { Self::__member_field_1C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C(&mut self, value: u32) { unsafe { Self::__member_field_1C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C_ptr(&self) -> *mut u32 { Self::__member_field_1C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_20", 0x20, u32) } }
+    /// `NiBoxBV::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_24", 0x24, u32) } }
+    /// `NiBoxBV::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u32 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u32) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u32 { Self::__member_field_24(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_28", 0x28, u32) } }
+    /// `NiBoxBV::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_2C", 0x2C, u32) } }
+    /// `NiBoxBV::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_30", 0x30, u32) } }
+    /// `NiBoxBV::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u32 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u32) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u32 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_34(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_34", 0x34, u32) } }
+    /// `NiBoxBV::field_34`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn field_34(&self) -> u32 { unsafe { Self::__member_field_34(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_34(&mut self, value: u32) { unsafe { Self::__member_field_34(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_34_ptr(&self) -> *mut u32 { Self::__member_field_34(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_38", 0x38, u32) } }
+    /// `NiBoxBV::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u32 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u32) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u32 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_3C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_3C", 0x3C, u32) } }
+    /// `NiBoxBV::field_3C`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn field_3C(&self) -> u32 { unsafe { Self::__member_field_3C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_3C(&mut self, value: u32) { unsafe { Self::__member_field_3C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_3C_ptr(&self) -> *mut u32 { Self::__member_field_3C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxBV.field_40", 0x40, u32) } }
+    /// `NiBoxBV::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiBoxCapsuleIntersector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxCapsuleIntersector.field_54", 0x54, u32) } }
+    /// `NiBoxCapsuleIntersector::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiBoxCapsuleIntersector.field_58", 0x58, u32) } }
+    /// `NiBoxCapsuleIntersector::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u32 { Self::__member_field_58(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiCapsuleTriIntersector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiCapsuleTriIntersector.field_60", 0x60, f32) } }
+    /// `NiCapsuleTriIntersector::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> f32 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: f32) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut f32 { Self::__member_field_60(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiCollisionData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiCollisionData.field_28", 0x28, f32) } }
+    /// `NiCollisionData::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> f32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: f32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut f32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiColorExtraData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColorExtraData.field_1C", 0x1C, f32) } }
+    /// `NiColorExtraData::field_1C`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn field_1C(&self) -> f32 { unsafe { Self::__member_field_1C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C(&mut self, value: f32) { unsafe { Self::__member_field_1C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C_ptr(&self) -> *mut f32 { Self::__member_field_1C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiColorExtraData.field_20", 0x20, f32) } }
+    /// `NiColorExtraData::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> f32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: f32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut f32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiColorExtraData.field_24", 0x24, u32) } }
+    /// `NiColorExtraData::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u32 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u32) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u32 { Self::__member_field_24(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiColorExtraDataController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiColorExtraDataController.field_20", 0x20, u32) } }
+    /// `NiColorExtraDataController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiColorExtraDataController.field_2C", 0x2C, u32) } }
+    /// `NiColorExtraDataController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiControllerManager {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiControllerManager.field_20", 0x20, u32) } }
+    /// `NiControllerManager::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiControllerManager.field_2C", 0x2C, u32) } }
+    /// `NiControllerManager::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
 }
 
 impl crate::NiCullingProcess {
@@ -1579,6 +2000,1698 @@ impl crate::NiDirectionalLight {
     pub unsafe fn update_world_data(&self, data: *mut crate::NiUpdateData) { unsafe { function!(71074, (*const Self, *mut crate::NiUpdateData))(core::ptr::from_ref(self), data) } }
 }
 
+impl crate::NiExtraDataController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiExtraDataController.field_20", 0x20, u32) } }
+    /// `NiExtraDataController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiExtraDataController.field_2C", 0x2C, u32) } }
+    /// `NiExtraDataController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiFloatController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatController.field_20", 0x20, u32) } }
+    /// `NiFloatController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatController.field_2C", 0x2C, u32) } }
+    /// `NiFloatController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiFloatExtraDataController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatExtraDataController.field_20", 0x20, u32) } }
+    /// `NiFloatExtraDataController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatExtraDataController.field_2C", 0x2C, u32) } }
+    /// `NiFloatExtraDataController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiFloatInterpController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatInterpController.field_20", 0x20, u32) } }
+    /// `NiFloatInterpController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatInterpController.field_2C", 0x2C, u32) } }
+    /// `NiFloatInterpController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiFloatsExtraDataController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatsExtraDataController.field_20", 0x20, u32) } }
+    /// `NiFloatsExtraDataController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatsExtraDataController.field_2C", 0x2C, u32) } }
+    /// `NiFloatsExtraDataController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiFloatsExtraDataPoint3Controller {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatsExtraDataPoint3Controller.field_20", 0x20, u32) } }
+    /// `NiFloatsExtraDataPoint3Controller::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiFloatsExtraDataPoint3Controller.field_2C", 0x2C, u32) } }
+    /// `NiFloatsExtraDataPoint3Controller::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiInterpController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiInterpController.field_20", 0x20, u32) } }
+    /// `NiInterpController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiInterpController.field_2C", 0x2C, u32) } }
+    /// `NiInterpController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiKeyframeManager {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiKeyframeManager.field_20", 0x20, u32) } }
+    /// `NiKeyframeManager::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiKeyframeManager.field_2C", 0x2C, u32) } }
+    /// `NiKeyframeManager::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiLightColorController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLightColorController.field_20", 0x20, u32) } }
+    /// `NiLightColorController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLightColorController.field_2C", 0x2C, u32) } }
+    /// `NiLightColorController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiLightDimmerController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLightDimmerController.field_20", 0x20, u32) } }
+    /// `NiLightDimmerController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLightDimmerController.field_2C", 0x2C, u32) } }
+    /// `NiLightDimmerController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiLookAtController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLookAtController.field_20", 0x20, u32) } }
+    /// `NiLookAtController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiLookAtController.field_2C", 0x2C, u32) } }
+    /// `NiLookAtController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiMeshPSysData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiMeshPSysData.field_A0", 0xA0, u32) } }
+    /// `NiMeshPSysData::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u32 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u32) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u32 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiMultiTargetTransformController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiMultiTargetTransformController.field_20", 0x20, u32) } }
+    /// `NiMultiTargetTransformController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiMultiTargetTransformController.field_2C", 0x2C, u32) } }
+    /// `NiMultiTargetTransformController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiOBBLeaf {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiOBBLeaf.field_10", 0x10, f32) } }
+    /// `NiOBBLeaf::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> f32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: f32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut f32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_14", 0x14, u64) } }
+    /// `NiOBBLeaf::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> u64 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: u64) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut u64 { Self::__member_field_14(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_1C", 0x1C, u64) } }
+    /// `NiOBBLeaf::field_1C`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn field_1C(&self) -> u64 { unsafe { Self::__member_field_1C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C(&mut self, value: u64) { unsafe { Self::__member_field_1C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C_ptr(&self) -> *mut u64 { Self::__member_field_1C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_24", 0x24, u64) } }
+    /// `NiOBBLeaf::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u64 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u64) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u64 { Self::__member_field_24(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_2C", 0x2C, u64) } }
+    /// `NiOBBLeaf::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u64 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u64) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u64 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_34(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBLeaf.field_34", 0x34, u32) } }
+    /// `NiOBBLeaf::field_34`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn field_34(&self) -> u32 { unsafe { Self::__member_field_34(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_34(&mut self, value: u32) { unsafe { Self::__member_field_34(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_34_ptr(&self) -> *mut u32 { Self::__member_field_34(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_38", 0x38, u64) } }
+    /// `NiOBBLeaf::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBLeaf.field_40", 0x40, u32) } }
+    /// `NiOBBLeaf::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_50", 0x50, u64) } }
+    /// `NiOBBLeaf::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_58", 0x58, u64) } }
+    /// `NiOBBLeaf::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u64 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u64) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u64 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_68", 0x68, u64) } }
+    /// `NiOBBLeaf::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_70(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBLeaf.field_70", 0x70, u32) } }
+    /// `NiOBBLeaf::field_70`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn field_70(&self) -> u32 { unsafe { Self::__member_field_70(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_70(&mut self, value: u32) { unsafe { Self::__member_field_70(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_70_ptr(&self) -> *mut u32 { Self::__member_field_70(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiOBBLeaf.field_8", 0x8, f32) } }
+    /// `NiOBBLeaf::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> f32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: f32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut f32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_80", 0x80, u64) } }
+    /// `NiOBBLeaf::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_A0", 0xA0, u64) } }
+    /// `NiOBBLeaf::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u64 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u64) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u64 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A8(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_A8", 0xA8, u64) } }
+    /// `NiOBBLeaf::field_A8`, at +0xA8 on 1.7.104.
+    #[inline]
+    pub fn field_A8(&self) -> u64 { unsafe { Self::__member_field_A8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A8(&mut self, value: u64) { unsafe { Self::__member_field_A8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A8_ptr(&self) -> *mut u64 { Self::__member_field_A8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B0(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBLeaf.field_B0", 0xB0, u64) } }
+    /// `NiOBBLeaf::field_B0`, at +0xB0 on 1.7.104.
+    #[inline]
+    pub fn field_B0(&self) -> u64 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B0(&mut self, value: u64) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B0_ptr(&self) -> *mut u64 { Self::__member_field_B0(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiOBBNode {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_10(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiOBBNode.field_10", 0x10, f32) } }
+    /// `NiOBBNode::field_10`, at +0x10 on 1.7.104.
+    #[inline]
+    pub fn field_10(&self) -> f32 { unsafe { Self::__member_field_10(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_10(&mut self, value: f32) { unsafe { Self::__member_field_10(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_10_ptr(&self) -> *mut f32 { Self::__member_field_10(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_14(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_14", 0x14, u64) } }
+    /// `NiOBBNode::field_14`, at +0x14 on 1.7.104.
+    #[inline]
+    pub fn field_14(&self) -> u64 { unsafe { Self::__member_field_14(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_14(&mut self, value: u64) { unsafe { Self::__member_field_14(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_14_ptr(&self) -> *mut u64 { Self::__member_field_14(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_1C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_1C", 0x1C, u64) } }
+    /// `NiOBBNode::field_1C`, at +0x1C on 1.7.104.
+    #[inline]
+    pub fn field_1C(&self) -> u64 { unsafe { Self::__member_field_1C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_1C(&mut self, value: u64) { unsafe { Self::__member_field_1C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_1C_ptr(&self) -> *mut u64 { Self::__member_field_1C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_24(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_24", 0x24, u64) } }
+    /// `NiOBBNode::field_24`, at +0x24 on 1.7.104.
+    #[inline]
+    pub fn field_24(&self) -> u64 { unsafe { Self::__member_field_24(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_24(&mut self, value: u64) { unsafe { Self::__member_field_24(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_24_ptr(&self) -> *mut u64 { Self::__member_field_24(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_2C", 0x2C, u64) } }
+    /// `NiOBBNode::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u64 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u64) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u64 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_34(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBNode.field_34", 0x34, u32) } }
+    /// `NiOBBNode::field_34`, at +0x34 on 1.7.104.
+    #[inline]
+    pub fn field_34(&self) -> u32 { unsafe { Self::__member_field_34(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_34(&mut self, value: u32) { unsafe { Self::__member_field_34(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_34_ptr(&self) -> *mut u32 { Self::__member_field_34(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_38", 0x38, u64) } }
+    /// `NiOBBNode::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBNode.field_40", 0x40, u32) } }
+    /// `NiOBBNode::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_50", 0x50, u64) } }
+    /// `NiOBBNode::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u64 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_58", 0x58, u64) } }
+    /// `NiOBBNode::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> u64 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: u64) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut u64 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_68", 0x68, u64) } }
+    /// `NiOBBNode::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> u64 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: u64) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut u64 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_70(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBNode.field_70", 0x70, u32) } }
+    /// `NiOBBNode::field_70`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn field_70(&self) -> u32 { unsafe { Self::__member_field_70(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_70(&mut self, value: u32) { unsafe { Self::__member_field_70(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_70_ptr(&self) -> *mut u32 { Self::__member_field_70(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_8(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiOBBNode.field_8", 0x8, f32) } }
+    /// `NiOBBNode::field_8`, at +0x8 on 1.7.104.
+    #[inline]
+    pub fn field_8(&self) -> f32 { unsafe { Self::__member_field_8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_8(&mut self, value: f32) { unsafe { Self::__member_field_8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_8_ptr(&self) -> *mut f32 { Self::__member_field_8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBNode.field_80", 0x80, u64) } }
+    /// `NiOBBNode::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u64 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u64) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u64 { Self::__member_field_80(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiOBBRoot {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiOBBRoot.field_4C", 0x4C, u64) } }
+    /// `NiOBBRoot::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> u64 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: u64) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut u64 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiOBBRoot.field_54", 0x54, u32) } }
+    /// `NiOBBRoot::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> u32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: u32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut u32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysAirFieldAirFrictionCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldAirFrictionCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysAirFieldAirFrictionCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldAirFrictionCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysAirFieldAirFrictionCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysAirFieldInheritVelocityCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldInheritVelocityCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysAirFieldInheritVelocityCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldInheritVelocityCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysAirFieldInheritVelocityCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysAirFieldModifier {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_7C(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysAirFieldModifier.field_7C", 0x7C, f32) } }
+    /// `NiPSysAirFieldModifier::field_7C`, at +0x7C on 1.7.104.
+    #[inline]
+    pub fn field_7C(&self) -> f32 { unsafe { Self::__member_field_7C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_7C(&mut self, value: f32) { unsafe { Self::__member_field_7C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_7C_ptr(&self) -> *mut f32 { Self::__member_field_7C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_84(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysAirFieldModifier.field_84", 0x84, f32) } }
+    /// `NiPSysAirFieldModifier::field_84`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn field_84(&self) -> f32 { unsafe { Self::__member_field_84(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_84(&mut self, value: f32) { unsafe { Self::__member_field_84(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_84_ptr(&self) -> *mut f32 { Self::__member_field_84(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysAirFieldSpreadCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldSpreadCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysAirFieldSpreadCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysAirFieldSpreadCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysAirFieldSpreadCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysBombModifier {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysBombModifier.field_38", 0x38, f32) } }
+    /// `NiPSysBombModifier::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> f32 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: f32) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut f32 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_3C(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysBombModifier.field_3C", 0x3C, f32) } }
+    /// `NiPSysBombModifier::field_3C`, at +0x3C on 1.7.104.
+    #[inline]
+    pub fn field_3C(&self) -> f32 { unsafe { Self::__member_field_3C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_3C(&mut self, value: f32) { unsafe { Self::__member_field_3C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_3C_ptr(&self) -> *mut f32 { Self::__member_field_3C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysBombModifier.field_40", 0x40, f32) } }
+    /// `NiPSysBombModifier::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> f32 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: f32) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut f32 { Self::__member_field_40(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_A0(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysData.field_A0", 0xA0, u32) } }
+    /// `NiPSysData::field_A0`, at +0xA0 on 1.7.104.
+    #[inline]
+    pub fn field_A0(&self) -> u32 { unsafe { Self::__member_field_A0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_A0(&mut self, value: u32) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_A0_ptr(&self) -> *mut u32 { Self::__member_field_A0(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_88(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiPSysEmitterCtlr.field_88", 0x88, u64) } }
+    /// `NiPSysEmitterCtlr::field_88`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn field_88(&self) -> u64 { unsafe { Self::__member_field_88(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_88(&mut self, value: u64) { unsafe { Self::__member_field_88(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_88_ptr(&self) -> *mut u64 { Self::__member_field_88(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterDeclinationCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterDeclinationCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterDeclinationCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterDeclinationCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterDeclinationCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterDeclinationVarCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterDeclinationVarCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterDeclinationVarCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterDeclinationVarCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterDeclinationVarCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterInitialRadiusCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterInitialRadiusCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterInitialRadiusCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterInitialRadiusCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterInitialRadiusCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterLifeSpanCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterLifeSpanCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterLifeSpanCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterLifeSpanCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterLifeSpanCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterPlanarAngleCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterPlanarAngleCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterPlanarAngleCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterPlanarAngleCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterPlanarAngleCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterPlanarAngleVarCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterPlanarAngleVarCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterPlanarAngleVarCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterPlanarAngleVarCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterPlanarAngleVarCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysEmitterSpeedCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterSpeedCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysEmitterSpeedCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysEmitterSpeedCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysEmitterSpeedCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysFieldAttenuationCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldAttenuationCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysFieldAttenuationCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldAttenuationCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysFieldAttenuationCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysFieldMagnitudeCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldMagnitudeCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysFieldMagnitudeCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldMagnitudeCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysFieldMagnitudeCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysFieldMaxDistanceCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldMaxDistanceCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysFieldMaxDistanceCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysFieldMaxDistanceCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysFieldMaxDistanceCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysGravityFieldModifier {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysGravityFieldModifier.field_50", 0x50, f32) } }
+    /// `NiPSysGravityFieldModifier::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> f32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: f32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut f32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysGravityFieldModifier.field_54", 0x54, f32) } }
+    /// `NiPSysGravityFieldModifier::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> f32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: f32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut f32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_5C(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysGravityFieldModifier.field_5C", 0x5C, f32) } }
+    /// `NiPSysGravityFieldModifier::field_5C`, at +0x5C on 1.7.104.
+    #[inline]
+    pub fn field_5C(&self) -> f32 { unsafe { Self::__member_field_5C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_5C(&mut self, value: f32) { unsafe { Self::__member_field_5C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_5C_ptr(&self) -> *mut f32 { Self::__member_field_5C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_60(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysGravityFieldModifier.field_60", 0x60, f32) } }
+    /// `NiPSysGravityFieldModifier::field_60`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn field_60(&self) -> f32 { unsafe { Self::__member_field_60(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_60(&mut self, value: f32) { unsafe { Self::__member_field_60(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_60_ptr(&self) -> *mut f32 { Self::__member_field_60(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysGravityFieldModifier.field_64", 0x64, f32) } }
+    /// `NiPSysGravityFieldModifier::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> f32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: f32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut f32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysGravityStrengthCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysGravityStrengthCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysGravityStrengthCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysGravityStrengthCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysGravityStrengthCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysInitialRotAngleCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotAngleCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysInitialRotAngleCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotAngleCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysInitialRotAngleCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysInitialRotAngleVarCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotAngleVarCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysInitialRotAngleVarCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotAngleVarCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysInitialRotAngleVarCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysInitialRotSpeedCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotSpeedCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysInitialRotSpeedCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotSpeedCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysInitialRotSpeedCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysInitialRotSpeedVarCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotSpeedVarCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysInitialRotSpeedVarCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysInitialRotSpeedVarCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysInitialRotSpeedVarCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysModifierActiveCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierActiveCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysModifierActiveCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierActiveCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysModifierActiveCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysModifierBoolCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierBoolCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysModifierBoolCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierBoolCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysModifierBoolCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysModifierCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysModifierCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysModifierCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysModifierFloatCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierFloatCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysModifierFloatCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysModifierFloatCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysModifierFloatCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysPlanarCollider {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_108(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiPSysPlanarCollider.field_108", 0x108, u64) } }
+    /// `NiPSysPlanarCollider::field_108`, at +0x108 on 1.7.104.
+    #[inline]
+    pub fn field_108(&self) -> u64 { unsafe { Self::__member_field_108(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_108(&mut self, value: u64) { unsafe { Self::__member_field_108(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_108_ptr(&self) -> *mut u64 { Self::__member_field_108(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_110(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysPlanarCollider.field_110", 0x110, u32) } }
+    /// `NiPSysPlanarCollider::field_110`, at +0x110 on 1.7.104.
+    #[inline]
+    pub fn field_110(&self) -> u32 { unsafe { Self::__member_field_110(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_110(&mut self, value: u32) { unsafe { Self::__member_field_110(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_110_ptr(&self) -> *mut u32 { Self::__member_field_110(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysPlanarCollider.field_64", 0x64, u32) } }
+    /// `NiPSysPlanarCollider::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> u32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: u32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut u32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_84(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysPlanarCollider.field_84", 0x84, f32) } }
+    /// `NiPSysPlanarCollider::field_84`, at +0x84 on 1.7.104.
+    #[inline]
+    pub fn field_84(&self) -> f32 { unsafe { Self::__member_field_84(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_84(&mut self, value: f32) { unsafe { Self::__member_field_84(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_84_ptr(&self) -> *mut f32 { Self::__member_field_84(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_88(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysPlanarCollider.field_88", 0x88, f32) } }
+    /// `NiPSysPlanarCollider::field_88`, at +0x88 on 1.7.104.
+    #[inline]
+    pub fn field_88(&self) -> f32 { unsafe { Self::__member_field_88(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_88(&mut self, value: f32) { unsafe { Self::__member_field_88(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_88_ptr(&self) -> *mut f32 { Self::__member_field_88(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_D4(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiPSysPlanarCollider.field_D4", 0xD4, u64) } }
+    /// `NiPSysPlanarCollider::field_D4`, at +0xD4 on 1.7.104.
+    #[inline]
+    pub fn field_D4(&self) -> u64 { unsafe { Self::__member_field_D4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_D4(&mut self, value: u64) { unsafe { Self::__member_field_D4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_D4_ptr(&self) -> *mut u64 { Self::__member_field_D4(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_DC(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysPlanarCollider.field_DC", 0xDC, u32) } }
+    /// `NiPSysPlanarCollider::field_DC`, at +0xDC on 1.7.104.
+    #[inline]
+    pub fn field_DC(&self) -> u32 { unsafe { Self::__member_field_DC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_DC(&mut self, value: u32) { unsafe { Self::__member_field_DC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_DC_ptr(&self) -> *mut u32 { Self::__member_field_DC(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysResetOnLoopCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysResetOnLoopCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysResetOnLoopCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysResetOnLoopCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysResetOnLoopCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_48(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysResetOnLoopCtlr.field_48", 0x48, u32) } }
+    /// `NiPSysResetOnLoopCtlr::field_48`, at +0x48 on 1.7.104.
+    #[inline]
+    pub fn field_48(&self) -> u32 { unsafe { Self::__member_field_48(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_48(&mut self, value: u32) { unsafe { Self::__member_field_48(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_48_ptr(&self) -> *mut u32 { Self::__member_field_48(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysSphericalCollider {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_54(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysSphericalCollider.field_54", 0x54, f32) } }
+    /// `NiPSysSphericalCollider::field_54`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn field_54(&self) -> f32 { unsafe { Self::__member_field_54(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_54(&mut self, value: f32) { unsafe { Self::__member_field_54(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_54_ptr(&self) -> *mut f32 { Self::__member_field_54(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_58(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPSysSphericalCollider.field_58", 0x58, f32) } }
+    /// `NiPSysSphericalCollider::field_58`, at +0x58 on 1.7.104.
+    #[inline]
+    pub fn field_58(&self) -> f32 { unsafe { Self::__member_field_58(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_58(&mut self, value: f32) { unsafe { Self::__member_field_58(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_58_ptr(&self) -> *mut f32 { Self::__member_field_58(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_B8(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysSphericalCollider.field_B8", 0xB8, u32) } }
+    /// `NiPSysSphericalCollider::field_B8`, at +0xB8 on 1.7.104.
+    #[inline]
+    pub fn field_B8(&self) -> u32 { unsafe { Self::__member_field_B8(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_B8(&mut self, value: u32) { unsafe { Self::__member_field_B8(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_B8_ptr(&self) -> *mut u32 { Self::__member_field_B8(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_BC(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysSphericalCollider.field_BC", 0xBC, u32) } }
+    /// `NiPSysSphericalCollider::field_BC`, at +0xBC on 1.7.104.
+    #[inline]
+    pub fn field_BC(&self) -> u32 { unsafe { Self::__member_field_BC(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_BC(&mut self, value: u32) { unsafe { Self::__member_field_BC(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_BC_ptr(&self) -> *mut u32 { Self::__member_field_BC(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C0(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysSphericalCollider.field_C0", 0xC0, u32) } }
+    /// `NiPSysSphericalCollider::field_C0`, at +0xC0 on 1.7.104.
+    #[inline]
+    pub fn field_C0(&self) -> u32 { unsafe { Self::__member_field_C0(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C0(&mut self, value: u32) { unsafe { Self::__member_field_C0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C0_ptr(&self) -> *mut u32 { Self::__member_field_C0(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_C4(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysSphericalCollider.field_C4", 0xC4, u32) } }
+    /// `NiPSysSphericalCollider::field_C4`, at +0xC4 on 1.7.104.
+    #[inline]
+    pub fn field_C4(&self) -> u32 { unsafe { Self::__member_field_C4(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_C4(&mut self, value: u32) { unsafe { Self::__member_field_C4(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_C4_ptr(&self) -> *mut u32 { Self::__member_field_C4(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPSysUpdateCtlr {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysUpdateCtlr.field_20", 0x20, u32) } }
+    /// `NiPSysUpdateCtlr::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPSysUpdateCtlr.field_2C", 0x2C, u32) } }
+    /// `NiPSysUpdateCtlr::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPathController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPathController.field_20", 0x20, u32) } }
+    /// `NiPathController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPathController.field_2C", 0x2C, u32) } }
+    /// `NiPathController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_4C(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiPathController.field_4C", 0x4C, u64) } }
+    /// `NiPathController::field_4C`, at +0x4C on 1.7.104.
+    #[inline]
+    pub fn field_4C(&self) -> u64 { unsafe { Self::__member_field_4C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_4C(&mut self, value: u64) { unsafe { Self::__member_field_4C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_4C_ptr(&self) -> *mut u64 { Self::__member_field_4C(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_80(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPathController.field_80", 0x80, u32) } }
+    /// `NiPathController::field_80`, at +0x80 on 1.7.104.
+    #[inline]
+    pub fn field_80(&self) -> u32 { unsafe { Self::__member_field_80(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_80(&mut self, value: u32) { unsafe { Self::__member_field_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_80_ptr(&self) -> *mut u32 { Self::__member_field_80(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPathInterpolator {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_50(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPathInterpolator.field_50", 0x50, u32) } }
+    /// `NiPathInterpolator::field_50`, at +0x50 on 1.7.104.
+    #[inline]
+    pub fn field_50(&self) -> u32 { unsafe { Self::__member_field_50(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_50(&mut self, value: u32) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_50_ptr(&self) -> *mut u32 { Self::__member_field_50(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiPoint3InterpController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPoint3InterpController.field_20", 0x20, u32) } }
+    /// `NiPoint3InterpController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiPoint3InterpController.field_2C", 0x2C, u32) } }
+    /// `NiPoint3InterpController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiRollController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiRollController.field_20", 0x20, u32) } }
+    /// `NiRollController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiRollController.field_2C", 0x2C, u32) } }
+    /// `NiRollController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSingleInterpController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSingleInterpController.field_20", 0x20, u32) } }
+    /// `NiSingleInterpController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSingleInterpController.field_2C", 0x2C, u32) } }
+    /// `NiSingleInterpController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSourceTexture {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSourceTexture.field_20", 0x20, u64) } }
+    /// `NiSourceTexture::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u64 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u64) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u64 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_30(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSourceTexture.field_30", 0x30, u64) } }
+    /// `NiSourceTexture::field_30`, at +0x30 on 1.7.104.
+    #[inline]
+    pub fn field_30(&self) -> u64 { unsafe { Self::__member_field_30(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_30(&mut self, value: u64) { unsafe { Self::__member_field_30(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_30_ptr(&self) -> *mut u64 { Self::__member_field_30(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_38(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSourceTexture.field_38", 0x38, u64) } }
+    /// `NiSourceTexture::field_38`, at +0x38 on 1.7.104.
+    #[inline]
+    pub fn field_38(&self) -> u64 { unsafe { Self::__member_field_38(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_38(&mut self, value: u64) { unsafe { Self::__member_field_38(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_38_ptr(&self) -> *mut u64 { Self::__member_field_38(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_40(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSourceTexture.field_40", 0x40, u64) } }
+    /// `NiSourceTexture::field_40`, at +0x40 on 1.7.104.
+    #[inline]
+    pub fn field_40(&self) -> u64 { unsafe { Self::__member_field_40(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_40(&mut self, value: u64) { unsafe { Self::__member_field_40(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_40_ptr(&self) -> *mut u64 { Self::__member_field_40(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSphereTriIntersector {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_64(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiSphereTriIntersector.field_64", 0x64, f32) } }
+    /// `NiSphereTriIntersector::field_64`, at +0x64 on 1.7.104.
+    #[inline]
+    pub fn field_64(&self) -> f32 { unsafe { Self::__member_field_64(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_64(&mut self, value: f32) { unsafe { Self::__member_field_64(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_64_ptr(&self) -> *mut f32 { Self::__member_field_64(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_68(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiSphereTriIntersector.field_68", 0x68, f32) } }
+    /// `NiSphereTriIntersector::field_68`, at +0x68 on 1.7.104.
+    #[inline]
+    pub fn field_68(&self) -> f32 { unsafe { Self::__member_field_68(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_68(&mut self, value: f32) { unsafe { Self::__member_field_68(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_68_ptr(&self) -> *mut f32 { Self::__member_field_68(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_70(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSphereTriIntersector.field_70", 0x70, u32) } }
+    /// `NiSphereTriIntersector::field_70`, at +0x70 on 1.7.104.
+    #[inline]
+    pub fn field_70(&self) -> u32 { unsafe { Self::__member_field_70(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_70(&mut self, value: u32) { unsafe { Self::__member_field_70(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_70_ptr(&self) -> *mut u32 { Self::__member_field_70(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_74(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSphereTriIntersector.field_74", 0x74, u32) } }
+    /// `NiSphereTriIntersector::field_74`, at +0x74 on 1.7.104.
+    #[inline]
+    pub fn field_74(&self) -> u32 { unsafe { Self::__member_field_74(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_74(&mut self, value: u32) { unsafe { Self::__member_field_74(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_74_ptr(&self) -> *mut u32 { Self::__member_field_74(core::ptr::from_ref(self)) }
+}
+
 impl crate::NiSpotLight {
     /// `NiSpotLight::Create`: NiStream factory for 'NiSpotLight' (registered by 0xee5570 at 0xf0663a with the class name 0x1a4b7a0); with the clone slot (vfunc_23 0xf16000) the only ways an NiSpotLight comes into being
     ///
@@ -1586,6 +3699,114 @@ impl crate::NiSpotLight {
     /// `NiObject* (void)`
     #[inline]
     pub fn create() -> Option<&'static crate::NiObject> { unsafe { function!(71548, () -> Option<&'static crate::NiObject>)() } }
+}
+
+impl crate::NiStream {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_234(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiStream.field_234", 0x234, u32) } }
+    /// `NiStream::field_234`, at +0x234 on 1.7.104.
+    #[inline]
+    pub fn field_234(&self) -> u32 { unsafe { Self::__member_field_234(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_234(&mut self, value: u32) { unsafe { Self::__member_field_234(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_234_ptr(&self) -> *mut u32 { Self::__member_field_234(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSwitchNode {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_m_NiTPrimitiveArray_138(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSwitchNode.m_NiTPrimitiveArray_138", 0x138, u64) } }
+    /// `NiSwitchNode::m_NiTPrimitiveArray_138`, at +0x138 on 1.7.104.
+    #[inline]
+    pub fn m_NiTPrimitiveArray_138(&self) -> u64 { unsafe { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_m_NiTPrimitiveArray_138(&mut self, value: u64) { unsafe { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn m_NiTPrimitiveArray_138_ptr(&self) -> *mut u64 { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiSwitchStringExtraData {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_28(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiSwitchStringExtraData.field_28", 0x28, u32) } }
+    /// `NiSwitchStringExtraData::field_28`, at +0x28 on 1.7.104.
+    #[inline]
+    pub fn field_28(&self) -> u32 { unsafe { Self::__member_field_28(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_28(&mut self, value: u32) { unsafe { Self::__member_field_28(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_28_ptr(&self) -> *mut u32 { Self::__member_field_28(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiTimeController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiTimeController.field_20", 0x20, u32) } }
+    /// `NiTimeController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiTimeController.field_2C", 0x2C, u32) } }
+    /// `NiTimeController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiTransformController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiTransformController.field_20", 0x20, u32) } }
+    /// `NiTransformController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiTransformController.field_2C", 0x2C, u32) } }
+    /// `NiTransformController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
+}
+
+impl crate::NiVisController {
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_20(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiVisController.field_20", 0x20, u32) } }
+    /// `NiVisController::field_20`, at +0x20 on 1.7.104.
+    #[inline]
+    pub fn field_20(&self) -> u32 { unsafe { Self::__member_field_20(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_20(&mut self, value: u32) { unsafe { Self::__member_field_20(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_20_ptr(&self) -> *mut u32 { Self::__member_field_20(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_field_2C(this: *const Self) -> *mut u32 { unsafe { member!(this, "NiVisController.field_2C", 0x2C, u32) } }
+    /// `NiVisController::field_2C`, at +0x2C on 1.7.104.
+    #[inline]
+    pub fn field_2C(&self) -> u32 { unsafe { Self::__member_field_2C(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_field_2C(&mut self, value: u32) { unsafe { Self::__member_field_2C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn field_2C_ptr(&self) -> *mut u32 { Self::__member_field_2C(core::ptr::from_ref(self)) }
 }
 
 /// `g_NiNode_ptr` at 0x3230510, id 403441 (xref_inference, medium)

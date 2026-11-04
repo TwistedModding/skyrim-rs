@@ -2126,7 +2126,7 @@ impl crate::InstalledContent {
     /// # Safety
     /// The decompiler's prototype: nothing checks the arguments or the result.
     #[inline]
-    pub unsafe fn process_load_game_event(&self, param_1: *mut *mut c_void, param_2: *mut *mut u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, 1, (*const Self, *mut *mut c_void, *mut *mut u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
+    pub unsafe fn process_load_game_event(&self, param_1: *mut *mut c_void, param_2: *mut *mut u64, param_3: u64) -> u64 { unsafe { virtual_function!(self, "InstalledContent", 0x0, 1, (*const Self, *mut *mut c_void, *mut *mut u64, u64) -> u64)(core::ptr::from_ref(self), param_1, param_2, param_3) } }
 }
 
 impl crate::InstantInteractionCallback {

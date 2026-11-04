@@ -3,13 +3,6 @@
 
 use core::ffi::{c_char, c_void};
 
-/// `FreeField10Array240Items` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 39339, rva 0x6f4b40).
-/// `undefined FreeField10Array240Items(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
-///
-/// # Safety
-/// The decompiler's prototype: nothing checks the arguments or the result.
-#[inline]
-pub unsafe fn free_field10_array240_items(param_1: i64, param_2: u64, param_3: u64, param_4: u64) -> u64 { unsafe { function!(39339, (i64, u64, u64, u64) -> u64)(param_1, param_2, param_3, param_4) } }
 /// `FreeField10ArrayAndClearField28` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 90325, rva 0x11b4d90).
 /// `undefined FreeField10ArrayAndClearField28(longlong param_1, undefined8 param_2, undefined8 param_3, undefined8 param_4)`
 ///
@@ -14185,3 +14178,10 @@ pub unsafe fn init_hash_table_on_buffer(param_1: *mut i64, param_2: i64, param_3
 /// The decompiler's prototype: nothing checks the arguments or the result.
 #[inline]
 pub unsafe fn init_header_and_empty_array(param_1: *mut u32) -> *mut u32 { unsafe { function!(29671, (*mut u32) -> *mut u32)(param_1) } }
+/// `InitHitData` (decompiler signature, tier untiered; ledger decompiler evidence, name medium; id 44005, rva 0x7f0330).
+/// `undefined InitHitData(float * param_1, undefined8 param_2, longlong * param_3, float param_4, longlong * param_5)`
+///
+/// # Safety
+/// The decompiler's prototype: nothing checks the arguments or the result.
+#[inline]
+pub unsafe fn init_hit_data(param_1: *mut f32, param_2: u64, param_3: *mut i64, param_4: f32, param_5: *mut i64) -> u64 { unsafe { function!(44005, (*mut f32, u64, *mut i64, f32, *mut i64) -> u64)(param_1, param_2, param_3, param_4, param_5) } }

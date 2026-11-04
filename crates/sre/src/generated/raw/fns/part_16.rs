@@ -3,6 +3,14 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `Papyrus::Alias::UnregisterForAnimationEvent` at 0xa13eb0 (papyrus_native, high); signature (medium): `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, TESObjectREFR * a0, BSFixedString * a1)`
+pub const Papyrus__Alias__UnregisterForAnimationEvent: u64 = 55139;
+/// `Papyrus::Alias::UnregisterForLOS` at 0xa13f90 (papyrus_native, high); signature (medium): `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
+pub const Papyrus__Alias__UnregisterForLOS: u64 = 55140;
+/// `Papyrus::Alias::UnregisterForSleep` at 0xa14030 (papyrus_native, high); signature (medium): `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
+pub const Papyrus__Alias__UnregisterForSleep: u64 = 55141;
+/// `Papyrus::Alias::UnregisterForTrackedStatsEvent` at 0xa14080 (papyrus_native, high); signature (medium): `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
+pub const Papyrus__Alias__UnregisterForTrackedStatsEvent: u64 = 55142;
 /// `Papyrus::Alias::UnregisterForUpdate` at 0xa140d0 (papyrus_native, high); signature (medium): `void UnregisterForUpdate(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 pub const Papyrus__Alias__UnregisterForUpdate: u64 = 55143;
 /// `Papyrus::Alias::UnregisterForUpdateGameTime` at 0xa14120 (papyrus_native, high); signature (medium): `void UnregisterForUpdateGameTime(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
@@ -3506,7 +3514,7 @@ pub const ProcessListMovementInterface__vfunc_4: u64 = 41283;
 /// `ProcessLists::AddActorHandle` at 0x77a790 (semantic, high); signature (untiered): `undefined AddActorHandle(longlong param_1, uint * param_2, int param_3)`; semantic: under the RW lock 0x3245560 (write) appends h to *(this+0x90+level*8) if absent (high); signature `void (ProcessLists* this, ActorHandle* h, int level)`
 pub const ProcessLists__AddActorHandle: u64 = 41289;
 /// `ProcessLists::AddActorHandle` as a function pointer type (high).
-pub type ProcessLists__AddActorHandle_fn = unsafe extern "C" fn(this: *mut c_void, h: *mut c_void, level: i32);
+pub type ProcessLists__AddActorHandle_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists, h: *mut c_void, level: i32);
 /// `ProcessLists::CollectAnimatedHighActors` at 0x78a2d0 (semantic, high); signature (untiered): `undefined8 CollectAnimatedHighActors(longlong * param_1, longlong * param_2)`; semantic: engine loop over the high list (+0x30): for each u32 handle ResolveActorHandle 0x2676c0 (add-ref), filter (3D loaded, not disabled/deleted, parent cell attached type 7), collect, release via refcount +0x28 (low 10 bits) and vtable(+0x20) slot 1 (high); signature `bool (BSTArray<ActorHandle>* highList, ScrapArrays* out)`
 pub const ProcessLists__CollectAnimatedHighActors: u64 = 41466;
 /// `ProcessLists::CollectAnimatedHighActors` as a function pointer type (high).
@@ -3524,37 +3532,37 @@ pub const ProcessLists__GetActorsFilter__vdtor: u64 = 34475;
 /// `ProcessLists::QueueActorAnimationJobs` at 0x7836e0 (semantic, high); signature (untiered): `undefined QueueActorAnimationJobs(longlong param_1, longlong * param_2)`; semantic: for each actor handle of the process list (+0x30, count +0x40) appends job 0x7898e0, then 0x7899b0 jobs (high); signature `void (ProcessLists* this, JobList* list)`
 pub const ProcessLists__QueueActorAnimationJobs: u64 = 41370;
 /// `ProcessLists::QueueActorAnimationJobs` as a function pointer type (high).
-pub type ProcessLists__QueueActorAnimationJobs_fn = unsafe extern "C" fn(this: *mut c_void, list: *mut c_void);
+pub type ProcessLists__QueueActorAnimationJobs_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists, list: *mut c_void);
 /// `ProcessLists::RefreshAllActors` at 0x77cd80 (semantic, high); signature (untiered): `undefined RefreshAllActors(longlong param_1)`; semantic: engine loop over all four lists through the +0x90 pointer table (4 iterations, data +0, size +0x10 of each array) (high); signature `void (ProcessLists* this)`
 pub const ProcessLists__RefreshAllActors: u64 = 41308;
 /// `ProcessLists::RefreshAllActors` as a function pointer type (high).
-pub type ProcessLists__RefreshAllActors_fn = unsafe extern "C" fn(this: *mut c_void);
+pub type ProcessLists__RefreshAllActors_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists);
 /// `ProcessLists::RemoveActorHandle` at 0x77a940 (semantic, high); signature (untiered): `undefined RemoveActorHandle(longlong param_1, int * param_2, int param_3)`; semantic: under the RW lock 0x3245560 (write) erases h from *(this+0x90+level*8), level 0..3 (high); signature `void (ProcessLists* this, ActorHandle* h, int level)`
 pub const ProcessLists__RemoveActorHandle: u64 = 41291;
 /// `ProcessLists::RemoveActorHandle` as a function pointer type (high).
-pub type ProcessLists__RemoveActorHandle_fn = unsafe extern "C" fn(this: *mut c_void, h: *mut c_void, level: i32);
+pub type ProcessLists__RemoveActorHandle_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists, h: *mut c_void, level: i32);
 /// `ProcessLists::StopModelEffectsOnRef` at 0x785420 (semantic, high); signature (untiered): `int * StopModelEffectsOnRef(longlong param_1, longlong param_2, longlong param_3)`; semantic: under the spin lock +0x120 walks the temp-effect array +0x108 (u32 count +0x118); for each ModelReferenceEffect (GetRTTI walk to g_TypeNode_ModelReferenceEffect) whose target handle +0x38 is ref's handle and whose art +0xb8 is art sets the finished byte +0x40 = 1 (high); signature `void (ProcessLists* lists, TESObjectREFR* ref, BGSArtObject* art)`
 pub const ProcessLists__StopModelEffectsOnRef: u64 = 41396;
 /// `ProcessLists::StopModelEffectsOnRef` as a function pointer type (high).
-pub type ProcessLists__StopModelEffectsOnRef_fn = unsafe extern "C" fn(lists: *mut c_void, ref_: *mut crate::TESObjectREFR, art: *mut crate::BGSArtObject);
+pub type ProcessLists__StopModelEffectsOnRef_fn = unsafe extern "C" fn(lists: *mut crate::ProcessLists, ref_: *mut crate::TESObjectREFR, art: *mut crate::BGSArtObject);
 /// `ProcessLists::StopShaderEffectsOnRef` at 0x785310 (semantic, high); signature (untiered): `int * StopShaderEffectsOnRef(longlong param_1, longlong param_2, longlong param_3)`; semantic: under the spin lock lists+0x120 walks the temp-effect array +0x108 (count +0x118), and for every ShaderReferenceEffect (TypeNode check) whose target handle +0x38 is ref and whose +0x108 is shader sets +0x40 = 1 (finish) (high); signature `void (ProcessLists* lists, TESObjectREFR* ref, TESEffectShader* shader)`
 pub const ProcessLists__StopShaderEffectsOnRef: u64 = 41395;
 /// `ProcessLists::StopShaderEffectsOnRef` as a function pointer type (high).
-pub type ProcessLists__StopShaderEffectsOnRef_fn = unsafe extern "C" fn(lists: *mut c_void, ref_: *mut crate::TESObjectREFR, shader: *mut crate::TESEffectShader);
+pub type ProcessLists__StopShaderEffectsOnRef_fn = unsafe extern "C" fn(lists: *mut crate::ProcessLists, ref_: *mut crate::TESObjectREFR, shader: *mut crate::TESEffectShader);
 /// `ProcessLists::UpdatePlayerAnimation` at 0x7839c0 (semantic, high); signature (untiered): `undefined UpdatePlayerAnimation(longlong param_1)`; semantic: PlayerCharacter slot 125 with g_FrameDelta * time scale when ProcessLists+0x1e6 is set (high); signature `void (ProcessLists* this)`
 pub const ProcessLists__UpdatePlayerAnimation: u64 = 41371;
 /// `ProcessLists::UpdatePlayerAnimation` as a function pointer type (high).
-pub type ProcessLists__UpdatePlayerAnimation_fn = unsafe extern "C" fn(this: *mut c_void);
+pub type ProcessLists__UpdatePlayerAnimation_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists);
 /// `ProcessLists::UpdateTempEffects` at 0x784e70 (runtime, high); signature (untiered): `DWORD UpdateTempEffects(longlong param_1, undefined4 param_2, ulonglong param_3)`; semantic: try-locks +0x100 and updates the +0xe8 array, then try-locks +0x120 and, with the flag 0x3211920 = 1, updates the +0x108 array (the reference effects: ModelReferenceEffect, ShaderReferenceEffect) through 0x78a070; each lock is skipped (no update this call) when another thread holds it (high); signature `void (ProcessLists* this, float delta)`
 pub const ProcessLists__UpdateTempEffects: u64 = 41390;
 /// `ProcessLists::UpdateTempEffects` as a function pointer type (high).
-pub type ProcessLists__UpdateTempEffects_fn = unsafe extern "C" fn(this: *mut c_void, delta: f32);
+pub type ProcessLists__UpdateTempEffects_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists, delta: f32);
 /// `ProcessLists::UpdateWithTimeBudget` at 0x77b470 (semantic, high); signature (untiered): `undefined UpdateWithTimeBudget(longlong param_1, undefined8 param_2, longlong param_3, ulonglong param_4)`; semantic: per-frame process update: middle-high list (+0x60, 0x77c5f0), middle-low (+0x78, 0x77c280), then the low list (+0x48, count +0x58) inside LockForRead(0x3245560) 0xce3250 / UnlockForRead 0xce3510 (high); signature `void (ProcessLists* this, ...)`
 pub const ProcessLists__UpdateWithTimeBudget: u64 = 41296;
 /// `ProcessLists::ctor` at 0x77a130 (semantic, high); signature (untiered): `longlong ctor(longlong param_1)`; semantic: sets g_ProcessLists_ptr; zero-inits four BSTArray<u32 handle> at +0x30, +0x48, +0x60, +0x78 and points the level table: +0x90 -> +0x30, +0x98 -> +0x60, +0xa0 -> +0x78, +0xa8 -> +0x48 (high); signature `ProcessLists* (ProcessLists* this)`
 pub const ProcessLists__ctor: u64 = 41287;
 /// `ProcessLists::ctor` as a function pointer type (high).
-pub type ProcessLists__ctor_fn = unsafe extern "C" fn(this: *mut c_void) -> *mut c_void;
+pub type ProcessLists__ctor_fn = unsafe extern "C" fn(this: *mut crate::ProcessLists) -> *mut crate::ProcessLists;
 /// `ProcessLoadQueue` at 0xd4ea30 (decompiler, medium); signature (untiered): `undefined ProcessLoadQueue(longlong param_1)`
 pub const ProcessLoadQueue: u64 = 83917;
 /// `ProcessMagicWardHit` at 0x6d7f70 (decompiler, medium); signature (untiered): `undefined8 ProcessMagicWardHit(longlong * param_1, longlong param_2, longlong * param_3, float * param_4, undefined4 * param_5)`
@@ -5999,6 +6007,10 @@ pub const ReadVariableWidthIndex: u64 = 104666;
 pub const ReadVec3QuatVec3ArrayFromStream: u64 = 80035;
 /// `ReadVec3QuatVec3FromStream` at 0x1094f30 (decompiler, medium); signature (untiered): `undefined ReadVec3QuatVec3FromStream(longlong param_1, undefined1[16] * param_2)`
 pub const ReadVec3QuatVec3FromStream: u64 = 79313;
+/// `ReadVertexShaderFromStream` at 0x100fc10 (runtime, high); signature (untiered): `void * ReadVertexShaderFromStream(undefined8 param_1, longlong param_2, undefined8 param_3, undefined8 param_4)`; semantic: reads one vertex shader of a shader package (magic 0x11223344, then id u32, bytecode size u32, +0x48 8 bytes, +0x50 0x14 bytes of constant-buffer tables, a u32 of three table indices, the bytecode) into a record of 0x68 + size bytes: +0x0 id, +0x8 the ID3D11VertexShader (CreateVertexShader, device vtable +0x60, from the bytecode at +0x68), +0x10 the bytecode size, +0x18/+0x28/+0x38 the three constant-buffer tables (ID_411371/ID_411373/ID_411375 by index, ID_411446 when none), +0x48, +0x50, +0x68 the DXBC container kept for the record's life (high); signature `void* (void* this, void* stream)`
+pub const ReadVertexShaderFromStream: u64 = 77348;
+/// `ReadVertexShaderFromStream` as a function pointer type (high).
+pub type ReadVertexShaderFromStream_fn = unsafe extern "C" fn(this: *mut c_void, stream: *mut c_void) -> *mut c_void;
 /// `ReadWeaponFormFromSave` at 0x4a2180 (decompiler, high); signature (high): `ulonglong ReadWeaponFormFromSave(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
 pub const ReadWeaponFormFromSave: u64 = 29758;
 /// `ReadWeatherFormRef` at 0x4194d0 (decompiler, medium); signature (medium): `ulonglong ReadWeatherFormRef(longlong param_1, undefined8 * param_2, undefined8 param_3, undefined8 param_4)`
@@ -8225,25 +8237,3 @@ pub const ReleaseOwnedPtrPair_2: u64 = 451958;
 pub const ReleaseOwnedPtrPair_3: u64 = 452198;
 /// `ReleaseOwnedPtrPair_4` at 0x143f830 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrPair_4(undefined8 * param_1)`
 pub const ReleaseOwnedPtrPair_4: u64 = 452413;
-/// `ReleaseOwnedPtrWithDeleter` at 0x12dca40 (decompiler, medium); signature (untiered): `undefined ReleaseOwnedPtrWithDeleter(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter: u64 = 525460;
-/// `ReleaseOwnedPtrWithDeleter_2` at 0x13d8990 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_2(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_2: u64 = 527184;
-/// `ReleaseOwnedPtrWithDeleter_3` at 0x13d89d0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_3(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_3: u64 = 527185;
-/// `ReleaseOwnedPtrWithDeleter_4` at 0x13d8a90 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_4(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_4: u64 = 527188;
-/// `ReleaseOwnedPtrWithDeleter_5` at 0x13d8ad0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_5(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_5: u64 = 527189;
-/// `ReleaseOwnedPtrWithDeleter_6` at 0x13d8b10 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_6(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_6: u64 = 527190;
-/// `ReleaseOwnedPtrWithDeleter_7` at 0x13d8b90 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_7(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_7: u64 = 527192;
-/// `ReleaseOwnedPtrWithDeleter_8` at 0x13d8bd0 (decompiler, medium); signature (medium): `undefined ReleaseOwnedPtrWithDeleter_8(undefined8 * param_1)`
-pub const ReleaseOwnedPtrWithDeleter_8: u64 = 527193;
-/// `ReleasePackageSlotUnderLock` at 0x6e0e60 (decompiler, medium); signature (untiered): `undefined8 * ReleasePackageSlotUnderLock(DWORD * param_1, longlong * param_2, undefined8 param_3)`
-pub const ReleasePackageSlotUnderLock: u64 = 38972;
-/// `ReleasePackedOpcodeBuffer` at 0x14a39c0 (decompiler, medium); signature (untiered): `undefined ReleasePackedOpcodeBuffer(uint * param_1, undefined8 param_2, undefined * param_3, undefined8 param_4)`
-pub const ReleasePackedOpcodeBuffer: u64 = 104557;
-/// `ReleasePackedRefCountPtr` at 0x1270b0 (decompiler, high); signature (untiered): `undefined ReleasePackedRefCountPtr(longlong * param_1)`
-pub const ReleasePackedRefCountPtr: u64 = 11349;

@@ -8,8 +8,9 @@ use std::path::{Path, PathBuf};
 use std::sync::OnceLock;
 
 use memmap2::Mmap;
-use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
+use windows_sys::Win32::System::LibraryLoader::{GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS, GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, GetModuleFileNameW, GetModuleHandleExW, GetModuleHandleW};
 
+pub mod manifest;
 pub mod profile;
 
 use profile::{Profile, Row};
@@ -150,8 +151,23 @@ pub fn module_base() -> usize {
     unsafe { GetModuleHandleW(core::ptr::null()) as usize }
 }
 
+/// The file of the module whose image holds `address`.
+pub fn module_file(address: *const core::ffi::c_void) -> io::Result<PathBuf> {
+    let mut module = core::ptr::null_mut();
+    let flags = GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT;
+    if unsafe { GetModuleHandleExW(flags, address.cast(), &raw mut module) } == 0 {
+        return Err(io::Error::last_os_error());
+    }
+    let mut path = vec![0u16; 1024];
+    let len = unsafe { GetModuleFileNameW(module, path.as_mut_ptr(), 1024) } as usize;
+    if len == 0 {
+        return Err(io::Error::last_os_error());
+    }
+    Ok(PathBuf::from(String::from_utf16_lossy(&path[..len])))
+}
+
 /// `<exe dir>\Data\SKSE\Plugins`.
-fn plugins_dir() -> io::Result<PathBuf> {
+pub fn plugins_dir() -> io::Result<PathBuf> {
     Ok(std::env::current_exe()?.with_file_name("Data").join("SKSE").join("Plugins"))
 }
 
@@ -180,6 +196,17 @@ impl Running {
         self.profile
     }
 
+    #[must_use]
+    pub fn db(&self) -> &VersionDb {
+        &self.db
+    }
+
+    /// Why a DLL with these bytes must not run on this game, with all it lacks; `None` when it may.
+    #[must_use]
+    pub fn refusal(&self, pe: &[u8]) -> Option<String> {
+        manifest::refusal(&manifest::fit(pe, self.profile, Some(&self.db)), &self.profile.name())
+    }
+
     /// The module-relative offset of an AE id, `None` when the profile has no usable row for it or
     /// the file does not hold it.
     #[must_use]
@@ -195,6 +222,18 @@ impl Running {
     #[must_use]
     pub fn address(&self, ae_id: u64) -> Option<usize> {
         Some(self.base + usize::try_from(self.offset(ae_id)?).ok()?)
+    }
+
+    /// The live address of the site `offset` bytes into the function at an AE id on 1.7.104,
+    /// wherever the profile places it; `None` when the profile has no place for it or no usable id.
+    #[must_use]
+    pub fn site(&self, ae_id: u64, offset: u32) -> Option<usize> {
+        let here = match self.profile.site(u32::try_from(ae_id).ok()?, offset) {
+            Row::Same => offset,
+            Row::Here(site) => site.offset,
+            Row::Missing | Row::Unverified => return None,
+        };
+        Some(self.address(ae_id)? + usize::try_from(here).ok()?)
     }
 }
 

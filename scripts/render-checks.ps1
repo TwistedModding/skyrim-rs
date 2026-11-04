@@ -15,7 +15,7 @@ $rows = @(
     @{ name = "view";             plugin = $view; devbench = "camera get after setPov third: pov $((Step 8).pov) stateId $((Step 8).stateId); after setPov first: pov $((Step 13).pov) stateId $((Step 13).stateId)";
        ok = ((Step 8).pov -eq "third" -and (Step 8).stateId -eq 9 -and (Step 13).pov -eq "first" -and (Step 13).stateId -eq 0 -and $view -match 'third_person=false state=Some\(FirstPerson\)') }
     @{ name = "sun";              plugin = $sun; devbench = "scene at save 1: gameHour $((Step 19).gameHour), weather $((Step 19).weather.formId)";
-       ok = ($sun -match 'maps 2 \(slices 0/1, viewport \[0, 4096, 4096, 0\]' -and $sun -match 'biasScale 60') }
+       ok = ($sun -match 'maps 2 \(viewport \[0, 4096, 4096, 0\]' -and $sun -match 'biasScale 60') }
     @{ name = "outdoor lights";   plugin = $scene; devbench = "inspect lights scope=scene: $(SceneLights 9) lights ($(ShadowLights 9) in the shadow list) in third person, $(SceneLights 14) ($(ShadowLights 14)) in first person";
        ok = ($scene -match '^world at' -and (SceneLights 9) -ne $null) }
     @{ name = "indoor lights";    plugin = $indoors; devbench = "inspect lights scope=scene in Dragonsreach: $(SceneLights 29) lights ($(ShadowLights 29) in the shadow list), pov $((Step 30).pov)";

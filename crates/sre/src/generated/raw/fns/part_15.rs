@@ -3,6 +3,20 @@
 
 use core::ffi::{c_char, c_void};
 
+/// `NiAVObject::dtor` at 0xee0890 (layout_inference, high); signature (low): `undefined dtor(NiAVObject * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAVObject__dtor: u64 = 70250;
+/// `NiAVObject::vdtor` at 0xee1250 (layout_inference, medium); signature (low): `NiAVObject * vdtor(NiAVObject * this, uint param_1, undefined8 param_2, undefined8 param_3)`
+pub const NiAVObject__vdtor: u64 = 70275;
+/// `NiAVObject::vfunc_2` at 0xee1310 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
+pub const NiAVObject__vfunc_2: u64 = 70277;
+/// `NiAVObject::vfunc_24` at 0xee05a0 (rtti, high); signature (low): `undefined vfunc_24(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__vfunc_24: u64 = 70245;
+/// `NiAVObject::vfunc_25` at 0xee0680 (rtti, high); signature (low): `undefined vfunc_25(NiAVObject * this, longlong param_1)`
+pub const NiAVObject__vfunc_25: u64 = 70246;
+/// `NiAVObject::vfunc_26` at 0xee0700 (rtti, high); signature (low): `undefined1 vfunc_26(NiAVObject * this, undefined8 param_1)`
+pub const NiAVObject__vfunc_26: u64 = 70247;
+/// `NiAVObject::vfunc_27` at 0xee0750 (rtti, high); signature (low): `undefined vfunc_27(NiAVObject * this, longlong * param_1)`
+pub const NiAVObject__vfunc_27: u64 = 70248;
 /// `NiAVObject::vfunc_28` at 0xee0810 (rtti, high); signature (low): `undefined8 vfunc_28(NiAVObject * this, longlong param_1)`
 pub const NiAVObject__vfunc_28: u64 = 70249;
 /// `NiAVObject::vfunc_29` at 0xee0f70 (rtti, medium); signature (low): `undefined vfunc_29(NiAVObject * this, undefined8 param_1)`
@@ -8727,11 +8741,3 @@ pub const Papyrus__Alias__RegisterFuncs: u64 = 55146;
 pub const Papyrus__Alias__StartObjectProfiling: u64 = 55137;
 /// `Papyrus::Alias::StopObjectProfiling` at 0xa13e20 (papyrus_native, high); signature (medium): `void StopObjectProfiling(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
 pub const Papyrus__Alias__StopObjectProfiling: u64 = 55138;
-/// `Papyrus::Alias::UnregisterForAnimationEvent` at 0xa13eb0 (papyrus_native, high); signature (medium): `void UnregisterForAnimationEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, TESObjectREFR * a0, BSFixedString * a1)`
-pub const Papyrus__Alias__UnregisterForAnimationEvent: u64 = 55139;
-/// `Papyrus::Alias::UnregisterForLOS` at 0xa13f90 (papyrus_native, high); signature (medium): `void UnregisterForLOS(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self, Actor * a0, TESObjectREFR * a1)`
-pub const Papyrus__Alias__UnregisterForLOS: u64 = 55140;
-/// `Papyrus::Alias::UnregisterForSleep` at 0xa14030 (papyrus_native, high); signature (medium): `void UnregisterForSleep(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__UnregisterForSleep: u64 = 55141;
-/// `Papyrus::Alias::UnregisterForTrackedStatsEvent` at 0xa14080 (papyrus_native, high); signature (medium): `void UnregisterForTrackedStatsEvent(IVirtualMachine * vm, uint stackId, BGSBaseAlias * self)`
-pub const Papyrus__Alias__UnregisterForTrackedStatsEvent: u64 = 55142;

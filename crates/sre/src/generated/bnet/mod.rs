@@ -4,7 +4,9 @@
 mod types;
 pub use types::*;
 #[cfg(feature = "bnet")]
-mod api;
+mod api_1;
+#[cfg(feature = "bnet")]
+mod api_2;
 #[cfg(all(feature = "bnet", feature = "tier-high"))]
 mod tier_high;
 #[cfg(all(feature = "bnet", feature = "tier-low"))]

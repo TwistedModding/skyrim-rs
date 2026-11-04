@@ -8,6 +8,7 @@ publish.workspace = true
 skse.workspace = true
 skyrim = { workspace = true, features = ["animation", "events", "input", "papyrus"] }
 hook.workspace = true
+versionlib.workspace = true
 sre = { workspace = true, default-features = false }
 overlay.workspace = true
 crash.workspace = true

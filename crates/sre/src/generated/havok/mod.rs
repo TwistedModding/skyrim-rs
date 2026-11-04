@@ -12,9 +12,15 @@ pub use types_4::*;
 mod types_5;
 pub use types_5::*;
 #[cfg(feature = "havok")]
-mod api;
+mod api_1;
 #[cfg(feature = "havok")]
-pub use api::*;
+mod api_2;
+#[cfg(feature = "havok")]
+mod api_3;
+#[cfg(feature = "havok")]
+mod api_4;
+#[cfg(feature = "havok")]
+pub use api_4::*;
 #[cfg(all(feature = "havok", feature = "tier-high"))]
 mod tier_high;
 #[cfg(all(feature = "havok", feature = "tier-medium"))]

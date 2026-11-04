@@ -37,6 +37,19 @@ use sre::{BSAnimationGraphEvent, BSEventNotifyControl, InputDevice};
 use skyrim::input::{Command, CommandContext, CommandSlot, Param};
 use skyrim::papyrus::{IntoVariable, LatentFn, NativeCall, NativeFn, NativeFunction, NativeKind, NativeMethod, ParamType, Variable, VirtualMachine};
 
+#[doc(hidden)]
+pub use sre as __sre;
+
+/// A [`hooks::Location`] by id and offset, recorded in the DLL's manifest so the loader can refuse
+/// the plugin on a runtime that lacks the site.
+#[macro_export]
+macro_rules! location {
+    ($id:expr, $offset:expr) => {{
+        $crate::__sre::record_site!($id, $offset);
+        $crate::hooks::Location::id($id, $offset)
+    }};
+}
+
 pub mod abi;
 pub mod hooks;
 pub mod host;
@@ -725,6 +738,7 @@ macro_rules! plugin {
             },
             load: {
                 extern "C" fn skyrim_rs_load(api: *const $crate::abi::HostApi) -> bool {
+                    $crate::__sre::declare_manifest!();
                     $crate::abi::start(api, $load)
                 }
                 skyrim_rs_load

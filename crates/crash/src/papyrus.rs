@@ -240,6 +240,9 @@ pub fn write(w: &mut dyn Write, ctx: &Context<'_>) -> fmt::Result {
     if rec.exe_base == 0 {
         return writeln!(w, "no game module");
     }
+    if !skse::runtime::is_canonical(rec.runtime) {
+        return writeln!(w, "not read on this runtime: its anchors and layouts are 1.7.104's");
+    }
     for (i, frame) in rec.frames().iter().enumerate().skip(1) {
         let Some(rva) = frame.rip.checked_sub(rec.exe_base).and_then(|d| u32::try_from(d).ok()) else { continue };
         for anchor in &ANCHORS {

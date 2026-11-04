@@ -71,7 +71,7 @@ unsafe extern "C" fn cull_detour(node: *mut sre::NiAVObject, culler: *mut sre::N
     {
         if core::ptr::eq(n, root) {
             if c.is_shadow_pass() { &BODY_SHADOW } else { &BODY_CAMERA }.fetch_add(1, Ordering::Relaxed);
-        } else if skyrim::class_of(n).is_some_and(|v| v.id == vtables::BSFaceGenNiNode_vtable::ID) && n.is_under(root, 24) {
+        } else if skyrim::class_of(n).is_some_and(|v| v.id == sre::id!(vtables::BSFaceGenNiNode_vtable::ID)) && n.is_under(root, 24) {
             if c.is_shadow_pass() {
                 HEAD_SHADOW.fetch_add(1, Ordering::Relaxed);
             } else {

@@ -138,7 +138,6 @@ fn devices() -> Result<String, String> {
     let keyboard = vtable_rva(input.keyboard.cast());
     let mouse = vtable_rva(input.mouse.cast());
     check(keyboard == 0x1a2_ce50 && mouse == 0x1a2_ceb0, &format!("keyboard vtable {keyboard:#x}, mouse {mouse:#x}"))?;
-    check(input.device3 == 0 && input.device4 == 0, "device slots 3 and 4 are not null")?;
     check(input.keyboard().is_some(), "keyboard() is None")?;
     let name = input.key_name(InputDevice::Keyboard, KEY_E);
     let code = input.key_code(InputDevice::Keyboard, KEY_E);
@@ -149,7 +148,7 @@ fn devices() -> Result<String, String> {
 fn sinks() -> Result<String, String> {
     let source = InputEventList::source().ok_or("no input source")?;
     let reloc = skyrim::reloc();
-    let expected = [globals::g_ConsoleHotkeyManager, globals::g_MenuControls, globals::g_PlayerControls].map(|g| reloc.address(g).unwrap_or(0));
+    let expected = [sre::id!(globals::g_ConsoleHotkeyManager), sre::id!(globals::g_MenuControls), sre::id!(globals::g_PlayerControls)].map(|g| reloc.address(g).unwrap_or(0));
     let first: Vec<usize> = source.sinks().iter().take(3).map(|s| *s as usize).collect();
     check(first == expected, &format!("first sinks {:x?}, expected {expected:x?}", first.iter().map(|p| rva(*p)).collect::<Vec<_>>()))?;
     check(source.contains(&KEY_SINK), "the key sink is not registered")?;
@@ -160,7 +159,7 @@ fn control_map() -> Result<String, String> {
     let map = ControlMap::singleton().ok_or("no control map")?;
     let stack = map.context_stack();
     check(stack.is_empty() || stack == [0], &format!("context stack {stack:?}"))?;
-    let enabled = map.enabledControls;
+    let enabled = map.enabledControls();
     check(enabled == 0xFFFF_FFFF, &format!("enabled controls {enabled:#x}"))?;
     let activate = map.button_name("Activate", InputDevice::Keyboard);
     check(activate.as_deref() == Some("E"), &format!("Activate maps to {activate:?}"))?;

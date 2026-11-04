@@ -42,6 +42,7 @@ macro_rules! ops {
                 type Fn = fns::$fn;
 
                 fn target(self) -> Target {
+                    sre::id!(fns::$id);
                     Target::Op(Index::$id as usize)
                 }
             }

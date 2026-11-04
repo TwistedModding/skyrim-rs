@@ -21,10 +21,6 @@ pub const HAVOK_SCALE: f32 = 0.014_287_5;
 /// Havok units to game units (`g_HavokWorldScaleInverse`).
 pub const HAVOK_SCALE_INVERSE: f32 = 69.991_25;
 
-/// Offset of the filter info in a collidable (`bhkPickData::rootCollidable`'s row).
-const COLLIDABLE_FILTER_INFO: usize = 0x2c;
-/// Offset of the group counter in the collision filter (`bhkCollisionFilter::nextCollisionGroup`).
-const NEXT_COLLISION_GROUP: usize = 0x4c;
 
 /// Where a ray hit.
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -70,12 +66,12 @@ pub const fn next_group(counter: u32) -> u16 {
 /// rays: a group no body belongs to. `None` before the filter exists.
 #[must_use]
 pub fn fresh_group() -> Option<u16> {
-    let holder = crate::reloc().address(globals::g_bhkCollisionFilter_ptr).ok()? as *const *const u32;
+    let holder = crate::reloc().address(sre::id!(globals::g_bhkCollisionFilter_ptr)).ok()? as *const *const u32;
     let filter = unsafe { *holder };
     if filter.is_null() {
         return None;
     }
-    let counter = unsafe { &*filter.add(NEXT_COLLISION_GROUP / 4) };
+    let counter = unsafe { &*filter.byte_add(sre::member_offset!("bhkCollisionFilter.field_4C", 0x4c)) };
     let group = next_group(*counter);
     crate::store(counter, u32::from(group));
     Some(group)
@@ -139,18 +135,18 @@ fn pick_data(from: [f32; 3], to: [f32; 3], filter_info: u32) -> Aligned {
 #[must_use]
 pub fn pick_in(cell: &TESObjectCELL, from: [f32; 3], to: [f32; 3], filter_info: u32) -> Option<Hit> {
     let mut data = pick_data(from, to, filter_info);
-    let cast: fns::TESObjectCELL__Pick_fn = unsafe { crate::engine_fn(fns::TESObjectCELL__Pick) };
+    let cast: fns::TESObjectCELL__Pick_fn = unsafe { crate::engine_fn(sre::id!(fns::TESObjectCELL__Pick)) };
     let node = unsafe { cast(core::ptr::from_ref(cell).cast_mut(), &raw mut data.0) };
     let pick = &data.0;
     if pick.rootCollidable.is_null() {
         return None;
     }
-    let layer = layer_of(unsafe { pick.rootCollidable.cast::<u8>().add(COLLIDABLE_FILTER_INFO).cast::<u32>().read_unaligned() });
+    let layer = layer_of(unsafe { pick.rootCollidable.cast::<u8>().add(sre::member_offset!("hkpCollidable.collisionFilterInfo", 0x2c)).cast::<u32>().read_unaligned() });
     // On a ground hit the cell's pick returns an object that is not a scene node.
     let reference = if node.is_null() || layer == Some(CollisionLayer::GROUND) {
         None
     } else {
-        let find: fns::FindReferenceFromNode_fn = unsafe { crate::engine_fn(fns::FindReferenceFromNode) };
+        let find: fns::FindReferenceFromNode_fn = unsafe { crate::engine_fn(sre::id!(fns::FindReferenceFromNode)) };
         unsafe { find(node).as_ref() }.map(TESObjectREFRExt::handle)
     };
     Some(Hit { position: lerp(from, to, pick.hitFraction), normal: vector(&pick.normal), fraction: pick.hitFraction, layer, reference })
@@ -200,7 +196,7 @@ pub fn move_reference(reference: &TESObjectREFR, position: [f32; 3]) {
     reference.set_position(&sre::NiPoint3 { x, y, z, __engine: sre::Engine::new() });
     if let Some(controller) = reference.cast::<sre::Actor>().and_then(sre::Actor::get_char_controller) {
         type SetPositionFn = unsafe extern "C" fn(*const sre::bhkCharacterController, *const sre::hkVector4, bool, bool);
-        let set: SetPositionFn = unsafe { core::mem::transmute(sre::vtable_entry(controller, 3)) };
+        let set: SetPositionFn = unsafe { core::mem::transmute(sre::vtable_entry(controller, sre::slot_index!("bhkCharacterController", 0x0, 3))) };
         let havok = sre::hkVector4 { x: x * HAVOK_SCALE, y: y * HAVOK_SCALE, z: z * HAVOK_SCALE, w: 0.0, __engine: sre::Engine::new() };
         unsafe { set(controller, &raw const havok, true, false) };
     }
