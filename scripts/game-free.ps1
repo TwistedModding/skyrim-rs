@@ -1,6 +1,6 @@
 # Throws unless the shared Steam install is free, and takes the modding toolchain's game lock for this process:
 # %TEMP%\modding-toolchain\game.lock holds the holder's PID, created only if absent; only a dead holder's lock is stale.
-# The RE session takes no lock, so a running SkyrimSE also counts as busy. Returns whether the lock was taken now;
+# Every session takes this lock before touching an install, the RE side included; a running SkyrimSE also counts as busy. Returns whether the lock was taken now;
 # the caller that took it gives it back with -Release, and a script run inside one that holds it takes nothing.
 param([switch]$Release)
 $lock = Join-Path $env:TEMP "modding-toolchain\game.lock"

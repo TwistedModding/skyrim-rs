@@ -129,7 +129,7 @@ pub struct Reloc {
 impl Reloc {
     /// Opens the Address Library the running game's profile names. The game is identified by its
     /// executable, not by what the loader reports.
-    pub fn open(_packed_runtime: u32) -> Result<Self, Error> {
+    pub fn open() -> Result<Self, Error> {
         Ok(Self { running: versionlib::running()? })
     }
 
@@ -178,7 +178,7 @@ mod tests {
 
     #[test]
     fn a_game_with_no_profile_is_an_error_not_a_panic() {
-        let Err(error) = Reloc::open(0) else { panic!("a test binary is no game") };
+        let Err(error) = Reloc::open() else { panic!("a test binary is no game") };
         assert!(error.to_string().contains("file version"), "{error}");
     }
 }

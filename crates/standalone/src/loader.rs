@@ -105,7 +105,7 @@ pub fn run(runtime: u32) {
         }
         return;
     }
-    match hook::Reloc::open(runtime) {
+    match hook::Reloc::open() {
         Ok(reloc) => {
             let _ = RELOC.set(reloc);
         }

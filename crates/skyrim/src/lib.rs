@@ -93,7 +93,7 @@ pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     if RELOC.get().is_some() {
         return Ok(());
     }
-    let _ = RELOC.set(hook::Reloc::open(skse.runtime_version)?);
+    let _ = RELOC.set(hook::Reloc::open()?);
     Ok(())
 }
 
