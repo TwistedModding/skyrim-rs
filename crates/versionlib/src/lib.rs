@@ -1,5 +1,5 @@
-//! Address Library reader: formats 1 and 2 (delta stream) and 5 (dense table), and the running
-//! game's database, opened once per process.
+//! Address Library reader: formats 1 and 2 (delta stream) and 5 (dense table), the running game's
+//! database, opened once per DLL, and the runtime [`profile`] that names it and translates ids.
 
 use std::fmt;
 use std::fs::File;
@@ -10,10 +10,16 @@ use std::sync::OnceLock;
 use memmap2::Mmap;
 use windows_sys::Win32::System::LibraryLoader::GetModuleHandleW;
 
+pub mod profile;
+
+use profile::{Profile, Row};
+
 #[derive(Debug)]
 pub enum Error {
     Io(io::Error),
     Format(&'static str),
+    /// The running runtime's profile could not be read; the text names the runtime and the file.
+    Profile(&'static str),
 }
 
 impl fmt::Display for Error {
@@ -21,6 +27,7 @@ impl fmt::Display for Error {
         match self {
             Self::Io(e) => write!(f, "address library: {e}"),
             Self::Format(what) => write!(f, "address library: {what}"),
+            Self::Profile(what) => f.write_str(what),
         }
     }
 }
@@ -143,20 +150,21 @@ pub fn module_base() -> usize {
     unsafe { GetModuleHandleW(core::ptr::null()) as usize }
 }
 
-/// The running game's Address Library, `<exe dir>\Data\SKSE\Plugins\<file>`, with the
-/// executable's base address.
+/// `<exe dir>\Data\SKSE\Plugins`.
+fn plugins_dir() -> io::Result<PathBuf> {
+    Ok(std::env::current_exe()?.with_file_name("Data").join("SKSE").join("Plugins"))
+}
+
+/// The running game's Address Library with the executable's base address. Ids here are AE ids:
+/// they go through the runtime's profile before they reach the file.
 pub struct Running {
     db: VersionDb,
     base: usize,
     path: PathBuf,
+    profile: &'static Profile,
 }
 
 impl Running {
-    #[must_use]
-    pub fn db(&self) -> &VersionDb {
-        &self.db
-    }
-
     #[must_use]
     pub fn base(&self) -> usize {
         self.base
@@ -167,31 +175,44 @@ impl Running {
         &self.path
     }
 
-    /// The live address of an id, `None` when the file does not hold it.
     #[must_use]
-    pub fn address(&self, id: u64) -> Option<usize> {
-        Some(self.base + usize::try_from(self.db.offset(id)?).ok()?)
+    pub fn profile(&self) -> &'static Profile {
+        self.profile
+    }
+
+    /// The module-relative offset of an AE id, `None` when the profile has no usable row for it or
+    /// the file does not hold it.
+    #[must_use]
+    pub fn offset(&self, ae_id: u64) -> Option<u64> {
+        self.db.offset(match self.profile.id(u32::try_from(ae_id).ok()?) {
+            Row::Same => ae_id,
+            Row::Here(id) => u64::from(id),
+            Row::Missing | Row::Unverified => return None,
+        })
+    }
+
+    /// The live address of an AE id, `None` as for [`Self::offset`].
+    #[must_use]
+    pub fn address(&self, ae_id: u64) -> Option<usize> {
+        Some(self.base + usize::try_from(self.offset(ae_id)?).ok()?)
     }
 }
 
 static RUNNING: OnceLock<Running> = OnceLock::new();
 
-/// The running game's database named `file`, opened by the first call and shared by every later
-/// one. A later call naming another file is an error: one process runs one game.
-pub fn running(file: &str) -> Result<&'static Running, Error> {
-    if RUNNING.get().is_none() {
-        let path = std::env::current_exe()?.with_file_name("Data").join("SKSE").join("Plugins").join(file);
-        let db = VersionDb::open(&path).map_err(|e| match e {
-            Error::Io(io) => Error::Io(io::Error::new(io.kind(), format!("{}: {io}", path.display()))),
-            other @ Error::Format(_) => other,
-        })?;
-        let _ = RUNNING.set(Running { db, base: module_base(), path });
+/// The running game's database, the file its profile names, opened by the first call in this DLL
+/// and shared by every later one.
+pub fn running() -> Result<&'static Running, Error> {
+    if let Some(running) = RUNNING.get() {
+        return Ok(running);
     }
-    let running = RUNNING.get().unwrap();
-    if running.path.file_name().is_some_and(|name| name != file) {
-        return Err(Error::Format("another Address Library file is already open in this process"));
-    }
-    Ok(running)
+    let profile = profile::current().map_err(Error::Profile)?;
+    let path = plugins_dir()?.join(profile.address_library());
+    let db = VersionDb::open(&path).map_err(|e| match e {
+        Error::Io(io) => Error::Io(io::Error::new(io.kind(), format!("{}: {io}", path.display()))),
+        other => other,
+    })?;
+    Ok(RUNNING.get_or_init(|| Running { db, base: module_base(), path, profile }))
 }
 
 struct Reader<'a> {

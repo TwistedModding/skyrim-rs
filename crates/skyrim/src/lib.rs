@@ -6,7 +6,7 @@
 //! lock), the event sinks, Papyrus natives and dispatch, a mod's own menus and console commands, the
 //! hook installers, and per class the few reads that would otherwise need `unsafe` (a C string by
 //! `&str`, an engine array as a slice, a checked cast), as extension traits collected in [`prelude`].
-//! [`init`] checks the running game against the runtime `sre` describes.
+//! [`init`] reads the running game's profile and opens its Address Library.
 
 use std::fmt;
 use std::sync::OnceLock;
@@ -64,18 +64,13 @@ pub mod prelude {
 
 #[derive(Debug)]
 pub enum Error {
-    /// The game is not the runtime the layouts were generated for; holds `[major, minor, build, store]`.
-    Runtime([u32; 4]),
+    /// The profile or Address Library could not be read; a runtime with no profile file names itself and the path here.
     Hook(hook::Error),
 }
 
 impl fmt::Display for Error {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::Runtime([major, minor, build, store]) => {
-                let [a, b, c] = sre::VERSION;
-                write!(f, "runtime {major}.{minor}.{build} store {store} is not {a}.{b}.{c}, the only runtime the layouts describe")
-            }
             Self::Hook(e) => e.fmt(f),
         }
     }
@@ -91,15 +86,12 @@ impl From<hook::Error> for Error {
 
 static RELOC: OnceLock<hook::Reloc> = OnceLock::new();
 
-/// Checks the runtime and opens the Address Library. Call it once from `SKSEPlugin_Load` before
-/// any other function of this crate; a second call is a no-op.
+/// Reads the running game's profile and opens its Address Library, an error when either is
+/// unusable. Call it once from `SKSEPlugin_Load` before any other function of this crate; a second
+/// call is a no-op.
 pub fn init(skse: &skse::Interface) -> Result<(), Error> {
     if RELOC.get().is_some() {
         return Ok(());
-    }
-    let version = skse::runtime::unpack(skse.runtime_version);
-    if version[..3] != sre::VERSION {
-        return Err(Error::Runtime(version));
     }
     let _ = RELOC.set(hook::Reloc::open(skse.runtime_version)?);
     Ok(())

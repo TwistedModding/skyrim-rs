@@ -127,9 +127,10 @@ pub struct Reloc {
 }
 
 impl Reloc {
-    /// Opens `<exe dir>\Data\SKSE\Plugins\<versionlib file>` for the packed runtime version SKSE reports.
-    pub fn open(packed_runtime: u32) -> Result<Self, Error> {
-        Ok(Self { running: versionlib::running(&skse::runtime::versionlib_name(packed_runtime))? })
+    /// Opens the Address Library the running game's profile names. The game is identified by its
+    /// executable, not by what the loader reports.
+    pub fn open(_packed_runtime: u32) -> Result<Self, Error> {
+        Ok(Self { running: versionlib::running()? })
     }
 
     #[must_use]
@@ -137,11 +138,7 @@ impl Reloc {
         self.running.base()
     }
 
-    #[must_use]
-    pub fn db(&self) -> &versionlib::VersionDb {
-        self.running.db()
-    }
-
+    /// The live address of an AE id on the running game.
     pub fn address(&self, id: u64) -> Result<usize, Error> {
         self.running.address(id).ok_or(Error::UnknownId(id))
     }
@@ -177,5 +174,11 @@ mod tests {
         assert_eq!(core::hint::black_box(target)(2, 3), 105);
         assert_eq!(ORIGINAL.get().unwrap().original()(2, 3), 5);
         assert_ne!(module_base(), 0);
+    }
+
+    #[test]
+    fn a_game_with_no_profile_is_an_error_not_a_panic() {
+        let Err(error) = Reloc::open(0) else { panic!("a test binary is no game") };
+        assert!(error.to_string().contains("file version"), "{error}");
     }
 }

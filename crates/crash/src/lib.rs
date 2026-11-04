@@ -50,7 +50,7 @@ pub type FactsFn = fn(&mut Writer<'_>, &Crash, Section);
 pub struct Options {
     /// Who installs: the host's or the mod's name, shown in the log's header.
     pub name: &'static str,
-    /// The packed runtime version the loader reported, for the Address Library and the ledger gate.
+    /// The packed runtime version the loader reported, for the report's header.
     pub runtime_version: u32,
     /// A build string for the header.
     pub build: &'static str,
@@ -93,19 +93,19 @@ impl std::error::Error for Error {}
 pub fn install(options: &Options) -> Result<Installed, Error> {
     let dir = skse::log::dir(options.runtime_version).map_err(Error::LogDir)?;
     let _ = std::fs::create_dir_all(&dir);
-    let game = game_addresses(options.runtime_version);
-    handler::install(options, &dir.to_string_lossy(), game)
+    handler::install(options, &dir.to_string_lossy(), game_addresses())
 }
 
-/// The globals the game-state probes read, through the Address Library when it opens.
-fn game_addresses(runtime: u32) -> live::GameAddresses {
+/// The globals the game-state probes read, through the Address Library when it opens. The probes
+/// read 1.7.104's layouts, so they stay off on any other runtime.
+fn game_addresses() -> live::GameAddresses {
     use sre::raw::globals;
     let mut out = live::GameAddresses::default();
-    if skse::runtime::unpack(runtime)[..3] != sre::VERSION {
+    if !skse::runtime::running().is_some_and(skse::runtime::is_canonical) {
         return out;
     }
-    let Ok(db) = versionlib::running(&skse::runtime::versionlib_name(runtime)) else { return out };
-    let resolve = |id: u64| db.address(id).map_or(0, |a| a as u64);
+    let Ok(running) = versionlib::running() else { return out };
+    let resolve = |id: u64| running.address(id).map_or(0, |a| a as u64);
     out.frame_counter = resolve(globals::g_RenderFrameCounter);
     out.player = resolve(globals::g_PlayerCharacter_ptr);
     out.save_manager = resolve(globals::g_BGSSaveLoadManager_ptr);

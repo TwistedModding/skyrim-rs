@@ -20,7 +20,9 @@ impl Engine {
 // SAFETY: the marker holds no data; a class's own fields decide whether it is Send or Sync.
 unsafe impl Sync for Engine {}
 
-/// An Address Library id of the running game, resolved on first use and cached.
+const _: () = assert!(skse::runtime::CANONICAL == skse::runtime::pack(VERSION[0], VERSION[1], VERSION[2], 0));
+
+/// An AE Address Library id, resolved on the running game through its profile on first use and cached.
 #[doc(hidden)]
 pub struct Relocation {
     id: u32,
@@ -34,7 +36,8 @@ impl Relocation {
     }
 
     /// # Panics
-    /// When the runtime's Address Library file cannot be opened or does not hold the id.
+    /// When the runtime's profile or Address Library file cannot be read, or the id has no usable
+    /// row in the profile or is not in the file.
     #[inline]
     pub fn address(&self) -> usize {
         match self.address.load(Ordering::Relaxed) {
@@ -46,12 +49,10 @@ impl Relocation {
     #[cold]
     #[inline(never)]
     fn resolve(&self) -> usize {
-        let [major, minor, build] = VERSION;
-        let file = skse::runtime::versionlib_name(skse::runtime::pack(major, minor, build, 0));
-        let running = versionlib::running(&file).unwrap_or_else(|e| panic!("id {}: {e}", self.id));
+        let running = versionlib::running().unwrap_or_else(|e| panic!("id {}: {e}", self.id));
         let address = running
             .address(u64::from(self.id))
-            .unwrap_or_else(|| panic!("id {} is not in {}", self.id, running.path().display()));
+            .unwrap_or_else(|| panic!("id {} has no usable profile row or is not in {}", self.id, running.path().display()));
         self.address.store(address, Ordering::Relaxed);
         address
     }
