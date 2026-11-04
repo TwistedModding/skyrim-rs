@@ -1,11 +1,13 @@
 //! The plugin loader without the script extender: the acceptance rules, the plugin interface and
 //! the message moments of request S1, on the game call sites S1 found the script extender hooking.
 //!
-//! Plugins in `Data\SKSE\Plugins` that export `SKSEPlugin_Version` are loaded in file name order and
-//! checked like SKSE 2.3.1 checks them; `SKSEPlugin_Preload` then `SKSEPlugin_Load` run for the
+//! Each runtime gets the protocol of its script extender ([`skse::loader`]). Plugins in
+//! `Data\SKSE\Plugins` are loaded in file name order and checked like that build checks them, by
+//! their `SKSEPlugin_Version` or, on 1.5.97, their `SKSEPlugin_Query`; `SKSEPlugin_Load` runs for the
 //! accepted ones, kinds 0 and 1 are sent, and the hooks below send the others. `QueryInterface`
 //! answers the Papyrus (2), task (4), messaging (5) and trampoline (7) tables; Scaleform (1),
-//! serialization (3) and the object table (6) are not implemented and answer null.
+//! serialization (3) and the object table (6) are not implemented and answer null. The hooks are
+//! 1.7.104 call sites: on another runtime nothing is loaded and the log lists the sites it lacks.
 //!
 //! Plugins also call two Papyrus natives the script extender adds and declares in its `Game.pex`,
 //! `Game.SaveGame(name)` and `Game.LoadGame(name)` (request S3: `DevBench` saves through the first).
@@ -18,7 +20,7 @@ use std::ffi::CString;
 use std::fs::File;
 use std::io::Write as _;
 use std::os::windows::ffi::OsStrExt as _;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU32, Ordering};
 use std::sync::{Mutex, OnceLock};
 use std::time::{Duration, Instant};
@@ -26,17 +28,13 @@ use std::time::{Duration, Instant};
 use skyrim::prelude::*;
 
 use sre::raw::{fns, globals};
-use skse::{Interface, Message, MessageCallback, MessagingInterface, PapyrusInterface, PluginHandle, PluginInfo, PluginVersionData, RegisterFunctions, TaskInterface, TrampolineInterface, compat};
+use skse::loader::Loader;
+use skse::{Interface, Message, MessageCallback, MessagingInterface, PapyrusInterface, PluginHandle, PluginInfo, PluginVersionData, RegisterFunctions, TaskInterface, TrampolineInterface};
 use windows_sys::Win32::Foundation::{FreeLibrary, HMODULE};
-use windows_sys::Win32::System::LibraryLoader::{GetModuleHandleW, GetProcAddress, LoadLibraryW};
+use windows_sys::Win32::System::LibraryLoader::{GetProcAddress, LoadLibraryW};
 
-/// The interface level implemented: SKSE 2.3.1's, as S1 read it.
-const LOADER_VERSION: u32 = 0x0203_0010;
-const RELEASE_INDEX: u32 = 75;
-pub(crate) const RUNTIME: u32 = skse::runtime::pack(1, 7, 104, 0);
+const LOG_NAME: &str = "skyrim-runtime-extender-standalone";
 const PLUGIN_DIR: &str = "Data\\SKSE\\Plugins";
-/// SKSE 2.3.1's link-timestamp gate: a plugin linked in this range needs `FLAG_NO_TIMESTAMP_GATE` or the runtime in its list.
-const TIMESTAMP_GATE: core::ops::RangeInclusive<u32> = 520_128_000..=1_748_217_599;
 /// The save name pointer in the save stream (`Win32FileType` +0xbb0).
 const SAVE_NAME: usize = 0xbb0;
 
@@ -55,6 +53,8 @@ struct Listener {
 }
 
 static LOG: Mutex<Option<File>> = Mutex::new(None);
+static LOADER: OnceLock<&'static Loader> = OnceLock::new();
+static INTERFACE: OnceLock<Interface> = OnceLock::new();
 static PLUGINS: Mutex<Vec<Plugin>> = Mutex::new(Vec::new());
 static CURRENT: AtomicU32 = AtomicU32::new(skse::INVALID_HANDLE);
 static LOADED: AtomicU32 = AtomicU32::new(0);
@@ -81,27 +81,31 @@ macro_rules! log {
     };
 }
 
-static INTERFACE: Interface = Interface {
-    skse_version: LOADER_VERSION,
-    runtime_version: RUNTIME,
-    reserved: [0; 2],
-    query_interface,
-    get_plugin_handle,
-    get_release_index,
-    get_plugin_info,
-};
 static MESSAGING: MessagingInterface = MessagingInterface { interface_version: MessagingInterface::VERSION, register_listener, dispatch, get_event_dispatcher };
 static PAPYRUS_TABLE: PapyrusInterface = PapyrusInterface { interface_version: PapyrusInterface::VERSION, register: register_papyrus };
 static TASK_TABLE: TaskInterface = TaskInterface { interface_version: TaskInterface::VERSION, add_task, add_ui_task };
 static TRAMPOLINE_TABLE: TrampolineInterface = TrampolineInterface { interface_version: TrampolineInterface::VERSION, alloc_branch: alloc_near, alloc_local: alloc_near };
 
 /// Loads and starts the plugins, then hooks the moments; on the main thread right before `WinMain`.
-pub fn run() {
-    if let Ok(file) = skse::log::open(RUNTIME, "skyrim-runtime-extender-standalone") {
+pub fn run(runtime: u32) {
+    if let Ok(file) = skse::log::open(runtime, LOG_NAME) {
         *LOG.lock().unwrap() = Some(file);
     }
-    log!("skyrim-runtime-extender standalone host, plugin interface {LOADER_VERSION:08x}, runtime {RUNTIME:08x}");
-    match hook::Reloc::open(RUNTIME) {
+    let Some(loader) = skse::loader::for_runtime(runtime) else {
+        log!("skyrim-runtime-extender standalone host: no plugin protocol known for runtime {runtime:08x}; nothing loaded");
+        return;
+    };
+    let _ = LOADER.set(loader);
+    log!("skyrim-runtime-extender standalone host, plugin interface {:08x}, runtime {runtime:08x}", loader.version);
+    let missing = missing_sites(runtime);
+    if !missing.is_empty() {
+        log!("{} of {} call sites are not known on this runtime; nothing loaded", missing.len(), SITES.len());
+        for site in missing {
+            log!("needs {}: the call at id {} + {:#x} to id {}", site.moment, site.caller, site.offset, site.callee);
+        }
+        return;
+    }
+    match hook::Reloc::open(runtime) {
         Ok(reloc) => {
             let _ = RELOC.set(reloc);
         }
@@ -110,13 +114,27 @@ pub fn run() {
             return;
         }
     }
-    if let Err(e) = skyrim::init(&INTERFACE) {
+    let interface = INTERFACE.get_or_init(|| Interface {
+        skse_version: loader.version,
+        runtime_version: runtime,
+        reserved: [0; 2],
+        query_interface,
+        get_plugin_handle,
+        get_release_index,
+        get_plugin_info,
+    });
+    if let Err(e) = skyrim::init(interface) {
         log!("game layer: {e}; nothing loaded");
         return;
     }
-    let accepted = scan();
-    for (handle, (path, data)) in (1..).zip(&accepted) {
-        start(handle, path, data);
+    if loader.calls_query() {
+        for path in plugin_files() {
+            load_queried(interface, &path);
+        }
+    } else {
+        for (handle, (file, module, data)) in (1..).zip(scan(loader)) {
+            start(interface, loader, handle, &file, module, data);
+        }
     }
     LOADED.store(1, Ordering::Release);
     let names: Vec<String> = PLUGINS.lock().unwrap().iter().map(|p| format!("{} ({})", p.file, p.name.to_string_lossy())).collect();
@@ -129,8 +147,8 @@ pub fn run() {
 }
 
 /// Leaves everything to the script extender, which is loaded.
-pub fn defer() {
-    if let Ok(mut file) = skse::log::open(RUNTIME, "skyrim-runtime-extender-standalone") {
+pub fn defer(runtime: u32) {
+    if let Ok(mut file) = skse::log::open(runtime, LOG_NAME) {
         let _ = writeln!(file, "the script extender is loaded; it hosts the plugins");
     }
 }
@@ -139,61 +157,51 @@ fn wide(path: &Path) -> Vec<u16> {
     path.as_os_str().encode_wide().chain([0]).collect()
 }
 
-/// Every DLL with version data in file name order, each kept loaded when the acceptance rules pass.
-fn scan() -> Vec<(String, &'static PluginVersionData)> {
+fn file_name(path: &Path) -> String {
+    path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default()
+}
+
+/// Every DLL directly in the plugin folder, in file name order.
+fn plugin_files() -> Vec<PathBuf> {
     let mut files: Vec<_> = std::fs::read_dir(PLUGIN_DIR).into_iter().flatten().flatten().map(|e| e.path()).filter(|p| p.extension().is_some_and(|x| x.eq_ignore_ascii_case("dll"))).collect();
     files.sort();
+    files
+}
+
+fn load_library(path: &Path) -> Option<HMODULE> {
+    let module = unsafe { LoadLibraryW(wide(path).as_ptr()) };
+    if module.is_null() {
+        log!("{}: could not be loaded ({})", file_name(path), std::io::Error::last_os_error());
+        return None;
+    }
+    Some(module)
+}
+
+fn export(module: HMODULE, symbol: &CStr) -> Option<unsafe extern "system" fn() -> isize> {
+    unsafe { GetProcAddress(module, symbol.as_ptr().cast()) }
+}
+
+/// Every DLL with version data the loader accepts, each kept loaded.
+fn scan(loader: &Loader) -> Vec<(String, HMODULE, &'static PluginVersionData)> {
     let mut accepted = Vec::new();
-    for path in files {
-        let file = path.file_name().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
-        let module = unsafe { LoadLibraryW(wide(&path).as_ptr()) };
-        if module.is_null() {
-            log!("{file}: could not be loaded ({})", std::io::Error::last_os_error());
+    for path in plugin_files() {
+        let file = file_name(&path);
+        let Some(module) = load_library(&path) else { continue };
+        let Some(data) = export(module, c"SKSEPlugin_Version").map(|p| unsafe { &*(p as *const PluginVersionData) }) else {
+            log!("{file}: disabled, no version data");
+            unsafe { FreeLibrary(module) };
             continue;
-        }
-        let data = unsafe { GetProcAddress(module, c"SKSEPlugin_Version".as_ptr().cast()) }.map(|p| unsafe { &*(p as *const PluginVersionData) });
-        match data.ok_or("no version data").and_then(|d| accept(module, d).map(|()| d)) {
-            Ok(data) => accepted.push((file, data)),
+        };
+        let versionlib = || Path::new(PLUGIN_DIR).join(skse::runtime::versionlib_name(loader.runtime)).exists();
+        match loader.accepts(data, versionlib, timestamp(module)) {
+            Ok(()) => accepted.push((file, module, data)),
             Err(reason) => {
-                log!("{file}: disabled, {reason}");
+                log!("{file}: {reason}");
                 unsafe { FreeLibrary(module) };
             }
         }
     }
     accepted
-}
-
-/// SKSE 2.3.1's checks in its order (S1).
-fn accept(module: HMODULE, data: &PluginVersionData) -> Result<(), &'static str> {
-    if data.data_version == 0 {
-        return Err("bad version data");
-    }
-    if data.name[0] == 0 {
-        return Err("no name specified");
-    }
-    if data.method > 7 {
-        return Err("unsupported version independence method");
-    }
-    let listed = data.compatible_versions.iter().take_while(|&&v| v != 0).any(|&v| v == RUNTIME);
-    if data.method & compat::METHOD_ADDRESS_LIBRARY != 0 {
-        if !Path::new(PLUGIN_DIR).join(skse::runtime::versionlib_name(RUNTIME)).exists() {
-            return Err("address library needs to be updated");
-        }
-        if data.flags & compat::FLAG_NO_TIMESTAMP_GATE == 0 && !listed && TIMESTAMP_GATE.contains(&timestamp(module)) {
-            return Err("must be recompiled for new address library");
-        }
-    }
-    if data.method & (compat::METHOD_ADDRESS_LIBRARY | compat::METHOD_NO_FILE_CHECK) != 0 {
-        if data.method & compat::METHOD_STRUCTS_1_6_629 == 0 && data.flags & compat::FLAG_STRUCTS_1_6_629 == 0 {
-            return Err("only compatible with versions earlier than 1.6.629");
-        }
-    } else if !listed {
-        return Err("incompatible with current version of the game");
-    }
-    if data.minimum_skse > LOADER_VERSION {
-        return Err("requires newer script extender");
-    }
-    Ok(())
 }
 
 /// The PE header's `TimeDateStamp` (8 bytes into the NT headers).
@@ -207,21 +215,51 @@ fn timestamp(module: HMODULE) -> u32 {
 
 type PreloadFn = unsafe extern "C" fn(*const Interface) -> bool;
 type LoadFn = unsafe extern "C" fn(*const Interface) -> bool;
+type QueryFn = unsafe extern "C" fn(*const Interface, *mut PluginInfo) -> bool;
+type RawExport = unsafe extern "system" fn() -> isize;
 
-fn start(handle: PluginHandle, file: &str, data: &PluginVersionData) {
-    let name = CStr::from_bytes_until_nul(&data.name).map(CStr::to_owned).unwrap_or_default();
-    let module = unsafe { GetModuleHandleW(wide(&Path::new(PLUGIN_DIR).join(file)).as_ptr()) };
-    let export = |symbol: &CStr| unsafe { GetProcAddress(module, symbol.as_ptr().cast()) };
+fn start(interface: &Interface, loader: &Loader, handle: PluginHandle, file: &str, module: HMODULE, data: &PluginVersionData) {
     CURRENT.store(handle, Ordering::Relaxed);
-    let preloaded = export(c"SKSEPlugin_Preload").is_none_or(|f| unsafe { core::mem::transmute::<unsafe extern "system" fn() -> isize, PreloadFn>(f)(&raw const INTERFACE) });
-    let loaded = preloaded && export(c"SKSEPlugin_Load").is_some_and(|f| unsafe { core::mem::transmute::<unsafe extern "system" fn() -> isize, LoadFn>(f)(&raw const INTERFACE) });
+    let preload = if loader.calls_preload() { export(module, c"SKSEPlugin_Preload") } else { None };
+    let preloaded = preload.is_none_or(|f| unsafe { core::mem::transmute::<RawExport, PreloadFn>(f)(interface) });
+    let ran = preloaded && export(module, c"SKSEPlugin_Load").is_some_and(|f| unsafe { core::mem::transmute::<RawExport, LoadFn>(f)(interface) });
     CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
-    if !loaded {
+    if !ran {
         log!("{file}: disabled, reported as incompatible during load");
         return;
     }
-    let info = Box::leak(Box::new(PluginInfo { info_version: PluginInfo::VERSION, name: name.as_ptr(), version: data.plugin_version }));
-    log!("{file}: loaded as handle {handle} ({}, version {:08x}) at {:#x}", name.to_string_lossy(), data.plugin_version, module as usize);
+    let name = CStr::from_bytes_until_nul(&data.name).map(CStr::to_owned).unwrap_or_default();
+    keep(handle, file, module, name, data.plugin_version);
+}
+
+/// SKSE 2.0.19's pass over one DLL: `SKSEPlugin_Query`, its checks, then `SKSEPlugin_Load`, the next
+/// handle counting only the plugins accepted so far.
+fn load_queried(interface: &Interface, path: &Path) {
+    let file = file_name(path);
+    let Some(module) = load_library(path) else { return };
+    let refuse = |reason: &str| {
+        log!("{file}: {reason}");
+        unsafe { FreeLibrary(module) };
+    };
+    let (Some(query), Some(load)) = (export(module, c"SKSEPlugin_Query"), export(module, c"SKSEPlugin_Load")) else {
+        return refuse("does not appear to be an SKSE plugin");
+    };
+    let handle = u32::try_from(PLUGINS.lock().unwrap().len()).unwrap_or(u32::MAX - 1) + 1;
+    let mut info = PluginInfo { info_version: 0, name: core::ptr::null(), version: 0 };
+    CURRENT.store(handle, Ordering::Relaxed);
+    let queried = unsafe { core::mem::transmute::<RawExport, QueryFn>(query)(interface, &raw mut info) };
+    let verdict = if queried { Loader::accepts_queried(&info) } else { Err("reported as incompatible during query") };
+    let loaded = verdict.and_then(|()| if unsafe { core::mem::transmute::<RawExport, LoadFn>(load)(interface) } { Ok(()) } else { Err("reported as incompatible during load") });
+    CURRENT.store(skse::INVALID_HANDLE, Ordering::Relaxed);
+    match loaded {
+        Ok(()) => keep(handle, &file, module, unsafe { CStr::from_ptr(info.name) }.to_owned(), info.version),
+        Err(reason) => refuse(reason),
+    }
+}
+
+fn keep(handle: PluginHandle, file: &str, module: HMODULE, name: CString, version: u32) {
+    let info = Box::leak(Box::new(PluginInfo { info_version: PluginInfo::VERSION, name: name.as_ptr(), version }));
+    log!("{file}: loaded as handle {handle} ({}, version {version:08x}) at {:#x}", name.to_string_lossy(), module as usize);
     PLUGINS.lock().unwrap().push(Plugin { name, file: file.to_owned(), info: core::ptr::from_ref(info) as usize });
 }
 
@@ -245,7 +283,7 @@ unsafe extern "C" fn get_plugin_handle() -> PluginHandle {
 }
 
 unsafe extern "C" fn get_release_index() -> u32 {
-    RELEASE_INDEX
+    LOADER.get().map_or(0, |l| l.release_index)
 }
 
 unsafe extern "C" fn get_plugin_info(name: *const c_char) -> *const PluginInfo {
@@ -362,11 +400,41 @@ static DRAIN: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 static UI_DRAIN: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 static REQUESTS: OnceLock<hook::CallSite<OneArgFn>> = OnceLock::new();
 
-/// The `call rel32` at `caller` + `offset`, after checking that it calls `callee` (S1's sites).
-fn site(caller: u64, offset: usize, target_id: u64) -> Result<usize, String> {
+/// A `call rel32` the script extender hooks (S1): `caller` + `offset` calls `callee`, as AE ids and a
+/// 1.7.104 offset.
+#[derive(Clone, Copy)]
+struct Site {
+    moment: &'static str,
+    caller: u64,
+    offset: usize,
+    callee: u64,
+}
+
+const SITE_LOAD: Site = Site { moment: "kinds 2 and 3, the game load", caller: fns::BGSSaveLoadManager__LoadGame, offset: 0x34f, callee: fns::BGSSaveLoadGame__LoadGame };
+const SITE_SAVE: Site = Site { moment: "kind 4, the game save", caller: fns::BGSSaveLoadManager__Save, offset: 0x2b3, callee: fns::BGSSaveLoadGame__SaveGame };
+const SITE_DELETE_OVER: Site = Site { moment: "kind 5, a save overwritten", caller: fns::SaveOverEntry, offset: 0x77, callee: fns::BGSSaveLoadManager__DeleteSaveFile };
+const SITE_DELETE: Site = Site { moment: "kind 5, a save deleted", caller: fns::DeleteSaveEntry, offset: 0x17, callee: fns::BGSSaveLoadManager__DeleteSaveFile };
+const SITE_CONTROLS: Site = Site { moment: "kind 6, the player controls", caller: fns::Main__ctor, offset: 0xd7a, callee: fns::PlayerControls__ctor };
+const SITE_NEW_GAME: Site = Site { moment: "kind 7, a new game", caller: fns::MainMenu__StartNewGame, offset: 0x59, callee: fns::TryStartQuest };
+const SITE_INIT_DONE: Site = Site { moment: "kind 8, the data load", caller: fns::InitTESThread__vfunc_1_sub0, offset: 0x3f7, callee: fns::TESDataHandler__CallSlot19OnArray1D8 };
+const SITE_VM: Site = Site { moment: "Papyrus registration", caller: fns::SkyrimVM__ctor, offset: 0xcfb, callee: fns::SkyrimVM__RegisterNatives };
+const SITE_DRAIN_WORLD: Site = Site { moment: "the task queue, first drain", caller: fns::SetupWorldRenderContext, offset: 0x178e, callee: fns::TaskQueue__Drain };
+const SITE_DRAIN_REFS: Site = Site { moment: "the task queue, second drain", caller: fns::ProcessReferenceQueuesAndDrainTaskQueue, offset: 0x1c, callee: fns::TaskQueue__Drain };
+const SITE_UI_DRAIN: Site = Site { moment: "the UI tasks", caller: fns::EventSourceHolder_MenuOpenClose__ProcessMessages, offset: 0xab5, callee: fns::UIMessageQueue__ReleaseStaticMessages };
+const SITE_REQUESTS: Site = Site { moment: "the save and load requests", caller: fns::SetupWorldRenderContext, offset: 0xc7a, callee: fns::ProcessSaveLoadRequests };
+
+const SITES: [Site; 12] = [SITE_LOAD, SITE_SAVE, SITE_DELETE_OVER, SITE_DELETE, SITE_CONTROLS, SITE_NEW_GAME, SITE_INIT_DONE, SITE_VM, SITE_DRAIN_WORLD, SITE_DRAIN_REFS, SITE_UI_DRAIN, SITE_REQUESTS];
+
+/// The sites a runtime has no offset for: all of them until its profile gives the offsets.
+fn missing_sites(runtime: u32) -> &'static [Site] {
+    if skse::runtime::is_canonical(runtime) { &[] } else { &SITES }
+}
+
+/// Where `site` is, after checking that it calls its callee.
+fn locate(site: Site) -> Result<usize, String> {
     let reloc = RELOC.get().ok_or("no Address Library")?;
     let resolve = |id| reloc.address(id).map_err(|e| e.to_string());
-    let (at, target) = (resolve(caller)? + offset, resolve(target_id)?);
+    let (at, target) = (resolve(site.caller)? + site.offset, resolve(site.callee)?);
     (hook::find_call(at, 5, target) == Some(at)).then_some(at).ok_or_else(|| format!("no call to {target:#x} at {at:#x}"))
 }
 
@@ -379,31 +447,26 @@ fn patch<F: Copy>(cell: &OnceLock<hook::CallSite<F>>, at: usize, detour: F) -> R
 }
 
 fn install_moments() -> Result<(), String> {
-    patch(&LOAD_GAME, site(fns::BGSSaveLoadManager__LoadGame, 0x34f, fns::BGSSaveLoadGame__LoadGame)?, load_game as LoadGameFn)?;
-    patch(&SAVE_GAME, site(fns::BGSSaveLoadManager__Save, 0x2b3, fns::BGSSaveLoadGame__SaveGame)?, save_game as SaveGameFn)?;
-    let delete = DELETE_SAVE_SITES.iter().map(|&(caller, offset)| site(caller, offset, fns::BGSSaveLoadManager__DeleteSaveFile)).collect::<Result<Vec<_>, _>>()?;
+    patch(&LOAD_GAME, locate(SITE_LOAD)?, load_game as LoadGameFn)?;
+    patch(&SAVE_GAME, locate(SITE_SAVE)?, save_game as SaveGameFn)?;
+    let delete = [locate(SITE_DELETE_OVER)?, locate(SITE_DELETE)?];
     for at in delete {
         let installed = unsafe { hook::CallSite::install(at, delete_save as DeleteSaveFn) }.map_err(|e| e.to_string())?;
         let _ = DELETE_SAVE.set(installed);
     }
-    patch(&CONTROLS, site(fns::Main__ctor, 0xd7a, fns::PlayerControls__ctor)?, controls_ready as ControlsFn)?;
-    patch(&NEW_GAME, site(fns::MainMenu__StartNewGame, 0x59, fns::TryStartQuest)?, new_game as StartQuestFn)?;
-    patch(&INIT_DONE, site(fns::InitTESThread__vfunc_1_sub0, 0x3f7, fns::TESDataHandler__CallSlot19OnArray1D8)?, init_done as OneArgFn)?;
-    patch(&VM_SETUP, site(fns::SkyrimVM__ctor, 0xcfb, fns::SkyrimVM__RegisterNatives)?, register_natives as RegisterNativesFn)?;
-    for (caller, offset) in DRAIN_SITES {
-        let installed = unsafe { hook::CallSite::install(site(caller, offset, fns::TaskQueue__Drain)?, drain_tasks as OneArgFn) }.map_err(|e| e.to_string())?;
+    patch(&CONTROLS, locate(SITE_CONTROLS)?, controls_ready as ControlsFn)?;
+    patch(&NEW_GAME, locate(SITE_NEW_GAME)?, new_game as StartQuestFn)?;
+    patch(&INIT_DONE, locate(SITE_INIT_DONE)?, init_done as OneArgFn)?;
+    patch(&VM_SETUP, locate(SITE_VM)?, register_natives as RegisterNativesFn)?;
+    for site in [SITE_DRAIN_WORLD, SITE_DRAIN_REFS] {
+        let installed = unsafe { hook::CallSite::install(locate(site)?, drain_tasks as OneArgFn) }.map_err(|e| e.to_string())?;
         let _ = DRAIN.set(installed);
     }
-    patch(&UI_DRAIN, site(fns::EventSourceHolder_MenuOpenClose__ProcessMessages, 0xab5, fns::UIMessageQueue__ReleaseStaticMessages)?, drain_ui_tasks as OneArgFn)?;
-    patch(&REQUESTS, site(fns::SetupWorldRenderContext, 0xc7a, fns::ProcessSaveLoadRequests)?, process_requests as OneArgFn)?;
+    patch(&UI_DRAIN, locate(SITE_UI_DRAIN)?, drain_ui_tasks as OneArgFn)?;
+    patch(&REQUESTS, locate(SITE_REQUESTS)?, process_requests as OneArgFn)?;
     log!("moment hooks installed: load, save, delete, controls, new game, init done, Papyrus, task and UI task drains, save/load requests");
     Ok(())
 }
-
-/// Both of the game's calls to `DeleteSaveFile` the script extender hooks; they reach one callee.
-const DELETE_SAVE_SITES: [(u64, usize); 2] = [(fns::SaveOverEntry, 0x77), (fns::DeleteSaveEntry, 0x17)];
-/// The main loop's two calls to `TaskQueue::Drain`.
-const DRAIN_SITES: [(u64, usize); 2] = [(fns::SetupWorldRenderContext, 0x178e), (fns::ProcessReferenceQueuesAndDrainTaskQueue, 0x1c)];
 
 fn send_name(kind: u32, name: *const c_char) {
     let (data, len) = if name.is_null() { (c"".as_ptr(), 0) } else { (name, unsafe { CStr::from_ptr(name) }.to_bytes().len()) };

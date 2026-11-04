@@ -79,10 +79,11 @@ unsafe fn patch_import() {
 unsafe extern "C" fn before_winmain() -> *mut c_char {
     static ONCE: Once = Once::new();
     ONCE.call_once(|| {
-        if skse::runtime::script_extender_loaded(loader::RUNTIME) {
-            loader::defer();
+        let runtime = skse::runtime::running().unwrap_or(0);
+        if skse::runtime::script_extender_loaded(runtime) {
+            loader::defer(runtime);
         } else {
-            loader::run();
+            loader::run(runtime);
         }
     });
     unsafe { COMMAND_LINE.get().expect("set with the patch")() }
