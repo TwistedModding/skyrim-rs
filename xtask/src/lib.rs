@@ -1,9 +1,10 @@
-//! Generates `crates/sre` from the SkyrimRE-1.7.104 ledgers.
+//! Generates `crates/sre` from the SkyrimRE-1.7.104 ledgers, and the runtime profiles the host ships.
 
 mod api;
 mod emit;
 mod groups;
 mod inputs;
+pub mod profile;
 
 use std::collections::BTreeMap;
 use std::error::Error;
@@ -21,6 +22,8 @@ pub const CRATE_DIR: &str = "crates/sre";
 /// Everything under it is generated; `cargo xtask gen` replaces the folder.
 pub const MODULE_DIR: &str = "crates/sre/src/generated";
 pub const LOCK: &str = "crates/sre/generated.lock";
+/// Everything under it is generated too; the package ships it next to the host.
+pub const PROFILE_DIR: &str = "crates/host/profiles";
 
 #[must_use]
 pub fn workspace_root() -> PathBuf {
@@ -55,14 +58,16 @@ pub fn generate(re_dir: &Path, commit: &str) -> Result<(BTreeMap<String, String>
         writeln!(lock, "sha256 {hash} {path}").unwrap();
     }
     files.insert(LOCK.to_owned(), lock);
+    let canonical = profile::Profile::canonical();
+    files.insert(format!("{PROFILE_DIR}/{}", canonical.file_name()), canonical.text());
     Ok((files, stats))
 }
 
-/// Every file under the generated module directory, relative to the workspace root with `/` separators.
+/// Every file under the generated folders, relative to the workspace root with `/` separators.
 #[must_use]
 pub fn generated_on_disk(root: &Path) -> Vec<String> {
     let mut found = Vec::new();
-    let mut dirs = vec![root.join(MODULE_DIR)];
+    let mut dirs = vec![root.join(MODULE_DIR), root.join(PROFILE_DIR)];
     while let Some(dir) = dirs.pop() {
         for entry in std::fs::read_dir(&dir).into_iter().flatten().flatten() {
             let path = entry.path();
