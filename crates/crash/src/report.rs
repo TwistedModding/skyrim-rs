@@ -27,6 +27,9 @@ pub struct Context<'a> {
 
 /// Writes the whole report; `paths` are the dump and log files when written in the game.
 pub fn write(w: &mut dyn Write, rec: &Record, src: &dyn Source, paths: Option<(&[u16], &[u16])>, pdb: Option<&DbgHelp>) {
+    if !skse::runtime::is_canonical(rec.runtime) {
+        symbols::forget_ledger_addresses();
+    }
     let ctx = Context { rec, src, pdb, seen: RefCell::new(Seen::default()) };
     let _ = header(w, &ctx, paths);
     // The probes note what they see for the rules; run them silently once so the summary can come first.
@@ -61,7 +64,7 @@ fn header(w: &mut dyn Write, ctx: &Context<'_>, paths: Option<(&[u16], &[u16])>)
     writeln!(w, "game {major}.{minor}.{build}.{store}, SkyrimSE.exe at {:#x}", rec.exe_base)?;
     writeln!(w, "reported by {}: {}", rec.installer(), rec.build())?;
     match Mode::from_u8(rec.symbols) {
-        Mode::None => writeln!(w, "game symbols: none, the runtime is not 1.7.104")?,
+        Mode::None => writeln!(w, "game symbols: none, the runtime is not 1.7.104 and its profile or Address Library is unusable")?,
         Mode::Ledger => writeln!(w, "game symbols: {} functions at the ledger's addresses", symbols::count())?,
         Mode::AddressLibrary => writeln!(w, "game symbols: {} functions at the Address Library's offsets, {} differ from the ledger", symbols::count(), rec.symbol_mismatches)?,
     }

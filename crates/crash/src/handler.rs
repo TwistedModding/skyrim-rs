@@ -123,7 +123,7 @@ pub(crate) fn install(options: &Options, log_dir: &str, game: GameAddresses) -> 
             symbols.1 = wide(path, &mut symbols.0);
         }
     }
-    let (mode, mismatches) = symbols::init(options.runtime_version);
+    let (mode, mismatches) = symbols::init();
     SYMBOLS.store(mode as u32, Ordering::Release);
     SYMBOL_MISMATCHES.store(mismatches, Ordering::Release);
     RUNTIME.store(options.runtime_version, Ordering::Release);

@@ -412,7 +412,6 @@ name = "hook"
 version = "0.1.0"
 dependencies = [
  "minhook",
- "skse",
  "versionlib",
  "windows-sys",
 ]
@@ -1033,6 +1032,7 @@ name = "versionlib"
 version = "0.1.0"
 dependencies = [
  "memmap2",
+ "skse",
  "windows-sys",
 ]
 
@@ -1164,6 +1164,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
+ "versionlib",
 ]
 
 [[package]]

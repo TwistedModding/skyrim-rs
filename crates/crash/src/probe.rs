@@ -7,7 +7,7 @@
 use core::fmt::{self, Write};
 
 use sre::FormType;
-use sre::raw::{symbols as ledger, vtables};
+use sre::raw::symbols as ledger;
 
 use crate::mem::Source;
 use crate::record::Record;
@@ -39,7 +39,7 @@ fn class_of(address: u64, rec: &Record, src: &dyn Source) -> Option<&'static sre
     if vtable == 0 || rec.exe_base == 0 || rec.module_at(vtable).is_none_or(|m| m.base != rec.exe_base) {
         return None;
     }
-    vtables::find(u32::try_from(vtable - rec.exe_base).ok()?)
+    crate::symbols::vtable(u32::try_from(vtable - rec.exe_base).ok()?)
 }
 
 /// A string the pool interned, by the text pointer a `BSFixedString` holds: the entry header

@@ -7,7 +7,7 @@
 
 use core::fmt::{self, Write};
 
-use sre::raw::{fns, symbols as ledger, vtables};
+use sre::raw::{fns, symbols as ledger};
 
 use crate::mem::Source;
 use crate::report::{Context, code_location};
@@ -90,7 +90,7 @@ fn text(w: &mut dyn Write, pointer: Option<u64>, src: &dyn Source) -> fmt::Resul
 fn class_of(address: u64, ctx: &Context<'_>) -> Option<&'static str> {
     let vtable = ctx.src.read_u64(address)?;
     let exe = ctx.rec.module_at(vtable).filter(|m| m.base == ctx.rec.exe_base)?;
-    vtables::find(u32::try_from(vtable - exe.base).ok()?).map(|v| v.class)
+    symbols::vtable(u32::try_from(vtable - exe.base).ok()?).map(|v| v.class)
 }
 
 /// Whether the address is a `CodeTasklet`.

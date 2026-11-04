@@ -11,6 +11,9 @@ serde_json = "1"
 sha2 = "0.10"
 crash = { workspace = true, optional = true }
 
+[dev-dependencies]
+versionlib.workspace = true
+
 [features]
 # The minidump decoder (`cargo xtask crash`); off by default so the generator never depends on the code it generates.
 decode = ["dep:crash"]

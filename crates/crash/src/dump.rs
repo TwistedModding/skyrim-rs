@@ -149,7 +149,6 @@ impl Dump {
         let mut rec = Box::new(Record::ZERO);
         rec.magic = record::MAGIC;
         rec.version = record::VERSION;
-        rec.symbols = crate::symbols::Mode::Ledger as u8;
         if let Some((at, _)) = self.stream(MODULE_LIST)
             && let Some(count) = self.u32(at)
         {
@@ -170,9 +169,13 @@ impl Dump {
                 rec.module_count = u32::try_from(i + 1).unwrap_or(0);
                 if i == 0 {
                     rec.exe_base = base;
+                    let [major, minor, build, store] = rec.modules[0].version.map(u32::from);
+                    rec.runtime = skse::runtime::pack(major, minor, build, store);
                 }
             }
         }
+        let mode = if skse::runtime::is_canonical(rec.runtime) { crate::symbols::Mode::Ledger } else { crate::symbols::Mode::None };
+        rec.symbols = mode as u8;
         if let Some((at, _)) = self.stream(EXCEPTION) {
             rec.thread = self.u32(at).unwrap_or(0);
             rec.exception.code = self.u32(at + 8).unwrap_or(0);
