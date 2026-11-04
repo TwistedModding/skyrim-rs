@@ -43,17 +43,7 @@ impl crate::BSAnimationGraphEvent {
     ///
     /// Semantic field, events pass, high; `None` while the pointer is null.
     #[inline]
-    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { Self::__member_owner(core::ptr::from_ref(self)).read_unaligned().as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_owner(this: *const Self) -> *mut *mut crate::TESObjectREFR { unsafe { member!(this, "BSAnimationGraphEvent.owner", 0x8, *mut crate::TESObjectREFR) } }
-    /// `BSAnimationGraphEvent::owner`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn owner_field(&self) -> *mut crate::TESObjectREFR { unsafe { Self::__member_owner(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_owner(&mut self, value: *mut crate::TESObjectREFR) { unsafe { Self::__member_owner(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn owner_ptr(&self) -> *mut *mut crate::TESObjectREFR { Self::__member_owner(core::ptr::from_ref(self)) }
+    pub fn owner(&self) -> Option<&crate::TESObjectREFR> { unsafe { { self.owner }.as_ref() } }
     #[doc(hidden)]
     #[inline]
     pub fn __member_payload(this: *const Self) -> *mut crate::BSFixedString { unsafe { member!(this, "BSAnimationGraphEvent.payload", 0x10, crate::BSFixedString) } }

@@ -4941,14 +4941,14 @@ const _: () = assert!(core::mem::offset_of!(BSSearchPath, field_110) == 0x110);
 /// `BSSegmentedTriShape`: size 0x150 (exact, high); primary base `NiTriShape`.
 /// Evidence: allocation sites (high): {'336': 3}.
 /// Bases: `NiTriShape`@0x0, `NiTriBasedGeom`@0x0, `NiGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSSegmentedTriShape {
     /// +0x0 `vtbl:BSSegmentedTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSegmentedTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -4959,12 +4959,12 @@ pub struct BSSegmentedTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    unknown_2C: [u8; 4],
+    pub unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    unknown_3C: [u8; 4],
+    pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -4987,7 +4987,7 @@ pub struct BSSegmentedTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    unknown_10A: [u8; 6],
+    pub unknown_10A: [u8; 6],
     /// +0x110 `undefined8`, base NiGeometry
     pub field_110: u64,
     /// +0x118 `undefined8`, base NiGeometry
@@ -5001,13 +5001,12 @@ pub struct BSSegmentedTriShape {
     /// +0x138 `undefined8`, ctor store
     pub field_138: u64,
     /// +0x140 `undefined4`, ctor store (widths [4, 8])
-    #[doc(hidden)]
-    pub __field_140: [u8; 4],
+    pub field_140: u32,
     /// +0x144 `undefined4`, ctor store
     pub field_144: u32,
     /// +0x148 `undefined2`, ctor store
     pub field_148: u16,
-    unknown_14A: [u8; 6],
+    pub unknown_14A: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -5038,7 +5037,7 @@ const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_120) == 0
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_138) == 0x138);
-const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, __field_140) == 0x140);
+const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_144) == 0x144);
 const _: () = assert!(core::mem::offset_of!(BSSegmentedTriShape, field_148) == 0x148);
 
@@ -6588,14 +6587,14 @@ const _: () = assert!(core::mem::offset_of!(BSStripParticleSystem, field_192) ==
 /// `BSSubIndexLandTriShape`: size 0x180 (exact, medium); primary base `BSSubIndexTriShape`.
 /// Evidence: allocation sites (medium): {'384': 1}.
 /// Bases: `BSSubIndexTriShape`@0x0, `BSTriShape`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSSubIndexLandTriShape {
     /// +0x0 `vtbl:BSSubIndexLandTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSubIndexLandTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -6606,12 +6605,12 @@ pub struct BSSubIndexLandTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    unknown_2C: [u8; 4],
+    pub unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    unknown_3C: [u8; 4],
+    pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -6634,7 +6633,7 @@ pub struct BSSubIndexLandTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    unknown_10A: [u8; 6],
+    pub unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -6657,21 +6656,20 @@ pub struct BSSubIndexLandTriShape {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    unknown_151: [u8; 7],
+    pub unknown_151: [u8; 7],
     /// +0x158 `undefined2`, base BSTriShape
     pub field_158: u16,
     /// +0x15A `undefined2`, base BSTriShape
     pub field_15A: u16,
-    unknown_15C: [u8; 4],
+    pub unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, base BSSubIndexTriShape
     pub field_160: u64,
     /// +0x168 `undefined4`, base BSSubIndexTriShape
-    #[doc(hidden)]
-    pub __field_168: [u8; 4],
-    unknown_16C: [u8; 4],
+    pub field_168: u32,
+    pub unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, base BSSubIndexTriShape
     pub field_170: u16,
-    unknown_172: [u8; 6],
+    pub unknown_172: [u8; 6],
     /// +0x178 `undefined8`, ctor store
     pub field_178: u64,
     #[doc(hidden)]
@@ -6712,21 +6710,21 @@ const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, type_) == 0x
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_15A) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, __field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_170) == 0x170);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexLandTriShape, field_178) == 0x178);
 
 /// `BSSubIndexTriShape`: size 0x178 (exact, medium); primary base `BSTriShape`.
 /// Evidence: runtime: 0x178 at 1 allocation sites; agrees with the static allocation sites.
 /// Bases: `BSTriShape`@0x0, `BSGeometry`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSSubIndexTriShape {
     /// +0x0 `vtbl:BSSubIndexTriShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSSubIndexTriShape_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -6737,12 +6735,12 @@ pub struct BSSubIndexTriShape {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    unknown_2C: [u8; 4],
+    pub unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    unknown_3C: [u8; 4],
+    pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -6765,7 +6763,7 @@ pub struct BSSubIndexTriShape {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    unknown_10A: [u8; 6],
+    pub unknown_10A: [u8; 6],
     /// +0x110 `float`, base BSGeometry
     pub field_110: f32,
     /// +0x114 `float`, base BSGeometry
@@ -6788,21 +6786,20 @@ pub struct BSSubIndexTriShape {
     pub field_148: u64,
     /// +0x150 `undefined1`, base BSGeometry, semantic; geometry type byte (3 for BSTriShape) (high)
     pub type_: u8,
-    unknown_151: [u8; 7],
+    pub unknown_151: [u8; 7],
     /// +0x158 `undefined2`, base BSTriShape
     pub field_158: u16,
     /// +0x15A `undefined2`, base BSTriShape
     pub field_15A: u16,
-    unknown_15C: [u8; 4],
+    pub unknown_15C: [u8; 4],
     /// +0x160 `undefined8`, ctor store
     pub field_160: u64,
     /// +0x168 `undefined4`, ctor store (widths [4, 8])
-    #[doc(hidden)]
-    pub __field_168: [u8; 4],
-    unknown_16C: [u8; 4],
+    pub field_168: u32,
+    pub unknown_16C: [u8; 4],
     /// +0x170 `undefined2`, ctor store
     pub field_170: u16,
-    unknown_172: [u8; 6],
+    pub unknown_172: [u8; 6],
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
@@ -6841,7 +6838,7 @@ const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, type_) == 0x150)
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_158) == 0x158);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_15A) == 0x15A);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_160) == 0x160);
-const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, __field_168) == 0x168);
+const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_168) == 0x168);
 const _: () = assert!(core::mem::offset_of!(BSSubIndexTriShape, field_170) == 0x170);
 
 /// `BSSynchronizedClipGenerator`: size >= 0x130 (lower bound); partial, the struct stops at the lower bound; primary base `hkbGenerator`.

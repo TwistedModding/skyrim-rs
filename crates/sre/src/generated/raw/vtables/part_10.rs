@@ -1421,8 +1421,7 @@ impl BSTDerivedCreator_MovementMessageBlocked_MovementMessage_vtable {
 #[repr(C)]
 pub struct BSTDerivedCreator_MovementMessageFreezeDirection_MovementMessage_vtable {
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vdtor` at 0x121ac60 (layout_inference, medium); signature (low): `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * vdtor(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_1` at 0x121abd0 (rtti, medium); signature (low): `undefined vfunc_1(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_1: *const c_void,
     /// `BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>::vfunc_2` at 0x121ac40 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage> * this, undefined8 * param_1)`
@@ -7318,8 +7317,7 @@ pub type BSWin32KeyboardDevice_vtable_Unk10 = unsafe extern "C" fn(this: *mut cr
 #[repr(C)]
 pub struct BSWin32MouseDevice_vtable {
     /// `BSWin32MouseDevice::vdtor` at 0xd6edb0 (layout_inference, medium); signature (low): `BSWin32MouseDevice * vdtor(BSWin32MouseDevice * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `BSWin32MouseDevice::Initialize` at 0xe13080 (semantic, high); signature (untiered): `undefined Initialize(BSWin32MouseDevice * this)`; `Initialize`: create and configure the DirectInput mouse (high); semantic signature: `void (BSWin32MouseDevice* this)`
     pub slot_1: *const c_void,
     /// `BSWin32MouseDevice::Poll` at 0xe13130 (semantic, high); signature (untiered): `undefined Poll(BSWin32MouseDevice * this, float param_1)`; `Poll`: unless reinitializing or BSSystemUtility+0x120: MouseMoveEvent(dx, dy) when this or the previous frame moved; buttons 0-7 from prev/cur; wheel: press and release of id 8 (wheel > 0) or 9 (wheel < 0) in the same frame (high); semantic signature: `void (BSWin32MouseDevice* this, float realDelta)`
@@ -7927,8 +7925,7 @@ impl BSXAudio2GameSound_vtable_C8 {
 #[repr(C)]
 pub struct BSXFlags_vtable {
     /// `BSXFlags::vdtor` at 0xfd30c0 (layout_inference, medium); signature (low): `BSXFlags * vdtor(BSXFlags * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSXFlags::vfunc_2` at 0xfd3100 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`

@@ -2143,8 +2143,7 @@ impl NiThreadProcedure_vtable {
 #[repr(C)]
 pub struct NiTimeController_vtable {
     /// `NiTimeController::vdtor` at 0xef8940 (layout_inference, medium); signature (low): `NiTimeController * vdtor(NiTimeController * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiTimeController::vfunc_2` at 0xef89c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -4466,8 +4465,7 @@ impl OwnedController_vtable {
 #[repr(C)]
 pub struct PArrayPoint_vtable {
     /// `PArrayPoint::vdtor` at 0xfe1c40 (slot_propagation, medium); signature (low): `PArrayPoint * vdtor(PArrayPoint * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `PArrayPoint::vfunc_2` at 0xfe1de0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`

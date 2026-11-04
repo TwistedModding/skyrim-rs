@@ -46,6 +46,13 @@ pub fn frame_counter() -> u32 {
     unsafe { AtomicU32::from_ptr(sre::g_render_frame_counter()).load(Ordering::Relaxed) }
 }
 
+/// The game window's record, the renderer's first window.
+#[must_use]
+#[allow(clippy::cast_ptr_alignment)]
+pub fn game_window() -> &'static sre::RenderWindow {
+    unsafe { &*sre::g_renderer().windows.as_ptr().cast::<sre::RenderWindow>() }
+}
+
 /// Creates, disabled, a detour on `NiAVObject::Cull` (id 70267), the per-node gate of every
 /// scene walk: the main-camera culls, the sun's list walk, the local lights' map culls. It is not
 /// the only caster gate (pass 12): the sun's cascades replay the walk's lists through

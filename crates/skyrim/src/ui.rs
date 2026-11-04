@@ -27,9 +27,6 @@ pub type RenderMenuStackFn = fns::RenderMenuStack_fn;
 pub type AddMessageFn = fns::UIMessageQueue__AddMessage_fn;
 pub type ShowHudMessageFn = fns::ShowHUDMessage_fn;
 
-/// `MenuTable::Find` (id 82135): the table is the UI singleton's `menuTable`; the out value is
-/// `{menu (one reference added), create}`.
-type FindFn = unsafe extern "C" fn(table: *mut c_void, name: *const sre::BSFixedString, out: *mut *mut IMenu) -> bool;
 type ObjectInvokeFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, result: *mut sre::GFxValue, name: *const c_char, args: *const sre::GFxValue, count: u32, is_display: bool) -> bool;
 type ObjectGetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, out: *mut sre::GFxValue, is_display: bool) -> bool;
 type ObjectSetMemberFn = unsafe extern "C" fn(this: *mut c_void, data: *mut c_void, name: *const c_char, value: *const sre::GFxValue, is_display: bool) -> bool;
@@ -142,15 +139,6 @@ impl UIMessageQueueExt for UIMessageQueue {
     }
 }
 
-/// Drops one reference; at zero the menu's own destructor runs and frees it.
-unsafe fn release_menu(menu: *mut IMenu) {
-    let count = unsafe { AtomicU32::from_ptr(&raw mut (*menu).refCount) };
-    if count.fetch_sub(1, Ordering::AcqRel) == 1 {
-        let dtor: IMenu_vtable_vdtor = unsafe { slot((*menu).__vftable.cast(), vtables::IMenu_vtable::SLOT_vdtor) };
-        unsafe { dtor(menu, 1) };
-    }
-}
-
 /// The open menus, read under the engine's recursive stack lock (`g_UIMenuStackLock`), which is
 /// released on drop. Ascending depth: the HUD at 2, the cursor at 13.
 pub struct MenuStack<'a> {
@@ -184,10 +172,10 @@ pub trait MenuManagerExt {
     /// Whether an open menu pauses the game: the engine's count of open `PAUSES_GAME` menus
     /// (`numPausesGame`), read without the stack lock, so any thread may ask while holding its own locks.
     fn is_paused(&self) -> bool;
-    /// A name `Register` has seen (`MenuTable::Find`, id 82135).
+    /// A name `Register` has seen.
     fn is_registered(&self, name: &str) -> bool;
     /// The live menu registered under `name`: `None` when the name is unknown or the menu was
-    /// never shown (or unloaded). The table keeps its own reference; the one the lookup adds is dropped here.
+    /// never shown (or unloaded). The table keeps its own reference.
     fn menu(&self, name: &str) -> Option<&IMenu>;
     /// The live HUD, `HUDMenu` behind "HUD Menu".
     fn hud(&self) -> Option<&HUDMenu>;
@@ -222,12 +210,7 @@ impl MenuManagerExt for EventSourceHolder_MenuOpenClose {
     }
 
     fn menu(&self, name: &str) -> Option<&IMenu> {
-        let value = find(self, name)?;
-        if value.menu.is_null() {
-            return None;
-        }
-        unsafe { release_menu(value.menu) };
-        unsafe { value.menu.as_ref() }
+        unsafe { find(self, name)?.menu.as_ref() }
     }
 
     fn hud(&self) -> Option<&HUDMenu> {
@@ -263,12 +246,19 @@ impl RaceSexMenuExt for RaceSexMenu {
     }
 }
 
-fn find(ui: &EventSourceHolder_MenuOpenClose, name: &str) -> Option<sre::MenuTableEntry> {
+/// The menu table's entry for `name`. `menuTable` is a `BSTHashMap`, capacity at +0xc and entries at
+/// +0x28, each with a null `next` when empty; the engine's lookup is a function of its own only on
+/// some runtimes, so this walks the entries. Names are interned, so the data pointers compare.
+fn find<'a>(ui: &'a EventSourceHolder_MenuOpenClose, name: &str) -> Option<&'a sre::MenuTableEntry> {
     let name = BSFixedString::new(name);
-    let mut value: sre::MenuTableEntry = unsafe { core::mem::zeroed() };
-    let table = (&raw const ui.menuTable).cast_mut().cast();
-    let find: FindFn = unsafe { crate::engine_fn(sre::id!(fns::MenuTable__Find)) };
-    unsafe { find(table, name.raw(), &raw mut value.menu) }.then_some(value)
+    let table = (&raw const ui.menuTable).cast::<u8>();
+    let capacity = unsafe { table.add(0xC).cast::<u32>().read_unaligned() } as usize;
+    let entries = unsafe { table.add(0x28).cast::<*const sre::MenuTableEntry>().read_unaligned() };
+    if entries.is_null() {
+        return None;
+    }
+    sre::fixed_size!("MenuTableEntry", sre::MenuTableEntry);
+    unsafe { core::slice::from_raw_parts(entries, capacity) }.iter().find(|entry| !entry.next.is_null() && entry.menuName.data == name.raw().data)
 }
 
 /// The `IMenu` part of a menu of this mod's own, handed to the [`Menu`] callbacks.
@@ -452,8 +442,9 @@ unsafe extern "C" fn menu_refresh_platform(this: *mut IMenu) {
 
 /// The movie view's own slots: it has no RTTI, so the generated `GFxMovieView` has no vtable methods.
 pub trait GFxMovieViewExt {
-    /// The view carries the engine's one concrete vtable (`GFxMovieView_vftable`, id 242614).
-    fn is_engine_view(&self) -> bool;
+    /// The view carries the engine's one concrete vtable (`GFxMovieView_vftable`, id 242614),
+    /// `None` on a runtime whose Address Library holds no id for that table.
+    fn is_engine_view(&self) -> Option<bool>;
     fn visible(&self) -> bool;
     fn set_visible(&self, visible: bool);
     /// A managed string value owned by this movie.
@@ -485,9 +476,9 @@ fn movie_ptr(movie: &GFxMovieView) -> *mut GFxMovieView {
 }
 
 impl GFxMovieViewExt for GFxMovieView {
-    fn is_engine_view(&self) -> bool {
+    fn is_engine_view(&self) -> Option<bool> {
         let vtable = unsafe { *core::ptr::from_ref(self).cast::<usize>() };
-        crate::reloc().address(sre::id!(MOVIE_VIEW_VTABLE)).is_ok_and(|v| v == vtable)
+        crate::reloc().address(MOVIE_VIEW_VTABLE).ok().map(|v| v == vtable)
     }
 
     fn visible(&self) -> bool {

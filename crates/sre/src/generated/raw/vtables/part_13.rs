@@ -7651,8 +7651,7 @@ impl FutBinaryFileC_vtable {
 #[repr(C)]
 pub struct FxDelegate_vtable {
     /// `FxDelegate::vdtor` at 0x117b270 (layout_inference, medium); signature (low): `FxDelegate * vdtor(FxDelegate * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `FxDelegate::vfunc_1` at 0x117aad0 (rtti, high); signature (low): `undefined vfunc_1(FxDelegate * this, undefined8 param_1, longlong param_2, undefined8 * param_3, int param_4)`
     pub slot_1: *const c_void,
 }

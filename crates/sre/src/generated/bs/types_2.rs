@@ -13771,8 +13771,7 @@ pub struct BSOcclusionBox {
     pub __field_18C: [u8; 8],
     unknown_194: [u8; 4],
     /// +0x198 `undefined8`, ctor store
-    #[doc(hidden)]
-    pub __field_198: [u8; 8],
+    pub field_198: u64,
     unknown_1A0: [u8; 12],
     /// +0x1AC `undefined8`, ctor store
     pub field_1AC: u64,
@@ -13814,7 +13813,7 @@ const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __field_174) == 0x17
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __field_17C) == 0x17C);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __field_184) == 0x184);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __field_18C) == 0x18C);
-const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, __field_198) == 0x198);
+const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_198) == 0x198);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_1AC) == 0x1AC);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_1B4) == 0x1B4);
 const _: () = assert!(core::mem::offset_of!(BSOcclusionBox, field_1BC) == 0x1BC);
@@ -14285,24 +14284,24 @@ const _: () = assert!(core::mem::offset_of!(BSPCGamepadDeviceDelegate, connected
 /// `BSPSysArrayEmitter`: size 0x98 (exact, high); primary base `NiPSysVolumeEmitter`.
 /// Evidence: allocation sites (high): {'152': 3}.
 /// Bases: `NiPSysVolumeEmitter`@0x0, `NiPSysEmitter`@0x0, `NiPSysModifier`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct BSPSysArrayEmitter {
     /// +0x0 `vtbl:BSPSysArrayEmitter:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::BSPSysArrayEmitter_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base NiPSysModifier
     pub field_10: u64,
     /// +0x18 `undefined4`, base NiPSysModifier
     pub field_18: u32,
-    unknown_1C: [u8; 4],
+    pub unknown_1C: [u8; 4],
     /// +0x20 `undefined8`, base NiPSysModifier
     pub field_20: u64,
     /// +0x28 `undefined1`, base NiPSysModifier
     pub field_28: u8,
-    unknown_29: [u8; 7],
+    pub unknown_29: [u8; 7],
     /// +0x30 `undefined4`, base NiPSysEmitter
     pub field_30: u32,
     /// +0x34 `float`, base NiPSysEmitter
@@ -14333,10 +14332,9 @@ pub struct BSPSysArrayEmitter {
     pub field_70: u64,
     /// +0x78 `undefined4`, ctor store
     pub field_78: u32,
-    unknown_7C: [u8; 4],
+    pub unknown_7C: [u8; 4],
     /// +0x80 `undefined8`, member ctor NiTPrimitiveArray<NiPointer<NiAVObject>_>
-    #[doc(hidden)]
-    pub __m_NiTPrimitiveArray_80: [u8; 8],
+    pub m_NiTPrimitiveArray_80: u64,
     /// +0x88 `undefined8`, ctor store
     pub field_88: u64,
     /// +0x90 `undefined4`, ctor store
@@ -14368,7 +14366,7 @@ const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_68) == 0x6
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_6C) == 0x6C);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_70) == 0x70);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_78) == 0x78);
-const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, __m_NiTPrimitiveArray_80) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, m_NiTPrimitiveArray_80) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_88) == 0x88);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_90) == 0x90);
 const _: () = assert!(core::mem::offset_of!(BSPSysArrayEmitter, field_94) == 0x94);

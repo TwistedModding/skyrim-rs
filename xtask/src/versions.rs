@@ -179,21 +179,27 @@ enum Usable {
     Rejected,
 }
 
-/// A row's status and review. `rejected` is never usable. An identical body reads the same
-/// arguments, since the comparison masks only addresses, so it is usable whatever its signature
-/// says; any other body needs a compared signature or a review. Tables with no signature column
-/// (globals, vtables) need only a row that was compared.
-fn usable(row: &Cells, signature: bool) -> Usable {
+/// A row's status and review. `rejected` is never usable, and `accepted` on a `changed` signature is
+/// a real parameter change: the runtime's prototype applies, which the generator cannot express yet.
+/// An identical body reads the same arguments, since the comparison masks only addresses, so it is
+/// usable whatever its signature says; any other body needs a compared signature or a review. On SE
+/// most prototypes were never recovered, so an unverified signature does not count against a
+/// compared body and the pair's own confidence decides. Tables with no signature column (globals,
+/// vtables) need only a row that was compared.
+fn usable(row: &Cells, signature: bool, se_database: bool) -> Usable {
     let review = row.text("review");
     let status = row.text("status");
+    let signature_status = row.text("signature_status");
     if review == Some("rejected") {
         Usable::Rejected
-    } else if signature {
-        if status == Some("same") || review == Some("accepted") || row.text("signature_status") == Some("same") { Usable::Yes } else { Usable::Unverified }
-    } else if status == Some("unverified") {
+    } else if !signature {
+        if status == Some("unverified") { Usable::Unverified } else { Usable::Yes }
+    } else if review == Some("accepted") && signature_status == Some("changed") {
         Usable::Unverified
-    } else {
+    } else if status == Some("same") || review == Some("accepted") || signature_status == Some("same") || (se_database && status == Some("changed") && signature_status != Some("changed")) {
         Usable::Yes
+    } else {
+        Usable::Unverified
     }
 }
 
@@ -273,13 +279,14 @@ impl Runtime {
     }
 
     fn read_ids(&mut self, functions: &Table, globals: &Table, vtables: &Table, id_map: &Table) {
+        let se_database = self.database == "se";
         let mut rows: HashMap<u32, Usable> = HashMap::new();
         let mut read = |table: &Table, id: &str, signature: bool| {
             table.for_each(|r| {
                 if r.text("status") != Some("absent")
                     && let Some(id) = r.u32(id)
                 {
-                    rows.insert(id, usable(&r, signature));
+                    rows.insert(id, usable(&r, signature, se_database));
                 }
             });
         };
@@ -287,7 +294,6 @@ impl Runtime {
         read(globals, "id", false);
         read(vtables, "id_canonical", false);
         self.seen = rows.keys().copied().collect();
-        let se_database = self.database == "se";
         if !se_database {
             self.ids = rows.iter().filter(|&(_, &u)| u != Usable::Yes).map(|(&id, _)| (id, IdState::Unverified)).collect();
         }
@@ -304,6 +310,9 @@ impl Runtime {
             let row = rows.get(&ae).copied().unwrap_or(Usable::Yes);
             let review = r.text("review");
             if row == Usable::Rejected || review == Some("rejected") {
+                if !se_database {
+                    self.ids.insert(ae, IdState::Unverified);
+                }
                 return;
             }
             let state = match r.u32("se") {

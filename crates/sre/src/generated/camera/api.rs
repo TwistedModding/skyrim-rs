@@ -7121,14 +7121,6 @@ impl crate::ThirdPersonState {
     pub fn padE3_ptr(&self) -> *mut [u8; 5] { Self::__member_padE3(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_targetOffset(this: *const Self) -> *mut crate::NiPoint3 { unsafe { member!(this, "ThirdPersonState.targetOffset", 0x5C, crate::NiPoint3) } }
-    /// `ThirdPersonState::targetOffset`, at +0x5C on 1.7.104.
-    #[inline]
-    pub fn targetOffset(&self) -> &crate::NiPoint3 { unsafe { &*Self::__member_targetOffset(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn targetOffset_ptr(&self) -> *mut crate::NiPoint3 { Self::__member_targetOffset(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_useShoulderOffsets(this: *const Self) -> *mut u8 { unsafe { member!(this, "ThirdPersonState.useShoulderOffsets", 0xE1, u8) } }
     /// `ThirdPersonState::useShoulderOffsets`, at +0xE1 on 1.7.104.
     #[inline]

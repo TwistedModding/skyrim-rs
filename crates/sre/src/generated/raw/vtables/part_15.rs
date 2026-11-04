@@ -111,8 +111,7 @@ pub struct NiDefaultAVObjectPalette_vtable {
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
     /// `NiDefaultAVObjectPalette::vfunc_23` at 0xeff690 (rtti, high); signature (low): `NiObject * vfunc_23(NiDefaultAVObjectPalette * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_23: *const c_void,
+    pub slot_23: *const c_void,
     /// `NiDefaultAVObjectPalette::vfunc_24` at 0xeff820 (rtti, high); signature (low): `undefined vfunc_24(NiDefaultAVObjectPalette * this, longlong param_1)`
     pub slot_24: *const c_void,
     /// `NiDefaultAVObjectPalette::vfunc_25` at 0xeff980 (rtti, high); signature (low): `undefined vfunc_25(NiDefaultAVObjectPalette * this, ulonglong * * * * param_1)`
@@ -1624,8 +1623,7 @@ impl NiFormArray_vtable {
 #[repr(C)]
 pub struct NiGeometry_vtable {
     /// `NiGeometry::vdtor` at 0xf0cab0 (slot_propagation, medium); signature (low): `NiGeometry * vdtor(NiGeometry * this, ulonglong param_1)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiGeometry::vfunc_2` at 0xf0cbd0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -1873,8 +1871,7 @@ impl NiHalfSpaceBV_vtable {
 #[repr(C)]
 pub struct NiIntegerExtraData_vtable {
     /// `NiIntegerExtraData::vdtor` at 0xf12380 (layout_inference, medium); signature (low): `NiIntegerExtraData * vdtor(NiIntegerExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiIntegerExtraData::vfunc_2` at 0xf123c0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -12560,8 +12557,7 @@ pub type NiSkinInstance_vtable_IsEqual = unsafe extern "C" fn(this: *mut crate::
 #[repr(C)]
 pub struct NiSkinPartition_vtable {
     /// `NiSkinPartition::vdtor` at 0xf090f0 (layout_inference, medium); signature (low): `NiSkinPartition * vdtor(NiSkinPartition * this, uint param_1, longlong param_2, undefined * param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiSkinPartition::vfunc_2` at 0xf09190 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -13276,8 +13272,7 @@ impl NiStringsExtraData_vtable {
 #[repr(C)]
 pub struct NiSwitchNode_vtable {
     /// `NiSwitchNode::vdtor` at 0xeee310 (slot_propagation, medium); signature (low): `NiSwitchNode * vdtor(NiSwitchNode * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiSwitchNode::vfunc_2` at 0xeee370 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`

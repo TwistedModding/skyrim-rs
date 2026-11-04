@@ -5,7 +5,7 @@ $Phases = "postLoadGame", "saveGame"
 
 $lastOwn = Captured (Detail "category_samples") 'last (\d+)$'
 $rows = @(
-    @{ name = "manager";       plugin = (Detail "manager"); devbench = "(plugin only)";
+    @{ name = "manager"; notRun = (PluginNotRun "manager");       plugin = (Detail "manager"); devbench = "(plugin only)";
        ok = $plugin["manager"].ok }
     @{ name = "marker";        plugin = (Detail "marker"); devbench = "Sound.Play(UISkillIncrease, player) = $(Returned 4)";
        ok = ($plugin["marker"].ok -and $null -ne (Returned 4)) }

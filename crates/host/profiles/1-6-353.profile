@@ -1179,7 +1179,6 @@ id-unverified 12098
 id-unverified 12099
 id-unverified 12100
 id-unverified 12315
-id-unverified 12354
 id-unverified 12355
 id-unverified 12358
 id-unverified 12432
@@ -1372,7 +1371,6 @@ id-unverified 15840
 id-unverified 15841
 id-unverified 15944
 id-unverified 15945
-id-unverified 15953
 id-unverified 15967
 id-unverified 15972
 id-unverified 15983
@@ -1456,7 +1454,6 @@ id-unverified 17153
 id-unverified 17210
 id-unverified 17219
 id-unverified 17223
-id-unverified 17231
 id-unverified 17232
 id-unverified 17233
 id-unverified 17240
@@ -1794,7 +1791,6 @@ id-unverified 19643
 id-unverified 19668
 id-unverified 19689
 id-unverified 19692
-id-unverified 19700
 id-unverified 19710
 id-unverified 19716
 id-unverified 19727
@@ -2438,7 +2434,6 @@ id-unverified 23221
 id-unverified 23277
 id-unverified 23300
 id-unverified 23306
-id-unverified 23314
 id-unverified 23329
 id-unverified 23354
 id-unverified 23380
@@ -2508,7 +2503,6 @@ id-unverified 24764
 id-unverified 24766
 id-unverified 24774
 id-unverified 24790
-id-unverified 24852
 id-unverified 24917
 id-unverified 24966
 id-unverified 24990
@@ -2609,7 +2603,6 @@ id-unverified 27293
 id-unverified 27294
 id-unverified 27350
 id-unverified 27351
-id-unverified 27356
 id-unverified 27365
 id-unverified 27404
 id-unverified 27426
@@ -2792,7 +2785,6 @@ id-unverified 29934
 id-unverified 29938
 id-unverified 29939
 id-unverified 30044
-id-unverified 30068
 id-unverified 30069
 id-unverified 30072
 id-unverified 30073
@@ -3022,7 +3014,6 @@ id-unverified 33280
 id-unverified 33281
 id-unverified 33321
 id-unverified 33594
-id-unverified 33643
 id-unverified 33737
 id-unverified 33740
 id-unverified 33755
@@ -3032,7 +3023,6 @@ id-unverified 33758
 id-unverified 33784
 id-unverified 33785
 id-unverified 33800
-id-unverified 33851
 id-unverified 33894
 id-unverified 33898
 id-unverified 33899
@@ -3212,7 +3202,6 @@ id-unverified 35909
 id-unverified 35910
 id-unverified 35930
 id-unverified 35941
-id-unverified 35994
 id-unverified 36010
 id-unverified 36013
 id-unverified 36031
@@ -3272,7 +3261,6 @@ id-unverified 36641
 id-unverified 36642
 id-unverified 36644
 id-unverified 36646
-id-unverified 36712
 id-unverified 36818
 id-unverified 36826
 id-unverified 36827
@@ -4335,7 +4323,6 @@ id-unverified 40533
 id-unverified 40534
 id-unverified 40535
 id-unverified 40536
-id-unverified 40537
 id-unverified 40538
 id-unverified 40539
 id-unverified 40540
@@ -4473,7 +4460,6 @@ id-unverified 40760
 id-unverified 40761
 id-unverified 40770
 id-unverified 40771
-id-unverified 40772
 id-unverified 40798
 id-unverified 40799
 id-unverified 40808
@@ -4507,7 +4493,6 @@ id-unverified 41024
 id-unverified 41076
 id-unverified 41130
 id-unverified 41131
-id-unverified 41136
 id-unverified 41233
 id-unverified 41234
 id-unverified 41235
@@ -4657,7 +4642,6 @@ id-unverified 42437
 id-unverified 42438
 id-unverified 42457
 id-unverified 42485
-id-unverified 42497
 id-unverified 42503
 id-unverified 42508
 id-unverified 42509
@@ -4975,7 +4959,6 @@ id-unverified 44341
 id-unverified 44358
 id-unverified 44359
 id-unverified 44360
-id-unverified 44370
 id-unverified 44377
 id-unverified 44378
 id-unverified 44383
@@ -5006,8 +4989,6 @@ id-unverified 44673
 id-unverified 44725
 id-unverified 44741
 id-unverified 44742
-id-unverified 44750
-id-unverified 44751
 id-unverified 44755
 id-unverified 44756
 id-unverified 44757
@@ -5101,7 +5082,8 @@ id-unverified 45443
 id-unverified 45448
 id-unverified 45454
 id-unverified 45455
-id-unverified 46515
+id 46515 46480
+id 46516 46481
 id-unverified 46871
 id-unverified 46873
 id-unverified 46874
@@ -5125,7 +5107,6 @@ id-unverified 47068
 id-unverified 47076
 id-unverified 47113
 id-unverified 47122
-id-unverified 47174
 id-unverified 47195
 id-unverified 47196
 id-unverified 47224
@@ -5375,7 +5356,6 @@ id-unverified 49959
 id-unverified 49960
 id-unverified 49961
 id-unverified 50010
-id-unverified 50015
 id-unverified 50066
 id-unverified 50078
 id-unverified 50085
@@ -5444,6 +5424,8 @@ id-unverified 50953
 id-unverified 50958
 id-unverified 50959
 id-unverified 50960
+id 50987 50990
+id 50990 50987
 id-unverified 51001
 id-unverified 51049
 id-unverified 51053
@@ -5680,7 +5662,6 @@ id-unverified 52855
 id-unverified 52857
 id-unverified 52858
 id-unverified 52861
-id-unverified 52878
 id-unverified 52882
 id-unverified 52883
 id-unverified 52884
@@ -6440,7 +6421,7 @@ id-unverified 68782
 id-unverified 68787
 id-unverified 68802
 id-unverified 68851
-id-unverified 68868
+id 68868 82547
 id-unverified 68942
 id-unverified 68955
 id-unverified 69064
@@ -6562,9 +6543,11 @@ id-unverified 70120
 id-unverified 70128
 id-unverified 70132
 id-unverified 70164
+id 70318 75305
 id-unverified 70376
+id 70432 75294
 id-unverified 70463
-id-unverified 70595
+id 70595 76302
 id-unverified 70669
 id-unverified 70688
 id-unverified 70715
@@ -6585,7 +6568,7 @@ id-unverified 71033
 id-unverified 71034
 id-unverified 71035
 id-unverified 71061
-id-unverified 71187
+id 71187 68740
 id-unverified 71212
 id-unverified 71240
 id-unverified 71251
@@ -6594,11 +6577,16 @@ id-unverified 71259
 id-unverified 71263
 id-unverified 71278
 id-unverified 71283
+id 71360 76811
+id 71441 75986
+id 71473 75291
+id 71479 75310
 id-unverified 71541
 id-unverified 71548
 id-unverified 71758
-id-unverified 71767
-id-unverified 71793
+id 71767 76775
+id 71793 76795
+id 71828 76381
 id-unverified 71892
 id-unverified 71916
 id-unverified 71940
@@ -6693,7 +6681,10 @@ id-unverified 75159
 id-unverified 75160
 id-unverified 75163
 id-unverified 75279
-id-unverified 75335
+id 75291 71473
+id 75294 70432
+id 75305 70318
+id 75310 71479
 id-unverified 75367
 id-unverified 75370
 id-unverified 75398
@@ -6713,6 +6704,7 @@ id-unverified 75638
 id-unverified 75739
 id-unverified 75773
 id-unverified 75808
+id 75822 82473
 id-unverified 75914
 id-unverified 75915
 id-unverified 75934
@@ -6721,17 +6713,19 @@ id-unverified 75940
 id-unverified 75941
 id-unverified 75958
 id-unverified 75959
-id-unverified 75967
+id 75967 70827
+id 75986 71441
 id-unverified 76016
 id-unverified 76021
 id-unverified 76042
 id-unverified 76060
 id-unverified 76064
 id-unverified 76067
+id 76153 71338
 id-unverified 76169
 id-unverified 76214
 id-unverified 76220
-id-unverified 76302
+id 76302 70595
 id-unverified 76324
 id-unverified 76327
 id-unverified 76330
@@ -6749,6 +6743,7 @@ id-unverified 76361
 id-unverified 76364
 id-unverified 76367
 id-unverified 76368
+id 76381 71828
 id-unverified 76383
 id-unverified 76395
 id-unverified 76401
@@ -6757,6 +6752,7 @@ id-unverified 76405
 id-unverified 76408
 id-unverified 76410
 id-unverified 76413
+id 76418 70999
 id-unverified 76422
 id-unverified 76425
 id-unverified 76433
@@ -6765,14 +6761,16 @@ id-unverified 76436
 id-unverified 76438
 id-unverified 76534
 id-unverified 76582
-id-unverified 76586
+id 76586 70981
 id-unverified 76665
 id-unverified 76670
 id-unverified 76693
 id-unverified 76719
-id-unverified 76724
-id-unverified 76775
-id-unverified 76795
+id 76724 71266
+id 76775 71767
+id 76792 71790
+id 76795 71793
+id 76811 71360
 id-unverified 76815
 id-unverified 76829
 id-unverified 76832
@@ -6780,11 +6778,12 @@ id-unverified 76846
 id-unverified 76853
 id-unverified 76855
 id-unverified 76858
+id 76954 70140
 id-unverified 77016
 id-unverified 77038
 id-unverified 77049
 id-unverified 77063
-id-unverified 77066
+id 77066 71975
 id-unverified 77086
 id-unverified 77101
 id-unverified 77159
@@ -6919,7 +6918,7 @@ id-unverified 78630
 id-unverified 78632
 id-unverified 78637
 id-unverified 78640
-id-unverified 78717
+id 78717 72403
 id-unverified 78742
 id-unverified 78761
 id-unverified 78932
@@ -6931,6 +6930,7 @@ id-unverified 79169
 id-unverified 79189
 id-unverified 79192
 id-unverified 79218
+id 79734 73514
 id-unverified 80063
 id-unverified 80084
 id-unverified 80085
@@ -6966,13 +6966,14 @@ id-unverified 82297
 id-unverified 82310
 id-unverified 82323
 id-unverified 82334
-id-unverified 82362
+id 82362 76420
 id-unverified 82407
 id-unverified 82420
 id-unverified 82440
 id-unverified 82448
 id-unverified 82458
 id-unverified 82465
+id 82473 75822
 id-unverified 82475
 id-unverified 82485
 id-unverified 82492
@@ -6984,6 +6985,7 @@ id-unverified 82874
 id-unverified 82888
 id-unverified 82896
 id-unverified 82921
+id 82981 76303
 id-unverified 83241
 id-unverified 83250
 id-unverified 83506
@@ -7020,17 +7022,17 @@ id-unverified 86331
 id-unverified 86612
 id-unverified 86681
 id-unverified 87188
-id-unverified 87466
+id 87466 82661
 id-unverified 87470
 id-unverified 87471
 id-unverified 87773
 id-unverified 87894
 id-unverified 87967
 id-unverified 87971
-id-unverified 88023
+id 88023 82654
 id-unverified 88144
 id-unverified 88273
-id-unverified 88319
+id 88319 84938
 id-unverified 88360
 id-unverified 88425
 id-unverified 88436
@@ -7137,6 +7139,8 @@ id-unverified 92036
 id-unverified 92037
 id-unverified 92038
 id-unverified 92039
+id 92059 92061
+id 92061 92059
 id-unverified 92150
 id-unverified 92193
 id-unverified 92284
@@ -7157,7 +7161,6 @@ id-unverified 92704
 id-unverified 92717
 id-unverified 92758
 id-unverified 92774
-id-unverified 92780
 id-unverified 92798
 id-unverified 92804
 id-unverified 92813
@@ -7208,7 +7211,6 @@ id-unverified 93196
 id-unverified 93200
 id-unverified 93210
 id-unverified 93244
-id-unverified 93295
 id-unverified 93310
 id-unverified 93320
 id-unverified 93321
@@ -7295,12 +7297,12 @@ id-unverified 96383
 id-unverified 96384
 id-unverified 96576
 id-unverified 96581
-id-unverified 96599
 id-unverified 96619
 id-unverified 96682
 id-unverified 96688
 id-unverified 96698
 id-unverified 96843
+id 96850 96851
 id-unverified 97121
 id-unverified 97122
 id-unverified 97131
@@ -7308,7 +7310,6 @@ id-unverified 97150
 id-unverified 97151
 id-unverified 97158
 id-unverified 97159
-id-unverified 97227
 id-unverified 97250
 id-unverified 97251
 id-unverified 97252
@@ -7337,7 +7338,6 @@ id-unverified 97343
 id-unverified 97344
 id-unverified 97345
 id-unverified 97381
-id-unverified 97382
 id-unverified 97383
 id-unverified 97390
 id-unverified 97391
@@ -7373,7 +7373,6 @@ id-unverified 98443
 id-unverified 98455
 id-unverified 98458
 id-unverified 98459
-id-unverified 98531
 id-unverified 98552
 id-unverified 98576
 id-unverified 98577
@@ -7411,7 +7410,6 @@ id-unverified 100172
 id-unverified 100173
 id-unverified 100174
 id-unverified 100178
-id-unverified 100179
 id-unverified 100180
 id-unverified 100200
 id-unverified 100232
@@ -7429,6 +7427,7 @@ id-unverified 100330
 id-unverified 100331
 id-unverified 100343
 id-unverified 100347
+id 100413 98038
 id-unverified 100448
 id-unverified 100461
 id-unverified 100462
@@ -7459,7 +7458,6 @@ id-unverified 100970
 id-unverified 100971
 id-unverified 100972
 id-unverified 100981
-id-unverified 100982
 id-unverified 100993
 id-unverified 100996
 id-unverified 101007
@@ -7476,7 +7474,6 @@ id-unverified 101108
 id-unverified 101109
 id-unverified 101280
 id-unverified 101284
-id-unverified 101296
 id-unverified 101317
 id-unverified 101336
 id-unverified 101337
@@ -11608,25 +11605,13 @@ id-unverified 174922
 id-unverified 174924
 id-unverified 174927
 id-unverified 174934
-id-unverified 210389
-id-unverified 211897
-id-unverified 211899
-id-unverified 211903
 id-unverified 214975
 id-unverified 215560
 id-unverified 215604
-id-unverified 237386
 id-unverified 238068
-id-unverified 238182
 id-unverified 238246
 id-unverified 238248
 id-unverified 238411
-id-unverified 238426
-id-unverified 238474
-id-unverified 238551
-id-unverified 240716
-id-unverified 242033
-id-unverified 242305
 id 246208 246214
 id 246214 246208
 id-unverified 416324
@@ -12162,7 +12147,7 @@ id-unverified 443592
 id-unverified 443594
 id-unverified 443595
 id 443598 94064
-id 443604 101339
+id-unverified 443604
 id 443608 94076
 id 443609 102525
 id-unverified 443611
@@ -12178,12 +12163,12 @@ id-unverified 443694
 id-unverified 443696
 id-unverified 443698
 id-unverified 443701
-id-unverified 443706
+id 443706 96167
 id-unverified 443708
-id-unverified 443710
+id 443710 99351
 id-unverified 443711
-id-unverified 443715
-id-unverified 443717
+id 443715 97586
+id 443717 101391
 id-unverified 443739
 id-unverified 443740
 id-unverified 443741
@@ -12243,7 +12228,7 @@ id-unverified 445161
 id 445176 94356
 id 445177 94357
 id-unverified 445185
-id-unverified 445186
+id 445186 96864
 id 445286 33622
 id-unverified 445313
 id-unverified 445323
@@ -12275,9 +12260,9 @@ id-unverified 445497
 id-unverified 445499
 id-unverified 445501
 id-unverified 445524
-id-unverified 445563
+id 445563 96290
 id-unverified 445584
-id-unverified 445585
+id 445585 94925
 id-unverified 445600
 id-unverified 445608
 id 445716 95324
@@ -12378,7 +12363,7 @@ id-unverified 447437
 id-unverified 447442
 id-unverified 447445
 id-unverified 447451
-id-unverified 447463
+id 447463 96703
 id-unverified 447465
 id-unverified 447483
 id 447484 96769
@@ -12424,7 +12409,7 @@ id-unverified 448909
 id-unverified 448910
 id-unverified 448919
 id-unverified 448920
-id-unverified 448924
+id 448924 101086
 id-unverified 448925
 id-unverified 448926
 id-unverified 448929
@@ -12464,7 +12449,7 @@ id 449061 95688
 id-unverified 449063
 id-unverified 449065
 id 449067 98397
-id-unverified 449070
+id 449070 98400
 id-unverified 449075
 id 449082 95935
 id-unverified 449086
@@ -12548,7 +12533,7 @@ id 449533 101090
 id 449534 101091
 id 449535 101093
 id 449537 101096
-id-unverified 449538
+id 449538 101097
 id-unverified 449539
 id-unverified 449595
 id 449601 102469
@@ -12709,7 +12694,7 @@ id-unverified 451251
 id-unverified 451255
 id-unverified 451281
 id-unverified 451306
-id-unverified 451307
+id 451307 100318
 id-unverified 451323
 id-unverified 451324
 id-unverified 451343
@@ -12853,7 +12838,7 @@ id-unverified 451877
 id-unverified 451878
 id-unverified 451891
 id-unverified 451898
-id-unverified 451899
+id 451899 100951
 id-unverified 451904
 id-unverified 451908
 id-unverified 451912
@@ -13051,8 +13036,9 @@ id-unverified 453078
 id 453080 102516
 id-unverified 453081
 id-unverified 453082
+id-unverified 453083
 id-unverified 453084
-id-unverified 453086
+id 453086 102528
 id 453087 101352
 id-unverified 453089
 id-unverified 453090
@@ -14309,10 +14295,10 @@ id-unverified 523542
 id-unverified 523543
 id-unverified 523544
 id-unverified 523572
-id-unverified 523574
+id 523574 30308
 id 523582 31299
 id 523583 31300
-id-unverified 523585
+id 523585 31418
 id-unverified 523588
 id-unverified 523589
 id-unverified 523667
@@ -14331,6 +14317,8 @@ id-unverified 523949
 id-unverified 523956
 id 523966 42422
 id 523977 46484
+id 523978 46515
+id 523979 46516
 id 523980 46517
 id-unverified 523983
 id-unverified 523984
@@ -14358,10 +14346,12 @@ id-unverified 524141
 id 524142 68684
 id-unverified 524157
 id-unverified 524158
+id 524159 82981
 id-unverified 524160
 id-unverified 524161
 id-unverified 524162
 id-unverified 524163
+id 524164 87466
 id 524165 88712
 id 524166 84927
 id-unverified 524167
@@ -14370,17 +14360,23 @@ id 524169 88302
 id 524170 88303
 id 524171 88304
 id 524172 88305
+id 524173 88319
 id 524176 88525
 id 524184 87960
 id 524185 87961
 id-unverified 524186
 id-unverified 524187
-id-unverified 524190
+id-unverified 524189
+id 524190 88023
 id 524194 89301
 id 524197 89304
 id 524198 89305
+id 524200 68868
+id 524202 70138
+id 524203 70139
 id-unverified 524204
 id 524205 70313
+id 524206 71187
 id-unverified 524207
 id 524208 68751
 id-unverified 524209
@@ -14392,21 +14388,31 @@ id-unverified 524226
 id-unverified 524227
 id-unverified 524228
 id-unverified 524230
+id 524231 75967
 id 524234 70201
-id 524235 71338
+id 524235 76153
+id 524236 76154
+id 524237 76155
 id-unverified 524238
 id 524239 70555
+id 524240 76418
 id 524242 70202
 id-unverified 524243
-id-unverified 524249
-id 524250 70140
+id 524246 76586
+id 524248 76724
+id 524249 76792
+id 524250 76954
 id-unverified 524251
 id-unverified 524252
+id 524253 77066
 id-unverified 524254
 id 524257 77828
+id 524263 78717
+id 524266 79734
 id-unverified 524267
 id-unverified 524269
 id 524270 82331
+id 524272 82362
 id-unverified 524273
 id 524274 33645
 id-unverified 524275
@@ -14457,7 +14463,7 @@ id 524752 96633
 id 524755 96245
 id-unverified 524767
 id-unverified 524771
-id-unverified 524772
+id 524772 94346
 id 524774 94349
 id-unverified 524786
 id 524859 101614
@@ -14507,7 +14513,7 @@ id 525870 103527
 id 525877 96270
 id-unverified 525879
 id-unverified 525954
-id-unverified 525957
+id 525957 101190
 id-unverified 525961
 id-unverified 525962
 id 526103 97911
@@ -14519,7 +14525,7 @@ id 526195 95978
 id 526256 96024
 id-unverified 526259
 id 526393 101491
-id-unverified 526399
+id 526399 93806
 id-unverified 526401
 id-unverified 526402
 id 526406 96685
@@ -14627,13 +14633,13 @@ id-unverified 527328
 id-unverified 527329
 id-unverified 527330
 id 527332 101349
-id-unverified 527340
+id 527340 102529
 id-unverified 527341
 id 527359 101358
 id-unverified 527364
 id-unverified 527377
-id-unverified 527379
-id-unverified 527380
+id 527379 102249
+id 527380 97862
 id-unverified 527408
 id-unverified 527432
 id 527435 94256
@@ -14654,7 +14660,7 @@ id-unverified 527524
 id-unverified 527525
 id-unverified 527529
 id-unverified 527531
-id-unverified 527532
+id 527532 100966
 id-unverified 527533
 id 527534 100964
 id-unverified 527535
@@ -14675,7 +14681,7 @@ id-unverified 527625
 id-unverified 527629
 id-unverified 527639
 id-unverified 527646
-id-unverified 527651
+id 527651 96850
 id 527652 101356
 id-unverified 527654
 id-unverified 527655
@@ -14703,8 +14709,9 @@ id 527786 108747
 id-unverified 527787
 id-unverified 527788
 id-unverified 527789
-id-unverified 527791
+id 527791 109087
 id-unverified 527792
+id 527809 109759
 id-unverified 527877
 id 527997 158154
 id 528154 416634
@@ -15854,7 +15861,7 @@ id 534080 164782
 id 534081 165019
 id 534083 165232
 id 534084 165233
-id-unverified 536607
+id 536607 211893
 id 536610 211837
 id-unverified 564417
 id 565129 132124
@@ -24267,7 +24274,6 @@ id-unverified 453069
 id-unverified 453072
 id-unverified 453074
 id-unverified 453079
-id-unverified 453083
 id-unverified 453085
 id-unverified 453091
 id-unverified 453093
@@ -30335,8 +30341,6 @@ id-unverified 523973
 id-unverified 523974
 id-unverified 523975
 id-unverified 523976
-id-unverified 523978
-id-unverified 523979
 id-unverified 523981
 id-unverified 523988
 id-unverified 523989
@@ -30456,41 +30460,23 @@ id-unverified 524140
 id-unverified 524143
 id-unverified 524144
 id-unverified 524148
-id-unverified 524159
-id-unverified 524164
-id-unverified 524173
 id-unverified 524188
-id-unverified 524189
-id-unverified 524200
 id-unverified 524201
-id-unverified 524202
-id-unverified 524203
-id-unverified 524206
 id-unverified 524229
-id-unverified 524231
 id-unverified 524232
 id-unverified 524233
-id-unverified 524236
-id-unverified 524237
-id-unverified 524240
 id-unverified 524241
-id-unverified 524246
 id-unverified 524247
-id-unverified 524248
-id-unverified 524253
 id-unverified 524256
 id-unverified 524258
 id-unverified 524259
 id-unverified 524260
 id-unverified 524261
 id-unverified 524262
-id-unverified 524263
 id-unverified 524264
 id-unverified 524265
-id-unverified 524266
 id-unverified 524268
 id-unverified 524271
-id-unverified 524272
 id-unverified 524276
 id-unverified 524277
 id-unverified 524278
@@ -33201,7 +33187,6 @@ id-unverified 527801
 id-unverified 527802
 id-unverified 527804
 id-unverified 527805
-id-unverified 527809
 id-unverified 527810
 id-unverified 527811
 id-unverified 527812
@@ -39789,7 +39774,6 @@ member-unverified BSAnimationGraphManager.variableCache
 member-unverified BSBatchRenderer.firstTechnique
 member-unverified BSBatchRenderer.lastTechnique
 member-unverified BSBatchRenderer.techniqueToBucket
-member-unverified BSBound.field_28
 member-unverified BSCubeMapCamera.padding0C
 member-unverified BSCubeMapCamera.padding10A
 member-unverified BSCubeMapCamera.padding169
@@ -39839,7 +39823,6 @@ member-unverified BSLightingShaderMaterialParallaxOcc.textureLoadLock
 member-unverified BSLightingShaderMaterialSnow.textureLoadLock
 member-unverified BSLightingShaderProperty.depthPassLists
 member-unverified BSLightingShaderProperty.lightDataStorage
-member BSNavmeshInfoSearch.field_1F8 208
 member-unverified BSNavmeshInfoSearch.field_200
 member-unverified BSNavmeshInfoSearch.field_208
 member-unverified BSNavmeshObstacleData.field_10
@@ -39848,10 +39831,6 @@ member-unverified BSNavmeshObstacleData.field_28
 member-unverified BSNavmeshObstacleData.field_64
 member-unverified BSNavmeshObstacleData.field_6C
 member-unverified BSNavmeshObstacleData.field_74
-member BSNavmeshObstacleData.field_7C 0
-member BSNavmeshObstacleData.field_84 10
-member BSNavmeshObstacleData.field_8C 18
-member BSNavmeshSearch.field_170 1a0
 member-unverified BSNavmeshSearch.field_178
 member-unverified BSNavmeshSearch.field_190
 member-unverified BSNavmeshSearch.field_198
@@ -39867,7 +39846,6 @@ member-unverified BSOcclusionBox.field_174
 member-unverified BSOcclusionBox.field_17C
 member-unverified BSOcclusionBox.field_184
 member-unverified BSOcclusionBox.field_18C
-member-unverified BSOcclusionBox.field_198
 member-unverified BSOcclusionPlane.field_C0
 member-unverified BSOcclusionPlane.field_C8
 member-unverified BSOcclusionPlane.field_D0
@@ -39876,7 +39854,6 @@ member-unverified BSOcclusionPlane.field_E0
 member-unverified BSOcclusionPlane.field_E8
 member-unverified BSPCGamepadDeviceDelegate.source_BSGamepadEvent
 member-unverified BSPCOrbisGamepadDevice.source_BSGamepadEvent
-member-unverified BSPSysArrayEmitter.m_NiTPrimitiveArray_80
 member-unverified BSParabolicCullingProcess.acceptFlag12Nodes
 member-unverified BSParabolicCullingProcess.deferAllAppends
 member-unverified BSParabolicCullingProcess.freeRecords
@@ -39900,11 +39877,6 @@ member-unverified BSParticleShaderCubeEmitter.field_FC0
 member-unverified BSParticleShaderCubeEmitter.field_FC8
 member-unverified BSParticleShaderCubeEmitter.field_FD0
 member-unverified BSParticleShaderCubeEmitter.field_FD8
-member-unverified BSParticleShaderProperty.field_100
-member BSParticleShaderProperty.field_108 120
-member-unverified BSParticleShaderProperty.field_110
-member BSParticleShaderProperty.field_118 140
-member-unverified BSParticleShaderProperty.field_120
 member-unverified BSParticleShaderProperty.field_128
 member-unverified BSParticleShaderRainEmitter.field_F68
 member-unverified BSParticleShaderRainEmitter.field_F70
@@ -39936,14 +39908,11 @@ member-unverified BSParticleShaderSnowEmitter.field_FC0
 member-unverified BSParticleShaderSnowEmitter.field_FC8
 member-unverified BSParticleShaderSnowEmitter.field_FD0
 member-unverified BSParticleShaderSnowEmitter.field_FD8
-member-unverified BSPathfindingTemporary<PathingRequestCover>.field_134
 member-unverified BSPathingSearchRayCast.field_74
-member BSPathingSearchRayCast.field_7C 0
-member BSPathingSearchRayCast.field_84 68
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_30 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_38 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_40 38
-member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_80
+member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>.field_80 78
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>.field_38
@@ -39967,11 +39936,11 @@ member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetRes
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40 38
-member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80
+member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSLegalDocument,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80 78
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38 28
 member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_40 38
-member-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80
+member BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_80 78
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>.__vftable
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_30
 member-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContentCollection,BSTArrayHeapAllocator>_const&___ptr64)>_>.field_38
@@ -40033,39 +40002,39 @@ member-missing BSPlatform::BSBNETFile::marketplaceDownload::marketplaceModStream
 member-missing BSPlatform::BSBNETImage.__vftable
 member-missing BSPlatform::BSBNETImage.field_20
 member-missing BSPlatform::BSBNETImage.field_28
-member BSPlatform::BSBethesdaPlatform.field_130 128
+member-unverified BSPlatform::BSBethesdaPlatform.field_130
 member-unverified BSPlatform::BSBethesdaPlatform.field_28
-member BSPlatform::BSBethesdaPlatform.field_30 88
+member-unverified BSPlatform::BSBethesdaPlatform.field_30
 member-unverified BSPlatform::BSBethesdaPlatform.field_32
 member-unverified BSPlatform::BSBethesdaPlatform.field_38
 member-unverified BSPlatform::BSBethesdaPlatform.field_40
-member BSPlatform::BSBethesdaPlatform.field_48 1b0
+member-unverified BSPlatform::BSBethesdaPlatform.field_48
 member-unverified BSPlatform::BSBethesdaPlatform.field_50
 member-unverified BSPlatform::BSBethesdaPlatform.field_80
-member BSPlatform::BSBethesdaPlatform.field_88 98
+member-unverified BSPlatform::BSBethesdaPlatform.field_88
 member-unverified BSPlatform::BSBethesdaPlatform.field_90
 member-unverified BSPlatform::BSBethesdaPlatform.field_B
 member-unverified BSPlatform::BSBethesdaPlatform.field_C
-member BSPlatform::BSBethesdaPlatform.field_C0 a0
-member BSPlatform::BSBethesdaPlatform.field_C8 a8
+member-unverified BSPlatform::BSBethesdaPlatform.field_C0
+member-unverified BSPlatform::BSBethesdaPlatform.field_C8
 member-unverified BSPlatform::BSBethesdaPlatform.field_D
-member BSPlatform::BSBethesdaPlatform.field_D0 b0
-member BSPlatform::BSBethesdaPlatform.field_D8 b8
-member BSPlatform::BSBethesdaPlatform.field_E0 c0
-member BSPlatform::BSBethesdaPlatform.field_E8 f0
-member BSPlatform::BSBethesdaPlatform.field_F0 f8
+member-unverified BSPlatform::BSBethesdaPlatform.field_D0
+member-unverified BSPlatform::BSBethesdaPlatform.field_D8
+member-unverified BSPlatform::BSBethesdaPlatform.field_E0
+member-unverified BSPlatform::BSBethesdaPlatform.field_E8
+member-unverified BSPlatform::BSBethesdaPlatform.field_F0
 member BSPlatform::BSDownloadRequest.field_30 28
 member BSPlatform::BSDownloadRequest.field_38 28
 member BSPlatform::BSDownloadRequest.field_40 38
 member BSPlatform::BSDownloadRequest.field_80 0
-member-unverified BSPlatform::BSDownloadRequest.field_88
-member-unverified BSPlatform::BSDownloadRequest.field_90
-member-unverified BSPlatform::BSDownloadRequest.field_98
+member BSPlatform::BSDownloadRequest.field_88 80
+member BSPlatform::BSDownloadRequest.field_90 88
+member BSPlatform::BSDownloadRequest.field_98 90
 member BSPlatform::BSDownloadRequest.field_A0 98
-member BSPlatform::BSDownloadRequest.field_A8 98
+member BSPlatform::BSDownloadRequest.field_A8 a0
 member BSPlatform::BSDownloadRequest.field_B0 a8
-member BSPlatform::BSDownloadRequest.field_B8 a0
-member BSPlatform::BSDownloadRequest.field_C0 a8
+member-missing BSPlatform::BSDownloadRequest.field_B8
+member-missing BSPlatform::BSDownloadRequest.field_C0
 member-missing BSPlatform::BSMarketplaceImage.__vftable
 member-missing BSPlatform::BSMarketplaceImage.field_20
 member-missing BSPlatform::BSMarketplaceImage.field_28
@@ -40074,7 +40043,7 @@ member-missing BSPlatform::BSMarketplaceUploader.field_8
 member BSPlatform::BSUploadRequest.field_30 28
 member BSPlatform::BSUploadRequest.field_38 28
 member BSPlatform::BSUploadRequest.field_40 38
-member-unverified BSPlatform::BSUploadRequest.field_80
+member BSPlatform::BSUploadRequest.field_80 78
 member BSPlatform::BSUploadRequest.field_88 80
 member BSPlatform::BSUploadRequest.field_90 88
 member BSPlatform::BSUploadRequest.field_98 90
@@ -40215,7 +40184,6 @@ member-unverified BSPortal.field_D0
 member-unverified BSPortal.field_D8
 member-unverified BSPortal.field_E0
 member-unverified BSPortal.field_E8
-member BSPrecomputedNavmeshInfoSearch.field_1F8 208
 member-unverified BSPrecomputedNavmeshInfoSearch.field_200
 member-unverified BSPrecomputedNavmeshInfoSearch.field_208
 member-unverified BSProceduralLightningController.source_BSProceduralGeomEvent
@@ -41331,7 +41299,6 @@ member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectRE
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
-member-unverified BSSegmentedTriShape.field_140
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
 member-unverified BSShaderAccumulator.field_129
 member-unverified BSShaderAccumulator.shadowSceneNode
@@ -41342,8 +41309,6 @@ member-unverified BSShadowFrustumLight.portalStrictCull
 member-unverified BSShadowLight.portalStrictCull
 member-unverified BSShadowParabolicLight.focusShadowMaps
 member-unverified BSShadowParabolicLight.portalStrictCull
-member-unverified BSSubIndexLandTriShape.field_168
-member-unverified BSSubIndexTriShape.field_168
 member-unverified BSSystemUtility.field_121
 member-unverified BSSystemUtility.source_BSSystemEvent
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.buffer
@@ -41354,13 +41319,8 @@ member-missing BSTEventSink<TESAmiiboTouchEvent>.__vftable
 member-unverified BSTEventSource.pendingRegisterCapacity
 member-unverified BSTEventSource.pendingUnregisterCapacity
 member BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_150 148
-member-unverified BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1F0
+member BSTStaticFreeList<ActorMovementMessageMap<16>::RawMessageHandlerWrapperType,16>.field_1F0 1e8
 member-unverified BSTaskManager.source_BSTaskManagerWaitAction
-member BSTempEffectGeometryDecal.field_58 40
-member BSTempEffectGeometryDecal.field_60 48
-member-unverified BSTempEffectGeometryDecal.field_8C
-member-unverified BSTempEffectGeometryDecal.field_94
-member-unverified BSTempEffectGeometryDecal.field_9C
 member-unverified BSTempEffectParticle.field_B4
 member-unverified BSTempEffectParticle.field_BC
 member-unverified BSThreadEvent::_anon_939FB6BB::Source.source_BSThreadEvent_ThreadEvent
@@ -41377,9 +41337,9 @@ member BSWin32SystemUtility.field_130 128
 member BSWin32SystemUtility.field_134 12c
 member BSWin32SystemUtility.field_138 130
 member BSWin32SystemUtility.field_140 138
-member BSWin32SystemUtility.field_158 148
+member-unverified BSWin32SystemUtility.field_158
 member-unverified BSWin32SystemUtility.field_15C
-member BSWin32SystemUtility.field_168 170
+member-unverified BSWin32SystemUtility.field_168
 member-unverified BSWin32SystemUtility.field_180
 member-unverified BSWin32SystemUtility.field_184
 member-unverified BSWin32SystemUtility.field_188
@@ -41396,7 +41356,7 @@ member-unverified BSWin32SystemUtility.field_200
 member-unverified BSWin32SystemUtility.field_208
 member BSWin32SystemUtility.m_CCallResult_1A0 150
 member BSWin32SystemUtility.m_CCallback_128 120
-member BSWin32SystemUtility.m_CCallback_178 120
+member-missing BSWin32SystemUtility.m_CCallback_178
 member-unverified BSWin32SystemUtility.source_BSSystemEvent
 member-unverified BShkbAnimationGraph.eventsSuppressed
 member-unverified BShkbAnimationGraph.nameMatchList
@@ -41617,7 +41577,6 @@ member Character.selectedSpells 1c0
 member Character.staminaModifiers 240
 member Character.voicePointsModifiers 24c
 member-unverified CombatCoverLocation.field_84
-member CombatCoverSearch.field_74 80
 member-unverified CombatCoverSearch.field_7C
 member-unverified CombatCoverSearch.field_84
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlank,CombatPathingSearchPolicyFlank>.field_1F8
@@ -41628,7 +41587,6 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyFlankDistant,Comba
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyLocation,CombatPathingSearchPolicyStandard>.field_213
-member CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_1F8 208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyReturnToCombatArea,CombatPathingSearchPolicyStandard>.field_200
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_230
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearch,CombatPathingSearchPolicyStandard>.field_238
@@ -41638,10 +41596,8 @@ member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicySearchWander,Comba
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_208
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_210
 member-unverified CombatNavmeshSearchT<CombatPathingGoalPolicyStandard,CombatPathingSearchPolicyStandard>.field_213
-member-unverified CombatProjectileAimController.field_B8
 member-unverified CombatThreat.field_1C
 member-unverified CombatThreat.field_24
-member CombatThreat.field_2C 14
 member-unverified CombatThreat.field_60
 member-unverified CommandTableEntry.pad24
 member-unverified CommandTableEntry.unk21
@@ -41705,7 +41661,7 @@ member-unverified Console.showAchievementWarning
 member-unverified ConsoleData.refHandle
 member-unverified ConsoleData.type
 member-unverified ContainerMenu.field_B9
-member ContainerMenu.field_BA b9
+member-unverified ContainerMenu.field_BA
 member-missing ContentMenu.__vftable
 member-missing ContentMenu.field_100
 member-missing ContentMenu.field_108
@@ -41857,7 +41813,6 @@ member Explosion.field_F8 f0
 member Explosion.refScale 90
 member-unverified ExtraAliasInstanceArray.capacity
 member-unverified ExtraPackageStartLocation.field_8
-member-unverified ExtraStartingPosition.field_20
 member-unverified ExtraStartingPosition.field_8
 member-missing FilterSideBar.__vftable
 member-missing FilterSideBar.field_10
@@ -41950,6 +41905,8 @@ member FrameState.cameraMatrices a8
 member FrameState.decreaseRequested 11d
 member FrameState.dynamicResolutionLock 118
 member FrameState.dynamicWidthRatio 104
+member FrameState.frameCounter 4c
+member FrameState.frameStarted 50
 member FrameState.increaseRequested 11c
 member FrameState.jitterIndex c0
 member FrameState.manualRatio 11e
@@ -42413,7 +42370,7 @@ member LockpickingMenu.field_11C 108
 member LockpickingMenu.field_120 10c
 member LockpickingMenu.field_122 10e
 member-unverified LockpickingMenu.field_E8
-member LockpickingMenu.field_F0 e8
+member-unverified LockpickingMenu.field_F0
 member-unverified LockpickingMenu.field_F4
 member-unverified LockpickingMenu.field_F6
 member-unverified LockpickingMenu.field_F8
@@ -42752,11 +42709,7 @@ member-missing MotionGestureEvent.unk2C
 member-missing MotionGestureEvent.unk30
 member-missing MotionGestureEvent.unk34
 member-unverified MouseMoveEvent.idCode
-member-unverified MovementHandlerArbiter.field_2C
-member-unverified MovementPathManagerAgentStaticAvoider.field_B8
 member-unverified MovementTweenerArbiter.field_BC
-member MultiBoundMarkerData.field_8 0
-member NavMeshSearchClosePoint.field_178 1b8
 member-unverified NavMeshSearchClosePoint.field_180
 member-unverified NavMeshSearchClosePoint.field_18C
 member-unverified NavMeshSearchClosePoint.field_194
@@ -42765,74 +42718,47 @@ member-unverified NavMeshSearchClosePoint.field_1A4
 member-unverified NavMeshSearchClosePoint.field_1AC
 member-unverified NavMeshSearchFlee.field_178
 member-unverified NavMeshSearchFlee.field_180
-member NavMeshSearchHide.field_170 1a0
 member-unverified NavMeshSearchHide.field_178
 member-unverified NavMeshSearchHide.field_190
 member-unverified NavMeshSearchHide.field_198
-member NavMeshSearchHide.field_1C8 1d8
 member-unverified NavMeshSearchHide.field_1D0
-member NavMeshSearchHide.field_1D8 1e0
 member-unverified NavMeshSearchHide.field_1E0
 member-unverified NavMeshSearchHide.field_1E8
 member-unverified NavMeshSearchHide.field_1F0
 member-unverified NavMeshSearchHide.field_200
-member NavMeshSearchLOS.field_178 188
 member-unverified NavMeshSearchLOS.field_180
 member-unverified NavMeshSearchLOS.field_1A8
 member-unverified NavMeshSearchLOS.field_1B0
-member NavMeshSearchMaxCost.field_170 1a0
 member-unverified NavMeshSearchMaxCost.field_178
 member-unverified NavMeshSearchMaxCost.field_190
 member-unverified NavMeshSearchMaxCost.field_198
-member NavMeshSearchMultipleGoals.field_170 1a0
 member-unverified NavMeshSearchMultipleGoals.field_178
 member-unverified NavMeshSearchMultipleGoals.field_190
 member-unverified NavMeshSearchMultipleGoals.field_198
-member NavMeshSearchSLPoint.field_170 1a0
 member-unverified NavMeshSearchSLPoint.field_178
 member-unverified NavMeshSearchSLPoint.field_190
 member-unverified NavMeshSearchSLPoint.field_198
 member-unverified NiAlphaProperty.alphaTestRef
-member-unverified NiBoxBV.field_38
 member-unverified NiCamera.padding0C
 member-unverified NiCamera.padding10A
 member-unverified NiCamera.padding169
 member-unverified NiCamera.padding2C
 member-unverified NiCamera.padding3C
-member-unverified NiCollisionData.field_28
 member-unverified NiColorA.a
 member-unverified NiColorA.g
 member-unverified NiFrustum.padding19
 member-unverified NiOBBLeaf.field_14
-member-unverified NiOBBLeaf.field_1C
-member-unverified NiOBBLeaf.field_24
-member-unverified NiOBBLeaf.field_2C
-member-unverified NiOBBLeaf.field_34
 member-unverified NiOBBLeaf.field_38
-member-unverified NiOBBLeaf.field_40
-member-unverified NiOBBLeaf.field_68
-member-unverified NiOBBLeaf.field_70
-member-unverified NiOBBLeaf.field_80
 member-unverified NiOBBNode.field_14
-member-unverified NiOBBNode.field_1C
-member-unverified NiOBBNode.field_24
-member-unverified NiOBBNode.field_2C
-member-unverified NiOBBNode.field_34
 member-unverified NiOBBNode.field_38
-member-unverified NiOBBNode.field_40
-member-unverified NiOBBNode.field_68
-member-unverified NiOBBNode.field_70
-member-unverified NiOBBNode.field_80
 member-unverified NiOBBRoot.field_4C
 member-unverified NiOBBRoot.field_54
-member NiPSysPlanarCollider.field_110 10c
 member-unverified NiPSysPlanarCollider.field_84
 member-unverified NiPSysPlanarCollider.field_88
 member-unverified NiPSysPlanarCollider.field_DC
 member-unverified NiSkinData.skinTransform
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
-member-unverified NiSwitchNode.m_NiTPrimitiveArray_138
 member-missing OfflineLoadOrder.__vftable
 member-missing OfflineLoadOrder.field_10
 member-missing OfflineLoadOrder.field_14
@@ -42880,7 +42806,6 @@ member-missing Options.field_C
 member-unverified OwnedCameraEffectController.pad0C
 member-unverified OwnedCameraEffectController.pad24
 member-unverified OwnedCameraEffectController.pad31
-member-unverified PathingRequestCover.field_134
 member-unverified PlayerCamera.pad_166
 member-unverified PlayerCamera.pad_31
 member-unverified PlayerCamera.pad_39
@@ -43275,9 +43200,6 @@ member-missing SearchResultsPage.field_C
 member-missing SearchResultsPage.field_C0
 member-unverified ShadowSceneNode.field_2CC
 member-unverified ShadowSceneNode.field_2D4
-member ShadowSceneNode.field_2DC 0
-member-unverified ShadowSceneNode.field_2E8
-member-unverified ShadowSceneNode.field_2F0
 member-unverified ShadowSceneNode.geometryQueueLock
 member-unverified ShadowSceneNode.lightQueueLock
 member-missing SideBar.__vftable
@@ -43440,7 +43362,6 @@ member SkyrimVM.m_Profiler_5A0 590
 member SkyrimVM.m_SavePatcher_680 670
 member SkyrimVM.m_SimpleAllocMemoryPagePolicy_228 218
 member SkyrimVM.source_SkyrimScript_StatsEvent 1a8
-member-unverified StatsMenu.field_1E0
 member-unverified StatsMenu.field_210
 member-unverified StatsMenu.field_218
 member-unverified StatsMenu.field_220
@@ -43448,7 +43369,6 @@ member-unverified StatsMenu.field_228
 member-unverified StatsMenu.field_230
 member-unverified StatsMenu.field_238
 member-unverified StatsMenu.field_250
-member StatsMenu.field_258 280
 member-unverified StatsMenu.field_26C
 member-unverified StatsMenu.field_274
 member-unverified StatsMenu.field_27C
@@ -43484,8 +43404,6 @@ member-missing StorageSpaceBar.field_B0
 member-missing StorageSpaceBar.field_B8
 member-missing StorageSpaceBar.field_C
 member-missing StorageSpaceBar.field_D0
-member-unverified SummonCreatureEffect.field_A0
-member-unverified SummonPlacementEffect.field_70
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.__vftable
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_10
 member-missing SynchronizedQueue<TextureCreator::createTask*___ptr64>.field_18
@@ -43528,7 +43446,6 @@ member-unverified TESContainer.field_14
 member-missing TESDataHandler.selectedFiles
 member-unverified TESEditorIDMap.free
 member-unverified TESEditorIDMap.freeScan
-member-unverified TESEffectShader.field_C4
 member-unverified TESEnterBleedoutEvent.actor
 member-unverified TESFile.version
 member-unverified TESFlora.field_50
@@ -43568,7 +43485,6 @@ member TESObjectCELL.field_E8 e0
 member-unverified TESObjectCONT.field_44
 member-unverified TESObjectCONT.field_68
 member-unverified TESObjectDOOR.field_50
-member-unverified TESObjectDOOR.field_B0
 member-unverified TESObjectLIGH.field_50
 member-unverified TESObjectMISC.field_50
 member TESObjectREFR.field_90 88
@@ -43588,13 +43504,6 @@ member-unverified TESQuestStartStopEvent.started
 member-unverified TESRace.field_170
 member-unverified TESRace.field_180
 member-unverified TESSoulGem.field_50
-member TESTopicInfo.field_44 0
-member-unverified TESWaterForm.field_44
-member-unverified TESWaterForm.field_4C
-member-unverified TESWaterForm.field_54
-member-unverified TESWaterForm.field_5C
-member-unverified TESWaterForm.field_64
-member-unverified TESWaterForm.field_6C
 member-missing TagField.__vftable
 member-missing TagField.field_10
 member-missing TagField.field_14
@@ -45050,34 +44959,14 @@ slot-unverified AttackBlockHandler[0].8
 slot-unverified AutoMoveHandler[0].4
 slot-unverified AutoMoveHandler[0].5
 slot AutoMoveHandler[0].6 4
-slot-missing AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_>[0].1
-slot-missing AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_>[0].2
-slot-unverified AutoRegisterCombatObject<CombatMagicCasterReanimate>[0].1
-slot-unverified AutoRegisterCombatObject<CombatMagicCasterReanimate>[0].2
-slot-missing AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-missing AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].2
-slot-unverified AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-unverified AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].2
-slot-missing AutoRegisterCreator<MovementMessageFreezeDirection,BSTSmartPointerPathingFactoryManager<MovementMessage,64>_>[0].0
-slot-missing AutoRegisterFactory<BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-missing AutoRegisterFactory<BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].2
-slot-unverified AutoRegisterFactory<BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-unverified AutoRegisterFactory<BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].2
 slot-missing BNetUnavailable::ModsNotMountedCallback[0].0
 slot-missing BNetUnavailable::ModsNotMountedCallback[0].1
 slot-missing BNetUnavailable::OpenConnectingToNetworkCallback[0].0
 slot-missing BNetUnavailable::OpenConnectingToNetworkCallback[0].1
 slot-missing BNetUnavailable::OpenMarketplaceCallback[0].0
 slot-missing BNetUnavailable::OpenMarketplaceCallback[0].1
-slot-unverified BSBoneMap[0].0
-slot-missing BSDistantObjectLargeRefExtraData[0].0
 slot-unverified BSGamerProfile[0].6
 slot-unverified BSGamerProfile[0].7
-slot-missing BSMultiBoundShape[0].0
-slot-missing BSOcclusionBox[0].0
-slot-missing BSPSysArrayEmitter[0].0
-slot-unverified BSParentVelocityModifier[0].27
-slot-unverified BSParticleSystemManager[0].17
 slot-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>[0].1
 slot-unverified BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64)>_>[0].2
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].0
@@ -45182,10 +45071,6 @@ slot-missing BSPlatform::BSUserContentSearcherAgent[0].c
 slot-missing BSPlatform::BSUserContentSearcherAgent[0].d
 slot-missing BSPlatform::BSUserContentSearcherAgent[0].e
 slot-missing BSPlatform::BSUserContentSearcherAgent[0].f
-slot-missing BSPortalGraphEntry[0].0
-slot-unverified BSReference[0].0
-slot-missing BSResource::EntryDB<BSModelDB::DBTraits>[0].5
-slot-missing BSResource::EntryDB<ScaleformFile::DBTraits>[0].5
 slot-missing BSResource::_anon_5F811FAA::LooseFileAsyncStream[0].0
 slot-missing BSResource::_anon_5F811FAA::LooseFileAsyncStream[30].0
 slot-unverified BSSaveDataSystemUtility[0].5
@@ -45277,13 +45162,6 @@ slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>[0].14
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>[0].15
 slot-missing BSScript::NativeFunction1<BSScript::StaticFunctionTag,int,unsigned_int>[0].16
-slot-missing BSSegmentedTriShape[0].0
-slot-missing BSSegmentedTriShape[0].17
-slot-missing BSSegmentedTriShape[0].34
-slot-missing BSSubIndexLandTriShape[0].34
-slot-missing BSSubIndexTriShape[0].0
-slot-missing BSSubIndexTriShape[0].17
-slot-missing BSSubIndexTriShape[0].34
 slot-unverified BSSystemUtility[0].2
 slot BSSystemUtility[0].3 2
 slot BSSystemUtility[0].4 3
@@ -45302,11 +45180,6 @@ slot BSSystemUtility[0].10 f
 slot BSSystemUtility[0].11 10
 slot-unverified BSSystemUtility[0].12
 slot BSSystemUtility[0].13 11
-slot-missing BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>[0].1
-slot-missing BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>[0].2
-slot-unverified BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>[0].1
-slot-unverified BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>[0].2
-slot-missing BSTDerivedCreator<MovementMessageFreezeDirection,MovementMessage>[0].0
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].0
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].1
 slot-missing BSTEventSink<TESAmiiboTouchEvent>[0].0
@@ -45315,7 +45188,6 @@ slot-unverified BSTextureDB::QueuedHandles[0].0
 slot-unverified BSTextureDB::QueuedHandles[38].0
 slot-unverified BSWin32GamerProfile[0].6
 slot-unverified BSWin32GamerProfile[0].7
-slot-missing BSWin32MouseDevice[0].0
 slot-unverified BSWin32SaveDataSystemUtility[0].5
 slot-unverified BSWin32SaveDataSystemUtility[0].6
 slot-unverified BSWin32SaveDataSystemUtility[0].7
@@ -45353,7 +45225,6 @@ slot BSWin32SystemUtility[0].10 f
 slot BSWin32SystemUtility[0].11 10
 slot-unverified BSWin32SystemUtility[0].12
 slot BSWin32SystemUtility[0].13 11
-slot-missing BSXFlags[0].0
 slot-missing BaseExtraList[0].0
 slot-unverified BleedoutCameraState[20].4
 slot-unverified BleedoutCameraState[20].5
@@ -45472,7 +45343,6 @@ slot FirstPersonState[20].6 4
 slot-unverified FreeCameraState[20].4
 slot-unverified FreeCameraState[20].5
 slot FreeCameraState[20].6 4
-slot-missing FxDelegate[0].0
 slot-missing FxResponseArgs<15>[0].0
 slot-missing FxResponseArgs<15>[0].1
 slot-unverified GRefCountBaseStatImpl<GRefCountImpl,2>[0].0
@@ -45854,31 +45724,18 @@ slot-missing MovementHandler[0].2
 slot MovementHandler[0].4 2
 slot-unverified MovementHandler[0].5
 slot MovementHandler[0].6 4
-slot-missing NiAccumulator[0].0
-slot-missing NiAmbientLight[0].0
-slot-missing NiBSplineFloatInterpolator[0].0
-slot-missing NiBooleanExtraData[0].0
-slot-missing NiCollisionData[0].2a
-slot-missing NiDefaultAVObjectPalette[0].17
-slot-missing NiGeometry[0].0
-slot-missing NiIntegerExtraData[0].0
 slot-unverified NiPSysRadialFieldModifier[0].25
 slot-missing NiPick::Results[0].0
-slot-unverified NiSkinPartition[0].0
-slot-missing NiSwitchNode[0].0
 slot-missing NiTMap<unsigned_long,BSNiUpdateTracker*___ptr64>[0].6
 slot-missing NiTPointerMap<NiNode*___ptr64,unsigned_int>[0].6
 slot-missing NiTPointerMap<NiObject_const*___ptr64,unsigned_int>[0].6
 slot-unverified NiTPointerMap<unsigned_int,bool>[0].6
-slot-missing NiTimeController[0].0
-slot-unverified NoRTTI_1A27E60[0].0
 slot-missing NoRTTI_1A3EBD8[0].0
 slot-missing NoRTTI_1A3EBD8[0].1
 slot-missing NoRTTI_1A3FBD0[0].0
 slot-missing NoRTTI_1A3FBD0[0].1
 slot-missing NoRTTI_1A3FBD0[0].2
 slot-missing NoRTTI_1A3FBE8[0].0
-slot-missing NoRTTI_1A3FD58[0].0
 slot-missing NoRTTI_1AE63E8[0].0
 slot-missing NoRTTI_1AE63E8[0].1
 slot-missing NoRTTI_1AE63E8[0].2
@@ -48640,7 +48497,6 @@ slot-missing Options[0].11
 slot-missing Options[0].12
 slot-missing Options[0].13
 slot-missing Options[0].14
-slot-missing PArrayPoint[0].0
 slot-missing PlayerCharacter[2d8].0
 slot-missing PlayerCharacter[2d8].1
 slot-unverified PlayerInputHandler[0].4
@@ -49313,11 +49169,6 @@ slot-missing _anon_025735F6::AmiiboTouchArguments[0].0
 slot-missing _anon_025735F6::AmiiboTouchArguments[0].1
 slot-missing _anon_1613A816::ConsoleHotkeyManager[0].0
 slot-missing _anon_1613A816::ConsoleHotkeyManager[0].1
-slot-unverified _anon_3B91968A::BSScaleformAllocatorPaged[0].0
-slot-unverified _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate>[0].1
-slot-unverified _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate>[0].2
-slot-missing _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterTargetEffect>[10].1
-slot-missing _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterTargetEffect>[10].2
 slot-missing `public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback[0].0
 slot-missing `public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback[0].1
 slot-missing `public:_static_void___cdecl_MarketplaceMenu::Start(MarketplaceMenu::MarketplaceMode)'::__l8::doNothingCallback[0].0
@@ -50489,7 +50340,6 @@ slot-missing doDownloads::waitingCallback[0].0
 slot-missing doDownloads::waitingCallback[0].1
 slot-missing downloadConfirmResetCallback[0].0
 slot-missing downloadConfirmResetCallback[0].1
-slot-unverified hkConstraintChainCinfo[0].0
 slot-missing noCreationsDownloadedCallback[0].0
 slot-missing noCreationsDownloadedCallback[0].1
 slot-missing std::_Func_impl_no_alloc<<lambda_011e18ed6303dee988fa3bd3cbcd3f6c>,void,BSPlatform::BNetResult,unsigned___int64,BSTArray<BSPlatform::BSUserContent,BSTArrayHeapAllocator>_const&___ptr64>[0].0

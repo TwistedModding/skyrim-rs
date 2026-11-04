@@ -953,8 +953,7 @@ impl BSRangeNode_vtable {
 #[repr(C)]
 pub struct BSReference_vtable {
     /// `BSReference::vdtor` at 0xfd2a10 (layout_inference, medium); signature (low): `BSReference * vdtor(BSReference * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSReference::vfunc_2` at 0xfd2b10 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -1406,8 +1405,7 @@ pub struct BSResource__EntryDB_BSModelDB__DBTraits_vtable {
     /// `BSResource::EntryDB<BSModelDB::DBTraits>::vfunc_4` at 0xfcafa0 (rtti, high); signature (low): `undefined vfunc_4(EntryDB<BSModelDB::DBTraits> * this, uint param_1, uint param_2)`
     pub slot_4: *const c_void,
     /// `BSResource::EntryDB<BSModelDB::DBTraits>::vfunc_5` at 0xfcb470 (rtti, high); signature (low): `undefined8 vfunc_5(EntryDB<BSModelDB::DBTraits> * this, ulonglong * param_1, longlong * param_2, undefined8 * param_3)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
+    pub slot_5: *const c_void,
 }
 impl BSResource__EntryDB_BSModelDB__DBTraits_vtable {
     pub const ID: u64 = 238155;
@@ -1487,8 +1485,7 @@ pub struct BSResource__EntryDB_ScaleformFile__DBTraits_vtable {
     /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vfunc_4` at 0x1176520 (rtti, high); signature (low): `undefined vfunc_4(EntryDB<ScaleformFile::DBTraits> * this, uint param_1, uint param_2)`
     pub slot_4: *const c_void,
     /// `BSResource::EntryDB<ScaleformFile::DBTraits>::vfunc_5` at 0x1177280 (rtti, high); signature (low): `undefined8 vfunc_5(EntryDB<ScaleformFile::DBTraits> * this, ulonglong * param_1, longlong * param_2, undefined8 * param_3)`
-    #[doc(hidden)]
-    pub __slot_5: *const c_void,
+    pub slot_5: *const c_void,
 }
 impl BSResource__EntryDB_ScaleformFile__DBTraits_vtable {
     pub const ID: u64 = 242093;

@@ -3301,8 +3301,7 @@ pub struct TESObjectDOOR {
     /// +0xA8 `undefined8`, ctor store
     pub field_A8: u64,
     /// +0xB0 `undefined1`, ctor store
-    #[doc(hidden)]
-    pub __field_B0: [u8; 1],
+    pub field_B0: u8,
     unknown_B1: [u8; 31],
     #[doc(hidden)]
     pub __engine: crate::Engine,
@@ -3331,7 +3330,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, __vftable_88) == 0x88
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_98) == 0x98);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_A0) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_A8) == 0xA8);
-const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, __field_B0) == 0xB0);
+const _: () = assert!(core::mem::offset_of!(TESObjectDOOR, field_B0) == 0xB0);
 
 /// `TESObjectLAND`: size 0x48 (exact, medium); primary base `TESForm`.
 /// Evidence: runtime: 0x48 at 1 allocation sites; static allocation size 0x768 was wrong.

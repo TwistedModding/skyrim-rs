@@ -100,8 +100,12 @@ impl Frame {
 /// game creates its swap chain as `R8G8B8A8_UNORM` and keeps it on a resize (RE `camera.md` IC8 N),
 /// so any other format means something replaced the swap chain and is refused.
 pub fn read_back() -> Result<Frame, String> {
-    let rtv = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null()).ok_or("no back buffer")?;
-    read_target(rtv)
+    read_target(back_buffer_view().ok_or("no back buffer")?)
+}
+
+/// The render target view of the game window's back buffer.
+pub(crate) fn back_buffer_view() -> Option<*mut core::ffi::c_void> {
+    Some(skyrim::render::game_window().backBufferRTV).filter(|p| !p.is_null())
 }
 
 fn read_target(rtv: *mut core::ffi::c_void) -> Result<Frame, String> {

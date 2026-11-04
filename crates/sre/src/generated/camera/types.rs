@@ -5650,8 +5650,7 @@ pub struct ThirdPersonState {
     /// +0x4C `class:NiQuaternion`, semantic; NiQuaternion (w, x, y, z) camera rotation (GetRotation) (high); retyped undefined1 -> class:NiQuaternion: GetRotation 0x8fd870 copies 16 bytes into NiQuaternion* out; meaning (w, x, y, z)
     pub rotation: crate::NiQuaternion,
     /// +0x5C `class:NiPoint3`, ctor store (widths [4, 8]), semantic, runtime; NiPoint3 shoulder offset (x right, y forward, z up) the camera dollies to (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3 (x right, y forward, z up)
-    #[doc(hidden)]
-    pub __targetOffset: [u8; 12],
+    pub targetOffset: crate::NiPoint3,
     /// +0x68 `class:NiPoint3`, ctor store, semantic, runtime; NiPoint3 offset applied this frame (high); retyped undefined1 -> class:NiPoint3: meaning: NiPoint3
     pub currentOffset: crate::NiPoint3,
     /// +0x74 `float`, ctor store, semantic, runtime; zoom the camera moves to, in [fMinCurrentZoom, 1] (medium)
@@ -5720,7 +5719,7 @@ const _: () = assert!(core::mem::offset_of!(ThirdPersonState, cam3Node) == 0x30)
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, cameraControlNode) == 0x38);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, position) == 0x40);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, rotation) == 0x4C);
-const _: () = assert!(core::mem::offset_of!(ThirdPersonState, __targetOffset) == 0x5C);
+const _: () = assert!(core::mem::offset_of!(ThirdPersonState, targetOffset) == 0x5C);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, currentOffset) == 0x68);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, targetZoom) == 0x74);
 const _: () = assert!(core::mem::offset_of!(ThirdPersonState, currentZoom) == 0x78);

@@ -3015,8 +3015,7 @@ impl BSSearchPath_vtable {
 #[repr(C)]
 pub struct BSSegmentedTriShape_vtable {
     /// `BSSegmentedTriShape::vdtor` at 0xf1e490 (layout_inference, medium); signature (low): `BSSegmentedTriShape * vdtor(BSSegmentedTriShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSSegmentedTriShape::vfunc_2` at 0xf1e520 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -3062,8 +3061,7 @@ pub struct BSSegmentedTriShape_vtable {
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
     /// `BSSegmentedTriShape::vfunc_23` at 0xf1d700 (rtti, high); signature (low): `NiTriShape * vfunc_23(BSSegmentedTriShape * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_23: *const c_void,
+    pub slot_23: *const c_void,
     /// `BSSegmentedTriShape::vfunc_24` at 0xf1da70 (rtti, high); signature (low): `undefined vfunc_24(BSSegmentedTriShape * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_24: *const c_void,
     /// `BSSegmentedTriShape::vfunc_25` at 0xf1dc90 (rtti, high); signature (untiered): `undefined vfunc_25(BSSegmentedTriShape * this, longlong param_1)`
@@ -3121,8 +3119,7 @@ pub struct BSSegmentedTriShape_vtable {
     /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSegmentedTriShape::vfunc_52` at 0xf1e320 (rtti, high); signature (high): `undefined vfunc_52(BSSegmentedTriShape * this)`
-    #[doc(hidden)]
-    pub __slot_52: *const c_void,
+    pub slot_52: *const c_void,
     /// `NiGeometry::vfunc_53` at 0xf0cbe0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
     /// `NiTriBasedGeom::vfunc_54` at 0xf1f3f0 (rtti, medium); signature (high): `undefined2 vfunc_54(NiTriBasedGeom * this)`
@@ -5237,8 +5234,7 @@ pub struct BSSubIndexLandTriShape_vtable {
     /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSubIndexTriShape::vfunc_52` at 0xff6990 (rtti, medium); signature (low): `undefined vfunc_52(BSSubIndexTriShape * this, longlong * param_1, undefined8 param_2)`
-    #[doc(hidden)]
-    pub __slot_52: *const c_void,
+    pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
     /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
@@ -5254,8 +5250,7 @@ impl BSSubIndexLandTriShape_vtable {
 #[repr(C)]
 pub struct BSSubIndexTriShape_vtable {
     /// `BSSubIndexTriShape::vdtor` at 0xff6b10 (layout_inference, medium); signature (low): `BSSubIndexTriShape * vdtor(BSSubIndexTriShape * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSSubIndexTriShape::vfunc_2` at 0xff6ba0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -5301,8 +5296,7 @@ pub struct BSSubIndexTriShape_vtable {
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
     /// `BSSubIndexTriShape::vfunc_23` at 0xff5d10 (rtti, high); signature (low): `BSTriShape * vfunc_23(BSSubIndexTriShape * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_23: *const c_void,
+    pub slot_23: *const c_void,
     /// `BSSubIndexTriShape::vfunc_24` at 0xff60a0 (rtti, medium); signature (low): `undefined vfunc_24(BSSubIndexTriShape * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_24: *const c_void,
     /// `BSSubIndexTriShape::vfunc_25` at 0xff6310 (rtti, medium); signature (untiered): `undefined vfunc_25(BSSubIndexTriShape * this, longlong param_1)`
@@ -5360,8 +5354,7 @@ pub struct BSSubIndexTriShape_vtable {
     /// `NiAVObject::UpdateUpwardPass` at 0xee0ed0 (semantic, high); signature (untiered): `undefined UpdateUpwardPass(NiAVObject * this)`
     pub slot_51: *const c_void,
     /// `BSSubIndexTriShape::vfunc_52` at 0xff6990 (rtti, medium); signature (low): `undefined vfunc_52(BSSubIndexTriShape * this, longlong * param_1, undefined8 param_2)`
-    #[doc(hidden)]
-    pub __slot_52: *const c_void,
+    pub slot_52: *const c_void,
     /// `BSGeometry::vfunc_53` at 0x26d4b0 (rtti, medium); signature (low): `undefined8 vfunc_53(void)`
     pub slot_53: *const c_void,
     /// `BSGeometry::Slot54ReturnsNull` at 0x26d4c0 (semantic, low); signature (untiered): `undefined8 Slot54ReturnsNull(void)`
@@ -9510,11 +9503,9 @@ pub struct BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vdtor` at 0x84a490 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * vdtor(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl BSTDerivedCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect_CombatObject_vtable {
     pub const ID: u64 = 211831;
@@ -9932,11 +9923,9 @@ pub struct BSTDerivedCreator_CombatMagicCasterReanimate_CombatObject_vtable {
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vdtor` at 0x830330 (layout_inference, medium); signature (low): `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * vdtor(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl BSTDerivedCreator_CombatMagicCasterReanimate_CombatObject_vtable {
     pub const ID: u64 = 536607;

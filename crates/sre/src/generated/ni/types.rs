@@ -10114,14 +10114,14 @@ const _: () = assert!(core::mem::offset_of!(NiStringsExtraData, field_20) == 0x2
 /// `NiSwitchNode`: size 0x150 (exact, high); primary base `NiNode`.
 /// Evidence: runtime: 0x150 at 2 allocation sites; agrees with the static allocation sites.
 /// Bases: `NiNode`@0x0, `NiAVObject`@0x0, `NiObjectNET`@0x0, `NiObject`@0x0, `NiRefObject`@0x0.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct NiSwitchNode {
     /// +0x0 `vtbl:NiSwitchNode:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::NiSwitchNode_vtable,
     /// +0x8 `undefined4`, base NiObject
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `class:BSFixedString`, base NiObjectNET, semantic; node name; a pooled string, compared by pointer (high)
     pub name: crate::BSFixedString,
     /// +0x18 `ptr:NiTimeController`, base NiObjectNET, semantic; head of the controller list (refcounted); the next controller is at controller+0x40 (high)
@@ -10132,12 +10132,12 @@ pub struct NiSwitchNode {
     pub extraDataCount: u16,
     /// +0x2A `undefined2`, base NiObjectNET, semantic; allocated slots of the extra data array (high)
     pub extraDataCapacity: u16,
-    unknown_2C: [u8; 4],
+    pub unknown_2C: [u8; 4],
     /// +0x30 `ptr:NiNode`, base NiAVObject, semantic; the parent node (medium)
     pub parent: *mut crate::NiNode,
     /// +0x38 `undefined4`, base NiAVObject, semantic; index of this object in its parent's children array, -1 when detached (high)
     pub parentIndex: u32,
-    unknown_3C: [u8; 4],
+    pub unknown_3C: [u8; 4],
     /// +0x40 `ptr:NiCollisionObject`, base NiAVObject, semantic; physics object of this node (refcounted); when set it, not the parent, produces the world transform (high)
     pub collisionObject: *mut crate::NiCollisionObject,
     /// +0x48 `class:NiTransform`, base NiAVObject, semantic; local transform: rotation 3x3 floats +0x48, translation +0x6c, scale +0x78 (high); retyped undefined1 -> class:NiTransform: meaning: rotation +0x48, translation +0x6c, scale +0x78; ApplyPoseToBoneNodes 0xbdfa20 writes rotation at +0x48 and translation at +0x6c; SetRotationFromQuaternion 0x221bd0 writes +0x48..+0x68
@@ -10160,12 +10160,12 @@ pub struct NiSwitchNode {
     pub unknown108: u8,
     /// +0x109 `undefined1`, base NiAVObject, semantic; second flag byte: bit 6 forces a previousWorld reset on the next UpdateWorldData; bit 0 switches the BSFadeNode fade path; bit 1 set by InitFadeNodeFields (medium)
     pub flags2: u8,
-    unknown_10A: [u8; 6],
+    pub unknown_10A: [u8; 6],
     /// +0x110 `undefined1`, base NiNode, semantic; NiTObjectArray<NiPointer<NiAVObject>>: vtable +0x110, data +0x118, capacity u16 +0x120, slots in use u16 +0x122, non-null count u16 +0x124, grow step u16 +0x126 (high)
     pub children: [u8; 24],
     /// +0x128 `undefined2`, ctor store
     pub field_128: u16,
-    unknown_12A: [u8; 2],
+    pub unknown_12A: [u8; 2],
     /// +0x12C `undefined4`, ctor store
     pub field_12C: u32,
     /// +0x130 `undefined4`, ctor store
@@ -10173,8 +10173,7 @@ pub struct NiSwitchNode {
     /// +0x134 `undefined4`, ctor store
     pub field_134: u32,
     /// +0x138 `undefined8`, member ctor NiTPrimitiveArray<unsigned_int>
-    #[doc(hidden)]
-    pub __m_NiTPrimitiveArray_138: [u8; 8],
+    pub m_NiTPrimitiveArray_138: u64,
     /// +0x140 `undefined8`, member ctor NiTArray<unsigned_int,NiTMallocInterface<unsigned_int>_>
     pub m_NiTArray_140: u64,
     /// +0x148 `undefined4`, ctor store
@@ -10210,7 +10209,7 @@ const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_128) == 0x128);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_12C) == 0x12C);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_130) == 0x130);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_134) == 0x134);
-const _: () = assert!(core::mem::offset_of!(NiSwitchNode, __m_NiTPrimitiveArray_138) == 0x138);
+const _: () = assert!(core::mem::offset_of!(NiSwitchNode, m_NiTPrimitiveArray_138) == 0x138);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, m_NiTArray_140) == 0x140);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_148) == 0x148);
 const _: () = assert!(core::mem::offset_of!(NiSwitchNode, field_14C) == 0x14C);

@@ -4165,8 +4165,7 @@ impl hkClassNameRegistry_vtable {
 #[repr(C)]
 pub struct hkConstraintChainCinfo_vtable {
     /// `hkConstraintChainCinfo::vdtor` at 0x10b7000 (slot_propagation, medium); signature (low): `hkConstraintChainCinfo * vdtor(hkConstraintChainCinfo * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `hkConstraintCinfo::vfunc_1` at 0x10910a0 (rtti, medium); signature (low): `undefined vfunc_1(hkConstraintCinfo * this, undefined8 * param_1)`
     pub slot_1: *const c_void,
     /// `hkConstraintChainCinfo::vfunc_2` at 0x10ecb50 (rtti, high); signature (low): `undefined vfunc_2(hkConstraintChainCinfo * this, longlong param_1)`

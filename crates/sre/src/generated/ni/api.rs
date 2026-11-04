@@ -3714,19 +3714,6 @@ impl crate::NiStream {
     pub fn field_234_ptr(&self) -> *mut u32 { Self::__member_field_234(core::ptr::from_ref(self)) }
 }
 
-impl crate::NiSwitchNode {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_NiTPrimitiveArray_138(this: *const Self) -> *mut u64 { unsafe { member!(this, "NiSwitchNode.m_NiTPrimitiveArray_138", 0x138, u64) } }
-    /// `NiSwitchNode::m_NiTPrimitiveArray_138`, at +0x138 on 1.7.104.
-    #[inline]
-    pub fn m_NiTPrimitiveArray_138(&self) -> u64 { unsafe { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_NiTPrimitiveArray_138(&mut self, value: u64) { unsafe { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_NiTPrimitiveArray_138_ptr(&self) -> *mut u64 { Self::__member_m_NiTPrimitiveArray_138(core::ptr::from_ref(self)) }
-}
-
 impl crate::NiSwitchStringExtraData {
     #[doc(hidden)]
     #[inline]

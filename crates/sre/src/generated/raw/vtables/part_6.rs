@@ -8601,8 +8601,7 @@ impl BSMultiBoundRoom_vtable {
 #[repr(C)]
 pub struct BSMultiBoundShape_vtable {
     /// `BSMultiBoundShape::vdtor` at 0xfe5140 (layout_inference, medium); signature (low): `BSMultiBoundShape * vdtor(BSMultiBoundShape * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSMultiBoundShape::vfunc_2` at 0xfe5180 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -9942,8 +9941,7 @@ impl BSOStream_vtable {
 #[repr(C)]
 pub struct BSOcclusionBox_vtable {
     /// `BSOcclusionBox::vdtor` at 0xfe82b0 (layout_inference, medium); signature (low): `BSOcclusionBox * vdtor(BSOcclusionBox * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSOcclusionBox::vfunc_2` at 0xfe8320 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -10538,8 +10536,7 @@ impl BSPCOrbisGamepadDevice_vtable {
 #[repr(C)]
 pub struct BSPSysArrayEmitter_vtable {
     /// `BSPSysArrayEmitter::vdtor` at 0xfe1be0 (slot_propagation, medium); signature (low): `BSPSysArrayEmitter * vdtor(BSPSysArrayEmitter * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `BSPSysArrayEmitter::vfunc_2` at 0xfe1dd0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -11667,8 +11664,7 @@ pub struct BSParentVelocityModifier_vtable {
     /// `BSParentVelocityModifier::vfunc_38` at 0x1001e10 (rtti, high); signature (low): `undefined vfunc_38(BSParentVelocityModifier * this, longlong param_1, ushort param_2, longlong param_3)`
     pub slot_38: *const c_void,
     /// `BSParentVelocityModifier::vfunc_39` at 0x1001eb0 (rtti, high); signature (high): `undefined vfunc_39(BSParentVelocityModifier * this)`
-    #[doc(hidden)]
-    pub __slot_39: *const c_void,
+    pub slot_39: *const c_void,
     /// `NiPSysModifier::vfunc_40` at 0xf9d7b0 (rtti, medium); signature (low): `undefined vfunc_40(NiPSysModifier * this, undefined1 param_1)`
     pub slot_40: *const c_void,
     /// `NiPSysModifier::vfunc_41` at 0xfa11c0 (rtti, medium); signature (low): `undefined vfunc_41(NiPSysModifier * this, undefined8 param_1)`
@@ -12184,8 +12180,7 @@ pub struct BSParticleSystemManager_vtable {
     /// `NiObject::vfunc_22` at 0x1b4c60 (rtti, medium); signature (low): `undefined8 vfunc_22(void)`
     pub slot_22: *const c_void,
     /// `BSParticleSystemManager::vfunc_23` at 0xfef310 (rtti, high); signature (low): `NiNode * vfunc_23(BSParticleSystemManager * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_23: *const c_void,
+    pub slot_23: *const c_void,
     /// `NiNode::vfunc_24` at 0xee1560 (rtti, medium); signature (low): `undefined vfunc_24(NiNode * this, longlong param_1)`
     pub slot_24: *const c_void,
     /// `NiNode::vfunc_25` at 0xee15a0 (rtti, medium); signature (low): `undefined vfunc_25(NiNode * this, longlong param_1, undefined8 param_2, undefined8 param_3)`
@@ -13789,8 +13784,7 @@ impl BSPortalGraph_vtable {
 #[repr(C)]
 pub struct BSPortalGraphEntry_vtable {
     /// `BSPortalGraphEntry::vdtor` at 0xfdb1f0 (slot_propagation, medium); signature (low): `BSPortalGraphEntry * vdtor(BSPortalGraphEntry * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
 }

@@ -47,8 +47,7 @@ pub struct BSAnimationGraphEvent {
     /// +0x0 `class:BSFixedString`, semantic; the animation event name (high)
     pub tag: crate::BSFixedString,
     /// +0x8 `ptr:TESObjectREFR`, semantic; the reference whose graph raised the event (its IAnimationGraphManagerHolder is at +0x38) (high)
-    #[doc(hidden)]
-    pub __owner: [u8; 8],
+    pub owner: *mut crate::TESObjectREFR,
     /// +0x10 `class:BSFixedString`, semantic; the event's payload string (high)
     #[doc(hidden)]
     pub __payload: [u8; 8],
@@ -57,7 +56,7 @@ pub struct BSAnimationGraphEvent {
 }
 const _: () = assert!(size_of::<BSAnimationGraphEvent>() == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, tag) == 0x0);
-const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, __owner) == 0x8);
+const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, owner) == 0x8);
 const _: () = assert!(core::mem::offset_of!(BSAnimationGraphEvent, __payload) == 0x10);
 
 /// `BSFixedString`: size 0x8 (exact).

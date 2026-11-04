@@ -2780,19 +2780,6 @@ impl crate::BSSceneGraph {
     pub unsafe fn ctor(&self, namePrefix: *const c_char, isMenuScene: bool, camera: *mut crate::NiCamera) -> *mut Self { unsafe { function!(76746, (*const Self, *const c_char, bool, *mut crate::NiCamera) -> *mut Self)(core::ptr::from_ref(self), namePrefix, isMenuScene, camera) } }
 }
 
-impl crate::BSSegmentedTriShape {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_140(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSSegmentedTriShape.field_140", 0x140, u32) } }
-    /// `BSSegmentedTriShape::field_140`, at +0x140 on 1.7.104.
-    #[inline]
-    pub fn field_140(&self) -> u32 { unsafe { Self::__member_field_140(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_140(&mut self, value: u32) { unsafe { Self::__member_field_140(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_140_ptr(&self) -> *mut u32 { Self::__member_field_140(core::ptr::from_ref(self)) }
-}
-
 impl crate::BSSimpleScaleController {
     #[doc(hidden)]
     #[inline]
@@ -3698,32 +3685,6 @@ impl crate::BSStripPSysData {
     pub fn set_field_A0(&mut self, value: u32) { unsafe { Self::__member_field_A0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_A0_ptr(&self) -> *mut u32 { Self::__member_field_A0(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSSubIndexLandTriShape {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_168(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSSubIndexLandTriShape.field_168", 0x168, u32) } }
-    /// `BSSubIndexLandTriShape::field_168`, at +0x168 on 1.7.104.
-    #[inline]
-    pub fn field_168(&self) -> u32 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_168(&mut self, value: u32) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_168_ptr(&self) -> *mut u32 { Self::__member_field_168(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSSubIndexTriShape {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_168(this: *const Self) -> *mut u32 { unsafe { member!(this, "BSSubIndexTriShape.field_168", 0x168, u32) } }
-    /// `BSSubIndexTriShape::field_168`, at +0x168 on 1.7.104.
-    #[inline]
-    pub fn field_168(&self) -> u32 { unsafe { Self::__member_field_168(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_168(&mut self, value: u32) { unsafe { Self::__member_field_168(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_168_ptr(&self) -> *mut u32 { Self::__member_field_168(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSSynchronizedClipGenerator {

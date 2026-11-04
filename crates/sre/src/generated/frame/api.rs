@@ -726,6 +726,26 @@ impl crate::FrameState {
     pub fn dynamicWidthRatio_ptr(&self) -> *mut f32 { Self::__member_dynamicWidthRatio(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
+    pub fn __member_frameCounter(this: *const Self) -> *mut u32 { unsafe { member!(this, "FrameState.frameCounter", 0x54, u32) } }
+    /// `FrameState::frameCounter`, at +0x54 on 1.7.104.
+    #[inline]
+    pub fn frameCounter(&self) -> u32 { unsafe { Self::__member_frameCounter(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_frameCounter(&mut self, value: u32) { unsafe { Self::__member_frameCounter(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn frameCounter_ptr(&self) -> *mut u32 { Self::__member_frameCounter(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
+    pub fn __member_frameStarted(this: *const Self) -> *mut u8 { unsafe { member!(this, "FrameState.frameStarted", 0x60, u8) } }
+    /// `FrameState::frameStarted`, at +0x60 on 1.7.104.
+    #[inline]
+    pub fn frameStarted(&self) -> u8 { unsafe { Self::__member_frameStarted(core::ptr::from_ref(self)).read_unaligned() } }
+    #[inline]
+    pub fn set_frameStarted(&mut self, value: u8) { unsafe { Self::__member_frameStarted(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
+    #[inline]
+    pub fn frameStarted_ptr(&self) -> *mut u8 { Self::__member_frameStarted(core::ptr::from_ref(self)) }
+    #[doc(hidden)]
+    #[inline]
     pub fn __member_increaseRequested(this: *const Self) -> *mut u8 { unsafe { member!(this, "FrameState.increaseRequested", 0x12C, u8) } }
     /// `FrameState::increaseRequested`, at +0x12C on 1.7.104.
     #[inline]

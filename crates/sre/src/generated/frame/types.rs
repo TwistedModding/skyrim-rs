@@ -745,10 +745,12 @@ pub struct FrameState {
     pub jitter: [u8; 8],
     unknown_4C: [u8; 8],
     /// +0x54 `undefined4`, semantic; g_RenderFrameCounter, +1 per PresentFrame (high)
-    pub frameCounter: u32,
+    #[doc(hidden)]
+    pub __frameCounter: [u8; 4],
     unknown_58: [u8; 8],
     /// +0x60 `undefined1`, semantic; set at frame start, cleared by PresentFrame (medium)
-    pub frameStarted: u8,
+    #[doc(hidden)]
+    pub __frameStarted: [u8; 1],
     unknown_61: [u8; 87],
     /// +0xB8 `class:BSTArray`, semantic; BSTArray of CameraMatrixEntry (0x290 each): data +0xb8, capacity +0xc0, count +0xc8; keyed by camera and jitter flag (high)
     #[doc(hidden)]
@@ -794,8 +796,8 @@ const _: () = assert!(core::mem::offset_of!(FrameState, screenHeight) == 0x28);
 const _: () = assert!(core::mem::offset_of!(FrameState, backBufferWidth) == 0x2C);
 const _: () = assert!(core::mem::offset_of!(FrameState, backBufferHeight) == 0x30);
 const _: () = assert!(core::mem::offset_of!(FrameState, jitter) == 0x44);
-const _: () = assert!(core::mem::offset_of!(FrameState, frameCounter) == 0x54);
-const _: () = assert!(core::mem::offset_of!(FrameState, frameStarted) == 0x60);
+const _: () = assert!(core::mem::offset_of!(FrameState, __frameCounter) == 0x54);
+const _: () = assert!(core::mem::offset_of!(FrameState, __frameStarted) == 0x60);
 const _: () = assert!(core::mem::offset_of!(FrameState, __cameraMatrices) == 0xB8);
 const _: () = assert!(core::mem::offset_of!(FrameState, __jitterIndex) == 0xD0);
 const _: () = assert!(core::mem::offset_of!(FrameState, __dynamicWidthRatio) == 0x114);

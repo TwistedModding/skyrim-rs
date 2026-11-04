@@ -976,7 +976,6 @@ id-unverified 10803
 id-unverified 10804
 id-unverified 10805
 id-unverified 11423
-id-unverified 11436
 id-unverified 11574
 id-unverified 11585
 id-unverified 11588
@@ -1005,7 +1004,6 @@ id-unverified 13343
 id-unverified 13375
 id-unverified 13413
 id-unverified 13458
-id-unverified 13459
 id-unverified 13598
 id-unverified 13641
 id-unverified 13693
@@ -1059,7 +1057,6 @@ id-unverified 15521
 id-unverified 15522
 id-unverified 15678
 id-unverified 15679
-id-unverified 15706
 id-unverified 15840
 id-unverified 15841
 id-unverified 15944
@@ -1142,7 +1139,6 @@ id-unverified 19506
 id-unverified 19516
 id-unverified 19538
 id-unverified 19543
-id-unverified 19544
 id-unverified 19575
 id-unverified 19598
 id-unverified 19668
@@ -1649,7 +1645,6 @@ id-unverified 26127
 id-unverified 26186
 id-unverified 26397
 id-unverified 26400
-id-unverified 26401
 id-unverified 26410
 id-unverified 26503
 id-unverified 26557
@@ -1664,7 +1659,6 @@ id-unverified 27110
 id-unverified 27246
 id-unverified 27257
 id-unverified 27294
-id-unverified 27356
 id-unverified 27365
 id-unverified 28317
 id-unverified 28411
@@ -1714,14 +1708,12 @@ id-unverified 29934
 id-unverified 29938
 id-unverified 29939
 id-unverified 30044
-id-unverified 30068
 id-unverified 30069
 id-unverified 30072
 id-unverified 30073
 id-unverified 30106
 id-unverified 30112
 id-unverified 30169
-id-unverified 30174
 id-unverified 30175
 id-unverified 30268
 id-unverified 30433
@@ -1890,7 +1882,6 @@ id-unverified 35909
 id-unverified 35910
 id-unverified 35930
 id-unverified 35941
-id-unverified 35994
 id-unverified 36010
 id-unverified 36093
 id-unverified 36172
@@ -1908,7 +1899,6 @@ id-unverified 36564
 id-unverified 36567
 id-unverified 36589
 id-unverified 36601
-id-unverified 36629
 id-unverified 36630
 id-unverified 36631
 id-unverified 36632
@@ -2021,7 +2011,6 @@ id-unverified 38281
 id-unverified 38492
 id-unverified 38628
 id-unverified 38697
-id-unverified 38706
 id-unverified 38741
 id-unverified 38785
 id-unverified 38805
@@ -2077,7 +2066,6 @@ id-unverified 39671
 id-unverified 39676
 id-unverified 39690
 id-unverified 39695
-id-unverified 39748
 id-unverified 39762
 id-unverified 39798
 id-unverified 39861
@@ -2162,7 +2150,6 @@ id-unverified 40532
 id-unverified 40534
 id-unverified 40535
 id-unverified 40536
-id-unverified 40537
 id-unverified 40538
 id-unverified 40539
 id-unverified 40540
@@ -2174,7 +2161,6 @@ id-unverified 40546
 id-unverified 40547
 id-unverified 40548
 id-unverified 40549
-id-unverified 40551
 id-unverified 40552
 id-unverified 40553
 id-unverified 40554
@@ -2284,10 +2270,8 @@ id-unverified 40755
 id-unverified 40760
 id-unverified 40770
 id-unverified 40771
-id-unverified 40772
 id-unverified 40798
 id-unverified 40799
-id-unverified 40803
 id-unverified 40808
 id-unverified 40818
 id-unverified 40824
@@ -2299,7 +2283,6 @@ id-unverified 41024
 id-unverified 41076
 id-unverified 41130
 id-unverified 41131
-id-unverified 41136
 id-unverified 41233
 id-unverified 41234
 id-unverified 41235
@@ -2364,7 +2347,6 @@ id-unverified 42437
 id-unverified 42438
 id-unverified 42457
 id-unverified 42485
-id-unverified 42497
 id-unverified 42503
 id-unverified 42509
 id-unverified 42538
@@ -2412,7 +2394,6 @@ id-unverified 44312
 id-unverified 44329
 id-unverified 44335
 id-unverified 44341
-id-unverified 44370
 id-unverified 44388
 id-unverified 44397
 id-unverified 44406
@@ -2433,14 +2414,13 @@ id-unverified 44644
 id-unverified 44673
 id-unverified 44741
 id-unverified 44742
-id-unverified 44750
-id-unverified 44751
 id-unverified 44758
 id-unverified 44760
 id-unverified 44870
 id-unverified 44882
 id-unverified 44899
-id-unverified 46515
+id 46515 46480
+id 46516 46481
 id-unverified 46983
 id-unverified 46989
 id-unverified 47001
@@ -2452,7 +2432,6 @@ id-unverified 47068
 id-unverified 47076
 id-unverified 47113
 id-unverified 47122
-id-unverified 47174
 id-unverified 47224
 id-unverified 47231
 id-unverified 47241
@@ -2535,7 +2514,6 @@ id-unverified 49795
 id-unverified 49804
 id-unverified 49955
 id-unverified 50010
-id-unverified 50015
 id-unverified 50066
 id-unverified 50078
 id-unverified 50085
@@ -2609,7 +2587,6 @@ id-unverified 51579
 id-unverified 51611
 id-unverified 51612
 id-unverified 51613
-id-unverified 51630
 id-unverified 51641
 id-unverified 51651
 id-unverified 51652
@@ -2638,7 +2615,6 @@ id-unverified 51924
 id-unverified 51926
 id-unverified 51929
 id-unverified 51950
-id-unverified 51952
 id-unverified 51954
 id-unverified 51955
 id-unverified 51960
@@ -2712,7 +2688,6 @@ id-unverified 52724
 id-unverified 52727
 id-unverified 52728
 id-unverified 52729
-id-unverified 52878
 id-unverified 52882
 id-unverified 52883
 id-unverified 52884
@@ -2740,7 +2715,6 @@ id-unverified 53154
 id-unverified 53155
 id-unverified 53170
 id-unverified 53171
-id-unverified 53259
 id-unverified 53260
 id-unverified 53268
 id-unverified 53269
@@ -3031,8 +3005,6 @@ id-unverified 55446
 id-unverified 55451
 id-unverified 55456
 id-unverified 55469
-id-unverified 55470
-id-unverified 55475
 id-unverified 55476
 id-unverified 55477
 id-unverified 55479
@@ -3389,7 +3361,7 @@ id-unverified 68721
 id-unverified 68782
 id-unverified 68787
 id-unverified 68851
-id-unverified 68868
+id 68868 82547
 id-unverified 68942
 id-unverified 69064
 id-unverified 69065
@@ -3429,15 +3401,17 @@ id-unverified 70045
 id-unverified 70046
 id-unverified 70048
 id-unverified 70052
+id 70318 75305
 id-unverified 70376
+id 70432 75294
 id-unverified 70463
-id-unverified 70595
+id 70595 76302
 id-unverified 70669
 id-unverified 70688
 id-unverified 70731
 id-unverified 70802
 id-unverified 71061
-id-unverified 71187
+id 71187 68740
 id-unverified 71212
 id-unverified 71240
 id-unverified 71251
@@ -3446,11 +3420,16 @@ id-unverified 71259
 id-unverified 71263
 id-unverified 71278
 id-unverified 71283
+id 71360 76811
+id 71441 75986
+id 71473 75291
+id 71479 75310
 id-unverified 71541
 id-unverified 71548
 id-unverified 71758
-id-unverified 71767
-id-unverified 71793
+id 71767 76775
+id 71793 76795
+id 71828 76381
 id-unverified 71892
 id-unverified 71916
 id-unverified 71940
@@ -3545,7 +3524,10 @@ id-unverified 75159
 id-unverified 75160
 id-unverified 75163
 id-unverified 75279
-id-unverified 75335
+id 75291 71473
+id 75294 70432
+id 75305 70318
+id 75310 71479
 id-unverified 75367
 id-unverified 75370
 id-unverified 75398
@@ -3563,6 +3545,7 @@ id-unverified 75586
 id-unverified 75637
 id-unverified 75638
 id-unverified 75739
+id 75822 82473
 id-unverified 75914
 id-unverified 75915
 id-unverified 75934
@@ -3571,17 +3554,19 @@ id-unverified 75940
 id-unverified 75941
 id-unverified 75958
 id-unverified 75959
-id-unverified 75967
-id-unverified 76064
+id 75967 70827
+id 75986 71441
+id 76064 70016
 id-unverified 76067
-id-unverified 76157
+id 76153 71338
 id-unverified 76214
 id-unverified 76220
-id-unverified 76302
+id 76302 70595
 id-unverified 76324
 id-unverified 76327
 id-unverified 76330
 id-unverified 76353
+id 76381 71828
 id-unverified 76383
 id-unverified 76395
 id-unverified 76401
@@ -3590,6 +3575,7 @@ id-unverified 76405
 id-unverified 76408
 id-unverified 76410
 id-unverified 76413
+id 76418 70999
 id-unverified 76422
 id-unverified 76425
 id-unverified 76433
@@ -3598,14 +3584,16 @@ id-unverified 76436
 id-unverified 76438
 id-unverified 76534
 id-unverified 76582
-id-unverified 76586
+id 76586 70981
 id-unverified 76665
 id-unverified 76670
 id-unverified 76693
 id-unverified 76719
-id-unverified 76724
-id-unverified 76775
-id-unverified 76795
+id 76724 71266
+id 76775 71767
+id 76792 71790
+id 76795 71793
+id 76811 71360
 id-unverified 76815
 id-unverified 76829
 id-unverified 76832
@@ -3613,11 +3601,12 @@ id-unverified 76846
 id-unverified 76853
 id-unverified 76855
 id-unverified 76858
+id 76954 70140
 id-unverified 77016
 id-unverified 77038
 id-unverified 77049
 id-unverified 77063
-id-unverified 77066
+id 77066 71975
 id-unverified 77086
 id-unverified 77101
 id-unverified 77159
@@ -3731,7 +3720,7 @@ id-unverified 78630
 id-unverified 78632
 id-unverified 78637
 id-unverified 78640
-id-unverified 78717
+id 78717 72403
 id-unverified 78742
 id-unverified 78761
 id-unverified 78932
@@ -3743,10 +3732,10 @@ id-unverified 79169
 id-unverified 79189
 id-unverified 79192
 id-unverified 79218
+id 79734 73514
 id-unverified 80063
 id-unverified 80084
 id-unverified 80085
-id-unverified 80187
 id-unverified 80482
 id-unverified 80540
 id-unverified 80561
@@ -3778,8 +3767,9 @@ id-unverified 82297
 id-unverified 82310
 id-unverified 82323
 id-unverified 82334
-id-unverified 82362
+id 82362 76420
 id-unverified 82465
+id 82473 75822
 id-unverified 82492
 id-unverified 82525
 id-unverified 82530
@@ -3789,6 +3779,7 @@ id-unverified 82874
 id-unverified 82888
 id-unverified 82896
 id-unverified 82921
+id 82981 76303
 id-unverified 83241
 id-unverified 83250
 id-unverified 83506
@@ -3825,17 +3816,17 @@ id-unverified 86331
 id-unverified 86612
 id-unverified 86681
 id-unverified 87188
-id-unverified 87466
+id 87466 82661
 id-unverified 87470
 id-unverified 87471
 id-unverified 87773
 id-unverified 87894
 id-unverified 87967
 id-unverified 87971
-id-unverified 88023
+id 88023 82654
 id-unverified 88144
 id-unverified 88273
-id-unverified 88319
+id 88319 84938
 id-unverified 88360
 id-unverified 88425
 id-unverified 88436
@@ -3856,8 +3847,6 @@ id-unverified 90196
 id-unverified 90268
 id-unverified 90298
 id-unverified 90334
-id-unverified 90337
-id-unverified 90338
 id-unverified 90339
 id-unverified 90369
 id-unverified 90389
@@ -3966,7 +3955,6 @@ id-unverified 92704
 id-unverified 92717
 id-unverified 92758
 id-unverified 92774
-id-unverified 92780
 id-unverified 92798
 id-unverified 92804
 id-unverified 92813
@@ -4017,7 +4005,6 @@ id-unverified 93196
 id-unverified 93200
 id-unverified 93210
 id-unverified 93244
-id-unverified 93295
 id-unverified 93310
 id-unverified 93320
 id-unverified 93321
@@ -4028,7 +4015,6 @@ id-unverified 93420
 id-unverified 93443
 id-unverified 93444
 id-unverified 93473
-id-unverified 93499
 id-unverified 93519
 id-unverified 93673
 id-unverified 93727
@@ -4089,7 +4075,6 @@ id-unverified 97339
 id-unverified 97340
 id-unverified 97341
 id-unverified 97381
-id-unverified 97382
 id-unverified 97383
 id-unverified 97390
 id-unverified 97391
@@ -4124,7 +4109,6 @@ id-unverified 99678
 id-unverified 99690
 id-unverified 100172
 id-unverified 100178
-id-unverified 100179
 id-unverified 100180
 id-unverified 100200
 id-unverified 100239
@@ -4140,24 +4124,20 @@ id-unverified 100461
 id-unverified 100462
 id-unverified 100463
 id-unverified 100464
-id-unverified 100480
 id-unverified 100572
 id-unverified 100573
 id-unverified 100574
 id-unverified 100575
 id-unverified 100618
 id-unverified 100625
-id-unverified 100890
 id-unverified 100896
 id-unverified 100949
 id-unverified 100958
 id-unverified 100968
 id-unverified 100969
 id-unverified 100971
-id-unverified 100982
 id-unverified 101068
 id-unverified 101092
-id-unverified 101296
 id-unverified 101317
 id-unverified 101336
 id-unverified 101346
@@ -4236,7 +4216,6 @@ id-unverified 104145
 id-unverified 104198
 id-unverified 104295
 id-unverified 104496
-id-unverified 104519
 id-unverified 104532
 id-unverified 104533
 id-unverified 104534
@@ -8021,17 +8000,10 @@ id-unverified 215560
 id-unverified 215604
 id-unverified 217155
 id-unverified 217157
-id-unverified 237386
 id-unverified 237489
 id-unverified 238068
-id-unverified 238182
-id-unverified 238246
 id-unverified 238248
 id-unverified 238411
-id-unverified 238426
-id-unverified 238474
-id-unverified 238551
-id-unverified 242033
 id-unverified 246992
 id-unverified 416401
 id-unverified 416402
@@ -8123,8 +8095,6 @@ id-unverified 439439
 id-unverified 439443
 id-unverified 439444
 id-unverified 439445
-id-unverified 439448
-id-unverified 439449
 id-unverified 439459
 id-unverified 439460
 id-unverified 439461
@@ -8246,7 +8216,6 @@ id-unverified 440965
 id-unverified 440967
 id-unverified 441119
 id-unverified 441138
-id-unverified 441139
 id-unverified 441162
 id-unverified 441303
 id-unverified 441333
@@ -8262,7 +8231,6 @@ id-unverified 441627
 id-unverified 441629
 id-unverified 441637
 id-unverified 441639
-id-unverified 441646
 id-unverified 441666
 id-unverified 441675
 id-unverified 441676
@@ -8320,7 +8288,6 @@ id-unverified 441825
 id-unverified 441826
 id-unverified 441827
 id-unverified 441828
-id-unverified 441829
 id-unverified 441834
 id-unverified 441839
 id-unverified 441840
@@ -8467,12 +8434,10 @@ id-unverified 442335
 id-unverified 442359
 id-unverified 442380
 id-unverified 442381
-id-unverified 442382
 id-unverified 442383
 id-unverified 442384
 id-unverified 442386
 id-unverified 442415
-id-unverified 442420
 id-unverified 442422
 id-unverified 442430
 id-unverified 442437
@@ -8488,7 +8453,6 @@ id-unverified 442459
 id-unverified 442460
 id-unverified 442461
 id-unverified 442463
-id-unverified 442466
 id-unverified 442468
 id-unverified 442469
 id-unverified 442473
@@ -8497,10 +8461,8 @@ id-unverified 442476
 id-unverified 442482
 id-unverified 442485
 id-unverified 442496
-id-unverified 442497
 id-unverified 442499
 id-unverified 442500
-id-unverified 442504
 id-unverified 442507
 id-unverified 442508
 id-unverified 442509
@@ -8518,7 +8480,6 @@ id-unverified 442555
 id-unverified 442556
 id-unverified 442557
 id-unverified 442558
-id-unverified 442559
 id-unverified 442560
 id-unverified 442561
 id-unverified 442620
@@ -8538,7 +8499,6 @@ id-unverified 442669
 id-unverified 442683
 id-unverified 442693
 id-unverified 442696
-id-unverified 442713
 id-unverified 442717
 id-unverified 442735
 id-unverified 442736
@@ -8616,7 +8576,6 @@ id-unverified 443285
 id-unverified 443286
 id-unverified 443287
 id-unverified 443288
-id-unverified 443329
 id-unverified 443355
 id-unverified 443356
 id-unverified 443357
@@ -8661,7 +8620,6 @@ id-unverified 443595
 id-unverified 443600
 id-unverified 443604
 id-unverified 443612
-id-unverified 443625
 id-unverified 443632
 id-unverified 443633
 id-unverified 443635
@@ -8673,20 +8631,10 @@ id-unverified 443678
 id-unverified 443688
 id-unverified 443691
 id-unverified 443696
-id-unverified 443700
 id-unverified 443701
-id-unverified 443702
-id-unverified 443703
 id-unverified 443704
-id-unverified 443706
 id-unverified 443708
-id-unverified 443709
-id-unverified 443710
-id-unverified 443711
 id-unverified 443712
-id-unverified 443713
-id-unverified 443715
-id-unverified 443717
 id-unverified 443718
 id-unverified 443744
 id-unverified 443749
@@ -8754,7 +8702,6 @@ id-unverified 443918
 id-unverified 443919
 id-unverified 443933
 id-unverified 443937
-id-unverified 443951
 id-unverified 443979
 id-unverified 443981
 id-unverified 443983
@@ -8780,6 +8727,7 @@ id-unverified 444087
 id-unverified 444088
 id-unverified 444102
 id-unverified 444103
+id 444116 448867
 id-unverified 444140
 id-unverified 444142
 id-unverified 444175
@@ -8852,9 +8800,7 @@ id-unverified 445030
 id-unverified 445031
 id-unverified 445032
 id-unverified 445034
-id-unverified 445035
 id-unverified 445036
-id-unverified 445037
 id-unverified 445038
 id-unverified 445050
 id-unverified 445051
@@ -8862,7 +8808,6 @@ id-unverified 445063
 id-unverified 445064
 id-unverified 445066
 id-unverified 445076
-id-unverified 445079
 id-unverified 445128
 id-unverified 445133
 id-unverified 445135
@@ -8877,7 +8822,6 @@ id-unverified 445180
 id-unverified 445181
 id-unverified 445182
 id-unverified 445183
-id-unverified 445186
 id-unverified 445194
 id-unverified 445195
 id-unverified 445221
@@ -8913,9 +8857,6 @@ id-unverified 445490
 id-unverified 445492
 id-unverified 445501
 id-unverified 445502
-id-unverified 445563
-id-unverified 445564
-id-unverified 445585
 id-unverified 445600
 id-unverified 445619
 id-unverified 445720
@@ -8923,7 +8864,6 @@ id-unverified 445728
 id-unverified 445765
 id-unverified 445780
 id-unverified 445791
-id-unverified 445792
 id-unverified 445801
 id-unverified 445802
 id-unverified 445808
@@ -8953,7 +8893,6 @@ id-unverified 445977
 id-unverified 445979
 id-unverified 445982
 id-unverified 445985
-id-unverified 445990
 id-unverified 446025
 id-unverified 446088
 id-unverified 446090
@@ -8981,16 +8920,13 @@ id-unverified 446421
 id-unverified 446436
 id-unverified 446454
 id-unverified 446492
-id-unverified 446560
-id-unverified 446561
-id-unverified 446562
-id-unverified 446563
 id-unverified 446602
 id-unverified 446609
 id-unverified 446627
 id-unverified 446636
 id-unverified 446639
 id-unverified 446640
+id 446647 444787
 id-unverified 446651
 id-unverified 446653
 id-unverified 446655
@@ -9020,7 +8956,6 @@ id-unverified 446761
 id-unverified 446766
 id-unverified 446805
 id-unverified 446806
-id-unverified 446807
 id-unverified 446809
 id-unverified 446815
 id-unverified 446816
@@ -9059,7 +8994,6 @@ id-unverified 446952
 id-unverified 446967
 id-unverified 446968
 id-unverified 446970
-id-unverified 446971
 id-unverified 446984
 id-unverified 446995
 id-unverified 447006
@@ -9165,16 +9099,15 @@ id-unverified 447451
 id-unverified 447453
 id-unverified 447455
 id-unverified 447460
-id-unverified 447463
 id-unverified 447465
-id-unverified 447481
+id 447481 447517
 id-unverified 447486
 id-unverified 447487
 id-unverified 447488
 id-unverified 447500
 id-unverified 447503
 id-unverified 447505
-id-unverified 447517
+id 447517 447481
 id-unverified 447523
 id-unverified 447525
 id-unverified 447528
@@ -9345,7 +9278,6 @@ id-unverified 448040
 id-unverified 448042
 id-unverified 448044
 id-unverified 448071
-id-unverified 448076
 id-unverified 448080
 id-unverified 448081
 id-unverified 448082
@@ -9363,9 +9295,7 @@ id-unverified 448172
 id-unverified 448188
 id-unverified 448194
 id-unverified 448195
-id-unverified 448196
 id-unverified 448197
-id-unverified 448198
 id-unverified 448288
 id-unverified 448290
 id-unverified 448291
@@ -9495,13 +9425,11 @@ id-unverified 448754
 id-unverified 448815
 id-unverified 448838
 id-unverified 448871
-id-unverified 448875
 id-unverified 448896
 id-unverified 448908
 id-unverified 448916
 id-unverified 448921
 id-unverified 448922
-id-unverified 448924
 id-unverified 448925
 id-unverified 448926
 id-unverified 448927
@@ -9525,7 +9453,6 @@ id-unverified 449056
 id-unverified 449057
 id-unverified 449064
 id-unverified 449065
-id-unverified 449070
 id-unverified 449075
 id-unverified 449084
 id-unverified 449087
@@ -9547,7 +9474,6 @@ id-unverified 449179
 id-unverified 449180
 id-unverified 449181
 id-unverified 449185
-id-unverified 449189
 id-unverified 449192
 id-unverified 449206
 id-unverified 449207
@@ -9609,7 +9535,6 @@ id-unverified 449396
 id-unverified 449397
 id-unverified 449398
 id-unverified 449401
-id-unverified 449417
 id-unverified 449418
 id-unverified 449428
 id-unverified 449429
@@ -9619,7 +9544,6 @@ id-unverified 449432
 id-unverified 449439
 id-unverified 449453
 id-unverified 449456
-id-unverified 449460
 id-unverified 449461
 id-unverified 449462
 id-unverified 449463
@@ -9633,7 +9557,6 @@ id-unverified 449502
 id-unverified 449508
 id-unverified 449516
 id-unverified 449536
-id-unverified 449538
 id-unverified 449539
 id-unverified 449591
 id-unverified 449592
@@ -9934,7 +9857,9 @@ id-unverified 451131
 id-unverified 451142
 id-unverified 451144
 id-unverified 451147
+id 451148 451169
 id-unverified 451159
+id 451164 449445
 id-unverified 451167
 id-unverified 451170
 id-unverified 451171
@@ -9945,7 +9870,6 @@ id-unverified 451188
 id-unverified 451189
 id-unverified 451194
 id-unverified 451195
-id-unverified 451197
 id-unverified 451198
 id-unverified 451209
 id-unverified 451211
@@ -10016,11 +9940,6 @@ id-unverified 451440
 id-unverified 451441
 id-unverified 451443
 id-unverified 451449
-id-unverified 451456
-id-unverified 451462
-id-unverified 451463
-id-unverified 451464
-id-unverified 451465
 id-unverified 451467
 id-unverified 451510
 id-unverified 451512
@@ -10052,7 +9971,6 @@ id-unverified 451685
 id-unverified 451686
 id-unverified 451689
 id-unverified 451719
-id-unverified 451724
 id-unverified 451727
 id-unverified 451728
 id-unverified 451743
@@ -10090,10 +10008,7 @@ id-unverified 451871
 id-unverified 451872
 id-unverified 451891
 id-unverified 451898
-id-unverified 451899
-id-unverified 451900
 id-unverified 451901
-id-unverified 451902
 id-unverified 451904
 id-unverified 451908
 id-unverified 451910
@@ -10251,13 +10166,9 @@ id-unverified 452814
 id-unverified 452815
 id-unverified 452816
 id-unverified 452817
-id-unverified 452818
 id-unverified 452819
-id-unverified 452820
 id-unverified 452821
-id-unverified 452822
 id-unverified 452823
-id-unverified 452824
 id-unverified 452830
 id-unverified 452860
 id-unverified 452861
@@ -10269,7 +10180,6 @@ id-unverified 452918
 id-unverified 452945
 id-unverified 452948
 id-unverified 452951
-id-unverified 452952
 id-unverified 452953
 id-unverified 452954
 id-unverified 452956
@@ -10297,7 +10207,6 @@ id-unverified 453060
 id-unverified 453064
 id-unverified 453066
 id-unverified 453078
-id-unverified 453092
 id-unverified 453093
 id-unverified 453098
 id-unverified 453100
@@ -10313,7 +10222,6 @@ id-unverified 453132
 id-unverified 453139
 id-unverified 453140
 id-unverified 453166
-id-unverified 453167
 id-unverified 453199
 id-unverified 453205
 id-unverified 453258
@@ -10981,12 +10889,9 @@ id-unverified 505806
 id-unverified 505809
 id-unverified 505810
 id-unverified 505818
-id-unverified 505819
-id-unverified 505820
 id-unverified 505821
 id-unverified 505822
 id-unverified 505823
-id-unverified 505824
 id-unverified 505825
 id-unverified 505826
 id-unverified 505829
@@ -10998,7 +10903,6 @@ id-unverified 505839
 id-unverified 505840
 id-unverified 505841
 id-unverified 505842
-id-unverified 505843
 id-unverified 505844
 id-unverified 505846
 id-unverified 505847
@@ -11060,7 +10964,7 @@ id-unverified 506466
 id-unverified 506467
 id-unverified 506468
 id-unverified 506843
-id-unverified 522619
+id 522619 439383
 id 522654 439452
 id-unverified 522971
 id-unverified 522972
@@ -11115,7 +11019,7 @@ id-unverified 523173
 id 523174 440242
 id 523176 440244
 id-unverified 523178
-id-unverified 523179
+id 523179 440248
 id-unverified 523180
 id 523182 440264
 id 523183 440265
@@ -11190,10 +11094,10 @@ id-unverified 523542
 id-unverified 523543
 id-unverified 523544
 id-unverified 523572
-id-unverified 523574
+id 523574 30308
 id 523582 441613
 id 523583 441614
-id-unverified 523585
+id 523585 31418
 id-unverified 523588
 id-unverified 523589
 id-unverified 523598
@@ -11231,7 +11135,7 @@ id-unverified 523880
 id-unverified 523881
 id-unverified 523914
 id-unverified 523916
-id-unverified 523918
+id 523918 442513
 id-unverified 523922
 id-unverified 523927
 id-unverified 523938
@@ -11242,8 +11146,8 @@ id-unverified 523949
 id-unverified 523956
 id 523966 42422
 id 523977 46484
-id-unverified 523978
-id 523979 46481
+id 523978 46515
+id 523979 46516
 id 523980 46517
 id-unverified 523983
 id-unverified 523984
@@ -11287,11 +11191,12 @@ id-unverified 524141
 id 524142 68684
 id-unverified 524157
 id-unverified 524158
-id 524159 76303
+id 524159 82981
 id-unverified 524160
 id 524161 84675
 id-unverified 524162
 id-unverified 524163
+id 524164 87466
 id 524165 443453
 id 524166 84927
 id 524167 84925
@@ -11300,18 +11205,24 @@ id 524169 88302
 id 524170 88303
 id 524171 88304
 id 524172 88305
+id 524173 88319
 id 524176 88525
 id 524184 87960
 id 524185 87961
 id-unverified 524186
 id-unverified 524187
-id-unverified 524190
+id-unverified 524189
+id 524190 88023
 id 524194 89301
 id 524197 89304
 id 524198 89305
+id 524200 68868
 id 524201 443429
+id 524202 70138
+id 524203 70139
 id-unverified 524204
 id 524205 70313
+id 524206 71187
 id-unverified 524207
 id 524208 68751
 id-unverified 524209
@@ -11322,23 +11233,32 @@ id-unverified 524226
 id-unverified 524227
 id-unverified 524228
 id-unverified 524230
+id 524231 75967
+id 524233 76064
 id 524234 70201
-id 524235 71338
+id 524235 76153
+id 524236 76154
+id 524237 76155
 id-unverified 524238
 id 524239 70555
+id 524240 76418
 id 524242 70202
 id-unverified 524243
-id-unverified 524249
-id 524250 70140
+id 524246 76586
+id 524248 76724
+id 524249 76792
+id 524250 76954
 id-unverified 524251
 id-unverified 524252
+id 524253 77066
 id-unverified 524254
 id 524257 77828
-id-unverified 524263
-id 524266 73514
+id 524263 78717
+id 524266 79734
 id-unverified 524267
 id-unverified 524269
 id 524270 82331
+id 524272 82362
 id-unverified 524273
 id 524274 443434
 id 524275 76017
@@ -11361,19 +11281,19 @@ id-unverified 524327
 id-unverified 524328
 id-unverified 524330
 id 524336 444000
-id-unverified 524338
-id-unverified 524339
-id-unverified 524340
-id-unverified 524341
+id 524338 444001
+id 524339 444002
+id 524340 444003
+id 524341 444004
 id-unverified 524342
-id-unverified 524343
-id-unverified 524345
-id-unverified 524346
+id 524343 444005
+id 524345 444006
+id 524346 444007
 id-unverified 524347
 id 524354 444059
 id-unverified 524355
 id-unverified 524356
-id-unverified 524357
+id 524357 443458
 id-unverified 524358
 id 524364 443464
 id-unverified 524368
@@ -11427,23 +11347,23 @@ id-unverified 524478
 id 524479 443686
 id-unverified 524482
 id-unverified 524483
-id-unverified 524484
+id 524484 450495
 id-unverified 524485
-id-unverified 524486
-id-unverified 524487
-id-unverified 524488
-id-unverified 524489
-id-unverified 524490
-id-unverified 524491
-id-unverified 524492
-id-unverified 524493
-id-unverified 524494
-id-unverified 524495
-id-unverified 524496
-id-unverified 524497
-id-unverified 524498
-id-unverified 524499
-id-unverified 524500
+id 524486 443719
+id 524487 443720
+id 524488 443721
+id 524489 443723
+id 524490 443724
+id 524491 443725
+id 524492 443726
+id 524493 443727
+id 524494 450497
+id 524495 443728
+id 524496 443729
+id 524497 443730
+id 524498 443732
+id 524499 443733
+id 524500 443734
 id-unverified 524501
 id-unverified 524502
 id-unverified 524505
@@ -11466,6 +11386,7 @@ id 524535 444108
 id 524538 444113
 id 524539 444114
 id 524540 444115
+id 524541 444116
 id 524543 444118
 id-unverified 524545
 id 524547 444121
@@ -11499,14 +11420,14 @@ id 524749 446669
 id 524750 94340
 id 524752 446671
 id 524755 444378
-id-unverified 524756
+id 524756 449716
 id 524757 446678
-id-unverified 524759
+id 524759 449718
 id-unverified 524760
 id 524766 444386
 id-unverified 524767
 id-unverified 524771
-id-unverified 524772
+id 524772 94346
 id 524774 444406
 id 524775 450242
 id 524776 444407
@@ -11517,7 +11438,7 @@ id-unverified 524783
 id 524784 96874
 id-unverified 524785
 id 524786 444417
-id-unverified 524805
+id 524805 445187
 id 524806 445188
 id-unverified 524814
 id 524816 444481
@@ -11672,8 +11593,8 @@ id 525628 444608
 id 525635 444714
 id-unverified 525643
 id 525649 446661
-id-unverified 525653
-id-unverified 525656
+id 525653 446663
+id 525656 446628
 id 525658 446630
 id 525718 96622
 id-unverified 525731
@@ -11709,7 +11630,7 @@ id 525785 446769
 id 525786 446770
 id-unverified 525787
 id-unverified 525788
-id-unverified 525789
+id 525789 443714
 id-unverified 525791
 id-unverified 525794
 id-unverified 525795
@@ -11771,8 +11692,8 @@ id-unverified 525938
 id-unverified 525939
 id-unverified 525951
 id 525954 448049
-id-unverified 525957
-id-unverified 525958
+id 525957 448117
+id 525958 448118
 id 525963 448143
 id-unverified 525964
 id-unverified 525965
@@ -11851,7 +11772,7 @@ id 526392 447273
 id 526393 447274
 id-unverified 526397
 id-unverified 526398
-id-unverified 526399
+id 526399 443705
 id-unverified 526401
 id-unverified 526402
 id 526405 447454
@@ -11865,7 +11786,12 @@ id 526419 98310
 id 526460 447700
 id 526466 447462
 id-unverified 526469
-id-unverified 526475
+id-unverified 526470
+id-unverified 526471
+id-unverified 526472
+id-unverified 526473
+id 526474 447499
+id 526475 447500
 id 526478 447504
 id-unverified 526479
 id-unverified 526480
@@ -11889,7 +11815,6 @@ id-unverified 526660
 id 526663 450040
 id-unverified 526664
 id 526665 447814
-id-unverified 526666
 id 526709 447866
 id-unverified 526711
 id-unverified 526721
@@ -11973,15 +11898,17 @@ id 526947 450509
 id-unverified 526979
 id-unverified 527000
 id 527024 449700
-id-unverified 527025
+id 527025 449514
 id-unverified 527026
 id 527027 449531
 id-unverified 527055
 id-unverified 527056
 id-unverified 527083
 id 527084 447860
+id 527094 451148
 id-unverified 527095
 id-unverified 527096
+id 527097 451164
 id-unverified 527101
 id 527102 449892
 id 527103 449336
@@ -12052,6 +11979,7 @@ id-unverified 527216
 id-unverified 527217
 id-unverified 527218
 id-unverified 527219
+id-unverified 527220
 id-unverified 527222
 id-unverified 527223
 id-unverified 527224
@@ -12140,7 +12068,7 @@ id-unverified 527333
 id-unverified 527334
 id-unverified 527336
 id-unverified 527339
-id-unverified 527340
+id 527340 102529
 id-unverified 527341
 id-unverified 527342
 id 527348 449684
@@ -12153,9 +12081,9 @@ id-unverified 527362
 id 527363 449698
 id-unverified 527364
 id-unverified 527378
-id-unverified 527380
-id-unverified 527381
-id-unverified 527382
+id 527380 449713
+id 527381 449714
+id 527382 449715
 id-unverified 527383
 id 527386 449720
 id-unverified 527387
@@ -12200,8 +12128,8 @@ id 527473 452356
 id-unverified 527474
 id-unverified 527475
 id-unverified 527476
-id-unverified 527477
-id-unverified 527478
+id 527477 452359
+id 527478 452360
 id-unverified 527492
 id-unverified 527493
 id-unverified 527494
@@ -12223,7 +12151,7 @@ id-unverified 527518
 id 527524 451601
 id-unverified 527528
 id 527531 100965
-id-unverified 527532
+id 527532 100966
 id 527533 100963
 id 527534 100964
 id-unverified 527538
@@ -12257,7 +12185,7 @@ id-unverified 527605
 id-unverified 527606
 id-unverified 527607
 id-unverified 527608
-id-unverified 527610
+id 527610 452331
 id-unverified 527614
 id 527616 452355
 id-unverified 527617
@@ -12302,8 +12230,8 @@ id-unverified 527673
 id-unverified 527674
 id-unverified 527675
 id-unverified 527676
-id-unverified 527678
-id-unverified 527679
+id 527678 449071
+id 527679 453099
 id-unverified 527683
 id-unverified 527684
 id 527687 453135
@@ -12340,8 +12268,9 @@ id 527786 108747
 id-unverified 527787
 id-unverified 527788
 id-unverified 527789
-id-unverified 527791
+id 527791 109087
 id-unverified 527792
+id 527809 109759
 id-unverified 527811
 id 527822 453632
 id-unverified 527823
@@ -12375,7 +12304,7 @@ id-unverified 527852
 id-unverified 527854
 id 527856 453951
 id-unverified 527860
-id-unverified 527862
+id 527862 454333
 id-unverified 527868
 id-unverified 527869
 id-unverified 527870
@@ -17956,27 +17885,12 @@ id-unverified 524140
 id-unverified 524143
 id-unverified 524144
 id-unverified 524148
-id-unverified 524164
-id-unverified 524173
 id-unverified 524188
-id-unverified 524189
-id-unverified 524200
-id-unverified 524202
-id-unverified 524203
-id-unverified 524206
 id-unverified 524222
 id-unverified 524229
-id-unverified 524231
 id-unverified 524232
-id-unverified 524233
-id-unverified 524236
-id-unverified 524237
-id-unverified 524240
 id-unverified 524241
-id-unverified 524246
 id-unverified 524247
-id-unverified 524248
-id-unverified 524253
 id-unverified 524256
 id-unverified 524258
 id-unverified 524259
@@ -17987,7 +17901,6 @@ id-unverified 524264
 id-unverified 524265
 id-unverified 524268
 id-unverified 524271
-id-unverified 524272
 id-unverified 524276
 id-unverified 524277
 id-unverified 524278
@@ -18104,7 +18017,6 @@ id-unverified 524520
 id-unverified 524534
 id-unverified 524536
 id-unverified 524537
-id-unverified 524541
 id-unverified 524546
 id-unverified 524554
 id-unverified 524555
@@ -19372,11 +19284,6 @@ id-unverified 526464
 id-unverified 526465
 id-unverified 526467
 id-unverified 526468
-id-unverified 526470
-id-unverified 526471
-id-unverified 526472
-id-unverified 526473
-id-unverified 526474
 id-unverified 526476
 id-unverified 526477
 id-unverified 526481
@@ -19488,6 +19395,7 @@ id-unverified 526658
 id-unverified 526659
 id-unverified 526661
 id-unverified 526662
+id-unverified 526666
 id-unverified 526667
 id-unverified 526669
 id-unverified 526670
@@ -19728,8 +19636,6 @@ id-unverified 527090
 id-unverified 527091
 id-unverified 527092
 id-unverified 527093
-id-unverified 527094
-id-unverified 527097
 id-unverified 527098
 id-unverified 527099
 id-unverified 527100
@@ -19768,7 +19674,6 @@ id-unverified 527182
 id-unverified 527195
 id-unverified 527205
 id-unverified 527213
-id-unverified 527220
 id-unverified 527221
 id-unverified 527228
 id-unverified 527234
@@ -19993,7 +19898,6 @@ id-unverified 527801
 id-unverified 527802
 id-unverified 527804
 id-unverified 527805
-id-unverified 527809
 id-unverified 527810
 id-unverified 527812
 id-unverified 527813
@@ -23303,7 +23207,6 @@ member-unverified BSOcclusionBox.field_174
 member-unverified BSOcclusionBox.field_17C
 member-unverified BSOcclusionBox.field_184
 member-unverified BSOcclusionBox.field_18C
-member-unverified BSOcclusionBox.field_198
 member-unverified BSOcclusionPlane.field_C0
 member-unverified BSOcclusionPlane.field_C8
 member-unverified BSOcclusionPlane.field_D0
@@ -23312,7 +23215,6 @@ member-unverified BSOcclusionPlane.field_E0
 member-unverified BSOcclusionPlane.field_E8
 member-unverified BSPCGamepadDeviceDelegate.source_BSGamepadEvent
 member-unverified BSPCOrbisGamepadDevice.source_BSGamepadEvent
-member-unverified BSPSysArrayEmitter.m_NiTPrimitiveArray_80
 member-unverified BSParabolicCullingProcess.acceptFlag12Nodes
 member-unverified BSParabolicCullingProcess.deferAllAppends
 member-unverified BSParabolicCullingProcess.freeRecords
@@ -24589,7 +24491,6 @@ member-unverified BSScript::NativeLatentFunction5<TESObjectREFR,void,TESObjectRE
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.docString
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.objectTypeName
 member-unverified BSScript::NativeLatentFunction9<BGSMessage,int,float,float,float,float,float,float,float,float,float>.stateName
-member-unverified BSSegmentedTriShape.field_140
 member-unverified BSShaderAccumulator.acceptAlphaDecalsInDepth
 member-unverified BSShaderAccumulator.field_129
 member-unverified BSShaderAccumulator.shadowSceneNode
@@ -24600,8 +24501,6 @@ member-unverified BSShadowFrustumLight.portalStrictCull
 member-unverified BSShadowLight.portalStrictCull
 member-unverified BSShadowParabolicLight.focusShadowMaps
 member-unverified BSShadowParabolicLight.portalStrictCull
-member-unverified BSSubIndexLandTriShape.field_168
-member-unverified BSSubIndexTriShape.field_168
 member-unverified BSSystemUtility.source_BSSystemEvent
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.buffer
 member-unverified BSTCommonStaticMessageQueue<UIMessage*___ptr64,100>.lock
@@ -24739,6 +24638,8 @@ member FrameState.cameraMatrices a8
 member FrameState.decreaseRequested 11d
 member FrameState.dynamicResolutionLock 118
 member FrameState.dynamicWidthRatio 104
+member FrameState.frameCounter 4c
+member FrameState.frameStarted 54
 member FrameState.increaseRequested 11c
 member FrameState.jitterIndex c0
 member FrameState.manualRatio 11e
@@ -25016,7 +24917,6 @@ member-unverified NiPSysPlanarCollider.field_DC
 member-unverified NiSkinData.skinTransform
 member-unverified NiSkinData::BoneData.weightCount
 member-unverified NiSkinData::BoneData.weights
-member-unverified NiSwitchNode.m_NiTPrimitiveArray_138
 member-unverified OwnedCameraEffectController.pad0C
 member-unverified OwnedCameraEffectController.pad24
 member-unverified OwnedCameraEffectController.pad31
@@ -25958,22 +25858,12 @@ slot-missing AutoMoveHandler[0].3
 slot AutoMoveHandler[0].4 2
 slot AutoMoveHandler[0].5 3
 slot AutoMoveHandler[0].6 4
-slot-missing AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_>[0].1
-slot-missing AutoRegisterCombatObject<CombatMagicCasterReanimate>[0].1
-slot-missing AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-missing AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-missing AutoRegisterFactory<BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
-slot-missing AutoRegisterFactory<BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>[0].1
 slot-missing BNetUnavailable::ModsNotMountedCallback[0].0
 slot-missing BNetUnavailable::ModsNotMountedCallback[0].1
 slot-missing BNetUnavailable::OpenConnectingToNetworkCallback[0].0
 slot-missing BNetUnavailable::OpenConnectingToNetworkCallback[0].1
-slot-missing BSDistantObjectLargeRefExtraData[0].0
 slot-unverified BSGamerProfile[0].6
 slot-unverified BSGamerProfile[0].7
-slot-missing BSMultiBoundShape[0].0
-slot-missing BSOcclusionBox[0].0
-slot-unverified BSParentVelocityModifier[0].27
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].0
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].1
 slot-missing BSPlatform::BSAsyncRequest<std::function<void___cdecl(BSPlatform::BNetResult,unsigned___int64,BSPlatform::BNetStreamStatus,unsigned_char*___ptr64,unsigned___int64)>_>[0].2
@@ -25996,7 +25886,6 @@ slot-unverified BSPlatform::BSUserContentSearcherAgent[0].b
 slot BSPlatform::BSUserContentSearcherAgent[0].d a
 slot BSPlatform::BSUserContentSearcherAgent[0].e b
 slot BSPlatform::BSUserContentSearcherAgent[0].f 9
-slot-missing BSResource::_anon_5F811FAA::LooseFileAsyncStream[0].0
 slot-unverified BSSaveDataSystemUtility[0].5
 slot-unverified BSSaveDataSystemUtility[0].6
 slot-unverified BSSaveDataSystemUtility[0].7
@@ -26094,8 +25983,6 @@ slot BSSystemUtility[0].9 8
 slot BSSystemUtility[0].a 9
 slot BSSystemUtility[0].12 11
 slot BSSystemUtility[0].13 12
-slot-missing BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>[0].1
-slot-missing BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>[0].1
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].0
 slot-missing BSTEventSink<TESAmiiboForcedStopDetectionEvent>[0].1
 slot-missing BSTEventSink<TESAmiiboTouchEvent>[0].0
@@ -26136,7 +26023,6 @@ slot BSWin32SystemUtility[0].10 f
 slot BSWin32SystemUtility[0].11 10
 slot BSWin32SystemUtility[0].12 11
 slot BSWin32SystemUtility[0].13 12
-slot-missing BSXFlags[0].0
 slot-missing BleedoutCameraState[20].2
 slot-missing BleedoutCameraState[20].3
 slot BleedoutCameraState[20].4 2
@@ -26327,10 +26213,6 @@ slot-missing MovementHandler[0].3
 slot MovementHandler[0].4 2
 slot MovementHandler[0].5 3
 slot MovementHandler[0].6 4
-slot-missing NiAccumulator[0].0
-slot-missing NiBooleanExtraData[0].0
-slot-missing NiCollisionData[0].2a
-slot-missing NiIntegerExtraData[0].0
 slot-unverified NiTPointerMap<unsigned_int,bool>[0].6
 slot-missing NoRTTI_1A3EBD8[0].0
 slot-missing NoRTTI_1A3EBD8[0].1
@@ -26338,7 +26220,6 @@ slot-missing NoRTTI_1A3FBD0[0].0
 slot-missing NoRTTI_1A3FBD0[0].1
 slot-missing NoRTTI_1A3FBD0[0].2
 slot-missing NoRTTI_1A3FBE8[0].0
-slot-missing NoRTTI_1A3FD58[0].0
 slot-unverified NoRTTI_1AE8920[0].4
 slot-missing NoRTTI_1AEA390[0].0
 slot-missing NoRTTI_1AEA390[0].1
@@ -27171,9 +27052,6 @@ slot ToggleRunHandler[0].5 3
 slot ToggleRunHandler[0].6 4
 slot-missing _anon_025735F6::AmiiboTouchArguments[0].0
 slot-missing _anon_025735F6::AmiiboTouchArguments[0].1
-slot-unverified _anon_3B91968A::BSScaleformAllocatorPaged[0].0
-slot-missing _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterReanimate>[0].1
-slot-missing _anon_CE40B4D9::AutoRegisterCombatMagicCaster<CombatMagicCasterTargetEffect>[10].1
 slot-missing `public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback[0].0
 slot-missing `public:_static_void___cdecl_MainMenu::OpenCreationClubMenu(void)'::__l8::errorCallback[0].1
 slot-missing bnet::Callback<bnet::Telemetry::EventResponse,bnet::HttpResponseInfo>[0].0

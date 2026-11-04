@@ -8566,8 +8566,7 @@ impl NiAVObjectPalette_vtable {
 #[repr(C)]
 pub struct NiAccumulator_vtable {
     /// `NiAccumulator::vdtor` at 0xf1ee00 (layout_inference, medium); signature (low): `NiAccumulator * vdtor(NiAccumulator * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiAccumulator::vfunc_2` at 0xf1ee40 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -8947,8 +8946,7 @@ impl NiAlphaProperty_vtable {
 #[repr(C)]
 pub struct NiAmbientLight_vtable {
     /// `NiAmbientLight::vdtor` at 0xf0f7e0 (slot_propagation, medium); signature (low): `NiAmbientLight * vdtor(NiAmbientLight * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiAmbientLight::vfunc_2` at 0xf0f820 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -10162,8 +10160,7 @@ impl NiBSplineData_vtable {
 #[repr(C)]
 pub struct NiBSplineFloatInterpolator_vtable {
     /// `NiBSplineFloatInterpolator::vdtor` at 0xf7a9b0 (slot_propagation, medium); signature (low): `NiBSplineFloatInterpolator * vdtor(NiBSplineFloatInterpolator * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiBSplineFloatInterpolator::vfunc_2` at 0xf7a9f0 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -12593,8 +12590,7 @@ impl NiBoolTimelineInterpolator_vtable {
 #[repr(C)]
 pub struct NiBooleanExtraData_vtable {
     /// `NiBooleanExtraData::vdtor` at 0xf100f0 (layout_inference, medium); signature (low): `NiBooleanExtraData * vdtor(NiBooleanExtraData * this, uint param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_0: *const c_void,
+    pub slot_0: *const c_void,
     /// `NiRefObject::vfunc_1` at 0xeebf20 (rtti, medium); signature (high): `undefined vfunc_1(NiRefObject * this)`
     pub slot_1: *const c_void,
     /// `NiBooleanExtraData::vfunc_2` at 0xf10130 (rtti, high); signature (low): `TypeNode * vfunc_2(void)`
@@ -13138,8 +13134,7 @@ pub struct NiCollisionData_vtable {
     /// `NiCollisionData::vfunc_41` at 0xf23a70 (rtti, high); signature (low): `longlong vfunc_41(NiCollisionData * this, uint param_1)`
     pub slot_41: *const c_void,
     /// `NiCollisionData::vfunc_42` at 0xf24790 (rtti, high); signature (low): `undefined4 * vfunc_42(NiCollisionData * this, undefined4 * param_1)`
-    #[doc(hidden)]
-    pub __slot_42: *const c_void,
+    pub slot_42: *const c_void,
 }
 impl NiCollisionData_vtable {
     pub const ID: u64 = 237495;

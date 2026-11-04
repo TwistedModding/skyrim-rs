@@ -16,7 +16,10 @@ use skyrim::render::{PresentFn, floats, frame_counter, shadow_scene_node};
 use sre::raw::vtables;
 use sre::{AccumulatorRenderMode, BSGeometry, BSShaderProperty_flags as ShaderFlags, CameraState, NiAVObject, NiCamera, PlayerCamera, PlayerCharacter, ShaderMaterialType};
 
-use crate::{Test, check, third_person_root};
+use crate::{Test, check, lacks, needs, third_person_root};
+
+const CACHED_POSITION: &str = "member PlayerCamera.cachedPosition";
+const CAMERA_YAW: &str = "member PlayerCamera.yaw";
 
 fn frustum(camera: &NiCamera) -> [f32; 6] {
     [camera.frustumLeft, camera.frustumRight, camera.frustumTop, camera.frustumBottom, camera.frustumNear, camera.frustumFar]
@@ -47,7 +50,7 @@ type ThirdPersonFields = ([f32; 3], [f32; 3], f32, f32, [f32; 2], bool);
 struct Sample {
     state: CameraState,
     stack_count: u32,
-    cached_position: [f32; 3],
+    cached_position: Option<[f32; 3]>,
     root_world: [f32; 3],
     root_local: [f32; 3],
     frame_camera_world: [f32; 3],
@@ -55,7 +58,7 @@ struct Sample {
     world_fov: f32,
     frustum: [f32; 6],
     viewport: [f32; 4],
-    yaw: f32,
+    yaw: Option<f32>,
     third: Option<ThirdPersonFields>,
     free: Option<([f32; 3], f32, f32)>,
     delta: f32,
@@ -69,7 +72,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
     let id = CameraState::from_u32(state.id)?;
     let root = camera.camera_root()?;
     let frame_camera = sre::get_main_camera()?;
-    let third = state.as_third_person().map(|t| (floats(t.targetOffset()), floats(&t.currentOffset), t.currentYaw, t.currentZoom, floats(&t.freeRotation), t.freeRotationEnabled != 0));
+    let third = state.as_third_person().map(|t| (floats(&t.targetOffset), floats(&t.currentOffset), t.currentYaw, t.currentZoom, floats(&t.freeRotation), t.freeRotationEnabled != 0));
     let free = state.as_free().map(|f| (floats(&f.position), f.pitch, f.yaw));
     let key = match (id, third) {
         (CameraState::ThirdPerson, Some((_, _, _, _, [yaw, _], true))) if yaw.abs() > 0.5 => "orbit",
@@ -83,7 +86,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
         Sample {
             state: id,
             stack_count: camera.stateStackCount,
-            cached_position: floats(camera.cachedPosition()),
+            cached_position: (!lacks(CACHED_POSITION)).then(|| floats(camera.cachedPosition())),
             root_world: root.world_transform().translation,
             root_local: root.local_transform().translation,
             frame_camera_world: frame_camera.world_transform().translation,
@@ -91,7 +94,7 @@ fn sample(camera: &PlayerCamera) -> Option<(&'static str, Sample)> {
             world_fov: camera.worldFOV,
             frustum: frustum(frame_camera),
             viewport: viewport(frame_camera),
-            yaw: camera.yaw(),
+            yaw: (!lacks(CAMERA_YAW)).then(|| camera.yaw()),
             third,
             free,
             delta: frame_delta(),
@@ -198,7 +201,7 @@ fn accumulators() -> Result<String, String> {
 }
 
 fn window() -> Result<String, String> {
-    let w = sre::g_current_render_window().ok_or("g_CurrentRenderWindow is null")?;
+    let w = skyrim::render::game_window();
     let (width, height, hwnd) = (w.width, w.height, w.hwnd);
     check(width > 0 && height > 0 && hwnd != 0, &format!("window {width}x{height} hwnd {hwnd:#x}"))?;
     check(!w.swapChain.is_null() && !w.backBufferRTV.is_null(), "the swap chain or the back buffer view is null")?;
@@ -206,6 +209,7 @@ fn window() -> Result<String, String> {
 }
 
 fn sky() -> Result<String, String> {
+    needs(&["id 401652"])?;
     let sky = sre::Sky::singleton().ok_or("g_Sky_ptr is null")?;
     let hour = sky.currentGameHour;
     let sun = sky.sun().and_then(|s| s.light()).ok_or("the sky has no sun light")?;
@@ -246,7 +250,8 @@ fn near(a: [f32; 3], b: [f32; 3], tol: f32) -> bool {
 }
 
 fn common(s: &Sample) -> Result<(), String> {
-    check(near(s.cached_position, s.root_world, 0.01) && near(s.cached_position, s.frame_camera_world, 0.01), &format!("cached {:?} root {:?} frame camera {:?}", s.cached_position, s.root_world, s.frame_camera_world))?;
+    check(near(s.frame_camera_world, s.root_world, 0.01), &format!("root {:?} frame camera {:?}", s.root_world, s.frame_camera_world))?;
+    check(s.cached_position.is_none_or(|cached| near(cached, s.root_world, 0.01)), &format!("cached {:?} root {:?}", s.cached_position, s.root_world))?;
     check(s.frame_camera_under_root, "the frame camera is not under the camera root")?;
     check((s.world_fov - 80.0).abs() < 0.01, &format!("world fov {}", s.world_fov))?;
     check(full_viewport(s.viewport), &format!("viewport {:?}", s.viewport))
@@ -262,8 +267,8 @@ fn third_person() -> Result<String, String> {
     check(s.state == CameraState::ThirdPerson && s.stack_count == 0, &format!("state {:?} stack {}", s.state, s.stack_count))?;
     let (target, current, yaw, zoom, free, _) = s.third.ok_or("no third-person fields")?;
     check(near(target, [30.0, 0.0, -10.0], 0.01) && near(current, [30.0, 0.0, -10.0], 0.01), &format!("offsets {target:?} {current:?}"))?;
-    check((yaw - s.yaw).abs() < 0.01, &format!("state yaw {yaw} camera yaw {}", s.yaw))?;
-    Ok(format!("state 9 stack 0, offsets {target:?}, yaw {yaw:.3}, zoom {zoom:.3}, free rotation {free:?}, position {:?}", s.cached_position))
+    check(s.yaw.is_none_or(|camera| (yaw - camera).abs() < 0.01), &format!("state yaw {yaw} camera yaw {:?}", s.yaw))?;
+    Ok(format!("state 9 stack 0, offsets {target:?}, yaw {yaw:.3}, zoom {zoom:.3}, free rotation {free:?}, position {:?}", s.root_world))
 }
 
 fn orbit() -> Result<String, String> {
@@ -271,15 +276,15 @@ fn orbit() -> Result<String, String> {
     common(&s)?;
     let (_, _, yaw, _, free, enabled) = s.third.ok_or("no third-person fields")?;
     check(enabled && (free[0].abs() - core::f32::consts::PI).abs() < 0.2, &format!("free rotation {free:?} enabled {enabled}"))?;
-    check((s.yaw - yaw).abs() < 0.01, &format!("camera yaw {} state yaw {yaw}", s.yaw))?;
-    Ok(format!("orbit: free rotation {free:?} (pi around the player), state yaw {yaw:.3} = camera yaw {:.3}", s.yaw))
+    check(s.yaw.is_none_or(|camera| (camera - yaw).abs() < 0.01), &format!("camera yaw {:?} state yaw {yaw}", s.yaw))?;
+    Ok(format!("orbit: free rotation {free:?} (pi around the player), state yaw {yaw:.3}, camera yaw {:?}", s.yaw))
 }
 
 fn first_person() -> Result<String, String> {
     let s = get("first")?;
     common(&s)?;
     check(s.state == CameraState::FirstPerson && s.stack_count == 0, &format!("state {:?} stack {}", s.state, s.stack_count))?;
-    Ok(format!("state 0 stack 0, position {:?}, frustum {:?}", s.cached_position, s.frustum))
+    Ok(format!("state 0 stack 0, position {:?}, frustum {:?}", s.root_world, s.frustum))
 }
 
 fn free_camera() -> Result<String, String> {

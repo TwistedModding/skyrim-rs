@@ -349,14 +349,23 @@ impl Variable {
         Self::scalar(PapyrusType::String, text.clone().into_raw().data as u64)
     }
 
-    /// The object Variable for a form through `Papyrus::PackFormToVariable` (id 55511): the
-    /// form's own script class, its handle, the bound object or a new one; None for a null form.
+    /// The object Variable for a form, what the engine's form-returning natives build: the form's
+    /// own script class, its handle, the bound object or a new one; None for a null form or a form
+    /// type with no script class.
     #[must_use]
     pub fn form(form: Option<&TESForm>, vm: &VirtualMachine) -> Self {
+        let Some(form) = form else { return Self::none() };
+        let Some(class) = VMTypeID::from_u32(u32::from(form.formType)).and_then(|id| vm.script_type_by_id(id)) else { return Self::none() };
+        let name = BSFixedString::view(&class.name).to_string();
+        let handle = vm.handle_for_form(form);
+        let object = vm.bound_object(handle, &name).or_else(|| {
+            let object = vm.new_object(&name)?;
+            vm.bind_to_handle(&GameThread(()), &object, handle);
+            Some(object)
+        });
+        let Some(object) = object else { return Self::none() };
         let mut out = Self::none();
-        if let Some(form) = form {
-            unsafe { sre::papyrus__pack_form_to_variable(&raw mut out.0, core::ptr::from_ref(form).cast_mut(), core::ptr::from_ref(vm).cast_mut()) };
-        }
+        unsafe { assign(&raw mut out.0, &variable(core::ptr::from_ref(class) as u64, object.0.as_ptr() as u64)) };
         out
     }
 

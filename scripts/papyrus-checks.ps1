@@ -34,13 +34,13 @@ $rows = @(
        ok = ((Returned 16) -eq 0 -and (Returned 21) -eq 1 -and (Returned 22).formId -eq "0x0001D4EC" -and ($modLines -match '^equip 1: 0001D4EC$').Count -eq 1) }
     @{ name = "bound method";  plugin = "$(Detail "bind_object") | $(NativeLine 'SelfFormId' '-> 20')"; devbench = "SkyrimRsTestRef.SelfFormId() on the player = $(Returned 23) ($((Step 23).returnedType))";
        ok = ($plugin["bind_object"].ok -and (Returned 23) -eq 20) }
-    @{ name = "arrays";        plugin = (Detail "arrays"); devbench = "Halves([3, 8, -5]) = $((Returned 24) -join ', ') ($((Step 24).returnedType)), FormIds(), the script reading Forms() = $((Returned 25) -join ', ') ($((Step 25).returnedType))";
+    @{ name = "arrays"; notRun = (PluginNotRun "arrays");        plugin = (Detail "arrays"); devbench = "Halves([3, 8, -5]) = $((Returned 24) -join ', ') ($((Step 24).returnedType)), FormIds(), the script reading Forms() = $((Returned 25) -join ', ') ($((Step 25).returnedType))";
        ok = ($plugin["arrays"].ok -and @(Returned 24).Count -eq 3 -and (Near (Returned 24)[0] 1.5 0.001) -and (Near (Returned 24)[1] 4.0 0.001) -and (Near (Returned 24)[2] -2.5 0.001) -and (((Returned 25) -join ',') -eq "20,-1,77495")) }
     @{ name = "latent";        plugin = (Detail "latent"); devbench = "DoubleNow(21) = $(Returned 26) ($((Step 26).returnedType)), DoubleLater(5) = $(Returned 27) ($((Step 27).returnedType))";
        ok = ($plugin["latent"].ok -and (Returned 26) -eq 42 -and (Returned 27) -eq 10) }
     @{ name = "events";        plugin = (Detail "events"); devbench = "EventCount() after the two Pings = $(Returned 28)";
        ok = ($plugin["events"].ok -and (Returned 28) -eq 2) }
-    @{ name = "relay";         plugin = (Detail "relay"); devbench = "player.addspell 000FB981 (Rested): $((Step 3) | ConvertTo-Json -Compress)";
+    @{ name = "relay"; notRun = (PluginNotRun "relay");         plugin = (Detail "relay"); devbench = "player.addspell 000FB981 (Rested): $((Step 3) | ConvertTo-Json -Compress)";
        ok = ($plugin["relay"].ok -and (Step 3) -ne $null) }
     @{ name = "save trigger";  plugin = ($summaries -match 'papyrus saveGame') -join ' '; devbench = "console save: $((Step 30) | ConvertTo-Json -Compress), waitFor saveGame satisfied: $(($steps | Where-Object { $_.index -eq 31 }).satisfied)";
        ok = ((($steps | Where-Object { $_.index -eq 31 }).satisfied -eq $true)) }

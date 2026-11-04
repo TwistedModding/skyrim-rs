@@ -255,7 +255,7 @@ unsafe extern "C" fn present_detour() {
         frame();
     }
     if (is_open() || HUD.get().is_some()) && FAILURE.get().is_none()
-        && let Some(fallback) = sre::g_current_render_window().map(|w| w.backBufferRTV).filter(|p| !p.is_null())
+        && let Some(fallback) = frame::back_buffer_view()
     {
         match unsafe { paint::Painter::frame_target(fallback) } {
             Ok(target) => draw(target.as_raw()),

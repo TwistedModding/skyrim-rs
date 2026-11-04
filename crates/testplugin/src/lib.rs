@@ -41,6 +41,8 @@ static LOG: Mutex<Option<File>> = Mutex::new(None);
 static MODE: OnceLock<String> = OnceLock::new();
 static LOG_DIR: OnceLock<std::path::PathBuf> = OnceLock::new();
 static RUNTIME: AtomicU32 = AtomicU32::new(0);
+/// What this game lacks of the DLL's manifest, as the manifest names it.
+static LACKING: OnceLock<Vec<String>> = OnceLock::new();
 
 /// The packed runtime version the loader reported.
 fn runtime() -> u32 {
@@ -93,6 +95,16 @@ fn check(ok: bool, what: &str) -> Result<(), String> {
 
 fn not_run(why: &str) -> Result<String, String> {
     Err(format!("{NOT_RUN}{why}"))
+}
+
+/// Whether this game lacks a record of the manifest. Reading one panics, so every use checks here first.
+fn lacks(record: &str) -> bool {
+    LACKING.get().is_some_and(|lacking| lacking.iter().any(|r| r == record))
+}
+
+/// A test's guard: not run on a game that lacks one of the records it needs.
+fn needs(records: &[&str]) -> Result<(), String> {
+    records.iter().find(|r| lacks(r)).map_or(Ok(()), |r| Err(format!("{NOT_RUN}this game lacks {r}")))
 }
 
 fn form(id: u32) -> Result<&'static TESForm, String> {
@@ -250,6 +262,7 @@ fn load(skse: &skse::Interface) -> bool {
         return false;
     };
     *LOG.lock().unwrap() = Some(file);
+    std::panic::set_hook(Box::new(|info| log!("PANIC {info}")));
     if let Ok(dir) = skse::log::dir(skse.runtime_version) {
         let _ = LOG_DIR.set(dir);
     }
@@ -261,9 +274,17 @@ fn load(skse: &skse::Interface) -> bool {
     let [major, minor, build, store] = skse::runtime::unpack(skse.runtime_version);
     log!("runtime {major}.{minor}.{build} store {store}, skse {:08x}", skse.skse_version);
     probe_interfaces(skse);
-    if let Err(e) = skyrim::init(skse) {
-        log!("FAIL init: {e}");
-        return false;
+    match skyrim::init_guarded(skse) {
+        Ok(lacking) => {
+            for record in &lacking {
+                log!("lacks {record}");
+            }
+            let _ = LACKING.set(lacking);
+        }
+        Err(e) => {
+            log!("FAIL init: {e}");
+            return false;
+        }
     }
     // After the last refusal: the loader unloads a plugin that returns false, and this leaves a thread running in it.
     match crash::install(&crash::Options { name: "skyrim-rs-test", runtime_version: skse.runtime_version, build: env!("CARGO_PKG_VERSION"), facts: None, symbol_path: None }) {

@@ -5269,11 +5269,9 @@ pub struct AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryIte
     /// `AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_>::vdtor` at 0x82fdb0 (layout_inference, medium); signature (low): `AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_> * vdtor(AutoRegisterCombatObject<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl AutoRegisterCombatObject_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEffect___vtable {
     pub const ID: u64 = 211841;
@@ -5691,11 +5689,9 @@ pub struct AutoRegisterCombatObject_CombatMagicCasterReanimate_vtable {
     /// `AutoRegisterCombatObject<CombatMagicCasterReanimate>::vdtor` at 0x830400 (layout_inference, medium); signature (low): `AutoRegisterCombatObject<CombatMagicCasterReanimate> * vdtor(AutoRegisterCombatObject<CombatMagicCasterReanimate> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl AutoRegisterCombatObject_CombatMagicCasterReanimate_vtable {
     pub const ID: u64 = 211903;
@@ -9505,11 +9501,9 @@ pub struct AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShou
     /// `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x82fd50 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_1` at 0x84a3f0 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject>::vfunc_2` at 0x84a470 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatInventoryItemMagicT<CombatInventoryItemShout,CombatMagicCasterTargetEffect>,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl AutoRegisterCreator_CombatInventoryItemMagicT_CombatInventoryItemShout_CombatMagicCasterTargetEf_4c5776ceb473_vtable {
     pub const ID: u64 = 536610;
@@ -9927,11 +9921,9 @@ pub struct AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManage
     /// `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_>::vdtor` at 0x8303d0 (layout_inference, medium); signature (low): `AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * vdtor(AutoRegisterCreator<CombatMagicCasterReanimate,BSTCreateFactoryManager<unsigned_int,CombatObject,256>_> * this, ulonglong param_1, undefined8 param_2, undefined8 param_3)`
     pub slot_0: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_1` at 0x830290 (rtti, medium); signature (low): `undefined8 * vfunc_1(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 param_1, undefined8 param_2, undefined8 param_3)`
-    #[doc(hidden)]
-    pub __slot_1: *const c_void,
+    pub slot_1: *const c_void,
     /// `BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject>::vfunc_2` at 0x830310 (rtti, medium); signature (low): `undefined vfunc_2(BSTDerivedCreator<CombatMagicCasterReanimate,CombatObject> * this, undefined8 * param_1)`
-    #[doc(hidden)]
-    pub __slot_2: *const c_void,
+    pub slot_2: *const c_void,
 }
 impl AutoRegisterCreator_CombatMagicCasterReanimate_BSTCreateFactoryManager_unsigned_int_CombatObject_256___vtable {
     pub const ID: u64 = 211899;

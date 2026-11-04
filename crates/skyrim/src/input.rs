@@ -482,7 +482,10 @@ fn take_entry(name: &'static CStr, help: &'static CStr, params: &'static [Param]
     if params.len() > MAX_ARGS {
         return Err(CommandError::TooManyParams);
     }
-    let tables = [table(sre::g_script_keyword_table(), FIRST_KEYWORD), table(sre::g_script_command_table(), FIRST_SCRIPT_FUNCTION), table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)];
+    let keywords = table(sre::g_script_keyword_table(), FIRST_KEYWORD);
+    // The script functions start where the keywords end.
+    let functions = table(keywords.as_mut_ptr_range().end.cast(), FIRST_SCRIPT_FUNCTION);
+    let tables = [keywords, functions, table(sre::g_console_command_table(), FIRST_CONSOLE_COMMAND)];
     if tables.iter().any(|t| t.iter().any(|e| answers_to(e, name))) {
         return Err(CommandError::NameTaken);
     }

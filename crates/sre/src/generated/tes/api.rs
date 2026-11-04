@@ -1850,16 +1850,6 @@ impl crate::TESObjectDOOR {
     pub fn set_field_50(&mut self, value: u64) { unsafe { Self::__member_field_50(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_50_ptr(&self) -> *mut u64 { Self::__member_field_50(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_B0(this: *const Self) -> *mut u8 { unsafe { member!(this, "TESObjectDOOR.field_B0", 0xB0, u8) } }
-    /// `TESObjectDOOR::field_B0`, at +0xB0 on 1.7.104.
-    #[inline]
-    pub fn field_B0(&self) -> u8 { unsafe { Self::__member_field_B0(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_B0(&mut self, value: u8) { unsafe { Self::__member_field_B0(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_B0_ptr(&self) -> *mut u8 { Self::__member_field_B0(core::ptr::from_ref(self)) }
 }
 
 impl crate::TESObjectLAND {

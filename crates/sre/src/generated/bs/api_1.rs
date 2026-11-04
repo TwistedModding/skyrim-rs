@@ -12361,16 +12361,6 @@ impl crate::BSOcclusionBox {
     pub fn set_field_18C(&mut self, value: u64) { unsafe { Self::__member_field_18C(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn field_18C_ptr(&self) -> *mut u64 { Self::__member_field_18C(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_field_198(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSOcclusionBox.field_198", 0x198, u64) } }
-    /// `BSOcclusionBox::field_198`, at +0x198 on 1.7.104.
-    #[inline]
-    pub fn field_198(&self) -> u64 { unsafe { Self::__member_field_198(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_field_198(&mut self, value: u64) { unsafe { Self::__member_field_198(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn field_198_ptr(&self) -> *mut u64 { Self::__member_field_198(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSOcclusionPlane {
@@ -12567,19 +12557,6 @@ impl crate::BSPCGamepadDeviceDelegate {
     pub fn source_BSGamepadEvent(&self) -> &crate::BSTEventSource { unsafe { &*Self::__member_source_BSGamepadEvent(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn source_BSGamepadEvent_ptr(&self) -> *mut crate::BSTEventSource { Self::__member_source_BSGamepadEvent(core::ptr::from_ref(self)) }
-}
-
-impl crate::BSPSysArrayEmitter {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_m_NiTPrimitiveArray_80(this: *const Self) -> *mut u64 { unsafe { member!(this, "BSPSysArrayEmitter.m_NiTPrimitiveArray_80", 0x80, u64) } }
-    /// `BSPSysArrayEmitter::m_NiTPrimitiveArray_80`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn m_NiTPrimitiveArray_80(&self) -> u64 { unsafe { Self::__member_m_NiTPrimitiveArray_80(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_m_NiTPrimitiveArray_80(&mut self, value: u64) { unsafe { Self::__member_m_NiTPrimitiveArray_80(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn m_NiTPrimitiveArray_80_ptr(&self) -> *mut u64 { Self::__member_m_NiTPrimitiveArray_80(core::ptr::from_ref(self)) }
 }
 
 impl crate::BSPSysMultiTargetEmitterCtlr {

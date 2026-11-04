@@ -178,7 +178,7 @@ fn profile_rows_follow_the_contract() {
     assert_eq!(
         profiles[&format!("{PROFILE_DIR}/1-6-1170.profile")],
         "skyrim-rs-profile 1\nruntime 1.6.1170\naddress-library versionlib-1-6-1170-0.bin\ndatabase ae\n\
-         id-unverified 302\nid-unverified 305\nid-unverified 308\n\
+         id-unverified 302\nid-unverified 303\nid-unverified 305\nid-unverified 308\n\
          member Actor.health 1c\nmember-missing Actor.inner\nmember-unverified Actor.process\n\
          slot Actor[0].1 2\n\
          size Actor 48\n\
@@ -216,14 +216,14 @@ fn a_site_only_another_file_lists_is_unverified_here() {
 fn se_ids_follow_confidence_and_review() {
     let inp = ledger();
     let changes = r#"{
-        "id_map": [[1,11,"high",null], [2,12,"medium",null], [3,13,"low","accepted"], [4,14,"high","rejected"], [5,15,"medium","rejected"], [6,16,"high",null], [7,17,"high",null]],
-        "functions": [[6,"changed","changed",null], [7,"same","same","rejected"]],
+        "id_map": [[1,11,"high",null], [2,12,"medium",null], [3,13,"low","accepted"], [4,14,"high","rejected"], [5,15,"medium","rejected"], [6,16,"high",null], [7,17,"high",null], [11,21,"high",null], [12,22,"high","accepted"], [13,23,"high",null], [14,24,"medium",null]],
+        "functions": [[6,"changed","changed",null], [7,"same","same","rejected"], [11,"changed","unverified",null], [12,"changed","changed","accepted"], [13,"unverified","unverified",null], [14,"same","same","accepted"]],
         "vtables": [[8,18,"same"], [9,null,"same"], [10,20,"absent"]]
     }"#;
     let se = runtime(&file("1.5.97", "version-1-5-97-0.bin", "SE", changes));
     let text = &profiles(&inp, &[se])[&format!("{PROFILE_DIR}/1-5-97.profile")];
     let ids: Vec<&str> = text.lines().filter(|l| l.starts_with("id")).collect();
-    assert_eq!(ids, ["id 1 11", "id-unverified 2", "id 3 13", "id-unverified 6", "id 8 18"]);
+    assert_eq!(ids, ["id 1 11", "id-unverified 2", "id 3 13", "id-unverified 6", "id 8 18", "id 11 21", "id-unverified 12", "id-unverified 13", "id-unverified 14"]);
     assert!(text.contains("database se\n"));
 }
 
@@ -316,15 +316,15 @@ fn a_site_patch_fills_or_answers_the_compared_row_and_refuses_to_contradict_it()
 
 #[test]
 fn an_ae_profile_maps_the_ids_its_library_holds_under_another_number() {
-    let functions = r#""functions": {"columns": ["id","status","signature_status","review"], "rows": [[1,"same",null,null],[2,"same",null,null],[3,"same",null,null],[4,"same",null,null],[5,"same",null,null],[6,"changed","unverified",null]]}"#;
-    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review"], "rows": [[1,11,"high",null],[2,12,"low","accepted"],[3,13,"medium",null],[4,14,"high","rejected"],[5,null,"high",null],[6,16,"high",null]]}"#;
+    let functions = r#""functions": {"columns": ["id","status","signature_status","review"], "rows": [[1,"same",null,null],[2,"same",null,null],[3,"same",null,null],[4,"same",null,null],[5,"same",null,null],[6,"changed","unverified",null],[9,"changed","unverified","accepted"],[10,"changed","changed","accepted"],[300,"same",null,null]]}"#;
+    let id_map = r#""id_map": {"columns": ["ae","se","confidence","review"], "rows": [[1,11,"high",null],[2,12,"low","accepted"],[3,13,"medium",null],[4,14,"high","rejected"],[5,null,"high",null],[6,16,"high",null],[9,19,"high","accepted"],[10,20,"high","accepted"],[300,null,"high","accepted"]]}"#;
     let vtables = r#""vtables": {"columns": ["id_canonical","id","status"], "rows": [[7,7,"same"],[8,18,"same"]]}"#;
     let other = runtime(&format!(r#"{{"schema": 1, "runtime": "1.6.353", "address_library": {{"file": "versionlib-1-6-353-0.bin", "database": "AE"}}, {functions}, {id_map}, {vtables}}}"#));
     let text = &profiles(&ledger(), std::slice::from_ref(&other))[&format!("{PROFILE_DIR}/1-6-353.profile")];
-    for row in ["id 1 11\n", "id 2 12\n", "id-unverified 3\n", "id-missing 5\n", "id-unverified 6\n", "id 8 18\n"] {
+    for row in ["id 1 11\n", "id 2 12\n", "id-unverified 3\n", "id-unverified 4\n", "id-missing 5\n", "id-unverified 6\n", "id 8 18\n", "id 9 19\n", "id-unverified 10\n", "id-missing 300\n"] {
         assert!(text.contains(row), "{row} in {text}");
     }
-    assert!(!text.contains("id 4 ") && !text.contains("id-unverified 4\n") && !text.contains("id 7 "), "{text}");
+    assert!(!text.contains("id 4 ") && !text.contains("id 7 "), "{text}");
 }
 
 #[test]

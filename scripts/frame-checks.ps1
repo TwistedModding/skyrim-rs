@@ -23,6 +23,6 @@ $rows = @(
        ok = ((Step 18).stateId -eq 3 -and (Step 18).freeCam -eq $true -and $free -match 'state 3 stack 1') }
     @{ name = "window";        plugin = $window; devbench = "the game window";
        ok = ($window -match 'window \d+x\d+ hwnd 0x') }
-    @{ name = "sky";           plugin = $sky; devbench = "inspect scene: gameHour $((Step 21).gameHour)";
+    @{ name = "sky"; notRun = (PluginNotRun "sky");           plugin = $sky; devbench = "inspect scene: gameHour $((Step 21).gameHour)";
        ok = ((Near (Captured $sky 'game hour ([0-9.]+)') (Step 21).gameHour 0.2)) }
 )
