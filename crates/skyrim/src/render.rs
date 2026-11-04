@@ -948,18 +948,14 @@ pub trait NiPointLightExt {
 
 impl NiPointLightExt for NiPointLight {
     fn values(&self) -> LightValues {
-        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x() }
+        LightValues { color: [self.diffuse.r, self.diffuse.g, self.diffuse.b], fade: self.fade, radius: self.radius.x }
     }
 
     #[allow(clippy::cast_possible_truncation, clippy::cast_sign_loss)]
     fn set_values(&self, values: LightValues) {
         let [r, g, b] = values.color;
-        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.y, values.radius), (&self.fade, values.fade)] {
+        for (field, value) in [(&self.diffuse.r, r), (&self.diffuse.g, g), (&self.diffuse.b, b), (&self.radius.x, values.radius), (&self.radius.y, values.radius), (&self.radius.z, values.radius), (&self.fade, values.fade)] {
             crate::store(field, value);
-        }
-        unsafe {
-            self.radius.x_ptr().write_volatile(values.radius);
-            self.radius.z_ptr().write_volatile(values.radius);
         }
         sre::apply_light_attenuation_settings(self, values.radius.max(0.0) as u32);
     }

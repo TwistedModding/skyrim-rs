@@ -73,7 +73,7 @@ fn world(controller: &bhkCharacterController) -> Option<&bhkWorld> {
 }
 
 fn lock_world(controller: &bhkCharacterController) -> Option<RwGuard> {
-    world(controller).map(|w| RwGuard::write(w.worldLock()))
+    world(controller).map(|w| RwGuard::write(&w.worldLock))
 }
 
 pub use sre::hkpListShape__ChildInfo as ListChild;
@@ -309,7 +309,7 @@ fn rebuild_list(like: &hkpListShape, children: &[*const hkpShape], filter_infos:
             (*entries.add(i)).collisionFilterInfo = filter_info;
         }
         (*list).enabledChildren = like.enabledChildren;
-        (&mut *list).set_numDisabledChildren(like.numDisabledChildren());
+        (*list).numDisabledChildren = like.numDisabledChildren;
     }
     Some(built)
 }

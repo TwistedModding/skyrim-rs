@@ -5,6 +5,9 @@
 # and a log naming the exception, the faulting module and plugin, the thread, the game functions on the stack and, for
 # hook, the hook site and subscriber; the thread id in the log must be the one the plugin logged right before crashing.
 $Phases = @()
+# Off 1.7.104 the logger reads no game layouts: it names a class through its vtable id and says the rest is off.
+$NoObjectDetails = if (-not $Install.canonical) { "the logger reads no object details on this runtime, by design" }
+$NoPapyrusStack = if (-not $Install.canonical) { "the logger reads no Papyrus stack on this runtime, by design" }
 
 function ScenarioFile($s, $pattern) { Get-ChildItem "$OutDir\$s" -Filter $pattern -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1 }
 function CrashLog($s) { $f = ScenarioFile $s "skyrim-runtime-extender-crash-????????-??????.log"; if ($f) { @(Get-Content $f.FullName) } else { @() } }
@@ -69,7 +72,9 @@ foreach ($s in $Mod.scenarios) {
         }
         "form" {
             $rows += @{ name = "form: register probe"; plugin = $atLine; devbench = "$accessLine | $rcx";
-                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  TESObjectWEAP form 00012EB7 WEAP, from "Skyrim\.esm"') }
+                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  TESObjectWEAP\b') }
+            $rows += @{ name = "form: object details"; notRun = $NoObjectDetails; plugin = $atLine; devbench = $rcx;
+                        ok = ($rcx -match '^rcx 0x[0-9a-f]+  TESObjectWEAP form 00012EB7 WEAP, from "Skyrim\.esm"') }
             $decoded = "$OutDir\$s\decoded.log"
             $dmpPath = if ($dump) { $dump.FullName } else { "" }
             if ($dmpPath) { Push-Location $Root; try { & cargo run -q -p xtask --features decode -- crash $dmpPath $decoded 2>&1 | Out-Null } finally { Pop-Location } }
@@ -85,12 +90,14 @@ foreach ($s in $Mod.scenarios) {
         }
         "deleted" {
             $rows += @{ name = "deleted: register probe"; plugin = $atLine; devbench = "$accessLine | $rcx";
-                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter form 00000014 ACHR DELETED, .*refcount \d+, base TESNPC form 00000007 NPC_, from "[^"]+\.es[lmp]".*, in cell 00009732 .* at \(.*\), name "Prisoner", race 00013746' -and $explanation -match '^rule deleted-record:') }
+                        ok = ($accessLine -eq 'reading address 0x0: null' -and $rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter\b') }
+            $rows += @{ name = "deleted: object details"; notRun = $NoObjectDetails; plugin = $atLine; devbench = "$rcx | $explanation";
+                        ok = ($rcx -match '^rcx 0x[0-9a-f]+  PlayerCharacter form 00000014 ACHR DELETED, .*refcount \d+, base TESNPC form 00000007 NPC_, from "[^"]+\.es[lmp]".*, in cell 00009732 .* at \(.*\), name "Prisoner", race 00013746' -and $explanation -match '^rule deleted-record:') }
         }
         "script" {
             # The native's function object and callback are the host's: a framework plugin registers natives through its Host, which owns the erased function.
             $papyrus = @($crash | Where-Object { $_ -match '^the crashing thread runs Papyrus: |^  #\d+ ' })
-            $rows += @{ name = "script: papyrus stack"; plugin = "$(First $plugin '^PASS native:') | $pluginCrashLine"; devbench = ($papyrus -join ' | ');
+            $rows += @{ name = "script: papyrus stack"; notRun = $NoPapyrusStack; plugin = "$(First $plugin '^PASS native:') | $pluginCrashLine"; devbench = ($papyrus -join ' | ');
                         ok = ((First $crash '^the crashing thread runs Papyrus: ') -match "^the crashing thread runs Papyrus: (a native's binding, inside Call|a native called by the executor)" -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.Crash: native \(function object of skyrim_runtime_extender\.dll\), implemented at skyrim_runtime_extender\.dll\+0x') -ge 1 -and (Count $crash '^  #\d+ SkyrimRsCrashTest\.CrashFromScript: script function from "SkyrimRsCrashTest\.psc", \d+ bits of code, no line table') -ge 1 -and $pluginCrashLine -ne "") }
         }
         "write" {

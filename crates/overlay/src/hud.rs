@@ -73,6 +73,6 @@ impl View {
         if bound.radius <= 0.0 {
             return None;
         }
-        self.project_sphere([bound.center.x(), bound.center.y, bound.center.z()], bound.radius)
+        self.project_sphere([bound.center.x, bound.center.y, bound.center.z], bound.radius)
     }
 }

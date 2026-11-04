@@ -38,6 +38,8 @@ param(
     [string]$GameDir = "",
     # Waits for a game or lock held by someone else instead of failing.
     [switch]$WaitForGame,
+    # Keeps the game in front for the run: only the overlay suite's typed text needs it, which otherwise reads as not run.
+    [switch]$Foreground,
     # The legacy suite's plugins, one folder per plugin holding its SKSE\Plugins files as the mod ships them.
     [string]$LegacyDir = $(if ($env:SKYRIM_RS_LEGACY_DIR) { $env:SKYRIM_RS_LEGACY_DIR } else { "$env:LOCALAPPDATA\skyrim-rs\legacy" }),
     # Runs the legacy suite with these plugins instead of its list, to try a candidate alone.
@@ -153,10 +155,9 @@ function Write-Results($verdict, $reason = "", $checks = @()) {
 }
 trap { Write-Results "error" $_.Exception.Message; break }
 
-# On an install other than the canonical one nothing goes outside Data\SKSE\Plugins until that is approved.
+# On an install other than the canonical one nothing goes outside Data\SKSE\Plugins and Data\Scripts until that is approved.
 $NotRunnable = if (-not $Install.canonical) {
     if ($Launch -ne "skse") { "-Launch $Launch copies dinput8.dll next to the game's executable" }
-    elseif ($PexSources) { "the suite copies .pex files to Data\Scripts" }
     elseif ($Suite -eq "legacy") { "its third-party plugins are built for 1.7.x; canonical only" }
 }
 if ($NotRunnable) {
@@ -208,25 +209,23 @@ $LegacyItems = @()
 $LegacyMissing = @()
 $ModDir = "$Plugins\$($Mod.dir)"
 # After part N of the scenario: the next tag's build replaces the installed DLL, as an author's copy would, and the host
-# (polling from the frame, so the game window must stay in front) must report that generation loaded within 90 s.
+# (polling from the frame) must report that generation loaded within 90 s.
 $Between = {
     param($part)
     $tag = $Mod.tags[$part - 1]
     Copy-Item "$TagDir\$tag.dll" "$ModDir\$($Mod.dll)" -Force
     # A build that did not change the code keeps the file's time; the host watches size and time.
     (Get-Item "$ModDir\$($Mod.dll)").LastWriteTime = Get-Date
-    $shell = New-Object -ComObject WScript.Shell
     $t0 = Get-Date
     while (-not (Select-String -Path "$SkseLogs\skyrim-runtime-extender.log" -Pattern "generation $tag loaded" -Quiet)) {
         if (((Get-Date) - $t0).TotalSeconds -gt 90) { throw "the host did not report generation $tag within 90 s" }
-        $game = Get-Process -Name SkyrimSE -ErrorAction SilentlyContinue | Select-Object -First 1
-        if ($game) { [void]$shell.AppActivate($game.Id) }
         Start-Sleep -Seconds 2
     }
     Start-Sleep -Seconds 2
 }.GetNewClosure()
 $DevBenchLaunch = if ($Launch -eq "standalone") { "standalone" } else { "skse" }
 $Session = @{ Runtime = $Runtime; GameDir = $GameDir; Launch = $DevBenchLaunch; WaitForGame = $WaitForGame }
+if ($Foreground) { $Session.Foreground = $true }
 try {
     # Nothing is copied or removed until the install is known to hold nothing of this run's names.
     foreach ($p in $Pex) { if (Test-Path "$Scripts\$(Split-Path $p -Leaf)") { throw "$Scripts already holds $(Split-Path $p -Leaf)" } }

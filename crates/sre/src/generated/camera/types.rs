@@ -4905,8 +4905,7 @@ pub struct TESObjectLIGH {
     #[doc(hidden)]
     pub __color: [u8; 4],
     /// +0xEC `u32`, semantic; light flags (see flags rows); see the flag rows (high)
-    #[doc(hidden)]
-    pub __flags: [u8; 4],
+    pub flags: u32,
     /// +0xF0 `float`, semantic; 1.0 when 0 at load; passed to LightParams+0xc for shadow lights (medium)
     pub falloffExponent: f32,
     /// +0xF4 `float`, semantic; spot / shadow-spot field of view in degrees (90 default) (high)
@@ -4966,7 +4965,7 @@ const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, field_D8) == 0xD8);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __field_e0) == 0xE0);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __radius) == 0xE4);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __color) == 0xE8);
-const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, __flags) == 0xEC);
+const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, flags) == 0xEC);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, falloffExponent) == 0xF0);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, fov) == 0xF4);
 const _: () = assert!(core::mem::offset_of!(TESObjectLIGH, nearClip) == 0xF8);
@@ -6459,8 +6458,7 @@ pub struct bhkWorld {
     /// +0xC590 `undefined8`, ctor store
     pub field_C590: u64,
     /// +0xC598 `class:BSReadWriteLock`, semantic; the world lock: read for picks and casts, write for the step and phantom moves; used only when bUseWorldLock:HAVOK (high)
-    #[doc(hidden)]
-    pub __worldLock: [u8; 8],
+    pub worldLock: crate::BSReadWriteLock,
     unknown_C5A0: [u8; 16],
     /// +0xC5B0 `undefined1[16]`, ctor store
     pub field_C5B0: [u8; 16],
@@ -6514,7 +6512,7 @@ const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C580) == 0xC580);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C584) == 0xC584);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C588) == 0xC588);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C590) == 0xC590);
-const _: () = assert!(core::mem::offset_of!(bhkWorld, __worldLock) == 0xC598);
+const _: () = assert!(core::mem::offset_of!(bhkWorld, worldLock) == 0xC598);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5B0) == 0xC5B0);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5C0) == 0xC5C0);
 const _: () = assert!(core::mem::offset_of!(bhkWorld, field_C5C8) == 0xC5C8);
@@ -7076,14 +7074,14 @@ const _: () = assert!(core::mem::offset_of!(hkpConvexVerticesShape__BuildConfig,
 /// Meaning: list of child shapes (hkpShapeCollection with an hkpShapeContainer at +0x20, vtable 0x19eb0e8) (high, camera pass).
 /// Evidence: camera pass (semantic): IC7 A7 (static-V). Vtable ids 227916 / 227918.; size: vdtor 0xb40b30 default 0x90; RebuildShapeTreeWithReplacements allocates 0x90.
 /// Bases: `hkpShapeCollection`@0x0, `hkpShape`@0x0, `hkReferencedObject`@0x0, `hkBaseObject`@0x0, `hkpShapeContainer`@0x20.
-#[repr(C, align(8))]
+#[repr(C)]
 pub struct hkpListShape {
     /// +0x0 `vtbl:hkpListShape:0`, rtti
     #[doc(hidden)]
     pub __vftable: *const crate::raw::vtables::hkpListShape_vtable,
     /// +0x8 `undefined4`, base hkpShapeCollection
     pub field_8: u32,
-    unknown_C: [u8; 4],
+    pub unknown_C: [u8; 4],
     /// +0x10 `undefined8`, base hkBaseObject
     pub m_hkpCollidableCollidableFilter_10: u64,
     /// +0x18 `undefined8`, base hkBaseObject
@@ -7101,8 +7099,7 @@ pub struct hkpListShape {
     /// +0x40 `u16`, base hkBaseObject, semantic; 0 from the ctor (medium)
     pub flags: u16,
     /// +0x42 `u16`, semantic; count of cleared enable bits (high)
-    #[doc(hidden)]
-    pub __numDisabledChildren: [u8; 2],
+    pub numDisabledChildren: u16,
     /// +0x44 `undefined4`, base hkBaseObject
     pub field_44: u32,
     /// +0x48 `undefined4`, base hkBaseObject
@@ -7129,7 +7126,7 @@ const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoData) == 0x30
 const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoSize) == 0x38);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, childInfoCapacityAndFlags) == 0x3C);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, flags) == 0x40);
-const _: () = assert!(core::mem::offset_of!(hkpListShape, __numDisabledChildren) == 0x42);
+const _: () = assert!(core::mem::offset_of!(hkpListShape, numDisabledChildren) == 0x42);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, field_44) == 0x44);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, field_48) == 0x48);
 const _: () = assert!(core::mem::offset_of!(hkpListShape, field_4C) == 0x4C);

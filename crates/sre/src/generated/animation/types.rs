@@ -145,11 +145,9 @@ pub struct BSFaceGenAnimationData {
     #[doc(hidden)]
     pub __expressionInput: [u8; 32],
     /// +0x60 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; modifier input (type 2, 17 values: Blink*, Brow*, Look*, Squint*, Head*) (high)
-    #[doc(hidden)]
-    pub __modifierInput: [u8; 32],
+    pub modifierInput: crate::BSFaceGenKeyframeMultiple,
     /// +0x80 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; phoneme input (type 0, 16 values) (high)
-    #[doc(hidden)]
-    pub __phonemeInput: [u8; 32],
+    pub phonemeInput: crate::BSFaceGenKeyframeMultiple,
     /// +0xA0 `class:BSFaceGenKeyframeMultiple`, semantic, runtime; custom input (type 3, 1 value: SkinnyMorph) (high)
     #[doc(hidden)]
     pub __customInput: [u8; 32],
@@ -253,8 +251,8 @@ const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, name) == 0x1
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expressionTarget) == 0x18);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expression) == 0x20);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expressionInput) == 0x40);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __modifierInput) == 0x60);
-const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __phonemeInput) == 0x80);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierInput) == 0x60);
+const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, phonemeInput) == 0x80);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __customInput) == 0xA0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, __expressionOutput) == 0xC0);
 const _: () = assert!(core::mem::offset_of!(BSFaceGenAnimationData, modifierSpeech) == 0xE0);

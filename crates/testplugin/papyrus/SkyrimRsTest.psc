@@ -11,6 +11,21 @@ Function Tick() native global
 string Function Describe(ObjectReference akRef, int count, string suffix, bool flag) native global
 float[] Function Halves(int[] values) native global
 Form[] Function Forms() native global
+int[] Function FormIds() global
+	{Forms() as a script reads it, -1 for a None. DevBench itself crashes on a Form[] when the address of Form's type object has bit 3 set.}
+	Form[] forms = Forms()
+	int[] ids = new int[3]
+	int i = 0
+	while i < forms.Length && i < ids.Length
+		if forms[i]
+			ids[i] = forms[i].GetFormID()
+		else
+			ids[i] = -1
+		endif
+		i += 1
+	endwhile
+	return ids
+EndFunction
 int Function DoubleNow(int x) native global
 int Function DoubleLater(int x) native global
 Function RecordEvent(int count, string text) native global

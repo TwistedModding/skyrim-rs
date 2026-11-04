@@ -421,14 +421,6 @@ impl crate::BSFaceGenAnimationData {
     pub fn headAngles_ptr(&self) -> *mut u64 { Self::__member_headAngles(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_modifierInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.modifierInput", 0x60, crate::BSFaceGenKeyframeMultiple) } }
-    /// `BSFaceGenAnimationData::modifierInput`, at +0x60 on 1.7.104.
-    #[inline]
-    pub fn modifierInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_modifierInput(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn modifierInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_modifierInput(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_modifierOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.modifierOutput", 0x100, crate::BSFaceGenKeyframeMultiple) } }
     /// `BSFaceGenAnimationData::modifierOutput`, at +0x100 on 1.7.104.
     #[inline]
@@ -445,14 +437,6 @@ impl crate::BSFaceGenAnimationData {
     pub fn set_phonemeAnim(&mut self, value: *mut c_void) { unsafe { Self::__member_phonemeAnim(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
     #[inline]
     pub fn phonemeAnim_ptr(&self) -> *mut *mut c_void { Self::__member_phonemeAnim(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_phonemeInput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.phonemeInput", 0x80, crate::BSFaceGenKeyframeMultiple) } }
-    /// `BSFaceGenAnimationData::phonemeInput`, at +0x80 on 1.7.104.
-    #[inline]
-    pub fn phonemeInput(&self) -> &crate::BSFaceGenKeyframeMultiple { unsafe { &*Self::__member_phonemeInput(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn phonemeInput_ptr(&self) -> *mut crate::BSFaceGenKeyframeMultiple { Self::__member_phonemeInput(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
     pub fn __member_phonemeOutput(this: *const Self) -> *mut crate::BSFaceGenKeyframeMultiple { unsafe { member!(this, "BSFaceGenAnimationData.phonemeOutput", 0x140, crate::BSFaceGenKeyframeMultiple) } }

@@ -273,8 +273,8 @@ impl BSFaceGenAnimationDataExt for BSFaceGenAnimationData {
     fn set_inputs(&self, phonemes: &[f32], modifiers: &[f32]) {
         let lock = &raw const self.lock;
         let _guard = crate::spin::SpinGuard::lock(unsafe { &*lock });
-        write_values(self.phonemeInput_ptr().cast_const(), phonemes);
-        write_values(self.modifierInput_ptr().cast_const(), modifiers);
+        write_values(&raw const self.phonemeInput, phonemes);
+        write_values(&raw const self.modifierInput, modifiers);
     }
 
     fn set_expression_override(&self, expression: i32, weight: f32) {

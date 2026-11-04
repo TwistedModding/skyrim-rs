@@ -11,6 +11,8 @@ param(
     # skse: through skse64_loader.exe; standalone: SkyrimSE.exe itself, for the dinput8.dll host
     [ValidateSet("skse", "standalone")][string]$Launch = "skse",
     [string]$Runtime = "1.7.104",
+    # Keeps the game's window in front instead of giving the foreground back.
+    [switch]$Foreground,
     [string]$GameDir = "",
     # Waits for a game or lock held by someone else instead of failing.
     [switch]$WaitForGame
@@ -62,8 +64,36 @@ function Game-InFront {
     $Game -and $owner -eq $Game.Id
 }
 
-# Without bAlwaysActive the game pauses whenever its window loses focus, which stops DevBench's main-thread tasks; with it
-# the game runs on behind other windows but typed keys never reach it. Either way, keep its window in front.
+# DevBench's input goes through the game's own event queue and bAlwaysActive keeps it running behind other windows, so a run
+# does not need the foreground: a game that takes it (it does at launch) goes behind the window the user was in. -Foreground
+# keeps it in front, for the overlay suite's typed text, the one thing that goes through SendInput.
+Add-Type -Namespace DevBench -Name Focus -MemberDefinition @'
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetForegroundWindow(System.IntPtr hwnd);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool IsWindow(System.IntPtr hwnd);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool SetWindowPos(System.IntPtr hwnd, System.IntPtr after, int x, int y, int w, int h, uint flags);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern bool AttachThreadInput(uint from, uint to, bool attach);
+[System.Runtime.InteropServices.DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(System.IntPtr hwnd, out uint pid);
+[System.Runtime.InteropServices.DllImport("kernel32.dll")] public static extern uint GetCurrentThreadId();
+'@
+function Yield-Focus {
+    if ($Foreground) { return }
+    $front = [DevBench.Fg]::GetForegroundWindow()
+    if (-not (Game-InFront)) {
+        if ($front -ne [IntPtr]::Zero) { $script:UserWindow = $front }
+        return
+    }
+    # Attached to the game's input queue this process may hand the foreground on.
+    [void][DevBench.Focus]::SetWindowPos($front, [IntPtr]1, 0, 0, 0, 0, 0x13)
+    if ($UserWindow -and [DevBench.Focus]::IsWindow($UserWindow)) {
+        $owner = 0
+        $thread = [DevBench.Focus]::GetWindowThreadProcessId($front, [ref]$owner)
+        $self = [DevBench.Focus]::GetCurrentThreadId()
+        [void][DevBench.Focus]::AttachThreadInput($self, $thread, $true)
+        [void][DevBench.Focus]::SetForegroundWindow($UserWindow)
+        [void][DevBench.Focus]::AttachThreadInput($self, $thread, $false)
+    }
+}
+
 function Wait-Run($Tool, $RunId) {
     $t0 = Get-Date
     $lastFrame = -1
@@ -74,12 +104,9 @@ function Wait-Run($Tool, $RunId) {
         $h = Get-Health
         if ($h -and $h.frame -eq $lastFrame) {
             Close-Dialogs
-            Write-Warning "game paused at frame $lastFrame; re-activating its window"
-            [void]$Shell.AppActivate($Game.Id)
-        } elseif (-not (Game-InFront)) {
-            Write-Warning "game window not in front; re-activating it"
-            [void]$Shell.AppActivate($Game.Id)
+            Write-Warning "game not advancing at frame $lastFrame"
         }
+        Yield-Focus
         if ($h) { $lastFrame = $h.frame }
         Start-Sleep -Seconds 2
     }
@@ -88,7 +115,7 @@ function Wait-Run($Tool, $RunId) {
 if (-not $Replay -and -not $Steps) { throw "give -Replay <recording> or -Steps <steps.json>" }
 $tookLock = & "$PSScriptRoot\game-free.ps1" -Wait:$WaitForGame
 New-Item -ItemType Directory -Force $OutDir | Out-Null
-$Shell = New-Object -ComObject WScript.Shell
+$UserWindow = [DevBench.Fg]::GetForegroundWindow()
 $Game = $null
 try {
     # The lock's holder may have spent minutes building; a game that started meanwhile is not ours to stop.
@@ -105,6 +132,7 @@ try {
     Wait-Until {
         if (Test-Path $RuntimeJson) { $script:Base = "http://127.0.0.1:$((Get-Content $RuntimeJson -Raw | ConvertFrom-Json).port)" }
         if ($Launch -eq "skse" -and -not (Get-Process -Id $Game.Id -ErrorAction SilentlyContinue)) { throw "the game ended before the main menu" }
+        Yield-Focus
         $h = Get-Health
         # Started directly, SkyrimSE.exe may hand itself to Steam and come back as a new process.
         if ($h -and $h.pid -ne $Game.Id) { $script:Game = Get-Process -Id $h.pid -ErrorAction SilentlyContinue }
@@ -112,7 +140,7 @@ try {
     } 180 "DevBench at the main menu"
     if ((Split-Path $Game.Path) -ne $GameDir.TrimEnd('\')) { throw "the game started from $($Game.Path), not $GameDir" }
     @{ runtime = $Runtime; exe = $Game.Path; fileVersion = (Get-Item $Game.Path).VersionInfo.FileVersion; pid = $Game.Id } | ConvertTo-Json | Out-File -Encoding utf8 "$OutDir\launch.json"
-    [void]$Shell.AppActivate($Game.Id)
+    if ($Foreground) { [void](New-Object -ComObject WScript.Shell).AppActivate($Game.Id) }
     if ($Replay) {
         if ($Replay -notmatch "[/\\]") { $Replay = "Data/SKSE/Plugins/devbench/recordings/$Replay" }
         $queued = Invoke-Tool record "{`"action`":`"replay`",`"path`":`"$Replay`",`"restoreScene`":true,`"closeMenus`":true,`"async`":true}"

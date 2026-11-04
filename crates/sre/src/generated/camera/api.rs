@@ -6470,16 +6470,6 @@ impl crate::TESObjectLIGH {
     pub fn field_e0_ptr(&self) -> *mut u32 { Self::__member_field_e0(core::ptr::from_ref(self)) }
     #[doc(hidden)]
     #[inline]
-    pub fn __member_flags(this: *const Self) -> *mut u32 { unsafe { member!(this, "TESObjectLIGH.flags", 0xEC, u32) } }
-    /// `TESObjectLIGH::flags`, at +0xEC on 1.7.104.
-    #[inline]
-    pub fn flags(&self) -> u32 { unsafe { Self::__member_flags(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_flags(&mut self, value: u32) { unsafe { Self::__member_flags(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn flags_ptr(&self) -> *mut u32 { Self::__member_flags(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
     pub fn __member_flickerIntensityAmplitude(this: *const Self) -> *mut f32 { unsafe { member!(this, "TESObjectLIGH.flickerIntensityAmplitude", 0x100, f32) } }
     /// `TESObjectLIGH::flickerIntensityAmplitude`, at +0x100 on 1.7.104.
     #[inline]
@@ -7722,14 +7712,6 @@ impl crate::bhkWorld {
     pub fn m_bhkWorldCinfo_C5E0(&self) -> &crate::bhkWorldCinfo { unsafe { &*Self::__member_m_bhkWorldCinfo_C5E0(core::ptr::from_ref(self)) } }
     #[inline]
     pub fn m_bhkWorldCinfo_C5E0_ptr(&self) -> *mut crate::bhkWorldCinfo { Self::__member_m_bhkWorldCinfo_C5E0(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_worldLock(this: *const Self) -> *mut crate::BSReadWriteLock { unsafe { member!(this, "bhkWorld.worldLock", 0xC598, crate::BSReadWriteLock) } }
-    /// `bhkWorld::worldLock`, at +0xC598 on 1.7.104.
-    #[inline]
-    pub fn worldLock(&self) -> &crate::BSReadWriteLock { unsafe { &*Self::__member_worldLock(core::ptr::from_ref(self)) } }
-    #[inline]
-    pub fn worldLock_ptr(&self) -> *mut crate::BSReadWriteLock { Self::__member_worldLock(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkContainerHeapAllocator__Allocator {
@@ -8056,16 +8038,6 @@ impl crate::hkpListShape {
     /// Semantic field, camera pass, high; `None` while the pointer is null.
     #[inline]
     pub fn child_info_data(&self) -> Option<&crate::hkpListShape__ChildInfo> { unsafe { { self.childInfoData }.as_ref() } }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_numDisabledChildren(this: *const Self) -> *mut u16 { unsafe { member!(this, "hkpListShape.numDisabledChildren", 0x42, u16) } }
-    /// `hkpListShape::numDisabledChildren`, at +0x42 on 1.7.104.
-    #[inline]
-    pub fn numDisabledChildren(&self) -> u16 { unsafe { Self::__member_numDisabledChildren(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_numDisabledChildren(&mut self, value: u16) { unsafe { Self::__member_numDisabledChildren(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn numDisabledChildren_ptr(&self) -> *mut u16 { Self::__member_numDisabledChildren(core::ptr::from_ref(self)) }
 }
 
 impl crate::hkpListShape__ChildInfo {

@@ -34,8 +34,8 @@ $rows = @(
        ok = ((Returned 16) -eq 0 -and (Returned 21) -eq 1 -and (Returned 22).formId -eq "0x0001D4EC" -and ($modLines -match '^equip 1: 0001D4EC$').Count -eq 1) }
     @{ name = "bound method";  plugin = "$(Detail "bind_object") | $(NativeLine 'SelfFormId' '-> 20')"; devbench = "SkyrimRsTestRef.SelfFormId() on the player = $(Returned 23) ($((Step 23).returnedType))";
        ok = ($plugin["bind_object"].ok -and (Returned 23) -eq 20) }
-    @{ name = "arrays";        plugin = (Detail "arrays"); devbench = "Halves([3, 8, -5]) = $((Returned 24) -join ', ') ($((Step 24).returnedType)), Forms() = $((@(Returned 25) | ForEach-Object { if ($_.none) { 'None' } else { $_.formId } }) -join ', ') ($((Step 25).returnedType))";
-       ok = ($plugin["arrays"].ok -and @(Returned 24).Count -eq 3 -and (Near (Returned 24)[0] 1.5 0.001) -and (Near (Returned 24)[1] 4.0 0.001) -and (Near (Returned 24)[2] -2.5 0.001) -and @(Returned 25).Count -eq 3 -and (Returned 25)[0].formId -eq "0x00000014" -and (Returned 25)[1].none -eq $true -and (Returned 25)[2].formId -eq "0x00012EB7") }
+    @{ name = "arrays";        plugin = (Detail "arrays"); devbench = "Halves([3, 8, -5]) = $((Returned 24) -join ', ') ($((Step 24).returnedType)), FormIds(), the script reading Forms() = $((Returned 25) -join ', ') ($((Step 25).returnedType))";
+       ok = ($plugin["arrays"].ok -and @(Returned 24).Count -eq 3 -and (Near (Returned 24)[0] 1.5 0.001) -and (Near (Returned 24)[1] 4.0 0.001) -and (Near (Returned 24)[2] -2.5 0.001) -and (((Returned 25) -join ',') -eq "20,-1,77495")) }
     @{ name = "latent";        plugin = (Detail "latent"); devbench = "DoubleNow(21) = $(Returned 26) ($((Step 26).returnedType)), DoubleLater(5) = $(Returned 27) ($((Step 27).returnedType))";
        ok = ($plugin["latent"].ok -and (Returned 26) -eq 42 -and (Returned 27) -eq 10) }
     @{ name = "events";        plugin = (Detail "events"); devbench = "EventCount() after the two Pings = $(Returned 28)";

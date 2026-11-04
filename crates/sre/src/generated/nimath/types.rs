@@ -181,20 +181,18 @@ const _: () = assert!(core::mem::offset_of!(NiPoint2, y) == 0x4);
 #[derive(Default)]
 pub struct NiPoint3 {
     /// +0x0 `float`, semantic; x (high)
-    #[doc(hidden)]
-    pub __x: [u8; 4],
+    pub x: f32,
     /// +0x4 `float`, semantic; y (high)
     pub y: f32,
     /// +0x8 `float`, semantic; z (up) (high)
-    #[doc(hidden)]
-    pub __z: [u8; 4],
+    pub z: f32,
     #[doc(hidden)]
     pub __engine: crate::Engine,
 }
 const _: () = assert!(size_of::<NiPoint3>() == 0xC);
-const _: () = assert!(core::mem::offset_of!(NiPoint3, __x) == 0x0);
+const _: () = assert!(core::mem::offset_of!(NiPoint3, x) == 0x0);
 const _: () = assert!(core::mem::offset_of!(NiPoint3, y) == 0x4);
-const _: () = assert!(core::mem::offset_of!(NiPoint3, __z) == 0x8);
+const _: () = assert!(core::mem::offset_of!(NiPoint3, z) == 0x8);
 
 /// `NiPoint4`: size 0x10 (exact).
 /// Meaning: 4-float point (x, y, z, w); the only user writes w = 0 (high, nimath pass).

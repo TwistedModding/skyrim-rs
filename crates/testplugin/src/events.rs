@@ -287,10 +287,13 @@ fn count(kind: &str) -> usize {
     RECEIVED.lock().unwrap().iter().filter(|r| r.kind == kind).count()
 }
 
-/// Source `index` of the TES holder's 56, at stride 0x58.
+/// The TES holder's sources on every runtime; only 1.7.104 has the two Amiibo sources after them.
+const TES_SOURCES: usize = 54;
+
+/// Source `index` of the TES holder, at stride 0x58.
 fn tes_source(holder: &sre::EventSourceHolder_TES, index: usize) -> Option<&sre::BSTEventSource> {
     sre::fixed_size!("BSTEventSource", sre::BSTEventSource);
-    (index < 56).then(|| unsafe { &*core::ptr::from_ref(holder).cast::<sre::BSTEventSource>().add(index) })
+    (index < TES_SOURCES).then(|| unsafe { &*core::ptr::from_ref(holder).cast::<sre::BSTEventSource>().add(index) })
 }
 
 fn sink_count<E: Event>(source: &BSTEventSource<E>) -> u32 {
@@ -301,15 +304,15 @@ fn holder() -> Result<String, String> {
     let holder = sre::EventSourceHolder_TES::get_singleton().ok_or("GetSingleton returned null")?;
     let global = skyrim::reloc().address(sre::id!(globals::g_EventSourceHolder_TES)).map_err(|e| e.to_string())?;
     check(core::ptr::from_ref(holder) as usize == global, "GetSingleton did not return g_EventSourceHolder_TES")?;
-    let counts: Vec<u32> = (0..56).map(|i| tes_source(holder, i).map_or(0, |s| s.sinkCount)).collect();
-    let empty: Vec<usize> = (1..56).filter(|&i| counts[i] == 0).collect();
+    let counts: Vec<u32> = (0..TES_SOURCES).map(|i| tes_source(holder, i).map_or(0, |s| s.sinkCount)).collect();
+    let empty: Vec<usize> = (1..TES_SOURCES).filter(|&i| counts[i] == 0).collect();
     check(empty.len() <= 2, &format!("sources without a sink at the main menu: {empty:?}"))?;
     let vm = skyrim::reloc().address(sre::id!(globals::g_SkyrimVM)).map_err(|e| e.to_string())?;
     let activate = source::<TESActivateEvent>("TESActivateEvent")?;
     check(activate.sinks().first().copied() == Some((vm + 0x10) as *const _), "sinks[0] of the TESActivateEvent source is not g_SkyrimVM + 0x10")?;
     let equip = source::<TESEquipEvent>("TESEquipEvent")?;
     check(core::ptr::from_ref(equip.raw()) as usize == global + 0x478, "the TESEquipEvent source is not holder + 0x478")?;
-    check(tes_source(holder, 56).is_none(), "source 56 exists")?;
+    check(tes_source(holder, TES_SOURCES).is_none(), "a source past the end exists")?;
     Ok(format!("holder at {global:#x} = g_EventSourceHolder_TES, sink counts {counts:?} (none at {empty:?}); TESActivateEvent sinks[0] = g_SkyrimVM + 0x10, TESEquipEvent source = holder + 0x478"))
 }
 

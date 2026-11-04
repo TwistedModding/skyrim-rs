@@ -100,29 +100,6 @@ impl crate::NiMatrix3 {
     pub unsafe fn to_euler_angles_zxy(&self, z: *mut f32, x: *mut f32, y: *mut f32) -> bool { unsafe { function!(70232, (*const Self, *mut f32, *mut f32, *mut f32) -> bool)(core::ptr::from_ref(self), z, x, y) } }
 }
 
-impl crate::NiPoint3 {
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_x(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint3.x", 0x0, f32) } }
-    /// `NiPoint3::x`, at +0x0 on 1.7.104.
-    #[inline]
-    pub fn x(&self) -> f32 { unsafe { Self::__member_x(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_x(&mut self, value: f32) { unsafe { Self::__member_x(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn x_ptr(&self) -> *mut f32 { Self::__member_x(core::ptr::from_ref(self)) }
-    #[doc(hidden)]
-    #[inline]
-    pub fn __member_z(this: *const Self) -> *mut f32 { unsafe { member!(this, "NiPoint3.z", 0x8, f32) } }
-    /// `NiPoint3::z`, at +0x8 on 1.7.104.
-    #[inline]
-    pub fn z(&self) -> f32 { unsafe { Self::__member_z(core::ptr::from_ref(self)).read_unaligned() } }
-    #[inline]
-    pub fn set_z(&mut self, value: f32) { unsafe { Self::__member_z(core::ptr::from_mut(self).cast_const()).write_unaligned(value) } }
-    #[inline]
-    pub fn z_ptr(&self) -> *mut f32 { Self::__member_z(core::ptr::from_ref(self)) }
-}
-
 impl crate::NiPoint4 {
     #[doc(hidden)]
     #[inline]
