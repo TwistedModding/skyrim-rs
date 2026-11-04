@@ -17,6 +17,7 @@ $entries = [ordered]@{
     "optional-standalone/README.md" = "$Root\crates\standalone\README.md"
     "README.md" = "$Root\crates\host\README.md"
 }
+foreach ($p in Get-ChildItem "$Root\crates\host\profiles" -Filter *.profile) { $entries["SKSE/Plugins/skyrim-runtime-extender/profiles/$($p.Name)"] = $p.FullName }
 New-Item -ItemType Directory -Force "$Root\dist" | Out-Null
 $out = "$Root\dist\skyrim-runtime-extender-$version.zip"
 Remove-Item -Force $out -ErrorAction SilentlyContinue
